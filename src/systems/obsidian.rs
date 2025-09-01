@@ -153,7 +153,7 @@ mod tests {
                 default_window_size: None,
                 max_log_file_size: None,
                 run_in_background: None,
-                markdown_roots: None,
+                file_roots: None,
                 orphans_path: None,
                 skip_directory_patterns: None,
             },

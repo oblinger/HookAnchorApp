@@ -11,6 +11,7 @@ use serde_yaml;
 
 /// Main configuration structure containing all application settings
 #[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(default)]
 pub struct Config {
     /// Popup window settings (includes scanner settings now)
     pub popup_settings: PopupSettings,
@@ -28,6 +29,7 @@ pub struct Config {
 
 /// Popup settings section of the configuration file
 #[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(default)]
 pub struct PopupSettings {
     pub max_rows: usize,
     pub max_columns: usize,
@@ -55,8 +57,8 @@ pub struct PopupSettings {
     pub max_log_file_size: Option<u64>,
     /// Keep app running in background for instant popup (default: false)
     pub run_in_background: Option<bool>,
-    /// Markdown scanning roots - directories to scan for markdown files
-    pub markdown_roots: Option<Vec<String>>,
+    /// File scanning roots - directories to scan for markdown files and applications
+    pub file_roots: Option<Vec<String>>,
     /// Path where orphan anchor files are created (default: ~/ob/kmr/SYS/Closet/Orphans)
     pub orphans_path: Option<String>,
     /// Directory patterns to skip during scanning (glob patterns)
@@ -109,7 +111,7 @@ impl Default for PopupSettings {
             default_window_size: Some("600x400".to_string()),
             max_log_file_size: Some(1_000_000), // 1MB default
             run_in_background: Some(false), // Default to false for safety
-            markdown_roots: None,
+            file_roots: None,
             orphans_path: Some("/Users/oblinger/ob/kmr/SYS/Closet/Orphans".to_string()),
             skip_directory_patterns: Some(vec![
                 "node_modules".to_string(),
@@ -233,20 +235,10 @@ pub fn load_config_with_error() -> ConfigResult {
             let _ = writeln!(file, "CONFIG_TIMING: Config file read in {:?} ({} microseconds)", read_elapsed, read_elapsed.as_micros());
         }
         
+        // Parse config with migrations and defaults
         let parse_start = std::time::Instant::now();
-        match serde_yaml::from_str::<Config>(&contents) {
+        match parse_config_contents(&contents) {
             Ok(mut config) => {
-                // Apply defaults for optional fields
-                if config.popup_settings.merge_similar {
-                    // Already set
-                } else {
-                    config.popup_settings.merge_similar = false;
-                }
-                
-                if config.popup_settings.word_separators.is_empty() {
-                    config.popup_settings.word_separators = " ._-".to_string();
-                }
-                
                 // Normalize template keys for efficient matching
                 normalize_template_keys(&mut config);
                 
@@ -263,11 +255,6 @@ pub fn load_config_with_error() -> ConfigResult {
                 return ConfigResult::Success(config);
             }
             Err(e) => {
-                // Try to load legacy format first
-                if let Ok(config) = load_legacy_config(&contents) {
-                    return ConfigResult::Success(config);
-                }
-                
                 // Failed to parse - return detailed error
                 let error_message = format!(
                     "YAML parsing error in config file:\n{}\n\n\
@@ -284,7 +271,7 @@ pub fn load_config_with_error() -> ConfigResult {
     } else {
         return ConfigResult::Error(format!(
             "Config file not found: {}\n\n\
-            Please create a config file with markdown_roots specified.",
+            Please create a config file with file_roots specified.",
             config_path.display()
         ));
     }
@@ -313,13 +300,13 @@ pub(super) fn load_config() -> Config {
     result
 }
 
-/// Loads and migrates configuration from legacy format (settings -> popup_settings)
-fn load_legacy_config(contents: &str) -> Result<Config, Box<dyn std::error::Error>> {
+/// Parses configuration from YAML string, handling migrations and providing defaults
+fn parse_config_contents(contents: &str) -> Result<Config, Box<dyn std::error::Error>> {
     // Parse as raw YAML value first
     let yaml: serde_yaml::Value = serde_yaml::from_str(contents)?;
     
-    // Extract the settings section if it exists
-    let mut popup_settings = if let Some(settings_value) = yaml.get("settings") {
+    // Extract the popup_settings section if it exists
+    let mut popup_settings = if let Some(settings_value) = yaml.get("popup_settings") {
         serde_yaml::from_value(settings_value.clone()).unwrap_or_default()
     } else {
         PopupSettings::default()
@@ -331,9 +318,11 @@ fn load_legacy_config(contents: &str) -> Result<Config, Box<dyn std::error::Erro
     }
     
     // Handle legacy markdown_roots at top level - migrate to popup_settings
-    if let Some(roots) = yaml.get("markdown_roots")
+    // Also support the old name "markdown_roots" for backwards compatibility
+    if let Some(roots) = yaml.get("file_roots")
+        .or_else(|| yaml.get("markdown_roots"))
         .and_then(|v| serde_yaml::from_value::<Vec<String>>(v.clone()).ok()) {
-        popup_settings.markdown_roots = Some(roots);
+        popup_settings.file_roots = Some(roots);
     }
     
     // Handle legacy scanner_settings - migrate to popup_settings
@@ -401,6 +390,7 @@ pub(crate) fn create_default_config() -> Config {
         actions: None,
     }
 }
+
 
 /// Parse a window size string in "widthxheight" format (e.g., "1700x1100")
 /// Returns (width, height) or None if parsing fails

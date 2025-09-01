@@ -17,7 +17,7 @@ use chrono::Local;
 
 /// Action types that are automatically generated and removed by the scanner
 /// These commands will be removed during rescanning unless they have the 'U' (user-edited) flag
-pub const SCANNER_GENERATED_ACTIONS: &[&str] = &["markdown", "anchor", "folder"];
+pub const SCANNER_GENERATED_ACTIONS: &[&str] = &["markdown", "anchor", "folder", "app", "open_app"];
 
 /// Helper function to log scanner debug messages
 fn scanner_log(message: &str) {
@@ -50,10 +50,10 @@ pub fn scan_check(commands: Vec<Command>) -> Vec<Command> {
     
     // Performing filesystem scan
     // Perform filesystem scan
-    let _markdown_roots = match &sys_data.config.popup_settings.markdown_roots {
+    let _file_roots = match &sys_data.config.popup_settings.file_roots {
         Some(roots) => roots,
         None => {
-            debug_log("SCANNER", "ERROR: No markdown_roots configured in config file");
+            debug_log("SCANNER", "ERROR: No file_roots configured in config file");
             return commands; // Return without scanning if no roots configured
         }
     };
@@ -108,16 +108,16 @@ fn scan(commands: Vec<Command>, sys_data: &crate::core::sys_data::SysData) -> Ve
 /// Used for the --rescan command line option
 pub fn scan_verbose(commands: Vec<Command>, sys_data: &crate::core::sys_data::SysData, verbose: bool) -> Vec<Command> {
     let empty_vec = vec![];
-    let markdown_roots = sys_data.config.popup_settings.markdown_roots.as_ref().unwrap_or(&empty_vec);
+    let file_roots = sys_data.config.popup_settings.file_roots.as_ref().unwrap_or(&empty_vec);
     
     if verbose {
         println!("\n🔍 Starting filesystem scan...");
-        println!("   Scanning roots: {:?}", markdown_roots);
+        println!("   Scanning roots: {:?}", file_roots);
     }
     
-    // First scan markdown files
+    // First scan files (markdown and apps)
     let initial_count = commands.len();
-    let mut commands = scan_files(commands, markdown_roots, &sys_data.config);
+    let mut commands = scan_files(commands, file_roots, &sys_data.config);
     
     if verbose {
         let files_added = commands.len().saturating_sub(initial_count);
@@ -136,12 +136,20 @@ pub fn scan_verbose(commands: Vec<Command>, sys_data: &crate::core::sys_data::Sy
         let orphans_path = std::path::Path::new(&expanded_orphans_path);
         
         // Get vault roots to search for matching anchors
-        for root in markdown_roots {
+        for root in file_roots {
             let expanded_root = expand_home(root);
             let vault_root = std::path::Path::new(&expanded_root);
             
+            // Skip orphan merge checking for /Applications and other system directories
+            // Orphan merging only makes sense for markdown vault directories
+            if expanded_root.starts_with("/Applications") || 
+               expanded_root.starts_with("/System") || 
+               expanded_root.starts_with("/Library") {
+                continue;
+            }
+            
             if verbose {
-                println!("\n🔄 Checking for orphan anchors to merge...");
+                println!("\n🔄 Checking for orphan anchors to merge in {}...", expanded_root);
             }
             
             // Find orphan folders that should be merged
@@ -173,7 +181,7 @@ pub fn scan_verbose(commands: Vec<Command>, sys_data: &crate::core::sys_data::Sy
                 if verbose {
                     println!("   Rescanning after merges...");
                 }
-                commands = scan_files(commands, markdown_roots, &sys_data.config);
+                commands = scan_files(commands, file_roots, &sys_data.config);
             } else if verbose {
                 println!("   No orphan anchors found to merge");
             }
@@ -210,14 +218,14 @@ pub fn scan_verbose(commands: Vec<Command>, sys_data: &crate::core::sys_data::Sy
     global_data.commands
 }
 
-/// Scans the configured markdown roots and returns an updated command list
-fn scan_files(mut commands: Vec<Command>, markdown_roots: &[String], config: &Config) -> Vec<Command> {
+/// Scans the configured file roots and returns an updated command list
+fn scan_files(mut commands: Vec<Command>, file_roots: &[String], config: &Config) -> Vec<Command> {
     
     // Create a set of file paths that are already handled by existing commands
     // This allows O(1) lookup to prevent creating duplicate commands for the same file
     let mut handled_files: HashSet<String> = HashSet::new();
     for cmd in &commands {
-        if cmd.action == "markdown" || cmd.action == "anchor" || cmd.action == "folder" {
+        if cmd.action == "markdown" || cmd.action == "anchor" || cmd.action == "folder" || cmd.action == "app" || cmd.action == "open_app" {
             handled_files.insert(cmd.arg.clone());
         }
     }
@@ -225,7 +233,7 @@ fn scan_files(mut commands: Vec<Command>, markdown_roots: &[String], config: &Co
     // Create a lookup map to preserve existing patches when regenerating commands
     let mut existing_patches: std::collections::HashMap<String, String> = std::collections::HashMap::new();
     for cmd in &commands {
-        if (cmd.action == "markdown" || cmd.action == "anchor" || cmd.action == "folder") && !cmd.patch.is_empty() {
+        if (cmd.action == "markdown" || cmd.action == "anchor" || cmd.action == "folder" || cmd.action == "app" || cmd.action == "open_app") && !cmd.patch.is_empty() {
             existing_patches.insert(cmd.command.clone(), cmd.patch.clone());
         }
     }
@@ -234,13 +242,14 @@ fn scan_files(mut commands: Vec<Command>, markdown_roots: &[String], config: &Co
     let _markdown_before = commands.iter().filter(|cmd| cmd.action == "markdown").count();
     let _anchor_before = commands.iter().filter(|cmd| cmd.action == "anchor").count();
     let _folder_before = commands.iter().filter(|cmd| cmd.action == "folder").count();
+    let _app_before = commands.iter().filter(|cmd| cmd.action == "app" || cmd.action == "open_app").count();
     let _user_edited_scanner_commands = commands.iter()
-        .filter(|cmd| (cmd.action == "markdown" || cmd.action == "anchor" || cmd.action == "folder") && cmd.flags.contains('U'))
+        .filter(|cmd| SCANNER_GENERATED_ACTIONS.contains(&cmd.action.as_str()) && cmd.flags.contains('U'))
         .count();
     
     // Check if a path is within any of the scan roots
     let is_within_scan_roots = |path: &str| -> bool {
-        for root in markdown_roots {
+        for root in file_roots {
             let expanded_root = expand_home(root);
             if path.starts_with(&expanded_root) {
                 return true;
@@ -261,8 +270,14 @@ fn scan_files(mut commands: Vec<Command>, markdown_roots: &[String], config: &Co
         if is_scanner_generated {
             // Check if file exists (for cleanup of orphan commands)
             let file_exists = std::path::Path::new(&cmd.arg).exists();
+            
+            // Log file existence checks only in detailed/verbose mode
+            crate::utils::detailed_log("SCANNER", &format!("Checking '{}' (action: {}) - file exists: {} at path: {}", 
+                cmd.command, cmd.action, file_exists, cmd.arg));
+            
             if !file_exists {
-                debug_log("SCANNER", &format!("Removing command '{}' - file no longer exists: {}", cmd.command, cmd.arg));
+                // This is important enough to always log
+                crate::utils::log(&format!("SCANNER: ✅ Removing command '{}' - file no longer exists: {}", cmd.command, cmd.arg));
                 // Remove from handled_files too so it can be rescanned if the file is recreated
                 handled_files.remove(&cmd.arg);
                 return false; // Remove this command
@@ -288,7 +303,7 @@ fn scan_files(mut commands: Vec<Command>, markdown_roots: &[String], config: &Co
     });
     
     let _preserved_user_edited = commands.iter()
-        .filter(|cmd| (cmd.action == "markdown" || cmd.action == "anchor" || cmd.action == "folder") && cmd.flags.contains('U'))
+        .filter(|cmd| SCANNER_GENERATED_ACTIONS.contains(&cmd.action.as_str()) && cmd.flags.contains('U'))
         .count();
     
     // Create a set of existing command names for collision detection (lowercase for case-insensitive comparison)
@@ -302,11 +317,12 @@ fn scan_files(mut commands: Vec<Command>, markdown_roots: &[String], config: &Co
     // COMMENTED OUT: Folder scanning disabled for now - only creating commands for markdown files
     // let mut found_folders: Vec<PathBuf> = Vec::new();
     
-    // Then scan for new markdown files and folders
-    for root in markdown_roots {
+    // Then scan for new files (markdown, folders, and apps)
+    for root in file_roots {
         let expanded_root = expand_home(root);
         let root_path = Path::new(&expanded_root);
         
+        println!("📂 Scanning directory: {}", expanded_root);
         
         if root_path.exists() && root_path.is_dir() {
             let _commands_before_scan = commands.len();
@@ -314,7 +330,9 @@ fn scan_files(mut commands: Vec<Command>, markdown_roots: &[String], config: &Co
             let mut dummy_folders = Vec::new();
             scan_directory_with_root(&root_path, &root_path, &mut commands, &mut existing_commands, &mut handled_files, &mut dummy_folders, &existing_patches, config);
             let _commands_after_scan = commands.len();
+            println!("   ✅ Found {} new commands in {}", _commands_after_scan - _commands_before_scan, expanded_root);
         } else {
+            println!("   ⚠️ Directory not found: {}", expanded_root);
         }
     }
     
@@ -357,6 +375,7 @@ fn scan_files(mut commands: Vec<Command>, markdown_roots: &[String], config: &Co
     let _markdown_after = commands.iter().filter(|cmd| cmd.action == "markdown").count();
     let _anchor_after = commands.iter().filter(|cmd| cmd.action == "anchor").count();
     let _folder_after = commands.iter().filter(|cmd| cmd.action == "folder").count();
+    let _app_after = commands.iter().filter(|cmd| cmd.action == "app" || cmd.action == "open_app").count();
     
     commands
 }
@@ -423,10 +442,39 @@ fn scan_directory_with_root_protected(dir: &Path, vault_root: &Path, commands: &
                     continue;
                 }
                 
+                // Check if this is a .app bundle
+                if let Some(file_name) = path.file_name() {
+                    if let Some(name_str) = file_name.to_str() {
+                        if name_str.ends_with(".app") {
+                            // This is an app bundle - create an APP command
+                            if let Some(command) = process_app_bundle(&path, existing_commands, existing_patches) {
+                                crate::utils::detailed_log("SCANNER", &format!("Found app bundle: {} -> command: {}", 
+                                    path.display(), command.command));
+                                
+                                // Check if this app is already handled
+                                if handled_files.contains(&command.arg) {
+                                    crate::utils::detailed_log("SCANNER", &format!("Skipping '{}' - app already handled: {}", 
+                                        command.command, path.display()));
+                                } else {
+                                    println!("      🎯 Found app: {}", command.command);
+                                    crate::utils::detailed_log("SCANNER", &format!("Creating new APP command '{}' -> {} {}", 
+                                        command.command, command.action, command.arg));
+                                    
+                                    existing_commands.insert(command.command.to_lowercase());
+                                    handled_files.insert(command.arg.clone());
+                                    commands.push(command);
+                                }
+                            }
+                            // Don't scan inside .app bundles
+                            continue;
+                        }
+                    }
+                }
+                
                 // COMMENTED OUT: Folder collection disabled - only scanning for markdown files
                 // found_folders.push(path.clone());
                 
-                // Recursively scan subdirectories
+                // Recursively scan subdirectories (but not .app bundles)
                 scan_directory_with_root_protected(&path, vault_root, commands, existing_commands, handled_files, found_folders, existing_patches, config, visited, depth + 1);
             } else {
                 // Process files (markdown files)
@@ -457,6 +505,50 @@ fn scan_directory_with_root_protected(dir: &Path, vault_root: &Path, commands: &
 }
 
 
+/// Processes an .app bundle and returns an APP command
+fn process_app_bundle(path: &Path, existing_commands: &HashSet<String>, existing_patches: &std::collections::HashMap<String, String>) -> Option<Command> {
+    // Get the app name from the path
+    let app_name_with_ext = path.file_name()?.to_str()?;
+    
+    // Remove the .app extension to get the base name
+    let app_name = if app_name_with_ext.ends_with(".app") {
+        &app_name_with_ext[..app_name_with_ext.len() - 4]
+    } else {
+        return None;
+    };
+    
+    // Create command name with "App" suffix
+    let preferred_name = format!("{} App", app_name);
+    
+    // Check for name collisions
+    let command_name = if existing_commands.contains(&preferred_name.to_lowercase()) {
+        // If collision exists, add a number suffix
+        let mut counter = 2;
+        loop {
+            let numbered_name = format!("{} App {}", app_name, counter);
+            if !existing_commands.contains(&numbered_name.to_lowercase()) {
+                break numbered_name;
+            }
+            counter += 1;
+        }
+    } else {
+        preferred_name
+    };
+    
+    let full_path = path.to_string_lossy().to_string();
+    
+    // Try to preserve existing patch if this command existed before
+    let preserved_patch = existing_patches.get(&command_name).cloned().unwrap_or_else(|| "App".to_string());
+    
+    Some(Command {
+        patch: preserved_patch,
+        command: command_name,
+        action: "open_app".to_string(),
+        arg: full_path,
+        flags: String::new(),
+    })
+}
+
 /// Processes a path and returns a command if it's a markdown file with vault root for relative paths
 fn process_markdown_with_root(path: &Path, _vault_root: &Path, existing_commands: &HashSet<String>, existing_patches: &std::collections::HashMap<String, String>) -> Option<Command> {
     // Check if it's a file and has .md extension
@@ -483,7 +575,13 @@ fn process_markdown_with_root(path: &Path, _vault_root: &Path, existing_commands
     
     // Create command name without suffix, but check for collisions (case-insensitive)
     let preferred_name = file_name.to_string();
-    let command_name = if existing_commands.contains(&preferred_name.to_lowercase()) {
+    
+    // Special handling for files ending with "App" - always add " Markdown" suffix
+    // This prevents collision with actual .app commands
+    let command_name = if file_name.ends_with(" App") || file_name.ends_with("App") {
+        // For App markdown files, always use " Markdown" suffix to avoid confusion with actual apps
+        format!("{} Markdown", file_name)
+    } else if existing_commands.contains(&preferred_name.to_lowercase()) {
         // If collision exists, use " markdown" suffix
         format!("{} markdown", file_name)
     } else {
@@ -578,9 +676,9 @@ fn expand_home(path: &str) -> String {
 fn calculate_commands_checksum(commands: &[Command]) -> String {
     let mut hasher = DefaultHasher::new();
     
-    // Filter only scan-generated commands (markdown, obs, anchor, contact, folder)
+    // Filter only scan-generated commands (markdown, anchor, contact, folder, app, open_app)
     let mut scan_commands: Vec<_> = commands.iter()
-        .filter(|cmd| cmd.action == "markdown" || cmd.action == "anchor" || cmd.action == "contact" || cmd.action == "folder")
+        .filter(|cmd| cmd.action == "markdown" || cmd.action == "anchor" || cmd.action == "contact" || cmd.action == "folder" || cmd.action == "app" || cmd.action == "open_app")
         .collect();
     
     // Sort for consistent checksum - use to_new_format() for comparison

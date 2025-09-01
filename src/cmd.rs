@@ -27,7 +27,8 @@ pub fn run_command_line_mode(args: Vec<String>) {
         "-m" | "--match" => run_match_command(&args),
         "-r" | "--run_fn" => run_exec_command(&args),
         "-x" | "--execute" => run_execute_top_match(&args),
-        "-a" | "--action" => run_test_action(&args),
+        "-c" | "--command" => run_test_command(&args),  // Renamed: test command with action and arg
+        "-a" | "--action" => run_action_directly(&args),  // New: execute action directly
         "-f" | "--folders" => run_folder_command(&args),
         "-F" | "--named-folders" => run_folder_with_commands(&args),
         "--hook" => handle_hook_option(&args),
@@ -66,7 +67,8 @@ pub fn print_help(program_name: &str) {
     eprintln!("  {} -x, --execute <query>    # Execute top match", program_name);
     eprintln!("  {} -f, --folders <query>    # Get folder paths", program_name);
     eprintln!("  {} -F, --named-folders <q>  # Get CMDS->paths", program_name);
-    eprintln!("  {} -a, --action <act> <arg> # Test action", program_name);
+    eprintln!("  {} -c, --command <act> <arg># Test command with action+arg", program_name);
+    eprintln!("  {} -a, --action <name>      # Execute action directly", program_name);
     eprintln!("  {} --infer [command]        # Show patch inference changes", program_name);
     eprintln!("  {} --infer-all              # Show changes and prompt to apply", program_name);
     eprintln!("  {} --rescan                 # Rescan filesystem with verbose output", program_name);
@@ -238,13 +240,13 @@ fn run_execute_top_match(args: &[String]) {
     println!("Command completed");
 }
 
-fn run_test_action(args: &[String]) {
+fn run_test_command(args: &[String]) {
     if args.len() < 3 {
-        eprintln!("Usage: {} -a, --action <action_name> [--arg <value>] [--input <value>] [--param key=value]...", args[0]);
+        eprintln!("Usage: {} -c, --command <action_name> [--arg <value>] [--input <value>] [--param key=value]...", args[0]);
         eprintln!("Examples:");
-        eprintln!("  {} -a open_url --arg https://github.com", args[0]);
-        eprintln!("  {} -a template --input \"My Note\" --param action=markdown", args[0]);
-        eprintln!("  {} -a popup --param popup_action=navigate --param dx=0 --param dy=1", args[0]);
+        eprintln!("  {} -c open_url --arg https://github.com", args[0]);
+        eprintln!("  {} -c template --input \"My Note\" --param action=markdown", args[0]);
+        eprintln!("  {} -c popup --param popup_action=navigate --param dx=0 --param dy=1", args[0]);
         std::process::exit(1);
     }
     
@@ -348,6 +350,62 @@ fn run_test_action(args: &[String]) {
     println!("Action completed");
 }
 
+fn run_action_directly(args: &[String]) {
+    if args.len() < 3 {
+        eprintln!("Usage: {} -a, --action <action_type> [--key value]...", args[0]);
+        eprintln!("Examples:");
+        eprintln!("  {} -a markdown --arg /path/to/file.md", args[0]);
+        eprintln!("  {} -a cmd --arg \"ls -la\" --flags W", args[0]);
+        eprintln!("  {} -a tmux_create --folder /path/to/folder --session my_session", args[0]);
+        std::process::exit(1);
+    }
+    
+    let action_type = &args[2];
+    
+    // Parse all --key value pairs
+    let mut params = std::collections::HashMap::new();
+    let mut i = 3;
+    while i < args.len() {
+        if args[i].starts_with("--") {
+            let key = args[i].trim_start_matches("--");
+            if i + 1 < args.len() {
+                params.insert(key.to_string(), args[i + 1].clone());
+                i += 2;
+            } else {
+                eprintln!("Error: {} requires a value", args[i]);
+                std::process::exit(1);
+            }
+        } else {
+            eprintln!("Error: Expected --key but got: {}", args[i]);
+            std::process::exit(1);
+        }
+    }
+    
+    // Build the action structure based on type and parameters
+    use crate::execute::Action;
+    use serde_json::Value as JsonValue;
+    
+    println!("Executing action '{}' with parameters:", action_type);
+    for (key, value) in &params {
+        println!("  {}: {}", key, value);
+    }
+    
+    // Create the action as a HashMap with JsonValue entries
+    let mut action_params = std::collections::HashMap::new();
+    action_params.insert("action_type".to_string(), JsonValue::String(action_type.to_string()));
+    
+    // Add all parameters from command line
+    for (key, value) in params {
+        action_params.insert(key, JsonValue::String(value));
+    }
+    
+    let action = Action { params: action_params };
+    
+    // Execute through server
+    use crate::execute::execute_on_server;
+    let _ = execute_on_server(&action);
+    println!("Action '{}' completed", action_type);
+}
 
 fn run_folder_command(args: &[String]) {
     if args.len() < 3 {
@@ -934,11 +992,18 @@ fn run_rescan_command() {
     // Load configuration
     let config = crate::core::sys_data::get_config();
     
-    // Get markdown roots
-    let _markdown_roots = match &config.popup_settings.markdown_roots {
-        Some(roots) => roots.clone(),
+    // Debug output
+    println!("📋 Config loaded - checking file_roots...");
+    
+    // Get file roots
+    let _file_roots = match &config.popup_settings.file_roots {
+        Some(roots) => {
+            println!("✅ File roots found: {:?}", roots);
+            roots.clone()
+        },
         None => {
-            eprintln!("❌ No markdown roots configured in config file");
+            eprintln!("❌ No file roots configured in config file");
+            eprintln!("    popup_settings exists: {}", config.popup_settings.file_roots.is_some());
             std::process::exit(1);
         }
     };

@@ -491,12 +491,31 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func ensurePopupRunning() {
+        // First check if our known process is still running
         if let process = rustPopupProcess, process.isRunning {
             // Process is still running
             return
         }
         
-        // Process has died, restart it (but don't show window)
+        // Check if ANY popup_server process is running (might have been started by ha --restart)
+        let checkTask = Process()
+        checkTask.executableURL = URL(fileURLWithPath: "/bin/sh")
+        checkTask.arguments = ["-c", "pgrep -f 'popup_server' > /dev/null 2>&1"]
+        
+        do {
+            try checkTask.run()
+            checkTask.waitUntilExit()
+            
+            if checkTask.terminationStatus == 0 {
+                // A popup_server is already running somewhere
+                log(" Popup_server already running (launched externally)")
+                return
+            }
+        } catch {
+            // Ignore errors, proceed to launch
+        }
+        
+        // No popup_server found anywhere, restart it (but don't show window)
         log(" Popup process died, restarting...")
         launchRustPopup(showOnStart: false)
     }

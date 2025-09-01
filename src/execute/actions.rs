@@ -506,7 +506,33 @@ pub(super) fn execute_locally(
     arg: Option<&str>,
     variables: Option<HashMap<String, String>>,
 ) -> Result<String, Box<dyn std::error::Error>> {
-    debug_log("ACTION", &format!("Executing action type: {}", action.action_type()));
+    // Get key values for logging
+    let action_name = action.get_string("command_name").unwrap_or("(unnamed)").to_string();
+    let action_type = action.action_type();
+    let action_arg = arg.unwrap_or_else(|| action.get_string("arg").unwrap_or(""));
+    let action_flags = action.get_string("flags").unwrap_or("");
+    
+    // Log main action line (to both console and log)
+    let main_log = format!("ACTION:{}  TYPE:{}  ARG:{}", action_name, action_type, action_arg);
+    crate::utils::log(&main_log);
+    println!("{}", main_log);
+    
+    // Log detailed action info (only to detailed log)
+    let mut details = format!("ACTION DETAILS  FLAGS:{}", action_flags);
+    
+    // Add other key-value pairs from action params
+    for (key, value) in &action.params {
+        if key != "command_name" && key != "action_type" && key != "arg" && key != "flags" {
+            let value_str = match value {
+                JsonValue::String(s) => s.clone(),
+                JsonValue::Bool(b) => b.to_string(),
+                JsonValue::Number(n) => n.to_string(),
+                _ => "...".to_string(), // Complex values
+            };
+            details.push_str(&format!(", {}:{}", key, value_str));
+        }
+    }
+    crate::utils::detailed_log("ACTION", &details);
     
     // Merge all parameters into a single HashMap
     let mut params = HashMap::new();
@@ -534,14 +560,8 @@ pub(super) fn execute_locally(
         params.insert(key.clone(), value_str);
     }
     
-    // Debug log the params before expansion
-    debug_log("ACTION", &format!("Params before expansion: {:?}", params));
-    
     // Expand all parameters that contain {{...}} expressions
     let expanded_params = expand_parameters(&params)?;
-    
-    // Debug log the params after expansion
-    debug_log("ACTION", &format!("Params after expansion: {:?}", expanded_params));
     
     // Dispatch based on action type
     match action.action_type() {
@@ -555,6 +575,7 @@ pub(super) fn execute_locally(
         "shell" => execute_shell_action(&expanded_params),
         "obsidian" => execute_obsidian_action(&expanded_params),
         "alias" => execute_alias_action(&expanded_params),
+        "tmux_create" => execute_tmux_create_action(&expanded_params),
         
         // Everything else is JavaScript with action_ prefix
         _ => {
@@ -667,30 +688,45 @@ fn execute_open_url_action(
 fn execute_open_app_action(
     params: &HashMap<String, String>,
 ) -> Result<String, Box<dyn std::error::Error>> {
+    // For open_app, the app path/name can be in either 'app' or 'arg' field
+    // Commands from commands.txt put it in 'arg', config actions put it in 'app'
     let app = params.get("app")
-        .ok_or("open_app action requires app parameter")?;
+        .or_else(|| params.get("arg"))
+        .ok_or("open_app action requires app or arg parameter")?;
     
-    let args = params.get("arg").or_else(|| params.get("args"));
+    // Additional arguments if specified separately
+    let args = params.get("args");
     
-    debug_log("ACTION", &format!("Launching app: {} with args: {:?}", app, args));
+    crate::utils::log(&format!("OPEN_APP: Attempting to launch app: '{}' with args: {:?}", app, args));
+    crate::utils::detailed_log("OPEN_APP", &format!("Full params: {:?}", params));
     
     let result = crate::utils::launch_app_with_arg(app, args.as_ref().map(|s| s.as_str()));
     
     // Handle NON_BLOCKING_SUCCESS as success
     match result {
-        Ok(_) => Ok(format!("Launched app: {}", app)),
+        Ok(_) => {
+            crate::utils::log(&format!("OPEN_APP: Successfully launched: {}", app));
+            Ok(format!("Launched app: {}", app))
+        },
         Err(e) if e.to_string().contains("NON_BLOCKING_SUCCESS") => {
+            crate::utils::log(&format!("OPEN_APP: Non-blocking launch successful: {}", app));
             Ok(format!("Launched app: {}", app))
         }
-        Err(e) => Err(e.into())
+        Err(e) => {
+            crate::utils::log_error(&format!("OPEN_APP: Failed to launch '{}': {}", app, e));
+            Err(e.into())
+        }
     }
 }
 
 fn execute_open_folder_action(
     params: &HashMap<String, String>,
 ) -> Result<String, Box<dyn std::error::Error>> {
-    let path = params.get("path")
-        .ok_or("open_folder action requires path parameter")?;
+    // For open_folder, the path can be in either 'folder', 'path', or 'arg' field
+    let path = params.get("folder")
+        .or_else(|| params.get("path"))
+        .or_else(|| params.get("arg"))
+        .ok_or("open_folder action requires folder, path, or arg parameter")?;
     
     debug_log("ACTION", &format!("Opening folder: {}", path));
     
@@ -709,8 +745,11 @@ fn execute_open_folder_action(
 fn execute_open_file_action(
     params: &HashMap<String, String>,
 ) -> Result<String, Box<dyn std::error::Error>> {
-    let path = params.get("path")
-        .ok_or("open_file action requires path parameter")?;
+    // For open_file, the path can be in either 'file', 'path', or 'arg' field
+    let path = params.get("file")
+        .or_else(|| params.get("path"))
+        .or_else(|| params.get("arg"))
+        .ok_or("open_file action requires file, path, or arg parameter")?;
     
     debug_log("ACTION", &format!("Opening file: {}", path));
     
@@ -835,6 +874,82 @@ fn execute_obsidian_action(
     crate::utils::launch_app_with_arg(obsidian_app, Some(&url))?;
     
     Ok(format!("Opened in Obsidian: {}", file))
+}
+
+fn execute_tmux_create_action(
+    params: &HashMap<String, String>,
+) -> Result<String, Box<dyn std::error::Error>> {
+    use std::process::Command;
+    use std::path::Path;
+    
+    let folder = params.get("folder")
+        .ok_or("tmux_create action requires 'folder' parameter")?;
+    
+    // Extract session name from folder or use provided one
+    let session_name = params.get("session")
+        .map(|s| s.clone())
+        .unwrap_or_else(|| {
+            // Use folder name as session, sanitized for tmux
+            Path::new(folder)
+                .file_name()
+                .and_then(|n| n.to_str())
+                .unwrap_or("session")
+                .replace(' ', "_")
+                .replace(':', "_")
+                .replace('.', "_")
+                .replace('[', "_")
+                .replace(']', "_")
+        });
+    
+    // Get the command to run (default to claude --continue)
+    let command_to_run = params.get("command")
+        .map(|s| s.clone())
+        .unwrap_or_else(|| "claude --continue".to_string());
+    
+    crate::utils::log(&format!("TMUX_CREATE: Creating session '{}' in folder '{}' with command '{}'", 
+        session_name, folder, command_to_run));
+    
+    // Kill existing session if it exists
+    let _ = Command::new("/opt/homebrew/bin/tmux")
+        .args(&["kill-session", "-t", &session_name])
+        .output();
+    
+    // Create new session with the command
+    let create_result = Command::new("/opt/homebrew/bin/tmux")
+        .args(&["new-session", "-d", "-s", &session_name, "-c", folder, &command_to_run])
+        .output()?;
+    
+    if !create_result.status.success() {
+        let stderr = String::from_utf8_lossy(&create_result.stderr);
+        return Err(format!("Failed to create tmux session: {}", stderr).into());
+    }
+    
+    crate::utils::log(&format!("TMUX_CREATE: Session '{}' created successfully", session_name));
+    
+    // Verify the session exists
+    std::thread::sleep(std::time::Duration::from_millis(100));
+    let verify = Command::new("/opt/homebrew/bin/tmux")
+        .args(&["has-session", "-t", &session_name])
+        .output()?;
+    
+    if !verify.status.success() {
+        return Err(format!("Session '{}' was created but verification failed", session_name).into());
+    }
+    
+    // Try to switch to the session if there's a client
+    let switch_result = Command::new("/opt/homebrew/bin/tmux")
+        .args(&["switch-client", "-t", &session_name])
+        .output();
+    
+    if let Ok(result) = switch_result {
+        if result.status.success() {
+            crate::utils::log(&format!("TMUX_CREATE: Switched to session '{}'", session_name));
+        } else {
+            crate::utils::log(&format!("TMUX_CREATE: Created session '{}' but no client to switch", session_name));
+        }
+    }
+    
+    Ok(format!("Created tmux session '{}' in {}", session_name, folder))
 }
 
 // ============================================================================

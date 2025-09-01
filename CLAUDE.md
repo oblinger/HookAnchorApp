@@ -15,6 +15,14 @@
 - `queue_user_error()` function in error_display.rs allows any part of the application to queue errors for display
 - Error queue is automatically checked in popup update loop and displays errors to user when shell server is unavailable
 
+## Code Architecture Philosophy
+- **NO LEGACY CODE OR MULTIPLE CODE PATHS** - Always refactor to a single, clean implementation
+- **NO BACKWARD COMPATIBILITY LAYERS** - When improving systems, remove old code entirely
+- Do not maintain multiple parameter names, function names, or config keys for backward compatibility
+- When changing a config key or API, update ALL references rather than supporting both old and new
+- Prefer breaking changes with clear migration over maintaining compatibility code
+- The codebase should have ONE way to do each thing, not multiple legacy options
+
 ## Launcher System
 - Single unified launcher system using launcher::launch() with YAML/JavaScript evaluation
 - Removed legacy `/tmp/cmd_file` system and `use_new_launcher` config flag

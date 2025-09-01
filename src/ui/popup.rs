@@ -435,12 +435,13 @@ impl PopupInterface for AnchorSelector {
         self.show_contact_impl();
     }
     
-    fn tmux_activate(&mut self) {
-        self.tmux_activate();
-    }
+    // COMMENTED OUT: Unused function - replaced by activate_tmux (formerly activate_anchor)
+    // fn tmux_activate(&mut self) {
+    //     self.tmux_activate();
+    // }
     
-    fn activate_anchor(&mut self) {
-        self.activate_anchor();
+    fn activate_tmux(&mut self) {
+        self.activate_tmux();
     }
     
     fn perform_exit_scanner_check(&mut self) {
@@ -916,6 +917,9 @@ impl AnchorSelector {
         crate::utils::log(&format!("TEMPLATE: Looking for action '{}'", template_name));
         let found_action = if let Some(ref actions) = config.actions {
             crate::utils::log(&format!("TEMPLATE: DEBUG 4 - config.actions is Some, Found {} actions in config", actions.len()));
+            // Debug: log all action names
+            let action_names: Vec<String> = actions.keys().cloned().collect();
+            crate::utils::log(&format!("TEMPLATE: Available actions: {:?}", action_names));
             if let Some(action) = actions.get(template_name) {
                 crate::utils::log(&format!("TEMPLATE: DEBUG 5 - Found action '{}', type='{}'", template_name, action.action_type()));
                 if action.action_type() == "template" {
@@ -945,11 +949,15 @@ impl AnchorSelector {
                     // This is a temporary compatibility layer
                     true
                 } else {
-                    crate::utils::log(&format!("TEMPLATE: Action '{}' is not a template (type='{}')", template_name, action.action_type()));
+                    let error_msg = format!("ERROR: Action '{}' exists but is not a template (type='{}').\nTo use this key binding, rename your template action to avoid name collision.", 
+                        template_name, action.action_type());
+                    crate::utils::log(&format!("TEMPLATE: {}", error_msg));
+                    self.show_error_dialog(&error_msg);
                     false
                 }
             } else {
                 crate::utils::log(&format!("TEMPLATE: Action '{}' not found in actions", template_name));
+                // Don't show error here - it might be in old templates
                 false
             }
         } else {
@@ -1928,10 +1936,14 @@ impl AnchorSelector {
             println!("  ⏳ Waiting for server to initialize...");
             std::thread::sleep(std::time::Duration::from_millis(1000));
             
-            // Step 2: Call "ha --rescan" to let the server handle the rescan
+            // Step 2: Call "ha --rescan" to let the CLI handle the rescan
             println!("\n📁 Step 2/3: Triggering filesystem rescan via server...");
-            let current_exe = std::env::current_exe().unwrap_or_else(|_| "popup".into());
-            match std::process::Command::new(current_exe)
+            // Use the ha binary for CLI operations, not popup_server
+            let ha_binary = std::env::current_exe()
+                .ok()
+                .and_then(|p| p.parent().map(|dir| dir.join("ha")))
+                .unwrap_or_else(|| "ha".into());
+            match std::process::Command::new(ha_binary)
                 .arg("--rescan")
                 .status() {
                 Ok(status) => {
@@ -1985,8 +1997,12 @@ impl AnchorSelector {
     /// Trigger filesystem rescan
     fn trigger_rescan(&mut self) {
         crate::utils::log("Triggering filesystem rescan...");
-        let current_exe = std::env::current_exe().unwrap_or_else(|_| "popup".into());
-        match std::process::Command::new(current_exe)
+        // Use the ha binary for CLI operations, not popup_server
+        let ha_binary = std::env::current_exe()
+            .ok()
+            .and_then(|p| p.parent().map(|dir| dir.join("ha")))
+            .unwrap_or_else(|| "ha".into());
+        match std::process::Command::new(ha_binary)
             .arg("--rescan")
             .status() {
             Ok(status) => {
@@ -2156,6 +2172,8 @@ impl AnchorSelector {
         let _ = crate::execute::execute_on_server(&contact_action);
     }
     
+    // COMMENTED OUT: Unused function - replaced by activate_tmux (formerly activate_anchor) below
+    /*
     /// Start tmux session for selected anchor
     fn tmux_activate(&mut self) {
         use crate::utils;
@@ -2212,8 +2230,10 @@ impl AnchorSelector {
         // Close the popup after successful execution
         self.should_exit = true;
     }
+    */
     
-    fn activate_anchor(&mut self) {
+    /// Activate TMUX session for selected anchor/folder (formerly activate_anchor)
+    fn activate_tmux(&mut self) {
         use crate::utils;
         use std::process::Command;
         use std::path::Path;
@@ -2311,23 +2331,23 @@ impl AnchorSelector {
         // This is based on the working Python anchor script logic
         
         // 1. Open folder in Finder
-        if let Err(e) = Command::new("open").arg(&folder_path).spawn() {
-            utils::log(&format!("ACTIVATE_ANCHOR: Failed to open folder: {}", e));
-        }
+        //if let Err(e) = Command::new("open").arg(&folder_path).spawn() {
+        //    utils::log(&format!("ACTIVATE_ANCHOR: Failed to open folder: {}", e));
+        //}
         
         // 2. Open in Obsidian if it's in the vault
-        let vault_path = self.popup_state.config.launcher_settings.as_ref()
-            .and_then(|ls| ls.obsidian_vault_path.as_ref())
-            .map(|p| utils::expand_tilde(p))
-            .unwrap_or_else(|| "/Users/oblinger/ob/kmr".to_string());
-            
-        if Path::new(&folder_path).starts_with(&vault_path) {
-            if let Some(vault_name) = self.popup_state.config.launcher_settings.as_ref()
-                .and_then(|ls| ls.obsidian_vault_name.as_ref()) {
-                // TODO: Open in Obsidian
-                utils::log(&format!("ACTIVATE_ANCHOR: Would open in Obsidian vault: {}", vault_name));
-            }
-        }
+        //let vault_path = self.popup_state.config.launcher_settings.as_ref()
+        //    .and_then(|ls| ls.obsidian_vault_path.as_ref())
+        //    .map(|p| utils::expand_tilde(p))
+        //    .unwrap_or_else(|| "/Users/oblinger/ob/kmr".to_string());
+        //    
+        //if Path::new(&folder_path).starts_with(&vault_path) {
+        //    if let Some(vault_name) = self.popup_state.config.launcher_settings.as_ref()
+        //        .and_then(|ls| ls.obsidian_vault_name.as_ref()) {
+        //        // TODO: Open in Obsidian
+        //        utils::log(&format!("ACTIVATE_ANCHOR: Would open in Obsidian vault: {}", vault_name));
+        //    }
+        //}
         
         // 3. Check for .tmuxp.yaml and activate TMUX session
         let tmuxp_path = Path::new(&folder_path).join(".tmuxp.yaml");
@@ -2398,22 +2418,79 @@ impl AnchorSelector {
                         if let Ok(v) = verify {
                             if v.status.success() {
                                 utils::log(&format!("ACTIVATE_ANCHOR: Verified session '{}' exists", session_name));
+                                
+                                // Run claude --continue in the new session
+                                // Add a small delay to ensure the window is created
+                                std::thread::sleep(std::time::Duration::from_millis(500));
+                                utils::log(&format!("ACTIVATE_ANCHOR: Running claude --continue in new tmuxp session '{}'", session_name));
+                                match Command::new("/opt/homebrew/bin/tmux")
+                                    .args(&["send-keys", "-t", &session_name, "claude --continue", "C-m"])
+                                    .output() {
+                                    Ok(output) => {
+                                        if output.status.success() {
+                                            utils::log(&format!("ACTIVATE_ANCHOR: Successfully sent claude --continue to tmuxp session '{}'", session_name));
+                                        } else {
+                                            utils::log(&format!("ACTIVATE_ANCHOR: Failed to send claude --continue to tmuxp session: {}", String::from_utf8_lossy(&output.stderr)));
+                                        }
+                                    }
+                                    Err(e) => {
+                                        utils::log(&format!("ACTIVATE_ANCHOR: Error sending claude --continue to tmuxp session: {}", e));
+                                    }
+                                }
                             } else {
                                 utils::log(&format!("ACTIVATE_ANCHOR: WARNING: Session '{}' was NOT created despite tmuxp success", session_name));
                                 utils::log(&format!("ACTIVATE_ANCHOR: tmux has-session stderr: {}", String::from_utf8_lossy(&v.stderr)));
                                 
                                 // Try creating a simple tmux session as fallback
                                 utils::log(&format!("ACTIVATE_ANCHOR: Falling back to basic tmux new-session"));
+                                
+                                // Log the exact command we're about to run
+                                utils::log(&format!("ACTIVATE_ANCHOR: Running command: /opt/homebrew/bin/tmux new-session -d -s '{}' -c '{}' 'claude --continue'", 
+                                    session_name, folder_path));
+                                
+                                // First check if the folder exists
+                                if !std::path::Path::new(&folder_path).exists() {
+                                    utils::log(&format!("ACTIVATE_ANCHOR: ERROR - Folder does not exist: {}", folder_path));
+                                }
+                                
+                                // Create session and immediately run claude --continue
                                 let basic_create = Command::new("/opt/homebrew/bin/tmux")
-                                    .args(&["new-session", "-d", "-s", &session_name, "-c", &folder_path])
+                                    .args(&["new-session", "-d", "-s", &session_name, "-c", &folder_path, "claude --continue"])
                                     .output();
                                 
                                 if let Ok(basic) = basic_create {
+                                    utils::log(&format!("ACTIVATE_ANCHOR: tmux command exit code: {:?}", basic.status.code()));
+                                    utils::log(&format!("ACTIVATE_ANCHOR: tmux stdout: '{}'", String::from_utf8_lossy(&basic.stdout)));
+                                    utils::log(&format!("ACTIVATE_ANCHOR: tmux stderr: '{}'", String::from_utf8_lossy(&basic.stderr)));
+                                    
                                     if basic.status.success() {
-                                        utils::log(&format!("ACTIVATE_ANCHOR: Basic tmux session created successfully"));
+                                        utils::log(&format!("ACTIVATE_ANCHOR: tmux reports success, verifying session creation..."));
+                                        
+                                        // Verify the session was actually created
+                                        std::thread::sleep(std::time::Duration::from_millis(200));
+                                        let verify = Command::new("/opt/homebrew/bin/tmux")
+                                            .args(&["has-session", "-t", &session_name])
+                                            .output();
+                                        
+                                        if let Ok(v) = verify {
+                                            if v.status.success() {
+                                                utils::log(&format!("ACTIVATE_ANCHOR: ✅ Session '{}' verified successfully!", session_name));
+                                            } else {
+                                                utils::log(&format!("ACTIVATE_ANCHOR: ❌ Session '{}' was NOT created despite success status!", session_name));
+                                                
+                                                // Try to list all sessions to debug
+                                                if let Ok(list) = Command::new("/opt/homebrew/bin/tmux")
+                                                    .args(&["list-sessions"])
+                                                    .output() {
+                                                    utils::log(&format!("ACTIVATE_ANCHOR: Current tmux sessions: {}", String::from_utf8_lossy(&list.stdout)));
+                                                }
+                                            }
+                                        }
                                     } else {
-                                        utils::log(&format!("ACTIVATE_ANCHOR: Basic tmux failed: {}", String::from_utf8_lossy(&basic.stderr)));
+                                        utils::log(&format!("ACTIVATE_ANCHOR: tmux command failed"));
                                     }
+                                } else {
+                                    utils::log(&format!("ACTIVATE_ANCHOR: Failed to execute tmux command"));
                                 }
                             }
                         }
@@ -3688,17 +3765,17 @@ impl eframe::App for PopupWithControl {
                     }
                     
                     // Make the window visible again if it was hidden
-                    crate::utils::log("[SHOW] Sending ViewportCommand::Visible(true)");
+                    crate::utils::detailed_log("SHOW", "Sending ViewportCommand::Visible(true)");
                     ctx.send_viewport_cmd(egui::ViewportCommand::Visible(true));
                     
-                    crate::utils::log("[SHOW] Sending ViewportCommand::Focus");
+                    crate::utils::detailed_log("SHOW", "Sending ViewportCommand::Focus");
                     ctx.send_viewport_cmd(egui::ViewportCommand::Focus);
                     
                     // Also try to bring to front
-                    crate::utils::log("[SHOW] Sending ViewportCommand::Fullscreen(false) to ensure windowed mode");
+                    crate::utils::detailed_log("SHOW", "Sending ViewportCommand::Fullscreen(false) to ensure windowed mode");
                     ctx.send_viewport_cmd(egui::ViewportCommand::Fullscreen(false));
                     
-                    crate::utils::log("[SHOW] Sending ViewportCommand::Minimized(false)");
+                    crate::utils::detailed_log("SHOW", "Sending ViewportCommand::Minimized(false)");
                     ctx.send_viewport_cmd(egui::ViewportCommand::Minimized(false));
                     
                     // Use AppleScript to ensure the window comes to front on macOS
@@ -3797,8 +3874,11 @@ impl eframe::App for PopupWithControl {
                     // Clear the search input when showing the popup
                     self.popup.popup_state.search_text.clear();
                     self.popup.popup_state.update_search(String::new());
-                    // Request focus on the input field
+                    // Request focus on the input field and reset focus tracking flags
                     self.popup.request_focus = true;
+                    self.popup.focus_set = false;  // Reset so focus logic will trigger again
+                    self.popup.window_activated = false;  // Reset so window activation will trigger again
+                    self.popup.frame_count = 0;  // Reset frame count so early-frame focus logic will run
                     // Mark window as not hidden and reset interaction time
                     crate::utils::log(&format!("[SHOW] Setting is_hidden=false (was {})", self.popup.is_hidden));
                     self.popup.is_hidden = false;

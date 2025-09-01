@@ -69,20 +69,29 @@ pub fn launch_app_with_arg(app: &str, arg: Option<&str>) -> Result<std::process:
         }
     }
     
+    // Log the exact command being executed
+    let command_str = format!("open -a \"{}\" {}", app, arg.unwrap_or(""));
+    crate::utils::log(&format!("LAUNCH_APP: Executing command: {}", command_str));
+    
     // Use spawn + detach for non-blocking execution to prevent UI lockups
-    let child = cmd.spawn()?;
-    
-    // Register the process for monitoring
-    let command_str = format!("open -a {} {}", app, arg.unwrap_or(""));
-    let _process_id = super::subprocess::register_process(child, command_str);
-    
-    
-    // For non-blocking execution, we don't wait for the result
-    // The application will open independently without blocking the UI
-    Err(std::io::Error::new(
-        std::io::ErrorKind::Other, 
-        "NON_BLOCKING_SUCCESS: Process spawned successfully"
-    ))
+    match cmd.spawn() {
+        Ok(child) => {
+            // Register the process for monitoring
+            let _process_id = super::subprocess::register_process(child, command_str.clone());
+            crate::utils::log(&format!("LAUNCH_APP: Process spawned successfully for: {}", app));
+            
+            // For non-blocking execution, we don't wait for the result
+            // The application will open independently without blocking the UI
+            Err(std::io::Error::new(
+                std::io::ErrorKind::Other, 
+                "NON_BLOCKING_SUCCESS: Process spawned successfully"
+            ))
+        },
+        Err(e) => {
+            crate::utils::log_error(&format!("LAUNCH_APP: Failed to spawn process for '{}': {}", app, e));
+            Err(e)
+        }
+    }
 }
 
 /// Open a URL using macOS `open` command

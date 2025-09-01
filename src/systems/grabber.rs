@@ -18,6 +18,8 @@ pub struct AppContext {
     pub app_name: String,
     /// Bundle identifier (e.g., "com.google.Chrome")
     pub bundle_id: String,
+    /// Application path (e.g., "/Applications/Google Chrome.app")
+    pub app_path: String,
     /// Window title
     pub window_title: String,
     /// Additional properties that might be useful
@@ -48,6 +50,13 @@ fn capture_active_app() -> Result<AppContext, String> {
             set appName to name of frontApp
             set bundleId to bundle identifier of frontApp
             
+            -- Get the application file path
+            set appPath to ""
+            try
+                set appFile to application file of frontApp
+                set appPath to POSIX path of appFile
+            end try
+            
             -- Try to get window title
             set windowTitle to ""
             try
@@ -55,7 +64,7 @@ fn capture_active_app() -> Result<AppContext, String> {
             end try
             
             -- Output as pipe-delimited for easy parsing
-            return appName & "|" & bundleId & "|" & windowTitle
+            return appName & "|" & bundleId & "|" & appPath & "|" & windowTitle
         end tell
     "#;
     
@@ -74,14 +83,15 @@ fn capture_active_app() -> Result<AppContext, String> {
     
     let parts: Vec<&str> = result.split('|').collect();
     
-    if parts.len() < 3 {
+    if parts.len() < 4 {
         return Err("Failed to parse AppleScript output".to_string());
     }
     
     let context = AppContext {
         app_name: parts[0].to_string(),
         bundle_id: parts[1].to_string(),
-        window_title: parts[2].to_string(),
+        app_path: parts[2].to_string(),
+        window_title: parts[3].to_string(),
         properties: serde_json::json!({}),
     };
     
@@ -449,6 +459,7 @@ fn match_grabber_rules(
         const context = {json};
         const app = context.app_name;
         const bundleId = context.bundle_id;
+        const appPath = context.app_path;
         const title = context.window_title;
         const props = context.properties;
     "#, json = context_json);
@@ -558,6 +569,7 @@ fn output_grabber_context_summary(context: &AppContext) {
     crate::utils::debug_log("GRABBER", "=== CAPTURED APPLICATION CONTEXT ===");
     crate::utils::debug_log("GRABBER", &format!("App: '{}'", context.app_name));
     crate::utils::debug_log("GRABBER", &format!("Bundle ID: '{}'", context.bundle_id));
+    crate::utils::debug_log("GRABBER", &format!("App Path: '{}'", context.app_path));
     crate::utils::debug_log("GRABBER", &format!("Title: '{}'", context.window_title));
     if let Some(props_obj) = context.properties.as_object() {
         if !props_obj.is_empty() {
@@ -575,6 +587,7 @@ pub fn generate_rule_template_text(context: &AppContext) -> String {
     template.push_str("=== CAPTURED APPLICATION CONTEXT ===\n");
     template.push_str(&format!("app = \"{}\"\n", context.app_name));
     template.push_str(&format!("bundleId = \"{}\"\n", context.bundle_id));
+    template.push_str(&format!("appPath = \"{}\"\n", context.app_path));
     template.push_str(&format!("title = \"{}\"\n", context.window_title));
     
     // Show properties as individual props.key variables if any exist
@@ -602,7 +615,8 @@ pub fn generate_rule_template_text(context: &AppContext) -> String {
     } else if context.window_title.len() > 3 {
         template.push_str(&format!("\"bundleId === '{}' && title ? title : null\"\n", context.bundle_id));
     } else {
-        template.push_str(&format!("\"bundleId === '{}' ? app : null\"\n", context.bundle_id));
+        // For general apps, return the app path for open_app action
+        template.push_str(&format!("\"bundleId === '{}' ? appPath : null\"\n", context.bundle_id));
     }
     
     template.push_str("    action: \"doc\"  # Change to appropriate action type\n");
@@ -651,10 +665,29 @@ pub fn grab(config: &Config) -> Result<GrabResult, String> {
             crate::utils::debug_log("GRABBER", &format!("Opening command editor with matched rule: '{}'", rule_name));
             return Ok(GrabResult::RuleMatched(rule_name, command));
         } else {
-            crate::utils::debug_log("GRABBER", "No rules matched - showing template dialog");
+            crate::utils::debug_log("GRABBER", "No rules matched - using app fallback");
         }
     } else {
-        crate::utils::debug_log("GRABBER", "No grabber rules configured");
+        crate::utils::debug_log("GRABBER", "No grabber rules configured - using app fallback");
+    }
+    
+    // Create a fallback app command if we have an app path
+    if !context.app_path.is_empty() {
+        let mut command = Command {
+            patch: "App".to_string(),  // Default patch for apps
+            command: String::new(),     // Will be filled by user
+            action: "open_app".to_string(),
+            arg: context.app_path.clone(),
+            flags: String::new(),
+        };
+        
+        // Try to get default patch for open_app action
+        if let Some(default_patch) = get_default_patch_for_action("open_app") {
+            command.patch = default_patch.to_string();
+        }
+        
+        crate::utils::debug_log("GRABBER", &format!("Created fallback app command with path: '{}'", context.app_path));
+        return Ok(GrabResult::RuleMatched("App Fallback".to_string(), command));
     }
     
     Ok(GrabResult::NoRuleMatched(context))
@@ -667,6 +700,7 @@ pub fn grab_debug(config: &Config) -> Result<AppContext, String> {
     println!("📱 Captured context:");
     println!("  App: {}", context.app_name);
     println!("  Bundle: {}", context.bundle_id);
+    println!("  Path: {}", context.app_path);
     println!("  Title: {}", context.window_title);
     
     let context = enrich_context(context);

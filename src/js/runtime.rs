@@ -143,6 +143,11 @@ fn setup_logging(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Error>> {
     ctx.globals().set("log", Function::new(ctx.clone(), |msg: String| {
         // Use regular log for JavaScript - these are important user-defined logs
         crate::utils::log(&msg);
+    }))?;
+    
+    // detailed_log(category, message) - Detailed logging (only in verbose mode)
+    ctx.globals().set("detailed_log", Function::new(ctx.clone(), |category: String, msg: String| {
+        crate::utils::detailed_log(&category, &msg);
     })?)?;
     
     // debug(message) - Debug logging (only in verbose mode)
@@ -781,10 +786,10 @@ fn load_config_js_functions(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Err
                                     return func(ctx);
                                 }};
                                 functionCount++;
-                                log('JS: Registered function: ' + name);
+                                detailed_log('JS', 'Registered function: ' + name);
                             }}
                         }}
-                        log('JS: Total functions registered: ' + functionCount);
+                        detailed_log('JS', 'Total functions registered: ' + functionCount);
                     }})();
                 "#, config_js_content);
                 

@@ -2733,6 +2733,17 @@ fn find_matching_anchor_recursive(
         return None;
     }
     
+    // Skip .app bundles and other system directories to prevent deep recursion
+    if let Some(dir_name) = current_dir.file_name() {
+        let name_str = dir_name.to_string_lossy();
+        if name_str.ends_with(".app") || 
+           name_str.ends_with(".framework") || 
+           name_str.ends_with(".bundle") ||
+           name_str.ends_with(".plugin") {
+            return None;
+        }
+    }
+    
     // First check if current directory contains the standard anchor file (folder_name/folder_name.md)
     let potential_anchor = current_dir.join(anchor_name).join(format!("{}.md", anchor_name));
     if potential_anchor.exists() {
@@ -2746,9 +2757,14 @@ fn find_matching_anchor_recursive(
         for entry in entries.filter_map(Result::ok) {
             let path = entry.path();
             if path.is_dir() {
-                // Skip hidden directories
+                // Skip hidden directories and .app bundles
                 if let Some(name) = path.file_name() {
-                    if name.to_string_lossy().starts_with('.') {
+                    let name_str = name.to_string_lossy();
+                    if name_str.starts_with('.') ||
+                       name_str.ends_with(".app") ||
+                       name_str.ends_with(".framework") ||
+                       name_str.ends_with(".bundle") ||
+                       name_str.ends_with(".plugin") {
                         continue;
                     }
                 }
@@ -2770,9 +2786,14 @@ fn find_matching_anchor_recursive(
         for entry in entries.filter_map(Result::ok) {
             let path = entry.path();
             if path.is_dir() {
-                // Skip hidden directories
+                // Skip hidden directories and .app bundles
                 if let Some(name) = path.file_name() {
-                    if name.to_string_lossy().starts_with('.') {
+                    let name_str = name.to_string_lossy();
+                    if name_str.starts_with('.') ||
+                       name_str.ends_with(".app") ||
+                       name_str.ends_with(".framework") ||
+                       name_str.ends_with(".bundle") ||
+                       name_str.ends_with(".plugin") {
                         continue;
                     }
                 }
