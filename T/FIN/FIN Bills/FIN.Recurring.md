@@ -28,7 +28,7 @@ Tangle (on Sapphire card)
 - +$30/mo	Sonic
 
 - +$20/mo	Core Power Yoga
-- +$16/mo 	Netflix
+- +$18/mo 	Netflix
 - +$15/m		Spotify Premium
 - +$6/mo		Rocket Money
 - +$5/mo		Medium Monthly
