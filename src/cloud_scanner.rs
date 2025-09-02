@@ -45,7 +45,7 @@ impl NotionScanner {
     }
 
     pub fn scan_all_pages(&self) -> Result<Vec<NotionPage>, String> {
-        println!("[NOTION] Starting scan of all accessible pages...");
+        crate::utils::log("[NOTION] Starting scan of all accessible pages...");
         
         let mut all_pages = Vec::new();
         let mut has_more = true;
@@ -161,15 +161,15 @@ impl NotionScanner {
         for page in pages {
             let modified = page.last_modified.format("%Y-%m-%d");
             let full_path = format!("{}/{}", page.parent_path, page.title);
-            println!(
+            crate::utils::log(&format!(
                 "[NOTION] {} - {} (ID: {}, Modified: {})",
                 full_path,
                 page.title,
                 &page.id[0..8],
                 modified
-            );
+            ));
         }
-        println!("[NOTION] Total pages found: {}", pages.len());
+        crate::utils::log(&format!("[NOTION] Total pages found: {}", pages.len()));
     }
 }
 
@@ -215,19 +215,19 @@ pub fn scan_cloud_services() {
                         };
 
                         if expanded_key.starts_with("ntn_") || expanded_key.starts_with("secret_") {
-                            println!("[NOTION] Scanning with API key...");
+                            crate::utils::log("[NOTION] Scanning with API key...");
                             let scanner = NotionScanner::new(expanded_key);
                             match scanner.scan_all_pages() {
                                 Ok(pages) => scanner.log_pages(&pages),
-                                Err(e) => eprintln!("[NOTION] Error scanning: {}", e),
+                                Err(e) => crate::utils::log_error(&format!("[NOTION] Error scanning: {}", e)),
                             }
                         } else {
-                            eprintln!("[NOTION] Invalid API key format");
+                            crate::utils::log_error("[NOTION] Invalid API key format");
                         }
                     }
                 }
                 "google_drive" => {
-                    println!("[GDRIVE] Google Drive scanning not yet implemented");
+                    crate::utils::log("[GDRIVE] Google Drive scanning not yet implemented");
                 }
                 _ => {}
             }

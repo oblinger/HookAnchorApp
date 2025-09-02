@@ -128,9 +128,7 @@ pub fn scan_verbose(commands: Vec<Command>, sys_data: &crate::core::sys_data::Sy
     }
     
     // Then scan cloud services (Notion, Google Drive) - Phase 1: Logging only
-    if verbose {
-        println!("\n☁️  Scanning cloud services...");
-    }
+    crate::utils::log("\n☁️  Scanning cloud services...");
     crate::cloud_scanner::scan_cloud_services();
     
     // Then scan contacts - DISABLED for performance
