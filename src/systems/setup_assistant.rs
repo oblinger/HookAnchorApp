@@ -140,12 +140,6 @@ impl SetupAssistant {
         println!("   HookAnchor's servers now run in Terminal windows to inherit");
         println!("   Apple's special permissions for automation scripts.");
         
-        println!("\n❌ What NOT to add:");
-        println!("   • Do NOT add HookAnchor.app");
-        println!("   • Do NOT add popup_server");
-        println!("   • Do NOT add ha");
-        println!("   Only Terminal.app needs permissions!");
-        
         println!("\nPress Enter to open System Settings...");
         std::io::stdin().read_line(&mut String::new())?;
         
