@@ -356,7 +356,6 @@ fn run_action_directly(args: &[String]) {
         eprintln!("Examples:");
         eprintln!("  {} -a markdown --arg /path/to/file.md", args[0]);
         eprintln!("  {} -a cmd --arg \"ls -la\" --flags W", args[0]);
-        eprintln!("  {} -a tmux_create --folder /path/to/folder --session my_session", args[0]);
         std::process::exit(1);
     }
     

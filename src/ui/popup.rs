@@ -2172,7 +2172,7 @@ impl AnchorSelector {
         let _ = crate::execute::execute_on_server(&contact_action);
     }
     
-    // COMMENTED OUT: Unused function - replaced by activate_tmux (formerly activate_anchor) below
+    // COMMENTED OUT: Old tmux_activate function - replaced by activate_tmux below
     /*
     /// Start tmux session for selected anchor
     fn tmux_activate(&mut self) {
@@ -2242,14 +2242,14 @@ impl AnchorSelector {
         if let Some(settings) = &self.popup_state.config.launcher_settings {
             if let Some(use_js) = &settings.use_javascript_tmux_activation {
                 if use_js == "true" {
-                    utils::log("🚀 ACTIVATE_ANCHOR: Using JavaScript TMUX implementation");
+                    utils::log("🚀 TMUX: Using JavaScript TMUX implementation");
                     
                     // Get selected command index
                     let selected_index = self.selected_index();
                     let display_commands = self.popup_state.filtered_commands.clone();
                     
                     if display_commands.is_empty() || selected_index >= display_commands.len() {
-                        utils::log("❌ ACTIVATE_ANCHOR: No commands available for JavaScript");
+                        utils::log("❌ TMUX: No commands available for JavaScript");
                         return;
                     }
                     
@@ -2258,7 +2258,7 @@ impl AnchorSelector {
                     let selected_command = &display_commands[selected_index];
                     let resolved_cmd = self.resolve_aliases_recursively(selected_command, &all_commands);
                     
-                    utils::log(&format!("📋 ACTIVATE_ANCHOR: Selected: '{}', Resolved: '{}'", 
+                    utils::log(&format!("📋 TMUX: Selected: '{}', Resolved: '{}'", 
                         selected_command.command, resolved_cmd.command));
                     
                     // Create command to execute JavaScript action
@@ -2270,7 +2270,7 @@ impl AnchorSelector {
                         flags: String::new(),
                     };
                     
-                    utils::log(&format!("🎯 ACTIVATE_ANCHOR: Executing JavaScript action with arg: {}", js_cmd.arg));
+                    utils::log(&format!("🎯 TMUX: Executing JavaScript action with arg: {}", js_cmd.arg));
                     let js_action = crate::execute::command_to_action(&js_cmd);
                     let _ = crate::execute::execute_on_server(&js_action);
                     
@@ -2281,8 +2281,8 @@ impl AnchorSelector {
             }
         }
         
-        // Original Rust implementation
-        utils::log("🦀 ACTIVATE_ANCHOR: Using Rust implementation");
+        // Original Rust implementation for TMUX session activation
+        utils::log("🦀 TMUX: Using Rust implementation for TMUX session activation");
         
         // Get selected command index
         let selected_index = self.selected_index();
@@ -2291,7 +2291,7 @@ impl AnchorSelector {
         let display_commands = self.popup_state.filtered_commands.clone();
         
         if display_commands.is_empty() || selected_index >= display_commands.len() {
-            utils::log("ACTIVATE_ANCHOR: No commands available or invalid selection");
+            utils::log("TMUX: No commands available or invalid selection");
             return;
         }
         
@@ -2300,39 +2300,39 @@ impl AnchorSelector {
         let selected_command = &display_commands[selected_index];
         
         // DEBUG: Log the selected command details
-        utils::log(&format!("ACTIVATE_ANCHOR: Selected command: '{}'", selected_command.command));
-        utils::log(&format!("ACTIVATE_ANCHOR: Selected action: '{}'", selected_command.action));
-        utils::log(&format!("ACTIVATE_ANCHOR: Selected arg: '{}'", selected_command.arg));
-        utils::log(&format!("ACTIVATE_ANCHOR: Selected patch: '{}'", selected_command.patch));
-        utils::log(&format!("ACTIVATE_ANCHOR: Selected flags: '{}'", selected_command.flags));
+        utils::log(&format!("TMUX: Selected command: '{}'", selected_command.command));
+        utils::log(&format!("TMUX: Selected action: '{}'", selected_command.action));
+        utils::log(&format!("TMUX: Selected arg: '{}'", selected_command.arg));
+        utils::log(&format!("TMUX: Selected patch: '{}'", selected_command.patch));
+        utils::log(&format!("TMUX: Selected flags: '{}'", selected_command.flags));
         
         let resolved_cmd = self.resolve_aliases_recursively(selected_command, &all_commands);
         
         // DEBUG: Log resolved command if different
         if resolved_cmd.command != selected_command.command {
-            utils::log(&format!("ACTIVATE_ANCHOR: Resolved to: '{}'", resolved_cmd.command));
-            utils::log(&format!("ACTIVATE_ANCHOR: Resolved action: '{}'", resolved_cmd.action));
-            utils::log(&format!("ACTIVATE_ANCHOR: Resolved arg: '{}'", resolved_cmd.arg));
+            utils::log(&format!("TMUX: Resolved to: '{}'", resolved_cmd.command));
+            utils::log(&format!("TMUX: Resolved action: '{}'", resolved_cmd.action));
+            utils::log(&format!("TMUX: Resolved arg: '{}'", resolved_cmd.arg));
         }
         
         // Extract folder path
-        utils::log("ACTIVATE_ANCHOR: Attempting to extract folder path...");
+        utils::log("TMUX: Attempting to extract folder path...");
         let folder_path = if let Some(abs_path) = resolved_cmd.get_absolute_folder_path(&self.popup_state.config) {
             abs_path.to_string_lossy().to_string()
         } else {
-            utils::log(&format!("ACTIVATE_ANCHOR: ERROR - Could not extract folder path from command: '{}'", resolved_cmd.command));
-            utils::log(&format!("ACTIVATE_ANCHOR: Command details - action: '{}', arg: '{}'", resolved_cmd.action, resolved_cmd.arg));
+            utils::log(&format!("TMUX: ERROR - Could not extract folder path from command: '{}'", resolved_cmd.command));
+            utils::log(&format!("TMUX: Command details - action: '{}', arg: '{}'", resolved_cmd.action, resolved_cmd.arg));
             return;
         };
         
-        utils::log(&format!("ACTIVATE_ANCHOR: Successfully extracted folder path: '{}'", folder_path));
+        utils::log(&format!("TMUX: Successfully extracted folder path: '{}'", folder_path));
         
         // Direct Rust implementation of TMUX activation (temporary - will be replaced with JavaScript)
         // This is based on the working Python anchor script logic
         
         // 1. Open folder in Finder
         //if let Err(e) = Command::new("open").arg(&folder_path).spawn() {
-        //    utils::log(&format!("ACTIVATE_ANCHOR: Failed to open folder: {}", e));
+        //    utils::log(&format!("TMUX: Failed to open folder: {}", e));
         //}
         
         // 2. Open in Obsidian if it's in the vault
@@ -2345,14 +2345,14 @@ impl AnchorSelector {
         //    if let Some(vault_name) = self.popup_state.config.launcher_settings.as_ref()
         //        .and_then(|ls| ls.obsidian_vault_name.as_ref()) {
         //        // TODO: Open in Obsidian
-        //        utils::log(&format!("ACTIVATE_ANCHOR: Would open in Obsidian vault: {}", vault_name));
+        //        utils::log(&format!("TMUX: Would open in Obsidian vault: {}", vault_name));
         //    }
         //}
         
         // 3. Check for .tmuxp.yaml and activate TMUX session
         let tmuxp_path = Path::new(&folder_path).join(".tmuxp.yaml");
         if tmuxp_path.exists() {
-            utils::log(&format!("ACTIVATE_ANCHOR: Found .tmuxp.yaml at {:?}", tmuxp_path));
+            utils::log(&format!("TMUX: Found .tmuxp.yaml at {:?}", tmuxp_path));
             
             // Use the folder name as the session name, sanitized for tmux
             // We ignore what's in the .tmuxp.yaml file because it might have spaces
@@ -2370,8 +2370,8 @@ impl AnchorSelector {
                 .replace('[', "_")
                 .replace(']', "_");
             
-            utils::log(&format!("ACTIVATE_ANCHOR: Folder name: '{}'", folder_name));
-            utils::log(&format!("ACTIVATE_ANCHOR: Sanitized session name: '{}'", session_name));
+            utils::log(&format!("TMUX: Folder name: '{}'", folder_name));
+            utils::log(&format!("TMUX: Sanitized session name: '{}'", session_name));
             
             // Check if session exists
             let check_session = Command::new("/opt/homebrew/bin/tmux")
@@ -2381,32 +2381,35 @@ impl AnchorSelector {
             let session_exists = check_session.map(|o| o.status.success()).unwrap_or(false);
             
             if !session_exists {
-                utils::log(&format!("ACTIVATE_ANCHOR: Creating new tmux session '{}'", session_name));
+                utils::log(&format!("TMUX: Creating new tmux session '{}'", session_name));
                 // Create session with tmuxp
                 // Since we expect the .tmuxp.yaml to have the correct session name (with underscores),
                 // we don't use -s flag which seems to cause issues
+                // Add /opt/homebrew/bin to PATH so tmuxp can find tmux
                 match Command::new("/opt/homebrew/bin/tmuxp")
                     .args(&["load", tmuxp_path.to_str().unwrap_or(""), "-d"])
                     .current_dir(&folder_path)
+                    .env("PATH", format!("/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:{}", 
+                        std::env::var("PATH").unwrap_or_default()))
                     .output() {
                     Ok(output) => {
                         let stdout = String::from_utf8_lossy(&output.stdout);
                         let stderr = String::from_utf8_lossy(&output.stderr);
                         
                         if !output.status.success() {
-                            utils::log(&format!("ACTIVATE_ANCHOR: tmuxp failed with exit code {:?}", output.status.code()));
-                            utils::log(&format!("ACTIVATE_ANCHOR: tmuxp stderr: {}", stderr));
-                            utils::log(&format!("ACTIVATE_ANCHOR: tmuxp stdout: {}", stdout));
+                            utils::log(&format!("TMUX: tmuxp failed with exit code {:?}", output.status.code()));
+                            utils::log(&format!("TMUX: tmuxp stderr: {}", stderr));
+                            utils::log(&format!("TMUX: tmuxp stdout: {}", stdout));
                             return;
                         }
                         
                         // Log output even on success to debug issues
-                        utils::log(&format!("ACTIVATE_ANCHOR: tmuxp completed with exit code 0"));
+                        utils::log(&format!("TMUX: tmuxp completed with exit code 0"));
                         if !stdout.is_empty() {
-                            utils::log(&format!("ACTIVATE_ANCHOR: tmuxp stdout: {}", stdout));
+                            utils::log(&format!("TMUX: tmuxp stdout: {}", stdout));
                         }
                         if !stderr.is_empty() {
-                            utils::log(&format!("ACTIVATE_ANCHOR: tmuxp stderr: {}", stderr));
+                            utils::log(&format!("TMUX: tmuxp stderr: {}", stderr));
                         }
                         
                         // Verify the session was actually created
@@ -2417,98 +2420,59 @@ impl AnchorSelector {
                         
                         if let Ok(v) = verify {
                             if v.status.success() {
-                                utils::log(&format!("ACTIVATE_ANCHOR: Verified session '{}' exists", session_name));
+                                utils::log(&format!("TMUX: Verified session '{}' exists", session_name));
                                 
                                 // Run claude --continue in the new session
                                 // Add a small delay to ensure the window is created
                                 std::thread::sleep(std::time::Duration::from_millis(500));
-                                utils::log(&format!("ACTIVATE_ANCHOR: Running claude --continue in new tmuxp session '{}'", session_name));
+                                utils::log(&format!("TMUX: Running claude --continue in new tmuxp session '{}'", session_name));
                                 match Command::new("/opt/homebrew/bin/tmux")
                                     .args(&["send-keys", "-t", &session_name, "claude --continue", "C-m"])
                                     .output() {
                                     Ok(output) => {
                                         if output.status.success() {
-                                            utils::log(&format!("ACTIVATE_ANCHOR: Successfully sent claude --continue to tmuxp session '{}'", session_name));
+                                            utils::log(&format!("TMUX: Successfully sent claude --continue to tmuxp session '{}'", session_name));
                                         } else {
-                                            utils::log(&format!("ACTIVATE_ANCHOR: Failed to send claude --continue to tmuxp session: {}", String::from_utf8_lossy(&output.stderr)));
+                                            utils::log(&format!("TMUX: Failed to send claude --continue to tmuxp session: {}", String::from_utf8_lossy(&output.stderr)));
                                         }
                                     }
                                     Err(e) => {
-                                        utils::log(&format!("ACTIVATE_ANCHOR: Error sending claude --continue to tmuxp session: {}", e));
+                                        utils::log(&format!("TMUX: Error sending claude --continue to tmuxp session: {}", e));
                                     }
                                 }
                             } else {
-                                utils::log(&format!("ACTIVATE_ANCHOR: WARNING: Session '{}' was NOT created despite tmuxp success", session_name));
-                                utils::log(&format!("ACTIVATE_ANCHOR: tmux has-session stderr: {}", String::from_utf8_lossy(&v.stderr)));
+                                // tmuxp said it succeeded but session wasn't created - this is an error
+                                utils::log(&format!("TMUX: ERROR - Session '{}' was NOT created despite tmuxp reporting success", session_name));
+                                utils::log(&format!("TMUX: tmux has-session stderr: {}", String::from_utf8_lossy(&v.stderr)));
                                 
-                                // Try creating a simple tmux session as fallback
-                                utils::log(&format!("ACTIVATE_ANCHOR: Falling back to basic tmux new-session"));
-                                
-                                // Log the exact command we're about to run
-                                utils::log(&format!("ACTIVATE_ANCHOR: Running command: /opt/homebrew/bin/tmux new-session -d -s '{}' -c '{}' 'claude --continue'", 
-                                    session_name, folder_path));
-                                
-                                // First check if the folder exists
-                                if !std::path::Path::new(&folder_path).exists() {
-                                    utils::log(&format!("ACTIVATE_ANCHOR: ERROR - Folder does not exist: {}", folder_path));
-                                }
-                                
-                                // Create session and immediately run claude --continue
-                                let basic_create = Command::new("/opt/homebrew/bin/tmux")
-                                    .args(&["new-session", "-d", "-s", &session_name, "-c", &folder_path, "claude --continue"])
-                                    .output();
-                                
-                                if let Ok(basic) = basic_create {
-                                    utils::log(&format!("ACTIVATE_ANCHOR: tmux command exit code: {:?}", basic.status.code()));
-                                    utils::log(&format!("ACTIVATE_ANCHOR: tmux stdout: '{}'", String::from_utf8_lossy(&basic.stdout)));
-                                    utils::log(&format!("ACTIVATE_ANCHOR: tmux stderr: '{}'", String::from_utf8_lossy(&basic.stderr)));
-                                    
-                                    if basic.status.success() {
-                                        utils::log(&format!("ACTIVATE_ANCHOR: tmux reports success, verifying session creation..."));
-                                        
-                                        // Verify the session was actually created
-                                        std::thread::sleep(std::time::Duration::from_millis(200));
-                                        let verify = Command::new("/opt/homebrew/bin/tmux")
-                                            .args(&["has-session", "-t", &session_name])
-                                            .output();
-                                        
-                                        if let Ok(v) = verify {
-                                            if v.status.success() {
-                                                utils::log(&format!("ACTIVATE_ANCHOR: ✅ Session '{}' verified successfully!", session_name));
-                                            } else {
-                                                utils::log(&format!("ACTIVATE_ANCHOR: ❌ Session '{}' was NOT created despite success status!", session_name));
-                                                
-                                                // Try to list all sessions to debug
-                                                if let Ok(list) = Command::new("/opt/homebrew/bin/tmux")
-                                                    .args(&["list-sessions"])
-                                                    .output() {
-                                                    utils::log(&format!("ACTIVATE_ANCHOR: Current tmux sessions: {}", String::from_utf8_lossy(&list.stdout)));
-                                                }
-                                            }
-                                        }
-                                    } else {
-                                        utils::log(&format!("ACTIVATE_ANCHOR: tmux command failed"));
-                                    }
+                                // Check if tmuxp can't find tmux in PATH
+                                let stdout = String::from_utf8_lossy(&output.stdout);
+                                if stdout.contains("tmux not found") {
+                                    self.show_error_dialog("tmuxp cannot find tmux in PATH.\nEnsure tmux is installed and in your PATH.");
                                 } else {
-                                    utils::log(&format!("ACTIVATE_ANCHOR: Failed to execute tmux command"));
+                                    self.show_error_dialog(&format!(
+                                        "Failed to create TMUX session '{}' with tmuxp.\nCheck ~/.config/hookanchor/anchor.log for details.",
+                                        session_name
+                                    ));
                                 }
+                                return;
                             }
                         }
                     }
                     Err(e) => {
-                        utils::log(&format!("ACTIVATE_ANCHOR: Failed to run tmuxp: {}", e));
+                        utils::log(&format!("TMUX: Failed to run tmuxp: {}", e));
                         return;
                     }
                 }
                 // Give tmux a moment to stabilize
                 std::thread::sleep(std::time::Duration::from_millis(100));
             } else {
-                utils::log(&format!("ACTIVATE_ANCHOR: Session '{}' already exists", session_name));
+                utils::log(&format!("TMUX: Session '{}' already exists", session_name));
             }
             
             // Now we need to switch to the session in an existing TMUX client
             // First check if there's a TMUX client running anywhere
-            utils::log(&format!("ACTIVATE_ANCHOR: Checking for existing TMUX clients"));
+            utils::log(&format!("TMUX: Checking for existing TMUX clients"));
             
             // Check if any tmux clients are attached
             let list_clients = Command::new("/opt/homebrew/bin/tmux")
@@ -2520,14 +2484,14 @@ impl AnchorSelector {
                     let stdout = String::from_utf8_lossy(&output.stdout);
                     let has = output.status.success() && !stdout.trim().is_empty();
                     if has {
-                        utils::log(&format!("ACTIVATE_ANCHOR: Found TMUX clients: {}", stdout.trim()));
+                        utils::log(&format!("TMUX: Found TMUX clients: {}", stdout.trim()));
                     } else {
-                        utils::log("ACTIVATE_ANCHOR: No TMUX clients found");
+                        utils::log("TMUX: No TMUX clients found");
                     }
                     has
                 }
                 Err(e) => {
-                    utils::log(&format!("ACTIVATE_ANCHOR: Failed to list clients: {}", e));
+                    utils::log(&format!("TMUX: Failed to list clients: {}", e));
                     false
                 }
             };
@@ -2540,13 +2504,13 @@ impl AnchorSelector {
                     tmux attach-session -t '{}'",
                     session_name, session_name
                 );
-                utils::log(&format!("ACTIVATE_ANCHOR: {}", error_msg));
+                utils::log(&format!("TMUX: {}", error_msg));
                 self.show_error_dialog(&error_msg);
                 return;
             }
             
             // There are TMUX clients, so we can switch
-            utils::log(&format!("ACTIVATE_ANCHOR: Switching to session '{}' in existing client", session_name));
+            utils::log(&format!("TMUX: Switching to session '{}' in existing client", session_name));
             
             // Use switch-client which will switch in any attached client
             match Command::new("/opt/homebrew/bin/tmux")
@@ -2554,10 +2518,10 @@ impl AnchorSelector {
                 .output() {
                 Ok(output) => {
                     if output.status.success() {
-                        utils::log(&format!("ACTIVATE_ANCHOR: Successfully switched to session '{}'", session_name));
+                        utils::log(&format!("TMUX: Successfully switched to session '{}'", session_name));
                     } else {
                         let stderr = String::from_utf8_lossy(&output.stderr);
-                        utils::log(&format!("ACTIVATE_ANCHOR: Failed to switch: {}", stderr));
+                        utils::log(&format!("TMUX: Failed to switch: {}", stderr));
                         self.show_error_dialog(&format!(
                             "Failed to switch to TMUX session '{}': {}",
                             session_name, stderr
@@ -2565,7 +2529,7 @@ impl AnchorSelector {
                     }
                 }
                 Err(e) => {
-                    utils::log(&format!("ACTIVATE_ANCHOR: Failed to run switch-client: {}", e));
+                    utils::log(&format!("TMUX: Failed to run switch-client: {}", e));
                     self.show_error_dialog(&format!(
                         "Failed to switch to TMUX session '{}': {}",
                         session_name, e
@@ -2574,17 +2538,222 @@ impl AnchorSelector {
             }
                 
         } else {
-            utils::log("ACTIVATE_ANCHOR: No .tmuxp.yaml found");
+            utils::log("TMUX: No .tmuxp.yaml found - creating basic TMUX session");
             
-            // Check for CLAUDE.md as fallback
-            let claude_path = Path::new(&folder_path).join("CLAUDE.md");
-            if claude_path.exists() {
-                utils::log("ACTIVATE_ANCHOR: Found CLAUDE.md, launching Claude Code");
-                let _ = Command::new("/opt/homebrew/bin/claude")
-                    .arg("--continue")
-                    .current_dir(&folder_path)
-                    .spawn();
+            // Extract folder name for session name
+            let folder_name = Path::new(&folder_path)
+                .file_name()
+                .and_then(|n| n.to_str())
+                .unwrap_or("session");
+            
+            // Sanitize the session name for tmux compatibility
+            let session_name = folder_name
+                .replace(' ', "_")
+                .replace(':', "_")
+                .replace('.', "_")
+                .replace('[', "_")
+                .replace(']', "_");
+            
+            utils::log(&format!("TMUX: Creating basic session '{}' in folder '{}'", session_name, folder_path));
+            
+            // Check if session already exists
+            let check_session = Command::new("/opt/homebrew/bin/tmux")
+                .args(&["has-session", "-t", &session_name])
+                .output();
+            
+            let session_exists = check_session.map(|o| o.status.success()).unwrap_or(false);
+            
+            if !session_exists {
+                // Create new basic tmux session (shell will be started, claude command sent after)
+                utils::log(&format!("TMUX: Running: tmux new-session -d -s '{}' -c '{}'", 
+                    session_name, folder_path));
+                
+                // First, let's list all existing sessions before creation
+                if let Ok(list_before) = Command::new("/opt/homebrew/bin/tmux")
+                    .args(&["list-sessions"])
+                    .output() {
+                    let sessions_before = String::from_utf8_lossy(&list_before.stdout);
+                    utils::log(&format!("TMUX: Sessions BEFORE creation:\n{}", 
+                        if sessions_before.trim().is_empty() { "(no sessions)" } else { sessions_before.trim() }));
+                }
+                
+                // Create session without an initial command - just start a shell
+                // We'll send the claude --continue command after the session is created
+                match Command::new("/opt/homebrew/bin/tmux")
+                    .args(&["new-session", "-d", "-s", &session_name, "-c", &folder_path])
+                    .output() {
+                    Ok(output) => {
+                        // Log the output regardless of success/failure
+                        let stdout = String::from_utf8_lossy(&output.stdout);
+                        let stderr = String::from_utf8_lossy(&output.stderr);
+                        utils::log(&format!("TMUX: new-session exit code: {:?}", output.status.code()));
+                        if !stdout.is_empty() {
+                            utils::log(&format!("TMUX: new-session stdout: {}", stdout));
+                        }
+                        if !stderr.is_empty() {
+                            utils::log(&format!("TMUX: new-session stderr: {}", stderr));
+                        }
+                        
+                        // List sessions after attempted creation
+                        if let Ok(list_after) = Command::new("/opt/homebrew/bin/tmux")
+                            .args(&["list-sessions"])
+                            .output() {
+                            let sessions_after = String::from_utf8_lossy(&list_after.stdout);
+                            utils::log(&format!("TMUX: Sessions AFTER creation:\n{}", 
+                                if sessions_after.trim().is_empty() { "(no sessions)" } else { sessions_after.trim() }));
+                        }
+                        
+                        if output.status.success() {
+                            utils::log(&format!("TMUX: Basic session '{}' creation reported success", session_name));
+                            
+                            // Check if session immediately exists without delay
+                            if let Ok(immediate_check) = Command::new("/opt/homebrew/bin/tmux")
+                                .args(&["has-session", "-t", &session_name])
+                                .output() {
+                                if immediate_check.status.success() {
+                                    utils::log(&format!("TMUX: ✅ Session '{}' exists immediately after creation", session_name));
+                                } else {
+                                    utils::log(&format!("TMUX: ❌ Session '{}' NOT found immediately after creation", session_name));
+                                    let stderr = String::from_utf8_lossy(&immediate_check.stderr);
+                                    utils::log(&format!("TMUX: Immediate check stderr: {}", stderr));
+                                }
+                            }
+                            
+                            // Give tmux more time to fully create the session
+                            std::thread::sleep(std::time::Duration::from_millis(500));
+                            
+                            // Verify it was created - with more detailed logging
+                            utils::log(&format!("TMUX: Verifying session '{}' exists...", session_name));
+                            match Command::new("/opt/homebrew/bin/tmux")
+                                .args(&["has-session", "-t", &session_name])
+                                .output() {
+                                Ok(verify) => {
+                                    let verify_stdout = String::from_utf8_lossy(&verify.stdout);
+                                    let verify_stderr = String::from_utf8_lossy(&verify.stderr);
+                                    utils::log(&format!("TMUX: has-session exit code: {:?}", verify.status.code()));
+                                    if !verify_stdout.is_empty() {
+                                        utils::log(&format!("TMUX: has-session stdout: {}", verify_stdout));
+                                    }
+                                    if !verify_stderr.is_empty() {
+                                        utils::log(&format!("TMUX: has-session stderr: {}", verify_stderr));
+                                    }
+                                    
+                                    if verify.status.success() {
+                                        utils::log(&format!("TMUX: ✅ Session '{}' verified!", session_name));
+                                        
+                                        // Now send the claude --continue command to the session
+                                        utils::log(&format!("TMUX: Sending 'claude --continue' to session '{}'", session_name));
+                                        match Command::new("/opt/homebrew/bin/tmux")
+                                            .args(&["send-keys", "-t", &session_name, "claude --continue", "C-m"])
+                                            .output() {
+                                            Ok(send_output) => {
+                                                if send_output.status.success() {
+                                                    utils::log(&format!("TMUX: ✅ Successfully sent claude command to session '{}'", session_name));
+                                                } else {
+                                                    let send_stderr = String::from_utf8_lossy(&send_output.stderr);
+                                                    utils::log(&format!("TMUX: ❌ Failed to send claude command: {}", send_stderr));
+                                                }
+                                            }
+                                            Err(e) => {
+                                                utils::log(&format!("TMUX: Error sending claude command: {}", e));
+                                            }
+                                        }
+                                    } else {
+                                        // Session doesn't exist despite tmux new-session reporting success
+                                        utils::log(&format!("TMUX: ❌ Session '{}' NOT found after creation!", session_name));
+                                        
+                                        // Check if stderr contains a specific error
+                                        if verify_stderr.contains("duplicate session") {
+                                            utils::log("TMUX: ERROR - Duplicate session name detected");
+                                        } else if verify_stderr.contains("server not found") {
+                                            utils::log("TMUX: ERROR - No TMUX server running");
+                                        }
+                                        
+                                        // Try to get more info about what's wrong
+                                        if let Ok(info) = Command::new("/opt/homebrew/bin/tmux")
+                                            .args(&["info"])
+                                            .output() {
+                                            let info_out = String::from_utf8_lossy(&info.stderr);
+                                            if !info_out.is_empty() {
+                                                utils::log(&format!("TMUX: tmux info stderr: {}", info_out));
+                                            }
+                                        }
+                                    }
+                                }
+                                Err(e) => {
+                                    utils::log(&format!("TMUX: Error running has-session: {}", e));
+                                }
+                            }
+                        } else {
+                            let stderr = String::from_utf8_lossy(&output.stderr);
+                            utils::log(&format!("TMUX: Failed to create session: {}", stderr));
+                            self.show_error_dialog(&format!("Failed to create TMUX session: {}", stderr));
+                            return;
+                        }
+                    }
+                    Err(e) => {
+                        utils::log(&format!("TMUX: Error executing tmux command: {}", e));
+                        self.show_error_dialog(&format!("Failed to execute tmux: {}", e));
+                        return;
+                    }
+                }
+            } else {
+                utils::log(&format!("TMUX: Session '{}' already exists", session_name));
             }
+            
+            // Now switch to the session
+            utils::log(&format!("TMUX: Checking for existing TMUX clients"));
+            
+            let list_clients = Command::new("/opt/homebrew/bin/tmux")
+                .args(&["list-clients"])
+                .output();
+            
+            let has_clients = match list_clients {
+                Ok(output) => {
+                    let stdout = String::from_utf8_lossy(&output.stdout);
+                    let has = output.status.success() && !stdout.trim().is_empty();
+                    if has {
+                        utils::log(&format!("TMUX: Found TMUX clients: {}", stdout.trim()));
+                    } else {
+                        utils::log("TMUX: No TMUX clients found");
+                    }
+                    has
+                }
+                Err(e) => {
+                    utils::log(&format!("TMUX: Failed to list clients: {}", e));
+                    false
+                }
+            };
+            
+            if has_clients {
+                // Switch to the session
+                utils::log(&format!("TMUX: Switching to session '{}'", session_name));
+                
+                match Command::new("/opt/homebrew/bin/tmux")
+                    .args(&["switch-client", "-t", &session_name])
+                    .output() {
+                    Ok(output) => {
+                        if output.status.success() {
+                            utils::log(&format!("TMUX: Successfully switched to session '{}'", session_name));
+                        } else {
+                            let stderr = String::from_utf8_lossy(&output.stderr);
+                            utils::log(&format!("TMUX: Failed to switch: {}", stderr));
+                        }
+                    }
+                    Err(e) => {
+                        utils::log(&format!("TMUX: Error switching: {}", e));
+                    }
+                }
+            } else {
+                // No client to switch, just inform user
+                let msg = format!(
+                    "TMUX session '{}' created.\nOpen a terminal and run:\ntmux attach-session -t '{}'",
+                    session_name, session_name
+                );
+                utils::log(&format!("TMUX: {}", msg));
+                self.show_error_dialog(&msg);
+            }
+            
         }
         
         // Request exit after activation

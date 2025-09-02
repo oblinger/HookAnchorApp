@@ -575,7 +575,6 @@ pub(super) fn execute_locally(
         "shell" => execute_shell_action(&expanded_params),
         "obsidian" => execute_obsidian_action(&expanded_params),
         "alias" => execute_alias_action(&expanded_params),
-        "tmux_create" => execute_tmux_create_action(&expanded_params),
         
         // Everything else is JavaScript with action_ prefix
         _ => {
@@ -876,81 +875,6 @@ fn execute_obsidian_action(
     Ok(format!("Opened in Obsidian: {}", file))
 }
 
-fn execute_tmux_create_action(
-    params: &HashMap<String, String>,
-) -> Result<String, Box<dyn std::error::Error>> {
-    use std::process::Command;
-    use std::path::Path;
-    
-    let folder = params.get("folder")
-        .ok_or("tmux_create action requires 'folder' parameter")?;
-    
-    // Extract session name from folder or use provided one
-    let session_name = params.get("session")
-        .map(|s| s.clone())
-        .unwrap_or_else(|| {
-            // Use folder name as session, sanitized for tmux
-            Path::new(folder)
-                .file_name()
-                .and_then(|n| n.to_str())
-                .unwrap_or("session")
-                .replace(' ', "_")
-                .replace(':', "_")
-                .replace('.', "_")
-                .replace('[', "_")
-                .replace(']', "_")
-        });
-    
-    // Get the command to run (default to claude --continue)
-    let command_to_run = params.get("command")
-        .map(|s| s.clone())
-        .unwrap_or_else(|| "claude --continue".to_string());
-    
-    crate::utils::log(&format!("TMUX_CREATE: Creating session '{}' in folder '{}' with command '{}'", 
-        session_name, folder, command_to_run));
-    
-    // Kill existing session if it exists
-    let _ = Command::new("/opt/homebrew/bin/tmux")
-        .args(&["kill-session", "-t", &session_name])
-        .output();
-    
-    // Create new session with the command
-    let create_result = Command::new("/opt/homebrew/bin/tmux")
-        .args(&["new-session", "-d", "-s", &session_name, "-c", folder, &command_to_run])
-        .output()?;
-    
-    if !create_result.status.success() {
-        let stderr = String::from_utf8_lossy(&create_result.stderr);
-        return Err(format!("Failed to create tmux session: {}", stderr).into());
-    }
-    
-    crate::utils::log(&format!("TMUX_CREATE: Session '{}' created successfully", session_name));
-    
-    // Verify the session exists
-    std::thread::sleep(std::time::Duration::from_millis(100));
-    let verify = Command::new("/opt/homebrew/bin/tmux")
-        .args(&["has-session", "-t", &session_name])
-        .output()?;
-    
-    if !verify.status.success() {
-        return Err(format!("Session '{}' was created but verification failed", session_name).into());
-    }
-    
-    // Try to switch to the session if there's a client
-    let switch_result = Command::new("/opt/homebrew/bin/tmux")
-        .args(&["switch-client", "-t", &session_name])
-        .output();
-    
-    if let Ok(result) = switch_result {
-        if result.status.success() {
-            crate::utils::log(&format!("TMUX_CREATE: Switched to session '{}'", session_name));
-        } else {
-            crate::utils::log(&format!("TMUX_CREATE: Created session '{}' but no client to switch", session_name));
-        }
-    }
-    
-    Ok(format!("Created tmux session '{}' in {}", session_name, folder))
-}
 
 // ============================================================================
 // OLD/UNUSED NATIVE IMPLEMENTATIONS 

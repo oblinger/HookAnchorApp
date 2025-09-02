@@ -791,7 +791,7 @@ impl ActionHandler {
             Action::ShowKeys => "Show key bindings",
             Action::UninstallApp => "Uninstall application",
             Action::TemplateCreate => "Create template",
-            Action::ActivateTmux => "Activate TMUX session (folder, tmux, Obsidian)",
+            Action::ActivateTmux => "Activate TMUX session for selected command",
         }.to_string();
         
         Self { action, description }
