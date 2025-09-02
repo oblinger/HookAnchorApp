@@ -209,64 +209,46 @@ fn get_obsidian_url() -> Option<String> {
     None
 }
 
-/// Get Notion page URL by checking clipboard or triggering copy link shortcut
+/// Get Notion page URL by triggering copy link shortcut
 fn get_notion_url() -> Option<String> {
-    crate::utils::debug_log("GRABBER", "Getting Notion URL");
+    crate::utils::debug_log("GRABBER", "Getting Notion URL via Cmd+L");
     
-    // First check current clipboard content - user might have already copied the link
-    let check_clipboard_script = r#"
-        try
-            set clipboardContent to (the clipboard)
-            return clipboardContent as string
-        on error
-            return ""
-        end try
-    "#;
-    
-    let current_clipboard = if let Ok(output) = ProcessCommand::new("osascript")
-        .arg("-e")
-        .arg(check_clipboard_script)
-        .output()
-    {
-        String::from_utf8_lossy(&output.stdout).trim().to_string()
-    } else {
-        String::new()
-    };
-    
-    // If clipboard already contains a Notion URL, use it
-    if current_clipboard.starts_with("https://www.notion.so/") {
-        crate::utils::debug_log("GRABBER", &format!("Found Notion URL already in clipboard: {}", 
-            if current_clipboard.len() > 80 { 
-                format!("{}...", &current_clipboard[..80]) 
-            } else { 
-                current_clipboard.clone() 
-            }
-        ));
-        return Some(current_clipboard);
-    }
-    
-    crate::utils::debug_log("GRABBER", &format!("Current clipboard: '{}'", 
-        if current_clipboard.len() > 50 { 
-            format!("{}...", &current_clipboard[..50]) 
-        } else { 
-            current_clipboard.clone() 
-        }
-    ));
-    
-    // Try to trigger Notion's copy link shortcut (requires Accessibility permissions)
+    // Try to trigger Notion's copy link shortcut (Cmd+L)
+    // This requires Terminal to have Accessibility permissions in System Settings
     let trigger_copy_script = r#"
+        -- Save current clipboard
+        set oldClipboard to ""
+        try
+            set oldClipboard to (the clipboard)
+        end try
+        
+        -- Clear clipboard first to detect if Cmd+L actually works
+        set the clipboard to ""
+        
         -- Trigger Notion's copy link shortcut (Cmd+L)
         tell application "System Events"
-            key code 37 using {command down}
+            keystroke "l" using {command down}
         end tell
         
         -- Wait for clipboard to update
         delay 0.5
         
-        -- Get clipboard content
+        -- Get new clipboard content
         try
-            set clipboardContent to (the clipboard)
-            return clipboardContent as string
+            set newClipboard to (the clipboard) as string
+            if newClipboard starts with "https://www.notion.so/" then
+                return newClipboard
+            else if newClipboard is "" then
+                -- Clipboard is still empty, Cmd+L didn't work
+                -- Restore old clipboard
+                try
+                    set the clipboard to oldClipboard
+                end try
+                return "EMPTY"
+            else
+                -- Got something else, not a Notion URL
+                return "NOT_NOTION:" & newClipboard
+            end if
         on error errMsg
             return "ERROR: " & errMsg
         end try
@@ -281,16 +263,37 @@ fn get_notion_url() -> Option<String> {
         let stderr = String::from_utf8_lossy(&output.stderr).trim().to_string();
         
         if !stderr.is_empty() {
-            crate::utils::debug_log("GRABBER", &format!("Notion keystroke error: {}", stderr));
+            crate::utils::debug_log("GRABBER", &format!("AppleScript stderr: {}", stderr));
             if stderr.contains("not allowed to send keystrokes") {
-                crate::utils::debug_log("GRABBER", "Note: Terminal needs Accessibility permissions in System Settings → Privacy & Security → Accessibility");
+                crate::utils::debug_log("GRABBER", "⚠️ Terminal needs Accessibility permissions to send keystrokes");
+                crate::utils::debug_log("GRABBER", "Go to: System Settings → Privacy & Security → Accessibility");
+                crate::utils::debug_log("GRABBER", "Add Terminal and enable the checkbox");
             }
         }
         
-        if output.status.success() && stdout.starts_with("https://www.notion.so/") {
-            crate::utils::debug_log("GRABBER", &format!("Got Notion URL via Cmd+L: {}", stdout));
-            return Some(stdout);
+        if output.status.success() {
+            if stdout.starts_with("https://www.notion.so/") {
+                crate::utils::debug_log("GRABBER", &format!("✅ Got Notion URL: {}", stdout));
+                return Some(stdout);
+            } else if stdout == "EMPTY" {
+                crate::utils::debug_log("GRABBER", "Clipboard empty after Cmd+L - either permissions issue or not on a Notion page");
+            } else if stdout.starts_with("NOT_NOTION:") {
+                let content = &stdout[11..];
+                crate::utils::debug_log("GRABBER", &format!("Cmd+L copied non-Notion content: '{}'", 
+                    if content.len() > 50 { 
+                        format!("{}...", &content[..50]) 
+                    } else { 
+                        content.to_string() 
+                    }
+                ));
+            } else if stdout.starts_with("ERROR:") {
+                crate::utils::debug_log("GRABBER", &format!("AppleScript error: {}", &stdout[6..]));
+            }
+        } else {
+            crate::utils::debug_log("GRABBER", "osascript command failed");
         }
+    } else {
+        crate::utils::debug_log("GRABBER", "Failed to execute osascript");
     }
     
     crate::utils::debug_log("GRABBER", "Could not get Notion URL - user can paste it manually");

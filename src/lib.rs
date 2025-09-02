@@ -23,5 +23,8 @@ pub mod utils;
 // Major subsystems
 pub mod systems;
 
+// Cloud scanning module
+pub mod cloud_scanner;
+
 // All exports are now controlled through individual mod.rs files
 // Access via: core::, execute::, ui::, js::, systems::, utils:: namespaces

@@ -64,6 +64,8 @@ urlencoding = "2.1"
 dirs = "5.0"
 libc = "0.2"
 image = "0.24"
+reqwest = { version = "0.11", features = ["json", "blocking"] }
+tokio = { version = "1", features = ["full"] }
 
 [target.'cfg(target_os = "macos")'.dependencies]
 core-graphics = "0.23"
