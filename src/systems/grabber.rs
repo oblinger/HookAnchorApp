@@ -209,45 +209,91 @@ fn get_obsidian_url() -> Option<String> {
     None
 }
 
-/// Get Notion page URL by triggering copy link shortcut
+/// Get Notion page URL by checking clipboard or triggering copy link shortcut
 fn get_notion_url() -> Option<String> {
-    crate::utils::debug_log("GRAB", "Getting Notion URL (includes 300ms clipboard delay)");
+    crate::utils::debug_log("GRABBER", "Getting Notion URL");
     
-    let script = r#"
+    // First check current clipboard content - user might have already copied the link
+    let check_clipboard_script = r#"
+        try
+            set clipboardContent to (the clipboard)
+            return clipboardContent as string
+        on error
+            return ""
+        end try
+    "#;
+    
+    let current_clipboard = if let Ok(output) = ProcessCommand::new("osascript")
+        .arg("-e")
+        .arg(check_clipboard_script)
+        .output()
+    {
+        String::from_utf8_lossy(&output.stdout).trim().to_string()
+    } else {
+        String::new()
+    };
+    
+    // If clipboard already contains a Notion URL, use it
+    if current_clipboard.starts_with("https://www.notion.so/") {
+        crate::utils::debug_log("GRABBER", &format!("Found Notion URL already in clipboard: {}", 
+            if current_clipboard.len() > 80 { 
+                format!("{}...", &current_clipboard[..80]) 
+            } else { 
+                current_clipboard.clone() 
+            }
+        ));
+        return Some(current_clipboard);
+    }
+    
+    crate::utils::debug_log("GRABBER", &format!("Current clipboard: '{}'", 
+        if current_clipboard.len() > 50 { 
+            format!("{}...", &current_clipboard[..50]) 
+        } else { 
+            current_clipboard.clone() 
+        }
+    ));
+    
+    // Try to trigger Notion's copy link shortcut (requires Accessibility permissions)
+    let trigger_copy_script = r#"
         -- Trigger Notion's copy link shortcut (Cmd+L)
         tell application "System Events"
             key code 37 using {command down}
         end tell
         
         -- Wait for clipboard to update
-        delay 0.3
+        delay 0.5
         
         -- Get clipboard content
         try
             set clipboardContent to (the clipboard)
-            if clipboardContent starts with "https://www.notion.so/" then
-                return clipboardContent
-            else
-                return ""
-            end if
-        on error
-            return ""
+            return clipboardContent as string
+        on error errMsg
+            return "ERROR: " & errMsg
         end try
     "#;
     
     if let Ok(output) = ProcessCommand::new("osascript")
         .arg("-e")
-        .arg(script)
+        .arg(trigger_copy_script)
         .output()
     {
-        if output.status.success() {
-            let url = String::from_utf8_lossy(&output.stdout).trim().to_string();
-            if !url.is_empty() && url.starts_with("https://www.notion.so/") {
-                return Some(url);
+        let stdout = String::from_utf8_lossy(&output.stdout).trim().to_string();
+        let stderr = String::from_utf8_lossy(&output.stderr).trim().to_string();
+        
+        if !stderr.is_empty() {
+            crate::utils::debug_log("GRABBER", &format!("Notion keystroke error: {}", stderr));
+            if stderr.contains("not allowed to send keystrokes") {
+                crate::utils::debug_log("GRABBER", "Note: Terminal needs Accessibility permissions in System Settings → Privacy & Security → Accessibility");
             }
+        }
+        
+        if output.status.success() && stdout.starts_with("https://www.notion.so/") {
+            crate::utils::debug_log("GRABBER", &format!("Got Notion URL via Cmd+L: {}", stdout));
+            return Some(stdout);
         }
     }
     
+    crate::utils::debug_log("GRABBER", "Could not get Notion URL - user can paste it manually");
     None
 }
 
@@ -471,12 +517,14 @@ fn match_grabber_rules(
         
         // Try each rule
         for rule in rules.iter() {
+            crate::utils::debug_log("GRABBER", &format!("Evaluating rule '{}': {}", rule.name, rule.matcher));
             
             match ctx.eval::<Value, _>(rule.matcher.as_bytes()) {
                 Ok(value) => {
                     // Check what type of value was returned
                     if value.is_null() || value.is_undefined() {
                         // Rule didn't match, continue to next rule
+                        crate::utils::debug_log("GRABBER", &format!("  Rule '{}' returned null/undefined - no match", rule.name));
                     } else if let Some(str_ref) = value.as_string() {
                         // String return - use current behavior
                         if let Ok(arg) = str_ref.to_string() {
