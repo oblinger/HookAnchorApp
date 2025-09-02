@@ -47,16 +47,21 @@ impl SetupAssistant {
             self.prompt_karabiner_install()?;
         }
         
-        // Step 2: Create configuration directory
+        // Step 2: Check Terminal accessibility permissions
+        if !self.check_terminal_accessibility() {
+            self.prompt_accessibility_permissions()?;
+        }
+        
+        // Step 3: Create configuration directory
         self.create_config_directory()?;
         
-        // Step 3: Create default configuration
+        // Step 4: Create default configuration
         self.create_default_config(force)?;
         
-        // Step 4: Install Karabiner complex modification
+        // Step 5: Install Karabiner complex modification
         self.install_karabiner_modification(force)?;
         
-        // Step 5: Create initial commands file
+        // Step 6: Create initial commands file
         self.create_initial_commands(force)?;
         
         println!("\n✓ Setup completed successfully!");
@@ -69,6 +74,72 @@ impl SetupAssistant {
     /// Check if Karabiner-Elements is installed
     fn check_karabiner(&self) -> bool {
         Path::new(KARABINER_CLI_PATH).exists()
+    }
+    
+    /// Check if Terminal has accessibility permissions
+    fn check_terminal_accessibility(&self) -> bool {
+        // Try to run a simple AppleScript that requires accessibility
+        let test_script = r#"
+            tell application "System Events"
+                try
+                    key code 0
+                    return "true"
+                on error
+                    return "false"
+                end try
+            end tell
+        "#;
+        
+        let output = Command::new("osascript")
+            .arg("-e")
+            .arg(test_script)
+            .output();
+        
+        match output {
+            Ok(result) => {
+                let stdout = String::from_utf8_lossy(&result.stdout);
+                stdout.trim() == "true"
+            }
+            Err(_) => false,
+        }
+    }
+    
+    /// Prompt user to grant accessibility permissions to Terminal
+    fn prompt_accessibility_permissions(&self) -> Result<(), Box<dyn std::error::Error>> {
+        println!("⚠️  Terminal needs Accessibility permissions for HookAnchor to work properly.");
+        println!("\nThis permission is required to:");
+        println!("• Capture window information from applications");
+        println!("• Grab URLs from Notion and other apps");
+        println!("• Send keyboard shortcuts to applications");
+        
+        println!("\nSteps to grant permission:");
+        println!("1. System Settings will open to Privacy & Security → Accessibility");
+        println!("2. Click the lock icon and enter your password");
+        println!("3. Enable the checkbox next to 'Terminal'");
+        println!("4. If Terminal is not in the list, click '+' and add it from /Applications/Utilities/");
+        
+        println!("\nPress Enter to open System Settings...");
+        std::io::stdin().read_line(&mut String::new())?;
+        
+        // Open System Settings to the Accessibility pane
+        Command::new("open")
+            .arg("x-apple.systempreferences:com.apple.preference.security?Privacy_Accessibility")
+            .spawn()?;
+        
+        println!("\nAfter granting permission, press Enter to continue...");
+        std::io::stdin().read_line(&mut String::new())?;
+        
+        // Check again after user claims to have set permissions
+        if !self.check_terminal_accessibility() {
+            println!("\n⚠️  Terminal still doesn't have Accessibility permissions.");
+            println!("Please ensure you've enabled Terminal in Privacy & Security → Accessibility.");
+            println!("You may need to restart Terminal after granting permissions.");
+            println!("\nContinuing setup, but some features may not work until permissions are granted.");
+        } else {
+            println!("✓ Terminal has Accessibility permissions!");
+        }
+        
+        Ok(())
     }
     
     /// Prompt user to install Karabiner-Elements
@@ -116,9 +187,9 @@ impl SetupAssistant {
                 Ok(content) => {
                     // Basic validation - check if it parses as YAML
                     if content.trim().is_empty() {
-                        println!("Warning: Existing config file is empty, will create backup and generate new one");
-                        let backup_path = self.config_dir.join("config.yaml.empty.backup");
-                        fs::copy(&config_path, &backup_path)?;
+                        println!("Warning: Existing config file is empty");
+                        println!("NOT overwriting - use --install --force to replace empty config");
+                        return Ok(()); // NEVER overwrite without force flag!
                     } else {
                         println!("Existing configuration looks valid - keeping as-is");
                         return Ok(());
@@ -129,11 +200,20 @@ impl SetupAssistant {
                     return Ok(()); // Don't overwrite if we can't read it
                 }
             }
-        } else {
-            if force {
-                println!("🔄 Force reinstall: Creating fresh configuration file...");
+        }
+        
+        // Only reach here if: (!exists) OR (exists AND force)
+        if !config_path.exists() {
+            println!("Creating default configuration...");
+        } else if force {
+            println!("🔄 Force reinstall: Creating fresh configuration file...");
+            // Backup existing file when forcing
+            let backup_path = self.config_dir.join(format!("config.yaml.backup.{}", 
+                chrono::Utc::now().format("%Y%m%d_%H%M%S")));
+            if let Err(e) = fs::copy(&config_path, &backup_path) {
+                println!("Warning: Could not backup existing config: {}", e);
             } else {
-                println!("Creating default configuration...");
+                println!("Backed up existing config to: {}", backup_path.display());
             }
         }
         
@@ -407,10 +487,9 @@ _install_info:
                         println!("Commands file already exists with content - preserving existing commands");
                         return Ok(());
                     } else {
-                        println!("Commands file exists but is empty/comments only - adding starter commands");
-                        // Backup the existing file
-                        let backup_path = self.config_dir.join("commands.txt.original.backup");
-                        fs::copy(&commands_path, &backup_path)?;
+                        println!("Commands file exists but is empty/comments only");
+                        println!("NOT overwriting - use --install --force to replace empty commands");
+                        return Ok(()); // NEVER overwrite without force flag!
                     }
                 }
                 Err(_) => {
@@ -418,8 +497,21 @@ _install_info:
                     return Ok(());
                 }
             }
-        } else {
+        }
+        
+        // Only reach here if: (!exists) OR (exists AND force)
+        if !commands_path.exists() {
             println!("Creating initial commands file...");
+        } else if force {
+            println!("🔄 Force reinstall: Creating fresh commands file...");
+            // Backup existing file when forcing
+            let backup_path = self.config_dir.join(format!("commands.txt.backup.{}", 
+                chrono::Utc::now().format("%Y%m%d_%H%M%S")));
+            if let Err(e) = fs::copy(&commands_path, &backup_path) {
+                println!("Warning: Could not backup existing commands: {}", e);
+            } else {
+                println!("Backed up existing commands to: {}", backup_path.display());
+            }
         }
         
         let timestamp = chrono::Utc::now().format("%Y-%m-%d %H:%M:%S UTC");
