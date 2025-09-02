@@ -225,13 +225,17 @@ fn get_notion_url() -> Option<String> {
         -- Clear clipboard first to detect if Cmd+L actually works
         set the clipboard to ""
         
+        -- Make sure Notion is active and ready
+        tell application "Notion" to activate
+        delay 0.2
+        
         -- Trigger Notion's copy link shortcut (Cmd+L)
         tell application "System Events"
             keystroke "l" using {command down}
         end tell
         
-        -- Wait for clipboard to update
-        delay 0.5
+        -- Wait longer for clipboard to update (Notion can be slow)
+        delay 1.0
         
         -- Get new clipboard content
         try
