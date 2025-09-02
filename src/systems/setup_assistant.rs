@@ -76,47 +76,36 @@ impl SetupAssistant {
         Path::new(KARABINER_CLI_PATH).exists()
     }
     
-    /// Check if Terminal has accessibility permissions
+    /// Check if HookAnchor app has accessibility permissions
     fn check_terminal_accessibility(&self) -> bool {
-        // Try to run a simple AppleScript that requires accessibility
-        let test_script = r#"
-            tell application "System Events"
-                try
-                    key code 0
-                    return "true"
-                on error
-                    return "false"
-                end try
-            end tell
-        "#;
+        // We can't directly check if HookAnchor.app has permissions from here,
+        // but we can check if the current process (Terminal when running installer) has them
+        // The real check needs to happen when the GUI app runs
         
-        let output = Command::new("osascript")
-            .arg("-e")
-            .arg(test_script)
-            .output();
-        
-        match output {
-            Ok(result) => {
-                let stdout = String::from_utf8_lossy(&result.stdout);
-                stdout.trim() == "true"
-            }
-            Err(_) => false,
-        }
+        // For now, always prompt the user to ensure HookAnchor.app is added
+        false  // Always show the permission prompt during install
     }
     
-    /// Prompt user to grant accessibility permissions to Terminal
+    /// Prompt user to grant accessibility permissions to HookAnchor
     fn prompt_accessibility_permissions(&self) -> Result<(), Box<dyn std::error::Error>> {
-        println!("⚠️  Terminal needs Accessibility permissions for HookAnchor to work properly.");
+        println!("\n⚠️  HookAnchor needs Accessibility permissions to work properly.");
+        println!("\n🎯 IMPORTANT: You need to add HookAnchor, NOT Terminal!");
+        
         println!("\nThis permission is required to:");
         println!("• Capture window information from applications");
         println!("• Grab URLs from Notion and other apps");
         println!("• Send keyboard shortcuts to applications");
         
-        println!("\nSteps to grant permission:");
+        println!("\n📋 Steps to grant permission:");
         println!("1. System Settings will open to Privacy & Security → Accessibility");
-        println!("2. Click the lock icon and enter your password");
-        println!("3. Enable the checkbox next to 'Terminal'");
-        println!("4. If Terminal is not in the list, click '+' and add it from /Applications/Utilities/");
+        println!("2. Click the lock icon 🔒 and enter your password");
+        println!("3. Click the '+' button to add an app");
+        println!("4. Navigate to and select ONE of these:");
+        println!("   • /Applications/HookAnchor.app (if installed)");
+        println!("   • /Users/oblinger/ob/proj/HookAnchor/target/release/popup_server (for development)");
+        println!("5. Make sure the checkbox ✓ is enabled next to HookAnchor");
+        
+        println!("\n⚠️  DO NOT add Terminal - add HookAnchor itself!");
         
         println!("\nPress Enter to open System Settings...");
         std::io::stdin().read_line(&mut String::new())?;
@@ -126,18 +115,12 @@ impl SetupAssistant {
             .arg("x-apple.systempreferences:com.apple.preference.security?Privacy_Accessibility")
             .spawn()?;
         
-        println!("\nAfter granting permission, press Enter to continue...");
+        println!("\nAfter adding HookAnchor to Accessibility, press Enter to continue...");
         std::io::stdin().read_line(&mut String::new())?;
         
-        // Check again after user claims to have set permissions
-        if !self.check_terminal_accessibility() {
-            println!("\n⚠️  Terminal still doesn't have Accessibility permissions.");
-            println!("Please ensure you've enabled Terminal in Privacy & Security → Accessibility.");
-            println!("You may need to restart Terminal after granting permissions.");
-            println!("\nContinuing setup, but some features may not work until permissions are granted.");
-        } else {
-            println!("✓ Terminal has Accessibility permissions!");
-        }
+        println!("\n✅ Setup will continue.");
+        println!("If you didn't add HookAnchor yet, you can do it later through:");
+        println!("System Settings → Privacy & Security → Accessibility");
         
         Ok(())
     }
