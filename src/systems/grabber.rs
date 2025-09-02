@@ -211,10 +211,43 @@ fn get_obsidian_url() -> Option<String> {
 
 /// Get Notion page URL by triggering copy link shortcut
 fn get_notion_url() -> Option<String> {
-    crate::utils::debug_log("GRABBER", "Getting Notion URL via Cmd+L");
+    crate::utils::detailed_log("GRABBER_NOTION", "=== NOTION URL CAPTURE START ===");
+    
+    // First, try to read the clipboard in case user already copied the URL
+    crate::utils::detailed_log("GRABBER_NOTION", "Step 1: Checking if clipboard already contains Notion URL");
+    
+    let check_clipboard_script = r#"
+        try
+            set clipContent to (the clipboard) as string
+            if clipContent starts with "https://www.notion.so/" then
+                return clipContent
+            else
+                return ""
+            end if
+        on error
+            return ""
+        end try
+    "#;
+    
+    if let Ok(output) = ProcessCommand::new("osascript")
+        .arg("-e")
+        .arg(check_clipboard_script)
+        .output()
+    {
+        let stdout = String::from_utf8_lossy(&output.stdout).trim().to_string();
+        if stdout.starts_with("https://www.notion.so/") {
+            crate::utils::detailed_log("GRABBER_NOTION", &format!("✅ Found Notion URL in clipboard: {}", stdout));
+            crate::utils::detailed_log("GRABBER_NOTION", "=== NOTION URL CAPTURE END (SUCCESS - from clipboard) ===");
+            return Some(stdout);
+        } else {
+            crate::utils::detailed_log("GRABBER_NOTION", "No Notion URL in clipboard, trying keystroke method");
+        }
+    }
     
     // Try to trigger Notion's copy link shortcut (Cmd+L)
-    // This requires Terminal to have Accessibility permissions in System Settings
+    // This requires Terminal/popup_server to have Accessibility permissions
+    crate::utils::detailed_log("GRABBER_NOTION", "Step 2: Attempting to trigger Cmd+L in Notion");
+    
     let trigger_copy_script = r#"
         -- Save current clipboard
         set oldClipboard to ""
@@ -258,6 +291,8 @@ fn get_notion_url() -> Option<String> {
         end try
     "#;
     
+    crate::utils::detailed_log("GRABBER_NOTION", "Executing AppleScript to send Cmd+L");
+    
     if let Ok(output) = ProcessCommand::new("osascript")
         .arg("-e")
         .arg(trigger_copy_script)
@@ -266,21 +301,39 @@ fn get_notion_url() -> Option<String> {
         let stdout = String::from_utf8_lossy(&output.stdout).trim().to_string();
         let stderr = String::from_utf8_lossy(&output.stderr).trim().to_string();
         
+        crate::utils::detailed_log("GRABBER_NOTION", &format!("AppleScript stdout: '{}'", stdout));
+        crate::utils::detailed_log("GRABBER_NOTION", &format!("AppleScript stderr: '{}'", stderr));
+        crate::utils::detailed_log("GRABBER_NOTION", &format!("AppleScript exit status: {}", output.status.success()));
+        
         if !stderr.is_empty() {
-            crate::utils::debug_log("GRABBER", &format!("AppleScript stderr: {}", stderr));
+            crate::utils::detailed_log("GRABBER_NOTION", &format!("AppleScript error output: {}", stderr));
             if stderr.contains("not allowed to send keystrokes") {
-                crate::utils::debug_log("GRABBER", "⚠️ Terminal needs Accessibility permissions to send keystrokes");
-                crate::utils::debug_log("GRABBER", "Go to: System Settings → Privacy & Security → Accessibility");
-                crate::utils::debug_log("GRABBER", "Add Terminal and enable the checkbox");
+                crate::utils::detailed_log("GRABBER_NOTION", "❌ PERMISSION ERROR: osascript not allowed to send keystrokes");
+                crate::utils::detailed_log("GRABBER_NOTION", "This is a known macOS limitation when running from popup_server");
+                crate::utils::detailed_log("GRABBER_NOTION", "");
+                crate::utils::detailed_log("GRABBER_NOTION", "WORKAROUND: User should manually copy Notion URL first:");
+                crate::utils::detailed_log("GRABBER_NOTION", "1. Click in Notion to focus the page");
+                crate::utils::detailed_log("GRABBER_NOTION", "2. Press Cmd+L to copy the page URL");  
+                crate::utils::detailed_log("GRABBER_NOTION", "3. Then trigger the grabber");
+                crate::utils::detailed_log("GRABBER_NOTION", "");
+                crate::utils::detailed_log("GRABBER_NOTION", "=== NOTION URL CAPTURE END (FAILED - permissions) ===");
+                
+                // Show user-friendly message
+                crate::utils::debug_log("GRABBER", "⚠️ Cannot send keystrokes from popup_server");
+                crate::utils::debug_log("GRABBER", "Please copy Notion URL manually first (Cmd+L), then grab");
             }
         }
         
         if output.status.success() {
+            crate::utils::detailed_log("GRABBER_NOTION", &format!("AppleScript returned: '{}'", stdout));
+            
             if stdout.starts_with("https://www.notion.so/") {
-                crate::utils::debug_log("GRABBER", &format!("✅ Got Notion URL: {}", stdout));
+                crate::utils::detailed_log("GRABBER_NOTION", &format!("✅ SUCCESS: Got Notion URL: {}", stdout));
+                crate::utils::detailed_log("GRABBER_NOTION", "=== NOTION URL CAPTURE END (SUCCESS) ===");
                 return Some(stdout);
             } else if stdout == "EMPTY" {
-                crate::utils::debug_log("GRABBER", "Clipboard empty after Cmd+L - either permissions issue or not on a Notion page");
+                crate::utils::detailed_log("GRABBER_NOTION", "❌ FAILED: Clipboard empty after Cmd+L");
+                crate::utils::detailed_log("GRABBER_NOTION", "Possible causes: permissions issue or not on a Notion page");
             } else if stdout.starts_with("NOT_NOTION:") {
                 let content = &stdout[11..];
                 crate::utils::debug_log("GRABBER", &format!("Cmd+L copied non-Notion content: '{}'", 
@@ -300,7 +353,9 @@ fn get_notion_url() -> Option<String> {
         crate::utils::debug_log("GRABBER", "Failed to execute osascript");
     }
     
-    crate::utils::debug_log("GRABBER", "Could not get Notion URL - user can paste it manually");
+    crate::utils::detailed_log("GRABBER_NOTION", "Step 3: Fallback - user needs to copy URL manually");
+    crate::utils::debug_log("GRABBER", "📋 Please copy Notion URL first (Cmd+L), then grab again");
+    crate::utils::detailed_log("GRABBER_NOTION", "=== NOTION URL CAPTURE END (FAILED - manual copy needed) ===");
     None
 }
 
@@ -467,12 +522,17 @@ fn enrich_context(mut context: AppContext) -> AppContext {
     
     // Add Notion URL if applicable
     if context.bundle_id == "notion.id" {
-        crate::utils::debug_log("GRABBER", "Enriching Notion context...");
+        crate::utils::detailed_log("GRABBER", "Bundle ID is notion.id - attempting to enrich with URL");
+        crate::utils::detailed_log("GRABBER", "Calling get_notion_url()...");
+        
         if let Some(url) = get_notion_url() {
-            crate::utils::debug_log("GRABBER", &format!("Got Notion URL: {}", url));
-            context.properties["url"] = serde_json::Value::String(url);
+            crate::utils::detailed_log("GRABBER", &format!("✅ Got Notion URL: {}", url));
+            crate::utils::detailed_log("GRABBER", "Adding URL to context.properties");
+            context.properties["url"] = serde_json::Value::String(url.clone());
+            crate::utils::detailed_log("GRABBER", &format!("Properties after adding URL: {:?}", context.properties));
         } else {
-            crate::utils::debug_log("GRABBER", "Failed to get Notion URL");
+            crate::utils::detailed_log("GRABBER", "❌ Failed to get Notion URL - properties['url'] will be empty");
+            crate::utils::detailed_log("GRABBER", &format!("Properties without URL: {:?}", context.properties));
         }
     }
     
@@ -535,7 +595,11 @@ fn match_grabber_rules(
                     } else if let Some(str_ref) = value.as_string() {
                         // String return - use current behavior
                         if let Ok(arg) = str_ref.to_string() {
-                            crate::utils::debug_log("GRABBER", &format!("Matched rule '{}' with string: '{}'", rule.name, arg));
+                            crate::utils::detailed_log("GRABBER_MATCH", &format!("====== RULE MATCH: '{}' ======", rule.name));
+                            crate::utils::detailed_log("GRABBER_MATCH", &format!("Matched argument: '{}'", arg));
+                            crate::utils::detailed_log("GRABBER_MATCH", &format!("Argument length: {}", arg.len()));
+                            crate::utils::detailed_log("GRABBER_MATCH", &format!("Rule action: '{}'", rule.action));
+                            crate::utils::detailed_log("GRABBER_MATCH", &format!("Rule patch: '{:?}'", rule.patch));
                             
                             // Rule matched and returned a string argument
                             let mut command = Command {
@@ -545,6 +609,8 @@ fn match_grabber_rules(
                                 arg: arg.clone(),
                                 flags: String::new(),
                             };
+                            
+                            crate::utils::detailed_log("GRABBER_MATCH", &format!("Created command: action='{}', arg='{}'", command.action, command.arg));
                             
                             // Apply patch inference if no explicit patch was set
                             if command.patch.is_empty() {

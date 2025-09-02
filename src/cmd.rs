@@ -1143,9 +1143,9 @@ fn run_uninstall() {
     }
 }
 
-/// Restart the command server - kill existing and start new one in Terminal
+/// Restart both command server and popup server - launch both from Terminal for proper permissions
 fn run_restart_server() {
-    println!("🔄 Restarting command server...");
+    println!("🔄 Restarting both servers (command + popup)...");
     
     // First, hide the popup if it's visible by sending command to socket
     println!("  Hiding popup window...");
@@ -1171,6 +1171,37 @@ fn run_restart_server() {
         .output() {
         Ok(_) => println!("  ✅ Existing popup_server killed"),
         Err(e) => println!("  ⚠️  Failed to kill popup_server: {}", e),
+    }
+    
+    // Start popup_server via Terminal for proper permissions
+    println!("  Starting popup_server via Terminal...");
+    let binary_path = crate::utils::get_binary_path()
+        .and_then(|p| p.parent().map(|d| d.to_path_buf()))
+        .unwrap_or_else(|| std::path::PathBuf::from("/Users/oblinger/ob/proj/HookAnchor/target/release"));
+    let popup_server_path = binary_path.join("popup_server");
+    
+    if popup_server_path.exists() {
+        let escaped_path = popup_server_path.display().to_string().replace("\"", "\\\"");
+        let script = format!(
+            r#"tell application "Terminal" to do script "cd ~ && \"{}\" 2>&1""#,
+            escaped_path
+        );
+        
+        match Command::new("osascript")
+            .args(["-e", &script])
+            .output() {
+            Ok(output) => {
+                if output.status.success() {
+                    println!("  ✅ popup_server started via Terminal (inherits Accessibility permissions)");
+                } else {
+                    println!("  ⚠️  Failed to start popup_server via Terminal: {}", 
+                            String::from_utf8_lossy(&output.stderr));
+                }
+            }
+            Err(e) => println!("  ⚠️  Failed to execute AppleScript: {}", e),
+        }
+    } else {
+        println!("  ⚠️  popup_server not found at: {}", popup_server_path.display());
     }
     
     // Restart the server (kill existing and start new)

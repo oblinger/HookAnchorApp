@@ -80,10 +80,42 @@ fn start_popup_server() -> Result<(), String> {
         .ok_or("Failed to get exe directory")?;
     let popup_server_path = exe_dir.join("popup_server");
     
-    // Start popup server in background
-    Command::new(&popup_server_path)
-        .spawn()
-        .map_err(|e| format!("Failed to start popup server: {}", e))?;
+    // Check if we should use Terminal for better permissions (macOS)
+    #[cfg(target_os = "macos")]
+    {
+        // Start popup server via Terminal to inherit Accessibility permissions
+        // This allows osascript subprocesses to send keystrokes (needed for grabber)
+        let escaped_path = popup_server_path.display().to_string().replace("\"", "\\\"");
+        let script = format!(
+            r#"tell application "Terminal" to do script "cd ~ && \"{}\" 2>&1""#,
+            escaped_path
+        );
+        
+        eprintln!("Starting popup_server via Terminal for proper permissions...");
+        eprintln!("This allows the grabber to send keystrokes to applications.");
+        
+        let output = Command::new("osascript")
+            .args(["-e", &script])
+            .output()
+            .map_err(|e| format!("Failed to execute AppleScript: {}", e))?;
+        
+        if !output.status.success() {
+            let stderr = String::from_utf8_lossy(&output.stderr);
+            eprintln!("AppleScript error: {}", stderr);
+            // Fall back to direct spawn if Terminal approach fails
+            Command::new(&popup_server_path)
+                .spawn()
+                .map_err(|e| format!("Failed to start popup server directly: {}", e))?;
+        }
+    }
+    
+    #[cfg(not(target_os = "macos"))]
+    {
+        // Non-macOS: start normally
+        Command::new(&popup_server_path)
+            .spawn()
+            .map_err(|e| format!("Failed to start popup server: {}", e))?;
+    }
     
     // Wait for server to be ready (max 2 seconds)
     for _ in 0..20 {
