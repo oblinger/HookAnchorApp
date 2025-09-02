@@ -44,7 +44,7 @@ pub fn run_command_line_mode(args: Vec<String>) {
         "--restart" => run_restart_server(),
         "--process-health" => run_process_health(),
         "--process-status" => run_process_status(),
-        "--install" => run_install(),
+        "--install" => run_install(&args),
         "--uninstall" => run_uninstall(),
         "--execute-launcher-command" => run_execute_launcher_command(&args),
         "--popup" => run_popup_command(&args),
@@ -79,7 +79,8 @@ pub fn print_help(program_name: &str) {
     eprintln!("  {} --restart                # Kill and restart command server in new Terminal", program_name);
     eprintln!("  {} --process-health         # Check for hung processes", program_name);
     eprintln!("  {} --process-status         # Show detailed process status", program_name);
-    eprintln!("  {} --install                # Run setup assistant (install)", program_name);
+    eprintln!("  {} --install                # Run setup assistant (preserves configs)", program_name);
+    eprintln!("  {} --install --force        # Force reinstall (overwrites configs)", program_name);
     eprintln!("  {} --uninstall              # Uninstall HookAnchor", program_name);
     eprintln!("  {} --popup [show|hide|delete|status] # Manage popup window", program_name);
     eprintln!("  {} --hook <url>             # Handle hook:// URL (for URL handler)", program_name);
@@ -1056,13 +1057,22 @@ fn run_process_status() {
 }
 
 /// Run the setup assistant (install)
-fn run_install() {
+fn run_install(args: &[String]) {
+    // Check if --force flag is present
+    let force = args.len() > 2 && args[2] == "--force";
+    
     println!("🔄 Running HookAnchor setup assistant...");
     println!("================================================");
     println!();
     
-    // Run the setup assistant with force flag
-    match crate::systems::setup_assistant::SetupAssistant::new().run_setup(true) {
+    if force {
+        println!("⚠️  FORCE MODE: Will overwrite existing configuration files!");
+        println!("   Backups will be created before overwriting.");
+        println!();
+    }
+    
+    // Run the setup assistant with appropriate force flag
+    match crate::systems::setup_assistant::SetupAssistant::new().run_setup(force) {
         Ok(()) => {
             println!();
             println!("✅ Installation completed successfully!");
