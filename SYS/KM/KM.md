@@ -19,7 +19,7 @@
   , [KM Overview Obsidian](spot://kmoverviewobsidian),
   DELS: [[KM Meta KM]],[[Dooby]], [[KM.]], [[Meta KM]],[[Hook System]], [[KM Anchors]], [[KM Global 2 Local]], [[KM Overview]], [KM script](spot://kmscript), [[Multi-List WorkFlow]], [[Facet]], [[KM Meta KM]], [[KM Meta KM]], [[KM Anchor Implementation]],[KM Note](spot://kmnote),[[Dooby]], [[KM.]], [[Meta KM]],[KM Obsidian](spot://kmobsidian),[KM Note](spot://kmnote), [KM Note](spot://kmnote),[[Dooby]], [[KM.]], [[Meta KM]], [[Dooby]], [[KM.]], [[Meta KM]],[KM Note](spot://kmnote), [KM Note](spot://kmnote), [KM Note](spot://kmnote), [KM Note](spot://kmnote),[[Hook And Anchor System]], 
 
-
+[[Hook And Anchor System]] 
 
 [[KM Meta KM]] - [[PKM]] - [[Hook System]] 
 - [[Multi-List WorkFlow]] 

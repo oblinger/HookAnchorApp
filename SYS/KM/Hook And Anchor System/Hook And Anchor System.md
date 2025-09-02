@@ -1,29 +1,31 @@
 
 [[KM Video Summary]] 
+[[Hook Anchor Video]] 
+
 # Introduction
 
 I have coded, then lived and suffered a dozen personal knowledge management systems (PKMs). Over the last decade, I have converged on what I see as the outline for an ideal PKM for the professional knowledge worker.  I believe an effective PKM will somehow embody these five pivotal insights:
 
 *MULTI* — Certain tools are wildly better for certain kinds of knowledge.  Thus, the ideal PKM is a meta-tool that spans and unifies ***many tools***; it is focused on loading (a) the right knowledge into (b) the right tool with (c) the proper context at (d) the right time.
 
-*NAMING* — People naturally organize their world using an evolving collection of *distinct names*; the trick is to maintain ***alignment*** between names in our head and those in our PKM.
+*NAMING* — People naturally organize their world using an evolving collection of *names*; the ideal PKM remembers the mapping from brain to PKM, so the user does not need to.
 
 *LOCALITY* — Organizing requires effort, and that effort becomes impractical as the scale of the task increases.  The ideal PKM achieves global organization through a series of **small-scale, localized** organizational efforts.
 
-DIRECT ACCESS - It is possible (and critical) to solve the lookup problem across these many independently organized localities ***without sequential searching***.
+DIRECT ACCESS - The ideal PKM solves the lookup problem across these many independently organized localities ***without sequential searching***.
 
-*LEAST RESISTANCE* — Of course, we should wash hands for 20 seconds, read all terms before hitting 'accept', and scrupulously tag and reference each item in our PKM.  BUT WE WONT!  Thus, the ideal PKM weaves ***good organizational hygiene into the paths of least resistance*** you already follow in getting your work done.
+*LEAST RESISTANCE* — Of course, we should wash our hands for 20 seconds, read all terms before hitting 'accept', and scrupulously tag and reference each item in our PKM.  BUT WE WONT!  Thus, the ideal PKM weaves ***good organizational hygiene into the paths of least resistance*** one already follows in getting work done.
 
-This is critical to ensure the necessary organizational work gets done, AND it improves relevancy since organizational efforts are always directed towards specific tasks of importance.
+This is critical to ensure the necessary organizational work gets done, and it also improves relevance since organizational efforts are always directed towards specific tasks of importance.
 
 
-
+/
 
 # The Hook And Anchor System
 The Hook and Anchor System embodies these principles.  Without further ado, let's jump into it!
 
 ## HOOKSPACE 
-*In a nutshell, this system ensures that anytime you think about an artifact, you instantly either know a hook name for it, or you know where it can be found.*
+*In a nutshell, this system ensures that anytime you think about an artifact, you instantly either know a hook name for it or you know where it can be found.*
 
 **HOOK** — A ***hook*** is a unique word or phrase used to refer to some digital artifact.
 

@@ -34,7 +34,6 @@ These actions control HookAnchor itself and are typically bound to keyboard shor
 |------------|-------------|-------|------------------|
 | [template](#template) | Creates new commands with templates | Yes | name, action, arg, patch |
 | [popup](#popup) | Controls the popup window | No | popup_action |
-| [tmux_create](#tmux_create) | Creates TMUX sessions | No | folder, session, command |
 | [rescan](#rescan) | Rescans command database | No | - |
 
 ---
@@ -171,25 +170,6 @@ notes:
   action_type: obsidian
   file: "~/ob/kmr/notes.md"
   line: 42
-```
-
----
-
-## tmux_create
-Creates a new TMUX session in a folder with an optional command.
-
-**Arguments:**
-- `folder` - Folder path for the session (required)
-- `session` - Session name (optional, defaults to folder name)
-- `command` - Command to run (optional, defaults to "claude --continue")
-
-**Example:**
-```yaml
-dev_session:
-  action_type: tmux_create
-  folder: "~/projects/myapp"
-  session: "myapp"
-  command: "vim"
 ```
 
 ---
