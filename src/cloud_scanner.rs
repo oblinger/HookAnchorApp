@@ -77,23 +77,9 @@ impl NotionScanner {
                 "value": "page"
             });
             
-            // Add date filter if we have a last scan time
-            if let Some(last_time) = last_scan {
-                filter = serde_json::json!({
-                    "and": [
-                        {
-                            "property": "object",
-                            "value": "page"
-                        },
-                        {
-                            "timestamp": "last_edited_time",
-                            "last_edited_time": {
-                                "after": last_time.to_rfc3339()
-                            }
-                        }
-                    ]
-                });
-            }
+            // For incremental scans, we still use the same filter
+            // The Notion API doesn't support filtering by last_edited_time in search
+            // So we'll just get the most recent pages and filter client-side if needed
             
             let mut body = serde_json::json!({
                 "filter": filter,
@@ -276,8 +262,14 @@ impl NotionScanner {
     }
 }
 
-pub fn scan_cloud_services() -> Vec<NotionPage> {
+pub struct CloudScanResult {
+    pub notion_pages: Vec<NotionPage>,
+    pub is_incremental: bool,
+}
+
+pub fn scan_cloud_services() -> CloudScanResult {
     let mut notion_pages = Vec::new();
+    let mut is_incremental = false;
     
     // Load the config file directly to get the YAML structure
     let config_path = dirs::home_dir()
@@ -288,7 +280,7 @@ pub fn scan_cloud_services() -> Vec<NotionPage> {
         Ok(c) => c,
         Err(e) => {
             eprintln!("[CLOUD] Error reading config: {}", e);
-            return notion_pages;
+            return CloudScanResult { notion_pages, is_incremental };
         }
     };
     
@@ -296,7 +288,7 @@ pub fn scan_cloud_services() -> Vec<NotionPage> {
         Ok(c) => c,
         Err(e) => {
             eprintln!("[CLOUD] Error parsing config YAML: {}", e);
-            return notion_pages;
+            return CloudScanResult { notion_pages, is_incremental };
         }
     };
     
@@ -327,6 +319,10 @@ pub fn scan_cloud_services() -> Vec<NotionPage> {
                         if expanded_key.starts_with("ntn_") || expanded_key.starts_with("secret_") {
                             crate::utils::log(&format!("[NOTION] Scanning with API key (limit: {} pages)...", limit));
                             let scanner = NotionScanner::new(expanded_key);
+                            
+                            // Check if we have previous scan data
+                            is_incremental = scanner.get_last_scan_time().is_some();
+                            
                             match scanner.scan_pages_with_limit(limit as usize) {
                                 Ok(pages) => {
                                     scanner.log_pages(&pages);
@@ -349,5 +345,5 @@ pub fn scan_cloud_services() -> Vec<NotionPage> {
         }
     }
     
-    notion_pages
+    CloudScanResult { notion_pages, is_incremental }
 }

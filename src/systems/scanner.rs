@@ -129,27 +129,37 @@ pub fn scan_verbose(commands: Vec<Command>, sys_data: &crate::core::sys_data::Sy
     
     // Then scan cloud services (Notion, Google Drive)
     crate::utils::log("☁️  Scanning cloud services...");
-    let notion_pages = crate::cloud_scanner::scan_cloud_services();
+    let scan_result = crate::cloud_scanner::scan_cloud_services();
     
-    // Remove existing notion commands that don't have the U flag
-    let notion_before = commands.iter().filter(|cmd| cmd.action == "notion").count();
-    let notion_user_edited = commands.iter()
-        .filter(|cmd| cmd.action == "notion" && cmd.flags.contains('U'))
-        .count();
-    
-    commands.retain(|cmd| {
-        // Keep the command if it's not notion, or if it's notion with U flag
-        cmd.action != "notion" || cmd.flags.contains('U')
-    });
-    
-    let notion_removed = notion_before - notion_user_edited;
-    if notion_removed > 0 && verbose {
-        println!("   Removed {} non-user-edited notion commands", notion_removed);
+    // Only remove existing notion commands during FULL scans
+    // During incremental scans, we only add/update changed pages
+    if !scan_result.is_incremental {
+        // Full scan - remove all non-U flagged Notion commands first
+        let notion_before = commands.iter().filter(|cmd| cmd.action == "notion").count();
+        let notion_user_edited = commands.iter()
+            .filter(|cmd| cmd.action == "notion" && cmd.flags.contains('U'))
+            .count();
+        
+        commands.retain(|cmd| {
+            // Keep the command if it's not notion, or if it's notion with U flag
+            cmd.action != "notion" || cmd.flags.contains('U')
+        });
+        
+        let notion_removed = notion_before - notion_user_edited;
+        if notion_removed > 0 && verbose {
+            println!("   Removed {} non-user-edited notion commands (full scan)", notion_removed);
+        }
+    } else {
+        if verbose {
+            println!("   Incremental Notion scan - preserving existing commands");
+        }
+        crate::utils::log("[NOTION] Incremental scan - existing commands preserved");
     }
     
-    // Create notion commands for each scanned page
+    // Create/update notion commands for each scanned page
     let mut notion_added = 0;
-    for page in notion_pages {
+    let mut notion_updated = 0;
+    for page in scan_result.notion_pages {
         // Create a command name from the page title (sanitize it)
         let command_name = page.title
             .chars()
@@ -158,25 +168,42 @@ pub fn scan_verbose(commands: Vec<Command>, sys_data: &crate::core::sys_data::Sy
             .trim()
             .replace(' ', " ");  // Keep spaces for readability
         
-        // Skip if a command with this name already exists
-        if commands.iter().any(|cmd| cmd.command.eq_ignore_ascii_case(&command_name)) {
-            crate::utils::detailed_log("SCANNER", &format!("Skipping Notion page '{}' - command already exists", command_name));
-            continue;
+        // Check if a command with this name already exists
+        if let Some(existing_cmd) = commands.iter_mut().find(|cmd| 
+            cmd.command.eq_ignore_ascii_case(&command_name) && cmd.action == "notion"
+        ) {
+            // Update the URL if it changed (Notion pages can be moved)
+            if existing_cmd.arg != page.url {
+                crate::utils::detailed_log("SCANNER", &format!("Updating Notion page URL for '{}': {} -> {}", 
+                    command_name, existing_cmd.arg, page.url));
+                existing_cmd.arg = page.url;
+                notion_updated += 1;
+            } else {
+                crate::utils::detailed_log("SCANNER", &format!("Notion page '{}' unchanged", command_name));
+            }
+        } else if !commands.iter().any(|cmd| cmd.command.eq_ignore_ascii_case(&command_name)) {
+            // No command with this name exists at all, create new one
+            commands.push(Command {
+                command: command_name,
+                action: "notion".to_string(),
+                arg: page.url,
+                flags: String::new(), // No U flag for scanner-generated notion commands
+                patch: String::new(),
+            });
+            notion_added += 1;
+        } else {
+            // Command exists but it's not a notion command, skip
+            crate::utils::detailed_log("SCANNER", &format!("Skipping Notion page '{}' - non-notion command exists", command_name));
         }
-        
-        // Create the notion command
-        commands.push(Command {
-            command: command_name,
-            action: "notion".to_string(),
-            arg: page.url,
-            flags: String::new(), // No U flag for scanner-generated notion commands
-            patch: String::new(),
-        });
-        notion_added += 1;
     }
     
-    if notion_added > 0 && verbose {
-        println!("   Added {} notion commands from scanned pages", notion_added);
+    if (notion_added > 0 || notion_updated > 0) && verbose {
+        if notion_added > 0 {
+            println!("   Added {} new notion commands", notion_added);
+        }
+        if notion_updated > 0 {
+            println!("   Updated {} existing notion commands", notion_updated);
+        }
     }
     
     // Then scan contacts - DISABLED for performance
