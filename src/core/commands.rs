@@ -2660,12 +2660,17 @@ mod tests {
 // mod merge_tests;
 
 // ============================================================================
-// Folder Merge Operations
-// (Previously in command_operations.rs)
+// Orphan Processing
+// Simplified: Just create anchor commands for missing patches
 // ============================================================================
 
-/// Find orphan folders that should be merged with their non-orphan counterparts
-/// Returns pairs of (orphan_folder, target_folder) that should be merged
+// All orphan merging functions have been removed and archived to old/old_orphan_processing.rs
+// The new system simply creates anchor commands for patches without anchors
+// Orphan processing is now handled directly in scanner.rs by creating
+// anchor commands with 'orphans' as parent for any missing patches
+
+/* REMOVED - Old orphan merging code archived to old/old_orphan_processing.rs
+
 pub(crate) fn find_orphan_folder_merges(
     orphans_path: &Path,
     vault_root: &Path,
@@ -3012,3 +3017,4 @@ fn cleanup_empty_folder(folder: &Path) -> Result<(), String> {
     
     Ok(())
 }
+*/ // END REMOVED orphan merging code

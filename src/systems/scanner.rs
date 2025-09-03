@@ -134,61 +134,63 @@ pub fn scan_verbose(commands: Vec<Command>, sys_data: &crate::core::sys_data::Sy
     // Then scan contacts - DISABLED for performance
     // commands = scan_contacts(commands);
     
-    // Process orphan merges after scanning files
-    if let Some(orphans_path_str) = &sys_data.config.popup_settings.orphans_path {
-        let expanded_orphans_path = expand_home(orphans_path_str);
-        let orphans_path = std::path::Path::new(&expanded_orphans_path);
-        
-        // Get vault roots to search for matching anchors
-        for root in file_roots {
-            let expanded_root = expand_home(root);
-            let vault_root = std::path::Path::new(&expanded_root);
-            
-            // Skip orphan merge checking for /Applications and other system directories
-            // Orphan merging only makes sense for markdown vault directories
-            if expanded_root.starts_with("/Applications") || 
-               expanded_root.starts_with("/System") || 
-               expanded_root.starts_with("/Library") {
-                continue;
-            }
-            
+    // Process orphan anchors - create anchor commands for patches without anchors
+    // First ensure the 'orphans' root anchor exists
+    let orphans_exists = commands.iter().any(|c| c.command == "orphans" && c.action == "anchor");
+    if !orphans_exists {
+        if verbose {
+            println!("\n🔄 Creating 'orphans' root anchor...");
+        }
+        commands.push(Command {
+            command: "orphans".to_string(),
+            action: "anchor".to_string(),
+            arg: String::new(), // No arg, so no action when triggered
+            flags: "S".to_string(), // System-created
+            patch: String::new(), // No parent patch - this is the root
+        });
+    }
+    
+    // Now check for patches that need orphan anchor commands
+    if verbose {
+        println!("\n🔄 Checking for orphan patches...");
+    }
+    
+    // Collect all patches that are referenced but don't have anchor commands
+    let mut referenced_patches = std::collections::HashSet::new();
+    let mut existing_anchors = std::collections::HashSet::new();
+    
+    for cmd in &commands {
+        if !cmd.patch.is_empty() {
+            referenced_patches.insert(cmd.patch.clone());
+        }
+        if cmd.action == "anchor" {
+            existing_anchors.insert(cmd.command.clone());
+        }
+    }
+    
+    // Create orphan anchor commands for missing patches
+    let mut orphan_count = 0;
+    for patch_name in referenced_patches {
+        if !existing_anchors.contains(&patch_name) {
             if verbose {
-                println!("\n🔄 Checking for orphan anchors to merge in {}...", expanded_root);
+                println!("   Creating orphan anchor for patch: {}", patch_name);
             }
-            
-            // Find orphan folders that should be merged
-            let merges = crate::core::commands::find_orphan_folder_merges(orphans_path, vault_root);
-            
-            if !merges.is_empty() {
-                if verbose {
-                    println!("   Found {} orphan anchors to merge", merges.len());
-                }
-                
-                // Execute each merge
-                for (source, dest) in merges {
-                    if verbose {
-                        println!("   Merging: {} -> {}", 
-                            source.file_name().unwrap_or_default().to_string_lossy(),
-                            dest.display());
-                    }
-                    
-                    if let Err(e) = crate::core::commands::merge_folders(&source, &dest) {
-                        crate::utils::log_error(&format!("Failed to merge orphan: {}", e));
-                        if verbose {
-                            println!("   ❌ Merge failed: {}", e);
-                        }
-                    }
-                }
-                
-                // After merging, we need to rescan to pick up the changes
-                // But only if we actually performed merges
-                if verbose {
-                    println!("   Rescanning after merges...");
-                }
-                commands = scan_files(commands, file_roots, &sys_data.config);
-            } else if verbose {
-                println!("   No orphan anchors found to merge");
-            }
+            commands.push(Command {
+                command: patch_name.clone(),
+                action: "anchor".to_string(),
+                arg: String::new(), // No arg, so no action when triggered
+                flags: "S".to_string(), // System-created
+                patch: "orphans".to_string(), // Parent is the orphans root
+            });
+            orphan_count += 1;
+        }
+    }
+    
+    if verbose {
+        if orphan_count > 0 {
+            println!("   Created {} orphan anchor commands", orphan_count);
+        } else {
+            println!("   No orphan patches found");
         }
     }
     
