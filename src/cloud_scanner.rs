@@ -177,9 +177,23 @@ impl NotionScanner {
             ));
         }
     }
+    
+    pub fn log_pages_verbose(&self, pages: &[NotionPage]) {
+        println!("   [NOTION] Found {} pages:", pages.len());
+        for page in pages {
+            // Print each page URL to stdout for verbose mode
+            println!("   [NOTION] {} - {}", page.title, page.url);
+        }
+        // Also log to file
+        self.log_pages(pages);
+    }
 }
 
 pub fn scan_cloud_services() -> Vec<NotionPage> {
+    scan_cloud_services_verbose(false)
+}
+
+pub fn scan_cloud_services_verbose(verbose: bool) -> Vec<NotionPage> {
     let mut notion_pages = Vec::new();
     
     // Load the config file directly to get the YAML structure
@@ -209,6 +223,9 @@ pub fn scan_cloud_services() -> Vec<NotionPage> {
             let enabled = root_config["enabled"].as_bool().unwrap_or(false);
 
             if !enabled {
+                if verbose && service_type == "notion" {
+                    println!("   [NOTION] Scanning disabled in config");
+                }
                 continue;
             }
 
@@ -223,14 +240,26 @@ pub fn scan_cloud_services() -> Vec<NotionPage> {
                         };
 
                         if expanded_key.starts_with("ntn_") || expanded_key.starts_with("secret_") {
+                            if verbose {
+                                println!("   [NOTION] Scanning with API key...");
+                            }
                             crate::utils::detailed_log("SYSTEM", &format!("[NOTION] Scanning with API key..."));
                             let scanner = NotionScanner::new(expanded_key);
                             match scanner.scan_all_pages() {
                                 Ok(pages) => {
-                                    scanner.log_pages(&pages);
+                                    if verbose {
+                                        scanner.log_pages_verbose(&pages);
+                                    } else {
+                                        scanner.log_pages(&pages);
+                                    }
                                     notion_pages = pages;
                                 },
-                                Err(e) => crate::utils::log_error(&format!("[NOTION] Error scanning: {}", e)),
+                                Err(e) => {
+                                    if verbose {
+                                        println!("   [NOTION] Error scanning: {}", e);
+                                    }
+                                    crate::utils::log_error(&format!("[NOTION] Error scanning: {}", e));
+                                }
                             }
                         } else {
                             crate::utils::log_error("[NOTION] Invalid API key format");

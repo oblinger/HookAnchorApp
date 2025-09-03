@@ -128,8 +128,11 @@ pub fn scan_verbose(commands: Vec<Command>, sys_data: &crate::core::sys_data::Sy
     }
     
     // Then scan cloud services (Notion, Google Drive)
+    if verbose {
+        println!("\n☁️  Scanning cloud services...");
+    }
     crate::utils::detailed_log("SYSTEM", &format!("\n☁️  Scanning cloud services..."));
-    let notion_pages = crate::cloud_scanner::scan_cloud_services();
+    let notion_pages = crate::cloud_scanner::scan_cloud_services_verbose(verbose);
     
     // Remove existing notion commands that don't have the U flag
     let notion_before = commands.iter().filter(|cmd| cmd.action == "notion").count();
