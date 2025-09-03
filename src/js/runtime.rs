@@ -380,7 +380,7 @@ fn setup_launcher_builtins(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Erro
     // shell(command) -> executes shell command without waiting (detached)
     ctx.globals().set("shell", Function::new(ctx.clone(), |command: String| {
         // ALWAYS log shell commands for debugging
-        crate::utils::log(&format!("🐚 JS_SHELL: Executing async command: {}", command));
+        crate::utils::detailed_log("SYSTEM", &format!("🐚 JS_SHELL: Executing async command: {}", command));
         
         // Detailed logging for debugging (only when verbose_logging is enabled)
         crate::utils::detailed_log("JS_SHELL", "===========================================");
@@ -413,7 +413,7 @@ fn setup_launcher_builtins(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Erro
                 }
                 
                 let msg = format!("Command started: {}", command);
-                crate::utils::log(&format!("✅ JS_SHELL: {}", msg));
+                crate::utils::detailed_log("SYSTEM", &format!("✅ JS_SHELL: {}", msg));
                 crate::utils::detailed_log("JS_SHELL", "===========================================");
                 msg
             },
@@ -432,7 +432,7 @@ fn setup_launcher_builtins(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Erro
     // shell_sync(command) -> executes shell command and waits for completion
     ctx.globals().set("shell_sync", Function::new(ctx.clone(), |command: String| {
         // ALWAYS log shell commands for debugging
-        crate::utils::log(&format!("🐚 JS_SHELL_SYNC: Executing sync command: {}", command));
+        crate::utils::detailed_log("SYSTEM", &format!("🐚 JS_SHELL_SYNC: Executing sync command: {}", command));
         
         // Execute directly since we're already on the server
         match crate::utils::shell_simple(&command, true) {
@@ -441,7 +441,7 @@ fn setup_launcher_builtins(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Erro
                 let stderr = String::from_utf8_lossy(&output.stderr);
                 let exit_code = output.status.code().unwrap_or(-1);
                 
-                crate::utils::log(&format!("✅ JS_SHELL_SYNC: Command completed with exit code: {}", exit_code));
+                crate::utils::detailed_log("SYSTEM", &format!("✅ JS_SHELL_SYNC: Command completed with exit code: {}", exit_code));
                 if !stdout.is_empty() {
                     crate::utils::log(&format!("📤 JS_SHELL_SYNC STDOUT: {}", stdout.trim()));
                 }
@@ -466,7 +466,7 @@ fn setup_launcher_builtins(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Erro
     // shellWithExitCode(command) -> executes shell command and returns detailed result
     ctx.globals().set("shellWithExitCode", Function::new(ctx.clone(), |command: String| {
         // ALWAYS log shell commands for debugging
-        crate::utils::log(&format!("🐚 JS_SHELL_EXIT_CODE: Executing command: {}", command));
+        crate::utils::detailed_log("SYSTEM", &format!("🐚 JS_SHELL_EXIT_CODE: Executing command: {}", command));
         
         // Execute directly since we're already on the server
         use std::process::Command;

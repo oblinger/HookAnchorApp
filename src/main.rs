@@ -50,7 +50,7 @@ fn main() -> Result<(), eframe::Error> {
     
     // Log startup with version and build timestamp
     let version = env!("CARGO_PKG_VERSION");
-    hookanchor::utils::debug_log("", &format!("HookAnchor v{} starting - Build: {}", version, build_time_str));
+    hookanchor::utils::detailed_log("", &format!("HookAnchor v{} starting - Build: {}", version, build_time_str));
     
     // Initialize the global error queue for user error display
     hookanchor::utils::init_error_queue();

@@ -652,8 +652,8 @@ impl AnchorSelector {
     /// Handle add alias command - opens command editor with alias action and last executed command as argument
     fn handle_add_alias_impl(&mut self) {
         let state = crate::core::state::load_state();
-        crate::utils::debug_log("ADD_ALIAS", &format!("=== ADD ALIAS TRIGGERED ==="));
-        crate::utils::debug_log("ADD_ALIAS", &format!("Last executed command from state: {:?}", state.last_executed_command));
+        crate::utils::detailed_log("ADD_ALIAS", &format!("=== ADD ALIAS TRIGGERED ==="));
+        crate::utils::detailed_log("ADD_ALIAS", &format!("Last executed command from state: {:?}", state.last_executed_command));
         if let Some(last_command) = state.last_executed_command {
             let search_text = self.popup_state.search_text.clone();
             
@@ -865,13 +865,13 @@ impl AnchorSelector {
     }
     
     fn handle_template_create_named_impl(&mut self, template_name: &str) {
-        crate::utils::log(&format!("TEMPLATE: === ENTER handle_template_create_named_impl('{}') ===", template_name));
+        crate::utils::detailed_log("TEMPLATE", &format!("TEMPLATE: === ENTER handle_template_create_named_impl('{}') ===", template_name));
         use crate::core::template_creation::TemplateContext;
         
-        crate::utils::log("TEMPLATE: DEBUG 0 - About to get current context");
+        crate::utils::detailed_log("TEMPLATE", &format!("TEMPLATE: DEBUG 0 - About to get current context"));
         // Get the current context
         let input = self.popup_state.search_text.clone();
-        crate::utils::log(&format!("TEMPLATE: DEBUG 0.1 - input = '{}'", input));
+        crate::utils::detailed_log("TEMPLATE", &format!("TEMPLATE: DEBUG 0.1 - input = '{}'", input));
         let selected_command = if !self.filtered_commands().is_empty() {
             let (display_commands, _, _, _) = self.get_display_commands();
             if self.selected_index() < display_commands.len() {
@@ -885,63 +885,63 @@ impl AnchorSelector {
         
         // Get previous command from state
         let state = crate::core::state::load_state();
-        crate::utils::debug_log("TEMPLATE", &format!("=== TEMPLATE CREATION: '{}' ===", template_name));
-        crate::utils::debug_log("TEMPLATE", &format!("State loaded - last_executed_command: {:?}", state.last_executed_command));
+        crate::utils::detailed_log("TEMPLATE", &format!("=== TEMPLATE CREATION: '{}' ===", template_name));
+        crate::utils::detailed_log("TEMPLATE", &format!("State loaded - last_executed_command: {:?}", state.last_executed_command));
         
         // Load all commands to find previous command, not just filtered ones
         let all_commands = crate::core::sys_data::get_sys_data().commands;
         
         let previous_command = state.last_executed_command.as_ref()
             .and_then(|name| {
-                crate::utils::debug_log("TEMPLATE", &format!("Looking for previous command: '{}'", name));
+                crate::utils::detailed_log("TEMPLATE", &format!("Looking for previous command: '{}'", name));
                 let found = all_commands.iter().find(|c| c.command == *name).cloned();
                 if found.is_some() {
-                    crate::utils::debug_log("TEMPLATE", &format!("Found previous command: '{}'", name));
+                    crate::utils::detailed_log("TEMPLATE", &format!("Found previous command: '{}'", name));
                 } else {
-                    crate::utils::debug_log("TEMPLATE", &format!("Previous command '{}' not found in {} available commands", name, all_commands.len()));
+                    crate::utils::detailed_log("TEMPLATE", &format!("Previous command '{}' not found in {} available commands", name, all_commands.len()));
                 }
                 found
             });
         
         
         // Create template context
-        crate::utils::log("TEMPLATE: DEBUG 1 - About to create TemplateContext");
+        crate::utils::detailed_log("TEMPLATE", &format!("TEMPLATE: DEBUG 1 - About to create TemplateContext"));
         let context = TemplateContext::new(&input, selected_command.as_ref(), previous_command.as_ref());
         
-        crate::utils::log("TEMPLATE: DEBUG 2 - TemplateContext created, about to get config");
+        crate::utils::detailed_log("TEMPLATE", &format!("TEMPLATE: DEBUG 2 - TemplateContext created, about to get config"));
         // Get the specified template/action
         let config = crate::core::sys_data::get_config();
         
-        crate::utils::log("TEMPLATE: DEBUG 3 - Config retrieved successfully");
+        crate::utils::detailed_log("TEMPLATE", &format!("TEMPLATE: DEBUG 3 - Config retrieved successfully"));
         // First try to find in unified actions
-        crate::utils::log(&format!("TEMPLATE: Looking for action '{}'", template_name));
+        crate::utils::detailed_log("TEMPLATE", &format!("TEMPLATE: Looking for action '{}'", template_name));
         let found_action = if let Some(ref actions) = config.actions {
-            crate::utils::log(&format!("TEMPLATE: DEBUG 4 - config.actions is Some, Found {} actions in config", actions.len()));
+            crate::utils::detailed_log("TEMPLATE", &format!("TEMPLATE: DEBUG 4 - config.actions is Some, Found {} actions in config", actions.len()));
             // Debug: log all action names
             let action_names: Vec<String> = actions.keys().cloned().collect();
-            crate::utils::log(&format!("TEMPLATE: Available actions: {:?}", action_names));
+            crate::utils::detailed_log("TEMPLATE", &format!("TEMPLATE: Available actions: {:?}", action_names));
             if let Some(action) = actions.get(template_name) {
-                crate::utils::log(&format!("TEMPLATE: DEBUG 5 - Found action '{}', type='{}'", template_name, action.action_type()));
+                crate::utils::detailed_log("TEMPLATE", &format!("TEMPLATE: DEBUG 5 - Found action '{}', type='{}'", template_name, action.action_type()));
                 if action.action_type() == "template" {
-                    crate::utils::log("TEMPLATE: DEBUG 6 - Action type is 'template'");
+                    crate::utils::detailed_log("TEMPLATE", &format!("TEMPLATE: DEBUG 6 - Action type is 'template'"));
                     // Extract grab parameter if present
-                    crate::utils::log("TEMPLATE: DEBUG 7 - About to extract grab parameter");
+                    crate::utils::detailed_log("TEMPLATE", &format!("TEMPLATE: DEBUG 7 - About to extract grab parameter"));
                     let grab_seconds = action.params.get("grab")
                         .and_then(|v| v.as_u64())
                         .map(|v| v as u32);
                     
-                    crate::utils::log(&format!("TEMPLATE: DEBUG 8 - grab_seconds = {:?}", grab_seconds));
+                    crate::utils::detailed_log("TEMPLATE", &format!("TEMPLATE: DEBUG 8 - grab_seconds = {:?}", grab_seconds));
                     if let Some(grab_secs) = grab_seconds {
-                        crate::utils::log(&format!("TEMPLATE: DEBUG 9 - grab_secs = {}", grab_secs));
+                        crate::utils::detailed_log("TEMPLATE", &format!("TEMPLATE: DEBUG 9 - grab_secs = {}", grab_secs));
                         // Store template info for after grab completes
-                        crate::utils::log(&format!("GRAB: Setting pending_template to '{}' with context", template_name));
+                        crate::utils::detailed_log("GRAB", &format!("GRAB: Setting pending_template to '{}' with context", template_name));
                         self.pending_template = Some((template_name.to_string(), context));
-                        crate::utils::log(&format!("GRAB: pending_template is now Some"));
+                        crate::utils::detailed_log("GRAB", &format!("GRAB: pending_template is now Some"));
                         
                         // Start countdown
                         self.grabber_countdown = Some(grab_secs as u8);
                         self.countdown_last_update = Some(std::time::Instant::now());
-                        crate::utils::log(&format!("GRAB: Started countdown for template '{}' with {} seconds", template_name, grab_secs));
+                        crate::utils::detailed_log("GRAB", &format!("GRAB: Started countdown for template '{}' with {} seconds", template_name, grab_secs));
                         return; // Early return for grab templates
                     }
                     
@@ -951,12 +951,12 @@ impl AnchorSelector {
                 } else {
                     let error_msg = format!("ERROR: Action '{}' exists but is not a template (type='{}').\nTo use this key binding, rename your template action to avoid name collision.", 
                         template_name, action.action_type());
-                    crate::utils::log(&format!("TEMPLATE: {}", error_msg));
+                    crate::utils::detailed_log("TEMPLATE", &format!("TEMPLATE: {}", error_msg));
                     self.show_error_dialog(&error_msg);
                     false
                 }
             } else {
-                crate::utils::log(&format!("TEMPLATE: Action '{}' not found in actions", template_name));
+                crate::utils::detailed_log("TEMPLATE", &format!("TEMPLATE: Action '{}' not found in actions", template_name));
                 // Don't show error here - it might be in old templates
                 false
             }
@@ -1040,13 +1040,13 @@ impl AnchorSelector {
             self.show_error_dialog(&format!("Template/Action '{}' not found in configuration", template_name));
         } else {
             // Process the unified action as a template
-            crate::utils::log(&format!("Processing unified action template: {}", template_name));
+            crate::utils::detailed_log("SYSTEM", &format!("Processing unified action template: {}", template_name));
             
             // Convert unified action to template and process it
             if let Some(ref actions) = config.actions {
                 if let Some(action) = actions.get(template_name) {
                     if let Some(template) = action.to_template() {
-                        crate::utils::log(&format!("TEMPLATE: Converted action to template, edit={}", template.edit));
+                        crate::utils::detailed_log("TEMPLATE", &format!("TEMPLATE: Converted action to template, edit={}", template.edit));
                         
                         // Check for existing command if use_existing is true
                         let existing_command = if template.use_existing {
@@ -1069,7 +1069,7 @@ impl AnchorSelector {
                             match crate::core::template_creation::process_template(&template, &context, &config) {
                                 Ok(new_command) => {
                                     if template.edit {
-                                        crate::utils::log("TEMPLATE: Opening command editor for sub_anchor template");
+                                        crate::utils::detailed_log("TEMPLATE", &format!("TEMPLATE: Opening command editor for sub_anchor template"));
                                         // Open command editor with the prefilled command
                                         self.command_editor.edit_command(Some(&new_command), &self.popup_state.search_text);
                                         // Store template for post-save file creation
@@ -1116,7 +1116,7 @@ impl AnchorSelector {
                             Some(json_variables)
                         ) {
                             Ok(result) => {
-                                crate::utils::log(&format!("Template action completed: {}", result));
+                                crate::utils::detailed_log("SYSTEM", &format!("Template action completed: {}", result));
                                 // Clear search and update display
                                 self.popup_state.search_text.clear();
                                 self.popup_state.update_search(String::new());
@@ -1236,13 +1236,13 @@ impl AnchorSelector {
     
     /// Start loading data in the background after UI is shown
     fn start_deferred_loading(&mut self) {
-        crate::utils::log("DEFERRED_LOADING: start_deferred_loading called");
+        crate::utils::detailed_log("DEFERRED_LOADING", &format!("DEFERRED_LOADING: start_deferred_loading called"));
         if self.loading_state != LoadingState::NotLoaded {
-            crate::utils::log(&format!("DEFERRED_LOADING: Already loading or loaded, state={:?}", self.loading_state));
+            crate::utils::detailed_log("DEFERRED_LOADING", &format!("DEFERRED_LOADING: Already loading or loaded, state={:?}", self.loading_state));
             return; // Already loading or loaded
         }
         
-        crate::utils::log("DEFERRED_LOADING: Starting to load");
+        crate::utils::detailed_log("DEFERRED_LOADING", &format!("DEFERRED_LOADING: Starting to load"));
         self.loading_state = LoadingState::Loading;
         let start_time = std::time::Instant::now();
         
@@ -1417,7 +1417,7 @@ impl AnchorSelector {
         let countdown_seconds = config.popup_settings.countdown_seconds.unwrap_or(5);
         let flip_focus = config.launcher_settings.as_ref().and_then(|ls| ls.flip_focus).unwrap_or(false);
         
-        crate::utils::debug_log("GRAB", &format!("Starting grabber countdown from {} (flip_focus={})", 
+        crate::utils::detailed_log("GRAB", &format!("Starting grabber countdown from {} (flip_focus={})", 
             countdown_seconds, flip_focus));
             
         self.grabber_countdown = Some(countdown_seconds);
@@ -1533,7 +1533,7 @@ impl AnchorSelector {
         }
         
         // Now capture from the focused application
-        crate::utils::log(&format!("GRAB: Calling crate::systems::grabber::grab, pending_template={:?}", 
+        crate::utils::detailed_log("GRAB", &format!("GRAB: Calling crate::systems::grabber::grab, pending_template={:?}", 
             self.pending_template.as_ref().map(|(name, _)| name)));
         match crate::systems::grabber::grab(&config) {
             Ok(grab_result) => {
@@ -1544,7 +1544,7 @@ impl AnchorSelector {
                         
                         // Check if we have a pending template
                         if let Some((template_name, mut context)) = self.pending_template.take() {
-                            crate::utils::log(&format!("GRAB: Found pending template '{}' - will process it", template_name));
+                            crate::utils::detailed_log("GRAB", &format!("GRAB: Found pending template '{}' - will process it", template_name));
                             
                             // Add grabbed variables to template context
                             context.add_variable("grabbed_action".to_string(), command.action.clone());
@@ -1557,31 +1557,31 @@ impl AnchorSelector {
                             // Try to find template in unified actions first
                             let template_found = if let Some(ref actions) = config.actions {
                                 if let Some(action) = actions.get(&template_name) {
-                                    crate::utils::log(&format!("GRAB: Found action '{}' in unified actions", template_name));
+                                    crate::utils::detailed_log("GRAB", &format!("GRAB: Found action '{}' in unified actions", template_name));
                                     if action.action_type() == "template" {
-                                        crate::utils::log(&format!("GRAB: Action type is 'template'"));
+                                        crate::utils::detailed_log("GRAB", &format!("GRAB: Action type is 'template'"));
                                         // Convert action to Template for processing
                                         if let Some(template) = action.to_template() {
-                                            crate::utils::log(&format!("GRAB: Successfully converted action to template"));
-                                            crate::utils::log(&format!("GRAB: Calling process_template"));
+                                            crate::utils::detailed_log("GRAB", &format!("GRAB: Successfully converted action to template"));
+                                            crate::utils::detailed_log("GRAB", &format!("GRAB: Calling process_template"));
                                             match crate::core::template_creation::process_template(&template, &context, &config) {
                                                 Ok(new_command) => {
-                                                    crate::utils::log(&format!("GRAB: process_template succeeded, command='{}'\n", new_command.command));
+                                                    crate::utils::detailed_log("GRAB", &format!("GRAB: process_template succeeded, command='{}'\n", new_command.command));
                                                     // Check edit flag from action params
                                                     let should_edit = action.params.get("edit")
                                                         .and_then(|v| v.as_bool())
                                                         .unwrap_or(false);
                                                     
-                                                    crate::utils::log(&format!("GRAB: Template created command '{}', should_edit={}", 
+                                                    crate::utils::detailed_log("GRAB", &format!("GRAB: Template created command '{}', should_edit={}", 
                                                         new_command.command, should_edit));
                                                     
                                                     if should_edit {
-                                                        crate::utils::log("GRAB: Opening command editor for template (should_edit=true)");
+                                                        crate::utils::detailed_log("GRAB", &format!("GRAB: Opening command editor for template (should_edit=true)"));
                                                         crate::utils::log(&format!("GRAB: command_editor.visible before={}", self.command_editor.visible));
                                                         self.command_editor.edit_command(Some(&new_command), &self.popup_state.search_text);
                                                         crate::utils::log(&format!("GRAB: command_editor.visible after={}", self.command_editor.visible));
                                                     } else {
-                                                        crate::utils::log("GRAB: Not opening editor (should_edit=false)");
+                                                        crate::utils::detailed_log("GRAB", &format!("GRAB: Not opening editor (should_edit=false)"));
                                                         // Add command directly
                                                         match crate::core::commands::add_command(new_command, &mut self.popup_state.commands) {
                                                             Ok(_) => {
@@ -1606,21 +1606,21 @@ impl AnchorSelector {
                                                     }
                                                 }
                                                 Err(e) => {
-                                                    crate::utils::log(&format!("GRAB: process_template failed: {}", e));
+                                                    crate::utils::detailed_log("GRAB", &format!("GRAB: process_template failed: {}", e));
                                                     self.show_error_dialog(&format!("Failed to create command from template: {}", e));
                                                 }
                                             }
                                             true
                                         } else {
-                                            crate::utils::log(&format!("GRAB: Failed to convert action '{}' to template", template_name));
+                                            crate::utils::detailed_log("GRAB", &format!("GRAB: Failed to convert action '{}' to template", template_name));
                                             false
                                         }
                                     } else {
-                                        crate::utils::log(&format!("GRAB: Action '{}' is not a template type (type={})", template_name, action.action_type()));
+                                        crate::utils::detailed_log("GRAB", &format!("GRAB: Action '{}' is not a template type (type={})", template_name, action.action_type()));
                                         false
                                     }
                                 } else {
-                                    crate::utils::log(&format!("GRAB: Action '{}' not found in unified actions", template_name));
+                                    crate::utils::detailed_log("GRAB", &format!("GRAB: Action '{}' not found in unified actions", template_name));
                                     false
                                 }
                             } else {
@@ -1630,7 +1630,7 @@ impl AnchorSelector {
                             
                             // Fall back to old templates if not found in actions
                             if !template_found {
-                                crate::utils::log(&format!("GRAB: Template '{}' not found in actions, checking old templates", template_name));
+                                crate::utils::detailed_log("GRAB", &format!("GRAB: Template '{}' not found in actions, checking old templates", template_name));
                                 if let Some(ref templates) = config.templates {
                                     if let Some(template) = templates.get(&template_name) {
                                         match crate::core::template_creation::process_template(template, &context, &config) {
@@ -1666,7 +1666,7 @@ impl AnchorSelector {
                                 }
                             }
                         } else {
-                            crate::utils::log("GRAB: No pending template - using normal grab behavior");
+                            crate::utils::detailed_log("GRAB", &format!("GRAB: No pending template - using normal grab behavior"));
                             // Normal grab behavior (no template)
                             // Use the current search text as the command name, or default if empty
                             let command_name = if self.popup_state.search_text.trim().is_empty() {
@@ -1698,29 +1698,29 @@ impl AnchorSelector {
                             let template_found = if let Some(ref actions) = config.actions {
                                 if let Some(action) = actions.get(&template_name) {
                                     if action.action_type() == "template" {
-                                        crate::utils::log(&format!("GRAB: Action type is 'template'"));
+                                        crate::utils::detailed_log("GRAB", &format!("GRAB: Action type is 'template'"));
                                         // Convert action to Template for processing
                                         if let Some(template) = action.to_template() {
-                                            crate::utils::log(&format!("GRAB: Successfully converted action to template"));
-                                            crate::utils::log(&format!("GRAB: Calling process_template"));
+                                            crate::utils::detailed_log("GRAB", &format!("GRAB: Successfully converted action to template"));
+                                            crate::utils::detailed_log("GRAB", &format!("GRAB: Calling process_template"));
                                             match crate::core::template_creation::process_template(&template, &context, &config) {
                                                 Ok(new_command) => {
-                                                    crate::utils::log(&format!("GRAB: process_template succeeded, command='{}'\n", new_command.command));
+                                                    crate::utils::detailed_log("GRAB", &format!("GRAB: process_template succeeded, command='{}'\n", new_command.command));
                                                     // Check edit flag from action params
                                                     let should_edit = action.params.get("edit")
                                                         .and_then(|v| v.as_bool())
                                                         .unwrap_or(false);
                                                     
-                                                    crate::utils::log(&format!("GRAB: Template created command '{}', should_edit={}", 
+                                                    crate::utils::detailed_log("GRAB", &format!("GRAB: Template created command '{}', should_edit={}", 
                                                         new_command.command, should_edit));
                                                     
                                                     if should_edit {
-                                                        crate::utils::log("GRAB: Opening command editor for template (should_edit=true)");
+                                                        crate::utils::detailed_log("GRAB", &format!("GRAB: Opening command editor for template (should_edit=true)"));
                                                         crate::utils::log(&format!("GRAB: command_editor.visible before={}", self.command_editor.visible));
                                                         self.command_editor.edit_command(Some(&new_command), &self.popup_state.search_text);
                                                         crate::utils::log(&format!("GRAB: command_editor.visible after={}", self.command_editor.visible));
                                                     } else {
-                                                        crate::utils::log("GRAB: Not opening editor (should_edit=false)");
+                                                        crate::utils::detailed_log("GRAB", &format!("GRAB: Not opening editor (should_edit=false)"));
                                                         // Add command directly
                                                         match crate::core::commands::add_command(new_command, &mut self.popup_state.commands) {
                                                             Ok(_) => {
@@ -1745,21 +1745,21 @@ impl AnchorSelector {
                                                     }
                                                 }
                                                 Err(e) => {
-                                                    crate::utils::log(&format!("GRAB: process_template failed: {}", e));
+                                                    crate::utils::detailed_log("GRAB", &format!("GRAB: process_template failed: {}", e));
                                                     self.show_error_dialog(&format!("Failed to create command from template: {}", e));
                                                 }
                                             }
                                             true
                                         } else {
-                                            crate::utils::log(&format!("GRAB: Failed to convert action '{}' to template", template_name));
+                                            crate::utils::detailed_log("GRAB", &format!("GRAB: Failed to convert action '{}' to template", template_name));
                                             false
                                         }
                                     } else {
-                                        crate::utils::log(&format!("GRAB: Action '{}' is not a template type (type={})", template_name, action.action_type()));
+                                        crate::utils::detailed_log("GRAB", &format!("GRAB: Action '{}' is not a template type (type={})", template_name, action.action_type()));
                                         false
                                     }
                                 } else {
-                                    crate::utils::log(&format!("GRAB: Action '{}' not found in unified actions", template_name));
+                                    crate::utils::detailed_log("GRAB", &format!("GRAB: Action '{}' not found in unified actions", template_name));
                                     false
                                 }
                             } else {
@@ -1769,7 +1769,7 @@ impl AnchorSelector {
                             
                             // Fall back to old templates if not found in actions
                             if !template_found {
-                                crate::utils::log(&format!("GRAB: Template '{}' not found in actions, checking old templates", template_name));
+                                crate::utils::detailed_log("GRAB", &format!("GRAB: Template '{}' not found in actions, checking old templates", template_name));
                                 if let Some(ref templates) = config.templates {
                                     if let Some(template) = templates.get(&template_name) {
                                         match crate::core::template_creation::process_template(template, &context, &config) {
@@ -1907,7 +1907,7 @@ impl AnchorSelector {
         
         // Log the rebuild header with timestamp and build ID
         crate::utils::log(&"=".repeat(80));
-        crate::utils::log(&format!("REBUILD SESSION: {}", build_id));
+        crate::utils::detailed_log("SYSTEM", &format!("REBUILD SESSION: {}", build_id));
         crate::utils::log(&format!("TIMESTAMP: {}", build_timestamp.format("%Y-%m-%d %H:%M:%S%.3f")));
         crate::utils::log(&"=".repeat(80));
         
@@ -1918,12 +1918,12 @@ impl AnchorSelector {
         println!("\n🔄 Step 1&2/3: Restarting server...");
         let server_restart_success = match crate::execute::activate_command_server(true) {
             Ok(()) => {
-                crate::utils::debug_log("REBUILD", "Server restart completed successfully");
+                crate::utils::detailed_log("REBUILD", "Server restart completed successfully");
                 println!("  ✅ Server restarted successfully");
                 true
             }
             Err(e) => {
-                crate::utils::debug_log("REBUILD", &format!("Server restart failed: {}", e));
+                crate::utils::detailed_log("REBUILD", &format!("Server restart failed: {}", e));
                 println!("  ⚠️  Server restart failed: {}", e);
                 println!("  ⚠️  Continuing with popup restart anyway...");
                 false
@@ -1948,15 +1948,15 @@ impl AnchorSelector {
                 .status() {
                 Ok(status) => {
                     if status.success() {
-                        crate::utils::debug_log("REBUILD", "Rescan via server completed successfully");
+                        crate::utils::detailed_log("REBUILD", "Rescan via server completed successfully");
                         println!("  ✅ Filesystem rescan completed");
                     } else {
-                        crate::utils::debug_log("REBUILD", "Rescan via server failed");
+                        crate::utils::detailed_log("REBUILD", "Rescan via server failed");
                         println!("  ❌ Filesystem rescan failed");
                     }
                 }
                 Err(e) => {
-                    crate::utils::debug_log("REBUILD", &format!("Failed to execute rescan: {}", e));
+                    crate::utils::detailed_log("REBUILD", &format!("Failed to execute rescan: {}", e));
                     println!("  ❌ Failed to start rescan: {}", e);
                 }
             }
@@ -1968,14 +1968,14 @@ impl AnchorSelector {
         // Get our current executable path - this will re-exec whatever is currently at this path
         if let Ok(current_exe) = std::env::current_exe() {
             println!("  📦 Re-executing: {}", current_exe.display());
-            crate::utils::debug_log("REBUILD", &format!("Re-executing popup at: {}", current_exe.display()));
+            crate::utils::detailed_log("REBUILD", &format!("Re-executing popup at: {}", current_exe.display()));
             
             // Launch the new popup instance (no args - it will run as normal GUI)
             match std::process::Command::new(&current_exe)
                 .spawn() {
                 Ok(_) => {
                     println!("  ✅ New popup instance launched");
-                    crate::utils::debug_log("REBUILD", "Successfully spawned new popup instance");
+                    crate::utils::detailed_log("REBUILD", "Successfully spawned new popup instance");
                     
                     // Exit this instance completely (not just hide)
                     println!("  👋 Exiting old popup instance...");
@@ -1983,12 +1983,12 @@ impl AnchorSelector {
                 }
                 Err(e) => {
                     println!("  ❌ Failed to restart popup: {}", e);
-                    crate::utils::debug_log("REBUILD", &format!("Failed to re-exec popup: {}", e));
+                    crate::utils::detailed_log("REBUILD", &format!("Failed to re-exec popup: {}", e));
                 }
             }
         } else {
             println!("  ⚠️  Could not determine executable path");
-            crate::utils::debug_log("REBUILD", "Could not get current executable path");
+            crate::utils::detailed_log("REBUILD", "Could not get current executable path");
         }
         
         println!("\n🎉 Rebuild completed successfully!");
@@ -2028,20 +2028,20 @@ impl AnchorSelector {
         while current_cmd.action == "alias" {
             // Prevent infinite loops
             if visited.contains(&current_cmd.command) {
-                utils::debug_log("SHOW_FOLDER", &format!("Circular alias detected for '{}', stopping resolution", current_cmd.command));
+                utils::detailed_log("SHOW_FOLDER", &format!("Circular alias detected for '{}', stopping resolution", current_cmd.command));
                 break;
             }
             visited.insert(current_cmd.command.clone());
             
-            utils::debug_log("SHOW_FOLDER", &format!("Resolving alias '{}' to target '{}'", current_cmd.command, current_cmd.arg));
+            utils::detailed_log("SHOW_FOLDER", &format!("Resolving alias '{}' to target '{}'", current_cmd.command, current_cmd.arg));
             
             // Find the target command
             if let Some(target) = all_commands.iter().find(|c| c.command == current_cmd.arg) {
-                utils::debug_log("SHOW_FOLDER", &format!("Alias resolved to: '{}' (action: {}, arg: {})", 
+                utils::detailed_log("SHOW_FOLDER", &format!("Alias resolved to: '{}' (action: {}, arg: {})", 
                     target.command, target.action, target.arg));
                 current_cmd = target;
             } else {
-                utils::debug_log("SHOW_FOLDER", &format!("Failed to resolve alias '{}' - target '{}' not found", current_cmd.command, current_cmd.arg));
+                utils::detailed_log("SHOW_FOLDER", &format!("Failed to resolve alias '{}' - target '{}' not found", current_cmd.command, current_cmd.arg));
                 break;
             }
         }
@@ -2054,14 +2054,14 @@ impl AnchorSelector {
         use crate::utils;
         
         let search_text = &self.popup_state.search_text;
-        utils::debug_log("SHOW_FOLDER", &format!("Triggered with search text: '{}'", search_text));
+        utils::detailed_log("SHOW_FOLDER", &format!("Triggered with search text: '{}'", search_text));
         
         // Get the current filtered commands from popup state
         let display_commands = self.popup_state.filtered_commands.clone();
-        utils::debug_log("SHOW_FOLDER", &format!("Found {} filtered commands", display_commands.len()));
+        utils::detailed_log("SHOW_FOLDER", &format!("Found {} filtered commands", display_commands.len()));
         
         if display_commands.is_empty() {
-            utils::debug_log("SHOW_FOLDER", "No filtered commands to show folder for");
+            utils::detailed_log("SHOW_FOLDER", "No filtered commands to show folder for");
             return;
         }
         
@@ -2070,26 +2070,26 @@ impl AnchorSelector {
         
         // Log first few commands for debugging
         for (i, cmd) in display_commands.iter().take(3).enumerate() {
-            utils::debug_log("SHOW_FOLDER", &format!("  Command {}: '{}' (action: {}, arg: {})", 
+            utils::detailed_log("SHOW_FOLDER", &format!("  Command {}: '{}' (action: {}, arg: {})", 
                 i, cmd.command, cmd.action, cmd.arg));
         }
         
         // Use the currently selected command and extract its folder
         let selected_idx = self.selected_index();
         if selected_idx >= display_commands.len() {
-            utils::debug_log("SHOW_FOLDER", &format!("Selected index {} is out of bounds ({})", selected_idx, display_commands.len()));
+            utils::detailed_log("SHOW_FOLDER", &format!("Selected index {} is out of bounds ({})", selected_idx, display_commands.len()));
             return;
         }
         
         let cmd = &display_commands[selected_idx];
-        utils::debug_log("SHOW_FOLDER", &format!("Using selected command at index {}: '{}'", selected_idx, cmd.command));
+        utils::detailed_log("SHOW_FOLDER", &format!("Using selected command at index {}: '{}'", selected_idx, cmd.command));
         
         if PopupState::is_separator_command(cmd) {
-            utils::debug_log("SHOW_FOLDER", &format!("Selected command is a separator: '{}'", cmd.command));
+            utils::detailed_log("SHOW_FOLDER", &format!("Selected command is a separator: '{}'", cmd.command));
             return;
         }
             
-        utils::debug_log("SHOW_FOLDER", &format!("Processing command: '{}' (action: {})", cmd.command, cmd.action));
+        utils::detailed_log("SHOW_FOLDER", &format!("Processing command: '{}' (action: {})", cmd.command, cmd.action));
         
         // Recursively resolve aliases
         let resolved_cmd = self.resolve_aliases_recursively(cmd, &all_commands);
@@ -2097,14 +2097,14 @@ impl AnchorSelector {
         // Extract folder path using the command's built-in method
         let folder_path = if let Some(abs_path) = resolved_cmd.get_absolute_folder_path(&self.popup_state.config) {
             let path_str = abs_path.to_string_lossy().to_string();
-            utils::debug_log("SHOW_FOLDER", &format!("Found {} action, extracted folder: {}", resolved_cmd.action, path_str));
+            utils::detailed_log("SHOW_FOLDER", &format!("Found {} action, extracted folder: {}", resolved_cmd.action, path_str));
             Some(path_str)
         } else if resolved_cmd.action == "alias" {
             // This shouldn't happen since we recursively resolved aliases above
-            utils::debug_log("SHOW_FOLDER", &format!("Unresolved alias found: '{}'", resolved_cmd.command));
+            utils::detailed_log("SHOW_FOLDER", &format!("Unresolved alias found: '{}'", resolved_cmd.command));
             None
         } else {
-            utils::debug_log("SHOW_FOLDER", &format!("Command '{}' has non-folder action: {}", resolved_cmd.command, resolved_cmd.action));
+            utils::detailed_log("SHOW_FOLDER", &format!("Command '{}' has non-folder action: {}", resolved_cmd.command, resolved_cmd.action));
             None
         };
         
@@ -2118,7 +2118,7 @@ impl AnchorSelector {
             let _ = crate::execute::execute_on_server(&folder_action);
             utils::log(&format!("SHOW_FOLDER: Sent folder command to server"));
         } else {
-            utils::debug_log("SHOW_FOLDER", &format!("No folder found for selected command: '{}'", cmd.command));
+            utils::detailed_log("SHOW_FOLDER", &format!("No folder found for selected command: '{}'", cmd.command));
         }
     }
     
@@ -2133,14 +2133,14 @@ impl AnchorSelector {
         let display_commands = self.popup_state.filtered_commands.clone();
         
         if display_commands.is_empty() || selected_index >= display_commands.len() {
-            utils::debug_log("SHOW_CONTACT", "No commands available or invalid selection");
+            utils::detailed_log("SHOW_CONTACT", "No commands available or invalid selection");
             return;
         }
         
         // Get the selected command
         let selected_command = &display_commands[selected_index];
         
-        utils::debug_log("SHOW_CONTACT", &format!("Processing command: {}", selected_command.command));
+        utils::detailed_log("SHOW_CONTACT", &format!("Processing command: {}", selected_command.command));
         
         // Resolve aliases to get the actual command
         let all_commands = self.popup_state.get_commands();
@@ -2153,7 +2153,7 @@ impl AnchorSelector {
             resolved_cmd.command.clone()
         };
         
-        utils::debug_log("SHOW_CONTACT", &format!("Contact name after stripping @: {}", contact_name));
+        utils::detailed_log("SHOW_CONTACT", &format!("Contact name after stripping @: {}", contact_name));
         
         // Execute the contact action through the command server
         // Create a command object to send to the server
@@ -2165,7 +2165,7 @@ impl AnchorSelector {
             flags: String::new(),
         };
         
-        utils::log(&format!("SHOW_CONTACT: Opening contact: {}", contact_name));
+        utils::detailed_log("SHOW_CONTACT", &format!("SHOW_CONTACT: Opening contact: {}", contact_name));
         
         // Execute via server
         let contact_action = crate::execute::command_to_action(&contact_cmd);
@@ -2185,7 +2185,7 @@ impl AnchorSelector {
         let display_commands = self.popup_state.filtered_commands.clone();
         
         if display_commands.is_empty() || selected_index >= display_commands.len() {
-            utils::debug_log("TMUX_ACTIVATE", "No commands available or invalid selection");
+            utils::detailed_log("TMUX_ACTIVATE", "No commands available or invalid selection");
             return;
         }
         
@@ -2198,11 +2198,11 @@ impl AnchorSelector {
         
         // Check if it's an anchor
         if resolved_cmd.action != "anchor" {
-            utils::debug_log("TMUX_ACTIVATE", &format!("Resolved command is not an anchor: {}", resolved_cmd.action));
+            utils::detailed_log("TMUX_ACTIVATE", &format!("Resolved command is not an anchor: {}", resolved_cmd.action));
             return;
         }
         
-        utils::debug_log("TMUX_ACTIVATE", &format!("Processing anchor: {} ({})", resolved_cmd.command, resolved_cmd.arg));
+        utils::detailed_log("TMUX_ACTIVATE", &format!("Processing anchor: {} ({})", resolved_cmd.command, resolved_cmd.arg));
         
         // Create a synthetic command to execute through the launcher
         // This will be recognized as a JavaScript action because tmux_activate is in listed_actions
@@ -2220,13 +2220,13 @@ impl AnchorSelector {
         
         // Execute using the same path as normal command execution
         // This will go through the launcher which recognizes JavaScript actions
-        utils::debug_log("TMUX_ACTIVATE", &format!("Executing through launcher: {} {}", tmux_cmd.action, tmux_cmd.arg));
+        utils::detailed_log("TMUX_ACTIVATE", &format!("Executing through launcher: {} {}", tmux_cmd.action, tmux_cmd.arg));
         
         // Use the server for consistent execution (like all other commands)
         // Execute the action
         let tmux_action = crate::execute::command_to_action(&tmux_cmd);
         let _ = crate::execute::execute_on_server(&tmux_action);
-        utils::debug_log("TMUX_ACTIVATE", "Executed tmux_activate via server");
+        utils::detailed_log("TMUX_ACTIVATE", "Executed tmux_activate via server");
         // Close the popup after successful execution
         self.should_exit = true;
     }
@@ -2242,14 +2242,14 @@ impl AnchorSelector {
         if let Some(settings) = &self.popup_state.config.launcher_settings {
             if let Some(use_js) = &settings.use_javascript_tmux_activation {
                 if use_js == "true" {
-                    utils::log("🚀 TMUX: Using JavaScript TMUX implementation");
+                    utils::detailed_log("TMUX", &format!("🚀 TMUX: Using JavaScript TMUX implementation"));
                     
                     // Get selected command index
                     let selected_index = self.selected_index();
                     let display_commands = self.popup_state.filtered_commands.clone();
                     
                     if display_commands.is_empty() || selected_index >= display_commands.len() {
-                        utils::log("❌ TMUX: No commands available for JavaScript");
+                        utils::detailed_log("TMUX", &format!("❌ TMUX: No commands available for JavaScript"));
                         return;
                     }
                     
@@ -2258,7 +2258,7 @@ impl AnchorSelector {
                     let selected_command = &display_commands[selected_index];
                     let resolved_cmd = self.resolve_aliases_recursively(selected_command, &all_commands);
                     
-                    utils::log(&format!("📋 TMUX: Selected: '{}', Resolved: '{}'", 
+                    utils::detailed_log("TMUX", &format!("📋 TMUX: Selected: '{}', Resolved: '{}'", 
                         selected_command.command, resolved_cmd.command));
                     
                     // Create command to execute JavaScript action
@@ -2270,7 +2270,7 @@ impl AnchorSelector {
                         flags: String::new(),
                     };
                     
-                    utils::log(&format!("🎯 TMUX: Executing JavaScript action with arg: {}", js_cmd.arg));
+                    utils::detailed_log("TMUX", &format!("🎯 TMUX: Executing JavaScript action with arg: {}", js_cmd.arg));
                     let js_action = crate::execute::command_to_action(&js_cmd);
                     let _ = crate::execute::execute_on_server(&js_action);
                     
@@ -2282,7 +2282,7 @@ impl AnchorSelector {
         }
         
         // Original Rust implementation for TMUX session activation
-        utils::log("🦀 TMUX: Using Rust implementation for TMUX session activation");
+        utils::detailed_log("TMUX", &format!("🦀 TMUX: Using Rust implementation for TMUX session activation"));
         
         // Get selected command index
         let selected_index = self.selected_index();
@@ -2291,7 +2291,7 @@ impl AnchorSelector {
         let display_commands = self.popup_state.filtered_commands.clone();
         
         if display_commands.is_empty() || selected_index >= display_commands.len() {
-            utils::log("TMUX: No commands available or invalid selection");
+            utils::detailed_log("TMUX", &format!("TMUX: No commands available or invalid selection"));
             return;
         }
         
@@ -2300,39 +2300,39 @@ impl AnchorSelector {
         let selected_command = &display_commands[selected_index];
         
         // DEBUG: Log the selected command details
-        utils::log(&format!("TMUX: Selected command: '{}'", selected_command.command));
-        utils::log(&format!("TMUX: Selected action: '{}'", selected_command.action));
-        utils::log(&format!("TMUX: Selected arg: '{}'", selected_command.arg));
-        utils::log(&format!("TMUX: Selected patch: '{}'", selected_command.patch));
-        utils::log(&format!("TMUX: Selected flags: '{}'", selected_command.flags));
+        utils::detailed_log("TMUX", &format!("TMUX: Selected command: '{}'", selected_command.command));
+        utils::detailed_log("TMUX", &format!("TMUX: Selected action: '{}'", selected_command.action));
+        utils::detailed_log("TMUX", &format!("TMUX: Selected arg: '{}'", selected_command.arg));
+        utils::detailed_log("TMUX", &format!("TMUX: Selected patch: '{}'", selected_command.patch));
+        utils::detailed_log("TMUX", &format!("TMUX: Selected flags: '{}'", selected_command.flags));
         
         let resolved_cmd = self.resolve_aliases_recursively(selected_command, &all_commands);
         
         // DEBUG: Log resolved command if different
         if resolved_cmd.command != selected_command.command {
-            utils::log(&format!("TMUX: Resolved to: '{}'", resolved_cmd.command));
-            utils::log(&format!("TMUX: Resolved action: '{}'", resolved_cmd.action));
-            utils::log(&format!("TMUX: Resolved arg: '{}'", resolved_cmd.arg));
+            utils::detailed_log("TMUX", &format!("TMUX: Resolved to: '{}'", resolved_cmd.command));
+            utils::detailed_log("TMUX", &format!("TMUX: Resolved action: '{}'", resolved_cmd.action));
+            utils::detailed_log("TMUX", &format!("TMUX: Resolved arg: '{}'", resolved_cmd.arg));
         }
         
         // Extract folder path
-        utils::log("TMUX: Attempting to extract folder path...");
+        utils::detailed_log("TMUX", &format!("TMUX: Attempting to extract folder path..."));
         let folder_path = if let Some(abs_path) = resolved_cmd.get_absolute_folder_path(&self.popup_state.config) {
             abs_path.to_string_lossy().to_string()
         } else {
-            utils::log(&format!("TMUX: ERROR - Could not extract folder path from command: '{}'", resolved_cmd.command));
-            utils::log(&format!("TMUX: Command details - action: '{}', arg: '{}'", resolved_cmd.action, resolved_cmd.arg));
+            utils::detailed_log("TMUX", &format!("TMUX: ERROR - Could not extract folder path from command: '{}'", resolved_cmd.command));
+            utils::detailed_log("TMUX", &format!("TMUX: Command details - action: '{}', arg: '{}'", resolved_cmd.action, resolved_cmd.arg));
             return;
         };
         
-        utils::log(&format!("TMUX: Successfully extracted folder path: '{}'", folder_path));
+        utils::detailed_log("TMUX", &format!("TMUX: Successfully extracted folder path: '{}'", folder_path));
         
         // Direct Rust implementation of TMUX activation (temporary - will be replaced with JavaScript)
         // This is based on the working Python anchor script logic
         
         // 1. Open folder in Finder
         //if let Err(e) = Command::new("open").arg(&folder_path).spawn() {
-        //    utils::log(&format!("TMUX: Failed to open folder: {}", e));
+        //    utils::detailed_log("TMUX", &format!("TMUX: Failed to open folder: {}", e));
         //}
         
         // 2. Open in Obsidian if it's in the vault
@@ -2345,14 +2345,14 @@ impl AnchorSelector {
         //    if let Some(vault_name) = self.popup_state.config.launcher_settings.as_ref()
         //        .and_then(|ls| ls.obsidian_vault_name.as_ref()) {
         //        // TODO: Open in Obsidian
-        //        utils::log(&format!("TMUX: Would open in Obsidian vault: {}", vault_name));
+        //        utils::detailed_log("TMUX", &format!("TMUX: Would open in Obsidian vault: {}", vault_name));
         //    }
         //}
         
         // 3. Check for .tmuxp.yaml and activate TMUX session
         let tmuxp_path = Path::new(&folder_path).join(".tmuxp.yaml");
         if tmuxp_path.exists() {
-            utils::log(&format!("TMUX: Found .tmuxp.yaml at {:?}", tmuxp_path));
+            utils::detailed_log("TMUX", &format!("TMUX: Found .tmuxp.yaml at {:?}", tmuxp_path));
             
             // Parse the .tmuxp.yaml file to get the actual session name
             utils::detailed_log("TMUX_RUST", &format!("Line 2354: Parsing .tmuxp.yaml to get session_name"));
@@ -2373,11 +2373,11 @@ impl AnchorSelector {
                     }
                     
                     if let Some(name) = found_session_name {
-                        utils::log(&format!("TMUX: Using session name from .tmuxp.yaml: '{}'", name));
+                        utils::detailed_log("TMUX", &format!("TMUX: Using session name from .tmuxp.yaml: '{}'", name));
                         name
                     } else {
                         // No session_name found in YAML - this is an error
-                        utils::log("TMUX: ERROR - No session_name found in .tmuxp.yaml");
+                        utils::detailed_log("TMUX", &format!("TMUX: ERROR - No session_name found in .tmuxp.yaml"));
                         utils::detailed_log("TMUX_RUST", "Line 2373: ERROR - .tmuxp.yaml missing session_name field");
                         self.show_error_dialog(&format!(
                             "The .tmuxp.yaml file at:\n{}\n\nis missing a 'session_name' field.\n\nPlease add:\nsession_name: <name>\n\nto the file.",
@@ -2387,7 +2387,7 @@ impl AnchorSelector {
                     }
                 }
                 Err(e) => {
-                    utils::log(&format!("TMUX: ERROR - Failed to read .tmuxp.yaml: {}", e));
+                    utils::detailed_log("TMUX", &format!("TMUX: ERROR - Failed to read .tmuxp.yaml: {}", e));
                     utils::detailed_log("TMUX_RUST", &format!("Line 2382: Failed to read .tmuxp.yaml: {}", e));
                     self.show_error_dialog(&format!(
                         "Failed to read .tmuxp.yaml file:\n{}\n\nError: {}",
@@ -2398,7 +2398,7 @@ impl AnchorSelector {
                 }
             };
             
-            utils::log(&format!("TMUX: Session name from YAML: '{}'", session_name));
+            utils::detailed_log("TMUX", &format!("TMUX: Session name from YAML: '{}'", session_name));
             
             // Check if session exists
             let check_session = Command::new("/opt/homebrew/bin/tmux")
@@ -2408,7 +2408,7 @@ impl AnchorSelector {
             let session_exists = check_session.map(|o| o.status.success()).unwrap_or(false);
             
             if !session_exists {
-                utils::log(&format!("TMUX: Creating new tmux session '{}'", session_name));
+                utils::detailed_log("TMUX", &format!("TMUX: Creating new tmux session '{}'", session_name));
                 utils::detailed_log("TMUX_RUST", &format!("Line 2384: Session '{}' does not exist, creating with tmuxp", session_name));
                 
                 // First, let's see what sessions exist before we create
@@ -2443,20 +2443,20 @@ impl AnchorSelector {
                         utils::detailed_log("TMUX_RUST", &format!("Line 2410: tmuxp stderr: '{}'", stderr));
                         
                         if !output.status.success() {
-                            utils::log(&format!("TMUX: tmuxp failed with exit code {:?}", output.status.code()));
-                            utils::log(&format!("TMUX: tmuxp stderr: {}", stderr));
-                            utils::log(&format!("TMUX: tmuxp stdout: {}", stdout));
+                            utils::detailed_log("TMUX", &format!("TMUX: tmuxp failed with exit code {:?}", output.status.code()));
+                            utils::detailed_log("TMUX", &format!("TMUX: tmuxp stderr: {}", stderr));
+                            utils::detailed_log("TMUX", &format!("TMUX: tmuxp stdout: {}", stdout));
                             utils::detailed_log("TMUX_RUST", "Line 2415: tmuxp FAILED, returning");
                             return;
                         }
                         
                         // Log output even on success to debug issues
-                        utils::log(&format!("TMUX: tmuxp completed with exit code 0"));
+                        utils::detailed_log("TMUX", &format!("TMUX: tmuxp completed with exit code 0"));
                         if !stdout.is_empty() {
-                            utils::log(&format!("TMUX: tmuxp stdout: {}", stdout));
+                            utils::detailed_log("TMUX", &format!("TMUX: tmuxp stdout: {}", stdout));
                         }
                         if !stderr.is_empty() {
-                            utils::log(&format!("TMUX: tmuxp stderr: {}", stderr));
+                            utils::detailed_log("TMUX", &format!("TMUX: tmuxp stderr: {}", stderr));
                         }
                         
                         // Check what sessions exist after tmuxp
@@ -2481,30 +2481,30 @@ impl AnchorSelector {
                             utils::detailed_log("TMUX_RUST", &format!("Line 2443: Verify stderr: '{}'", verify_stderr));
                             
                             if v.status.success() {
-                                utils::log(&format!("TMUX: Verified session '{}' exists", session_name));
+                                utils::detailed_log("TMUX", &format!("TMUX: Verified session '{}' exists", session_name));
                                 
                                 // Run claude --continue in the new session
                                 // Add a small delay to ensure the window is created
                                 std::thread::sleep(std::time::Duration::from_millis(500));
-                                utils::log(&format!("TMUX: Running claude --continue in new tmuxp session '{}'", session_name));
+                                utils::detailed_log("TMUX", &format!("TMUX: Running claude --continue in new tmuxp session '{}'", session_name));
                                 match Command::new("/opt/homebrew/bin/tmux")
                                     .args(&["send-keys", "-t", &session_name, "claude --continue", "C-m"])
                                     .output() {
                                     Ok(output) => {
                                         if output.status.success() {
-                                            utils::log(&format!("TMUX: Successfully sent claude --continue to tmuxp session '{}'", session_name));
+                                            utils::detailed_log("TMUX", &format!("TMUX: Successfully sent claude --continue to tmuxp session '{}'", session_name));
                                         } else {
-                                            utils::log(&format!("TMUX: Failed to send claude --continue to tmuxp session: {}", String::from_utf8_lossy(&output.stderr)));
+                                            utils::detailed_log("TMUX", &format!("TMUX: Failed to send claude --continue to tmuxp session: {}", String::from_utf8_lossy(&output.stderr)));
                                         }
                                     }
                                     Err(e) => {
-                                        utils::log(&format!("TMUX: Error sending claude --continue to tmuxp session: {}", e));
+                                        utils::detailed_log("TMUX", &format!("TMUX: Error sending claude --continue to tmuxp session: {}", e));
                                     }
                                 }
                             } else {
                                 // tmuxp said it succeeded but session wasn't created - this is an error
-                                utils::log(&format!("TMUX: ERROR - Session '{}' was NOT created despite tmuxp reporting success", session_name));
-                                utils::log(&format!("TMUX: tmux has-session stderr: {}", verify_stderr));
+                                utils::detailed_log("TMUX", &format!("TMUX: ERROR - Session '{}' was NOT created despite tmuxp reporting success", session_name));
+                                utils::detailed_log("TMUX", &format!("TMUX: tmux has-session stderr: {}", verify_stderr));
                                 utils::detailed_log("TMUX_RUST", &format!("Line 2479: CRITICAL ERROR - tmuxp succeeded but session '{}' doesn't exist", session_name));
                                 
                                 // Let's check what's in the .tmuxp.yaml file
@@ -2550,19 +2550,19 @@ impl AnchorSelector {
                         }
                     }
                     Err(e) => {
-                        utils::log(&format!("TMUX: Failed to run tmuxp: {}", e));
+                        utils::detailed_log("TMUX", &format!("TMUX: Failed to run tmuxp: {}", e));
                         return;
                     }
                 }
                 // Give tmux a moment to stabilize
                 std::thread::sleep(std::time::Duration::from_millis(100));
             } else {
-                utils::log(&format!("TMUX: Session '{}' already exists", session_name));
+                utils::detailed_log("TMUX", &format!("TMUX: Session '{}' already exists", session_name));
             }
             
             // Now we need to switch to the session in an existing TMUX client
             // First check if there's a TMUX client running anywhere
-            utils::log(&format!("TMUX: Checking for existing TMUX clients"));
+            utils::detailed_log("TMUX", &format!("TMUX: Checking for existing TMUX clients"));
             
             // Check if any tmux clients are attached
             let list_clients = Command::new("/opt/homebrew/bin/tmux")
@@ -2574,14 +2574,14 @@ impl AnchorSelector {
                     let stdout = String::from_utf8_lossy(&output.stdout);
                     let has = output.status.success() && !stdout.trim().is_empty();
                     if has {
-                        utils::log(&format!("TMUX: Found TMUX clients: {}", stdout.trim()));
+                        utils::detailed_log("TMUX", &format!("TMUX: Found TMUX clients: {}", stdout.trim()));
                     } else {
-                        utils::log("TMUX: No TMUX clients found");
+                        utils::detailed_log("TMUX", &format!("TMUX: No TMUX clients found"));
                     }
                     has
                 }
                 Err(e) => {
-                    utils::log(&format!("TMUX: Failed to list clients: {}", e));
+                    utils::detailed_log("TMUX", &format!("TMUX: Failed to list clients: {}", e));
                     false
                 }
             };
@@ -2594,13 +2594,13 @@ impl AnchorSelector {
                     tmux attach-session -t '{}'",
                     session_name, session_name
                 );
-                utils::log(&format!("TMUX: {}", error_msg));
+                utils::detailed_log("TMUX", &format!("TMUX: {}", error_msg));
                 self.show_error_dialog(&error_msg);
                 return;
             }
             
             // There are TMUX clients, so we can switch
-            utils::log(&format!("TMUX: Switching to session '{}' in existing client", session_name));
+            utils::detailed_log("TMUX", &format!("TMUX: Switching to session '{}' in existing client", session_name));
             
             // Use switch-client which will switch in any attached client
             match Command::new("/opt/homebrew/bin/tmux")
@@ -2608,10 +2608,10 @@ impl AnchorSelector {
                 .output() {
                 Ok(output) => {
                     if output.status.success() {
-                        utils::log(&format!("TMUX: Successfully switched to session '{}'", session_name));
+                        utils::detailed_log("TMUX", &format!("TMUX: Successfully switched to session '{}'", session_name));
                     } else {
                         let stderr = String::from_utf8_lossy(&output.stderr);
-                        utils::log(&format!("TMUX: Failed to switch: {}", stderr));
+                        utils::detailed_log("TMUX", &format!("TMUX: Failed to switch: {}", stderr));
                         self.show_error_dialog(&format!(
                             "Failed to switch to TMUX session '{}': {}",
                             session_name, stderr
@@ -2619,7 +2619,7 @@ impl AnchorSelector {
                     }
                 }
                 Err(e) => {
-                    utils::log(&format!("TMUX: Failed to run switch-client: {}", e));
+                    utils::detailed_log("TMUX", &format!("TMUX: Failed to run switch-client: {}", e));
                     self.show_error_dialog(&format!(
                         "Failed to switch to TMUX session '{}': {}",
                         session_name, e
@@ -2628,7 +2628,7 @@ impl AnchorSelector {
             }
                 
         } else {
-            utils::log("TMUX: No .tmuxp.yaml found - creating basic TMUX session");
+            utils::detailed_log("TMUX", &format!("TMUX: No .tmuxp.yaml found - creating basic TMUX session"));
             
             // Extract folder name for session name
             let folder_name = Path::new(&folder_path)
@@ -2644,7 +2644,7 @@ impl AnchorSelector {
                 .replace('[', "_")
                 .replace(']', "_");
             
-            utils::log(&format!("TMUX: Creating basic session '{}' in folder '{}'", session_name, folder_path));
+            utils::detailed_log("TMUX", &format!("TMUX: Creating basic session '{}' in folder '{}'", session_name, folder_path));
             
             // Check if session already exists
             let check_session = Command::new("/opt/homebrew/bin/tmux")
@@ -2655,7 +2655,7 @@ impl AnchorSelector {
             
             if !session_exists {
                 // Create new basic tmux session (shell will be started, claude command sent after)
-                utils::log(&format!("TMUX: Running: tmux new-session -d -s '{}' -c '{}'", 
+                utils::detailed_log("TMUX", &format!("TMUX: Running: tmux new-session -d -s '{}' -c '{}'", 
                     session_name, folder_path));
                 
                 // First, let's list all existing sessions before creation
@@ -2663,7 +2663,7 @@ impl AnchorSelector {
                     .args(&["list-sessions"])
                     .output() {
                     let sessions_before = String::from_utf8_lossy(&list_before.stdout);
-                    utils::log(&format!("TMUX: Sessions BEFORE creation:\n{}", 
+                    utils::detailed_log("TMUX", &format!("TMUX: Sessions BEFORE creation:\n{}", 
                         if sessions_before.trim().is_empty() { "(no sessions)" } else { sessions_before.trim() }));
                 }
                 
@@ -2676,12 +2676,12 @@ impl AnchorSelector {
                         // Log the output regardless of success/failure
                         let stdout = String::from_utf8_lossy(&output.stdout);
                         let stderr = String::from_utf8_lossy(&output.stderr);
-                        utils::log(&format!("TMUX: new-session exit code: {:?}", output.status.code()));
+                        utils::detailed_log("TMUX", &format!("TMUX: new-session exit code: {:?}", output.status.code()));
                         if !stdout.is_empty() {
-                            utils::log(&format!("TMUX: new-session stdout: {}", stdout));
+                            utils::detailed_log("TMUX", &format!("TMUX: new-session stdout: {}", stdout));
                         }
                         if !stderr.is_empty() {
-                            utils::log(&format!("TMUX: new-session stderr: {}", stderr));
+                            utils::detailed_log("TMUX", &format!("TMUX: new-session stderr: {}", stderr));
                         }
                         
                         // List sessions after attempted creation
@@ -2689,23 +2689,23 @@ impl AnchorSelector {
                             .args(&["list-sessions"])
                             .output() {
                             let sessions_after = String::from_utf8_lossy(&list_after.stdout);
-                            utils::log(&format!("TMUX: Sessions AFTER creation:\n{}", 
+                            utils::detailed_log("TMUX", &format!("TMUX: Sessions AFTER creation:\n{}", 
                                 if sessions_after.trim().is_empty() { "(no sessions)" } else { sessions_after.trim() }));
                         }
                         
                         if output.status.success() {
-                            utils::log(&format!("TMUX: Basic session '{}' creation reported success", session_name));
+                            utils::detailed_log("TMUX", &format!("TMUX: Basic session '{}' creation reported success", session_name));
                             
                             // Check if session immediately exists without delay
                             if let Ok(immediate_check) = Command::new("/opt/homebrew/bin/tmux")
                                 .args(&["has-session", "-t", &session_name])
                                 .output() {
                                 if immediate_check.status.success() {
-                                    utils::log(&format!("TMUX: ✅ Session '{}' exists immediately after creation", session_name));
+                                    utils::detailed_log("TMUX", &format!("TMUX: ✅ Session '{}' exists immediately after creation", session_name));
                                 } else {
-                                    utils::log(&format!("TMUX: ❌ Session '{}' NOT found immediately after creation", session_name));
+                                    utils::detailed_log("TMUX", &format!("TMUX: ❌ Session '{}' NOT found immediately after creation", session_name));
                                     let stderr = String::from_utf8_lossy(&immediate_check.stderr);
-                                    utils::log(&format!("TMUX: Immediate check stderr: {}", stderr));
+                                    utils::detailed_log("TMUX", &format!("TMUX: Immediate check stderr: {}", stderr));
                                 }
                             }
                             
@@ -2713,50 +2713,50 @@ impl AnchorSelector {
                             std::thread::sleep(std::time::Duration::from_millis(500));
                             
                             // Verify it was created - with more detailed logging
-                            utils::log(&format!("TMUX: Verifying session '{}' exists...", session_name));
+                            utils::detailed_log("TMUX", &format!("TMUX: Verifying session '{}' exists...", session_name));
                             match Command::new("/opt/homebrew/bin/tmux")
                                 .args(&["has-session", "-t", &session_name])
                                 .output() {
                                 Ok(verify) => {
                                     let verify_stdout = String::from_utf8_lossy(&verify.stdout);
                                     let verify_stderr = String::from_utf8_lossy(&verify.stderr);
-                                    utils::log(&format!("TMUX: has-session exit code: {:?}", verify.status.code()));
+                                    utils::detailed_log("TMUX", &format!("TMUX: has-session exit code: {:?}", verify.status.code()));
                                     if !verify_stdout.is_empty() {
-                                        utils::log(&format!("TMUX: has-session stdout: {}", verify_stdout));
+                                        utils::detailed_log("TMUX", &format!("TMUX: has-session stdout: {}", verify_stdout));
                                     }
                                     if !verify_stderr.is_empty() {
-                                        utils::log(&format!("TMUX: has-session stderr: {}", verify_stderr));
+                                        utils::detailed_log("TMUX", &format!("TMUX: has-session stderr: {}", verify_stderr));
                                     }
                                     
                                     if verify.status.success() {
-                                        utils::log(&format!("TMUX: ✅ Session '{}' verified!", session_name));
+                                        utils::detailed_log("TMUX", &format!("TMUX: ✅ Session '{}' verified!", session_name));
                                         
                                         // Now send the claude --continue command to the session
-                                        utils::log(&format!("TMUX: Sending 'claude --continue' to session '{}'", session_name));
+                                        utils::detailed_log("TMUX", &format!("TMUX: Sending 'claude --continue' to session '{}'", session_name));
                                         match Command::new("/opt/homebrew/bin/tmux")
                                             .args(&["send-keys", "-t", &session_name, "claude --continue", "C-m"])
                                             .output() {
                                             Ok(send_output) => {
                                                 if send_output.status.success() {
-                                                    utils::log(&format!("TMUX: ✅ Successfully sent claude command to session '{}'", session_name));
+                                                    utils::detailed_log("TMUX", &format!("TMUX: ✅ Successfully sent claude command to session '{}'", session_name));
                                                 } else {
                                                     let send_stderr = String::from_utf8_lossy(&send_output.stderr);
-                                                    utils::log(&format!("TMUX: ❌ Failed to send claude command: {}", send_stderr));
+                                                    utils::detailed_log("TMUX", &format!("TMUX: ❌ Failed to send claude command: {}", send_stderr));
                                                 }
                                             }
                                             Err(e) => {
-                                                utils::log(&format!("TMUX: Error sending claude command: {}", e));
+                                                utils::detailed_log("TMUX", &format!("TMUX: Error sending claude command: {}", e));
                                             }
                                         }
                                     } else {
                                         // Session doesn't exist despite tmux new-session reporting success
-                                        utils::log(&format!("TMUX: ❌ Session '{}' NOT found after creation!", session_name));
+                                        utils::detailed_log("TMUX", &format!("TMUX: ❌ Session '{}' NOT found after creation!", session_name));
                                         
                                         // Check if stderr contains a specific error
                                         if verify_stderr.contains("duplicate session") {
-                                            utils::log("TMUX: ERROR - Duplicate session name detected");
+                                            utils::detailed_log("TMUX", &format!("TMUX: ERROR - Duplicate session name detected"));
                                         } else if verify_stderr.contains("server not found") {
-                                            utils::log("TMUX: ERROR - No TMUX server running");
+                                            utils::detailed_log("TMUX", &format!("TMUX: ERROR - No TMUX server running"));
                                         }
                                         
                                         // Try to get more info about what's wrong
@@ -2765,34 +2765,34 @@ impl AnchorSelector {
                                             .output() {
                                             let info_out = String::from_utf8_lossy(&info.stderr);
                                             if !info_out.is_empty() {
-                                                utils::log(&format!("TMUX: tmux info stderr: {}", info_out));
+                                                utils::detailed_log("TMUX", &format!("TMUX: tmux info stderr: {}", info_out));
                                             }
                                         }
                                     }
                                 }
                                 Err(e) => {
-                                    utils::log(&format!("TMUX: Error running has-session: {}", e));
+                                    utils::detailed_log("TMUX", &format!("TMUX: Error running has-session: {}", e));
                                 }
                             }
                         } else {
                             let stderr = String::from_utf8_lossy(&output.stderr);
-                            utils::log(&format!("TMUX: Failed to create session: {}", stderr));
+                            utils::detailed_log("TMUX", &format!("TMUX: Failed to create session: {}", stderr));
                             self.show_error_dialog(&format!("Failed to create TMUX session: {}", stderr));
                             return;
                         }
                     }
                     Err(e) => {
-                        utils::log(&format!("TMUX: Error executing tmux command: {}", e));
+                        utils::detailed_log("TMUX", &format!("TMUX: Error executing tmux command: {}", e));
                         self.show_error_dialog(&format!("Failed to execute tmux: {}", e));
                         return;
                     }
                 }
             } else {
-                utils::log(&format!("TMUX: Session '{}' already exists", session_name));
+                utils::detailed_log("TMUX", &format!("TMUX: Session '{}' already exists", session_name));
             }
             
             // Now switch to the session
-            utils::log(&format!("TMUX: Checking for existing TMUX clients"));
+            utils::detailed_log("TMUX", &format!("TMUX: Checking for existing TMUX clients"));
             
             let list_clients = Command::new("/opt/homebrew/bin/tmux")
                 .args(&["list-clients"])
@@ -2803,35 +2803,35 @@ impl AnchorSelector {
                     let stdout = String::from_utf8_lossy(&output.stdout);
                     let has = output.status.success() && !stdout.trim().is_empty();
                     if has {
-                        utils::log(&format!("TMUX: Found TMUX clients: {}", stdout.trim()));
+                        utils::detailed_log("TMUX", &format!("TMUX: Found TMUX clients: {}", stdout.trim()));
                     } else {
-                        utils::log("TMUX: No TMUX clients found");
+                        utils::detailed_log("TMUX", &format!("TMUX: No TMUX clients found"));
                     }
                     has
                 }
                 Err(e) => {
-                    utils::log(&format!("TMUX: Failed to list clients: {}", e));
+                    utils::detailed_log("TMUX", &format!("TMUX: Failed to list clients: {}", e));
                     false
                 }
             };
             
             if has_clients {
                 // Switch to the session
-                utils::log(&format!("TMUX: Switching to session '{}'", session_name));
+                utils::detailed_log("TMUX", &format!("TMUX: Switching to session '{}'", session_name));
                 
                 match Command::new("/opt/homebrew/bin/tmux")
                     .args(&["switch-client", "-t", &session_name])
                     .output() {
                     Ok(output) => {
                         if output.status.success() {
-                            utils::log(&format!("TMUX: Successfully switched to session '{}'", session_name));
+                            utils::detailed_log("TMUX", &format!("TMUX: Successfully switched to session '{}'", session_name));
                         } else {
                             let stderr = String::from_utf8_lossy(&output.stderr);
-                            utils::log(&format!("TMUX: Failed to switch: {}", stderr));
+                            utils::detailed_log("TMUX", &format!("TMUX: Failed to switch: {}", stderr));
                         }
                     }
                     Err(e) => {
-                        utils::log(&format!("TMUX: Error switching: {}", e));
+                        utils::detailed_log("TMUX", &format!("TMUX: Error switching: {}", e));
                     }
                 }
             } else {
@@ -2840,7 +2840,7 @@ impl AnchorSelector {
                     "TMUX session '{}' created.\nOpen a terminal and run:\ntmux attach-session -t '{}'",
                     session_name, session_name
                 );
-                utils::log(&format!("TMUX: {}", msg));
+                utils::detailed_log("TMUX", &format!("TMUX: {}", msg));
                 self.show_error_dialog(&msg);
             }
             
@@ -2929,13 +2929,13 @@ fn get_actual_screen_dimensions() -> (f32, f32) {
         let display = CGDisplay::main();
         let width = display.pixels_wide() as f32;
         let height = display.pixels_high() as f32;
-        crate::utils::log(&format!("🔵 SCREEN: Got actual screen dimensions from CoreGraphics: {}x{}", width, height));
+        crate::utils::detailed_log("SYSTEM", &format!("🔵 SCREEN: Got actual screen dimensions from CoreGraphics: {}x{}", width, height));
         (width, height)
     }
     
     #[cfg(not(target_os = "macos"))]
     {
-        crate::utils::log("🔵 SCREEN: Using default screen dimensions (not macOS)");
+        crate::utils::detailed_log("SYSTEM", &format!("🔵 SCREEN: Using default screen dimensions (not macOS)"));
         (1920.0, 1080.0)
     }
 }
@@ -2993,7 +2993,7 @@ impl eframe::App for AnchorSelector {
                     self.should_exit
                 )
             });
-            crate::utils::debug_log("POPUP_UPDATE", &viewport_info);
+            crate::utils::detailed_log("POPUP_UPDATE", &viewport_info);
         }
         
         // Write to debug file to see if update() is being called at all
@@ -3009,7 +3009,7 @@ impl eframe::App for AnchorSelector {
         
         // Start deferred loading on second frame (after UI is shown)
         if self.frame_count == 2 && self.loading_state == LoadingState::NotLoaded {
-            crate::utils::log("POPUP: Starting deferred loading on frame 2");
+            crate::utils::detailed_log("POPUP", &format!("POPUP: Starting deferred loading on frame 2"));
             self.start_deferred_loading();
             ctx.request_repaint(); // Ensure we update when loading completes
         }
@@ -3088,7 +3088,7 @@ impl eframe::App for AnchorSelector {
         // if self.frame_count <= 20 {
         //     let has_focus = ctx.input(|i| i.focused);
         //     if self.frame_count % 5 == 0 { // Log every 5th frame for first 20 frames
-        //         crate::utils::debug_log("FOCUS", &format!("Frame {}: Window focused={}, input focus_set={}", 
+        //         crate::utils::detailed_log("FOCUS", &format!("Frame {}: Window focused={}, input focus_set={}", 
         //             self.frame_count, has_focus, self.focus_set));
         //     }
         // }
@@ -3246,7 +3246,7 @@ impl eframe::App for AnchorSelector {
                             self.command_editor.pending_template.as_ref(),
                             self.command_editor.template_context.as_ref()
                         ) {
-                            crate::utils::log("TEMPLATE: Processing template files after save");
+                            crate::utils::detailed_log("TEMPLATE", &format!("TEMPLATE: Processing template files after save"));
                             if let Err(e) = crate::core::template_creation::process_template_files(
                                 template,
                                 context,
@@ -3254,7 +3254,7 @@ impl eframe::App for AnchorSelector {
                             ) {
                                 self.show_error_dialog(&format!("Failed to create template files: {}", e));
                             } else {
-                                crate::utils::log("TEMPLATE: Successfully created template files");
+                                crate::utils::detailed_log("TEMPLATE", &format!("TEMPLATE: Successfully created template files"));
                                 // Trigger rescan if requested
                                 if template.file_rescan {
                                     self.trigger_rescan();
@@ -3905,7 +3905,7 @@ fn load_app_icon() -> IconData {
             }
         } else {
             // Fallback: create a simple colored icon
-            crate::utils::debug_log("ICON", "Failed to decode embedded icon, using fallback");
+            crate::utils::detailed_log("ICON", "Failed to decode embedded icon, using fallback");
             create_fallback_icon()
         }
     }).clone()
@@ -4038,7 +4038,7 @@ impl eframe::App for PopupWithControl {
                     ctx.send_viewport_cmd(egui::ViewportCommand::Minimized(false));
                     
                     // Use AppleScript to ensure the window comes to front on macOS
-                    crate::utils::log("[SHOW] Using AppleScript to activate popup_server");
+                    crate::utils::detailed_log("SYSTEM", &format!("[SHOW] Using AppleScript to activate popup_server"));
                     let activate_script = r#"tell application "System Events"
                         set frontProcess to first process whose unix id is "#.to_string() + &std::process::id().to_string() + r#"
                         set frontmost of frontProcess to true
@@ -4172,8 +4172,8 @@ impl eframe::App for PopupWithControl {
 
 pub fn run_gui_with_prompt(initial_prompt: &str, _app_state: super::ApplicationState) -> Result<(), eframe::Error> {
     // Debug: Log when popup is being opened
-    crate::utils::log("===== POPUP GUI STARTING =====");
-    crate::utils::debug_log("POPUP_OPEN", &format!("Opening popup with initial prompt: '{}'", initial_prompt));
+    crate::utils::detailed_log("SYSTEM", &format!("===== POPUP GUI STARTING ====="));
+    crate::utils::detailed_log("POPUP_OPEN", &format!("Opening popup with initial prompt: '{}'", initial_prompt));
     
     // Capture the prompt for the closure
     let prompt = initial_prompt.to_string();
@@ -4185,7 +4185,7 @@ pub fn run_gui_with_prompt(initial_prompt: &str, _app_state: super::ApplicationS
     // Always start visible - we'll hide it later if needed
     let start_visible = true;
     
-    crate::utils::log(&format!("[POPUP_INIT] Window size: {}x{}, start_visible: {}", width, height, start_visible));
+    crate::utils::detailed_log("SYSTEM", &format!("[POPUP_INIT] Window size: {}x{}, start_visible: {}", width, height, start_visible));
     
     // Load saved position or use centered position
     let initial_position = if let Some(saved_pos) = load_window_position() {

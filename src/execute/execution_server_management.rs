@@ -28,35 +28,35 @@ pub(crate) fn start_server_if_needed() -> Result<(), Box<dyn std::error::Error>>
     
     // Log file size check is done when popup opens, not here
     
-    crate::utils::debug_log("SERVER_MGR", "Checking if command server is needed");
+    crate::utils::detailed_log("SERVER_MGR", "Checking if command server is needed");
     
     // Check PID from state.json
     let state = load_state();
     if let Some(pid) = state.server_pid {
         if is_process_alive(pid) {
-            crate::utils::debug_log("SERVER_MGR", &format!("Server running with PID: {}", pid));
+            crate::utils::detailed_log("SERVER_MGR", &format!("Server running with PID: {}", pid));
             SERVER_CHECKED.store(true, Ordering::Relaxed);
             return Ok(());
         } else {
-            crate::utils::debug_log("SERVER_MGR", &format!("Server PID {} no longer running", pid));
+            crate::utils::detailed_log("SERVER_MGR", &format!("Server PID {} no longer running", pid));
             // Clear stale PID
             let _ = clear_server_pid();
         }
     }
     
     // Start new server via Terminal for proper environment
-    crate::utils::debug_log("SERVER_MGR", "Starting new command server via Terminal");
+    crate::utils::detailed_log("SERVER_MGR", "Starting new command server via Terminal");
     start_server_via_terminal()?;
     
     // Wait for startup and verify PID is saved
-    crate::utils::debug_log("SERVER_MGR", "Waiting for server startup");
+    crate::utils::detailed_log("SERVER_MGR", "Waiting for server startup");
     let start_time = std::time::Instant::now();
     let max_wait = std::time::Duration::from_secs(5);
     
     // Poll for server to be ready
     loop {
         if start_time.elapsed() > max_wait {
-            crate::utils::debug_log("SERVER_MGR", "Server startup timeout - failed to start in 5 seconds");
+            crate::utils::detailed_log("SERVER_MGR", "Server startup timeout - failed to start in 5 seconds");
             return Err("Server startup timeout".into());
         }
         
@@ -64,7 +64,7 @@ pub(crate) fn start_server_if_needed() -> Result<(), Box<dyn std::error::Error>>
         let new_state = load_state();
         if let Some(pid) = new_state.server_pid {
             if is_process_alive(pid) {
-                crate::utils::debug_log("SERVER_MGR", &format!("Server started successfully with PID: {}", pid));
+                crate::utils::detailed_log("SERVER_MGR", &format!("Server started successfully with PID: {}", pid));
                 SERVER_CHECKED.store(true, Ordering::Relaxed);
                 return Ok(());
             }
@@ -85,10 +85,10 @@ pub(crate) fn start_server_via_terminal() -> Result<(), Box<dyn std::error::Erro
             if let Ok(created) = metadata.created() {
                 let elapsed = created.elapsed().unwrap_or(std::time::Duration::from_secs(0));
                 if elapsed > std::time::Duration::from_secs(30) {
-                    crate::utils::debug_log("SERVER_MGR", "Removing stale server startup lock");
+                    crate::utils::detailed_log("SERVER_MGR", "Removing stale server startup lock");
                     let _ = std::fs::remove_file(lock_path);
                 } else {
-                    crate::utils::debug_log("SERVER_MGR", "Server startup already in progress, skipping");
+                    crate::utils::detailed_log("SERVER_MGR", "Server startup already in progress, skipping");
                     return Ok(());
                 }
             }
@@ -114,8 +114,8 @@ pub(crate) fn start_server_via_terminal() -> Result<(), Box<dyn std::error::Erro
         escaped_path
     );
     
-    crate::utils::debug_log("SERVER_MGR", "Starting server via Terminal with AppleScript");
-    crate::utils::debug_log("SERVER_MGR", &format!("AppleScript command: {}", script));
+    crate::utils::detailed_log("SERVER_MGR", "Starting server via Terminal with AppleScript");
+    crate::utils::detailed_log("SERVER_MGR", &format!("AppleScript command: {}", script));
     
     let output = std::process::Command::new("osascript")
         .args(["-e", &script])
@@ -126,7 +126,7 @@ pub(crate) fn start_server_via_terminal() -> Result<(), Box<dyn std::error::Erro
         return Err(format!("AppleScript failed: {}", stderr).into());
     }
     
-    crate::utils::debug_log("SERVER_MGR", "Terminal server start initiated successfully");
+    crate::utils::detailed_log("SERVER_MGR", "Terminal server start initiated successfully");
     
     // Remove lock file after a delay
     std::thread::spawn(move || {
@@ -142,7 +142,7 @@ pub(crate) fn kill_existing_server() -> Result<(), Box<dyn std::error::Error>> {
     let state = load_state();
     if let Some(pid) = state.server_pid {
         if is_process_alive(pid) {
-            crate::utils::debug_log("SERVER_MGR", &format!("Killing existing server PID: {}", pid));
+            crate::utils::detailed_log("SERVER_MGR", &format!("Killing existing server PID: {}", pid));
             
             unsafe {
                 // Send SIGTERM first (graceful shutdown)

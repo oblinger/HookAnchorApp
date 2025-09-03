@@ -45,7 +45,7 @@ impl NotionScanner {
     }
 
     pub fn scan_all_pages(&self) -> Result<Vec<NotionPage>, String> {
-        crate::utils::log("[NOTION] Starting scan of all accessible pages...");
+        crate::utils::detailed_log("SYSTEM", &format!("[NOTION] Starting scan of all accessible pages..."));
         
         let mut all_pages = Vec::new();
         let mut has_more = true;
@@ -169,7 +169,7 @@ impl NotionScanner {
                 modified
             ));
         }
-        crate::utils::log(&format!("[NOTION] Total pages found: {}", pages.len()));
+        crate::utils::detailed_log("SYSTEM", &format!("[NOTION] Total pages found: {}", pages.len()));
     }
 }
 
@@ -215,7 +215,7 @@ pub fn scan_cloud_services() {
                         };
 
                         if expanded_key.starts_with("ntn_") || expanded_key.starts_with("secret_") {
-                            crate::utils::log("[NOTION] Scanning with API key...");
+                            crate::utils::detailed_log("SYSTEM", &format!("[NOTION] Scanning with API key..."));
                             let scanner = NotionScanner::new(expanded_key);
                             match scanner.scan_all_pages() {
                                 Ok(pages) => scanner.log_pages(&pages),
@@ -227,7 +227,7 @@ pub fn scan_cloud_services() {
                     }
                 }
                 "google_drive" => {
-                    crate::utils::log("[GDRIVE] Google Drive scanning not yet implemented");
+                    crate::utils::detailed_log("SYSTEM", &format!("[GDRIVE] Google Drive scanning not yet implemented"));
                 }
                 _ => {}
             }

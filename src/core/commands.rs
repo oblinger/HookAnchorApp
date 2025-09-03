@@ -856,7 +856,7 @@ pub fn run_patch_inference(
                 if apply_changes && (overwrite_patch || command.patch.is_empty()) {
                     // Debug: Log when we're about to assign a patch
                     if inferred_patch.is_empty() {
-                        crate::utils::debug_log("EMPTY_PATCH_BUG", &format!("WARNING: About to assign EMPTY patch to command '{}' (was: '{}')", 
+                        crate::utils::detailed_log("EMPTY_PATCH_BUG", &format!("WARNING: About to assign EMPTY patch to command '{}' (was: '{}')", 
                             command.command, old_patch_display));
                     }
                     command.patch = inferred_patch.clone();
@@ -935,7 +935,7 @@ pub(crate) fn normalize_patch_case(commands: &mut [Command], patches: &HashMap<S
                     // Don't shorten longer patch names to shorter anchor names
                     // This prevents "2023 SV Patents" from being normalized to "2023"
                     if command.patch != proper_case && command.patch.to_lowercase() == proper_case.to_lowercase() {
-                        crate::utils::debug_log("AUTO_NORMALIZE", &format!("Normalized patch case for '{}': '{}' -> '{}'", 
+                        crate::utils::detailed_log("AUTO_NORMALIZE", &format!("Normalized patch case for '{}': '{}' -> '{}'", 
                             command.command, command.patch, proper_case));
                         command.patch = proper_case;
                         command.update_full_line();
@@ -1097,7 +1097,7 @@ pub(crate) fn ensure_orphans_root_patch(
     let orphans_dir = Path::new(&expanded_path);
     if !orphans_dir.exists() {
         fs::create_dir_all(orphans_dir)?;
-        crate::utils::debug_log("AUTO_ORPHAN", &format!("Created orphans root directory: {}", orphans_dir.display()));
+        crate::utils::detailed_log("AUTO_ORPHAN", &format!("Created orphans root directory: {}", orphans_dir.display()));
     }
     
     // Create the orphans.md file
@@ -1105,7 +1105,7 @@ pub(crate) fn ensure_orphans_root_patch(
     if !orphans_file.exists() {
         let markdown_content = "# Orphans\n\nThis is the root anchor for all orphaned patches.\n\nAll patches without explicit anchors are grouped under this root.\n";
         fs::write(&orphans_file, markdown_content)?;
-        crate::utils::debug_log("AUTO_ORPHAN", &format!("Created orphans root anchor file: {}", orphans_file.display()));
+        crate::utils::detailed_log("AUTO_ORPHAN", &format!("Created orphans root anchor file: {}", orphans_file.display()));
     }
     
     // Create the orphans anchor command (with no patch - this is the root)
@@ -1126,7 +1126,7 @@ pub(crate) fn ensure_orphans_root_patch(
         linked_command: Some(orphans_command),
     });
     
-    crate::utils::debug_log("AUTO_ORPHAN", "Created orphans root patch and command");
+    crate::utils::detailed_log("AUTO_ORPHAN", "Created orphans root patch and command");
     Ok(())
 }
 
@@ -1140,7 +1140,7 @@ pub(crate) fn create_orphan_anchors(
         .as_ref()
         .ok_or("orphans_path not configured")?;
     
-    crate::utils::debug_log("ORPHAN_CREATE", &format!("Creating orphan anchors for {} patches at path: {}", orphan_patches.len(), orphans_path));
+    crate::utils::detailed_log("ORPHAN_CREATE", &format!("Creating orphan anchors for {} patches at path: {}", orphan_patches.len(), orphans_path));
     
     let mut created_count = 0;
     
@@ -1162,7 +1162,7 @@ pub(crate) fn create_orphan_anchors(
         // Create the directory if it doesn't exist
         if !patch_folder.exists() {
             fs::create_dir_all(&patch_folder)?;
-            crate::utils::debug_log("AUTO_ORPHAN", &format!("Created orphan patch folder: {}", patch_folder.display()));
+            crate::utils::detailed_log("AUTO_ORPHAN", &format!("Created orphan patch folder: {}", patch_folder.display()));
         }
         
         // Create the markdown file
@@ -1175,7 +1175,7 @@ pub(crate) fn create_orphan_anchors(
             );
             
             fs::write(&markdown_file, markdown_content)?;
-            crate::utils::debug_log("AUTO_ORPHAN", &format!("Created orphan anchor file: {}", markdown_file.display()));
+            crate::utils::detailed_log("AUTO_ORPHAN", &format!("Created orphan anchor file: {}", markdown_file.display()));
         }
         
         // Create the anchor command - use the patch name as both patch and command to create a proper patch record
@@ -1191,7 +1191,7 @@ pub(crate) fn create_orphan_anchors(
         commands.push(anchor_command);
         created_count += 1;
         
-        crate::utils::debug_log("AUTO_ORPHAN", &format!("Created orphan anchor command for patch: {}", patch_name));
+        crate::utils::detailed_log("AUTO_ORPHAN", &format!("Created orphan anchor command for patch: {}", patch_name));
     }
     
     Ok(created_count)
@@ -1316,7 +1316,7 @@ pub fn parse_command_line(line: &str) -> Result<Command, String> {
         
         // Debug: Log when we parse a command with an empty patch where we might expect one
         if group.is_empty() && line.contains('!') {
-            crate::utils::debug_log("EMPTY_PATCH_BUG", &format!("WARNING: Parsed command with empty patch despite '!' in line: '{}'", line));
+            crate::utils::detailed_log("EMPTY_PATCH_BUG", &format!("WARNING: Parsed command with empty patch despite '!' in line: '{}'", line));
         }
         
         return Ok(Command {
@@ -1350,11 +1350,11 @@ fn deduplicate_commands(commands: Vec<Command>) -> Vec<Command> {
             Some(existing) => {
                 // Keep the better command based on priority
                 if is_better_command(&command, existing) {
-                    crate::utils::debug_log("AUTO_DEDUP", &format!("Replacing '{}' (patch:'{}' flags:'{}') with better version (patch:'{}' flags:'{}')", 
+                    crate::utils::detailed_log("AUTO_DEDUP", &format!("Replacing '{}' (patch:'{}' flags:'{}') with better version (patch:'{}' flags:'{}')", 
                         command.command, existing.patch, existing.flags, command.patch, command.flags));
                     best_commands.insert(key, command);
                 } else {
-                    crate::utils::debug_log("AUTO_DEDUP", &format!("Keeping existing '{}' (patch:'{}' flags:'{}') over (patch:'{}' flags:'{}')", 
+                    crate::utils::detailed_log("AUTO_DEDUP", &format!("Keeping existing '{}' (patch:'{}' flags:'{}') over (patch:'{}' flags:'{}')", 
                         command.command, existing.patch, existing.flags, command.patch, command.flags));
                 }
             }
@@ -1367,7 +1367,7 @@ fn deduplicate_commands(commands: Vec<Command>) -> Vec<Command> {
     let deduplicated_commands = best_commands.into_values().collect::<Vec<_>>();
     let removed_count = original_count - deduplicated_commands.len();
     if removed_count > 0 {
-        crate::utils::debug_log("AUTO_DEDUP", &format!("Removed {} duplicate commands ({} -> {})", removed_count, original_count, deduplicated_commands.len()));
+        crate::utils::detailed_log("AUTO_DEDUP", &format!("Removed {} duplicate commands ({} -> {})", removed_count, original_count, deduplicated_commands.len()));
     }
     deduplicated_commands
 }
@@ -1441,7 +1441,7 @@ pub fn save_commands_to_file(commands: &[Command]) -> Result<(), Box<dyn std::er
             // Only log as potential bug for actions that typically need patches
             let actions_that_need_patches = ["anchor", "markdown", "doc", "cmd"];
             if actions_that_need_patches.contains(&cmd.action.as_str()) {
-                crate::utils::debug_log("EMPTY_PATCH_BUG", &format!("Command with EMPTY patch during save: '{}' (action: {}, arg: {})", 
+                crate::utils::detailed_log("EMPTY_PATCH_BUG", &format!("Command with EMPTY patch during save: '{}' (action: {}, arg: {})", 
                     cmd.command, cmd.action, cmd.arg));
             }
         }
@@ -1456,14 +1456,14 @@ pub fn save_commands_to_file(commands: &[Command]) -> Result<(), Box<dyn std::er
     if updated_commands.len() > 4000 {
         let error_msg = format!("CORRUPTION DETECTED: Attempting to save {} commands (> 4000 limit). This indicates command inflation. Save operation CANCELLED.", updated_commands.len());
         crate::utils::log_error(&error_msg);
-        crate::utils::debug_log("CORRUPTION", &error_msg);
+        crate::utils::detailed_log("CORRUPTION", &error_msg);
         return Err("Command count exceeds safety limit".into());
     }
     
     if empty_patch_count > 200 {
         let error_msg = format!("CORRUPTION DETECTED: Attempting to save {} commands with empty patches (> 200 limit). This indicates patch stripping. Save operation CANCELLED.", empty_patch_count);
         crate::utils::log_error(&error_msg);
-        crate::utils::debug_log("CORRUPTION", &error_msg);
+        crate::utils::detailed_log("CORRUPTION", &error_msg);
         return Err("Empty patch count exceeds safety limit".into());
     }
     
@@ -1480,7 +1480,7 @@ pub fn save_commands_to_file(commands: &[Command]) -> Result<(), Box<dyn std::er
         return Err(error_msg.into());
     }
     
-    crate::utils::debug_log("AUTO_SAVE", &format!("Saved {} commands to {}", commands.len(), path.display()));
+    crate::utils::detailed_log("AUTO_SAVE", &format!("Saved {} commands to {}", commands.len(), path.display()));
     Ok(())
 }
 
@@ -1598,7 +1598,7 @@ pub(crate) fn filter_commands_with_patch_support(commands: &[Command], search_te
         .map(|(score, cmd)| {
             // Debug logging for AT search results
             if search_text.eq_ignore_ascii_case("AT") && score <= 0 {
-                crate::utils::debug_log("AT_RESULTS", &format!("Result with score {}: cmd={}, patch={}", score, cmd.command, cmd.patch));
+                crate::utils::detailed_log("AT_RESULTS", &format!("Result with score {}: cmd={}, patch={}", score, cmd.command, cmd.patch));
             }
             cmd.clone()
         })
@@ -1606,7 +1606,7 @@ pub(crate) fn filter_commands_with_patch_support(commands: &[Command], search_te
     
     // Log if At command is missing from results
     if search_text.eq_ignore_ascii_case("AT") && !results.iter().any(|c| c.command.eq_ignore_ascii_case("At")) {
-        crate::utils::debug_log("AT_MISSING", "At command not in final results!");
+        crate::utils::detailed_log("AT_MISSING", "At command not in final results!");
     }
     
     results
@@ -1656,7 +1656,7 @@ pub fn filter_commands(commands: &[Command], search_text: &str, max_results: usi
         if match_result >= 0 {
             // Debug logging for AT command specifically
             if search_text.eq_ignore_ascii_case("AT") && cmd.command.eq_ignore_ascii_case("At") {
-                crate::utils::debug_log("AT_MATCH", &format!("Adding At command with score {}: cmd='{}', patch='{}', action='{}'", match_result, cmd.command, cmd.patch, cmd.action));
+                crate::utils::detailed_log("AT_MATCH", &format!("Adding At command with score {}: cmd='{}', patch='{}', action='{}'", match_result, cmd.command, cmd.patch, cmd.action));
             }
             matched_commands.push((match_result, cmd));
         }
@@ -2681,7 +2681,7 @@ pub(crate) fn find_orphan_folder_merges(
     let orphan_entries = match fs::read_dir(orphans_path) {
         Ok(entries) => entries,
         Err(e) => {
-            crate::utils::log(&format!("MERGE: Could not read orphans directory: {}", e));
+            crate::utils::detailed_log("MERGE", &format!("MERGE: Could not read orphans directory: {}", e));
             return merges;
         }
     };
@@ -2708,7 +2708,7 @@ pub(crate) fn find_orphan_folder_merges(
         crate::utils::detailed_log("MERGE", &format!("Searching for match for orphan anchor: {}", folder_name));
         if let Some(target_folder) = find_matching_anchor(&folder_name, vault_root, orphans_path) {
             // Keep this as regular log since merges are important events
-            crate::utils::log(&format!("MERGE: Found merge candidate: {} -> {}", 
+            crate::utils::detailed_log("MERGE", &format!("MERGE: Found merge candidate: {} -> {}", 
                 orphan_folder.display(), target_folder.display()));
             merges.push((orphan_folder, target_folder));
         } else {
@@ -2752,7 +2752,7 @@ fn find_matching_anchor_recursive(
     // First check if current directory contains the standard anchor file (folder_name/folder_name.md)
     let potential_anchor = current_dir.join(anchor_name).join(format!("{}.md", anchor_name));
     if potential_anchor.exists() {
-        crate::utils::log(&format!("MERGE: Found matching anchor at: {}", potential_anchor.display()));
+        crate::utils::detailed_log("MERGE", &format!("MERGE: Found matching anchor at: {}", potential_anchor.display()));
         return Some(current_dir.join(anchor_name));
     }
     
@@ -2779,7 +2779,7 @@ fn find_matching_anchor_recursive(
                 if alias_anchor.exists() {
                     // Verify it's actually marked as an anchor by checking if it's in our commands
                     // This prevents false positives from random markdown files
-                    crate::utils::log(&format!("MERGE: Found potential alias anchor at: {}", alias_anchor.display()));
+                    crate::utils::detailed_log("MERGE", &format!("MERGE: Found potential alias anchor at: {}", alias_anchor.display()));
                     return Some(path);
                 }
             }
@@ -2819,7 +2819,7 @@ pub(crate) fn merge_folders(
     source_folder: &Path,
     dest_folder: &Path,
 ) -> Result<(), String> {
-    crate::utils::log(&format!("MERGE: Starting merge of {} -> {}", 
+    crate::utils::detailed_log("MERGE", &format!("MERGE: Starting merge of {} -> {}", 
         source_folder.display(), dest_folder.display()));
     
     // Get folder name for anchor file
@@ -2846,7 +2846,7 @@ pub(crate) fn merge_folders(
     
     // Use the alias location if it exists, otherwise use standard
     let dest_md = if dest_md_alias.exists() {
-        crate::utils::log(&format!("MERGE: Using alias anchor file: {}", dest_md_alias.display()));
+        crate::utils::detailed_log("MERGE", &format!("MERGE: Using alias anchor file: {}", dest_md_alias.display()));
         dest_md_alias.clone()
     } else {
         dest_md_standard
@@ -2858,10 +2858,10 @@ pub(crate) fn merge_folders(
         // Delete the source markdown file after successful merge
         fs::remove_file(&source_md)
             .map_err(|e| format!("Failed to remove source markdown after merge: {}", e))?;
-        crate::utils::log(&format!("MERGE: Removed source markdown: {}", source_md.display()));
+        crate::utils::detailed_log("MERGE", &format!("MERGE: Removed source markdown: {}", source_md.display()));
     } else if source_md.exists() && !dest_md.exists() {
         // If destination doesn't exist, just move the source file
-        crate::utils::log(&format!("MERGE: Moving orphan anchor to destination: {} -> {}", 
+        crate::utils::detailed_log("MERGE", &format!("MERGE: Moving orphan anchor to destination: {} -> {}", 
             source_md.display(), dest_md.display()));
         fs::rename(&source_md, &dest_md)
             .map_err(|e| format!("Failed to move orphan anchor: {}", e))?;
@@ -2873,7 +2873,7 @@ pub(crate) fn merge_folders(
     // Remove empty source folder
     cleanup_empty_folder(source_folder)?;
     
-    crate::utils::log(&format!("MERGE: Completed merge successfully"));
+    crate::utils::detailed_log("MERGE", &format!("MERGE: Completed merge successfully"));
     Ok(())
 }
 
@@ -2897,7 +2897,7 @@ fn merge_markdown_files(
     // If both source and destination have auto-generated content, or if source is just
     // auto-generated and destination already has content, skip the merge
     if is_auto_generated && (dest_has_auto_generated || !dest_content.trim().is_empty()) {
-        crate::utils::log(&format!("MERGE: Skipping merge of auto-generated content into {}", 
+        crate::utils::detailed_log("MERGE", &format!("MERGE: Skipping merge of auto-generated content into {}", 
             dest_md.display()));
         return Ok(());
     }
@@ -2908,7 +2908,7 @@ fn merge_markdown_files(
     fs::write(dest_md, merged_content)
         .map_err(|e| format!("Failed to write merged markdown: {}", e))?;
     
-    crate::utils::log(&format!("MERGE: Merged markdown content ({} + {} -> {})", 
+    crate::utils::detailed_log("MERGE", &format!("MERGE: Merged markdown content ({} + {} -> {})", 
         source_md.display(), dest_md.display(), dest_md.display()));
     
     Ok(())
@@ -2940,7 +2940,7 @@ fn migrate_files(
         
         // Skip directories for now (could be enhanced to handle subdirs)
         if source_path.is_dir() {
-            crate::utils::log(&format!("MERGE: Skipping subdirectory: {}", source_path.display()));
+            crate::utils::detailed_log("MERGE", &format!("MERGE: Skipping subdirectory: {}", source_path.display()));
             continue;
         }
         
@@ -2952,10 +2952,10 @@ fn migrate_files(
             .map_err(|e| format!("Failed to move file {}: {}", source_path.display(), e))?;
         
         if dest_path.file_name().unwrap().to_string_lossy() != filename {
-            crate::utils::log(&format!("MERGE: Moved file: {} -> {} (resolved naming conflict)", 
+            crate::utils::detailed_log("MERGE", &format!("MERGE: Moved file: {} -> {} (resolved naming conflict)", 
                 source_path.display(), dest_path.display()));
         } else {
-            crate::utils::log(&format!("MERGE: Moved file: {} -> {}", 
+            crate::utils::detailed_log("MERGE", &format!("MERGE: Moved file: {} -> {}", 
                 source_path.display(), dest_path.display()));
         }
     }
@@ -3010,9 +3010,9 @@ fn cleanup_empty_folder(folder: &Path) -> Result<(), String> {
     if is_empty {
         fs::remove_dir(folder)
             .map_err(|e| format!("Failed to remove empty folder: {}", e))?;
-        crate::utils::log(&format!("MERGE: Removed empty folder: {}", folder.display()));
+        crate::utils::detailed_log("MERGE", &format!("MERGE: Removed empty folder: {}", folder.display()));
     } else {
-        crate::utils::log(&format!("MERGE: Folder not empty, keeping: {}", folder.display()));
+        crate::utils::detailed_log("MERGE", &format!("MERGE: Folder not empty, keeping: {}", folder.display()));
     }
     
     Ok(())

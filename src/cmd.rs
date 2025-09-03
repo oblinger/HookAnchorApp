@@ -113,14 +113,14 @@ fn handle_hook_url(url: &str) {
     let decoded_query = urlencoding::decode(query).unwrap_or_else(|_| query.into());
     
     if decoded_query.is_empty() {
-        utils::debug_log("URL_HANDLER", "Empty query in hook URL");
+        utils::detailed_log("URL_HANDLER", "Empty query in hook URL");
         return;
     }
     
     // Visual separator for URL handler execution
-    utils::debug_log("", "=================================================================");
-    utils::debug_log("USER INPUT", &format!("URL: '{}'", decoded_query));
-    utils::debug_log("URL_HANDLER", &format!("Processing hook URL: {} -> query: '{}'", url, decoded_query));
+    utils::detailed_log("", "=================================================================");
+    utils::detailed_log("USER INPUT", &format!("URL: '{}'", decoded_query));
+    utils::detailed_log("URL_HANDLER", &format!("Processing hook URL: {} -> query: '{}'", url, decoded_query));
     
     // Client environment logging is now handled automatically in execute_command based on action type
     
@@ -129,21 +129,21 @@ fn handle_hook_url(url: &str) {
     let filtered = crate::core::commands::get_display_commands(&sys_data, &decoded_query, 1);
     
     if filtered.is_empty() {
-        utils::debug_log("URL_HANDLER", &format!("No commands found for query: '{}'", decoded_query));
+        utils::detailed_log("URL_HANDLER", &format!("No commands found for query: '{}'", decoded_query));
         return;
     }
     
     let top_command_obj = &filtered[0];
-    utils::debug_log("URL_HANDLER", &format!("Executing command: {}", top_command_obj.command));
+    utils::detailed_log("URL_HANDLER", &format!("Executing command: {}", top_command_obj.command));
     
     // For URL handling, execute directly via launcher (like -a action test) to avoid GUI context
     // This prevents the popup from showing when handling URLs
-    utils::debug_log("URL_HANDLER", &format!("Launching via launcher: {} {}", top_command_obj.action, top_command_obj.arg));
+    utils::detailed_log("URL_HANDLER", &format!("Launching via launcher: {} {}", top_command_obj.action, top_command_obj.arg));
     
     // Convert command to action and execute
     let action = command_to_action(&top_command_obj);
     let _ = execute_on_server(&action);
-    utils::debug_log("URL_HANDLER", "Command executed");
+    utils::detailed_log("URL_HANDLER", "Command executed");
 }
 
 fn run_match_command(args: &[String]) {
@@ -177,8 +177,8 @@ fn run_exec_command(args: &[String]) {
     let command = &args[2];
     
     // Visual separator for run function execution
-    utils::debug_log("", "=================================================================");
-    utils::debug_log("USER INPUT", &format!("RUN_FN: '{}'", command));
+    utils::detailed_log("", "=================================================================");
+    utils::detailed_log("USER INPUT", &format!("RUN_FN: '{}'", command));
     
     println!("Executing command function: {}", command);
     
@@ -210,8 +210,8 @@ fn run_execute_top_match(args: &[String]) {
     let query = &args[2];
     
     // Visual separator for command execution
-    utils::debug_log("", "=================================================================");
-    utils::debug_log("USER INPUT", &format!("CLI: '{}'", query));
+    utils::detailed_log("", "=================================================================");
+    utils::detailed_log("USER INPUT", &format!("CLI: '{}'", query));
     
     // Client environment logging is now handled automatically in execute_command based on action type
     
@@ -305,8 +305,8 @@ fn run_test_command(args: &[String]) {
     }
     
     // Visual separator for action testing
-    utils::debug_log("", "=================================================================");
-    utils::debug_log("USER INPUT", &format!("ACTION: '{}' ARG: '{}' INPUT: '{}'", action_name, arg_value, input_value));
+    utils::detailed_log("", "=================================================================");
+    utils::detailed_log("USER INPUT", &format!("ACTION: '{}' ARG: '{}' INPUT: '{}'", action_name, arg_value, input_value));
     
     // Try to execute as a unified action first
     let config = crate::core::sys_data::get_config();
@@ -715,7 +715,7 @@ fn run_grab_command(args: &[String]) {
 
 /// Force restart the command server
 fn run_start_server() {
-    utils::log("Restarting command server...");
+    utils::detailed_log("SYSTEM", &format!("Restarting command server..."));
     
     // Restart the server (kill existing and start new)
     match crate::execute::activate_command_server(true) {
@@ -739,7 +739,7 @@ fn run_start_server_daemon() {
         // Continue with default config
     }
     
-    utils::log("Starting command server daemon...");
+    utils::detailed_log("SYSTEM", &format!("Starting command server daemon..."));
     
     // Change to home directory
     if let Ok(home) = std::env::var("HOME") {
@@ -1282,7 +1282,7 @@ fn run_execute_launcher_command(args: &[String]) {
     let launcher_command = &args[2];
     
     // Visual separator for launcher command execution
-    utils::debug_log("", "=================================================================");
+    utils::detailed_log("", "=================================================================");
     utils::detailed_log("LAUNCHER_CMD", &format!("Executing in GUI session: '{}'", launcher_command));
     
     // Execute the launcher command via server (consistent with all execution)
@@ -1311,10 +1311,10 @@ fn run_rebuild_command() {
     
     // Log the rebuild header with timestamp and build ID
     crate::utils::log(&"=".repeat(80));
-    crate::utils::log(&format!("REBUILD SESSION: {}", build_id));
+    crate::utils::detailed_log("SYSTEM", &format!("REBUILD SESSION: {}", build_id));
     crate::utils::log(&format!("TIMESTAMP: {}", build_timestamp.format("%Y-%m-%d %H:%M:%S%.3f")));
     crate::utils::log(&"=".repeat(80));
-    crate::utils::debug_log("REBUILD", &format!("Starting rebuild session {}", build_id));
+    crate::utils::detailed_log("REBUILD", &format!("Starting rebuild session {}", build_id));
     
     println!("🏗️  HookAnchor Rebuild - Full Reset");
     println!("===================================");
@@ -1391,7 +1391,7 @@ fn run_popup_command(args: &[String]) {
         "show"  // Default action
     };
     
-    utils::debug_log("POPUP_CMD", &format!("Popup action requested: {}", action));
+    utils::detailed_log("POPUP_CMD", &format!("Popup action requested: {}", action));
     
     // Validate action
     match action {
@@ -1415,7 +1415,7 @@ fn run_popup_command(args: &[String]) {
         std::process::exit(1);
     }
     
-    utils::debug_log("POPUP_CMD", &format!("Executing popup launcher: {:?} {}", popup_path, action));
+    utils::detailed_log("POPUP_CMD", &format!("Executing popup launcher: {:?} {}", popup_path, action));
     
     // Execute popup launcher with action
     match Command::new(&popup_path)
@@ -1424,7 +1424,7 @@ fn run_popup_command(args: &[String]) {
         Ok(output) => {
             if output.status.success() {
                 let stdout = String::from_utf8_lossy(&output.stdout);
-                utils::debug_log("POPUP_CMD", &format!("Popup {} succeeded: {}", action, stdout.trim()));
+                utils::detailed_log("POPUP_CMD", &format!("Popup {} succeeded: {}", action, stdout.trim()));
                 print!("{}", stdout);
             } else {
                 let stderr = String::from_utf8_lossy(&output.stderr);

@@ -75,7 +75,7 @@ pub fn get_sys_data() -> SysData {
         }
         Err(_) => {
             // Mutex is locked, this indicates a potential deadlock
-            crate::utils::debug_log("GET_SYS_DATA", "ERROR: Mutex is locked, potential deadlock detected");
+            crate::utils::detailed_log("GET_SYS_DATA", "ERROR: Mutex is locked, potential deadlock detected");
             // Return a fallback - load without caching
             load_data_no_cache(Vec::new(), false)
         }
@@ -94,7 +94,7 @@ pub fn clear_sys_data() {
     if let Some(sys) = SYS_DATA.get() {
         let mut sys_data = sys.lock().unwrap();
         *sys_data = None;
-        crate::utils::debug_log("CLEAR_SYS_DATA", "Cleared sys data cache");
+        crate::utils::detailed_log("CLEAR_SYS_DATA", "Cleared sys data cache");
     }
 }
 
@@ -149,7 +149,7 @@ pub fn load_data(commands_override: Vec<Command>, verbose: bool) -> SysData {
             println!("📂 Loading data from disk...");
         }
     } else {
-        crate::utils::debug_log("LOAD_DATA", &format!("Using provided commands override ({} commands)", commands_override.len()));
+        crate::utils::detailed_log("LOAD_DATA", &format!("Using provided commands override ({} commands)", commands_override.len()));
         if verbose {
             println!("🔧 Using provided commands override ({} commands)", commands_override.len());
         }

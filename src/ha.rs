@@ -87,38 +87,38 @@ fn handle_hook_url(url: &str) {
     let decoded_query = match urlencoding::decode(query) {
         Ok(decoded) => decoded,
         Err(_) => {
-            utils::debug_log("DISPATCHER", &format!("Failed to decode URL: {}", url));
+            utils::detailed_log("DISPATCHER", &format!("Failed to decode URL: {}", url));
             return;
         }
     };
     
     if decoded_query.is_empty() {
-        utils::debug_log("DISPATCHER", "Empty query in hook URL");
+        utils::detailed_log("DISPATCHER", "Empty query in hook URL");
         return;
     }
     
     // Visual separator for URL handler execution
-    utils::debug_log("", "=================================================================");
-    utils::debug_log("USER INPUT", &format!("URL: '{}'", decoded_query));
-    utils::debug_log("DISPATCHER", &format!("Processing hook URL: {} -> query: '{}'", url, decoded_query));
+    utils::detailed_log("", "=================================================================");
+    utils::detailed_log("USER INPUT", &format!("URL: '{}'", decoded_query));
+    utils::detailed_log("DISPATCHER", &format!("Processing hook URL: {} -> query: '{}'", url, decoded_query));
     
     // Find the top matching command using the same logic as CLI and GUI
     let sys_data = get_sys_data();
     let filtered = hookanchor::core::get_display_commands(&sys_data, &decoded_query, 1);
     
     if filtered.is_empty() {
-        utils::debug_log("DISPATCHER", &format!("No commands found for query: '{}'", decoded_query));
+        utils::detailed_log("DISPATCHER", &format!("No commands found for query: '{}'", decoded_query));
         return;
     }
     
     let top_command_obj = &filtered[0];
-    utils::debug_log("DISPATCHER", &format!("Executing command: {}", top_command_obj.command));
+    utils::detailed_log("DISPATCHER", &format!("Executing command: {}", top_command_obj.command));
     
     // Execute via server to avoid GUI context and ensure consistent execution
-    utils::debug_log("DISPATCHER", &format!("Launching via server: {} ({})", top_command_obj.command, top_command_obj.action));
+    utils::detailed_log("DISPATCHER", &format!("Launching via server: {} ({})", top_command_obj.command, top_command_obj.action));
     
     // Execute command - handles all retries internally
     let action = execute::command_to_action(&top_command_obj);
     let _ = execute::execute_on_server(&action);
-    utils::debug_log("DISPATCHER", "Command sent to server");
+    utils::detailed_log("DISPATCHER", "Command sent to server");
 }

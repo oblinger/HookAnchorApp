@@ -45,7 +45,7 @@ impl ApplicationState {
         let (config, config_error) = match config_result {
             ConfigResult::Success(cfg) => (cfg, None),
             ConfigResult::Error(error) => {
-                utils::debug_log("CONFIG_ERROR", &format!("Failed to load config: {}", error));
+                utils::detailed_log("CONFIG_ERROR", &format!("Failed to load config: {}", error));
                 (crate::core::sys_data::get_config(), Some(error)) // Use fallback config
             }
         };

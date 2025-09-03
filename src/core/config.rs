@@ -640,16 +640,16 @@ impl Config {
             let target_with_modifiers = Keystroke::new(target_keystroke.key, modifiers_struct);
             
             if let Some(ref templates) = self.templates {
-                crate::utils::debug_log("TEMPLATE_BIND", &format!("Checking {} templates for key '{}' with modifiers {:?}", templates.len(), key_name, modifiers));
+                crate::utils::detailed_log("TEMPLATE_BIND", &format!("Checking {} templates for key '{}' with modifiers {:?}", templates.len(), key_name, modifiers));
                 for (template_name, template) in templates {
                     if let Some(ref keystroke) = template.keystroke {
-                        crate::utils::debug_log("TEMPLATE_BIND", &format!("  Template '{}' has keystroke {:?}", template_name, keystroke));
+                        crate::utils::detailed_log("TEMPLATE_BIND", &format!("  Template '{}' has keystroke {:?}", template_name, keystroke));
                         if *keystroke == target_with_modifiers {
-                            crate::utils::debug_log("TEMPLATE_BIND", &format!("✓ MATCH: Template '{}' matches key '{}'", template_name, key_name));
+                            crate::utils::detailed_log("TEMPLATE_BIND", &format!("✓ MATCH: Template '{}' matches key '{}'", template_name, key_name));
                             return Some(template_name);
                         }
                     } else {
-                        crate::utils::debug_log("TEMPLATE_BIND", &format!("  Template '{}' has no keystroke binding", template_name));
+                        crate::utils::detailed_log("TEMPLATE_BIND", &format!("  Template '{}' has no keystroke binding", template_name));
                     }
                 }
             }

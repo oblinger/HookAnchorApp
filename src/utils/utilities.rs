@@ -71,14 +71,14 @@ pub fn launch_app_with_arg(app: &str, arg: Option<&str>) -> Result<std::process:
     
     // Log the exact command being executed
     let command_str = format!("open -a \"{}\" {}", app, arg.unwrap_or(""));
-    crate::utils::log(&format!("LAUNCH_APP: Executing command: {}", command_str));
+    crate::utils::detailed_log("LAUNCH_APP", &format!("LAUNCH_APP: Executing command: {}", command_str));
     
     // Use spawn + detach for non-blocking execution to prevent UI lockups
     match cmd.spawn() {
         Ok(child) => {
             // Register the process for monitoring
             let _process_id = super::subprocess::register_process(child, command_str.clone());
-            crate::utils::log(&format!("LAUNCH_APP: Process spawned successfully for: {}", app));
+            crate::utils::detailed_log("LAUNCH_APP", &format!("LAUNCH_APP: Process spawned successfully for: {}", app));
             
             // For non-blocking execution, we don't wait for the result
             // The application will open independently without blocking the UI

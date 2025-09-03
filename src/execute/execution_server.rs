@@ -172,7 +172,7 @@ impl CommandServer {
         // Handle alias command type: execute the target command instead
         if command.action == "alias" {
             if depth >= MAX_ALIAS_DEPTH {
-                crate::utils::debug_log("ALIAS", &format!("Maximum alias depth ({}) exceeded for '{}'", MAX_ALIAS_DEPTH, command.command));
+                crate::utils::detailed_log("ALIAS", &format!("Maximum alias depth ({}) exceeded for '{}'", MAX_ALIAS_DEPTH, command.command));
                 return crate::core::CommandTarget::Command(command.clone());
             }
             
@@ -185,17 +185,17 @@ impl CommandServer {
             if !filtered.is_empty() {
                 // Execute the first matching command
                 let target_command = &filtered[0];
-                crate::utils::debug_log("ALIAS", &format!("Alias '{}' executing target: {} (depth: {})", command.command, target_command.command, depth));
+                crate::utils::detailed_log("ALIAS", &format!("Alias '{}' executing target: {} (depth: {})", command.command, target_command.command, depth));
                 return self.execute_command_with_depth(target_command, depth + 1); // Recursive call with depth tracking
             } else {
-                crate::utils::debug_log("ALIAS", &format!("Alias '{}' target '{}' not found", command.command, command.arg));
+                crate::utils::detailed_log("ALIAS", &format!("Alias '{}' target '{}' not found", command.command, command.arg));
                 return crate::core::CommandTarget::Command(command.clone());
             }
         }
         
         // Log command execution in the requested format
-        crate::utils::debug_log("EXECUTE", &format!("'{}' AS '{}' ON '{}'", command.command, command.action, command.arg));
-        crate::utils::debug_log("EXECUTE_FLOW", "Starting command execution process via server");
+        crate::utils::detailed_log("EXECUTE", &format!("'{}' AS '{}' ON '{}'", command.command, command.action, command.arg));
+        crate::utils::detailed_log("EXECUTE_FLOW", "Starting command execution process via server");
         
         // Save the last executed command for add_alias functionality
         use crate::core::state::save_last_executed_command;
@@ -206,16 +206,16 @@ impl CommandServer {
         }
         
         // Execute via server (always use server for consistent execution)
-        crate::utils::debug_log("EXECUTE_FLOW", "Sending command to server for execution");
+        crate::utils::detailed_log("EXECUTE_FLOW", "Sending command to server for execution");
         
         if let Ok(client) = CommandClient::new() {
             if client.is_server_available() {
-                crate::utils::debug_log("EXECUTE_FLOW", "Server available, sending command object");
+                crate::utils::detailed_log("EXECUTE_FLOW", "Server available, sending command object");
                 
                 // Send the command object to server for execution
                 match client.execute_command(command) {
                     Ok(response) => {
-                        crate::utils::debug_log("EXECUTE_FLOW", &format!("Command sent to server successfully: {:?}", response));
+                        crate::utils::detailed_log("EXECUTE_FLOW", &format!("Command sent to server successfully: {:?}", response));
                         
                         // Check process health after command execution
                         crate::utils::subprocess::check_system_health();
@@ -223,7 +223,7 @@ impl CommandServer {
                         return crate::core::CommandTarget::Command(command.clone());
                     }
                     Err(e) => {
-                        crate::utils::debug_log("EXECUTE_FLOW", &format!("Failed to send command to server: {:?}", e));
+                        crate::utils::detailed_log("EXECUTE_FLOW", &format!("Failed to send command to server: {:?}", e));
                         // Fall through to error handling
                     }
                 }
@@ -641,7 +641,7 @@ pub(crate) fn execute_via_server(command: &crate::core::Command) {
         
         // Server not responding - restart it for next attempt
         verbose_log("CMD_SERVER", &format!("Restarting server for attempt {}", attempt + 1));
-        crate::utils::debug_log("CMD_SERVER", &format!("Restarting server for command: {}", command.command));
+        crate::utils::detailed_log("CMD_SERVER", &format!("Restarting server for command: {}", command.command));
         
         // Kill existing server and reset check
         let _ = super::execution_server_management::kill_existing_server();

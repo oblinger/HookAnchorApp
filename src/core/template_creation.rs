@@ -100,11 +100,11 @@ impl TemplateContext {
                 // Extract and validate folder, or use empty string if extraction fails
                 let folder = match extract_and_validate_folder(&cmd) {
                     Ok(f) => {
-                        crate::utils::log(&format!("TEMPLATE_FOLDER: Extracted valid folder from '{}': {}", cmd.command, f));
+                        crate::utils::detailed_log("TEMPLATE_FOLDER", &format!("TEMPLATE_FOLDER: Extracted valid folder from '{}': {}", cmd.command, f));
                         f
                     },
                     Err(e) => {
-                        crate::utils::log(&format!("TEMPLATE_FOLDER: Failed to extract folder from '{}' (action={}): {}", cmd.command, cmd.action, e));
+                        crate::utils::detailed_log("TEMPLATE_FOLDER", &format!("TEMPLATE_FOLDER: Failed to extract folder from '{}' (action={}): {}", cmd.command, cmd.action, e));
                         String::new() // Use empty string for invalid folder
                     }
                 };
@@ -209,7 +209,7 @@ impl TemplateContext {
                         last_pos = start + value.len();
                     }
                     Err(e) => {
-                        crate::utils::debug_log("TEMPLATE_JS", &format!("Failed to evaluate '{}': {}", expr, e));
+                        crate::utils::detailed_log("TEMPLATE_JS", &format!("Failed to evaluate '{}': {}", expr, e));
                         // For backward compatibility, try simple variable lookup
                         if let Some(value) = self.variables.get(expr) {
                             result.replace_range(start..end, value);
@@ -530,7 +530,7 @@ pub fn process_template(
             return Err(error_msg.into());
         }
         
-        crate::utils::debug_log("TEMPLATE", &format!("Validated previous folder: {}", previous_folder));
+        crate::utils::detailed_log("TEMPLATE", &format!("Validated previous folder: {}", previous_folder));
     }
     
     // TODO: Implement grab functionality if template.grab is set
@@ -556,7 +556,7 @@ pub fn process_template(
     
     // Log if template has edit flag (but don't modify the command)
     if template.edit {
-        crate::utils::debug_log("TEMPLATE", "Template has edit flag set - command will be opened in editor");
+        crate::utils::detailed_log("TEMPLATE", "Template has edit flag set - command will be opened in editor");
     }
     
     Ok(command)
@@ -577,7 +577,7 @@ pub fn process_template_files(
             // Check for special "true" value to use saved command's arg
             if file_template == "true" {
                 // Use the saved command's arg as the file path
-                crate::utils::debug_log("TEMPLATE", "Using saved command arg as file path (file: \"true\")");
+                crate::utils::detailed_log("TEMPLATE", "Using saved command arg as file path (file: \"true\")");
                 saved_command.arg.clone()
             } else {
                 // Use the expanded file template
@@ -589,7 +589,7 @@ pub fn process_template_files(
         };
         
         // Debug logging
-        crate::utils::debug_log("TEMPLATE", &format!("File path from template: {}", file_path_str));
+        crate::utils::detailed_log("TEMPLATE", &format!("File path from template: {}", file_path_str));
         
         // Expand tilde in the file path
         let expanded_path = if file_path_str.starts_with("~/") {
@@ -606,11 +606,11 @@ pub fn process_template_files(
         
         // Create parent directory if it doesn't exist
         if let Some(parent) = file_path.parent() {
-            crate::utils::debug_log("TEMPLATE", &format!("Creating parent dir: {}", parent.display()));
+            crate::utils::detailed_log("TEMPLATE", &format!("Creating parent dir: {}", parent.display()));
             create_folder_if_needed(&parent.to_string_lossy())?;
         }
         
-        crate::utils::debug_log("TEMPLATE", &format!("Writing file: {}", file_path.display()));
+        crate::utils::detailed_log("TEMPLATE", &format!("Writing file: {}", file_path.display()));
         
         // Check if file exists and might be read-only
         if file_path.exists() {
@@ -624,7 +624,7 @@ pub fn process_template_files(
                         crate::utils::log_error(&format!("Failed to remove read-only flag from '{}': {}", file_path.display(), e));
                         // Continue anyway - the write might still work on some systems
                     } else {
-                        crate::utils::log(&format!("Successfully removed read-only flag from '{}'", file_path.display()));
+                        crate::utils::detailed_log("SYSTEM", &format!("Successfully removed read-only flag from '{}'", file_path.display()));
                     }
                 }
             }
@@ -633,7 +633,7 @@ pub fn process_template_files(
         // Write the file
         match std::fs::write(&file_path, &contents) {
             Ok(_) => {
-                crate::utils::log(&format!("TEMPLATE: Created file '{}' ({} bytes)", file_path.display(), contents.len()));
+                crate::utils::detailed_log("TEMPLATE", &format!("TEMPLATE: Created file '{}' ({} bytes)", file_path.display(), contents.len()));
             }
             Err(e) => {
                 let error_msg = format!("Cannot write to file '{}': {}", file_path.display(), e);
@@ -683,7 +683,7 @@ pub fn process_template_files(
         
         // Create parent directory if it doesn't exist
         if let Some(parent) = file_path.parent() {
-            crate::utils::debug_log("TEMPLATE", &format!("Creating parent dir for file: {}", parent.display()));
+            crate::utils::detailed_log("TEMPLATE", &format!("Creating parent dir for file: {}", parent.display()));
             create_folder_if_needed(&parent.to_string_lossy())?;
         }
         
@@ -694,7 +694,7 @@ pub fn process_template_files(
                 crate::utils::log_error(&error_msg);
                 return Err(error_msg.into());
             } else {
-                crate::utils::log(&format!("TEMPLATE: Created empty file '{}'", file_path.display()));
+                crate::utils::detailed_log("TEMPLATE", &format!("TEMPLATE: Created empty file '{}'", file_path.display()));
             }
         }
     }
@@ -704,38 +704,38 @@ pub fn process_template_files(
 
 /// Create a folder if it doesn't exist
 fn create_folder_if_needed(path: &str) -> Result<(), Box<dyn std::error::Error>> {
-    crate::utils::debug_log("TEMPLATE", &format!("create_folder_if_needed called with: {}", path));
+    crate::utils::detailed_log("TEMPLATE", &format!("create_folder_if_needed called with: {}", path));
     
     let expanded_path = if path.starts_with("~/") {
         if let Ok(home) = std::env::var("HOME") {
             let result = path.replacen("~/", &format!("{}/", home), 1);
-            crate::utils::debug_log("TEMPLATE", &format!("Expanded tilde path to: {}", result));
+            crate::utils::detailed_log("TEMPLATE", &format!("Expanded tilde path to: {}", result));
             result
         } else {
-            crate::utils::debug_log("TEMPLATE", "Could not get HOME environment variable");
+            crate::utils::detailed_log("TEMPLATE", "Could not get HOME environment variable");
             path.to_string()
         }
     } else {
-        crate::utils::debug_log("TEMPLATE", &format!("Path doesn't start with ~/, using as-is: {}", path));
+        crate::utils::detailed_log("TEMPLATE", &format!("Path doesn't start with ~/, using as-is: {}", path));
         path.to_string()
     };
     
     let path = std::path::Path::new(&expanded_path);
-    crate::utils::debug_log("TEMPLATE", &format!("Final path for mkdir: {}", path.display()));
+    crate::utils::detailed_log("TEMPLATE", &format!("Final path for mkdir: {}", path.display()));
     
     if !path.exists() {
-        crate::utils::debug_log("TEMPLATE", "Path doesn't exist, creating directory...");
+        crate::utils::detailed_log("TEMPLATE", "Path doesn't exist, creating directory...");
         match std::fs::create_dir_all(path) {
-            Ok(_) => crate::utils::debug_log("TEMPLATE", "Successfully created directory"),
+            Ok(_) => crate::utils::detailed_log("TEMPLATE", "Successfully created directory"),
             Err(e) => {
                 let error_msg = format!("Cannot create directory '{}': {}", path.display(), e);
                 crate::utils::log_error(&error_msg);
-                crate::utils::debug_log("TEMPLATE", &error_msg);
+                crate::utils::detailed_log("TEMPLATE", &error_msg);
                 return Err(error_msg.into());
             }
         }
     } else {
-        crate::utils::debug_log("TEMPLATE", "Path already exists, skipping creation");
+        crate::utils::detailed_log("TEMPLATE", "Path already exists, skipping creation");
     }
     
     Ok(())

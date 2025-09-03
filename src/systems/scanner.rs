@@ -128,7 +128,7 @@ pub fn scan_verbose(commands: Vec<Command>, sys_data: &crate::core::sys_data::Sy
     }
     
     // Then scan cloud services (Notion, Google Drive) - Phase 1: Logging only
-    crate::utils::log("\n☁️  Scanning cloud services...");
+    crate::utils::detailed_log("SYSTEM", &format!("\n☁️  Scanning cloud services..."));
     crate::cloud_scanner::scan_cloud_services();
     
     // Then scan contacts - DISABLED for performance
@@ -283,7 +283,7 @@ fn scan_files(mut commands: Vec<Command>, file_roots: &[String], config: &Config
             
             if !file_exists {
                 // This is important enough to always log
-                crate::utils::log(&format!("SCANNER: ✅ Removing command '{}' - file no longer exists: {}", cmd.command, cmd.arg));
+                crate::utils::detailed_log("SCANNER", &format!("SCANNER: ✅ Removing command '{}' - file no longer exists: {}", cmd.command, cmd.arg));
                 // Remove from handled_files too so it can be rescanned if the file is recreated
                 handled_files.remove(&cmd.arg);
                 return false; // Remove this command

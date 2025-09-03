@@ -714,7 +714,7 @@ fn execute_open_app_action(
     // Handle NON_BLOCKING_SUCCESS as success
     match result {
         Ok(_) => {
-            crate::utils::log(&format!("OPEN_APP: Successfully launched: {}", app));
+            crate::utils::detailed_log("OPEN_APP", &format!("OPEN_APP: Successfully launched: {}", app));
             Ok(format!("Launched app: {}", app))
         },
         Err(e) if e.to_string().contains("NON_BLOCKING_SUCCESS") => {
