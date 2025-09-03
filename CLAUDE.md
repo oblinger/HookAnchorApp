@@ -6,6 +6,30 @@
 - If symlinks are broken, recreate them - DO NOT COPY BINARIES
 - Read the DO_NOT_COPY_BINARIES.md files before doing anything with binaries
 
+## 🚨 CRITICAL: println! vs Logging Rules 🚨
+**NEVER use println! or eprintln! except in these specific cases:**
+
+### ✅ ALLOWED to use println!/eprintln!:
+1. **CLI commands** (`src/ha.rs`, `src/cmd.rs`) - User expects terminal output
+2. **CLI scanner verbose mode** (`scan_verbose` function only) - User requested verbose output with `--rescan`  
+3. **Command server** (`src/execute/execution_server.rs`) - ONLY for:
+   - One line per command executed (with timestamp)
+   - Error messages to stderr
+   - Nothing else!
+
+### ❌ NEVER use println!/eprintln! in:
+1. **Popup/GUI code** (`src/ui/*`, `src/popup_launcher.rs`) - No console output at all!
+2. **Library code** (`src/core/*`, `src/utils/*`, `src/systems/*`) - Use logging functions
+3. **Background services** - Use logging functions
+4. **Any new code by default** - Use logging unless it's a CLI command
+
+### 📝 Use these logging functions instead:
+- `crate::utils::log()` - Normal logging (goes to ~/.config/hookanchor/anchor.log)
+- `crate::utils::detailed_log()` - Verbose/debug logging (only when verbose mode enabled)
+- `crate::utils::log_error()` - Error logging
+
+**Remember: Logs go to `~/.config/hookanchor/anchor.log`, not to the console!**
+
 ## Configuration
 - `~/.config/hookanchor` is where the config info is stored
 - It's important that we're not hard coding keys into the application, instead all control keys should be specified in the key binding section in the config file
