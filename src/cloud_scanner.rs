@@ -1,6 +1,5 @@
 use chrono::{DateTime, Utc};
 use serde::{Deserialize, Serialize};
-use std::collections::HashMap;
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct CloudScanConfig {
@@ -161,19 +160,21 @@ impl NotionScanner {
         for page in pages {
             let modified = page.last_modified.format("%Y-%m-%d");
             let full_path = format!("{}/{}", page.parent_path, page.title);
-            crate::utils::log(&format!(
-                "[NOTION] {} - {} (ID: {}, Modified: {})",
+            crate::utils::detailed_log("NOTION", &format!(
+                "Page: {} - URL: {} (ID: {}, Modified: {})",
                 full_path,
-                page.title,
+                page.url,
                 &page.id[0..8],
                 modified
             ));
         }
-        crate::utils::detailed_log("SYSTEM", &format!("[NOTION] Total pages found: {}", pages.len()));
+        crate::utils::log(&format!("[NOTION] Total pages found: {}", pages.len()));
     }
 }
 
-pub fn scan_cloud_services() {
+pub fn scan_cloud_services() -> Vec<NotionPage> {
+    let mut notion_pages = Vec::new();
+    
     // Load the config file directly to get the YAML structure
     let config_path = dirs::home_dir()
         .map(|h| h.join(".config/hookanchor/config.yaml"))
@@ -183,7 +184,7 @@ pub fn scan_cloud_services() {
         Ok(c) => c,
         Err(e) => {
             eprintln!("[CLOUD] Error reading config: {}", e);
-            return;
+            return notion_pages;
         }
     };
     
@@ -191,7 +192,7 @@ pub fn scan_cloud_services() {
         Ok(c) => c,
         Err(e) => {
             eprintln!("[CLOUD] Error parsing config YAML: {}", e);
-            return;
+            return notion_pages;
         }
     };
     
@@ -218,7 +219,10 @@ pub fn scan_cloud_services() {
                             crate::utils::detailed_log("SYSTEM", &format!("[NOTION] Scanning with API key..."));
                             let scanner = NotionScanner::new(expanded_key);
                             match scanner.scan_all_pages() {
-                                Ok(pages) => scanner.log_pages(&pages),
+                                Ok(pages) => {
+                                    scanner.log_pages(&pages);
+                                    notion_pages = pages;
+                                },
                                 Err(e) => crate::utils::log_error(&format!("[NOTION] Error scanning: {}", e)),
                             }
                         } else {
@@ -233,4 +237,6 @@ pub fn scan_cloud_services() {
             }
         }
     }
+    
+    notion_pages
 }

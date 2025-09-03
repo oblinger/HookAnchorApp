@@ -127,9 +127,57 @@ pub fn scan_verbose(commands: Vec<Command>, sys_data: &crate::core::sys_data::Sy
         }
     }
     
-    // Then scan cloud services (Notion, Google Drive) - Phase 1: Logging only
+    // Then scan cloud services (Notion, Google Drive)
     crate::utils::detailed_log("SYSTEM", &format!("\n☁️  Scanning cloud services..."));
-    crate::cloud_scanner::scan_cloud_services();
+    let notion_pages = crate::cloud_scanner::scan_cloud_services();
+    
+    // Remove existing notion commands that don't have the U flag
+    let notion_before = commands.iter().filter(|cmd| cmd.action == "notion").count();
+    let notion_user_edited = commands.iter()
+        .filter(|cmd| cmd.action == "notion" && cmd.flags.contains('U'))
+        .count();
+    
+    commands.retain(|cmd| {
+        // Keep the command if it's not notion, or if it's notion with U flag
+        cmd.action != "notion" || cmd.flags.contains('U')
+    });
+    
+    let notion_removed = notion_before - notion_user_edited;
+    if notion_removed > 0 && verbose {
+        println!("   Removed {} non-user-edited notion commands", notion_removed);
+    }
+    
+    // Create notion commands for each scanned page
+    let mut notion_added = 0;
+    for page in notion_pages {
+        // Create a command name from the page title (sanitize it)
+        let command_name = page.title
+            .chars()
+            .filter(|c| c.is_alphanumeric() || *c == ' ' || *c == '-' || *c == '_')
+            .collect::<String>()
+            .trim()
+            .replace(' ', " ");  // Keep spaces for readability
+        
+        // Skip if a command with this name already exists
+        if commands.iter().any(|cmd| cmd.command.eq_ignore_ascii_case(&command_name)) {
+            crate::utils::detailed_log("SCANNER", &format!("Skipping Notion page '{}' - command already exists", command_name));
+            continue;
+        }
+        
+        // Create the notion command
+        commands.push(Command {
+            command: command_name,
+            action: "notion".to_string(),
+            arg: page.url,
+            flags: String::new(), // No U flag for scanner-generated notion commands
+            patch: String::new(),
+        });
+        notion_added += 1;
+    }
+    
+    if notion_added > 0 && verbose {
+        println!("   Added {} notion commands from scanned pages", notion_added);
+    }
     
     // Then scan contacts - DISABLED for performance
     // commands = scan_contacts(commands);
