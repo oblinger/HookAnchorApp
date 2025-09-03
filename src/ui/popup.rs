@@ -2354,24 +2354,51 @@ impl AnchorSelector {
         if tmuxp_path.exists() {
             utils::log(&format!("TMUX: Found .tmuxp.yaml at {:?}", tmuxp_path));
             
-            // Use the folder name as the session name, sanitized for tmux
-            // We ignore what's in the .tmuxp.yaml file because it might have spaces
-            let folder_name = Path::new(&folder_path)
-                .file_name()
-                .and_then(|n| n.to_str())
-                .unwrap_or("session");
+            // Parse the .tmuxp.yaml file to get the actual session name
+            utils::detailed_log("TMUX_RUST", &format!("Line 2354: Parsing .tmuxp.yaml to get session_name"));
+            let session_name = match std::fs::read_to_string(&tmuxp_path) {
+                Ok(yaml_content) => {
+                    let mut found_session_name = None;
+                    for line in yaml_content.lines() {
+                        if line.trim_start().starts_with("session_name:") {
+                            // Extract the session name after the colon
+                            let parts: Vec<&str> = line.splitn(2, ':').collect();
+                            if parts.len() == 2 {
+                                let name = parts[1].trim().trim_matches('"').trim_matches('\'');
+                                utils::detailed_log("TMUX_RUST", &format!("Line 2360: Found session_name in YAML: '{}'", name));
+                                found_session_name = Some(name.to_string());
+                                break;
+                            }
+                        }
+                    }
+                    
+                    if let Some(name) = found_session_name {
+                        utils::log(&format!("TMUX: Using session name from .tmuxp.yaml: '{}'", name));
+                        name
+                    } else {
+                        // No session_name found in YAML - this is an error
+                        utils::log("TMUX: ERROR - No session_name found in .tmuxp.yaml");
+                        utils::detailed_log("TMUX_RUST", "Line 2373: ERROR - .tmuxp.yaml missing session_name field");
+                        self.show_error_dialog(&format!(
+                            "The .tmuxp.yaml file at:\n{}\n\nis missing a 'session_name' field.\n\nPlease add:\nsession_name: <name>\n\nto the file.",
+                            tmuxp_path.display()
+                        ));
+                        return;
+                    }
+                }
+                Err(e) => {
+                    utils::log(&format!("TMUX: ERROR - Failed to read .tmuxp.yaml: {}", e));
+                    utils::detailed_log("TMUX_RUST", &format!("Line 2382: Failed to read .tmuxp.yaml: {}", e));
+                    self.show_error_dialog(&format!(
+                        "Failed to read .tmuxp.yaml file:\n{}\n\nError: {}",
+                        tmuxp_path.display(),
+                        e
+                    ));
+                    return;
+                }
+            };
             
-            // IMPORTANT: Sanitize the session name for tmux compatibility
-            // Replace spaces and other problematic characters with underscores
-            let session_name = folder_name
-                .replace(' ', "_")
-                .replace(':', "_")
-                .replace('.', "_")
-                .replace('[', "_")
-                .replace(']', "_");
-            
-            utils::log(&format!("TMUX: Folder name: '{}'", folder_name));
-            utils::log(&format!("TMUX: Sanitized session name: '{}'", session_name));
+            utils::log(&format!("TMUX: Session name from YAML: '{}'", session_name));
             
             // Check if session exists
             let check_session = Command::new("/opt/homebrew/bin/tmux")
@@ -2382,10 +2409,25 @@ impl AnchorSelector {
             
             if !session_exists {
                 utils::log(&format!("TMUX: Creating new tmux session '{}'", session_name));
+                utils::detailed_log("TMUX_RUST", &format!("Line 2384: Session '{}' does not exist, creating with tmuxp", session_name));
+                
+                // First, let's see what sessions exist before we create
+                utils::detailed_log("TMUX_RUST", "Line 2386: Checking existing sessions before creation");
+                if let Ok(existing) = Command::new("/opt/homebrew/bin/tmux")
+                    .args(&["list-sessions", "-F", "#{session_name}"])
+                    .output() {
+                    let sessions = String::from_utf8_lossy(&existing.stdout);
+                    utils::detailed_log("TMUX_RUST", &format!("Line 2390: Existing sessions: {}", sessions.trim()));
+                }
+                
                 // Create session with tmuxp
                 // Since we expect the .tmuxp.yaml to have the correct session name (with underscores),
                 // we don't use -s flag which seems to cause issues
                 // Add /opt/homebrew/bin to PATH so tmuxp can find tmux
+                let tmuxp_cmd = format!("/opt/homebrew/bin/tmuxp load '{}' -d", tmuxp_path.to_str().unwrap_or(""));
+                utils::detailed_log("TMUX_RUST", &format!("Line 2397: Running command: {}", tmuxp_cmd));
+                utils::detailed_log("TMUX_RUST", &format!("Line 2398: Current dir: {}", folder_path));
+                
                 match Command::new("/opt/homebrew/bin/tmuxp")
                     .args(&["load", tmuxp_path.to_str().unwrap_or(""), "-d"])
                     .current_dir(&folder_path)
@@ -2396,10 +2438,15 @@ impl AnchorSelector {
                         let stdout = String::from_utf8_lossy(&output.stdout);
                         let stderr = String::from_utf8_lossy(&output.stderr);
                         
+                        utils::detailed_log("TMUX_RUST", &format!("Line 2408: tmuxp exit code: {:?}", output.status.code()));
+                        utils::detailed_log("TMUX_RUST", &format!("Line 2409: tmuxp stdout: '{}'", stdout));
+                        utils::detailed_log("TMUX_RUST", &format!("Line 2410: tmuxp stderr: '{}'", stderr));
+                        
                         if !output.status.success() {
                             utils::log(&format!("TMUX: tmuxp failed with exit code {:?}", output.status.code()));
                             utils::log(&format!("TMUX: tmuxp stderr: {}", stderr));
                             utils::log(&format!("TMUX: tmuxp stdout: {}", stdout));
+                            utils::detailed_log("TMUX_RUST", "Line 2415: tmuxp FAILED, returning");
                             return;
                         }
                         
@@ -2412,13 +2459,27 @@ impl AnchorSelector {
                             utils::log(&format!("TMUX: tmuxp stderr: {}", stderr));
                         }
                         
+                        // Check what sessions exist after tmuxp
+                        utils::detailed_log("TMUX_RUST", "Line 2428: Checking sessions after tmuxp");
+                        if let Ok(after) = Command::new("/opt/homebrew/bin/tmux")
+                            .args(&["list-sessions", "-F", "#{session_name}"])
+                            .output() {
+                            let sessions = String::from_utf8_lossy(&after.stdout);
+                            utils::detailed_log("TMUX_RUST", &format!("Line 2432: Sessions after tmuxp: {}", sessions.trim()));
+                        }
+                        
                         // Verify the session was actually created
                         std::thread::sleep(std::time::Duration::from_millis(200));
+                        utils::detailed_log("TMUX_RUST", &format!("Line 2436: Verifying session '{}' exists", session_name));
                         let verify = Command::new("/opt/homebrew/bin/tmux")
                             .args(&["has-session", "-t", &session_name])
                             .output();
                         
                         if let Ok(v) = verify {
+                            let verify_stderr = String::from_utf8_lossy(&v.stderr);
+                            utils::detailed_log("TMUX_RUST", &format!("Line 2442: Verify exit code: {}", v.status.code().unwrap_or(-1)));
+                            utils::detailed_log("TMUX_RUST", &format!("Line 2443: Verify stderr: '{}'", verify_stderr));
+                            
                             if v.status.success() {
                                 utils::log(&format!("TMUX: Verified session '{}' exists", session_name));
                                 
@@ -2443,7 +2504,36 @@ impl AnchorSelector {
                             } else {
                                 // tmuxp said it succeeded but session wasn't created - this is an error
                                 utils::log(&format!("TMUX: ERROR - Session '{}' was NOT created despite tmuxp reporting success", session_name));
-                                utils::log(&format!("TMUX: tmux has-session stderr: {}", String::from_utf8_lossy(&v.stderr)));
+                                utils::log(&format!("TMUX: tmux has-session stderr: {}", verify_stderr));
+                                utils::detailed_log("TMUX_RUST", &format!("Line 2479: CRITICAL ERROR - tmuxp succeeded but session '{}' doesn't exist", session_name));
+                                
+                                // Let's check what's in the .tmuxp.yaml file
+                                utils::detailed_log("TMUX_RUST", &format!("Line 2481: Reading .tmuxp.yaml to check session_name"));
+                                if let Ok(yaml_content) = std::fs::read_to_string(&tmuxp_path) {
+                                    // Look for session_name in the YAML
+                                    for line in yaml_content.lines() {
+                                        if line.contains("session_name") {
+                                            utils::detailed_log("TMUX_RUST", &format!("Line 2485: Found in .tmuxp.yaml: {}", line.trim()));
+                                            break;
+                                        }
+                                    }
+                                }
+                                
+                                // Try a fallback: check if tmuxp created a session with a different name
+                                utils::detailed_log("TMUX_RUST", "Line 2490: Checking if tmuxp created session with different name");
+                                if let Ok(after_create) = Command::new("/opt/homebrew/bin/tmux")
+                                    .args(&["list-sessions", "-F", "#{session_name}"])
+                                    .output() {
+                                    let all_sessions = String::from_utf8_lossy(&after_create.stdout);
+                                    utils::detailed_log("TMUX_RUST", &format!("Line 2494: All sessions after tmuxp: {}", all_sessions.trim()));
+                                    
+                                    // Try to find a session that might match our expected session name
+                                    for session in all_sessions.lines() {
+                                        if session.contains(&session_name) || session_name.contains(session) {
+                                            utils::detailed_log("TMUX_RUST", &format!("Line 2498: Found possible match: '{}'", session));
+                                        }
+                                    }
+                                }
                                 
                                 // Check if tmuxp can't find tmux in PATH
                                 let stdout = String::from_utf8_lossy(&output.stdout);
