@@ -37,6 +37,7 @@ impl NotionScanner {
 
         let client = reqwest::blocking::Client::builder()
             .default_headers(headers)
+            .timeout(std::time::Duration::from_secs(10))  // Add 10 second timeout
             .build()
             .unwrap();
 
@@ -44,13 +45,16 @@ impl NotionScanner {
     }
 
     pub fn scan_all_pages(&self) -> Result<Vec<NotionPage>, String> {
-        crate::utils::detailed_log("SYSTEM", &format!("[NOTION] Starting scan of all accessible pages..."));
+        crate::utils::log("[NOTION] Starting scan of all accessible pages...");
         
         let mut all_pages = Vec::new();
         let mut has_more = true;
         let mut start_cursor: Option<String> = None;
+        let mut iterations = 0;
+        const MAX_ITERATIONS: i32 = 10;  // Limit to 1000 pages (10 * 100)
 
-        while has_more {
+        while has_more && iterations < MAX_ITERATIONS {
+            iterations += 1;
             let mut body = serde_json::json!({
                 "filter": {
                     "property": "object",
@@ -63,32 +67,53 @@ impl NotionScanner {
                 body["start_cursor"] = serde_json::json!(cursor);
             }
 
+            crate::utils::log("[NOTION] Sending request to Notion API...");
             let response = self
                 .client
                 .post("https://api.notion.com/v1/search")
                 .json(&body)
                 .send()
-                .map_err(|e| format!("Failed to send request: {}", e))?;
+                .map_err(|e| {
+                    let error_msg = format!("Failed to send request: {}", e);
+                    crate::utils::log_error(&format!("[NOTION] {}", error_msg));
+                    error_msg
+                })?;
 
             if !response.status().is_success() {
                 let status = response.status();
                 let text = response.text().unwrap_or_default();
-                return Err(format!("Notion API error {}: {}", status, text));
+                let error_msg = format!("Notion API error {}: {}", status, text);
+                crate::utils::log_error(&format!("[NOTION] {}", error_msg));
+                return Err(error_msg);
             }
 
+            crate::utils::log("[NOTION] Response received, parsing JSON...");
             let data: serde_json::Value = response
                 .json()
-                .map_err(|e| format!("Failed to parse response: {}", e))?;
+                .map_err(|e| {
+                    let error_msg = format!("Failed to parse response: {}", e);
+                    crate::utils::log_error(&format!("[NOTION] {}", error_msg));
+                    error_msg
+                })?;
 
             has_more = data["has_more"].as_bool().unwrap_or(false);
             start_cursor = data["next_cursor"].as_str().map(String::from);
 
             if let Some(results) = data["results"].as_array() {
+                let page_count = results.len();
+                crate::utils::log(&format!("[NOTION] Processing {} pages (iteration {}/{})", 
+                    page_count, iterations, MAX_ITERATIONS));
+                
                 for page in results {
                     if let Some(parsed) = self.parse_page(page) {
                         all_pages.push(parsed);
                     }
                 }
+            }
+            
+            if has_more && iterations >= MAX_ITERATIONS {
+                crate::utils::log(&format!("[NOTION] Reached max iterations limit. Stopping scan with {} pages collected.", all_pages.len()));
+                break;
             }
         }
 
