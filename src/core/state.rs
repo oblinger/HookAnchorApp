@@ -24,6 +24,8 @@ pub struct AppState {
     pub last_executed_command: Option<String>,
     /// Process ID of the running command server
     pub server_pid: Option<u32>,
+    /// ISO timestamp when Notion was last scanned
+    pub notion_last_scan: Option<String>,
 }
 
 impl Default for AppState {
@@ -35,6 +37,7 @@ impl Default for AppState {
             last_scan_checksum: None,
             last_executed_command: None,
             server_pid: None,
+            notion_last_scan: None,
         }
     }
 }

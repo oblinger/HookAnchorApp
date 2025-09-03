@@ -45,23 +45,70 @@ impl NotionScanner {
     }
 
     pub fn scan_all_pages(&self) -> Result<Vec<NotionPage>, String> {
-        crate::utils::log("[NOTION] Starting scan of all accessible pages...");
+        // Default to scanning up to 1000 pages
+        self.scan_pages_with_limit(1000)
+    }
+    
+    pub fn scan_pages_with_limit(&self, page_limit: usize) -> Result<Vec<NotionPage>, String> {
+        // Check if we have a stored last scan timestamp
+        let last_scan = self.get_last_scan_time();
+        
+        if let Some(last_time) = last_scan {
+            crate::utils::log(&format!("[NOTION] Incremental scan since {} (limit: {} pages)...", 
+                last_time.format("%Y-%m-%d %H:%M:%S"), page_limit));
+        } else {
+            crate::utils::log(&format!("[NOTION] Full scan (limit: {} pages)...", page_limit));
+        }
         
         let mut all_pages = Vec::new();
         let mut has_more = true;
         let mut start_cursor: Option<String> = None;
-        let mut iterations = 0;
-        const MAX_ITERATIONS: i32 = 10;  // Limit to 1000 pages (10 * 100)
+        
+        // Calculate iterations needed based on page limit (100 pages per request)
+        let max_iterations = ((page_limit + 99) / 100).min(10); // Cap at 10 iterations max
 
-        while has_more && iterations < MAX_ITERATIONS {
+        let mut iterations = 0;
+        while has_more && iterations < max_iterations && all_pages.len() < page_limit {
             iterations += 1;
+            
+            // Build query with optional date filter for incremental scanning
+            let mut filter = serde_json::json!({
+                "property": "object",
+                "value": "page"
+            });
+            
+            // Add date filter if we have a last scan time
+            if let Some(last_time) = last_scan {
+                filter = serde_json::json!({
+                    "and": [
+                        {
+                            "property": "object",
+                            "value": "page"
+                        },
+                        {
+                            "timestamp": "last_edited_time",
+                            "last_edited_time": {
+                                "after": last_time.to_rfc3339()
+                            }
+                        }
+                    ]
+                });
+            }
+            
             let mut body = serde_json::json!({
-                "filter": {
-                    "property": "object",
-                    "value": "page"
-                },
+                "filter": filter,
                 "page_size": 100
             });
+            
+            // Only add sort if we're doing incremental scan
+            if last_scan.is_some() {
+                body["sorts"] = serde_json::json!([
+                    {
+                        "property": "last_edited_time",
+                        "direction": "descending"
+                    }
+                ]);
+            }
 
             if let Some(cursor) = start_cursor {
                 body["start_cursor"] = serde_json::json!(cursor);
@@ -101,23 +148,48 @@ impl NotionScanner {
 
             if let Some(results) = data["results"].as_array() {
                 let page_count = results.len();
-                crate::utils::log(&format!("[NOTION] Processing {} pages (iteration {}/{})", 
-                    page_count, iterations, MAX_ITERATIONS));
+                crate::utils::log(&format!("[NOTION] Processing {} pages (iteration {}/{}, total: {})", 
+                    page_count, iterations, max_iterations, all_pages.len()));
                 
                 for page in results {
+                    if all_pages.len() >= page_limit {
+                        crate::utils::log(&format!("[NOTION] Reached page limit of {}. Stopping.", page_limit));
+                        has_more = false;
+                        break;
+                    }
                     if let Some(parsed) = self.parse_page(page) {
                         all_pages.push(parsed);
                     }
                 }
             }
             
-            if has_more && iterations >= MAX_ITERATIONS {
+            if has_more && iterations >= max_iterations {
                 crate::utils::log(&format!("[NOTION] Reached max iterations limit. Stopping scan with {} pages collected.", all_pages.len()));
                 break;
             }
         }
 
+        // Save the current scan time for next incremental scan
+        self.save_last_scan_time();
+        
         Ok(all_pages)
+    }
+    
+    fn get_last_scan_time(&self) -> Option<DateTime<Utc>> {
+        let state = crate::core::load_state();
+        
+        if let Some(timestamp_str) = state.notion_last_scan {
+            if let Ok(timestamp) = DateTime::parse_from_rfc3339(&timestamp_str) {
+                return Some(timestamp.with_timezone(&Utc));
+            }
+        }
+        None
+    }
+    
+    fn save_last_scan_time(&self) {
+        let mut state = crate::core::load_state();
+        state.notion_last_scan = Some(Utc::now().to_rfc3339());
+        crate::core::save_state(&state);
     }
 
     fn parse_page(&self, page: &serde_json::Value) -> Option<NotionPage> {
@@ -231,11 +303,13 @@ pub fn scan_cloud_services() -> Vec<NotionPage> {
     if let Some(cloud_roots) = config["popup_settings"]["cloud_scan_roots"].as_sequence() {
         for root_config in cloud_roots {
             let service_type = root_config["type"].as_str().unwrap_or("");
-            let enabled = root_config["enabled"].as_bool().unwrap_or(false);
+            
+            // Use limit field: 0 = disabled, positive number = max pages to scan
+            let limit = root_config["limit"].as_i64().unwrap_or(0);
 
-            if !enabled {
+            if limit <= 0 {
                 if service_type == "notion" {
-                    crate::utils::log("[NOTION] Scanning disabled in config");
+                    crate::utils::log("[NOTION] Scanning disabled (limit = 0)");
                 }
                 continue;
             }
@@ -251,9 +325,9 @@ pub fn scan_cloud_services() -> Vec<NotionPage> {
                         };
 
                         if expanded_key.starts_with("ntn_") || expanded_key.starts_with("secret_") {
-                            crate::utils::log("[NOTION] Scanning with API key...");
+                            crate::utils::log(&format!("[NOTION] Scanning with API key (limit: {} pages)...", limit));
                             let scanner = NotionScanner::new(expanded_key);
-                            match scanner.scan_all_pages() {
+                            match scanner.scan_pages_with_limit(limit as usize) {
                                 Ok(pages) => {
                                     scanner.log_pages(&pages);
                                     notion_pages = pages;
