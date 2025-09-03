@@ -267,6 +267,21 @@ fn handle_client(
     let action: crate::execute::Action = serde_json::from_str(&request_line.trim())?;
     verbose_log("CMD_SERVER", &format!("Received action: type={}", action.action_type()));
     
+    // Print one line to console showing what command is being executed
+    // Extract a meaningful description of what's being executed
+    let action_desc = if action.action_type() == "shell" || action.action_type() == "cmd" {
+        // For shell/cmd, show the actual command
+        action.get_string("arg")
+            .map(|s| s.to_string())
+            .unwrap_or_else(|| action.action_type().to_string())
+    } else {
+        // For other actions, show type and primary arg if available
+        action.get_string("arg")
+            .map(|arg| format!("{}: {}", action.action_type(), arg))
+            .unwrap_or_else(|| action.action_type().to_string())
+    };
+    println!("[{}] Executing: {}", chrono::Local::now().format("%H:%M:%S"), action_desc);
+    
     // Check if client needs a response (blocking calls)
     let needs_response = action.get_string("flags").unwrap_or("").contains("G");
     
@@ -282,12 +297,16 @@ fn handle_client(
                 stderr: String::new(),
                 error: None,
             },
-            Err(e) => CommandResponse {
-                success: false,
-                exit_code: Some(1),
-                stdout: String::new(),
-                stderr: String::new(),
-                error: Some(e.to_string()),
+            Err(e) => {
+                // Print error to console so user can see it
+                eprintln!("[{}] ERROR: {}", chrono::Local::now().format("%H:%M:%S"), e);
+                CommandResponse {
+                    success: false,
+                    exit_code: Some(1),
+                    stdout: String::new(),
+                    stderr: String::new(),
+                    error: Some(e.to_string()),
+                }
             }
         };
         
@@ -302,7 +321,11 @@ fn handle_client(
             verbose_log("CMD_SERVER", "Executing action in background");
             match super::actions::execute_locally(&action, None, None) {
                 Ok(_) => verbose_log("CMD_SERVER", "Action executed successfully"),
-                Err(e) => crate::utils::log_error(&format!("Action failed: {}", e)),
+                Err(e) => {
+                    // Print error to console so user can see it
+                    eprintln!("[{}] ERROR: {}", chrono::Local::now().format("%H:%M:%S"), e);
+                    crate::utils::log_error(&format!("Action failed: {}", e));
+                }
             }
         });
         
