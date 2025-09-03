@@ -157,18 +157,25 @@ impl NotionScanner {
     }
 
     pub fn log_pages(&self, pages: &[NotionPage]) {
+        crate::utils::log(&format!("[NOTION] Found {} pages:", pages.len()));
         for page in pages {
             let modified = page.last_modified.format("%Y-%m-%d");
+            // Log each page URL at normal level so it's visible
+            crate::utils::log(&format!(
+                "[NOTION] {} - {}",
+                page.title,
+                page.url
+            ));
+            // Also log detailed info for debug mode
             let full_path = format!("{}/{}", page.parent_path, page.title);
             crate::utils::detailed_log("NOTION", &format!(
-                "Page: {} - URL: {} (ID: {}, Modified: {})",
-                full_path,
-                page.url,
+                "Page details: {} (ID: {}, Modified: {}, Path: {})",
+                page.title,
                 &page.id[0..8],
-                modified
+                modified,
+                full_path
             ));
         }
-        crate::utils::log(&format!("[NOTION] Total pages found: {}", pages.len()));
     }
 }
 
