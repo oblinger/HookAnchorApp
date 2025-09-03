@@ -15,6 +15,7 @@
 	  - Get contract spec
   [AWS Costs](https://drive.google.com/drive/folders/1Mnu6bwVw9bqxGq40uM_fBZ6x_75O3c6H) 
   MGT
+    - AWS analysis
     - Patent Restart
     + Refine/decide on an all-encompassing BB AI accuracy metric
     + Followup with Softbank with new accuracy numbers given recent improvement

@@ -1,3 +1,5 @@
+- setup should setup config.js
+- should error if notion does not have permissions; need to exetend grabber
 - anchor should really be a flag on any command rather than a command type
 - ha use top left not bottom left for state
 - add 'open' fn to templates

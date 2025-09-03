@@ -1,7 +1,9 @@
 
 
-### 2025-08-04  
+### 2025-05-03 
 
+
+### 2025-08-04  Asian Ordering / Pillow scream
 
 - was with group of asians (in asia) who were my work collegues.  they helped me order some game (or dish) on my phone, where they needed to switch languages to complete the order... I could not do it in english text.
 - We were ordering a sequence of games or food dishes to be sent to me.

@@ -1,5 +1,14 @@
 
 
+### 2025-09-02  Few MIT targets
+
+- Sleep is better, motivation is better.
+- This week I want to set several MIT tasks & hit them
+- Need to feel the "wins" of doing what I am saying
+- Need to work on important items
+
+
+
 ### 2025-08-25  Daily Reflection on Approach, Emotions, and Outcomes
 - M:  Sunday night nose-dive watching TV. ==> edit my alarm settings, and then really follow them.  May be hard 2night I am a little off schedule.
 

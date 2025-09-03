@@ -1,6 +1,5 @@
 - xmas ticket for Dan
 
-- AWS analysis
 - playon data download
 
 - james and matty; fireball matty tell

@@ -6,7 +6,6 @@
 -  [Bucket Listers](https://bucketlisters.com/inspiration/145-the-best-date-spots-in-san-francisco)  
 -  [Two Scotts Abroad](https://www.twoscotsabroad.com/date-nights-in-san-francisco/) 
 -  [Reddit](https://www.reddit.com/r/AskSF/comments/137zacq/sfdate_ideas_that_arent_just_drinks_and_dinner/) 
-- 
 -  [CozyMeal](https://www.cozymeal.com/magazine/date-ideas-san-francisco) 
 - 
 

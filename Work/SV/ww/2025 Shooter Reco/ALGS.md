@@ -1,3 +1,10 @@
+
+# Exploration
+
+### Group Reco in VB 
+  1. "Learning Actor Relation Graphs for Group Activity Recognition" (CVPR 2019)
+    - https://arxiv.org/abs/1904.04295
+
 # Basketball Shot Recognition Algorithms
 
 ## Reco

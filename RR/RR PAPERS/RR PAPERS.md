@@ -8,6 +8,146 @@
 
 mamba block
 
+## 2025-09 - COMPOSER - NeurIPS 2021 - ECCV 2022 - COMPOSER: Compositional Reasoning of Group Activity in Videos
+  Paper: https://arxiv.org/abs/2112.05892
+  Project Page: https://sites.google.com/view/composer-action
+  Code: https://github.com/hongluzhou/composer
+
+  Authors: Honglu Zhou, Asim Kadav, Aviv Shamsian, Shijie Geng, Farley Lai, Long Zhao, Ting Liu, Mubbasir Kapadia, Hans Peter Graf
+
+  Conference: NeurIPS 2021
+
+ System Inputs and Outputs:
+https://www.notion.so/sportsvisio/PROJ-9d1f8e89d87442a7a22e0c2a95561319?source=copy_link
+
+  Inputs:
+  {
+      # Video data
+      'video_frames': tensor,  # [T, H, W, 3] - Full scene video
+
+      # Person tracklets (bounding boxes for each person)
+      'person_tracks': [
+          {
+              'track_id': int,
+              'bboxes': [[x1,y1,x2,y2], ...],  # One per frame
+              'frames': [0, 1, 2, ...],  # Which frames they appear in
+          },
+          ... # For all N people in scene
+      ],
+
+      # Optional: Pre-extracted features
+      'person_features': tensor,  # [N, T, D] - Features per person per frame
+  }
+
+  Outputs:
+  {
+      # Primary: Group activity classification
+      'group_activity': str,  # e.g., "team_offense", "fast_break", "set_play"
+
+      # Secondary: Individual actions (discovered latently)
+      'individual_actions': [
+          {'track_id': 0, 'action': 'shooting'},
+          {'track_id': 1, 'action': 'screening'},
+          {'track_id': 2, 'action': 'defending'},
+          ...
+      ],
+
+      # Latent: Discovered sub-activities (not explicitly supervised)
+      'latent_sub_activities': tensor,  # [N, K] - K latent activities per person
+
+      # Interaction graph
+      'interaction_weights': matrix  # [N, N] - Who influences whom
+  }
+
+  Core Architecture:
+
+  Key Components:
+
+  1. Multi-Scale Transformer Encoder
+    - Encodes individual person features
+    - Encodes group-level features
+    - Maintains full scene context
+  2. Compositional Reasoning Module
+    - Learns latent sub-activities without labels
+    - Discovers patterns like "pick-and-roll", "screening"
+    - Uses mixture-of-experts approach
+  3. Interaction Graph
+    - Models relationships between all players
+    - Attention weights show who affects whom
+    - Preserves spatial relationships
+
+## 2025-09 - ICCV 2021 "Learning to Track with Object Permanence" (ICCV 2021)
+  Paper: https://arxiv.org/abs/2103.14258
+  Project Page: https://sites.google.com/view/object-permanence
+  Code: https://github.com/TRI-ML/permatrack
+  Authors: Pavel Tokmakov, Jie Li, Wolfram Burgard, Adrien Gaidon (Toyota Research Institute)
+
+System Inputs and Outputs:
+
+  Inputs:
+  # Per frame:
+  - RGB image (H x W x 3)
+  - Detection results from base detector (CenterNet):
+    - Bounding boxes [x1, y1, x2, y2]
+    - Detection scores
+    - Class labels (person, vehicle, etc.)
+
+  # From previous frames:
+  - Track history (past trajectories)
+  - Track features (appearance embeddings)
+
+  Outputs:
+  # Per frame:
+  - Active tracks: {
+      'track_id': int,
+      'bbox': [x1, y1, x2, y2],
+      'confidence': float,
+      'visibility': ['visible', 'occluded', 'absent'],
+      'predicted_position': [x, y]  # Even when occluded
+    }
+
+  # Key feature: Maintains tracks even when object not detected
+
+  Core Architecture:
+
+  Main Components:
+
+  1. Detection Module: CenterNet (or any detector)
+  2. Appearance Encoder: ResNet features for Re-ID
+  3. Prediction Module: Predicts future positions using:
+    - Kalman filter for motion
+    - Learned offsets for occlusion patterns
+  4. Association Module: Hungarian matching with:
+    - Spatial distance (IoU)
+    - Appearance similarity
+    - Motion consistency
+
+
+  What PermaTrack gives you:
+  - Maintains tracks through occlusions (object permanence)
+  - Predicts positions during gaps
+  - Associates detections across time
+
+  Your advantage:
+  - Gallery model provides reliable "anchor" detections
+  - Each player is a distinct object class (Player_O1, not generic person)
+  - Only need short-term Re-ID between gallery detections
+
+  Perfect fit because:
+  - Designed to handle missing detections (your gaps between gallery IDs)
+  - Maintains spatial coherence (tracking without seeing)
+  - Can treat pre-identified players as different object types
+
+  The code is available and well-documented on their GitHub, making it straightforward to adapt for your gallery-guided tracking approach.
+
+
+## 2025-09-02  "TubeR: Tubelet Transformer for Video Action Detection" (CVPR 2022)
+  - Paper: https://arxiv.org/abs/2104.00969
+  - Code: https://github.com/salesforce/TubeR
+  - Uses "tubelets" (tracks) as queries to transformer
+  - Combines track proposals with video features
+  - Very close to your use case
+
 
 ## 2025-08-30  [VideoMAE](https://arxiv.org/abs/2203.12602) 
 
