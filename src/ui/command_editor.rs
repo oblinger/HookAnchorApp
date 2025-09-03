@@ -338,9 +338,12 @@ impl CommandEditor {
         // Check if this is a scanner-generated action type
         let is_scanner_generated = crate::systems::SCANNER_GENERATED_ACTIONS.contains(&self.action.as_str());
         
-        // Add 'U' flag if it's a scanner-generated action type to prevent removal during rescan
+        // Check if this is a notion command (which should also get the U flag)
+        let is_notion = self.action == "notion";
+        
+        // Add 'U' flag if it's a scanner-generated action type or notion command to prevent removal during rescan
         let mut flags = self.flags.clone();
-        if is_scanner_generated && !flags.contains('U') {
+        if (is_scanner_generated || is_notion) && !flags.contains('U') {
             if !flags.is_empty() {
                 flags.push(' ');
             }
