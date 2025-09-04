@@ -8,9 +8,6 @@
   OLD:			[[2023-12 CV Tree]], , [Assess](spot://assess), [Baselines](spot://baselines), [BELIEF Gdrive](spot://beliefgdrive)
   .				[Benchmarks](spot://benchmarks), [Brainstorming Q3](spot://brainstormingq3), [[CV Annotations]], [[GameGraph]], [[Infra]],
   .				[[Player Tracking Problem]], [[Rpt]], [[ShotTopView]], [tasks](spot://tasks), [Task Tree](spot://tasktree), [Baseball](spot://baseball),
-  , ,
-  , ,
-  , ,
   , [CVP Obsidian](spot://cvpobsidian),
   DELS: ,[CVP Obsidian](spot://cvpobsidian),
   , ,

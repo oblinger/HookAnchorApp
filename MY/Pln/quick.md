@@ -1,3 +1,5 @@
+- see if Magic Hour better effects, Briones, James, Matty  (magic hours)
+- email to Jason about requrie for GPUs
 - xmas ticket for Dan
 
 - playon data download

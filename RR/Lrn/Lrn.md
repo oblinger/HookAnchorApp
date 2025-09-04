@@ -6,6 +6,8 @@
   DELS: [Lrn Note](spot://lrnnote),[Lrn Obsidian](spot://lrnobsidian),[Lrn Note](spot://lrnnote),[Lrn Note](spot://lrnnote),
 
 
+https://github.com/openai/openai-cookbook/blob/main/articles/gpt-oss/fine-tune-transfomers.ipynb?utm_source=alphasignal&utm_campaign=2025-07-24&asuniq=23058444
+
 
 
 ## Rocks - Evergreen @ top  [[Lrn Big]] 
