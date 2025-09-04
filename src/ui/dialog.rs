@@ -173,7 +173,7 @@ impl Dialog {
     
     /// Calculate the required dialog size using simple estimation (performance optimized)
     pub fn calculate_required_size(&self, _ctx: &egui::Context) -> (f32, f32) {
-        let mut max_width = 400.0f32; // reasonable minimum width
+        let mut max_width = 500.0f32; // increased minimum width for rename dialogs
         let mut total_height = 30.0f32; // base padding for window chrome and margins
         
         for row in &self.rows {
@@ -220,9 +220,10 @@ impl Dialog {
                                 .max()
                                 .unwrap_or(0);
                             
-                            // Use monospace font estimation: ~7px per character
-                            let textbox_width = (max_line_length as f32 * 7.0 + 40.0).max(350.0);
-                            let textbox_height = line_count as f32 * 16.0 + 15.0; // 16px line height + padding
+                            // Use better font estimation for proportional font: ~8px per character
+                            // Add extra width for bullet points and indentation
+                            let textbox_width = (max_line_length as f32 * 8.0 + 60.0).max(450.0);
+                            let textbox_height = line_count as f32 * 18.0 + 20.0; // Better line height + padding
                             
                             row_width += textbox_width;
                             row_height = row_height.max(textbox_height);
@@ -259,7 +260,7 @@ impl Dialog {
         let final_height_with_margin = total_height + (pad * 2.0);
         
         // Use calculated size but constrain to configured maximums
-        let final_width = final_width_with_margin.max(350.0).min(max_width_available);
+        let final_width = final_width_with_margin.max(500.0).min(max_width_available);
         let final_height = final_height_with_margin.max(150.0).min(max_height_available);
         
         (final_width, final_height)
@@ -295,8 +296,7 @@ impl Dialog {
         let pad = 20.0; // Same padding value used in calculate_required_size
 
         egui::Window::new(&self.title)
-            .default_size([required_width, required_height])
-            .resizable(true)
+            .fixed_size([required_width, required_height])
             .collapsible(false)
             .show(ctx, |ui| {
                 // Add padding around the dialog content

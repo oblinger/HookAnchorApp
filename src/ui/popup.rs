@@ -4,6 +4,7 @@
 
 use eframe::egui::{self, IconData};
 use std::sync::OnceLock;
+use std::collections::HashMap;
 use crate::core::Command;
 use crate::core::{
     Config, load_state, save_state
@@ -38,6 +39,8 @@ pub struct AnchorSelector {
     last_saved_position: Option<egui::Pos2>,
     /// Whether window position has been set on startup
     position_set: bool,
+    /// Track if current position was set automatically (centering, bottom-avoidance) vs user action
+    was_auto_positioned: bool,
     /// Command editor dialog state
     command_editor: CommandEditor,
     /// Dialog system for user input
@@ -82,6 +85,8 @@ pub struct AnchorSelector {
     is_hidden: bool,
     /// Flag to track if rebuild is pending (deferred to next frame)
     pending_rebuild: bool,
+    /// Pending action waiting for user confirmation or input
+    pending_action: Option<PendingAction>,
 }
 
 /// Loading state for deferred initialization
@@ -96,6 +101,14 @@ enum LoadingState {
     /// Error occurred during loading
     #[allow(dead_code)]
     Error(String),
+}
+
+/// Action to be executed after user confirms via dialog or other UI component
+pub struct PendingAction {
+    /// Context data passed to the action
+    pub context: HashMap<String, String>,
+    /// Callback function to execute with final context (including user input)
+    pub callback: Box<dyn FnOnce(&HashMap<String, String>) -> Result<(), Box<dyn std::error::Error>>>,
 }
 
 impl AnchorSelector {
@@ -1206,6 +1219,7 @@ impl AnchorSelector {
             popup_state,
             last_saved_position: None,
             position_set: false,
+            was_auto_positioned: false,
             command_editor: CommandEditor::new(),
             dialog: Dialog::new(),
             window_size_mode: WindowSizeMode::Normal,
@@ -1229,6 +1243,7 @@ impl AnchorSelector {
             should_exit: false,
             is_hidden: false,
             pending_rebuild: false,
+            pending_action: None,
         };
         
         result
@@ -1333,6 +1348,201 @@ impl AnchorSelector {
     /// Backward compatibility: mutable access to commands
     fn commands_mut(&mut self) -> &mut Vec<Command> {
         &mut self.popup_state.commands
+    }
+
+    // =============================================================================
+    // Action System - General UI Action Queue
+    // =============================================================================
+
+    /// Queue an action to be executed after user confirms via dialog or other UI component
+    pub fn queue_action(
+        &mut self,
+        context: HashMap<String, String>,
+        callback: Box<dyn FnOnce(&HashMap<String, String>) -> Result<(), Box<dyn std::error::Error>>>,
+    ) {
+        crate::utils::log(&format!("ACTION: Queueing action with {} context keys", context.len()));
+        self.pending_action = Some(PendingAction { context, callback });
+    }
+
+    /// Complete the pending action by merging user input and executing the callback
+    pub fn complete_action(&mut self, user_input: HashMap<String, String>) {
+        if let Some(action) = self.pending_action.take() {
+            crate::utils::log(&format!("ACTION: Completing action with {} user inputs", user_input.len()));
+            
+            // Merge action context with user input
+            let mut final_context = action.context;
+            final_context.extend(user_input);
+            
+            // Check if this is a rename operation that needs special handling
+            if final_context.get("operation") == Some(&"rename".to_string()) {
+                let empty_string = String::new();
+                let exit_button = final_context.get("exit").unwrap_or(&empty_string);
+                if exit_button == "OK" {
+                    // User confirmed rename - execute it with access to self
+                    match self.execute_rename_with_ui_update(&final_context) {
+                        Ok(()) => {
+                            crate::utils::log("ACTION: Rename action executed successfully");
+                        }
+                        Err(e) => {
+                            let error_msg = format!("Rename action failed: {}", e);
+                            crate::utils::log_error(&error_msg);
+                            self.show_error_dialog(&error_msg);
+                        }
+                    }
+                }
+                // If Cancel or Escape, do nothing
+            } else {
+                // Execute the regular callback with merged context
+                match (action.callback)(&final_context) {
+                    Ok(()) => {
+                        crate::utils::log("ACTION: Action executed successfully");
+                    }
+                    Err(e) => {
+                        let error_msg = format!("Action failed: {}", e);
+                        crate::utils::log_error(&error_msg);
+                        self.show_error_dialog(&error_msg);
+                    }
+                }
+            }
+        }
+    }
+
+    /// Cancel the pending action without executing it
+    pub fn cancel_action(&mut self) {
+        if self.pending_action.is_some() {
+            crate::utils::log("ACTION: Cancelling pending action");
+            self.pending_action = None;
+        }
+    }
+
+    /// Check if there is a pending action waiting for user input
+    pub fn has_pending_action(&self) -> bool {
+        self.pending_action.is_some()
+    }
+
+    /// Execute a rename operation with UI update - has access to &mut self unlike static version
+    fn execute_rename_with_ui_update(&mut self, context: &HashMap<String, String>) -> Result<(), Box<dyn std::error::Error>> {
+        let old_name = context.get("old_name").ok_or("Missing old_name")?;
+        let new_name = context.get("new_name").ok_or("Missing new_name")?;
+        let current_arg = context.get("current_arg").ok_or("Missing current_arg")?;
+        let action = context.get("action").ok_or("Missing action")?;
+        let original_command_to_delete = context.get("original_command_to_delete");
+
+        // Get the new command details from context
+        let new_command_action = context.get("new_command_action").ok_or("Missing new_command_action")?;
+        let new_command_arg = context.get("new_command_arg").ok_or("Missing new_command_arg")?;
+        let new_command_patch = context.get("new_command_patch").ok_or("Missing new_command_patch")?;
+        let new_command_flags = context.get("new_command_flags").ok_or("Missing new_command_flags")?;
+
+        let config = crate::core::sys_data::get_config();
+
+        // Execute the rename with dry_run = false on UI commands
+        use crate::core::commands::rename_associated_data;
+        let mut patches = crate::core::commands::create_patches_hashmap(&self.commands());
+        let (updated_arg, _actions) = rename_associated_data(
+            old_name,
+            new_name,
+            current_arg,
+            action,
+            self.commands_mut(),
+            &mut patches,
+            &config,
+            false, // dry_run = false
+        )?;
+
+        // Delete original command from UI if needed
+        if let Some(cmd_name) = original_command_to_delete {
+            if !cmd_name.is_empty() {
+                use crate::core::commands::delete_command;
+                let _ = delete_command(cmd_name, self.commands_mut());
+            }
+        }
+
+        // Create the new command with potentially updated arg
+        let new_command = crate::core::Command {
+            command: new_name.clone(),
+            action: new_command_action.clone(),
+            arg: updated_arg, // Use the updated arg from rename operation
+            patch: new_command_patch.clone(),
+            flags: new_command_flags.clone(),
+        };
+
+        // Add the new command to UI
+        use crate::core::commands::{add_command, save_commands_to_file};
+        let _ = add_command(new_command, self.commands_mut());
+
+        // Save commands to file
+        save_commands_to_file(&self.commands())?;
+
+        // Update the filtered list if we're currently filtering
+        if !self.popup_state.search_text.trim().is_empty() {
+            // Refresh the search with updated commands
+            let current_search = self.popup_state.search_text.clone();
+            self.popup_state.update_search(current_search);
+        }
+
+        crate::utils::log(&format!("RENAME: Successfully renamed '{}' to '{}' with side effects and UI update", old_name, new_name));
+        Ok(())
+    }
+
+    /// Execute a rename operation from the action context (static version for non-UI contexts)
+    fn execute_rename_operation(context: &HashMap<String, String>) -> Result<(), Box<dyn std::error::Error>> {
+        let old_name = context.get("old_name").ok_or("Missing old_name")?;
+        let new_name = context.get("new_name").ok_or("Missing new_name")?;
+        let current_arg = context.get("current_arg").ok_or("Missing current_arg")?;
+        let action = context.get("action").ok_or("Missing action")?;
+        let original_command_to_delete = context.get("original_command_to_delete");
+
+        // Get the new command details from context
+        let new_command_action = context.get("new_command_action").ok_or("Missing new_command_action")?;
+        let new_command_arg = context.get("new_command_arg").ok_or("Missing new_command_arg")?;
+        let new_command_patch = context.get("new_command_patch").ok_or("Missing new_command_patch")?;
+        let new_command_flags = context.get("new_command_flags").ok_or("Missing new_command_flags")?;
+
+        // Load current state (this is a static method, so we need to load fresh)
+        let mut commands = crate::core::commands::load_commands();
+        let mut patches = crate::core::commands::create_patches_hashmap(&commands);
+        let config = crate::core::sys_data::get_config();
+
+        // Execute the rename with dry_run = false
+        use crate::core::commands::rename_associated_data;
+        let (updated_arg, _actions) = rename_associated_data(
+            old_name,
+            new_name,
+            current_arg,
+            action,
+            &mut commands,
+            &mut patches,
+            &config,
+            false, // dry_run = false
+        )?;
+
+        // Delete original command if needed
+        if let Some(cmd_name) = original_command_to_delete {
+            if !cmd_name.is_empty() {
+                use crate::core::commands::delete_command;
+                let _ = delete_command(cmd_name, &mut commands);
+            }
+        }
+
+        // Create the new command with potentially updated arg
+        let new_command = crate::core::Command {
+            command: new_name.clone(),
+            action: new_command_action.clone(),
+            arg: updated_arg, // Use the updated arg from rename operation
+            patch: new_command_patch.clone(),
+            flags: new_command_flags.clone(),
+        };
+
+        // Add the new command
+        use crate::core::commands::{add_command, save_commands_to_file};
+        let _ = add_command(new_command, &mut commands);
+
+        // Save commands to file (patches are embedded in commands, so no separate save needed)
+        save_commands_to_file(&commands)?;
+
+        crate::utils::log(&format!("RENAME: Successfully renamed '{}' to '{}' with side effects", old_name, new_name));
+        Ok(())
     }
     
     
@@ -3173,30 +3383,36 @@ impl eframe::App for AnchorSelector {
             // Dialog was closed, request focus on input field
             self.request_focus = true;
             if let Some(result) = self.dialog.take_result() {
-                // Check if the "Exit" button was clicked
-                if let Some(button_text) = result.get("exit") {
-                    if button_text == "Exit" {
-                        // Don't perform scanner check - it blocks
-                        self.exit_or_hide(ctx);
-                    } else if button_text == "OK" {
-                        // Check if this is from the uninstall dialog (has the warning about Karabiner)
-                        // by looking at the dialog title or content - for simplicity, assume OK from uninstall dialog
-                        
-                        // Execute uninstall in background thread
-                        std::thread::spawn(|| {
-                            match crate::systems::setup_assistant::uninstall_hookanchor() {
-                                Ok(()) => {
-                                    // Exit successfully - no stdout message
-                                    std::process::exit(0);
-                                },
-                                Err(_e) => {
-                                    // Show error dialog instead of stderr
-                                    // Since we're in a thread, we can't easily show dialog here
-                                    // Just exit with error code
-                                    std::process::exit(1);
+                // Check if we have a pending action to execute
+                if self.has_pending_action() {
+                    // Let the action system handle the dialog result
+                    self.complete_action(result);
+                } else {
+                    // Handle legacy dialog logic (uninstall, etc.)
+                    if let Some(button_text) = result.get("exit") {
+                        if button_text == "Exit" {
+                            // Don't perform scanner check - it blocks
+                            self.exit_or_hide(ctx);
+                        } else if button_text == "OK" {
+                            // Check if this is from the uninstall dialog (has the warning about Karabiner)
+                            // by looking at the dialog title or content - for simplicity, assume OK from uninstall dialog
+                            
+                            // Execute uninstall in background thread
+                            std::thread::spawn(|| {
+                                match crate::systems::setup_assistant::uninstall_hookanchor() {
+                                    Ok(()) => {
+                                        // Exit successfully - no stdout message
+                                        std::process::exit(0);
+                                    },
+                                    Err(_e) => {
+                                        // Show error dialog instead of stderr
+                                        // Since we're in a thread, we can't easily show dialog here
+                                        // Just exit with error code
+                                        std::process::exit(1);
+                                    }
                                 }
-                            }
-                        });
+                            });
+                        }
                     }
                 }
             }
@@ -3218,9 +3434,114 @@ impl eframe::App for AnchorSelector {
                     let _ = writeln!(file, "🚪 POPUP: Command editor is now hidden, back to main popup");
                 }
             }
-            CommandEditorResult::Save(_new_command, _original_command_name) => {
+            CommandEditorResult::Save(_new_command, original_command_name) => {
                 // Get the save data from command editor
-                let (command_to_delete, new_command) = self.command_editor.prepare_save_command();
+                let (command_to_delete, mut new_command) = self.command_editor.prepare_save_command();
+                
+                // Check if this is a rename that might have side effects
+                let orig_name = &original_command_name;
+                crate::utils::log(&format!("RENAME_CHECK: orig_name='{}', new_name='{}', empty={}, command_to_delete={:?}", orig_name, new_command.command, orig_name.is_empty(), command_to_delete));
+                
+                // Also check if there's a command_to_delete - this indicates editing an existing command
+                let effective_old_name = if !orig_name.is_empty() {
+                    orig_name.as_str()
+                } else if let Some(ref old_cmd) = command_to_delete {
+                    old_cmd.as_str()
+                } else {
+                    ""
+                };
+                
+                if !effective_old_name.is_empty() {
+                    if effective_old_name != &new_command.command {
+                        crate::utils::log(&format!("RENAME_DETECTED: '{}' -> '{}'", effective_old_name, new_command.command));
+                        // Command name changed - check for rename side effects
+                        let config = crate::core::sys_data::get_config();
+                        
+                        // Check if any rename flags are enabled
+                        let has_rename_options = config.popup_settings.rename_doc.unwrap_or(false) ||
+                                               config.popup_settings.rename_folder.unwrap_or(false) ||
+                                               config.popup_settings.rename_patch.unwrap_or(false) ||
+                                               config.popup_settings.rename_prefix.unwrap_or(false);
+                        
+                        if has_rename_options {
+                            // Perform dry-run to see what would be renamed
+                            use crate::core::commands::rename_associated_data;
+                            let mut patches = crate::core::commands::create_patches_hashmap(&self.commands());
+                            match rename_associated_data(
+                                effective_old_name,
+                                &new_command.command,
+                                &new_command.arg,
+                                &new_command.action,
+                                self.commands_mut(),
+                                &mut patches,
+                                &config,
+                                true, // dry_run = true
+                            ) {
+                                Ok((updated_arg, actions)) => {
+                                    crate::utils::log(&format!("RENAME_DRY_RUN: Found {} actions: {:?}", actions.len(), actions));
+                                    if !actions.is_empty() {
+                                        // There are side effects - show confirmation dialog
+                                        let mut context = HashMap::new();
+                                        context.insert("operation".to_string(), "rename".to_string());
+                                        context.insert("old_name".to_string(), effective_old_name.to_string());
+                                        context.insert("new_name".to_string(), new_command.command.clone());
+                                        context.insert("current_arg".to_string(), new_command.arg.clone());
+                                        context.insert("action".to_string(), new_command.action.clone());
+                                        context.insert("original_command_to_delete".to_string(), 
+                                            command_to_delete.clone().unwrap_or_default());
+                                        
+                                        // Store the new command details in context
+                                        context.insert("new_command_action".to_string(), new_command.action.clone());
+                                        context.insert("new_command_arg".to_string(), new_command.arg.clone());
+                                        context.insert("new_command_patch".to_string(), new_command.patch.clone());
+                                        context.insert("new_command_flags".to_string(), new_command.flags.clone());
+                                        
+                                        // Show confirmation dialog with actions
+                                        let action_list = actions.join("\n• ");
+                                        let dialog_spec = vec![
+                                            "=Confirm Rename".to_string(),
+                                            format!("'Renaming \"{}\" to \"{}\"", effective_old_name, new_command.command),
+                                            format!("&The following changes will be made:\n\n• {}", action_list),
+                                            "!OK".to_string(),
+                                            "!Cancel".to_string(),
+                                        ];
+                                        
+                                        // Queue the rename action - action callback simplified for UI thread execution
+                                        
+                                        self.queue_action(context, Box::new(move |final_context| {
+                                            let empty_string = String::new();
+                                            let exit_button = final_context.get("exit").unwrap_or(&empty_string);
+                                            if exit_button == "OK" {
+                                                // User confirmed - we need to execute this in the main UI thread
+                                                // Store the rename execution details for the main update loop
+                                                // This will be handled in complete_action where we have &mut self
+                                                Ok(())
+                                            } else {
+                                                // Cancel - do nothing
+                                                Ok(())
+                                            }
+                                        }));
+                                        
+                                        self.dialog.show(dialog_spec);
+                                        self.close_command_editor();
+                                        command_editor_just_closed = true;
+                                        return; // Exit early to wait for user confirmation
+                                    } else {
+                                        // No side effects found by dry-run - proceed with direct rename
+                                        crate::utils::log(&format!("RENAME_DRY_RUN: No side effects found, proceeding with normal save for '{}' -> '{}'", effective_old_name, new_command.command));
+                                        // Update arg if it was changed by rename logic
+                                        new_command.arg = updated_arg;
+                                    }
+                                }
+                                Err(e) => {
+                                    self.show_error_dialog(&format!("Error checking rename effects: {}", e));
+                                }
+                            }
+                        }
+                    }
+                }
+                
+                // No rename side effects or user not using rename features - proceed with normal save
                 
                 // Delete original command if needed
                 if let Some(cmd_name) = command_to_delete {
@@ -3867,14 +4188,19 @@ impl eframe::App for AnchorSelector {
         if let Some(current_pos) = ctx.input(|i| i.viewport().outer_rect.map(|r| r.min)) {
             if self.last_saved_position.is_none() {
                 crate::utils::detailed_log("WINDOW_POS", &format!("First position detection: {:?}", current_pos));
-                save_window_position(current_pos);
+                // Only save if this position was explicitly set by user, not auto-positioned
+                if !self.was_auto_positioned {
+                    save_window_position(current_pos);
+                }
                 self.last_saved_position = Some(current_pos);
             } else if let Some(last_pos) = self.last_saved_position {
-                let moved = (current_pos.x - last_pos.x).abs() > 1.0 || (current_pos.y - last_pos.y).abs() > 1.0;
+                let moved = (current_pos.x - last_pos.x).abs() > 10.0 || (current_pos.y - last_pos.y).abs() > 10.0;
                 if moved {
-                    crate::utils::detailed_log("WINDOW_POS", &format!("Window moved from {:?} to {:?}", last_pos, current_pos));
+                    crate::utils::detailed_log("WINDOW_POS", &format!("Window moved from {:?} to {:?} (user moved)", last_pos, current_pos));
+                    // Only save significant moves that are likely user-initiated
                     save_window_position(current_pos);
                     self.last_saved_position = Some(current_pos);
+                    self.was_auto_positioned = false; // User moved it, so it's no longer auto-positioned
                 }
             }
         } else {
@@ -4087,7 +4413,8 @@ impl eframe::App for PopupWithControl {
                             let center_y = center_y.min(max_y);
                             let center_pos = egui::pos2(center_x.max(0.0), center_y.max(0.0));
                             ctx.send_viewport_cmd(egui::ViewportCommand::OuterPosition(center_pos));
-                            crate::utils::log(&format!("[SHOW] Repositioned window to {:?}", center_pos));
+                            self.popup.was_auto_positioned = true; // Mark as auto-positioned
+                            crate::utils::log(&format!("[SHOW] Repositioned window to {:?} (auto-centered)", center_pos));
                         } else {
                             // Window is on-screen, restore saved position if different
                             if let Some(mut saved_pos) = load_window_position() {
@@ -4097,6 +4424,7 @@ impl eframe::App for PopupWithControl {
                                 if saved_pos.y > max_y {
                                     crate::utils::log(&format!("[SHOW] Adjusting saved position from y={} to y={} (too close to bottom)", saved_pos.y, max_y));
                                     saved_pos.y = max_y;
+                                    self.popup.was_auto_positioned = true; // Mark as auto-positioned since we adjusted it
                                 }
                                 
                                 let pos_diff = (rect.min.x - saved_pos.x).abs() + (rect.min.y - saved_pos.y).abs();
@@ -4104,6 +4432,10 @@ impl eframe::App for PopupWithControl {
                                 if pos_diff > 5.0 {  // Only restore if significantly different
                                     crate::utils::log(&format!("[SHOW] Restoring saved position {:?} (current: {:?})", saved_pos, rect.min));
                                     ctx.send_viewport_cmd(egui::ViewportCommand::OuterPosition(saved_pos));
+                                    // If we didn't adjust the position, it's user-set, not auto-positioned
+                                    if !self.popup.was_auto_positioned {
+                                        self.popup.was_auto_positioned = false;
+                                    }
                                 } else {
                                     crate::utils::log("[SHOW] Position is close to saved, not restoring");
                                 }

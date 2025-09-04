@@ -63,6 +63,14 @@ pub struct PopupSettings {
     pub orphans_path: Option<String>,
     /// Directory patterns to skip during scanning (glob patterns)
     pub skip_directory_patterns: Option<Vec<String>>,
+    /// When renaming a command, also rename the associated document file if the names match (default: false)
+    pub rename_doc: Option<bool>,
+    /// When renaming an anchor command, also rename the folder if the names match (default: false)
+    pub rename_folder: Option<bool>,
+    /// When renaming a command that is a patch, update all commands with that patch (default: false)
+    pub rename_patch: Option<bool>,
+    /// When renaming a command, update all commands that have it as a prefix (default: false)
+    pub rename_prefix: Option<bool>,
 }
 
 /// Launcher settings section of the configuration file
@@ -124,6 +132,10 @@ impl Default for PopupSettings {
                 "*.Trash*".to_string(),
                 "*[Rr]ecycle*".to_string(),
             ]),
+            rename_doc: Some(false),
+            rename_folder: Some(false),
+            rename_patch: Some(false),
+            rename_prefix: Some(false),
         }
     }
 }

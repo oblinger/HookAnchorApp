@@ -335,15 +335,10 @@ impl CommandEditor {
     }
     
     pub fn prepare_save_command(&self) -> (Option<String>, Command) {
-        // Check if this is a scanner-generated action type
-        let is_scanner_generated = crate::systems::SCANNER_GENERATED_ACTIONS.contains(&self.action.as_str());
-        
-        // Check if this is a notion command (which should also get the U flag)
-        let is_notion = self.action == "notion";
-        
-        // Add 'U' flag if it's a scanner-generated action type or notion command to prevent removal during rescan
+        // ALWAYS add 'U' flag when a command is edited in the command editor
+        // This indicates user-edited and prevents removal during rescan
         let mut flags = self.flags.clone();
-        if (is_scanner_generated || is_notion) && !flags.contains('U') {
+        if !flags.contains('U') {
             if !flags.is_empty() {
                 flags.push(' ');
             }
