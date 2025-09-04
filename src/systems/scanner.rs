@@ -1,7 +1,56 @@
-//! Scanner module for finding and processing markdown files and contacts
+//! # File Scanner Module
 //! 
-//! This module scans specified directory roots for markdown files and
-//! user contacts, creating commands based on the items found.
+//! This module handles filesystem scanning to discover and create commands for markdown files,
+//! applications, and cloud resources (Notion). The scanner maintains existing user edits while
+//! refreshing automatically generated content.
+//!
+//! ## Scanning Process Overview
+//! 
+//! ### Phase 1: Initialization
+//! 1. **Preserve existing patches**: Build a map of command→patch from existing commands
+//! 2. **Delete old anchors**: Remove non-Notion anchors (unless user-edited with 'U' flag)
+//!    - Special anchors like "orphans" and "Notion Root" are preserved
+//!    - This allows anchors to be recreated with fresh data
+//! 3. **Clean up scanner commands**: Remove scanner-generated commands (markdown/folder/app)
+//!    - Only for files within scan roots
+//!    - Preserves user-edited commands ('U' flag)
+//!    - Removes commands for non-existent files
+//!
+//! ### Phase 2: Build Tracking Sets (AFTER deletion)
+//! 1. **existing_commands**: Set of command names (lowercase) to prevent name collisions
+//! 2. **handled_files**: Set of file paths from remaining commands
+//!    - Built AFTER deletion so deleted anchors can be recreated
+//!    - Skips empty args (commands without files)
+//!    - Prevents creating duplicate commands for the same file
+//!
+//! ### Phase 3: Filesystem Scan
+//! For each configured file root (e.g., ~/ob/kmr, /Applications):
+//! 1. **Process .app bundles**: Create app commands with "App" suffix
+//! 2. **Process markdown files**:
+//!    - Determine if it's an anchor (filename matches parent folder) or regular markdown
+//!    - Skip if file already in handled_files
+//!    - Skip if command name already in existing_commands
+//!    - Preserve patch from existing_patches if available
+//! 3. **Recursively scan subdirectories**
+//!
+//! ### Phase 4: Cloud Services
+//! 1. **Notion scanning**: If enabled, fetch pages and create anchor commands
+//!    - All Notion pages become anchors under "Notion Root" patch
+//!
+//! ### Phase 5: Post-Processing (scan_verbose only)
+//! 1. Run full inference pipeline via load_data():
+//!    - Create patches hashmap from anchors
+//!    - Run patch inference (assigns patches to commands with empty patches)
+//!    - Normalize patch case
+//! 2. Save final commands to commands.txt
+//!
+//! ## Key Design Decisions
+//! 
+//! - **handled_files built AFTER deletion**: Allows recreation of deleted anchors
+//! - **Skip empty args**: Empty args don't represent files, shouldn't block other commands
+//! - **User edits preserved**: 'U' flag prevents automatic deletion/modification
+//! - **Orphan anchors removed**: No longer creating orphan folders or anchors
+//! - **Patch preservation**: Existing patches are preserved when regenerating commands
 
 use std::fs;
 use std::path::{Path, PathBuf};
@@ -17,11 +66,70 @@ use chrono::Local;
 
 /// Action types that are automatically generated and removed by the scanner
 /// These commands will be removed during rescanning unless they have the 'U' (user-edited) flag
-pub const SCANNER_GENERATED_ACTIONS: &[&str] = &["markdown", "anchor", "folder", "app", "open_app"];
+/// NOTE: "anchor" is handled separately by delete_anchors() function
+pub const SCANNER_GENERATED_ACTIONS: &[&str] = &["markdown", "folder", "app", "open_app"];
 
 /// Helper function to log scanner debug messages
 fn scanner_log(message: &str) {
     crate::utils::detailed_log("SCANNER", message);
+}
+
+/// Check if a command is a Notion anchor
+/// Simple check that doesn't require accessing the actions module
+fn is_notion_anchor(cmd: &Command) -> bool {
+    cmd.action == "anchor" && 
+    (cmd.arg.contains("notion.so") || cmd.patch == "Notion Root")
+}
+
+/// Delete anchor commands based on whether they are Notion anchors or not
+/// 
+/// # Arguments
+/// * `commands` - Mutable reference to the command list
+/// * `delete_notion_anchors` - If true, delete Notion anchors. If false, delete non-Notion anchors
+/// * `verbose` - Whether to print verbose output
+/// 
+/// Returns the number of commands deleted
+fn delete_anchors(commands: &mut Vec<Command>, delete_notion_anchors: bool, verbose: bool) -> usize {
+    let initial_count = commands.len();
+    
+    commands.retain(|cmd| {
+        // Skip if not an anchor
+        if cmd.action != "anchor" {
+            return true;
+        }
+        
+        // Always keep user-edited commands
+        if cmd.flags.contains('U') {
+            return true;
+        }
+        
+        // Always keep special system anchors
+        if cmd.command == "orphans" || cmd.command == "Notion Root" {
+            return true;
+        }
+        
+        // Check if this is a Notion anchor
+        let is_notion = is_notion_anchor(cmd);
+        
+        // Delete based on the flag
+        if delete_notion_anchors {
+            // We want to delete Notion anchors, so keep non-Notion
+            !is_notion
+        } else {
+            // We want to delete non-Notion anchors, so keep Notion
+            is_notion
+        }
+    });
+    
+    let deleted = initial_count - commands.len();
+    if deleted > 0 && verbose {
+        if delete_notion_anchors {
+            println!("   Removed {} non-user-edited Notion anchor commands", deleted);
+        } else {
+            println!("   Removed {} non-user-edited file anchor commands", deleted);
+        }
+    }
+    deleted
 }
 
 /// Main function for automatic background scanning
@@ -131,35 +239,45 @@ pub fn scan_verbose(commands: Vec<Command>, sys_data: &crate::core::sys_data::Sy
     crate::utils::log("☁️  Scanning cloud services...");
     let scan_result = crate::cloud_scanner::scan_cloud_services();
     
-    // Only remove existing notion commands during FULL scans
-    // During incremental scans, we only add/update changed pages
-    if !scan_result.is_incremental {
-        // Full scan - remove all non-U flagged Notion commands first
-        let notion_before = commands.iter().filter(|cmd| cmd.action == "notion").count();
-        let notion_user_edited = commands.iter()
-            .filter(|cmd| cmd.action == "notion" && cmd.flags.contains('U'))
-            .count();
-        
-        commands.retain(|cmd| {
-            // Keep the command if it's not notion, or if it's notion with U flag
-            cmd.action != "notion" || cmd.flags.contains('U')
-        });
-        
-        let notion_removed = notion_before - notion_user_edited;
-        if notion_removed > 0 && verbose {
-            println!("   Removed {} non-user-edited notion commands (full scan)", notion_removed);
+    // Only process Notion commands if we actually got pages (meaning scan was enabled)
+    if !scan_result.notion_pages.is_empty() {
+        // Delete existing Notion anchors during full scans
+        if !scan_result.is_incremental {
+            delete_anchors(&mut commands, true, verbose);  // true = delete Notion anchors
+        } else {
+            if verbose {
+                println!("   Incremental Notion scan - preserving existing commands");
+            }
+            crate::utils::log("[NOTION] Incremental scan - existing commands preserved");
         }
     } else {
+        // No Notion pages means scanning was disabled or failed
         if verbose {
-            println!("   Incremental Notion scan - preserving existing commands");
+            crate::utils::detailed_log("SCANNER", "Notion scanning disabled or returned no pages");
         }
-        crate::utils::log("[NOTION] Incremental scan - existing commands preserved");
     }
     
-    // Create/update notion commands for each scanned page
-    let mut notion_added = 0;
-    let mut notion_updated = 0;
-    for page in scan_result.notion_pages {
+    // Only process Notion pages if we have any
+    if !scan_result.notion_pages.is_empty() {
+        // First, create the Notion Root anchor if it doesn't exist
+        let notion_root_exists = commands.iter().any(|c| c.command == "Notion Root" && c.action == "anchor");
+        if !notion_root_exists {
+            commands.push(Command {
+                command: "Notion Root".to_string(),
+                action: "anchor".to_string(),
+                arg: String::new(),  // Virtual anchor, no actual file
+                flags: String::new(),
+                patch: "orphans".to_string(),  // Notion Root is under orphans
+            });
+            if verbose {
+                println!("   Created Notion Root anchor");
+            }
+        }
+
+        // Create/update notion anchor commands for each scanned page
+        let mut notion_added = 0;
+        let mut notion_updated = 0;
+        for page in scan_result.notion_pages {
         // Create a command name from the page title (sanitize it)
         let command_name = page.title
             .chars()
@@ -168,106 +286,64 @@ pub fn scan_verbose(commands: Vec<Command>, sys_data: &crate::core::sys_data::Sy
             .trim()
             .replace(' ', " ");  // Keep spaces for readability
         
-        // Check if a command with this name already exists
+        // For now, all Notion pages are children of Notion Root
+        // TODO: In future, parse parent_path to create proper hierarchy
+        let parent_patch = "Notion Root".to_string();
+        
+        // Check if a command with this name already exists as an anchor
         if let Some(existing_cmd) = commands.iter_mut().find(|cmd| 
-            cmd.command.eq_ignore_ascii_case(&command_name) && cmd.action == "notion"
+            cmd.command.eq_ignore_ascii_case(&command_name) && 
+            (cmd.action == "anchor" || cmd.action == "notion")
         ) {
-            // Update the URL if it changed (Notion pages can be moved)
+            // Update existing command to be an anchor if it was "notion"
+            if existing_cmd.action == "notion" {
+                existing_cmd.action = "anchor".to_string();
+                existing_cmd.patch = parent_patch.clone();
+                notion_updated += 1;
+            }
+            // Update the URL if it changed
             if existing_cmd.arg != page.url {
-                crate::utils::detailed_log("SCANNER", &format!("Updating Notion page URL for '{}': {} -> {}", 
+                crate::utils::detailed_log("SCANNER", &format!("Updating Notion anchor URL for '{}': {} -> {}", 
                     command_name, existing_cmd.arg, page.url));
                 existing_cmd.arg = page.url;
                 notion_updated += 1;
-            } else {
-                crate::utils::detailed_log("SCANNER", &format!("Notion page '{}' unchanged", command_name));
+            }
+            // Update patch if different
+            if existing_cmd.patch != parent_patch {
+                existing_cmd.patch = parent_patch;
+                notion_updated += 1;
             }
         } else if !commands.iter().any(|cmd| cmd.command.eq_ignore_ascii_case(&command_name)) {
-            // No command with this name exists at all, create new one
+            // No command with this name exists at all, create new anchor
             commands.push(Command {
-                command: command_name,
-                action: "notion".to_string(),
-                arg: page.url,
-                flags: String::new(), // No U flag for scanner-generated notion commands
-                patch: String::new(),
+                command: command_name.clone(),
+                action: "anchor".to_string(),  // All Notion pages are anchors
+                arg: page.url,                  // URL as the arg
+                flags: String::new(),
+                patch: parent_patch,             // Parent page as the patch
             });
             notion_added += 1;
         } else {
-            // Command exists but it's not a notion command, skip
-            crate::utils::detailed_log("SCANNER", &format!("Skipping Notion page '{}' - non-notion command exists", command_name));
+            // Command exists but it's not an anchor/notion command, skip
+            crate::utils::detailed_log("SCANNER", &format!("Skipping Notion page '{}' - non-anchor command exists", command_name));
         }
     }
     
-    if (notion_added > 0 || notion_updated > 0) && verbose {
-        if notion_added > 0 {
-            println!("   Added {} new notion commands", notion_added);
+        if (notion_added > 0 || notion_updated > 0) && verbose {
+            if notion_added > 0 {
+                println!("   Added {} new Notion anchor commands", notion_added);
+            }
+            if notion_updated > 0 {
+                println!("   Updated {} existing Notion anchor commands", notion_updated);
+            }
         }
-        if notion_updated > 0 {
-            println!("   Updated {} existing notion commands", notion_updated);
-        }
-    }
+    } // End of Notion pages processing
     
     // Then scan contacts - DISABLED for performance
     // commands = scan_contacts(commands);
     
-    // Process orphan anchors - create anchor commands for patches without anchors
-    // First ensure the 'orphans' root anchor exists
-    let orphans_exists = commands.iter().any(|c| c.command == "orphans" && c.action == "anchor");
-    if !orphans_exists {
-        if verbose {
-            println!("\n🔄 Creating 'orphans' root anchor...");
-        }
-        commands.push(Command {
-            command: "orphans".to_string(),
-            action: "anchor".to_string(),
-            arg: String::new(), // No arg, so no action when triggered
-            flags: "S".to_string(), // System-created
-            patch: String::new(), // No parent patch - this is the root
-        });
-    }
-    
-    // Now check for patches that need orphan anchor commands
-    if verbose {
-        println!("\n🔄 Checking for orphan patches...");
-    }
-    
-    // Collect all patches that are referenced but don't have anchor commands
-    let mut referenced_patches = std::collections::HashSet::new();
-    let mut existing_anchors = std::collections::HashSet::new();
-    
-    for cmd in &commands {
-        if !cmd.patch.is_empty() {
-            referenced_patches.insert(cmd.patch.clone());
-        }
-        if cmd.action == "anchor" {
-            existing_anchors.insert(cmd.command.clone());
-        }
-    }
-    
-    // Create orphan anchor commands for missing patches
-    let mut orphan_count = 0;
-    for patch_name in referenced_patches {
-        if !existing_anchors.contains(&patch_name) {
-            if verbose {
-                println!("   Creating orphan anchor for patch: {}", patch_name);
-            }
-            commands.push(Command {
-                command: patch_name.clone(),
-                action: "anchor".to_string(),
-                arg: String::new(), // No arg, so no action when triggered
-                flags: "S".to_string(), // System-created
-                patch: "orphans".to_string(), // Parent is the orphans root
-            });
-            orphan_count += 1;
-        }
-    }
-    
-    if verbose {
-        if orphan_count > 0 {
-            println!("   Created {} orphan anchor commands", orphan_count);
-        } else {
-            println!("   No orphan patches found");
-        }
-    }
+    // REMOVED - No longer creating orphan anchors
+    // Patches without anchors will simply remain without anchors
     
     // Run full inference pipeline on scanned commands to ensure consistency
     if verbose {
@@ -302,15 +378,6 @@ pub fn scan_verbose(commands: Vec<Command>, sys_data: &crate::core::sys_data::Sy
 /// Scans the configured file roots and returns an updated command list
 fn scan_files(mut commands: Vec<Command>, file_roots: &[String], config: &Config) -> Vec<Command> {
     
-    // Create a set of file paths that are already handled by existing commands
-    // This allows O(1) lookup to prevent creating duplicate commands for the same file
-    let mut handled_files: HashSet<String> = HashSet::new();
-    for cmd in &commands {
-        if cmd.action == "markdown" || cmd.action == "anchor" || cmd.action == "folder" || cmd.action == "app" || cmd.action == "open_app" {
-            handled_files.insert(cmd.arg.clone());
-        }
-    }
-    
     // Create a lookup map to preserve existing patches when regenerating commands
     let mut existing_patches: std::collections::HashMap<String, String> = std::collections::HashMap::new();
     for cmd in &commands {
@@ -339,7 +406,10 @@ fn scan_files(mut commands: Vec<Command>, file_roots: &[String], config: &Config
         false
     };
     
-    // Remove existing markdown, anchor, and folder commands from the commands list
+    // Delete non-Notion file anchors before rescanning files
+    delete_anchors(&mut commands, false, true);  // false = delete non-Notion anchors, true = verbose output for debugging
+    
+    // Remove existing markdown and folder commands from the commands list
     // BUT ONLY for files within the directories we're about to scan
     // EXCEPT those with the "U" (user edited) flag - preserve those
     // Also validate that files actually exist for scanner-generated commands
@@ -359,14 +429,11 @@ fn scan_files(mut commands: Vec<Command>, file_roots: &[String], config: &Config
             if !file_exists {
                 // This is important enough to always log
                 crate::utils::detailed_log("SCANNER", &format!("SCANNER: ✅ Removing command '{}' - file no longer exists: {}", cmd.command, cmd.arg));
-                // Remove from handled_files too so it can be rescanned if the file is recreated
-                handled_files.remove(&cmd.arg);
                 return false; // Remove this command
             }
             
             // If the file is within scan roots and not user-edited, remove it for rescan
             if is_within_scan_roots(&cmd.arg) && !is_user_edited {
-                handled_files.remove(&cmd.arg);
                 crate::utils::detailed_log("SCANNER", &format!("Removing command '{}' for rescan (within scan roots)", cmd.command));
                 return false; // Remove this command so it can be rescanned
             }
@@ -393,6 +460,16 @@ fn scan_files(mut commands: Vec<Command>, file_roots: &[String], config: &Config
     let mut existing_commands: HashSet<String> = commands.iter()
         .map(|cmd| cmd.command.to_lowercase())
         .collect();
+    
+    // Create a set of file paths that are already handled by remaining commands
+    // This is done AFTER deletion to allow recreation of deleted anchors
+    // Skip empty args - they don't represent handled files
+    let mut handled_files: HashSet<String> = HashSet::new();
+    for cmd in &commands {
+        if !cmd.arg.is_empty() && (cmd.action == "markdown" || cmd.action == "anchor" || cmd.action == "folder" || cmd.action == "app" || cmd.action == "open_app") {
+            handled_files.insert(cmd.arg.clone());
+        }
+    }
     
     // Collect folders during scanning
     // COMMENTED OUT: Folder scanning disabled for now - only creating commands for markdown files
@@ -560,18 +637,18 @@ fn scan_directory_with_root_protected(dir: &Path, vault_root: &Path, commands: &
             } else {
                 // Process files (markdown files)
                 if let Some(command) = process_markdown_with_root(&path, vault_root, existing_commands, &existing_patches) {
-                    // Debug log for found markdown files
-                    crate::utils::detailed_log("SCANNER", &format!("Found markdown file: {} -> command: {}", 
-                        path.display(), command.command));
+                    // Always log found markdown files for debugging
+                    crate::utils::log(&format!("📄 Found markdown: {} -> cmd: '{}' action: '{}'", 
+                        path.display(), command.command, command.action));
                     
                     // Check if this file is already handled by an existing command (O(1) lookup)
                     if handled_files.contains(&command.arg) {
-                        crate::utils::detailed_log("SCANNER", &format!("Skipping '{}' - file already handled: {}", 
+                        crate::utils::log(&format!("  ⏭️  Skipping '{}' - file already handled: {}", 
                             command.command, path.display()));
                     } else {
-                        // Log that we're creating a new command (detailed log to avoid clutter)
-                        crate::utils::detailed_log("SCANNER", &format!("Creating new command '{}' -> {} {}", 
-                            command.command, command.action, command.arg));
+                        // Log that we're creating a new command
+                        crate::utils::log(&format!("  ✅ Creating new {} command '{}' -> {}", 
+                            command.action, command.command, command.arg));
                         
                         // Add to existing commands set to prevent future collisions (lowercase)
                         existing_commands.insert(command.command.to_lowercase());

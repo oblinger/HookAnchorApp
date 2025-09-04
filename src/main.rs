@@ -25,42 +25,11 @@ fn main() -> Result<(), eframe::Error> {
         }
     }
     
-    // Check and clear oversized log file now that config is loaded
-    hookanchor::utils::check_and_clear_oversized_log();
-    
-    // Generate session ID for this popup instance
-    let session_timestamp = Local::now();
-    let session_id = session_timestamp.format("%Y%m%d_%H%M%S").to_string();
-    
-    // Visual separator and session header for new app launch in logs
-    hookanchor::utils::log(&"=".repeat(80));
-    hookanchor::utils::log(&format!("POPUP SESSION: {}", session_id));
-    hookanchor::utils::log(&format!("TIMESTAMP: {}", session_timestamp.format("%Y-%m-%d %H:%M:%S%.3f")));
-    hookanchor::utils::log(&"=".repeat(80));
-    
-    // Load state to get build time
-    let state = hookanchor::core::load_state();
-    let build_time_str = if let Some(build_time) = state.build_time {
-        let dt = Local.timestamp_opt(build_time, 0).single()
-            .unwrap_or_else(|| Local::now());
-        dt.format("%Y-%m-%d %H:%M:%S").to_string()
-    } else {
-        "Unknown".to_string()
-    };
-    
-    // Log startup with version and build timestamp
-    let version = env!("CARGO_PKG_VERSION");
-    hookanchor::utils::detailed_log("", &format!("HookAnchor v{} starting - Build: {}", version, build_time_str));
+    // Defer non-critical operations for faster startup
+    // We'll do minimal logging until after the GUI is shown
     
     // Initialize the global error queue for user error display
     hookanchor::utils::init_error_queue();
-    
-    // Check if this is first run and run setup if needed
-    if let Ok(true) = hookanchor::systems::check_and_run_setup() {
-        // Setup was run, exit so user can configure Karabiner
-        // They'll launch HookAnchor again after setup
-        return Ok(());
-    }
     
     let args: Vec<String> = env::args().collect();
     
@@ -90,11 +59,8 @@ fn main() -> Result<(), eframe::Error> {
         // may spawn background processes that need the server
         Ok(())
     } else {
-        // GUI mode - check if we're handling a URL by checking process arguments after a brief delay
-        // macOS may take a moment to deliver URL events to the process
-        std::thread::sleep(std::time::Duration::from_millis(50));
-        
-        // Check if any URL was passed via environment or if we can detect URL handling
+        // GUI mode - check if we're handling a URL immediately (no delay needed)
+        // Check if any URL was passed via environment
         if let Ok(url) = env::var("HOOK_URL_HANDLER") {
             hookanchor::cmd::run_command_line_mode(vec!["ha".to_string(), url]);
             return Ok(());

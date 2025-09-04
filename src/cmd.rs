@@ -2,6 +2,7 @@ use std::collections::HashMap;
 use crate::core::{load_commands_with_data, load_commands_for_inference, filter_commands, run_patch_inference};
 use crate::core::commands::save_commands_to_file;
 use crate::utils;
+use crate::utils::logging::print;
 use crate::execute::{execute_on_server, make_action, command_to_action, execute_on_server_with_parameters};
 
 /// Main entry point for command-line mode
@@ -49,56 +50,56 @@ pub fn run_command_line_mode(args: Vec<String>) {
         "--execute-launcher-command" => run_execute_launcher_command(&args),
         "--popup" => run_popup_command(&args),
         _ => {
-            eprintln!("Unknown command: {}", args[1]);
-            eprintln!("Use -h or --help for usage information");
+            print(&format!("Unknown command: {}", args[1]));
+            print("Use -h or --help for usage information");
             std::process::exit(1);
         }
     }
 }
 
 pub fn print_help(program_name: &str) {
-    eprintln!("HookAnchor - Universal Command Launcher");
-    eprintln!();
-    eprintln!("Usage:");
-    eprintln!("  {}                          # Run GUI mode", program_name);
-    eprintln!("  {} -h, --help               # Show help", program_name);
-    eprintln!("  {} -m, --match <query>      # Search CMDS", program_name);
-    eprintln!("  {} -r, --run_fn <cmd>       # Execute specific CMD", program_name);
-    eprintln!("  {} -x, --execute <query>    # Execute top match", program_name);
-    eprintln!("  {} -f, --folders <query>    # Get folder paths", program_name);
-    eprintln!("  {} -F, --named-folders <q>  # Get CMDS->paths", program_name);
-    eprintln!("  {} -c, --command <act> <arg># Test command with action+arg", program_name);
-    eprintln!("  {} -a, --action <name>      # Execute action directly", program_name);
-    eprintln!("  {} --infer [command]        # Show patch inference changes", program_name);
-    eprintln!("  {} --infer-all              # Show changes and prompt to apply", program_name);
-    eprintln!("  {} --rescan                 # Rescan filesystem with verbose output", program_name);
-    eprintln!("  {} --rebuild                # Rebuild: restart server and rescan filesystem", program_name);
-    eprintln!("  {} --test-grabber           # Test grabber functionality", program_name);
-    eprintln!("  {} --grab [delay]           # Grab active app after delay", program_name);
-    eprintln!("  {} --start-server           # Force restart command server", program_name);
-    eprintln!("  {} --restart                # Kill and restart command server in new Terminal", program_name);
-    eprintln!("  {} --process-health         # Check for hung processes", program_name);
-    eprintln!("  {} --process-status         # Show detailed process status", program_name);
-    eprintln!("  {} --install                # Run setup assistant (preserves configs)", program_name);
-    eprintln!("  {} --install --force        # Force reinstall (overwrites configs)", program_name);
-    eprintln!("  {} --uninstall              # Uninstall HookAnchor", program_name);
-    eprintln!("  {} --popup [show|hide|delete|status] # Manage popup window", program_name);
-    eprintln!("  {} --hook <url>             # Handle hook:// URL (for URL handler)", program_name);
-    eprintln!("  open 'hook://query'         # Handle hook URL via URL handler");
-    eprintln!();
-    eprintln!("Examples:");
-    eprintln!("  {}           # Launch GUI", program_name);
-    eprintln!("  {} -m spot   # Find 'spot' CMDS", program_name);
-    eprintln!("  {} -x spot   # Execute top 'spot'", program_name);
-    eprintln!("  {} -f spot   # Get 'spot' folders", program_name);
-    eprintln!("  {} -F spo    # Get 'spo' CMDS->paths", program_name);
-    eprintln!("  {} -r Spot   # Execute 'Spot' CMD", program_name);
+    print("HookAnchor - Universal Command Launcher");
+    print("");
+    print("Usage:");
+    print(&format!("  {}                          # Run GUI mode", program_name));
+    print(&format!("  {} -h, --help               # Show help", program_name));
+    print(&format!("  {} -m, --match <query>      # Search CMDS", program_name));
+    print(&format!("  {} -r, --run_fn <cmd>       # Execute specific CMD", program_name));
+    print(&format!("  {} -x, --execute <query>    # Execute top match", program_name));
+    print(&format!("  {} -f, --folders <query>    # Get folder paths", program_name));
+    print(&format!("  {} -F, --named-folders <q>  # Get CMDS->paths", program_name));
+    print(&format!("  {} -c, --command <act> <arg># Test command with action+arg", program_name));
+    print(&format!("  {} -a, --action <name>      # Execute action directly", program_name));
+    print(&format!("  {} --infer [command]        # Show patch inference changes", program_name));
+    print(&format!("  {} --infer-all              # Show changes and prompt to apply", program_name));
+    print(&format!("  {} --rescan                 # Rescan filesystem with verbose output", program_name));
+    print(&format!("  {} --rebuild                # Rebuild: restart server and rescan filesystem", program_name));
+    print(&format!("  {} --test-grabber           # Test grabber functionality", program_name));
+    print(&format!("  {} --grab [delay]           # Grab active app after delay", program_name));
+    print(&format!("  {} --start-server           # Force restart command server", program_name));
+    print(&format!("  {} --restart                # Kill and restart command server in new Terminal", program_name));
+    print(&format!("  {} --process-health         # Check for hung processes", program_name));
+    print(&format!("  {} --process-status         # Show detailed process status", program_name));
+    print(&format!("  {} --install                # Run setup assistant (preserves configs)", program_name));
+    print(&format!("  {} --install --force        # Force reinstall (overwrites configs)", program_name));
+    print(&format!("  {} --uninstall              # Uninstall HookAnchor", program_name));
+    print(&format!("  {} --popup [show|hide|delete|status] # Manage popup window", program_name));
+    print(&format!("  {} --hook <url>             # Handle hook:// URL (for URL handler)", program_name));
+    print("  open 'hook://query'         # Handle hook URL via URL handler");
+    print("");
+    print("Examples:");
+    print(&format!("  {}           # Launch GUI", program_name));
+    print(&format!("  {} -m spot   # Find 'spot' CMDS", program_name));
+    print(&format!("  {} -x spot   # Execute top 'spot'", program_name));
+    print(&format!("  {} -f spot   # Get 'spot' folders", program_name));
+    print(&format!("  {} -F spo    # Get 'spo' CMDS->paths", program_name));
+    print(&format!("  {} -r Spot   # Execute 'Spot' CMD", program_name));
 }
 
 
 fn handle_hook_option(args: &[String]) {
     if args.len() < 3 {
-        eprintln!("Usage: {} --hook <url>", args[0]);
+        print(&format!("Usage: {} --hook <url>", args[0]));
         std::process::exit(1);
     }
     
@@ -148,7 +149,7 @@ fn handle_hook_url(url: &str) {
 
 fn run_match_command(args: &[String]) {
     if args.len() < 3 {
-        eprintln!("Usage: {} -m, --match <query> [debug]", args[0]);
+        print(&format!("Usage: {} -m, --match <query> [debug]", args[0]));
         std::process::exit(1);
     }
     
@@ -164,13 +165,13 @@ fn run_match_command(args: &[String]) {
     
     // Print first 50 matches to see submenu results
     for cmd in filtered.iter().take(50) {
-        println!("{}", cmd.command);
+        print(&format!("{}", cmd.command));
     }
 }
 
 fn run_exec_command(args: &[String]) {
     if args.len() < 3 {
-        eprintln!("Usage: {} -r, --run_fn <command>", args[0]);
+        print(&format!("Usage: {} -r, --run_fn <command>", args[0]));
         std::process::exit(1);
     }
     
@@ -180,7 +181,7 @@ fn run_exec_command(args: &[String]) {
     utils::detailed_log("", "=================================================================");
     utils::detailed_log("USER INPUT", &format!("RUN_FN: '{}'", command));
     
-    println!("Executing command function: {}", command);
+    print(&format!("Executing command function: {}", command));
     
     // Load system data to find the actual command
     let sys_data = crate::core::sys_data::get_sys_data();
@@ -194,16 +195,16 @@ fn run_exec_command(args: &[String]) {
         // Convert command to action and execute
         let action = command_to_action(&cmd);
         let _ = execute_on_server(&action);
-        println!("Command completed");
+        print("Command completed");
     } else {
-        eprintln!("Command '{}' not found", command);
+        print(&format!("Command '{}' not found", command));
         std::process::exit(1);
     }
 }
 
 fn run_execute_top_match(args: &[String]) {
     if args.len() < 3 {
-        eprintln!("Usage: {} -x, --execute <query>", args[0]);
+        print(&format!("Usage: {} -x, --execute <query>", args[0]));
         std::process::exit(1);
     }
     
@@ -219,12 +220,12 @@ fn run_execute_top_match(args: &[String]) {
     let filtered = crate::core::commands::get_display_commands(&sys_data, query, 1);
     
     if filtered.is_empty() {
-        eprintln!("No commands found matching: {}", query);
+        print(&format!("No commands found matching: {}", query));
         std::process::exit(1);
     }
     
     let top_command_obj = &filtered[0];
-    println!("Executing top match: {}", top_command_obj.command);
+    print(&format!("Executing top match: {}", top_command_obj.command));
     
     // Save the last executed command for add_alias functionality
     use crate::core::state::save_last_executed_command;
@@ -238,16 +239,16 @@ fn run_execute_top_match(args: &[String]) {
     // Convert command to action and execute
     let action = command_to_action(&top_command_obj);
     let _ = execute_on_server(&action);
-    println!("Command completed");
+    print("Command completed");
 }
 
 fn run_test_command(args: &[String]) {
     if args.len() < 3 {
-        eprintln!("Usage: {} -c, --command <action_name> [--arg <value>] [--input <value>] [--param key=value]...", args[0]);
-        eprintln!("Examples:");
-        eprintln!("  {} -c open_url --arg https://github.com", args[0]);
-        eprintln!("  {} -c template --input \"My Note\" --param action=markdown", args[0]);
-        eprintln!("  {} -c popup --param popup_action=navigate --param dx=0 --param dy=1", args[0]);
+        print(&format!("Usage: {} -c, --command <action_name> [--arg <value>] [--input <value>] [--param key=value]...", args[0]));
+        print("Examples:");
+        print(&format!("  {} -c open_url --arg https://github.com", args[0]));
+        print(&format!("  {} -c template --input \"My Note\" --param action=markdown", args[0]));
+        print(&format!("  {} -c popup --param popup_action=navigate --param dx=0 --param dy=1", args[0]));
         std::process::exit(1);
     }
     
@@ -266,7 +267,7 @@ fn run_test_command(args: &[String]) {
                     arg_value = args[i + 1].clone();
                     i += 2;
                 } else {
-                    eprintln!("--arg requires a value");
+                    print("--arg requires a value");
                     std::process::exit(1);
                 }
             }
@@ -275,7 +276,7 @@ fn run_test_command(args: &[String]) {
                     input_value = args[i + 1].clone();
                     i += 2;
                 } else {
-                    eprintln!("--input requires a value");
+                    print("--input requires a value");
                     std::process::exit(1);
                 }
             }
@@ -285,12 +286,12 @@ fn run_test_command(args: &[String]) {
                     if let Some((key, value)) = args[i + 1].split_once('=') {
                         extra_params.insert(key.to_string(), serde_json::Value::String(value.to_string()));
                     } else {
-                        eprintln!("--param requires key=value format");
+                        print("--param requires key=value format");
                         std::process::exit(1);
                     }
                     i += 2;
                 } else {
-                    eprintln!("--param requires a value");
+                    print("--param requires a value");
                     std::process::exit(1);
                 }
             }
@@ -312,7 +313,7 @@ fn run_test_command(args: &[String]) {
     let config = crate::core::sys_data::get_config();
     if let Some(actions) = &config.actions {
         if let Some(action) = actions.get(action_name) {
-            println!("Testing unified action '{}' (type: {})", action_name, action.action_type());
+            print(&format!("Testing unified action '{}' (type: {})", action_name, action.action_type()));
             
             // Prepare variables for action execution (as JsonValue)
             let mut variables = HashMap::new();
@@ -329,10 +330,10 @@ fn run_test_command(args: &[String]) {
             let arg = if !arg_value.is_empty() { Some(arg_value.as_str()) } else { None };
             match execute_on_server_with_parameters(action, arg, Some(variables)) {
                 Ok(result) => {
-                    println!("Action completed successfully: {}", result);
+                    print(&format!("Action completed successfully: {}", result));
                 }
                 Err(e) => {
-                    println!("Action failed: {}", e);
+                    print(&format!("Action failed: {}", e));
                     std::process::exit(1);
                 }
             }
@@ -342,21 +343,21 @@ fn run_test_command(args: &[String]) {
     
     // Fall back to legacy action testing (for backward compatibility)
     let command_line = format!("{} {}", action_name, arg_value);
-    println!("Testing legacy action '{}' with arg '{}': {}", action_name, arg_value, command_line);
+    print(&format!("Testing legacy action '{}' with arg '{}': {}", action_name, arg_value, command_line));
     
     // Use server-based execution for testing actions
     // Create action directly and execute
     let action = make_action(&action_name, &arg_value);
     let _ = execute_on_server(&action);
-    println!("Action completed");
+    print("Action completed");
 }
 
 fn run_action_directly(args: &[String]) {
     if args.len() < 3 {
-        eprintln!("Usage: {} -a, --action <action_type> [--key value]...", args[0]);
-        eprintln!("Examples:");
-        eprintln!("  {} -a markdown --arg /path/to/file.md", args[0]);
-        eprintln!("  {} -a cmd --arg \"ls -la\" --flags W", args[0]);
+        print(&format!("Usage: {} -a, --action <action_type> [--key value]...", args[0]));
+        print("Examples:");
+        print(&format!("  {} -a markdown --arg /path/to/file.md", args[0]));
+        print(&format!("  {} -a cmd --arg \"ls -la\" --flags W", args[0]));
         std::process::exit(1);
     }
     
@@ -372,11 +373,11 @@ fn run_action_directly(args: &[String]) {
                 params.insert(key.to_string(), args[i + 1].clone());
                 i += 2;
             } else {
-                eprintln!("Error: {} requires a value", args[i]);
+                print(&format!("Error: {} requires a value", args[i]));
                 std::process::exit(1);
             }
         } else {
-            eprintln!("Error: Expected --key but got: {}", args[i]);
+            print(&format!("Error: Expected --key but got: {}", args[i]));
             std::process::exit(1);
         }
     }
@@ -385,9 +386,9 @@ fn run_action_directly(args: &[String]) {
     use crate::execute::Action;
     use serde_json::Value as JsonValue;
     
-    println!("Executing action '{}' with parameters:", action_type);
+    print(&format!("Executing action '{}' with parameters:", action_type));
     for (key, value) in &params {
-        println!("  {}: {}", key, value);
+        print(&format!("  {}: {}", key, value));
     }
     
     // Create the action as a HashMap with JsonValue entries
@@ -404,12 +405,12 @@ fn run_action_directly(args: &[String]) {
     // Execute through server
     use crate::execute::execute_on_server;
     let _ = execute_on_server(&action);
-    println!("Action '{}' completed", action_type);
+    print(&format!("Action '{}' completed", action_type));
 }
 
 fn run_folder_command(args: &[String]) {
     if args.len() < 3 {
-        eprintln!("Usage: {} -f, --folders <query>", args[0]);
+        print(&format!("Usage: {} -f, --folders <query>", args[0]));
         std::process::exit(1);
     }
     
@@ -451,7 +452,7 @@ fn run_folder_command(args: &[String]) {
     let display_commands = crate::core::commands::get_display_commands_with_options(&sys_data, query, 100, true);
     
     if display_commands.is_empty() {
-        eprintln!("No commands found matching: {}", query);
+        print(&format!("No commands found matching: {}", query));
         std::process::exit(1);
     }
     
@@ -465,7 +466,7 @@ fn run_folder_command(args: &[String]) {
         if cmd_lower == query_lower || cmd_lower == query_folder_pattern {
             // Found exact match, return just that folder
             if let Some(folder_path) = extract_folder_path(first_cmd) {
-                println!("{}", folder_path);
+                print(&format!("{}", folder_path));
                 return;
             }
         }
@@ -491,13 +492,13 @@ fn run_folder_command(args: &[String]) {
     paths.sort(); // Sort for consistent output
     
     for path in paths {
-        println!("{}", path);
+        print(&format!("{}", path));
     }
 }
 
 fn run_folder_with_commands(args: &[String]) {
     if args.len() < 3 {
-        eprintln!("Usage: {} -F, --named-folders <query>", args[0]);
+        print(&format!("Usage: {} -F, --named-folders <query>", args[0]));
         std::process::exit(1);
     }
     
@@ -539,7 +540,7 @@ fn run_folder_with_commands(args: &[String]) {
     let display_commands = crate::core::commands::get_display_commands_with_options(&sys_data, query, 100, true);
     
     if display_commands.is_empty() {
-        eprintln!("No commands found matching: {}", query);
+        print(&format!("No commands found matching: {}", query));
         std::process::exit(1);
     }
     
@@ -553,7 +554,7 @@ fn run_folder_with_commands(args: &[String]) {
         if cmd_lower == query_lower || cmd_lower == query_folder_pattern {
             // Found exact match, return just that command -> path
             if let Some(folder_path) = extract_folder_path(first_cmd) {
-                println!("{} -> {}", first_cmd.command, folder_path);
+                print(&format!("{} -> {}", first_cmd.command, folder_path));
                 return;
             }
         }
@@ -567,30 +568,30 @@ fn run_folder_with_commands(args: &[String]) {
         }
         
         if let Some(path) = extract_folder_path(command) {
-            println!("{} -> {}", command.command, path);
+                print(&format!("{} -> {}", command.command, path));
         }
     }
 }
 
 fn print_user_info() {
-    println!("=== User Environment Information ===");
+    print("=== User Environment Information ===");
     
     // Environment variables
-    println!("USER: {:?}", std::env::var("USER"));
-    println!("LOGNAME: {:?}", std::env::var("LOGNAME"));
-    println!("HOME: {:?}", std::env::var("HOME"));
-    println!("SHELL: {:?}", std::env::var("SHELL"));
-    println!("PATH: {:?}", std::env::var("PATH"));
+    print(&format!("USER: {:?}", std::env::var("USER")));
+    print(&format!("LOGNAME: {:?}", std::env::var("LOGNAME")));
+    print(&format!("HOME: {:?}", std::env::var("HOME")));
+    print(&format!("SHELL: {:?}", std::env::var("SHELL")));
+    print(&format!("PATH: {:?}", std::env::var("PATH")));
     
     // Try whoami command
     use std::process::Command;
     match Command::new("whoami").output() {
         Ok(output) => {
             let whoami_user = String::from_utf8_lossy(&output.stdout).trim().to_string();
-            println!("whoami: '{}'", whoami_user);
+            print(&format!("whoami: '{}'", whoami_user));
         }
         Err(e) => {
-            println!("whoami failed: {}", e);
+            print(&format!("whoami failed: {}", e));
         }
     }
     
@@ -598,23 +599,23 @@ fn print_user_info() {
     match Command::new("id").output() {
         Ok(output) => {
             let id_output = String::from_utf8_lossy(&output.stdout).trim().to_string();
-            println!("id: {}", id_output);
+            print(&format!("id: {}", id_output));
         }
         Err(e) => {
-            println!("id failed: {}", e);
+            print(&format!("id failed: {}", e));
         }
     }
     
     // Try to get user's shell profile paths
     if let Ok(home) = std::env::var("HOME") {
-        println!("Checking shell profiles in {}", home);
+        print(&format!("Checking shell profiles in {}", home));
         let profiles = vec![".zshrc", ".bash_profile", ".bashrc", ".profile"];
         for profile in profiles {
             let path = format!("{}/{}", home, profile);
             if std::path::Path::new(&path).exists() {
-                println!("  {} exists", path);
+                print(&format!("  {} exists", path));
             } else {
-                println!("  {} not found", path);
+                print(&format!("  {} not found", path));
             }
         }
     }
@@ -622,40 +623,40 @@ fn print_user_info() {
 
 /// Test the grabber functionality - capture context and try to match rules
 fn run_test_grabber() {
-    println!("Testing grabber functionality...");
-    println!("==================================");
+    print("Testing grabber functionality...");
+    print("==================================");
     
     // Load config
     let config = crate::core::sys_data::get_config();
-    println!("Loaded config with {} grabber rules", 
-        config.grabber_rules.as_ref().map(|r| r.len()).unwrap_or(0));
+    print(&format!("Loaded config with {} grabber rules", 
+        config.grabber_rules.as_ref().map(|r| r.len()).unwrap_or(0)));
     
     // Try to capture and test context
-    println!("\nCapturing active application context...");
+    print("\nCapturing active application context...");
     match crate::systems::grab_debug(&config) {
         Ok(context) => {
-            println!("SUCCESS: Captured app context");
-            println!("  App: '{}'", context.app_name);
-            println!("  Bundle ID: '{}'", context.bundle_id);
-            println!("  Title: '{}'", context.window_title);
+            print("SUCCESS: Captured app context");
+            print(&format!("  App: '{}'", context.app_name));
+            print(&format!("  Bundle ID: '{}'", context.bundle_id));
+            print(&format!("  Title: '{}'", context.window_title));
             
             // Show properties if any
             if let Some(props_obj) = context.properties.as_object() {
                 if !props_obj.is_empty() {
-                    println!("  Properties:");
+                    print("  Properties:");
                     for (key, value) in props_obj {
-                        println!("    {}: '{}'", key, value.as_str().unwrap_or("(complex value)"));
+                        print(&format!("    {}: '{}'", key, value.as_str().unwrap_or("(complex value)")));
                     }
                 }
             }
         }
         Err(e) => {
-            println!("ERROR: Failed to capture app context: {}", e);
+            print(&format!("ERROR: Failed to capture app context: {}", e));
             std::process::exit(1);
         }
     }
     
-    println!("\nGrabber test completed successfully!");
+    print("\nGrabber test completed successfully!");
 }
 
 /// Run grab command to capture active app and output result
@@ -665,8 +666,8 @@ fn run_grab_command(args: &[String]) {
         match args[2].parse::<u64>() {
             Ok(d) => d,
             Err(_) => {
-                eprintln!("Invalid delay value: {}", args[2]);
-                eprintln!("Usage: {} --grab [delay_seconds]", args[0]);
+                print(&format!("Invalid delay value: {}", args[2]));
+                print(&format!("Usage: {} --grab [delay_seconds]", args[0]));
                 std::process::exit(1);
             }
         }
@@ -676,7 +677,7 @@ fn run_grab_command(args: &[String]) {
     
     // If delay requested, sleep before capturing
     if delay_seconds > 0 {
-        eprintln!("Waiting {} seconds before capture...", delay_seconds);
+        print(&format!("Waiting {} seconds before capture...", delay_seconds));
         std::thread::sleep(std::time::Duration::from_secs(delay_seconds));
     }
     
@@ -689,17 +690,17 @@ fn run_grab_command(args: &[String]) {
             match grab_result {
                 crate::systems::grabber::GrabResult::RuleMatched(_rule_name, command) => {
                     // Output the action and argument for easy testing
-                    println!("{} {}", command.action, command.arg);
+                    print(&format!("{} {}", command.action, command.arg));
                 }
                 crate::systems::grabber::GrabResult::NoRuleMatched(context) => {
                     // No rule matched - output context information
-                    eprintln!("No grabber rule matched for:");
-                    eprintln!("  App: {}", context.app_name);
-                    eprintln!("  Bundle ID: {}", context.bundle_id);
-                    eprintln!("  Title: {}", context.window_title);
+                    print("No grabber rule matched for:");
+                    print(&format!("  App: {}", context.app_name));
+                    print(&format!("  Bundle ID: {}", context.bundle_id));
+                    print(&format!("  Title: {}", context.window_title));
                     if let Some(props) = context.properties.as_object() {
                         for (key, value) in props {
-                            eprintln!("  props.{}: {}", key, value.as_str().unwrap_or("(complex)"));
+                            print(&format!("  props.{}: {}", key, value.as_str().unwrap_or("(complex)")));
                         }
                     }
                     std::process::exit(1);
@@ -720,12 +721,12 @@ fn run_start_server() {
     // Restart the server (kill existing and start new)
     match crate::execute::activate_command_server(true) {
         Ok(()) => {
-            println!("Command server restart initiated");
-            println!("The server will start with full shell environment in a few seconds");
+            print("Command server restart initiated");
+            print("The server will start with full shell environment in a few seconds");
         }
         Err(e) => {
             utils::log_error(&format!("Failed to restart server: {}", e));
-            println!("Failed to restart server: {}", e);
+            print(&format!("Failed to restart server: {}", e));
             std::process::exit(1);
         }
     }
@@ -814,12 +815,12 @@ fn run_infer_patches(args: &[String]) {
         return;
     }
     
-    println!("Analyzing patch inference changes...");
+    print("Analyzing patch inference changes...");
     
     // Load current commands (without inference and orphan creation)
     let (_config, mut commands, patches) = load_commands_for_inference();
     
-    println!("\n=== COMMAND PATCH CHANGES ===");
+    print("\n=== COMMAND PATCH CHANGES ===");
     
     // Run inference without applying changes, but print to stdout
     let (changes_found, new_patches_to_add) = run_patch_inference(
@@ -831,25 +832,25 @@ fn run_infer_patches(args: &[String]) {
     );
     
     if changes_found == 0 {
-        println!("  No commands would have their patches changed.");
+        print("  No commands would have their patches changed.");
     }
     
     // Show orphan patches that would be created
     if !new_patches_to_add.is_empty() {
-        println!("\n=== ORPHAN PATCHES THAT WOULD BE CREATED ===");
+        print("\n=== ORPHAN PATCHES THAT WOULD BE CREATED ===");
         for new_patch in &new_patches_to_add {
-            println!("  New orphan patch: {}", new_patch);
+            print(&format!("  New orphan patch: {}", new_patch));
         }
     }
     
-    println!("\n=== SUMMARY ===");
-    println!("  Commands that would change: {}", changes_found);
-    println!("  Orphan patches that would be created: {}", new_patches_to_add.len());
+    print("\n=== SUMMARY ===");
+    print(&format!("  Commands that would change: {}", changes_found));
+    print(&format!("  Orphan patches that would be created: {}", new_patches_to_add.len()));
     
     if changes_found == 0 && new_patches_to_add.is_empty() {
-        println!("  No changes would be made.");
+        print("  No changes would be made.");
     } else {
-        println!("  Use --infer-all to apply these changes (normal startup only fills empty patches).");
+        print("  Use --infer-all to apply these changes (normal startup only fills empty patches).");
     }
 }
 
@@ -863,33 +864,33 @@ fn run_infer_single_command(command_name: &str) {
     
     match found_command {
         Some(command) => {
-            println!("Command: {}", command.command);
-            println!("Current patch: '{}'", command.patch);
+            print(&format!("Command: {}", command.command));
+            print(&format!("Current patch: '{}'", command.patch));
             
             // Test patch inference on this specific command
             match crate::core::commands::infer_patch(command, &patches) {
                 Some(inferred_patch) => {
-                    println!("Inferred patch: '{}'", inferred_patch);
+                    print(&format!("Inferred patch: '{}'", inferred_patch));
                     
                     if command.patch == inferred_patch {
-                        println!("✅ No change needed - current patch matches inferred patch");
+                        print("✅ No change needed - current patch matches inferred patch");
                     } else if command.patch.is_empty() {
-                        println!("📄 Would assign patch: '{}' -> '{}'", command.patch, inferred_patch);
+                        print(&format!("📄 Would assign patch: '{}' -> '{}'", command.patch, inferred_patch));
                     } else {
-                        println!("🔄 Would change patch: '{}' -> '{}'", command.patch, inferred_patch);
+                        print(&format!("🔄 Would change patch: '{}' -> '{}'", command.patch, inferred_patch));
                     }
                 }
                 None => {
                     if command.patch.is_empty() {
-                        println!("No patch could be inferred (would remain empty)");
+                        print("No patch could be inferred (would remain empty)");
                     } else {
-                        println!("No patch could be inferred (would keep current: '{}')", command.patch);
+                        print(&format!("No patch could be inferred (would keep current: '{}')", command.patch));
                     }
                 }
             }
         }
         None => {
-            println!("Command '{}' not found.", command_name);
+            print(&format!("Command '{}' not found.", command_name));
             
             // Show similar commands as suggestions
             let similar_commands: Vec<&crate::core::Command> = commands.iter()
@@ -898,9 +899,9 @@ fn run_infer_single_command(command_name: &str) {
                 .collect();
             
             if !similar_commands.is_empty() {
-                println!("\nSimilar commands found:");
+                print("\nSimilar commands found:");
                 for cmd in similar_commands {
-                    println!("  {}", cmd.command);
+                    print(&format!("  {}", cmd.command));
                 }
             }
         }
@@ -909,12 +910,12 @@ fn run_infer_single_command(command_name: &str) {
 
 /// Show patch inference changes and prompt user to apply them
 fn run_infer_all_patches(_args: &[String]) {
-    println!("Analyzing patch inference changes...");
+    print("Analyzing patch inference changes...");
     
     // Load current commands (without inference and orphan creation)
     let (_config, mut commands, patches) = load_commands_for_inference();
     
-    println!("\n=== COMMAND PATCH CHANGES ===");
+    print("\n=== COMMAND PATCH CHANGES ===");
     
     // First run: Show changes without applying
     let (changes_found, new_patches_to_add) = run_patch_inference(
@@ -926,26 +927,26 @@ fn run_infer_all_patches(_args: &[String]) {
     );
     
     if changes_found == 0 {
-        println!("  No commands would have their patches changed.");
+        print("  No commands would have their patches changed.");
     }
     
     // Show orphan patches that would be created
     if !new_patches_to_add.is_empty() {
-        println!("\n=== ORPHAN PATCHES THAT WOULD BE CREATED ===");
+        print("\n=== ORPHAN PATCHES THAT WOULD BE CREATED ===");
         for new_patch in &new_patches_to_add {
-            println!("  New orphan patch: {}", new_patch);
+            print(&format!("  New orphan patch: {}", new_patch));
         }
     }
     
     if changes_found == 0 && new_patches_to_add.is_empty() {
-        println!("\nNo changes would be made.");
+        print("\nNo changes would be made.");
         return;
     }
     
     // Prompt user for confirmation
-    println!("\n=== SUMMARY ===");
-    println!("  Commands that would change: {}", changes_found);
-    println!("  Orphan patches that would be created: {}", new_patches_to_add.len());
+    print("\n=== SUMMARY ===");
+    print(&format!("  Commands that would change: {}", changes_found));
+    print(&format!("  Orphan patches that would be created: {}", new_patches_to_add.len()));
     print!("\nApply all changes? (y/n): ");
     use std::io::{self, Write};
     io::stdout().flush().unwrap();
@@ -971,50 +972,50 @@ fn run_infer_all_patches(_args: &[String]) {
         if applied_count > 0 {
             match save_commands_to_file(&commands) {
                 Ok(()) => {
-                    println!("Updated {} commands and saved to file.", applied_count);
+                    print(&format!("Updated {} commands and saved to file.", applied_count));
                 }
                 Err(e) => {
                     utils::log_error(&format!("Updated {} commands but failed to save: {}", applied_count, e));
                 }
             }
         } else {
-            println!("No commands were actually updated.");
+            print("No commands were actually updated.");
         }
     } else {
-        println!("No changes applied.");
+        print("No changes applied.");
     }
 }
 
 fn run_rescan_command() {
-    println!("🚀 HookAnchor Rescan - Verbose Mode");
-    println!("====================================");
+    print("🚀 HookAnchor Rescan - Verbose Mode");
+    print("====================================");
     
     // Load configuration
     let config = crate::core::sys_data::get_config();
     
     // Debug output
-    println!("📋 Config loaded - checking file_roots...");
+    print("📋 Config loaded - checking file_roots...");
     
     // Get file roots
     let _file_roots = match &config.popup_settings.file_roots {
         Some(roots) => {
-            println!("✅ File roots found: {:?}", roots);
+            print(&format!("✅ File roots found: {:?}", roots));
             roots.clone()
         },
         None => {
-            eprintln!("❌ No file roots configured in config file");
-            eprintln!("    popup_settings exists: {}", config.popup_settings.file_roots.is_some());
+            print("❌ No file roots configured in config file");
+            print(&format!("    popup_settings exists: {}", config.popup_settings.file_roots.is_some()));
             std::process::exit(1);
         }
     };
     
-    println!("\n📋 Initial data load...");
+    print("\n📋 Initial data load...");
     
     // Load existing commands from disk first (to preserve patches), then run verbose load
     let existing_commands = crate::core::load_commands();
     let global_data = crate::core::sys_data::load_data(existing_commands, true);
     
-    println!("\n🔍 Starting filesystem scan...");
+    print("\n🔍 Starting filesystem scan...");
     
     // Run scan with verbose output
     let scanned_commands = crate::systems::scan_verbose(
@@ -1023,8 +1024,8 @@ fn run_rescan_command() {
         true
     );
     
-    println!("\n📊 Final Summary:");
-    println!("   Total commands after rescan: {}", scanned_commands.len());
+    print("\n📊 Final Summary:");
+    print(&format!("   Total commands after rescan: {}", scanned_commands.len()));
     
     // Count commands by action type
     let mut action_counts: std::collections::HashMap<String, usize> = std::collections::HashMap::new();
@@ -1032,27 +1033,27 @@ fn run_rescan_command() {
         *action_counts.entry(cmd.action.clone()).or_insert(0) += 1;
     }
     
-    println!("\n   Commands by action type:");
+    print("\n   Commands by action type:");
     let mut sorted_actions: Vec<_> = action_counts.iter().collect();
     sorted_actions.sort_by_key(|(action, _)| (*action).clone());
     
     for (action, count) in sorted_actions {
-        println!("     {}: {}", action, count);
+        print(&format!("     {}: {}", action, count));
     }
     
-    println!("\n✅ Rescan complete!");
+    print("\n✅ Rescan complete!");
 }
 
 /// Check for hung processes
 fn run_process_health() {
-    println!("Checking process health...");
+    print("Checking process health...");
     crate::utils::subprocess::check_system_health();
-    println!("Health check complete. See debug logs for details.");
+    print("Health check complete. See debug logs for details.");
 }
 
 /// Show detailed process status
 fn run_process_status() {
-    println!("Process status:");
+    print("Process status:");
     crate::utils::subprocess::show_process_status();
 }
 
@@ -1061,35 +1062,35 @@ fn run_install(args: &[String]) {
     // Check if --force flag is present
     let force = args.len() > 2 && args[2] == "--force";
     
-    println!("🔄 Running HookAnchor setup assistant...");
-    println!("================================================");
-    println!();
+    print("🔄 Running HookAnchor setup assistant...");
+    print("================================================");
+    print("");
     
     if force {
-        println!("⚠️  FORCE MODE: Will overwrite existing configuration files!");
-        println!("   Backups will be created before overwriting.");
-        println!();
+        print("⚠️  FORCE MODE: Will overwrite existing configuration files!");
+        print("   Backups will be created before overwriting.");
+        print("");
     }
     
     // Run the setup assistant with appropriate force flag
     match crate::systems::setup_assistant::SetupAssistant::new().run_setup(force) {
         Ok(()) => {
-            println!();
-            println!("✅ Installation completed successfully!");
-            println!();
-            println!("Changes made:");
-            println!("  - Karabiner configuration updated/reinstalled");
-            println!("  - Configuration files validated");
-            println!("  - Setup assistant completed");
-            println!();
-            println!("You may need to:");
-            println!("  1. Enable the HookAnchor rule in Karabiner-Elements preferences");
-            println!("  2. Restart HookAnchor if currently running");
+            print("");
+            print("✅ Installation completed successfully!");
+            print("");
+            print("Changes made:");
+            print("  - Karabiner configuration updated/reinstalled");
+            print("  - Configuration files validated");
+            print("  - Setup assistant completed");
+            print("");
+            print("You may need to:");
+            print("  1. Enable the HookAnchor rule in Karabiner-Elements preferences");
+            print("  2. Restart HookAnchor if currently running");
         },
         Err(e) => {
-            eprintln!("❌ Installation failed: {}", e);
-            eprintln!();
-            eprintln!("Please check the error message above and try again.");
+            print(&format!("❌ Installation failed: {}", e));
+            print("");
+            print("Please check the error message above and try again.");
             std::process::exit(1);
         }
     }
@@ -1097,15 +1098,15 @@ fn run_install(args: &[String]) {
 
 /// Uninstall HookAnchor
 fn run_uninstall() {
-    println!("🗑️  HookAnchor Uninstall");
-    println!("========================");
-    println!();
+    print("🗑️  HookAnchor Uninstall");
+    print("========================");
+    print("");
     
-    println!("This will remove:");
-    println!("  - Karabiner configuration for HookAnchor");
-    println!("  - Configuration directory: ~/.config/hookanchor");  
-    println!("  - URL handler registration");
-    println!();
+    print("This will remove:");
+    print("  - Karabiner configuration for HookAnchor");
+    print("  - Configuration directory: ~/.config/hookanchor");  
+    print("  - URL handler registration");
+    print("");
     
     print!("Are you sure you want to uninstall HookAnchor? (y/N): ");
     use std::io::{self, Write};
@@ -1116,16 +1117,16 @@ fn run_uninstall() {
     let input = input.trim().to_lowercase();
     
     if input == "y" || input == "yes" {
-        println!();
-        println!("🗑️  Uninstalling HookAnchor...");
+        print("");
+        print("🗑️  Uninstalling HookAnchor...");
         
         // Remove configuration directory
         if let Ok(home) = std::env::var("HOME") {
             let config_dir = format!("{}/.config/hookanchor", home);
             if std::path::Path::new(&config_dir).exists() {
                 match std::fs::remove_dir_all(&config_dir) {
-                    Ok(()) => println!("✅ Removed configuration directory"),
-                    Err(e) => println!("⚠️  Could not remove config directory: {}", e),
+                    Ok(()) => print("✅ Removed configuration directory"),
+                    Err(e) => print(&format!("⚠️  Could not remove config directory: {}", e)),
                 }
             }
         }
@@ -1133,48 +1134,48 @@ fn run_uninstall() {
         // TODO: Remove Karabiner configuration
         // TODO: Unregister URL handler
         
-        println!();
-        println!("✅ HookAnchor uninstalled successfully!");
-        println!("You may need to manually remove any remaining files:");
-        println!("  - App bundles in /Applications");
-        println!("  - Binary files if installed to system paths");
+        print("");
+        print("✅ HookAnchor uninstalled successfully!");
+        print("You may need to manually remove any remaining files:");
+        print("  - App bundles in /Applications");
+        print("  - Binary files if installed to system paths");
     } else {
-        println!("Uninstall cancelled.");
+        print("Uninstall cancelled.");
     }
 }
 
 /// Restart both command server and popup server - launch both from Terminal for proper permissions
 fn run_restart_server() {
-    println!("🔄 Restarting both servers (command + popup)...");
+    print("🔄 Restarting both servers (command + popup)...");
     
     // First, hide the popup if it's visible by sending command to socket
-    println!("  Hiding popup window...");
+    print("  Hiding popup window...");
     use std::os::unix::net::UnixStream;
     use std::io::Write;
     
     if let Ok(mut stream) = UnixStream::connect("/tmp/hookanchor_popup.sock") {
         if let Err(e) = stream.write_all(b"hide") {
-            println!("  ⚠️  Could not send hide command to popup: {}", e);
+            print(&format!("  ⚠️  Could not send hide command to popup: {}", e));
         } else {
-            println!("  ✅ Popup window hidden");
+            print("  ✅ Popup window hidden");
         }
     } else {
-        println!("  ⚠️  Popup server not running (window may already be hidden)");
+        print("  ⚠️  Popup server not running (window may already be hidden)");
     }
     
     // Kill any existing popup_server first
-    println!("  Killing existing popup_server...");
+    print("  Killing existing popup_server...");
     use std::process::Command;
     match Command::new("pkill")
         .arg("-f")
         .arg("popup_server")
         .output() {
-        Ok(_) => println!("  ✅ Existing popup_server killed"),
-        Err(e) => println!("  ⚠️  Failed to kill popup_server: {}", e),
+        Ok(_) => print("  ✅ Existing popup_server killed"),
+        Err(e) => print(&format!("  ⚠️  Failed to kill popup_server: {}", e)),
     }
     
     // Start popup_server via Terminal for proper permissions
-    println!("  Starting popup_server via Terminal...");
+    print("  Starting popup_server via Terminal...");
     let binary_path = crate::utils::get_binary_path()
         .and_then(|p| p.parent().map(|d| d.to_path_buf()))
         .unwrap_or_else(|| std::path::PathBuf::from("/Users/oblinger/ob/proj/HookAnchor/target/release"));
@@ -1192,37 +1193,37 @@ fn run_restart_server() {
             .output() {
             Ok(output) => {
                 if output.status.success() {
-                    println!("  ✅ popup_server started via Terminal (inherits Accessibility permissions)");
+                    print("  ✅ popup_server started via Terminal (inherits Accessibility permissions)");
                 } else {
-                    println!("  ⚠️  Failed to start popup_server via Terminal: {}", 
-                            String::from_utf8_lossy(&output.stderr));
+                    print(&format!("  ⚠️  Failed to start popup_server via Terminal: {}", 
+                            String::from_utf8_lossy(&output.stderr)));
                 }
             }
-            Err(e) => println!("  ⚠️  Failed to execute AppleScript: {}", e),
+            Err(e) => print(&format!("  ⚠️  Failed to execute AppleScript: {}", e)),
         }
     } else {
-        println!("  ⚠️  popup_server not found at: {}", popup_server_path.display());
+        print(&format!("  ⚠️  popup_server not found at: {}", popup_server_path.display()));
     }
     
     // Restart the server (kill existing and start new)
-    println!("  Restarting server...");
+    print("  Restarting server...");
     
     // Clear the socket file to ensure clean start
     let socket_path = std::path::Path::new("/Users/oblinger/.config/hookanchor/execution_server.sock");
     if socket_path.exists() {
         if let Err(e) = std::fs::remove_file(socket_path) {
-            println!("  ⚠️  Failed to remove socket file: {}", e);
+            print(&format!("  ⚠️  Failed to remove socket file: {}", e));
         }
     }
     
     match crate::execute::activate_command_server(true) {
         Ok(()) => {
-            println!("  ✅ Server restart initiated via Terminal");
-            println!("  📱 A new Terminal window should open with the server daemon");
-            println!("  📄 Server output will be logged to ~/.config/hookanchor/server.log");
+            print("  ✅ Server restart initiated via Terminal");
+            print("  📱 A new Terminal window should open with the server daemon");
+            print("  📄 Server output will be logged to ~/.config/hookanchor/server.log");
             
             // Wait for the server to start - check multiple times
-            println!("  ⏳ Waiting for server to start...");
+            print("  ⏳ Waiting for server to start...");
             let mut server_started = false;
             let max_attempts = 50; // 50 attempts * 200ms = 10 seconds max
             let socket_path = std::path::Path::new("/Users/oblinger/.config/hookanchor/execution_server.sock");
@@ -1249,24 +1250,24 @@ fn run_restart_server() {
             }
             
             if server_started {
-                println!("\n  ✅ Server started successfully!");
+                print("\n  ✅ Server started successfully!");
                 
                 // Also verify by checking the PID in state
                 let state = crate::core::state::load_state();
                 if let Some(pid) = state.server_pid {
-                    println!("  📊 Server running with PID: {}", pid);
+                    print(&format!("  📊 Server running with PID: {}", pid));
                 }
                 
-                println!("  🎯 Server is ready to accept commands");
+                print("  🎯 Server is ready to accept commands");
             } else {
-                println!("\n  ❌ Server failed to start within 10 seconds");
-                println!("  💡 Check the Terminal window for error messages");
+                print("\n  ❌ Server failed to start within 10 seconds");
+                print("  💡 Check the Terminal window for error messages");
                 std::process::exit(1);
             }
         }
         Err(e) => {
-            eprintln!("  ❌ Failed to start server: {}", e);
-            eprintln!("  💡 Try running manually: ha --start-server-daemon");
+            print(&format!("  ❌ Failed to start server: {}", e));
+            print("  💡 Try running manually: ha --start-server-daemon");
             std::process::exit(1);
         }
     }
@@ -1275,7 +1276,7 @@ fn run_restart_server() {
 /// Execute a launcher command - used by launchctl asuser to run commands in GUI session
 fn run_execute_launcher_command(args: &[String]) {
     if args.len() < 3 {
-        eprintln!("Usage: {} --execute-launcher-command <launcher_command>", args[0]);
+        print(&format!("Usage: {} --execute-launcher-command <launcher_command>", args[0]));
         std::process::exit(1);
     }
     
@@ -1316,11 +1317,11 @@ fn run_rebuild_command() {
     crate::utils::log(&"=".repeat(80));
     crate::utils::detailed_log("REBUILD", &format!("Starting rebuild session {}", build_id));
     
-    println!("🏗️  HookAnchor Rebuild - Full Reset");
-    println!("===================================");
+    print("🏗️  HookAnchor Rebuild - Full Reset");
+    print("===================================");
     
     // Step 1: Build the release binary
-    println!("\n🔨 Step 1/3: Building release binary...");
+    print("\n🔨 Step 1/3: Building release binary...");
     let build_start = std::time::Instant::now();
     
     // Run cargo build --release
@@ -1334,50 +1335,50 @@ fn run_rebuild_command() {
         Ok(output) => {
             if output.status.success() {
                 let build_time = build_start.elapsed();
-                println!("  ✅ Build successful ({:.1}s)", build_time.as_secs_f32());
+                print(&format!("  ✅ Build successful ({:.1}s)", build_time.as_secs_f32()));
             } else {
                 let stderr = String::from_utf8_lossy(&output.stderr);
-                println!("  ❌ Build failed:");
-                println!("{}", stderr);
-                println!("\n⚠️  Cannot proceed with rebuild due to compilation errors");
+                print("  ❌ Build failed:");
+                print(&format!("{}", stderr));
+                print("\n⚠️  Cannot proceed with rebuild due to compilation errors");
                 std::process::exit(1);
             }
         }
         Err(e) => {
-            println!("  ❌ Failed to run cargo build: {}", e);
-            println!("\n⚠️  Make sure cargo is installed and in PATH");
+            print(&format!("  ❌ Failed to run cargo build: {}", e));
+            print("\n⚠️  Make sure cargo is installed and in PATH");
             std::process::exit(1);
         }
     }
     
-    println!("\n🔄 Step 2/3: Restarting command server...");
+    print("\n🔄 Step 2/3: Restarting command server...");
     
     // Clear the socket file to ensure clean start
     let socket_path = std::path::Path::new("/Users/oblinger/.config/hookanchor/execution_server.sock");
     if socket_path.exists() {
         if let Err(e) = std::fs::remove_file(socket_path) {
-            println!("  ⚠️  Failed to remove socket file: {}", e);
+            print(&format!("  ⚠️  Failed to remove socket file: {}", e));
         }
     }
     
     // Restart the server
     match crate::execute::activate_command_server(true) {
         Ok(()) => {
-            println!("  ✅ Server restart initiated");
-            println!("  📱 A new Terminal window should open with the server daemon");
+            print("  ✅ Server restart initiated");
+            print("  📱 A new Terminal window should open with the server daemon");
         },
         Err(e) => {
-            println!("  ❌ Failed to restart server: {}", e);
+            print(&format!("  ❌ Failed to restart server: {}", e));
             return;
         }
     }
     
-    println!("\n📁 Step 3/3: Rescanning filesystem...");
+    print("\n📁 Step 3/3: Rescanning filesystem...");
     
     // Run filesystem rescan
     run_rescan_command();
     
-    println!("\n🎉 Rebuild complete!");
+    print("\n🎉 Rebuild complete!");
 }
 
 /// Run popup management command
@@ -1398,8 +1399,8 @@ fn run_popup_command(args: &[String]) {
         "show" | "hide" | "delete" | "status" => {},
         _ => {
             utils::log_error(&format!("Unknown popup action: {}", action));
-            eprintln!("Unknown popup action: {}", action);
-            eprintln!("Valid actions: show, hide, delete, status");
+            print(&format!("Unknown popup action: {}", action));
+            print("Valid actions: show, hide, delete, status");
             std::process::exit(1);
         }
     }
@@ -1411,7 +1412,7 @@ fn run_popup_command(args: &[String]) {
     
     if !popup_path.exists() {
         utils::log_error(&format!("Popup launcher not found at: {:?}", popup_path));
-        eprintln!("Popup launcher not found at: {:?}", popup_path);
+        print(&format!("Popup launcher not found at: {:?}", popup_path));
         std::process::exit(1);
     }
     
@@ -1435,7 +1436,7 @@ fn run_popup_command(args: &[String]) {
         }
         Err(e) => {
             utils::log_error(&format!("Failed to execute popup launcher: {}", e));
-            eprintln!("Failed to execute popup launcher: {}", e);
+            print(&format!("Failed to execute popup launcher: {}", e));
             std::process::exit(1);
         }
     }

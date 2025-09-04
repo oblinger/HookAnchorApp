@@ -1144,6 +1144,29 @@ pub fn get_action(path: &std::path::Path) -> &'static str {
     }
 }
 
+/// Determine the appropriate action type for a given argument string
+/// This can handle URLs, file paths, and other special cases
+pub fn get_action_for_arg(arg: &str) -> &'static str {
+    // Check if it's a URL
+    if arg.starts_with("http://") || arg.starts_with("https://") {
+        // Special case for Notion URLs
+        if arg.contains("notion.so") {
+            return "notion";
+        }
+        return "url";
+    }
+    
+    // Check if it's an obsidian URL
+    if arg.starts_with("obsidian://") {
+        return "obs_url";
+    }
+    
+    // Otherwise treat as a file path
+    let path = std::path::Path::new(arg);
+    get_action(path)
+}
+
+
 
 /// Get the default patch for a given action type
 pub fn get_default_patch_for_action(action: &str) -> Option<&'static str> {

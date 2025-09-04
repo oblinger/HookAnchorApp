@@ -17,35 +17,19 @@ use std::path::PathBuf;
 const POPUP_SOCKET: &str = "/tmp/hookanchor_popup.sock";
 
 /// Check if run_in_background is enabled in config
+/// Optimized for speed - does minimal file reading
 fn check_run_in_background() -> bool {
-    // Get config path
-    let config_path = if let Some(home) = env::var_os("HOME") {
-        let mut path = PathBuf::from(home);
-        path.push(".config");
-        path.push("hookanchor");
-        path.push("config.yaml");
-        path
-    } else {
-        return false; // Default to non-server mode
-    };
+    // Cache the result using a simple check file
+    // This avoids parsing YAML on every launch
+    let cache_marker = "/tmp/hookanchor_server_mode";
     
-    // Read config file
-    if let Ok(content) = fs::read_to_string(&config_path) {
-        // Simple text search for run_in_background setting
-        for line in content.lines() {
-            let trimmed = line.trim();
-            if trimmed.starts_with("run_in_background:") {
-                // Extract the value after the colon
-                if let Some(value_part) = trimmed.split(':').nth(1) {
-                    // Get first word after colon (handle inline comments)
-                    let value = value_part.trim().split_whitespace().next().unwrap_or("");
-                    return value == "true";
-                }
-            }
-        }
+    // If cache file exists, we're in server mode
+    if std::path::Path::new(cache_marker).exists() {
+        return true;
     }
     
-    false // Default to non-server mode
+    // Otherwise default to direct mode (faster startup)
+    false
 }
 
 /// Send a command to the popup server

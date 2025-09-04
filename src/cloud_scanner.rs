@@ -86,16 +86,9 @@ impl NotionScanner {
                 "page_size": 100
             });
             
-            // Only add sort if we're doing incremental scan
-            if last_scan.is_some() {
-                body["sorts"] = serde_json::json!([
-                    {
-                        "property": "last_edited_time",
-                        "direction": "descending"
-                    }
-                ]);
-            }
-
+            // Note: The /search endpoint doesn't support sorts parameter
+            // Results are returned in relevance order by default
+            
             if let Some(cursor) = start_cursor {
                 body["start_cursor"] = serde_json::json!(cursor);
             }
@@ -175,6 +168,12 @@ impl NotionScanner {
     fn save_last_scan_time(&self) {
         let mut state = crate::core::load_state();
         state.notion_last_scan = Some(Utc::now().to_rfc3339());
+        crate::core::save_state(&state);
+    }
+    
+    fn clear_last_scan_time(&self) {
+        let mut state = crate::core::load_state();
+        state.notion_last_scan = None;
         crate::core::save_state(&state);
     }
 
@@ -305,6 +304,9 @@ pub fn scan_cloud_services() -> CloudScanResult {
                 }
                 continue;
             }
+            
+            // Check if incremental scanning is enabled
+            let incremental = root_config["incremental"].as_bool().unwrap_or(false);
 
             match service_type {
                 "notion" => {
@@ -317,11 +319,16 @@ pub fn scan_cloud_services() -> CloudScanResult {
                         };
 
                         if expanded_key.starts_with("ntn_") || expanded_key.starts_with("secret_") {
-                            crate::utils::log(&format!("[NOTION] Scanning with API key (limit: {} pages)...", limit));
+                            crate::utils::log(&format!("[NOTION] Scanning with API key (limit: {} pages, incremental: {})...", limit, incremental));
                             let scanner = NotionScanner::new(expanded_key);
                             
-                            // Check if we have previous scan data
-                            is_incremental = scanner.get_last_scan_time().is_some();
+                            // Check if we have previous scan data AND incremental is enabled
+                            is_incremental = incremental && scanner.get_last_scan_time().is_some();
+                            
+                            // If not incremental, clear the last scan time to force a full scan
+                            if !incremental {
+                                scanner.clear_last_scan_time();
+                            }
                             
                             match scanner.scan_pages_with_limit(limit as usize) {
                                 Ok(pages) => {

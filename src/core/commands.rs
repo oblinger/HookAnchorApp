@@ -38,6 +38,9 @@ pub struct Patch {
     pub name: String,
     /// The first command that matches this patch name
     pub linked_command: Option<Command>,
+    /// Commands with the 'I' (include) flag that have this patch
+    /// These commands' folders will be included in the submenu
+    pub include_commands: Vec<Command>,
 }
 
 /// Performs case-insensitive lookup of a patch
@@ -291,7 +294,7 @@ pub(crate) fn backup_commands_file() -> Result<(), Box<dyn std::error::Error>> {
 pub fn create_patches_hashmap(commands: &[Command]) -> HashMap<String, Patch> {
     let mut patches = HashMap::new();
     
-    // Create a patch for every anchor command, indexed by lowercase command name
+    // First pass: Create a patch for every anchor command, indexed by lowercase command name
     for command in commands {
         if command.action == "anchor" {
             let patch_key = command.command.to_lowercase();
@@ -302,7 +305,19 @@ pub fn create_patches_hashmap(commands: &[Command]) -> HashMap<String, Patch> {
                 patches.insert(patch_key, Patch {
                     name: command.command.clone(), // Preserve original case from the anchor command
                     linked_command: Some(command.clone()),
+                    include_commands: Vec::new(),
                 });
+            }
+        }
+    }
+    
+    // Second pass: Add commands with 'I' flag to their patch's include list
+    for command in commands {
+        // Check if command has the Include flag
+        if command.flags.contains('I') && !command.patch.is_empty() {
+            let patch_key = command.patch.to_lowercase();
+            if let Some(patch) = patches.get_mut(&patch_key) {
+                patch.include_commands.push(command.clone());
             }
         }
     }
@@ -322,9 +337,17 @@ pub fn infer_patch(command: &Command, patches: &HashMap<String, Patch>) -> Optio
         return None;
     }
     
+    // CRITICAL: Prevent cycles - an anchor cannot have itself as its patch
+    // For anchor commands, we'll check if the inferred patch would be the same as the command name
+    // This check will be enforced at the end before returning
+    
     // Method 1: Alias commands inherit patch from their target (HIGHEST PRIORITY)
     if command.action == "alias" {
         if let Some(target_patch) = infer_patch_from_alias_target(command, patches) {
+            // Check for self-assignment (would create a cycle)
+            if command.action == "anchor" && target_patch.to_lowercase() == command.command.to_lowercase() {
+                return None;
+            }
             return Some(target_patch);
         }
     }
@@ -333,6 +356,26 @@ pub fn infer_patch(command: &Command, patches: &HashMap<String, Patch>) -> Optio
     // Check if the command is path-based and extract folder information
     if command.is_path_based() {
         if let Some(inferred_patch) = infer_patch_from_command(command, patches) {
+            // Check for self-assignment (would create a cycle)
+            if command.action == "anchor" && inferred_patch.to_lowercase() == command.command.to_lowercase() {
+                crate::utils::detailed_log("CYCLE_PREVENTION", &format!(
+                    "Preventing cycle: anchor '{}' cannot have patch '{}'. Looking for parent patch.",
+                    command.command, inferred_patch
+                ));
+                // This anchor would be assigned to itself - try to find parent patch instead
+                if let Some(hierarchy_patch) = infer_patch_from_hierarchy_for_anchor(command, patches) {
+                    crate::utils::detailed_log("CYCLE_PREVENTION", &format!(
+                        "Found parent patch '{}' for anchor '{}'",
+                        hierarchy_patch, command.command
+                    ));
+                    return Some(hierarchy_patch);
+                }
+                crate::utils::detailed_log("CYCLE_PREVENTION", &format!(
+                    "No parent patch found for anchor '{}', leaving empty",
+                    command.command
+                ));
+                return None;
+            }
             return Some(inferred_patch);
         }
     }
@@ -433,6 +476,34 @@ fn infer_patch_from_file_path_with_exclusion(file_path: &str, patches: &HashMap<
         return None;
     }
     
+    // Check if this is an anchor file FIRST
+    let path = Path::new(file_path);
+    if let Some(file_stem) = path.file_stem() {
+        if let Some(parent) = path.parent() {
+            if let Some(parent_name) = parent.file_name() {
+                if file_stem.to_string_lossy().to_lowercase() == parent_name.to_string_lossy().to_lowercase() {
+                    // This IS an anchor file (e.g., RR/Lrn/Lrn.md)
+                    crate::utils::detailed_log("ANCHOR_INFERENCE", &format!(
+                        "File {} is an anchor (stem '{}' matches folder '{}'). Looking for parent patch.",
+                        file_path, file_stem.to_string_lossy(), parent_name.to_string_lossy()
+                    ));
+                    // For anchors, walk up the hierarchy to find parent patch
+                    if let Some(result) = infer_patch_from_hierarchy(parent, patches) {
+                        crate::utils::detailed_log("ANCHOR_INFERENCE", &format!(
+                            "Found parent patch '{}' for anchor '{}'",
+                            result, exclude_command
+                        ));
+                        return Some(result);
+                    }
+                    crate::utils::detailed_log("ANCHOR_INFERENCE", &format!(
+                        "No parent patch found for anchor '{}', will check other methods",
+                        exclude_command
+                    ));
+                }
+            }
+        }
+    }
+    
     // Method 1: Check all path components and return the most specific (deepest) non-self match
     // For paths like "T/Misc/Sleep.md", prefer "Misc" over "T"
     // This works for both relative and absolute paths
@@ -487,11 +558,14 @@ fn infer_patch_from_file_path_with_exclusion(file_path: &str, patches: &HashMap<
                     if dir == linked_dir {
                         // Prevent self-assignment
                         if patch.name.to_lowercase() != exclude_command.to_lowercase() {
-                            // Check if this is an anchor file (same name as patch)
+                            // Check if this is an anchor file (file stem matches parent folder name)
                             if let Some(file_stem) = path.file_stem() {
-                                if file_stem.to_string_lossy().to_lowercase() == patch.name {
-                                    // This is an anchor file, walk hierarchy for containing patch
-                                    return infer_patch_from_hierarchy(dir, patches);
+                                if let Some(parent_name) = dir.file_name() {
+                                    if file_stem.to_string_lossy().to_lowercase() == parent_name.to_string_lossy().to_lowercase() {
+                                        // This IS an anchor file (e.g., Lrn/Lrn.md)
+                                        // Walk hierarchy to find the containing patch (should be grandparent)
+                                        return infer_patch_from_hierarchy(dir, patches);
+                                    }
                                 }
                             }
                             
@@ -600,6 +674,22 @@ fn infer_patch_from_file_path(file_path: &str, patches: &HashMap<String, Patch>)
     }
     
     None
+}
+
+/// Helper function specifically for anchors to find their parent patch
+fn infer_patch_from_hierarchy_for_anchor(command: &Command, patches: &HashMap<String, Patch>) -> Option<String> {
+    if !command.is_path_based() {
+        return None;
+    }
+    
+    let path = Path::new(&command.arg);
+    let dir = if path.is_file() {
+        path.parent()?
+    } else {
+        path
+    };
+    
+    infer_patch_from_hierarchy(dir, patches)
 }
 
 /// Walks directory hierarchy looking for a patch that contains this folder
@@ -797,6 +887,101 @@ fn is_patch_degradation(current_patch: &str, inferred_patch: &str) -> bool {
     false
 }
 
+/// Build a hashmap of absolute folder paths to patch names from anchor commands
+/// This creates the folder hierarchy that patch inference will use
+fn build_folder_to_patch_map(commands: &[Command]) -> HashMap<PathBuf, String> {
+    use std::path::PathBuf;
+    let mut folder_map = HashMap::new();
+    
+    // First pass: Add all anchor commands to the map
+    for cmd in commands {
+        if cmd.action == "anchor" && !cmd.arg.is_empty() {
+            let path = PathBuf::from(&cmd.arg);
+            
+            // Get the parent folder of the anchor file
+            if let Some(parent) = path.parent() {
+                // Canonicalize to handle symlinks and relative paths
+                if let Ok(canonical_parent) = parent.canonicalize() {
+                    // Map this folder to the anchor's command name (which becomes the patch for its contents)
+                    folder_map.insert(canonical_parent, cmd.command.clone());
+                    
+                    crate::utils::detailed_log("PATCH_MAP", &format!(
+                        "Folder '{}' -> patch '{}'",
+                        parent.display(), cmd.command
+                    ));
+                }
+            }
+        }
+    }
+    
+    folder_map
+}
+
+/// Simple patch inference: walk up the folder hierarchy until we find a mapped folder
+fn infer_patch_simple(file_path: &str, folder_map: &HashMap<PathBuf, String>) -> Option<String> {
+    use std::path::{Path, PathBuf};
+    
+    // Skip if not a file path
+    if file_path.is_empty() || file_path.starts_with("http") || !file_path.contains('/') {
+        return None;
+    }
+    
+    let path = Path::new(file_path);
+    
+    // Check if this is an anchor file itself (file name without extension matches parent folder)
+    if let Some(file_stem) = path.file_stem() {
+        if let Some(parent) = path.parent() {
+            if let Some(parent_name) = parent.file_name() {
+                if file_stem == parent_name {
+                    // This is an anchor file - walk up to find its parent's patch
+                    crate::utils::log(&format!("  📁 Found anchor file: {} in folder {}", 
+                        file_stem.to_string_lossy(), parent_name.to_string_lossy()));
+                    
+                    // Start from the parent's parent to avoid self-reference
+                    if let Some(grandparent) = parent.parent() {
+                        let mut current = grandparent;
+                        loop {
+                            if let Ok(canonical) = current.canonicalize() {
+                                if let Some(patch) = folder_map.get(&canonical) {
+                                    crate::utils::log(&format!("  📍 Anchor '{}' -> parent folder '{}' -> patch '{}'",
+                                        file_stem.to_string_lossy(), current.display(), patch));
+                                    return Some(patch.clone());
+                                }
+                            }
+                            current = current.parent()?;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    // Start with the file's parent directory
+    let mut current = if path.is_file() || path.extension().is_some() {
+        path.parent()?
+    } else {
+        path
+    };
+    
+    // Walk up the directory tree
+    loop {
+        // Try to canonicalize the current directory
+        if let Ok(canonical) = current.canonicalize() {
+            // Check if this directory has a patch mapping
+            if let Some(patch) = folder_map.get(&canonical) {
+                crate::utils::log(&format!(
+                    "  📂 File '{}' -> folder '{}' -> patch '{}'",
+                    file_path, current.display(), patch
+                ));
+                return Some(patch.clone());
+            }
+        }
+        
+        // Move up to parent directory
+        current = current.parent()?;
+    }
+}
+
 /// Run patch inference on commands with configurable behavior
 /// 
 /// # Arguments
@@ -819,6 +1004,18 @@ pub fn run_patch_inference(
     let mut patches_assigned = 0;
     let mut new_patches_to_add = Vec::new();
     
+    crate::utils::log(&format!("=== PATCH INFERENCE ==="));
+    crate::utils::log(&format!("Processing {} commands", commands.len()));
+    
+    // Build the folder → patch mapping from anchors
+    let folder_map = build_folder_to_patch_map(commands);
+    crate::utils::log(&format!("Built folder map with {} entries", folder_map.len()));
+    
+    // Log the folder map entries
+    for (folder, patch) in &folder_map {
+        crate::utils::log(&format!("  Folder: {} -> Patch: {}", folder.display(), patch));
+    }
+    
     for command in commands.iter_mut() {
         // Skip the orphans root command - it should never have a patch
         if command.command == "orphans" {
@@ -834,9 +1031,24 @@ pub fn run_patch_inference(
         let should_process = overwrite_patch || command.patch.is_empty();
         
         if should_process {
-            if let Some(inferred_patch) = infer_patch(command, patches) {
+            // Use simple inference for path-based commands
+            let inferred_patch = if command.is_path_based() && !command.arg.is_empty() {
+                infer_patch_simple(&command.arg, &folder_map)
+            } else {
+                // Fall back to old inference for non-path commands
+                infer_patch(command, patches)
+            };
+            
+            if let Some(inferred_patch) = inferred_patch {
                 // Skip if patch wouldn't change - always skip when values are the same
                 if command.patch == inferred_patch {
+                    continue;
+                }
+                
+                // CRITICAL: Check for self-reference (cycle prevention)
+                if command.action == "anchor" && inferred_patch.to_lowercase() == command.command.to_lowercase() {
+                    crate::utils::log(&format!("  ❌ CYCLE PREVENTED: Anchor '{}' cannot have itself as patch '{}'", 
+                        command.command, inferred_patch));
                     continue;
                 }
                 
@@ -856,11 +1068,11 @@ pub fn run_patch_inference(
                 if apply_changes && (overwrite_patch || command.patch.is_empty()) {
                     // Debug: Log when we're about to assign a patch
                     if inferred_patch.is_empty() {
-                        crate::utils::detailed_log("EMPTY_PATCH_BUG", &format!("WARNING: About to assign EMPTY patch to command '{}' (was: '{}')", 
+                        crate::utils::log(&format!("  ⚠️ WARNING: About to assign EMPTY patch to command '{}' (was: '{}')", 
                             command.command, old_patch_display));
                     }
                     command.patch = inferred_patch.clone();
-                    crate::utils::detailed_log("AUTO_PATCH", &format!("Inferred patch for '{}': {} -> {}", 
+                    crate::utils::log(&format!("  ✅ Inferred patch for '{}': {} -> {}", 
                         command.command, old_patch_display, inferred_patch));
                 }
                 
@@ -878,6 +1090,16 @@ pub fn run_patch_inference(
             }
         }
     }
+    
+    // Log final state of anchors for debugging
+    crate::utils::log(&format!("\n=== FINAL ANCHOR STATES ==="));
+    for cmd in commands.iter().filter(|c| c.action == "anchor") {
+        if cmd.command.to_lowercase() == "lrn" || cmd.arg.contains("Lrn") {
+            crate::utils::log(&format!("  Anchor '{}': patch='{}', arg='{}'", 
+                cmd.command, cmd.patch, cmd.arg));
+        }
+    }
+    crate::utils::log(&format!("=== END INFERENCE ===\n"));
     
     (patches_assigned, new_patches_to_add)
 }
@@ -997,20 +1219,36 @@ pub fn get_patch_path(command_name: &str, patches: &HashMap<String, Patch>) -> V
     path
 }
 
-/// Find patch names that are referenced by commands but don't have corresponding anchor commands
+/// REMOVED - No longer finding orphan patches since we don't create orphan anchors
+#[allow(dead_code)]
 pub(crate) fn find_orphan_patches(patches: &HashMap<String, Patch>, commands: &[Command]) -> Vec<String> {
     let mut orphan_patches = Vec::new();
     
-    // Starting orphan detection
+    // First, build a set of all anchor command names (these ARE the patches)
+    let anchor_names: std::collections::HashSet<String> = commands
+        .iter()
+        .filter(|cmd| cmd.action == "anchor")
+        .map(|cmd| cmd.command.to_lowercase())
+        .collect();
     
-    // Debug: Show some existing patches for comparison
-    let _patch_keys: Vec<String> = patches.keys().take(10).cloned().collect();
+    crate::utils::log(&format!(
+        "=== ORPHAN DETECTION ===\nFound {} anchor commands", anchor_names.len()
+    ));
+    
+    // Log all existing anchors
+    for cmd in commands.iter().filter(|c| c.action == "anchor") {
+        crate::utils::log(&format!("  Existing anchor: '{}' (patch: '{}')", cmd.command, cmd.patch));
+    }
     
     // Scan all commands and collect unique patch names that are referenced but don't have anchors
     for command in commands {
         if !command.patch.is_empty() {
-            // Use the canonical case-insensitive lookup
-            if !patch_exists(&command.patch, patches) {
+            let patch_lower = command.patch.to_lowercase();
+            
+            // Check if there's an anchor with this name (regardless of the anchor's own patch)
+            let has_anchor = anchor_names.contains(&patch_lower) || patch_exists(&command.patch, patches);
+            
+            if !has_anchor {
                 let patch_name_lower = command.patch.to_lowercase();
                 // Patch not found in patches hashmap - considering for orphan creation
                 // Check if we haven't already marked this patch as orphaned (case-insensitive)
@@ -1058,143 +1296,28 @@ pub(crate) fn find_orphan_patches(patches: &HashMap<String, Patch>, commands: &[
     orphan_patches
 }
 
-/// Ensure the "orphans" root patch exists to prevent cycles in the patch graph
-/// This creates an "orphans" anchor with no patch (root of the graph)
+/// REMOVED - No longer creating orphan anchors
+/// This function is kept as a stub to avoid breaking compilation
+#[allow(dead_code)]
 pub(crate) fn ensure_orphans_root_patch(
-    patches: &mut HashMap<String, Patch>,
-    commands: &mut Vec<Command>,
-    config: &Config
+    _patches: &mut HashMap<String, Patch>,
+    _commands: &mut Vec<Command>,
+    _config: &Config
 ) -> Result<(), Box<dyn std::error::Error>> {
-    let orphans_key = "Orphans";
-    
-    // Check if orphans patch already exists
-    if let Some(orphans_patch) = patches.get_mut(orphans_key) {
-        // If it exists, remove its patch string to make it the root
-        if let Some(ref mut linked_cmd) = orphans_patch.linked_command {
-            linked_cmd.patch = String::new();
-            linked_cmd.update_full_line();
-        }
-        return Ok(());
-    }
-    
-    // Create orphans patch if it doesn't exist
-    let orphans_path = config.popup_settings.orphans_path
-        .as_ref()
-        .ok_or("orphans_path not configured")?;
-    
-    // Expand tilde in the path
-    let expanded_path = if orphans_path.starts_with("~/") {
-        if let Ok(home) = env::var("HOME") {
-            orphans_path.replace("~", &home)
-        } else {
-            orphans_path.clone()
-        }
-    } else {
-        orphans_path.clone()
-    };
-    
-    // Create the orphans directory if it doesn't exist
-    let orphans_dir = Path::new(&expanded_path);
-    if !orphans_dir.exists() {
-        fs::create_dir_all(orphans_dir)?;
-        crate::utils::detailed_log("AUTO_ORPHAN", &format!("Created orphans root directory: {}", orphans_dir.display()));
-    }
-    
-    // Create the orphans.md file
-    let orphans_file = orphans_dir.join("orphans.md");
-    if !orphans_file.exists() {
-        let markdown_content = "# Orphans\n\nThis is the root anchor for all orphaned patches.\n\nAll patches without explicit anchors are grouped under this root.\n";
-        fs::write(&orphans_file, markdown_content)?;
-        crate::utils::detailed_log("AUTO_ORPHAN", &format!("Created orphans root anchor file: {}", orphans_file.display()));
-    }
-    
-    // Create the orphans anchor command (with no patch - this is the root)
-    let orphans_command = Command {
-        patch: String::new(), // NO PATCH - this is the root of the graph
-        command: "orphans".to_string(),
-        action: "anchor".to_string(),
-        arg: orphans_file.to_string_lossy().to_string(),
-        flags: "A".to_string(), // Auto-generated flag
-    };
-    
-    // Add the command to the list
-    commands.push(orphans_command.clone());
-    
-    // Add the patch to the hashmap
-    patches.insert(orphans_key.to_string(), Patch {
-        name: orphans_key.to_string(),
-        linked_command: Some(orphans_command),
-    });
-    
-    crate::utils::detailed_log("AUTO_ORPHAN", "Created orphans root patch and command");
+    // Function removed - no longer creating orphan anchors
     Ok(())
 }
 
-/// Create orphan anchor files and commands for patches without anchors
+/// REMOVED - No longer creating orphan anchors
+/// This function is kept as a stub to avoid breaking compilation
+#[allow(dead_code)]
 pub(crate) fn create_orphan_anchors(
-    config: &Config, 
-    orphan_patches: &[String], 
-    commands: &mut Vec<Command>
+    _config: &Config, 
+    _orphan_patches: &[String], 
+    _commands: &mut Vec<Command>
 ) -> Result<usize, Box<dyn std::error::Error>> {
-    let orphans_path = config.popup_settings.orphans_path
-        .as_ref()
-        .ok_or("orphans_path not configured")?;
-    
-    crate::utils::detailed_log("ORPHAN_CREATE", &format!("Creating orphan anchors for {} patches at path: {}", orphan_patches.len(), orphans_path));
-    
-    let mut created_count = 0;
-    
-    for patch_name in orphan_patches {
-        // Expand tilde in the path
-        let expanded_path = if orphans_path.starts_with("~/") {
-            if let Ok(home) = env::var("HOME") {
-                orphans_path.replace("~", &home)
-            } else {
-                orphans_path.clone()
-            }
-        } else {
-            orphans_path.clone()
-        };
-        
-        // Create the folder path for this patch
-        let patch_folder = Path::new(&expanded_path).join(patch_name);
-        
-        // Create the directory if it doesn't exist
-        if !patch_folder.exists() {
-            fs::create_dir_all(&patch_folder)?;
-            crate::utils::detailed_log("AUTO_ORPHAN", &format!("Created orphan patch folder: {}", patch_folder.display()));
-        }
-        
-        // Create the markdown file
-        let markdown_file = patch_folder.join(format!("{}.md", patch_name));
-        
-        if !markdown_file.exists() {
-            let markdown_content = format!(
-                "# {}\n\nThis is an auto-generated anchor file for patch '{}'.\n\nAdd your content here.\n",
-                patch_name, patch_name
-            );
-            
-            fs::write(&markdown_file, markdown_content)?;
-            crate::utils::detailed_log("AUTO_ORPHAN", &format!("Created orphan anchor file: {}", markdown_file.display()));
-        }
-        
-        // Create the anchor command - use the patch name as both patch and command to create a proper patch record
-        let anchor_command = Command {
-            patch: patch_name.clone(), // Use the original case as the patch
-            command: patch_name.clone(), // Use the original case as the command
-            action: "anchor".to_string(),
-            arg: markdown_file.to_string_lossy().to_string(),
-            flags: "A".to_string(), // Auto-generated flag
-        };
-        
-        // Add the command to the list
-        commands.push(anchor_command);
-        created_count += 1;
-        
-        crate::utils::detailed_log("AUTO_ORPHAN", &format!("Created orphan anchor command for patch: {}", patch_name));
-    }
-    
-    Ok(created_count)
+    // Function removed - no longer creating orphan anchors
+    Ok(0)
 }
 
 // GlobalData has been moved to sys_data module as SysData
@@ -2163,7 +2286,7 @@ pub fn get_display_commands_with_options(
     max_results: usize,
     expand_aliases: bool
 ) -> Vec<Command> {
-    get_display_commands_with_options_internal(&sys_data.commands, search_text, &sys_data.config, max_results, expand_aliases)
+    get_display_commands_with_options_internal(&sys_data.commands, search_text, &sys_data.config, &sys_data.patches, max_results, expand_aliases)
 }
 
 /// Internal function that still takes individual parameters for backward compatibility
@@ -2171,6 +2294,7 @@ fn get_display_commands_with_options_internal(
     commands: &[Command], 
     search_text: &str, 
     config: &crate::core::config::Config,
+    patches: &HashMap<String, Patch>,
     max_results: usize,
     expand_aliases: bool
 ) -> Vec<Command> {
@@ -2244,6 +2368,64 @@ fn get_display_commands_with_options_internal(
                 inside_commands.push(cmd);
             } else {
                 outside_commands.push(cmd);
+            }
+        }
+        
+        // NEW: Check if this patch has include commands OR if the anchor has the 'I' flag
+        // If so, add all commands from the same folders as those commands
+        let patch_key = menu_prefix.to_lowercase();
+        if let Some(patch) = patches.get(&patch_key) {
+            // Build a list of commands to check for folders:
+            // 1. The anchor command itself (if it has 'I' flag)
+            // 2. All include commands for this patch
+            let mut commands_to_check = Vec::new();
+            
+            // Check if the anchor command itself has the 'I' flag
+            if let Some(ref anchor_cmd) = patch.linked_command {
+                if anchor_cmd.flags.contains('I') {
+                    commands_to_check.push(anchor_cmd.clone());
+                }
+            }
+            
+            // Add all include commands
+            commands_to_check.extend(patch.include_commands.clone());
+            
+            if !commands_to_check.is_empty() {
+                // Collect folders from all these commands
+                let mut include_folders = std::collections::HashSet::new();
+                for include_cmd in &commands_to_check {
+                    if let Some(folder_path) = include_cmd.get_absolute_folder_path(config) {
+                        include_folders.insert(folder_path);
+                    }
+                }
+                
+                // Add all commands from these folders to the inside list
+                // (if they're not already there)
+                for cmd in commands {
+                    if cmd.action == "separator" {
+                        continue;
+                    }
+                    
+                    // Skip if already in inside_commands or exact_matches
+                    if inside_commands.iter().any(|c| c.command == cmd.command && c.action == cmd.action) {
+                        continue;
+                    }
+                    if exact_matches.iter().any(|c| c.command == cmd.command && c.action == cmd.action) {
+                        continue;
+                    }
+                    
+                    // Check if this command is in one of the include folders
+                    if let Some(cmd_folder) = cmd.get_absolute_folder_path(config) {
+                        if include_folders.contains(&cmd_folder) {
+                            // Remove from outside_commands if it's there
+                            if let Some(pos) = outside_commands.iter().position(|c| c.command == cmd.command && c.action == cmd.action) {
+                                outside_commands.remove(pos);
+                            }
+                            // Add to inside_commands
+                            inside_commands.push(cmd.clone());
+                        }
+                    }
+                }
             }
         }
         

@@ -184,48 +184,12 @@ pub fn load_data(commands_override: Vec<Command>, verbose: bool) -> SysData {
         println!("   Found {} patches from anchor commands", patches.len());
     }
     
-    // Step 3.1: Ensure orphans root patch exists
-    if verbose {
-        println!("🌳 Step 3.1: Ensuring orphans root patch exists...");
-    }
-    if let Err(e) = crate::core::commands::ensure_orphans_root_patch(&mut patches, &mut commands, &config) {
-        crate::utils::log_error(&format!("Failed to ensure orphans root patch: {}", e));
-    }
+    // Step 3.1: REMOVED - No longer creating orphans root
+    // Orphan management is no longer needed
     
-    // Step 3.2: Create orphan anchor files and commands for patches without anchors
-    // This must happen BEFORE patch inference to catch patches that need anchors
-    if verbose {
-        println!("🔍 Step 3.2: Looking for orphan patches...");
-    }
-    let orphan_patches = crate::core::commands::find_orphan_patches(&patches, &commands);
-    let orphans_created = if !orphan_patches.is_empty() {
-        if verbose {
-            println!("   Found {} orphan patches: {:?}", orphan_patches.len(), orphan_patches);
-        } else {
-            eprintln!("Found {} orphan patches: {:?}", orphan_patches.len(), orphan_patches);
-        }
-        match crate::core::commands::create_orphan_anchors(&config, &orphan_patches, &mut commands) {
-            Ok(count) => {
-                if verbose {
-                    println!("   ✅ Created {} orphan anchor files and commands", count);
-                } else {
-                    eprintln!("Created {} orphan anchor files and commands", count);
-                }
-                // Recreate patches hashmap to include newly created anchor commands
-                patches = crate::core::commands::create_patches_hashmap(&commands);
-                count
-            }
-            Err(e) => {
-                crate::utils::log_error(&format!("Failed to create orphan anchors: {}", e));
-                0
-            }
-        }
-    } else {
-        if verbose {
-            println!("   No orphan patches found");
-        }
-        0
-    };
+    // Step 3.2: REMOVED - No longer creating orphan anchors
+    // Patches without anchors will simply remain without anchors
+    let orphans_created = 0;
     
     // Step 4: Infer patches for commands without patches
     if verbose {
@@ -255,6 +219,7 @@ pub fn load_data(commands_override: Vec<Command>, verbose: bool) -> SysData {
             patches.insert(patch_key, Patch {
                 name: patch_name.clone(), // Store original case
                 linked_command: matching_command.cloned(),
+                include_commands: Vec::new(),
             });
         }
     }
