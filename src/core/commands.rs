@@ -285,6 +285,78 @@ impl Command {
         
         result
     }
+    
+    /// Resolves alias chains recursively, returning the final target command
+    /// 
+    /// If this command is not an alias, returns self.
+    /// If this command is an alias, recursively follows the chain until reaching 
+    /// a non-alias command or hitting the recursion limit.
+    /// 
+    /// Errors (recursion limit exceeded, cycles, missing targets) are logged and 
+    /// the original command is returned - no error propagation needed.
+    /// 
+    /// # Arguments
+    /// * `commands` - The full list of commands to search for alias targets
+    /// 
+    /// # Returns
+    /// * `Command` - The final resolved command (or original command if resolution fails)
+    /// 
+    /// # Examples
+    /// ```
+    /// let resolved = command.resolve_alias(&all_commands);
+    /// // Execute resolved command (safe to use directly)
+    /// ```
+    pub fn resolve_alias(&self, commands: &[Command]) -> Command {
+        const MAX_ALIAS_DEPTH: usize = 100;
+        match self.resolve_alias_with_depth(commands, 0, MAX_ALIAS_DEPTH, &mut std::collections::HashSet::new()) {
+            Ok(resolved) => resolved,
+            Err(error_msg) => {
+                // Log the error and return the original command
+                crate::utils::log_error(&error_msg);
+                self.clone()
+            }
+        }
+    }
+    
+    /// Internal recursive helper for resolve_alias with depth tracking and cycle detection
+    fn resolve_alias_with_depth(
+        &self, 
+        commands: &[Command], 
+        depth: usize, 
+        max_depth: usize,
+        visited: &mut std::collections::HashSet<String>
+    ) -> Result<Command, String> {
+        // Check recursion depth
+        if depth >= max_depth {
+            return Err(format!("Recursive aliases: exceeded maximum depth of {} for command '{}'", max_depth, self.command));
+        }
+        
+        // Check for cycles
+        if visited.contains(&self.command) {
+            return Err(format!("Recursive aliases: cycle detected involving command '{}'", self.command));
+        }
+        
+        // If not an alias, return self
+        if self.action != "alias" {
+            return Ok(self.clone());
+        }
+        
+        // Add current command to visited set
+        visited.insert(self.command.clone());
+        
+        // Find the target command that this alias points to
+        let target_command = commands.iter()
+            .find(|cmd| cmd.command == self.arg)
+            .ok_or_else(|| format!("Recursive aliases: alias '{}' points to non-existent command '{}'", self.command, self.arg))?;
+        
+        // Recursively resolve the target
+        let resolved = target_command.resolve_alias_with_depth(commands, depth + 1, max_depth, visited)?;
+        
+        // Remove current command from visited set (backtrack)
+        visited.remove(&self.command);
+        
+        Ok(resolved)
+    }
 }
 
 /// Returns the path to the commands.txt file
@@ -802,23 +874,19 @@ fn infer_patch_from_hierarchy(dir: &Path, patches: &HashMap<String, Patch>) -> O
 
 /// Infers patch for alias commands by looking up the target command's patch
 fn infer_patch_from_alias_target(command: &Command, patches: &HashMap<String, Patch>) -> Option<String> {
-    // Load all commands to find the alias target
+    // Load all commands and resolve the alias chain
     let all_commands = load_commands_raw();
+    let resolved_command = command.resolve_alias(&all_commands);
     
-    // Find the target command that the alias points to
-    let target_commands = filter_commands(&all_commands, &command.arg, 1, false);
+    // If target has a patch, return it
+    if !resolved_command.patch.is_empty() {
+        return Some(resolved_command.patch.clone());
+    }
     
-    if let Some(target_command) = target_commands.first() {
-        // If target has a patch, return it
-        if !target_command.patch.is_empty() {
-            return Some(target_command.patch.clone());
-        }
-        
-        // If target doesn't have a patch, try to infer one for it
-        // (but don't recurse infinitely - only one level)
-        if target_command.action != "alias" {
-            return infer_patch(target_command, patches);
-        }
+    // If target doesn't have a patch, try to infer one for it
+    // (but only if it's not the original command to avoid infinite recursion)
+    if resolved_command.command != command.command {
+        return infer_patch(&resolved_command, patches);
     }
     
     None
@@ -2565,19 +2633,16 @@ fn get_display_commands_with_options_internal(
     if expand_aliases {
         final_result = final_result.into_iter().map(|cmd| {
             if cmd.action == "alias" {
-                // Find the target command
-                if let Some(target_cmd) = commands.iter().find(|c| c.command == cmd.arg) {
-                    // Create a new command with the alias's name but the target's action/arg
-                    Command {
-                        patch: cmd.patch,
-                        command: cmd.command, // Keep the alias's name
-                        action: target_cmd.action.clone(), // Use target's action
-                        arg: target_cmd.arg.clone(), // Use target's arg
-                        flags: target_cmd.flags.clone(), // Use target's flags
-                    }
-                } else {
-                    // Target not found, keep the alias as-is
-                    cmd
+                // Use resolve_alias to get the final target
+                let resolved_cmd = cmd.resolve_alias(commands);
+                
+                // Create a new command with the alias's name but the target's action/arg
+                Command {
+                    patch: cmd.patch,
+                    command: cmd.command, // Keep the alias's name
+                    action: resolved_cmd.action, // Use resolved action
+                    arg: resolved_cmd.arg, // Use resolved arg
+                    flags: resolved_cmd.flags, // Use resolved flags
                 }
             } else {
                 // Not an alias, return as-is

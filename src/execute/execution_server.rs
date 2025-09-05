@@ -167,34 +167,17 @@ impl CommandServer {
     
     /// Internal function to execute commands with recursion depth tracking
     fn execute_command_with_depth(&self, command: &crate::core::Command, depth: u32) -> crate::core::CommandTarget {
-        const MAX_ALIAS_DEPTH: u32 = 10; // Prevent infinite recursion
+        // Resolve alias chains before execution
+        let all_commands = crate::core::load_commands();
+        let resolved_command = command.resolve_alias(&all_commands);
         
-        // Handle alias command type: execute the target command instead
-        if command.action == "alias" {
-            if depth >= MAX_ALIAS_DEPTH {
-                crate::utils::detailed_log("ALIAS", &format!("Maximum alias depth ({}) exceeded for '{}'", MAX_ALIAS_DEPTH, command.command));
-                return crate::core::CommandTarget::Command(command.clone());
-            }
-            
-            // Load all commands to find the target
-            let all_commands = crate::core::load_commands();
-            
-            // Filter commands to find the best match for the alias target
-            let filtered = crate::core::filter_commands(&all_commands, &command.arg, 1, false);
-            
-            if !filtered.is_empty() {
-                // Execute the first matching command
-                let target_command = &filtered[0];
-                crate::utils::detailed_log("ALIAS", &format!("Alias '{}' executing target: {} (depth: {})", command.command, target_command.command, depth));
-                return self.execute_command_with_depth(target_command, depth + 1); // Recursive call with depth tracking
-            } else {
-                crate::utils::detailed_log("ALIAS", &format!("Alias '{}' target '{}' not found", command.command, command.arg));
-                return crate::core::CommandTarget::Command(command.clone());
-            }
+        // If the resolved command is different, log the alias resolution
+        if resolved_command.command != command.command {
+            crate::utils::detailed_log("ALIAS", &format!("Alias '{}' resolved to target: '{}'", command.command, resolved_command.command));
         }
         
-        // Log command execution in the requested format
-        crate::utils::detailed_log("EXECUTE", &format!("'{}' AS '{}' ON '{}'", command.command, command.action, command.arg));
+        // Log command execution in the requested format (use original command name for logging)
+        crate::utils::detailed_log("EXECUTE", &format!("'{}' AS '{}' ON '{}'", command.command, resolved_command.action, resolved_command.arg));
         crate::utils::detailed_log("EXECUTE_FLOW", "Starting command execution process via server");
         
         // Save the last executed command for add_alias functionality
@@ -212,15 +195,15 @@ impl CommandServer {
             if client.is_server_available() {
                 crate::utils::detailed_log("EXECUTE_FLOW", "Server available, sending command object");
                 
-                // Send the command object to server for execution
-                match client.execute_command(command) {
+                // Send the resolved command object to server for execution
+                match client.execute_command(&resolved_command) {
                     Ok(response) => {
                         crate::utils::detailed_log("EXECUTE_FLOW", &format!("Command sent to server successfully: {:?}", response));
                         
                         // Check process health after command execution
                         crate::utils::subprocess::check_system_health();
                         
-                        return crate::core::CommandTarget::Command(command.clone());
+                        return crate::core::CommandTarget::Command(resolved_command);
                     }
                     Err(e) => {
                         crate::utils::detailed_log("EXECUTE_FLOW", &format!("Failed to send command to server: {:?}", e));
@@ -232,7 +215,7 @@ impl CommandServer {
         
         // If we get here, server execution failed
         crate::utils::log("CMD_SERVER: Failed to execute command via server");
-        crate::core::CommandTarget::Command(command.clone())
+        crate::core::CommandTarget::Command(resolved_command)
     }
 }
 
