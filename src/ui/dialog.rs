@@ -174,7 +174,7 @@ impl Dialog {
     /// Calculate the required dialog size using simple estimation (performance optimized)
     pub fn calculate_required_size(&self, _ctx: &egui::Context) -> (f32, f32) {
         let mut max_width = 500.0f32; // increased minimum width for rename dialogs
-        let mut total_height = 30.0f32; // base padding for window chrome and margins
+        let mut total_height = 50.0f32; // increased base padding for window chrome and margins
         
         for row in &self.rows {
             let mut row_width = 30.0f32; // left + right padding
@@ -232,7 +232,7 @@ impl Dialog {
                             // Button with proper sizing
                             let button_width = (text.len() as f32 * 8.0 + 30.0).max(80.0);
                             row_width += button_width + 15.0; // button + spacing
-                            row_height = row_height.max(35.0); // button row height
+                            row_height = row_height.max(50.0); // increased button row height
                         }
                     }
                 }
@@ -245,9 +245,9 @@ impl Dialog {
         
         // Add minimal extra spacing for button rows
         let button_rows = self.rows.iter().filter(|row| {
-            row.elements.iter().all(|e| matches!(e, DialogElement::Button { .. }))
+            row.elements.iter().any(|e| matches!(e, DialogElement::Button { .. }))
         }).count();
-        total_height += button_rows as f32 * 8.0; // Extra spacing for button rows
+        total_height += button_rows as f32 * 15.0; // More spacing for button rows
         
         // Use configured maximum window sizes
         let config = crate::core::sys_data::get_config();
@@ -261,7 +261,7 @@ impl Dialog {
         
         // Use calculated size but constrain to configured maximums
         let final_width = final_width_with_margin.max(500.0).min(max_width_available);
-        let final_height = final_height_with_margin.max(150.0).min(max_height_available);
+        let final_height = final_height_with_margin.max(200.0).min(max_height_available);
         
         (final_width, final_height)
     }
