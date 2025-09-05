@@ -2,7 +2,6 @@
 - email to Jason about requrie for GPUs
 - xmas ticket for Dan
 
-- playon data download
 
 - james and matty; fireball matty tell
 - check alto pharmacy; check costco vision; dental

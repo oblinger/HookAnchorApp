@@ -1,6 +1,5 @@
 
 .**TODO**.
-  re-reun softbank stuff
   [[2025 AI Codeing Brainstorm|AI-code]]  
   Baseball opportunity
   [Schart](https://www.notion.so/sportsvisio/SHOT-CHARTS-END-2-END-1d4719d6f2bd802ca4dfc8b1e0ff1fd5?pvs=4): POC
@@ -13,12 +12,8 @@
   [PlayOn](hook://playon): Timeline.  [[@Jason Syversen]] 
 	  - Get access to games
 	  - Get contract spec
-  [AWS Costs](https://drive.google.com/drive/folders/1Mnu6bwVw9bqxGq40uM_fBZ6x_75O3c6H) 
   MGT
-    - AWS analysis
-    - Patent Restart
-    + Refine/decide on an all-encompassing BB AI accuracy metric
-    + Followup with Softbank with new accuracy numbers given recent improvement
+	-  [AWS Costs](https://drive.google.com/drive/folders/1Mnu6bwVw9bqxGq40uM_fBZ6x_75O3c6H) 
     + turn on AI Fireballs/AR by next management meeting in app
     - Followup with Playon about raw data and establish a regular tempo for communication (Note: I have 3 touch points planned.
     - talks to mike F about surging up to add web manager features
@@ -58,11 +53,8 @@
 
 
 Claim: AI will likely operate with a set of overlapping and conflicting agendas.
-
-
 - Maximize ROI
 - Maintain healthy cash flow and cash-balance
 - Minimize risks to the business
-
-
 Claim: AI will need to balance self-serving and corp-serving
+

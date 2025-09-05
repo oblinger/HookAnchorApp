@@ -1,8 +1,21 @@
-- setup should setup config.js
-- should error if notion does not have permissions; need to exetend grabber
-- anchor should really be a flag on any command rather than a command type
-- ha use top left not bottom left for state
-- add 'open' fn to templates
+
+- [ ] wrong sizing.
+- [x] start blank.
+- [x] no sub-menu for fireball
+- [x] anchor should be listed at the front of the list.
+- [x] input should be listed at the front of the commands list.
+- [x] the submenu should be filtered by the characters AFTER those that matched the anchor (which might be aliased) 
+- [x] Remove commands whose alias_resolution match a command in the submenu as well.
+- [x] expand the prefix in the input box. when in an alias submenu
+- [x] Nothing is getting saved when creating a new command
+- [ ] Line break in output....
+- [x] Delete button's logic is reversed.
+- [ ] 
+- [ ] - setup should setup config.js
+- [ ] - should error if notion does not have permissions; need to exetend grabber
+- [x] XXX nope.   anchor should really be a flag on any command rather than a command type
+- [ ] - ha use top left not bottom left for state
+- [ ] - add 'open' fn to templates
 
 
 ## __

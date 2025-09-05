@@ -7,7 +7,7 @@ This document outlines the adaptation of VideoMAE for identifying which player t
 ## Base Architecture: VideoMAE
 
 VideoMAE processes video by:
-1. Dividing video into spatiotemporal patches (16×16 pixel cubes across time)
+1. Dividing video into spatiotemporal patches (16×16x3 pixel cubes across time)
 2. Randomly masking patches during training for self-supervised learning
 3. Using a Vision Transformer to encode visible patches
 4. Reconstructing masked patches to learn video representations
@@ -28,8 +28,8 @@ Our adaptation keeps this pixel-level processing but adds domain-specific modifi
   - Bounding box coordinates (x, y, width, height)
   - Player ID if known (O1-O5 for offense, D1-D5 for defense)
   - Detection confidence score
-- Concatenate track tokens with video patch tokens before transformer processing
-- Add learnable type embeddings to distinguish video patches from track tokens
+- Process tokens in separate streams (no concatenation needed)
+- Video tokens go to VideoMAE, track tokens go to track transformer
 
 **Benefit**: The transformer can now explicitly reason about player positions while still processing raw pixels for detailed visual understanding.
 
@@ -166,14 +166,21 @@ To preserve the pretrained VideoMAE capabilities while adding basketball-specifi
 
 **Stream 1: Video Processing (Pretrained VideoMAE)**
 - Input: Only standard video patch tokens [B, T, H/16, W/16, 768]
+  - Each patch: 16×16×3 = 768 dimensions (flattened RGB pixels)
+  - Example: 224×224 video = 14×14 = 196 patches per frame
+  - 16 frames × 196 patches = 3,136 video tokens total
 - Processing: Unmodified pretrained VideoMAE encoder
-- Output: Video feature representations
+- Output: Video feature representations [B, 3136, 768]
 - Initially frozen to preserve pretrained knowledge
 
 **Stream 2: Track and Context Processing (New Components)**
 - Input: Track tokens + shot context tokens
+  - Track tokens: [B, T, N_players, 768] where N_players ≤ 10
+  - Each track token: bbox(4) + player_id(64) + confidence(1) → projected to 768 dims
+  - Example: 16 frames × 10 players = 160 track tokens total
+  - Shot context: 1 token of 768 dimensions
 - Processing: New transformer encoder trained from scratch
-- Output: Track-aware spatial-temporal features
+- Output: Track-aware spatial-temporal features [B, 161, 768]
 - Trainable from the start
 
 ### Detailed Architecture Flow

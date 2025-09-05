@@ -1,11 +1,9 @@
 
-
-
-
 - [[./ALGS.md]] 
 - [GCP](hook://GCP) 
 - [G59](https://drive.google.com/drive/folders/11P71i8hIwc-UH_Mt3-g20-gGbsHdwuSC) 
 - [[Reco Approaches]] 
+- [[003 VideoMAE Adaptation]] 
 
 Plan:
 - Gather data from 10, 100, 1000, 10K games.
