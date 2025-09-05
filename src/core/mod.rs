@@ -15,6 +15,7 @@ pub(crate) mod sys_data;
 pub(crate) mod template_creation;  // Used by UI and execute modules
 pub(crate) mod key_processing;     // Used by UI module
 pub(crate) mod commands;           // Many internal functions used across crates
+pub(crate) mod display;            // Command display and filtering logic
 
 // ============================================================================
 // PUBLIC API - All external access goes through these re-exports
@@ -57,15 +58,12 @@ pub use commands::{
     // Query and filtering
     filter_commands, get_display_commands, get_display_commands_with_options,
     merge_similar_commands, merge_similar_commands_with_context,
-    command_matches_query, command_matches_query_with_debug,
     
     // Patch management
     auto_assign_patches, infer_patch, run_patch_inference, get_patch_for_command,
     get_patch, create_patches_hashmap, get_patch_path,
     
-    // Submenu and navigation
-    get_current_submenu_prefix, split_commands, get_command_prefix,
-    get_current_submenu_prefix_from_commands,
+    // Submenu and navigation (moved to display module)
     
     // Migration and maintenance
     migrate_commands_to_new_format
@@ -92,4 +90,14 @@ pub use key_processing::{
     
     // Utilities
     create_default_key_registry, ascii_to_key_name
+};
+
+// Display and filtering system
+pub use display::{
+    // Core filtering functions
+    command_matches_query, command_matches_query_with_debug,
+    
+    // Submenu and navigation functions
+    get_current_submenu_prefix, get_current_submenu_prefix_from_commands,
+    split_commands, get_command_prefix,
 };
