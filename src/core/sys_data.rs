@@ -218,7 +218,7 @@ pub fn load_data(commands_override: Vec<Command>, verbose: bool) -> SysData {
             
             patches.insert(patch_key, Patch {
                 name: patch_name.clone(), // Store original case
-                linked_command: matching_command.cloned(),
+                anchor_commands: if let Some(cmd) = matching_command.cloned() { vec![cmd] } else { vec![] },
                 include_commands: Vec::new(),
             });
         }

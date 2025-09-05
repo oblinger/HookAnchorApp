@@ -25,7 +25,8 @@ pub use self::actions::{
     get_action,
     get_default_patch_for_action,
     expand_string,
-    make_action
+    make_action,
+    get_action_for_arg,
 };
 
 // From execute module - main execution interface

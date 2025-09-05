@@ -774,8 +774,8 @@ fn is_parent_directory_patch(current_patch: &str, new_patch: &str, patches: &std
     use std::path::Path;
     
     // Get the linked commands for both patches
-    let current_linked = crate::core::commands::get_patch(current_patch, patches).and_then(|p| p.linked_command.as_ref());
-    let new_linked = crate::core::commands::get_patch(new_patch, patches).and_then(|p| p.linked_command.as_ref());
+    let current_linked = crate::core::commands::get_patch(current_patch, patches).and_then(|p| p.primary_anchor());
+    let new_linked = crate::core::commands::get_patch(new_patch, patches).and_then(|p| p.primary_anchor());
     
     if let (Some(current_cmd), Some(new_cmd)) = (current_linked, new_linked) {
         // Both patches have linked commands - compare their directory paths

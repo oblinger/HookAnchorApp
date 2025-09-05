@@ -36,8 +36,8 @@ pub enum CommandTarget {
 pub struct Patch {
     /// Name of the patch (original case from anchor command)
     pub name: String,
-    /// The first command that matches this patch name
-    pub linked_command: Option<Command>,
+    /// List of anchor commands for this patch (first one is the preferred/primary anchor)
+    pub anchor_commands: Vec<Command>,
     /// Commands with the 'I' (include) flag that have this patch
     /// These commands' folders will be included in the submenu
     pub include_commands: Vec<Command>,
@@ -48,6 +48,37 @@ pub struct Patch {
 pub fn get_patch<'a>(patch_name: &str, patches: &'a HashMap<String, Patch>) -> Option<&'a Patch> {
     let patch_name_lower = patch_name.to_lowercase();
     patches.get(&patch_name_lower)
+}
+
+impl Patch {
+    /// Get the primary (preferred) anchor command for this patch
+    /// Returns the first anchor in the list (which should be the preferred one)
+    pub fn primary_anchor(&self) -> Option<&Command> {
+        self.anchor_commands.first()
+    }
+    
+    /// Get all include folders from both anchor commands with 'I' flag and include_commands
+    pub fn get_all_include_folders(&self, config: &crate::core::Config) -> std::collections::HashSet<std::path::PathBuf> {
+        let mut include_folders = std::collections::HashSet::new();
+        
+        // Check anchor commands with 'I' flag
+        for anchor_cmd in &self.anchor_commands {
+            if anchor_cmd.flags.contains('I') {
+                if let Some(folder_path) = anchor_cmd.get_absolute_folder_path(config) {
+                    include_folders.insert(folder_path);
+                }
+            }
+        }
+        
+        // Check include commands
+        for include_cmd in &self.include_commands {
+            if let Some(folder_path) = include_cmd.get_absolute_folder_path(config) {
+                include_folders.insert(folder_path);
+            }
+        }
+        
+        include_folders
+    }
 }
 
 /// Mapping from flag letters to their word descriptions
@@ -293,31 +324,77 @@ pub(crate) fn backup_commands_file() -> Result<(), Box<dyn std::error::Error>> {
 /// Creates a patch entry for every anchor command, indexed by the command's lowercase name
 pub fn create_patches_hashmap(commands: &[Command]) -> HashMap<String, Patch> {
     let mut patches = HashMap::new();
+    let config = crate::core::sys_data::get_config();
+    let preferred_anchor_type = config.popup_settings.preferred_anchor.as_deref().unwrap_or("markdown");
     
-    // First pass: Create a patch for every anchor command, indexed by lowercase command name
+    // First pass: Group all anchor commands by their normalized name
+    let mut anchor_groups: HashMap<String, Vec<Command>> = HashMap::new();
     for command in commands {
         if command.action == "anchor" {
             let patch_key = command.command.to_lowercase();
-            
-            // Create patch if it doesn't exist yet
-            // (First anchor with this name becomes the linked command)
-            if !patches.contains_key(&patch_key) {
-                patches.insert(patch_key, Patch {
-                    name: command.command.clone(), // Preserve original case from the anchor command
-                    linked_command: Some(command.clone()),
-                    include_commands: Vec::new(),
-                });
-            }
+            anchor_groups.entry(patch_key).or_insert_with(Vec::new).push(command.clone());
         }
     }
     
-    // Second pass: Add commands with 'I' flag to their patch's include list
+    // Second pass: For each group of anchors, select preferred anchor and create patch
+    for (patch_key, mut anchor_commands) in anchor_groups {
+        if anchor_commands.is_empty() {
+            continue;
+        }
+        
+        // Sort anchors to put preferred action type first
+        anchor_commands.sort_by(|a, b| {
+            let a_action = crate::execute::get_action_for_arg(&a.arg);
+            let b_action = crate::execute::get_action_for_arg(&b.arg);
+            
+            // Preferred action type comes first
+            if a_action == preferred_anchor_type && b_action != preferred_anchor_type {
+                std::cmp::Ordering::Less
+            } else if a_action != preferred_anchor_type && b_action == preferred_anchor_type {
+                std::cmp::Ordering::Greater
+            } else {
+                // Secondary sort by command name for stability
+                a.command.cmp(&b.command)
+            }
+        });
+        
+        // Create patch with preferred anchor first, but store all anchors
+        let primary_anchor = &anchor_commands[0];
+        patches.insert(patch_key, Patch {
+            name: primary_anchor.command.clone(), // Use primary anchor's case
+            anchor_commands,
+            include_commands: Vec::new(),
+        });
+    }
+    
+    // Third pass: Add commands with 'I' flag to their patch's include list
     for command in commands {
-        // Check if command has the Include flag
         if command.flags.contains('I') && !command.patch.is_empty() {
             let patch_key = command.patch.to_lowercase();
             if let Some(patch) = patches.get_mut(&patch_key) {
                 patch.include_commands.push(command.clone());
+            }
+        }
+    }
+    
+    // Fourth pass: Create orphan anchors for patches that have no anchors but have commands
+    let mut patches_with_commands = std::collections::HashSet::new();
+    for command in commands {
+        if !command.patch.is_empty() && command.patch != "orphans" {
+            patches_with_commands.insert(command.patch.to_lowercase());
+        }
+    }
+    
+    for patch_name in patches_with_commands {
+        if !patches.contains_key(&patch_name) {
+            // Create orphan anchor for this patch
+            if let Some(orphan_command) = create_orphan_anchor_for_patch(&patch_name, &config) {
+                crate::utils::log(&format!("PATCH: Created orphan anchor for patch '{}'", patch_name));
+                patches.insert(patch_name.clone(), Patch {
+                    name: orphan_command.command.clone(),
+                    anchor_commands: vec![orphan_command],
+                    include_commands: Vec::new(),
+                });
             }
         }
     }
@@ -393,7 +470,7 @@ pub fn infer_patch(command: &Command, patches: &HashMap<String, Patch>) -> Optio
         // Look for exact patch name match (case-insensitive)
         if let Some(patch) = get_patch(&prefix, patches) {
             // Check if this would create a self-assignment (command assigned to its own patch)
-            let proposed_patch = if let Some(ref linked_cmd) = patch.linked_command {
+            let proposed_patch = if let Some(linked_cmd) = patch.primary_anchor() {
                 linked_cmd.command.clone()
             } else {
                 prefix.clone()
@@ -417,7 +494,7 @@ pub fn infer_patch(command: &Command, patches: &HashMap<String, Patch>) -> Optio
         
         for (patch_key, patch) in patches {
             if patch_key.starts_with(&command_lower) && patch_key != &command_lower {
-                if let Some(ref linked_cmd) = patch.linked_command {
+                if let Some(linked_cmd) = patch.primary_anchor() {
                     let proposed_patch = linked_cmd.command.clone();
                     
                     // Prevent self-assignment
@@ -524,7 +601,7 @@ fn infer_patch_from_file_path_with_exclusion(file_path: &str, patches: &HashMap<
         if patch_name.to_lowercase() != exclude_command.to_lowercase() {
             // Return the correct case from the patch's linked command, not the directory name
             if let Some(patch) = get_patch(&patch_name, patches) {
-                if let Some(ref linked_cmd) = patch.linked_command {
+                if let Some(linked_cmd) = patch.primary_anchor() {
                     return Some(linked_cmd.command.clone());
                 }
             }
@@ -544,7 +621,7 @@ fn infer_patch_from_file_path_with_exclusion(file_path: &str, patches: &HashMap<
     
     // Method 2: Check if any patch's linked command refers to a file in the same directory or parent directory
     for patch in patches.values() {
-        if let Some(ref linked_cmd) = patch.linked_command {
+        if let Some(linked_cmd) = patch.primary_anchor() {
             if linked_cmd.is_path_based() {
                 let linked_path = Path::new(&linked_cmd.arg);
                 let linked_dir = if linked_path.is_file() || linked_cmd.arg.contains('.') {
@@ -610,7 +687,7 @@ fn infer_patch_from_file_path(file_path: &str, patches: &HashMap<String, Patch>)
     if let Some((_, patch_name)) = best_match {
         // Return the correct case from the patch's linked command, not the directory name
         if let Some(patch) = get_patch(&patch_name, patches) {
-            if let Some(ref linked_cmd) = patch.linked_command {
+            if let Some(linked_cmd) = patch.primary_anchor() {
                 return Some(linked_cmd.command.clone());
             }
         }
@@ -628,7 +705,7 @@ fn infer_patch_from_file_path(file_path: &str, patches: &HashMap<String, Patch>)
     
     // Method 2: Check if any patch's linked command refers to a file in the same directory or parent directory
     for patch in patches.values() {
-        if let Some(ref linked_cmd) = patch.linked_command {
+        if let Some(linked_cmd) = patch.primary_anchor() {
             if linked_cmd.is_path_based() {
                 let linked_path = Path::new(&linked_cmd.arg);
                 let linked_dir = if linked_path.is_file() || linked_cmd.arg.contains('.') {
@@ -658,7 +735,7 @@ fn infer_patch_from_file_path(file_path: &str, patches: &HashMap<String, Patch>)
                         if !relative.as_os_str().is_empty() {
                             // The file is in a subdirectory of the patch's directory
                             // Return the patch name in the correct case
-                            if let Some(ref linked_cmd) = patch.linked_command {
+                            if let Some(linked_cmd) = patch.primary_anchor() {
                                 // Extract the patch name from the linked command
                                 // For example, if linked command is "T", return "T"
                                 if linked_cmd.command.to_lowercase() == patch.name {
@@ -699,7 +776,7 @@ fn infer_patch_from_hierarchy(dir: &Path, patches: &HashMap<String, Patch>) -> O
     while let Some(parent) = current_dir {
         // Check if any patch is associated with this parent directory
         for patch in patches.values() {
-            if let Some(ref linked_cmd) = patch.linked_command {
+            if let Some(linked_cmd) = patch.primary_anchor() {
                 if linked_cmd.is_path_based() {
                     let linked_path = Path::new(&linked_cmd.arg);
                     let linked_dir = if linked_path.is_file() || linked_cmd.arg.contains('.') {
@@ -1134,7 +1211,7 @@ pub fn get_patch_for_command<'a>(command_name: &str, patches: &'a HashMap<String
         .or_else(|| {
             // Try to find by command name if not found by direct lookup
             patches.values()
-                .find(|patch| patch.linked_command.as_ref()
+                .find(|patch| patch.primary_anchor().as_ref()
                     .map_or(false, |cmd| cmd.command.to_lowercase() == command_name.to_lowercase()))
         })
 }
@@ -1149,7 +1226,7 @@ pub(crate) fn normalize_patch_case(commands: &mut [Command], patches: &HashMap<S
             // Find the corresponding patch
             if let Some(patch) = get_patch(&command.patch, patches) {
                 // Check if the patch has a linked command to get the proper case
-                if let Some(ref linked_cmd) = patch.linked_command {
+                if let Some(linked_cmd) = patch.primary_anchor() {
                     // Get the properly cased command name from the anchor
                     let proper_case = linked_cmd.command.clone();
                     
@@ -1202,7 +1279,7 @@ pub fn get_patch_path(command_name: &str, patches: &HashMap<String, Patch>) -> V
             }
         }
         
-        if let Some(ref linked_cmd) = patch.linked_command {
+        if let Some(linked_cmd) = patch.primary_anchor() {
             if !linked_cmd.patch.is_empty() {
                 current_patch = linked_cmd.patch.to_lowercase();
             } else {
@@ -1318,6 +1395,27 @@ pub(crate) fn create_orphan_anchors(
 ) -> Result<usize, Box<dyn std::error::Error>> {
     // Function removed - no longer creating orphan anchors
     Ok(0)
+}
+
+/// Create an orphan anchor command for a patch that has no anchor
+/// This ensures every patch has at least one anchor command
+fn create_orphan_anchor_for_patch(patch_name: &str, config: &Config) -> Option<Command> {
+    // Get the orphans path from config
+    let default_orphans_path = format!("{}/.config/hookanchor/orphans", std::env::var("HOME").unwrap_or(".".to_string()));
+    let orphans_path = config.popup_settings.orphans_path.as_deref()
+        .unwrap_or(&default_orphans_path);
+    
+    // Create the orphan anchor file path
+    let orphan_file_path = format!("{}/{}.md", orphans_path, patch_name);
+    
+    // Create the orphan anchor command
+    Some(Command {
+        command: patch_name.to_string(),
+        action: "anchor".to_string(),
+        arg: orphan_file_path,
+        patch: "orphans".to_string(),
+        flags: "A".to_string(), // Add 'A' flag to mark as orphan anchor
+    })
 }
 
 // GlobalData has been moved to sys_data module as SysData
@@ -2371,33 +2469,14 @@ fn get_display_commands_with_options_internal(
             }
         }
         
-        // NEW: Check if this patch has include commands OR if the anchor has the 'I' flag
+        // NEW: Check if this patch has include commands OR if any anchor has the 'I' flag
         // If so, add all commands from the same folders as those commands
         let patch_key = menu_prefix.to_lowercase();
         if let Some(patch) = patches.get(&patch_key) {
-            // Build a list of commands to check for folders:
-            // 1. The anchor command itself (if it has 'I' flag)
-            // 2. All include commands for this patch
-            let mut commands_to_check = Vec::new();
+            // Use the new efficient method to get all include folders
+            let include_folders = patch.get_all_include_folders(config);
             
-            // Check if the anchor command itself has the 'I' flag
-            if let Some(ref anchor_cmd) = patch.linked_command {
-                if anchor_cmd.flags.contains('I') {
-                    commands_to_check.push(anchor_cmd.clone());
-                }
-            }
-            
-            // Add all include commands
-            commands_to_check.extend(patch.include_commands.clone());
-            
-            if !commands_to_check.is_empty() {
-                // Collect folders from all these commands
-                let mut include_folders = std::collections::HashSet::new();
-                for include_cmd in &commands_to_check {
-                    if let Some(folder_path) = include_cmd.get_absolute_folder_path(config) {
-                        include_folders.insert(folder_path);
-                    }
-                }
+            if !include_folders.is_empty() {
                 
                 // Add all commands from these folders to the inside list
                 // (if they're not already there)

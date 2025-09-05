@@ -71,6 +71,9 @@ pub struct PopupSettings {
     pub rename_patch: Option<bool>,
     /// When renaming a command, update all commands that have it as a prefix (default: false)
     pub rename_prefix: Option<bool>,
+    /// Preferred action type for selecting primary anchor when multiple anchors exist for same patch
+    /// Options: "markdown", "doc", "anchor", "text", etc. (default: "markdown")
+    pub preferred_anchor: Option<String>,
 }
 
 /// Launcher settings section of the configuration file
@@ -136,6 +139,7 @@ impl Default for PopupSettings {
             rename_folder: Some(false),
             rename_patch: Some(false),
             rename_prefix: Some(false),
+            preferred_anchor: Some("markdown".to_string()),
         }
     }
 }
