@@ -3166,14 +3166,26 @@ impl AnchorSelector {
     /// Generate the patch path display string for submenu headers
     /// Returns a string like "FOO > BAR > BAZ > CMD" 
     fn get_patch_path_display(&self, command_name: &str) -> String {
-        let sys_data = crate::core::sys_data::get_sys_data();
-        let path = get_patch_path(command_name, &sys_data.patches);
-        
-        if path.is_empty() {
-            command_name.to_string()
+        // If we have submenu info, use that for more accurate breadcrumbs
+        if let Some((_, resolved_command)) = self.popup_state.get_submenu_command_info() {
+            let sys_data = crate::core::sys_data::get_sys_data();
+            let path = get_patch_path(&resolved_command.command, &sys_data.patches);
+            
+            if path.is_empty() {
+                resolved_command.command.clone()
+            } else {
+                path.join(" > ")
+            }
         } else {
-            // Just show the path - the last element should always be the command name
-            path.join(" > ")
+            // Fallback to old behavior
+            let sys_data = crate::core::sys_data::get_sys_data();
+            let path = get_patch_path(command_name, &sys_data.patches);
+            
+            if path.is_empty() {
+                command_name.to_string()
+            } else {
+                path.join(" > ")
+            }
         }
     }
 }
@@ -3960,12 +3972,14 @@ impl eframe::App for AnchorSelector {
                                         
                                         // Determine display text based on submenu mode and position
                                         let display_text = if is_submenu && !is_separator && i < inside_count {
-                                            // This is an inside menu command - apply trimming logic
-                                            if let Some(ref prefix) = menu_prefix {
+                                            // This is an inside menu command - apply trimming logic using original command name
+                                            if let Some((original_command, resolved_command)) = self.popup_state.get_submenu_command_info() {
+                                                let original_prefix = &original_command.command;
+                                                
                                                 // Check if this command should have its prefix trimmed
-                                                if cmd.command.len() > prefix.len() {
-                                                    let prefix_end = prefix.len();
-                                                    if cmd.command[..prefix_end].eq_ignore_ascii_case(prefix) {
+                                                if cmd.command.len() > original_prefix.len() {
+                                                    let prefix_end = original_prefix.len();
+                                                    if cmd.command[..prefix_end].eq_ignore_ascii_case(original_prefix) {
                                                         // Check if there's a separator right after the prefix
                                                         if let Some(ch) = cmd.command.chars().nth(prefix_end) {
                                                             if self.popup_state.config.popup_settings.word_separators.contains(ch) {
@@ -4072,12 +4086,14 @@ impl eframe::App for AnchorSelector {
                             } else {
                                 // Determine display text based on submenu mode and position
                                 let display_text = if is_submenu && i < inside_count {
-                                    // This is an inside menu command - apply trimming logic
-                                    if let Some(ref prefix) = menu_prefix {
+                                    // This is an inside menu command - apply trimming logic using original command name
+                                    if let Some((original_command, resolved_command)) = self.popup_state.get_submenu_command_info() {
+                                        let original_prefix = &original_command.command;
+                                        
                                         // Check if this command should have its prefix trimmed
-                                        if cmd.command.len() > prefix.len() {
-                                            let prefix_end = prefix.len();
-                                            if cmd.command[..prefix_end].eq_ignore_ascii_case(prefix) {
+                                        if cmd.command.len() > original_prefix.len() {
+                                            let prefix_end = original_prefix.len();
+                                            if cmd.command[..prefix_end].eq_ignore_ascii_case(original_prefix) {
                                                 // Check if there's a separator right after the prefix
                                                 if let Some(ch) = cmd.command.chars().nth(prefix_end) {
                                                     if self.popup_state.config.popup_settings.word_separators.contains(ch) {

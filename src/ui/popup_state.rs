@@ -24,6 +24,12 @@ pub struct PopupState {
     pub config: Config,
     /// Persistent application state
     pub app_state: AppState,
+    /// Whether we're currently in submenu mode
+    pub is_in_submenu: bool,
+    /// Submenu information: (original_command, resolved_command) 
+    pub submenu_info: Option<(Command, Command)>,
+    /// Number of commands in the submenu (before separator)
+    pub submenu_count: usize,
 }
 
 impl PopupState {
@@ -41,6 +47,9 @@ impl PopupState {
             selection,
             config,
             app_state,
+            is_in_submenu: false,
+            submenu_info: None,
+            submenu_count: 0,
         }
     }
     
@@ -61,6 +70,9 @@ impl PopupState {
             selection,
             config,
             app_state,
+            is_in_submenu: false,
+            submenu_info: None,
+            submenu_count: 0,
         }
     }
     
@@ -133,17 +145,25 @@ impl PopupState {
             .collect()
     }
     
-    /// Recompute filtered commands based on current search
+    /// Recompute filtered commands based on current search using new approach
     fn recompute_filtered_commands(&mut self) {
-        use crate::core::commands::get_display_commands;
+        use crate::core::get_new_display_commands;
         
+        let sys_data = crate::core::sys_data::get_sys_data();
+        let (display_commands, is_submenu, submenu_info, submenu_count) = 
+            get_new_display_commands(&self.search_text, &sys_data.commands, &sys_data.patches);
+        
+        // Apply max limit
         let total_limit = self.config.popup_settings.max_rows * self.config.popup_settings.max_columns;
-        let sys_data = crate::core::sys_data::SysData {
-            config: self.config.clone(),
-            commands: self.commands.clone(),
-            patches: std::collections::HashMap::new(), // Empty for filtering
-        };
-        self.filtered_commands = get_display_commands(&sys_data, &self.search_text, total_limit);
+        let mut limited_commands = display_commands;
+        limited_commands.truncate(total_limit);
+        
+        self.filtered_commands = limited_commands;
+        
+        // Store submenu information for get_display_commands
+        self.is_in_submenu = is_submenu;
+        self.submenu_info = submenu_info;
+        self.submenu_count = submenu_count;
     }
     
     /// Update display layout based on current filtered commands
@@ -201,19 +221,27 @@ impl PopupState {
     /// Get display commands with submenu information
     /// Returns (commands_to_display, is_in_submenu, menu_prefix, inside_count)
     pub fn get_display_commands(&self) -> (Vec<Command>, bool, Option<String>, usize) {
-        use crate::core::commands::get_current_submenu_prefix_from_commands;
-        
-        // Check if we're in submenu mode
-        if let Some(menu_prefix) = get_current_submenu_prefix_from_commands(&self.filtered_commands, &self.search_text, &self.config.popup_settings.word_separators) {
-            // We're in submenu mode - the commands are already organized
-            // Just find the separator to count inside commands
-            let separator_index = self.filtered_commands.iter().position(|cmd| Self::is_separator_command(cmd));
-            let inside_count = separator_index.unwrap_or(self.filtered_commands.len());
+        if self.is_in_submenu {
+            // Extract the resolved command name for the menu prefix
+            let menu_prefix = if let Some((_, resolved_command)) = &self.submenu_info {
+                Some(resolved_command.command.clone())
+            } else {
+                None
+            };
             
-            (self.filtered_commands.clone(), true, Some(menu_prefix), inside_count)
+            (self.filtered_commands.clone(), true, menu_prefix, self.submenu_count)
         } else {
-            // Not in submenu mode, use filtered commands directly
             (self.filtered_commands.clone(), false, None, 0)
+        }
+    }
+    
+    /// Get submenu information for breadcrumb display and prefix trimming
+    /// Returns (original_command, resolved_command) if in submenu mode
+    pub fn get_submenu_command_info(&self) -> Option<&(Command, Command)> {
+        if self.is_in_submenu {
+            self.submenu_info.as_ref()
+        } else {
+            None
         }
     }
 }

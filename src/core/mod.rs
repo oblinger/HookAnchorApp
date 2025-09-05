@@ -99,5 +99,5 @@ pub use display::{
     
     // Submenu and navigation functions
     get_current_submenu_prefix, get_current_submenu_prefix_from_commands,
-    split_commands, get_command_prefix,
+    split_commands, get_command_prefix, build_submenu, get_new_display_commands,
 };
