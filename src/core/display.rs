@@ -1,5 +1,34 @@
 //! Display logic for commands and command filtering
 //!
+//! ## Display Logic Overview
+//!
+//! The display system uses a forward-thinking approach that first determines if there's a submenu,
+//! then constructs the appropriate display. This is implemented in two main phases:
+//!
+//! ### Phase 1: Submenu Detection (`build_submenu`)
+//! 1. **Backward Scanning**: Starting with the full input string (e.g., "FBAA"), scan backwards
+//!    character by character: "FBAA" → "FBA" → "FB" → "F"
+//! 2. **Command Matching**: For each substring, look for exact command matches (case-insensitive)
+//! 3. **Alias Resolution**: Use `resolve_alias()` on each match to get the final target command
+//! 4. **Anchor Detection**: Stop at the first resolved command that is an anchor
+//! 5. **Return Data**: (submenu_commands, original_command, resolved_command)
+//!    - `submenu_commands`: All commands that belong in this anchor's submenu
+//!    - `original_command`: The matched alias (e.g., "FB") - used for prefix index calculation
+//!    - `resolved_command`: The final anchor (e.g., "Facebook") - used for breadcrumbs
+//!
+//! ### Phase 2: Display Construction (`get_new_display_commands`)
+//! 1. **Submenu Case**: If build_submenu finds an anchor:
+//!    - Get all commands with simple prefix matching on the original input
+//!    - Remove submenu commands from prefix commands to avoid duplicates  
+//!    - Combine: [submenu_commands] + [separator] + [remaining_prefix_commands]
+//! 2. **No Submenu Case**: Simple substring matching and relevance sorting
+//!
+//! ### Key Benefits
+//! - **Correct prefix trimming**: Uses original command length (FB=2) not resolved (Facebook=8)
+//! - **Accurate breadcrumbs**: Uses resolved command for patch hierarchy traversal
+//! - **Complete submenu content**: Includes prefix matches, patch matches, and include logic
+//! - **No duplicate commands**: Clean separation between submenu and non-submenu sections
+//!
 //! This module handles basic display-related operations for commands including:
 //! - Basic query matching and scoring
 //! - Submenu prefix detection and navigation
