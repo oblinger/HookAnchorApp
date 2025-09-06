@@ -1016,82 +1016,7 @@ impl AnchorSelector {
             false
         };
         
-        // Fall back to old templates system if not found in actions
         if !found_action {
-            if let Some(ref templates) = config.templates {
-                if let Some(template) = templates.get(template_name) {
-                    // Check if this template requires grab functionality
-                    if let Some(grab_seconds) = template.grab {
-                        // Store template info for after grab completes
-                        self.pending_template = Some((template_name.to_string(), context));
-                        
-                        // Start countdown
-                        self.grabber_countdown = Some(grab_seconds as u8);
-                        self.countdown_last_update = Some(std::time::Instant::now());
-                    } else {
-                        // Check for existing command if use_existing is true
-                        let existing_command = if template.use_existing {
-                            // Look for a command with the same name (case-insensitive)
-                            let expanded_name = context.expand(&template.name);
-                            self.popup_state.commands.iter().find(|cmd| 
-                                cmd.command.eq_ignore_ascii_case(&expanded_name)
-                            ).cloned()
-                        } else {
-                            None
-                        };
-                        
-                        if let Some(existing) = existing_command {
-                            // Edit the existing command
-                            if template.edit {
-                                self.command_editor.edit_command(Some(&existing), &existing.command);
-                                // Don't clear search text when opening editor - preserve input
-                            }
-                            // If edit is false with use_existing, do nothing (command already exists)
-                        } else {
-                            // Process template to create new command
-                            match crate::core::template_creation::process_template(template, &context, &config) {
-                                Ok(new_command) => {
-                                    if template.edit {
-                                        // Open command editor with the prefilled command
-                                        self.command_editor.create_new_command(&new_command, &self.popup_state.search_text);
-                                        // Store template for post-save file creation
-                                        self.command_editor.set_pending_template(template.clone(), context.clone());
-                                        // Don't clear search text when opening editor - preserve input
-                                } else {
-                                    // Add the new command directly
-                                    match crate::core::commands::add_command(new_command, &mut self.popup_state.commands) {
-                                        Ok(_) => {
-                                            // Save commands to file
-                                            if let Err(e) = crate::core::commands::save_commands_to_file(&self.popup_state.commands) {
-                                                crate::utils::log_error(&format!("Failed to save commands: {}", e));
-                                            } else {
-                                                // Clear the global sys_data cache so it reloads from disk
-                                                crate::core::sys_data::clear_sys_data();
-                                            }
-                                            // Clear search and update display
-                                            self.popup_state.search_text.clear();
-                                            self.popup_state.update_search(String::new());
-                                            
-                                            // Trigger rescan if requested
-                                            if template.file_rescan {
-                                                self.trigger_rescan();
-                                            }
-                                        }
-                                        Err(e) => {
-                                            self.show_error_dialog(&format!("Failed to add command: {}", e));
-                                        }
-                                    }
-                                }
-                            }
-                            Err(e) => {
-                                self.show_error_dialog(&format!("Failed to create command from '{}' template: {}", template_name, e));
-                            }
-                        }
-                        }
-                    }
-                    return; // Early return after processing old template
-                }
-            }
             self.show_error_dialog(&format!("Template/Action '{}' not found in configuration", template_name));
         } else {
             // Process the unified action as a template
@@ -1367,41 +1292,6 @@ impl AnchorSelector {
         // Initialize key registry with the loaded config
         self.key_registry = Some(create_default_key_registry(&config));
         
-        // Populate exit keystrokes from config
-        if let Some(ref keybindings) = config.keybindings {
-            use crate::core::key_processing::Keystroke;
-            
-            // Debug log all keybindings
-            if let Ok(mut file) = std::fs::OpenOptions::new().create(true).append(true).open("/tmp/hookanchor_debug.log") {
-                use std::io::Write;
-                let _ = writeln!(file, "🔧 CONFIG: Found {} keybindings", keybindings.len());
-            }
-            
-            if let Some(exit_app_str) = keybindings.get("exit_app") {
-                match Keystroke::from_key_string(exit_app_str) {
-                    Ok(keystroke) => {
-                        self.exit_app_key = Some(keystroke);
-                        if let Ok(mut file) = std::fs::OpenOptions::new().create(true).append(true).open("/tmp/hookanchor_debug.log") {
-                            use std::io::Write;
-                            let _ = writeln!(file, "🔧 CONFIG: exit_app = '{}' -> {:?}", exit_app_str, self.exit_app_key.as_ref().unwrap().key);
-                        }
-                    }
-                    Err(e) => {
-                        if let Ok(mut file) = std::fs::OpenOptions::new().create(true).append(true).open("/tmp/hookanchor_debug.log") {
-                            use std::io::Write;
-                            let _ = writeln!(file, "🔧 CONFIG: ERROR parsing exit_app '{}': {}", exit_app_str, e);
-                        }
-                    }
-                }
-            }
-            
-            
-        } else {
-            if let Ok(mut file) = std::fs::OpenOptions::new().create(true).append(true).open("/tmp/hookanchor_debug.log") {
-                use std::io::Write;
-                let _ = writeln!(file, "🔧 CONFIG: No keybindings section found in config!");
-            }
-        }
         
         // Create new popup state with loaded data but preserve app_state
         let app_state = self.popup_state.app_state.clone();
@@ -1945,46 +1835,6 @@ impl AnchorSelector {
                                 false
                             };
                             
-                            // Fall back to old templates if not found in actions
-                            if !template_found {
-                                crate::utils::detailed_log("GRAB", &format!("GRAB: Template '{}' not found in actions, checking old templates", template_name));
-                                if let Some(ref templates) = config.templates {
-                                    if let Some(template) = templates.get(&template_name) {
-                                        match crate::core::template_creation::process_template(template, &context, &config) {
-                                            Ok(new_command) => {
-                                                if template.edit {
-                                                    self.command_editor.create_new_command(&new_command, &self.popup_state.search_text);
-                                                } else {
-                                                    // Add command directly
-                                                    match crate::core::commands::add_command(new_command, &mut self.popup_state.commands) {
-                                                        Ok(_) => {
-                                                            if let Err(e) = crate::core::commands::save_commands_to_file(&self.popup_state.commands) {
-                                                                crate::utils::log_error(&format!("Failed to save commands: {}", e));
-                                                            } else {
-                                                                // Clear the global sys_data cache so it reloads from disk
-                                                                crate::core::sys_data::clear_sys_data();
-                                                            }
-                                                            self.popup_state.search_text.clear();
-                                                            self.popup_state.update_search(String::new());
-                                                            
-                                                            // Trigger rescan if requested
-                                                            if template.file_rescan {
-                                                                self.trigger_rescan();
-                                                            }
-                                                        }
-                                                        Err(e) => {
-                                                            self.show_error_dialog(&format!("Failed to add command: {}", e));
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                            Err(e) => {
-                                                self.show_error_dialog(&format!("Failed to create command from template: {}", e));
-                                            }
-                                        }
-                                    }
-                                }
-                            }
                         } else {
                             crate::utils::detailed_log("GRAB", &format!("GRAB: No pending template - using normal grab behavior"));
                             // Normal grab behavior (no template)
@@ -2090,46 +1940,6 @@ impl AnchorSelector {
                                 false
                             };
                             
-                            // Fall back to old templates if not found in actions
-                            if !template_found {
-                                crate::utils::detailed_log("GRAB", &format!("GRAB: Template '{}' not found in actions, checking old templates", template_name));
-                                if let Some(ref templates) = config.templates {
-                                    if let Some(template) = templates.get(&template_name) {
-                                        match crate::core::template_creation::process_template(template, &context, &config) {
-                                            Ok(new_command) => {
-                                                if template.edit {
-                                                    self.command_editor.create_new_command(&new_command, &self.popup_state.search_text);
-                                                } else {
-                                                    // Add command directly
-                                                    match crate::core::commands::add_command(new_command, &mut self.popup_state.commands) {
-                                                        Ok(_) => {
-                                                            if let Err(e) = crate::core::commands::save_commands_to_file(&self.popup_state.commands) {
-                                                                crate::utils::log_error(&format!("Failed to save commands: {}", e));
-                                                            } else {
-                                                                // Clear the global sys_data cache so it reloads from disk
-                                                                crate::core::sys_data::clear_sys_data();
-                                                            }
-                                                            self.popup_state.search_text.clear();
-                                                            self.popup_state.update_search(String::new());
-                                                            
-                                                            // Trigger rescan if requested
-                                                            if template.file_rescan {
-                                                                self.trigger_rescan();
-                                                            }
-                                                        }
-                                                        Err(e) => {
-                                                            self.show_error_dialog(&format!("Failed to add command: {}", e));
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                            Err(e) => {
-                                                self.show_error_dialog(&format!("Failed to create command from template: {}", e));
-                                            }
-                                        }
-                                    }
-                                }
-                            }
                         } else {
                             // Normal grab behavior (no template)
                             // Generate the template text

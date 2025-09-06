@@ -19,10 +19,6 @@ pub struct Config {
     pub launcher_settings: Option<LauncherSettings>,
     /// Grabber rules for capturing application context
     pub grabber_rules: Option<Vec<crate::systems::grabber::GrabberRule>>,
-    /// Key bindings for all actions (legacy)
-    pub keybindings: Option<HashMap<String, String>>,
-    /// Templates for creating new commands (legacy - migrated to actions)
-    pub templates: Option<HashMap<String, crate::core::template_creation::Template>>,
     /// Unified actions section (new)
     pub actions: Option<HashMap<String, crate::execute::Action>>,
 }
@@ -150,8 +146,6 @@ impl Default for Config {
             popup_settings: PopupSettings::default(),
             launcher_settings: Some(LauncherSettings::default()),
             grabber_rules: None,
-            keybindings: None,
-            templates: None,
             actions: None,
         }
     }
@@ -256,7 +250,6 @@ pub fn load_config_with_error() -> ConfigResult {
         match parse_config_contents(&contents) {
             Ok(mut config) => {
                 // Normalize template keys for efficient matching
-                normalize_template_keys(&mut config);
                 
                 let parse_elapsed = parse_start.elapsed();
                 // Direct write to avoid recursion during config loading
@@ -360,37 +353,15 @@ fn parse_config_contents(contents: &str) -> Result<Config, Box<dyn std::error::E
     let grabber_rules = yaml.get("grabber_rules")
         .and_then(|v| serde_yaml::from_value(v.clone()).ok());
     
-    // Extract keybindings if it exists
-    let keybindings = yaml.get("keybindings")
-        .and_then(|v| serde_yaml::from_value(v.clone()).ok());
-    
-    // Extract templates if it exists (legacy)
-    let templates = yaml.get("templates")
-        .and_then(|v| serde_yaml::from_value(v.clone()).ok());
-    
-    // Extract actions if it exists (new unified system)
-    let mut actions: Option<HashMap<String, crate::execute::Action>> = 
+    // Extract actions if it exists (unified system)
+    let actions: Option<HashMap<String, crate::execute::Action>> = 
         yaml.get("actions")
             .and_then(|v| serde_yaml::from_value(v.clone()).ok());
-    
-    // If we have templates but no actions, migrate templates to actions
-    if actions.is_none() && templates.is_some() {
-        actions = migrate_templates_to_actions(&templates);
-    }
-    
-    // If we have keybindings but no corresponding actions, migrate them
-    if let Some(ref mut action_map) = actions {
-        if let Some(ref kb) = keybindings {
-            migrate_keybindings_to_actions(kb, action_map);
-        }
-    }
     
     Ok(Config {
         popup_settings,
         launcher_settings,
         grabber_rules,
-        keybindings,
-        templates,
         actions,
     })
 }
@@ -401,8 +372,6 @@ pub(crate) fn create_default_config() -> Config {
         popup_settings: PopupSettings::default(),
         launcher_settings: Some(LauncherSettings::default()),
         grabber_rules: Some(vec![]),
-        keybindings: None,
-        templates: None,
         actions: None,
     }
 }
@@ -420,121 +389,6 @@ fn parse_window_size(size_str: &str) -> Option<(u32, u32)> {
     None
 }
 
-/// Migrate templates to unified actions
-fn migrate_templates_to_actions(
-    templates: &Option<HashMap<String, crate::core::template_creation::Template>>
-) -> Option<HashMap<String, crate::execute::Action>> {
-    let templates = templates.as_ref()?;
-    let mut actions = HashMap::new();
-    
-    for (name, template) in templates {
-        let mut params = HashMap::new();
-        
-        // Core template fields
-        params.insert("name".to_string(), serde_json::Value::String(template.name.clone()));
-        params.insert("action".to_string(), serde_json::Value::String(template.action.clone()));
-        params.insert("arg".to_string(), serde_json::Value::String(template.arg.clone()));
-        params.insert("patch".to_string(), serde_json::Value::String(template.patch.clone()));
-        params.insert("flags".to_string(), serde_json::Value::String(template.flags.clone()));
-        
-        // Optional fields
-        if template.edit {
-            params.insert("edit".to_string(), serde_json::Value::Bool(true));
-        }
-        if let Some(ref file) = template.file {
-            params.insert("file".to_string(), serde_json::Value::String(file.clone()));
-        }
-        if let Some(ref contents) = template.contents {
-            params.insert("contents".to_string(), serde_json::Value::String(contents.clone()));
-        }
-        if let Some(grab) = template.grab {
-            params.insert("grab".to_string(), serde_json::Value::Number(grab.into()));
-        }
-        if template.validate_previous_folder {
-            params.insert("validate_previous_folder".to_string(), serde_json::Value::Bool(true));
-        }
-        if template.file_rescan {
-            params.insert("file_rescan".to_string(), serde_json::Value::Bool(true));
-        }
-        
-        // Add the template-specific fields to params
-        params.insert("action_type".to_string(), serde_json::Value::String("template".to_string()));
-        if let Some(desc) = &template.description {
-            params.insert("description".to_string(), serde_json::Value::String(desc.clone()));
-        }
-        if let Some(key) = &template.key {
-            params.insert("key".to_string(), serde_json::Value::String(key.clone()));
-        }
-        
-        let action = crate::execute::Action { params };
-        
-        actions.insert(name.clone(), action);
-    }
-    
-    Some(actions)
-}
-
-/// Migrate keybindings to popup actions
-fn migrate_keybindings_to_actions(
-    keybindings: &HashMap<String, String>,
-    actions: &mut HashMap<String, crate::execute::Action>,
-) {
-    for (action_name, key) in keybindings {
-        // Skip if this action already exists (e.g., from templates)
-        if actions.contains_key(action_name) {
-            continue;
-        }
-        
-        // Create a popup action based on the keybinding name
-        let mut params = HashMap::new();
-        
-        let (action_type, popup_action) = match action_name.as_str() {
-            "exit_app" => ("popup", Some("exit")),
-            "navigate_down" => {
-                params.insert("dx".to_string(), serde_json::Value::Number(0.into()));
-                params.insert("dy".to_string(), serde_json::Value::Number(1.into()));
-                ("popup", Some("navigate"))
-            },
-            "navigate_up" => {
-                params.insert("dx".to_string(), serde_json::Value::Number(0.into()));
-                params.insert("dy".to_string(), serde_json::Value::Number((-1).into()));
-                ("popup", Some("navigate"))
-            },
-            "navigate_left" => {
-                params.insert("dx".to_string(), serde_json::Value::Number((-1).into()));
-                params.insert("dy".to_string(), serde_json::Value::Number(0.into()));
-                ("popup", Some("navigate"))
-            },
-            "navigate_right" => {
-                params.insert("dx".to_string(), serde_json::Value::Number(1.into()));
-                params.insert("dy".to_string(), serde_json::Value::Number(0.into()));
-                ("popup", Some("navigate"))
-            },
-            "execute_command" => ("popup", Some("execute")),
-            "force_rebuild" => ("popup", Some("rebuild")),
-            "show_folder" => ("popup", Some("show_folder")),
-            "open_editor" | "edit_active_command" => ("popup", Some("edit_command")),
-            "show_keys" => ("popup", Some("show_help")),
-            "tmux_activate" => ("tmux", None),
-            "navigate_up_hierarchy" => ("popup", Some("navigate_up_hierarchy")),
-            "navigate_down_hierarchy" => ("popup", Some("navigate_down_hierarchy")),
-            _ => continue, // Skip unknown keybindings
-        };
-        
-        if let Some(popup_action_name) = popup_action {
-            params.insert("popup_action".to_string(), serde_json::Value::String(popup_action_name.to_string()));
-        }
-        
-        // Add the action fields to params
-        params.insert("action_type".to_string(), serde_json::Value::String(action_type.to_string()));
-        params.insert("description".to_string(), serde_json::Value::String(format!("Keyboard action: {}", action_name)));
-        params.insert("key".to_string(), serde_json::Value::String(key.clone()));
-        
-        let action = crate::execute::Action { params };
-        
-        actions.insert(action_name.clone(), action);
-    }
-}
 
 impl PopupSettings {
     /// Get maximum window width from max_window_size
@@ -579,136 +433,5 @@ impl PopupSettings {
 }
 
 impl Config {
-    /// Check if a specific action is bound to the given key name
-    /// Returns true if the action is bound to this key, false otherwise
-    pub fn is_key_bound_to_action(&self, key_name: &str, action_name: &str) -> bool {
-        if let Some(ref keybindings) = self.keybindings {
-            if let Some(bound_key) = keybindings.get(action_name) {
-                return bound_key == key_name;
-            }
-        }
-        false
-    }
-    
-    /// Check if any action is bound to the given key name
-    /// Returns the action name if found, None otherwise
-    pub fn get_action_for_key(&self, key_name: &str) -> Option<&str> {
-        self.get_action_for_key_with_modifiers(key_name, &std::collections::HashSet::new())
-    }
-    
-    /// Check if any action is bound to the given key with modifiers (using new Modifiers struct)
-    /// Returns the action name if found, None otherwise
-    /// NOTE: This is a legacy method - new code should use the KeyRegistry system
-    pub fn get_action_for_key_with_modifiers_struct(&self, key_name: &str, modifiers: &crate::core::key_processing::Modifiers) -> Option<&str> {
-        use crate::core::key_processing::Keystroke;
-        
-        // Try to create a keystroke from the key name and modifiers
-        if let Ok(target_keystroke) = Keystroke::from_key_string(key_name) {
-            let target_with_modifiers = Keystroke::new(target_keystroke.key, modifiers.clone());
-            
-            if let Some(ref keybindings) = self.keybindings {
-                for (action, bound_key) in keybindings {
-                    if let Ok(bound_keystroke) = Keystroke::from_key_string(bound_key) {
-                        if bound_keystroke == target_with_modifiers {
-                            return Some(action);
-                        }
-                    }
-                }
-            }
-        }
-        
-        None
-    }
-    
-    /// Check if any action is bound to the given key with modifiers (legacy HashSet version)
-    /// Returns the action name if found, None otherwise
-    pub fn get_action_for_key_with_modifiers(&self, key_name: &str, modifiers: &std::collections::HashSet<String>) -> Option<&str> {
-        // Convert HashSet to Modifiers struct and use new method
-        let modifiers_struct = crate::core::key_processing::Modifiers {
-            ctrl: modifiers.contains("Ctrl"),
-            alt: modifiers.contains("Alt"),
-            shift: modifiers.contains("Shift"),
-            cmd: modifiers.contains("Cmd"),
-        };
-        self.get_action_for_key_with_modifiers_struct(key_name, &modifiers_struct)
-    }
-    
-    /// Check if the given key is bound to a template
-    /// Returns the template name if found, None otherwise
-    pub fn get_template_for_key(&self, key_name: &str) -> Option<&str> {
-        self.get_template_for_key_with_modifiers(key_name, &std::collections::HashSet::new())
-    }
-    
-    /// Check if the given key with modifiers is bound to a template
-    /// Returns the template name if found, None otherwise
-    /// NOTE: This is a legacy method - new code should use get_template_for_keystroke
-    pub fn get_template_for_key_with_modifiers(&self, key_name: &str, modifiers: &std::collections::HashSet<String>) -> Option<&str> {
-        use crate::core::key_processing::{Keystroke, Modifiers};
-        
-        // Convert HashSet modifiers to Modifiers struct
-        let modifiers_struct = Modifiers {
-            ctrl: modifiers.contains("Ctrl"),
-            alt: modifiers.contains("Alt"),
-            shift: modifiers.contains("Shift"),
-            cmd: modifiers.contains("Cmd"),
-        };
-        
-        // Try to create a keystroke from the key name and modifiers
-        if let Ok(target_keystroke) = Keystroke::from_key_string(key_name) {
-            let target_with_modifiers = Keystroke::new(target_keystroke.key, modifiers_struct);
-            
-            if let Some(ref templates) = self.templates {
-                crate::utils::detailed_log("TEMPLATE_BIND", &format!("Checking {} templates for key '{}' with modifiers {:?}", templates.len(), key_name, modifiers));
-                for (template_name, template) in templates {
-                    if let Some(ref keystroke) = template.keystroke {
-                        crate::utils::detailed_log("TEMPLATE_BIND", &format!("  Template '{}' has keystroke {:?}", template_name, keystroke));
-                        if *keystroke == target_with_modifiers {
-                            crate::utils::detailed_log("TEMPLATE_BIND", &format!("✓ MATCH: Template '{}' matches key '{}'", template_name, key_name));
-                            return Some(template_name);
-                        }
-                    } else {
-                        crate::utils::detailed_log("TEMPLATE_BIND", &format!("  Template '{}' has no keystroke binding", template_name));
-                    }
-                }
-            }
-        }
-        None
-    }
-    
-    /// Check if the given egui event matches any template using the Keystroke system
-    /// This provides efficient matching by comparing against pre-computed keystrokes
-    pub fn get_template_for_keystroke(&self, event: &egui::Event) -> Option<&str> {
-        if let Some(ref templates) = self.templates {
-            for (template_name, template) in templates {
-                if let Some(ref keystroke) = template.keystroke {
-                    if keystroke.matches_event(event) {
-                        return Some(template_name);
-                    }
-                }
-            }
-        }
-        None
-    }
 }
 
-/// Convert template keys to Keystroke objects for efficient matching
-fn normalize_template_keys(config: &mut Config) {
-    use crate::core::key_processing::Keystroke;
-    
-    if let Some(ref mut templates) = config.templates {
-        for (template_name, template) in templates.iter_mut() {
-            if let Some(ref key_str) = template.key {
-                match Keystroke::from_key_string(key_str) {
-                    Ok(keystroke) => {
-                        template.keystroke = Some(keystroke);
-                        crate::utils::detailed_log("CONFIG", &format!("✅ Template '{}' key '{}' → {:?}", template_name, key_str, template.keystroke));
-                    }
-                    Err(e) => {
-                        crate::utils::log_error(&format!("Failed to parse key '{}' for template '{}': {}", key_str, template_name, e));
-                    }
-                }
-            }
-        }
-
-    }
-}

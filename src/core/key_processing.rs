@@ -1052,37 +1052,6 @@ pub fn create_default_key_registry(config: &super::Config) -> KeyRegistry {
     let mut registry = KeyRegistry::new();
     let mut registered_count = 0;
     
-    // Register keybinding-based handlers
-    if let Some(ref keybindings) = config.keybindings {
-        for (action_name, key_str) in keybindings {
-            if let Ok(keystroke) = Keystroke::from_key_string(key_str) {
-                let handler: Box<dyn KeyHandler> = match action_name.as_str() {
-                    "navigate_up" => Box::new(NavigationHandler::new(NavigationDirection::Up)),
-                    "navigate_down" => Box::new(NavigationHandler::new(NavigationDirection::Down)),
-                    "navigate_left" => Box::new(NavigationHandler::new(NavigationDirection::Left)),
-                    "navigate_right" => Box::new(NavigationHandler::new(NavigationDirection::Right)),
-                    "force_rebuild" => Box::new(ActionHandler::new(Action::ForceRebuild)),
-                    "start_grabber" => Box::new(ActionHandler::new(Action::StartGrabber)),
-                    "show_folder" => Box::new(ActionHandler::new(Action::ShowFolder)),
-                    // "tmux_activate" => Box::new(ActionHandler::new(Action::TmuxActivate)), // COMMENTED OUT: Unused
-                    "exit_app" => Box::new(ActionHandler::new(Action::ExitApp)),
-                    "execute_command" => Box::new(ActionHandler::new(Action::ExecuteCommand)),
-                    "open_editor" => Box::new(ActionHandler::new(Action::OpenEditor)),
-                    "add_alias" => Box::new(ActionHandler::new(Action::AddAlias)),
-                    "edit_active_command" => Box::new(ActionHandler::new(Action::EditActiveCommand)),
-                    "link_to_clipboard" => Box::new(ActionHandler::new(Action::LinkToClipboard)),
-                    "show_keys" => Box::new(ActionHandler::new(Action::ShowKeys)),
-                    "uninstall_app" => Box::new(ActionHandler::new(Action::UninstallApp)),
-                    "template_create" => Box::new(ActionHandler::new(Action::TemplateCreate)),
-                    "navigate_up_hierarchy" => Box::new(ActionHandler::new(Action::NavigateUpHierarchy)),
-                    "navigate_down_hierarchy" => Box::new(ActionHandler::new(Action::NavigateDownHierarchy)),
-                    _ => continue, // Skip unknown actions
-                };
-                
-                registry.register_keystroke(keystroke, handler);
-            }
-        }
-    }
     
     // Register handlers for unified actions with keys
     crate::utils::log(&format!("Config has actions field: {}", config.actions.is_some()));
@@ -1192,23 +1161,6 @@ pub fn create_default_key_registry(config: &super::Config) -> KeyRegistry {
         }
     }
     
-    // Keep backward compatibility: check if old templates field still exists
-    if let Some(ref templates) = config.templates {
-        crate::utils::detailed_log("SYSTEM", &format!("Registering {} legacy templates", templates.len()));
-        for (template_name, template) in templates {
-            if let Some(ref keystroke) = template.keystroke {
-                crate::utils::detailed_log("SYSTEM", &format!("  Template '{}': key={:?} -> keystroke={:?}", 
-                    template_name, template.key, keystroke));
-                let handler = Box::new(TemplateHandler::new(template_name.clone()));
-                registry.register_keystroke(keystroke.clone(), handler);
-            } else {
-                crate::utils::detailed_log("KEY", &format!("  Template '{}': NO KEYSTROKE (key={:?})", 
-                    template_name, template.key));
-            }
-        }
-    } else {
-        crate::utils::detailed_log("SYSTEM", &format!("No templates configured (checking unified actions instead)"));
-    }
     
     // Register text handlers
     registry.register_text_handler(Box::new(UninstallTextHandler));
