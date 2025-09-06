@@ -13,7 +13,7 @@
 - [[RR]] 	- Research topics
 - [[pp]] 	- Personal Projects (in folder)
 - [[pq]] 	- Personal "Quick" Projects (in simple list)
-- [[Phack]] 
+- [[hack]] 
 
 - [p Proj Folder](spot://pprojfolder) - [[Proj Folder]] - Local 
 - [[prj]] - Non

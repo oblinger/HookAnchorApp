@@ -1,6 +1,10 @@
 #pp   
 
-
+- [Airline Rules](https://www.bringfido.com/travel/) : 
+	Good: Delta
+	Good Riskier: United
+	Maybe: Southwest, Frontier, 
+	No: American
 
 ### Weight
 

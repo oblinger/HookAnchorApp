@@ -11,20 +11,8 @@ n:: Research Reference pages
   [[Alg]],
   [[Swearing]], ,
   , [[Comp]], [[DL]], [[Lrn]], [[Stat]],
-  , ,
   , [[RR CV]],
-  , ,
-  , ,
   , [[LLM]],
-  , ,
-  , ,
-  , , ,
-  , ,
-  , ,
-  , , ,
-  DELS: [[RR CV]],,,
-  , , ,
-  DELS: [[RR CV]],,,, ,
   , [RR Articles Obsidian](spot://rrarticlesobsidian), [RR Blog Obsidian](spot://rrblogobsidian)
   , [RR Leet Obsidian](spot://rrleetobsidian), [RR Med Obsidian](spot://rrmedobsidian)
   , [RR MGR Obsidian](spot://rrmgrobsidian), [RR Obsidian](spot://rrobsidian)

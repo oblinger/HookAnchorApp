@@ -1,4 +1,5 @@
-- see if Magic Hour better effects, Briones, James, Matty  (magic hours)
+- HLS format check w/ Juan
+- see if Magic Hour better effects, Briones, James, Matty 
 - email to Jason about requrie for GPUs
 - xmas ticket for Dan
 

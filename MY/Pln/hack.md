@@ -1,5 +1,17 @@
+- [ ] .
+- [x] Streamline way we manage command reloading.
+- [x] remove the "A" flag
+- [x] Fix submenu to it is fully recomputed after the dirty flag was set.  (have the get_sys_data return a boolean)
+- [ ] Add a 'just cmd' button
+- [ ] Delete key should prompt to delete file and maybe folder.
+- [ ] svproj should find the submenu even though there is no space in it
+- [ ] proj sv is added twice and only one can be deleted
+- [ ] Popup is still drifting downward when it is reopening
 
 - [ ] wrong sizing.
+- [ ] remove legacy and dead code.
+- [x] the "]" should 'follow' selected item to new menu
+- [x] the '[' key should go to patch parent for current menu.  
 - [x] start blank.
 - [x] no sub-menu for fireball
 - [x] anchor should be listed at the front of the list.
@@ -8,15 +20,24 @@
 - [x] Remove commands whose alias_resolution match a command in the submenu as well.
 - [x] expand the prefix in the input box. when in an alias submenu
 - [x] Nothing is getting saved when creating a new command
-- [ ] Line break in output....
+- [x] Line break in output....
 - [x] Delete button's logic is reversed.
-- [ ] 
+
 - [ ] - setup should setup config.js
 - [ ] - should error if notion does not have permissions; need to exetend grabber
 - [x] XXX nope.   anchor should really be a flag on any command rather than a command type
 - [ ] - ha use top left not bottom left for state
 - [ ] - add 'open' fn to templates
 
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│ > Let's add another more complicated command to the command ops module. The delete command operation should be extended to check to see if the ARG for the command actually     │
+│   refers to an existing file or folder. And if it does, then it should prompt the user for the Alicia that fileif the name matches the file name that is. If the name matches   │
+│   the folder because it's an anchor folder it's an anchor name then it should prompt to delete the folder. Only if the folder is gonna be empty after deleting the associated   │
+│   file. Just to be clearif the file referenced is not the same name as the command being deleted, it should still prompt the user asking about whether or not it should delete  │
+│   that file. And this deletion operation should follow the same paradigm that the current rename operation does, it should have a dry run flagand it's called the first time    │
+│   with the dry run flag in order to get the list of things that it's gonna present to the user. Then if the user presses OK, it's going to actually execute those commands. We  │
+│   should think about whether or not this code is sufficiently similar to the reading code that somehow they should be merged togetheror perhaps it is Cleaner to just keep      │
+│   them separate even though they are analogous to each other.                                           
 
 ## __
 

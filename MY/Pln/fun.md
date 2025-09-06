@@ -8,6 +8,10 @@
 HARD THINGS
 - somehow track Credit cards
 
+MyPillow Brand
+King Size - for bed and mom's 
+Softer
+Cooler
 
 
 https://obsidianninja.com/best-obsidian-plugins/

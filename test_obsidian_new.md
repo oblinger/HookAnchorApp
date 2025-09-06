@@ -1,1 +1,0 @@
-# Test inside Obsidian folder
