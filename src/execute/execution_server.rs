@@ -155,18 +155,21 @@ impl CommandServer {
         }
     }
     
+    // PLEASE REFACTOR AWAY - Legacy server status check method
     /// Check if server is running
     pub fn is_running(&self) -> bool {
         *self.running.lock().unwrap()
     }
     
+    // PLEASE REFACTOR AWAY - Legacy direct command execution through server instance
     /// Execute a command through the server with proper alias resolution
     fn execute_command(&self, command: &crate::core::Command) -> crate::core::CommandTarget {
         self.execute_command_with_depth(command, 0)
     }
     
+    // PLEASE REFACTOR AWAY - Legacy recursive command execution with depth tracking
     /// Internal function to execute commands with recursion depth tracking
-    fn execute_command_with_depth(&self, command: &crate::core::Command, depth: u32) -> crate::core::CommandTarget {
+    fn execute_command_with_depth(&self, command: &crate::core::Command, _depth: u32) -> crate::core::CommandTarget {
         // Resolve alias chains before execution
         let all_commands = crate::core::load_commands();
         let resolved_command = command.resolve_alias(&all_commands);
@@ -407,6 +410,7 @@ fn get_socket_path() -> Result<PathBuf, Box<dyn std::error::Error>> {
 }
 
 
+// PLEASE REFACTOR AWAY - Legacy standalone server availability check
 /// Check if the execution server is available
 pub(crate) fn is_server_available() -> bool {
     match CommandClient::new() {
@@ -445,6 +449,7 @@ impl CommandClient {
         Ok(Self { socket_path })
     }
     
+    // PLEASE REFACTOR AWAY - Legacy client-side command execution method
     /// Execute a command via the server with timeout and ACK verification
     fn execute_command(
         &self,
@@ -510,16 +515,20 @@ impl CommandClient {
         }
     }
     
+    // PLEASE REFACTOR AWAY - Legacy client-side server availability check
     /// Check if the server is available
     fn is_server_available(&self) -> bool {
         UnixStream::connect(&self.socket_path).is_ok()
     }
 }
 
-/// Global server instance
+
+// PLEASE REFACTOR AWAY - Legacy global server system, unused dual code path
+/// Global server instance  
 static mut GLOBAL_SERVER: Option<CommandServer> = None;
 static mut SERVER_INITIALIZED: bool = false;
 
+// PLEASE REFACTOR AWAY - Legacy global server initialization
 /// Initialize the global command server
 pub(crate) fn init_global_server() -> Result<(), Box<dyn std::error::Error>> {
     unsafe {
@@ -540,6 +549,7 @@ pub(crate) fn init_global_server() -> Result<(), Box<dyn std::error::Error>> {
     }
 }
 
+// PLEASE REFACTOR AWAY - Legacy global server shutdown
 /// Shutdown the global command server
 pub(crate) fn shutdown_global_server() {
     unsafe {
@@ -552,6 +562,7 @@ pub(crate) fn shutdown_global_server() {
     }
 }
 
+// PLEASE REFACTOR AWAY - Legacy global server status check
 /// Check if the global server is running
 pub(crate) fn is_global_server_running() -> bool {
     unsafe {
@@ -563,6 +574,7 @@ pub(crate) fn is_global_server_running() -> bool {
     }
 }
 
+// PLEASE REFACTOR AWAY - Legacy command helper for old server system
 /// Simple helper to create a Command from action and arg (covers 90% of cases)
 pub(crate) fn make_command(action: &str, arg: &str) -> crate::core::Command {
     crate::core::Command {
@@ -574,6 +586,7 @@ pub(crate) fn make_command(action: &str, arg: &str) -> crate::core::Command {
     }
 }
 
+// PLEASE REFACTOR AWAY - Legacy shell command helper
 /// Helper for shell commands with optional flags
 pub(crate) fn shell_command(cmd: &str, flags: &str) -> crate::core::Command {
     make_command("shell", cmd).with_flags(flags)
@@ -587,6 +600,7 @@ impl crate::core::Command {
     }
 }
 
+// PLEASE REFACTOR AWAY - Legacy global server execution with retry logic
 /// Execute a command using the global server with retry and restart logic
 /// This function NEVER fails from the caller's perspective - it handles all retries internally
 /// If the server can't be started after MAX_RETRIES attempts:

@@ -77,7 +77,7 @@ fn launch_popup() {
 /// Handle hook:// URLs by sending them to the command server
 fn handle_hook_url(url: &str) {
     use hookanchor::utils;
-    use hookanchor::core::{get_sys_data, get_config};
+    use hookanchor::core::get_sys_data;
     use hookanchor::execute;
     
     // Extract the query from hook://query

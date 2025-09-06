@@ -313,7 +313,7 @@ pub fn expand_string(
 fn create_js_context_with_params(
     params: &HashMap<String, String>,
 ) -> Result<Context, Box<dyn std::error::Error>> {
-    let config = crate::core::sys_data::get_config();
+    let _config = crate::core::sys_data::get_config();
     let rt = rquickjs::Runtime::new()?;
     let ctx = Context::full(&rt)?;
     
@@ -340,11 +340,12 @@ fn create_js_context_with_params(
     Ok(ctx)
 }
 
+// PLEASE REFACTOR AWAY - Legacy JavaScript context creation for old action system
 /// Create a JavaScript context with action-specific variables (deprecated)
 fn create_action_js_context(
     context: &ActionContext,
 ) -> Result<Context, Box<dyn std::error::Error>> {
-    let config = crate::core::sys_data::get_config();
+    let _config = crate::core::sys_data::get_config();
     let rt = rquickjs::Runtime::new()?;
     let ctx = Context::full(&rt)?;
     
@@ -362,6 +363,7 @@ fn create_action_js_context(
 }
 
 /// Setup action-specific variables in JavaScript context
+// PLEASE REFACTOR AWAY - Legacy action variable setup for old JS action system
 fn setup_action_variables(
     ctx: &Ctx<'_>,
     context: &ActionContext,
@@ -445,6 +447,7 @@ fn js_value_to_string(value: &rquickjs::Value) -> String {
 }
 
 /// Extract folder path from a file path
+// PLEASE REFACTOR AWAY - Legacy path utility for old action system
 fn extract_folder_from_path(path: &str) -> Option<String> {
     use std::path::Path;
     Path::new(path)
@@ -453,6 +456,7 @@ fn extract_folder_from_path(path: &str) -> Option<String> {
         .map(|s| s.to_string())
 }
 
+// PLEASE REFACTOR AWAY - Legacy hook URL creation utility
 /// Create a hook:// URL from a command name
 fn create_hook_url(name: &str) -> String {
     // Simple URL-safe encoding: lowercase, remove spaces and special chars
@@ -1033,6 +1037,7 @@ fn execute_alias_action(
 }
 
 
+// PLEASE REFACTOR AWAY - Legacy custom action execution via JavaScript
 fn execute_custom_action(
     action_type: &str,
     params: &HashMap<String, String>,

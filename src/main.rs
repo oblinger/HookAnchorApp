@@ -5,7 +5,6 @@
 
 use std::env;
 use hookanchor::core::ApplicationState;
-use chrono::{Local, TimeZone};
 
 /// Main application entry point
 /// 

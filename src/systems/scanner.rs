@@ -69,10 +69,6 @@ use chrono::Local;
 /// NOTE: "anchor" is handled separately by delete_anchors() function
 pub const SCANNER_GENERATED_ACTIONS: &[&str] = &["markdown", "folder", "app", "open_app"];
 
-/// Helper function to log scanner debug messages
-fn scanner_log(message: &str) {
-    crate::utils::detailed_log("SCANNER", message);
-}
 
 /// Check if a command is a Notion anchor
 /// Simple check that doesn't require accessing the actions module
@@ -850,6 +846,7 @@ fn calculate_commands_checksum(commands: &[Command]) -> String {
     format!("{:x}", hasher.finish())
 }
 
+// PLEASE KEEP - Expected to integrate later for contact scanning functionality
 /// Scans macOS contacts and creates commands for contacts with phone or email
 fn scan_contacts(mut commands: Vec<Command>) -> Vec<Command> {
     // First, remove all existing contact commands

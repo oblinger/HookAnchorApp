@@ -107,7 +107,7 @@ impl CommandEditor {
     }
     
     /// Create a new command with pre-populated data from a template
-    pub fn create_new_command(&mut self, template_command: &Command, search_text: &str) {
+    pub fn create_new_command(&mut self, template_command: &Command, _search_text: &str) {
         self.visible = true;
         self.focus_requested = false;
         
@@ -146,7 +146,7 @@ impl CommandEditor {
         self.original_command_name = String::new();
     }
     
-    pub fn update(&mut self, ctx: &egui::Context, config: &Config) -> CommandEditorResult {
+    pub fn update(&mut self, ctx: &egui::Context, _config: &Config) -> CommandEditorResult {
         if !self.visible {
             return CommandEditorResult::None;
         }
@@ -302,6 +302,11 @@ impl CommandEditor {
                                         flags: self.flags.clone(),
                                     };
                                     result = CommandEditorResult::Save(new_command, self.original_command_name.clone());
+                                    
+                                    // Consume any pending Enter key to prevent command execution
+                                    ctx.input_mut(|i| {
+                                        i.consume_key(egui::Modifiers::NONE, egui::Key::Enter);
+                                    });
                                 }
                             }
                         );
@@ -320,39 +325,11 @@ impl CommandEditor {
                 flags: self.flags.clone(),
             };
             result = CommandEditorResult::Save(new_command, self.original_command_name.clone());
-        }
-        
-        
-        result
-    }
-    
-    fn format_command_line(&self) -> String {
-        let mut result = String::new();
-        
-        // Add group if present
-        if !self.patch.is_empty() {
-            result.push_str(&self.patch);
-            result.push_str("! ");
-        }
-        
-        // Add command and action
-        result.push_str(&self.command);
-        result.push_str(" : ");
-        result.push_str(&self.action);
-        
-        // Add flags if present (after action, before semicolon)
-        if !self.flags.is_empty() {
-            result.push(' ');
-            result.push_str(&self.flags);
-        }
-        
-        // Add semicolon to separate action/flags from argument
-        result.push(';');
-        
-        // Add argument if present (after semicolon)
-        if !self.argument.is_empty() {
-            result.push(' ');
-            result.push_str(&self.argument);
+            
+            // IMPORTANT: Consume the Enter key to prevent it from being processed by the popup
+            ctx.input_mut(|i| {
+                i.consume_key(egui::Modifiers::NONE, egui::Key::Enter);
+            });
         }
         
         result

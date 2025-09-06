@@ -248,7 +248,7 @@ pub fn load_config_with_error() -> ConfigResult {
         // Parse config with migrations and defaults
         let parse_start = std::time::Instant::now();
         match parse_config_contents(&contents) {
-            Ok(mut config) => {
+            Ok(config) => {
                 // Normalize template keys for efficient matching
                 
                 let parse_elapsed = parse_start.elapsed();
@@ -286,6 +286,7 @@ pub fn load_config_with_error() -> ConfigResult {
     }
 }
 
+// PLEASE REFACTOR AWAY - Legacy compatibility wrapper, use load_config_with_error instead
 /// Loads configuration from YAML file or returns default if file doesn't exist (compatibility wrapper)
 pub(super) fn load_config() -> Config {
     let start = std::time::Instant::now();

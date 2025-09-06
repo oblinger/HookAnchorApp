@@ -10,8 +10,6 @@ use std::process::{Command, exit};
 use std::time::Duration;
 use std::thread;
 use std::env;
-use std::fs;
-use std::path::PathBuf;
 
 /// Socket path for popup server control
 const POPUP_SOCKET: &str = "/tmp/hookanchor_popup.sock";
@@ -217,7 +215,7 @@ fn main() {
     
     // Server mode - use socket communication
     // First try to send command
-    let result = match send_command(command) {
+    let _result = match send_command(command) {
         Ok(response) => {
             // For status command, add mode information
             if command == "status" {

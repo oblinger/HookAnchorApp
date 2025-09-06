@@ -21,7 +21,6 @@ pub struct NotionPage {
 }
 
 pub struct NotionScanner {
-    api_key: String,
     client: reqwest::blocking::Client,
 }
 
@@ -41,7 +40,7 @@ impl NotionScanner {
             .build()
             .unwrap();
 
-        Self { api_key, client }
+        Self { client }
     }
 
     pub fn scan_all_pages(&self) -> Result<Vec<NotionPage>, String> {
@@ -72,7 +71,7 @@ impl NotionScanner {
             iterations += 1;
             
             // Build query with optional date filter for incremental scanning
-            let mut filter = serde_json::json!({
+            let filter = serde_json::json!({
                 "property": "object",
                 "value": "page"
             });
@@ -168,13 +167,13 @@ impl NotionScanner {
     fn save_last_scan_time(&self) {
         let mut state = crate::core::load_state();
         state.notion_last_scan = Some(Utc::now().to_rfc3339());
-        crate::core::save_state(&state);
+        let _ = crate::core::save_state(&state);
     }
     
     fn clear_last_scan_time(&self) {
         let mut state = crate::core::load_state();
         state.notion_last_scan = None;
-        crate::core::save_state(&state);
+        let _ = crate::core::save_state(&state);
     }
 
     fn parse_page(&self, page: &serde_json::Value) -> Option<NotionPage> {

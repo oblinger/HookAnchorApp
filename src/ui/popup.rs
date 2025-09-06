@@ -1130,7 +1130,7 @@ impl AnchorSelector {
         crate::utils::detailed_log("HIERARCHY", "Navigating up hierarchy");
         
         // Check if we're currently in a submenu
-        if let Some((original_command, resolved_command)) = self.popup_state.get_submenu_command_info() {
+        if let Some((_original_command, resolved_command)) = self.popup_state.get_submenu_command_info() {
             // We're in a submenu - get the current patch from the anchor name
             let anchor_name = &resolved_command.command;
             let current_patch_key = anchor_name.to_lowercase();
@@ -1437,7 +1437,7 @@ impl AnchorSelector {
 
         // Get the new command details from context
         let new_command_action = context.get("new_command_action").ok_or("Missing new_command_action")?;
-        let new_command_arg = context.get("new_command_arg").ok_or("Missing new_command_arg")?;
+        let _new_command_arg = context.get("new_command_arg").ok_or("Missing new_command_arg")?;
         let new_command_patch = context.get("new_command_patch").ok_or("Missing new_command_patch")?;
         let new_command_flags = context.get("new_command_flags").ok_or("Missing new_command_flags")?;
 
@@ -1496,69 +1496,6 @@ impl AnchorSelector {
         Ok(())
     }
 
-    /// Execute a rename operation from the action context (static version for non-UI contexts)
-    fn execute_rename_operation(context: &HashMap<String, String>) -> Result<(), Box<dyn std::error::Error>> {
-        let old_name = context.get("old_name").ok_or("Missing old_name")?;
-        let new_name = context.get("new_name").ok_or("Missing new_name")?;
-        let current_arg = context.get("current_arg").ok_or("Missing current_arg")?;
-        let action = context.get("action").ok_or("Missing action")?;
-        let original_command_to_delete = context.get("original_command_to_delete");
-
-        // Get the new command details from context
-        let new_command_action = context.get("new_command_action").ok_or("Missing new_command_action")?;
-        let new_command_arg = context.get("new_command_arg").ok_or("Missing new_command_arg")?;
-        let new_command_patch = context.get("new_command_patch").ok_or("Missing new_command_patch")?;
-        let new_command_flags = context.get("new_command_flags").ok_or("Missing new_command_flags")?;
-
-        // Load current state (this is a static method, so we need to load fresh)
-        let mut commands = crate::core::commands::load_commands();
-        let mut patches = crate::core::commands::create_patches_hashmap(&commands);
-        let config = crate::core::sys_data::get_config();
-
-        // Execute the rename with dry_run = false
-        use crate::core::rename_associated_data;
-        let (updated_arg, _actions) = rename_associated_data(
-            old_name,
-            new_name,
-            current_arg,
-            action,
-            &mut commands,
-            &mut patches,
-            &config,
-            false, // dry_run = false
-        )?;
-
-        // Delete original command if needed
-        if let Some(cmd_name) = original_command_to_delete {
-            if !cmd_name.is_empty() {
-                use crate::core::delete_command;
-                let _ = delete_command(cmd_name, &mut commands);
-            }
-        }
-
-        // Create the new command with potentially updated arg
-        let new_command = crate::core::Command {
-            command: new_name.clone(),
-            action: new_command_action.clone(),
-            arg: updated_arg, // Use the updated arg from rename operation
-            patch: new_command_patch.clone(),
-            flags: new_command_flags.clone(),
-        };
-
-        // Add the new command
-        use crate::core::add_command;
-        use crate::core::commands::save_commands_to_file;
-        let _ = add_command(new_command, &mut commands);
-
-        // Save commands to file (patches are embedded in commands, so no separate save needed)
-        save_commands_to_file(&commands)?;
-
-        // Mark commands as modified to trigger automatic reload
-        crate::core::mark_commands_modified();
-        
-        crate::utils::log(&format!("RENAME: Successfully renamed '{}' to '{}' with side effects", old_name, new_name));
-        Ok(())
-    }
     
     
     /// Backward compatibility: access to filtered commands
@@ -1780,7 +1717,7 @@ impl AnchorSelector {
                             let config = crate::core::sys_data::get_config();
                             
                             // Try to find template in unified actions first
-                            let template_found = if let Some(ref actions) = config.actions {
+                            let _template_found = if let Some(ref actions) = config.actions {
                                 if let Some(action) = actions.get(&template_name) {
                                     crate::utils::detailed_log("GRAB", &format!("GRAB: Found action '{}' in unified actions", template_name));
                                     if action.action_type() == "template" {
@@ -1886,7 +1823,7 @@ impl AnchorSelector {
                             let config = crate::core::sys_data::get_config();
                             
                             // Try to find template in unified actions first
-                            let template_found = if let Some(ref actions) = config.actions {
+                            let _template_found = if let Some(ref actions) = config.actions {
                                 if let Some(action) = actions.get(&template_name) {
                                     if action.action_type() == "template" {
                                         crate::utils::detailed_log("GRAB", &format!("GRAB: Action type is 'template'"));
@@ -3008,9 +2945,6 @@ impl AnchorSelector {
     }
 }
 
-fn save_window_position(pos: egui::Pos2) {
-    save_window_position_with_reason(pos, "unspecified");
-}
 
 fn save_window_position_with_reason(pos: egui::Pos2, reason: &str) {
     let mut state = load_state();
@@ -3983,7 +3917,7 @@ impl eframe::App for AnchorSelector {
                                         // Determine display text based on submenu mode and position
                                         let display_text = if is_submenu && !is_separator && i < inside_count {
                                             // This is an inside menu command - apply trimming logic using original command name
-                                            if let Some((original_command, resolved_command)) = self.popup_state.get_submenu_command_info() {
+                                            if let Some((original_command, _resolved_command)) = self.popup_state.get_submenu_command_info() {
                                                 let original_prefix = &original_command.command;
                                                 
                                                 // Check if this command should have its prefix trimmed
@@ -4097,7 +4031,7 @@ impl eframe::App for AnchorSelector {
                                 // Determine display text based on submenu mode and position
                                 let display_text = if is_submenu && i < inside_count {
                                     // This is an inside menu command - apply trimming logic using original command name
-                                    if let Some((original_command, resolved_command)) = self.popup_state.get_submenu_command_info() {
+                                    if let Some((original_command, _resolved_command)) = self.popup_state.get_submenu_command_info() {
                                         let original_prefix = &original_command.command;
                                         
                                         // Check if this command should have its prefix trimmed

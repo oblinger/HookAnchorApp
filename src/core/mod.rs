@@ -16,6 +16,7 @@ pub(crate) mod template_creation;  // Used by UI and execute modules
 pub(crate) mod key_processing;     // Used by UI module
 pub(crate) mod commands;           // Many internal functions used across crates
 pub(crate) mod command_ops;        // User-level command operations
+pub(crate) mod inference;          // Patch inference and auto-assignment logic
 pub(crate) mod display;            // Command display and filtering logic
 
 // ============================================================================
@@ -60,9 +61,9 @@ pub use commands::{
     filter_commands, 
     merge_similar_commands, merge_similar_commands_with_context,
     
-    // Patch management
-    auto_assign_patches, infer_patch, run_patch_inference, get_patch_for_command,
-    get_patch, create_patches_hashmap, get_patch_path,
+    // Patch management  
+    get_patch_for_command, get_patch, create_patches_hashmap, get_patch_path,
+    run_patch_inference,
     
     // Submenu and navigation (moved to display module)
     
@@ -73,6 +74,11 @@ pub use commands::{
 // User-level command operations
 pub use command_ops::{
     add_command, delete_command, rename_associated_data
+};
+
+// Patch inference system
+pub use inference::{
+    infer_patch, auto_assign_patches
 };
 
 // Template creation (used by UI)
