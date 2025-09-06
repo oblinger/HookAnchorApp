@@ -250,7 +250,18 @@ impl AnchorSelector {
         };
         
         if should_resize {
+            // Get current position BEFORE resizing to maintain top-left anchor
+            let current_pos = ctx.input(|i| i.viewport().outer_rect.map(|r| r.min)).unwrap_or(egui::pos2(100.0, 100.0));
+            
+            crate::utils::log(&format!("[POSITION] Before resize: position={:?}, mode={:?}, size={:?}", 
+                current_pos, new_mode, required_size));
+            
             ctx.send_viewport_cmd(egui::ViewportCommand::InnerSize(required_size));
+            
+            // CRITICAL: Re-anchor position after resize to prevent drift
+            // This ensures the top-left corner stays in the same place
+            crate::utils::log(&format!("[POSITION] Re-anchoring position after resize to {:?} (reason: prevent drift)", current_pos));
+            ctx.send_viewport_cmd(egui::ViewportCommand::OuterPosition(current_pos));
             
             // Update the mode and cache the size
             self.window_size_mode = new_mode.clone();
@@ -294,7 +305,7 @@ impl AnchorSelector {
             // Save current position before hiding
             if let Some(current_pos) = ctx.input(|i| i.viewport().outer_rect.map(|r| r.min)) {
                 crate::utils::log(&format!("[EXIT_OR_HIDE] Saving position before hide: {:?}", current_pos));
-                save_window_position(current_pos);
+                save_window_position_with_reason(current_pos, "hiding window");
                 self.last_saved_position = Some(current_pos);
             }
             
@@ -941,7 +952,8 @@ impl AnchorSelector {
         crate::utils::detailed_log("TEMPLATE", &format!("State loaded - last_executed_command: {:?}", state.last_executed_command));
         
         // Load all commands to find previous command, not just filtered ones
-        let all_commands = crate::core::sys_data::get_sys_data().commands;
+        let (sys_data, _) = crate::core::sys_data::get_sys_data();
+        let all_commands = sys_data.commands;
         
         let previous_command = state.last_executed_command.as_ref()
             .and_then(|name| {
@@ -1057,14 +1069,14 @@ impl AnchorSelector {
                                         // Don't clear search text when opening editor - preserve input
                                 } else {
                                     // Add the new command directly
-                                    match crate::core::commands::add_command(new_command, &mut self.popup_state.commands) {
+                                    match crate::core::add_command(new_command, &mut self.popup_state.commands) {
                                         Ok(_) => {
                                             // Save commands to file
                                             if let Err(e) = crate::core::commands::save_commands_to_file(&self.popup_state.commands) {
                                                 crate::utils::log_error(&format!("Failed to save commands: {}", e));
                                             } else {
-                                                // Clear the global sys_data cache so it reloads from disk
-                                                crate::core::sys_data::clear_sys_data();
+                                                // Mark commands as modified to trigger automatic reload
+                                                crate::core::mark_commands_modified();
                                             }
                                             // Clear search and update display
                                             self.popup_state.search_text.clear();
@@ -1119,25 +1131,32 @@ impl AnchorSelector {
         
         // Check if we're currently in a submenu
         if let Some((original_command, resolved_command)) = self.popup_state.get_submenu_command_info() {
-            // We're in a submenu - find the parent patch
+            // We're in a submenu - get the current patch from the anchor name
             let anchor_name = &resolved_command.command;
+            let current_patch_key = anchor_name.to_lowercase();
             
-            // Get the patch for this anchor
-            let config = crate::core::sys_data::get_config();
-            let sys_data = crate::core::sys_data::get_sys_data();
+            let (sys_data, _) = crate::core::sys_data::get_sys_data();
             
-            if let Some(patch) = sys_data.patches.get(&anchor_name.to_lowercase()) {
-                // Don't go up if we're already at orphans patch
-                if patch.name.to_lowercase() == "orphans" {
-                    crate::utils::detailed_log("HIERARCHY", "Already at orphans patch, not navigating up");
-                    return;
+            // Get the current patch structure
+            if let Some(current_patch) = sys_data.patches.get(&current_patch_key) {
+                // Get the primary anchor command for this patch
+                if let Some(anchor_command) = current_patch.primary_anchor() {
+                    let parent_patch = &anchor_command.patch;
+                    
+                    // Don't go up if we're already at orphans patch or empty patch
+                    if parent_patch.is_empty() || parent_patch.to_lowercase() == "orphans" {
+                        crate::utils::detailed_log("HIERARCHY", &format!("Already at root level (patch: '{}')", parent_patch));
+                        return;
+                    }
+                    
+                    // Set the search text to the parent patch name to navigate up
+                    crate::utils::detailed_log("HIERARCHY", &format!("Navigating up from patch '{}' to parent patch: '{}'", current_patch.name, parent_patch));
+                    self.popup_state.update_search(parent_patch.clone());
+                } else {
+                    crate::utils::detailed_log("HIERARCHY", &format!("No primary anchor found for patch: {}", current_patch.name));
                 }
-                
-                // Set the search text to the patch name to navigate to parent
-                crate::utils::detailed_log("HIERARCHY", &format!("Navigating up to patch: {}", patch.name));
-                self.popup_state.update_search(patch.name.clone());
             } else {
-                crate::utils::detailed_log("HIERARCHY", &format!("No patch found for anchor: {}", anchor_name));
+                crate::utils::detailed_log("HIERARCHY", &format!("No patch found for current submenu: {}", anchor_name));
             }
         } else {
             crate::utils::detailed_log("HIERARCHY", "Not in submenu, cannot navigate up");
@@ -1425,7 +1444,7 @@ impl AnchorSelector {
         let config = crate::core::sys_data::get_config();
 
         // Execute the rename with dry_run = false on UI commands
-        use crate::core::commands::rename_associated_data;
+        use crate::core::rename_associated_data;
         let mut patches = crate::core::commands::create_patches_hashmap(&self.commands());
         let (updated_arg, _actions) = rename_associated_data(
             old_name,
@@ -1441,7 +1460,7 @@ impl AnchorSelector {
         // Delete original command from UI if needed
         if let Some(cmd_name) = original_command_to_delete {
             if !cmd_name.is_empty() {
-                use crate::core::commands::delete_command;
+                use crate::core::delete_command;
                 let _ = delete_command(cmd_name, self.commands_mut());
             }
         }
@@ -1456,7 +1475,8 @@ impl AnchorSelector {
         };
 
         // Add the new command to UI
-        use crate::core::commands::{add_command, save_commands_to_file};
+        use crate::core::add_command;
+        use crate::core::commands::save_commands_to_file;
         let _ = add_command(new_command, self.commands_mut());
 
         // Save commands to file
@@ -1469,8 +1489,8 @@ impl AnchorSelector {
             self.popup_state.update_search(current_search);
         }
 
-        // Clear the global sys_data cache so it reloads from disk
-        crate::core::sys_data::clear_sys_data();
+        // Mark commands as modified to trigger automatic reload
+        crate::core::mark_commands_modified();
         
         crate::utils::log(&format!("RENAME: Successfully renamed '{}' to '{}' with side effects and UI update", old_name, new_name));
         Ok(())
@@ -1496,7 +1516,7 @@ impl AnchorSelector {
         let config = crate::core::sys_data::get_config();
 
         // Execute the rename with dry_run = false
-        use crate::core::commands::rename_associated_data;
+        use crate::core::rename_associated_data;
         let (updated_arg, _actions) = rename_associated_data(
             old_name,
             new_name,
@@ -1511,7 +1531,7 @@ impl AnchorSelector {
         // Delete original command if needed
         if let Some(cmd_name) = original_command_to_delete {
             if !cmd_name.is_empty() {
-                use crate::core::commands::delete_command;
+                use crate::core::delete_command;
                 let _ = delete_command(cmd_name, &mut commands);
             }
         }
@@ -1526,14 +1546,15 @@ impl AnchorSelector {
         };
 
         // Add the new command
-        use crate::core::commands::{add_command, save_commands_to_file};
+        use crate::core::add_command;
+        use crate::core::commands::save_commands_to_file;
         let _ = add_command(new_command, &mut commands);
 
         // Save commands to file (patches are embedded in commands, so no separate save needed)
         save_commands_to_file(&commands)?;
 
-        // Clear the global sys_data cache so it reloads from disk
-        crate::core::sys_data::clear_sys_data();
+        // Mark commands as modified to trigger automatic reload
+        crate::core::mark_commands_modified();
         
         crate::utils::log(&format!("RENAME: Successfully renamed '{}' to '{}' with side effects", old_name, new_name));
         Ok(())
@@ -1787,13 +1808,13 @@ impl AnchorSelector {
                                                     } else {
                                                         crate::utils::detailed_log("GRAB", &format!("GRAB: Not opening editor (should_edit=false)"));
                                                         // Add command directly
-                                                        match crate::core::commands::add_command(new_command, &mut self.popup_state.commands) {
+                                                        match crate::core::add_command(new_command, &mut self.popup_state.commands) {
                                                             Ok(_) => {
                                                                 if let Err(e) = crate::core::commands::save_commands_to_file(&self.popup_state.commands) {
                                                                     crate::utils::log_error(&format!("Failed to save commands: {}", e));
                                                                 } else {
-                                                                    // Clear the global sys_data cache so it reloads from disk
-                                                                    crate::core::sys_data::clear_sys_data();
+                                                                    // Mark commands as modified to trigger automatic reload
+                                                                    crate::core::mark_commands_modified();
                                                                 }
                                                                 self.popup_state.search_text.clear();
                                                                 self.popup_state.update_search(String::new());
@@ -1892,13 +1913,13 @@ impl AnchorSelector {
                                                     } else {
                                                         crate::utils::detailed_log("GRAB", &format!("GRAB: Not opening editor (should_edit=false)"));
                                                         // Add command directly
-                                                        match crate::core::commands::add_command(new_command, &mut self.popup_state.commands) {
+                                                        match crate::core::add_command(new_command, &mut self.popup_state.commands) {
                                                             Ok(_) => {
                                                                 if let Err(e) = crate::core::commands::save_commands_to_file(&self.popup_state.commands) {
                                                                     crate::utils::log_error(&format!("Failed to save commands: {}", e));
                                                                 } else {
-                                                                    // Clear the global sys_data cache so it reloads from disk
-                                                                    crate::core::sys_data::clear_sys_data();
+                                                                    // Mark commands as modified to trigger automatic reload
+                                                                    crate::core::mark_commands_modified();
                                                                 }
                                                                 self.popup_state.search_text.clear();
                                                                 self.popup_state.update_search(String::new());
@@ -2988,16 +3009,30 @@ impl AnchorSelector {
 }
 
 fn save_window_position(pos: egui::Pos2) {
-    crate::utils::detailed_log("WINDOW_POS", &format!("save_window_position called with pos: ({}, {})", pos.x, pos.y));
+    save_window_position_with_reason(pos, "unspecified");
+}
+
+fn save_window_position_with_reason(pos: egui::Pos2, reason: &str) {
     let mut state = load_state();
     let old_pos = state.window_position;
+    
+    // Log the save with reason and check for drift
+    let msg = if pos.y > 600.0 {
+        format!("[POSITION-SAVE] WARNING: Saving low position ({}, {}) from {:?} - reason: {} - POSITION TOO LOW!", 
+                pos.x, pos.y, old_pos, reason)
+    } else {
+        format!("[POSITION-SAVE] Saving position ({}, {}) from {:?} - reason: {}", 
+                pos.x, pos.y, old_pos, reason)
+    };
+    crate::utils::log(&msg);
+    
     state.window_position = Some((pos.x, pos.y));
     match save_state(&state) {
         Ok(_) => {
-            crate::utils::detailed_log("WINDOW_POS", &format!("Successfully saved position from {:?} to ({}, {})", old_pos, pos.x, pos.y));
+            crate::utils::detailed_log("WINDOW_POS", &format!("Successfully saved position"));
         }
         Err(e) => {
-            crate::utils::detailed_log("WINDOW_POS", &format!("Failed to save position: {}", e));
+            crate::utils::log(&format!("[POSITION-SAVE] ERROR: Failed to save position: {}", e));
         }
     }
 }
@@ -3005,7 +3040,17 @@ fn save_window_position(pos: egui::Pos2) {
 fn load_window_position() -> Option<egui::Pos2> {
     let state = load_state();
     let result = state.window_position.map(|(x, y)| egui::pos2(x, y));
-    crate::utils::detailed_log("WINDOW_POS", &format!("load_window_position returned {:?}", result));
+    
+    if let Some(pos) = result {
+        if pos.y > 600.0 {
+            crate::utils::log(&format!("[POSITION-LOAD] WARNING: Loading low position ({}, {}) - POSITION TOO LOW!", pos.x, pos.y));
+        } else {
+            crate::utils::log(&format!("[POSITION-LOAD] Loading saved position ({}, {})", pos.x, pos.y));
+        }
+    } else {
+        crate::utils::log("[POSITION-LOAD] No saved position available");
+    }
+    
     result
 }
 
@@ -3094,7 +3139,7 @@ impl AnchorSelector {
     fn get_patch_path_display(&self, command_name: &str) -> String {
         // If we have submenu info, use that for more accurate breadcrumbs
         if let Some((_, resolved_command)) = self.popup_state.get_submenu_command_info() {
-            let sys_data = crate::core::sys_data::get_sys_data();
+            let (sys_data, _) = crate::core::sys_data::get_sys_data();
             let path = get_patch_path(&resolved_command.command, &sys_data.patches);
             
             if path.is_empty() {
@@ -3104,7 +3149,7 @@ impl AnchorSelector {
             }
         } else {
             // Fallback to old behavior
-            let sys_data = crate::core::sys_data::get_sys_data();
+            let (sys_data, _) = crate::core::sys_data::get_sys_data();
             let path = get_patch_path(command_name, &sys_data.patches);
             
             if path.is_empty() {
@@ -3128,6 +3173,11 @@ impl eframe::App for AnchorSelector {
             self.pending_rebuild = false;
             self.perform_rebuild();
             return; // Exit after rebuild (the process will be replaced)
+        }
+        
+        // Check if commands were modified and refresh display if needed
+        if self.popup_state.check_for_reload() {
+            ctx.request_repaint();
         }
         
         // Enhanced debugging for visibility issues
@@ -3185,6 +3235,7 @@ impl eframe::App for AnchorSelector {
                 let height = config.popup_settings.get_default_window_height() as f32;
                 let window_size = egui::vec2(width, height);
                 let position = center_on_main_display(ctx, window_size);
+                crate::utils::log(&format!("[POSITION] Setting position on first frames to {:?} (reason: initial positioning)", position));
                 ctx.send_viewport_cmd(egui::ViewportCommand::OuterPosition(position));
                 self.position_set = true;
             }
@@ -3261,6 +3312,7 @@ impl eframe::App for AnchorSelector {
             let height = config.popup_settings.get_default_window_height() as f32;
             let window_size = egui::vec2(width, height);
             let pos = get_previous_window_location(ctx, window_size);
+            crate::utils::log(&format!("[POSITION] Setting initial position to {:?} (reason: first-time window setup)", pos));
             ctx.send_viewport_cmd(egui::ViewportCommand::OuterPosition(pos));
             self.position_set = true;
         }
@@ -3414,7 +3466,7 @@ impl eframe::App for AnchorSelector {
                         
                         if has_rename_options {
                             // Perform dry-run to see what would be renamed
-                            use crate::core::commands::rename_associated_data;
+                            use crate::core::rename_associated_data;
                             let mut patches = crate::core::commands::create_patches_hashmap(&self.commands());
                             match rename_associated_data(
                                 effective_old_name,
@@ -3494,7 +3546,7 @@ impl eframe::App for AnchorSelector {
                 
                 // Delete original command if needed
                 if let Some(cmd_name) = command_to_delete {
-                    use crate::core::commands::delete_command;
+                    use crate::core::delete_command;
                     let deleted = delete_command(&cmd_name, self.commands_mut());
                     if deleted.is_err() {
                         crate::utils::log_error(&format!("Original command '{}' not found for deletion", cmd_name));
@@ -3505,7 +3557,8 @@ impl eframe::App for AnchorSelector {
                 let saved_command = new_command.clone();
                 
                 // Add the new command
-                use crate::core::commands::{add_command, save_commands_to_file};
+                use crate::core::add_command;
+        use crate::core::commands::save_commands_to_file;
                 crate::utils::log(&format!("SAVE_DEBUG: About to add new command: '{}' (action: {}, arg: {})", 
                     new_command.command, new_command.action, new_command.arg));
                 match add_command(new_command, self.commands_mut()) {
@@ -3523,10 +3576,9 @@ impl eframe::App for AnchorSelector {
                     Ok(_) => {
                         crate::utils::log(&format!("SAVE_DEBUG: Successfully saved commands to file"));
                         
-                        // IMPORTANT: Clear the global sys_data cache so it reloads from disk
-                        // This ensures the display uses the updated commands
-                        crate::core::sys_data::clear_sys_data();
-                        crate::utils::log(&format!("SAVE_DEBUG: Cleared sys_data cache to force reload"));
+                        // Mark commands as modified to trigger automatic reload
+                        crate::core::mark_commands_modified();
+                        crate::utils::log(&format!("SAVE_DEBUG: Marked commands as modified to trigger reload"));
                         
                         // Process template files if there was a pending template
                         if let (Some(template), Some(context)) = (
@@ -3570,7 +3622,8 @@ impl eframe::App for AnchorSelector {
             }
             CommandEditorResult::Delete(command_name) => {
                 // Delete the specified command and save to file
-                use crate::core::commands::{delete_command, save_commands_to_file};
+                use crate::core::delete_command;
+                use crate::core::commands::save_commands_to_file;
                 
                 let deleted = delete_command(&command_name, self.commands_mut());
                 if deleted.is_err() {
@@ -3580,8 +3633,8 @@ impl eframe::App for AnchorSelector {
                     if let Err(e) = save_commands_to_file(&self.commands()) {
                         crate::utils::log_error(&format!("Error saving commands to file after deletion: {}", e));
                     } else {
-                        // Clear the global sys_data cache so it reloads from disk
-                        crate::core::sys_data::clear_sys_data();
+                        // Mark commands as modified to trigger automatic reload
+                        crate::core::mark_commands_modified();
                         
                         // Update the filtered list if we're currently filtering
                         if !self.popup_state.search_text.trim().is_empty() {
@@ -4163,7 +4216,7 @@ impl eframe::App for AnchorSelector {
                 crate::utils::detailed_log("WINDOW_POS", &format!("First position detection: {:?}", current_pos));
                 // Only save if this position was explicitly set by user, not auto-positioned
                 if !self.was_auto_positioned {
-                    save_window_position(current_pos);
+                    save_window_position_with_reason(current_pos, "window closed by user");
                 }
                 self.last_saved_position = Some(current_pos);
             } else if let Some(last_pos) = self.last_saved_position {
@@ -4171,7 +4224,7 @@ impl eframe::App for AnchorSelector {
                 if moved {
                     crate::utils::detailed_log("WINDOW_POS", &format!("Window moved from {:?} to {:?} (user moved)", last_pos, current_pos));
                     // Only save significant moves that are likely user-initiated
-                    save_window_position(current_pos);
+                    save_window_position_with_reason(current_pos, "user dragged window");
                     self.last_saved_position = Some(current_pos);
                     self.was_auto_positioned = false; // User moved it, so it's no longer auto-positioned
                 }

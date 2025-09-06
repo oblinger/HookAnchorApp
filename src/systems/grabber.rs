@@ -560,7 +560,7 @@ fn match_grabber_rules(
     crate::utils::detailed_log("GRABBER", &format!("Attempting {} grabber rules", rules.len()));
     
     // Load patches data for patch inference
-    let sys_data = crate::core::sys_data::get_sys_data();
+    let (sys_data, _) = crate::core::sys_data::get_sys_data();
     let patches = &sys_data.patches;
     
     let rt = Runtime::new().ok()?;

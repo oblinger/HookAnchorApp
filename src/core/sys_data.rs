@@ -36,6 +36,9 @@ static SYS_DATA: OnceLock<Mutex<Option<SysData>>> = OnceLock::new();
 // Global config - loaded once at startup
 pub static CONFIG: OnceLock<Config> = OnceLock::new();
 
+// Global flag to track if commands have been modified and need reload
+static COMMANDS_MODIFIED: OnceLock<std::sync::atomic::AtomicBool> = OnceLock::new();
+
 /// Initialize the global config at application startup
 /// This MUST be called before any other operations
 pub fn initialize_config() -> Result<(), String> {
@@ -58,26 +61,39 @@ pub fn initialize_config() -> Result<(), String> {
 }
 
 /// Gets a reference to the sys data, loading it if necessary
-pub fn get_sys_data() -> SysData {
-    // Check if we already have sys data cached
+/// Returns (data, was_reloaded) where was_reloaded indicates if data was refreshed
+pub fn get_sys_data() -> (SysData, bool) {
+    // Check if commands have been modified and need reload
+    let flag = COMMANDS_MODIFIED.get_or_init(|| std::sync::atomic::AtomicBool::new(false));
+    let commands_dirty = flag.swap(false, std::sync::atomic::Ordering::Relaxed);
+    
     let sys = SYS_DATA.get_or_init(|| Mutex::new(None));
     
     // Try to acquire the lock without blocking to detect potential deadlock
     match sys.try_lock() {
-        Ok(sys_data) => {
+        Ok(mut sys_data) => {
+            // If commands are dirty, clear cache to force reload
+            let was_cleared = if commands_dirty {
+                crate::utils::detailed_log("GET_SYS_DATA", "Commands modified - clearing cache for reload");
+                *sys_data = None;
+                true
+            } else {
+                false
+            };
+            
             if let Some(ref data) = *sys_data {
                 // Cached data found, return it
-                return data.clone();
+                return (data.clone(), false);
             }
-            // Not cached, need to load
+            // Not cached or cleared due to modifications, need to load
             drop(sys_data); // Release the lock before calling load_data
-            load_data(Vec::new(), false)
+            (load_data(Vec::new(), false), was_cleared)
         }
         Err(_) => {
             // Mutex is locked, this indicates a potential deadlock
             crate::utils::detailed_log("GET_SYS_DATA", "ERROR: Mutex is locked, potential deadlock detected");
-            // Return a fallback - load without caching
-            load_data_no_cache(Vec::new(), false)
+            // Return a fallback - load without caching (assume this is a reload)
+            (load_data_no_cache(Vec::new(), false), true)
         }
     }
 }
@@ -88,14 +104,13 @@ pub fn get_config() -> Config {
     CONFIG.get().expect("Config not initialized! Call initialize_config() at startup").clone()
 }
 
-/// Clears the sys data, forcing the next access to reload from disk
-/// This is useful for testing or when external changes to the data files are made
-pub fn clear_sys_data() {
-    if let Some(sys) = SYS_DATA.get() {
-        let mut sys_data = sys.lock().unwrap();
-        *sys_data = None;
-        crate::utils::detailed_log("CLEAR_SYS_DATA", "Cleared sys data cache");
-    }
+/// Mark that commands have been modified and need to be reloaded
+/// This is the standard way to indicate that command data has changed
+/// The next call to get_sys_data() will automatically reload
+pub fn mark_commands_modified() {
+    let flag = COMMANDS_MODIFIED.get_or_init(|| std::sync::atomic::AtomicBool::new(false));
+    flag.store(true, std::sync::atomic::Ordering::Relaxed);
+    crate::utils::detailed_log("COMMANDS_RELOAD", "Commands marked as modified - will reload on next get_sys_data() call");
 }
 
 /// Load data without caching - used as fallback when cache is locked
@@ -191,7 +206,7 @@ pub fn load_data(commands_override: Vec<Command>, verbose: bool) -> SysData {
     let mut orphans_created = 0;
     for patch in patches.values() {
         for anchor_cmd in &patch.anchor_commands {
-            if anchor_cmd.patch == "orphans" && anchor_cmd.flags.contains('A') {
+            if anchor_cmd.patch == "orphans" && anchor_cmd.action == "anchor" && !anchor_cmd.flags.contains('U') {
                 if verbose {
                     println!("   Adding orphan anchor command: {}", anchor_cmd.command);
                 }

@@ -15,6 +15,7 @@ pub(crate) mod sys_data;
 pub(crate) mod template_creation;  // Used by UI and execute modules
 pub(crate) mod key_processing;     // Used by UI module
 pub(crate) mod commands;           // Many internal functions used across crates
+pub(crate) mod command_ops;        // User-level command operations
 pub(crate) mod display;            // Command display and filtering logic
 
 // ============================================================================
@@ -42,7 +43,7 @@ pub use application_state::{
 // System data
 pub use sys_data::{
     SysData, load_data, get_sys_data, get_config, 
-    clear_sys_data, initialize_config,
+    initialize_config, mark_commands_modified,
     DEFAULT_LOG_PATH, DEFAULT_MAX_LOG_SIZE
 };
 
@@ -53,7 +54,7 @@ pub use commands::{
     
     // CRUD operations
     load_commands, load_commands_with_data, load_commands_for_inference,
-    save_commands_to_file, add_command, delete_command, parse_command_line,
+    save_commands_to_file, parse_command_line,
     
     // Query and filtering
     filter_commands, 
@@ -67,6 +68,11 @@ pub use commands::{
     
     // Migration and maintenance
     migrate_commands_to_new_format
+};
+
+// User-level command operations
+pub use command_ops::{
+    add_command, delete_command, rename_associated_data
 };
 
 // Template creation (used by UI)
@@ -99,6 +105,10 @@ pub use display::{
     
     // Main display function
     get_new_display_commands,
+};
+
+// Command utilities 
+pub use commands::{
     // Helper functions
     get_command_prefix,
 };

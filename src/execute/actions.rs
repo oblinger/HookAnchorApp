@@ -635,8 +635,8 @@ fn execute_template_action(
     }
     
     // Add the command to commands.txt
-    let mut sys_data = crate::core::sys_data::get_sys_data();
-    crate::core::commands::add_command(command.clone(), &mut sys_data.commands)?;
+    let (mut sys_data, _) = crate::core::sys_data::get_sys_data();
+    crate::core::add_command(command.clone(), &mut sys_data.commands)?;
     
     Ok(format!("Created command: {}", command.command))
 }

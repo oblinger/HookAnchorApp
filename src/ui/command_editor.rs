@@ -1,6 +1,7 @@
 use eframe::egui;
 use crate::core::{Command};
-use crate::core::commands::{delete_command, save_commands_to_file};
+use crate::core::delete_command;
+use crate::core::commands::save_commands_to_file;
 use crate::core::Config;
 use crate::core::template_creation::{Template, TemplateContext};
 

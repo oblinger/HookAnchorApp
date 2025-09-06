@@ -136,7 +136,7 @@ fn delete_anchors(commands: &mut Vec<Command>, delete_notion_anchors: bool, verb
 /// Checks if filesystem scan should be performed and executes it if needed.
 /// This function should be called on application exit, not startup.
 pub fn scan_check(commands: Vec<Command>) -> Vec<Command> {
-    let sys_data = crate::core::sys_data::get_sys_data();
+    let (sys_data, _) = crate::core::sys_data::get_sys_data();
     let mut state = load_state();
     
     let current_time = Local::now().timestamp();
@@ -194,8 +194,8 @@ pub fn scan_check(commands: Vec<Command>) -> Vec<Command> {
         if let Err(e) = save_commands_to_file(&scanned_commands) {
             crate::utils::log_error(&format!("Failed to save updated commands: {}", e));
         } else {
-            // Clear global cache since we've updated the commands file
-            crate::core::sys_data::clear_sys_data();
+            // Mark commands as modified since we've updated the commands file
+            crate::core::mark_commands_modified();
         }
         
         

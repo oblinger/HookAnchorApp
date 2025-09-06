@@ -48,80 +48,73 @@ use super::{Command, Patch};
 use std::collections::HashMap;
 
 
-/// Check if a command matches a query string (compatibility wrapper)
-pub fn command_matches_query_with_debug(command: &str, query: &str, debug: bool) -> i32 {
-    if command_matches_query_string(command, query, debug) {
-        1
-    } else {
-        0
-    }
-}
-
-/// Check if a command string matches a query 
-pub fn command_matches_query_string(command: &str, query: &str, _debug: bool) -> bool {
-    if query.trim().is_empty() {
-        return true;
+/// Core matching function that returns the index where the match ends
+/// Returns the position of the first unmatched character, or -1 if no match
+/// This is the canonical separator-aware matching function used throughout the system
+pub fn command_matches_query_with_debug(command: &str, query: &str, _debug: bool) -> i32 {
+    if query.is_empty() {
+        return command.len() as i32;
     }
     
-    let query_lower = query.to_lowercase();
     let command_lower = command.to_lowercase();
+    let query_lower = query.to_lowercase();
+    let separators = " ._-";
     
-    // Exact match (highest priority)
-    if command_lower == query_lower {
-        return true;
-    }
+    let cmd_chars: Vec<char> = command_lower.chars().collect();
+    let query_chars: Vec<char> = query_lower.chars().collect();
     
-    // Prefix match (high priority) 
-    if command_lower.starts_with(&query_lower) {
-        return true;
-    }
+    let mut cmd_idx = 0;
+    let mut query_idx = 0;
+    let mut last_match_pos = 0;
     
-    // Word boundary matches
-    let command_words: Vec<&str> = command_lower.split_whitespace().collect();
-    let query_words: Vec<&str> = query_lower.split_whitespace().collect();
-    
-    // Check if all query words match command words (in order)
-    if query_words.len() <= command_words.len() {
-        let mut query_idx = 0;
-        for cmd_word in &command_words {
-            if query_idx < query_words.len() && cmd_word.starts_with(query_words[query_idx]) {
-                query_idx += 1;
+    while cmd_idx < cmd_chars.len() && query_idx < query_chars.len() {
+        let cmd_char = cmd_chars[cmd_idx];
+        let query_char = query_chars[query_idx];
+        
+        if cmd_char == query_char {
+            // Characters match, advance both
+            cmd_idx += 1;
+            query_idx += 1;
+            last_match_pos = cmd_idx;
+        } else if separators.contains(cmd_char) {
+            // Skip separator in command
+            cmd_idx += 1;
+        } else if separators.contains(query_char) {
+            // Skip separator in query (handles "Book R" matching "Book To Read")
+            query_idx += 1;
+        } else {
+            // No match - try to find next word boundary in command
+            // This allows flexible matching across words
+            let mut found_separator = false;
+            while cmd_idx < cmd_chars.len() && !found_separator {
+                if separators.contains(cmd_chars[cmd_idx]) {
+                    found_separator = true;
+                    cmd_idx += 1; // Skip the separator
+                    break;
+                }
+                cmd_idx += 1;
+            }
+            
+            if !found_separator {
+                // No more word boundaries, no match
+                return -1;
             }
         }
-        if query_idx == query_words.len() {
-            return true;
-        }
     }
     
-    // Substring match (lower priority)
-    command_lower.contains(&query_lower)
+    // If we matched all query characters, return the position
+    if query_idx == query_chars.len() {
+        last_match_pos as i32
+    } else {
+        -1
+    }
 }
 
-/// Check if a Command struct matches a query
+/// Simple boolean version of the canonical matching function
 pub fn command_matches_query(command: &str, query: &str) -> bool {
-    command_matches_query_string(command, query, false)
+    command_matches_query_with_debug(command, query, false) >= 0
 }
 
-/// Extract the prefix from a command string with custom separators
-pub fn get_command_prefix(command: &str, separators: &str) -> String {
-    // If no separators specified, use first word
-    if separators.is_empty() {
-        return command.split_whitespace()
-            .next()
-            .unwrap_or(command)
-            .to_string();
-    }
-    
-    // Find the first separator and extract prefix
-    let mut end_pos = command.len();
-    for sep_char in separators.chars() {
-        if let Some(pos) = command.find(sep_char) {
-            end_pos = end_pos.min(pos);
-        }
-    }
-    
-    command[..end_pos].trim().to_string()
-}
 
 /// Build submenu by scanning backwards from input string to find first anchor
 /// 

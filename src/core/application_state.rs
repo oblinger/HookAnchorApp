@@ -51,7 +51,7 @@ impl ApplicationState {
         };
         
         // Load sys data once to get commands
-        let sys_data = super::sys_data::get_sys_data();
+        let (sys_data, _) = super::sys_data::get_sys_data();
         let commands = sys_data.commands;
         
         // Don't scan at startup - only scan at termination

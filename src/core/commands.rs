@@ -481,8 +481,8 @@ pub fn create_patches_hashmap(commands: &[Command]) -> HashMap<String, Patch> {
 /// Returns None if no patch can be inferred
 /// Always analyzes the command regardless of any current patch value
 pub fn infer_patch(command: &Command, patches: &HashMap<String, Patch>) -> Option<String> {
-    // Skip orphan anchor commands - they should always keep their "orphans" patch
-    if command.patch == "orphans" && command.flags.contains('A') {
+    // Skip system-generated orphan anchor commands - they should always keep their "orphans" patch
+    if command.patch == "orphans" && command.action == "anchor" && !command.flags.contains('U') {
         return None;
     }
     
@@ -627,29 +627,31 @@ fn infer_patch_from_file_path_with_exclusion(file_path: &str, patches: &HashMap<
     
     // Check if this is an anchor file FIRST
     let path = Path::new(file_path);
-    if let Some(file_stem) = path.file_stem() {
-        if let Some(parent) = path.parent() {
-            if let Some(parent_name) = parent.file_name() {
-                if file_stem.to_string_lossy().to_lowercase() == parent_name.to_string_lossy().to_lowercase() {
-                    // This IS an anchor file (e.g., RR/Lrn/Lrn.md)
+    if crate::utils::is_anchor_file(path) {
+        // This IS an anchor file (e.g., RR/Lrn/Lrn.md)
+        if let Some(file_stem) = path.file_stem() {
+            if let Some(parent) = path.parent() {
+                if let Some(parent_name) = parent.file_name() {
                     crate::utils::detailed_log("ANCHOR_INFERENCE", &format!(
                         "File {} is an anchor (stem '{}' matches folder '{}'). Looking for parent patch.",
                         file_path, file_stem.to_string_lossy(), parent_name.to_string_lossy()
                     ));
-                    // For anchors, walk up the hierarchy to find parent patch
-                    if let Some(result) = infer_patch_from_hierarchy(parent, patches) {
-                        crate::utils::detailed_log("ANCHOR_INFERENCE", &format!(
-                            "Found parent patch '{}' for anchor '{}'",
-                            result, exclude_command
-                        ));
-                        return Some(result);
-                    }
-                    crate::utils::detailed_log("ANCHOR_INFERENCE", &format!(
-                        "No parent patch found for anchor '{}', will check other methods",
-                        exclude_command
-                    ));
                 }
             }
+        }
+        // For anchors, walk up the hierarchy to find parent patch
+        if let Some(parent) = path.parent() {
+            if let Some(result) = infer_patch_from_hierarchy(parent, patches) {
+                crate::utils::detailed_log("ANCHOR_INFERENCE", &format!(
+                    "Found parent patch '{}' for anchor '{}'",
+                    result, exclude_command
+                ));
+                return Some(result);
+            }
+            crate::utils::detailed_log("ANCHOR_INFERENCE", &format!(
+                "No parent patch found for anchor '{}', will check other methods",
+                exclude_command
+            ));
         }
     }
     
@@ -707,15 +709,11 @@ fn infer_patch_from_file_path_with_exclusion(file_path: &str, patches: &HashMap<
                     if dir == linked_dir {
                         // Prevent self-assignment
                         if patch.name.to_lowercase() != exclude_command.to_lowercase() {
-                            // Check if this is an anchor file (file stem matches parent folder name)
-                            if let Some(file_stem) = path.file_stem() {
-                                if let Some(parent_name) = dir.file_name() {
-                                    if file_stem.to_string_lossy().to_lowercase() == parent_name.to_string_lossy().to_lowercase() {
-                                        // This IS an anchor file (e.g., Lrn/Lrn.md)
-                                        // Walk hierarchy to find the containing patch (should be grandparent)
-                                        return infer_patch_from_hierarchy(dir, patches);
-                                    }
-                                }
+                            // Check if this is an anchor file
+                            if crate::utils::is_anchor_file(path) {
+                                // This IS an anchor file (e.g., Lrn/Lrn.md)
+                                // Walk hierarchy to find the containing patch (should be grandparent)
+                                return infer_patch_from_hierarchy(dir, patches);
                             }
                             
                             // Not an anchor file, return this patch
@@ -789,11 +787,13 @@ fn infer_patch_from_file_path(file_path: &str, patches: &HashMap<String, Patch>)
                 if let Some(linked_dir) = linked_dir {
                     // Check if directories match exactly
                     if dir == linked_dir {
-                        // Check if this is an anchor file (same name as patch)
-                        if let Some(file_stem) = path.file_stem() {
-                            if file_stem.to_string_lossy().to_lowercase() == patch.name {
-                                // This is an anchor file, walk hierarchy for containing patch
-                                return infer_patch_from_hierarchy(dir, patches);
+                        // Check if this is an anchor file and matches patch name
+                        if crate::utils::is_anchor_file(path) {
+                            if let Some(file_stem) = path.file_stem() {
+                                if file_stem.to_string_lossy().to_lowercase() == patch.name.to_lowercase() {
+                                    // This is an anchor file, walk hierarchy for containing patch
+                                    return infer_patch_from_hierarchy(dir, patches);
+                                }
                             }
                         }
                         
@@ -1074,28 +1074,31 @@ fn infer_patch_simple(file_path: &str, folder_map: &HashMap<PathBuf, String>) ->
     let path = Path::new(file_path);
     
     // Check if this is an anchor file itself (file name without extension matches parent folder)
-    if let Some(file_stem) = path.file_stem() {
-        if let Some(parent) = path.parent() {
-            if let Some(parent_name) = parent.file_name() {
-                if file_stem == parent_name {
+    if crate::utils::is_anchor_file(path) {
+        if let Some(file_stem) = path.file_stem() {
+            if let Some(parent) = path.parent() {
+                if let Some(parent_name) = parent.file_name() {
                     // This is an anchor file - walk up to find its parent's patch
                     crate::utils::log(&format!("  📁 Found anchor file: {} in folder {}", 
                         file_stem.to_string_lossy(), parent_name.to_string_lossy()));
-                    
-                    // Start from the parent's parent to avoid self-reference
-                    if let Some(grandparent) = parent.parent() {
-                        let mut current = grandparent;
-                        loop {
-                            if let Ok(canonical) = current.canonicalize() {
-                                if let Some(patch) = folder_map.get(&canonical) {
-                                    crate::utils::log(&format!("  📍 Anchor '{}' -> parent folder '{}' -> patch '{}'",
-                                        file_stem.to_string_lossy(), current.display(), patch));
-                                    return Some(patch.clone());
-                                }
-                            }
-                            current = current.parent()?;
+                }
+            }
+        }
+        
+        if let Some(parent) = path.parent() {
+            // Start from the parent's parent to avoid self-reference
+            if let Some(grandparent) = parent.parent() {
+                let mut current = grandparent;
+                loop {
+                    if let Ok(canonical) = current.canonicalize() {
+                        if let Some(patch) = folder_map.get(&canonical) {
+                            let file_display = path.file_stem().map(|s| s.to_string_lossy()).unwrap_or_default();
+                            crate::utils::log(&format!("  📍 Anchor '{}' -> parent folder '{}' -> patch '{}'",
+                                file_display, current.display(), patch));
+                            return Some(patch.clone());
                         }
                     }
+                    current = current.parent()?;
                 }
             }
         }
@@ -1167,8 +1170,8 @@ pub fn run_patch_inference(
             continue;
         }
         
-        // Skip orphan anchor commands - they should always keep their "orphans" patch
-        if command.patch == "orphans" && command.flags.contains('A') {
+        // Skip system-generated orphan anchor commands - they should always keep their "orphans" patch
+        if command.patch == "orphans" && command.action == "anchor" && !command.flags.contains('U') {
             continue;
         }
         
@@ -1469,12 +1472,13 @@ pub(crate) fn create_orphan_anchors(
 /// This ensures every patch has at least one anchor command
 fn create_orphan_anchor_for_patch(patch_name: &str, _config: &Config) -> Option<Command> {
     // Create the orphan anchor command - no file path needed, just blank arg
+    // No flags needed - absence of 'U' flag indicates this is system-generated
     Some(Command {
         command: patch_name.to_string(),
         action: "anchor".to_string(),
         arg: String::new(), // NEW SYSTEM: Blank arg, no markdown file
         patch: "orphans".to_string(),
-        flags: "A".to_string(), // Add 'A' flag to mark as orphan anchor
+        flags: String::new(), // System-generated, so no flags needed
     })
 }
 
@@ -1765,19 +1769,6 @@ pub fn save_commands_to_file(commands: &[Command]) -> Result<(), Box<dyn std::er
     Ok(())
 }
 
-/// Adds a new command to the list and saves it
-pub fn add_command(new_command: Command, commands: &mut Vec<Command>) -> Result<(), Box<dyn std::error::Error>> {
-    commands.push(new_command);
-    save_commands_to_file(commands)?;
-    Ok(())
-}
-
-/// Deletes a command from the list and saves
-pub fn delete_command(command_to_delete: &str, commands: &mut Vec<Command>) -> Result<(), Box<dyn std::error::Error>> {
-    commands.retain(|cmd| cmd.command != command_to_delete);
-    save_commands_to_file(commands)?;
-    Ok(())
-}
 
 /// Filters commands based on search text with fuzzy matching and patch support
 pub(crate) fn filter_commands_with_patch_support(commands: &[Command], search_text: &str, max_results: usize, _word_separators: &str, debug: bool) -> Vec<Command> {
@@ -1790,7 +1781,7 @@ pub(crate) fn filter_commands_with_patch_support(commands: &[Command], search_te
     
     for cmd in commands {
         // First try normal command name matching
-        let name_match_result = command_matches_query_with_debug(&cmd.command, search_text, debug);
+        let name_match_result = crate::core::display::command_matches_query_with_debug(&cmd.command, search_text, debug);
         
         // Also try patch matching if this might be a patch name (short search text)
         let patch_match_result = if search_text.len() <= 3 {
@@ -1808,7 +1799,7 @@ pub(crate) fn filter_commands_with_patch_support(commands: &[Command], search_te
                     // Perfect patch match - include this command even if name doesn't match
                     0
                 } else {
-                    command_matches_query_with_debug(patch_name, search_text, debug)
+                    crate::core::display::command_matches_query_with_debug(patch_name, search_text, debug)
                 }
             } else {
                 -1
@@ -1903,7 +1894,7 @@ pub fn filter_commands(commands: &[Command], search_text: &str, max_results: usi
     
     for cmd in commands {
         // Use the core matching function to get match end position
-        let name_match_result = command_matches_query_with_debug(&cmd.command, search_text, debug);
+        let name_match_result = crate::core::display::command_matches_query_with_debug(&cmd.command, search_text, debug);
         
         // Also try patch matching for short searches that could be patch names
         let patch_match_result = if search_text.len() <= 3 {
@@ -1916,7 +1907,7 @@ pub fn filter_commands(commands: &[Command], search_text: &str, max_results: usi
                 if patch_name.eq_ignore_ascii_case(search_text) {
                     0 // Perfect patch match
                 } else {
-                    command_matches_query_with_debug(patch_name, search_text, debug)
+                    crate::core::display::command_matches_query_with_debug(patch_name, search_text, debug)
                 }
             } else {
                 -1
@@ -1977,71 +1968,6 @@ pub fn filter_commands(commands: &[Command], search_text: &str, max_results: usi
         .collect()
 }
 
-/// Core matching function that returns the index where the match ends
-/// Returns the position of the first unmatched character, or -1 if no match
-pub fn command_matches_query_with_debug(command: &str, query: &str, _debug: bool) -> i32 {
-    if query.is_empty() {
-        return command.len() as i32;
-    }
-    
-    let command_lower = command.to_lowercase();
-    let query_lower = query.to_lowercase();
-    let separators = " ._-";
-    
-    let cmd_chars: Vec<char> = command_lower.chars().collect();
-    let query_chars: Vec<char> = query_lower.chars().collect();
-    
-    let mut cmd_idx = 0;
-    let mut query_idx = 0;
-    let mut last_match_pos = 0;
-    
-    while cmd_idx < cmd_chars.len() && query_idx < query_chars.len() {
-        let cmd_char = cmd_chars[cmd_idx];
-        let query_char = query_chars[query_idx];
-        
-        if cmd_char == query_char {
-            // Characters match, advance both
-            cmd_idx += 1;
-            query_idx += 1;
-            last_match_pos = cmd_idx;
-        } else if separators.contains(cmd_char) {
-            // Skip separator in command
-            cmd_idx += 1;
-        } else if separators.contains(query_char) {
-            // Skip separator in query (handles "Book R" matching "Book To Read")
-            query_idx += 1;
-        } else {
-            // No match - try to find next word boundary in command
-            // This allows flexible matching across words
-            let mut found_separator = false;
-            while cmd_idx < cmd_chars.len() && !found_separator {
-                if separators.contains(cmd_chars[cmd_idx]) {
-                    found_separator = true;
-                    cmd_idx += 1; // Skip the separator
-                    break;
-                }
-                cmd_idx += 1;
-            }
-            
-            if !found_separator {
-                // No more word boundaries, no match
-                return -1;
-            }
-        }
-    }
-    
-    // If we matched all query characters, return the position
-    if query_idx == query_chars.len() {
-        last_match_pos as i32
-    } else {
-        -1
-    }
-}
-
-/// Simple boolean version of the matching function
-pub fn command_matches_query(command: &str, query: &str) -> bool {
-    command_matches_query_with_debug(command, query, false) >= 0
-}
 
 
 /// Merges similar commands based on word removal approach (backward compatibility)
@@ -2195,7 +2121,7 @@ fn is_valid_merge_candidate_by_position(candidate: &str, search_context: &str, s
     }
     
     // Find where the search context matches in the candidate using our core matching function
-    let match_end_pos = command_matches_query_with_debug(candidate, search_context, false);
+    let match_end_pos = crate::core::display::command_matches_query_with_debug(candidate, search_context, false);
     
     if match_end_pos < 0 {
         return false; // Search doesn't match this candidate
@@ -2223,348 +2149,9 @@ pub fn migrate_commands_to_new_format(commands: &mut [Command]) {
     }
 }
 
-#[cfg(test)]
-mod tests {
-    use super::*;
 
-    #[test]
-    fn test_parse_simple_command() {
-        let line = "test : action; arg";
-        let result = parse_command_line(line).unwrap();
-        
-        assert_eq!(result.command, "test");
-        assert_eq!(result.action, "action");
-        assert_eq!(result.arg, "arg");
-        assert_eq!(result.flags, "");
-        assert_eq!(result.patch, "");
-    }
 
-    #[test]
-    fn test_parse_command_with_patch() {
-        let line = "Patch! test command : action; argument here";
-        let result = parse_command_line(line).unwrap();
-        
-        assert_eq!(result.patch, "Patch");
-        assert_eq!(result.command, "test command");
-        assert_eq!(result.action, "action");
-        assert_eq!(result.arg, "argument here");
-        assert_eq!(result.flags, "");
-    }
 
-    #[test]
-    fn test_parse_command_with_flags() {
-        let line = "test : action flag1 flag2; argument";
-        let result = parse_command_line(line).unwrap();
-        
-        assert_eq!(result.command, "test");
-        assert_eq!(result.action, "action");
-        assert_eq!(result.flags, "flag1 flag2");
-        assert_eq!(result.arg, "argument");
-        assert_eq!(result.patch, "");
-    }
-
-    #[test]
-    fn test_parse_command_with_group_and_flags() {
-        let line = "Application! Chrome Test : chrome --incognito; https://example.com";
-        let result = parse_command_line(line).unwrap();
-        
-        assert_eq!(result.patch, "Application");
-        assert_eq!(result.command, "Chrome Test");
-        assert_eq!(result.action, "chrome");
-        assert_eq!(result.flags, "--incognito");
-        assert_eq!(result.arg, "https://example.com");
-    }
-
-    #[test]
-    fn test_parse_command_action_only() {
-        let line = "test : action;";
-        let result = parse_command_line(line).unwrap();
-        
-        assert_eq!(result.command, "test");
-        assert_eq!(result.action, "action");
-        assert_eq!(result.arg, "");
-        assert_eq!(result.flags, "");
-    }
-
-    #[test]
-    fn test_parse_command_with_flags_no_arg() {
-        let line = "test : action flag1 flag2;";
-        let result = parse_command_line(line).unwrap();
-        
-        assert_eq!(result.command, "test");
-        assert_eq!(result.action, "action");
-        assert_eq!(result.flags, "flag1 flag2");
-        assert_eq!(result.arg, "");
-    }
-
-    #[test]
-    fn test_parse_cmd_action_command() {
-        let line = "zzz : cmd; echo test";
-        let result = parse_command_line(line).unwrap();
-        
-        assert_eq!(result.command, "zzz");
-        assert_eq!(result.action, "cmd");
-        assert_eq!(result.arg, "echo test");
-        assert_eq!(result.flags, "");
-    }
-
-    #[test]
-    fn test_parse_complex_1pass_command() {
-        let line = "Application! Netflix 1Pass : 1pass --auto-fill; Netflix Account";
-        let result = parse_command_line(line).unwrap();
-        
-        assert_eq!(result.patch, "Application");
-        assert_eq!(result.command, "Netflix 1Pass");
-        assert_eq!(result.action, "1pass");
-        assert_eq!(result.flags, "--auto-fill");
-        assert_eq!(result.arg, "Netflix Account");
-    }
-
-    #[test]
-    fn test_format_generation_simple() {
-        let cmd = Command {
-            patch: String::new(),
-            command: "test".to_string(),
-            action: "action".to_string(),
-            arg: "argument".to_string(),
-            flags: String::new(),
-        };
-        
-        let formatted = cmd.to_new_format();
-        assert_eq!(formatted, "test : action; argument");
-    }
-
-    #[test]
-    fn test_format_generation_with_flags() {
-        let cmd = Command {
-            patch: String::new(),
-            command: "test".to_string(),
-            action: "action".to_string(),
-            arg: "argument".to_string(),
-            flags: "flag1 flag2".to_string(),
-        };
-        
-        let formatted = cmd.to_new_format();
-        assert_eq!(formatted, "test : action flag1 flag2; argument");
-    }
-
-    #[test]
-    fn test_format_generation_with_patch_and_flags() {
-        let cmd = Command {
-            patch: "Patch".to_string(),
-            command: "test command".to_string(),
-            action: "action".to_string(),
-            arg: "argument here".to_string(),
-            flags: "--flag".to_string(),
-        };
-        
-        let formatted = cmd.to_new_format();
-        assert_eq!(formatted, "Patch! test command : action --flag; argument here");
-    }
-
-    #[test]
-    fn test_roundtrip_parsing() {
-        let original = "Application! Test Command : chrome --incognito; https://example.com";
-        let parsed = parse_command_line(original).unwrap();
-        let reformatted = parsed.to_new_format();
-        let reparsed = parse_command_line(&reformatted).unwrap();
-        
-        assert_eq!(parsed.patch, reparsed.patch);
-        assert_eq!(parsed.command, reparsed.command);
-        assert_eq!(parsed.action, reparsed.action);
-        assert_eq!(parsed.flags, reparsed.flags);
-        assert_eq!(parsed.arg, reparsed.arg);
-    }
-
-    #[test]
-    fn test_filter_commands_sorting_exact_match_first() {
-        let commands = vec![
-            Command {
-                patch: String::new(),
-                command: "Web25".to_string(),
-                action: "action".to_string(),
-                arg: "arg".to_string(),
-                flags: String::new(),
-                },
-            Command {
-                patch: String::new(),
-                command: "web".to_string(),
-                action: "action".to_string(),
-                arg: "arg".to_string(),
-                flags: String::new(),
-                },
-            Command {
-                patch: String::new(),
-                command: "Webshare".to_string(),
-                action: "action".to_string(),
-                arg: "arg".to_string(),
-                flags: String::new(),
-                },
-        ];
-
-        let result = filter_commands(&commands, "web", 10, false);
-        
-        // Exact match "web" should come first
-        assert_eq!(result[0].command, "web");
-        assert_eq!(result[1].command, "Web25");
-        assert_eq!(result[2].command, "Webshare");
-    }
-
-    #[test]
-    fn test_filter_commands_sorting_word_count_before_alphabetical() {
-        let commands = vec![
-            Command {
-                patch: String::new(),
-                command: "test zebra final".to_string(), // 3 words, alphabetically first
-                action: "action".to_string(),
-                arg: "arg".to_string(),
-                flags: String::new(),
-                },
-            Command {
-                patch: String::new(),
-                command: "test apple".to_string(), // 2 words, alphabetically second
-                action: "action".to_string(),
-                arg: "arg".to_string(),
-                flags: String::new(),
-                },
-            Command {
-                patch: String::new(),
-                command: "testZ".to_string(), // 1 word, alphabetically last
-                action: "action".to_string(),
-                arg: "arg".to_string(),
-                flags: String::new(),
-                },
-        ];
-
-        let result = filter_commands(&commands, "test", 10, false);
-        
-        // Should be sorted by word count first (fewer words first), then alphabetical
-        assert_eq!(result[0].command, "testZ");         // 1 word comes first
-        assert_eq!(result[1].command, "test apple");    // 2 words comes second  
-        assert_eq!(result[2].command, "test zebra final"); // 3 words comes last
-    }
-
-    #[test]
-    fn test_filter_commands_sorting_alphabetical_within_same_word_count() {
-        let commands = vec![
-            Command {
-                patch: String::new(),
-                command: "test zebra".to_string(),
-                action: "action".to_string(),
-                arg: "arg".to_string(),
-                flags: String::new(),
-                },
-            Command {
-                patch: String::new(),
-                command: "test apple".to_string(),
-                action: "action".to_string(),
-                arg: "arg".to_string(),
-                flags: String::new(),
-                },
-            Command {
-                patch: String::new(),
-                command: "test banana".to_string(),
-                action: "action".to_string(),
-                arg: "arg".to_string(),
-                flags: String::new(),
-                },
-        ];
-
-        let result = filter_commands(&commands, "test", 10, false);
-        
-        // All have same word count, should be sorted alphabetically
-        assert_eq!(result[0].command, "test apple");
-        assert_eq!(result[1].command, "test banana");
-        assert_eq!(result[2].command, "test zebra");
-    }
-
-    #[test]
-    fn test_filter_commands_sorting_match_position_priority() {
-        let commands = vec![
-            Command {
-                patch: String::new(),
-                command: "some test here".to_string(), // "test" matches at position 5
-                action: "action".to_string(),
-                arg: "arg".to_string(),
-                flags: String::new(),
-                },
-            Command {
-                patch: String::new(),
-                command: "test something".to_string(), // "test" matches at position 0
-                action: "action".to_string(),
-                arg: "arg".to_string(),
-                flags: String::new(),
-                },
-        ];
-
-        let result = filter_commands(&commands, "test", 10, false);
-        
-        // Earlier match position should come first
-        assert_eq!(result[0].command, "test something"); // match at position 0
-        assert_eq!(result[1].command, "some test here"); // match at position 5
-    }
-
-    #[test]
-    fn test_filter_commands_comprehensive_sorting() {
-        let commands = vec![
-            Command {
-                patch: String::new(),
-                command: "Web App Store".to_string(), // 3 words, partial match
-                action: "action".to_string(),
-                arg: "arg".to_string(),
-                flags: String::new(),
-                },
-            Command {
-                patch: String::new(),
-                command: "WebZ".to_string(), // 1 word, partial match
-                action: "action".to_string(),
-                arg: "arg".to_string(),
-                flags: String::new(),
-                },
-            Command {
-                patch: String::new(),
-                command: "web".to_string(), // exact match
-                action: "action".to_string(),
-                arg: "arg".to_string(),
-                flags: String::new(),
-                },
-            Command {
-                patch: String::new(),
-                command: "Web Browser".to_string(), // 2 words, partial match
-                action: "action".to_string(),
-                arg: "arg".to_string(),
-                flags: String::new(),
-                },
-        ];
-
-        let result = filter_commands(&commands, "web", 10, false);
-        
-        // Expected order:
-        // 1. Exact match first: "web"
-        // 2. Then by word count: 1-word "WebZ", 2-word "Web Browser", 3-word "Web App Store"
-        assert_eq!(result[0].command, "web");           // exact match
-        assert_eq!(result[1].command, "WebZ");          // 1 word
-        assert_eq!(result[2].command, "Web Browser");   // 2 words
-        assert_eq!(result[3].command, "Web App Store"); // 3 words
-    }
-}
-
-// Include merge tests module
-// #[path = "commands_merge_tests.rs"]
-// #[cfg(test)]
-// mod merge_tests;
-
-// ============================================================================
-// Orphan Processing
-// Simplified: Just create anchor commands for missing patches
-// ============================================================================
-
-// All orphan merging functions have been removed and archived to old/old_orphan_processing.rs
-// The new system simply creates anchor commands for patches without anchors
-// Orphan processing is now handled directly in scanner.rs by creating
-// anchor commands with 'orphans' as parent for any missing patches
-
-/* REMOVED - Old orphan merging code archived to old/old_orphan_processing.rs
 
 pub(crate) fn find_orphan_folder_merges(
     orphans_path: &Path,
@@ -2912,312 +2499,337 @@ fn cleanup_empty_folder(folder: &Path) -> Result<(), String> {
     
     Ok(())
 }
-*/ // END REMOVED orphan merging code
 
-/// Rename associated data when a command name is changed
-/// 
-/// This function handles renaming of associated files, folders, patches, and prefixes
-/// when a command name is edited in the command editor.
-/// 
-/// Algorithm:
-/// 1. Document Renaming (rename_doc flag): Renames physical document files that match the command name
-/// 2. Folder Renaming (rename_folder flag): Renames folders for anchor commands where folder matches command name  
-/// 3. Patch Renaming (rename_patch flag): Updates patch names and all commands referencing that patch
-/// 4. Prefix Renaming (rename_prefix flag): Updates command names that have the old name as a prefix
-/// 
-/// Parameters:
-/// - dry_run: If true, only returns descriptions of what would be done without making changes
-/// 
-/// Returns: Tuple of (updated_arg, list of action descriptions)
-pub fn rename_associated_data(
-    old_name: &str,
-    new_name: &str,
-    current_arg: &str,
-    action: &str,
-    commands: &mut [Command],
-    patches: &mut HashMap<String, Patch>,
-    config: &Config,
-    dry_run: bool,
-) -> Result<(String, Vec<String>), Box<dyn std::error::Error>> {
-    use std::fs;
-    use std::path::Path;
-    use std::path::PathBuf;
-    
-    let mut updated_arg = current_arg.to_string();
-    let mut actions = Vec::new();
-    
-    // Helper to normalize names for comparison (lowercase, remove spaces)
-    let normalize_for_match = |s: &str| -> String {
-        s.to_lowercase().replace(' ', "").replace('_', "").replace('-', "")
-    };
-    
-    // 1. Document Renaming
-    if config.popup_settings.rename_doc.unwrap_or(false) {
-        // Check if this is a document action
-        if matches!(action, "markdown" | "text" | "doc" | "anchor") {
-            let path = Path::new(current_arg);
-            if path.exists() && path.is_file() {
-                // Check if the file basename matches the old command name
-                if let Some(file_stem) = path.file_stem() {
-                    if let Some(file_stem_str) = file_stem.to_str() {
-                        if normalize_for_match(file_stem_str) == normalize_for_match(old_name) {
-                            // Build new file path with new name
-                            let extension = path.extension().unwrap_or_default();
-                            let new_file_name = if extension.is_empty() {
-                                new_name.to_string()
-                            } else {
-                                format!("{}.{}", new_name, extension.to_str().unwrap())
-                            };
-                            
-                            let new_path = path.parent()
-                                .map(|p| p.join(&new_file_name))
-                                .unwrap_or_else(|| PathBuf::from(new_file_name));
-                            
-                            // Rename the file
-                            if !new_path.exists() {
-                                let file_name = path.file_name().unwrap().to_string_lossy();
-                                let new_file = new_path.file_name().unwrap().to_string_lossy();
-                                actions.push(format!("Rename file: {} → {}", file_name, new_file));
-                                
-                                if !dry_run {
-                                    crate::utils::log(&format!("RENAME: Renaming document {} -> {}", 
-                                        path.display(), new_path.display()));
-                                    fs::rename(path, &new_path)?;
-                                    updated_arg = new_path.to_string_lossy().to_string();
-                                }
-                            } else if dry_run {
-                                actions.push(format!("WARNING: Cannot rename file (target exists): {}", 
-                                    new_path.file_name().unwrap().to_string_lossy()));
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-    
-    // 2. Folder Renaming (for anchor commands)
-    if config.popup_settings.rename_folder.unwrap_or(false) && action == "anchor" {
-        let path = Path::new(&updated_arg);
+
+
+
+
+
+
+
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_parse_simple_command() {
+        let line = "test : action; arg";
+        let result = parse_command_line(line).unwrap();
         
-        // For anchor files, check if folder name matches old command name
-        if let Some(parent) = path.parent() {
-            if let Some(folder_name) = parent.file_name() {
-                if let Some(folder_name_str) = folder_name.to_str() {
-                    if normalize_for_match(folder_name_str) == normalize_for_match(old_name) {
-                        // Build new folder path
-                        let new_folder_path = parent.parent()
-                            .map(|p| p.join(new_name))
-                            .unwrap_or_else(|| PathBuf::from(new_name));
-                        
-                        if !new_folder_path.exists() && parent.exists() {
-                            // Add action descriptions
-                            actions.push(format!("Rename folder: {} → {}", 
-                                folder_name_str, new_name));
-                            actions.push(format!("Update anchor command: {} → {}", 
-                                folder_name_str, new_name));
-                            
-                            // Perform rename if not dry run
-                            if !dry_run {
-                                crate::utils::log(&format!("RENAME: Renaming folder {} -> {}", 
-                                    parent.display(), new_folder_path.display()));
-                                fs::rename(parent, &new_folder_path)?;
-                                
-                                // Update the arg to point to the new location
-                                // Rebuild the file path within the renamed folder
-                                if let Some(file_name) = path.file_name() {
-                                    // Also rename the anchor file itself to match
-                                    let new_anchor_file = format!("{}.md", new_name);
-                                    let new_full_path = new_folder_path.join(&new_anchor_file);
-                                    let old_file_in_new_folder = new_folder_path.join(file_name);
-                                    
-                                    // Rename the anchor file to match the folder
-                                    if old_file_in_new_folder.exists() && !new_full_path.exists() {
-                                        fs::rename(&old_file_in_new_folder, &new_full_path)?;
-                                        updated_arg = new_full_path.to_string_lossy().to_string();
-                                    } else {
-                                        updated_arg = old_file_in_new_folder.to_string_lossy().to_string();
-                                    }
-                                }
-                            }
-                        } else if new_folder_path.exists() && dry_run {
-                            actions.push(format!("WARNING: Cannot rename folder (target exists): {}", new_name));
-                        }
-                    }
-                }
-            }
-        }
+        assert_eq!(result.command, "test");
+        assert_eq!(result.action, "action");
+        assert_eq!(result.arg, "arg");
+        assert_eq!(result.flags, "");
+        assert_eq!(result.patch, "");
     }
-    
-    // 3. Patch Renaming
-    if config.popup_settings.rename_patch.unwrap_or(false) {
-        // Check if there's a patch with the old name
-        let old_name_lower = old_name.to_lowercase();
-        if patches.contains_key(&old_name_lower) {
-            // Count affected commands
-            let mut affected_commands = Vec::new();
-            for cmd in commands.iter() {
-                if cmd.patch.to_lowercase() == old_name_lower ||
-                   cmd.patch.to_lowercase().starts_with(&format!("{}!", old_name_lower)) {
-                    affected_commands.push(cmd.command.clone());
-                }
-            }
-            
-            if !affected_commands.is_empty() {
-                // Add action description with complete command listing
-                let mut action_desc = format!("Update patch from {} to {} for the following commands:", old_name, new_name);
-                
-                // Add all affected commands, 4 spaces indented, wrapping lines as needed
-                let mut current_line = String::from("    ");
-                for (i, cmd) in affected_commands.iter().enumerate() {
-                    let cmd_text = if i == affected_commands.len() - 1 {
-                        cmd.clone() // Last command, no comma
-                    } else {
-                        format!("{}, ", cmd) // Add comma and space
-                    };
-                    
-                    // Check if adding this command would make the line too long (>70 chars)
-                    if current_line.len() + cmd_text.len() > 70 && current_line.len() > 4 {
-                        // Add the current line and start a new one
-                        action_desc.push('\n');
-                        action_desc.push_str(&current_line);
-                        current_line = format!("    {}", cmd_text);
-                    } else {
-                        current_line.push_str(&cmd_text);
-                    }
-                }
-                
-                // Add the final line if it has content
-                if current_line.len() > 4 {
-                    action_desc.push('\n');
-                    action_desc.push_str(&current_line);
-                }
-                
-                actions.push(action_desc);
-                
-                // Perform update if not dry run
-                if !dry_run {
-                    crate::utils::log(&format!("RENAME: Renaming patch '{}' -> '{}'", old_name, new_name));
-                    
-                    // Update the patch in the patches map
-                    if let Some(mut patch) = patches.remove(&old_name_lower) {
-                        patch.name = new_name.to_string();
-                        patches.insert(new_name.to_lowercase(), patch);
-                    }
-                    
-                    // Update all commands that have this patch
-                    for cmd in commands.iter_mut() {
-                        if cmd.patch.to_lowercase() == old_name_lower {
-                            cmd.patch = new_name.to_string();
-                            cmd.update_full_line();
-                        } else if cmd.patch.to_lowercase().starts_with(&format!("{}!", old_name_lower)) {
-                            cmd.patch = format!("{}!", new_name);
-                            cmd.update_full_line();
-                        }
-                    }
-                    crate::utils::log(&format!("RENAME: Updated {} commands with new patch name", 
-                        affected_commands.len()));
-                }
-            }
-        }
-    }
-    
-    // 4. Prefix Renaming  
-    if config.popup_settings.rename_prefix.unwrap_or(false) {
-        let separators = &config.popup_settings.word_separators;
+
+    #[test]
+    fn test_parse_command_with_patch() {
+        let line = "Patch! test command : action; argument here";
+        let result = parse_command_line(line).unwrap();
         
-        // Find affected commands
-        let mut affected_commands = Vec::new();
-        for cmd in commands.iter() {
-            // Skip the command being renamed
-            if cmd.command == old_name {
-                continue;
-            }
-            
-            // Check if this command starts with old_name followed by a separator
-            let old_name_chars: Vec<char> = old_name.chars().collect();
-            let cmd_chars: Vec<char> = cmd.command.chars().collect();
-            
-            if cmd_chars.len() > old_name_chars.len() {
-                // Extract prefix characters
-                let prefix_chars: String = cmd_chars[..old_name_chars.len()].iter().collect();
-                let next_char = cmd_chars[old_name_chars.len()];
-                
-                // Check if prefix matches (case-insensitive) and next char is a separator
-                if prefix_chars.to_lowercase() == old_name.to_lowercase() && 
-                   separators.contains(next_char) {
-                    affected_commands.push(cmd.command.clone());
-                }
-            }
-        }
-        
-        if !affected_commands.is_empty() {
-            // Add action description with complete command listing
-            let mut action_desc = format!("Update prefix from {} to {} for the following commands:", old_name, new_name);
-            
-            // Add all affected commands, 4 spaces indented, wrapping lines as needed
-            let mut current_line = String::from("    ");
-            for (i, cmd) in affected_commands.iter().enumerate() {
-                let cmd_text = if i == affected_commands.len() - 1 {
-                    cmd.clone() // Last command, no comma
-                } else {
-                    format!("{}, ", cmd) // Add comma and space
-                };
-                
-                // Check if adding this command would make the line too long (>80 chars)
-                if current_line.len() + cmd_text.len() > 80 && current_line.len() > 4 {
-                    // Add the current line and start a new one
-                    action_desc.push('\n');
-                    action_desc.push_str(&current_line);
-                    current_line = format!("    {}", cmd_text);
-                } else {
-                    current_line.push_str(&cmd_text);
-                }
-            }
-            
-            // Add the final line if it has content
-            if current_line.len() > 4 {
-                action_desc.push('\n');
-                action_desc.push_str(&current_line);
-            }
-            
-            actions.push(action_desc);
-            
-            // Perform update if not dry run
-            if !dry_run {
-                for cmd in commands.iter_mut() {
-                    // Skip the command being renamed
-                    if cmd.command == old_name {
-                        continue;
-                    }
-                    
-                    // Check if this command starts with old_name followed by a separator
-                    let old_name_chars: Vec<char> = old_name.chars().collect();
-                    let cmd_chars: Vec<char> = cmd.command.chars().collect();
-                    
-                    if cmd_chars.len() > old_name_chars.len() {
-                        // Extract prefix characters
-                        let prefix_chars: String = cmd_chars[..old_name_chars.len()].iter().collect();
-                        let next_char = cmd_chars[old_name_chars.len()];
-                        
-                        // Check if prefix matches (case-insensitive) and next char is a separator
-                        if prefix_chars.to_lowercase() == old_name.to_lowercase() && 
-                           separators.contains(next_char) {
-                            // Replace the prefix with the new name
-                            let remainder_chars: String = cmd_chars[old_name_chars.len()..].iter().collect();
-                            let old_cmd_name = cmd.command.clone();
-                            cmd.command = format!("{}{}", new_name, remainder_chars);
-                            cmd.update_full_line();
-                            crate::utils::log(&format!("RENAME: Updated prefix '{}' -> '{}'", 
-                                old_cmd_name, cmd.command));
-                        }
-                    }
-                }
-                crate::utils::log(&format!("RENAME: Updated {} commands with new prefix", 
-                    affected_commands.len()));
-            }
-        }
+        assert_eq!(result.patch, "Patch");
+        assert_eq!(result.command, "test command");
+        assert_eq!(result.action, "action");
+        assert_eq!(result.arg, "argument here");
+        assert_eq!(result.flags, "");
     }
-    
-    Ok((updated_arg, actions))
+
+    #[test]
+    fn test_parse_command_with_flags() {
+        let line = "test : action flag1 flag2; argument";
+        let result = parse_command_line(line).unwrap();
+        
+        assert_eq!(result.command, "test");
+        assert_eq!(result.action, "action");
+        assert_eq!(result.flags, "flag1 flag2");
+        assert_eq!(result.arg, "argument");
+        assert_eq!(result.patch, "");
+    }
+
+    #[test]
+    fn test_parse_command_with_group_and_flags() {
+        let line = "Application! Chrome Test : chrome --incognito; https://example.com";
+        let result = parse_command_line(line).unwrap();
+        
+        assert_eq!(result.patch, "Application");
+        assert_eq!(result.command, "Chrome Test");
+        assert_eq!(result.action, "chrome");
+        assert_eq!(result.flags, "--incognito");
+        assert_eq!(result.arg, "https://example.com");
+    }
+
+    #[test]
+    fn test_parse_command_action_only() {
+        let line = "test : action;";
+        let result = parse_command_line(line).unwrap();
+        
+        assert_eq!(result.command, "test");
+        assert_eq!(result.action, "action");
+        assert_eq!(result.arg, "");
+        assert_eq!(result.flags, "");
+    }
+
+    #[test]
+    fn test_parse_command_with_flags_no_arg() {
+        let line = "test : action flag1 flag2;";
+        let result = parse_command_line(line).unwrap();
+        
+        assert_eq!(result.command, "test");
+        assert_eq!(result.action, "action");
+        assert_eq!(result.flags, "flag1 flag2");
+        assert_eq!(result.arg, "");
+    }
+
+    #[test]
+    fn test_parse_cmd_action_command() {
+        let line = "zzz : cmd; echo test";
+        let result = parse_command_line(line).unwrap();
+        
+        assert_eq!(result.command, "zzz");
+        assert_eq!(result.action, "cmd");
+        assert_eq!(result.arg, "echo test");
+        assert_eq!(result.flags, "");
+    }
+
+    #[test]
+    fn test_parse_complex_1pass_command() {
+        let line = "Application! Netflix 1Pass : 1pass --auto-fill; Netflix Account";
+        let result = parse_command_line(line).unwrap();
+        
+        assert_eq!(result.patch, "Application");
+        assert_eq!(result.command, "Netflix 1Pass");
+        assert_eq!(result.action, "1pass");
+        assert_eq!(result.flags, "--auto-fill");
+        assert_eq!(result.arg, "Netflix Account");
+    }
+
+    #[test]
+    fn test_format_generation_simple() {
+        let cmd = Command {
+            patch: String::new(),
+            command: "test".to_string(),
+            action: "action".to_string(),
+            arg: "argument".to_string(),
+            flags: String::new(),
+        };
+        
+        let formatted = cmd.to_new_format();
+        assert_eq!(formatted, "test : action; argument");
+    }
+
+    #[test]
+    fn test_format_generation_with_flags() {
+        let cmd = Command {
+            patch: String::new(),
+            command: "test".to_string(),
+            action: "action".to_string(),
+            arg: "argument".to_string(),
+            flags: "flag1 flag2".to_string(),
+        };
+        
+        let formatted = cmd.to_new_format();
+        assert_eq!(formatted, "test : action flag1 flag2; argument");
+    }
+
+    #[test]
+    fn test_format_generation_with_patch_and_flags() {
+        let cmd = Command {
+            patch: "Patch".to_string(),
+            command: "test command".to_string(),
+            action: "action".to_string(),
+            arg: "argument here".to_string(),
+            flags: "--flag".to_string(),
+        };
+        
+        let formatted = cmd.to_new_format();
+        assert_eq!(formatted, "Patch! test command : action --flag; argument here");
+    }
+
+    #[test]
+    fn test_roundtrip_parsing() {
+        let original = "Application! Test Command : chrome --incognito; https://example.com";
+        let parsed = parse_command_line(original).unwrap();
+        let reformatted = parsed.to_new_format();
+        let reparsed = parse_command_line(&reformatted).unwrap();
+        
+        assert_eq!(parsed.patch, reparsed.patch);
+        assert_eq!(parsed.command, reparsed.command);
+        assert_eq!(parsed.action, reparsed.action);
+        assert_eq!(parsed.flags, reparsed.flags);
+        assert_eq!(parsed.arg, reparsed.arg);
+    }
+
+    #[test]
+    fn test_filter_commands_sorting_exact_match_first() {
+        let commands = vec![
+            Command {
+                patch: String::new(),
+                command: "Web25".to_string(),
+                action: "action".to_string(),
+                arg: "arg".to_string(),
+                flags: String::new(),
+                },
+            Command {
+                patch: String::new(),
+                command: "web".to_string(),
+                action: "action".to_string(),
+                arg: "arg".to_string(),
+                flags: String::new(),
+                },
+            Command {
+                patch: String::new(),
+                command: "Webshare".to_string(),
+                action: "action".to_string(),
+                arg: "arg".to_string(),
+                flags: String::new(),
+                },
+        ];
+
+        let result = filter_commands(&commands, "web", 10, false);
+        
+        // Exact match "web" should come first
+        assert_eq!(result[0].command, "web");
+        assert_eq!(result[1].command, "Web25");
+        assert_eq!(result[2].command, "Webshare");
+    }
+
+    #[test]
+    fn test_filter_commands_sorting_word_count_before_alphabetical() {
+        let commands = vec![
+            Command {
+                patch: String::new(),
+                command: "test zebra final".to_string(), // 3 words, alphabetically first
+                action: "action".to_string(),
+                arg: "arg".to_string(),
+                flags: String::new(),
+                },
+            Command {
+                patch: String::new(),
+                command: "test apple".to_string(), // 2 words, alphabetically second
+                action: "action".to_string(),
+                arg: "arg".to_string(),
+                flags: String::new(),
+                },
+            Command {
+                patch: String::new(),
+                command: "testZ".to_string(), // 1 word, alphabetically last
+                action: "action".to_string(),
+                arg: "arg".to_string(),
+                flags: String::new(),
+                },
+        ];
+
+        let result = filter_commands(&commands, "test", 10, false);
+        
+        // Should be sorted by word count first (fewer words first), then alphabetical
+        assert_eq!(result[0].command, "testZ");         // 1 word comes first
+        assert_eq!(result[1].command, "test apple");    // 2 words comes second  
+        assert_eq!(result[2].command, "test zebra final"); // 3 words comes last
+    }
+
+    #[test]
+    fn test_filter_commands_sorting_alphabetical_within_same_word_count() {
+        let commands = vec![
+            Command {
+                patch: String::new(),
+                command: "test zebra".to_string(),
+                action: "action".to_string(),
+                arg: "arg".to_string(),
+                flags: String::new(),
+                },
+            Command {
+                patch: String::new(),
+                command: "test apple".to_string(),
+                action: "action".to_string(),
+                arg: "arg".to_string(),
+                flags: String::new(),
+                },
+            Command {
+                patch: String::new(),
+                command: "test banana".to_string(),
+                action: "action".to_string(),
+                arg: "arg".to_string(),
+                flags: String::new(),
+                },
+        ];
+
+        let result = filter_commands(&commands, "test", 10, false);
+        
+        // All have same word count, should be sorted alphabetically
+        assert_eq!(result[0].command, "test apple");
+        assert_eq!(result[1].command, "test banana");
+        assert_eq!(result[2].command, "test zebra");
+    }
+
+    #[test]
+    fn test_filter_commands_sorting_match_position_priority() {
+        let commands = vec![
+            Command {
+                patch: String::new(),
+                command: "some test here".to_string(), // "test" matches at position 5
+                action: "action".to_string(),
+                arg: "arg".to_string(),
+                flags: String::new(),
+                },
+            Command {
+                patch: String::new(),
+                command: "test something".to_string(), // "test" matches at position 0
+                action: "action".to_string(),
+                arg: "arg".to_string(),
+                flags: String::new(),
+                },
+        ];
+
+        let result = filter_commands(&commands, "test", 10, false);
+        
+        // Earlier match position should come first
+        assert_eq!(result[0].command, "test something"); // match at position 0
+        assert_eq!(result[1].command, "some test here"); // match at position 5
+    }
+
+    #[test]
+    fn test_filter_commands_comprehensive_sorting() {
+        let commands = vec![
+            Command {
+                patch: String::new(),
+                command: "Web App Store".to_string(), // 3 words, partial match
+                action: "action".to_string(),
+                arg: "arg".to_string(),
+                flags: String::new(),
+                },
+            Command {
+                patch: String::new(),
+                command: "WebZ".to_string(), // 1 word, partial match
+                action: "action".to_string(),
+                arg: "arg".to_string(),
+                flags: String::new(),
+                },
+            Command {
+                patch: String::new(),
+                command: "web".to_string(), // exact match
+                action: "action".to_string(),
+                arg: "arg".to_string(),
+                flags: String::new(),
+                },
+            Command {
+                patch: String::new(),
+                command: "Web Browser".to_string(), // 2 words, partial match
+                action: "action".to_string(),
+                arg: "arg".to_string(),
+                flags: String::new(),
+                },
+        ];
+
+        let result = filter_commands(&commands, "web", 10, false);
+        
+        // Expected order:
+        // 1. Exact match first: "web"
+        // 2. Then by word count: 1-word "WebZ", 2-word "Web Browser", 3-word "Web App Store"
+        assert_eq!(result[0].command, "web");           // exact match
+        assert_eq!(result[1].command, "WebZ");          // 1 word
+        assert_eq!(result[2].command, "Web Browser");   // 2 words
+        assert_eq!(result[3].command, "Web App Store"); // 3 words
+    }
 }

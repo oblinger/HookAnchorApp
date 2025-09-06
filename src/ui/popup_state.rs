@@ -79,9 +79,24 @@ impl PopupState {
     /// Update search text and recompute filtered commands
     pub fn update_search(&mut self, new_search: String) {
         self.search_text = new_search;
-        self.recompute_filtered_commands();
+        let was_reloaded = self.recompute_filtered_commands();
         self.update_display_layout();
         self.selection.reset(&self.display_layout);
+        
+        if was_reloaded {
+            crate::utils::detailed_log("POPUP_REFRESH", "Commands were reloaded - display fully refreshed");
+        }
+    }
+    
+    /// Check if commands were modified and refresh if needed
+    pub fn check_for_reload(&mut self) -> bool {
+        let was_reloaded = self.recompute_filtered_commands();
+        if was_reloaded {
+            self.update_display_layout();
+            self.selection.reset(&self.display_layout);
+            crate::utils::detailed_log("POPUP_REFRESH", "Commands were reloaded - display refreshed");
+        }
+        was_reloaded
     }
     
     /// Navigate selection in the given direction
@@ -146,10 +161,13 @@ impl PopupState {
     }
     
     /// Recompute filtered commands based on current search using new approach
-    fn recompute_filtered_commands(&mut self) {
+    fn recompute_filtered_commands(&mut self) -> bool {
         use crate::core::get_new_display_commands;
         
-        let sys_data = crate::core::sys_data::get_sys_data();
+        let (sys_data, was_reloaded) = crate::core::sys_data::get_sys_data();
+        if was_reloaded {
+            crate::utils::detailed_log("POPUP_REFRESH", "Commands were reloaded - rebuilding search results");
+        }
         let (display_commands, is_submenu, submenu_info, submenu_count) = 
             get_new_display_commands(&self.search_text, &sys_data.commands, &sys_data.patches);
         
@@ -164,6 +182,9 @@ impl PopupState {
         self.is_in_submenu = is_submenu;
         self.submenu_info = submenu_info;
         self.submenu_count = submenu_count;
+        
+        // Return whether we reloaded
+        was_reloaded
     }
     
     /// Update display layout based on current filtered commands

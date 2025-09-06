@@ -126,7 +126,7 @@ fn handle_hook_url(url: &str) {
     // Client environment logging is now handled automatically in execute_command based on action type
     
     // Use the same logic as -x command
-    let sys_data = crate::core::sys_data::get_sys_data();
+    let (sys_data, _) = crate::core::sys_data::get_sys_data();
     let (display_commands, _, _, _) = crate::core::get_new_display_commands(&decoded_query, &sys_data.commands, &sys_data.patches);
     let filtered = display_commands.into_iter().take(1).collect::<Vec<_>>();
     
@@ -157,7 +157,7 @@ fn run_match_command(args: &[String]) {
     let query = &args[2];
     let debug = args.len() > 3 && args[3] == "debug";
     
-    let sys_data = crate::core::sys_data::get_sys_data();
+    let (sys_data, _) = crate::core::sys_data::get_sys_data();
     let filtered = if debug {
         filter_commands(&sys_data.commands, query, 10, debug)  // Keep debug mode using original function
     } else {
@@ -188,7 +188,7 @@ fn run_exec_command(args: &[String]) {
     print(&format!("Executing command function: {}", command));
     
     // Load system data to find the actual command
-    let sys_data = crate::core::sys_data::get_sys_data();
+    let (sys_data, _) = crate::core::sys_data::get_sys_data();
     
     // Find the command by name (case-insensitive)
     let matching_cmd = sys_data.commands.iter()
@@ -220,7 +220,7 @@ fn run_execute_top_match(args: &[String]) {
     
     // Client environment logging is now handled automatically in execute_command based on action type
     
-    let sys_data = crate::core::sys_data::get_sys_data();
+    let (sys_data, _) = crate::core::sys_data::get_sys_data();
     let (display_commands, _, _, _) = crate::core::get_new_display_commands(query, &sys_data.commands, &sys_data.patches);
     let filtered = display_commands.into_iter().take(1).collect::<Vec<_>>();
     
@@ -420,7 +420,7 @@ fn run_folder_command(args: &[String]) {
     }
     
     let query = &args[2];
-    let sys_data = crate::core::sys_data::get_sys_data();
+    let (sys_data, _) = crate::core::sys_data::get_sys_data();
     
     // Helper function to extract folder path from a command
     let extract_folder_path = |command: &crate::core::Command| -> Option<String> {
@@ -516,7 +516,7 @@ fn run_folder_with_commands(args: &[String]) {
     }
     
     let query = &args[2];
-    let sys_data = crate::core::sys_data::get_sys_data();
+    let (sys_data, _) = crate::core::sys_data::get_sys_data();
     
     // Helper function to extract folder path from a command
     let extract_folder_path = |command: &crate::core::Command| -> Option<String> {
