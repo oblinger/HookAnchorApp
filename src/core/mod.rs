@@ -56,7 +56,7 @@ pub use commands::{
     save_commands_to_file, add_command, delete_command, parse_command_line,
     
     // Query and filtering
-    filter_commands, get_display_commands, get_display_commands_with_options,
+    filter_commands, 
     merge_similar_commands, merge_similar_commands_with_context,
     
     // Patch management
@@ -97,7 +97,8 @@ pub use display::{
     // Core filtering functions
     command_matches_query, command_matches_query_with_debug,
     
-    // Submenu and navigation functions
-    get_current_submenu_prefix, get_current_submenu_prefix_from_commands,
-    split_commands, get_command_prefix, build_submenu, get_new_display_commands,
+    // Main display function
+    get_new_display_commands,
+    // Helper functions
+    get_command_prefix,
 };

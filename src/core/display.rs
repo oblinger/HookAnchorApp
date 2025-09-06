@@ -2,41 +2,51 @@
 //!
 //! ## Display Logic Overview
 //!
-//! The display system uses a forward-thinking approach that first determines if there's a submenu,
-//! then constructs the appropriate display. This is implemented in two main phases:
+//! The display system uses a two-phase approach that first determines if there's a submenu,
+//! then constructs the appropriate display with sophisticated matching.
 //!
 //! ### Phase 1: Submenu Detection (`build_submenu`)
-//! 1. **Backward Scanning**: Starting with the full input string (e.g., "FBAA"), scan backwards
-//!    character by character: "FBAA" → "FBA" → "FB" → "F"
+//! 1. **Backward Scanning**: Starting with the full input string (e.g., "FBO"), scan backwards
+//!    character by character: "FBO" → "FB" → "F"
 //! 2. **Command Matching**: For each substring, look for exact command matches (case-insensitive)
 //! 3. **Alias Resolution**: Use `resolve_alias()` on each match to get the final target command
+//!    - Example: "fb" command with action "alias" resolves to "Fireball" anchor
 //! 4. **Anchor Detection**: Stop at the first resolved command that is an anchor
-//! 5. **Return Data**: (submenu_commands, original_command, resolved_command)
-//!    - `submenu_commands`: All commands that belong in this anchor's submenu
-//!    - `original_command`: The matched alias (e.g., "FB") - used for prefix index calculation
-//!    - `resolved_command`: The final anchor (e.g., "Facebook") - used for breadcrumbs
+//! 5. **Filter Calculation**: Extract remaining characters for submenu filtering
+//!    - Example: "FBO" with "FB" match → remaining_chars = "O"
+//! 6. **Return Data**: (submenu_commands, original_command, resolved_command)
+//!    - `submenu_commands`: Commands filtered by remaining characters
+//!    - `original_command`: The matched command (e.g., "fb" alias)
+//!    - `resolved_command`: The final anchor (e.g., "Fireball")
 //!
 //! ### Phase 2: Display Construction (`get_new_display_commands`)
 //! 1. **Submenu Case**: If build_submenu finds an anchor:
-//!    - Get all commands with simple prefix matching on the original input
-//!    - Remove submenu commands from prefix commands to avoid duplicates  
-//!    - Combine: [submenu_commands] + [separator] + [remaining_prefix_commands]
-//! 2. **No Submenu Case**: Simple substring matching and relevance sorting
+//!    - Use sophisticated matching (`filter_commands_with_patch_support`) for all commands
+//!    - Remove submenu commands from the results to avoid duplicates
+//!    - Sort remaining commands by relevance (exact → prefix → substring)
+//!    - Combine: [submenu_commands] + [separator] + [remaining_commands]
+//! 2. **No Submenu Case**: Use sophisticated matching with relevance sorting
 //!
-//! ### Key Benefits
-//! - **Correct prefix trimming**: Uses original command length (FB=2) not resolved (Facebook=8)
-//! - **Accurate breadcrumbs**: Uses resolved command for patch hierarchy traversal
-//! - **Complete submenu content**: Includes prefix matches, patch matches, and include logic
-//! - **No duplicate commands**: Clean separation between submenu and non-submenu sections
+//! ### Submenu Building (`build_submenu_commands`)
+//! 1. **Prefix Matching**: Find commands where prefix matches anchor name
+//!    - Uses separator-aware prefix extraction (separators: " ._-!")
+//!    - Example: "Fireball! Fireball Gdrive" has prefix "Fireball"
+//! 2. **Patch Matching**: Find commands with matching patch field
+//! 3. **Include Logic**: Process patch include folders if configured
+//! 4. **Filtering**: Apply remaining character filter if present
+//!    - Skips separator characters after prefix before matching
+//!    - Example: "Fireball! Old Example" → skip "! " → match "Old" with "O"
 //!
-//! This module handles basic display-related operations for commands including:
-//! - Basic query matching and scoring
-//! - Submenu prefix detection and navigation
-//! - Command prefix extraction
-//! - Submenu construction and breadcrumb generation
+//! ### Key Features
+//! - **Sophisticated Matching**: Uses word boundaries and proper separators, not simple contains
+//! - **Separator-Aware**: Handles "!" and other separators in command prefixes
+//! - **Proper Filtering**: Correctly filters submenu commands by remaining input
+//! - **No Duplicates**: Clean separation between submenu and non-submenu sections
+//! - **Unified Code Path**: Same logic for both CLI and GUI
 
 use super::{Command, Patch};
 use std::collections::HashMap;
+
 
 /// Check if a command matches a query string (compatibility wrapper)
 pub fn command_matches_query_with_debug(command: &str, query: &str, debug: bool) -> i32 {
@@ -113,58 +123,6 @@ pub fn get_command_prefix(command: &str, separators: &str) -> String {
     command[..end_pos].trim().to_string()
 }
 
-/// Split commands based on search text and separators
-pub fn split_commands(commands: &[Command], search_text: &str, separators: &str) -> Vec<Command> {
-    if search_text.is_empty() {
-        return commands.to_vec();
-    }
-    
-    // Find commands that match the search text
-    commands.iter()
-        .filter(|cmd| command_matches_query_string(&cmd.command, search_text, false))
-        .cloned()
-        .collect()
-}
-
-/// Get current submenu prefix from commands using search text and separators
-pub fn get_current_submenu_prefix_from_commands(
-    commands: &[Command], 
-    search_text: &str, 
-    separators: &str
-) -> Option<String> {
-    if commands.is_empty() || search_text.is_empty() {
-        return None;
-    }
-    
-    // Get all command prefixes
-    let prefixes: Vec<String> = commands.iter()
-        .map(|cmd| get_command_prefix(&cmd.command, separators))
-        .collect();
-    
-    // Find the most common prefix that matches the search text
-    let mut prefix_counts = std::collections::HashMap::new();
-    for prefix in &prefixes {
-        if command_matches_query_string(prefix, search_text, false) {
-            *prefix_counts.entry(prefix.clone()).or_insert(0) += 1;
-        }
-    }
-    
-    // Return the most common matching prefix
-    prefix_counts.into_iter()
-        .max_by_key(|(_, count)| *count)
-        .map(|(prefix, _)| prefix)
-}
-
-/// Get current submenu prefix from search text
-pub fn get_current_submenu_prefix(search_text: &str) -> Option<String> {
-    if search_text.is_empty() {
-        return None;
-    }
-    
-    // For simple case, return the search text itself as potential prefix
-    Some(search_text.trim().to_string())
-}
-
 /// Build submenu by scanning backwards from input string to find first anchor
 /// 
 /// Scans backwards from the full input string, looking for commands that resolve to anchors.
@@ -188,10 +146,10 @@ pub fn build_submenu(
     
     let input = input.trim();
     
+    
     // Scan backwards from full input string to find first anchor
     for end_pos in (1..=input.len()).rev() {
         let test_string = &input[..end_pos];
-        
         // Look for exact command match
         if let Some(matching_command) = all_commands.iter().find(|cmd| cmd.command.eq_ignore_ascii_case(test_string)) {
             // Resolve alias to get the final command
@@ -199,13 +157,19 @@ pub fn build_submenu(
             
             // Check if resolved command is an anchor
             if resolved_command.action == "anchor" {
-                // Found our anchor! Build the submenu
-                let submenu_commands = build_submenu_commands(&resolved_command, all_commands, patches);
+                // Found our anchor! Calculate remaining characters for filtering
+                let remaining_chars = if end_pos < input.len() {
+                    &input[end_pos..]
+                } else {
+                    ""
+                };
+                
+                // Build the submenu with filtering
+                let submenu_commands = build_submenu_commands(&resolved_command, all_commands, patches, remaining_chars);
                 return Some((submenu_commands, matching_command.clone(), resolved_command));
             }
         }
     }
-    
     None
 }
 
@@ -215,16 +179,20 @@ pub fn build_submenu(
 /// * `anchor_command` - The resolved anchor command
 /// * `all_commands` - All available commands in the system  
 /// * `patches` - All available patches for include logic
+/// * `filter_text` - Characters after the anchor match to filter submenu commands
 /// 
 /// # Returns
 /// * `Vec<Command>` - The commands that should be displayed in the submenu, sorted alphabetically
 fn build_submenu_commands(
     anchor_command: &Command,
     all_commands: &[Command], 
-    patches: &HashMap<String, Patch>
+    patches: &HashMap<String, Patch>,
+    filter_text: &str
 ) -> Vec<Command> {
     let mut submenu_commands = Vec::new();
     let anchor_name = &anchor_command.command;
+    let config = crate::core::sys_data::get_config();
+    let separators = &config.popup_settings.word_separators;
     
     // Find all commands that have the anchor name as a prefix
     for cmd in all_commands {
@@ -232,9 +200,61 @@ fn build_submenu_commands(
             continue;
         }
         
-        // Check if command starts with anchor name (case-insensitive)
-        if cmd.command.to_lowercase().starts_with(&anchor_name.to_lowercase()) {
-            submenu_commands.push(cmd.clone());
+        // Check if command starts with anchor name (followed by separator or end of string)
+        let cmd_lower = cmd.command.to_lowercase();
+        let anchor_lower = anchor_name.to_lowercase();
+        
+        let matches_prefix = if cmd_lower == anchor_lower {
+            // Exact match
+            true
+        } else if cmd_lower.starts_with(&anchor_lower) {
+            // Check if the character after the anchor name is a separator
+            let next_char_pos = anchor_lower.len();
+            if next_char_pos < cmd.command.len() {
+                let next_char = cmd.command.chars().nth(next_char_pos).unwrap_or(' ');
+                separators.contains(next_char)
+            } else {
+                false
+            }
+        } else {
+            false
+        };
+        
+        if matches_prefix {
+            // Apply additional filtering based on remaining characters
+            // Only include if filter_text is empty or the command name (after anchor prefix) starts with filter_text
+            if filter_text.is_empty() {
+                // Avoid duplicates
+                if !submenu_commands.iter().any(|existing: &Command| existing.command == cmd.command && existing.action == cmd.action) {
+                    submenu_commands.push(cmd.clone());
+                }
+            } else {
+                // Get the part of the command after the anchor name
+                if anchor_name.len() < cmd.command.len() {
+                    // Find the start of remaining text after anchor name and separators
+                    let mut remaining_start = anchor_name.len();
+                    
+                    // Skip over separator characters after the anchor name
+                    while remaining_start < cmd.command.len() {
+                        let ch = cmd.command.chars().nth(remaining_start).unwrap_or(' ');
+                        if separators.contains(ch) {
+                            remaining_start += ch.len_utf8();
+                        } else {
+                            break;
+                        }
+                    }
+                    
+                    if remaining_start < cmd.command.len() {
+                        let remaining_part = &cmd.command[remaining_start..];
+                        if remaining_part.to_lowercase().starts_with(&filter_text.to_lowercase()) {
+                            // Avoid duplicates
+                            if !submenu_commands.iter().any(|existing| existing.command == cmd.command && existing.action == cmd.action) {
+                                submenu_commands.push(cmd.clone());
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
     
@@ -246,9 +266,21 @@ fn build_submenu_commands(
         }
         
         if cmd.patch.to_lowercase() == patch_key {
-            // Avoid duplicates
-            if !submenu_commands.iter().any(|existing| existing.command == cmd.command && existing.action == cmd.action) {
-                submenu_commands.push(cmd.clone());
+            // Apply additional filtering based on remaining characters
+            // Only include if filter_text is empty or the command name starts with filter_text
+            if filter_text.is_empty() {
+                // Avoid duplicates
+                if !submenu_commands.iter().any(|existing: &Command| existing.command == cmd.command && existing.action == cmd.action) {
+                    submenu_commands.push(cmd.clone());
+                }
+            } else {
+                // Check if command name starts with the filter text
+                if cmd.command.to_lowercase().starts_with(&filter_text.to_lowercase()) {
+                    // Avoid duplicates
+                    if !submenu_commands.iter().any(|existing| existing.command == cmd.command && existing.action == cmd.action) {
+                        submenu_commands.push(cmd.clone());
+                    }
+                }
             }
         }
     }
@@ -280,8 +312,22 @@ fn build_submenu_commands(
         }
     }
     
-    // Sort alphabetically (not by length as before)
-    submenu_commands.sort_by(|a, b| a.command.cmp(&b.command));
+    // Sort with exact anchor name first, then alphabetically
+    let anchor_name_lower = anchor_name.to_lowercase();
+    submenu_commands.sort_by(|a, b| {
+        let a_is_exact = a.command.to_lowercase() == anchor_name_lower;
+        let b_is_exact = b.command.to_lowercase() == anchor_name_lower;
+        
+        // Exact matches come first
+        if a_is_exact && !b_is_exact {
+            std::cmp::Ordering::Less
+        } else if !a_is_exact && b_is_exact {
+            std::cmp::Ordering::Greater
+        } else {
+            // Both are exact or both are not exact - sort alphabetically
+            a.command.cmp(&b.command)
+        }
+    });
     
     submenu_commands
 }
@@ -308,10 +354,8 @@ pub fn get_new_display_commands(
     patches: &HashMap<String, Patch>
 ) -> (Vec<Command>, bool, Option<(Command, Command)>, usize) {
     if input.trim().is_empty() {
-        // Return all commands sorted alphabetically
-        let mut all_cmds: Vec<Command> = all_commands.iter().cloned().collect();
-        all_cmds.sort_by(|a, b| a.command.cmp(&b.command));
-        return (all_cmds, false, None, 0);
+        // Return empty list when input is blank
+        return (Vec::new(), false, None, 0);
     }
     
     let input = input.trim();
@@ -320,27 +364,59 @@ pub fn get_new_display_commands(
     if let Some((submenu_commands, original_command, resolved_command)) = build_submenu(input, all_commands, patches) {
         // We have a submenu!
         
-        // Step 2: Get all commands that match the input as prefix (not thinking about aliases)
-        let mut prefix_commands = Vec::new();
-        for cmd in all_commands {
-            if cmd.action == "separator" {
-                continue;
-            }
-            // Simple prefix match - no alias resolution
-            if cmd.command.to_lowercase().starts_with(&input.to_lowercase()) {
-                prefix_commands.push(cmd.clone());
-            }
-        }
+        // Step 2: Get all commands that match the input using sophisticated matching
+        let config = crate::core::sys_data::get_config();
+        let mut prefix_commands = crate::core::commands::filter_commands_with_patch_support(
+            all_commands, 
+            input, 
+            1000, // High limit to get all matches
+            &config.popup_settings.word_separators, 
+            false
+        );
         
         // Step 3: Remove submenu commands from prefix_commands to avoid duplicates
+        // Check both literal matches and resolved alias matches
         prefix_commands.retain(|cmd| {
+            let cmd_resolved = cmd.resolve_alias(all_commands);
+            
             !submenu_commands.iter().any(|submenu_cmd| {
-                submenu_cmd.command == cmd.command && submenu_cmd.action == cmd.action
+                // Check literal match
+                let literal_match = submenu_cmd.command == cmd.command && submenu_cmd.action == cmd.action;
+                
+                // Check if the resolved alias of cmd matches any submenu command
+                let resolved_matches_submenu = submenu_cmd.command == cmd_resolved.command && submenu_cmd.action == cmd_resolved.action;
+                
+                literal_match || resolved_matches_submenu
             })
+        });
+        
+        // Step 3.5: Sort prefix commands - exact matches first, then prefix matches, then substring matches
+        prefix_commands.sort_by(|a, b| {
+            let a_exact = a.command.eq_ignore_ascii_case(input);
+            let b_exact = b.command.eq_ignore_ascii_case(input);
+            
+            if a_exact && !b_exact {
+                return std::cmp::Ordering::Less;
+            } else if !a_exact && b_exact {
+                return std::cmp::Ordering::Greater;
+            }
+            
+            let a_prefix = a.command.to_lowercase().starts_with(&input.to_lowercase());
+            let b_prefix = b.command.to_lowercase().starts_with(&input.to_lowercase());
+            
+            if a_prefix && !b_prefix {
+                return std::cmp::Ordering::Less;
+            } else if !a_prefix && b_prefix {
+                return std::cmp::Ordering::Greater;
+            }
+            
+            // Both are same type of match - sort alphabetically
+            a.command.cmp(&b.command)
         });
         
         // Step 4: Combine submenu + separator + remaining prefix commands
         let mut final_commands = submenu_commands.clone();
+        
         
         if !final_commands.is_empty() && !prefix_commands.is_empty() {
             // Add separator between submenu and other commands
@@ -357,17 +433,15 @@ pub fn get_new_display_commands(
         
         return (final_commands, true, Some((original_command, resolved_command)), submenu_commands.len());
     } else {
-        // No submenu - just return commands that match the input prefix
-        let mut matching_commands = Vec::new();
-        for cmd in all_commands {
-            if cmd.action == "separator" {
-                continue;
-            }
-            // Simple prefix match or substring match
-            if cmd.command.to_lowercase().contains(&input.to_lowercase()) {
-                matching_commands.push(cmd.clone());
-            }
-        }
+        // No submenu - use sophisticated matching instead of simple contains()
+        let config = crate::core::sys_data::get_config();
+        let mut matching_commands = crate::core::commands::filter_commands_with_patch_support(
+            all_commands,
+            input,
+            1000, // High limit to get all matches
+            &config.popup_settings.word_separators,
+            false
+        );
         
         // Sort by relevance (exact matches first, then prefix matches, then substring matches)
         matching_commands.sort_by(|a, b| {

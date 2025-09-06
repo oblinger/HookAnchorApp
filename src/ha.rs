@@ -104,7 +104,8 @@ fn handle_hook_url(url: &str) {
     
     // Find the top matching command using the same logic as CLI and GUI
     let sys_data = get_sys_data();
-    let filtered = hookanchor::core::get_display_commands(&sys_data, &decoded_query, 1);
+    let (display_commands, _, _, _) = hookanchor::core::get_new_display_commands(&decoded_query, &sys_data.commands, &sys_data.patches);
+    let filtered = display_commands.into_iter().take(1).collect::<Vec<_>>();
     
     if filtered.is_empty() {
         utils::detailed_log("DISPATCHER", &format!("No commands found for query: '{}'", decoded_query));

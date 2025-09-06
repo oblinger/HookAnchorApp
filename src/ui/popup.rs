@@ -73,6 +73,8 @@ pub struct AnchorSelector {
     loading_state: LoadingState,
     /// Buffer for keyboard input captured before full initialization
     pre_init_input_buffer: String,
+    /// Flag to indicate search needs to be computed after loading is complete
+    search_pending_after_load: bool,
     /// Pending template info for grab functionality (template_name, context)
     pending_template: Option<(String, crate::core::template_creation::TemplateContext)>,
     /// Key registry for unified key processing
@@ -520,6 +522,7 @@ impl PopupInterface for AnchorSelector {
         self.handle_template_create_named_impl(template_name);
     }
     
+    
     fn is_command_editor_visible(&self) -> bool {
         self.command_editor.visible
     }
@@ -550,6 +553,14 @@ impl PopupInterface for AnchorSelector {
     
     fn update_search(&mut self, text: String) {
         self.popup_state.update_search(text);
+    }
+    
+    fn navigate_up_hierarchy(&mut self) {
+        self.handle_navigate_up_hierarchy_impl();
+    }
+    
+    fn navigate_down_hierarchy(&mut self) {
+        self.handle_navigate_down_hierarchy_impl();
     }
 }
 
@@ -710,10 +721,23 @@ impl AnchorSelector {
     
     fn edit_input_command_impl(&mut self) {
         // Create a new blank command with the input text as the name
-        let input_text = self.popup_state.search_text.clone();
+        let mut input_text = self.popup_state.search_text.clone();
+        
+        // If we're in submenu mode, transform input to use expanded alias
+        if let Some((original_command, resolved_command)) = self.popup_state.get_submenu_command_info() {
+            // Replace the alias prefix with the expanded prefix
+            let original_name = &original_command.command;
+            let resolved_name = &resolved_command.command;
+            
+            if input_text.to_lowercase().starts_with(&original_name.to_lowercase()) {
+                // Replace the prefix: "FB ZZZ" -> "fireball ZZZ"
+                let remaining = &input_text[original_name.len()..];
+                input_text = format!("{}{}", resolved_name, remaining);
+            }
+        }
         
         if !input_text.is_empty() {
-            // Create a new command with the input as the name
+            // Create a new command with the transformed input as the name
             let new_command = crate::core::Command {
                 command: input_text.clone(),
                 action: String::new(),  // Blank action for user to fill
@@ -723,7 +747,7 @@ impl AnchorSelector {
             };
             
             // Open the command editor with this new command
-            self.command_editor.edit_command(Some(&new_command), &input_text);
+            self.command_editor.create_new_command(&new_command, &input_text);
         }
     }
     
@@ -883,7 +907,22 @@ impl AnchorSelector {
         
         crate::utils::detailed_log("TEMPLATE", &format!("TEMPLATE: DEBUG 0 - About to get current context"));
         // Get the current context
-        let input = self.popup_state.search_text.clone();
+        let mut input = self.popup_state.search_text.clone();
+        
+        // If we're in submenu mode, transform input to use expanded alias
+        if let Some((original_command, resolved_command)) = self.popup_state.get_submenu_command_info() {
+            // Replace the alias prefix with the expanded prefix
+            let original_name = &original_command.command;
+            let resolved_name = &resolved_command.command;
+            
+            if input.to_lowercase().starts_with(&original_name.to_lowercase()) {
+                // Replace the prefix: "FB ZZZ" -> "fireball ZZZ"
+                let remaining = &input[original_name.len()..];
+                let transformed_input = format!("{}{}", resolved_name, remaining);
+                crate::utils::detailed_log("TEMPLATE", &format!("TEMPLATE: Transformed input from '{}' to '{}'", input, transformed_input));
+                input = transformed_input;
+            }
+        }
         crate::utils::detailed_log("TEMPLATE", &format!("TEMPLATE: DEBUG 0.1 - input = '{}'", input));
         let selected_command = if !self.filtered_commands().is_empty() {
             let (display_commands, _, _, _) = self.get_display_commands();
@@ -1014,7 +1053,7 @@ impl AnchorSelector {
                                 Ok(new_command) => {
                                     if template.edit {
                                         // Open command editor with the prefilled command
-                                        self.command_editor.edit_command(Some(&new_command), &self.popup_state.search_text);
+                                        self.command_editor.create_new_command(&new_command, &self.popup_state.search_text);
                                         // Store template for post-save file creation
                                         self.command_editor.set_pending_template(template.clone(), context.clone());
                                         // Don't clear search text when opening editor - preserve input
@@ -1025,6 +1064,9 @@ impl AnchorSelector {
                                             // Save commands to file
                                             if let Err(e) = crate::core::commands::save_commands_to_file(&self.popup_state.commands) {
                                                 crate::utils::log_error(&format!("Failed to save commands: {}", e));
+                                            } else {
+                                                // Clear the global sys_data cache so it reloads from disk
+                                                crate::core::sys_data::clear_sys_data();
                                             }
                                             // Clear search and update display
                                             self.popup_state.search_text.clear();
@@ -1084,7 +1126,7 @@ impl AnchorSelector {
                                     if template.edit {
                                         crate::utils::detailed_log("TEMPLATE", &format!("TEMPLATE: Opening command editor for sub_anchor template"));
                                         // Open command editor with the prefilled command
-                                        self.command_editor.edit_command(Some(&new_command), &self.popup_state.search_text);
+                                        self.command_editor.create_new_command(&new_command, &self.popup_state.search_text);
                                         // Store template for post-save file creation
                                         self.command_editor.set_pending_template(template.clone(), context.clone());
                                         // Don't clear search text when opening editor - preserve input
@@ -1095,6 +1137,9 @@ impl AnchorSelector {
                                             // Save commands to file
                                             if let Err(e) = crate::core::commands::save_commands_to_file(&self.popup_state.commands) {
                                                 crate::utils::log_error(&format!("Failed to save commands: {}", e));
+                                            } else {
+                                                // Clear the global sys_data cache so it reloads from disk
+                                                crate::core::sys_data::clear_sys_data();
                                             }
                                             // Clear search and update display
                                             self.popup_state.search_text.clear();
@@ -1141,6 +1186,56 @@ impl AnchorSelector {
                     }
                 }
             }
+        }
+    }
+    
+    fn handle_navigate_up_hierarchy_impl(&mut self) {
+        crate::utils::detailed_log("HIERARCHY", "Navigating up hierarchy");
+        
+        // Check if we're currently in a submenu
+        if let Some((original_command, resolved_command)) = self.popup_state.get_submenu_command_info() {
+            // We're in a submenu - find the parent patch
+            let anchor_name = &resolved_command.command;
+            
+            // Get the patch for this anchor
+            let config = crate::core::sys_data::get_config();
+            let sys_data = crate::core::sys_data::get_sys_data();
+            
+            if let Some(patch) = sys_data.patches.get(&anchor_name.to_lowercase()) {
+                // Don't go up if we're already at orphans patch
+                if patch.name.to_lowercase() == "orphans" {
+                    crate::utils::detailed_log("HIERARCHY", "Already at orphans patch, not navigating up");
+                    return;
+                }
+                
+                // Set the search text to the patch name to navigate to parent
+                crate::utils::detailed_log("HIERARCHY", &format!("Navigating up to patch: {}", patch.name));
+                self.popup_state.update_search(patch.name.clone());
+            } else {
+                crate::utils::detailed_log("HIERARCHY", &format!("No patch found for anchor: {}", anchor_name));
+            }
+        } else {
+            crate::utils::detailed_log("HIERARCHY", "Not in submenu, cannot navigate up");
+        }
+    }
+    
+    fn handle_navigate_down_hierarchy_impl(&mut self) {
+        crate::utils::detailed_log("HIERARCHY", "Navigating down hierarchy");
+        
+        // Get the currently selected command
+        if let Some(selected_command) = self.popup_state.get_selected_command() {
+            // Check if the selected command is an anchor
+            if selected_command.action == "anchor" {
+                let anchor_name = &selected_command.command;
+                crate::utils::detailed_log("HIERARCHY", &format!("Navigating into anchor: {}", anchor_name));
+                
+                // Set the search text to the anchor name to enter its submenu
+                self.popup_state.update_search(anchor_name.clone());
+            } else {
+                crate::utils::detailed_log("HIERARCHY", &format!("Selected command '{}' is not an anchor (action='{}')", selected_command.command, selected_command.action));
+            }
+        } else {
+            crate::utils::detailed_log("HIERARCHY", "No command selected");
         }
     }
     
@@ -1237,6 +1332,7 @@ impl AnchorSelector {
             last_interaction_time: std::time::Instant::now(),
             loading_state: LoadingState::NotLoaded,
             pre_init_input_buffer: initial_prompt.to_string(),
+            search_pending_after_load: !initial_prompt.is_empty(),
             pending_template: None,
             key_registry: None, // Will be initialized when config is loaded
             exit_app_key: None, // Will be populated from config
@@ -1311,10 +1407,12 @@ impl AnchorSelector {
         let app_state = self.popup_state.app_state.clone();
         self.popup_state = PopupState::new(commands, config, app_state);
         
-        // Apply any buffered input
+        // Apply any buffered input - but avoid recompute during deferred loading
         if !self.pre_init_input_buffer.is_empty() {
             self.popup_state.search_text = self.pre_init_input_buffer.clone();
-            self.popup_state.update_search(self.pre_init_input_buffer.clone());
+            // Don't call update_search() here - it triggers expensive recompute_filtered_commands()
+            // Set flag to trigger search computation on next frame
+            self.search_pending_after_load = true;
             self.pre_init_input_buffer.clear();
         }
         
@@ -1481,6 +1579,9 @@ impl AnchorSelector {
             self.popup_state.update_search(current_search);
         }
 
+        // Clear the global sys_data cache so it reloads from disk
+        crate::core::sys_data::clear_sys_data();
+        
         crate::utils::log(&format!("RENAME: Successfully renamed '{}' to '{}' with side effects and UI update", old_name, new_name));
         Ok(())
     }
@@ -1541,6 +1642,9 @@ impl AnchorSelector {
         // Save commands to file (patches are embedded in commands, so no separate save needed)
         save_commands_to_file(&commands)?;
 
+        // Clear the global sys_data cache so it reloads from disk
+        crate::core::sys_data::clear_sys_data();
+        
         crate::utils::log(&format!("RENAME: Successfully renamed '{}' to '{}' with side effects", old_name, new_name));
         Ok(())
     }
@@ -1788,7 +1892,7 @@ impl AnchorSelector {
                                                     if should_edit {
                                                         crate::utils::detailed_log("GRAB", &format!("GRAB: Opening command editor for template (should_edit=true)"));
                                                         crate::utils::log(&format!("GRAB: command_editor.visible before={}", self.command_editor.visible));
-                                                        self.command_editor.edit_command(Some(&new_command), &self.popup_state.search_text);
+                                                        self.command_editor.create_new_command(&new_command, &self.popup_state.search_text);
                                                         crate::utils::log(&format!("GRAB: command_editor.visible after={}", self.command_editor.visible));
                                                     } else {
                                                         crate::utils::detailed_log("GRAB", &format!("GRAB: Not opening editor (should_edit=false)"));
@@ -1797,6 +1901,9 @@ impl AnchorSelector {
                                                             Ok(_) => {
                                                                 if let Err(e) = crate::core::commands::save_commands_to_file(&self.popup_state.commands) {
                                                                     crate::utils::log_error(&format!("Failed to save commands: {}", e));
+                                                                } else {
+                                                                    // Clear the global sys_data cache so it reloads from disk
+                                                                    crate::core::sys_data::clear_sys_data();
                                                                 }
                                                                 self.popup_state.search_text.clear();
                                                                 self.popup_state.update_search(String::new());
@@ -1846,13 +1953,16 @@ impl AnchorSelector {
                                         match crate::core::template_creation::process_template(template, &context, &config) {
                                             Ok(new_command) => {
                                                 if template.edit {
-                                                    self.command_editor.edit_command(Some(&new_command), &self.popup_state.search_text);
+                                                    self.command_editor.create_new_command(&new_command, &self.popup_state.search_text);
                                                 } else {
                                                     // Add command directly
                                                     match crate::core::commands::add_command(new_command, &mut self.popup_state.commands) {
                                                         Ok(_) => {
                                                             if let Err(e) = crate::core::commands::save_commands_to_file(&self.popup_state.commands) {
                                                                 crate::utils::log_error(&format!("Failed to save commands: {}", e));
+                                                            } else {
+                                                                // Clear the global sys_data cache so it reloads from disk
+                                                                crate::core::sys_data::clear_sys_data();
                                                             }
                                                             self.popup_state.search_text.clear();
                                                             self.popup_state.update_search(String::new());
@@ -1927,7 +2037,7 @@ impl AnchorSelector {
                                                     if should_edit {
                                                         crate::utils::detailed_log("GRAB", &format!("GRAB: Opening command editor for template (should_edit=true)"));
                                                         crate::utils::log(&format!("GRAB: command_editor.visible before={}", self.command_editor.visible));
-                                                        self.command_editor.edit_command(Some(&new_command), &self.popup_state.search_text);
+                                                        self.command_editor.create_new_command(&new_command, &self.popup_state.search_text);
                                                         crate::utils::log(&format!("GRAB: command_editor.visible after={}", self.command_editor.visible));
                                                     } else {
                                                         crate::utils::detailed_log("GRAB", &format!("GRAB: Not opening editor (should_edit=false)"));
@@ -1936,6 +2046,9 @@ impl AnchorSelector {
                                                             Ok(_) => {
                                                                 if let Err(e) = crate::core::commands::save_commands_to_file(&self.popup_state.commands) {
                                                                     crate::utils::log_error(&format!("Failed to save commands: {}", e));
+                                                                } else {
+                                                                    // Clear the global sys_data cache so it reloads from disk
+                                                                    crate::core::sys_data::clear_sys_data();
                                                                 }
                                                                 self.popup_state.search_text.clear();
                                                                 self.popup_state.update_search(String::new());
@@ -1985,13 +2098,16 @@ impl AnchorSelector {
                                         match crate::core::template_creation::process_template(template, &context, &config) {
                                             Ok(new_command) => {
                                                 if template.edit {
-                                                    self.command_editor.edit_command(Some(&new_command), &self.popup_state.search_text);
+                                                    self.command_editor.create_new_command(&new_command, &self.popup_state.search_text);
                                                 } else {
                                                     // Add command directly
                                                     match crate::core::commands::add_command(new_command, &mut self.popup_state.commands) {
                                                         Ok(_) => {
                                                             if let Err(e) = crate::core::commands::save_commands_to_file(&self.popup_state.commands) {
                                                                 crate::utils::log_error(&format!("Failed to save commands: {}", e));
+                                                            } else {
+                                                                // Clear the global sys_data cache so it reloads from disk
+                                                                crate::core::sys_data::clear_sys_data();
                                                             }
                                                             self.popup_state.search_text.clear();
                                                             self.popup_state.update_search(String::new());
@@ -3236,6 +3352,17 @@ impl eframe::App for AnchorSelector {
             ctx.request_repaint(); // Ensure we update when loading completes
         }
         
+        // If loading just completed and we have pending search, trigger it now
+        if self.loading_state == LoadingState::Loaded && self.search_pending_after_load {
+            crate::utils::detailed_log("POPUP", &format!("POPUP: Triggering pending search after load"));
+            let current_search = self.popup_state.search_text.clone();
+            if !current_search.trim().is_empty() {
+                self.popup_state.update_search(current_search);
+            }
+            self.search_pending_after_load = false;
+            ctx.request_repaint(); // Ensure UI updates with search results
+        }
+        
         // On the first few frames, ensure the window is properly activated and positioned
         if self.frame_count <= 3 {
             ctx.send_viewport_cmd(egui::ViewportCommand::Focus);
@@ -3569,11 +3696,28 @@ impl eframe::App for AnchorSelector {
                 
                 // Add the new command
                 use crate::core::commands::{add_command, save_commands_to_file};
-                let _ = add_command(new_command, self.commands_mut());
+                crate::utils::log(&format!("SAVE_DEBUG: About to add new command: '{}' (action: {}, arg: {})", 
+                    new_command.command, new_command.action, new_command.arg));
+                match add_command(new_command, self.commands_mut()) {
+                    Ok(_) => {
+                        crate::utils::log(&format!("SAVE_DEBUG: Successfully added command to memory"));
+                    }
+                    Err(e) => {
+                        crate::utils::log_error(&format!("SAVE_DEBUG: Failed to add command: {}", e));
+                    }
+                }
                 
                 // Save to file
+                crate::utils::log(&format!("SAVE_DEBUG: About to save {} commands to file", self.commands().len()));
                 match save_commands_to_file(&self.commands()) {
                     Ok(_) => {
+                        crate::utils::log(&format!("SAVE_DEBUG: Successfully saved commands to file"));
+                        
+                        // IMPORTANT: Clear the global sys_data cache so it reloads from disk
+                        // This ensures the display uses the updated commands
+                        crate::core::sys_data::clear_sys_data();
+                        crate::utils::log(&format!("SAVE_DEBUG: Cleared sys_data cache to force reload"));
+                        
                         // Process template files if there was a pending template
                         if let (Some(template), Some(context)) = (
                             self.command_editor.pending_template.as_ref(),
@@ -3626,6 +3770,9 @@ impl eframe::App for AnchorSelector {
                     if let Err(e) = save_commands_to_file(&self.commands()) {
                         crate::utils::log_error(&format!("Error saving commands to file after deletion: {}", e));
                     } else {
+                        // Clear the global sys_data cache so it reloads from disk
+                        crate::core::sys_data::clear_sys_data();
+                        
                         // Update the filtered list if we're currently filtering
                         if !self.popup_state.search_text.trim().is_empty() {
                             // Refresh the search with updated commands

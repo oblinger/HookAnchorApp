@@ -118,20 +118,8 @@ impl ApplicationState {
     /// Get display commands with submenu information
     /// Returns (commands_to_display, is_in_submenu, menu_prefix, inside_count)
     pub fn get_display_commands(&self) -> (Vec<Command>, bool, Option<String>, usize) {
-        use crate::core::commands::get_current_submenu_prefix_from_commands;
-        
-        // Check if we're in submenu mode
-        if let Some(menu_prefix) = get_current_submenu_prefix_from_commands(&self.filtered_commands, &self.search_text, &self.config.popup_settings.word_separators) {
-            // We're in submenu mode - the commands are already organized
-            // Just find the separator to count inside commands
-            let separator_index = self.filtered_commands.iter().position(|cmd| Self::is_separator_command(cmd));
-            let inside_count = separator_index.unwrap_or(self.filtered_commands.len());
-            
-            (self.filtered_commands.clone(), true, Some(menu_prefix), inside_count)
-        } else {
-            // Not in submenu mode, use filtered commands directly
-            (self.filtered_commands.clone(), false, None, 0)
-        }
+        // Legacy ApplicationState is not used - return simple response
+        (self.filtered_commands.clone(), false, None, 0)
     }
     
     /// Get hint text for the search box
@@ -167,14 +155,9 @@ impl ApplicationState {
     
     /// Recompute filtered commands based on current search
     fn recompute_filtered_commands(&mut self) {
-        use crate::core::commands::get_display_commands;
-        
+        // Legacy ApplicationState is not used - simplified implementation
         let total_limit = self.config.popup_settings.max_rows * self.config.popup_settings.max_columns;
-        let sys_data = super::sys_data::SysData {
-            config: self.config.clone(),
-            commands: self.commands.clone(),
-            patches: std::collections::HashMap::new(), // Empty for filtering
-        };
-        self.filtered_commands = get_display_commands(&sys_data, &self.search_text, total_limit);
+        self.filtered_commands = self.commands.clone();
+        self.filtered_commands.truncate(total_limit);
     }
 }

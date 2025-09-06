@@ -105,6 +105,28 @@ impl CommandEditor {
         }
     }
     
+    /// Create a new command with pre-populated data from a template
+    pub fn create_new_command(&mut self, template_command: &Command, search_text: &str) {
+        self.visible = true;
+        self.focus_requested = false;
+        
+        // Clear any pending template
+        self.pending_template = None;
+        self.template_context = None;
+        
+        // Populate with template data, but mark as new command (no original_command_name)
+        self.command = template_command.command.clone();
+        self.action = template_command.action.clone();
+        self.argument = template_command.arg.clone();
+        self.patch = template_command.patch.clone();
+        self.flags = template_command.flags.clone();
+        self.priority = false;
+        
+        // IMPORTANT: Mark as new command by leaving original_command_name empty
+        self.original_command_name = String::new();
+        self.original_command = None;
+    }
+    
     /// Open the command editor with a pre-filled command (for grabber functionality)
     pub fn open_with_command(&mut self, command: Command) {
         self.visible = true;
@@ -164,9 +186,10 @@ impl CommandEditor {
                             // Command row with optional delete button
                             ui.label("Command:");
                             
-                            // Check if current command text matches an existing command
-                            let command_exists = !self.command.is_empty() && 
-                                self.commands.iter().any(|cmd| cmd.command == self.command);
+                            // Delete button should be enabled only when editing an existing command
+                            // (i.e., original_command_name is not empty and still exists in the system)
+                            let can_delete = !self.original_command_name.is_empty() && 
+                                self.commands.iter().any(|cmd| cmd.command == self.original_command_name);
                             
                             // Always use the same horizontal layout to prevent focus issues
                             ui.horizontal(|ui| {
@@ -189,8 +212,8 @@ impl CommandEditor {
                                     self.focus_requested = true;
                                 }
                                 
-                                // Always show delete button, but enable/disable based on command existence
-                                ui.add_enabled_ui(command_exists, |ui| {
+                                // Always show delete button, but enable/disable based on whether we're editing an existing command
+                                ui.add_enabled_ui(can_delete, |ui| {
                                     if ui.button("Delete").clicked() {
                                         // Use original command name for deletion, not current text
                                         let command_to_delete = if !self.original_command_name.is_empty() {

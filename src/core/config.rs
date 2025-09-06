@@ -516,6 +516,8 @@ fn migrate_keybindings_to_actions(
             "open_editor" | "edit_active_command" => ("popup", Some("edit_command")),
             "show_keys" => ("popup", Some("show_help")),
             "tmux_activate" => ("tmux", None),
+            "navigate_up_hierarchy" => ("popup", Some("navigate_up_hierarchy")),
+            "navigate_down_hierarchy" => ("popup", Some("navigate_down_hierarchy")),
             _ => continue, // Skip unknown keybindings
         };
         

@@ -187,9 +187,23 @@ pub fn load_data(commands_override: Vec<Command>, verbose: bool) -> SysData {
     // Step 3.1: REMOVED - No longer creating orphans root
     // Orphan management is no longer needed
     
-    // Step 3.2: REMOVED - No longer creating orphan anchors
-    // Patches without anchors will simply remain without anchors
-    let orphans_created = 0;
+    // Step 3.2: Extract orphan anchor commands from patches and add them to commands list
+    let mut orphans_created = 0;
+    for patch in patches.values() {
+        for anchor_cmd in &patch.anchor_commands {
+            if anchor_cmd.patch == "orphans" && anchor_cmd.flags.contains('A') {
+                if verbose {
+                    println!("   Adding orphan anchor command: {}", anchor_cmd.command);
+                }
+                commands.push(anchor_cmd.clone());
+                orphans_created += 1;
+            }
+        }
+    }
+    
+    if verbose && orphans_created > 0 {
+        println!("   Created {} orphan anchor commands", orphans_created);
+    }
     
     // Step 4: Infer patches for commands without patches
     if verbose {

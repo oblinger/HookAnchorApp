@@ -62,11 +62,28 @@ impl Keystroke {
     pub fn matches_event(&self, event: &egui::Event) -> bool {
         match event {
             egui::Event::Key { key, pressed, modifiers, .. } => {
+                // Always log bracket key events
+                if *key == egui::Key::OpenBracket || *key == egui::Key::CloseBracket {
+                    crate::utils::detailed_log("BRACKET_MATCH", &format!("Testing key={:?} pressed={} modifiers={:?} against keystroke={:?}", 
+                        key, pressed, modifiers, self));
+                }
+                
+                crate::utils::detailed_log("KEY_PROCESSING", &format!("Key event: {:?} pressed={} modifiers={:?}", key, pressed, modifiers));
                 if !pressed {
+                    if *key == egui::Key::OpenBracket || *key == egui::Key::CloseBracket {
+                        crate::utils::detailed_log("BRACKET_MATCH", &format!("Key not pressed, returning false"));
+                    }
                     return false;
                 }
                 
                 let modifiers_match = Modifiers::from_egui(modifiers) == self.modifiers;
+                let key_match = *key == self.key;
+                
+                // Log detailed matching for bracket keys
+                if *key == egui::Key::OpenBracket || *key == egui::Key::CloseBracket {
+                    crate::utils::detailed_log("BRACKET_MATCH", &format!("key_match={} (key={:?} vs self.key={:?}), modifiers_match={} (modifiers={:?} vs self.modifiers={:?})", 
+                        key_match, key, self.key, modifiers_match, Modifiers::from_egui(modifiers), self.modifiers));
+                }
                 
                 // Special cases for shifted punctuation characters
                 // Some keyboards/systems send different key codes for these
@@ -191,6 +208,10 @@ impl Keystroke {
             (egui::Key::Semicolon, Modifiers { shift: false, .. }) => text == ";",
             (egui::Key::Backtick, Modifiers { shift: true, .. }) => text == "~",
             (egui::Key::Backtick, Modifiers { shift: false, .. }) => text == "`",
+            (egui::Key::OpenBracket, Modifiers { shift: true, .. }) => text == "{",
+            (egui::Key::OpenBracket, Modifiers { shift: false, .. }) => text == "[",
+            (egui::Key::CloseBracket, Modifiers { shift: true, .. }) => text == "}",
+            (egui::Key::CloseBracket, Modifiers { shift: false, .. }) => text == "]",
             (egui::Key::Space, _) => text == " ",
             
             // Keys that don't generate text events
@@ -252,8 +273,11 @@ impl Keystroke {
             ")" => (egui::Key::Num0, Modifiers { shift: true, ..Modifiers::none() }),
             "_" => (egui::Key::Minus, Modifiers { shift: true, ..Modifiers::none() }),
             "+" => (egui::Key::Equals, Modifiers { shift: true, ..Modifiers::none() }),
-            // Note: [ and ] brackets with shift may not be available directly
-            // We'll add them later if needed
+            // Square brackets - these keys exist on US keyboards
+            "[" => (egui::Key::OpenBracket, Modifiers::none()),
+            "]" => (egui::Key::CloseBracket, Modifiers::none()),
+            "{" => (egui::Key::OpenBracket, Modifiers { shift: true, ..Modifiers::none() }),
+            "}" => (egui::Key::CloseBracket, Modifiers { shift: true, ..Modifiers::none() }),
             "|" => (egui::Key::Backslash, Modifiers { shift: true, ..Modifiers::none() }),
             ":" => (egui::Key::Semicolon, Modifiers { shift: true, ..Modifiers::none() }),
             "\"" => (egui::Key::Quote, Modifiers { shift: true, ..Modifiers::none() }),
@@ -335,6 +359,8 @@ impl Keystroke {
             "," => Ok(egui::Key::Comma),
             "." => Ok(egui::Key::Period),
             "/" => Ok(egui::Key::Slash),
+            "[" => Ok(egui::Key::OpenBracket),
+            "]" => Ok(egui::Key::CloseBracket),
             
             // Function keys
             "f1" => Ok(egui::Key::F1),
@@ -477,6 +503,12 @@ pub trait PopupInterface {
     
     /// Update the search text
     fn update_search(&mut self, text: String);
+    
+    /// Navigate up hierarchy to parent patch
+    fn navigate_up_hierarchy(&mut self);
+    
+    /// Navigate down hierarchy into selected anchor submenu
+    fn navigate_down_hierarchy(&mut self);
 }
 
 /// Registry for key event handlers
@@ -518,12 +550,18 @@ impl KeyRegistry {
         self.text_handlers.push(handler);
     }
     
-    /// Process key events using registered handlers
+    /// Process key events using registered handlers  
     pub fn process_events(&self, events: &[egui::Event], popup: &mut dyn PopupInterface, egui_ctx: &egui::Context) -> bool {
+        if !events.is_empty() {
+            crate::utils::log(&format!("🔑 KEY_REGISTRY: Processing {} events", events.len()));
+        }
         // Log EVERY incoming event
         for event in events {
             match event {
                 egui::Event::Key { key, pressed, modifiers, .. } => {
+                    if *pressed {
+                        crate::utils::detailed_log("KEY_PRESS", &format!("Key pressed: {:?} (modifiers={:?})", key, modifiers));
+                    }
                     crate::utils::detailed_log("KEYSTROKE", &format!(
                         "Key event: key={:?}, pressed={}, modifiers={:?}", 
                         key, pressed, modifiers
@@ -607,20 +645,59 @@ impl KeyRegistry {
             
             // Try all matching handlers until one succeeds
             for (keystroke, handler) in &self.handlers {
-                // Debug logging for specific keys
+                // Debug logging for specific keys - checking against registry
                 if let egui::Event::Key { key, pressed, .. } = event {
                     if *pressed {
-                        if *key == egui::Key::Enter {
-                            crate::utils::detailed_log("KEY", &format!("🔵 ENTER KEY: Checking handler: {} (keystroke: {:?})", 
+                        if *key == egui::Key::Semicolon {
+                            crate::utils::detailed_log("REGISTRY_CHECK", &format!("🔸 SEMICOLON: Checking handler '{}' (keystroke: {:?})", 
                                 handler.description(), keystroke));
-                        } else if *key == egui::Key::Backtick {
-                            crate::utils::detailed_log("KEY", &format!("⚡ BACKTICK KEY: Checking handler: {} (keystroke: {:?})", 
+                        } else if *key == egui::Key::OpenBracket {
+                            crate::utils::detailed_log("REGISTRY_CHECK", &format!("🔶 LEFT BRACKET: Checking handler '{}' (keystroke: {:?})", 
+                                handler.description(), keystroke));
+                        } else if *key == egui::Key::CloseBracket {
+                            crate::utils::detailed_log("REGISTRY_CHECK", &format!("🔷 RIGHT BRACKET: Checking handler '{}' (keystroke: {:?})", 
+                                handler.description(), keystroke));
+                        } else if *key == egui::Key::Equals {
+                            crate::utils::detailed_log("REGISTRY_CHECK", &format!("🟰 EQUALS: Checking handler '{}' (keystroke: {:?})", 
                                 handler.description(), keystroke));
                         }
                     }
                 }
                 
-                if keystroke.matches_event(event) {
+                let matches = keystroke.matches_event(event);
+                
+                // Log the matching result for specific keys
+                if let egui::Event::Key { key, pressed, .. } = event {
+                    if *pressed {
+                        if *key == egui::Key::Semicolon && matches {
+                            crate::utils::detailed_log("REGISTRY_MATCH", &format!("🔸 SEMICOLON: ✅ MATCHED handler '{}' (keystroke: {:?})", 
+                                handler.description(), keystroke));
+                        } else if *key == egui::Key::Semicolon {
+                            crate::utils::detailed_log("REGISTRY_MATCH", &format!("🔸 SEMICOLON: ❌ NO MATCH for handler '{}' (keystroke: {:?})", 
+                                handler.description(), keystroke));
+                        } else if *key == egui::Key::OpenBracket && matches {
+                            crate::utils::detailed_log("REGISTRY_MATCH", &format!("🔶 LEFT BRACKET: ✅ MATCHED handler '{}' (keystroke: {:?})", 
+                                handler.description(), keystroke));
+                        } else if *key == egui::Key::OpenBracket {
+                            crate::utils::detailed_log("REGISTRY_MATCH", &format!("🔶 LEFT BRACKET: ❌ NO MATCH for handler '{}' (keystroke: {:?})", 
+                                handler.description(), keystroke));
+                        } else if *key == egui::Key::CloseBracket && matches {
+                            crate::utils::detailed_log("REGISTRY_MATCH", &format!("🔷 RIGHT BRACKET: ✅ MATCHED handler '{}' (keystroke: {:?})", 
+                                handler.description(), keystroke));
+                        } else if *key == egui::Key::CloseBracket {
+                            crate::utils::detailed_log("REGISTRY_MATCH", &format!("🔷 RIGHT BRACKET: ❌ NO MATCH for handler '{}' (keystroke: {:?})", 
+                                handler.description(), keystroke));
+                        } else if *key == egui::Key::Equals && matches {
+                            crate::utils::detailed_log("REGISTRY_MATCH", &format!("🟰 EQUALS: ✅ MATCHED handler '{}' (keystroke: {:?})", 
+                                handler.description(), keystroke));
+                        } else if *key == egui::Key::Equals {
+                            crate::utils::detailed_log("REGISTRY_MATCH", &format!("🟰 EQUALS: ❌ NO MATCH for handler '{}' (keystroke: {:?})", 
+                                handler.description(), keystroke));
+                        }
+                    }
+                }
+                
+                if matches {
                     crate::utils::detailed_log("KEY_HANDLER", &format!("KEY_HANDLER: Handler matched: {}", handler.description()));
                     
                     // Special logging for Enter key
@@ -639,6 +716,20 @@ impl KeyRegistry {
                         // Log Cmd+D key
                         if *key == egui::Key::D && modifiers.command {
                             crate::utils::detailed_log("KEY", &format!("📝 DOC KEY: Handler '{}' matched for Cmd+D key!", handler.description()));
+                        }
+                        // Log bracket keys
+                        if *key == egui::Key::OpenBracket {
+                            crate::utils::detailed_log("KEY", &format!("🔶 LEFT BRACKET KEY: Handler '{}' MATCHED for [ key!", handler.description()));
+                        }
+                        if *key == egui::Key::CloseBracket {
+                            crate::utils::detailed_log("KEY", &format!("🔷 RIGHT BRACKET KEY: Handler '{}' MATCHED for ] key!", handler.description()));
+                        }
+                        // Log equals and semicolon for comparison
+                        if *key == egui::Key::Equals {
+                            crate::utils::detailed_log("KEY", &format!("🟰 EQUALS KEY: Handler '{}' MATCHED for = key!", handler.description()));
+                        }
+                        if *key == egui::Key::Semicolon {
+                            crate::utils::detailed_log("KEY", &format!("🔸 SEMICOLON KEY: Handler '{}' MATCHED for ; key!", handler.description()));
                         }
                     }
                     
@@ -771,6 +862,8 @@ pub enum Action {
     TemplateCreate,
     // TmuxActivate, // COMMENTED OUT: Unused - replaced by ActivateTmux
     ActivateTmux, // Renamed from ActivateAnchor
+    NavigateUpHierarchy,  // Square bracket left - go to parent patch
+    NavigateDownHierarchy, // Square bracket right - enter selected anchor submenu
 }
 
 impl ActionHandler {
@@ -792,6 +885,8 @@ impl ActionHandler {
             Action::UninstallApp => "Uninstall application",
             Action::TemplateCreate => "Create template",
             Action::ActivateTmux => "Activate TMUX session for selected command",
+            Action::NavigateUpHierarchy => "Navigate up to parent patch",
+            Action::NavigateDownHierarchy => "Navigate into selected anchor submenu",
         }.to_string();
         
         Self { action, description }
@@ -870,6 +965,14 @@ impl KeyHandler for ActionHandler {
             },
             Action::TemplateCreate => {
                 context.popup.handle_template_create();
+                KeyHandlerResult::Handled
+            },
+            Action::NavigateUpHierarchy => {
+                context.popup.navigate_up_hierarchy();
+                KeyHandlerResult::Handled
+            },
+            Action::NavigateDownHierarchy => {
+                context.popup.navigate_down_hierarchy();
                 KeyHandlerResult::Handled
             },
         }
@@ -971,6 +1074,8 @@ pub fn create_default_key_registry(config: &super::Config) -> KeyRegistry {
                     "show_keys" => Box::new(ActionHandler::new(Action::ShowKeys)),
                     "uninstall_app" => Box::new(ActionHandler::new(Action::UninstallApp)),
                     "template_create" => Box::new(ActionHandler::new(Action::TemplateCreate)),
+                    "navigate_up_hierarchy" => Box::new(ActionHandler::new(Action::NavigateUpHierarchy)),
+                    "navigate_down_hierarchy" => Box::new(ActionHandler::new(Action::NavigateDownHierarchy)),
                     _ => continue, // Skip unknown actions
                 };
                 
@@ -1066,6 +1171,8 @@ pub fn create_default_key_registry(config: &super::Config) -> KeyRegistry {
                                 "add_alias" => Box::new(ActionHandler::new(Action::AddAlias)),
                                 // "tmux_activate" => Box::new(ActionHandler::new(Action::TmuxActivate)), // COMMENTED OUT: Unused
                                 "activate_tmux" => Box::new(ActionHandler::new(Action::ActivateTmux)), // Renamed from activate_anchor
+                                "navigate_up_hierarchy" => Box::new(ActionHandler::new(Action::NavigateUpHierarchy)),
+                                "navigate_down_hierarchy" => Box::new(ActionHandler::new(Action::NavigateDownHierarchy)),
                                 _ => continue, // Skip unknown popup actions
                             };
                             registry.register_keystroke(keystroke, handler);

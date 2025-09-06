@@ -1,10 +1,4 @@
 # HookAnchor
-
-
-
-
-
-
 VLM 
 Digital Twin
 

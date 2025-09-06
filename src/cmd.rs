@@ -127,7 +127,8 @@ fn handle_hook_url(url: &str) {
     
     // Use the same logic as -x command
     let sys_data = crate::core::sys_data::get_sys_data();
-    let filtered = crate::core::commands::get_display_commands(&sys_data, &decoded_query, 1);
+    let (display_commands, _, _, _) = crate::core::get_new_display_commands(&decoded_query, &sys_data.commands, &sys_data.patches);
+    let filtered = display_commands.into_iter().take(1).collect::<Vec<_>>();
     
     if filtered.is_empty() {
         utils::detailed_log("URL_HANDLER", &format!("No commands found for query: '{}'", decoded_query));
@@ -160,7 +161,10 @@ fn run_match_command(args: &[String]) {
     let filtered = if debug {
         filter_commands(&sys_data.commands, query, 10, debug)  // Keep debug mode using original function
     } else {
-        crate::core::commands::get_display_commands(&sys_data, query, 50)
+        // Use new display logic that handles submenu filtering correctly
+        let (display_commands, _is_submenu, _submenu_info, _submenu_count) = 
+            crate::core::get_new_display_commands(query, &sys_data.commands, &sys_data.patches);
+        display_commands
     };
     
     // Print first 50 matches to see submenu results
@@ -217,7 +221,8 @@ fn run_execute_top_match(args: &[String]) {
     // Client environment logging is now handled automatically in execute_command based on action type
     
     let sys_data = crate::core::sys_data::get_sys_data();
-    let filtered = crate::core::commands::get_display_commands(&sys_data, query, 1);
+    let (display_commands, _, _, _) = crate::core::get_new_display_commands(query, &sys_data.commands, &sys_data.patches);
+    let filtered = display_commands.into_iter().take(1).collect::<Vec<_>>();
     
     if filtered.is_empty() {
         print(&format!("No commands found matching: {}", query));
@@ -449,7 +454,15 @@ fn run_folder_command(args: &[String]) {
     };
     
     // Use the same display logic as the popup, with aliases expanded
-    let display_commands = crate::core::commands::get_display_commands_with_options(&sys_data, query, 100, true);
+    let (mut display_commands, _, _, _) = crate::core::get_new_display_commands(query, &sys_data.commands, &sys_data.patches);
+    // Expand aliases for display
+    display_commands = display_commands.into_iter().map(|cmd| {
+        if cmd.action == "alias" {
+            cmd.resolve_alias(&sys_data.commands)
+        } else {
+            cmd
+        }
+    }).take(100).collect();
     
     if display_commands.is_empty() {
         print(&format!("No commands found matching: {}", query));
@@ -537,7 +550,15 @@ fn run_folder_with_commands(args: &[String]) {
     };
     
     // Use the same display logic as the popup, with aliases expanded
-    let display_commands = crate::core::commands::get_display_commands_with_options(&sys_data, query, 100, true);
+    let (mut display_commands, _, _, _) = crate::core::get_new_display_commands(query, &sys_data.commands, &sys_data.patches);
+    // Expand aliases for display
+    display_commands = display_commands.into_iter().map(|cmd| {
+        if cmd.action == "alias" {
+            cmd.resolve_alias(&sys_data.commands)
+        } else {
+            cmd
+        }
+    }).take(100).collect();
     
     if display_commands.is_empty() {
         print(&format!("No commands found matching: {}", query));
