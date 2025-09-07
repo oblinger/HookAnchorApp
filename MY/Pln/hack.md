@@ -1,15 +1,21 @@
+- [ ] Fix submenu to it is fully recomputed after the dirty flag was set.  (have the get_sys_data return a boolean)
 - [ ] .
-- [x] Streamline way we manage command reloading.
-- [x] remove the "A" flag
-- [x] Fix submenu to it is fully recomputed after the dirty flag was set.  (have the get_sys_data return a boolean)
 - [ ] Add a 'just cmd' button
 - [ ] Delete key should prompt to delete file and maybe folder.
-- [ ] svproj should find the submenu even though there is no space in it
-- [ ] proj sv is added twice and only one can be deleted
-- [ ] Popup is still drifting downward when it is reopening
-
+- [x] remove legacy code (refactor away comments), warnings
+- [ ] remove legacy panic fns
 - [ ] wrong sizing.
-- [ ] remove legacy and dead code.
+- [ ] Adding an alias can cause a circularity in the anchor-patch graph.  The user might also manually edit the commands.TXT file and cause a circularity to occur that way as well. Let's think through the best way to handle this.
+- [x] Streamline way we manage command reloading.
+- [x] remove the "A" flag
+- [x] Don't exit after command save, just return to popup
+- [x] refactor commands.rs to split complex inference logic into a module inference.rs.  each section in this module will have a comment on the top describging the functioning of its section, and then a group of related functions for that kind of inference.  Patch inference is a large bit of code and I think there is an auto inference as another group.
+
+
+- [x] svproj should find the submenu even though there is no space in it
+- [x] proj sv is added twice and only one can be deleted
+- [x] Popup is still drifting downward when it is reopening
+- [x] remove legacy and dead code.
 - [x] the "]" should 'follow' selected item to new menu
 - [x] the '[' key should go to patch parent for current menu.  
 - [x] start blank.
@@ -39,8 +45,24 @@
 │   should think about whether or not this code is sufficiently similar to the reading code that somehow they should be merged togetheror perhaps it is Cleaner to just keep      │
 │   them separate even though they are analogous to each other.                                           
 
-## __
 
+
+  3 TODO/FIXME removal items
+
+  - src/execute/actions.rs:290 - "TODO: Remove after all callers are updated"
+  - src/cmd.rs:1155 - "TODO: Remove Karabiner configuration"
+  - src/core/key_processing.rs:385 - "TODO: Remove this once all legacy code is cleaned up"
+
+  Legacy/compatibility mentions (not necessarily actionable)
+
+  - Several "legacy" comments in archived/compatibility code
+  - Migration comments in config.rs (functional, not removal targets)
+  - Bridge comments between old/new systems (architectural, not removal targets)
+
+
+
+
+## __
 
 - [ ] ama should really be an anchor page AND should launch a website. Need to rethink how anchor pages relate to everything
 #### LATER
