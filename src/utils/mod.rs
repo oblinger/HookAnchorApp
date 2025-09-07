@@ -28,7 +28,6 @@ pub(crate) mod error;
 // Logging functions
 pub use logging::{
     log, detailed_log, log_error, log_error_module, 
-    debug_log, verbose_log,
     clear_debug_log, check_and_clear_oversized_log, clear_log_file
 };
 

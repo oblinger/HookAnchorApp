@@ -384,7 +384,8 @@ impl Keystroke {
 /// Compatibility function for legacy key->text mapping
 /// TODO: Remove this once all legacy code is cleaned up
 pub fn ascii_to_key_name(ascii_char: &str) -> String {
-    ascii_char.to_string() // Simplified - just return the character
+    crate::utils::log(&format!("PANIC_TEST: ascii_to_key_name called with: {}", ascii_char));
+    panic!("PANIC_TEST: ascii_to_key_name function is being used - remove this panic if you want to keep this function");
 }
 
 // ================================================================================================

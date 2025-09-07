@@ -1971,9 +1971,8 @@ fn is_valid_merge_candidate_by_position(candidate: &str, search_context: &str, s
 
 /// Migrates commands to the new format (if needed)
 pub fn migrate_commands_to_new_format(commands: &mut [Command]) {
-    for cmd in commands.iter_mut() {
-        cmd.update_full_line();
-    }
+    crate::utils::log("PANIC_TEST: migrate_commands_to_new_format was called!");
+    panic!("PANIC_TEST: migrate_commands_to_new_format function is being used - remove this panic if you want to keep this function");
 }
 
 

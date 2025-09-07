@@ -52,7 +52,7 @@ impl ProcessTracker {
         let tracker = get_process_tracker();
         thread::spawn(move || {
             let start_time = Instant::now();
-            super::logging::debug_log("SUBPROCESS", &format!("Monitoring process {} (PID: {}) - command: '{}'", id, pid, command));
+            super::logging::detailed_log("SUBPROCESS", &format!("Monitoring process {} (PID: {}) - command: '{}'", id, pid, command));
             
             match child.wait() {
                 Ok(status) => {
@@ -62,7 +62,7 @@ impl ProcessTracker {
                     } else {
                         "FAILED"
                     };
-                    super::logging::debug_log("SUBPROCESS", &format!("Process {} completed: {} in {:?}", id, status_msg, duration));
+                    super::logging::detailed_log("SUBPROCESS", &format!("Process {} completed: {} in {:?}", id, status_msg, duration));
                     
                     // Mark as completed
                     if let Ok(mut tracker) = tracker.lock() {
@@ -73,12 +73,12 @@ impl ProcessTracker {
                 }
                 Err(e) => {
                     let duration = start_time.elapsed();
-                    super::logging::debug_log("SUBPROCESS", &format!("Process {} wait failed after {:?}: {}", id, duration, e));
+                    super::logging::detailed_log("SUBPROCESS", &format!("Process {} wait failed after {:?}: {}", id, duration, e));
                 }
             }
         });
         
-        super::logging::debug_log("SUBPROCESS", &format!("Registered process {} (PID: {}) for monitoring", id, pid));
+        super::logging::detailed_log("SUBPROCESS", &format!("Registered process {} (PID: {}) for monitoring", id, pid));
         id
     }
 
@@ -92,7 +92,7 @@ impl ProcessTracker {
         let now = Instant::now();
         self.processes.retain(|id, info| {
             if info.completed && now.duration_since(info.start_time) > max_age {
-                super::logging::debug_log("SUBPROCESS", &format!("Cleaned up completed process {}", id));
+                super::logging::detailed_log("SUBPROCESS", &format!("Cleaned up completed process {}", id));
                 false
             } else {
                 true

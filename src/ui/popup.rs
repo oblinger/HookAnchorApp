@@ -209,6 +209,8 @@ impl AnchorSelector {
     /// Update window size based on current mode, only if mode or size changed
     fn update_window_size(&mut self, ctx: &egui::Context) {
         let new_mode = self.determine_window_size_mode();
+        crate::utils::log(&format!("🪟 WINDOW_SIZING: Mode detected={:?}, dialog.visible={}, command_editor.visible={}", 
+            new_mode, self.dialog.visible, self.command_editor.visible));
         
         // Calculate the required size for the new mode
         let required_size = match new_mode {
@@ -218,17 +220,11 @@ impl AnchorSelector {
             }
             WindowSizeMode::Editor => self.calculate_editor_size(),
             WindowSizeMode::Dialog => {
-                // Get the dialog's calculated size
-                if self.dialog.visible {
-                    let (width, height) = self.dialog.calculate_required_size(ctx);
-                    egui::vec2(width, height)
-                } else {
-                    // Default reasonable size if dialog not yet visible
-                    let config = crate::core::sys_data::get_config();
-                    let width = config.popup_settings.get_default_window_width() as f32;
-                    let height = config.popup_settings.get_default_window_height() as f32;
-                    egui::vec2(width, height)
-                }
+                // TEST: Force main window to 1000x1000 to verify this code path is working
+                crate::utils::log("🪟 WINDOW_SIZING: Dialog mode - calculating size for dialog");
+                let size = egui::vec2(1000.0, 1000.0);
+                crate::utils::log(&format!("🪟 WINDOW_SIZING: Dialog mode calculated size: {}x{}", size.x, size.y));
+                size
             }
         };
         
@@ -249,12 +245,15 @@ impl AnchorSelector {
             _ => true, // Mode changed, definitely resize
         };
         
+        crate::utils::log(&format!("🪟 WINDOW_SIZING: Should resize? {}, current_mode={:?}, new_mode={:?}, required_size={}x{}", 
+            should_resize, self.window_size_mode, new_mode, required_size.x, required_size.y));
+            
         if should_resize {
             // Get current position BEFORE resizing to maintain top-left anchor
             let current_pos = ctx.input(|i| i.viewport().outer_rect.map(|r| r.min)).unwrap_or(egui::pos2(100.0, 100.0));
             
-            crate::utils::log(&format!("[POSITION] Before resize: position={:?}, mode={:?}, size={:?}", 
-                current_pos, new_mode, required_size));
+            crate::utils::log(&format!("🪟 WINDOW_SIZING: SENDING RESIZE COMMAND! position={:?}, mode={:?}, target_size={}x{}", 
+                current_pos, new_mode, required_size.x, required_size.y));
             
             ctx.send_viewport_cmd(egui::ViewportCommand::InnerSize(required_size));
             
@@ -288,7 +287,7 @@ impl AnchorSelector {
         static mut HIDING: bool = false;
         unsafe {
             if HIDING {
-                crate::utils::verbose_log("EXIT_OR_HIDE", "Already hiding, returning early");
+                crate::utils::detailed_log("EXIT_OR_HIDE", "Already hiding, returning early");
                 return; // Already hiding, don't call again
             }
             HIDING = true;
@@ -296,11 +295,11 @@ impl AnchorSelector {
         
         // Check if we're in direct mode (set by launcher via environment variable)
         let direct_mode = std::env::var("HOOKANCHOR_DIRECT_MODE").is_ok();
-        crate::utils::verbose_log("EXIT_OR_HIDE", &format!("Direct mode: {}", direct_mode));
+        crate::utils::detailed_log("EXIT_OR_HIDE", &format!("Direct mode: {}", direct_mode));
         
         if !direct_mode {
             // Server mode - hide window using AppleScript
-            crate::utils::verbose_log("EXIT_OR_HIDE", "Server mode - hiding window");
+            crate::utils::detailed_log("EXIT_OR_HIDE", "Server mode - hiding window");
             
             // Save current position before hiding
             if let Some(current_pos) = ctx.input(|i| i.viewport().outer_rect.map(|r| r.min)) {
@@ -315,16 +314,16 @@ impl AnchorSelector {
             
             // IMPORTANT: Restore focus to the previous application before hiding
             // This ensures that text insertion and other operations work correctly
-            crate::utils::verbose_log("EXIT_OR_HIDE", "Restoring focus to previous application");
+            crate::utils::detailed_log("EXIT_OR_HIDE", "Restoring focus to previous application");
             if let Err(e) = self.regain_focus() {
                 crate::utils::log_error(&format!("Failed to restore focus before hiding: {}", e));
             }
             
             // Hide the window using egui's viewport command
-            crate::utils::verbose_log("EXIT_OR_HIDE", "Sending ViewportCommand::Visible(false)");
+            crate::utils::detailed_log("EXIT_OR_HIDE", "Sending ViewportCommand::Visible(false)");
             ctx.send_viewport_cmd(egui::ViewportCommand::Visible(false));
             
-            crate::utils::verbose_log("EXIT_OR_HIDE", &format!("Setting is_hidden=true (was {})", self.is_hidden));
+            crate::utils::detailed_log("EXIT_OR_HIDE", &format!("Setting is_hidden=true (was {})", self.is_hidden));
             self.is_hidden = true;
             
             // Reset interaction time to prevent timeout loop
@@ -337,14 +336,14 @@ impl AnchorSelector {
                     i.viewport().outer_rect
                 )
             });
-            crate::utils::verbose_log("EXIT_OR_HIDE", &viewport_info);
-            crate::utils::verbose_log("EXIT_OR_HIDE", "Window hidden via viewport commands");
+            crate::utils::detailed_log("EXIT_OR_HIDE", &viewport_info);
+            crate::utils::detailed_log("EXIT_OR_HIDE", "Window hidden via viewport commands");
             // Reset the flag after a delay to allow for future hide operations
             std::thread::spawn(|| {
                 std::thread::sleep(std::time::Duration::from_millis(100));
                 unsafe { 
                     HIDING = false;
-                    crate::utils::verbose_log("EXIT_OR_HIDE", "HIDING flag reset to false");
+                    crate::utils::detailed_log("EXIT_OR_HIDE", "HIDING flag reset to false");
                 }
             });
         } else {
@@ -551,6 +550,7 @@ impl PopupInterface for AnchorSelector {
     }
     
     fn close_dialog(&mut self) {
+        crate::utils::log("🪟 DIALOG CLOSE: close_dialog() called - setting visible=false");
         self.dialog.visible = false;
         // Reset window size when closing dialog
         self.window_size_mode = WindowSizeMode::Normal;
@@ -591,21 +591,21 @@ impl AnchorSelector {
     
     /// Main entry point for executing actions from the popup
     fn execute(&mut self, action: &crate::execute::Action) {
-        use crate::utils::debug_log;
+        use crate::utils::detailed_log;
         
-        debug_log("POPUP_EXEC", &format!("Executing action type: {}", action.action_type()));
+        detailed_log("POPUP_EXEC", &format!("Executing action type: {}", action.action_type()));
         
         // Execute the action - will route to server or local as appropriate
         match action.action_type() {
             // UI actions need special handling in popup
             "template" | "popup" => {
-                debug_log("POPUP_EXEC", "Executing UI action in popup");
+                detailed_log("POPUP_EXEC", "Executing UI action in popup");
                 self.execute_in_popup(action);
             }
             // All other actions go to server
             _ => {
                 let _ = crate::execute::execute_on_server(action);
-                debug_log("POPUP_EXEC", "Action sent to server");
+                detailed_log("POPUP_EXEC", "Action sent to server");
                 self.should_exit = true;
             }
         }
@@ -613,21 +613,21 @@ impl AnchorSelector {
     
     /// Execute an action in the popup context (for UI-requiring actions)
     fn execute_in_popup(&mut self, action: &crate::execute::Action) {
-        use crate::utils::{debug_log, log_error};
+        use crate::utils::{detailed_log, log_error};
         
-        debug_log("POPUP_LOCAL", &format!("Executing {} locally", action.action_type()));
+        detailed_log("POPUP_LOCAL", &format!("Executing {} locally", action.action_type()));
         
         // For template actions, we need special UI handling
         if action.action_type() == "template" {
             // Get template name from action or use default
             let template_name = action.get_string("name").unwrap_or("default");
-            debug_log("POPUP_LOCAL", &format!("Processing template UI: {}", template_name));
+            detailed_log("POPUP_LOCAL", &format!("Processing template UI: {}", template_name));
             
             // Use existing template UI handling
             self.handle_template_create_named_impl(template_name);
         } else if action.action_type() == "popup" {
             // Handle popup control actions
-            debug_log("POPUP_LOCAL", "Handling popup control action");
+            detailed_log("POPUP_LOCAL", "Handling popup control action");
             // TODO: Implement popup control (show/hide/etc)
             self.should_exit = true;
         } else {
@@ -915,6 +915,28 @@ impl AnchorSelector {
     fn handle_template_create_named_impl(&mut self, template_name: &str) {
         crate::utils::detailed_log("TEMPLATE", &format!("TEMPLATE: === ENTER handle_template_create_named_impl('{}') ===", template_name));
         use crate::core::template_creation::TemplateContext;
+        
+        // Special validation for edit_selection template - only prevent editing invalid commands
+        if template_name == "edit_selection" {
+            // Only validate if we actually have commands to validate
+            if !self.filtered_commands().is_empty() {
+                let (display_commands, _, _, _) = self.get_display_commands();
+                let selected_idx = self.selected_index();
+                crate::utils::detailed_log("TEMPLATE", &format!("TEMPLATE: edit_selection - selected_index={}, display_commands.len()={}", selected_idx, display_commands.len()));
+                
+                if selected_idx < display_commands.len() {
+                    let selected_cmd = &display_commands[selected_idx];
+                    crate::utils::detailed_log("TEMPLATE", &format!("TEMPLATE: Selected command for editing: '{}'", selected_cmd.command));
+                    
+                    // Don't edit separator commands or merged commands
+                    if PopupState::is_separator_command(selected_cmd) || selected_cmd.get_flag('M').is_some() {
+                        crate::utils::detailed_log("TEMPLATE", "TEMPLATE: Cannot edit separator or merged command");
+                        self.show_error_dialog("Cannot edit separator or merged commands.");
+                        return;
+                    }
+                }
+            }
+        }
         
         crate::utils::detailed_log("TEMPLATE", &format!("TEMPLATE: DEBUG 0 - About to get current context"));
         // Get the current context
@@ -1591,10 +1613,10 @@ impl AnchorSelector {
     /// Update countdown and handle grabber logic
     fn update_grabber_countdown(&mut self, ctx: &egui::Context) {
         if let Some(count) = self.grabber_countdown {
-            crate::utils::verbose_log("GRAB", &format!("update_grabber_countdown: count={}", count));
+            crate::utils::detailed_log("GRAB", &format!("update_grabber_countdown: count={}", count));
             if let Some(last_update) = self.countdown_last_update {
                 let elapsed = last_update.elapsed();
-                crate::utils::verbose_log("GRAB", &format!("Elapsed: {}ms", elapsed.as_millis()));
+                crate::utils::detailed_log("GRAB", &format!("Elapsed: {}ms", elapsed.as_millis()));
                 if elapsed.as_secs() >= 1 {
                     if count > 1 {
                         // Continue countdown
@@ -3262,7 +3284,7 @@ impl eframe::App for AnchorSelector {
         
         // Update grabber countdown
         if self.grabber_countdown.is_some() {
-            crate::utils::verbose_log("GRAB", "Calling update_grabber_countdown from main update");
+            crate::utils::detailed_log("GRAB", "Calling update_grabber_countdown from main update");
         }
         self.update_grabber_countdown(ctx);
         
@@ -3851,32 +3873,39 @@ impl eframe::App for AnchorSelector {
                         }
                     };
                     
-                    // Determine the correct window size based on current mode
-                    let (final_width, final_height) = if self.command_editor.visible {
-                        // Use calculated editor size when command editor is open
-                        let editor_size = self.calculate_editor_size();
-                        (editor_size.x, editor_size.y)
+                    // Skip content-based window sizing when dialog is visible to avoid competing with dialog sizing
+                    if !self.dialog.visible {
+                        // Determine the correct window size based on current mode
+                        let (final_width, final_height) = if self.command_editor.visible {
+                            // Use calculated editor size when command editor is open
+                            let editor_size = self.calculate_editor_size();
+                            (editor_size.x, editor_size.y)
+                        } else {
+                            (window_width, required_height)
+                        };
+                        
+                        // Apply the calculated window size to ensure it fits the content
+                        let config = crate::core::sys_data::get_config();
+                        let max_width = config.popup_settings.get_max_window_width() as f32;
+                        let max_height = config.popup_settings.get_max_window_height() as f32;
+                        let default_width = config.popup_settings.get_default_window_width() as f32;
+                        
+                        // Ensure the calculated size respects our constraints
+                        let constrained_width = final_width.max(default_width).min(max_width);
+                        let constrained_height = final_height.min(max_height);
+                        
+                        // Only resize if the size actually changed significantly to avoid constant resizing
+                        let current_size = ctx.screen_rect().size();
+                        let size_diff_width = (current_size.x - constrained_width).abs();
+                        let size_diff_height = (current_size.y - constrained_height).abs();
+                        
+                        if size_diff_width > 10.0 || size_diff_height > 10.0 {
+                            crate::utils::log(&format!("🪟 CONTENT_RESIZE: Sending content-based resize command! {}x{} (dialog not visible)", 
+                                constrained_width, constrained_height));
+                            ctx.send_viewport_cmd(egui::ViewportCommand::InnerSize(egui::vec2(constrained_width, constrained_height)));
+                        }
                     } else {
-                        (window_width, required_height)
-                    };
-                    
-                    // Apply the calculated window size to ensure it fits the content
-                    let config = crate::core::sys_data::get_config();
-                    let max_width = config.popup_settings.get_max_window_width() as f32;
-                    let max_height = config.popup_settings.get_max_window_height() as f32;
-                    let default_width = config.popup_settings.get_default_window_width() as f32;
-                    
-                    // Ensure the calculated size respects our constraints
-                    let constrained_width = final_width.max(default_width).min(max_width);
-                    let constrained_height = final_height.min(max_height);
-                    
-                    // Only resize if the size actually changed significantly to avoid constant resizing
-                    let current_size = ctx.screen_rect().size();
-                    let size_diff_width = (current_size.x - constrained_width).abs();
-                    let size_diff_height = (current_size.y - constrained_height).abs();
-                    
-                    if size_diff_width > 10.0 || size_diff_height > 10.0 {
-                        ctx.send_viewport_cmd(egui::ViewportCommand::InnerSize(egui::vec2(constrained_width, constrained_height)));
+                        crate::utils::log("🪟 SKIPPING_CONTENT_RESIZE: Dialog is visible, allowing dialog sizing to control window");
                     }
                     
                     // Use DisplayLayout to determine arrangement

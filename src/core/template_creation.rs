@@ -85,6 +85,7 @@ impl TemplateContext {
         selected_command: Option<&Command>,
         _previous_command: Option<&Command>, // Kept for compatibility but unused
     ) -> Self {
+        // Note: _previous_command parameter is kept for API compatibility but not used in template processing
         let mut variables = HashMap::new();
         
         // Basic variables
@@ -210,14 +211,8 @@ impl TemplateContext {
                     }
                     Err(e) => {
                         crate::utils::detailed_log("TEMPLATE_JS", &format!("Failed to evaluate '{}': {}", expr, e));
-                        // For backward compatibility, try simple variable lookup
-                        if let Some(value) = self.variables.get(expr) {
-                            result.replace_range(start..end, value);
-                            last_pos = start + value.len();
-                        } else {
-                            // Unknown variable - skip past it to avoid infinite loop
-                            last_pos = end;
-                        }
+                        // Unknown variable - skip past it to avoid infinite loop
+                        last_pos = end;
                     }
                 }
             } else {
@@ -363,10 +358,7 @@ impl TemplateContext {
         context.push_str(&format!("  flags: {{ value: {:?}, enumerable: true }}\n", self.variables.get("_last_executed_flags").unwrap_or(&String::new())));
         context.push_str("});\n");
         
-        // Alias previous to last_executed for migration period
-        context.push_str("const previous = last_executed; // Aliased to last_executed for compatibility\n");
-        
-        // No backward compatibility variables - we're using clean object-based approach only
+        // No legacy compatibility variables needed
         
         context
     }

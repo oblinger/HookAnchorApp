@@ -1152,7 +1152,13 @@ fn run_uninstall() {
             }
         }
         
-        // TODO: Remove Karabiner configuration
+        // Remove Karabiner configuration
+        let setup_assistant = crate::systems::setup_assistant::SetupAssistant::new();
+        match setup_assistant.remove_karabiner_config() {
+            Ok(()) => print("✅ Removed Karabiner configuration"),
+            Err(e) => print(&format!("⚠️  Could not remove Karabiner configuration: {}", e)),
+        }
+        
         // TODO: Unregister URL handler
         
         print("");

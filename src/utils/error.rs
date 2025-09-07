@@ -23,7 +23,7 @@ pub fn queue_user_error(error_message: &str) {
     if let Some(queue) = ERROR_QUEUE.get() {
         if let Ok(mut queue_guard) = queue.lock() {
             queue_guard.push_back(error_message.to_string());
-            super::logging::debug_log("ERROR_QUEUE", &format!("Queued error: {}", error_message));
+            super::logging::detailed_log("ERROR_QUEUE", &format!("Queued error: {}", error_message));
         }
     }
 }

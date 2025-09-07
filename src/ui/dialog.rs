@@ -37,6 +37,7 @@ impl Dialog {
     
     #[allow(dead_code)]
     pub fn show(&mut self, spec_strings: Vec<String>) {
+        crate::utils::log("🪟 DIALOG SHOW: Dialog.show() called - setting visible=true");
         self.visible = true;
         self.rows.clear();
         self.input_values.clear();
@@ -173,97 +174,99 @@ impl Dialog {
     
     /// Calculate the required dialog size using simple estimation (performance optimized)
     pub fn calculate_required_size(&self, _ctx: &egui::Context) -> (f32, f32) {
-        let mut max_width = 500.0f32; // increased minimum width for rename dialogs
-        let mut total_height = 50.0f32; // increased base padding for window chrome and margins
+        let mut max_width = 450.0f32; // minimum width for rename dialogs
+        let mut total_height = 5.0f32; // very minimal base padding
         
         for row in &self.rows {
             let mut row_width = 30.0f32; // left + right padding
             let mut row_height = 6.0f32; // minimum row height for spacing
             
-            // Check if this is an empty row (spacing)
+            // Skip completely empty rows - they shouldn't add any height
             let is_empty_row = row.elements.is_empty() || 
                 (row.elements.len() == 1 && 
                  matches!(row.elements[0], DialogElement::Label(ref s) if s.is_empty()));
             
-            if is_empty_row {
-                // Empty rows still need some height for spacing
-                row_height = 12.0;
-            } else {
+            if !is_empty_row {
                 // Calculate size for each element in the row
                 for element in &row.elements {
                     match element {
                         DialogElement::Title(text) => {
                             // Dialog window title (larger font, centered)
                             row_width += text.len() as f32 * 12.0 + 30.0; // larger font + margins
-                            row_height = row_height.max(30.0); // extra height for title
+                            row_height = row_height.max(20.0); // realistic height for title
                         }
                         DialogElement::Label(text) => {
                             if !text.is_empty() {
                                 // Header text like "Available keyboard shortcuts:"
                                 row_width += text.len() as f32 * 8.0 + 15.0;
-                                row_height = row_height.max(22.0);
+                                row_height = row_height.max(15.0);
                             }
                         }
                         DialogElement::Input { .. } => {
                             // Fixed width for input fields
                             row_width += 200.0;
-                            row_height = row_height.max(30.0);
+                            row_height = row_height.max(25.0);
                         }
                         DialogElement::TextBox { content } => {
                             // Calculate textbox dimensions based on content
                             let lines: Vec<&str> = content.lines().collect();
                             let line_count = lines.len().max(1);
                             
-                            // Find the longest line for width calculation
+                            // Find the longest line for width calculation  
                             let max_line_length = lines.iter()
                                 .map(|line| line.len())
                                 .max()
                                 .unwrap_or(0);
                             
-                            // Use better font estimation for proportional font: ~8px per character
-                            // Add extra width for bullet points and indentation
-                            let textbox_width = (max_line_length as f32 * 8.0 + 60.0).max(450.0);
-                            let textbox_height = line_count as f32 * 18.0 + 20.0; // Better line height + padding
+                            // Make dialog width just big enough for the content with reasonable margins
+                            // The textbox will fill available width minus 20px, so dialog should be content + margins
+                            let content_width = max_line_length as f32 * 7.5;
+                            let needed_width = content_width + 60.0; // 20px textbox margins + 40px dialog margins
+                            let textbox_height = line_count as f32 * 16.0 + 10.0;
                             
-                            row_width += textbox_width;
+                            row_width += needed_width;
                             row_height = row_height.max(textbox_height);
                         }
                         DialogElement::Button { text } => {
                             // Button with proper sizing
                             let button_width = (text.len() as f32 * 8.0 + 30.0).max(80.0);
                             row_width += button_width + 15.0; // button + spacing
-                            row_height = row_height.max(50.0); // increased button row height
+                            row_height = row_height.max(30.0); // match observed button row height
                         }
                     }
                 }
+                
+                // Update maximums only for non-empty rows
+                max_width = max_width.max(row_width);
+                total_height += row_height + 1.0; // row height + very minimal inter-row spacing
             }
-            
-            // Update maximums
-            max_width = max_width.max(row_width);
-            total_height += row_height + 6.0; // row height + inter-row spacing
         }
         
-        // Add minimal extra spacing for button rows
-        let button_rows = self.rows.iter().filter(|row| {
-            row.elements.iter().any(|e| matches!(e, DialogElement::Button { .. }))
-        }).count();
-        total_height += button_rows as f32 * 15.0; // More spacing for button rows
+        // No extra spacing for button rows - they already have adequate height
+        
+        // Add tiny safety margin for egui framework overhead
+        total_height += 5.0;
         
         // Use configured maximum window sizes
         let config = crate::core::sys_data::get_config();
         let max_width_available = config.popup_settings.get_max_window_width() as f32;
         let max_height_available = config.popup_settings.get_max_window_height() as f32;
         
-        // Add window chrome margins (consistent padding around the dialog)
-        let pad = 20.0; // Padding around all edges of the dialog
+        // Add very minimal window chrome margins
+        let pad = 5.0; // Very minimal padding around dialog edges
         let final_width_with_margin = max_width + (pad * 2.0);
         let final_height_with_margin = total_height + (pad * 2.0);
         
         // Use calculated size but constrain to configured maximums
-        let final_width = final_width_with_margin.max(500.0).min(max_width_available);
-        let final_height = final_height_with_margin.max(200.0).min(max_height_available);
+        let final_width = final_width_with_margin.max(400.0).min(max_width_available);
+        let final_height = final_height_with_margin.max(150.0).min(max_height_available);
         
-        (final_width, final_height)
+        // Subtract estimated window chrome size to achieve target outer window size
+        // On macOS, window chrome typically adds ~28px (title bar) + ~4px (borders) = ~32px total
+        let estimated_chrome_height = 32.0;
+        let adjusted_height = (final_height - estimated_chrome_height).max(100.0); // Don't go below 100px content
+        
+        (final_width, adjusted_height)
     }
 
     pub fn update(&mut self, ctx: &egui::Context) -> bool {
@@ -293,11 +296,17 @@ impl Dialog {
         
         // Calculate required window size by measuring actual content  
         let (required_width, required_height) = self.calculate_required_size(ctx);
-        let pad = 20.0; // Same padding value used in calculate_required_size
+        let pad = 5.0; // Same padding value used in calculate_required_size
+
+        crate::utils::detailed_log("DIALOG", &format!("DIALOG SIZE: Calculated width={}, height={}", required_width, required_height));
 
         egui::Window::new(&self.title)
-            .fixed_size([required_width, required_height])
+            .min_size([required_width, required_height])
+            .max_size([required_width, required_height]) // Force exact size constraints 
+            .default_size([required_width, required_height])
+            .resizable(false)
             .collapsible(false)
+            .anchor(egui::Align2::CENTER_CENTER, [0.0, 0.0])
             .show(ctx, |ui| {
                 // Add padding around the dialog content
                 ui.add_space(pad);
@@ -327,8 +336,8 @@ impl Dialog {
                                         }
                                     }
                                 });
-                                // Add extra padding after button rows
-                                ui.add_space(12.0);
+                                // Add very minimal padding after button rows
+                                ui.add_space(3.0);
                             });
                         } else {
                             // Regular layout for non-button rows
@@ -354,9 +363,9 @@ impl Dialog {
                                             // Calculate height based on actual content lines
                                             let lines: Vec<&str> = content.lines().collect();
                                             let line_count = lines.len().max(1);
-                                            let text_height = line_count as f32 * 16.0 + 15.0; // 16px per line + padding (match sizing calc)
+                                            let text_height = line_count as f32 * 16.0 + 10.0; // Match sizing calc
                                             
-                                            // Use the calculated height directly without scrolling for better sizing
+                                            // Use available width (looks better) but calculated height
                                             ui.add_sized(
                                                 [ui.available_width() - 20.0, text_height],
                                                 egui::TextEdit::multiline(&mut content.clone())
@@ -378,7 +387,7 @@ impl Dialog {
                                 }
                             });
                         }
-                        ui.add_space(8.0);
+                        ui.add_space(2.0);
                     }
                     ui.add_space(pad); // Bottom padding
                 });
@@ -399,6 +408,7 @@ impl Dialog {
             result.insert("exit".to_string(), button_pressed.unwrap_or_default());
             
             self.result = Some(result);
+            crate::utils::log("🪟 DIALOG HIDE: Dialog closed - setting visible=false");
             self.visible = false;
             return true;
         }

@@ -10,7 +10,7 @@ use serde_json::Value as JsonValue;
 use rquickjs::{Context, Ctx};
 use crate::core::Command;
 use crate::core::key_processing::Keystroke;
-use crate::utils::{debug_log, log_error};
+use crate::utils::{detailed_log, log_error};
 
 /// A unified action that can be invoked via keyboard, command, or other actions
 /// This is now simply a HashMap with accessor methods for common fields
@@ -254,13 +254,13 @@ fn expand_template_string(
             let end = start + end + 2;
             let expr = result[start + 2..end - 2].trim();
             
-            debug_log("EXPAND", &format!("Evaluating expression: {}", expr));
+            detailed_log("EXPAND", &format!("Evaluating expression: {}", expr));
             
             // Evaluate the JavaScript expression
             match ctx.eval::<rquickjs::Value, _>(expr) {
                 Ok(value) => {
                     let expanded = js_value_to_string(&value);
-                    debug_log("EXPAND", &format!("Expression '{}' expanded to: '{}'", expr, expanded));
+                    detailed_log("EXPAND", &format!("Expression '{}' expanded to: '{}'", expr, expanded));
                     result.replace_range(start..end, &expanded);
                     last_pos = start + expanded.len();
                 }
@@ -292,21 +292,8 @@ pub fn expand_string(
     template: &str,
     context: &ActionContext,
 ) -> Result<String, Box<dyn std::error::Error>> {
-    // Convert context to params
-    let mut params = HashMap::new();
-    params.insert("input".to_string(), context.input.clone());
-    if let Some(arg) = &context.arg {
-        params.insert("arg".to_string(), arg.clone());
-    }
-    for (k, v) in &context.variables {
-        params.insert(k.clone(), v.clone());
-    }
-    
-    // Use the new expansion
-    let expanded_params = expand_parameters(&params)?;
-    expanded_params.get(template)
-        .cloned()
-        .ok_or_else(|| "Template not found in expanded params".into())
+    crate::utils::log(&format!("PANIC_TEST: expand_string called with template: {}", template));
+    panic!("PANIC_TEST: expand_string function is being used - remove this panic if you want to keep this function");
 }
 
 /// Create a JavaScript context with parameters as variables
@@ -340,94 +327,6 @@ fn create_js_context_with_params(
     Ok(ctx)
 }
 
-// PLEASE REFACTOR AWAY - Legacy JavaScript context creation for old action system
-/// Create a JavaScript context with action-specific variables (deprecated)
-fn create_action_js_context(
-    context: &ActionContext,
-) -> Result<Context, Box<dyn std::error::Error>> {
-    let _config = crate::core::sys_data::get_config();
-    let rt = rquickjs::Runtime::new()?;
-    let ctx = Context::full(&rt)?;
-    
-    ctx.with(|ctx| -> Result<(), Box<dyn std::error::Error>> {
-        // Setup all standard built-in functions and user functions from config.js
-        crate::js::setup_runtime(&ctx)?;
-        
-        // Add context variables
-        setup_action_variables(&ctx, context)?;
-        
-        Ok(())
-    })?;
-    
-    Ok(ctx)
-}
-
-/// Setup action-specific variables in JavaScript context
-// PLEASE REFACTOR AWAY - Legacy action variable setup for old JS action system
-fn setup_action_variables(
-    ctx: &Ctx<'_>,
-    context: &ActionContext,
-) -> Result<(), Box<dyn std::error::Error>> {
-    let globals = ctx.globals();
-    
-    // Basic variables
-    globals.set("input", context.input.clone())?;
-    if let Some(arg) = &context.arg {
-        globals.set("arg", arg.clone())?;
-    } else {
-        globals.set("arg", "")?;
-    }
-    
-    // Previous command object
-    if let Some(cmd) = &context.previous_command {
-        let previous = rquickjs::Object::new(ctx.clone())?;
-        previous.set("name", cmd.command.clone())?;
-        previous.set("path", cmd.arg.clone())?;
-        previous.set("folder", extract_folder_from_path(&cmd.arg).unwrap_or_default())?;
-        previous.set("hook", create_hook_url(&cmd.command))?;
-        globals.set("previous", previous)?;
-    } else {
-        // Empty previous object
-        let previous = rquickjs::Object::new(ctx.clone())?;
-        previous.set("name", "")?;
-        previous.set("path", "")?;
-        previous.set("folder", "")?;
-        previous.set("hook", "")?;
-        globals.set("previous", previous)?;
-    }
-    
-    // Selected command object
-    if let Some(cmd) = &context.selected_command {
-        let selected = rquickjs::Object::new(ctx.clone())?;
-        selected.set("name", cmd.command.clone())?;
-        selected.set("path", cmd.arg.clone())?;
-        selected.set("folder", extract_folder_from_path(&cmd.arg).unwrap_or_default())?;
-        selected.set("hook", create_hook_url(&cmd.command))?;
-        globals.set("selected", selected)?;
-    } else {
-        // Empty selected object
-        let selected = rquickjs::Object::new(ctx.clone())?;
-        selected.set("name", "")?;
-        selected.set("path", "")?;
-        selected.set("folder", "")?;
-        selected.set("hook", "")?;
-        globals.set("selected", selected)?;
-    }
-    
-    // Add all custom variables
-    for (key, value) in &context.variables {
-        globals.set(key.as_str(), value.clone())?;
-    }
-    
-    // Add first_match for folder operations (will be populated by search)
-    globals.set("first_match", "")?;
-    
-    // Add grabbed variables for grab functionality
-    globals.set("grabbed_action", "app")?;
-    globals.set("grabbed_arg", "Finder")?;
-    
-    Ok(())
-}
 
 
 /// Convert JavaScript value to string
@@ -446,27 +345,6 @@ fn js_value_to_string(value: &rquickjs::Value) -> String {
     }
 }
 
-/// Extract folder path from a file path
-// PLEASE REFACTOR AWAY - Legacy path utility for old action system
-fn extract_folder_from_path(path: &str) -> Option<String> {
-    use std::path::Path;
-    Path::new(path)
-        .parent()
-        .and_then(|p| p.to_str())
-        .map(|s| s.to_string())
-}
-
-// PLEASE REFACTOR AWAY - Legacy hook URL creation utility
-/// Create a hook:// URL from a command name
-fn create_hook_url(name: &str) -> String {
-    // Simple URL-safe encoding: lowercase, remove spaces and special chars
-    let safe_name = name
-        .to_lowercase()
-        .chars()
-        .filter(|c| c.is_alphanumeric() || *c == '-' || *c == '_')
-        .collect::<String>();
-    format!("hook://{}", safe_name)
-}
 
 /// Add date/time variables to the context
 fn add_datetime_variables(variables: &mut HashMap<String, String>) {
@@ -604,7 +482,7 @@ fn execute_template_action(
     _action: &Action,
     params: &HashMap<String, String>,
 ) -> Result<String, Box<dyn std::error::Error>> {
-    debug_log("ACTION", "Executing template action");
+    detailed_log("ACTION", "Executing template action");
     
     // Create a Command from the template parameters
     let mut command = Command {
@@ -628,14 +506,14 @@ fn execute_template_action(
         
         // Write the file
         std::fs::write(&expanded_path, contents)?;
-        debug_log("ACTION", &format!("Created file: {}", expanded_path));
+        detailed_log("ACTION", &format!("Created file: {}", expanded_path));
     }
     
     // Handle additional folder creation
     if let Some(folder) = params.get("file") {
         let expanded_folder = crate::utils::expand_tilde(folder);
         std::fs::create_dir_all(&expanded_folder)?;
-        debug_log("ACTION", &format!("Created folder: {}", expanded_folder));
+        detailed_log("ACTION", &format!("Created folder: {}", expanded_folder));
     }
     
     // Add the command to commands.txt
@@ -652,7 +530,7 @@ fn execute_popup_action(
     let popup_action = params.get("popup_action")
         .ok_or("popup action requires popup_action parameter")?;
     
-    debug_log("ACTION", &format!("Executing popup action: {}", popup_action));
+    detailed_log("ACTION", &format!("Executing popup action: {}", popup_action));
     
     // Popup actions are handled by the UI layer
     // This function is mainly for CLI testing
@@ -669,12 +547,12 @@ fn execute_open_url_action(
     let browser = params.get("browser");
     
     crate::utils::log(&format!("OPEN_URL_ACTION: url='{}', browser={:?}", url, browser));
-    debug_log("ACTION", &format!("Opening URL: {} in browser: {:?}", url, browser));
+    detailed_log("ACTION", &format!("Opening URL: {} in browser: {:?}", url, browser));
     
     // Use the launcher system to open URL
     let result = if let Some(browser_name) = browser {
         crate::utils::log(&format!("OPEN_URL_ACTION: Using browser: {}", browser_name));
-        debug_log("ACTION", &format!("Calling open_with_app('{}', '{}')", browser_name, url));
+        detailed_log("ACTION", &format!("Calling open_with_app('{}', '{}')", browser_name, url));
         crate::utils::open_with_app(browser_name, url)
     } else {
         crate::utils::log("OPEN_URL_ACTION: Using default browser");
@@ -741,7 +619,7 @@ fn execute_open_folder_action(
         .or_else(|| params.get("arg"))
         .ok_or("open_folder action requires folder, path, or arg parameter")?;
     
-    debug_log("ACTION", &format!("Opening folder: {}", path));
+    detailed_log("ACTION", &format!("Opening folder: {}", path));
     
     let result = crate::utils::open_folder(path);
     
@@ -764,7 +642,7 @@ fn execute_open_file_action(
         .or_else(|| params.get("arg"))
         .ok_or("open_file action requires file, path, or arg parameter")?;
     
-    debug_log("ACTION", &format!("Opening file: {}", path));
+    detailed_log("ACTION", &format!("Opening file: {}", path));
     
     // Use default app to open file
     let result = crate::utils::open_with_app("", path);
@@ -799,7 +677,7 @@ fn execute_shell_action(
         (command.as_str(), false)
     };
     
-    debug_log("ACTION", &format!("Executing shell command: {} (windowed: {}, gui: {})", actual_command, windowed, is_gui));
+    detailed_log("ACTION", &format!("Executing shell command: {} (windowed: {}, gui: {})", actual_command, windowed, is_gui));
     
     if windowed {
         // Open in terminal window
@@ -821,7 +699,7 @@ fn execute_js_function_action(
     function_name: &str,
     params: &HashMap<String, String>,
 ) -> Result<String, Box<dyn std::error::Error>> {
-    debug_log("ACTION", &format!("Executing JavaScript function: {}", function_name));
+    detailed_log("ACTION", &format!("Executing JavaScript function: {}", function_name));
     
     // Get parameters that will be passed to the JavaScript function
     let arg = params.get("arg").unwrap_or(&String::new()).clone();
@@ -844,15 +722,15 @@ fn execute_js_function_action(
         input = input.replace("\\", "\\\\").replace("'", "\\'").replace("\n", "\\n").replace("\"", "\\\"")
     );
     
-    debug_log("ACTION", &format!("Calling JavaScript: {}", js_code));
+    detailed_log("ACTION", &format!("Calling JavaScript: {}", js_code));
     
     match crate::js::execute(&js_code) {
         Ok(result) => {
-            debug_log("ACTION", &format!("JavaScript execution succeeded: {}", result));
+            detailed_log("ACTION", &format!("JavaScript execution succeeded: {}", result));
             Ok(result)
         }
         Err(e) => {
-            debug_log("ACTION", &format!("JavaScript execution failed: {}", e));
+            detailed_log("ACTION", &format!("JavaScript execution failed: {}", e));
             Err(e)
         }
     }
@@ -872,7 +750,7 @@ fn execute_obsidian_action(
     let vault = params.get("vault")
         .unwrap_or(&default_vault);
     
-    debug_log("ACTION", &format!("Opening in Obsidian: {} (vault: {})", file, vault));
+    detailed_log("ACTION", &format!("Opening in Obsidian: {} (vault: {})", file, vault));
     
     let url = format!("obsidian://open?vault={}&file={}", 
         urlencoding::encode(vault),
@@ -902,7 +780,7 @@ fn execute_1password_action(
     let query = params.get("query")
         .ok_or("1password action requires query parameter")?;
     
-    debug_log("ACTION", &format!("Searching 1Password for: {}", query));
+    detailed_log("ACTION", &format!("Searching 1Password for: {}", query));
     
     // Use the 1Password Quick Access approach
     let script = format!(
@@ -926,7 +804,7 @@ fn execute_slack_action(
     let channel = params.get("channel")
         .ok_or("slack action requires channel parameter")?;
     
-    debug_log("ACTION", &format!("Navigating to Slack channel: {}", channel));
+    detailed_log("ACTION", &format!("Navigating to Slack channel: {}", channel));
     
     // Activate Slack and navigate to channel
     let script = format!(
@@ -954,7 +832,7 @@ fn execute_tmux_action(
     
     let session = params.get("session");
     
-    debug_log("ACTION", &format!("Activating tmux at: {} (session: {:?})", path, session));
+    detailed_log("ACTION", &format!("Activating tmux at: {} (session: {:?})", path, session));
     
     // TODO: Implement tmux activation logic
     
@@ -974,7 +852,7 @@ fn execute_type_text_action(
         return Err("type_text action requires either file or text parameter".into());
     };
     
-    debug_log("ACTION", &format!("Typing {} characters", text.len()));
+    detailed_log("ACTION", &format!("Typing {} characters", text.len()));
     
     // Type the text using AppleScript
     let escaped = text
@@ -1000,7 +878,7 @@ fn execute_alias_action(
         .or_else(|| params.get("arg"))
         .ok_or("alias action requires target parameter")?;
     
-    debug_log("ACTION", &format!("Resolving alias to: {}", target));
+    detailed_log("ACTION", &format!("Resolving alias to: {}", target));
     
     // Find and execute the target command
     let commands = crate::core::commands::load_commands_raw();
@@ -1026,7 +904,7 @@ fn execute_alias_action(
         .ok_or_else(|| format!("Alias target '{}' not found", target))?;
     
     // Execute the target command
-    debug_log("ACTION", &format!("Executing aliased command: {} (action: {})", 
+    detailed_log("ACTION", &format!("Executing aliased command: {} (action: {})", 
         target_cmd.command, target_cmd.action));
     
     // Execute the resolved command
@@ -1037,44 +915,6 @@ fn execute_alias_action(
 }
 
 
-// PLEASE REFACTOR AWAY - Legacy custom action execution via JavaScript
-fn execute_custom_action(
-    action_type: &str,
-    params: &HashMap<String, String>,
-) -> Result<String, Box<dyn std::error::Error>> {
-    debug_log("ACTION", &format!("Looking for custom action handler: action_{}", action_type));
-    
-    // Look for action_<type> function in JavaScript
-    let function_name = format!("action_{}", action_type);
-    
-    // Create JS context with parameters
-    let js_ctx = create_js_context_with_params(params)?;
-    
-    js_ctx.with(|ctx| {
-        // Check if function exists
-        let globals = ctx.globals();
-        if let Ok(func) = globals.get::<_, rquickjs::Value>(&function_name) {
-            if func.is_function() {
-                // Call the function with expanded arg
-                let arg = params.get("arg").cloned().unwrap_or_default();
-                let eval_code = format!("{}('{}')", function_name, arg);
-                match ctx.eval::<rquickjs::Value, _>(eval_code.as_str()) {
-                    Ok(result) => {
-                        let result_str = js_value_to_string(&result);
-                        Ok(result_str)
-                    }
-                    Err(e) => {
-                        Err(format!("Error executing custom action '{}': {}", action_type, e).into())
-                    }
-                }
-            } else {
-                Err(format!("action_{} is not a function", action_type).into())
-            }
-        } else {
-            Err(format!("Unknown action type: {} (no action_{} function found)", action_type, action_type).into())
-        }
-    })
-}
 
 #[cfg(test)]
 mod tests {

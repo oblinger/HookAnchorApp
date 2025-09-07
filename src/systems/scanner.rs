@@ -60,7 +60,7 @@ use std::hash::{Hash, Hasher};
 use crate::core::Command;
 use crate::core::commands::save_commands_to_file;
 use crate::core::{Config, load_state, save_state};
-use crate::utils::debug_log;
+use crate::utils::detailed_log;
 use crate::execute::get_action;
 use chrono::Local;
 
@@ -157,7 +157,7 @@ pub fn scan_check(commands: Vec<Command>) -> Vec<Command> {
     let _file_roots = match &sys_data.config.popup_settings.file_roots {
         Some(roots) => roots,
         None => {
-            debug_log("SCANNER", "ERROR: No file_roots configured in config file");
+            detailed_log("SCANNER", "ERROR: No file_roots configured in config file");
             return commands; // Return without scanning if no roots configured
         }
     };
@@ -491,7 +491,7 @@ fn scan_files(mut commands: Vec<Command>, file_roots: &[String], config: &Config
     }
     
     // COMMENTED OUT: Process collected folders at the end - folder scanning disabled
-    // debug_log("SCANNER", &format!("Processing {} collected folders", found_folders.len()));
+    // detailed_log("SCANNER", &format!("Processing {} collected folders", found_folders.len()));
     // for folder_path in found_folders {
     //     if let Some(folder_name) = folder_path.file_name() {
     //         if let Some(name_str) = folder_name.to_str() {
@@ -514,11 +514,11 @@ fn scan_files(mut commands: Vec<Command>, file_roots: &[String], config: &Config
     //                 commands.push(folder_command);
     //                 existing_commands.insert(command_name.to_lowercase());
     //                 if is_scanner_debug_enabled(config) {
-    //                     debug_log("SCANNER", &format!("Added folder command: {}", name_str));
+    //                     detailed_log("SCANNER", &format!("Added folder command: {}", name_str));
     //                 }
     //             } else {
     //                 if is_scanner_debug_enabled(config) {
-    //                     debug_log("SCANNER", &format!("Skipping folder '{}' - command already exists", name_str));
+    //                     detailed_log("SCANNER", &format!("Skipping folder '{}' - command already exists", name_str));
     //                 }
     //             }
     //         }

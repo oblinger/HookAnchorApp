@@ -14,7 +14,7 @@ use std::sync::{Arc, Mutex};
 use std::path::PathBuf;
 use serde::{Serialize, Deserialize};
 use chrono::TimeZone;
-use crate::utils::{debug_log, verbose_log};
+use crate::utils::detailed_log;
 
 /// Helper function to output to both console and debug log
 fn log_and_print(prefix: &str, message: &str) {
@@ -22,7 +22,7 @@ fn log_and_print(prefix: &str, message: &str) {
     // Print to stdout so we can see what the server is doing
     println!("{}", formatted);
     // Also log to file for persistence
-    debug_log(prefix, message);
+    detailed_log(prefix, message);
 }
 
 /// Response structure for command execution
@@ -70,9 +70,9 @@ impl CommandServer {
         // Change to that directory
         std::env::set_current_dir(&base_working_dir)?;
         
-        debug_log("CMD_SERVER", &format!("Creating server with socket: {:?}", socket_path));
-        debug_log("CMD_SERVER", &format!("Captured {} environment variables", inherited_env.len()));
-        debug_log("CMD_SERVER", &format!("Base working directory: {:?}", base_working_dir));
+        detailed_log("CMD_SERVER", &format!("Creating server with socket: {:?}", socket_path));
+        detailed_log("CMD_SERVER", &format!("Captured {} environment variables", inherited_env.len()));
+        detailed_log("CMD_SERVER", &format!("Base working directory: {:?}", base_working_dir));
         
         Ok(Self {
             socket_path,
@@ -109,12 +109,12 @@ impl CommandServer {
         let running_clone = Arc::clone(&running);
         
         thread::spawn(move || {
-            debug_log("CMD_SERVER", "Server thread started");
+            detailed_log("CMD_SERVER", "Server thread started");
             
             for stream in listener.incoming() {
                 // Check if we should continue running
                 if !*running_clone.lock().unwrap() {
-                    debug_log("CMD_SERVER", "Server shutdown requested");
+                    detailed_log("CMD_SERVER", "Server shutdown requested");
                     break;
                 }
                 
@@ -126,17 +126,17 @@ impl CommandServer {
                         // Handle each connection in a separate thread
                         thread::spawn(move || {
                             if let Err(e) = handle_client(stream, env, working_dir) {
-                                debug_log("CMD_SERVER", &format!("Error handling client: {}", e));
+                                detailed_log("CMD_SERVER", &format!("Error handling client: {}", e));
                             }
                         });
                     }
                     Err(e) => {
-                        debug_log("CMD_SERVER", &format!("Error accepting connection: {}", e));
+                        detailed_log("CMD_SERVER", &format!("Error accepting connection: {}", e));
                     }
                 }
             }
             
-            debug_log("CMD_SERVER", "Server thread exiting");
+            detailed_log("CMD_SERVER", "Server thread exiting");
         });
         
         // We can't store the listener since it was moved into the thread
@@ -146,7 +146,7 @@ impl CommandServer {
     
     /// Stop the server
     pub fn stop(&mut self) {
-        debug_log("CMD_SERVER", "Stopping server");
+        detailed_log("CMD_SERVER", "Stopping server");
         *self.running.lock().unwrap() = false;
         
         // Remove socket file
@@ -155,71 +155,6 @@ impl CommandServer {
         }
     }
     
-    // PLEASE REFACTOR AWAY - Legacy server status check method
-    /// Check if server is running
-    pub fn is_running(&self) -> bool {
-        *self.running.lock().unwrap()
-    }
-    
-    // PLEASE REFACTOR AWAY - Legacy direct command execution through server instance
-    /// Execute a command through the server with proper alias resolution
-    fn execute_command(&self, command: &crate::core::Command) -> crate::core::CommandTarget {
-        self.execute_command_with_depth(command, 0)
-    }
-    
-    // PLEASE REFACTOR AWAY - Legacy recursive command execution with depth tracking
-    /// Internal function to execute commands with recursion depth tracking
-    fn execute_command_with_depth(&self, command: &crate::core::Command, _depth: u32) -> crate::core::CommandTarget {
-        // Resolve alias chains before execution
-        let all_commands = crate::core::load_commands();
-        let resolved_command = command.resolve_alias(&all_commands);
-        
-        // If the resolved command is different, log the alias resolution
-        if resolved_command.command != command.command {
-            crate::utils::detailed_log("ALIAS", &format!("Alias '{}' resolved to target: '{}'", command.command, resolved_command.command));
-        }
-        
-        // Log command execution in the requested format (use original command name for logging)
-        crate::utils::detailed_log("EXECUTE", &format!("'{}' AS '{}' ON '{}'", command.command, resolved_command.action, resolved_command.arg));
-        crate::utils::detailed_log("EXECUTE_FLOW", "Starting command execution process via server");
-        
-        // Save the last executed command for add_alias functionality
-        use crate::core::state::save_last_executed_command;
-        crate::utils::detailed_log("STATE_SAVE", &format!("Attempting to save last executed command: '{}'", command.command));
-        match save_last_executed_command(&command.command) {
-            Ok(_) => crate::utils::detailed_log("STATE_SAVE", "Successfully saved last executed command"),
-            Err(e) => crate::utils::detailed_log("STATE_SAVE", &format!("Failed to save last executed command: {}", e)),
-        }
-        
-        // Execute via server (always use server for consistent execution)
-        crate::utils::detailed_log("EXECUTE_FLOW", "Sending command to server for execution");
-        
-        if let Ok(client) = CommandClient::new() {
-            if client.is_server_available() {
-                crate::utils::detailed_log("EXECUTE_FLOW", "Server available, sending command object");
-                
-                // Send the resolved command object to server for execution
-                match client.execute_command(&resolved_command) {
-                    Ok(response) => {
-                        crate::utils::detailed_log("EXECUTE_FLOW", &format!("Command sent to server successfully: {:?}", response));
-                        
-                        // Check process health after command execution
-                        crate::utils::subprocess::check_system_health();
-                        
-                        return crate::core::CommandTarget::Command(resolved_command);
-                    }
-                    Err(e) => {
-                        crate::utils::detailed_log("EXECUTE_FLOW", &format!("Failed to send command to server: {:?}", e));
-                        // Fall through to error handling
-                    }
-                }
-            }
-        }
-        
-        // If we get here, server execution failed
-        crate::utils::log("CMD_SERVER: Failed to execute command via server");
-        crate::core::CommandTarget::Command(resolved_command)
-    }
 }
 
 impl Drop for CommandServer {
@@ -234,7 +169,7 @@ fn handle_client(
     _inherited_env: HashMap<String, String>,
     _base_working_dir: PathBuf,
 ) -> Result<(), Box<dyn std::error::Error>> {
-    verbose_log("CMD_SERVER", "Handling new client connection");
+    detailed_log("CMD_SERVER", "Handling new client connection");
     
     // Read the JSON action from the client
     let mut reader = BufReader::new(&stream);
@@ -243,15 +178,15 @@ fn handle_client(
     
     // Check if we actually read any data
     if bytes_read == 0 || request_line.trim().is_empty() {
-        verbose_log("CMD_SERVER", "Client sent empty request, closing connection");
+        detailed_log("CMD_SERVER", "Client sent empty request, closing connection");
         return Ok(());
     }
     
-    verbose_log("CMD_SERVER", &format!("Read {} bytes", bytes_read));
+    detailed_log("CMD_SERVER", &format!("Read {} bytes", bytes_read));
     
     // Deserialize the Action
     let action: crate::execute::Action = serde_json::from_str(&request_line.trim())?;
-    verbose_log("CMD_SERVER", &format!("Received action: type={}", action.action_type()));
+    detailed_log("CMD_SERVER", &format!("Received action: type={}", action.action_type()));
     
     // Print one line to console showing what command is being executed
     // Extract a meaningful description of what's being executed
@@ -273,7 +208,7 @@ fn handle_client(
     
     if needs_response {
         // Execute synchronously and send result back
-        verbose_log("CMD_SERVER", "Executing action synchronously (client waiting for response)");
+        detailed_log("CMD_SERVER", "Executing action synchronously (client waiting for response)");
         
         let result = match super::actions::execute_locally(&action, None, None) {
             Ok(output) => CommandResponse {
@@ -304,9 +239,9 @@ fn handle_client(
     } else {
         // Execute asynchronously in background thread
         thread::spawn(move || {
-            verbose_log("CMD_SERVER", "Executing action in background");
+            detailed_log("CMD_SERVER", "Executing action in background");
             match super::actions::execute_locally(&action, None, None) {
-                Ok(_) => verbose_log("CMD_SERVER", "Action executed successfully"),
+                Ok(_) => detailed_log("CMD_SERVER", "Action executed successfully"),
                 Err(e) => {
                     // Print error to console so user can see it
                     eprintln!("[{}] ERROR: {}", chrono::Local::now().format("%H:%M:%S"), e);
@@ -329,7 +264,7 @@ fn handle_client(
         stream.flush()?;
     }
     
-    verbose_log("CMD_SERVER", "Response sent to client");
+    detailed_log("CMD_SERVER", "Response sent to client");
     Ok(())
 }
 
@@ -339,7 +274,7 @@ fn handle_client(
 /*
 /// Main entry point for executing actions in the server - routes based on action type
 pub(crate) fn execute(action: &crate::execute::Action) -> Result<String, String> {
-    verbose_log("CMD_SERVER", &format!("Server execute: type={}", action.action_type()));
+    detailed_log("CMD_SERVER", &format!("Server execute: type={}", action.action_type()));
     
     match action.action_type() {
         // Server-only actions (or actions that should always run in server context)
@@ -355,7 +290,7 @@ pub(crate) fn execute(action: &crate::execute::Action) -> Result<String, String>
 }
 /// Execute an action locally within the server process
 pub fn execute_locally(action: &crate::execute::Action) -> Result<String, String> {
-    verbose_log("CMD_SERVER", &format!("Executing action locally: type={}", action.action_type()));
+    detailed_log("CMD_SERVER", &format!("Executing action locally: type={}", action.action_type()));
     
     match action.action_type() {
         "template" => {
@@ -410,30 +345,22 @@ fn get_socket_path() -> Result<PathBuf, Box<dyn std::error::Error>> {
 }
 
 
-// PLEASE REFACTOR AWAY - Legacy standalone server availability check
-/// Check if the execution server is available
-pub(crate) fn is_server_available() -> bool {
-    match CommandClient::new() {
-        Ok(client) => client.is_server_available(),
-        Err(_) => false,
-    }
-}
 
 /// Send an action to the execution server for execution
 /// This is the main public entry point for executing actions via the server
 /// Returns CommandResponse with either ACK (non-blocking) or execution results (G flag/GUI)
 pub(crate) fn send_for_execution(action: &crate::execute::Action) -> Result<CommandResponse, Box<dyn std::error::Error>> {
-    use crate::utils::debug_log;
+    use crate::utils::detailed_log;
     
     // Serialize action to JSON
     let action_json = serde_json::to_string(action)?;
-    debug_log("EXEC_SERVER", &format!("Sending action for execution: {}", action_json));
+    detailed_log("EXEC_SERVER", &format!("Sending action for execution: {}", action_json));
     
     // Send to server and get response
     let client = CommandClient::new()?;
     let response = client.send_json(&action_json)?;
     
-    debug_log("EXEC_SERVER", &format!("Action sent successfully, got response: success={}", response.success));
+    detailed_log("EXEC_SERVER", &format!("Action sent successfully, got response: success={}", response.success));
     Ok(response)
 }
 
@@ -449,45 +376,9 @@ impl CommandClient {
         Ok(Self { socket_path })
     }
     
-    // PLEASE REFACTOR AWAY - Legacy client-side command execution method
-    /// Execute a command via the server with timeout and ACK verification
-    fn execute_command(
-        &self,
-        command: &crate::core::Command,
-    ) -> Result<CommandResponse, Box<dyn std::error::Error>> {
-        verbose_log("CMD_CLIENT", &format!("Sending command to server: {:?}", command));
-        
-        // Connect to server with timeout
-        let mut stream = UnixStream::connect(&self.socket_path)?;
-        
-        // Set read timeout for ACK verification
-        stream.set_read_timeout(Some(std::time::Duration::from_millis(1000)))?;
-        
-        // Send command as JSON
-        let command_json = serde_json::to_string(&command)?;
-        stream.write_all(command_json.as_bytes())?;
-        stream.write_all(b"\n")?;
-        stream.flush()?;
-        
-        // Always wait for ACK/response (server sends immediate response for both modes)
-        let mut response_data = String::new();
-        match stream.read_to_string(&mut response_data) {
-            Ok(_) => {
-                let response: CommandResponse = serde_json::from_str(&response_data.trim())?;
-                verbose_log("CMD_CLIENT", &format!("Received ACK/response: success={}", response.success));
-                Ok(response)
-            }
-            Err(e) => {
-                // Timeout or connection error - server is not responding
-                verbose_log("CMD_CLIENT", &format!("Failed to receive ACK from server: {}", e));
-                Err(format!("Server not responding: {}", e).into())
-            }
-        }
-    }
-    
     /// Send raw JSON to the server (for Actions)
     fn send_json(&self, json: &str) -> Result<CommandResponse, Box<dyn std::error::Error>> {
-        verbose_log("CMD_CLIENT", &format!("Sending JSON to server: {}", json));
+        detailed_log("CMD_CLIENT", &format!("Sending JSON to server: {}", json));
         
         // Connect to server
         let mut stream = UnixStream::connect(&self.socket_path)?;
@@ -505,185 +396,26 @@ impl CommandClient {
         match stream.read_to_string(&mut response_data) {
             Ok(_) => {
                 let response: CommandResponse = serde_json::from_str(&response_data.trim())?;
-                verbose_log("CMD_CLIENT", &format!("Received response: success={}", response.success));
+                detailed_log("CMD_CLIENT", &format!("Received response: success={}", response.success));
                 Ok(response)
             }
             Err(e) => {
-                verbose_log("CMD_CLIENT", &format!("Failed to receive response from server: {}", e));
+                detailed_log("CMD_CLIENT", &format!("Failed to receive response from server: {}", e));
                 Err(format!("Server not responding: {}", e).into())
             }
         }
     }
     
-    // PLEASE REFACTOR AWAY - Legacy client-side server availability check
-    /// Check if the server is available
-    fn is_server_available(&self) -> bool {
-        UnixStream::connect(&self.socket_path).is_ok()
-    }
 }
 
 
-// PLEASE REFACTOR AWAY - Legacy global server system, unused dual code path
-/// Global server instance  
-static mut GLOBAL_SERVER: Option<CommandServer> = None;
-static mut SERVER_INITIALIZED: bool = false;
-
-// PLEASE REFACTOR AWAY - Legacy global server initialization
-/// Initialize the global command server
-pub(crate) fn init_global_server() -> Result<(), Box<dyn std::error::Error>> {
-    unsafe {
-        if SERVER_INITIALIZED {
-            return Ok(());
-        }
-        
-        debug_log("CMD_SERVER", "Initializing global command server");
-        
-        let mut server = CommandServer::new()?;
-        server.start()?;
-        
-        GLOBAL_SERVER = Some(server);
-        SERVER_INITIALIZED = true;
-        
-        debug_log("CMD_SERVER", "Global command server initialized");
-        Ok(())
-    }
-}
-
-// PLEASE REFACTOR AWAY - Legacy global server shutdown
-/// Shutdown the global command server
-pub(crate) fn shutdown_global_server() {
-    unsafe {
-        if let Some(ref mut server) = GLOBAL_SERVER {
-            server.stop();
-        }
-        GLOBAL_SERVER = None;
-        SERVER_INITIALIZED = false;
-        debug_log("CMD_SERVER", "Global command server shutdown");
-    }
-}
-
-// PLEASE REFACTOR AWAY - Legacy global server status check
-/// Check if the global server is running
-pub(crate) fn is_global_server_running() -> bool {
-    unsafe {
-        if let Some(ref server) = GLOBAL_SERVER {
-            server.is_running()
-        } else {
-            false
-        }
-    }
-}
-
-// PLEASE REFACTOR AWAY - Legacy command helper for old server system
-/// Simple helper to create a Command from action and arg (covers 90% of cases)
-pub(crate) fn make_command(action: &str, arg: &str) -> crate::core::Command {
-    crate::core::Command {
-        patch: String::new(),
-        command: if arg.is_empty() { action.to_string() } else { format!("{}: {}", action, arg) },
-        action: action.to_string(),
-        arg: arg.to_string(),
-        flags: String::new(),
-    }
-}
-
-// PLEASE REFACTOR AWAY - Legacy shell command helper
-/// Helper for shell commands with optional flags
-pub(crate) fn shell_command(cmd: &str, flags: &str) -> crate::core::Command {
-    make_command("shell", cmd).with_flags(flags)
-}
-
-// Extension trait to add flags to a Command
-impl crate::core::Command {
-    pub fn with_flags(mut self, flags: &str) -> Self {
-        self.flags = flags.to_string();
-        self
-    }
-}
-
-// PLEASE REFACTOR AWAY - Legacy global server execution with retry logic
-/// Execute a command using the global server with retry and restart logic
-/// This function NEVER fails from the caller's perspective - it handles all retries internally
-/// If the server can't be started after MAX_RETRIES attempts:
-///   - Shows error dialog to user
-///   - Exits popup if in GUI mode
-/// Otherwise guarantees command delivery
-pub(crate) fn execute_via_server(command: &crate::core::Command) {
-    const MAX_RETRIES: u32 = 5;  // Increased for better resilience
-    const ACK_TIMEOUT_MS: u64 = 1000;
-    
-    // Convert Command to Action for the new protocol
-    let action = super::command_to_action(command);
-    let action_json = serde_json::to_string(&action).unwrap_or_else(|e| {
-        verbose_log("CMD_SERVER", &format!("Failed to serialize action: {}", e));
-        // Fall back to old protocol
-        serde_json::to_string(command).unwrap()
-    });
-    
-    for attempt in 1..=MAX_RETRIES {
-        verbose_log("CMD_SERVER", &format!("Command execution attempt {} of {}", attempt, MAX_RETRIES));
-        
-        // Try to send action and get ACK
-        if let Ok(client) = CommandClient::new() {
-            match client.send_json(&action_json) {
-                Ok(_response) => {
-                    // Success! Command was delivered
-                    verbose_log("CMD_SERVER", &format!("Action executed successfully on attempt {}", attempt));
-                    return;  // Done - command delivered
-                }
-                Err(e) => {
-                    verbose_log("CMD_SERVER", &format!("Action failed on attempt {}: {}", attempt, e));
-                }
-            }
-        }
-        
-        // If we've exhausted all retries, show error and exit
-        if attempt == MAX_RETRIES {
-            let error_msg = format!(
-                "Critical Error: Command server is completely unresponsive after {} attempts.\n\n\
-                The server cannot be started or is experiencing critical issues.\n\
-                Please restart HookAnchor manually.",
-                MAX_RETRIES
-            );
-            
-            // Show error to user
-            crate::utils::error::queue_user_error(&error_msg);
-            crate::utils::log_error(&error_msg);
-            
-            // If we're in popup mode, exit gracefully
-            #[cfg(feature = "gui")]
-            {
-                std::thread::sleep(std::time::Duration::from_secs(2)); // Let user see the error
-                std::process::exit(1);
-            }
-            
-            return;  // Give up - server is truly broken
-        }
-        
-        // Server not responding - restart it for next attempt
-        verbose_log("CMD_SERVER", &format!("Restarting server for attempt {}", attempt + 1));
-        crate::utils::detailed_log("CMD_SERVER", &format!("Restarting server for command: {}", command.command));
-        
-        // Kill existing server and reset check
-        let _ = super::execution_server_management::kill_existing_server();
-        super::execution_server_management::reset_server_check();
-        
-        // Start new server
-        if let Err(e) = super::execution_server_management::start_server_if_needed() {
-            verbose_log("CMD_SERVER", &format!("Failed to restart server: {}", e));
-            // Continue trying - don't give up yet
-        }
-        
-        // Brief delay before retry
-        std::thread::sleep(std::time::Duration::from_millis(200));
-    }
-}
 
 /// Start a persistent command server and return its PID
 /// This function starts a server that runs indefinitely until killed
 pub(crate) fn start_persistent_server() -> Result<u32, Box<dyn std::error::Error>> {
-    use crate::utils::debug_log;
+    use crate::utils::detailed_log;
     
-    debug_log("CMD_SERVER", "Starting persistent command server");
+    detailed_log("CMD_SERVER", "Starting persistent command server");
     
     // Create a new server instance
     let socket_path = get_socket_path()?;
@@ -697,7 +429,7 @@ pub(crate) fn start_persistent_server() -> Result<u32, Box<dyn std::error::Error
     
     // Get current process PID (this will be the daemon PID)
     let server_pid = std::process::id();
-    debug_log("CMD_SERVER", &format!("Persistent server starting with PID: {}", server_pid));
+    detailed_log("CMD_SERVER", &format!("Persistent server starting with PID: {}", server_pid));
     
     // Start the server (this starts a background thread)
     server.start()?;

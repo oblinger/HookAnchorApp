@@ -7,13 +7,13 @@ use std::collections::HashMap;
 use serde_json::Value as JsonValue;
 use super::Action;
 use crate::core::Command;
-use crate::utils::debug_log;
+use crate::utils::detailed_log;
 
 /// Execute an action on the server
 /// This function always sends the action to the command server for execution
 /// Returns either an ACK (for non-blocking) or actual execution results (for G flag/GUI commands)
 pub fn execute_on_server(action: &Action) -> Result<String, Box<dyn std::error::Error>> {
-    debug_log("EXECUTE", &format!("Sending action to server: {}", action.action_type()));
+    detailed_log("EXECUTE", &format!("Sending action to server: {}", action.action_type()));
     
     // Send to server and get response (ACK or full result)
     let response = super::execution_server::send_for_execution(action)?;
@@ -51,12 +51,9 @@ pub fn execute_on_server_with_parameters(
 
 
 /// Convert a Command to an Action
-/// This is the bridge between the old Command system and the new Action system
-/// It resolves action types through the config so that actions with a 'type' field
-/// get properly routed to their handler (e.g., anchor -> markdown)
 pub fn command_to_action(cmd: &Command) -> Action {
     // Log the command being converted
-    debug_log("COMMAND_TO_ACTION", &format!("Converting command '{}' with action '{}'", cmd.command, cmd.action));
+    detailed_log("COMMAND_TO_ACTION", &format!("Converting command '{}' with action '{}'", cmd.command, cmd.action));
     
     let mut params = HashMap::new();
     
@@ -94,7 +91,7 @@ pub fn command_to_action(cmd: &Command) -> Action {
     let browser = params.get("browser")
         .and_then(|v| v.as_str())
         .unwrap_or("default");
-    debug_log("COMMAND_TO_ACTION", &format!("Final action type: '{}', browser: '{}'", final_type, browser));
+    detailed_log("COMMAND_TO_ACTION", &format!("Final action type: '{}', browser: '{}'", final_type, browser));
     
     Action { params }
 }
@@ -113,7 +110,7 @@ fn resolve_action_from_config(action_name: &str) -> HashMap<String, JsonValue> {
             // Check if we need to resolve the type
             let resolved_type = action_def.action_type();
             if resolved_type != action_name {
-                debug_log("ACTION_RESOLVE", 
+                detailed_log("ACTION_RESOLVE", 
                     &format!("Resolved action '{}' to type '{}'", action_name, resolved_type));
             }
             
@@ -127,7 +124,7 @@ fn resolve_action_from_config(action_name: &str) -> HashMap<String, JsonValue> {
     }
     
     // Action not found in config - use the name as-is
-    debug_log("ACTION_RESOLVE", 
+    detailed_log("ACTION_RESOLVE", 
         &format!("Action '{}' not found in config, using as-is", action_name));
     let mut params = HashMap::new();
     params.insert("action_type".to_string(), JsonValue::String(action_name.to_string()));
@@ -155,11 +152,11 @@ fn resolve_action_from_config(action_name: &str) -> HashMap<String, JsonValue> {
 /// activate_command_server(true)?;
 /// ```
 pub fn activate_command_server(restart: bool) -> Result<(), Box<dyn std::error::Error>> {
-    debug_log("SERVER_ACTIVATE", &format!("Activating command server (restart={})", restart));
+    detailed_log("SERVER_ACTIVATE", &format!("Activating command server (restart={})", restart));
     
     if restart {
         // Kill any existing server first
-        debug_log("SERVER_ACTIVATE", "Restart requested - killing existing server");
+        detailed_log("SERVER_ACTIVATE", "Restart requested - killing existing server");
         let _ = super::execution_server_management::kill_existing_server();
         // Reset the session check flag so we'll verify the new server
         super::execution_server_management::reset_server_check();
@@ -168,7 +165,7 @@ pub fn activate_command_server(restart: bool) -> Result<(), Box<dyn std::error::
     // Now ensure server is running (will start if needed)
     super::execution_server_management::start_server_if_needed()?;
     
-    debug_log("SERVER_ACTIVATE", "Command server activation complete");
+    detailed_log("SERVER_ACTIVATE", "Command server activation complete");
     Ok(())
 }
 
@@ -180,7 +177,7 @@ pub fn activate_command_server(restart: bool) -> Result<(), Box<dyn std::error::
 /// # Returns
 /// This function never returns normally - it runs until the process is killed
 pub fn run_command_server() -> Result<(), Box<dyn std::error::Error>> {
-    debug_log("SERVER_RUN", "Starting command server daemon");
+    detailed_log("SERVER_RUN", "Starting command server daemon");
     
     // Start the persistent server and get its PID
     let server_pid = super::execution_server::start_persistent_server()?;
@@ -190,7 +187,7 @@ pub fn run_command_server() -> Result<(), Box<dyn std::error::Error>> {
         crate::utils::log_error(&format!("Could not save server PID: {}", e));
     }
     
-    debug_log("SERVER_RUN", &format!("Command server daemon running with PID: {}", server_pid));
+    detailed_log("SERVER_RUN", &format!("Command server daemon running with PID: {}", server_pid));
     
     // Keep the process alive - this is the daemon
     loop {

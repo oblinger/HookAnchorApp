@@ -604,7 +604,7 @@ impl SetupAssistant {
     }
     
     /// Remove Karabiner configuration for HookAnchor
-    fn remove_karabiner_config(&self) -> Result<(), Box<dyn std::error::Error>> {
+    pub fn remove_karabiner_config(&self) -> Result<(), Box<dyn std::error::Error>> {
         let karabiner_dir = dirs::home_dir()
             .expect("Could not find home directory")
             .join(".config")

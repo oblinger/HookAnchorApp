@@ -286,29 +286,6 @@ pub fn load_config_with_error() -> ConfigResult {
     }
 }
 
-// PLEASE REFACTOR AWAY - Legacy compatibility wrapper, use load_config_with_error instead
-/// Loads configuration from YAML file or returns default if file doesn't exist (compatibility wrapper)
-pub(super) fn load_config() -> Config {
-    let start = std::time::Instant::now();
-    let result = match load_config_with_error() {
-        ConfigResult::Success(config) => config,
-        ConfigResult::Error(_) => {
-            // Fall back to default config for backward compatibility
-            // The error will be shown by popup if it uses load_config_with_error
-            create_default_config()
-        }
-    };
-    let elapsed = start.elapsed();
-    // Direct write to avoid recursion during config loading
-    if let Ok(mut file) = std::fs::OpenOptions::new()
-        .create(true)
-        .append(true)
-        .open("/tmp/hookanchor_timing.log") {
-        use std::io::Write;
-        let _ = writeln!(file, "CONFIG_TIMING: Total config load time: {:?} ({} microseconds)", elapsed, elapsed.as_micros());
-    }
-    result
-}
 
 /// Parses configuration from YAML string, handling migrations and providing defaults
 fn parse_config_contents(contents: &str) -> Result<Config, Box<dyn std::error::Error>> {
@@ -332,18 +309,17 @@ fn parse_config_contents(contents: &str) -> Result<Config, Box<dyn std::error::E
     if let Some(roots) = yaml.get("file_roots")
         .or_else(|| yaml.get("markdown_roots"))
         .and_then(|v| serde_yaml::from_value::<Vec<String>>(v.clone()).ok()) {
+        if yaml.get("markdown_roots").is_some() {
+            crate::utils::log("PANIC_TEST: Legacy 'markdown_roots' config key found - this compatibility code is being used!");
+            panic!("PANIC_TEST: Legacy markdown_roots config compatibility is being used - remove this panic if needed");
+        }
         popup_settings.file_roots = Some(roots);
     }
     
     // Handle legacy scanner_settings - migrate to popup_settings
     if let Some(scanner) = yaml.get("scanner_settings") {
-        if let Some(orphans_path) = scanner.get("orphans_path").and_then(|v| v.as_str()) {
-            popup_settings.orphans_path = Some(orphans_path.to_string());
-        }
-        if let Some(patterns) = scanner.get("skip_directory_patterns")
-            .and_then(|v| serde_yaml::from_value::<Vec<String>>(v.clone()).ok()) {
-            popup_settings.skip_directory_patterns = Some(patterns);
-        }
+        crate::utils::log("PANIC_TEST: Legacy 'scanner_settings' config key found - this compatibility code is being used!");
+        panic!("PANIC_TEST: Legacy scanner_settings config compatibility is being used - remove this panic if needed");
     }
     
     // Extract launcher_settings if it exists
