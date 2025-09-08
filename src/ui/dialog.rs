@@ -37,7 +37,7 @@ impl Dialog {
     
     #[allow(dead_code)]
     pub fn show(&mut self, spec_strings: Vec<String>) {
-        crate::utils::log("🪟 DIALOG SHOW: Dialog.show() called - setting visible=true");
+        crate::utils::detailed_log("DIALOG", "Dialog opened");
         self.visible = true;
         self.rows.clear();
         self.input_values.clear();
@@ -177,7 +177,7 @@ impl Dialog {
         let mut max_width = 450.0f32; // minimum width for rename dialogs
         let mut total_height = 5.0f32; // very minimal base padding
         
-        for row in &self.rows {
+        for (row_index, row) in self.rows.iter().enumerate() {
             let mut row_width = 30.0f32; // left + right padding
             let mut row_height = 6.0f32; // minimum row height for spacing
             
@@ -188,7 +188,7 @@ impl Dialog {
             
             if !is_empty_row {
                 // Calculate size for each element in the row
-                for element in &row.elements {
+                for element in row.elements.iter() {
                     match element {
                         DialogElement::Title(text) => {
                             // Dialog window title (larger font, centered)
@@ -199,7 +199,7 @@ impl Dialog {
                             if !text.is_empty() {
                                 // Header text like "Available keyboard shortcuts:"
                                 row_width += text.len() as f32 * 8.0 + 15.0;
-                                row_height = row_height.max(15.0);
+                                row_height = row_height.max(25.0);
                             }
                         }
                         DialogElement::Input { .. } => {
@@ -222,7 +222,8 @@ impl Dialog {
                             // The textbox will fill available width minus 20px, so dialog should be content + margins
                             let content_width = max_line_length as f32 * 7.5;
                             let needed_width = content_width + 60.0; // 20px textbox margins + 40px dialog margins
-                            let textbox_height = line_count as f32 * 16.0 + 10.0;
+                            // Reduced by 2px per line based on observation
+                            let textbox_height = line_count as f32 * 16.0 + 15.0;
                             
                             row_width += needed_width;
                             row_height = row_height.max(textbox_height);
@@ -231,7 +232,7 @@ impl Dialog {
                             // Button with proper sizing
                             let button_width = (text.len() as f32 * 8.0 + 30.0).max(80.0);
                             row_width += button_width + 15.0; // button + spacing
-                            row_height = row_height.max(30.0); // match observed button row height
+                            row_height = row_height.max(32.0); // button row height
                         }
                     }
                 }
@@ -244,8 +245,8 @@ impl Dialog {
         
         // No extra spacing for button rows - they already have adequate height
         
-        // Add tiny safety margin for egui framework overhead
-        total_height += 5.0;
+        // Add safety margin for egui framework overhead
+        total_height += 15.0;
         
         // Use configured maximum window sizes
         let config = crate::core::sys_data::get_config();
@@ -257,16 +258,29 @@ impl Dialog {
         let final_width_with_margin = max_width + (pad * 2.0);
         let final_height_with_margin = total_height + (pad * 2.0);
         
+        // Add window overhead to account for window chrome and margins
+        let estimated_egui_overhead = 40.0;
+        let content_height_needed = total_height;
+        let window_height_needed = content_height_needed + estimated_egui_overhead;
+        
         // Use calculated size but constrain to configured maximums
         let final_width = final_width_with_margin.max(400.0).min(max_width_available);
-        let final_height = final_height_with_margin.max(150.0).min(max_height_available);
+        let final_height = window_height_needed.max(100.0).min(max_height_available);
         
-        // Subtract estimated window chrome size to achieve target outer window size
-        // On macOS, window chrome typically adds ~28px (title bar) + ~4px (borders) = ~32px total
-        let estimated_chrome_height = 32.0;
-        let adjusted_height = (final_height - estimated_chrome_height).max(100.0); // Don't go below 100px content
-        
-        (final_width, adjusted_height)
+        (final_width, final_height)
+    }
+    
+    /// Create a test rename dialog for debugging size calculation
+    #[allow(dead_code)]
+    pub fn create_test_rename_dialog(&mut self) {
+        let dialog_spec = vec![
+            "=Confirm Rename".to_string(),
+            "'Renaming \"p proj\" to \"p proj2\"".to_string(),
+            "&The following changes will be made:\n\n• Update patch from p proj to p proj2 for the following commands:\nASIN_lkp_lkp\n\n• Lorem ipsum dolor sit amet, consectetur adipiscing elit".to_string(),
+            "!OK".to_string(),
+            "!Cancel".to_string(),
+        ];
+        self.show(dialog_spec);
     }
 
     pub fn update(&mut self, ctx: &egui::Context) -> bool {
@@ -294,20 +308,18 @@ impl Dialog {
             });
         }
         
-        // Calculate required window size by measuring actual content  
+        // Calculate required window size based on content
         let (required_width, required_height) = self.calculate_required_size(ctx);
-        let pad = 5.0; // Same padding value used in calculate_required_size
-
-        crate::utils::detailed_log("DIALOG", &format!("DIALOG SIZE: Calculated width={}, height={}", required_width, required_height));
 
         egui::Window::new(&self.title)
             .min_size([required_width, required_height])
-            .max_size([required_width, required_height]) // Force exact size constraints 
+            .max_size([required_width, required_height])
             .default_size([required_width, required_height])
             .resizable(false)
             .collapsible(false)
             .anchor(egui::Align2::CENTER_CENTER, [0.0, 0.0])
             .show(ctx, |ui| {
+                let pad = 5.0;
                 // Add padding around the dialog content
                 ui.add_space(pad);
                 ui.horizontal(|ui| {
@@ -408,7 +420,7 @@ impl Dialog {
             result.insert("exit".to_string(), button_pressed.unwrap_or_default());
             
             self.result = Some(result);
-            crate::utils::log("🪟 DIALOG HIDE: Dialog closed - setting visible=false");
+            crate::utils::detailed_log("DIALOG", "Dialog closed");
             self.visible = false;
             return true;
         }

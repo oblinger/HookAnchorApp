@@ -170,12 +170,22 @@ impl CommandEditor {
             enter_pressed = true;
         }
         
-        // Render as a large modal-style window that fills more space
+        // Get the config to determine window width
+        let config = crate::core::sys_data::get_config();
+        let window_width = config.popup_settings.get_default_window_width() as f32;
+        
+        crate::utils::log(&format!("🔧 COMMAND_EDITOR: Setting inner window to exact outer width: {}px", window_width));
+        
         egui::Window::new("Command Editor")
-            .default_size([420.0, 320.0])
             .resizable(false)
             .collapsible(false)
+            .fixed_size([window_width, 260.0])
+            .anchor(egui::Align2::CENTER_CENTER, [0.0, 0.0])
             .show(ctx, |ui| {
+                // Log the actual available width that egui is giving us
+                let actual_width = ui.available_width();
+                crate::utils::log(&format!("🔧 COMMAND_EDITOR ACTUAL: egui is giving us {}px available width inside the window", actual_width));
+                
                 ui.vertical(|ui| {
                     ui.add_space(10.0);
                     
@@ -247,7 +257,7 @@ impl CommandEditor {
                             
                             // Argument row
                             ui.label("Argument:");
-                            let arg_response = ui.text_edit_singleline(&mut self.argument);
+                            let arg_response = ui.add_sized([500.0, 20.0], egui::TextEdit::singleline(&mut self.argument));
                             if arg_response.lost_focus() && ctx.input(|i| i.key_pressed(egui::Key::Enter)) {
                                 enter_pressed = true;
                             }
@@ -255,7 +265,7 @@ impl CommandEditor {
                             
                             // Patch row
                             ui.label("Patch:");
-                            let patch_response = ui.text_edit_singleline(&mut self.patch);
+                            let patch_response = ui.add_sized([500.0, 20.0], egui::TextEdit::singleline(&mut self.patch));
                             if patch_response.lost_focus() && ctx.input(|i| i.key_pressed(egui::Key::Enter)) {
                                 enter_pressed = true;
                             }
@@ -263,7 +273,7 @@ impl CommandEditor {
                             
                             // Flags row
                             ui.label("Flags:");
-                            let flags_response = ui.text_edit_singleline(&mut self.flags);
+                            let flags_response = ui.add_sized([500.0, 20.0], egui::TextEdit::singleline(&mut self.flags));
                             if flags_response.lost_focus() && ctx.input(|i| i.key_pressed(egui::Key::Enter)) {
                                 enter_pressed = true;
                             }

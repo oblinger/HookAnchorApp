@@ -392,6 +392,13 @@ impl AnchorSelector {
         let mut events_to_process = Vec::new();
         ctx.input_mut(|input| {
             events_to_process = input.events.clone();
+            // Debug: Log ALL events, not just key events
+            if !input.events.is_empty() {
+                crate::utils::log(&format!("🔍 RAW_INPUT: Captured {} total events", input.events.len()));
+                for event in &input.events {
+                    crate::utils::log(&format!("🔍 RAW_EVENT: {:?}", event));
+                }
+            }
         });
         
         return self.handle_popup_keys_with_events(ctx, events_to_process);
@@ -410,10 +417,25 @@ impl AnchorSelector {
         if self.key_registry.is_some() {
             // Take ownership of the registry temporarily to avoid borrowing issues
             let registry = self.key_registry.take().unwrap();
+            
+            // Log all key events for debugging
+            for event in &events_to_process {
+                if let egui::Event::Key { key, pressed, modifiers, .. } = event {
+                    if *pressed {
+                        crate::utils::detailed_log("KEY_DEBUG", &format!("Processing key event: {:?} + {:?}", key, modifiers));
+                    }
+                }
+            }
+            
             let handled = registry.process_events(&events_to_process, self, ctx);
             
             // Put the registry back
             self.key_registry = Some(registry);
+            
+            // Log handling results
+            if !events_to_process.is_empty() {
+                crate::utils::detailed_log("KEY_DEBUG", &format!("Processed {} events, handled={}", events_to_process.len(), handled));
+            }
             
             if handled {
                 ctx.input_mut(|input| {
@@ -422,11 +444,26 @@ impl AnchorSelector {
                     // Also clear key states to prevent stuck keys
                     input.keys_down.clear();
                 });
+            } else if !events_to_process.is_empty() {
+                // Log when events were not handled
+                let key_events: Vec<String> = events_to_process.iter()
+                    .filter_map(|event| {
+                        if let egui::Event::Key { key, pressed, modifiers, .. } = event {
+                            if *pressed {
+                                Some(format!("{:?}+{:?}", key, modifiers))
+                            } else { None }
+                        } else { None }
+                    })
+                    .collect();
+                if !key_events.is_empty() {
+                    crate::utils::detailed_log("KEY_DEBUG", &format!("UNHANDLED KEY EVENTS: {}", key_events.join(", ")));
+                }
             }
             
             handled // Return whether any keys were actually handled
         } else {
             // Fallback: registry not initialized yet
+            crate::utils::log_error("KEY_REGISTRY: Registry not initialized, cannot process keys");
             false
         }
     }}
@@ -914,6 +951,7 @@ impl AnchorSelector {
     
     fn handle_template_create_named_impl(&mut self, template_name: &str) {
         crate::utils::detailed_log("TEMPLATE", &format!("TEMPLATE: === ENTER handle_template_create_named_impl('{}') ===", template_name));
+        crate::utils::log(&format!("TEMPLATE: Processing template '{}' with search text '{}'", template_name, self.popup_state.search_text));
         use crate::core::template_creation::TemplateContext;
         
         // Special validation for edit_selection template - only prevent editing invalid commands
@@ -1051,7 +1089,21 @@ impl AnchorSelector {
         };
         
         if !found_action {
-            self.show_error_dialog(&format!("Template/Action '{}' not found in configuration", template_name));
+            let error_msg = format!("Template/Action '{}' not found in configuration.\n\nAvailable templates:", template_name);
+            let mut full_error = error_msg.clone();
+            if let Some(ref actions) = config.actions {
+                let template_actions: Vec<String> = actions.iter()
+                    .filter(|(_, action)| action.action_type() == "template")
+                    .map(|(name, _)| name.clone())
+                    .collect();
+                if !template_actions.is_empty() {
+                    full_error.push_str(&format!("\n- {}", template_actions.join("\n- ")));
+                } else {
+                    full_error.push_str("\n(No templates configured)");
+                }
+            }
+            crate::utils::log_error(&full_error);
+            self.show_error_dialog(&full_error);
         } else {
             // Process the unified action as a template
             crate::utils::detailed_log("SYSTEM", &format!("Processing unified action template: {}", template_name));
@@ -1121,27 +1173,8 @@ impl AnchorSelector {
                         }
                         }
                     } else {
-                        // Not a template action, execute directly
-                        // Convert HashMap<String, String> to HashMap<String, JsonValue>
-                        let json_variables: std::collections::HashMap<String, serde_json::Value> = 
-                            context.variables.iter()
-                                .map(|(k, v)| (k.clone(), serde_json::Value::String(v.clone())))
-                                .collect();
-                        match crate::execute::execute_on_server_with_parameters(
-                            action, 
-                            None,  // No primary arg for templates
-                            Some(json_variables)
-                        ) {
-                            Ok(result) => {
-                                crate::utils::detailed_log("SYSTEM", &format!("Template action completed: {}", result));
-                                // Clear search and update display
-                                self.popup_state.search_text.clear();
-                                self.popup_state.update_search(String::new());
-                            }
-                            Err(e) => {
-                                self.show_error_dialog(&format!("Failed to execute template action '{}': {}", template_name, e));
-                            }
-                        }
+                        // Failed to convert action to template format
+                        self.show_error_dialog(&format!("Failed to convert action '{}' to template format. Check your template configuration.", template_name));
                     }
                 }
             }
@@ -1800,6 +1833,7 @@ impl AnchorSelector {
                                             true
                                         } else {
                                             crate::utils::detailed_log("GRAB", &format!("GRAB: Failed to convert action '{}' to template", template_name));
+                                            self.show_error_dialog(&format!("Failed to convert grab action '{}' to template format. Check your template configuration.", template_name));
                                             false
                                         }
                                     } else {
@@ -1905,6 +1939,7 @@ impl AnchorSelector {
                                             true
                                         } else {
                                             crate::utils::detailed_log("GRAB", &format!("GRAB: Failed to convert action '{}' to template", template_name));
+                                            self.show_error_dialog(&format!("Failed to convert grab action '{}' to template format. Check your template configuration.", template_name));
                                             false
                                         }
                                     } else {
