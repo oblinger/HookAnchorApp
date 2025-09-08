@@ -7,16 +7,16 @@
 |       | Type            | Name                 | Description                                                                 |
 | ----- | --------------- | -------------------- | --------------------------------------------------------------------------- |
 |       | **Special Doc** |                      |                                                                             |
-| **M** | Markdown        | **XXXX Markdown**    | Local markdown files only use "Markdown" suffix when conflicting            |
+|       | Markdown        | **XXXX**             | Default action. (is markdown by default)                                    |
 | **N** | Notion          | **XXXX Notion**      | Notion document                                                             |
 | **G** | Gdrive          | **XXXX Gdrive**      | Gdrive folder, or Gdoc, Gsheet, etc. document                               |
 |       | Confluence      | **XXXX Confluence**  | Duplicates Code but maybe ok?                                               |
 |       |                 |                      |                                                                             |
 |       | **DIR/DOC**     |                      |                                                                             |
-|       | Markdown        | **XXXX**             | Default action. (is markdown by default)                                    |
 | **A** | Anchor          | **XXXX Anchor**      | Used when anchor's name is conflicting                                      |
-| **F** | Folder          | **XXXX Folder**      | Launches finder on local Folder                                             |
 | **B** | Box             | **XXXX Box**         | Drop box folder                                                             |
+| **F** | Folder          | **XXXX Folder**      | Launches finder on local Folder                                             |
+| **M** | Markdown        | **XXXX Markdown**    | Local markdown files only use "Markdown" suffix when conflicting            |
 | **S** | Shared          | **XXXX Shared**      | Catch all instead of tool name.<br>External "Shared" tool, e.g. Notion, ... |
 |       |                 |                      |                                                                             |
 |       | **TOPIC**       |                      |                                                                             |
@@ -24,7 +24,7 @@
 | **A** | App             | **XXXX**             | Mac App. Launches it.                                                       |
 | **C** | Code            | **XXXX Code**        | Project's source                                                            |
 | **L** | Log             | **XXXX Log**         | Log of related content                                                      |
-| **P** | Page            | **XXXX Page**        | Launches a URL                                                              |
+| **P** | Page            | **XXXX Page**        | Launches a URL page                                                         |
 | **T** | Todo            | **XXXX Todo** or "." | Todo list for XXXX.  "XXXX." can be an alias                                |
 | **W** | Web App         | **XXXX Web**         | Launches Web App                                                            |
 |       |                 |                      |                                                                             |
@@ -39,7 +39,7 @@
 
 AI
 
-a b C D E f g H I J K l M? n O p Q R S t U V W X Y Z
+a b c D E f g H I J K l m n O p Q R s t U V W X Y Z
 
 ### KEY FACETS FOR A TERM
 - TASK - A todo list or plan associated with this term

@@ -4,12 +4,14 @@
 - [ ] Delete key should prompt to delete file and maybe folder.
 - [x] remove legacy code (refactor away comments), warnings
 - [ ] remove legacy panic fns
-- [ ] wrong sizing.
+- [ ] add support for "close popup" into templates.  move CMD+shift+2 to be a template
+- [x] wrong sizing.
 - [ ] Adding an alias can cause a circularity in the anchor-patch graph.  The user might also manually edit the commands.TXT file and cause a circularity to occur that way as well. Let's think through the best way to handle this.
 - [x] Streamline way we manage command reloading.
 - [x] remove the "A" flag
 - [x] Don't exit after command save, just return to popup
 - [x] refactor commands.rs to split complex inference logic into a module inference.rs.  each section in this module will have a comment on the top describging the functioning of its section, and then a group of related functions for that kind of inference.  Patch inference is a large bit of code and I think there is an auto inference as another group.
+- [ ] implement activate tmux in Javascript just as it works in Rust
 
 
 - [x] svproj should find the submenu even though there is no space in it
@@ -36,6 +38,27 @@
 - [ ] - add 'open' fn to templates
 
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+
+
+⏺ The issue is that the Rust code needs to be modified to:
+  1. Read the close_popup parameter from the config
+  2. Actually close the popup when close_popup: true
+
+  However, implementing this requires modifying the Rust code to handle the close_popup parameter, which is a more complex change that requires:
+  - Updating the config structs to include the close_popup field
+  - Modifying the key handler to check this field
+  - Changing the return type to indicate whether to close the popup
+
+  This is a structural change to the Rust application that needs careful implementation. The config changes we made are ready, but the Rust code needs to be updated to
+  actually use the close_popup parameter.
+
+  For now, the contact functionality should be working correctly (opening the Contacts app with the right contact selected), but the popup won't automatically close yet. That
+  feature would need to be implemented in the Rust code.
+
+
+
+
+
 │ > Let's add another more complicated command to the command ops module. The delete command operation should be extended to check to see if the ARG for the command actually     │
 │   refers to an existing file or folder. And if it does, then it should prompt the user for the Alicia that fileif the name matches the file name that is. If the name matches   │
 │   the folder because it's an anchor folder it's an anchor name then it should prompt to delete the folder. Only if the folder is gonna be empty after deleting the associated   │
