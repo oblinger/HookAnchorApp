@@ -1,5 +1,19 @@
 
 
+
+### 2025-09-08  No Plan no progress
+
+- Killing TOO MUCH TIME on my hook anchor
+- Don't have plan for the week
+- Not jumping in quickly during the day
+
+I know what to do, I am just not doing it.
+I think I need to start small, but push each day to grow this habit.
+
+will check in daily on this during this week:
+- M: Started slow, limited hook anchor stuff in the way
+- 
+
 ### 2025-09-02  Few MIT targets
 
 - Sleep is better, motivation is better.

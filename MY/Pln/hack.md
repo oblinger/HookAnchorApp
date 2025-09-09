@@ -1,12 +1,23 @@
+
+- [x] nj lrn should "]" to LRN
+- [ ] add a javascript 'console' command that pops up a new console from the 
+- [ ] "[" should go back in history
+- [x] "resd" should keep showing the 'res' menu
+- [x] change the case of the breadcrumb menu
+- [x] Rename command should update the input box too
+- [ ] yore support
+- [ ] ghost entry w/ different input and maybe blank selection
+- [x] make 1pass go faster
+- [ ] ctop - unix top command
 - [ ] Fix submenu to it is fully recomputed after the dirty flag was set.  (have the get_sys_data return a boolean)
 - [ ] .
 - [ ] Add a 'just cmd' button
 - [ ] Delete key should prompt to delete file and maybe folder.
 - [x] remove legacy code (refactor away comments), warnings
-- [ ] remove legacy panic fns
+- [x] remove legacy panic fns
 - [ ] add support for "close popup" into templates.  move CMD+shift+2 to be a template
 - [x] wrong sizing.
-- [ ] Adding an alias can cause a circularity in the anchor-patch graph.  The user might also manually edit the commands.TXT file and cause a circularity to occur that way as well. Let's think through the best way to handle this.
+- [x] Adding an alias can cause a circularity in the anchor-patch graph.  The user might also manually edit the commands.TXT file and cause a circularity to occur that way as well. Let's think through the best way to handle this.
 - [x] Streamline way we manage command reloading.
 - [x] remove the "A" flag
 - [x] Don't exit after command save, just return to popup
@@ -40,7 +51,16 @@
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
 
 
-⏺ The issue is that the Rust code needs to be modified to:
+
+#### Anchor Dialog
+
+- we want to extend the command class for a special kind of command called an anchor.
+- and we want to create a special dialogue for dealing with these command classes. 
+- anchors are commands, whose action is anchor.
+- we will extend the command editor to be the anchor editor as well,  any time the action is set to anchor this editor gets a number of extra Fields and the size of the added window. The vertical size gets larger. It might be simpler for the editor to simply have all these fields available and unused in the case that the action is not anchor because the user can flip back-and-forth and the interface shouldn't forget the values in all those extra fields. Still once a command is saved if it's not saved as an anchor then all the extra fields are lost since they don't exist on non-anchor commands.
+- 
+
+#### popup_close -- The issue is that the Rust code needs to be modified to:
   1. Read the close_popup parameter from the config
   2. Actually close the popup when close_popup: true
 
@@ -56,9 +76,7 @@
   feature would need to be implemented in the Rust code.
 
 
-
-
-
+#### delete 
 │ > Let's add another more complicated command to the command ops module. The delete command operation should be extended to check to see if the ARG for the command actually     │
 │   refers to an existing file or folder. And if it does, then it should prompt the user for the Alicia that fileif the name matches the file name that is. If the name matches   │
 │   the folder because it's an anchor folder it's an anchor name then it should prompt to delete the folder. Only if the folder is gonna be empty after deleting the associated   │
@@ -69,7 +87,7 @@
 │   them separate even though they are analogous to each other.                                           
 
 
-
+#### Refactor
   3 TODO/FIXME removal items
 
   - src/execute/actions.rs:290 - "TODO: Remove after all callers are updated"

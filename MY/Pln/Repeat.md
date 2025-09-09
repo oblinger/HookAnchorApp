@@ -4,7 +4,7 @@
 | ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | --- |
 | **HOT LISTS** | [Simple Note](hook://simplenote1pass)   [Reminders](https://www.icloud.com/#reminders)  [RocMny](hook://RocketMoney1Pass)  [wef](hook://safari) |     |
 |               | Bk  Nails  Nose  Groc AudioMemos [[Friday]]                                                                                                     |     |
-| **CLEAN**     | [MyD](hook://MyDeskFolder), [DwnFdr](hook://Downloads)                                                                                          |     |
+| **CLEAN**     | [MyD](hook://MyDesktop), [DwnFdr](hook://Downloads)                                                                                             |     |
 |               | [[Reflections]]                                                                                                                                 |     |
 | **TODO**      | Clean F1 page for week.  [[quick]] & [[todo]]                                                                                                   |     |
 | **HOUSE**     | Room: [My-]Desks/Bin/Shelf  Hous                                                                                                                |     |

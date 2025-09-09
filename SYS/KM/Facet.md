@@ -27,6 +27,7 @@
 | **P** | Page            | **XXXX Page**        | Launches a URL page                                                         |
 | **T** | Todo            | **XXXX Todo** or "." | Todo list for XXXX.  "XXXX." can be an alias                                |
 | **W** | Web App         | **XXXX Web**         | Launches Web App                                                            |
+| **Y** | Yore            | **XXXX Yore**        | Historical "Links of Yore"                                                  |
 |       |                 |                      |                                                                             |
 |       | **PREFIX**      |                      |                                                                             |
 |       | Doc             | **Doc XXXX**         | Documentations about some SW thing                                          |
@@ -37,9 +38,8 @@
 |       | **TARGET**      |                      |                                                                             |
 |       |                 |                      |                                                                             |
 
-AI
 
-a b c D E f g H I J K l m n O p Q R s t U V W X Y Z
+a b c D E f g H I J K l m n O p Q R s t U V W X y Z
 
 ### KEY FACETS FOR A TERM
 - TASK - A todo list or plan associated with this term

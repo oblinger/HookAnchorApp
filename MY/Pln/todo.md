@@ -1,6 +1,6 @@
 
+- check alto pharmacy
 - Jameson bottle
-- This Friday.
 
 - Filepe
 - Quarterly budget

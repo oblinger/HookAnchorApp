@@ -1,11 +1,11 @@
 
  Lead with the Problem (30 seconds)
 
-If you're drowning in thousands of files across Obsidian, Google Drive, Notion, in dozens of apps both local and cloud - and tired of searching through folder hierarchies, trying to remember where things are - this tool solves that with a simple insight: you already have names in your head for all your important stuff, let's just use those!
+If you're drowning in thousands of files across Obsidian, Google Drive, Notion, in dozens of apps both local and cloud - and tired of searching through folder hierarchies, trying to remember where things are - this tool solves that with a simple insight: you already have names in your head for all your important stuff, your personal knowledge manager should just use those!
 
 Hook Anchor isn't another note-taking app. It's a meta-layer that works WITH Obsidian, Notion, Google Drive, bookmarks, PDFs - anywhere your knowledge lives.   
 
-Think of it as a universal launcher for your personal, but one that uses the names in your head, NOT the names in your file system!
+Think of it as a universal launcher for your personal knowledge, but one that uses the names in your head, NOT the names of your files!
 
 It does this by maintaining a two-way conversation between your digital memory and your meat memory.
 
@@ -17,7 +17,32 @@ Best to show this by example:
 
 In my day job at SportsVisio, we released a feature that uses computer vision to track the ball and the player to generate video clips showing basketball shots with flames trailing after the ball--fun for sharing on social media.
 
-- I know there is a notion page for this, should be under projects I think
+JUST TYPE - To find this, I just type the first word that comes to mind. "Fireball"
+
+ADD FIREBALL - Not there, since this is for work, maybe we have a project page in Notion.  Yep, let's remember this! ...
+
+ADD GDRIVE - After release we start using Gdrive for datafiles.  Let's remember this. (show my 'facets' list with 'Gdrive')
+
+ADD LOCAL - Later, I needed to write up a contract related to fireballs.  I like using markdown in Obsidian for quick writing.
+- USE TEMPLATE - A few well considered templates greatly simplifies creation, organization, and access.
+	For local work files I put them under 'ww' using the CMD+w template
+
+ADD ANCHOR - Notice that we are starting to get fireball items scattered around; we should anchor them somewhere.  Notion is the 80% anchor, but I do have gdrive files and local files too.  I could use my local fireball WW folder as the anchor, but this seems a bit gross for a project that is 90% online.  Lets just use the word "fireball" itself as the anchor.
+- RENAME - Oh yeah, fireball is already used for the notion page and that mostly still is the anchor place for fireballs.  Lets rename it to be "Fireball Notion"
+- ANCHOR - Use ">" to create
+- RENAME GROUP -
+
+ADD ALIAS - 
+	- FI ALIAS -
+	- RENAME FACEBOOK - 
+	- 
+
+MANY THINGS - Can link many kinds of things:
+- haco /, haco cmd+T, haco enter
+- bbc, @nick, free, ctop, resd, bugb, gmai, rock
+
+REDUCE COG LOAD - Need not think about which app to use, how to get to it, what folder its in, or the current state of that app right now.
+- The aim is stateless direct access.  Think of a name and you are there, For many apps this already works well, and I keep adding new apps.
 
 
 
@@ -25,10 +50,9 @@ In my day job at SportsVisio, we released a feature that uses computer vision to
 
 
 
-evolving name changes as you are 
 
 
-access an item this reinforces 
+### Notes of GPT
 
 
   Position as: "A universal launcher for your personal knowledge - like Spotlight/Alfred, but it actually knows YOUR mental model"

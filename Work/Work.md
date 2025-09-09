@@ -13,12 +13,14 @@
 	  - Get access to games
 	  - Get contract spec
   MGT
-	-  [AWS Costs](https://drive.google.com/drive/folders/1Mnu6bwVw9bqxGq40uM_fBZ6x_75O3c6H) 
-    + turn on AI Fireballs/AR by next management meeting in app
-    - Followup with Playon about raw data and establish a regular tempo for communication (Note: I have 3 touch points planned.
-    - talks to mike F about surging up to add web manager features
+	 - Magic Hour
+	 -  james and matty; fireball matty tell
+	-  [AWS Costs](https://drive.google.com/drive/folders/1Mnu6bwVw9bqxGq40uM_fBZ6x_75O3c6H)  (talk w/ Matty?)
+    + turn on AI Fireballs/AR by next mgt meeting in app
+    - Followup with Playon API
     - Pursues beta testing in app
     - AI-code brainstorm
+    - darien
  SOON
     Beta tester stuff
     [[@Google]] GPU  answers
