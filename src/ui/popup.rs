@@ -496,12 +496,6 @@ impl PopupInterface for AnchorSelector {
     fn show_contact(&mut self) {
         self.show_contact_impl();
     }
-    
-    // COMMENTED OUT: Unused function - replaced by activate_tmux (formerly activate_anchor)
-    // fn tmux_activate(&mut self) {
-    //     self.tmux_activate();
-    // }
-    
     fn activate_tmux(&mut self) {
         self.activate_tmux();
     }
@@ -2323,65 +2317,6 @@ impl AnchorSelector {
         let _ = crate::execute::execute_on_server(&contact_action);
     }
     
-    // COMMENTED OUT: Old tmux_activate function - replaced by activate_tmux below
-    /*
-    /// Start tmux session for selected anchor
-    fn tmux_activate(&mut self) {
-        use crate::utils;
-        
-        // Get selected command index
-        let selected_index = self.selected_index();
-        
-        // Get the current filtered commands  
-        let display_commands = self.popup_state.filtered_commands.clone();
-        
-        if display_commands.is_empty() || selected_index >= display_commands.len() {
-            utils::detailed_log("TMUX_ACTIVATE", "No commands available or invalid selection");
-            return;
-        }
-        
-        // Get the selected command
-        let selected_command = &display_commands[selected_index];
-        
-        // Resolve aliases to get the actual command
-        let all_commands = self.popup_state.get_commands();
-        let resolved_cmd = self.resolve_aliases_recursively(selected_command, &all_commands);
-        
-        // Check if it's an anchor
-        if resolved_cmd.action != "anchor" {
-            utils::detailed_log("TMUX_ACTIVATE", &format!("Resolved command is not an anchor: {}", resolved_cmd.action));
-            return;
-        }
-        
-        utils::detailed_log("TMUX_ACTIVATE", &format!("Processing anchor: {} ({})", resolved_cmd.command, resolved_cmd.arg));
-        
-        // Create a synthetic command to execute through the launcher
-        // This will be recognized as a JavaScript action because tmux_activate is in listed_actions
-        let tmux_cmd = crate::core::Command {
-            command: format!("TMUX: {}", resolved_cmd.command),
-            action: "tmux_activate".to_string(),
-            arg: resolved_cmd.arg.clone(),
-            patch: resolved_cmd.patch.clone(),
-            flags: String::new(),
-        };
-        
-        // Save as last executed for potential alias creation
-        use crate::core::state::save_last_executed_command;
-        let _ = save_last_executed_command(&tmux_cmd.command);
-        
-        // Execute using the same path as normal command execution
-        // This will go through the launcher which recognizes JavaScript actions
-        utils::detailed_log("TMUX_ACTIVATE", &format!("Executing through launcher: {} {}", tmux_cmd.action, tmux_cmd.arg));
-        
-        // Use the server for consistent execution (like all other commands)
-        // Execute the action
-        let tmux_action = crate::execute::command_to_action(&tmux_cmd);
-        let _ = crate::execute::execute_on_server(&tmux_action);
-        utils::detailed_log("TMUX_ACTIVATE", "Executed tmux_activate via server");
-        // Close the popup after successful execution
-        self.should_exit = true;
-    }
-    */
     
     /// Activate TMUX session for selected anchor/folder (formerly activate_anchor)
     fn activate_tmux(&mut self) {
@@ -3558,6 +3493,10 @@ impl eframe::App for AnchorSelector {
                     }
                     Err(e) => {
                         crate::utils::log_error(&format!("SAVE_DEBUG: Failed to add command: {}", e));
+                        self.show_error_dialog(&format!("Failed to add command: {}", e));
+                        self.close_command_editor();
+                        command_editor_just_closed = true;
+                        return; // Exit early on error
                     }
                 }
                 
@@ -3607,6 +3546,12 @@ impl eframe::App for AnchorSelector {
                 // Clear the pending template now that it's been processed
                 self.command_editor.pending_template = None;
                 self.command_editor.template_context = None;
+                
+                // Update input field with the renamed command name for symmetric feedback
+                // This ensures that after closing the editor, the input field shows the command that was just saved/renamed
+                crate::utils::log(&format!("RENAME_FEEDBACK: Setting input field to renamed command: '{}'", saved_command.command));
+                self.popup_state.search_text = saved_command.command.clone();
+                self.popup_state.update_search(saved_command.command.clone());
                 
                 self.close_command_editor();
                 command_editor_just_closed = true;

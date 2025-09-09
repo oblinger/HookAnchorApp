@@ -139,52 +139,33 @@ pub fn build_submenu(
     
     let input = input.trim();
     
-    
-    // Scan backwards from full input string to find first anchor
-    // We need to find commands that match the prefix and track how many characters were consumed
-    for matching_command in all_commands {
-        let match_end = command_matches_query_with_debug(&matching_command.command, input, false);
-        if match_end > 0 {
-            // We have a match! The match consumed 'match_end' characters from the command
-            // Now we need to figure out how many characters from the input were used
-            
-            // Count how many input characters were consumed by matching
-            let input_chars: Vec<char> = input.to_lowercase().chars().collect();
-            let cmd_chars: Vec<char> = matching_command.command.to_lowercase().chars().collect();
-            let separators = " ._-";
-            
-            let mut input_consumed = 0;
-            let mut cmd_idx = 0;
-            let mut input_idx = 0;
-            
-            while cmd_idx < cmd_chars.len() && input_idx < input_chars.len() && cmd_idx < match_end as usize {
-                let cmd_char = cmd_chars[cmd_idx];
-                let input_char = input_chars[input_idx];
-                
-                if cmd_char == input_char {
-                    cmd_idx += 1;
-                    input_idx += 1;
-                    input_consumed = input_idx;
-                } else if separators.contains(cmd_char) {
-                    cmd_idx += 1;
-                } else {
-                    break;
-                }
-            }
-            
-            // Check if we've consumed the entire command name (exact match)
-            if cmd_idx >= matching_command.command.len() {
+    // Try all possible prefixes of the input string, starting from longest
+    // This allows "RESD" to match "RES" and show the submenu with "D" as filter
+    for prefix_len in (1..=input.len()).rev() {
+        let prefix = &input[..prefix_len];
+        
+        // Look for commands that exactly match this prefix
+        for matching_command in all_commands {
+            // Check for exact match (case-insensitive)
+            if matching_command.command.eq_ignore_ascii_case(prefix) {
                 // Resolve alias to get the final command
+                crate::utils::detailed_log("BUILD_SUBMENU", &format!("Found exact match for prefix '{}': {} (action: {})", 
+                    prefix, matching_command.command, matching_command.action));
                 let resolved_command = matching_command.resolve_alias(all_commands);
+                crate::utils::detailed_log("BUILD_SUBMENU", &format!("Resolved to: {} (action: {})", 
+                    resolved_command.command, resolved_command.action));
                 
                 // Check if resolved command is an anchor
                 if resolved_command.action == "anchor" {
                     // Found our anchor! Calculate remaining characters for filtering
-                    let remaining_chars = if input_consumed < input.len() {
-                        &input[input_consumed..]
+                    let remaining_chars = if prefix_len < input.len() {
+                        &input[prefix_len..]
                     } else {
                         ""
                     };
+                    
+                    crate::utils::detailed_log("BUILD_SUBMENU", &format!("Building submenu for anchor '{}' with filter '{}'", 
+                        resolved_command.command, remaining_chars));
                     
                     // Build the submenu with filtering
                     let submenu_commands = build_submenu_commands(&resolved_command, all_commands, patches, remaining_chars);
@@ -193,6 +174,7 @@ pub fn build_submenu(
             }
         }
     }
+    
     None
 }
 
@@ -328,7 +310,15 @@ fn build_submenu_commands(
                 // Check if this command is in one of the include folders
                 if let Some(cmd_folder) = cmd.get_absolute_folder_path(&config) {
                     if include_folders.contains(&cmd_folder) {
-                        submenu_commands.push(cmd.clone());
+                        // Apply filter if provided
+                        if filter_text.is_empty() {
+                            submenu_commands.push(cmd.clone());
+                        } else {
+                            // Check if command name starts with the filter text
+                            if cmd.command.to_lowercase().starts_with(&filter_text.to_lowercase()) {
+                                submenu_commands.push(cmd.clone());
+                            }
+                        }
                     }
                 }
             }
@@ -400,7 +390,9 @@ pub fn get_new_display_commands(
         // Step 3: Remove submenu commands from prefix_commands to avoid duplicates
         // Check both literal matches and resolved alias matches
         prefix_commands.retain(|cmd| {
+            crate::utils::detailed_log("DISPLAY_FILTER", &format!("Checking command for dedup: {} (action: {})", cmd.command, cmd.action));
             let cmd_resolved = cmd.resolve_alias(all_commands);
+            crate::utils::detailed_log("DISPLAY_FILTER", &format!("Resolved to: {} (action: {})", cmd_resolved.command, cmd_resolved.action));
             
             !submenu_commands.iter().any(|submenu_cmd| {
                 // Check literal match
