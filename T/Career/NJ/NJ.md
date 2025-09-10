@@ -1,5 +1,5 @@
 .[[NJ]].		  [[NJ.]], [[Lrn]], [[RES]], [[TG]],  [[CRM]] 
-  PLAN:	[[NJ Plan]], [[NJ Paths]], [[SEEK]],
+  PLAN:	[[NJ Thesis]],	[[NJ Plan]], [[NJ Paths]], [[Seek]],  
   TOP:	[NJ Slides](spot://njslides), [[NJ Log]],
   PARTS	[[NJ Ask]], [[NJ Coaches]],
   SUB:
@@ -10,30 +10,3 @@
 [[NJ.2]] 
 
 
-
-
----
-
-# NJ
-
-This is an auto-generated anchor file for patch 'NJ'.
-
-Add your content here.
-
-
----
-
-# NJ
-
-This is an auto-generated anchor file for patch 'NJ'.
-
-Add your content here.
-
-
----
-
-# NJ
-
-This is an auto-generated anchor file for patch 'NJ'.
-
-Add your content here.

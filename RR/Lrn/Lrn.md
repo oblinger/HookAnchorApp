@@ -1,3 +1,6 @@
+
+[[Lrn]] Flash, 
+
 .[[Lrn]]. [[LRN Todo|todo]]
   [[Lrn Mgt]], [[LRN Read]], [[LRN Todo]], [Lrn Obsidian](spot://lrnobsidian),
   , [Lrn Note](spot://lrnnote),

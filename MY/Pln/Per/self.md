@@ -1,7 +1,8 @@
+[[self]]: Workout, >150.
 #### __
 
 MIT
-- [ ] [[SEEK]]:	Apply!!! & be ready for more.
+- [ ] [[SEEK]]:	App!!! & be ready for more.
 - [ ] [[CN]]: 	Rodrigo, Abio-targets
 - [ ] [[Lrn]]:	Learning something????  fine tune,
 - [ ] [[Show]]:	MikeM, 

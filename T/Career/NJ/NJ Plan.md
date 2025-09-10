@@ -18,7 +18,6 @@
 ML mgr. 
 
 ## MY PLAN -- Get a job as an ML manager, preferably at a FAANG, possibly as an IC
-(Or as a PostDoc )
 ### META PLAN
 1. READY - Get materials ready, Learn stuff, 
 2. LEARNING - Read, Vibe, Torch, Leet

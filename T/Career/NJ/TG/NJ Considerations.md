@@ -1,4 +1,5 @@
 
+- BAY AREA - Specifically looking for Bay Area talent?
 
 - HIRING - Are they hiring
 	- FLUSH - Are they flush with money from a recent raise or the market, or are they beleaguered 

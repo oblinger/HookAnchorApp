@@ -1,3 +1,4 @@
+
 .[[TG]].  [[NJDB]] 
   , [[NJ Considerations]], [[NJ Queries]],
   , [[MDDB]],
@@ -7,7 +8,6 @@
   , [TG Labs Obsidian](spot://tglabsobsidian), [TG People Obsidian](spot://tgpeopleobsidian)
   , [TG Startups Obsidian](spot://tgstartupsobsidian)
   , [TG Summary Obsidian](spot://tgsummaryobsidian), 
-  DELS: [[TG AI Safety]],[TG Safety Obsidian](spot://tgsafetyobsidian), [[TG Safety]],[[TG AI Safety]], 
 
 
 - [[TG People]] 

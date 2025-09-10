@@ -1,28 +1,32 @@
 
-- [x] nj lrn should "]" to LRN
-- [ ] add a javascript 'console' command that pops up a new console from the 
+
+
+- [ ] Get 'q2' working right
 - [ ] "[" should go back in history
-- [x] "resd" should keep showing the 'res' menu
-- [x] change the case of the breadcrumb menu
-- [x] Rename command should update the input box too
 - [ ] yore support
 - [ ] ghost entry w/ different input and maybe blank selection
-- [x] make 1pass go faster
 - [ ] ctop - unix top command
 - [ ] Fix submenu to it is fully recomputed after the dirty flag was set.  (have the get_sys_data return a boolean)
 - [ ] .
 - [ ] Add a 'just cmd' button
 - [ ] Delete key should prompt to delete file and maybe folder.
+- [ ] add support for "close popup" into templates.  move CMD+shift+2 to be a template
+- [ ] implement activate tmux in Javascript just as it works in Rust
+- [x]  nj lrn should "]" to LRN
+- [x] "Forum.PPTX Doc" is pointing to a folder that does not exist in a file. It does not exist
+- [x] add a javascript 'console' command that pops up a new console from the 
+- [x] "resd" should keep showing the 'res' menu
+- [x] change the case of the breadcrumb menu
+- [x] Rename command should update the input box too
+- [x] make 1pass go faster
 - [x] remove legacy code (refactor away comments), warnings
 - [x] remove legacy panic fns
-- [ ] add support for "close popup" into templates.  move CMD+shift+2 to be a template
 - [x] wrong sizing.
 - [x] Adding an alias can cause a circularity in the anchor-patch graph.  The user might also manually edit the commands.TXT file and cause a circularity to occur that way as well. Let's think through the best way to handle this.
 - [x] Streamline way we manage command reloading.
 - [x] remove the "A" flag
 - [x] Don't exit after command save, just return to popup
 - [x] refactor commands.rs to split complex inference logic into a module inference.rs.  each section in this module will have a comment on the top describging the functioning of its section, and then a group of related functions for that kind of inference.  Patch inference is a large bit of code and I think there is an auto inference as another group.
-- [ ] implement activate tmux in Javascript just as it works in Rust
 
 
 - [x] svproj should find the submenu even though there is no space in it
