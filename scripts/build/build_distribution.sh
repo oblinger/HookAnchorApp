@@ -230,13 +230,14 @@ elif [ -f "$PROJECT_ROOT/resources/icon.icns" ]; then
     cp "$PROJECT_ROOT/resources/icon.icns" "$RESOURCES_DIR/AppIcon.icns"
 fi
 
-# Generate default config from personal config
-echo "   Generating default config from personal config..."
+# Generate default configs from personal configs
+echo "   Generating default configs from personal configs..."
+
+# Generate YAML config
 if [ -f "$HOME/.config/hookanchor/config.yaml" ]; then
     python3 "$PROJECT_ROOT/scripts/generate_default_config.py" "$RESOURCES_DIR/default_config.yaml"
 else
-    echo "   Warning: Personal config not found, creating minimal default"
-    # Fallback to a minimal config if personal config doesn't exist
+    echo "   Warning: Personal YAML config not found, creating minimal default"
     cat > "$RESOURCES_DIR/default_config.yaml" << 'EOF'
 # HookAnchor Default Configuration
 popup_settings:
@@ -245,9 +246,37 @@ popup_settings:
   run_in_background: true
 launcher_settings:
   obsidian_vault_name: "MyVault"
-  obsidian_vault_path: "~/Documents"
-markdown_roots:
+  obsidian_vault_path: "~/Documents/MyVault"
+file_roots:
   - "~/Documents"
+EOF
+fi
+
+# Generate JavaScript config
+if [ -f "$HOME/.config/hookanchor/config.js" ]; then
+    python3 "$PROJECT_ROOT/scripts/generate_default_config_js.py" "$RESOURCES_DIR/default_config.js"
+else
+    echo "   Warning: Personal JavaScript config not found, creating minimal default"
+    cat > "$RESOURCES_DIR/default_config.js" << 'EOF'
+// HookAnchor Default JavaScript Configuration
+// Copy this to ~/.config/hookanchor/config.js and customize as needed
+
+module.exports = {
+  // Example JavaScript function for 1Password integration
+  action_1pass: function(ctx) {
+    const searchTerm = ctx.arg || '';
+    try {
+      // Use 1Password Quick Access (Cmd+Shift+Space)
+      shell("osascript -e 'tell application \"System Events\" to keystroke \" \" using {shift down, command down}'");
+      shell_sync("/bin/sleep 0.5");
+      shell_sync(`osascript -e 'tell application "System Events" to keystroke "${searchTerm}"'`);
+      shell_sync("/bin/sleep 0.3");
+      shell("osascript -e 'tell application \"System Events\" to key code 36'");
+    } catch (e) {
+      log("Error executing 1Password action: " + e.message);
+    }
+  }
+};
 EOF
 fi
 
