@@ -24,7 +24,7 @@ use crate::core::{Command, Patch};
 /// 4. Year-based prefix matching
 /// 5. Similarity-based fuzzy matching (lowest priority)
 pub fn infer_patch(command: &Command, patches: &HashMap<String, Patch>) -> Option<String> {
-    // Skip system-generated orphan anchor commands - they should always keep their "orphans" patch
+    // Skip system-generated virtual anchor commands - they should always keep their "orphans" patch
     if command.patch == "orphans" && command.action == "anchor" && !command.flags.contains('U') {
         return None;
     }

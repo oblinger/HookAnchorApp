@@ -24,7 +24,6 @@ pub use self::actions::{
     // Helper functions that need to be public
     get_action,
     get_default_patch_for_action,
-    expand_string,
     make_action,
     get_action_for_arg,
 };

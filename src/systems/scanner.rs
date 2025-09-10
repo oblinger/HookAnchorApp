@@ -49,7 +49,6 @@
 //! - **handled_files built AFTER deletion**: Allows recreation of deleted anchors
 //! - **Skip empty args**: Empty args don't represent files, shouldn't block other commands
 //! - **User edits preserved**: 'U' flag prevents automatic deletion/modification
-//! - **Orphan anchors removed**: No longer creating orphan folders or anchors
 //! - **Patch preservation**: Existing patches are preserved when regenerating commands
 
 use std::fs;
@@ -67,7 +66,7 @@ use chrono::Local;
 /// Action types that are automatically generated and removed by the scanner
 /// These commands will be removed during rescanning unless they have the 'U' (user-edited) flag
 /// NOTE: "anchor" is handled separately by delete_anchors() function
-pub const SCANNER_GENERATED_ACTIONS: &[&str] = &["markdown", "folder", "app", "open_app"];
+pub const SCANNER_GENERATED_ACTIONS: &[&str] = &["markdown", "folder", "app", "open_app", "doc"];
 
 
 /// Check if a command is a Notion anchor
@@ -338,7 +337,6 @@ pub fn scan_verbose(commands: Vec<Command>, sys_data: &crate::core::sys_data::Sy
     // Then scan contacts - DISABLED for performance
     // commands = scan_contacts(commands);
     
-    // REMOVED - No longer creating orphan anchors
     // Patches without anchors will simply remain without anchors
     
     // Run full inference pipeline on scanned commands to ensure consistency
@@ -377,7 +375,7 @@ fn scan_files(mut commands: Vec<Command>, file_roots: &[String], config: &Config
     // Create a lookup map to preserve existing patches when regenerating commands
     let mut existing_patches: std::collections::HashMap<String, String> = std::collections::HashMap::new();
     for cmd in &commands {
-        if (cmd.action == "markdown" || cmd.action == "anchor" || cmd.action == "folder" || cmd.action == "app" || cmd.action == "open_app") && !cmd.patch.is_empty() {
+        if (cmd.action == "markdown" || cmd.action == "anchor" || cmd.action == "folder" || cmd.action == "app" || cmd.action == "open_app" || cmd.action == "doc") && !cmd.patch.is_empty() {
             existing_patches.insert(cmd.command.clone(), cmd.patch.clone());
         }
     }
@@ -415,7 +413,7 @@ fn scan_files(mut commands: Vec<Command>, file_roots: &[String], config: &Config
         
         // If it's scanner-generated, check if we should keep or remove it
         if is_scanner_generated {
-            // Check if file exists (for cleanup of orphan commands)
+            // Check if file exists (for cleanup of missing file commands)
             let file_exists = std::path::Path::new(&cmd.arg).exists();
             
             // Log file existence checks only in detailed/verbose mode
@@ -462,7 +460,7 @@ fn scan_files(mut commands: Vec<Command>, file_roots: &[String], config: &Config
     // Skip empty args - they don't represent handled files
     let mut handled_files: HashSet<String> = HashSet::new();
     for cmd in &commands {
-        if !cmd.arg.is_empty() && (cmd.action == "markdown" || cmd.action == "anchor" || cmd.action == "folder" || cmd.action == "app" || cmd.action == "open_app") {
+        if !cmd.arg.is_empty() && (cmd.action == "markdown" || cmd.action == "anchor" || cmd.action == "folder" || cmd.action == "app" || cmd.action == "open_app" || cmd.action == "doc") {
             handled_files.insert(cmd.arg.clone());
         }
     }
@@ -631,7 +629,12 @@ fn scan_directory_with_root_protected(dir: &Path, vault_root: &Path, commands: &
                 // Recursively scan subdirectories (but not .app bundles)
                 scan_directory_with_root_protected(&path, vault_root, commands, existing_commands, handled_files, found_folders, existing_patches, config, visited, depth + 1);
             } else {
-                // Process files (markdown files)
+                // Process files (markdown files and DOC files)
+                let mut file_processed = false;
+                
+                crate::utils::detailed_log("SCANNER", &format!("Processing file: {}", path.display()));
+                
+                // Try to process as markdown file first
                 if let Some(command) = process_markdown_with_root(&path, vault_root, existing_commands, &existing_patches) {
                     // Always log found markdown files for debugging
                     crate::utils::log(&format!("📄 Found markdown: {} -> cmd: '{}' action: '{}'", 
@@ -651,6 +654,34 @@ fn scan_directory_with_root_protected(dir: &Path, vault_root: &Path, commands: &
                         // Add to handled files set to prevent creating duplicate commands for this file
                         handled_files.insert(command.arg.clone());
                         commands.push(command);
+                    }
+                    file_processed = true;
+                }
+                
+                // If not a markdown file, try to process as DOC file
+                if !file_processed {
+                    crate::utils::detailed_log("SCANNER", &format!("File not processed as markdown, trying DOC: {}", path.display()));
+                    if let Some(command) = process_doc_file(&path, existing_commands, &existing_patches, config) {
+                        // Always log found DOC files for debugging
+                        // DOC command created successfully
+                        crate::utils::log(&format!("📄 Found doc: {} -> cmd: '{}' action: '{}'", 
+                            path.display(), command.command, command.action));
+                        
+                        // Check if this file is already handled by an existing command (O(1) lookup)
+                        if handled_files.contains(&command.arg) {
+                            crate::utils::log(&format!("  ⏭️  Skipping '{}' - file already handled: {}", 
+                                command.command, path.display()));
+                        } else {
+                            // Log that we're creating a new command
+                            crate::utils::log(&format!("  ✅ Creating new {} command '{}' -> {}", 
+                                command.action, command.command, command.arg));
+                            
+                            // Add to existing commands set to prevent future collisions (lowercase)
+                            existing_commands.insert(command.command.to_lowercase());
+                            // Add to handled files set to prevent creating duplicate commands for this file
+                            handled_files.insert(command.arg.clone());
+                            commands.push(command);
+                        }
                     }
                 }
             }
@@ -766,6 +797,75 @@ fn process_markdown_with_root(path: &Path, _vault_root: &Path, existing_commands
     })
 }
 
+/// Processes a path and returns a DOC command if it matches the configured file extensions
+fn process_doc_file(path: &Path, existing_commands: &HashSet<String>, existing_patches: &std::collections::HashMap<String, String>, config: &Config) -> Option<Command> {
+    // Check if it's a file
+    if !path.is_file() {
+        return None;
+    }
+    
+    // Get file extension
+    let extension = path.extension()?.to_str()?;
+    let extension_lower = extension.to_lowercase();
+    
+    // Get the whitelist of DOC file extensions from config
+    let doc_extensions = match &config.popup_settings.doc_file_extensions {
+        Some(exts) => {
+            crate::utils::detailed_log("SCANNER", &format!("DOC extensions whitelist: {}", exts));
+            exts
+        },
+        None => {
+            crate::utils::detailed_log("SCANNER", "No DOC extensions configured in config");
+            return None; // No DOC extensions configured
+        }
+    };
+    
+    // Check if this file extension is in the whitelist
+    let is_doc_extension = doc_extensions
+        .split(',')
+        .map(|ext| ext.trim().to_lowercase())
+        .any(|ext| ext == extension_lower);
+    
+    crate::utils::detailed_log("SCANNER", &format!("File '{}' extension '{}' in whitelist: {}", path.display(), extension_lower, is_doc_extension));
+    
+    if !is_doc_extension {
+        return None;
+    }
+    
+    // Get the base name without extension
+    let file_name = match path.file_stem()?.to_str() {
+        Some(name) => name,
+        None => {
+            crate::utils::detailed_log("SCANNER", &format!("Skipping file with invalid UTF-8 name: {}", path.display()));
+            return None;
+        }
+    };
+    
+    // Create command name, checking for collisions (case-insensitive)
+    let preferred_name = file_name.to_string();
+    
+    let command_name = if existing_commands.contains(&preferred_name.to_lowercase()) {
+        // If collision exists, add extension suffix to distinguish from other files
+        format!("{} {}", file_name, extension_lower)
+    } else {
+        // Use the preferred name without suffix
+        preferred_name
+    };
+    
+    let full_path = path.to_string_lossy().to_string();
+    
+    // Try to preserve existing patch if this command existed before
+    let preserved_patch = existing_patches.get(&command_name).cloned().unwrap_or_else(String::new);
+    
+    Some(Command {
+        patch: preserved_patch,
+        command: command_name,
+        action: "doc".to_string(),
+        arg: full_path,
+        flags: String::new(),
+    })
+}
+
 
 /// Check if a directory should be skipped based on config patterns
 fn should_skip_directory(dir_name: &str, config: &Config) -> bool {
@@ -830,9 +930,9 @@ fn expand_home(path: &str) -> String {
 fn calculate_commands_checksum(commands: &[Command]) -> String {
     let mut hasher = DefaultHasher::new();
     
-    // Filter only scan-generated commands (markdown, anchor, contact, folder, app, open_app)
+    // Filter only scan-generated commands (markdown, anchor, contact, folder, app, open_app, doc)
     let mut scan_commands: Vec<_> = commands.iter()
-        .filter(|cmd| cmd.action == "markdown" || cmd.action == "anchor" || cmd.action == "contact" || cmd.action == "folder" || cmd.action == "app" || cmd.action == "open_app")
+        .filter(|cmd| cmd.action == "markdown" || cmd.action == "anchor" || cmd.action == "contact" || cmd.action == "folder" || cmd.action == "app" || cmd.action == "open_app" || cmd.action == "doc")
         .collect();
     
     // Sort for consistent checksum - use to_new_format() for comparison

@@ -311,7 +311,16 @@ impl CommandEditor {
                                         arg: self.argument.clone(),
                                         flags: self.flags.clone(),
                                     };
-                                    result = CommandEditorResult::Save(new_command, self.original_command_name.clone());
+                                    
+                                    // Early validation for self-referential aliases to prevent crashes
+                                    if new_command.action == "alias" && new_command.command == new_command.arg {
+                                        // Show error immediately without trying to save
+                                        // This prevents the system from getting into a bad state
+                                        eprintln!("ERROR: Cannot create self-referential alias: '{}' cannot alias to itself", new_command.command);
+                                        // Don't set result, keep editor open
+                                    } else {
+                                        result = CommandEditorResult::Save(new_command, self.original_command_name.clone());
+                                    }
                                     
                                     // Consume any pending Enter key to prevent command execution
                                     ctx.input_mut(|i| {
@@ -334,7 +343,14 @@ impl CommandEditor {
                 arg: self.argument.clone(),
                 flags: self.flags.clone(),
             };
-            result = CommandEditorResult::Save(new_command, self.original_command_name.clone());
+            
+            // Early validation for self-referential aliases to prevent crashes
+            if new_command.action == "alias" && new_command.command == new_command.arg {
+                eprintln!("ERROR: Cannot create self-referential alias: '{}' cannot alias to itself", new_command.command);
+                // Don't set result, keep editor open
+            } else {
+                result = CommandEditorResult::Save(new_command, self.original_command_name.clone());
+            }
             
             // IMPORTANT: Consume the Enter key to prevent it from being processed by the popup
             ctx.input_mut(|i| {
@@ -346,24 +362,21 @@ impl CommandEditor {
     }
     
     pub fn prepare_save_command(&self) -> (Option<String>, Command) {
-        // ALWAYS add 'U' flag when a command is edited in the command editor
-        // This indicates user-edited and prevents removal during rescan
-        let mut flags = self.flags.clone();
-        if !flags.contains('U') {
-            if !flags.is_empty() {
-                flags.push(' ');
-            }
-            flags.push('U');
-        }
-        
         // Return the command to delete (if any) and the new command to add
-        let new_command = Command {
+        let mut new_command = Command {
             patch: self.patch.clone(),
             command: self.command.clone(),
             action: self.action.clone(),
             arg: self.argument.clone(),
-            flags,
+            flags: self.flags.clone(),
         };
+        
+        // ALWAYS add 'U' flag when a command is edited in the command editor
+        // This indicates user-edited and prevents removal during rescan
+        // Use proper flag accessor to ensure correct comma separation
+        if !new_command.flags.contains('U') {
+            new_command.set_flag('U', "");
+        }
         
         let command_to_delete = if !self.original_command_name.is_empty() {
             Some(self.original_command_name.clone())

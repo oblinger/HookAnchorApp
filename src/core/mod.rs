@@ -68,7 +68,6 @@ pub use commands::{
     // Submenu and navigation (moved to display module)
     
     // Migration and maintenance
-    migrate_commands_to_new_format
 };
 
 // User-level command operations
@@ -101,7 +100,7 @@ pub use key_processing::{
     UninstallTextHandler, ShowKeysTextHandler,
     
     // Utilities
-    create_default_key_registry, ascii_to_key_name
+    create_default_key_registry
 };
 
 // Display and filtering system

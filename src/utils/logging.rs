@@ -121,21 +121,7 @@ pub fn log_error_module(module: &str, message: &str) {
     log(&format!("❌ ERROR [{}]: {}", module, message));
 }
 
-/// Legacy debug log function - now just calls log() with formatted message
-/// 
-/// Kept for backward compatibility. New code should use log() or detailed_log().
-pub fn debug_log(module: &str, message: &str) {
-    log(&format!("PANIC_TEST: debug_log called from {}: {}", module, message));
-    panic!("PANIC_TEST: debug_log function is being used - remove this panic if you want to keep this function");
-}
 
-/// Verbose debug logging function for detailed debugging
-/// 
-/// This is now an alias for detailed_log. Kept for backward compatibility.
-pub fn verbose_log(module: &str, message: &str) {
-    log(&format!("PANIC_TEST: verbose_log called from {}: {}", module, message));
-    panic!("PANIC_TEST: verbose_log function is being used - remove this panic if you want to keep this function");
-}
 
 /// Unified print function that both prints to console and logs
 /// 

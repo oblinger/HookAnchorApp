@@ -139,7 +139,7 @@ fn load_data_no_cache(commands_override: Vec<Command>, _verbose: bool) -> SysDat
 /// 1. Load configuration
 /// 2. Load commands (from disk or use override)
 /// 3. Create patches hashmap from anchor commands
-/// 4. Create orphan anchors if needed
+/// 4. Create virtual anchors if needed
 /// 5. Run patch inference for commands without patches
 /// 6. Create fast lookup maps
 /// 7. Normalize patch case
@@ -199,25 +199,25 @@ pub fn load_data(commands_override: Vec<Command>, verbose: bool) -> SysData {
         println!("   Found {} patches from anchor commands", patches.len());
     }
     
-    // Step 3.1: REMOVED - No longer creating orphans root
-    // Orphan management is no longer needed
+    // Step 3.1: REMOVED - No longer creating physical anchor root
+    // Virtual anchor management is no longer needed
     
-    // Step 3.2: Extract orphan anchor commands from patches and add them to commands list
-    let mut orphans_created = 0;
+    // Step 3.2: Extract virtual anchor commands from patches and add them to commands list
+    let mut virtual_anchors_created = 0;
     for patch in patches.values() {
         for anchor_cmd in &patch.anchor_commands {
             if anchor_cmd.patch == "orphans" && anchor_cmd.action == "anchor" && !anchor_cmd.flags.contains('U') {
                 if verbose {
-                    println!("   Adding orphan anchor command: {}", anchor_cmd.command);
+                    println!("   Adding virtual anchor command: {}", anchor_cmd.command);
                 }
                 commands.push(anchor_cmd.clone());
-                orphans_created += 1;
+                virtual_anchors_created += 1;
             }
         }
     }
     
-    if verbose && orphans_created > 0 {
-        println!("   Created {} orphan anchor commands", orphans_created);
+    if verbose && virtual_anchors_created > 0 {
+        println!("   Created {} virtual anchor commands", virtual_anchors_created);
     }
     
     // Step 4: Infer patches for commands without patches
@@ -279,7 +279,7 @@ pub fn load_data(commands_override: Vec<Command>, verbose: bool) -> SysData {
     if verbose {
         println!("💾 Step 5: Saving changes if needed...");
     }
-    if patches_assigned > 0 || orphans_created > 0 || normalized_patches > 0 {
+    if patches_assigned > 0 || virtual_anchors_created > 0 || normalized_patches > 0 {
         // Save commands with changes
         
         if let Err(e) = crate::core::commands::save_commands_to_file(&commands) {

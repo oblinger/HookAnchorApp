@@ -838,7 +838,7 @@ fn run_infer_patches(args: &[String]) {
     
     print("Analyzing patch inference changes...");
     
-    // Load current commands (without inference and orphan creation)
+    // Load current commands (without inference and virtual anchor creation)
     let (_config, mut commands, patches) = load_commands_for_inference();
     
     print("\n=== COMMAND PATCH CHANGES ===");
@@ -858,15 +858,15 @@ fn run_infer_patches(args: &[String]) {
     
     // Show orphan patches that would be created
     if !new_patches_to_add.is_empty() {
-        print("\n=== ORPHAN PATCHES THAT WOULD BE CREATED ===");
+        print("\n=== PATCHES NEEDING VIRTUAL ANCHORS ===");
         for new_patch in &new_patches_to_add {
-            print(&format!("  New orphan patch: {}", new_patch));
+            print(&format!("  New patch needing virtual anchor: {}", new_patch));
         }
     }
     
     print("\n=== SUMMARY ===");
     print(&format!("  Commands that would change: {}", changes_found));
-    print(&format!("  Orphan patches that would be created: {}", new_patches_to_add.len()));
+    print(&format!("  Patches needing virtual anchors: {}", new_patches_to_add.len()));
     
     if changes_found == 0 && new_patches_to_add.is_empty() {
         print("  No changes would be made.");
@@ -877,7 +877,7 @@ fn run_infer_patches(args: &[String]) {
 
 /// Show patch inference for a specific command
 fn run_infer_single_command(command_name: &str) {
-    // Load current commands (without inference and orphan creation)
+    // Load current commands (without inference and virtual anchor creation)
     let (_config, commands, patches) = load_commands_with_data();
     
     // Find the command by name
@@ -933,7 +933,7 @@ fn run_infer_single_command(command_name: &str) {
 fn run_infer_all_patches(_args: &[String]) {
     print("Analyzing patch inference changes...");
     
-    // Load current commands (without inference and orphan creation)
+    // Load current commands (without inference and virtual anchor creation)
     let (_config, mut commands, patches) = load_commands_for_inference();
     
     print("\n=== COMMAND PATCH CHANGES ===");
@@ -953,9 +953,9 @@ fn run_infer_all_patches(_args: &[String]) {
     
     // Show orphan patches that would be created
     if !new_patches_to_add.is_empty() {
-        print("\n=== ORPHAN PATCHES THAT WOULD BE CREATED ===");
+        print("\n=== PATCHES NEEDING VIRTUAL ANCHORS ===");
         for new_patch in &new_patches_to_add {
-            print(&format!("  New orphan patch: {}", new_patch));
+            print(&format!("  New patch needing virtual anchor: {}", new_patch));
         }
     }
     
@@ -967,7 +967,7 @@ fn run_infer_all_patches(_args: &[String]) {
     // Prompt user for confirmation
     print("\n=== SUMMARY ===");
     print(&format!("  Commands that would change: {}", changes_found));
-    print(&format!("  Orphan patches that would be created: {}", new_patches_to_add.len()));
+    print(&format!("  Patches needing virtual anchors: {}", new_patches_to_add.len()));
     print!("\nApply all changes? (y/n): ");
     use std::io::{self, Write};
     io::stdout().flush().unwrap();

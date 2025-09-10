@@ -36,7 +36,6 @@ launcher_settings:
   obsidian_vault_path:    "~/Documents/Notes"  # Location of the main vault
 
 scanner_settings:
-  orphans_path:           "~/Documents/Orphans"
 
 markdown_roots:
  - "~/Documents/Notes"                         # Markdown file scanning roots

@@ -381,13 +381,6 @@ impl Keystroke {
     }
 }
 
-/// Compatibility function for legacy key->text mapping
-/// TODO: Remove this once all legacy code is cleaned up
-pub fn ascii_to_key_name(ascii_char: &str) -> String {
-    crate::utils::log(&format!("PANIC_TEST: ascii_to_key_name called with: {}", ascii_char));
-    panic!("PANIC_TEST: ascii_to_key_name function is being used - remove this panic if you want to keep this function");
-}
-
 // ================================================================================================
 // KEY REGISTRY SYSTEM
 // ================================================================================================
@@ -443,10 +436,6 @@ pub trait PopupInterface {
     
     /// Show contact for selected command (strips @ prefix)
     fn show_contact(&mut self);
-    
-    // COMMENTED OUT: Unused - replaced by activate_tmux
-    // /// Start tmux session in selected anchor folder
-    // fn tmux_activate(&mut self);
     
     /// Activate TMUX - open folder, tmux session, and Obsidian (formerly activate_anchor)
     fn activate_tmux(&mut self);
@@ -861,7 +850,6 @@ pub enum Action {
     ShowKeys,
     UninstallApp,
     TemplateCreate,
-    // TmuxActivate, // COMMENTED OUT: Unused - replaced by ActivateTmux
     ActivateTmux, // Renamed from ActivateAnchor
     NavigateUpHierarchy,  // Square bracket left - go to parent patch
     NavigateDownHierarchy, // Square bracket right - enter selected anchor submenu
@@ -874,7 +862,6 @@ impl ActionHandler {
             Action::StartGrabber => "Start grabber countdown",
             Action::ShowFolder => "Show folder of selected command",
             Action::ShowContact => "Show contact (strips @ prefix)",
-            // Action::TmuxActivate => "Start tmux session in anchor folder", // COMMENTED OUT: Unused
             Action::ExitApp => "Exit application",
             Action::ExecuteCommand => "Execute selected command",
             Action::OpenEditor => "Open command editor",
@@ -924,10 +911,6 @@ impl KeyHandler for ActionHandler {
                 context.popup.show_contact();
                 KeyHandlerResult::Handled
             },
-            // Action::TmuxActivate => {
-            //     context.popup.tmux_activate();
-            //     KeyHandlerResult::Handled
-            // }, // COMMENTED OUT: Unused
             Action::ActivateTmux => {
                 context.popup.activate_tmux();
                 KeyHandlerResult::Handled
@@ -1139,7 +1122,6 @@ pub fn create_default_key_registry(config: &super::Config) -> KeyRegistry {
                                 "edit_input_command" => Box::new(ActionHandler::new(Action::EditInputCommand)),
                                 "open_editor" => Box::new(ActionHandler::new(Action::OpenEditor)),
                                 "add_alias" => Box::new(ActionHandler::new(Action::AddAlias)),
-                                // "tmux_activate" => Box::new(ActionHandler::new(Action::TmuxActivate)), // COMMENTED OUT: Unused
                                 "activate_tmux" => Box::new(ActionHandler::new(Action::ActivateTmux)), // Renamed from activate_anchor
                                 "navigate_up_hierarchy" => Box::new(ActionHandler::new(Action::NavigateUpHierarchy)),
                                 "navigate_down_hierarchy" => Box::new(ActionHandler::new(Action::NavigateDownHierarchy)),

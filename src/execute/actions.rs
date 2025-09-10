@@ -286,16 +286,6 @@ fn expand_template_string(
     Ok(result)
 }
 
-/// Keep the old function for backward compatibility temporarily
-/// TODO: Remove after all callers are updated
-pub fn expand_string(
-    template: &str,
-    context: &ActionContext,
-) -> Result<String, Box<dyn std::error::Error>> {
-    crate::utils::log(&format!("PANIC_TEST: expand_string called with template: {}", template));
-    panic!("PANIC_TEST: expand_string function is being used - remove this panic if you want to keep this function");
-}
-
 /// Create a JavaScript context with parameters as variables
 fn create_js_context_with_params(
     params: &HashMap<String, String>,

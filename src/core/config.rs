@@ -55,8 +55,8 @@ pub struct PopupSettings {
     pub run_in_background: Option<bool>,
     /// File scanning roots - directories to scan for markdown files and applications
     pub file_roots: Option<Vec<String>>,
-    /// Path where orphan anchor files are created (default: ~/ob/kmr/SYS/Closet/Orphans)
-    pub orphans_path: Option<String>,
+    /// Comma-separated file extensions for which to create DOC commands during scanning
+    pub doc_file_extensions: Option<String>,
     /// Directory patterns to skip during scanning (glob patterns)
     pub skip_directory_patterns: Option<Vec<String>>,
     /// When renaming a command, also rename the associated document file if the names match (default: false)
@@ -119,7 +119,7 @@ impl Default for PopupSettings {
             max_log_file_size: Some(1_000_000), // 1MB default
             run_in_background: Some(false), // Default to false for safety
             file_roots: None,
-            orphans_path: Some("/Users/oblinger/ob/kmr/SYS/Closet/Orphans".to_string()),
+            doc_file_extensions: Some("pdf,doc,docx,xls,xlsx,ppt,pptx,txt,rtf,pages,numbers,key".to_string()),
             skip_directory_patterns: Some(vec![
                 "node_modules".to_string(),
                 "target".to_string(),
@@ -304,23 +304,12 @@ fn parse_config_contents(contents: &str) -> Result<Config, Box<dyn std::error::E
         popup_settings.listed_actions = Some(listed_actions_str.to_string());
     }
     
-    // Handle legacy markdown_roots at top level - migrate to popup_settings
-    // Also support the old name "markdown_roots" for backwards compatibility
+    // Handle file_roots at top level - migrate to popup_settings
     if let Some(roots) = yaml.get("file_roots")
-        .or_else(|| yaml.get("markdown_roots"))
         .and_then(|v| serde_yaml::from_value::<Vec<String>>(v.clone()).ok()) {
-        if yaml.get("markdown_roots").is_some() {
-            crate::utils::log("PANIC_TEST: Legacy 'markdown_roots' config key found - this compatibility code is being used!");
-            panic!("PANIC_TEST: Legacy markdown_roots config compatibility is being used - remove this panic if needed");
-        }
         popup_settings.file_roots = Some(roots);
     }
     
-    // Handle legacy scanner_settings - migrate to popup_settings
-    if let Some(scanner) = yaml.get("scanner_settings") {
-        crate::utils::log("PANIC_TEST: Legacy 'scanner_settings' config key found - this compatibility code is being used!");
-        panic!("PANIC_TEST: Legacy scanner_settings config compatibility is being used - remove this panic if needed");
-    }
     
     // Extract launcher_settings if it exists
     let launcher_settings = yaml.get("launcher_settings")

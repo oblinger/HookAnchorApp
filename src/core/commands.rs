@@ -259,7 +259,7 @@ impl Command {
         
         // Add command and action
         result.push_str(&self.command);
-        result.push_str(" : ");
+        result.push(':');
         result.push_str(&self.action);
         
         // Add flags if present (before semicolon)
@@ -341,7 +341,9 @@ impl Command {
         // Find the target command that this alias points to
         let target_command = commands.iter()
             .find(|cmd| cmd.command == self.arg)
-            .ok_or_else(|| format!("Recursive aliases: alias '{}' points to non-existent command '{}'", self.command, self.arg))?;
+            .ok_or_else(|| {
+                format!("Recursive aliases: alias '{}' points to non-existent command '{}'", self.command, self.arg)
+            })?;
         
         // Recursively resolve the target
         let resolved = target_command.resolve_alias_with_depth(commands, depth + 1, max_depth, visited)?;
@@ -443,7 +445,7 @@ pub fn create_patches_hashmap(commands: &[Command]) -> HashMap<String, Patch> {
         }
     }
     
-    // Fourth pass: Create orphan anchors for patches that have no anchors but have commands
+    // Fourth pass: Create virtual anchors for patches that have no anchors but have commands
     let mut patches_with_commands = std::collections::HashSet::new();
     for command in commands {
         if !command.patch.is_empty() && command.patch != "orphans" {
@@ -453,12 +455,12 @@ pub fn create_patches_hashmap(commands: &[Command]) -> HashMap<String, Patch> {
     
     for patch_name in patches_with_commands {
         if !patches.contains_key(&patch_name) {
-            // Create orphan anchor for this patch
-            if let Some(orphan_command) = create_orphan_anchor_for_patch(&patch_name, &config) {
-                crate::utils::log(&format!("PATCH: Created orphan anchor for patch '{}'", patch_name));
+            // Create virtual anchor for this patch
+            if let Some(virtual_command) = create_virtual_anchor_for_patch(&patch_name, &config) {
+                crate::utils::log(&format!("PATCH: Created virtual anchor for patch '{}'", patch_name));
                 patches.insert(patch_name.clone(), Patch {
-                    name: orphan_command.command.clone(),
-                    anchor_commands: vec![orphan_command],
+                    name: virtual_command.command.clone(),
+                    anchor_commands: vec![virtual_command],
                     include_commands: Vec::new(),
                 });
             }
@@ -997,7 +999,7 @@ pub fn run_patch_inference(
             continue;
         }
         
-        // Skip system-generated orphan anchor commands - they should always keep their "orphans" patch
+        // Skip system-generated virtual anchor commands - they should always keep their "orphans" patch
         if command.patch == "orphans" && command.action == "anchor" && !command.flags.contains('U') {
             continue;
         }
@@ -1146,7 +1148,7 @@ pub(crate) fn normalize_patch_case(commands: &mut [Command], patches: &HashMap<S
     normalized_count
 }
 
-/// Get the patch path from a command to the orphans root
+/// Get the patch path from a command to the root
 /// Returns a vector of patch names from the given command up to the root (excluding orphans)
 /// If a cycle is detected, returns the path up to the point where the cycle would occur
 pub fn get_patch_path(command_name: &str, patches: &HashMap<String, Patch>) -> Vec<String> {
@@ -1169,11 +1171,12 @@ pub fn get_patch_path(command_name: &str, patches: &HashMap<String, Patch>) -> V
         
         // Don't include "orphans" in the path as it's the root
         if current_patch.to_lowercase() != "orphans" {
-            // Use the original case from the patch key
-            if let Some((original_key, _)) = patches.iter().find(|(k, _)| k.to_lowercase() == current_patch) {
-                path.push(original_key.clone());
+            // Use the original case from the patch's primary anchor command
+            if let Some(primary_cmd) = patch.primary_anchor() {
+                path.push(primary_cmd.command.clone());
             } else {
-                path.push(current_patch.clone());
+                // Fallback to patch name if no primary anchor
+                path.push(patch.name.clone());
             }
         }
         
@@ -1194,10 +1197,10 @@ pub fn get_patch_path(command_name: &str, patches: &HashMap<String, Patch>) -> V
     path
 }
 
-/// REMOVED - No longer finding orphan patches since we don't create orphan anchors
+/// REMOVED - No longer finding patches without anchors since we don't create physical anchor files
 #[allow(dead_code)]
-pub(crate) fn find_orphan_patches(patches: &HashMap<String, Patch>, commands: &[Command]) -> Vec<String> {
-    let mut orphan_patches = Vec::new();
+pub(crate) fn find_patches_without_anchors(patches: &HashMap<String, Patch>, commands: &[Command]) -> Vec<String> {
+    let mut patches_without_anchors = Vec::new();
     
     // First, build a set of all anchor command names (these ARE the patches)
     let anchor_names: std::collections::HashSet<String> = commands
@@ -1225,13 +1228,13 @@ pub(crate) fn find_orphan_patches(patches: &HashMap<String, Patch>, commands: &[
             
             if !has_anchor {
                 let patch_name_lower = command.patch.to_lowercase();
-                // Patch not found in patches hashmap - considering for orphan creation
-                // Check if we haven't already marked this patch as orphaned (case-insensitive)
-                let already_exists = orphan_patches.iter().any(|existing: &String| existing.to_lowercase() == patch_name_lower);
+                // Patch not found in patches hashmap - considering for virtual anchor creation
+                // Check if we haven't already marked this patch as needing virtual anchor (case-insensitive)
+                let already_exists = patches_without_anchors.iter().any(|existing: &String| existing.to_lowercase() == patch_name_lower);
                 if !already_exists {
                     // IMPORTANT: Don't create shorter patches when longer, more specific ones exist
-                    // Check if there's already a longer patch that contains this one (in orphan_patches)
-                    let should_skip_orphan = orphan_patches.iter().any(|existing| {
+                    // Check if there's already a longer patch that contains this one (in patches_without_anchors)
+                    let should_skip_virtual = patches_without_anchors.iter().any(|existing| {
                         let existing_lower = existing.to_lowercase();
                         // Skip if existing patch starts with this patch name + space
                         existing_lower.starts_with(&format!("{} ", patch_name_lower))
@@ -1242,33 +1245,33 @@ pub(crate) fn find_orphan_patches(patches: &HashMap<String, Patch>, commands: &[
                         key.starts_with(&format!("{} ", patch_name_lower))
                     });
                     
-                    if !should_skip_orphan && !should_skip_existing {
+                    if !should_skip_virtual && !should_skip_existing {
                         // Also check if this patch would make existing shorter patches redundant
                         let current_patch_lower = command.patch.to_lowercase();
-                        orphan_patches.retain(|existing| {
+                        patches_without_anchors.retain(|existing| {
                             let existing_lower = existing.to_lowercase();
                             // Remove existing patch if this one is a longer version
                             !current_patch_lower.starts_with(&format!("{} ", existing_lower))
                         });
                         
                         // Use the original mixed case from the command
-                        orphan_patches.push(command.patch.clone());
-                        // Added orphan patch
+                        patches_without_anchors.push(command.patch.clone());
+                        // Added patch needing virtual anchor
                     } else {
                         // Skipped patch - would conflict with longer patch
                     }
                 } else {
-                    // Patch already marked as orphan
+                    // Patch already marked as needing virtual anchor
                 }
             } else {
                 // Patch exists - this is the normal case
-                // Patch found in patches hashmap - no orphan needed
+                // Patch found in patches hashmap - no virtual anchor needed
             }
         }
     }
     
-    // Found orphan patches
-    orphan_patches
+    // Found patches without anchors
+    patches_without_anchors
 }
 
 /// REMOVED - No longer creating orphan anchors
@@ -1279,26 +1282,26 @@ pub(crate) fn ensure_orphans_root_patch(
     _commands: &mut Vec<Command>,
     _config: &Config
 ) -> Result<(), Box<dyn std::error::Error>> {
-    // Function removed - no longer creating orphan anchors
+    // Function removed - no longer creating physical anchor files
     Ok(())
 }
 
-/// REMOVED - No longer creating orphan anchors
+/// REMOVED - No longer creating physical anchor files
 /// This function is kept as a stub to avoid breaking compilation
 #[allow(dead_code)]
-pub(crate) fn create_orphan_anchors(
+pub(crate) fn create_virtual_anchors(
     _config: &Config, 
-    _orphan_patches: &[String], 
+    _patches_without_anchors: &[String], 
     _commands: &mut Vec<Command>
 ) -> Result<usize, Box<dyn std::error::Error>> {
-    // Function removed - no longer creating orphan anchors
+    // Function removed - no longer creating physical anchor files
     Ok(0)
 }
 
-/// Create an orphan anchor command for a patch that has no anchor
+/// Create a virtual anchor command for a patch that has no anchor
 /// This ensures every patch has at least one anchor command
-fn create_orphan_anchor_for_patch(patch_name: &str, _config: &Config) -> Option<Command> {
-    // Create the orphan anchor command - no file path needed, just blank arg
+fn create_virtual_anchor_for_patch(patch_name: &str, _config: &Config) -> Option<Command> {
+    // Create the virtual anchor command - no file path needed, just blank arg
     // No flags needed - absence of 'U' flag indicates this is system-generated
     Some(Command {
         command: patch_name.to_string(),
@@ -1365,7 +1368,9 @@ pub fn load_commands() -> Vec<Command> {
 
 /// Load commands with config and patches - main entry point for full data loading
 pub fn load_commands_with_data() -> (crate::core::config::Config, Vec<Command>, HashMap<String, Patch>) {
-    let global_data = crate::core::sys_data::load_data(Vec::new(), false);
+    // IMPORTANT: This function should use get_sys_data() instead of load_data() to avoid deadlock
+    // load_data() is meant to be called only from get_sys_data()
+    let (global_data, _) = crate::core::sys_data::get_sys_data();
     (global_data.config, global_data.commands, global_data.patches)
 }
 
@@ -1390,10 +1395,12 @@ pub fn parse_command_line(line: &str) -> Result<Command, String> {
         return Err("Empty line".to_string());
     }
     
-    // Check for new format: [GROUP! ]COMMAND : ACTION FLAGS; ARG
-    if let Some(colon_pos) = trimmed.find(" : ") {
+    // Check for new format: [GROUP! ]COMMAND:ACTION FLAGS; ARG
+    // Colon is invalid in command names, so we just look for the first colon
+    if let Some(colon_pos) = trimmed.find(':') {
         let (prefix, rest) = trimmed.split_at(colon_pos);
-        let rest = &rest[3..]; // Skip " : "
+        // Skip the colon and any optional spaces after it
+        let rest = &rest[1..].trim_start();
         
         // Parse group and command from prefix
         let (group, command) = if let Some(exclaim_pos) = prefix.find("! ") {
@@ -1564,9 +1571,9 @@ pub fn save_commands_to_file(commands: &[Command]) -> Result<(), Box<dyn std::er
     // Skip logging empty patch commands
 
     // SAFETY CHECKS: Prevent saving corrupted data
-    // Updated based on July 16th baseline: ~3616 total commands
-    if updated_commands.len() > 4000 {
-        let error_msg = format!("CORRUPTION DETECTED: Attempting to save {} commands (> 4000 limit). This indicates command inflation. Save operation CANCELLED.", updated_commands.len());
+    // Updated for DOC commands: DOC scanning can legitimately add thousands of commands
+    if updated_commands.len() > 10000 {
+        let error_msg = format!("CORRUPTION DETECTED: Attempting to save {} commands (> 10000 limit). This indicates command inflation. Save operation CANCELLED.", updated_commands.len());
         crate::utils::log_error(&error_msg);
         crate::utils::detailed_log("CORRUPTION", &error_msg);
         return Err("Command count exceeds safety limit".into());
@@ -1969,11 +1976,6 @@ fn is_valid_merge_candidate_by_position(candidate: &str, search_context: &str, s
 }
 
 
-/// Migrates commands to the new format (if needed)
-pub fn migrate_commands_to_new_format(commands: &mut [Command]) {
-    crate::utils::log("PANIC_TEST: migrate_commands_to_new_format was called!");
-    panic!("PANIC_TEST: migrate_commands_to_new_format function is being used - remove this panic if you want to keep this function");
-}
 
 
 

@@ -11,7 +11,28 @@ use crate::core::{Command, Config, Patch};
 // ============================================================================
 
 /// Adds a new command to the list and saves
+/// Validate an alias command for cycles before adding it
+fn validate_alias_command(new_command: &Command, _commands: &[Command]) -> Result<(), String> {
+    if new_command.action != "alias" {
+        return Ok(());
+    }
+    
+    // Prevent self-referential alias (A -> A) - this is the most critical check
+    if new_command.command == new_command.arg {
+        return Err(format!("Cannot create self-referential alias: '{}' cannot alias to itself", new_command.command));
+    }
+    
+    // Note: More complex cycle detection would require loading the full command set
+    // and doing graph traversal, but the self-referential check catches the most
+    // dangerous case that causes immediate stack overflow
+    
+    Ok(())
+}
+
 pub fn add_command(new_command: Command, commands: &mut Vec<Command>) -> Result<(), Box<dyn std::error::Error>> {
+    // Validate before making any changes
+    validate_alias_command(&new_command, commands)?;
+    
     commands.push(new_command);
     crate::core::save_commands_to_file(commands)?;
     Ok(())

@@ -154,7 +154,7 @@ mod tests {
                 max_log_file_size: None,
                 run_in_background: None,
                 file_roots: None,
-                orphans_path: None,
+                doc_file_extensions: None,
                 skip_directory_patterns: None,
                 rename_doc: None,
                 rename_folder: None,

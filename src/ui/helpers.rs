@@ -25,6 +25,7 @@ pub(super) fn get_listed_actions() -> Vec<String> {
                 "url".to_string(),
                 "folder".to_string(),
                 "cmd".to_string(),
+                "console".to_string(),
                 "chrome".to_string(),
                 "anchor".to_string(),
             ]
