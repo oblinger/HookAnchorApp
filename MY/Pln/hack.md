@@ -1,3 +1,5 @@
+- ANCHOR EDITOR - Extend the command editor to be the anchor editor whenever the action type is anchor
+- ACTION type - add an 'action' type that runs any action w/ any args
 
 
 

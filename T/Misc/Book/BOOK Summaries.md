@@ -3,11 +3,16 @@
 Chaos
 Nexus
 
-## 2025 Redemption Ark - Alatar Reynolds
+## 2025 Inhibitor Trilogy - Alastar Reynolds
 
 ### Universe
 - Ultras - heavily modified post-humans
 - Conjoiners - 
+
+
+
+### Redemption Ark - Alastar Reynolds
+
 
 ###  Revelation Space
 

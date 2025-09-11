@@ -16,3 +16,16 @@ A bit of background on me:
   
 
 Really looking forward to chatting about all of these topics.
+
+
+
+--- 60-second intro --- name/role.  Deeper why.  Relatable 20-30 second origin moment.  What I help people do 10-15 seconds.
+https://medium.com/change-your-mind/the-1-minute-introduction-that-makes-people-remember-you-forever-30d0e8265854
+
+
+Dan O, CTO for sports vision - an AI/computer vision company.
+
+I love translating rocket-science academic research into scaled products.
+
+
+

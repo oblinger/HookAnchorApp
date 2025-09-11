@@ -11,7 +11,7 @@
   , [Bio Verbal Obsidian](spot://bioverbalobsidian), 
   DELS: [Bio Note](spot://bionote),[Bio Obsidian](spot://bioobsidian),[Bio Note](spot://bionote),[Bio Note](spot://bionote),
 
-d
+
 
 
 

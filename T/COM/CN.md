@@ -1,10 +1,12 @@
 (See [[CRM]]) 
 
-- mike mathew code for NLP prompting
-- [Alain](https://www.linkedin.com/feed/update/urn:li:activity:7323156352921444353/?origin=NETWORK_CONVERSATIONS&midToken=AQGyXU4GbqUJFA&midSig=3HlIBRwusF8XM1&trk=eml-email_network_conversations_01-network_post-0-actor_card&trkEmail=eml-email_network_conversations_01-network_post-0-actor_card-null-59hu~maakuv6u~3i-null-null&eid=59hu-maakuv6u-3i&otpToken=MTAwMTFiZTUxYTI4YzNjNWIzMmEwM2VlNDcxN2U2YjA4YmNlZDU0NjkzYWQ4NzYyNzdjNTA4NmU0ODU4NTY4MDhiOTFkMWE0NDhjNmVlM2VlMDhjZTE2NjhkNGUzMjJkYmZiM2E1MjllOWJkNTksMSwx) 
+- [[@Alain Biem]] 
+- [[@Rachel Kadosh]] 
+- [[@Damien Filiatrault]] 
+- Doug Riecken. 908-
+- 294-0973
 
 -  [[@David Israel]],
-- Doug Riecken. 908-294-0973
 - Jason Wells - NOW CFO
 - do we know anyone at scale
 - [LinkedIn Contacts](hook://comlinkedin)
