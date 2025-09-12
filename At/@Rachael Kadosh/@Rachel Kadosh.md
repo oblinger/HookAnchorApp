@@ -11,7 +11,7 @@ Rachel, indeed now is a good time for us to chat. Over the last year, I have bee
 
 Here is my context:
 
-My career and life plans really fell apart with COVID and with the AI revolution.  The silver lining that it has focused me on neglected parts of my life.  I had planned to use Analytics Fire to make enough money that I never needed to work traditional jobs again.
+My career and life plans really fell apart with COVID and with the AI revolution.  The silver lining that it has focused me on neglected parts of my life.  Before I planning to use Analytics Fire to make enough money that I never needed to work traditional jobs again.
 
 I have several passion companies that I would have loved to pursue, but those are on the back burner for now or forever.  This took years to really come to terms with.  But the reality is I am 60 years old with a working wife 12 years my junior, a 6 year old son in private school, and a $20K/month burn rate.  So retiring with my $3.5M and our additional $1.5M may well not be an option.
 

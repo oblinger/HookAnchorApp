@@ -6,7 +6,7 @@ THESIS -- Looking for a job
 - TITLE
 
 
-ENG MGR
+ENG MGR (CV or )
 - Working for a Big Co
 - Hook: Experience in Computer Vision 
 

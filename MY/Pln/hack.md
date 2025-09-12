@@ -1,65 +1,51 @@
-- ANCHOR EDITOR - Extend the command editor to be the anchor editor whenever the action type is anchor
-- ACTION type - add an 'action' type that runs any action w/ any args
 
 
 
-- [ ] Get 'q2' working right
+- [ ] Refactor the installer
+- [ ] Create teaser video [Video](hook://hookanchorvideo) 
 - [ ] "[" should go back in history
-- [ ] yore support
 - [ ] ghost entry w/ different input and maybe blank selection
-- [ ] ctop - unix top command
-- [ ] Fix submenu to it is fully recomputed after the dirty flag was set.  (have the get_sys_data return a boolean)
-- [ ] .
 - [ ] Add a 'just cmd' button
 - [ ] Delete key should prompt to delete file and maybe folder.
+- [ ] .
+- [ ] ANCHOR EDITOR - Extend the command editor to be the anchor editor whenever the action type is anchor
+- [ ] yore support
 - [ ] add support for "close popup" into templates.  move CMD+shift+2 to be a template
-- [ ] implement activate tmux in Javascript just as it works in Rust
-- [x]  nj lrn should "]" to LRN
-- [x] "Forum.PPTX Doc" is pointing to a folder that does not exist in a file. It does not exist
-- [x] add a javascript 'console' command that pops up a new console from the 
-- [x] "resd" should keep showing the 'res' menu
-- [x] change the case of the breadcrumb menu
-- [x] Rename command should update the input box too
-- [x] make 1pass go faster
-- [x] remove legacy code (refactor away comments), warnings
-- [x] remove legacy panic fns
-- [x] wrong sizing.
-- [x] Adding an alias can cause a circularity in the anchor-patch graph.  The user might also manually edit the commands.TXT file and cause a circularity to occur that way as well. Let's think through the best way to handle this.
-- [x] Streamline way we manage command reloading.
-- [x] remove the "A" flag
-- [x] Don't exit after command save, just return to popup
-- [x] refactor commands.rs to split complex inference logic into a module inference.rs.  each section in this module will have a comment on the top describging the functioning of its section, and then a group of related functions for that kind of inference.  Patch inference is a large bit of code and I think there is an auto inference as another group.
+- [ ] iIplement activate tmux in JavasSript just as it works in Rust
+- [x] Get 'q2' working right.
+- [x] ACTION type - add an 'action' type that runs any action w/ any args
 
 
-- [x] svproj should find the submenu even though there is no space in it
-- [x] proj sv is added twice and only one can be deleted
-- [x] Popup is still drifting downward when it is reopening
-- [x] remove legacy and dead code.
-- [x] the "]" should 'follow' selected item to new menu
-- [x] the '[' key should go to patch parent for current menu.  
-- [x] start blank.
-- [x] no sub-menu for fireball
-- [x] anchor should be listed at the front of the list.
-- [x] input should be listed at the front of the commands list.
-- [x] the submenu should be filtered by the characters AFTER those that matched the anchor (which might be aliased) 
-- [x] Remove commands whose alias_resolution match a command in the submenu as well.
-- [x] expand the prefix in the input box. when in an alias submenu
-- [x] Nothing is getting saved when creating a new command
-- [x] Line break in output....
-- [x] Delete button's logic is reversed.
 
+## __
+
+
+#### INSTALLER
+- [ ] - should error if notion does not have permissions; need to exeend grabber
 - [ ] - setup should setup config.js
-- [ ] - should error if notion does not have permissions; need to exetend grabber
-- [x] XXX nope.   anchor should really be a flag on any command rather than a command type
-- [ ] - ha use top left not bottom left for state
-- [ ] - add 'open' fn to templates
+- [ ] Should check if the following are installed:
+	- [ ] karabiner, karabiner macros
+	- [ ] config.yaml, config.js
+	- [ ] permission for the terminal
+	- [ ] extending the path to include ha
+	- [ ] adding command for ff, fp, fd
+	- [ ] Load self on startup
 
-────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
 
-
+#### LATER
+- [ ] G-doc support.  auto create for 'WW' in confluence and g-docs
+- [ ] Clean up the log file, verify that std out and error are sent there.
+- [ ] go through the code base and move any non-trivial Constance in the code into variables at the top of cis data.RS
+- [ ] refactor to get rid of the NavigationHandler
+- [ ] - how would we refactor if a short abbreviation prefix like CV were to change later?  how can we refactor prefixes generally?
+- [ ] Rename command (should prompt if matching source file and folder should be changed)
+- [ ] Ensure that uninstall does not touch files in the .config/hookanchor folder
+- [ ] create a functional test based on a complex command.txt to check auto inferencing and other fancy sub systems
+- [ ] Get summary of all functions and clean up code base
+- [ ] ! will add priority to certain entries.
 
 #### Anchor Dialog
-
+- [ ] ama should really be an anchor page AND should launch a website. Need to rethink how anchor pages relate to everything
 - we want to extend the command class for a special kind of command called an anchor.
 - and we want to create a special dialogue for dealing with these command classes. 
 - anchors are commands, whose action is anchor.
@@ -86,49 +72,85 @@
 │ > Let's add another more complicated command to the command ops module. The delete command operation should be extended to check to see if the ARG for the command actually     │
 │   refers to an existing file or folder. And if it does, then it should prompt the user for the Alicia that fileif the name matches the file name that is. If the name matches   │
 │   the folder because it's an anchor folder it's an anchor name then it should prompt to delete the folder. Only if the folder is gonna be empty after deleting the associated   │
-│   file. Just to be clearif the file referenced is not the same name as the command being deleted, it should still prompt the user asking about whether or not it should delete  │
+│   file. To be clearif the file referenced is not the same name as the command being deleted, it should still prompt the user asking about whether or not it should delete  │
 │   that file. And this deletion operation should follow the same paradigm that the current rename operation does, it should have a dry run flagand it's called the first time    │
 │   with the dry run flag in order to get the list of things that it's gonna present to the user. Then if the user presses OK, it's going to actually execute those commands. We  │
 │   should think about whether or not this code is sufficiently similar to the reading code that somehow they should be merged togetheror perhaps it is Cleaner to just keep      │
 │   them separate even though they are analogous to each other.                                           
 
 
-#### Refactor
-  3 TODO/FIXME removal items
+#### Rescan
+I would like to overhaul the way that rescanning is done:
+- this is a complex spec. Let's take it in stages, even if we build the to-do items for all the parts upfront. Feel free to interact with me to clarify each of the steps before you begin.
+- both the scan function and the  run patch inference should accept the same string, which is gonna be a, separated, a comma separated string that indicates the specific scan operations and the specific inference operations that should be performed. This becomes a new parameter on a load data so it controls, which of these sub operations are performed. Since this string is gonna be set up to begin and end with a comma one can simply search for the command name with a comma before, and after it and reliably determine whether each command should or should not be executed. 
+- there should be a subsection underneath scanner in the config file got an example of this subsection shown below. In this section, we defined a number of scans that can be applied. We can apply those scans using the dash – scan option, and if you notice, they may also have an every flag at the beginning if they do then that particular name scan should be executed once every N seconds.   Here is an example of this section:
+- named_scans:
+      startup: orphans
+      my_name:  --every 3600, files, applications, orphans
+- There should be a config file option under scanner, which indicates which of these operations should occur when the application first loads. Of course, in the config file, the string will not begin and end with commas, those will be added before passing the string to load data.
+- start up is a special scan name. That's the one that's executed each time. The system first starts up, this is the string that's passed into low data for that first load.
+- all other scans are passed to load data either by the rescan command, or at exit of the app we checked to see if any of the named scans are due for a re-execution. Notice, right now we check for re-scanning when the application first starts, but this is wrong. Rescanning takes noticeable time so instead, we should be checking it at the end when we're gonna dismiss the app instead of doing that we can simply minimize the window and then run the appropriate scanner operation.
+- find all the places where scanning or patch inference are done and make sure they all are now done within the load data function, we will simply call the load data function from a couple different places in order to get the functionality at boot time, when the every timeout occurs at the end of the application when it's closing, and from the command line when you call rescan
+- Let's update the rescan operation so that it checks if the file has shrunk by a large amount and prompts the user before actually performing that operation. Since the interface might be minimized at this point, we might need to add a focus to it or something in order to be able to pop up the dialogue box asking if the deletion is OK.
 
-  - src/execute/actions.rs:290 - "TODO: Remove after all callers are updated"
-  - src/cmd.rs:1155 - "TODO: Remove Karabiner configuration"
-  - src/core/key_processing.rs:385 - "TODO: Remove this once all legacy code is cleaned up"
+#### Patch
 
-  Legacy/compatibility mentions (not necessarily actionable)
+- [ ] PATCH SUPPORT
+	- [ ] design format for a patch in markdown.     
+	- [ ] Rename Patch to be Anchor
+	- [ ] Patch support: Read/Update patch region in a markdown file
+	- [ ] Parse commands in it
+	- [ ] Add/delete commands based on delta from commands.txt file
+	- [ ] Track file changes over time in all patch files
+	- [ ] Top level logic to push all cmds into existing patches (if they exist)
+	- [ ] LATER Top level logic to trigger patch update when command is changes/added/deleted
+	- [ ] LATER Top level logic to notice file updates and check for added or removed links & update cmds
 
-  - Several "legacy" comments in archived/compatibility code
-  - Migration comments in config.rs (functional, not removal targets)
-  - Bridge comments between old/new systems (architectural, not removal targets)
 
-
-
-
-## __
-
-- [ ] ama should really be an anchor page AND should launch a website. Need to rethink how anchor pages relate to everything
-#### LATER
-- [ ] G-doc support.  auto create for 'WW' in confluence and g-docs
-- [ ] Clean up the log file, verify that std out and error are sent there.
-- [ ] go through the code base and move any non-trivial Constance in the code into variables at the top of cis data.RS
-- [ ] refactor to get rid of the NavigationHandler
-- [ ] - how would we refactor if a short abbreviation prefix like CV were to change later?  how can we refactor prefixes generally?
-- [ ] Rename command (should prompt if matching source file and folder should be changed)
-- [ ] Ensure that uninstall does not touch files in the .config/hookanchor folder
-- [ ] create a functional test based on a complex command.txt to check auto inferencing and other fancy sub systems
-- [ ] Get summary of all functions and clean up code base
-- [ ] ! will add priority to certain entries.
 
 
 
 
 #### __
 ## DONE
+
+- [x] forum (doc) has a wrong patch... why?
+- [x] ctop - unix top command
+- [x] Fix submenu to it is fully recomputed after the dirty flag was set.  (have the get_sys_data return a boolean)
+- [x]  nj lrn should "]" to LRN
+- [x] "Forum.PPTX Doc" is pointing to a folder that does not exist in a file. It does not exist
+- [x] add a javascript 'console' command that pops up a new console from the 
+- [x] "resd" should keep showing the 'res' menu
+- [x] change the case of the breadcrumb menu
+- [x] Rename command should update the input box too
+- [x] make 1pass go faster
+- [x] remove legacy code (refactor away comments), warnings
+- [x] remove legacy panic fns
+- [x] wrong sizing.
+- [x] Adding an alias can cause a circularity in the anchor-patch graph.  The user might also manually edit the commands.TXT file and cause a circularity to occur that way as well. Let's think through the best way to handle this.
+- [x] Streamline way we manage command reloading.
+- [x] remove the "A" flag
+- [x] Don't exit after command save, just return to popup
+- [x] refactor commands.rs to split complex inference logic into a module inference.rs.  each section in this module will have a comment on the top describging the functioning of its section, and then a group of related functions for that kind of inference.  Patch inference is a large bit of code and I think there is an auto inference as another group.
+- [x] svproj should find the submenu even though there is no space in it
+- [x] proj sv is added twice and only one can be deleted
+- [x] Popup is still drifting downward when it is reopening
+- [x] remove legacy and dead code.
+- [x] the "]" should 'follow' selected item to new menu
+- [x] the '[' key should go to patch parent for current menu.  
+- [x] start blank.
+- [x] no sub-menu for fireball
+- [x] anchor should be listed at the front of the list.
+- [x] input should be listed at the front of the commands list.
+- [x] the submenu should be filtered by the characters AFTER those that matched the anchor (which might be aliased) 
+- [x] Remove commands whose alias_resolution match a command in the submenu as well.
+- [x] expand the prefix in the input box. when in an alias submenu
+- [x] Nothing is getting saved when creating a new command
+- [x] Line break in output....
+- [x] Delete button's logic is reversed.
+- [x] XXX nope.   anchor should really be a flag on any command rather than a command type
+- [x] - ha use top left not bottom left for state
+- [x] X add 'open' fn to templates  (I no longer understand what this was)
 - [x] CTRL-2 opens contact
 - [x] ajs CMD+A does not launch anchoring
 - [x] ensure we have removed processing for javascript in yaml file
@@ -283,32 +305,18 @@ OTHER
 - [x] scanner should group names byparent hook folder; 
 [[2025-06 HookAnchor]] 
 
-## Rescan
-I would like to overhaul the way that rescanning is done:
-- this is a complex spec. Let's take it in stages, even if we build the to-do items for all the parts upfront. Feel free to interact with me to clarify each of the steps before you begin.
-- both the scan function and the  run patch inference should accept the same string, which is gonna be a, separated, a comma separated string that indicates the specific scan operations and the specific inference operations that should be performed. This becomes a new parameter on a load data so it controls, which of these sub operations are performed. Since this string is gonna be set up to begin and end with a comma one can simply search for the command name with a comma before, and after it and reliably determine whether each command should or should not be executed. 
-- there should be a subsection underneath scanner in the config file got an example of this subsection shown below. In this section, we defined a number of scans that can be applied. We can apply those scans using the dash – scan option, and if you notice, they may also have an every flag at the beginning if they do then that particular name scan should be executed once every N seconds.   Here is an example of this section:
-- named_scans:
-      startup: orphans
-      my_name:  --every 3600, files, applications, orphans
-- There should be a config file option under scanner, which indicates which of these operations should occur when the application first loads. Of course, in the config file, the string will not begin and end with commas, those will be added before passing the string to load data.
-- start up is a special scan name. That's the one that's executed each time. The system first starts up, this is the string that's passed into low data for that first load.
-- all other scans are passed to load data either by the rescan command, or at exit of the app we checked to see if any of the named scans are due for a re-execution. Notice, right now we check for re-scanning when the application first starts, but this is wrong. Rescanning takes noticeable time so instead, we should be checking it at the end when we're gonna dismiss the app instead of doing that we can simply minimize the window and then run the appropriate scanner operation.
-- find all the places where scanning or patch inference are done and make sure they all are now done within the load data function, we will simply call the load data function from a couple different places in order to get the functionality at boot time, when the every timeout occurs at the end of the application when it's closing, and from the command line when you call rescan
-- Let's update the rescan operation so that it checks if the file has shrunk by a large amount and prompts the user before actually performing that operation. Since the interface might be minimized at this point, we might need to add a focus to it or something in order to be able to pop up the dialogue box asking if the deletion is OK.
 
-## Patch
+#### Refactor
+  3 TODO/FIXME removal items
+  - src/execute/actions.rs:290 - "TODO: Remove after all callers are updated"
+  - src/cmd.rs:1155 - "TODO: Remove Karabiner configuration"
+  - src/core/key_processing.rs:385 - "TODO: Remove this once all legacy code is cleaned up"
+  Legacy/compatibility mentions (not necessarily actionable)
+  - Several "legacy" comments in archived/compatibility code
+  - Migration comments in config.rs (functional, not removal targets)
+  - Bridge comments between old/new systems (architectural, not removal targets)
 
-- [ ] PATCH SUPPORT
-	- [ ] design format for a patch in markdown.     
-	- [ ] Rename Patch to be Anchor
-	- [ ] Patch support: Read/Update patch region in a markdown file
-	- [ ] Parse commands in it
-	- [ ] Add/delete commands based on delta from commands.txt file
-	- [ ] Track file changes over time in all patch files
-	- [ ] Top level logic to push all cmds into existing patches (if they exist)
-	- [ ] LATER Top level logic to trigger patch update when command is changes/added/deleted
-	- [ ] LATER Top level logic to notice file updates and check for added or removed links & update cmds
+
 
 
 ## OTHER SYSTEMS
