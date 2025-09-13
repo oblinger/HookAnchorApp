@@ -15,7 +15,7 @@ Hook Anchor's interface is organized to reinforce your meat-memory of currently 
 
 Best to show this by example:
 
-In my day job at SportsVisio, we released a feature that uses computer vision to track the ball and the player to generate video clips showing basketball shots with flames trailing after the ball--fun for sharing on social media.
+In my day job, we released a feature that adds a fireball effect to a basketball clip.
 
 JUST TYPE - To find this, I just type the first word that comes to mind. "Fireball"
 
@@ -45,12 +45,18 @@ REDUCE COG LOAD - Need not think about which app to use, how to get to it, what 
 - The aim is stateless direct access.  Think of a name and you are there, For many apps this already works well, and I keep adding new apps.
 
 
+FIREBALL - day job, just type
+REMEMBER - notion, add
+GDRIVE - Grab, Facets
+ANCHOR - Contract, 
+STREAM - QQ #Y 
+ALIAS - fi, fb
+MANY 
+ haco /, cmd+T, enter
+ bbc, @nick, free, ctop, 
+ resd, bugb, gmai, rock
 
-
-
-
-
-- Screen Flow
+OBS
 
 ### Notes of GPT
 
