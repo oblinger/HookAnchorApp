@@ -7,7 +7,9 @@ This document describes the specific actions and interactions available within e
 ### **adminCreateUser** - Create new user accounts
 
 - Creates new user record in the system
-- Allows admin to pre-fill basic profile information (name, email, tribal affiliations)
+- Allows admin to pre-fill basic profile information (name, email)
+- **Assigns Political Affiliation** - Admin selects from fixed categories: Progressive, Conservative, Libertarian, Centrist
+- Political affiliation stored as permanent user metadata, only editable by administrators
 - Assigns initial role (participant, moderator, or admin)
 - Automatically generates and sends invitation email to the new user
 - User receives secure link to complete registration and set password
@@ -15,8 +17,9 @@ This document describes the specific actions and interactions available within e
 
 ### **adminEditUser** - Edit existing user properties and management
 
-- Opens user dashboard showing all user properties (name, email, roles, tribal affiliations)
-- Allows editing of any user field including profile information and permissions
+- Opens user dashboard showing all user properties (name, email, roles, political affiliation)
+- **Political Affiliation Management** - Admin can view and modify user's political affiliation (Progressive/Conservative/Libertarian/Centrist)
+- Allows editing of user fields including profile information and permissions (but political affiliation restricted to admin)
 - Displays user activity summary and engagement statistics
 - Shows invitation status and registration completion date
 - **Delete button** - Permanently removes user account and all associated data
@@ -30,7 +33,7 @@ This document describes the specific actions and interactions available within e
 
 ### **noteToggleSupport** / **noteToggleOppose** - Add or remove support/opposition to a position
 - TOGGLES -  The toggle support and opposition buttons are both push buttons. It can be clicked on and off, and if you click on one of them, it implicitly clicks the other one off.
-- ONE NOTE - there is in most one note which represents either support or opposition for a given user on a given note. So if the user expresses multiple opinions, it's the last one that will count, and the text will be the text associated with the last one.
+- ONE NOTE - there is at most one note which represents either support or opposition for a given user on a given note. So if the user expresses multiple opinions, it's the last one that will count, and the text will be the text associated with the last one.
 
 ### **noteOpenAddMenu** - Pops up the add menu
 ### **noteOpenNavMenu** - Pops up the nav menu

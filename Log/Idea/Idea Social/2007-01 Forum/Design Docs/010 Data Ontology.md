@@ -12,6 +12,7 @@
 - `last_active` (timestamp) - Last activity timestamp
 
 ### NOTE - Universal content type that maps to NodeBB posts, represents all user contributions.
+
 - `note_id` (string) - Unique identifier [NodeBB: pid]
 - `parent_note_id` (string) - Parent note (null for root topics)
 - `author_id` (user_id) - Author of note
@@ -42,6 +43,13 @@
 ### NOTE.position - Stance taken on an issue
 - Uses: `title`, `content`
 - Parent: Issue (note_type: issue)
+
+### NOTE.stance - Indicates user's stance toward the parent note (support/opposition/none)
+- Uses: `content`, `stance`, `subtype`
+- Parent: Any note (the note being responded to)
+- Stance: "support" | "oppose" | "none" (neutral comment)
+- Only one note per user per parent note (editable)
+- Only the last note
 
 ### NOTE.contribution - Supporting evidence, opposition, or neutral comment
 - Uses: `content`, `stance`, `subtype`

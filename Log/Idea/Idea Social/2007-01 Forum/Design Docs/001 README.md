@@ -11,8 +11,14 @@ A collaborative platform for diverse political viewpoints to synthesize position
 - **[002 User Stories](./002%20User%20Stories.md)** - Six user types and their interactions with the platform
 - **[003 UX Design](./003%20UX%20Design.md)** - Interface designs, wireframes, and user experience elements
 - **[004 UX Actions](./004%20UX%20Actions.md)** - Complete catalog of user actions with JavaScript identifiers
+- **[005 Forum Mechanics](./005%20Forum%20Mechanics.md)** - Core forum interaction patterns and discussion flow
 - **[006 Data Ontology](./006%20Data%20Ontology.md)** - Unified NOTE data model and NodeBB mapping strategy
-- **[007 NodeBB Design](./007%20NodeBB%20Design.md)** - Complete system architecture with event sourcing implementation
+- **[007 APIs and Key Methods](./007%20APIs%20and%20Key%20Methods.md)** - API endpoints and method signatures
+- **[008 NodeBB Design](./008%20NodeBB%20Design.md)** - Complete system architecture with event sourcing implementation
+
+### Implementation Documentation
+
+- **[021 Detail Design](./021%20Detail%20Design.md)** - Component specifications, versions, and infrastructure details
 
 ### Supporting Documentation
 
@@ -31,6 +37,7 @@ A collaborative platform for diverse political viewpoints to synthesize position
 1. **User Stories** - Start here to understand who uses the platform and why
 2. **UX Design** - Review the interface designs and user flows
 3. **NodeBB Design** - Comprehensive technical architecture and implementation details
+4. **APIs and Key Methods** - Technical API specifications for developers
 
 ## Implementation Status
 

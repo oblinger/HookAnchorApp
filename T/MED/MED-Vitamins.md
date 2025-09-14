@@ -5,15 +5,15 @@
 B12.  maybe I am getting too much?
 
 
-	|                     |     | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
-	| ------------------- | --- | ----------------------------------------------------------- |
-	| 2000IU Vitamin D3   |     |                                                             |
-	| Calcium             | .   |                                                             |
-	| B12                 | .   |                                                             |
-	| 81mg   Aspirin      | .   |                                                             |
-	| 80mg   Atorvastatin |     |                                                             |
-	| Folate??            | .   |                                                             |
-	| CoQ                 |     |                                                             |
+|                     |     | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+| ------------------- | --- | ----------------------------------------------------------- |
+| 2000IU Vitamin D3   |     |                                                             |
+| Calcium             | .   |                                                             |
+| B12                 | .   |                                                             |
+| 81mg   Aspirin      | .   |                                                             |
+| 80mg   Atorvastatin |     |                                                             |
+| Folate??            | .   |                                                             |
+| CoQ                 |     |                                                             |
 
 
 ### Vitamin-D
@@ -23,3 +23,14 @@ B12.  maybe I am getting too much?
 
 ### B12
 - Greger suggests one 2000mcg per WEEK if you are not eating supplemented foods.
+
+
+# LOG
+
+## 2025-09-13  Ideas
+https://medium.com/@crumbinedocs/the-only-5-supplements-i-take-at-50-efab0f78e552
+
+- Creatine 
+- Omega 3
+- Magnesium Glycinate (with lunch)
+- Ashwagandha ???
