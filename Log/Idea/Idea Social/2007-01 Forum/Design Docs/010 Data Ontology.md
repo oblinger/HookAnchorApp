@@ -1,8 +1,8 @@
 # Data Ontology
+Here are the core data objects underlying the forum platform.
 
-## Core Data Types
-
-### USER - Represents a participant in the system with political affiliation and roles.
+## USER
+Represents a participant in the system with political affiliation and roles.
 - `user_id` (string) - Unique identifier [NodeBB: uid]
 - `username` (string) - Display name
 - `email` (string) - Contact email
@@ -11,7 +11,143 @@
 - `created_at` (timestamp) - Account creation date
 - `last_active` (timestamp) - Last activity timestamp
 
-### NOTE - Universal content type that maps to NodeBB posts, represents all user contributions.
+## NOTE
+Universal content type that maps to NodeBB posts, represents all user contributions.
+
+### Source Data
+### nid (string) - Unique Note Identifier
+NIDs are guaranteed to be unique across the system.
+- By convention, they are expressed as a single letter prefix and then a number.
+- Prefix letters:
+  - 'r' - Root node (virtual, nid = "r0")
+  - 'c' - NodeBB category (e.g., "c1" maps to cid:1)
+  - 't' - NodeBB topic (e.g., "t123" maps to tid:123)
+  - 'p' - NodeBB post (e.g., "p789" maps to pid:789)
+  - 'v' - Variant note (e.g., "v1001" for alternative phrasings)
+
+### parentNid (string)
+The nid of this note's parent in the unified tree hierarchy.
+- Root node: parentNid = null
+- Categories: parentNid = "r0"
+- Topics: parentNid = category nid (e.g., "c1")
+- Posts: parentNid = topic nid or another post nid for threading
+- Variants: parentNid = the note they're a variant of
+
+### noteType (string)
+Enumeration defining the note's role and behavior in the system:
+- **Structural**: `root`, 
+- **Issue** - Maps onto NodeBB Categories
+- **Position** - Maps onto Topics
+- **Rebuttal** - 
+- **Contribution** - 
+- **Vote** - 
+
+### uid (string)
+NodeBB user ID of the note's author. Maps to NodeBB uid field.
+
+### timestamp (number)
+Unix timestamp when the note was created.
+
+### version (number)
+Current version number, incremented with each edit.
+
+### metadata (object)
+Type-specific additional data stored as JSON object. 
+
+
+## Note Derived Accessors
+
+### parentNote (Note)
+The parent note object, derived by looking up parentNid in the notes cache.
+
+### childrenNotes (List of Note)
+List of all direct children, derived by maintaining an inverse mapping of parentNid relationships.
+
+### content (text)
+Markdown-formatted text content of the note.  Derived from the associated nodeBB entry.
+
+### pid, cid, tid (number)
+NodeBB-specific IDs, extracted from nid and ancestry:
+- **pid**: If nid starts with 'p', extract the numeric portion
+- **tid**: Walk up ancestors to find first nid starting with 't'
+- **cid**: Walk up ancestors to find first nid starting with 'c'
+
+### nodebbReference (object)
+Computed reference to the corresponding NodeBB object:
+- Categories: `{type: "category", id: 1}`
+- Topics: `{type: "topic", id: 123}`
+- Posts: `{type: "post", id: 789}`
+- Virtual/variants: null
+
+
+## Note Vote Related Accessors
+
+### votes (List of Note)
+List of vote objects
+
+### supportCount (number)
+Total support votes, computed from aggregating vote events in the event log.
+
+### opposeCount (number)
+Total opposition votes, computed from aggregating vote events in the event log.
+
+
+
+
+## Note Vote Fields
+
+### stance (string)
+Enum: support, oppose
+
+
+### perspective
+Enum: True, Mostly True, Misleading, Mostly False, False
+
+
+
+
+# OLDER INFO
+
+
+### politicalDistribution (object)
+Vote breakdown by political affiliation, computed from user votes and their declared affiliations:
+```javascript
+{
+  progressive: 12,
+  conservative: 3,
+  libertarian: 2,
+  centrist: 1
+}
+```
+
+### qualityScore (number)
+Computed quality metric (0-1) based on engagement patterns, constructiveness indicators, and cross-tribal support.
+
+### consensusLevel (number)
+Cross-tribal agreement metric (0-1), computed from political distribution of support votes.
+
+### tribalLean (number)
+Political lean indicator (-1 to +1), derived from weighted political distribution.
+
+### versionCount (number)
+Total number of edits, derived from counting edit events in the event log.
+
+### lastEdit (timestamp)
+Timestamp of most recent edit, derived from latest edit event.
+
+### synthesisData (object)
+For synthesis-type notes, contains aggregated analysis data:
+```javascript
+{
+  sourceNotes: ["p789", "p790"],
+  keyPoints: ["Universal coverage", "Cost reduction"],
+  algorithmVersion: "2.1"
+}
+```
+
+
+
+
 
 - `note_id` (string) - Unique identifier [NodeBB: pid]
 - `parent_note_id` (string) - Parent note (null for root topics)
