@@ -1,12 +1,12 @@
 .[[RES]]. [[RES Todo|todo]] 
   TOP:	 [[Bio]], [RES Docx](spot://resdocx), [[RES Linked In]],
-  TOPS:		[[RES Pyramid]], [[RES Star]], [[RES War]], [[RES Parts]], [[RES Highlights]],
+  TOPS:		[[RES Pyramid]], [[Star]], [[Star Stories]], [[RES Parts]], [[RES Highlights]],
   FACTS:	[[RES Src Info]], [[RES Numbers]], [[RES Patents]], [[RES Papers]],
-  OTHER:	 [[RES War AI]], [[RES References]],
+  OTHER:	 [[Star AI]], [[RES References]],
   DIRS:		, , ,
   CLOSET:	[[Resume]],
   .
-- [[RES Instant Design Story]],
+- [[Star Instant Design Story]],
 - [[2024-04-01 Resume Rewrite]],
   , [[WarStories]],
   , ,

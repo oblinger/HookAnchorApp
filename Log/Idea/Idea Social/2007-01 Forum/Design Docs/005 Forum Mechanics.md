@@ -1,4 +1,4 @@
-# Forum Mechanics
+ # Forum Mechanics
 
 This document describes the mechanics of how the form operates. Specifically, how derived parameters are computed, and how permissions for various actions are derived as well.
 

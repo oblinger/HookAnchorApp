@@ -1,4 +1,4 @@
-[[NJ.]]:	[[RES]] linked in fixes
+[[NJ Todo]]:	[[RES]] linked in fixes
 - [ ] [[RES Linked In]]: 
 	- [ ] Update About 
 	- [ ] Post SV stuff
@@ -7,8 +7,8 @@
 	- [ ] Remove Dates from education
 
 - [ ] .
-- [ ] [[Res Star]] [[Res War]] - key entries need to be completed
-- [ ] [[Res War AI]] - Add details about hands-on AI
+- [ ] [[Star]] [[Star Stories]] - key entries need to be completed
+- [ ] [[Star AI]] - Add details about hands-on AI
 
 - [ ] Get Recommendations:  Nick & ?Filiepe?
 - [ ] Update Linked in about section

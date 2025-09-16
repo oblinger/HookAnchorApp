@@ -1,7 +1,6 @@
 
 [[Seek]] 
-
-[[SEEK.]] 
+[[Seek search]] 
 
 
 ONE-HOUR START 

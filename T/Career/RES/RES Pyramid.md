@@ -2,11 +2,15 @@
 
 # **PYRAMID**    [Docx](spot://resdocx) 
 
+
+## One Liner
+**Machine Learning, AI, Leader** seeking a product-focused leadership role.
+
 A proven AI PhD/CTO with decade-plus hands-on experience in ML/DL.  Built five organizations from scratch (up to 60 engineers), funded/led hundreds of millions in research at DARPA, exited three companies, and brought products to the market worth billions.  
 
 Seeking a hands-on, leadership role in generative AI R&D.
 
-### __
+### _older versions_
 Seeking a hands-on, leadership, generative-AI research-related role.
 
 Seeking a hands-on leadership role as close as possible to an engineering manager in a research organization focused on developing their own generative AI models.
@@ -16,35 +20,36 @@ My sweet spot is driving world-leading R&D into rapid productization.
 
 
 
-## PhD/CTO   (Details in [[RES Numbers]])
+## PARTS
+### PhD/CTO   (Details in [[RES Numbers]])
 - PhD in AI/ML from a top engineering school: Illinois (UIUC)
 - CTO for 5 companies: with 3 exits and 2 continuing
 - Dozens of peer-reviewed conference and journal publications.
 - 20+ Patents Granted.
 
-## Decade+ Experience in AI/ML/DL/CV/Robotics
+### Decade+ Experience in AI/ML/DL/CV/Robotics
 - SportsVisio - In-the-code leading and coding with advanced CV team
 - Martian/Aeolus Robotics - Hired/lead 60+ eng team (with 40+ AI-PhDs), chief architect for the first solution
 - DARPA PM for $200+M in AI R&D projects.  
   Drove early work in the Deep Learning revolution (with/ Andrew Ng, Stuart Russel, Pedro Domingos, Daphny Koler)
 
-## Built 5 Orgs From Scratch upto 60 Engineers
+### Built 5 Orgs From Scratch up to 60 Engineers
 - Aeolus: 60+ Eng (40+ with PhDs)
 - AF: ~50 person team with 30+ eng
 - DARPA: 5 orgs spanning 500+ faculty and researchers.   ??? numbers
 - Martian Robots 13 person team
 
-## Funded & Lead Hundreds of Millions in Advanced AI R&D
+### Funded & Led Hundreds of Millions in Advanced AI R&D
 - Funded over $200 in AI Research as a PM at DARPA
 - Created and lead Machine Reading and Bootstrapped Learning programs.
 - Lead the Transfer Learning program
 
-## Exited Three Companies
+### Exited Three Companies
 - Analytics Fire -> Rzero
 - Martian Robots -> Aeolus
 - PayByGroup -> FEVO
 
-## Brought Multiple Products To Market Totaling More Than $3B In Value
+### Brought Multiple Products To Market Totaling More Than $3B In Value
 - Soup-to-nuts our team developed the SW and Firmware for Envoy, Oasis, and TMAC.  Together these represent more than $3B in hardware.
 
 - SV Hoops - $300K/ARR
@@ -57,7 +62,7 @@ My sweet spot is driving world-leading R&D into rapid productization.
 - PayByGroup - Group Payments Platform
 
 
-## Hands-On Generative AI
+### Hands-On Generative AI
 - **Worked as both an IC and Tech Lead** on a range of Gen-AI / DL-based projects, including:
   CV-based sport-stats, Autonomous-dexterous robotics, Automated solar installation design, 
 
@@ -122,13 +127,13 @@ ACTIVITES
 - TECH ADVISE - Technical advising
 
 ### ROLE / PROJECT / COMPANY
-- ROLE: TECH LEAD 				- My ideal role is tech lead, where a significant fraction of my time is discussing / solving technical challenges
+- ROLE: TECH LEAD 			- My ideal role is tech lead, where a significant fraction of my time is discussing / solving technical challenges
 - ROLE: ENG MGR				- Could be an Eng Mgr that is still very technical.  (e. g. active in designing solution)
 - ROLE: CTO, etc.				- Really could be any role that was the leader of some advanced AI product(s).
-- PROJ: NOVEL APPLICATION	- Ideally this is focused on iterative refinement of recent research into working product prototypes
-- PROJ: APPLYING GEN-AI 		- 
-- PROJ: COMPUTER VISION		- 
-- CORP: FOUNDATIONAL			- Org is building their own foundational models; FAANG-ish
+- PROJ: NOVEL APPLICATION	- Ideally, this is focused on iterative refinement of recent research into working product prototypes
+- PROJ: APPLYING GEN-AI		- 
+- PROJ: COMPUTER VISION	- 
+- CORP: FOUNDATIONAL		- Org is building their own foundational models; FAANG-ish
 
 ### INNOVATIVE
 - Love it when NO ONE knows how to attack the problem at hand

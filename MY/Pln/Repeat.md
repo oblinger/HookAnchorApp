@@ -7,9 +7,9 @@
 | **CLEAN**     | [MyD](hook://MyDesktop), [DwnFdr](hook://Downloads)                                                                                             |     |
 |               | [[Reflections]]                                                                                                                                 |     |
 | **TODO**      | Clean F1 page for week.  [[quick]] & [[todo]]                                                                                                   |     |
-| **HOUSE**     | Room: [My-]Desks/Bin/Shelf  Hous                                                                                                                |     |
+| **HOUSE**     | Room: [My-]Desks/Bin/Shelf  House                                                                                                               |     |
 | **PLAN**      | Week plan                                                                                                                                       |     |
-| **IN2**       | Qu                                                                                                                                              |     |
+| **IN2**       | Quick scan                                                                                                                                      |     |
 |               |                                                                                                                                                 |     |
 |               |                                                                                                                                                 |     |
 |               |                                                                                                                                                 |     |

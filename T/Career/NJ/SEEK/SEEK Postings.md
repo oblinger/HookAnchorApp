@@ -1,7 +1,7 @@
 
 
 General Job Boards
-- linkedin.com/jobs				-- filters for location, industry, and specific AI roles.
+- linkedin.com/jobs			-- filters for location, industry, and specific AI roles.
 - https://indeed.com			-- Aggregates AI job postings across companies, allowing easy application with customizable alerts.
 - https://glassdoor.com		-- Job listings with company reviews, salaries, and interview insights.
 

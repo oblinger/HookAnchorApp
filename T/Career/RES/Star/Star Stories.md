@@ -1,5 +1,5 @@
 
-# [[RES War AI]], [[RES Star]], 
+# [[Star AI]], [[Star]], 
 
 
 # TODO

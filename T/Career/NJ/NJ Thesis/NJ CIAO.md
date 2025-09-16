@@ -1,3 +1,11 @@
+# Todo
+
+
+TODO
+- Talk with Alain
+- Talk w/ John Davis' friend
+
+
 # Chief AI Officer (CAIO) Role Profile
 
 ## Key Experience Required

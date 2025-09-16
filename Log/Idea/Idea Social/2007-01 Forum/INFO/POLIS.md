@@ -5,15 +5,15 @@ This document compiles contact information and details for various Pol.is democr
 
 ## Platform Implementations
 
-| Platform/Project | Organizer/Contact | Purpose/Description |
-|------------------|-------------------|---------------------|
-| **Computational Democracy Project** (Core Team) | Colin Megill, Christopher Small, Michael Bjorkegren<br/>*Contact: Through pol.is website or academic networks*<br/>*Note: Specific emails not publicly available* | Original creators of Pol.is platform. Open-source technology for survey research leveraging data science to scale deliberation and map high-dimensional opinion spaces. |
-| **vTaiwan (Taiwan)** | Audrey Tang (Cyber Ambassador-at-large)<br/>g0v community volunteers<br/>*Contact: Through Taiwan Ministry of Digital Affairs or g0v community*<br/>*LinkedIn: /in/tangaudrey/* | National digital democracy platform using Pol.is for crowdsourcing legislation. 26 national issues discussed with 80% leading to government action. Enables citizen participation in policymaking through radical transparency. |
-| **Sitra Finland** | Veera Heinonen (Director, Democracy and Participation)<br/>*Contact: Through Sitra.fi experts*<br/>*Website: sitra.fi/en/projects/polis-platform-experiments/* | "What do you think, Finland?" initiative. Piloting Polis in collaboration with DigiFinland to revolutionize political participation. Focus on developing European Open Source Polis Community. |
-| **DigiFinland** | Technical implementation partner<br/>*Contact: Through DigiFinland digital administration services* | Technical deployment partner for Finnish Polis trials. Responsible for platform implementation and user interface development. Promotes digitalization of public administration. |
-| **Canada (PCH)** | Canadian Heritage Department<br/>*Contact: Through official government channels* | Pilot program focusing on Canada's visual arts marketplace issues. Government testing of deliberative democracy tools for policy consultation. |
-| **University of Melbourne** | Melanoma treatment research team<br/>*Contact: Through MSPGH Centre for Health Policy* | Research study using Polis for melanoma treatment discussions. Anonymous participation platform for medical research consensus building. |
-| **LessWrong Community** | EA Forum/LessWrong moderators<br/>*Contact: Through LessWrong platform*<br/>*Example: pol.is/report/r7dr5tzke7pbpbajynkv8* | Community discussions on EA topics using Polis for consensus building. Demonstrates platform use for intellectual community discourse and opinion mapping. |
+| Platform/Project                                | Organizer/Contact                                                                                                                                                               | Purpose/Description                                                                                                                                                                                                             |
+| ----------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Computational Democracy Project** (Core Team) | Colin Megill, Christopher Small, Michael Bjorkegren<br/>*Contact: Through pol.is website or academic networks*<br/>*Note: Specific emails not publicly available*               | Original creators of Pol.is platform. Open-source technology for survey research leveraging data science to scale deliberation and map high-dimensional opinion spaces.                                                         |
+| **vTaiwan (Taiwan)**                            | Audrey Tang (Cyber Ambassador-at-large)<br/>g0v community volunteers<br/>*Contact: Through Taiwan Ministry of Digital Affairs or g0v community*<br/>*LinkedIn: /in/tangaudrey/* | National digital democracy platform using Pol.is for crowdsourcing legislation. 26 national issues discussed with 80% leading to government action. Enables citizen participation in policymaking through radical transparency. |
+| **Sitra Finland**                               | Veera Heinonen (Director, Democracy and Participation)<br/>*Contact: Through Sitra.fi experts*<br/>*Website: sitra.fi/en/projects/polis-platform-experiments/*                  | "What do you think, Finland?" initiative. Piloting Polis in collaboration with DigiFinland to revolutionize political participation. Focus on developing European Open Source Polis Community.                                  |
+| **DigiFinland**                                 | Technical implementation partner<br/>*Contact: Through DigiFinland digital administration services*                                                                             | Technical deployment partner for Finnish Polis trials. Responsible for platform implementation and user interface development. Promotes digitalization of public administration.                                                |
+| **Canada (PCH)**                                | Canadian Heritage Department<br/>*Contact: Through official government channels*                                                                                                | Pilot program focusing on Canada's visual arts marketplace issues. Government testing of deliberative democracy tools for policy consultation.                                                                                  |
+| **University of Melbourne**                     | Melanoma treatment research team<br/>*Contact: Through MSPGH Centre for Health Policy*                                                                                          | Research study using Polis for melanoma treatment discussions. Anonymous participation platform for medical research consensus building.                                                                                        |
+| **LessWrong Community**                         | EA Forum/LessWrong moderators<br/>*Contact: Through LessWrong platform*<br/>*Example: pol.is/report/r7dr5tzke7pbpbajynkv8*                                                      | Community discussions on EA topics using Polis for consensus building. Demonstrates platform use for intellectual community discourse and opinion mapping.                                                                      |
 
 ## Specific Use Cases and Smaller Implementations
 
@@ -82,19 +82,21 @@ This document compiles contact information and details for various Pol.is democr
 
 ## Digital Discussion Platforms & Organizers
 
-| Platform/Organization                | Key Organizers/Contacts                                                                                  | Platform Type                        | Notable Uses/Outcomes                                                                                                                       |
-| ------------------------------------ | -------------------------------------------------------------------------------------------------------- | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Loomio Cooperative**               | Richard Bartlett, Benjamin Knight<br/>*Wellington, New Zealand*<br/>*Contact: Through loomio.org*        | Consensus-building tool              | 300 people discussing alcohol management in Wellington NZ (6 weeks). Used by workplaces, government, co-ops, political parties worldwide.   |
-| **Decidim**                          | Barcelona City Council + Global Community<br/>*Contact: Through decidim.org*<br/>*Open source community* | Comprehensive participation platform | Used by hundreds of organizations worldwide. Participatory budgeting, citizens' assemblies. Exceptional inter-organizational collaboration. |
-| **Democracy OS**                     | Pia Mancini, Santiago Siri<br/>*Argentina-based*<br/>*Contact: Through democracyos.org*                  | Online deliberation & voting         | Used in 10+ countries including Argentina, Brazil, Chile, El Salvador, Mexico, USA. Focus on legislative proposals.                         |
-| **Alliance for Civic Technologists** | Former Code for America brigades<br/>*17 US markets*<br/>*Contact: civictechnologists.org*               | Network of civic tech orgs           | Supports Atlanta, Austin, Boston, Chicago, NYC, Philadelphia, San Francisco. Focus on equitable government services.                        |
-| **Open Twin Cities**                 | Twin Cities civic hackers<br/>*Minneapolis/St. Paul*<br/>*Contact: opentwincities.org*                   | Local civic tech community           | Mutual aid projects, government collaboration. Former Code for America brigade, now independent.                                            |
-| **Chi Hack Night**                   | Chicago civic tech community<br/>*Contact: chihacknight.org*<br/>*Weekly events*                         | Local civic tech meetup              | Weekly civic tech events. Recently joined Alliance for Civic Technologists. Active digital democracy experiments.                           |
-| **Civic Tech DC**                    | Washington DC volunteers<br/>*Contact: civictechdc.org*                                                  | Local civic engagement               | DC-focused civic technology projects. Regular meetups and hackathons.                                                                       |
-| **CitizenOS**                        | Estonian e-democracy platform<br/>*Contact: citizenos.com*<br/>*Open source*                             | E-democracy platform                 | Free, open-source collaborative decision-making. Enables citizen petitions and policy discussions in Estonia.                               |
-| **LiquidFeedback**                   | German developers<br/>*Contact: liquidfeedback.org*<br/>*Academic/political use*                         | Liquid democracy system              | Used by Pirate Parties, academic experiments. Delegation-based voting system.                                                               |
-| **DemocracyLab**                     | Mark Frischmuth (Founder)<br/>*Seattle-based*<br/>*Contact: democracylab.org*                            | Civic tech marketplace               | Connects volunteers with civic projects. Focus on technology for social good.                                                               |
-|                                      |                                                                                                          |                                      |                                                                                                                                             |
+| Platform/Organization                | Key Organizers/Contacts                                                                                                                                 | Platform Type                        | Notable Uses/Outcomes                                                                                                                                                                                                 |
+| ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Loomio Cooperative**               | Richard Bartlett, Benjamin Knight<br/>*Wellington, New Zealand*<br/>*Contact: Through loomio.org*                                                       | Consensus-building tool              | 300 people discussing alcohol management in Wellington NZ (6 weeks). Used by workplaces, government, co-ops, political parties worldwide.                                                                             |
+| **Decidim**                          | Barcelona City Council + Global Community<br/>*Contact: Through decidim.org*<br/>*Open source community*                                                | Comprehensive participation platform | Used by hundreds of organizations worldwide. Participatory budgeting, citizens' assemblies. Exceptional inter-organizational collaboration.                                                                           |
+| **Democracy OS**                     | Pia Mancini, Santiago Siri<br/>*Argentina-based*<br/>*Contact: Through democracyos.org*                                                                 | Online deliberation & voting         | Used in 10+ countries including Argentina, Brazil, Chile, El Salvador, Mexico, USA. Focus on legislative proposals.                                                                                                   |
+| **Alliance for Civic Technologists** | Christopher Whitaker (Executive Director)<br/>*hello@civictechnologists.org*<br/>*Website: civictechnologists.org*<br/>*Discord: discord.gg/EM6ywtMhkP* | Network of civic tech orgs           | Formed 2023 after Code for America ended Brigade program. Supports 16+ former brigades including Boston, Seattle, Atlanta, Austin, Chicago, NYC, Philadelphia, San Francisco. Focus on equitable government services. |
+| **SF Civic Tech**                    | Formerly Code for San Francisco<br/>*Contact: sfcivictech.org*<br/>*501(c)(3) since 2024*                                                               | Local civic tech community           | Renamed from Code for San Francisco in 2024. Independent 501(c)(3). Member of Alliance for Civic Technologists. Weekly hack nights.                                                                                   |
+| **Open Austin**                      | Austin civic tech community<br/>*Contact: open-austin.org*<br/>*Part of ACT network*                                                                    | Local civic tech community           | Former Code for America brigade. Hosted 2025 ATX Public Interest Tech Mixer with 37 attendees. Member of Alliance for Civic Technologists.                                                                            |
+| **Open Twin Cities**                 | Twin Cities civic hackers<br/>*Minneapolis/St. Paul*<br/>*Contact: opentwincities.org*                                                                  | Local civic tech community           | Mutual aid projects, government collaboration. Former Code for America brigade, now independent.                                                                                                                      |
+| **Chi Hack Night**                   | Chicago civic tech community<br/>*Contact: chihacknight.org*<br/>*Weekly events*                                                                        | Local civic tech meetup              | Weekly civic tech events. Recently joined Alliance for Civic Technologists. Active digital democracy experiments.                                                                                                     |
+| **Civic Tech DC**                    | Washington DC volunteers<br/>*Contact: civictechdc.org*                                                                                                 | Local civic engagement               | DC-focused civic technology projects. Regular meetups and hackathons.                                                                                                                                                 |
+| **CitizenOS**                        | Estonian e-democracy platform<br/>*Contact: citizenos.com*<br/>*Open source*                                                                            | E-democracy platform                 | Free, open-source collaborative decision-making. Enables citizen petitions and policy discussions in Estonia.                                                                                                         |
+| **LiquidFeedback**                   | German developers<br/>*Contact: liquidfeedback.org*<br/>*Academic/political use*                                                                        | Liquid democracy system              | Used by Pirate Parties, academic experiments. Delegation-based voting system.                                                                                                                                         |
+| **DemocracyLab**                     | Mark Frischmuth (Founder)<br/>*Seattle-based*<br/>*Contact: democracylab.org*                                                                           | Civic tech marketplace               | Connects volunteers with civic projects. Focus on technology for social good.                                                                                                                                         |
+|                                      |                                                                                                                                                         |                                      |                                                                                                                                                                                                                       |
 
 ## Specific Digital Discussion Experiments
 
@@ -131,3 +133,87 @@ This document compiles contact information and details for various Pol.is democr
 ---
 
 *Note: Email addresses and direct contacts are intentionally limited due to privacy considerations. Contact through official channels, academic institutions, or professional networks is recommended.*
+
+
+
+# HOW POLIS WORKS - Polis Consensus Finding Approach
+
+  Core Mechanism
+
+  Polis uses statistical clustering and machine learning to identify consensus by:
+
+  1. Collecting statements - Participants submit short opinions (<140 characters)
+  2. Voting on others' statements - Agree, disagree, or pass
+  3. Clustering participants - Algorithm groups people based on voting patterns
+  4. Identifying bridging statements - Finding what different groups agree on
+
+  How Consensus Emerges
+
+  Opinion Mapping:
+
+  - Creates a 2D visualization showing how participants cluster
+  - Groups form based on shared voting patterns
+  - Distance between groups shows ideological separation
+  - Consensus statements pool to the left of the visualization
+
+  Key Innovation:
+
+  Instead of highlighting divisive comments (like most social media), Polis elevates statements that find agreement across different groups. As people vote, the algorithm
+  identifies:
+  - Majority consensus - Statements most people agree on
+  - Group-bridging consensus - Statements that opposing groups both support
+  - Hidden common ground - Unexpected areas of agreement
+
+  The Taiwan Uber Example
+
+  The most famous demonstration:
+  - 4,000+ participants with strongly opposing views
+  - Initial positions seemed irreconcilable
+  - Polis revealed: "Everyone really just cared about safety"
+  - Consensus emerged on:
+    - Insurance requirements for drivers
+    - No undercutting minimum fares
+    - App-only dispatch (no street hailing)
+    - Background checks for drivers
+
+  Technical Process
+
+  1. Seed statements introduced
+  2. Participants vote and add new statements
+  3. PCA (Principal Component Analysis) maps opinion space
+  4. K-means clustering identifies groups
+  5. Algorithm calculates:
+     - Statement agreement percentages per group
+     - Cross-group consensus scores
+     - Divisiveness metrics
+
+  Why It Works
+
+  Psychological Design:
+
+  - No reply button - Prevents argumentative threads
+  - Limited characters - Forces clear, concise points
+  - Anonymous participation - Reduces performative behavior
+  - Vote to see results - Encourages engagement
+
+  Mathematical Approach:
+
+  - Dimensionality reduction - Complex opinions mapped to visualizable space
+  - Real-time updates - Opinion landscape evolves as people participate
+  - Weighted consensus - Prioritizes statements that unite diverse groups
+
+  Types of Consensus Found
+
+  6. Universal consensus - 80%+ agreement across all participants
+  7. Bridging consensus - Majority agreement in otherwise opposed groups
+  8. Unexpected alignment - Issues where traditional enemies agree
+  9. Priority consensus - Agreement on what matters most, even if solutions differ
+
+  Key Insight
+
+  The breakthrough is that Polis doesn't try to resolve all disagreements. Instead, it:
+  - Maps the disagreement landscape
+  - Finds islands of agreement within that landscape
+  - Builds policy from consensus points rather than trying to solve everything
+
+  This approach has proven especially effective for seemingly intractable conflicts where traditional deliberation fails due to polarization.

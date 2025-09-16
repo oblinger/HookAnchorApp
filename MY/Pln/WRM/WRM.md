@@ -12,7 +12,7 @@
 ## 2024 Q2
 MAIN
 . [[SVQ2]]:	Move SportsVisio forward
-. [[NJ.]]	Move needle, getting next job
+. [[NJ Todo]]	Move needle, getting next job
 . [[Lrn]]:		Learning for NJ
 . FUN:	Fun each day; stuff that matters
 . [[Spirit]]:	Spending time with family;

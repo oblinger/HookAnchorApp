@@ -17,7 +17,7 @@ Early stage startup
 - [Seneca](https://www.google.com/search?q=grove+collaborative+stuart+landesberg&oq=grove+collaborative+stu&gs_lcrp=EgZjaHJvbWUqCAgBEAAYFhgeMgYIABBFGDkyCAgBEAAYFhgeMgoIAhAAGIAEGKIEMgoIAxAAGIAEGKIEMgcIBBAAGO8FMgoIBRAAGIAEGKIE0gEIODY4M2owajeoAgCwAgA&sourceid=chrome&ie=UTF-8) 
 - [Nick](https://www.linkedin.com/in/nhfoley/) 
 - [Stu](https://www.linkedin.com/in/stuartlandesberg/) 
-- [[RES Star]]
+- [[Star]]
 
 # Log
 

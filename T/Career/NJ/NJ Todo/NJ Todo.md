@@ -1,4 +1,4 @@
-.[[NJ.]].   [[NJ]]
+.[[NJ Todo]].   [[NJ]]
 - [[NJ.2]]: Build Lists: BigCo & Startup: Companies, People, Filters
   [[DL proj]],
   [[NJ.1]],
@@ -22,7 +22,7 @@
 - Resume match website
 
 
-- [[RES War]]: Ability to speak from first-person perspective about coding tasks
+- [[Star Stories]]: Ability to speak from first-person perspective about coding tasks
 ## TODO
 - [ ] +[[TG]]: Figure top 20 list.
 - [ ] +Read Manager's Path
@@ -38,7 +38,7 @@
 - L Interview:	Practice interviewing [[@Pramp]]
 - [[COM]]:		Calling plan; Choose my [[BOD]]. 
 - INTRV:		Watch linked in.
-- DOCS:		Write docs:	[[Res]], [[RES War]], [[RES Star]], [Doc](spot://resdocx), 
+- DOCS:		Write docs:	[[Res]], [[Star Stories]], [[Star]], [Doc](spot://resdocx), 
 - D [[RES]]: 		Get into final form.  Along with a cover letter?
 - Rsrch:		[[Alien Biology]] 
 - 

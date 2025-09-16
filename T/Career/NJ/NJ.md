@@ -1,4 +1,4 @@
-.[[NJ]].		  [[NJ.]], [[Lrn]], [[RES]], [[TG]],  [[CRM]] 
+.[[NJ]].		  [[NJ Todo]], [[Lrn]], [[RES]], [[TG]],  [[CRM]] 
   PLAN:	[[NJ Thesis]],	[[NJ Plan]], [[NJ Paths]], [[Seek]],  
   TOP:	[NJ Slides](spot://njslides), [[NJ Log]],
   PARTS	[[NJ Ask]], [[NJ Coaches]],

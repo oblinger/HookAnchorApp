@@ -1,5 +1,23 @@
 
 
+## 2025-09-15  Limited success last week; redouble this week
+
+- I did clean the house/yard
+- I did dig deep on the forum
+- I did not have a good plan for applying
+- I did not have a do great in exercise
+- I did not do great learning new stuff
+
+- Solo parent this week.
+- Yashins push for me on forum last week.
+
+- **Focus this week**:
+	- whole body/life - exercise & time w Eli
+	- applying plan/action
+	- learning stuff
+
+
+## H3 headings
 
 ### 2025-09-08  No Plan no progress
 

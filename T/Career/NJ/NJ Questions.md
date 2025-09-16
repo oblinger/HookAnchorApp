@@ -1,7 +1,7 @@
 Questions I need to be able to answer:
 
-- [[RES War]] 
-- [[RES Star]]
+- [[Star Stories]] 
+- [[Star]]
 
 
 

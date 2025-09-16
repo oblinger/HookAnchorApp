@@ -3,15 +3,8 @@
   [[2025 AI Codeing Brainstorm|AI-code]]  
   Baseball opportunity
   [Schart](https://www.notion.so/sportsvisio/SHOT-CHARTS-END-2-END-1d4719d6f2bd802ca4dfc8b1e0ff1fd5?pvs=4): POC
-  [AI Prod Matrix](https://docs.google.com/spreadsheets/d/1iQvOKwS09QcFTqXK1Ko0ydSgwqjXItbCRrkOMZaBj40/edit?gid=0#gid=0) possible products
   Effort Analysis for BB stats
-  [DT](spot://dt): Shots Data
-  Halo analysis
-  Fireball analysis
-  Fernley Projects Locked Down
-  [PlayOn](hook://playon): Timeline.  [[@Jason Syversen]] 
-	  - Get access to games
-	  - Get contract spec
+  [PlayOn](hook://playon): 
   MGT
 	 - Magic Hour
 	 -  james and matty; fireball matty tell
@@ -30,6 +23,8 @@
     Test automation:  (1) Mery Impersonation; (2) API testing.
     Top of mind from Jason; ask for topics before (for mgt meeting)
 ## PAUSE
+  Halo analysis
+  [AI Prod Matrix](https://docs.google.com/spreadsheets/d/1iQvOKwS09QcFTqXK1Ko0ydSgwqjXItbCRrkOMZaBj40/edit?gid=0#gid=0) possible products
   [**BUG**](https://www.notion.so/sportsvisio/SOFTWARE-STABILIZATION-1eb719d6f2bd807586afdba684e60901?pvs=4): Beta, RegTst0, Factory, [R](https://www.notion.so/sportsvisio/Regression-Testing-1f4719d6f2bd80ddaa0de76008e9f41b?pvs=4) 
   [**PATENT**](https://www.notion.so/sportsvisio/PATENTS-3434075a725f4997b57d9aa9bd0b818a?pvs=4): (do it)
   [**CAMERA**](https://www.notion.so/sportsvisio/AI-Camera-e8e5e2d211604c9cbe81ca19fa11f8cd?pvs=4): LOE Plan,  [V1](https://www.notion.so/sportsvisio/AI-CAMERA-v1-1e0719d6f2bd80a3abb8eac297561b07?pvs=4) 
@@ -50,7 +45,7 @@
   , ,  
   , [work Note](spot://worknote), 
   DELS: [work Note](spot://worknote),[work Obsidian](spot://workobsidian),[work Note](spot://worknote),[work Note](spot://worknote),
- SOON [[mgt]] [[CVP]] 
+ SOON [[mgt]] [[CVP]] l
 [[Journaling]] 
 
 

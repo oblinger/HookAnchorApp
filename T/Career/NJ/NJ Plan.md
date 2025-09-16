@@ -1,6 +1,6 @@
 
 
-- [[NJ]] [[NJ.|.]]	
+- [[NJ]] [[NJ Todo|.]]	
 - PLAN:	[[#My PLAN]], [[NJ Paths]], 
 - [[TG]]:		[[TG Summary]], 
 - [[RES]]:	Get Res & LinkedIn into final form.
@@ -27,7 +27,7 @@ ML mgr.
 
 ### READY
 1. LATER Review [Docx](spot://resdocx) 
-2. LATER Sweep [[RES War]] & [[RES Star]]
+2. LATER Sweep [[Star Stories]] & [[Star]]
 
 ### LEARNING
 1. GREP-GRAB-n-GO - Scan for alg and quickly try it out.

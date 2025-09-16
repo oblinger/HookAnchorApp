@@ -1,5 +1,5 @@
 
-(See [[RES Star]])
+(See [[Star]])
 
 Situation
 Task

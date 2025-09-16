@@ -1,6 +1,6 @@
-. [[S.T.A.R.]], [[RES]], [[RES War]], [[RES War AI]]. 
-
+. [[S.T.A.R.]], [[RES]], [[Star Stories]], [[Star AI]]. 
 Anchor Stories: A time when you:  (a) created value,  (b) solved a messy problem,  (c) were asked to lead
+
 # __
 
 
@@ -9,9 +9,6 @@ Deep Learning/AI Researcher/Leader.  Career includes building 5 orgs from scratc
 Looking for a hands-on role leading generative-AI based innovation.
 My sweet-spot is bridging world-leading R&D into rapid productization.
 
-
-#### One Liner
-**Machine Learning, AI, Leader** seeking a product-focused leadership role.
 #### [[RES Pyramid]] 
 A proven AI PhD/CTO: with decade+ hands on experience in ML/DL, built 5 orgs from scratch (up to 60 engineers), funded hundreds of millions in research at DARPA, exited three companies, and brought products to market worth billions.  Looking for a hands-on role leading generative-AI based innovation.
 
@@ -28,8 +25,8 @@ My sweet-spot is bridging world-leading R&D into rapid productization.
 
 # STORIES: KEY TOPICS
 ## = TURN AROUND !!!
-- [[RES Star#SPORTS VISIO - Turn Around]]
-- [[RES Star#Aeolus Turn Around]] 
+- [[Star#SPORTS VISIO - Turn Around]]
+- [[Star#Aeolus Turn Around]] 
 - Aeolus??  Key algorithms (motion planning; object reco) not working 70 days from CES.
 
 

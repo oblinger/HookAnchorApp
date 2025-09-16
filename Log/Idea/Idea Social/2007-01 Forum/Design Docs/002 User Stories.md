@@ -55,10 +55,3 @@ Focuses on critiquing and rebutting positions from the opposing political viewpo
 - VIEW ALL - As a cross-partisan challenger, I want to see how my rebuttals are received so I can improve my argumentation
 - ADD +1 - As a cross-partisan challenger, I want to acknowledge strong points in opposing arguments so debate remains intellectually honest
 
-
-# USER STORIES
-
-## Admin
-
-### Admin - Onboard
-

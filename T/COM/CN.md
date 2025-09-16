@@ -3,8 +3,8 @@
 - [[@Alain Biem]] 
 - [[@Rachel Kadosh]] 
 - [[@Damien Filiatrault]] 
-- Doug Riecken. 908-
-- 294-0973
+- Doug Riecken. 908-294-0973
+
 
 -  [[@David Israel]],
 - Jason Wells - NOW CFO

@@ -321,13 +321,13 @@ ADVICE:
 .[[NJ24]].
   :
   [NJ24 Slide](spot://nj24slide):
-  ADDS:   [[NJ]], [[NJ.]], [[NJ24 Framing]], [[NJ Read]], [[2024-04-01 Resume Rewrite]],
+  ADDS:   [[NJ]], [[NJ Todo]], [[NJ24 Framing]], [[NJ Read]], [[2024-04-01 Resume Rewrite]],
 
 :: [[NJ Read]]
 
 :: [[NJ]]
 
-. [[NJ.]] [[Lrn]], [[2024-04-01 Resume Rewrite]], [[War AI]], 
+. [[NJ Todo]] [[Lrn]], [[2024-04-01 Resume Rewrite]], [[War AI]], 
 
 
 ### 2021 REBOOT

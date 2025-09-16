@@ -1,5 +1,5 @@
 .STU.
- [[NJ.]]: 
+ [[NJ Todo]]: 
  [[Friday]]: 
 
 !fball Analysis & on?
