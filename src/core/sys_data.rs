@@ -43,7 +43,43 @@ static COMMANDS_MODIFIED: OnceLock<std::sync::atomic::AtomicBool> = OnceLock::ne
 /// This MUST be called before any other operations
 pub fn initialize_config() -> Result<(), String> {
     let start = std::time::Instant::now();
-    
+
+    // Check if essential config files exist - if not, run the installer
+    let config_dir = dirs::home_dir()
+        .ok_or_else(|| "Could not find home directory".to_string())?
+        .join(".config")
+        .join("hookanchor");
+
+    let config_yaml_exists = config_dir.join("config.yaml").exists();
+    let commands_txt_exists = config_dir.join("commands.txt").exists();
+
+    // If the essential config files created by the installer are missing, run first-time setup
+    // Note: config.js is user-created and not part of the installer, so we don't check for it
+    if !config_yaml_exists || !commands_txt_exists {
+        crate::utils::log(&format!(
+            "CONFIG_INIT: Missing config files - running first-time setup (yaml:{}, txt:{})",
+            config_yaml_exists, commands_txt_exists
+        ));
+
+        println!("\n🚀 First-time setup detected - initializing HookAnchor configuration...");
+        println!("   Missing files will be created:");
+        if !config_yaml_exists {
+            println!("   • config.yaml (application configuration)");
+        }
+        if !commands_txt_exists {
+            println!("   • commands.txt (command definitions)");
+        }
+
+        // Run the setup assistant in non-interactive mode for automatic installation
+        let setup_assistant = crate::systems::setup_assistant::SetupAssistant::new();
+        if let Err(e) = setup_assistant.run_setup(false) {
+            eprintln!("\n⚠️  Setup encountered issues: {}", e);
+            eprintln!("   You can re-run setup manually with: ha --install");
+        } else {
+            println!("\n✅ Initial configuration files created successfully!");
+        }
+    }
+
     // Load config using the existing load_config_with_error for proper error handling
     match super::config::load_config_with_error() {
         super::config::ConfigResult::Success(config) => {
