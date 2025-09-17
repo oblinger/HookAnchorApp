@@ -63,11 +63,15 @@ impl SetupAssistant {
         
         // Step 6: Create initial commands file
         self.create_initial_commands(force)?;
-        
+
+        // Step 7: Install uninstaller script
+        self.install_uninstaller_script()?;
+
         println!("\n✓ Setup completed successfully!");
         println!("\nHookAnchor is now configured to launch with Caps Lock (when pressed alone).");
-        println!("You can modify the keyboard shortcut in Karabiner-Elements if needed.\n");
-        
+        println!("You can modify the keyboard shortcut in Karabiner-Elements if needed.");
+        println!("\nTo uninstall later: run ~/.config/hookanchor/uninstall.sh\n");
+
         Ok(())
     }
     
@@ -272,7 +276,53 @@ _install_info:
             timestamp
         )
     }
-    
+
+    /// Install the uninstaller script in the config directory
+    fn install_uninstaller_script(&self) -> Result<(), Box<dyn std::error::Error>> {
+        let uninstall_script_path = self.config_dir.join("uninstall.sh");
+
+        // Find the uninstall script in the codebase
+        let exe_path = std::env::current_exe().unwrap_or_default();
+        let exe_dir = exe_path.parent().unwrap_or(std::path::Path::new("."));
+
+        // Look for the uninstall script in possible locations
+        let possible_paths = vec![
+            // Development mode - script is in scripts/
+            exe_dir.join("../../scripts/uninstall.sh"),
+            // Distribution mode - script might be packaged
+            exe_dir.join("uninstall.sh"),
+            exe_dir.join("scripts/uninstall.sh"),
+        ];
+
+        let mut script_content = None;
+        for script_path in &possible_paths {
+            if script_path.exists() {
+                script_content = Some(fs::read_to_string(script_path)?);
+                break;
+            }
+        }
+
+        // If we can't find the script file, create it with embedded content
+        let content = script_content.unwrap_or_else(|| {
+            // Embedded fallback version
+            include_str!("../../scripts/uninstall.sh").to_string()
+        });
+
+        fs::write(&uninstall_script_path, content)?;
+
+        // Make it executable
+        #[cfg(unix)]
+        {
+            use std::os::unix::fs::PermissionsExt;
+            let mut perms = fs::metadata(&uninstall_script_path)?.permissions();
+            perms.set_mode(0o755);
+            fs::set_permissions(&uninstall_script_path, perms)?;
+        }
+
+        println!("✓ Uninstaller script installed");
+        Ok(())
+    }
+
     /// Check for existing Caps Lock mappings in Karabiner
     fn check_caps_lock_conflicts(&self) -> Result<Vec<String>, Box<dyn std::error::Error>> {
         let karabiner_dir = dirs::home_dir()
@@ -561,17 +611,31 @@ pub fn uninstall_hookanchor() -> Result<(), Box<dyn std::error::Error>> {
 impl SetupAssistant {
     /// Run the uninstall process
     pub fn run_uninstall(&self) -> Result<(), Box<dyn std::error::Error>> {
-        // Silent uninstall - no stdout messages, no interactive prompts
-        // NOTE: Does NOT remove ~/.config/hookanchor directory - user data is preserved
-        
-        // Step 1: Remove from Applications folder
-        self.remove_from_applications()?;
-        
-        // Step 2: Remove Karabiner configuration
-        self.remove_karabiner_config()?;
-        
-        // Config directory is NOT removed - user's commands and settings are preserved
-        
+        // Use the uninstall script if it exists, otherwise fall back to direct method
+        let uninstall_script = self.config_dir.join("uninstall.sh");
+
+        if uninstall_script.exists() {
+            // Run the uninstall script with "yes" option (preserve config)
+            let mut child = std::process::Command::new("bash")
+                .arg(&uninstall_script)
+                .stdin(std::process::Stdio::piped())
+                .stdout(std::process::Stdio::null())  // Silent for GUI
+                .stderr(std::process::Stdio::null())  // Silent for GUI
+                .spawn()?;
+
+            // Send "yes" to the script
+            if let Some(stdin) = child.stdin.as_mut() {
+                use std::io::Write;
+                stdin.write_all(b"yes\n")?;
+            }
+
+            child.wait()?;
+        } else {
+            // Fallback to direct method
+            self.remove_from_applications()?;
+            self.remove_karabiner_config()?;
+        }
+
         Ok(())
     }
     
