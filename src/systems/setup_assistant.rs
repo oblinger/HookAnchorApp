@@ -199,54 +199,42 @@ impl SetupAssistant {
     }
     
     /// Create the default config.yaml file (safely)
-    fn create_default_config(&self, force: bool) -> Result<(), Box<dyn std::error::Error>> {
+    fn create_default_config(&self, _force: bool) -> Result<(), Box<dyn std::error::Error>> {
         let config_path = self.config_dir.join("config.yaml");
-        
-        if config_path.exists() && !force {
-            println!("Configuration file already exists - preserving existing settings");
-            
-            // Validate existing config
-            match fs::read_to_string(&config_path) {
-                Ok(content) => {
-                    // Basic validation - check if it parses as YAML
-                    if content.trim().is_empty() {
-                        println!("Warning: Existing config file is empty");
-                        println!("NOT overwriting - use --install --force to replace empty config");
-                        return Ok(()); // NEVER overwrite without force flag!
-                    } else {
-                        println!("Existing configuration looks valid - keeping as-is");
-                        return Ok(());
-                    }
-                }
-                Err(_) => {
-                    println!("Warning: Could not read existing config file");
-                    return Ok(()); // Don't overwrite if we can't read it
-                }
-            }
+
+        if config_path.exists() {
+            // NEVER overwrite existing config.yaml - user settings are too complex and valuable
+            println!("✓ Configuration file already exists - preserving existing settings");
+            let default_config_path = self.config_dir.join("config.yaml-latest-default.yaml");
+            println!("📄 Creating latest default configuration at: {}", default_config_path.display());
+            println!("  (config.yaml is never automatically overwritten to protect your customizations)");
+
+            // Generate and write reference file
+            let timestamp = std::time::SystemTime::now().duration_since(std::time::UNIX_EPOCH).unwrap().as_secs();
+            let default_config = self.generate_default_config_content(timestamp);
+            fs::write(&default_config_path, default_config)?;
+            return Ok(());
         }
-        
-        // Only reach here if: (!exists) OR (exists AND force)
-        if !config_path.exists() {
-            println!("Creating default configuration...");
-        } else if force {
-            println!("🔄 Force reinstall: Creating fresh configuration file...");
-            // Backup existing file when forcing
-            let backup_path = self.config_dir.join(format!("config.yaml.backup.{}", 
-                chrono::Utc::now().format("%Y%m%d_%H%M%S")));
-            if let Err(e) = fs::copy(&config_path, &backup_path) {
-                println!("Warning: Could not backup existing config: {}", e);
-            } else {
-                println!("Backed up existing config to: {}", backup_path.display());
-            }
-        }
-        
+
+        // Only create if doesn't exist
+        println!("Creating default configuration...");
+
         // Create timestamp for this installation
         let timestamp = std::time::SystemTime::now()
             .duration_since(std::time::UNIX_EPOCH)
             .unwrap()
             .as_secs();
-            
-        let default_config = format!(r#"# HookAnchor Configuration
+
+        let default_config = self.generate_default_config_content(timestamp);
+        fs::write(&config_path, default_config)?;
+        println!("✓ Default configuration created");
+
+        Ok(())
+    }
+
+    /// Generate default config content with timestamp
+    fn generate_default_config_content(&self, timestamp: u64) -> String {
+        format!(r#"# HookAnchor Configuration
 # Generated on: {}
 
 general:
@@ -279,15 +267,10 @@ logging:
 _install_info:
   created_timestamp: {}
   version: "installer_generated"
-"#, 
+"#,
             chrono::DateTime::<chrono::Utc>::from(std::time::UNIX_EPOCH + std::time::Duration::from_secs(timestamp)),
             timestamp
-        );
-        
-        fs::write(&config_path, default_config)?;
-        println!("✓ Default configuration created");
-        
-        Ok(())
+        )
     }
     
     /// Check for existing Caps Lock mappings in Karabiner
