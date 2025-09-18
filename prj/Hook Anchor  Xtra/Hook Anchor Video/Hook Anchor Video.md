@@ -1,4 +1,16 @@
 
+- [ ] check marks should be bigger and more visible (bold)
+- [ ] The latest dist_.... files should be copied into the user's config folder so they can see and use the latest code in there config.js config.yaml or hook_anchor_zshrc file.  Those files should always be copied over so the user has ready access to them.
+
+
+SETUP:
+- Open Notes.txt in Text Edit
+- Open Intro.txt in Cursor
+- Use [OBS app](hook://OBSapp) 
+- Rename fb-meta back and delete all fireball commands.
+
+
+
  Lead with the Problem (30 seconds)
 
 If you're drowning in thousands of files across Obsidian, Google Drive, Notion, in dozens of apps both local and cloud - and tired of searching through folder hierarchies, trying to remember where things are - this tool solves that with a simple insight: you already have names in your head for all your important stuff, your personal knowledge manager should just use those!
