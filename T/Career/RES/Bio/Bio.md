@@ -1,232 +1,38 @@
 .[[Bio]].
-  [[Bio Email]], [[Bio Intro]], [[Bio Verbal]],
-  , ,
-  , ,
-  , ,
-  , [Bio Obsidian](spot://bioobsidian),
-  DELS: ,[Bio Obsidian](spot://bioobsidian),
-  , ,
+  [[Bio Email]], [[Bio Intro]], [[Bio Verbal]], [[Bio Points]], 
+  
   , [Bio Note](spot://bionote),
   , [Bio Email Obsidian](spot://bioemailobsidian), [Bio Intro Obsidian](spot://biointroobsidian)
   , [Bio Verbal Obsidian](spot://bioverbalobsidian), 
   DELS: [Bio Note](spot://bionote),[Bio Obsidian](spot://bioobsidian),[Bio Note](spot://bionote),[Bio Note](spot://bionote),
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Three exit CTO with a PhD in Artificial Intelligence.
 
 
 
 
 # REVERSE ORDER LIST WRITTEN BIOS
 
+## 2025-09-16  - Fractional CTO Introduction
+
+**Proven AI/ML Leader Who Builds, Ships, and Scales**
+
+I'm Dan Oblinger, a hands-on engineering leader who bridges the gap between cutting-edge research and market-ready products. With three successful company exits under my belt and over $200M in R&D programs managed, I help startups navigate the complex journey from technical innovation to commercial success.
+
+**What sets me apart is my rare combination of deep technical expertise and proven business execution.** I don't just theorize about AI/ML—I architect the algorithms myself. At my sport tech startup, I worked hand in hand with my team, developing novel self-training algorithms combining DinoV2, VitPose, and ByteTrack that transformed our "unshippable" product into a zero-bug platform generating $1.5M ARR. At Analytics Fire, I co-designed the first-of-a-kind automated solar installation designer using deep learning over satellite imagery, creating an entirely new sales channel for our Fortune 1000 client.
+
+**My track record speaks to both technical innovation and team leadership.** I've built five organizations from scratch, including a 60+ engineer team with 40+ PhDs that delivered a two-armed eldercare robot in just 13 months. I've raised $25M+ in venture funding across multiple successful exits. My DARPA tenure managing $200M+ in advanced AI programs directly contributed to breakthrough technologies like IBM Watson.
+
+**As a fractional CTO, I bring the experience of someone who has been in your shoes.** I understand the unique challenges of startup leadership—balancing technical debt against feature velocity, hiring world-class talent with limited resources, and making architectural decisions that will scale. I've navigated the transition from prototype to product, from product-market fit to scale, and from startup to acquisition multiple times.
+
+**My approach is deeply hands-on.** While I can set technical strategy and build teams, I'm equally comfortable diving into code, debugging algorithms, and working alongside your engineers. I hold 20+ patents and have authored 25+ peer-reviewed papers, but more importantly, I've shipped products that customers actually use and pay for.
+
+**Whether you need help scaling your AI capabilities, building a high-performing engineering organization, or preparing for your next funding round, I bring the technical depth and business acumen of someone who has successfully walked this path before.** I've collaborated with AI luminaries like Andrew Ng and Stuart Russell, briefed the Secretary of Defense, and taught graduate ML courses at Columbia—but my real value comes from translating that expertise into products that drive revenue and growth.
+
+Let's discuss how my experience building and exiting companies in AI/ML, computer vision, and robotics can accelerate your technical roadmap and business objectives.
+
+
+## older
 
 ### 2023-02-20  SportsVisio newsletter and blog entry
 

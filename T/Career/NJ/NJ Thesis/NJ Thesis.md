@@ -5,15 +5,17 @@ THESIS -- Looking for a job
 - ML -- Job is focused on Deep Learning and ideally on Generative AI
 - TITLE -- 
 
-[[NJ ML Eng Mgr]] (in CV or )
-- Working for a Big Co
-- Hook: Experience in Computer Vision 
-
 
 [[NJ CIAO]] 
 CIAO -- Can I get it?
 [[NJ VP of AI Product]] 
 [[NJ Research Director]] 
+
+
+[[NJ ML Eng Mgr]] (in CV or )
+- Working for a Big Co
+- Hook: Experience in Computer Vision 
+
 
 [[NJ DL Researcher]]
 

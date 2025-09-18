@@ -4,7 +4,7 @@
 
  [1-888-ONEMED1](tel:1-888-663-6331).
 billing at [888-663-6331](tel:1-888-663-6331).
-
+[feedback@onemedical.com](mailto:feedback@onemedical.com)
 # LOG
 
 billing@onemedical.com 

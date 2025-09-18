@@ -1,16 +1,18 @@
 ## = NUMBERS - "AT A GLANCE" 
 
-### - Delivered 4+ products to market
+### - Delivered 5+ products to market totally more than $3B in value
 ! SV Hoops 
 ! AF - Instant Design - 
-! AF - Oasis/Eddie - Omnibus sales and execution solution.
+! AF - TMAC - Legacy powerplant controllers
+! AF - Oasis - Power Plant Controllers. [8min video](https://www.youtube.com/watch?v=o7mn-idDwms) 
+! AF - Eddie - Omnibus sales and execution solution.  [News Wire](https://www.prnewswire.com/news-releases/sunpower-introduces-eddie-its-next-generation-digital-sales-tool-and-design-engine-for-home-solar-300414581.html) 
 ! PBG - Payments splitting - 
 - AE - Aeolus Elder bot - 
 
 #### Brought Multiple Products To Market Totaling More Than $3B In Value
 - Soup-to-nuts our team developed the SW and Firmware for Envoy, Oasis, and TMAC.  Together these represent more than $3B in hardware.
 
-- SV Hoops - $800K/ARR
+- SV Hoops - zero to $1.5M/ARR
 - Aeolus Aeo - Eldercare robot
 - Instant Design - 
 - Envoy - Residential hub for Enphase inverter-based systems
@@ -42,9 +44,9 @@ _
 	Cyc Team: 
 	Nist / SAIC Team:
 
-
 - Largest Report Structures:  DARPA 3 teams for each of 2 simultaneous programs
 - 8 Team Managed, 12 Direct Reports, 17 Countries Spanned
+
 ### - 8  TEAMS MANAGED
 1. SportsVisio CV team
 2. SportsVisio Eng
@@ -59,9 +61,9 @@ _
 ### - 12 DIRECT REPORTS
 SWIM LANES (7): Infrastructure (Rafael), Robio (Brandon), Recognition (Mirek),
 		WM (Severin), Base (Georgios), Manip (Rogerio), Platform (Alexey)
-- Patrick - Finanace
+- Patrick - Finance
 - Theo - Chief Architect
-- Andrzej (sw hiring manager)
+- Andrzej (SW hiring manager)
 - Matt Lu
 - Sahil (gold room)
 

@@ -24,6 +24,12 @@ My sweet-spot is bridging world-leading R&D into rapid productization.
 
 
 # STORIES: KEY TOPICS
+## = BUILDING TEAMS / Maintaining them
+- Aeolus: 60+ Eng Team, 40+ PhDs, 9 months
+- AF: 50+ Eng Team
+	- turnover ...
+- SV: 20+ Eng Team, replace entire CV team
+
 ## = TURN AROUND !!!
 - [[Star#SPORTS VISIO - Turn Around]]
 - [[Star#Aeolus Turn Around]] 

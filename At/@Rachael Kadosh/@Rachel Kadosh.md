@@ -11,17 +11,33 @@ Rachel, indeed now is a good time for us to chat. Over the last year, I have bee
 
 Here is my context:
 
-My career and life plans really fell apart with COVID and with the AI revolution.  The silver lining that it has focused me on neglected parts of my life.  Before I planning to use Analytics Fire to make enough money that I never needed to work traditional jobs again.
+My career and life plans really fell apart with COVID and with the AI revolution.  The silver lining that it has focused me on neglected parts of my life, raising my son, family and health.  Before, I planned to use Analytics Fire to make enough money that I would never need to work traditional jobs again, so I was not focused on my marketability in this space, and it historically seemed getting an FAANG job would be easy w/ a PhD in AI.  
 
-I have several passion companies that I would have loved to pursue, but those are on the back burner for now or forever.  This took years to really come to terms with.  But the reality is I am 60 years old with a working wife 12 years my junior, a 6 year old son in private school, and a $20K/month burn rate.  So retiring with my $3.5M and our additional $1.5M may well not be an option.
+Well, these plans really turned out to be dramatically wrong.  I sold Analytics Fire with a good but not awesome exit, not enough that I am retired, especially with a son now in private school.  (Qingling is quite adamant on this point, but I am less sold on its centrality.)  I have several passion companies that I would have loved to pursue, but those are on the back burner for now or perhaps forever.  This took years for me to really come to terms with the fact that my old life plan is gone.  The reality is I am 60 years old with a working wife 12 years my junior, a 6 year old son in private school, and a $20K/month burn rate.  So retiring with my $3.5M and our additional $1.5M may not be an option; or maybe it is, but it will require some level of re-adjustment for both my wife and myself.
 
-For the moment, I am trying to do a back flip back into the corporate world after being out of it for 15 years in startups.
+For the moment, I am trying to do a back flip back into the corporate world after being out of it for 15 years in startups.  My present job is stable, but is also a risky long term bet.
+
 This is hampered by the shift in AI towards newer techniques than when I got my PhD, and the general tightening that AI has caused, especially in mid-manager hiring, where I would most naturally fit.
 
+RELEVANT PATHS FOR ME
 
-Issues to focus on:
-- My efforts in job searching have not been efficient for reasons that might be worth digging into.
-- 
+
+LLM RESEARCHER - I have been interested in AGI-related AI (which is now incredibly hot), but likely I am too many years away from Research to make a backflip into such a research role.  I do have an exciting research direction that researchers in the field have confirmed is novel and quite professionally very interesting.  Two such researchers suggested that I do this work (would require ~3 months of focused work) and publish to ArXiv.org.  Then turn it into a job talk that I could use in trying to score such a job.
+	- Very tempting, but I think it will require multiple tier-I publications to qualify for such roles, AND folks who are doing that kind of research have been doing this work actively for years.  I believe my intuitions are better than the average bear in this area (even compared to existing researchers), but I recognize that it will take me years to match them in terms of research efficiency.
+
+
+AI SAFETY RESEARCHER - In 2004, when I joined DARPA, I was so concerned about the dangers of AI that I wrote up a three-page reasoning why it was ok for me to join DARPA despite still having this concern (the jist of the argument was "Dan get over yourself, sure you might shift things a tiny bit but this beast is coming either way").  Flash forward 20 years, and many now take this danger seriously.  This suggests that I work in this space; if I could help, it would be fulfilling, and likely the most important thing for me to do with my life.  But there are some challenges to this path:
+- NOT SURE HOW TO HELP - I am far clearer on why humanity is F--ed, and far less clear about what to do about it.  If I focused on this for some time perhaps I can come up with some things, but one of the reasons I did not do AGI research was that I could not see how it could be made to be safe.  (As a simple analogy, imagine trying to raise a child such that it would be impossible for they ever to kill later in life.  You might shape their thinking, but you could never guarantee this outcome.)  Still if I had the job to figure this out, maybe I could come up with some ideas, it would be interesting to try.
+- CURRENT AI-SAFETY MONEY DOES NOT FOCUS ON THIS EXISTENTIAL THREAT. The majority of AI-safety money is dedicated to making AI less biased, or trying to monitor that current systems play nice, while the existential threat is not addressed.
+- SAFETY POLICY - Given that I was a DARPA program manager in the past, perhaps I can could aim for to be either at DARPA or within the gov related to this topic.  This is less technical than I might otherwise want, but this could be interesting.  I have yet to explore this very much.
+
+
+ML ENG MANAGER at a FAANG or a BIG CO
+
+
+STARTUP CTO / FRACTIONAL CTO
+
+
 
 
 

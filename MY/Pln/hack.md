@@ -1,9 +1,10 @@
-- auto add facet name
 
-
-
-- [ ] Refactor the installer
+- [ ] Scrub system & test reinstall works
 - [ ] Create teaser video [Video](hook://hookanchorvideo) 
+- [ ] Build Uninstaller
+
+
+- [ ] auto add facet name
 - [ ] "[" should go back in history
 - [ ] ghost entry w/ different input and maybe blank selection
 - [ ] Add a 'just cmd' button
@@ -11,110 +12,19 @@
 - [ ] .
 - [ ] ANCHOR EDITOR - Extend the command editor to be the anchor editor whenever the action type is anchor
 - [ ] yore support
-- [ ] add support for "close popup" into templates.  move CMD+shift+2 to be a template
-- [ ] iIplement activate tmux in JavasSript just as it works in Rust
+- [ ] Add support for "close popup" into templates.  Move CMD+shift+2 to be a template
+- [ ] Implement activate tmux in JavasScrpt just as it works in Rust
+
+
+
+## DONE
 - [x] Get 'q2' working right.
 - [x] ACTION type - add an 'action' type that runs any action w/ any args
-
-
-
-## __
-
-
-#### INSTALLER
-- [ ] - should error if notion does not have permissions; need to exeend grabber
-- [ ] - setup should setup config.js
-- [ ] Should check if the following are installed:
-	- [ ] karabiner, karabiner macros
-	- [ ] config.yaml, config.js
-	- [ ] permission for the terminal
-	- [ ] extending the path to include ha
-	- [ ] adding command for ff, fp, fd
-	- [ ] Load self on startup
-
-
-#### LATER
-- [ ] G-doc support.  auto create for 'WW' in confluence and g-docs
-- [ ] Clean up the log file, verify that std out and error are sent there.
-- [ ] go through the code base and move any non-trivial Constance in the code into variables at the top of cis data.RS
-- [ ] refactor to get rid of the NavigationHandler
-- [ ] - how would we refactor if a short abbreviation prefix like CV were to change later?  how can we refactor prefixes generally?
-- [ ] Rename command (should prompt if matching source file and folder should be changed)
-- [ ] Ensure that uninstall does not touch files in the .config/hookanchor folder
-- [ ] create a functional test based on a complex command.txt to check auto inferencing and other fancy sub systems
-- [ ] Get summary of all functions and clean up code base
-- [ ] ! will add priority to certain entries.
-
-#### Anchor Dialog
-- [ ] ama should really be an anchor page AND should launch a website. Need to rethink how anchor pages relate to everything
-- we want to extend the command class for a special kind of command called an anchor.
-- and we want to create a special dialogue for dealing with these command classes. 
-- anchors are commands, whose action is anchor.
-- we will extend the command editor to be the anchor editor as well,  any time the action is set to anchor this editor gets a number of extra Fields and the size of the added window. The vertical size gets larger. It might be simpler for the editor to simply have all these fields available and unused in the case that the action is not anchor because the user can flip back-and-forth and the interface shouldn't forget the values in all those extra fields. Still once a command is saved if it's not saved as an anchor then all the extra fields are lost since they don't exist on non-anchor commands.
-- 
-
-#### popup_close -- The issue is that the Rust code needs to be modified to:
-  1. Read the close_popup parameter from the config
-  2. Actually close the popup when close_popup: true
-
-  However, implementing this requires modifying the Rust code to handle the close_popup parameter, which is a more complex change that requires:
-  - Updating the config structs to include the close_popup field
-  - Modifying the key handler to check this field
-  - Changing the return type to indicate whether to close the popup
-
-  This is a structural change to the Rust application that needs careful implementation. The config changes we made are ready, but the Rust code needs to be updated to
-  actually use the close_popup parameter.
-
-  For now, the contact functionality should be working correctly (opening the Contacts app with the right contact selected), but the popup won't automatically close yet. That
-  feature would need to be implemented in the Rust code.
-
-
-#### delete 
-│ > Let's add another more complicated command to the command ops module. The delete command operation should be extended to check to see if the ARG for the command actually     │
-│   refers to an existing file or folder. And if it does, then it should prompt the user for the Alicia that fileif the name matches the file name that is. If the name matches   │
-│   the folder because it's an anchor folder it's an anchor name then it should prompt to delete the folder. Only if the folder is gonna be empty after deleting the associated   │
-│   file. To be clearif the file referenced is not the same name as the command being deleted, it should still prompt the user asking about whether or not it should delete  │
-│   that file. And this deletion operation should follow the same paradigm that the current rename operation does, it should have a dry run flagand it's called the first time    │
-│   with the dry run flag in order to get the list of things that it's gonna present to the user. Then if the user presses OK, it's going to actually execute those commands. We  │
-│   should think about whether or not this code is sufficiently similar to the reading code that somehow they should be merged togetheror perhaps it is Cleaner to just keep      │
-│   them separate even though they are analogous to each other.                                           
-
-
-#### Rescan
-I would like to overhaul the way that rescanning is done:
-- this is a complex spec. Let's take it in stages, even if we build the to-do items for all the parts upfront. Feel free to interact with me to clarify each of the steps before you begin.
-- both the scan function and the  run patch inference should accept the same string, which is gonna be a, separated, a comma separated string that indicates the specific scan operations and the specific inference operations that should be performed. This becomes a new parameter on a load data so it controls, which of these sub operations are performed. Since this string is gonna be set up to begin and end with a comma one can simply search for the command name with a comma before, and after it and reliably determine whether each command should or should not be executed. 
-- there should be a subsection underneath scanner in the config file got an example of this subsection shown below. In this section, we defined a number of scans that can be applied. We can apply those scans using the dash – scan option, and if you notice, they may also have an every flag at the beginning if they do then that particular name scan should be executed once every N seconds.   Here is an example of this section:
-- named_scans:
-      startup: orphans
-      my_name:  --every 3600, files, applications, orphans
-- There should be a config file option under scanner, which indicates which of these operations should occur when the application first loads. Of course, in the config file, the string will not begin and end with commas, those will be added before passing the string to load data.
-- start up is a special scan name. That's the one that's executed each time. The system first starts up, this is the string that's passed into low data for that first load.
-- all other scans are passed to load data either by the rescan command, or at exit of the app we checked to see if any of the named scans are due for a re-execution. Notice, right now we check for re-scanning when the application first starts, but this is wrong. Rescanning takes noticeable time so instead, we should be checking it at the end when we're gonna dismiss the app instead of doing that we can simply minimize the window and then run the appropriate scanner operation.
-- find all the places where scanning or patch inference are done and make sure they all are now done within the load data function, we will simply call the load data function from a couple different places in order to get the functionality at boot time, when the every timeout occurs at the end of the application when it's closing, and from the command line when you call rescan
-- Let's update the rescan operation so that it checks if the file has shrunk by a large amount and prompts the user before actually performing that operation. Since the interface might be minimized at this point, we might need to add a focus to it or something in order to be able to pop up the dialogue box asking if the deletion is OK.
-
-#### Patch
-
-- [ ] PATCH SUPPORT
-	- [ ] design format for a patch in markdown.     
-	- [ ] Rename Patch to be Anchor
-	- [ ] Patch support: Read/Update patch region in a markdown file
-	- [ ] Parse commands in it
-	- [ ] Add/delete commands based on delta from commands.txt file
-	- [ ] Track file changes over time in all patch files
-	- [ ] Top level logic to push all cmds into existing patches (if they exist)
-	- [ ] LATER Top level logic to trigger patch update when command is changes/added/deleted
-	- [ ] LATER Top level logic to notice file updates and check for added or removed links & update cmds
-
-
-
-
-
-
-#### __
-## DONE
-
+- [x] Installer backups
+- [x] Refactor the installer
+- [x] add ff to config file
+- [x] add ff to the intaller
+- [x] create fp fd commands to the config file
 - [x] forum (doc) has a wrong patch... why?
 - [x] ctop - unix top command
 - [x] Fix submenu to it is fully recomputed after the dirty flag was set.  (have the get_sys_data return a boolean)
@@ -305,20 +215,114 @@ OTHER
 - [x] backtick should not get added to the input buffer
 - [x] scanner should group names byparent hook folder; 
 [[2025-06 HookAnchor]] 
+- [x] #### Refactor
+- [x]   3 TODO/FIXME removal items
+  - [x] - src/execute/actions.rs:290 - "TODO: Remove after all callers are updated"
+  - [x] - src/cmd.rs:1155 - "TODO: Remove Karabiner configuration"
+ - [x]  - src/core/key_processing.rs:385 - "TODO: Remove this once all legacy code is cleaned up"
+ - [x]  Legacy/compatibility mentions (not necessarily actionable)
+- [x]   - Several "legacy" comments in archived/compatibility code
+ - [x]  - Migration comments in config.rs (functional, not removal targets)
+ - [x]  - Bridge comments between old/new systems (architectural, not removal targets)
 
 
-#### Refactor
-  3 TODO/FIXME removal items
-  - src/execute/actions.rs:290 - "TODO: Remove after all callers are updated"
-  - src/cmd.rs:1155 - "TODO: Remove Karabiner configuration"
-  - src/core/key_processing.rs:385 - "TODO: Remove this once all legacy code is cleaned up"
-  Legacy/compatibility mentions (not necessarily actionable)
-  - Several "legacy" comments in archived/compatibility code
-  - Migration comments in config.rs (functional, not removal targets)
-  - Bridge comments between old/new systems (architectural, not removal targets)
+
+
+## __ Task Groups __
+
+
+#### INSTALLER
+- [ ] - should error if notion does not have permissions; need to exeend grabber
+- [ ] - setup should setup config.js
+- [ ] Should check if the following are installed:
+	- [ ] karabiner, karabiner macros
+	- [ ] config.yaml, config.js
+	- [ ] permission for the terminal
+	- [ ] extending the path to include ha
+	- [ ] adding command for ff, fp, fd
+	- [ ] Load self on startup
+
+
+#### LATER
+- [ ] G-doc support.  auto create for 'WW' in confluence and g-docs
+- [ ] Clean up the log file, verify that std out and error are sent there.
+- [ ] go through the code base and move any non-trivial Constance in the code into variables at the top of cis data.RS
+- [ ] refactor to get rid of the NavigationHandler
+- [ ] - how would we refactor if a short abbreviation prefix like CV were to change later?  how can we refactor prefixes generally?
+- [ ] Rename command (should prompt if matching source file and folder should be changed)
+- [ ] Ensure that uninstall does not touch files in the .config/hookanchor folder
+- [ ] create a functional test based on a complex command.txt to check auto inferencing and other fancy sub systems
+- [ ] Get summary of all functions and clean up code base
+- [ ] ! will add priority to certain entries.
+
+#### Anchor Dialog
+- [ ] ama should really be an anchor page AND should launch a website. Need to rethink how anchor pages relate to everything
+- we want to extend the command class for a special kind of command called an anchor.
+- and we want to create a special dialogue for dealing with these command classes. 
+- anchors are commands, whose action is anchor.
+- we will extend the command editor to be the anchor editor as well,  any time the action is set to anchor this editor gets a number of extra Fields and the size of the added window. The vertical size gets larger. It might be simpler for the editor to simply have all these fields available and unused in the case that the action is not anchor because the user can flip back-and-forth and the interface shouldn't forget the values in all those extra fields. Still once a command is saved if it's not saved as an anchor then all the extra fields are lost since they don't exist on non-anchor commands.
+- 
+
+#### popup_close -- The issue is that the Rust code needs to be modified to:
+  1. Read the close_popup parameter from the config
+  2. Actually close the popup when close_popup: true
+
+  However, implementing this requires modifying the Rust code to handle the close_popup parameter, which is a more complex change that requires:
+  - Updating the config structs to include the close_popup field
+  - Modifying the key handler to check this field
+  - Changing the return type to indicate whether to close the popup
+
+  This is a structural change to the Rust application that needs careful implementation. The config changes we made are ready, but the Rust code needs to be updated to
+  actually use the close_popup parameter.
+
+  For now, the contact functionality should be working correctly (opening the Contacts app with the right contact selected), but the popup won't automatically close yet. That
+  feature would need to be implemented in the Rust code.
+
+
+#### delete 
+│ > Let's add another more complicated command to the command ops module. The delete command operation should be extended to check to see if the ARG for the command actually     │
+│   refers to an existing file or folder. And if it does, then it should prompt the user for the Alicia that fileif the name matches the file name that is. If the name matches   │
+│   the folder because it's an anchor folder it's an anchor name then it should prompt to delete the folder. Only if the folder is gonna be empty after deleting the associated   │
+│   file. To be clearif the file referenced is not the same name as the command being deleted, it should still prompt the user asking about whether or not it should delete  │
+│   that file. And this deletion operation should follow the same paradigm that the current rename operation does, it should have a dry run flagand it's called the first time    │
+│   with the dry run flag in order to get the list of things that it's gonna present to the user. Then if the user presses OK, it's going to actually execute those commands. We  │
+│   should think about whether or not this code is sufficiently similar to the reading code that somehow they should be merged togetheror perhaps it is Cleaner to just keep      │
+│   them separate even though they are analogous to each other.                                           
+
+
+#### Rescan
+I would like to overhaul the way that rescanning is done:
+- this is a complex spec. Let's take it in stages, even if we build the to-do items for all the parts upfront. Feel free to interact with me to clarify each of the steps before you begin.
+- both the scan function and the  run patch inference should accept the same string, which is gonna be a, separated, a comma separated string that indicates the specific scan operations and the specific inference operations that should be performed. This becomes a new parameter on a load data so it controls, which of these sub operations are performed. Since this string is gonna be set up to begin and end with a comma one can simply search for the command name with a comma before, and after it and reliably determine whether each command should or should not be executed. 
+- there should be a subsection underneath scanner in the config file got an example of this subsection shown below. In this section, we defined a number of scans that can be applied. We can apply those scans using the dash – scan option, and if you notice, they may also have an every flag at the beginning if they do then that particular name scan should be executed once every N seconds.   Here is an example of this section:
+- named_scans:
+      startup: orphans
+      my_name:  --every 3600, files, applications, orphans
+- There should be a config file option under scanner, which indicates which of these operations should occur when the application first loads. Of course, in the config file, the string will not begin and end with commas, those will be added before passing the string to load data.
+- start up is a special scan name. That's the one that's executed each time. The system first starts up, this is the string that's passed into low data for that first load.
+- all other scans are passed to load data either by the rescan command, or at exit of the app we checked to see if any of the named scans are due for a re-execution. Notice, right now we check for re-scanning when the application first starts, but this is wrong. Rescanning takes noticeable time so instead, we should be checking it at the end when we're gonna dismiss the app instead of doing that we can simply minimize the window and then run the appropriate scanner operation.
+- find all the places where scanning or patch inference are done and make sure they all are now done within the load data function, we will simply call the load data function from a couple different places in order to get the functionality at boot time, when the every timeout occurs at the end of the application when it's closing, and from the command line when you call rescan
+- Let's update the rescan operation so that it checks if the file has shrunk by a large amount and prompts the user before actually performing that operation. Since the interface might be minimized at this point, we might need to add a focus to it or something in order to be able to pop up the dialogue box asking if the deletion is OK.
+
+#### Patch
+
+- [ ] PATCH SUPPORT
+	- [ ] design format for a patch in markdown.     
+	- [ ] Rename Patch to be Anchor
+	- [ ] Patch support: Read/Update patch region in a markdown file
+	- [ ] Parse commands in it
+	- [ ] Add/delete commands based on delta from commands.txt file
+	- [ ] Track file changes over time in all patch files
+	- [ ] Top level logic to push all cmds into existing patches (if they exist)
+	- [ ] LATER Top level logic to trigger patch update when command is changes/added/deleted
+	- [ ] LATER Top level logic to notice file updates and check for added or removed links & update cmds
 
 
 
+
+
+
+#### __
 
 ## OTHER SYSTEMS
 - [ ] Finish [[T Roll]]
