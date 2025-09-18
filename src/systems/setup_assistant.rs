@@ -37,43 +37,6 @@ impl SetupAssistant {
         self.first_run
     }
     
-    /// Run the setup process
-    pub fn run_setup(&self, force: bool) -> Result<(), Box<dyn std::error::Error>> {
-        println!("Welcome to HookAnchor Setup!");
-        println!("=============================\n");
-        
-        // Step 1: Check for Karabiner-Elements
-        if !self.check_karabiner() {
-            self.prompt_karabiner_install()?;
-        }
-        
-        // Step 2: Check Terminal accessibility permissions
-        if !self.check_terminal_accessibility() {
-            self.prompt_accessibility_permissions()?;
-        }
-        
-        // Step 3: Create configuration directory
-        self.create_config_directory()?;
-        
-        // Step 4: Create default configuration
-        self.create_default_config(force)?;
-        
-        // Step 5: Install Karabiner complex modification
-        self.install_karabiner_modification(force)?;
-        
-        // Step 6: Create initial commands file
-        self.create_initial_commands(force)?;
-
-        // Step 7: Install uninstaller script
-        self.install_uninstaller_script()?;
-
-        println!("\n✓ Setup completed successfully!");
-        println!("\nHookAnchor is now configured to launch with Caps Lock (when pressed alone).");
-        println!("You can modify the keyboard shortcut in Karabiner-Elements if needed.");
-        println!("\nTo uninstall later: run ~/.config/hookanchor/uninstall.sh\n");
-
-        Ok(())
-    }
     
     /// Check if Karabiner-Elements is installed
     fn check_karabiner(&self) -> bool {
@@ -202,113 +165,96 @@ impl SetupAssistant {
         Ok(())
     }
     
-    /// Create the default config.yaml file (safely)
-    fn create_default_config(&self, _force: bool) -> Result<(), Box<dyn std::error::Error>> {
+    /// Create the default config.yaml file (safely) - GUI-friendly version
+    pub fn create_default_config(&self) -> Result<(), Box<dyn std::error::Error>> {
         let config_path = self.config_dir.join("config.yaml");
 
-        if config_path.exists() {
-            // NEVER overwrite existing config.yaml - user settings are too complex and valuable
-            println!("✓ Configuration file already exists - preserving existing settings");
-            let default_config_path = self.config_dir.join("config.yaml-latest-default.yaml");
-            println!("📄 Creating latest default configuration at: {}", default_config_path.display());
-            println!("  (config.yaml is never automatically overwritten to protect your customizations)");
-
-            // Generate and write reference file
-            let timestamp = std::time::SystemTime::now().duration_since(std::time::UNIX_EPOCH).unwrap().as_secs();
-            let default_config = self.generate_default_config_content(timestamp);
-            fs::write(&default_config_path, default_config)?;
+        // Prioritize dist_config.yaml (only install if doesn't exist)
+        if let Ok(dist_config_path) = self.find_distribution_file("dist_config.yaml") {
+            if !config_path.exists() {
+                fs::copy(&dist_config_path, &config_path)?;
+            }
             return Ok(());
         }
 
-        // Only create if doesn't exist
-        println!("Creating default configuration...");
+        // MUST use distribution default_config.yaml - no fallbacks!
+        let dist_config_path = self.find_distribution_file("default_config.yaml")?;
 
-        // Create timestamp for this installation
-        let timestamp = std::time::SystemTime::now()
-            .duration_since(std::time::UNIX_EPOCH)
-            .unwrap()
-            .as_secs();
+        if config_path.exists() {
+            // NEVER overwrite existing config.yaml - user settings are too complex and valuable
+            return Ok(());
+        }
 
-        let default_config = self.generate_default_config_content(timestamp);
-        fs::write(&config_path, default_config)?;
-        println!("✓ Default configuration created");
-
+        // Copy distribution default to user config
+        fs::copy(&dist_config_path, &config_path)?;
         Ok(())
     }
 
-    /// Generate default config content with timestamp
-    fn generate_default_config_content(&self, timestamp: u64) -> String {
-        format!(r#"# HookAnchor Configuration
-# Generated on: {}
 
-general:
-  max_results: 20
-  debug: false
-  word_separators: " /-_."
 
-ui:
-  window_width: 600
-  font_size: 14
-  show_patch: true
-  show_icons: true
+    /// Install config.js from distribution default
+    pub fn install_config_js(&self) -> Result<(), Box<dyn std::error::Error>> {
+        let config_js_path = self.config_dir.join("config.js");
 
-search:
-  fuzzy_match: true
-  case_sensitive: false
-  min_search_length: 1
-
-launcher:
-  terminal: "Terminal"
-  browser: "default"
-
-logging:
-  level: "info"
-  file: "logs/hookanchor.log"
-  max_size: 10
-  max_files: 5
-
-# Installation info
-_install_info:
-  created_timestamp: {}
-  version: "installer_generated"
-"#,
-            chrono::DateTime::<chrono::Utc>::from(std::time::UNIX_EPOCH + std::time::Duration::from_secs(timestamp)),
-            timestamp
-        )
-    }
-
-    /// Install the uninstaller script in the config directory
-    fn install_uninstaller_script(&self) -> Result<(), Box<dyn std::error::Error>> {
-        let uninstall_script_path = self.config_dir.join("uninstall.sh");
-
-        // Find the uninstall script in the codebase
-        let exe_path = std::env::current_exe().unwrap_or_default();
-        let exe_dir = exe_path.parent().unwrap_or(std::path::Path::new("."));
-
-        // Look for the uninstall script in possible locations
-        let possible_paths = vec![
-            // Development mode - script is in scripts/
-            exe_dir.join("../../scripts/uninstall.sh"),
-            // Distribution mode - script might be packaged
-            exe_dir.join("uninstall.sh"),
-            exe_dir.join("scripts/uninstall.sh"),
-        ];
-
-        let mut script_content = None;
-        for script_path in &possible_paths {
-            if script_path.exists() {
-                script_content = Some(fs::read_to_string(script_path)?);
-                break;
+        // Prioritize dist_config.js (only install if doesn't exist)
+        if let Ok(dist_config_js) = self.find_distribution_file("dist_config.js") {
+            if !config_js_path.exists() {
+                fs::copy(&dist_config_js, &config_js_path)?;
             }
+            return Ok(());
         }
 
-        // If we can't find the script file, create it with embedded content
-        let content = script_content.unwrap_or_else(|| {
-            // Embedded fallback version
-            include_str!("../../scripts/uninstall.sh").to_string()
-        });
+        // Fallback to old default_config.js approach (only install if doesn't exist)
+        if !config_js_path.exists() {
+            let dist_config_js = self.find_distribution_file("default_config.js")?;
+            fs::copy(&dist_config_js, &config_js_path)?;
+        }
+        Ok(())
+    }
 
-        fs::write(&uninstall_script_path, content)?;
+    /// Install uninstaller script from distribution default
+    pub fn install_uninstaller_script(&self) -> Result<(), Box<dyn std::error::Error>> {
+        let uninstall_script_path = self.config_dir.join("uninstall.sh");
+
+        // Prioritize dist_uninstall.sh (always install approach)
+        if let Ok(dist_uninstall) = self.find_distribution_file("dist_uninstall.sh") {
+            if uninstall_script_path.exists() {
+                return Ok(());
+            }
+
+            // Install the dist_ file
+            fs::copy(&dist_uninstall, &uninstall_script_path)?;
+
+            // Make it executable
+            #[cfg(unix)]
+            {
+                use std::os::unix::fs::PermissionsExt;
+                let mut perms = fs::metadata(&uninstall_script_path)?.permissions();
+                perms.set_mode(0o755);
+                fs::set_permissions(&uninstall_script_path, perms)?;
+            }
+
+            return Ok(());
+        }
+
+        // Fallback to looking for the original script
+        let source_script = self.find_distribution_file("uninstall.sh").or_else(|_| -> Result<PathBuf, Box<dyn std::error::Error>> {
+            // Look in scripts directory relative to exe
+            let exe_path = std::env::current_exe().unwrap_or_default();
+            let exe_dir = exe_path.parent().unwrap_or(std::path::Path::new("."));
+            let script_path = exe_dir.join("../../scripts/uninstall.sh");
+            if script_path.exists() {
+                Ok(script_path.canonicalize()?)
+            } else {
+                Err("Uninstall script not found".into())
+            }
+        })?;
+
+        if uninstall_script_path.exists() {
+            return Ok(());
+        }
+
+        fs::copy(&source_script, &uninstall_script_path)?;
 
         // Make it executable
         #[cfg(unix)]
@@ -319,7 +265,103 @@ _install_info:
             fs::set_permissions(&uninstall_script_path, perms)?;
         }
 
-        println!("✓ Uninstaller script installed");
+        Ok(())
+    }
+
+    /// Install Uninstaller.app from distribution
+    pub fn install_uninstaller_app(&self) -> Result<(), Box<dyn std::error::Error>> {
+        use std::process::Command;
+
+        let uninstaller_app_path = self.config_dir.join("Uninstaller.app");
+
+        // Look for Uninstaller.app in distribution files
+        if let Ok(dist_uninstaller_dir) = self.find_distribution_file("Uninstaller.app") {
+            if uninstaller_app_path.exists()  {
+                // Remove existing app if forcing update or if it exists
+                std::fs::remove_dir_all(&uninstaller_app_path)?;
+            }
+
+            // Copy the entire app bundle
+            Command::new("cp")
+                .arg("-R")
+                .arg(&dist_uninstaller_dir)
+                .arg(&uninstaller_app_path)
+                .output()?;
+
+            return Ok(());
+        }
+
+        Err("Uninstaller.app not found in distribution".into())
+    }
+
+    /// Install hook_anchor_zshrc from distribution default
+    pub fn install_hook_anchor_zshrc(&self) -> Result<(), Box<dyn std::error::Error>> {
+        let zshrc_path = self.config_dir.join("hook_anchor_zshrc");
+
+        // Find the distribution default zshrc
+        let dist_zshrc = self.find_distribution_file("dist_hook_anchor_zshrc")?;
+
+        if zshrc_path.exists()  {
+            // Check if file has changed from default and backup if needed
+            if self.file_differs_from_default(&zshrc_path, &dist_zshrc)? {
+                self.create_backup(&zshrc_path)?;
+            }
+        }
+
+        // Copy distribution default to config location
+        fs::copy(&dist_zshrc, &zshrc_path)?;
+        Ok(())
+    }
+
+    /// Find a distribution file relative to the executable
+    fn find_distribution_file(&self, filename: &str) -> Result<std::path::PathBuf, Box<dyn std::error::Error>> {
+        let exe_path = std::env::current_exe().unwrap_or_default();
+        let exe_dir = exe_path.parent().unwrap_or(std::path::Path::new("."));
+
+        // Look for distribution files in possible locations
+        let possible_paths = vec![
+            // In the app bundle Resources directory
+            exe_dir.join("../Resources").join(filename),
+            // In development mode from target/release
+            exe_dir.join("../../dist/HookAnchor.app/Contents/Resources").join(filename),
+            // In development mode from target/debug or target/debug/examples
+            exe_dir.join("../../../dist/HookAnchor.app/Contents/Resources").join(filename),
+            exe_dir.join("../../../../dist/HookAnchor.app/Contents/Resources").join(filename),
+            // Direct in exe directory
+            exe_dir.join(filename),
+        ];
+
+        for path in &possible_paths {
+            if path.exists() {
+                return Ok(path.canonicalize()?);
+            }
+        }
+
+        Err(format!("Distribution file '{}' not found in any expected location", filename).into())
+    }
+
+    /// Check if a file differs from the distribution default
+    fn file_differs_from_default(&self, user_file: &std::path::Path, dist_file: &std::path::Path) -> Result<bool, Box<dyn std::error::Error>> {
+        let user_content = fs::read_to_string(user_file)?;
+        let dist_content = fs::read_to_string(dist_file)?;
+        Ok(user_content != dist_content)
+    }
+
+    /// Create a timestamped backup of a file
+    fn create_backup(&self, file_path: &std::path::Path) -> Result<(), Box<dyn std::error::Error>> {
+        if !file_path.exists() {
+            return Ok(()); // Nothing to backup
+        }
+
+        let file_name = file_path.file_name()
+            .and_then(|name| name.to_str())
+            .ok_or("Invalid file name")?;
+
+        let backup_path = self.config_dir.join(format!("{}.backup.{}",
+            file_name,
+            chrono::Utc::now().format("%Y%m%d_%H%M%S")));
+
+        fs::copy(file_path, &backup_path)?;
         Ok(())
     }
 
@@ -355,21 +397,26 @@ _install_info:
     }
 
     /// Install the Karabiner complex modification (safely with user prompts)
-    fn install_karabiner_modification(&self, force: bool) -> Result<(), Box<dyn std::error::Error>> {
+    pub fn install_karabiner_modification(&self) -> Result<(), Box<dyn std::error::Error>> {
+        // First check if Karabiner-Elements is installed
+        let app_installed = std::path::Path::new("/Applications/Karabiner-Elements.app").exists();
+        let cli_installed = std::path::Path::new("/Library/Application Support/org.pqrs/Karabiner-Elements/bin/karabiner_cli").exists();
+
+        if !app_installed && !cli_installed {
+            return Err("Karabiner-Elements is not installed. Please install it from https://karabiner-elements.pqrs.org/ first.".into());
+        }
+
         let karabiner_dir = dirs::home_dir()
             .expect("Could not find home directory")
             .join(".config")
             .join("karabiner")
             .join("assets")
             .join("complex_modifications");
-        
+
+        // Create the directory structure (this is safe even if Karabiner creates it later)
         fs::create_dir_all(&karabiner_dir)?;
         
-        // Check for Caps Lock conflicts first (skip if force reinstall)
-        if force {
-            println!("\n🔄 Force reinstall: Skipping conflict detection, installing F12+Cmd+Option hotkey");
-            return self.install_karabiner_f12_only();
-        }
+        // Check for Caps Lock conflicts first
         
         println!("\n🔍 Checking for existing Caps Lock mappings...");
         let conflicts = self.check_caps_lock_conflicts()?;
@@ -489,13 +536,24 @@ _install_info:
     
     /// Install F12+Cmd+Option hotkey only (no Caps Lock conflicts)
     fn install_karabiner_f12_only(&self) -> Result<(), Box<dyn std::error::Error>> {
+        // First check if Karabiner-Elements is installed
+        let app_installed = std::path::Path::new("/Applications/Karabiner-Elements.app").exists();
+        let cli_installed = std::path::Path::new("/Library/Application Support/org.pqrs/Karabiner-Elements/bin/karabiner_cli").exists();
+
+        if !app_installed && !cli_installed {
+            return Err("Karabiner-Elements is not installed. Please install it from https://karabiner-elements.pqrs.org/ first.".into());
+        }
+
         let karabiner_dir = dirs::home_dir()
             .expect("Could not find home directory")
             .join(".config")
             .join("karabiner")
             .join("assets")
             .join("complex_modifications");
-        
+
+        // Create the directory structure (this is safe even if Karabiner creates it later)
+        fs::create_dir_all(&karabiner_dir)?;
+
         let mod_path = karabiner_dir.join("hookanchor.json");
         
         let modification = json!({
@@ -527,48 +585,39 @@ _install_info:
     }
     
     /// Create initial commands.txt file with some starter commands (safely)
-    fn create_initial_commands(&self, force: bool) -> Result<(), Box<dyn std::error::Error>> {
+    /// Install commands.txt using dist_ approach
+    pub fn install_commands_txt(&self) -> Result<(), Box<dyn std::error::Error>> {
+        let commands_path = self.config_dir.join("commands.txt");
+
+        // Prioritize dist_commands.txt (always install approach)
+        if let Ok(dist_commands) = self.find_distribution_file("dist_commands.txt") {
+            if commands_path.exists()  {
+                // Check if user file differs from distribution default
+                if self.file_differs_from_default(&commands_path, &dist_commands)? {
+                    // User has modifications - back up their version
+                    self.create_backup(&commands_path)?;
+                }
+            }
+
+            // Always install the latest dist_ file
+            fs::copy(&dist_commands, &commands_path)?;
+            return Ok(());
+        }
+
+        // Fallback to old create_initial_commands approach
+        self.create_initial_commands()
+    }
+
+    pub fn create_initial_commands(&self) -> Result<(), Box<dyn std::error::Error>> {
         let commands_path = self.config_dir.join("commands.txt");
         
-        if commands_path.exists() && !force {
-            // Check if the file has any non-comment content
-            match fs::read_to_string(&commands_path) {
-                Ok(content) => {
-                    let has_commands = content.lines().any(|line| {
-                        let trimmed = line.trim();
-                        !trimmed.is_empty() && !trimmed.starts_with('#')
-                    });
-                    
-                    if has_commands {
-                        println!("Commands file already exists with content - preserving existing commands");
-                        return Ok(());
-                    } else {
-                        println!("Commands file exists but is empty/comments only");
-                        println!("NOT overwriting - use --install --force to replace empty commands");
-                        return Ok(()); // NEVER overwrite without force flag!
-                    }
-                }
-                Err(_) => {
-                    println!("Warning: Could not read existing commands file - skipping initialization");
-                    return Ok(());
-                }
-            }
+        if commands_path.exists() {
+            // Commands file already exists - don't overwrite
+            return Ok(());
         }
-        
-        // Only reach here if: (!exists) OR (exists AND force)
-        if !commands_path.exists() {
-            println!("Creating initial commands file...");
-        } else if force {
-            println!("🔄 Force reinstall: Creating fresh commands file...");
-            // Backup existing file when forcing
-            let backup_path = self.config_dir.join(format!("commands.txt.backup.{}", 
-                chrono::Utc::now().format("%Y%m%d_%H%M%S")));
-            if let Err(e) = fs::copy(&commands_path, &backup_path) {
-                println!("Warning: Could not backup existing commands: {}", e);
-            } else {
-                println!("Backed up existing commands to: {}", backup_path.display());
-            }
-        }
+
+        // Create initial commands file
+        println!("Creating initial commands file...");
         
         let timestamp = chrono::Utc::now().format("%Y-%m-%d %H:%M:%S UTC");
         let initial_commands = format!(r#"# HookAnchor Commands
@@ -590,66 +639,8 @@ Apps! Finder : app; Finder
     }
 }
 
-/// Check if setup is needed and run if necessary
-pub fn check_and_run_setup() -> Result<bool, Box<dyn std::error::Error>> {
-    let assistant = SetupAssistant::new();
-    
-    if assistant.is_first_run() {
-        assistant.run_setup(false)?;
-        Ok(true)
-    } else {
-        Ok(false)
-    }
-}
-
-/// Uninstall HookAnchor and clean up configuration
-pub fn uninstall_hookanchor() -> Result<(), Box<dyn std::error::Error>> {
-    let assistant = SetupAssistant::new();
-    assistant.run_uninstall()
-}
 
 impl SetupAssistant {
-    /// Run the uninstall process
-    pub fn run_uninstall(&self) -> Result<(), Box<dyn std::error::Error>> {
-        // Use the uninstall script if it exists, otherwise fall back to direct method
-        let uninstall_script = self.config_dir.join("uninstall.sh");
-
-        if uninstall_script.exists() {
-            // Run the uninstall script with "yes" option (preserve config)
-            let mut child = std::process::Command::new("bash")
-                .arg(&uninstall_script)
-                .stdin(std::process::Stdio::piped())
-                .stdout(std::process::Stdio::null())  // Silent for GUI
-                .stderr(std::process::Stdio::null())  // Silent for GUI
-                .spawn()?;
-
-            // Send "yes" to the script
-            if let Some(stdin) = child.stdin.as_mut() {
-                use std::io::Write;
-                stdin.write_all(b"yes\n")?;
-            }
-
-            child.wait()?;
-        } else {
-            // Fallback to direct method
-            self.remove_from_applications()?;
-            self.remove_karabiner_config()?;
-        }
-
-        Ok(())
-    }
-    
-    /// Remove HookAnchor from Applications folder
-    fn remove_from_applications(&self) -> Result<(), Box<dyn std::error::Error>> {
-        let app_path = Path::new("/Applications/HookAnchor.app");
-        
-        if app_path.exists() {
-            fs::remove_dir_all(app_path)?;
-        }
-        
-        Ok(())
-    }
-    
     /// Remove Karabiner configuration for HookAnchor
     pub fn remove_karabiner_config(&self) -> Result<(), Box<dyn std::error::Error>> {
         let karabiner_dir = dirs::home_dir()
@@ -658,9 +649,9 @@ impl SetupAssistant {
             .join("karabiner")
             .join("assets")
             .join("complex_modifications");
-        
+
         let mod_path = karabiner_dir.join("hookanchor.json");
-        
+
         if mod_path.exists() {
             // Disable the modification first if CLI is available
             if Path::new(KARABINER_CLI_PATH).exists() {
@@ -669,14 +660,14 @@ impl SetupAssistant {
                     .output();
                 // Don't fail if this doesn't work - just continue
             }
-            
+
             // Remove the JSON file
             fs::remove_file(&mod_path)?;
         }
-        
+
         Ok(())
     }
-    
+
     /// Remove configuration directory (with user confirmation for data)
     #[allow(dead_code)]
     fn remove_config_directory(&self) -> Result<(), Box<dyn std::error::Error>> {

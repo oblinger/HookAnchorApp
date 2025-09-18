@@ -55,9 +55,13 @@ fn main() {
 fn launch_popup() {
     let exe_dir = env::current_exe()
         .ok()
+        .and_then(|p| {
+            // Resolve symlinks to get the actual binary location
+            std::fs::canonicalize(&p).ok().or(Some(p))
+        })
         .and_then(|p| p.parent().map(|p| p.to_path_buf()))
         .unwrap_or_else(|| PathBuf::from("."));
-    
+
     let popup_path = exe_dir.join("popup");
     
     // Launch popup as a separate process

@@ -3324,17 +3324,40 @@ impl eframe::App for AnchorSelector {
                             // Check if this is from the uninstall dialog (has the warning about Karabiner)
                             // by looking at the dialog title or content - for simplicity, assume OK from uninstall dialog
                             
-                            // Execute uninstall in background thread
+                            // Execute uninstall using the shell script
                             std::thread::spawn(|| {
-                                match crate::systems::setup_assistant::uninstall_hookanchor() {
-                                    Ok(()) => {
-                                        // Exit successfully - no stdout message
-                                        std::process::exit(0);
-                                    },
-                                    Err(_e) => {
-                                        // Show error dialog instead of stderr
-                                        // Since we're in a thread, we can't easily show dialog here
-                                        // Just exit with error code
+                                // Find the uninstall script in the config directory
+                                let config_dir = dirs::home_dir()
+                                    .map(|h| h.join(".config").join("hookanchor"))
+                                    .unwrap_or_else(|| std::path::PathBuf::from(".config/hookanchor"));
+                                let uninstall_script = config_dir.join("uninstall.sh");
+
+                                if uninstall_script.exists() {
+                                    match std::process::Command::new("bash")
+                                        .arg(&uninstall_script)
+                                        .spawn() {
+                                        Ok(_) => {
+                                            // Script launched successfully
+                                            std::process::exit(0);
+                                        },
+                                        Err(_e) => {
+                                            std::process::exit(1);
+                                        }
+                                    }
+                                } else {
+                                    // Fallback: try to find uninstall script in the same directory as the binary
+                                    let current_exe = std::env::current_exe().unwrap_or_else(|_| std::path::PathBuf::from("ha"));
+                                    let exe_dir = current_exe.parent().unwrap_or_else(|| std::path::Path::new("."));
+                                    let script_path = exe_dir.join("../scripts/uninstall.sh");
+
+                                    if script_path.exists() {
+                                        match std::process::Command::new("bash")
+                                            .arg(&script_path)
+                                            .spawn() {
+                                            Ok(_) => std::process::exit(0),
+                                            Err(_) => std::process::exit(1),
+                                        }
+                                    } else {
                                         std::process::exit(1);
                                     }
                                 }

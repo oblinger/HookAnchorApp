@@ -1,0 +1,12 @@
+#!/usr/bin/osascript
+
+tell application "Terminal"
+    activate
+    -- Get the path to this app's Resources folder
+    set appPath to (path to me as string)
+    set resourcesPath to appPath & "Contents:Resources:"
+    set posixResourcesPath to POSIX path of (resourcesPath as alias)
+
+    -- Run the uninstall script
+    do script "cd '" & posixResourcesPath & "' && ./uninstall.sh"
+end tell

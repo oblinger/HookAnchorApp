@@ -47,7 +47,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         NSLog("HookAnchor Supervisor: \(message)")
         
         // Append to anchor.log
-        let homeDir = FileManager.default.homeDirectoryForCurrentUser.path(percentEncoded: false)
+        let homeDir = FileManager.default.homeDirectoryForCurrentUser.path
         if !homeDir.isEmpty {
             let logPath = "\(homeDir)/.config/hookanchor/anchor.log"
             

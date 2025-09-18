@@ -1078,41 +1078,42 @@ fn run_process_status() {
     crate::utils::subprocess::show_process_status();
 }
 
-/// Run the setup assistant (install)
+/// Run the setup assistant (install) - Launch GUI installer
 fn run_install(args: &[String]) {
-    // Check if --force flag is present
-    let force = args.len() > 2 && args[2] == "--force";
-    
-    print("🔄 Running HookAnchor setup assistant...");
-    print("================================================");
+    // Check if --force flag is present for future use
+    let _force = args.len() > 2 && args[2] == "--force";
+
+    print("🚀 Launching HookAnchor GUI installer...");
     print("");
-    
-    if force {
-        print("⚠️  FORCE MODE: Will overwrite existing configuration files!");
-        print("   Backups will be created before overwriting.");
-        print("");
-    }
-    
-    // Run the setup assistant with appropriate force flag
-    match crate::systems::setup_assistant::SetupAssistant::new().run_setup(force) {
-        Ok(()) => {
-            print("");
-            print("✅ Installation completed successfully!");
-            print("");
-            print("Changes made:");
-            print("  - Karabiner configuration updated/reinstalled");
-            print("  - Configuration files validated");
-            print("  - Setup assistant completed");
-            print("");
-            print("You may need to:");
-            print("  1. Enable the HookAnchor rule in Karabiner-Elements preferences");
-            print("  2. Restart HookAnchor if currently running");
-        },
+
+    // Get the current executable path to find the installer_gui binary
+    match std::env::current_exe() {
+        Ok(exe_path) => {
+            // Resolve symlinks to get the actual binary location
+            let resolved_exe = std::fs::canonicalize(&exe_path).unwrap_or(exe_path);
+            let exe_dir = resolved_exe.parent().unwrap_or(std::path::Path::new("."));
+            let installer_path = exe_dir.join("installer_gui");
+
+            // Launch the GUI installer
+            match std::process::Command::new(&installer_path)
+                .spawn()
+            {
+                Ok(_) => {
+                    print("✅ GUI installer launched successfully!");
+                    print("   Complete the installation in the GUI window.");
+                }
+                Err(e) => {
+                    print(&format!("❌ Failed to launch GUI installer: {}", e));
+                    print("");
+                    print("Troubleshooting:");
+                    print(&format!("  - Make sure installer_gui binary exists at: {}", installer_path.display()));
+                    print("  - Try rebuilding with: cargo build --release");
+                    print("  - Check file permissions");
+                }
+            }
+        }
         Err(e) => {
-            print(&format!("❌ Installation failed: {}", e));
-            print("");
-            print("Please check the error message above and try again.");
-            std::process::exit(1);
+            print(&format!("❌ Could not determine executable path: {}", e));
         }
     }
 }

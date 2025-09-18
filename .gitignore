@@ -30,3 +30,6 @@ debug/
 # Old/archived files
 old/
 OLD/
+
+# Personal configuration files (too specific to user's system)
+config/commands.txt

@@ -52,13 +52,13 @@ pub fn initialize_config() -> Result<(), String> {
 
     let config_yaml_exists = config_dir.join("config.yaml").exists();
     let commands_txt_exists = config_dir.join("commands.txt").exists();
+    let config_js_exists = config_dir.join("config.js").exists();
 
     // If the essential config files created by the installer are missing, run first-time setup
-    // Note: config.js is user-created and not part of the installer, so we don't check for it
-    if !config_yaml_exists || !commands_txt_exists {
+    if !config_yaml_exists || !commands_txt_exists || !config_js_exists {
         crate::utils::log(&format!(
-            "CONFIG_INIT: Missing config files - running first-time setup (yaml:{}, txt:{})",
-            config_yaml_exists, commands_txt_exists
+            "CONFIG_INIT: Missing config files - running first-time setup (yaml:{}, txt:{}, js:{})",
+            config_yaml_exists, commands_txt_exists, config_js_exists
         ));
 
         println!("\n🚀 First-time setup detected - initializing HookAnchor configuration...");
@@ -69,14 +69,37 @@ pub fn initialize_config() -> Result<(), String> {
         if !commands_txt_exists {
             println!("   • commands.txt (command definitions)");
         }
+        if !config_js_exists {
+            println!("   • config.js (JavaScript functions)");
+        }
 
-        // Run the setup assistant in non-interactive mode for automatic installation
-        let setup_assistant = crate::systems::setup_assistant::SetupAssistant::new();
-        if let Err(e) = setup_assistant.run_setup(false) {
-            eprintln!("\n⚠️  Setup encountered issues: {}", e);
-            eprintln!("   You can re-run setup manually with: ha --install");
+        // Launch GUI installer for automatic installation
+        println!("   Launching GUI installer...");
+
+        // Find the installer_gui binary in the same directory as the current executable
+        let current_exe = std::env::current_exe().unwrap_or_else(|_| std::path::PathBuf::from("ha"));
+
+        // Resolve symlinks to get the actual binary location
+        let resolved_exe = std::fs::canonicalize(&current_exe).unwrap_or(current_exe);
+        let exe_dir = resolved_exe.parent().unwrap_or_else(|| std::path::Path::new("."));
+        let installer_path = exe_dir.join("installer_gui");
+
+        if installer_path.exists() {
+            match std::process::Command::new(&installer_path)
+                .spawn() {
+                Ok(_) => {
+                    println!("   GUI installer launched successfully");
+                    println!("   Please complete the setup and restart HookAnchor");
+                    std::process::exit(0); // Exit to let user complete setup
+                },
+                Err(e) => {
+                    eprintln!("\n⚠️  Failed to launch GUI installer: {}", e);
+                    eprintln!("   You can run setup manually with: ha --install");
+                }
+            }
         } else {
-            println!("\n✅ Initial configuration files created successfully!");
+            eprintln!("\n⚠️  GUI installer not found at: {}", installer_path.display());
+            eprintln!("   You can run setup manually with: ha --install");
         }
     }
 

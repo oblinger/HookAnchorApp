@@ -1,6 +1,6 @@
 [package]
 name = "hookanchor"
-version = "0.13.0"
+version = "0.13.1"
 edition = "2021"
 build = "build.rs"
 
@@ -17,6 +17,11 @@ path = "src/main.rs"
 [[bin]]
 name = "popup"
 path = "src/popup_launcher.rs"
+
+# GUI installer binary
+[[bin]]
+name = "installer_gui"
+path = "src/installer_gui.rs"
 
 # URL Handler binary (deprecated - moved to url_handler.rs.bak)
 # Functionality has been moved to ha binary with --hook flag

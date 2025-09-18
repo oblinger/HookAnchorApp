@@ -51,7 +51,6 @@ pub use obsidian::{
 
 // Setup assistant - first run configuration
 pub use setup_assistant::{
-    check_and_run_setup, uninstall_hookanchor,
     SetupAssistant
 };
 

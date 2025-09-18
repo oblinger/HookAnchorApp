@@ -68,3 +68,32 @@
 - **Any attempt to handle URLs via command line argument checking will fail**
 - **URL handling must be implemented in the GUI application using Apple Event handlers**
 - This is why wrapper scripts and Info.plist CFBundleExecutable changes don't work for URL handling
+
+## "Let's Discuss" Rule
+
+**ABSOLUTE RULE: When the user says "let's discuss" - STOP and DISCUSS ONLY**
+
+### If the user starts with "let's discuss":
+- **DO NOT** write code
+- **DO NOT** create/modify files
+- **DO NOT** change configurations
+- **DO NOT** implement anything
+
+### You CAN and SHOULD:
+- Search/read existing code (gathering information)
+- Present options with pros/cons
+- Propose alternatives
+- Analyze the problem
+- React to ideas
+- Ask clarifying questions
+
+### Wait for explicit permission like:
+- "Go ahead and implement option 2"
+- "Please proceed with..."
+- "Let's do that"
+- Any clear implementation request
+
+### Example:
+User: "Let's discuss how to handle uninstall when the app is broken"
+❌ BAD: Creating uninstall.sh...
+✅ GOOD: Here are several approaches we could take: [options]
