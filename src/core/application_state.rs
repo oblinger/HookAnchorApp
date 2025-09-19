@@ -115,8 +115,8 @@ impl ApplicationState {
         // This functionality has been removed along with the rewrite action type
     }
     
-    /// Get display commands with submenu information
-    /// Returns (commands_to_display, is_in_submenu, menu_prefix, inside_count)
+    /// Get display commands with prefix menu information
+    /// Returns (commands_to_display, is_in_prefix_menu, menu_prefix, inside_count)
     pub fn get_display_commands(&self) -> (Vec<Command>, bool, Option<String>, usize) {
         // Legacy ApplicationState is not used - return simple response
         (self.filtered_commands.clone(), false, None, 0)

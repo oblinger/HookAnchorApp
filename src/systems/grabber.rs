@@ -10,6 +10,7 @@ use crate::core::Command;
 use crate::core::Config;
 use crate::execute::{get_action, get_default_patch_for_action};
 use rquickjs::{Runtime, Context, Value};
+use regex::Regex;
 
 /// Information captured about the active application
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -38,6 +39,35 @@ pub struct GrabberRule {
     /// Optional group for the created command (stored as patch in Command)
     #[serde(alias = "group")]
     pub patch: Option<String>,
+}
+
+/// Apply suffix mapping to a grabbed argument based on config patterns
+/// Returns (original_arg, detected_suffix) - arg is NOT modified, only suffix is detected
+fn apply_suffix_mapping(arg: &str, config: &Config) -> (String, Option<String>) {
+    crate::utils::detailed_log("GRABBER", &format!("Applying suffix mapping to: '{}'", arg));
+
+    if let Some(suffix_map) = config.grabber_suffix_map.as_ref() {
+        crate::utils::detailed_log("GRABBER", &format!("Found {} suffix patterns to check", suffix_map.len()));
+        for (suffix, pattern) in suffix_map.iter() {
+            crate::utils::detailed_log("GRABBER", &format!("Testing pattern '{}' for suffix '{}'", pattern, suffix));
+            if let Ok(regex) = Regex::new(pattern) {
+                if regex.is_match(arg) {
+                    crate::utils::detailed_log("GRABBER", &format!("Suffix match: '{}' -> detected suffix '{}' (arg unchanged)", pattern, suffix));
+                    return (arg.to_string(), Some(suffix.clone()));
+                } else {
+                    crate::utils::detailed_log("GRABBER", &format!("Pattern '{}' did not match", pattern));
+                }
+            } else {
+                crate::utils::detailed_log("GRABBER", &format!("Invalid regex pattern for suffix '{}': {}", suffix, pattern));
+            }
+        }
+    } else {
+        crate::utils::detailed_log("GRABBER", "No grabber_suffix_map found in config");
+    }
+
+    // No suffix matched, return original
+    crate::utils::detailed_log("GRABBER", "No suffix patterns matched, returning original arg");
+    (arg.to_string(), None)
 }
 
 /// Captures information about the currently focused application
@@ -114,6 +144,17 @@ fn get_browser_info(bundle_id: &str) -> Option<String> {
                 end tell
             "#)
         },
+        "com.google.Chrome.beta" => {
+            Some(r#"
+                tell application "Google Chrome Beta"
+                    if (count of windows) > 0 then
+                        return URL of active tab of window 1
+                    else
+                        return ""
+                    end if
+                end tell
+            "#)
+        },
         "com.apple.Safari" => {
             Some(r#"
                 tell application "Safari"
@@ -169,27 +210,78 @@ fn get_browser_info(bundle_id: &str) -> Option<String> {
 
 /// Get Obsidian active file URL by triggering copy URL shortcut
 fn get_obsidian_url() -> Option<String> {
-    crate::utils::detailed_log("GRAB", "Getting Obsidian URL (includes 300ms clipboard delay)");
-    
+    crate::utils::detailed_log("GRAB", "Getting Obsidian URL via command palette (Cmd+P)");
+    crate::utils::detailed_log("GRAB", "🔥 NEW CODE VERSION - Improved error handling active");
+
+    // First, save the current clipboard content
+    let original_clipboard = ProcessCommand::new("osascript")
+        .arg("-e")
+        .arg("get the clipboard as string")
+        .output()
+        .ok()
+        .and_then(|o| String::from_utf8(o.stdout).ok())
+        .unwrap_or_default();
+
     let script = r#"
-        -- Trigger Obsidian's copy URL shortcut (Cmd+Ctrl+Option+F5)
+        -- Clear clipboard first to detect if command succeeded
+        set the clipboard to ""
+
+        -- Open Obsidian command palette with Cmd+P
         tell application "System Events"
-            key code 101 using {command down, control down, option down}
+            tell process "Obsidian"
+                key code 35 using {command down}  -- Cmd+P
+            end tell
         end tell
-        
-        -- Wait for clipboard to update (reduced from 1.0s)
+
+        -- Wait for command palette to fully open
+        delay 0.4
+
+        -- Clear the palette first (in case something was typed before)
+        tell application "System Events"
+            tell process "Obsidian"
+                key code 51  -- Delete key
+                key code 51  -- Delete key again
+                keystroke "a" using {command down}  -- Select all
+                key code 51  -- Delete
+            end tell
+        end tell
+
+        -- Type the command to copy Obsidian URL
+        tell application "System Events"
+            tell process "Obsidian"
+                keystroke "copy obsidian url"
+            end tell
+        end tell
+
+        -- Small delay for autocomplete
         delay 0.3
-        
+
+        -- Press Enter to execute the command
+        tell application "System Events"
+            tell process "Obsidian"
+                key code 36  -- Enter key
+            end tell
+        end tell
+
+        -- Wait for clipboard to update
+        delay 0.5
+
         -- Get clipboard content
         try
-            set clipboardContent to (the clipboard)
+            set clipboardContent to (the clipboard as string)
             if clipboardContent starts with "obsidian://" then
                 return clipboardContent
             else
+                -- If no URL, maybe try pressing Escape to close palette
+                tell application "System Events"
+                    tell process "Obsidian"
+                        key code 53  -- Escape key
+                    end tell
+                end tell
                 return ""
             end if
-        on error
-            return ""
+        on error errMsg
+            return "ERROR: " & errMsg
         end try
     "#;
     
@@ -198,14 +290,27 @@ fn get_obsidian_url() -> Option<String> {
         .arg(script)
         .output()
     {
+        let result = String::from_utf8_lossy(&output.stdout).trim().to_string();
+
         if output.status.success() {
-            let url = String::from_utf8_lossy(&output.stdout).trim().to_string();
-            if !url.is_empty() && url.starts_with("obsidian://") {
-                return Some(url);
+            if result.starts_with("obsidian://") {
+                crate::utils::detailed_log("GRAB", &format!("Successfully got Obsidian URL: {}", result));
+                return Some(result);
+            } else if result.starts_with("ERROR:") {
+                crate::utils::detailed_log("GRAB", &format!("AppleScript error: {}", result));
+            } else if result.is_empty() {
+                crate::utils::detailed_log("GRAB", "No Obsidian URL found in clipboard (command may have failed)");
+            } else {
+                crate::utils::detailed_log("GRAB", &format!("Unexpected clipboard content: {}", result));
             }
+        } else {
+            let error = String::from_utf8_lossy(&output.stderr);
+            crate::utils::detailed_log("GRAB", &format!("AppleScript execution failed: {}", error));
         }
+    } else {
+        crate::utils::detailed_log("GRAB", "Failed to execute AppleScript");
     }
-    
+
     None
 }
 
@@ -550,7 +655,7 @@ fn enrich_context(mut context: AppContext) -> AppContext {
 fn match_grabber_rules(
     context: &AppContext,
     rules: &[GrabberRule],
-    _config: &Config,
+    config: &Config,
 ) -> Option<(String, Command)> {
     if rules.is_empty() {
         crate::utils::detailed_log("GRABBER", "No grabber rules configured");
@@ -600,14 +705,20 @@ fn match_grabber_rules(
                             crate::utils::detailed_log("GRABBER_MATCH", &format!("Argument length: {}", arg.len()));
                             crate::utils::detailed_log("GRABBER_MATCH", &format!("Rule action: '{}'", rule.action));
                             crate::utils::detailed_log("GRABBER_MATCH", &format!("Rule patch: '{:?}'", rule.patch));
-                            
+
+                            // Apply suffix mapping to the argument
+                            let (_, detected_suffix) = apply_suffix_mapping(&arg, config);
+                            if let Some(ref suffix) = detected_suffix {
+                                crate::utils::detailed_log("GRABBER_MATCH", &format!("Detected suffix '{}' for arg '{}'", suffix, arg));
+                            }
+
                             // Rule matched and returned a string argument
                             let mut command = Command {
                                 patch: rule.patch.clone().unwrap_or_default(),
                                 command: String::new(), // Will be filled by user
                                 action: rule.action.clone(),
                                 arg: arg.clone(),
-                                flags: String::new(),
+                                flags: detected_suffix.unwrap_or_default(), // Store suffix in flags field temporarily
                             };
                             
                             crate::utils::detailed_log("GRABBER_MATCH", &format!("Created command: action='{}', arg='{}'", command.action, command.arg));
@@ -643,13 +754,19 @@ fn match_grabber_rules(
                         
                         if let Some(action) = action {
                             crate::utils::detailed_log("GRABBER", &format!("  action: '{}', arg: '{}', patch: '{}'", action, arg, group));
-                            
+
+                            // Apply suffix mapping to the argument
+                            let (_, detected_suffix) = apply_suffix_mapping(&arg, config);
+                            if let Some(ref suffix) = detected_suffix {
+                                crate::utils::detailed_log("GRABBER_MATCH", &format!("Detected suffix '{}' for arg '{}'", suffix, arg));
+                            }
+
                             let mut command = Command {
                                 patch: group,
                                 command: String::new(), // Will be filled by user
                                 action,
-                                arg,
-                                flags: String::new(),
+                                arg: arg.clone(),
+                                flags: detected_suffix.unwrap_or_default(), // Store suffix in flags field temporarily
                             };
                             
                             // Apply patch inference if no explicit patch was set

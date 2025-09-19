@@ -35,6 +35,7 @@ pub fn run_command_line_mode(args: Vec<String>) {
         "--hook" => handle_hook_option(&args),
         "--user-info" => print_user_info(),
         "--test-grabber" => run_test_grabber(),
+        "--test-permissions" => run_test_permissions(),
         "--grab" => run_grab_command(&args),
         "--infer" => run_infer_patches(&args),
         "--infer-all" => run_infer_all_patches(&args),
@@ -75,6 +76,7 @@ pub fn print_help(program_name: &str) {
     print(&format!("  {} --rescan                 # Rescan filesystem with verbose output", program_name));
     print(&format!("  {} --rebuild                # Rebuild: restart server and rescan filesystem", program_name));
     print(&format!("  {} --test-grabber           # Test grabber functionality", program_name));
+    print(&format!("  {} --test-permissions       # Test accessibility permissions", program_name));
     print(&format!("  {} --grab [delay]           # Grab active app after delay", program_name));
     print(&format!("  {} --start-server           # Force restart command server", program_name));
     print(&format!("  {} --restart                # Kill and restart command server in new Terminal", program_name));
@@ -161,13 +163,13 @@ fn run_match_command(args: &[String]) {
     let filtered = if debug {
         filter_commands(&sys_data.commands, query, 10, debug)  // Keep debug mode using original function
     } else {
-        // Use new display logic that handles submenu filtering correctly
-        let (display_commands, _is_submenu, _submenu_info, _submenu_count) = 
+        // Use new display logic that handles prefix menu filtering correctly
+        let (display_commands, _is_prefix_menu, _prefix_menu_info, _prefix_menu_count) =
             crate::core::get_new_display_commands(query, &sys_data.commands, &sys_data.patches);
         display_commands
     };
-    
-    // Print first 50 matches to see submenu results
+
+    // Print first 50 matches to see prefix menu results
     for cmd in filtered.iter().take(50) {
         print(&format!("{}", cmd.command));
     }
@@ -678,6 +680,48 @@ fn run_test_grabber() {
     }
     
     print("\nGrabber test completed successfully!");
+}
+
+/// Test accessibility permissions for HookAnchor
+fn run_test_permissions() {
+    print("Testing Accessibility Permissions");
+    print("==================================");
+    print("Checking if HookAnchor has the required accessibility permissions...");
+    print("");
+
+    match crate::systems::setup_assistant::SetupAssistant::test_accessibility_permissions() {
+        Ok(true) => {
+            print("✅ SUCCESS: Accessibility permissions are granted!");
+            print("HookAnchor can capture app context and send keystrokes.");
+            print("");
+            print("This means:");
+            print("• Obsidian URL capture should work");
+            print("• Notion URL capture should work");
+            print("• Window title detection works");
+            print("• Grabber functionality is fully operational");
+        }
+        Ok(false) => {
+            print("❌ FAILED: Accessibility permissions are missing!");
+            print("");
+            print("This explains why:");
+            print("• Obsidian grabber defaults to generic app capture");
+            print("• Notion URL capture fails");
+            print("• Some grabber features don't work");
+            print("");
+            print("To fix this, run:");
+            print("  ha --install");
+            print("");
+            print("Or manually:");
+            print("1. Open System Preferences → Security & Privacy → Privacy → Accessibility");
+            print("2. Click the lock and enter your password");
+            print("3. Add Terminal (or your current app) to the allowed list");
+            print("4. Test again with: ha --test-permissions");
+        }
+        Err(e) => {
+            print(&format!("❌ ERROR: Could not test permissions: {}", e));
+            print("This might indicate a system configuration issue.");
+        }
+    }
 }
 
 /// Run grab command to capture active app and output result

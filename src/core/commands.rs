@@ -39,7 +39,7 @@ pub struct Patch {
     /// List of anchor commands for this patch (first one is the preferred/primary anchor)
     pub anchor_commands: Vec<Command>,
     /// Commands with the 'I' (include) flag that have this patch
-    /// These commands' folders will be included in the submenu
+    /// These commands' folders will be included in the prefix menu
     pub include_commands: Vec<Command>,
 }
 

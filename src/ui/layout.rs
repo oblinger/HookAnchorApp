@@ -13,8 +13,8 @@ pub struct DisplayLayout {
     pub commands: Vec<Command>,
     /// Visual arrangement information
     pub arrangement: LayoutArrangement,
-    /// Submenu information if in submenu mode
-    pub submenu_info: Option<SubmenuInfo>,
+    /// Prefix menu information if in prefix menu mode
+    pub prefix_menu_info: Option<PrefixMenuInfo>,
 }
 
 /// Different ways commands can be visually arranged
@@ -29,9 +29,9 @@ pub enum LayoutArrangement {
     },
 }
 
-/// Information about submenu display
+/// Information about prefix menu display
 #[derive(Debug, Clone)]
-pub struct SubmenuInfo {
+pub struct PrefixMenuInfo {
     pub prefix: String,
     pub inside_count: usize,
     pub separator_index: Option<usize>,
@@ -59,12 +59,12 @@ impl DisplayLayout {
     /// Create a new display layout from filtered commands
     pub fn new(commands: Vec<Command>, config: &Config) -> Self {
         let arrangement = Self::calculate_arrangement(&commands, config);
-        let submenu_info = Self::detect_submenu(&commands);
-        
+        let prefix_menu_info = Self::detect_prefix_menu(&commands);
+
         DisplayLayout {
             commands,
             arrangement,
-            submenu_info,
+            prefix_menu_info,
         }
     }
     
@@ -87,12 +87,12 @@ impl DisplayLayout {
         }
     }
     
-    /// Detect if we're in submenu mode and extract info
-    fn detect_submenu(commands: &[Command]) -> Option<SubmenuInfo> {
+    /// Detect if we're in prefix menu mode and extract info
+    fn detect_prefix_menu(commands: &[Command]) -> Option<PrefixMenuInfo> {
         // Look for separator command
         if let Some(separator_index) = commands.iter().position(|cmd| cmd.action == "separator") {
-            Some(SubmenuInfo {
-                prefix: "submenu".to_string(), // Could be extracted from commands
+            Some(PrefixMenuInfo {
+                prefix: "prefix menu".to_string(), // Could be extracted from commands
                 inside_count: separator_index,
                 separator_index: Some(separator_index),
             })

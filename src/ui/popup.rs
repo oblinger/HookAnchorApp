@@ -777,7 +777,7 @@ impl AnchorSelector {
         let mut input_text = self.popup_state.search_text.clone();
         
         // If we're in submenu mode, transform input to use expanded alias
-        if let Some((original_command, resolved_command)) = self.popup_state.get_submenu_command_info() {
+        if let Some((original_command, resolved_command)) = self.popup_state.get_prefix_menu_command_info() {
             // Replace the alias prefix with the expanded prefix
             let original_name = &original_command.command;
             let resolved_name = &resolved_command.command;
@@ -986,7 +986,7 @@ impl AnchorSelector {
         let mut input = self.popup_state.search_text.clone();
         
         // If we're in submenu mode, transform input to use expanded alias
-        if let Some((original_command, resolved_command)) = self.popup_state.get_submenu_command_info() {
+        if let Some((original_command, resolved_command)) = self.popup_state.get_prefix_menu_command_info() {
             // Replace the alias prefix with the expanded prefix
             let original_name = &original_command.command;
             let resolved_name = &resolved_command.command;
@@ -1190,7 +1190,7 @@ impl AnchorSelector {
         crate::utils::detailed_log("HIERARCHY", "Navigating up hierarchy");
         
         // Check if we're currently in a submenu
-        if let Some((_original_command, resolved_command)) = self.popup_state.get_submenu_command_info() {
+        if let Some((_original_command, resolved_command)) = self.popup_state.get_prefix_menu_command_info() {
             // We're in a submenu - get the current patch from the anchor name
             let anchor_name = &resolved_command.command;
             let current_patch_key = anchor_name.to_lowercase();
@@ -1778,6 +1778,14 @@ impl AnchorSelector {
                             context.add_variable("grabbed_action".to_string(), command.action.clone());
                             context.add_variable("grabbed_arg".to_string(), command.arg.clone());
                             context.add_variable("grabbed_rule".to_string(), rule_name.clone());
+
+                            // Add suffix from command.flags with leading space if not empty
+                            let grabbed_suffix = if command.flags.is_empty() {
+                                String::new()
+                            } else {
+                                format!(" {}", command.flags)
+                            };
+                            context.add_variable("grabbed_suffix".to_string(), grabbed_suffix);
                             
                             // Process the template with grabbed context
                             let config = crate::core::sys_data::get_config();
@@ -1885,6 +1893,7 @@ impl AnchorSelector {
                             context.add_variable("grabbed_action".to_string(), "app".to_string());
                             context.add_variable("grabbed_arg".to_string(), grab_context.app_name.clone());
                             context.add_variable("grabbed_rule".to_string(), "NoRuleMatched".to_string());
+                            context.add_variable("grabbed_suffix".to_string(), String::new());
                             
                             // Process the template
                             let config = crate::core::sys_data::get_config();
@@ -3081,7 +3090,7 @@ impl AnchorSelector {
     /// Returns a string like "FOO > BAR > BAZ > CMD" 
     fn get_patch_path_display(&self, command_name: &str) -> String {
         // If we have submenu info, use that for more accurate breadcrumbs
-        if let Some((_, resolved_command)) = self.popup_state.get_submenu_command_info() {
+        if let Some((_, resolved_command)) = self.popup_state.get_prefix_menu_command_info() {
             let (sys_data, _) = crate::core::sys_data::get_sys_data();
             let path = get_patch_path(&resolved_command.command, &sys_data.patches);
             
@@ -3590,8 +3599,7 @@ impl eframe::App for AnchorSelector {
                 // Update input field with the renamed command name for symmetric feedback
                 // This ensures that after closing the editor, the input field shows the command that was just saved/renamed
                 crate::utils::log(&format!("RENAME_FEEDBACK: Setting input field to renamed command: '{}'", saved_command.command));
-                self.popup_state.search_text = saved_command.command.clone();
-                self.popup_state.update_search(saved_command.command.clone());
+                self.set_input(saved_command.command.clone());
                 
                 self.close_command_editor();
                 command_editor_just_closed = true;
@@ -4001,7 +4009,7 @@ impl eframe::App for AnchorSelector {
                                         // Determine display text based on submenu mode and position
                                         let display_text = if is_submenu && !is_separator && i < inside_count {
                                             // This is an inside menu command - apply trimming logic using original command name
-                                            if let Some((original_command, _resolved_command)) = self.popup_state.get_submenu_command_info() {
+                                            if let Some((original_command, _resolved_command)) = self.popup_state.get_prefix_menu_command_info() {
                                                 let original_prefix = &original_command.command;
                                                 
                                                 // Check if this command should have its prefix trimmed
@@ -4115,7 +4123,7 @@ impl eframe::App for AnchorSelector {
                                 // Determine display text based on submenu mode and position
                                 let display_text = if is_submenu && i < inside_count {
                                     // This is an inside menu command - apply trimming logic using original command name
-                                    if let Some((original_command, _resolved_command)) = self.popup_state.get_submenu_command_info() {
+                                    if let Some((original_command, _resolved_command)) = self.popup_state.get_prefix_menu_command_info() {
                                         let original_prefix = &original_command.command;
                                         
                                         // Check if this command should have its prefix trimmed

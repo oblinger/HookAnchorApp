@@ -318,7 +318,8 @@ impl TemplateContext {
         context.push_str(&format!("  arg: {:?},\n", self.variables.get("grabbed_arg").unwrap_or(&String::new())));
         context.push_str(&format!("  app: {:?},\n", self.variables.get("grabbed_app").unwrap_or(&String::new())));
         context.push_str(&format!("  title: {:?},\n", self.variables.get("grabbed_title").unwrap_or(&String::new())));
-        context.push_str(&format!("  text: {:?}\n", self.variables.get("grabbed_text").unwrap_or(&String::new())));
+        context.push_str(&format!("  text: {:?},\n", self.variables.get("grabbed_text").unwrap_or(&String::new())));
+        context.push_str(&format!("  suffix: {:?}\n", self.variables.get("grabbed_suffix").unwrap_or(&String::new())));
         context.push_str("};\n");
         
         // Create env object

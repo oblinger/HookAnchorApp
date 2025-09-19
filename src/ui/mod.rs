@@ -21,7 +21,7 @@ mod helpers;  // Only used within UI module
 
 // Layout and display types
 pub use layout::{
-    DisplayLayout, LayoutArrangement, Selection, Direction, SubmenuInfo
+    DisplayLayout, LayoutArrangement, Selection, Direction, PrefixMenuInfo
 };
 
 // Popup state management

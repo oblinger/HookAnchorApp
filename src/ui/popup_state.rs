@@ -24,12 +24,12 @@ pub struct PopupState {
     pub config: Config,
     /// Persistent application state
     pub app_state: AppState,
-    /// Whether we're currently in submenu mode
-    pub is_in_submenu: bool,
-    /// Submenu information: (original_command, resolved_command) 
-    pub submenu_info: Option<(Command, Command)>,
-    /// Number of commands in the submenu (before separator)
-    pub submenu_count: usize,
+    /// Whether we're currently in prefix menu mode
+    pub is_in_prefix_menu: bool,
+    /// Prefix menu information: (original_command, resolved_command)
+    pub prefix_menu_info: Option<(Command, Command)>,
+    /// Number of commands in the prefix menu (before separator)
+    pub prefix_menu_count: usize,
 }
 
 impl PopupState {
@@ -47,9 +47,9 @@ impl PopupState {
             selection,
             config,
             app_state,
-            is_in_submenu: false,
-            submenu_info: None,
-            submenu_count: 0,
+            is_in_prefix_menu: false,
+            prefix_menu_info: None,
+            prefix_menu_count: 0,
         }
     }
     
@@ -70,9 +70,9 @@ impl PopupState {
             selection,
             config,
             app_state,
-            is_in_submenu: false,
-            submenu_info: None,
-            submenu_count: 0,
+            is_in_prefix_menu: false,
+            prefix_menu_info: None,
+            prefix_menu_count: 0,
         }
     }
     
@@ -165,9 +165,9 @@ impl PopupState {
         cmd.action != "separator"
     }
     
-    /// Get submenu information if in submenu mode
-    pub fn get_submenu_info(&self) -> Option<&crate::ui::layout::SubmenuInfo> {
-        self.display_layout.submenu_info.as_ref()
+    /// Get prefix menu information if in prefix menu mode
+    pub fn get_prefix_menu_info(&self) -> Option<&crate::ui::layout::PrefixMenuInfo> {
+        self.display_layout.prefix_menu_info.as_ref()
     }
     
     /// Get display commands for rendering (excludes separators, handles columns)
@@ -185,20 +185,20 @@ impl PopupState {
         if was_reloaded {
             crate::utils::detailed_log("POPUP_REFRESH", "Commands were reloaded - rebuilding search results");
         }
-        let (display_commands, is_submenu, submenu_info, submenu_count) = 
+        let (display_commands, is_prefix_menu, prefix_menu_info, prefix_menu_count) =
             get_new_display_commands(&self.search_text, &sys_data.commands, &sys_data.patches);
-        
+
         // Apply max limit
         let total_limit = self.config.popup_settings.max_rows * self.config.popup_settings.max_columns;
         let mut limited_commands = display_commands;
         limited_commands.truncate(total_limit);
-        
+
         self.filtered_commands = limited_commands;
-        
-        // Store submenu information for get_display_commands
-        self.is_in_submenu = is_submenu;
-        self.submenu_info = submenu_info;
-        self.submenu_count = submenu_count;
+
+        // Store prefix menu information for get_display_commands
+        self.is_in_prefix_menu = is_prefix_menu;
+        self.prefix_menu_info = prefix_menu_info;
+        self.prefix_menu_count = prefix_menu_count;
         
         // Return whether we reloaded
         was_reloaded
@@ -256,28 +256,28 @@ impl PopupState {
         // This functionality has been removed along with the rewrite action type
     }
     
-    /// Get display commands with submenu information
-    /// Returns (commands_to_display, is_in_submenu, menu_prefix, inside_count)
+    /// Get display commands with prefix menu information
+    /// Returns (commands_to_display, is_in_prefix_menu, menu_prefix, inside_count)
     pub fn get_display_commands(&self) -> (Vec<Command>, bool, Option<String>, usize) {
-        if self.is_in_submenu {
+        if self.is_in_prefix_menu {
             // Extract the resolved command name for the menu prefix
-            let menu_prefix = if let Some((_, resolved_command)) = &self.submenu_info {
+            let menu_prefix = if let Some((_, resolved_command)) = &self.prefix_menu_info {
                 Some(resolved_command.command.clone())
             } else {
                 None
             };
-            
-            (self.filtered_commands.clone(), true, menu_prefix, self.submenu_count)
+
+            (self.filtered_commands.clone(), true, menu_prefix, self.prefix_menu_count)
         } else {
             (self.filtered_commands.clone(), false, None, 0)
         }
     }
     
-    /// Get submenu information for breadcrumb display and prefix trimming
-    /// Returns (original_command, resolved_command) if in submenu mode
-    pub fn get_submenu_command_info(&self) -> Option<&(Command, Command)> {
-        if self.is_in_submenu {
-            self.submenu_info.as_ref()
+    /// Get prefix menu information for breadcrumb display and prefix trimming
+    /// Returns (original_command, resolved_command) if in prefix menu mode
+    pub fn get_prefix_menu_command_info(&self) -> Option<&(Command, Command)> {
+        if self.is_in_prefix_menu {
+            self.prefix_menu_info.as_ref()
         } else {
             None
         }

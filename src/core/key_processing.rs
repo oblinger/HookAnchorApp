@@ -497,7 +497,7 @@ pub trait PopupInterface {
     /// Navigate up hierarchy to parent patch
     fn navigate_up_hierarchy(&mut self);
     
-    /// Navigate down hierarchy into selected anchor submenu
+    /// Navigate down hierarchy into selected anchor prefix menu
     fn navigate_down_hierarchy(&mut self);
 
     /// Set input text and position cursor at the end
@@ -855,7 +855,7 @@ pub enum Action {
     TemplateCreate,
     ActivateTmux, // Renamed from ActivateAnchor
     NavigateUpHierarchy,  // Square bracket left - go to parent patch
-    NavigateDownHierarchy, // Square bracket right - enter selected anchor submenu
+    NavigateDownHierarchy, // Square bracket right - enter selected anchor prefix menu
 }
 
 impl ActionHandler {
@@ -877,7 +877,7 @@ impl ActionHandler {
             Action::TemplateCreate => "Create template",
             Action::ActivateTmux => "Activate TMUX session for selected command",
             Action::NavigateUpHierarchy => "Navigate up to parent patch",
-            Action::NavigateDownHierarchy => "Navigate into selected anchor submenu",
+            Action::NavigateDownHierarchy => "Navigate into selected anchor prefix menu",
         }.to_string();
         
         Self { action, description }
