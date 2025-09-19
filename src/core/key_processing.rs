@@ -499,6 +499,9 @@ pub trait PopupInterface {
     
     /// Navigate down hierarchy into selected anchor submenu
     fn navigate_down_hierarchy(&mut self);
+
+    /// Set input text and position cursor at the end
+    fn set_input(&mut self, text: String);
 }
 
 /// Registry for key event handlers

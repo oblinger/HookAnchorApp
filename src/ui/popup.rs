@@ -61,6 +61,8 @@ pub struct AnchorSelector {
     focus_set: bool,
     /// Request focus on next frame
     request_focus: bool,
+    /// Request cursor position at end of text on next frame
+    request_cursor_at_end: bool,
     /// Frame counter to track how many frames have passed since startup
     frame_count: u32,
     /// Track if window activation has been attempted
@@ -603,6 +605,15 @@ impl PopupInterface for AnchorSelector {
     
     fn navigate_down_hierarchy(&mut self) {
         self.handle_navigate_down_hierarchy_impl();
+    }
+
+    fn set_input(&mut self, text: String) {
+        crate::utils::log(&format!("SET_INPUT_DEBUG: Called with text: '{}' (length: {})", text, text.len()));
+        self.popup_state.update_search(text.clone());
+        // Request focus and cursor positioning at the end
+        self.request_focus = true;
+        self.request_cursor_at_end = true;
+        crate::utils::log(&format!("SET_INPUT_DEBUG: Set request_focus=true, request_cursor_at_end=true for text: '{}'", text));
     }
 }
 
@@ -1319,6 +1330,7 @@ impl AnchorSelector {
             countdown_last_update: None,
             focus_set: false,
             request_focus: false,
+            request_cursor_at_end: false,
             frame_count: 0,
             window_activated: false,
             config_error: None,
@@ -1540,7 +1552,12 @@ impl AnchorSelector {
 
         // Mark commands as modified to trigger automatic reload
         crate::core::mark_commands_modified();
-        
+
+        // Update input field with the renamed command name for symmetric feedback
+        // This ensures that after the rename dialog, the input field shows the command that was just renamed
+        crate::utils::log(&format!("RENAME_FEEDBACK: Setting input field to renamed command: '{}'", new_name));
+        self.set_input(new_name.to_string());
+
         crate::utils::log(&format!("RENAME: Successfully renamed '{}' to '{}' with side effects and UI update", old_name, new_name));
         Ok(())
     }
@@ -3683,27 +3700,62 @@ impl eframe::App for AnchorSelector {
                     style.visuals.widgets.active.rounding = egui::Rounding::same(6.0);
                     ui.set_style(style);
                     
-                    if self.loading_state == LoadingState::Loaded {
-                        // Normal operation - edit popup state directly
-                        ui.add_enabled(
-                            !self.command_editor.visible && self.grabber_countdown.is_none(),
-                            egui::TextEdit::singleline(&mut self.popup_state.search_text)
-                                .desired_width(ui.available_width())
-                                .hint_text(hint_text)
-                                .font(font_id)
-                        )
+                    // Get text length before creating TextEdit to avoid borrowing conflicts
+                    let text_len = if self.loading_state == LoadingState::Loaded {
+                        self.popup_state.search_text.len()
                     } else {
-                        // Still loading - edit the buffer instead
-                        ui.add_enabled(
-                            !self.command_editor.visible && self.grabber_countdown.is_none(),
-                            egui::TextEdit::singleline(&mut self.pre_init_input_buffer)
-                                .desired_width(ui.available_width())
-                                .hint_text(hint_text)
-                                .font(font_id)
-                        )
+                        self.pre_init_input_buffer.len()
+                    };
+
+                    let mut text_edit = if self.loading_state == LoadingState::Loaded {
+                        egui::TextEdit::singleline(&mut self.popup_state.search_text)
+                            .desired_width(ui.available_width())
+                            .hint_text(hint_text)
+                            .font(font_id)
+                    } else {
+                        egui::TextEdit::singleline(&mut self.pre_init_input_buffer)
+                            .desired_width(ui.available_width())
+                            .hint_text(hint_text)
+                            .font(font_id)
+                    };
+
+                    let text_edit_response = ui.add_enabled(
+                        !self.command_editor.visible && self.grabber_countdown.is_none(),
+                        text_edit
+                    );
+
+                    // Handle cursor positioning AFTER rendering the TextEdit
+                    if self.request_cursor_at_end {
+                        crate::utils::log(&format!("CURSOR_DEBUG: About to manually set cursor at end for text length {}", text_len));
+
+                        if let Some(mut state) = egui::TextEdit::load_state(ui.ctx(), text_edit_response.id) {
+                            // Manually set cursor to end position
+                            let end_pos = egui::text::CCursor::new(text_len);
+                            state.cursor.set_char_range(Some(egui::text::CCursorRange::two(end_pos, end_pos)));
+                            state.store(ui.ctx(), text_edit_response.id);
+                            crate::utils::log(&format!("CURSOR_DEBUG: Manually set cursor to position {}", text_len));
+                        } else {
+                            crate::utils::log(&format!("CURSOR_DEBUG: Could not load TextEdit state to set cursor"));
+                        }
+
+                        self.request_cursor_at_end = false;
                     }
+
+                    // Check actual cursor position after our manual positioning
+                    if let Some(state) = egui::TextEdit::load_state(ui.ctx(), text_edit_response.id) {
+                        if let Some(cursor_range) = state.cursor.char_range() {
+                            crate::utils::log(&format!("CURSOR_DEBUG: Final cursor range: {:?} (text length: {})", cursor_range, text_len));
+                        } else {
+                            crate::utils::log(&format!("CURSOR_DEBUG: No cursor range available (text length: {})", text_len));
+                        }
+                    } else {
+                        crate::utils::log(&format!("CURSOR_DEBUG: No TextEdit state available (text length: {})", text_len));
+                    }
+
+                    text_edit_response
                 };
-                
+
+
                 // Check if Enter was pressed (checked before TextEdit could consume it)
                 if enter_pressed && response.has_focus() && !self.filtered_commands().is_empty() {
                     self.execute_selected_command();

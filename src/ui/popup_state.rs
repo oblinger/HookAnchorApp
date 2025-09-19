@@ -87,7 +87,24 @@ impl PopupState {
             crate::utils::detailed_log("POPUP_REFRESH", "Commands were reloaded - display fully refreshed");
         }
     }
-    
+
+    /// Get the current search text
+    pub fn search_text(&self) -> &str {
+        &self.search_text
+    }
+
+    /// Get mutable access to search text for UI binding only
+    /// WARNING: Direct changes bypass update_search logic
+    pub fn search_text_mut(&mut self) -> &mut String {
+        &mut self.search_text
+    }
+
+    /// Set search text during initialization without triggering updates
+    /// Used only during construction/initialization
+    pub fn set_search_text_during_init(&mut self, text: String) {
+        self.search_text = text;
+    }
+
     /// Check if commands were modified and refresh if needed
     pub fn check_for_reload(&mut self) -> bool {
         let was_reloaded = self.recompute_filtered_commands();

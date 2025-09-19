@@ -112,7 +112,7 @@ pub fn rename_associated_data(
                             if !new_path.exists() {
                                 let file_name = path.file_name().unwrap().to_string_lossy();
                                 let new_file = new_path.file_name().unwrap().to_string_lossy();
-                                actions.push(format!("Rename file: {} → {}", file_name, new_file));
+                                actions.push(format!("DOC -- Rename file: {} → {}", file_name, new_file));
                                 
                                 if !dry_run {
                                     crate::utils::log(&format!("RENAME: Renaming document {} -> {}", 
@@ -121,7 +121,7 @@ pub fn rename_associated_data(
                                     updated_arg = new_path.to_string_lossy().to_string();
                                 }
                             } else if dry_run {
-                                actions.push(format!("WARNING: Cannot rename file (target exists): {}", 
+                                actions.push(format!("WARNING -- Cannot rename file (target exists): {}",
                                     new_path.file_name().unwrap().to_string_lossy()));
                             }
                         }
@@ -147,9 +147,9 @@ pub fn rename_associated_data(
                         
                         if !new_folder_path.exists() && parent.exists() {
                             // Add action descriptions
-                            actions.push(format!("Rename folder: {} → {}", 
+                            actions.push(format!("FOLDER -- Rename folder: {} → {}",
                                 folder_name_str, new_name));
-                            actions.push(format!("Update anchor command: {} → {}", 
+                            actions.push(format!("ANCHOR -- Update anchor command: {} → {}",
                                 folder_name_str, new_name));
                             
                             // Perform rename if not dry run
@@ -176,7 +176,7 @@ pub fn rename_associated_data(
                                 }
                             }
                         } else if new_folder_path.exists() && dry_run {
-                            actions.push(format!("WARNING: Cannot rename folder (target exists): {}", new_name));
+                            actions.push(format!("WARNING -- Cannot rename folder (target exists): {}", new_name));
                         }
                     }
                 }
@@ -200,7 +200,7 @@ pub fn rename_associated_data(
             
             if !affected_commands.is_empty() {
                 // Add action description with complete command listing
-                let mut action_desc = format!("Update patch from {} to {} for the following commands:", old_name, new_name);
+                let mut action_desc = format!("PATCH -- Update patch from {} to {} for the following commands:", old_name, new_name);
                 
                 // Add all affected commands, 4 spaces indented, wrapping lines as needed
                 let mut current_line = String::from("    ");
@@ -288,7 +288,7 @@ pub fn rename_associated_data(
         
         if !affected_commands.is_empty() {
             // Add action description with complete command listing
-            let mut action_desc = format!("Update prefix from {} to {} for the following commands:", old_name, new_name);
+            let mut action_desc = format!("PREFIX -- Update prefix from {} to {} for the following commands:", old_name, new_name);
             
             // Add all affected commands, 4 spaces indented, wrapping lines as needed
             let mut current_line = String::from("    ");

@@ -1,6 +1,11 @@
+# ⚠️ CRITICAL REMINDER FOR CLAUDE ⚠️
+# AFTER EVERY `cargo build --release` YOU MUST RUN:
+# ~/ob/proj/HookAnchor/target/release/ha --restart
+# This restarts the server to use the updated binary!
+
 [package]
 name = "hookanchor"
-version = "0.13.1"
+version = "0.13.2"
 edition = "2021"
 build = "build.rs"
 
