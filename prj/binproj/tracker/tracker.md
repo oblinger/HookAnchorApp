@@ -1,3 +1,7 @@
+
+
+# Notes
+
 # User Manual
 
 ## Quick Start
@@ -67,3 +71,21 @@ Add descriptive text about categories:
 - **tracker.dat** - JSON time entry data (auto-created)
 - **tracker.csv** - Daily summary reports
 - **tracker.txt** - Text format reports
+
+
+# LOG
+
+## 2025-09-18  Old hierarchy
+
+
+ , Spirit
+
+=== THESE ARE THE DOCS PRINTED BY '/' ===
+  123456789 12345678 12345678 12345678 12345678 12345678 12345678 12345678---
+' SELF:      Self, Fried, Out, Project, Read
+' PERSONAL:  Personal, Career, Eli, Family, Home, Run, Spirit
+' WORK:      Work, Chew, Email, First, zMit, Prime, Repeat, Secondary
+' COMMS:     Comms, Talk, zMeeting
+' DAILY:     Daily, Tidy, Wake
+' LOUNGE:    Lounge, Browse, Eat, Frittered, Watch
+' GAP:       Gap, Sleep, Nap

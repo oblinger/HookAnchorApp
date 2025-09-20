@@ -19,9 +19,9 @@ Hook Anchor isn't another note-taking app. It's a meta-layer that works WITH Obs
 
 Think of it as a universal launcher for your personal knowledge, but one that uses the names in your head, NOT the names of your files!
 
-It does this by maintaining a two-way conversation between your digital memory and your meat memory.
+It does this through a continuous two-way conversation between your digital memory and your meat memory.
 
-Hook Anchor's interface is organized to reinforce your meat-memory of currently used naming, and streamlined to capture your ever-changing ways of thinking about your personal knowledge without forcing file and folder changes.
+Hook Anchor reinforces names already in your head, and is streamlined to capture the ever-changing ways you think about and name your personal knowledge.
 
 
 
@@ -37,7 +37,7 @@ ADD GDRIVE - After release we start using Gdrive for datafiles.  Let's remember 
 
 ADD LOCAL - Later, I needed to write up a contract related to fireballs.  I like using markdown in Obsidian for quick writing.
 - USE TEMPLATE - A few well considered templates greatly simplifies creation, organization, and access.
-	For local work files I put them under 'ww' using the CMD+w template
+	For local work files I put them under 'ww' using the CMD+OPT Q template
 
 ADD ANCHOR - Notice that we are starting to get fireball items scattered around; we should anchor them somewhere.  Notion is the 80% anchor, but I do have gdrive files and local files too.  I could use my local fireball WW folder as the anchor, but this seems a bit gross for a project that is 90% online.  Lets just use the word "fireball" itself as the anchor.
 - RENAME - Oh yeah, fireball is already used for the notion page and that mostly still is the anchor place for fireballs.  Lets rename it to be "Fireball Notion"
