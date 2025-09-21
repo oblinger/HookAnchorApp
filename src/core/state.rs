@@ -26,6 +26,10 @@ pub struct AppState {
     pub server_pid: Option<u32>,
     /// ISO timestamp when Notion was last scanned
     pub notion_last_scan: Option<String>,
+    /// Ghost input - last executed anchor name
+    pub ghost_input: Option<String>,
+    /// Ghost timestamp - Unix timestamp when ghost_input was set
+    pub ghost_timestamp: Option<i64>,
 }
 
 impl Default for AppState {
@@ -38,6 +42,8 @@ impl Default for AppState {
             last_executed_command: None,
             server_pid: None,
             notion_last_scan: None,
+            ghost_input: None,
+            ghost_timestamp: None,
         }
     }
 }
@@ -87,6 +93,14 @@ pub fn save_state_with_build_time() -> Result<(), Box<dyn std::error::Error>> {
 pub fn save_last_executed_command(command_name: &str) -> Result<(), Box<dyn std::error::Error>> {
     let mut state = load_state();
     state.last_executed_command = Some(command_name.to_string());
+    save_state(&state)
+}
+
+/// Updates ghost input for anchor commands
+pub fn save_ghost_input(anchor_name: &str) -> Result<(), Box<dyn std::error::Error>> {
+    let mut state = load_state();
+    state.ghost_input = Some(anchor_name.to_string());
+    state.ghost_timestamp = Some(Local::now().timestamp());
     save_state(&state)
 }
 

@@ -690,9 +690,14 @@ impl AnchorSelector {
                 // Don't execute if it's a separator
                 if !PopupState::is_separator_command(selected_cmd) {
                     // Save the last executed command for add_alias functionality
-                    use crate::core::state::save_last_executed_command;
+                    use crate::core::state::{save_last_executed_command, save_ghost_input};
                     let _ = save_last_executed_command(&selected_cmd.command);
-                    
+
+                    // Save ghost input for anchor commands
+                    if selected_cmd.action == "anchor" {
+                        let _ = save_ghost_input(&selected_cmd.command);
+                    }
+
                     // Convert command to action and execute through unified system
                     crate::utils::log("=== UNIFIED ACTION SYSTEM: Converting command to action ===");
                     use crate::execute::command_to_action;
@@ -2224,7 +2229,7 @@ impl AnchorSelector {
     fn show_folder_impl(&mut self) {
         use crate::utils;
         
-        let search_text = &self.popup_state.search_text;
+        let search_text = self.popup_state.search_text();
         utils::detailed_log("SHOW_FOLDER", &format!("Triggered with search text: '{}'", search_text));
         
         // Get the current filtered commands from popup state

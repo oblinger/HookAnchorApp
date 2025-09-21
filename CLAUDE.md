@@ -55,6 +55,33 @@
 ## Build Process
 - Always build release versions of the code each time. This is important because I'm using keyboard maestro and it's launching the release version each time. Thus, if you only build a build release, I'll end up running Old code.
 
+## 🔄 CRITICAL: SERVER RESTART AFTER REBUILD 🔄
+**ALWAYS restart the server after rebuilding binaries!**
+
+### Rule: After every `cargo build --release`, IMMEDIATELY run:
+```bash
+~/ob/proj/HookAnchor/target/release/ha --restart
+```
+
+### Why this is critical:
+- The popup_server runs continuously in the background
+- It loads the binary code into memory at startup
+- Simply rebuilding does NOT update the running server
+- The running server will continue using the OLD code until restarted
+- This causes confusion when code changes don't take effect
+
+### Development workflow:
+1. Make code changes
+2. `cargo build --release`
+3. `~/ob/proj/HookAnchor/target/release/ha --restart` ← **NEVER SKIP THIS**
+4. Test the changes
+
+### Signs you forgot to restart:
+- Code changes don't take effect
+- New logging statements don't appear
+- Bug fixes don't work
+- Features behave as before
+
 ## ⚠️ CRITICAL: URL HANDLING - READ docs/URL_HANDLING.md FIRST ⚠️
 **DO NOT modify ANY URL handling without reading docs/URL_HANDLING.md**
 **Incorrect URL handling has locked up the entire system multiple times!**

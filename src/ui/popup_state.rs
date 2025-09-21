@@ -88,8 +88,30 @@ impl PopupState {
         }
     }
 
-    /// Get the current search text
-    pub fn search_text(&self) -> &str {
+    /// Get the current search text (with ghost input fallback)
+    pub fn search_text(&self) -> String {
+        // If search text is empty, try to use ghost input
+        if self.search_text.is_empty() {
+            if let (Some(ghost_input), Some(ghost_timestamp)) = (&self.app_state.ghost_input, self.app_state.ghost_timestamp) {
+                let current_time = chrono::Local::now().timestamp();
+                let seconds_since_ghost = current_time - ghost_timestamp;
+                let ghost_timeout = self.config.popup_settings.ghost_timeout_seconds.unwrap_or(180) as i64;
+
+                if seconds_since_ghost < ghost_timeout {
+                    crate::utils::detailed_log("GHOST_INPUT", &format!("Using ghost input '{}' ({}s ago)", ghost_input, seconds_since_ghost));
+                    return ghost_input.clone();
+                } else {
+                    crate::utils::detailed_log("GHOST_INPUT", &format!("Ghost input '{}' expired ({}s ago, timeout: {}s)", ghost_input, seconds_since_ghost, ghost_timeout));
+                }
+            }
+        }
+
+        self.search_text.clone()
+    }
+
+    /// Get the raw search text (without ghost input fallback)
+    /// Used by UI components that need the actual input box text
+    pub fn raw_search_text(&self) -> &str {
         &self.search_text
     }
 
@@ -180,13 +202,13 @@ impl PopupState {
     /// Recompute filtered commands based on current search using new approach
     fn recompute_filtered_commands(&mut self) -> bool {
         use crate::core::get_new_display_commands;
-        
+
         let (sys_data, was_reloaded) = crate::core::sys_data::get_sys_data();
         if was_reloaded {
             crate::utils::detailed_log("POPUP_REFRESH", "Commands were reloaded - rebuilding search results");
         }
         let (display_commands, is_prefix_menu, prefix_menu_info, prefix_menu_count) =
-            get_new_display_commands(&self.search_text, &sys_data.commands, &sys_data.patches);
+            get_new_display_commands(&self.search_text(), &sys_data.commands, &sys_data.patches);
 
         // Apply max limit
         let total_limit = self.config.popup_settings.max_rows * self.config.popup_settings.max_columns;
@@ -211,18 +233,32 @@ impl PopupState {
     
     /// Get hint text for the search box
     pub fn get_hint_text(&self) -> String {
+        // Check for ghost input first
+        if let (Some(ghost_input), Some(ghost_timestamp)) = (&self.app_state.ghost_input, self.app_state.ghost_timestamp) {
+            let current_time = chrono::Local::now().timestamp();
+            let seconds_since_ghost = current_time - ghost_timestamp;
+
+            // Get ghost timeout from config (default 180 seconds)
+            let ghost_timeout = self.config.popup_settings.ghost_timeout_seconds.unwrap_or(180) as i64;
+
+            if seconds_since_ghost < ghost_timeout {
+                // Show ghost input as placeholder
+                return ghost_input.clone();
+            }
+        }
+
         let base_text = "Type to search commands...";
-        
+
         // Add build time if recent (within 10 minutes)
         if let Some(build_time) = self.app_state.build_time {
             let current_time = chrono::Local::now().timestamp();
             let seconds_since_build = current_time - build_time;
-            
+
             if seconds_since_build < 600 { // 10 minutes
                 return format!("{} {}s", base_text, seconds_since_build);
             }
         }
-        
+
         base_text.to_string()
     }
     

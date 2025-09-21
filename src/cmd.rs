@@ -235,11 +235,20 @@ fn run_execute_top_match(args: &[String]) {
     print(&format!("Executing top match: {}", top_command_obj.command));
     
     // Save the last executed command for add_alias functionality
-    use crate::core::state::save_last_executed_command;
+    use crate::core::state::{save_last_executed_command, save_ghost_input};
     crate::utils::detailed_log("STATE_SAVE", &format!("CLI: Attempting to save last executed command: '{}'", top_command_obj.command));
     match save_last_executed_command(&top_command_obj.command) {
         Ok(_) => crate::utils::detailed_log("STATE_SAVE", "CLI: Successfully saved last executed command"),
         Err(e) => crate::utils::detailed_log("STATE_SAVE", &format!("CLI: Failed to save last executed command: {}", e)),
+    }
+
+    // Save ghost input for anchor commands
+    if top_command_obj.action == "anchor" {
+        crate::utils::detailed_log("STATE_SAVE", &format!("CLI: Attempting to save ghost input: '{}'", top_command_obj.command));
+        match save_ghost_input(&top_command_obj.command) {
+            Ok(_) => crate::utils::detailed_log("STATE_SAVE", "CLI: Successfully saved ghost input"),
+            Err(e) => crate::utils::detailed_log("STATE_SAVE", &format!("CLI: Failed to save ghost input: {}", e)),
+        }
     }
     
     // Use server-based execution for consistent environment

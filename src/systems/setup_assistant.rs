@@ -723,7 +723,160 @@ impl SetupAssistant {
         if self.config_dir.exists() {
             fs::remove_dir_all(&self.config_dir)?;
         }
-        
+
+        Ok(())
+    }
+
+    /// Test if the current application has accessibility permissions
+    pub fn test_accessibility_permissions() -> Result<bool, Box<dyn std::error::Error>> {
+        crate::utils::log("Testing accessibility permissions...");
+
+        // Simple test script that tries to send a keystroke to System Events
+        let test_script = r#"
+            tell application "System Events"
+                try
+                    -- Try to get the frontmost process (requires accessibility)
+                    set frontApp to first application process whose frontmost is true
+                    set appName to name of frontApp
+                    return "SUCCESS: " & appName
+                on error errMsg number errNum
+                    return "ERROR: " & errMsg & " (Code: " & errNum & ")"
+                end try
+            end tell
+        "#;
+
+        let output = Command::new("osascript")
+            .arg("-e")
+            .arg(test_script)
+            .output()?;
+
+        let result = String::from_utf8_lossy(&output.stdout).trim().to_string();
+        let stderr = String::from_utf8_lossy(&output.stderr);
+
+        crate::utils::log(&format!("Accessibility test result: '{}'", result));
+        if !stderr.is_empty() {
+            crate::utils::log(&format!("Accessibility test stderr: '{}'", stderr));
+        }
+
+        // Check for permission-related errors
+        let has_permission = result.starts_with("SUCCESS:") &&
+                           !stderr.contains("not allowed") &&
+                           !stderr.contains("1002");
+
+        Ok(has_permission)
+    }
+
+    /// Open macOS System Preferences to Accessibility settings
+    pub fn open_accessibility_settings() -> Result<(), Box<dyn std::error::Error>> {
+        crate::utils::log("Opening System Preferences → Security & Privacy → Accessibility");
+
+        // Try the modern System Settings first (macOS 13+)
+        let modern_result = Command::new("open")
+            .arg("x-apple.systempreferences:com.apple.preference.security?Privacy_Accessibility")
+            .output();
+
+        if let Ok(output) = modern_result {
+            if output.status.success() {
+                return Ok(());
+            }
+        }
+
+        // Fallback to legacy System Preferences (macOS 12 and earlier)
+        let legacy_result = Command::new("open")
+            .arg("x-apple.systempreferences:com.apple.preference.security?Privacy_Accessibility")
+            .output();
+
+        if let Ok(output) = legacy_result {
+            if output.status.success() {
+                return Ok(());
+            }
+        }
+
+        // Final fallback - just open System Preferences
+        Command::new("open")
+            .arg("/System/Applications/System Preferences.app")
+            .output()?;
+
+        Ok(())
+    }
+
+    /// Check accessibility permissions and prompt user if needed
+    pub fn ensure_accessibility_permissions() -> Result<bool, Box<dyn std::error::Error>> {
+        match Self::test_accessibility_permissions()? {
+            true => {
+                crate::utils::log("✅ Accessibility permissions are granted");
+                Ok(true)
+            }
+            false => {
+                crate::utils::log("❌ Accessibility permissions are missing");
+
+                println!("\n🔒 ACCESSIBILITY PERMISSIONS REQUIRED");
+                println!("═══════════════════════════════════════");
+                println!("HookAnchor needs accessibility permissions to:");
+                println!("• Capture context from applications (Obsidian, Notion, etc.)");
+                println!("• Send keystrokes to copy URLs and content");
+                println!("• Detect window titles and active documents");
+                println!();
+                println!("📱 WHAT TO DO:");
+                println!("1. Click OK to open System Preferences");
+                println!("2. Navigate to Security & Privacy → Privacy → Accessibility");
+                println!("3. Click the lock icon and enter your password");
+                println!("4. Find and enable the app running HookAnchor:");
+                println!("   - Terminal (if running from command line)");
+                println!("   - HookAnchor.app (if using the app bundle)");
+                println!("   - Your IDE (if running from development environment)");
+                println!("5. Come back and test again");
+                println!();
+                print!("Press Enter to open System Preferences...");
+
+                use std::io::{self, Write};
+                io::stdout().flush()?;
+                let mut input = String::new();
+                io::stdin().read_line(&mut input)?;
+
+                Self::open_accessibility_settings()?;
+
+                println!("\n⏳ After granting permissions, test again with:");
+                println!("   ha --test-permissions");
+
+                Ok(false)
+            }
+        }
+    }
+
+    /// Install/update the latest distribution files to user config folder
+    /// This ensures users always have the latest templates and config examples
+    pub fn install_latest_dist_files(&self) -> Result<(), Box<dyn std::error::Error>> {
+        crate::utils::log("Installing latest distribution files to user config...");
+
+        // List of dist files to copy (latest versions from distribution)
+        let dist_files = [
+            ("dist_config.yaml", "dist_config.yaml"),
+            ("dist_config.js", "dist_config.js"),
+            ("dist_hook_anchor_zshrc", "dist_hook_anchor_zshrc"),
+        ];
+
+        for (source_name, target_name) in &dist_files {
+            if let Ok(source_path) = self.find_distribution_file(source_name) {
+                let target_path = self.config_dir.join(target_name);
+
+                // Check if target exists and differs from source
+                if target_path.exists() {
+                    if self.file_differs_from_default(&target_path, &source_path)? {
+                        // User has a different version - create backup
+                        self.create_backup(&target_path)?;
+                        crate::utils::log(&format!("Backed up existing {} due to changes", target_name));
+                    }
+                }
+
+                // Always copy the latest version
+                fs::copy(&source_path, &target_path)?;
+                crate::utils::log(&format!("✓ Installed latest {}", target_name));
+            } else {
+                crate::utils::log(&format!("Warning: Distribution file {} not found", source_name));
+            }
+        }
+
         Ok(())
     }
 }

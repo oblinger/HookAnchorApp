@@ -87,7 +87,7 @@ impl TemplateContext {
     ) -> Self {
         // Note: _previous_command parameter is kept for API compatibility but not used in template processing
         let mut variables = HashMap::new();
-        
+
         // Basic variables
         variables.insert("input".to_string(), input.to_string());
         

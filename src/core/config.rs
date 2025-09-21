@@ -19,6 +19,9 @@ pub struct Config {
     pub launcher_settings: Option<LauncherSettings>,
     /// Grabber rules for capturing application context
     pub grabber_rules: Option<Vec<crate::systems::grabber::GrabberRule>>,
+    /// Grabber suffix map - map from suffix strings to regex patterns
+    /// When a grabbed URL/path matches a regex, the corresponding suffix is appended
+    pub grabber_suffix_map: Option<HashMap<String, String>>,
     /// Unified actions section (new)
     pub actions: Option<HashMap<String, crate::execute::Action>>,
 }
@@ -45,6 +48,8 @@ pub struct PopupSettings {
     pub idle_timeout_seconds: Option<u64>,
     /// Seconds for grabber countdown (default: 5)
     pub countdown_seconds: Option<u8>,
+    /// Seconds to remember last executed anchor as ghost input (default: 180)
+    pub ghost_timeout_seconds: Option<u64>,
     /// Maximum window size for dialogs and popups in "widthxheight" format (default: "1700x1100")
     pub max_window_size: Option<String>,
     /// Default window size for popups in "widthxheight" format (default: "600x400")
@@ -114,6 +119,7 @@ impl Default for PopupSettings {
             scan_interval_seconds: Some(10),
             idle_timeout_seconds: Some(60),
             countdown_seconds: Some(5),
+            ghost_timeout_seconds: Some(180),
             max_window_size: Some("1700x1100".to_string()),
             default_window_size: Some("600x400".to_string()),
             max_log_file_size: Some(1_000_000), // 1MB default
@@ -146,6 +152,7 @@ impl Default for Config {
             popup_settings: PopupSettings::default(),
             launcher_settings: Some(LauncherSettings::default()),
             grabber_rules: None,
+            grabber_suffix_map: None,
             actions: None,
         }
     }
@@ -279,6 +286,8 @@ fn parse_config_contents(contents: &str) -> Result<Config, Box<dyn std::error::E
         popup_settings,
         launcher_settings,
         grabber_rules,
+        grabber_suffix_map: yaml.get("grabber_suffix_map")
+            .and_then(|v| serde_yaml::from_value(v.clone()).ok()),
         actions,
     })
 }
@@ -289,6 +298,7 @@ pub(crate) fn create_default_config() -> Config {
         popup_settings: PopupSettings::default(),
         launcher_settings: Some(LauncherSettings::default()),
         grabber_rules: Some(vec![]),
+        grabber_suffix_map: None,
         actions: None,
     }
 }

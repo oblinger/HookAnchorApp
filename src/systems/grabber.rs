@@ -352,26 +352,26 @@ fn get_notion_url() -> Option<String> {
     // Try to trigger Notion's copy link shortcut (Cmd+L)
     // This requires Terminal/popup_server to have Accessibility permissions
     crate::utils::detailed_log("GRABBER_NOTION", "Step 2: Attempting to trigger Cmd+L in Notion");
-    
+
     let trigger_copy_script = r#"
         -- Save current clipboard
         set oldClipboard to ""
         try
             set oldClipboard to (the clipboard)
         end try
-        
+
         -- Clear clipboard first to detect if Cmd+L actually works
         set the clipboard to ""
-        
+
         -- Make sure Notion is active and ready
         tell application "Notion" to activate
         delay 0.2
-        
+
         -- Trigger Notion's copy link shortcut (Cmd+L)
         tell application "System Events"
             keystroke "l" using {command down}
         end tell
-        
+
         -- Wait longer for clipboard to update (Notion can be slow)
         delay 1.0
         
@@ -418,7 +418,7 @@ fn get_notion_url() -> Option<String> {
                 crate::utils::detailed_log("GRABBER_NOTION", "");
                 crate::utils::detailed_log("GRABBER_NOTION", "WORKAROUND: User should manually copy Notion URL first:");
                 crate::utils::detailed_log("GRABBER_NOTION", "1. Click in Notion to focus the page");
-                crate::utils::detailed_log("GRABBER_NOTION", "2. Press Cmd+L to copy the page URL");  
+                crate::utils::detailed_log("GRABBER_NOTION", "2. Press Cmd+L to copy the page URL");
                 crate::utils::detailed_log("GRABBER_NOTION", "3. Then trigger the grabber");
                 crate::utils::detailed_log("GRABBER_NOTION", "");
                 crate::utils::detailed_log("GRABBER_NOTION", "=== NOTION URL CAPTURE END (FAILED - permissions) ===");
@@ -636,8 +636,13 @@ fn enrich_context(mut context: AppContext) -> AppContext {
             context.properties["url"] = serde_json::Value::String(url.clone());
             crate::utils::detailed_log("GRABBER", &format!("Properties after adding URL: {:?}", context.properties));
         } else {
+            crate::utils::log("⚠️ WARNING: get_notion_url() returned None - URL capture failed!");
             crate::utils::detailed_log("GRABBER", "❌ Failed to get Notion URL - properties['url'] will be empty");
             crate::utils::detailed_log("GRABBER", &format!("Properties without URL: {:?}", context.properties));
+
+            // Add empty URL to properties so matcher can still match with empty string
+            context.properties["url"] = serde_json::Value::String(String::new());
+            crate::utils::detailed_log("GRABBER", "Added empty string to properties['url'] so rule can still match");
         }
     }
     
@@ -705,6 +710,18 @@ fn match_grabber_rules(
                             crate::utils::detailed_log("GRABBER_MATCH", &format!("Argument length: {}", arg.len()));
                             crate::utils::detailed_log("GRABBER_MATCH", &format!("Rule action: '{}'", rule.action));
                             crate::utils::detailed_log("GRABBER_MATCH", &format!("Rule patch: '{:?}'", rule.patch));
+
+                            // CRITICAL WARNING for empty Notion URLs
+                            if rule.name == "Notion Page" && arg.is_empty() {
+                                crate::utils::log("⚠️ WARNING: Notion Page matched but URL is EMPTY!");
+                                crate::utils::log("⚠️ This means get_notion_url() failed to capture the URL.");
+                                crate::utils::log("⚠️ Check the logs above for GRABBER_NOTION details.");
+                                crate::utils::log("⚠️ Common causes:");
+                                crate::utils::log("⚠️   1. Accessibility permissions not granted");
+                                crate::utils::log("⚠️   2. Not on a Notion page (on home/settings instead)");
+                                crate::utils::log("⚠️   3. Cmd+L shortcut not working in current Notion version");
+                                crate::utils::log("⚠️ WORKAROUND: Copy URL manually with Cmd+L before grabbing");
+                            }
 
                             // Apply suffix mapping to the argument
                             let (_, detected_suffix) = apply_suffix_mapping(&arg, config);

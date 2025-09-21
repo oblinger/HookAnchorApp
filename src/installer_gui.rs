@@ -79,31 +79,19 @@ impl InstallerGui {
             },
             InstallComponent {
                 name: "Configuration Files".to_string(),
-                description: "Default config.yaml with HookAnchor settings".to_string(),
+                description: "All config files: config.yaml, config.js, shell integration, commands.txt, uninstaller, and distribution templates".to_string(),
                 status: InstallStatus::NotInstalled,
                 required: true,
             },
             InstallComponent {
-                name: "JavaScript Configuration".to_string(),
-                description: "config.js file for custom JavaScript functions".to_string(),
+                name: "Shell Integration Status".to_string(),
+                description: "User added shell integration to ~/.zshrc".to_string(),
                 status: InstallStatus::NotInstalled,
                 required: false,
             },
             InstallComponent {
-                name: "Shell Integration".to_string(),
-                description: "Zsh functions (ff, fp, fd) for command-line integration".to_string(),
-                status: InstallStatus::NotInstalled,
-                required: false,
-            },
-            InstallComponent {
-                name: "Initial Commands".to_string(),
-                description: "Starter commands and examples in commands.txt".to_string(),
-                status: InstallStatus::NotInstalled,
-                required: true,
-            },
-            InstallComponent {
-                name: "Uninstaller App".to_string(),
-                description: "Double-clickable Uninstaller.app for easy removal".to_string(),
+                name: "Accessibility Permissions".to_string(),
+                description: "Required for grabber to capture URLs from Obsidian, Notion, etc.".to_string(),
                 status: InstallStatus::NotInstalled,
                 required: true,
             },
@@ -131,11 +119,26 @@ impl InstallerGui {
                     let karabiner_status = self.check_karabiner_status();
                     matches!(karabiner_status, KarabinerStatus::InstalledAndConfigured)
                 },
-                2 => config_dir.join("config.yaml").exists(),
-                3 => config_dir.join("config.js").exists(),
-                4 => config_dir.join("hook_anchor_zshrc").exists(),
-                5 => config_dir.join("commands.txt").exists(),
-                6 => config_dir.join("Uninstaller.app").exists(),
+                2 => {
+                    // Configuration Files - check ALL config files
+                    config_dir.join("config.yaml").exists() &&
+                    config_dir.join("config.js").exists() &&
+                    config_dir.join("hook_anchor_zshrc").exists() &&
+                    config_dir.join("commands.txt").exists() &&
+                    config_dir.join("Uninstaller.app").exists() &&
+                    config_dir.join("dist_config.yaml").exists() &&
+                    config_dir.join("dist_config.js").exists() &&
+                    config_dir.join("dist_hook_anchor_zshrc").exists()
+                },
+                3 => {
+                    // Shell Integration Status - check if user added to ~/.zshrc
+                    self.check_shell_integration_status()
+                },
+                4 => {
+                    // Accessibility Permissions - test if they are granted
+                    SetupAssistant::test_accessibility_permissions()
+                        .unwrap_or(false)
+                },
                 _ => false,
             };
             statuses.push(is_installed);
@@ -154,13 +157,32 @@ impl InstallerGui {
         }
     }
 
+    /// Check if shell integration is added to ~/.zshrc
+    fn check_shell_integration_status(&self) -> bool {
+        let zshrc_path = dirs::home_dir()
+            .map(|h| h.join(".zshrc"));
+
+        if let Some(path) = zshrc_path {
+            if let Ok(content) = std::fs::read_to_string(&path) {
+                // Look for the exact source line we want users to add
+                return content.contains("source ~/.config/hookanchor/hook_anchor_zshrc");
+            }
+        }
+        false
+    }
+
+    /// Get the exact line users should add to their ~/.zshrc
+    fn get_shell_integration_line(&self) -> &'static str {
+        "source ~/.config/hookanchor/hook_anchor_zshrc"
+    }
+
     /// Check if Karabiner-Elements is installed and optionally configured
     fn check_karabiner_status(&self) -> KarabinerStatus {
-        // First check if Karabiner-Elements is installed
+        // Simply check if the application exists - this is what users expect
+        // When they "uninstall" an app on macOS, they delete it from /Applications
         let app_installed = std::path::Path::new("/Applications/Karabiner-Elements.app").exists();
-        let cli_installed = std::path::Path::new("/Library/Application Support/org.pqrs/Karabiner-Elements/bin/karabiner_cli").exists();
 
-        if !app_installed && !cli_installed {
+        if !app_installed {
             return KarabinerStatus::NotInstalled;
         }
 
@@ -228,16 +250,48 @@ impl InstallerGui {
                     },
                     1 => setup_assistant.install_karabiner_modification()
                         .map_err(|e| e.to_string()),
-                    2 => setup_assistant.create_default_config()
-                        .map_err(|e| e.to_string()),
-                    3 => setup_assistant.install_config_js()
-                        .map_err(|e| e.to_string()),
-                    4 => setup_assistant.install_hook_anchor_zshrc()
-                        .map_err(|e| e.to_string()),
-                    5 => setup_assistant.install_commands_txt()
-                        .map_err(|e| e.to_string()),
-                    6 => setup_assistant.install_uninstaller_app()
-                        .map_err(|e| e.to_string()),
+                    2 => {
+                        // Configuration Files - install ALL config files with their individual logic
+                        let mut errors = Vec::new();
+
+                        // Install each config file with its own logic and rules
+                        if let Err(e) = setup_assistant.create_default_config() {
+                            errors.push(format!("config.yaml: {}", e));
+                        }
+                        if let Err(e) = setup_assistant.install_config_js() {
+                            errors.push(format!("config.js: {}", e));
+                        }
+                        if let Err(e) = setup_assistant.install_hook_anchor_zshrc() {
+                            errors.push(format!("shell integration: {}", e));
+                        }
+                        if let Err(e) = setup_assistant.install_commands_txt() {
+                            errors.push(format!("commands.txt: {}", e));
+                        }
+                        if let Err(e) = setup_assistant.install_uninstaller_app() {
+                            errors.push(format!("uninstaller: {}", e));
+                        }
+                        if let Err(e) = setup_assistant.install_latest_dist_files() {
+                            errors.push(format!("distribution templates: {}", e));
+                        }
+
+                        if errors.is_empty() {
+                            Ok(())
+                        } else {
+                            Err(format!("Some config files failed: {}", errors.join(", ")))
+                        }
+                    },
+                    3 => {
+                        // Shell Integration Status - this is just a status display, no action needed
+                        Ok(())
+                    },
+                    4 => {
+                        // Accessibility Permissions - trigger the permission check
+                        match SetupAssistant::ensure_accessibility_permissions() {
+                            Ok(true) => Ok(()),
+                            Ok(false) => Err("User needs to grant accessibility permissions manually".to_string()),
+                            Err(e) => Err(e.to_string()),
+                        }
+                    },
                     _ => Err("Unknown component".to_string()),
                 };
 
@@ -310,6 +364,13 @@ impl InstallerGui {
             None
         };
 
+        // Get shell integration status and command before borrowing components
+        let shell_integration_data = if index == 3 {
+            Some((self.check_shell_integration_status(), self.get_shell_integration_line()))
+        } else {
+            None
+        };
+
         if let Some(component) = self.components.get_mut(index) {
             // Special handling for Karabiner-Elements components (index 0 and 1)
             if let Some(status) = karabiner_status {
@@ -320,10 +381,38 @@ impl InstallerGui {
                     // Karabiner-Elements Configuration
                     Self::render_karabiner_component_static(ui, component, status);
                 }
+            } else if let Some((shell_status, shell_command)) = shell_integration_data {
+                // Shell Integration Status (special handling)
+                Self::render_shell_integration_status_static(ui, component, shell_status, shell_command);
             } else {
                 Self::render_regular_component_static(ui, component);
             }
         }
+    }
+
+    /// Render shell integration status (read-only with command line always shown)
+    fn render_shell_integration_status_static(ui: &mut egui::Ui, _component: &InstallComponent, shell_integrated: bool, shell_command: &str) {
+        ui.horizontal(|ui| {
+            if shell_integrated {
+                ui.label(egui::RichText::new("✅").size(20.0).strong().color(egui::Color32::GREEN));
+                ui.label("User added shell integration to ~/.zshrc");
+            } else {
+                ui.label(egui::RichText::new("❌").size(20.0).strong().color(egui::Color32::RED));
+                ui.label("User can optionally add this line for shell integration:");
+            }
+        });
+
+        // Always show the command line indented
+        ui.indent("shell_command", |ui| {
+            ui.horizontal(|ui| {
+                ui.label(egui::RichText::new(shell_command)
+                    .family(egui::FontFamily::Monospace)
+                    .size(11.0)
+                    .background_color(egui::Color32::LIGHT_GRAY));
+            });
+        });
+
+        ui.add_space(8.0);
     }
 
     /// Render Karabiner application status (read-only)
@@ -331,16 +420,16 @@ impl InstallerGui {
         ui.horizontal(|ui| {
             match karabiner_status {
                 KarabinerStatus::NotInstalled => {
-                    ui.label(egui::RichText::new("❌").color(egui::Color32::RED));
+                    ui.label(egui::RichText::new("❌").size(20.0).strong().color(egui::Color32::RED));
                     ui.label(egui::RichText::new("Karabiner-Elements - NOT INSTALLED")
                         .color(egui::Color32::RED));
                 }
                 KarabinerStatus::InstalledNotConfigured => {
-                    ui.label(egui::RichText::new("✅").color(egui::Color32::GREEN));
+                    ui.label(egui::RichText::new("✅").size(20.0).strong().color(egui::Color32::GREEN));
                     ui.label("Karabiner-Elements - Now Installed");
                 }
                 KarabinerStatus::InstalledAndConfigured => {
-                    ui.label(egui::RichText::new("✅").color(egui::Color32::GREEN));
+                    ui.label(egui::RichText::new("✅").size(20.0).strong().color(egui::Color32::GREEN));
                     ui.label("Karabiner-Elements - Now Installed");
                 }
             }
@@ -381,7 +470,7 @@ impl InstallerGui {
             match karabiner_status {
                 KarabinerStatus::NotInstalled => {
                     // Red X - Karabiner not installed
-                    ui.label(egui::RichText::new("❌").color(egui::Color32::RED));
+                    ui.label(egui::RichText::new("❌").size(20.0).strong().color(egui::Color32::RED));
                     ui.label(egui::RichText::new("Karabiner-Elements - NOT INSTALLED")
                         .color(egui::Color32::RED));
                 }
@@ -404,17 +493,17 @@ impl InstallerGui {
                             ui.label("Karabiner-Elements Configuration - Installing...");
                         }
                         InstallStatus::InstallSuccess => {
-                            ui.label(egui::RichText::new("✅").color(egui::Color32::GREEN));
+                            ui.label(egui::RichText::new("✅").size(20.0).strong().color(egui::Color32::GREEN));
                             ui.label("Karabiner-Elements Configuration - Installed");
                         }
                         InstallStatus::InstallFailed(error) => {
-                            ui.label(egui::RichText::new("❌").color(egui::Color32::RED));
+                            ui.label(egui::RichText::new("❌").size(20.0).strong().color(egui::Color32::RED));
                             ui.label(egui::RichText::new("Karabiner-Elements Configuration - Failed")
                                 .color(egui::Color32::RED));
                             if ui.small_button("?").on_hover_text(error).clicked() {}
                         }
                         _ => {
-                            ui.label(egui::RichText::new("✅").color(egui::Color32::GREEN));
+                            ui.label(egui::RichText::new("✅").size(20.0).strong().color(egui::Color32::GREEN));
                             ui.label("Karabiner-Elements Configuration - Now Configured");
                         }
                     }
@@ -456,7 +545,7 @@ impl InstallerGui {
             match &component.status {
                 InstallStatus::Installed => {
                     // Green checkmark for installed components
-                    ui.label(egui::RichText::new("✅").color(egui::Color32::GREEN));
+                    ui.label(egui::RichText::new("✅").size(20.0).strong().color(egui::Color32::GREEN));
                     ui.label(format!("{} - Now Installed", component.name));
                 }
                 InstallStatus::Installing => {
@@ -466,12 +555,12 @@ impl InstallerGui {
                 }
                 InstallStatus::InstallSuccess => {
                     // Green checkmark for just completed
-                    ui.label(egui::RichText::new("✅").color(egui::Color32::GREEN));
+                    ui.label(egui::RichText::new("✅").size(20.0).strong().color(egui::Color32::GREEN));
                     ui.label(format!("{} - Installed", component.name));
                 }
                 InstallStatus::InstallFailed(error) => {
                     // Red X for failed installations
-                    ui.label(egui::RichText::new("❌").color(egui::Color32::RED));
+                    ui.label(egui::RichText::new("❌").size(20.0).strong().color(egui::Color32::RED));
                     ui.label(egui::RichText::new(format!("{} - Failed", component.name))
                         .color(egui::Color32::RED));
                     if ui.small_button("?").on_hover_text(error).clicked() {
@@ -549,42 +638,49 @@ impl eframe::App for InstallerGui {
 
             ui.add_space(20.0);
 
-            // Status messages
-            if !self.status_messages.is_empty() {
-                ui.separator();
-                ui.label("Installation Status:");
-                egui::ScrollArea::vertical()
-                    .max_height(150.0)
-                    .show(ui, |ui| {
+            // Status messages (always visible with fixed size)
+            ui.separator();
+            ui.label("Installation Status:");
+            ui.add_space(5.0);
+
+            egui::ScrollArea::vertical()
+                .max_height(120.0)
+                .auto_shrink([false, false])
+                .show(ui, |ui| {
+                    if self.status_messages.is_empty() {
+                        // Check if all required components are already installed
+                        let all_required_installed = self.components.iter()
+                            .filter(|comp| comp.required)
+                            .all(|comp| comp.status == InstallStatus::Installed);
+
+                        if all_required_installed {
+                            ui.label(egui::RichText::new("Installation complete!")
+                                .italics()
+                                .color(egui::Color32::DARK_GREEN));
+                        } else {
+                            ui.label(egui::RichText::new("Ready to install...")
+                                .italics()
+                                .color(egui::Color32::GRAY));
+                        }
+                    } else {
                         for message in &self.status_messages {
                             ui.label(message);
                         }
-                    });
-            }
-
-            // Close button at the very bottom when installation is complete
-            let installation_complete = !self.installation_in_progress &&
-                self.components.iter().all(|comp| {
-                    matches!(comp.status,
-                        InstallStatus::Installed |
-                        InstallStatus::InstallSuccess |
-                        InstallStatus::InstallFailed(_)
-                    )
+                    }
                 });
 
-            if installation_complete {
-                ui.add_space(20.0);
-                ui.separator();
-                ui.add_space(10.0);
-                ui.horizontal(|ui| {
-                    // Center the close button
-                    ui.with_layout(egui::Layout::right_to_left(egui::Align::Center), |ui| {
-                        if ui.button("Close").clicked() {
-                            std::process::exit(0);
-                        }
-                    });
+            // Close button always at the bottom
+            ui.add_space(20.0);
+            ui.separator();
+            ui.add_space(10.0);
+            ui.horizontal(|ui| {
+                // Center the close button
+                ui.with_layout(egui::Layout::right_to_left(egui::Align::Center), |ui| {
+                    if ui.button("Close").clicked() {
+                        std::process::exit(0);
+                    }
                 });
-            }
+            });
         });
 
         // Request repaint if installation is in progress
@@ -597,7 +693,7 @@ impl eframe::App for InstallerGui {
 fn main() -> Result<(), eframe::Error> {
     let options = eframe::NativeOptions {
         viewport: egui::ViewportBuilder::default()
-            .with_inner_size([500.0, 700.0])
+            .with_inner_size([500.0, 640.0])
             .with_title("HookAnchor Installer")
             .with_resizable(true),
         ..Default::default()
