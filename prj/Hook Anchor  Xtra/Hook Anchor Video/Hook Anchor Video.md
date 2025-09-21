@@ -4,8 +4,7 @@
 
 
 SETUP:
-- Open Notes.txt in Text Edit
-- Open Intro.txt in Cursor
+- Open Notes.txt and Intro.txt in Cursor
 - Use [OBS app](hook://OBSapp) 
 - Rename fb-meta back and delete all fireball commands.
 
@@ -27,17 +26,15 @@ Hook Anchor reinforces names already in your head, and is streamlined to capture
 
 Best to show this by example:
 
-In my day job, we released a feature that adds a fireball effect to a basketball clip.
+IN MY DAY JOB my team used our player & ball tracking to create a fireball effect over basketball highlight clips.
 
-JUST TYPE - To find this, I just type the first word that comes to mind. "Fireball"
-
-ADD FIREBALL - Not there, since this is for work, maybe we have a project page in Notion.  Yep, let's remember this! ...
+ON NOTION - I think this is a project on notion. PROJ N
 
 ADD GDRIVE - After release we start using Gdrive for datafiles.  Let's remember this. (show my 'facets' list with 'Gdrive')
 
-ADD LOCAL - Later, I needed to write up a contract related to fireballs.  I like using markdown in Obsidian for quick writing.
+LOCAL PRD - Later, I needed to write up a contract related to fireballs.  I like using markdown in Obsidian for quick text drafting.
 - USE TEMPLATE - A few well considered templates greatly simplifies creation, organization, and access.
-	For local work files I put them under 'ww' using the CMD+OPT Q template
+	For local work files I put them under 'QQ' using the CMD+OPT Q template
 
 ADD ANCHOR - Notice that we are starting to get fireball items scattered around; we should anchor them somewhere.  Notion is the 80% anchor, but I do have gdrive files and local files too.  I could use my local fireball WW folder as the anchor, but this seems a bit gross for a project that is 90% online.  Lets just use the word "fireball" itself as the anchor.
 - RENAME - Oh yeah, fireball is already used for the notion page and that mostly still is the anchor place for fireballs.  Lets rename it to be "Fireball Notion"
@@ -45,8 +42,8 @@ ADD ANCHOR - Notice that we are starting to get fireball items scattered around;
 - RENAME GROUP -
 
 ADD ALIAS - 
-	- FI ALIAS -
-	- RENAME FACEBOOK - 
+	- FI ALIAS 
+	- FB ALIAS (RENAME FACEBOOK)
 	- 
 
 MANY THINGS - Can link many kinds of things:

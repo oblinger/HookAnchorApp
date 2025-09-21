@@ -1,7 +1,9 @@
 
+- Use "SEEK" 
+- [[AI Job Search]] 
 - [[LI]] Linked In Searches
 - [[Seek LinkedIn Based]]
-- [[Seek Search Terms]]
+- [[Seek Search Terms]] 
 
 
 

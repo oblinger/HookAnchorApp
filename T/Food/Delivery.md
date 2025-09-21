@@ -4,7 +4,7 @@ ASIAN:	 Chinese, Japanese, Thai, Korean, Burmese, Vietnamese, Fusion    BOWL: Ph
 AMER:	 Seafood, American (Salad, Pizza,  Sandwich, Burger, Fast, Soul, Desert)		
 WORLD:	Italian, French, Mediterranean, German, Spanish, Mexican, Indian, African
 
-ELI:    Thai, Chinese, Korean, Pizza, Mexican, ?Seafood, Italian, pizz
+ELI:    Thai, Chinese, Korean, Pizza, Mexican, ?Seafood, Italian, pizza
 MOM:  Thai, Poki, Seafood, Japanese, Sandwich, EURO(Italian, French, German, Spanish), Salad, Pizza, Burger
 
 https://www.frannyskitchensf.com/

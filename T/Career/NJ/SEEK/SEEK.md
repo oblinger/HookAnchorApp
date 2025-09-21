@@ -6,7 +6,6 @@
   [[SEEK Cover Letter Terms]],
   [[SEEK Interview Log]], [[SEEK Interviewing Tips]], 
   [[SEEK Info]],
-  [[AI Job Search]] 
 
 
 - [[NJ Questions]], 

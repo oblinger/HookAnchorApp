@@ -5,7 +5,7 @@
   SYSTEMS:	[[SYS Android]], [[SYS Disks]], [[SYS Network]], 
   My KBD:		[[KBD Shortcuts]], [[KBD Obsidian Keys]], [[KBD Global Keys]], [[KBD Notion]],
   :				[[OBS]],
-  :	[[Hack]], [[Automation]], [NEU Folder](spot://neufolder), ,
+  :	[[SYS/Hack/Hacks]], [[Automation]], [NEU Folder](spot://neufolder), ,
 - [[SYS Dashboards]]	-
 - [[SYS Keyboard Setup]]
 - 			-
@@ -42,7 +42,7 @@
 - [[@Github]], [[Spot]], 
 
 
-  DELS: [[Facet]],[[SYS/Hack/Hack]],[[MAC]], [[OBS]], [[SYS Android]], [[SYS Disks]], [[SYS Github Webpage]], [[SYS Hacks]], [[Closet]], [[KM]], [[Spot]], [[HACK]],[[My Android]], [[My Github Webpage]], [[My Hacks]], [[Facet]], [[SYS/Hack/Hack]],[[HACK]], [[HACK]],[[Spot]], [[Spot]], 
+  DELS: [[Facet]],[[SYS/Hack/Hacks]],[[MAC]], [[OBS]], [[SYS Android]], [[SYS Disks]], [[SYS Github Webpage]], [[SYS Hacks]], [[Closet]], [[KM]], [[Spot]], [[SYS/Hack/Hacks]],[[My Android]], [[My Github Webpage]], [[My Hacks]], [[Facet]], [[SYS/Hack/Hacks]],[[SYS/Hack/Hacks]], [[SYS/Hack/Hacks]],[[Spot]], [[Spot]], 
 
 - [[Spot]] 
 

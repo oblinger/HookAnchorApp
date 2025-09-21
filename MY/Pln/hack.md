@@ -1,4 +1,7 @@
 
+
+- ghost set to last anchor
+
 - [ ] Scrub system & test reinstall works
 - [ ] Create teaser video [Video](hook://hookanchorvideo) 
 - [ ] Build Uninstaller
