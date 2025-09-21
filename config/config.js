@@ -956,4 +956,39 @@ module.exports = {
     }
   },
 
+  action_grab: function(ctx) {
+    const { log, detailed_log, shell_sync } = ctx.builtins;
+
+    detailed_log("GRAB", "action_grab: Starting grab operation via command server");
+
+    try {
+      // Use the CLI grab command to perform the grab operation
+      const grab_output = shell_sync("~/ob/proj/HookAnchor/target/release/ha --grab");
+
+      detailed_log("GRAB", `action_grab: Raw grab output: '${grab_output}'`);
+
+      // Parse the output - format is "action argument"
+      const parts = grab_output.trim().split(' ', 2);
+      if (parts.length >= 2) {
+        const action = parts[0];
+        const argument = parts.slice(1).join(' '); // Handle arguments with spaces
+
+        detailed_log("GRAB", `action_grab: Parsed - action='${action}', argument='${argument}'`);
+
+        // Return the argument (which is the URL for web pages)
+        return argument;
+      } else if (parts.length === 1) {
+        const action = parts[0];
+        detailed_log("GRAB", `action_grab: Single part result - action='${action}', no argument`);
+        return ""; // No argument part
+      } else {
+        detailed_log("GRAB", "action_grab: Empty grab result");
+        return "";
+      }
+    } catch (error) {
+      detailed_log("GRAB", `action_grab: Error during grab: ${error}`);
+      return "";
+    }
+  },
+
 };
