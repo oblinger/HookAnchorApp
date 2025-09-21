@@ -171,8 +171,8 @@ impl ActionContext {
     pub fn new(input: String) -> Self {
         let mut variables = HashMap::new();
         
-        // Add date/time variables
-        add_datetime_variables(&mut variables);
+        // Add date/time variables using shared function from template_creation
+        crate::core::template_creation::add_datetime_variables(&mut variables);
         
         Self {
             input,
@@ -304,9 +304,9 @@ fn create_js_context_with_params(
             globals.set(key.as_str(), value.clone())?;
         }
         
-        // Add date/time variables
+        // Add date/time variables using shared function from template_creation
         let mut date_vars = HashMap::new();
-        add_datetime_variables(&mut date_vars);
+        crate::core::template_creation::add_datetime_variables(&mut date_vars);
         for (key, value) in date_vars {
             globals.set(key.as_str(), value)?;
         }
@@ -335,37 +335,6 @@ fn js_value_to_string(value: &rquickjs::Value) -> String {
     }
 }
 
-
-/// Add date/time variables to the context
-fn add_datetime_variables(variables: &mut HashMap<String, String>) {
-    use chrono::{Local, Datelike, Timelike};
-    let now = Local::now();
-    
-    // Year
-    variables.insert("YYYY".to_string(), format!("{:04}", now.year()));
-    variables.insert("YY".to_string(), format!("{:02}", now.year() % 100));
-    
-    // Month
-    variables.insert("M".to_string(), format!("{}", now.month()));
-    variables.insert("MM".to_string(), format!("{:02}", now.month()));
-    variables.insert("MMM".to_string(), now.format("%b").to_string());
-    
-    // Day
-    variables.insert("D".to_string(), format!("{}", now.day()));
-    variables.insert("DD".to_string(), format!("{:02}", now.day()));
-    
-    // Hour
-    variables.insert("h".to_string(), format!("{}", now.hour()));
-    variables.insert("hh".to_string(), format!("{:02}", now.hour()));
-    
-    // Minute
-    variables.insert("m".to_string(), format!("{}", now.minute()));
-    variables.insert("mm".to_string(), format!("{:02}", now.minute()));
-    
-    // Second
-    variables.insert("s".to_string(), format!("{}", now.second()));
-    variables.insert("ss".to_string(), format!("{:02}", now.second()));
-}
 
 /// Execute an action locally in the current process
 /// 

@@ -443,7 +443,8 @@ fn extract_and_validate_folder(cmd: &super::Command) -> Result<String, String> {
 }
 
 /// Add date/time variables to the context
-fn add_datetime_variables(variables: &mut HashMap<String, String>) {
+/// This is used by both template system and actions system
+pub fn add_datetime_variables(variables: &mut HashMap<String, String>) {
     let now = Local::now();
     
     // Year
