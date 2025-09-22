@@ -419,9 +419,9 @@ pub(super) fn execute_locally(
         
         // Everything else is JavaScript with action_ prefix
         _ => {
-            // Check if there's a specific function name in params (for js_function type)
-            let function_name = if action.action_type() == "js_function" {
-                // For js_function, use the actual function name from params
+            // Check if there's a specific function name in params (for js or js_function type)
+            let function_name = if action.action_type() == "js_function" || action.action_type() == "js" {
+                // For js_function and js, use the actual function name from params
                 action.params.get("function")
                     .and_then(|v| v.as_str())
                     .unwrap_or(&format!("action_{}", action.action_type()))
