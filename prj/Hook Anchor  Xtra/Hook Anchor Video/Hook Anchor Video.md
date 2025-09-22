@@ -1,4 +1,10 @@
 
+
+
+- [[./1 intro.txt]] [[./2 notes.txt]]  [[./3 Body.md]] 
+- [OBS App](hook://OBSapp) 
+
+
 - [ ] check marks should be bigger and more visible (bold)
 - [ ] The latest dist_.... files should be copied into the user's config folder so they can see and use the latest code in there config.js config.yaml or hook_anchor_zshrc file.  Those files should always be copied over so the user has ready access to them.
 
@@ -24,34 +30,9 @@ Hook Anchor reinforces names already in your head, and is streamlined to capture
 
 
 
+
 Best to show this by example:
 
-IN MY DAY JOB my team used our player & ball tracking to create a fireball effect over basketball highlight clips.
-
-ON NOTION - I think this is a project on notion. PROJ N
-
-ADD GDRIVE - After release we start using Gdrive for datafiles.  Let's remember this. (show my 'facets' list with 'Gdrive')
-
-LOCAL PRD - Later, I needed to write up a contract related to fireballs.  I like using markdown in Obsidian for quick text drafting.
-- USE TEMPLATE - A few well considered templates greatly simplifies creation, organization, and access.
-	For local work files I put them under 'QQ' using the CMD+OPT Q template
-
-ADD ANCHOR - Notice that we are starting to get fireball items scattered around; we should anchor them somewhere.  Notion is the 80% anchor, but I do have gdrive files and local files too.  I could use my local fireball WW folder as the anchor, but this seems a bit gross for a project that is 90% online.  Lets just use the word "fireball" itself as the anchor.
-- RENAME - Oh yeah, fireball is already used for the notion page and that mostly still is the anchor place for fireballs.  Lets rename it to be "Fireball Notion"
-- ANCHOR - Use ">" to create
-- RENAME GROUP -
-
-ADD ALIAS - 
-	- FI ALIAS 
-	- FB ALIAS (RENAME FACEBOOK)
-	- 
-
-MANY THINGS - Can link many kinds of things:
-- haco /, haco cmd+T, haco enter
-- bbc, @nick, free, ctop, resd, bugb, gmai, rock
-
-REDUCE COG LOAD - Need not think about which app to use, how to get to it, what folder its in, or the current state of that app right now.
-- The aim is stateless direct access.  Think of a name and you are there, For many apps this already works well, and I keep adding new apps.
 
 
 FIREBALL - day job, just type

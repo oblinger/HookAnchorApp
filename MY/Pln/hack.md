@@ -1,3 +1,6 @@
+- svproj menu is wrong
+- The menu should go away when the prefix menus is empty
+- oblinger should sort to the top of the list
 
 
 - ghost set to last anchor
