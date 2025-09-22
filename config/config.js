@@ -712,11 +712,23 @@ module.exports = {
   action_test_error: function(ctx) {
     const { error, detailed_log } = ctx.builtins;
     detailed_log("TEST_ERROR", "About to throw a JavaScript error for testing");
-    
+
     // This will definitely throw an error
     nonexistent_function_call();
-    
+
     return "This should never be reached";
+  },
+
+  // TEST: Function to debug available builtins
+  action_test_builtins: function(ctx) {
+    const { log } = ctx.builtins;
+
+    log("BUILTINS_TEST: Available builtins:");
+    for (const key in ctx.builtins) {
+      log(`BUILTINS_TEST: - ${key}: ${typeof ctx.builtins[key]}`);
+    }
+
+    return "Builtins logged";
   },
   
   // NEW: TMUX activation using only the shell commands available to JavaScript
@@ -957,37 +969,59 @@ module.exports = {
   },
 
   action_grab: function(ctx) {
-    const { log, detailed_log, shell_sync } = ctx.builtins;
+    const { log, error, shell_sync } = ctx.builtins;
 
-    detailed_log("GRAB", "action_grab: Starting grab operation via command server");
+    // Use log for visibility
+    log("GRAB: action_grab: Starting grab operation via CLI");
 
     try {
       // Use the CLI grab command to perform the grab operation
+      log("GRAB: action_grab: Calling shell_sync...");
+
       const grab_output = shell_sync("~/ob/proj/HookAnchor/target/release/ha --grab");
 
-      detailed_log("GRAB", `action_grab: Raw grab output: '${grab_output}'`);
+      log(`GRAB: action_grab: Raw grab output: '${grab_output}'`);
 
-      // Parse the output - format is "action argument"
-      const parts = grab_output.trim().split(' ', 2);
-      if (parts.length >= 2) {
-        const action = parts[0];
-        const argument = parts.slice(1).join(' '); // Handle arguments with spaces
-
-        detailed_log("GRAB", `action_grab: Parsed - action='${action}', argument='${argument}'`);
-
-        // Return the argument (which is the URL for web pages)
-        return argument;
-      } else if (parts.length === 1) {
-        const action = parts[0];
-        detailed_log("GRAB", `action_grab: Single part result - action='${action}', no argument`);
-        return ""; // No argument part
-      } else {
-        detailed_log("GRAB", "action_grab: Empty grab result");
-        return "";
+      // shell_sync wraps output with "Command executed: " prefix, strip it
+      let clean_output = grab_output.trim();
+      if (clean_output.startsWith("Command executed: ")) {
+        clean_output = clean_output.substring("Command executed: ".length);
       }
-    } catch (error) {
-      detailed_log("GRAB", `action_grab: Error during grab: ${error}`);
+
+      log(`GRAB: action_grab: Clean grab output: '${clean_output}'`);
+
+      // Return the clean output (format: "action argument")
+      // The popup will parse this into action and argument
+      return clean_output;
+
+    } catch (err) {
+      // Detailed error logging
+      const errorDetails = `action_grab ERROR: ${err}\nStack: ${err.stack || 'No stack trace'}\nMessage: ${err.message || err}`;
+
+      // Log to file
+      log(`GRAB: ${errorDetails}`);
+
+      // Show to user via error dialog
+      error(`Grab failed: ${err.message || err}`);
+
       return "";
+    }
+  },
+
+  // Clear the anchor.log file for debugging
+  action_clear_log: function(ctx) {
+    const { log, shell_sync } = ctx.builtins;
+
+    log("CLEAR_LOG: Clearing anchor.log file for debugging");
+
+    try {
+      // Clear the log file
+      const result = shell_sync("echo '' > ~/.config/hookanchor/anchor.log");
+      log("CLEAR_LOG: Successfully cleared anchor.log");
+      return "Log cleared";
+    } catch (err) {
+      log(`CLEAR_LOG: Failed to clear log: ${err}`);
+      return "Failed to clear log";
     }
   },
 

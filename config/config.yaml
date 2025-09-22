@@ -7,7 +7,7 @@
 # APPLICATION SETTINGS
 # =================================================================
 popup_settings:
-  verbose_logging:        true        # Controls if detailed logging messages added to the log
+  verbose_logging:        false        # Controls if detailed logging messages added to the log
   merge_similar:          true         # Merging similar commands in popup
   max_rows:               25           # Max number of rows in the list of matching commands
   max_columns:            4            # Max columns in list of matching commands
@@ -100,7 +100,15 @@ actions:
     arg: ""
     edit: true
     use_existing: true
-    
+
+
+  clear_log:
+    description: "Clear anchor.log file for debugging"
+    action_type: js_function
+    key: "Cmd+Opt+E"
+    name: "Clear Log"
+    function: "action_clear_log"
+
 
   create_alias:
     description: "Create alias to last executed command"
@@ -280,6 +288,12 @@ actions:
     description: "Test JavaScript error reporting"
     action_type: js
     function: action_test_error
+
+  # Test available JavaScript builtins
+  test_builtins:
+    description: "Test available JavaScript builtins"
+    action_type: js
+    function: action_test_builtins
  
   show_contact:
     description: "Show contact for selected command (strips @ prefix)"

@@ -12,8 +12,10 @@ GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 NC='\033[0m' # No Color
 
-# Project paths
-PROJECT_DIR="$(cd "$(dirname \"${BASH_SOURCE[0]}\")/../.." && pwd)"
+# Change to script directory first, then find project root
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$SCRIPT_DIR/../.."
+PROJECT_DIR="$(pwd)"
 RELEASE_DIR="$PROJECT_DIR/target/release"
 APP_DIR="/Applications/HookAnchor.app"
 CONTENTS_DIR="$APP_DIR/Contents"
