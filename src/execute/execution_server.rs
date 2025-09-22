@@ -21,8 +21,8 @@ fn log_and_print(prefix: &str, message: &str) {
     let formatted = format!("{}: {}", prefix, message);
     // Print to stdout so we can see what the server is doing
     println!("{}", formatted);
-    // Also log to file for persistence
-    detailed_log(prefix, message);
+    // Also log to file for persistence - use regular log() for command execution
+    crate::utils::log(&formatted);
 }
 
 /// Response structure for command execution
@@ -201,7 +201,7 @@ fn handle_client(
             .map(|arg| format!("{}: {}", action.action_type(), arg))
             .unwrap_or_else(|| action.action_type().to_string())
     };
-    println!("[{}] Executing: {}", chrono::Local::now().format("%H:%M:%S"), action_desc);
+    log_and_print("CMD_SERVER", &format!("Executing: {}", action_desc));
     
     // Check if client needs a response (blocking calls)
     let needs_response = action.get_string("flags").unwrap_or("").contains("G");
@@ -219,8 +219,8 @@ fn handle_client(
                 error: None,
             },
             Err(e) => {
-                // Print error to console so user can see it
-                eprintln!("[{}] ERROR: {}", chrono::Local::now().format("%H:%M:%S"), e);
+                // Log error to file and console
+                log_and_print("CMD_SERVER_ERROR", &format!("{}", e));
                 CommandResponse {
                     success: false,
                     exit_code: Some(1),
@@ -243,8 +243,8 @@ fn handle_client(
             match super::actions::execute_locally(&action, None, None) {
                 Ok(_) => detailed_log("CMD_SERVER", "Action executed successfully"),
                 Err(e) => {
-                    // Print error to console so user can see it
-                    eprintln!("[{}] ERROR: {}", chrono::Local::now().format("%H:%M:%S"), e);
+                    // Log error to file and console
+                    log_and_print("CMD_SERVER_ERROR", &format!("{}", e));
                     crate::utils::log_error(&format!("Action failed: {}", e));
                 }
             }
@@ -383,8 +383,8 @@ impl CommandClient {
         // Connect to server
         let mut stream = UnixStream::connect(&self.socket_path)?;
         
-        // Set read timeout for response
-        stream.set_read_timeout(Some(std::time::Duration::from_millis(1000)))?;
+        // Set read timeout for response (5 seconds for operations like grab)
+        stream.set_read_timeout(Some(std::time::Duration::from_millis(5000)))?;
         
         // Send JSON
         stream.write_all(json.as_bytes())?;
