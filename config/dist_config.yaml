@@ -1,3 +1,12 @@
+# HookAnchor Default Configuration
+# 
+# This config has a number of example templates.  Please customize as needed.
+#
+# UNIFIED ACTIONS SYSTEM:
+# All behaviors (templates, keyboard bindings, command actions) are now defined
+# in the 'actions:' section. Each action has a 'type' that determines its behavior,
+# and can optionally be bound to a keyboard key via the 'key' field.
+
 # Anchor Selector Configuration
 # Main configuration file for both popup app and launcher system
 
@@ -15,14 +24,13 @@ popup_settings:
   scan_interval_seconds:  30           # How many seconds between automatic rescanning of the filesystem
   idle_timeout_seconds:   60           # Hide popup after this many seconds of inactivity
   countdown_seconds:      5            # Seconds for grabber countdown (default: 5)
-  ghost_timeout_seconds:  180          # Seconds to remember last executed anchor as ghost input
   run_in_background:      true         # Keep app running in background for instant popup (experimental)
-  global_hotkey:          "opt+a"      # Global hotkey to show popup (requires accessibility permissions)
+  global_hotkey:          "cmd+z"      # Global hotkey to show popup (requires accessibility permissions)
   popup_server_retries:   3            # Number of times to retry showing the popup before rebuilding
   max_window_size:        "1700x1100"  # Maximum size for dialogs and popups in "widthxheight" format
   default_window_size:    "800x120"    # Default popup window size in "widthxheight" format
   max_log_file_size:      10000000     # Maximum log file size in bytes (10MB) before clearing
-  file_roots:             ["~/ob/kmr", "/Applications"] # List of file scanning roots (markdown files and apps)
+  file_roots:             ["~/Documents/Notes", "/Applications"] # List of file scanning roots (markdown files and apps)
   doc_file_extensions:    "pdf,doc,docx,xls,xlsx,ppt,pptx,txt,rtf,pages,numbers,csv,html,htm" # File extensions to auto-create DOC commands for
   scan_exclusion_patterns:    # Regular expressions to exclude paths from scanning
     - "/Yore/"            # Exclude any path containing /Yore/ folder (historical files)
@@ -49,8 +57,8 @@ popup_settings:
 launcher_settings:
   js_timeout_ms:          5000         # Max milliseconds allows for a js command execution
   obsidian_app_name:      "Obsidian"   # Obisidian app name
-  obsidian_vault_name:    "kmr"        # Main vault used for Obsidian viewing of markdown files
-  obsidian_vault_path:    "~/ob/kmr"   # Location of the main vault
+  obsidian_vault_name:    "MyVault"        # Main vault used for Obsidian viewing of markdown files
+  obsidian_vault_path:    "~/Documents/Notes"   # Location of the main vault
   use_javascript_tmux_activation: "false"  # Use JavaScript TMUX implementation
 
 
@@ -72,7 +80,7 @@ actions:
     action_type: template
     key: "+"
     grab: 5
-    name: "{{input}}{{grabbed.suffix}}"
+    name: "{{input}}"
     action: "{{grabbed.action}}"
     arg: "{{grabbed.arg}}"
     edit: true
@@ -145,39 +153,25 @@ actions:
        
 
   ww:
-    description: "WORK      - Creates a new ww subfolder with a YYYY prefix"
+    description: "Creates a new ww subfolder with a YYYY prefix"
     action_type: template
-    key: "Cmd+Opt+W"
+    key: "Cmd+W"
     name: "{{date.year}} {{input}}"
     action: "anchor"
-    arg: "/Users/oblinger/ob/kmr/Work/SV/ww/{{date.year}} {{input}}/{{date.year}} {{input}}.md"
+    arg: "~/Work/{{date.year}} {{input}}/{{date.year}} {{input}}.md"
     patch: "WW"
     flags: ""
     edit: true
-    file: "/Users/oblinger/ob/kmr/Work/SV/ww/{{date.year}} {{input}}/{{date.year}} {{input}}.md"
+    file: "~/Work/{{date.year}} {{input}}/{{date.year}} {{input}}.md"
     file_rescan: true
     contents: |
       .[[{{date.year}}-{{date.month}} {{input}}]].
       
-  qq:
-    description: "QUICK PG  - Creates a new qq markdown document with a YYYY-MM-DD prefix"
-    action_type: template
-    key: "Cmd+Opt+Q"
-    name: "{{date.year}}-{{date.month}}-{{date.day}} {{input}}"
-    action: "anchor"
-    arg: "/Users/oblinger/ob/kmr/Work/SV/QQ/{{date.year}}-{{date.month}}-{{date.day}} {{input}}.md"
-    patch: "QQ"
-    flags: ""
-    edit: true
-    file: "/Users/oblinger/ob/kmr/Work/SV/QQ/{{date.year}}-{{date.month}}-{{date.day}} {{input}}.md"
-    file_rescan: true
-    contents: ""
-      
 
   year:
-    description: "SUB-PAGE  - Creates an anchor and subfolder with a YYYY-MM-DD prefix"
+    description: "Creates an anchor and subfolder with a YYYY-MM-DD prefix"
     action_type: template
-    key: "Cmd+Opt+S"
+    key: "Cmd+Y"
     name: "{{date.year}}-{{date.month}}-{{date.day}} {{input}}"
     action: "markdown"
     arg: "{{last_executed.folder}}/{{date.year}}-{{date.month}}-{{date.day}} {{input}}.md"
@@ -190,28 +184,28 @@ actions:
              
 
   prj:
-    description: "PROJECT   - Creates a new Prj project with a YYYY prefix"
+    description: "Creates a new Prj project with a YYYY prefix"
     action_type: template
-    key: "Cmd+Opt+P"
+    key: "Cmd+P"
     name: "{{date.year}} {{input}}"
     action: "anchor"
-    arg: "/Users/oblinger/ob/kmr/prj/{{date.year}} {{input}}/{{date.year}} {{input}}.md"
+    arg: "~/Documents/Notes/prj/{{date.year}} {{input}}/{{date.year}} {{input}}.md"
     patch: "Prj"
     flags: ""
     edit: true
-    file: "/Users/oblinger/ob/kmr/prj/{{date.year}} {{input}}/{{date.year}} {{input}}.md"
+    file: "~/Documents/Notes/prj/{{date.year}} {{input}}/{{date.year}} {{input}}.md"
     file_rescan: true
     contents: |
       .[[{{date.year}}-{{date.month}} {{input}}]].
       
 
   at:
-    description: "AT ENTRY  - Creates a new contact's @ entry"
+    description: "Creates a new contact's @ entry"
     action_type: template
-    key: "Cmd+Opt+A"
+    key: "Cmd+Shift+A"
     name: "@{{input}}"
     action: "anchor"
-    arg: "/Users/oblinger/ob/kmr/At/@{{input}}.md"
+    arg: "~/Documents/Notes/At/@{{input}}.md"
     patch: "At"
     flags: ""
     edit: true
@@ -221,32 +215,32 @@ actions:
     
 
   org:
-    description: "ORG ENTRY - Creates a new org @ entry"
+    description: "Creates a new org @ entry"
     action_type: template
-    key: "Cmd+Opt+O"
+    key: "Cmd+O"
     name: "@{{input}}"
     action: "anchor"
-    arg: "/Users/oblinger/ob/kmr/At/Org/@{{input}}.md"
+    arg: "~/Documents/Notes/At/Org/@{{input}}.md"
     patch: "Org"
     flags: ""
     edit: true
-    file: "/Users/oblinger/ob/kmr/At/Org/@{{input}}.md"
+    file: "~/Documents/Notes/At/Org/@{{input}}.md"
     file_rescan: true
     contents: |
       =[[Org]]   
     
   doc_page:
-    description: "DOC PAGE  - Creates a new DOC documentation file"
+    description: "Creates a new DOC documentation file"
     action_type: template
-    key: "Cmd+Opt+D"
+    key: "Cmd+D"
     name: "Doc{{input}}"
     action: "doc"
-    arg: "/Users/oblinger/ob/kmr/T/DOC/Doc{{input}}.md"
+    arg: "~/Documents/Notes/T/DOC/Doc{{input}}.md"
     patch: "DOC"
     flags: ""
     edit: true
     file_rescan: true
-    file: "/Users/oblinger/ob/kmr/At/Org/@{{input}}.md"
+    file: "~/Documents/Notes/At/Org/@{{input}}.md"
     contents: |
       #org   
       
@@ -491,49 +485,23 @@ actions:
 # =================================================================
 # Rules for capturing application context and creating new commands
 
-# =================================================================
-# GRABBER SUFFIX MAP
-# =================================================================
-# Map from suffix strings to regex patterns for URL/path classification
-# When the grabber captures a URL/path that matches a regex pattern,
-# the corresponding suffix is appended to help distinguish sources
-grabber_suffix_map:
-  "Gdrive": "https://drive\\.google\\.com/.*|https://docs\\.google\\.com/.*"
-  "Notion": "https://www\\.notion\\.so/.*|notion://.*"
-  "Github": "https://github\\.com/.*|https://.*\\.github\\.io/.*"
-  "Obsidian": "obsidian://.*"
-  "Slack": "https://.*\\.slack\\.com/.*|slack://.*"
-  "Zoom": "https://.*\\.zoom\\.us/.*|zoommtg://.*"
-  "Figma": "https://www\\.figma\\.com/.*|figma://.*"
-  "Youtube": "https://www\\.youtube\\.com/.*|https://youtu\\.be/.*"
-  "Dropbox": "https://www\\.dropbox\\.com/.*|https://.*\\.dropbox\\.com/.*"
-  "OneDrive": "https://.*\\.sharepoint\\.com/.*|https://onedrive\\.live\\.com/.*"
-  "Confluence": "https://.*\\.atlassian\\.net/.*|https://.*\\.confluence\\.com/.*"
-  "Jira": "https://.*\\.atlassian\\.net/.*|https://.*\\.jira\\.com/.*"
-  "Trello": "https://trello\\.com/.*"
-  "Asana": "https://app\\.asana\\.com/.*"
-  "Miro": "https://miro\\.com/.*"
-  "Linear": "https://linear\\.app/.*"
-  "Discord": "https://discord\\.com/.*|discord://.*"
-  "Teams": "https://teams\\.microsoft\\.com/.*|msteams://.*"
-
 grabber_rules:
 - {"name": "Chrome URL", "action": "chrome", "group": "Web",
-  "matcher": "bundleId === 'com.google.Chrome' && props.url ? props.url : null"}
+  "matcher": "bundleId === ''com.google.Chrome'' && props.url ? props.url : null"}
 - name: Safari URL
-  matcher: 'bundleId === "com.apple.Safari" && props.url ? props.url : null'
+  matcher: 'bundleId === ''com.apple.Safari'' && props.url ? props.url : null'
   action: safari
   group: Web
 - name: Brave URL
-  matcher: 'bundleId === "com.brave.Browser" && props.url ? props.url : null'
+  matcher: 'bundleId === ''com.brave.Browser'' && props.url ? props.url : null'
   action: brave
   group: Web
 - name: Firefox URL
-  matcher: 'bundleId === "org.mozilla.firefox" && props.url ? props.url : null'
+  matcher: 'bundleId === ''org.mozilla.firefox'' && props.url ? props.url : null'
   action: firefox
   group: Web
 - name: Chrome Beta URL
-  matcher: 'bundleId === "com.google.Chrome.beta" && props.url ? props.url : null'
+  matcher: 'bundleId === ''com.google.Chrome.beta'' && props.url ? props.url : null'
   action: work
   group: Work
 - name: Finder Anchor

@@ -1,0 +1,24 @@
+# HookAnchor Shell Integration
+# This file provides shell functions for HookAnchor integration
+
+# Add ~/bin to PATH if it exists and isn't already there
+if [[ -d "$HOME/bin" && ":$PATH:" != *":$HOME/bin:"* ]]; then
+    export PATH="$HOME/bin:$PATH"
+fi
+
+# HookAnchor shortcut function
+ha() {
+    if command -v ~/bin/ha >/dev/null 2>&1; then
+        ~/bin/ha "$@"
+    elif command -v /Applications/HookAnchor.app/Contents/MacOS/ha >/dev/null 2>&1; then
+        /Applications/HookAnchor.app/Contents/MacOS/ha "$@"
+    else
+        echo "HookAnchor not found. Please run the installer."
+        return 1
+    fi
+}
+
+# Quick popup launcher
+hook() {
+    ha -m "$*"
+}
