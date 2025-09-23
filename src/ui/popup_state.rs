@@ -98,10 +98,10 @@ impl PopupState {
                 let ghost_timeout = self.config.popup_settings.ghost_timeout_seconds.unwrap_or(180) as i64;
 
                 if seconds_since_ghost < ghost_timeout {
-                    crate::utils::detailed_log("GHOST_INPUT", &format!("Using ghost input '{}' ({}s ago)", ghost_input, seconds_since_ghost));
+                    // crate::utils::detailed_log("GHOST_INPUT", &format!("Using ghost input '{}' ({}s ago)", ghost_input, seconds_since_ghost));
                     return ghost_input.clone();
                 } else {
-                    crate::utils::detailed_log("GHOST_INPUT", &format!("Ghost input '{}' expired ({}s ago, timeout: {}s)", ghost_input, seconds_since_ghost, ghost_timeout));
+                    // crate::utils::detailed_log("GHOST_INPUT", &format!("Ghost input '{}' expired ({}s ago, timeout: {}s)", ghost_input, seconds_since_ghost, ghost_timeout));
                 }
             }
         }
@@ -242,8 +242,10 @@ impl PopupState {
             let ghost_timeout = self.config.popup_settings.ghost_timeout_seconds.unwrap_or(180) as i64;
 
             if seconds_since_ghost < ghost_timeout {
-                // Show ghost input as placeholder
+                // crate::utils::detailed_log("GHOST_DISPLAY", &format!("📱 Displaying ghost input: '{}'", ghost_input));
                 return ghost_input.clone();
+            } else {
+                // crate::utils::detailed_log("GHOST_DISPLAY", &format!("👻 Ghost input '{}' expired ({}s ago, timeout: {}s)", ghost_input, seconds_since_ghost, ghost_timeout));
             }
         }
 
@@ -255,10 +257,13 @@ impl PopupState {
             let seconds_since_build = current_time - build_time;
 
             if seconds_since_build < 600 { // 10 minutes
-                return format!("{} {}s", base_text, seconds_since_build);
+                let hint_text = format!("{} {}s", base_text, seconds_since_build);
+                // crate::utils::detailed_log("GHOST_DISPLAY", &format!("💡 Displaying build time hint: '{}'", hint_text));
+                return hint_text;
             }
         }
 
+        // crate::utils::detailed_log("GHOST_DISPLAY", &format!("📝 Displaying default hint: '{}'", base_text));
         base_text.to_string()
     }
     

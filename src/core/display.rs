@@ -406,9 +406,10 @@ pub fn get_new_display_commands(
         // Step 3: Remove prefix menu commands from prefix_commands to avoid duplicates
         // Check both literal matches and resolved alias matches
         prefix_commands.retain(|cmd| {
-            crate::utils::detailed_log("DISPLAY_FILTER", &format!("Checking command for dedup: {} (action: {})", cmd.command, cmd.action));
+            // TODO: Remove DEBUG - Commented out to reduce log noise
+            // crate::utils::detailed_log("DISPLAY_FILTER", &format!("Checking command for dedup: {} (action: {})", cmd.command, cmd.action));
             let cmd_resolved = cmd.resolve_alias(all_commands);
-            crate::utils::detailed_log("DISPLAY_FILTER", &format!("Resolved to: {} (action: {})", cmd_resolved.command, cmd_resolved.action));
+            // crate::utils::detailed_log("DISPLAY_FILTER", &format!("Resolved to: {} (action: {})", cmd_resolved.command, cmd_resolved.action));
             
             !prefix_menu_commands.iter().any(|prefix_menu_cmd| {
                 // Check literal match

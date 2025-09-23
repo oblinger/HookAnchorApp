@@ -201,7 +201,7 @@ fn handle_client(
             .map(|arg| format!("{}: {}", action.action_type(), arg))
             .unwrap_or_else(|| action.action_type().to_string())
     };
-    log_and_print("CMD_SERVER", &format!("Executing: {}", action_desc));
+    detailed_log("CMD_SERVER", &format!("Executing: {}", action_desc));
     
     // Check if client needs a response (blocking calls)
     let needs_response = action.get_string("flags").unwrap_or("").contains("G");

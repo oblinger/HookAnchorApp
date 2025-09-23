@@ -9,15 +9,26 @@ use super::Action;
 use crate::core::Command;
 use crate::utils::detailed_log;
 
-/// Execute an action on the server
-/// This function always sends the action to the command server for execution
+/// Execute an action on the server with CLI template expansion
+/// This function performs template expansion before sending to the command server
 /// Returns either an ACK (for non-blocking) or actual execution results (for G flag/GUI commands)
 pub fn execute_on_server(action: &Action) -> Result<String, Box<dyn std::error::Error>> {
-    detailed_log("EXECUTE", &format!("Sending action to server: {}", action.action_type()));
-    
+    detailed_log("EXECUTE", &format!("CLI execution - expanding action: {}", action.action_type()));
+
+    // Clone action and perform CLI template expansion
+    let mut expanded_action = action.clone();
+
+    // Create basic template context for CLI (no popup context, empty input)
+    let template_context = crate::core::template_creation::TemplateContext::create_basic_template("");
+
+    // Expand all action parameters
+    template_context.expand_action_parameters(&mut expanded_action);
+
+    detailed_log("EXECUTE", &format!("Sending expanded action to server: {}", expanded_action.action_type()));
+
     // Send to server and get response (ACK or full result)
-    let response = super::execution_server::send_for_execution(action)?;
-    
+    let response = super::execution_server::send_for_execution(&expanded_action)?;
+
     // Return server response (either ACK or execution output)
     Ok(response.stdout)
 }

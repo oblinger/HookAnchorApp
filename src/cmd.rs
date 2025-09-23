@@ -223,33 +223,40 @@ fn run_execute_top_match(args: &[String]) {
     // Client environment logging is now handled automatically in execute_command based on action type
     
     let (sys_data, _) = crate::core::sys_data::get_sys_data();
+
+    // First, find if there's an exact match (including aliases)
+    let exact_match = sys_data.commands.iter()
+        .find(|cmd| cmd.command.eq_ignore_ascii_case(query))
+        .cloned();
+
+    // Get display commands which may resolve aliases
     let (display_commands, _, _, _) = crate::core::get_new_display_commands(query, &sys_data.commands, &sys_data.patches);
     let filtered = display_commands.into_iter().take(1).collect::<Vec<_>>();
-    
+
     if filtered.is_empty() {
         print(&format!("No commands found matching: {}", query));
         std::process::exit(1);
     }
-    
-    let top_command_obj = &filtered[0];
+
+    // Use the exact match if we have one (preserves original alias), otherwise use filtered result
+    let (top_command_obj, original_name) = if let Some(exact) = exact_match.as_ref() {
+        // We have an exact match - use it to preserve the original alias name
+        (exact.clone(), exact.command.clone())
+    } else {
+        // No exact match, use the filtered result
+        (filtered[0].clone(), filtered[0].command.clone())
+    };
+
     print(&format!("Executing top match: {}", top_command_obj.command));
-    
+
     // Save the last executed command for add_alias functionality
-    use crate::core::state::{save_last_executed_command, save_ghost_input};
-    crate::utils::detailed_log("STATE_SAVE", &format!("CLI: Attempting to save last executed command: '{}'", top_command_obj.command));
-    match save_last_executed_command(&top_command_obj.command) {
+    use crate::core::state::save_last_executed_command;
+    crate::utils::detailed_log("STATE_SAVE", &format!("CLI: Attempting to save last executed command: '{}'", original_name));
+    match save_last_executed_command(&original_name) {
         Ok(_) => crate::utils::detailed_log("STATE_SAVE", "CLI: Successfully saved last executed command"),
         Err(e) => crate::utils::detailed_log("STATE_SAVE", &format!("CLI: Failed to save last executed command: {}", e)),
     }
 
-    // Save ghost input for anchor commands
-    if top_command_obj.action == "anchor" {
-        crate::utils::detailed_log("STATE_SAVE", &format!("CLI: Attempting to save ghost input: '{}'", top_command_obj.command));
-        match save_ghost_input(&top_command_obj.command) {
-            Ok(_) => crate::utils::detailed_log("STATE_SAVE", "CLI: Successfully saved ghost input"),
-            Err(e) => crate::utils::detailed_log("STATE_SAVE", &format!("CLI: Failed to save ghost input: {}", e)),
-        }
-    }
     
     // Use server-based execution for consistent environment
     // Convert command to action and execute
@@ -762,9 +769,14 @@ fn run_grab_command(args: &[String]) {
     match crate::systems::grabber::grab(&config) {
         Ok(grab_result) => {
             match grab_result {
-                crate::systems::grabber::GrabResult::RuleMatched(_rule_name, command) => {
-                    // Output the action and argument for easy testing
-                    print(&format!("{} {}", command.action, command.arg));
+                crate::systems::grabber::GrabResult::RuleMatched(rule_name, command) => {
+                    // Output action, argument, rule name, and suffix for the popup to process
+                    // Format: "action arg RULE:rule_name FLAGS:suffix"
+                    if command.flags.is_empty() {
+                        print(&format!("{} {} RULE:{}", command.action, command.arg, rule_name));
+                    } else {
+                        print(&format!("{} {} RULE:{} FLAGS:{}", command.action, command.arg, rule_name, command.flags));
+                    }
                 }
                 crate::systems::grabber::GrabResult::NoRuleMatched(context) => {
                     // No rule matched - output context information

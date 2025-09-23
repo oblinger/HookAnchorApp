@@ -659,53 +659,93 @@ module.exports = {
   // Anchor action - behaves exactly like markdown action
   // Anchors and markdown files are both just documents that open the same way
   action_anchor: function(ctx) {
-    const { log, error, file_exists, shell } = ctx.builtins;
-    const arg = ctx.arg;
-    
+    const { log, error, file_exists, isDirectory, save_ghost_input } = ctx.builtins;
+
+    // Debug: Log everything available in the context
+    log("=== ANCHOR ACTION DEBUG ===");
+    log(`Full ctx object: ${JSON.stringify(ctx, null, 2)}`);
+    log("Available in ctx:");
+    for (const key in ctx) {
+      if (ctx.hasOwnProperty(key)) {
+        log(`  ${key}: '${ctx[key]}'`);
+      }
+    }
+    log("=== END ANCHOR DEBUG ===");
+
+    const { command_name, arg, input, ghost_input } = ctx;
+
+    // 1. Save ghost input (this is what makes anchor special)
+    // Priority: ghost_input (from template expansion) > input > command_name (fallback)
+    const ghost_text = (ghost_input && ghost_input.trim() !== '') ? ghost_input :
+                      (input && input.trim() !== '') ? input : command_name;
+    const source = (ghost_input && ghost_input.trim() !== '') ? 'ghost_input parameter' :
+                   (input && input.trim() !== '') ? 'input parameter' : 'command_name';
+    log(`ANCHOR: Saving ghost input: '${ghost_text}' (source: ${source})`);
+    if (ghost_text) {
+      save_ghost_input(ghost_text);
+    }
+
     // If no argument, silently do nothing (virtual anchors like "Notion Root")
     if (!arg) {
-      detailed_log("ANCHOR", "ANCHOR: No argument provided, doing nothing (virtual anchor)");
-      return;
+      detailed_log("ANCHOR", "No argument provided, doing nothing (virtual anchor)");
+      return "Virtual anchor processed";
     }
-    
+
     detailed_log("ANCHOR", `Processing argument: '${arg}'`);
-    
-    // Check what type of argument we have
-    // 1. If it's a Notion URL, open it
-    if (arg.includes('notion.so')) {
-      detailed_log("ANCHOR", `Detected Notion URL, opening: '${arg}'`);
-      shell(`open "${arg}"`);
-      return `Opened Notion page: ${arg}`;
+
+    // 2. Dynamically determine action type (equivalent to get_action_for_arg)
+    let actionType;
+
+    // Check URLs first
+    if (arg.startsWith('http://') || arg.startsWith('https://')) {
+      if (arg.includes('notion.so')) {
+        actionType = 'notion';
+      } else {
+        actionType = 'url';
+      }
+    } else if (arg.startsWith('obsidian://')) {
+      actionType = 'obs_url';
+    } else {
+      // File/folder path - check if it's a directory
+      if (file_exists(arg) && isDirectory(arg)) {
+        actionType = 'folder';
+      } else {
+        // File path - check extension
+        const argLower = arg.toLowerCase();
+        if (argLower.endsWith('.md')) {
+          // Check if it's an anchor file (simple heuristic)
+          if (arg.includes('/') && argLower.includes('.md')) {
+            actionType = 'markdown';  // For now, treat all .md as markdown
+          } else {
+            actionType = 'markdown';
+          }
+        } else if (argLower.endsWith('.txt') || argLower.endsWith('.text')) {
+          actionType = 'text';
+        } else if (argLower.endsWith('.pdf') || argLower.endsWith('.doc') || argLower.endsWith('.docx')) {
+          actionType = 'doc';
+        } else if (argLower.endsWith('.app')) {
+          actionType = 'app';
+        } else if (argLower.endsWith('.html') || argLower.endsWith('.htm')) {
+          actionType = 'url';
+        } else {
+          actionType = 'doc';  // Default for unknown files
+        }
+      }
     }
-    
-    // 2. If it ends with .md, it's a markdown file
-    if (arg.endsWith('.md')) {
-      detailed_log("ANCHOR", `Detected markdown file, delegating to action_markdown`);
-      return this.action_markdown(ctx);
+
+    detailed_log("ANCHOR", `Inferred action type: '${actionType}' for argument: '${arg}'`);
+
+    // 3. Dynamically call the appropriate sub-action
+    const functionName = `action_${actionType}`;
+    if (typeof globalThis[functionName] === 'function') {
+      detailed_log("ANCHOR", `Delegating to ${functionName}`);
+      return globalThis[functionName](arg, ctx.input, ctx.previous, ctx.grabbed, ctx.date);
+    } else {
+      const errorMsg = `No handler found for action type '${actionType}' (function: ${functionName})`;
+      error(errorMsg);
+      detailed_log("ANCHOR", `ERROR: ${errorMsg}`);
+      return errorMsg;
     }
-    
-    // 3. Check if it's a folder (exists and is a directory)
-    // We'll check if the path exists and doesn't have a common file extension
-    const commonExtensions = ['.txt', '.pdf', '.doc', '.docx', '.html', '.htm', 
-                             '.jpg', '.jpeg', '.png', '.gif', '.mp4', '.mov',
-                             '.zip', '.tar', '.gz', '.dmg', '.app'];
-    const hasFileExtension = commonExtensions.some(ext => arg.toLowerCase().endsWith(ext));
-    
-    if (!hasFileExtension && file_exists(arg)) {
-      // Likely a folder - delegate to folder action
-      detailed_log("ANCHOR", `Detected folder, delegating to action_folder`);
-      return this.action_folder(ctx);
-    }
-    
-    // 4. If it has a file extension or appears to be a file path, treat as document
-    if (hasFileExtension || arg.includes('.')) {
-      detailed_log("ANCHOR", `Detected document, delegating to action_doc`);
-      return this.action_doc(ctx);
-    }
-    
-    // 5. Otherwise, generate an error
-    error(`Illegal anchor argument: '${arg}' - must be a Notion URL, markdown file, folder, or document`);
-    detailed_log("ANCHOR", `ERROR - Unrecognized argument type: '${arg}'`);
   },
 
   // TEST: Function to test JavaScript error reporting

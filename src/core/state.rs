@@ -98,10 +98,21 @@ pub fn save_last_executed_command(command_name: &str) -> Result<(), Box<dyn std:
 
 /// Updates ghost input for anchor commands
 pub fn save_ghost_input(anchor_name: &str) -> Result<(), Box<dyn std::error::Error>> {
+    crate::utils::detailed_log("GHOST_SAVE", &format!("🔄 Attempting to save ghost input: '{}'", anchor_name));
     let mut state = load_state();
+    let old_ghost = state.ghost_input.clone();
     state.ghost_input = Some(anchor_name.to_string());
     state.ghost_timestamp = Some(Local::now().timestamp());
-    save_state(&state)
+    match save_state(&state) {
+        Ok(()) => {
+            crate::utils::detailed_log("GHOST_SAVE", &format!("✅ Successfully saved ghost input: '{}' (was: '{:?}')", anchor_name, old_ghost));
+            Ok(())
+        },
+        Err(e) => {
+            crate::utils::detailed_log("GHOST_SAVE", &format!("❌ Failed to save ghost input: {}", e));
+            Err(e)
+        }
+    }
 }
 
 /// Updates server PID in state.json file

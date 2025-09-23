@@ -1068,7 +1068,7 @@ impl KeyHandler for JavaScriptHandler {
 
         // Create an action to execute the JavaScript function
         let mut action_params = std::collections::HashMap::new();
-        action_params.insert("action_type".to_string(), serde_json::Value::String("js_function".to_string()));
+        action_params.insert("action_type".to_string(), serde_json::Value::String("js".to_string()));
         action_params.insert("function".to_string(), serde_json::Value::String(self.function_name.clone()));
         let action = crate::execute::Action { params: action_params };
 
@@ -1121,11 +1121,11 @@ pub fn create_default_key_registry(config: &super::Config) -> KeyRegistry {
                             registry.register_keystroke(keystroke.clone(), handler);
                             registered_count += 1;
                             crate::utils::detailed_log("KEY_REGISTRY", &format!("Registered template '{}' to key '{}'", action_name, key_str));
-                        } else if action.action_type() == "js" || action.action_type() == "js_function" {
-                            // Create a JavaScript handler for js and js_function actions
+                        } else if action.action_type() == "js" {
+                            // Create a JavaScript handler for js actions
                             let function_name = action.params.get("function")
                                 .and_then(|v| v.as_str())
-                                .unwrap_or(&format!("action_{}", action_name))
+                                .unwrap_or(&format!("action_{}", action.action_type()))
                                 .to_string();
                             let handler = Box::new(JavaScriptHandler::new(function_name.clone()));
                             registry.register_keystroke(keystroke.clone(), handler);

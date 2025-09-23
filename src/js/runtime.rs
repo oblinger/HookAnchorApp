@@ -129,7 +129,74 @@ pub fn execute(script: &str) -> Result<String, Box<dyn std::error::Error>> {
                     Ok("undefined".to_string())
                 }
             }
-            Err(e) => Err(format!("JavaScript execution error: {}", e).into()),
+            Err(e) => {
+                // Try to get exception details if available
+                let exception = ctx.catch();
+                let error_details = if let Some(error_obj) = exception.as_object() {
+                    let mut parts = Vec::new();
+
+                    // Try to get error name
+                    if let Ok(name) = error_obj.get::<_, rquickjs::String>("name") {
+                        if let Ok(name_str) = name.to_string() {
+                            parts.push(format!("Type: {}", name_str));
+                        }
+                    }
+
+                    // Try to get error message
+                    if let Ok(message) = error_obj.get::<_, rquickjs::String>("message") {
+                        if let Ok(msg_str) = message.to_string() {
+                            parts.push(format!("Message: {}", msg_str));
+                        }
+                    }
+
+                    // Try to get line number
+                    if let Ok(line_number) = error_obj.get::<_, i32>("lineNumber") {
+                        parts.push(format!("Line: {}", line_number));
+                    }
+
+                    // Try to get column number
+                    if let Ok(column_number) = error_obj.get::<_, i32>("columnNumber") {
+                        parts.push(format!("Column: {}", column_number));
+                    }
+
+                    // Try to get filename
+                    if let Ok(filename) = error_obj.get::<_, rquickjs::String>("fileName") {
+                        if let Ok(filename_str) = filename.to_string() {
+                            parts.push(format!("File: {}", filename_str));
+                        }
+                    }
+
+                    // Try to get stack trace
+                    if let Ok(stack) = error_obj.get::<_, rquickjs::String>("stack") {
+                        if let Ok(stack_str) = stack.to_string() {
+                            parts.push(format!("Stack: {}", stack_str));
+                        }
+                    }
+
+                    // For debugging: if we couldn't get standard properties, note that
+                    if parts.is_empty() {
+                        parts.push("No standard error properties found".to_string());
+                    }
+
+                    if parts.is_empty() {
+                        format!("JavaScript exception (no detailed info available): {}", e)
+                    } else {
+                        format!("JavaScript error: {}", parts.join(", "))
+                    }
+                } else if let Some(s) = exception.as_string() {
+                    match s.to_string() {
+                        Ok(str) => format!("JavaScript error: {}", str),
+                        Err(_) => format!("JavaScript error (string parse failed): {}", e),
+                    }
+                } else {
+                    format!("JavaScript execution error: {} (exception: {:?})", e, exception)
+                };
+
+                // Also log the detailed error for debugging
+                crate::utils::log_error(&format!("JS_ERROR_DETAIL: {}", error_details));
+
+                Err(error_details.into())
+            }
         }
     })
 }
@@ -672,7 +739,15 @@ fn setup_launcher_builtins(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Erro
             Err(_) => false,
         }
     })?)?;
-    
+
+    // save_ghost_input(anchor_name) -> saves ghost input for next popup
+    ctx.globals().set("save_ghost_input", Function::new(ctx.clone(), |anchor_name: String| {
+        match crate::core::state::save_ghost_input(&anchor_name) {
+            Ok(()) => format!("Ghost input saved: {}", anchor_name),
+            Err(e) => format!("Failed to save ghost input: {}", e),
+        }
+    })?)?;
+
     Ok(())
 }
 
@@ -733,10 +808,13 @@ fn load_config_js_functions(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Err
                         {}
                         
                         // Create a context object with all builtins
-                        const createContext = function(arg, input, previous, grabbed, date) {{
+                        const createContext = function(arg, input, previous, grabbed, date, command_name, user_input, ghost_input) {{
                             return {{
                                 arg: arg || '',
                                 input: input || '',
+                                command_name: command_name || '',
+                                user_input: user_input || '',
+                                ghost_input: ghost_input || '',
                                 previous: previous || {{ name: '', folder: '', patch: '' }},
                                 grabbed: grabbed || {{ action: '', arg: '' }},
                                 date: date || {{ YYYY: '', MM: '', DD: '' }},
@@ -772,7 +850,8 @@ fn load_config_js_functions(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Err
                                     runAppleScript: runAppleScript,
                                     // spawnDetached removed - use shell("command &") instead
                                     appIsRunning: appIsRunning,
-                                    encodeURIComponent: encodeURIComponent
+                                    encodeURIComponent: encodeURIComponent,
+                                    save_ghost_input: save_ghost_input
                                 }}
                             }};
                         }};
@@ -781,8 +860,8 @@ fn load_config_js_functions(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Err
                         let functionCount = 0;
                         for (const [name, func] of Object.entries(module.exports)) {{
                             if (typeof func === 'function') {{
-                                globalThis[name] = function(arg, input, previous, grabbed, date) {{
-                                    const ctx = createContext(arg, input, previous, grabbed, date);
+                                globalThis[name] = function(arg, input, previous, grabbed, date, command_name, user_input, ghost_input) {{
+                                    const ctx = createContext(arg, input, previous, grabbed, date, command_name, user_input, ghost_input);
                                     return func(ctx);
                                 }};
                                 functionCount++;

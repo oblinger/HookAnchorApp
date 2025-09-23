@@ -78,7 +78,104 @@ pub struct TemplateContext {
     pub variables: HashMap<String, String>,
 }
 
+
 impl TemplateContext {
+    /// Create a basic template context with all universally available data
+    /// This gathers everything it can without needing popup state
+    /// Suitable for both CLI and as a base for popup execution
+    pub fn create_basic_template(input: &str) -> Self {
+        let mut variables = HashMap::new();
+
+        // Basic input variable
+        variables.insert("input".to_string(), input.to_string());
+
+        // Raw input variable (for CLI, same as input since no alias expansion)
+        variables.insert("raw_input".to_string(), input.to_string());
+
+        // Add date/time variables
+        add_datetime_variables(&mut variables);
+
+        // Add last executed command from state (available everywhere)
+        let state = crate::core::state::load_state();
+        if let Some(last_executed_name) = &state.last_executed_command {
+            let commands = crate::core::commands::load_commands();
+            if let Some(cmd) = commands.iter().find(|c| &c.command == last_executed_name) {
+                let folder = match extract_and_validate_folder(cmd) {
+                    Ok(f) => f,
+                    Err(_) => String::new()
+                };
+
+                variables.insert("_last_executed_name".to_string(), cmd.command.clone());
+                variables.insert("_last_executed_path".to_string(), cmd.arg.clone());
+                variables.insert("_last_executed_patch".to_string(), cmd.patch.clone());
+                variables.insert("_last_executed_action".to_string(), cmd.action.clone());
+                variables.insert("_last_executed_flags".to_string(), cmd.flags.clone());
+                variables.insert("_last_executed_folder".to_string(), folder);
+            }
+        } else {
+            // Provide empty defaults for last executed
+            variables.insert("_last_executed_name".to_string(), String::new());
+            variables.insert("_last_executed_path".to_string(), String::new());
+            variables.insert("_last_executed_patch".to_string(), String::new());
+            variables.insert("_last_executed_action".to_string(), String::new());
+            variables.insert("_last_executed_flags".to_string(), String::new());
+            variables.insert("_last_executed_folder".to_string(), String::new());
+        }
+
+        // Add placeholder grabber variables (empty defaults)
+        variables.insert("grabbed_action".to_string(), String::new());
+        variables.insert("grabbed_arg".to_string(), String::new());
+        variables.insert("grabbed_app".to_string(), String::new());
+        variables.insert("grabbed_title".to_string(), String::new());
+        variables.insert("grabbed_text".to_string(), String::new());
+        variables.insert("grabbed_suffix".to_string(), String::new());
+
+        // Add empty defaults for selected command (will be overwritten by popup if available)
+        variables.insert("_selected_name".to_string(), String::new());
+        variables.insert("_selected_path".to_string(), String::new());
+        variables.insert("_selected_patch".to_string(), String::new());
+        variables.insert("_selected_action".to_string(), String::new());
+        variables.insert("_selected_flags".to_string(), String::new());
+        variables.insert("_selected_folder".to_string(), String::new());
+
+        TemplateContext { variables }
+    }
+
+    /// Add popup-specific variables to this context (only selected command)
+    /// Last executed is now handled in new_basic()
+    pub fn add_popup_variables(&mut self, selected_command: Option<&Command>) {
+        // Add or update selected command variables
+        if let Some(cmd) = selected_command {
+            // Extract and validate folder, or use empty string if extraction fails
+            let folder = match extract_and_validate_folder(cmd) {
+                Ok(f) => f,
+                Err(_) => String::new()
+            };
+
+            self.variables.insert("_selected_name".to_string(), cmd.command.clone());
+            self.variables.insert("_selected_path".to_string(), cmd.arg.clone());
+            self.variables.insert("_selected_patch".to_string(), cmd.patch.clone());
+            self.variables.insert("_selected_action".to_string(), cmd.action.clone());
+            self.variables.insert("_selected_flags".to_string(), cmd.flags.clone());
+            self.variables.insert("_selected_folder".to_string(), folder);
+        }
+        // If no selected command, the empty defaults from new_basic() remain
+    }
+
+    /// Perform grab operation and add grabbed variables to this context
+    pub fn perform_grab_and_add_variables(&mut self, _grab_seconds: u64) -> Result<(), Box<dyn std::error::Error>> {
+        // TODO: Implement actual grab functionality
+        // For now, just add placeholder grabbed variables
+        self.variables.insert("grabbed_action".to_string(), "app".to_string());
+        self.variables.insert("grabbed_arg".to_string(), "Finder".to_string());
+        self.variables.insert("grabbed_app".to_string(), "Finder".to_string());
+        self.variables.insert("grabbed_title".to_string(), "".to_string());
+        self.variables.insert("grabbed_text".to_string(), "".to_string());
+        self.variables.insert("grabbed_suffix".to_string(), "".to_string());
+
+        Ok(())
+    }
+
     /// Create a new template context with standard variables
     pub fn new(
         input: &str,
@@ -263,6 +360,13 @@ impl TemplateContext {
         } else {
             context.push_str("const input = '';\n");
         }
+
+        // Create raw_input variable (string)
+        if let Some(raw_input) = self.variables.get("raw_input") {
+            context.push_str(&format!("const raw_input = {:?};\n", raw_input));
+        } else {
+            context.push_str("const raw_input = '';\n");
+        }
         
         // Create selected object with getter for folder that throws on empty
         let selected_name = self.variables.get("_selected_name").cloned().unwrap_or_else(String::new);
@@ -360,8 +464,56 @@ impl TemplateContext {
         context.push_str("});\n");
         
         // No legacy compatibility variables needed
-        
+
         context
+    }
+
+    /// Expand all values in a HashMap using template expansion
+    /// This allows batch expansion of action parameters
+    pub fn expand_hashmap(&self, params: &std::collections::HashMap<String, String>) -> std::collections::HashMap<String, String> {
+        let mut expanded = std::collections::HashMap::new();
+
+        for (key, value) in params {
+            if value.contains("{{") {
+                // Expand this parameter
+                let expanded_value = self.expand(value);
+                expanded.insert(key.clone(), expanded_value);
+            } else {
+                // No expansion needed
+                expanded.insert(key.clone(), value.clone());
+            }
+        }
+
+        expanded
+    }
+
+    /// Directly expand all string parameters in an Action object
+    /// This modifies the action in place, expanding any {{...}} templates
+    pub fn expand_action_parameters(&self, action: &mut crate::execute::Action) {
+        let mut params_to_update = Vec::new();
+
+        // Find all string parameters that need expansion
+        for (key, value) in &action.params {
+            if let Some(string_value) = value.as_str() {
+                if string_value.contains("{{") {
+                    let expanded_value = self.expand(string_value);
+                    params_to_update.push((key.clone(), expanded_value));
+                }
+            }
+        }
+
+        // Update the parameters with expanded values
+        for (key, expanded_value) in params_to_update {
+            action.params.insert(key, serde_json::Value::String(expanded_value));
+        }
+    }
+
+    /// Add grabber variables to this context
+    /// This is used when grab functionality has been executed
+    pub fn add_grabber_variables(&mut self, grabbed_vars: std::collections::HashMap<String, String>) {
+        for (key, value) in grabbed_vars {
+            self.variables.insert(key, value);
+        }
     }
 }
 

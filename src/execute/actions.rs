@@ -7,10 +7,9 @@
 use std::collections::HashMap;
 use serde::{Deserialize, Serialize};
 use serde_json::Value as JsonValue;
-use rquickjs::{Context, Ctx};
 use crate::core::Command;
 use crate::core::key_processing::Keystroke;
-use crate::utils::{detailed_log, log_error};
+use crate::utils::detailed_log;
 
 /// A unified action that can be invoked via keyboard, command, or other actions
 /// This is now simply a HashMap with accessor methods for common fields
@@ -207,133 +206,7 @@ impl ActionContext {
     }
 }
 
-/// Expand all parameters that contain {{...}} JavaScript expressions
-fn expand_parameters(
-    params: &HashMap<String, String>,
-) -> Result<HashMap<String, String>, Box<dyn std::error::Error>> {
-    let mut expanded = HashMap::new();
-    
-    // Check if any parameter needs expansion
-    let needs_expansion = params.values().any(|v| v.contains("{{"));
-    
-    if !needs_expansion {
-        // No expansion needed, return as-is
-        return Ok(params.clone());
-    }
-    
-    // Create JavaScript context with all parameters as variables
-    let js_ctx = create_js_context_with_params(params)?;
-    
-    js_ctx.with(|ctx| {
-        for (key, value) in params {
-            if value.contains("{{") {
-                // Expand this parameter
-                let expanded_value = expand_template_string(&ctx, value)?;
-                expanded.insert(key.clone(), expanded_value);
-            } else {
-                // No expansion needed
-                expanded.insert(key.clone(), value.clone());
-            }
-        }
-        Ok(expanded)
-    })
-}
-
-/// Expand a single template string with {{...}} expressions
-fn expand_template_string(
-    ctx: &Ctx<'_>,
-    template: &str,
-) -> Result<String, Box<dyn std::error::Error>> {
-    let mut result = template.to_string();
-    let mut last_pos = 0;
-    
-    // Process all {{...}} expressions
-    while let Some(start) = result[last_pos..].find("{{") {
-        let start = last_pos + start;
-        if let Some(end) = result[start..].find("}}") {
-            let end = start + end + 2;
-            let expr = result[start + 2..end - 2].trim();
-            
-            detailed_log("EXPAND", &format!("Evaluating expression: {}", expr));
-            
-            // Evaluate the JavaScript expression
-            match ctx.eval::<rquickjs::Value, _>(expr) {
-                Ok(value) => {
-                    let expanded = js_value_to_string(&value);
-                    detailed_log("EXPAND", &format!("Expression '{}' expanded to: '{}'", expr, expanded));
-                    result.replace_range(start..end, &expanded);
-                    last_pos = start + expanded.len();
-                }
-                Err(e) => {
-                    // On error, show dialog and terminate
-                    let error_msg = format!(
-                        "Couldn't execute this action because of an error in expansion:\n\
-                        Expression: {}\n\
-                        Error: {}",
-                        expr, e
-                    );
-                    log_error(&error_msg);
-                    crate::utils::error::queue_user_error(&error_msg);
-                    return Err(error_msg.into());
-                }
-            }
-        } else {
-            // No matching }} found
-            break;
-        }
-    }
-    
-    Ok(result)
-}
-
-/// Create a JavaScript context with parameters as variables
-fn create_js_context_with_params(
-    params: &HashMap<String, String>,
-) -> Result<Context, Box<dyn std::error::Error>> {
-    let _config = crate::core::sys_data::get_config();
-    let rt = rquickjs::Runtime::new()?;
-    let ctx = Context::full(&rt)?;
-    
-    ctx.with(|ctx| -> Result<(), Box<dyn std::error::Error>> {
-        // Setup all standard built-in functions and user functions from config.js
-        crate::js::setup_runtime(&ctx)?;
-        
-        // Add all parameters as global variables
-        let globals = ctx.globals();
-        for (key, value) in params {
-            globals.set(key.as_str(), value.clone())?;
-        }
-        
-        // Add date/time variables using shared function from template_creation
-        let mut date_vars = HashMap::new();
-        crate::core::template_creation::add_datetime_variables(&mut date_vars);
-        for (key, value) in date_vars {
-            globals.set(key.as_str(), value)?;
-        }
-        
-        Ok(())
-    })?;
-    
-    Ok(ctx)
-}
-
-
-
-/// Convert JavaScript value to string
-fn js_value_to_string(value: &rquickjs::Value) -> String {
-    if value.is_null() || value.is_undefined() {
-        String::new()
-    } else if value.is_bool() {
-        value.as_bool().unwrap_or(false).to_string()
-    } else if value.is_number() {
-        value.as_number().unwrap_or(0.0).to_string()
-    } else if let Some(s) = value.as_string() {
-        s.to_string().unwrap_or_default()
-    } else {
-        // Try to stringify complex objects
-        format!("{:?}", value)
-    }
-}
+// Removed unused expansion functions - expansion now handled by TemplateContext
 
 
 /// Execute an action locally in the current process
@@ -354,7 +227,7 @@ pub(super) fn execute_locally(
     let action_flags = action.get_string("flags").unwrap_or("");
     
     // Log main action line (to both console and log)
-    let main_log = format!("ACTION:{}  TYPE:{}  ARG:{}", action_name, action_type, action_arg);
+    let main_log = format!("ACTION:{}  TYPE:{}  FLAGS:{}  ARG:{}", action_name, action_type, action_flags, action_arg);
     crate::utils::log(&main_log);
     println!("{}", main_log);
     
@@ -400,22 +273,22 @@ pub(super) fn execute_locally(
         };
         params.insert(key.clone(), value_str);
     }
-    
-    // Expand all parameters that contain {{...}} expressions
-    let expanded_params = expand_parameters(&params)?;
-    
+
+    // No expansion here - expansion should be done by caller (popup or CLI)
+    // using TemplateContext before calling this function
+
     // Dispatch based on action type
     match action.action_type() {
         // Builtin Rust actions
-        "template" => execute_template_action(action, &expanded_params),
-        "popup" => execute_popup_action(action, &expanded_params),
-        "open_url" => execute_open_url_action(&expanded_params),
-        "open_app" => execute_open_app_action(&expanded_params),
-        "open_folder" => execute_open_folder_action(&expanded_params),
-        "open_file" => execute_open_file_action(&expanded_params),
-        "shell" => execute_shell_action(&expanded_params),
-        "obsidian" => execute_obsidian_action(&expanded_params),
-        "alias" => execute_alias_action(&expanded_params),
+        "template" => execute_template_action(action, &params),
+        "popup" => execute_popup_action(action, &params),
+        "open_url" => execute_open_url_action(&params),
+        "open_app" => execute_open_app_action(&params),
+        "open_folder" => execute_open_folder_action(&params),
+        "open_file" => execute_open_file_action(&params),
+        "shell" => execute_shell_action(&params),
+        "obsidian" => execute_obsidian_action(&params),
+        "alias" => execute_alias_action(&params),
         
         // Everything else is JavaScript with action_ prefix
         _ => {
@@ -430,7 +303,7 @@ pub(super) fn execute_locally(
                 // For other types, use action_ prefix with the type
                 format!("action_{}", action.action_type())
             };
-            execute_js_function_action(&function_name, &expanded_params)
+            execute_js_function_action(&function_name, &params)
         }
     }
 }
@@ -659,11 +532,27 @@ fn execute_js_function_action(
     params: &HashMap<String, String>,
 ) -> Result<String, Box<dyn std::error::Error>> {
     detailed_log("ACTION", &format!("Executing JavaScript function: {}", function_name));
+
+    // Log extra parameters (excluding standard ones)
+    let standard_params = ["action_type", "patch", "command_name", "arg", "flags", "description"];
+    let mut extra_params = Vec::new();
+    for (key, value) in params {
+        if !standard_params.contains(&key.as_str()) {
+            extra_params.push(format!("{}='{}'", key, value));
+        }
+    }
+    if !extra_params.is_empty() {
+        let param_msg = format!("   {}", extra_params.join(", "));
+        crate::utils::log(&param_msg);
+    }
     
     // Get parameters that will be passed to the JavaScript function
     let arg = params.get("arg").unwrap_or(&String::new()).clone();
     let input = params.get("input").unwrap_or(&String::new()).clone();
-    
+    let command_name = params.get("command_name").unwrap_or(&String::new()).clone();
+    let user_input = params.get("user_input").unwrap_or(&String::new()).clone();
+    let ghost_input = params.get("ghost_input").unwrap_or(&String::new()).clone();
+
     // Simply call the function that's already loaded in the JavaScript runtime
     // The function is registered as a global and expects the arguments directly
     let js_code = format!(r#"
@@ -671,14 +560,17 @@ fn execute_js_function_action(
         if (typeof {func} === 'undefined') {{
             throw new Error('JavaScript function "{func}" not found. Make sure it is exported from config.js');
         }}
-        
-        // Call the function with simple arguments
+
+        // Call the function with simple arguments including ghost_input
         // The wrapper in js_runtime.rs will create the context object
-        {func}('{arg}', '{input}', null, null, null);
-    "#, 
+        {func}('{arg}', '{input}', null, null, null, '{command_name}', '{user_input}', '{ghost_input}');
+    "#,
         func = function_name,
         arg = arg.replace("\\", "\\\\").replace("'", "\\'").replace("\n", "\\n").replace("\"", "\\\""),
-        input = input.replace("\\", "\\\\").replace("'", "\\'").replace("\n", "\\n").replace("\"", "\\\"")
+        input = input.replace("\\", "\\\\").replace("'", "\\'").replace("\n", "\\n").replace("\"", "\\\""),
+        command_name = command_name.replace("\\", "\\\\").replace("'", "\\'").replace("\n", "\\n").replace("\"", "\\\""),
+        user_input = user_input.replace("\\", "\\\\").replace("'", "\\'").replace("\n", "\\n").replace("\"", "\\\""),
+        ghost_input = ghost_input.replace("\\", "\\\\").replace("'", "\\'").replace("\n", "\\n").replace("\"", "\\\"")
     );
     
     detailed_log("ACTION", &format!("Calling JavaScript: {}", js_code));

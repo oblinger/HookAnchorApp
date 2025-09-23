@@ -15,7 +15,7 @@ popup_settings:
   scan_interval_seconds:  30           # How many seconds between automatic rescanning of the filesystem
   idle_timeout_seconds:   60           # Hide popup after this many seconds of inactivity
   countdown_seconds:      5            # Seconds for grabber countdown (default: 5)
-  ghost_timeout_seconds:  180          # Seconds to remember last executed anchor as ghost input
+  ghost_timeout_seconds:  20          # Seconds to remember last executed anchor as ghost input
   run_in_background:      true         # Keep app running in background for instant popup (experimental)
   global_hotkey:          "opt+a"      # Global hotkey to show popup (requires accessibility permissions)
   popup_server_retries:   3            # Number of times to retry showing the popup before rebuilding
@@ -104,10 +104,10 @@ actions:
 
   clear_log:
     description: "Clear anchor.log file for debugging"
-    action_type: js_function
+    action_type: js
+    function: action_clear_log
     key: "Cmd+Opt+E"
     name: "Clear Log"
-    function: "action_clear_log"
 
 
   create_alias:
@@ -473,7 +473,8 @@ actions:
     
   anchor:
     description: "Open anchor file in Obsidian or default editor"
-    action_type: markdown
+    action_type: anchor
+    ghost_input: "{{raw_input}}"
     
   text:
     description: "Type text file contents into active application"
