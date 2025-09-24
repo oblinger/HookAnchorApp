@@ -3,11 +3,10 @@
 
 .[[SYS]]. > [[MY]] 
   SYSTEMS:	[[SYS Android]], [[SYS Disks]], [[SYS Network]], 
-  My KBD:		[[KBD Shortcuts]], [[KBD Obsidian Keys]], [[KBD Global Keys]], [[KBD Notion]],
-  :				[[OBS]],
-  :	[[SYS/Hack/Hacks]], [[Automation]], [NEU Folder](spot://neufolder), ,
+  My KBD:		[[KBD Shortcuts]], [[KBD Obsidian Keys]], [[KBD Global Keys]], [[KBD Notion]], [[SYS Keyboard Setup]], 
+  :				[[OBS]], [[Automation]], [NEU Folder](spot://neufolder), ,
 - [[SYS Dashboards]]	-
-- [[SYS Keyboard Setup]]
+- 
 - 			-
 - [[SYS Notations]]		-
 - [[SYS Setup]]			-

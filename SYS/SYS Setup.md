@@ -1,4 +1,6 @@
 
+- [[MAC Apps]], 
+
 ### CAPS LOCK MENU
 - KARABINER maps caps alone to Opt-Cmd-F12
 - KEYBOARD MAESTRO execute "global command" macro for this keystroke
@@ -38,6 +40,9 @@
 - m	info collected during a meeting
 - n	dated notes on a given topic
 - wp	Work Product
+
+
+
 
 Rocks  (maybe 'p' for projects)
 Daily notes

@@ -1,21 +1,16 @@
-- svproj menu is wrong
-- The menu should go away when the prefix menus is empty
-- oblinger should sort to the top of the list
+- [ ] x
 
 
-- ghost set to last anchor
-
-- [ ] Scrub system & test reinstall works
-- [ ] Create teaser video [Video](hook://hookanchorvideo) 
-- [ ] Build Uninstaller
-
-
-- [ ] auto add facet name
-- [ ] "[" should go back in history
-- [ ] ghost entry w/ different input and maybe blank selection
+- [ ] Personal use licence
+- [ ] the ha bin should be added to the path in the source script file
+- [ ] Help doc by sections  [[HELP]] 
 - [ ] Add a 'just cmd' button
 - [ ] Delete key should prompt to delete file and maybe folder.
+- [ ] distinct names of the processes
 - [ ] .
+- [ ] help command rendering the sections
+- [ ] consider EVERY fallback in the code, and try to remove them
+- [ ] "[" should go back in history
 - [ ] ANCHOR EDITOR - Extend the command editor to be the anchor editor whenever the action type is anchor
 - [ ] yore support
 - [ ] Add support for "close popup" into templates.  Move CMD+shift+2 to be a template
@@ -24,6 +19,15 @@
 
 
 ## DONE
+- [x] svproj menu is wrong
+- [x] The menu should go away when the prefix menus is empty
+- [x] oblinger should sort to the top of the list
+- [x] ghost set to last anchor
+- [x] Scrub system & test reinstall works
+- [x] Create teaser video [Video](hook://hookanchorvideo) 
+- [x] Build Uninstaller
+- [x] auto add facet name
+- [x] ghost entry w/ different input and maybe blank selection
 - [x] Get 'q2' working right.
 - [x] ACTION type - add an 'action' type that runs any action w/ any args
 - [x] Installer backups

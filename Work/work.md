@@ -1,4 +1,12 @@
 
+
+- write up rebounds and assist ideas, steals, turn overs, blocks,
+- AWS Activate.
+- playon datasets: Andy6 720pNow 1080pGood.
+!metric:  Speed of our app 
+!summary single metric for BB 
+!fball Analysis & on?
+
 .**TODO**.
   [[2025 AI Codeing Brainstorm|AI-code]]  
   Baseball opportunity

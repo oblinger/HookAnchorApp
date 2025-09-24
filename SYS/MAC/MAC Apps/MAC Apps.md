@@ -20,6 +20,7 @@ keeps mac from shutting down
 
 ## xx Divvy   <<<<<<
 
+**(Now using BTT - Better Touch Tool)**
 
 setup 2019.04
 Compass: N S E W   Left Right Center (on East Side)

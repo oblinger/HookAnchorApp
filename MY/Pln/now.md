@@ -2,9 +2,6 @@
  [[NJ Todo]]: 
  [[Friday]]: 
 
-!fball Analysis & on?
-!metric:  Speed of our app 
-!summary single metric for BB 
 
 
 
@@ -18,3 +15,4 @@
 
 ### [[Q2]]
 
+7033981710

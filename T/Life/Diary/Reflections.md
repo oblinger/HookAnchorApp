@@ -1,5 +1,28 @@
 
 
+## 2025-09-23  Biggest fail is starting each day on Hook Anchor
+
+- I will try allowing myself to fix quick bugs on the fly, but not allowing myself to work on core task during the day.
+- But really I STILL want to get this pup out!  It is a driving goal.
+## 2025-09-23  Deeper problem job tasks are not task #1
+
+This is the real problem, I have let getting hook anchor out be task #1, and really I am dubious and frightened about.
+
+
+## 2025-09-23  Hook Anchor release absorbed all
+
+I really nose dived on this goal of releasing hook anchor.
+
+I have the belief that if I get this out, then my brain will be clearer to work on another major task, 
+
+==> I do have the sense that I can get spread thin, by having multiple projects at once.
+
+==> And I think I am happiest when making fast progress on a project, so this suggests being focused on one
+
+"Fun-ish" project at a time, but this is giving me licence to nose dive and get nothing else done.
+
+The problem is, I have given a goal to release this app, and I thought it was a smaller goal that it is.
+
 ## 2025-09-15  Limited success last week; redouble this week
 
 - I did clean the house/yard

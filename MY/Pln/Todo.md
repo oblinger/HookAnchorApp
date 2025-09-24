@@ -1,6 +1,5 @@
 
 - check alto pharmacy
-- skin spots
 - Jameson bottle
 
 - Filepe

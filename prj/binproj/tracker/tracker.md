@@ -1,5 +1,4 @@
 
-
 # Notes
 
 # User Manual
@@ -43,7 +42,7 @@ Run `trackR` or `python3 tracker.py` to launch the time tracker GUI.
 # Configuration File
 
 ## Location
-`/Users/oblinger/ob/data/tracker/tracker_info.txt`
+`/Users/oblinger/.config/tracker/` 
 
 ## Format
 

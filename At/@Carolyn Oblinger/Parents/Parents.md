@@ -1,8 +1,5 @@
 .[[Parents]].
   ,   [[Christmas Ornaments]],
-  , ,
-  , ,
-  , ,
   , [Parents Obsidian](spot://parentsobsidian),
   DELS: ,[Parents Obsidian](spot://parentsobsidian),
   , ,
@@ -12,6 +9,9 @@
   [Parents Gdoc](https://docs.google.com/document/d/1-RnQcbruiKJQkZIZlaMC_cEZ_Vc17_iP45RcxRSM4Os/edit#heading=h.2i45vboz1026) 
 - [[Christmas Ornaments]] 
 - [Mom Games GDOC](https://docs.google.com/document/d/1ykFUqOhlNgQ3frW20-RB0tWdVobA0IBbvCdVGWAJaeg/edit) - 
+
+
+
 
 
 
@@ -85,10 +85,13 @@ SMALL PACKAGES:
 
 
 
+
 # KY HOME
 
 ### Hardware
 - Cable Box:  Amulet 756Q Cable Box
+- Cable Box: Fioptics   GGB1-UD22-3474-0DRS 0DRS   (2025-10-23)
+- 
 
 # MOM
 
