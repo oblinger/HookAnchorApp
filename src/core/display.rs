@@ -47,6 +47,18 @@
 use super::{Command, Patch};
 use std::collections::HashMap;
 
+
+/// Case-insensitive alphabetical comparison for command sorting
+/// Ensures "oblinge" comes before "Oblinger 83b" (shorter wins in case-insensitive ties)
+fn compare_commands_case_insensitive(a: &Command, b: &Command) -> std::cmp::Ordering {
+    let a_lower = a.command.to_lowercase();
+    let b_lower = b.command.to_lowercase();
+    match a_lower.cmp(&b_lower) {
+        std::cmp::Ordering::Equal => a.command.len().cmp(&b.command.len()), // Shorter wins if same text
+        other => other,
+    }
+}
+
 /// Skip leading date-like characters (digits, dashes, underscores, spaces) from the beginning of a string
 /// This allows commands like "2025-09-12 Fireball Integration SOW" to match the "Fireball" anchor
 /// by ignoring the date prefix and starting the match from "Fireball"
@@ -143,15 +155,17 @@ pub fn command_matches_query(command: &str, query: &str) -> bool {
 /// # Returns
 /// * `Option<(Vec<Command>, Command, Command)>` - (prefix_menu_commands, original_command, resolved_command) or None if no prefix menu found
 pub fn build_prefix_menu(
-    input: &str, 
-    all_commands: &[Command], 
+    input: &str,
+    all_commands: &[Command],
     patches: &HashMap<String, Patch>
 ) -> Option<(Vec<Command>, Command, Command)> {
+
     if input.trim().is_empty() {
         return None;
     }
-    
+
     let input = input.trim();
+
     
     // Try all possible prefixes of the input string, starting from longest
     // This allows "RESD" to match "RES" and show the prefix menu with "D" as filter
@@ -173,13 +187,18 @@ pub fn build_prefix_menu(
                 if resolved_command.action == "anchor" {
                     // Found our anchor! Calculate remaining characters for filtering
                     let remaining_chars = if prefix_len < input.len() {
-                        &input[prefix_len..]
+                        &input[prefix_len..].trim_start() // Trim leading spaces from filter
                     } else {
                         ""
                     };
 
+                    // Debug log for any anchor found
+                    crate::utils::log(&format!("BUILD_PREFIX_MENU: Found anchor='{}' for input='{}', filter='{}'",
+                        resolved_command.command, input, remaining_chars));
+
                     crate::utils::detailed_log("BUILD_PREFIX_MENU", &format!("Building prefix menu for anchor '{}' with filter '{}'",
                         resolved_command.command, remaining_chars));
+
 
                     // Build the prefix menu with filtering
                     let prefix_menu_commands = build_prefix_menu_commands(&resolved_command, all_commands, patches, remaining_chars);
@@ -212,18 +231,25 @@ fn build_prefix_menu_commands(
     let anchor_name = &anchor_command.command;
     let config = crate::core::sys_data::get_config();
     let separators = &config.popup_settings.word_separators;
+
     
     // Find all commands that have the anchor name as a prefix
     for cmd in all_commands {
         if cmd.action == "separator" {
             continue;
         }
-        
+
         // Check if command starts with anchor name (followed by separator or end of string)
         // First, skip any leading digits, dashes, underscores, and spaces in the command name
         let cmd_trimmed = skip_leading_date_chars(&cmd.command);
         let cmd_lower = cmd_trimmed.to_lowercase();
         let anchor_lower = anchor_name.to_lowercase();
+
+        // Log tracker info specifically
+        if cmd.command.to_lowercase().contains("tracker info") && !filter_text.is_empty() {
+            crate::utils::log(&format!("PREFIX_MENU: Checking 'tracker info' - cmd_trimmed='{}', anchor_name='{}', filter_text='{}'",
+                cmd_trimmed, anchor_name, filter_text));
+        }
 
         let matches_prefix = if cmd_lower == anchor_lower {
             // Exact match
@@ -233,7 +259,10 @@ fn build_prefix_menu_commands(
             let next_char_pos = anchor_lower.len();
             if next_char_pos < cmd_trimmed.len() {
                 let next_char = cmd_trimmed.chars().nth(next_char_pos).unwrap_or(' ');
-                separators.contains(next_char)
+                let is_separator = separators.contains(next_char);
+
+
+                is_separator
             } else {
                 false
             }
@@ -267,7 +296,18 @@ fn build_prefix_menu_commands(
 
                     if remaining_start < cmd_trimmed.len() {
                         let remaining_part = &cmd_trimmed[remaining_start..];
-                        if remaining_part.to_lowercase().starts_with(&filter_text.to_lowercase()) {
+
+
+                        // Two-phase matching as identified by user:
+                        // Phase 1: Check if remaining part after anchor matches filter using sophisticated matching
+                        let phase1_match = command_matches_query_with_debug(remaining_part, filter_text, false) >= 0;
+
+                        // Phase 2: Check if full command matches full input (anchor + filter) using sophisticated matching
+                        let full_input = format!("{} {}", anchor_name, filter_text);
+                        let phase2_match = command_matches_query_with_debug(&cmd.command, &full_input, false) >= 0;
+
+
+                        if phase1_match || phase2_match {
                             // Avoid duplicates
                             if !prefix_menu_commands.iter().any(|existing| existing.command == cmd.command && existing.action == cmd.action) {
                                 prefix_menu_commands.push(cmd.clone());
@@ -353,11 +393,19 @@ fn build_prefix_menu_commands(
         } else if !a_is_exact && b_is_exact {
             std::cmp::Ordering::Greater
         } else {
-            // Both are exact or both are not exact - sort alphabetically
-            a.command.cmp(&b.command)
+            // Both are exact or both are not exact - sort case-insensitively
+            compare_commands_case_insensitive(a, b)
         }
     });
-    
+
+    // Log final result for tracker
+    if anchor_name.to_lowercase() == "tracker" && !filter_text.is_empty() {
+        let command_names: Vec<&str> = prefix_menu_commands.iter().map(|c| c.command.as_str()).collect();
+        crate::utils::log(&format!("PREFIX_MENU_RESULT: anchor='{}', filter='{}', commands={:?}",
+            anchor_name, filter_text, command_names));
+    }
+
+
     prefix_menu_commands
 }
 
@@ -382,6 +430,7 @@ pub fn get_new_display_commands(
     all_commands: &[Command],
     patches: &HashMap<String, Patch>
 ) -> (Vec<Command>, bool, Option<(Command, Command)>, usize) {
+
     if input.trim().is_empty() {
         // Return empty list when input is blank
         return (Vec::new(), false, None, 0);
@@ -391,6 +440,7 @@ pub fn get_new_display_commands(
     
     // Step 1: Try to build a prefix menu
     if let Some((prefix_menu_commands, original_command, resolved_command)) = build_prefix_menu(input, all_commands, patches) {
+
         // We have a prefix menu!
         
         // Step 2: Get all commands that match the input using sophisticated matching
@@ -406,7 +456,6 @@ pub fn get_new_display_commands(
         // Step 3: Remove prefix menu commands from prefix_commands to avoid duplicates
         // Check both literal matches and resolved alias matches
         prefix_commands.retain(|cmd| {
-            // TODO: Remove DEBUG - Commented out to reduce log noise
             // crate::utils::detailed_log("DISPLAY_FILTER", &format!("Checking command for dedup: {} (action: {})", cmd.command, cmd.action));
             let cmd_resolved = cmd.resolve_alias(all_commands);
             // crate::utils::detailed_log("DISPLAY_FILTER", &format!("Resolved to: {} (action: {})", cmd_resolved.command, cmd_resolved.action));
@@ -442,19 +491,19 @@ pub fn get_new_display_commands(
                 return std::cmp::Ordering::Greater;
             }
             
-            // Both are same type of match - sort alphabetically
-            a.command.cmp(&b.command)
+            // Both are same type of match - sort case-insensitively
+            compare_commands_case_insensitive(a, b)
         });
         
         // Step 4: Combine prefix menu + separator + remaining prefix commands
         let mut final_commands = prefix_menu_commands.clone();
         
         
-        if !final_commands.is_empty() && !prefix_commands.is_empty() {
-            // Add separator between prefix menu and other commands
+        if !prefix_commands.is_empty() {
+            // Add separator between prefix menu and other commands (even if prefix menu is empty)
             final_commands.push(Command {
                 patch: String::new(),
-                command: "---".to_string(),
+                command: "============".to_string(),
                 action: "separator".to_string(),
                 arg: String::new(),
                 flags: String::new(),
@@ -495,8 +544,8 @@ pub fn get_new_display_commands(
                 return std::cmp::Ordering::Greater;
             }
             
-            // Both are same type of match, sort alphabetically
-            a.command.cmp(&b.command)
+            // Both are same type of match, sort case-insensitively
+            compare_commands_case_insensitive(a, b)
         });
         
         return (matching_commands, false, None, 0);

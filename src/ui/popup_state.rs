@@ -78,6 +78,7 @@ impl PopupState {
     
     /// Update search text and recompute filtered commands
     pub fn update_search(&mut self, new_search: String) {
+
         self.search_text = new_search;
         let was_reloaded = self.recompute_filtered_commands();
         self.update_display_layout();
