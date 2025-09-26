@@ -346,8 +346,8 @@ impl TemplateContext {
             expr
         );
         
-        // Execute the JavaScript code
-        crate::js::execute(&js_code)
+        // Execute the JavaScript code with context for better error reporting
+        crate::js::execute_with_context(&js_code, &format!("TEMPLATE_EXPANSION({})", expr))
     }
     
     /// Build JavaScript context with all template variables as objects
@@ -367,7 +367,14 @@ impl TemplateContext {
         } else {
             context.push_str("const raw_input = '';\n");
         }
-        
+
+        // Create arg variable (string) - for template expansion like {{arg}}
+        if let Some(arg) = self.variables.get("arg") {
+            context.push_str(&format!("const arg = {:?};\n", arg));
+        } else {
+            context.push_str("const arg = '';\n");
+        }
+
         // Create selected object with getter for folder that throws on empty
         let selected_name = self.variables.get("_selected_name").cloned().unwrap_or_else(String::new);
         let selected_folder = self.variables.get("_selected_folder").cloned().unwrap_or_else(String::new);

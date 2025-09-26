@@ -16,6 +16,7 @@ mod runtime;
 
 // Runtime creation and management
 pub use runtime::{
-    execute,        // Main function for executing JavaScript code
-    setup_runtime   // Setup function for creating custom runtime contexts (includes config.js)
+    execute,                 // Main function for executing JavaScript code
+    execute_with_context,    // Execute JavaScript with context string for better error reporting
+    setup_runtime            // Setup function for creating custom runtime contexts (includes config.js)
 };

@@ -575,7 +575,7 @@ fn execute_js_function_action(
     
     detailed_log("ACTION", &format!("Calling JavaScript: {}", js_code));
     
-    match crate::js::execute(&js_code) {
+    match crate::js::execute_with_context(&js_code, &format!("JS_FUNCTION({})", function_name)) {
         Ok(result) => {
             detailed_log("ACTION", &format!("JavaScript execution succeeded: {}", result));
             Ok(result)

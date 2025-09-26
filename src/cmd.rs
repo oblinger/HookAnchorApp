@@ -259,9 +259,9 @@ fn run_execute_top_match(args: &[String]) {
 
     
     // Use server-based execution for consistent environment
-    // Convert command to action and execute
+    // Convert command to action and execute with parameters
     let action = command_to_action(&top_command_obj);
-    let _ = execute_on_server(&action);
+    let _ = execute_on_server_with_parameters(&action, Some(&top_command_obj.arg), None);
     print("Command completed");
 }
 

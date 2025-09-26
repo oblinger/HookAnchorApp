@@ -34,29 +34,58 @@ pub fn execute_on_server(action: &Action) -> Result<String, Box<dyn std::error::
 }
 
 /// Execute an action on the server with additional parameters
-/// This clones the action, merges in the arg and variables, then sends to server
+/// This clones the action, creates proper template context, expands templates, then sends to server
 pub fn execute_on_server_with_parameters(
     action: &Action,
     arg: Option<&str>,
     variables: Option<HashMap<String, JsonValue>>
 ) -> Result<String, Box<dyn std::error::Error>> {
+    detailed_log("EXECUTE", &format!("CLI execution with parameters - expanding action: {}", action.action_type()));
+
     // Clone the action so we can modify it
     let mut modified_action = action.clone();
-    
-    // Merge in the arg parameter if provided
+
+    // Create template context with arg and variables available for expansion
+    let mut template_context = crate::core::template_creation::TemplateContext::create_basic_template("");
+
+    // Add the arg parameter to template context for expansion
+    if let Some(arg_value) = arg {
+        template_context.add_variable("arg".to_string(), arg_value.to_string());
+        detailed_log("EXECUTE", &format!("Added arg to template context: '{}'", arg_value));
+    }
+
+    // Add any additional variables to template context
+    if let Some(vars) = &variables {
+        for (key, value) in vars {
+            if let Some(string_value) = value.as_str() {
+                template_context.add_variable(key.clone(), string_value.to_string());
+                detailed_log("EXECUTE", &format!("Added variable to template context: '{}' = '{}'", key, string_value));
+            }
+        }
+    }
+
+    // Expand all action parameters using the template context (this handles {{arg}} expansion)
+    template_context.expand_action_parameters(&mut modified_action);
+
+    // After expansion, merge in the actual parameter values for JavaScript execution context
     if let Some(arg_value) = arg {
         modified_action.params.insert("arg".to_string(), JsonValue::String(arg_value.to_string()));
     }
-    
+
     // Merge in any additional variables
     if let Some(vars) = variables {
         for (key, value) in vars {
             modified_action.params.insert(key, value);
         }
     }
-    
-    // Now execute on server with the modified action
-    execute_on_server(&modified_action)
+
+    detailed_log("EXECUTE", &format!("Sending expanded action to server: {}", modified_action.action_type()));
+
+    // Send to server and get response (ACK or full result)
+    let response = super::execution_server::send_for_execution(&modified_action)?;
+
+    // Return server response (either ACK or execution output)
+    Ok(response.stdout)
 }
 
 

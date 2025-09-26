@@ -111,6 +111,10 @@ pub fn setup_runtime(ctx: &rquickjs::Ctx<'_>) -> Result<(), Box<dyn std::error::
 /// Execute JavaScript code in a configured runtime
 /// Main function for executing JavaScript code in a sandboxed environment
 pub fn execute(script: &str) -> Result<String, Box<dyn std::error::Error>> {
+    execute_with_context(script, "UNKNOWN_CONTEXT")
+}
+
+pub fn execute_with_context(script: &str, context: &str) -> Result<String, Box<dyn std::error::Error>> {
     let ctx = create_business_logic_runtime()?;
     
     ctx.with(|ctx| {
@@ -192,8 +196,8 @@ pub fn execute(script: &str) -> Result<String, Box<dyn std::error::Error>> {
                     format!("JavaScript execution error: {} (exception: {:?})", e, exception)
                 };
 
-                // Also log the detailed error for debugging
-                crate::utils::log_error(&format!("JS_ERROR_DETAIL: {}", error_details));
+                // Also log the detailed error for debugging with context
+                crate::utils::log_error(&format!("JS_ERROR_DETAIL [{}]: {}", context, error_details));
 
                 Err(error_details.into())
             }
