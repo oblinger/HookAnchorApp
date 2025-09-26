@@ -23,17 +23,55 @@ My sweet-spot is bridging world-leading R&D into rapid productization.
 
 
 
-# STORIES: KEY TOPICS
-## = BUILDING TEAMS / Maintaining them
-- Aeolus: 60+ Eng Team, 40+ PhDs, 9 months
-- AF: 50+ Eng Team
-	- turnover ...
-- SV: 20+ Eng Team, replace entire CV team
+# TOP STORIES
 
-## = TURN AROUND !!!
-- [[Star#SPORTS VISIO - Turn Around]]
+## = HANDS-ON ML EXPERIENCE
+
+### Developed SV OCR/Gallery System
+Developed a novel self-supervised player identification system that fuses a custom-trained dual-head jersey digit recognizer with multi-frame statistical fusion using signal-to-noise analysis. Built the digit recognition model on DINO v2 architecture, training on thousands of synthetic jersey number samples per class generated via inpainting techniques from real game footage, achieving robust player tracking through automated gallery generation and temporal aggregation.
+
+S: Neither ReID, Tracking, nor OCR was strong enough to track basketball players accurately
+A: Developed proprietary OCR and self-supervising Gallery system to solve player ID
+R: Advanced F1 from under .3 to over .9
+
+**Novel Technical Contributions:**
+• **Dual-head digit classifier**: Repurposed generalized transformer (DINO v2) and treated left and right jersey digit as distinct classification tasks.
+• **Synthetic training via inpainting**: Generated thousands of jersey number samples per class using advanced inpainting on real game footage
+• **Multi-frame statistical fusion**: Custom signal-to-noise analysis aggregating OCR readings across track duration with dual-threshold validation
+• **ByteTrackWithColor**: Extended ByteTracker with jersey color-aware associations to prevent identity switches between teams
+• **Self-supervised gallery generation**: Automated player-specific dataset creation through temporal aggregation and collision-aware track splitting
+• **Sports-optimized OCR pipeline**: Custom PaddleOCR wrapper with batch processing and jersey-specific filtering for basketball contexts
+
+
+### Wrote DAT - Persistent Self-Documenting Data Containers
+Architected a lightweight persistent object framework combining filesystem storage with YAML/JSON metadata, featuring automatic path resolution, lazy loading, and inheritance through base object composition. The system provides elegant abstractions for reproducible ML experiments with minimal boilerplate - enabling seamless data versioning, caching, and method chaining across distributed development workflows.
+
+S: Code was not easily re-run or remembered; work to integrate w/ DVC or ML-flow
+A: Developed simple open source data framework DVC DAT
+R: So few lines to write a DAT wrapper, most all data objects are now DATs
+
+
+
+## = BUILDING TEAMS and Maintaining them
+Built and led 5 organizations from scratch, with the largest encompassing 40+ PhDs and 60+ engineers while overseeing R&D funding budgets exceeding $200M. Demonstrated consistent ability to rapidly scale high-performing technical teams across diverse domains - from robotics and ML research to commercial software development - while maintaining low turnover and delivering complex products under aggressive timelines.
+
+- **Aeolus**: 60+ Engineering team, 40+ PhDs, hired in 9 months
+- **Analytics Fire**: 45+ Engineering team, very low turnover over 9 years
+- **Sports Visio**: 20+ Engineering team, replaced entire CV team
+
+## = TURN AROUND
+Proven track record of executing successful organizational and technical turnarounds under extreme pressure, from rescuing "unshippable" products and replacing entire teams to rebuilding core algorithms 70 days before major demos. Consistently transformed failing initiatives into funded successes - turning $3M in burned capital into shipping products and Series A funding, building 60+ person organizations from scratch in months, and threading the needle between fixing vs rebuilding critical systems when facing immovable deadlines.
+
+- [[Star#SPORTS VISIO - Turn Around]] 
 - [[Star#Aeolus Turn Around]] 
-- Aeolus??  Key algorithms (motion planning; object reco) not working 70 days from CES.
+
+### Aeolus Algorithm Crisis
+**S**: 70 days before CES with booth already purchased, core motion planning and object recognition algorithms failing
+**T**: Navigate fix-vs-rebuild decision under extreme time pressure
+**A**: Rebuilt core algorithms in 3 weeks while maintaining CES timeline
+**R**: Successfully delivered functional demo that secured follow-on investment
+
+With booth already purchased and major demo commitments made, discovered that foundational algorithms were not working as expected. Successfully threaded the needle between fixing existing systems versus starting from scratch, ultimately rebuilding core functionality within the compressed timeline to deliver a successful CES demonstration.
 
 
 ## = YOUR WEAKNESS 
@@ -126,14 +164,14 @@ R:	Delivered into CES, raised $16M
 
 ## = PRODUCT DELIVERY
 
-### PRODUCT DELIVERY:   >$3B at AF   (biggest)
+### PRODUCT DELIVERY:   >$3B at AF   (largest delivery)
 Largest scale deployments
 S: Sunpower wanted to create a residential business from scratch.
 T:	Deliver omnibus solution
 A:	Built-in QA, what is not getting delivered, quarter-by-quarter deliverables.
 R:	The largest driver of new business across all business units for a decacorn.
 
-### PRODUCT DELIVERY: (adv) Dexterous Robot; Solar Planner; CV BB stats
+### PRODUCT DELIVERY: Solar Planner; CV BB stats (Most Advanced Delivery)
 ### PRODUCT DELIVERY: (execution) SportVisio BB - BB Stats & highlights
 
 ## LEADERSHIP ???
@@ -641,6 +679,12 @@ R:	The largest driver of new business across all business units for a decacorn.
 
 ## BY COMPANY
 ## SPORTS VISIO - Turn Around
+**S**: $3M and 2 years spent, never shipped, never met deadline within factor of 2
+**T**: Right the ship, improve quality & velocity
+**A**: Layoffs, Descoping, Hires, Revamped all processes
+**R**: Shipped stable products, bugs dropped immeasurably, raised $5M+ from Tier-1 VCs
+
+Hired to fix quality, velocity, delivery, and personnel issues across Software and AI teams. Replaced the entire AI team, hired new QA team, developed and implemented formalized SW life cycle, and strategically reduced product scope to match dev resources while still delivering features required to drive sales. Went from an "unshippable" product to deployments that routinely had zero high severity bugs, raised $5M+ from Tier-1 VCs including Sapphire Ventures, and grew sales from thousands to hundreds of thousands.
 
 Hired to fix quality, velocity, delivery, and personnel issues across Software and AI teams.
 - Replaced the entire AI team; Hired a new QA team
@@ -780,6 +824,13 @@ Tapped to deliver a two armed eldercare assistive robot.
 => hired two world class PhDs in robotic grasping & collaborated top 10 lab for robotic grasping.
 
 ### Aeolus Turn Around
+**S**: Cash rich, Short timeline, Unrealistic investors
+**T**: Build team, Create Aeolus Robot OS, Deliver CES Prototype
+**A**: Build 2-tiered mgt structure, AROS framework, and CES prototype
+**R**: Hired 40+ PhDs & 20+ Eng, Raised $16M, Debuted autonomous two-armed robot at CES
+
+Tapped as employee #1 following Martian Robotics acquisition to reimagine the IP as an eldercare robot. Led 13-month "Hail Mary" build of team, robot, and technology to demo prototype at CES 2017, helping secure $16M in follow-on funding. Built 60-member, 8-discipline follow-the-sun HW/SW R&D organization (40+ PhDs, 20+ engineers) remotely distributed across 6 continents.
+
 Bang Start
 - S: Cash rich, Short timeline, Unrealistic investors
 - T: Build team, Create Aeolus Robot OS, Deliver CES Prototype

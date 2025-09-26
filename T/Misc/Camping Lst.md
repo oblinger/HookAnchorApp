@@ -3,7 +3,7 @@
 REDO:	 Pills, Food/Snack, Paper Towels, Plates, TrashBags
 WEAR:	 Hat, Hiking pants, Shoes, Sunglasses, 
 BIG:	 Tent, SleepBags, Mattress, Stove/Fuel, Cooler, 
-.		 Chairs, Day Pack, Wagon, Pillows
+.		 Chairs, Day Pack, Wagon, Pillows, Bike
 LAMP:	 HeadLamps, Cards, Deet, Sunscreen, Binoculars, 
 .		 HandTowel, BugMesh,
 DOG:	 Leash, Food, Blanket, 

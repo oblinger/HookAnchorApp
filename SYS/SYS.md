@@ -3,13 +3,17 @@
 
 .[[SYS]]. > [[MY]] 
   SYSTEMS:	[[SYS Android]], [[SYS Disks]], [[SYS Network]], 
-  My KBD:		[[KBD Shortcuts]], [[KBD Obsidian Keys]], [[KBD Global Keys]], [[KBD Notion]], [[SYS Keyboard Setup]], 
-  :				[[OBS]], [[Automation]], [NEU Folder](spot://neufolder), ,
-- [[SYS Dashboards]]	-
+  [[SYS Setup]]			-
+	My KBD:		[[SYS Keyboard Setup]], [[KBD Shortcuts]], [[KBD Obsidian Keys]], [[KBD Global Keys]], [[KBD Notion]], 
+	[[OBS]], 
+		[[SYS Dashboards]]	-
+  [[SYS Dev]] 
+
+
+  [[Automation]], [NEU Folder](spot://neufolder), ,
 - 
 - 			-
 - [[SYS Notations]]		-
-- [[SYS Setup]]			-
 - [[KBD Shortcuts]]		-
 - [[SYS Task Lists]]		-
   , [Bard Page](spot://bardpage), , ,

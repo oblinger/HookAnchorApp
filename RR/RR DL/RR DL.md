@@ -1,9 +1,8 @@
 
 .[[DL]].  
-  DL:		, , ,
-  [[DLF]]:
-  :	[[NG Notation]],
-  :	[[GenAI]], , [[Self Supervised Learning]],
+  DL:		
+  [[DLF]]:	[[NG Notation]], 
+  AREAS:[[GenAI]], [[Self Supervised Learning]], [[Safety]] 
   PARTS:	[[Attention]], [[Activation Functions]], ,
   AREAS:	,
   DETAILS:	[[Invertable Density Estimation]], [[LoRA]], ,

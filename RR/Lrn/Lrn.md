@@ -1,12 +1,11 @@
 
-[[Lrn]] Flash, 
+
 
 .[[Lrn]]. [[LRN Todo|todo]]
   [[Lrn Mgt]], [[LRN Read]], [[LRN Todo]], [Lrn Obsidian](spot://lrnobsidian),
   , [Lrn Note](spot://lrnnote),
   , [Lrn Mgt Obsidian](spot://lrnmgtobsidian), [LRN Read Obsidian](spot://lrnreadobsidian)
   , [LRN Todo Obsidian](spot://lrntodoobsidian), 
-  DELS: [Lrn Note](spot://lrnnote),[Lrn Obsidian](spot://lrnobsidian),[Lrn Note](spot://lrnnote),[Lrn Note](spot://lrnnote),
 
 
 https://github.com/openai/openai-cookbook/blob/main/articles/gpt-oss/fine-tune-transfomers.ipynb?utm_source=alphasignal&utm_campaign=2025-07-24&asuniq=23058444

@@ -15,7 +15,7 @@
 	- **do-test1**    	{{Rename instance to be "do-test" or whatever, on first line}}
 	- **us-east1-b**   {{Select zone "us-east1-b"}}
 - LOCAL CONSOLE  (S5)
-	- gcloud compute ssh --project "ai-worker-launcher" --zone "us-east1-b" "ubuntu@dotest" --ssh-key-file=~/.ssh/google_compute_engine
+	- gcloud compute ssh --project "ai-worker-launcher" --zone "us-east1-b" "ubuntu@do-test1" --ssh-key-file=~/.ssh/google_compute_engine
 - FIND AND RUN DOCKER CONTAINER
 	- [console.cloud.google.com](https://console.cloud.google.com/artifacts/docker/ai-worker-launcher/us-east4/sv-ai-docker/sv-ai-pipeline?project=ai-worker-launcher&pli=1&invt=Ab28Lg&inv=1)  
 	- Select the Tag as a string.
@@ -49,12 +49,12 @@ import importlib; importlib.reload(rem)
 
 ```
 
-
+]
 
 /src/sync/communications/models.py 
 
 pprint
-
+Test 123  test 123
 
 cat > /tmp/test_tunnel.py << 'EOF'
 import urllib.request
