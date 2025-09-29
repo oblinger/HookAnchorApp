@@ -22,11 +22,12 @@ SYM LINKS
 
 
 EXPECTED JUST COMMANDS
-   just setup             # Fixes up the dev enviornment so all sym-links any other dependencies are set properly for operations
-   just build             # Performs an incremental build so that 'rerun' is ready to execute
-   just builddist         # (Optional) builds a distrbution .dmg for this applications
+   just setup             # Fixes up the dev environment so all symlinks any other dependencies are correctly set for operations
+   just build             # Performs an incremental build 
+   just rebuild           # So that 'rerun' is ready to execute
+   just builddist         # (Optional) builds a distribution .dmg for this application
    just buildrun          # Executes build then rerun
-   just rerun             # Ensures the old app is not running, then runs the app
+   just rerun             # Ensures the old app is not running, Build the app, if successful then run the app
    just test              # Run the basic app testing
    just testall           # Runs all maintained tests for the app
 
@@ -46,6 +47,4 @@ VERSION CHECKING --  Prevents running stale or mismatched binaries during develo
   - If the checks pass, the log file is cleared and the first line should say:  "Running version X.X.X built at YYYY-MM-DD HH:MM:SS"
 
    
-```
-
-
+``
