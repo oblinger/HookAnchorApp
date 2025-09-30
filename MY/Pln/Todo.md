@@ -1,5 +1,4 @@
 
-- check alto pharmacy
 - Jameson bottle
 
 - Filepe

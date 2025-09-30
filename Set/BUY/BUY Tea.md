@@ -1,4 +1,14 @@
 ### BUY TEAS
+- LICORICE: Yogi Egyptian Licorice
+- CINNAMON: Harney & Sons Hot Cinnamon Spice
+- BLACK: Harney & Sons Paris Black Tea
+- GINGER: Twinings Lemon & Ginger, Eq Exch Tumeric Ginger
+- ROOIBOS: Numi Rooibos??, Equal Exchange Vanilla Rooibos
+- PEPPERMINT:
+- SPEARIMENT:
+- GREEN TEA:
+- CHAI??:
+
 - Black (Paris), Chai, Green, 
 - Ginger (Lemon) (Turmeric)
 - Licorice, 

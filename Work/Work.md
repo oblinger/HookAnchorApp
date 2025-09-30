@@ -57,9 +57,13 @@
 
 # __
 
+
+
+
 Claim: AI will likely operate with a set of overlapping and conflicting agendas.
 - Maximize ROI
 - Maintain healthy cash flow and cash-balance
 - Minimize risks to the business
 Claim: AI will need to balance self-serving and corp-serving
 
+Beta Add some text Add some text here 

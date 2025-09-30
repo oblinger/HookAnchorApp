@@ -1,8 +1,6 @@
 - SKIN!!
 - ozempic
-- fix chair
-- skin spots
 - credit cards loaded correctly
 - med
-- see if Magic Hour better effects, Briones, James, Matty 
+- Friday / Reflections
 - adam brown response 

@@ -1,5 +1,6 @@
 
 
+
 ## 2025-09-23  Biggest fail is starting each day on Hook Anchor
 
 - I will try allowing myself to fix quick bugs on the fly, but not allowing myself to work on core task during the day.

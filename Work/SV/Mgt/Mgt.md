@@ -1,11 +1,6 @@
 .[[Mgt]].
-  , ,
-  , ,
-  , ,
-  , [Mgt Obsidian](spot://mgtobsidian),
-  DELS: ,[Mgt Obsidian](spot://mgtobsidian),
-  , ,
-  , [Mgt Note](spot://mgtnote), 
+  
+  , [Mgt Note](spot://mgtnote), [Planning Factory](Hook://flnfactory) 
   DELS: [Mgt Note](spot://mgtnote),[Mgt Obsidian](spot://mgtobsidian),[Mgt Note](spot://mgtnote),[Mgt Note](spot://mgtnote),
 
 
