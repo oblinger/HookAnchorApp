@@ -14,7 +14,7 @@ EAR NOSE: Dr Johnson
 ONLINE - Plush Care
 PCP:ShawnHassler ‭415-397-0700‬
    870 Market Street   Suite 600 
-UROLOGIST:TomLiu415-353-2200
+UROLOGIST:TomLiu 415-353-2200
    400 Parnassus # 610A
 EYES: ??? 415-982-3007
     Eyecare Associates 

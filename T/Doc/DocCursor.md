@@ -1,12 +1,20 @@
 
 
+# INFO
 
+## Setup
+### Setup Remote GCP
+
+- CURSOR: Install "Remote - SSH"
+- IN ~/.ssh/config ADD
 
 
 
 # LOG
 
-### 2025-07-11  how to use cursor for planning
+
+
+## 2025-07-11  how to use cursor for planning
 https://softerware.substack.com/p/tiger-mom-coding?r=dazhb&utm_medium=ios&triedRedirect=true
 
 Here is my rule for planning

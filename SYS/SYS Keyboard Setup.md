@@ -1,10 +1,13 @@
 
 
+
 APPLE Keyboard Preferences
-- No changes (use Karabiner remapping)
+- No modifier key changes (use Karabiner remapping)
 
 
 KARABINER
+- SIMPLE MODIFICATIONS
+	- For Add Devices (flip 4 option & cmd keys)
 - CAPS LOCK
 	- To Opt-Cmd-F12 if alone
 		- Keyboard Maestro script under "CAPS-alone" triggers spotlight
@@ -17,14 +20,13 @@ KARABINER
 
 
 BETTER TOUCH TOOL
-
 - Shift-Ctrl-Opt-Cmd K (screen moves)
 
 
 
 KEYBOARD MAESTRO
-- Caps mappings
-- Many Others
+- CapLocks HyperKey mappings
+- Many Other Mappings too
 
 
 SPECIAL KEYS

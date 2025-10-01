@@ -1,6 +1,8 @@
 - SKIN!!
 - ozempic
-- credit cards loaded correctly
-- med
+
 - Friday / Reflections
 - adam brown response 
+
+- [[med]] 
+- credit cards loaded correctly

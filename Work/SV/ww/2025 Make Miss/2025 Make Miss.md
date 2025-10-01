@@ -1,5 +1,11 @@
 .[[2025-09 Make Miss]].
 
+- [[GCP]] 
+
+## Todo
+- Run just pull on local machine
+- Run CI build on my machine
+- Get GCP Dev box setup (has linux commands)
 
 ## Plan
 - Extract Data
@@ -16,5 +22,7 @@
 - Scale
 	- Get the command that pulls many G-games.
 	- Run these games and save to a runset.
+
+
 
 

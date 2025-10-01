@@ -5,6 +5,17 @@ SalesForce, Nvidia,
 
 # LOG
 
+## 2025-09-30  Derm person
+
+Oh, you asked me about my dermatologist, they happen to just sent me a text, so here is the info:
+
+San Francisco - Laurel Heights/Presidio Terrace office with Emma Taylor, MD. Schedule online at https://www.schweigerderm.com/providers/emma-taylor-md/, text (646) 558-6698, or call (415) 387-8007. Convenient appointment times are available.
+
+Thank you for choosing California Skin Institute – San Francisco - Laurel Heights/Presidio Terrace, part of Schweiger Dermatology
+
+
+
+## H3
 
 ### 2025-07-07  Hassler Annual
 
