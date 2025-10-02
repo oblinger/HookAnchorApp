@@ -58,6 +58,29 @@
 # __
 
 
+Tlive in SF and have a dog. Certainly | have seen many dogs in many places. And
+certainly rules about where dogs are not allowed is still a challenge even with the
+permissive rules of the city.
+As I see it, this is common resource (public spaces) and we want to use them for
+greatest benefit of all. So we want laws that provide support both owners and
+non-owners. This requires acknowledging the inherent tradeoff involved.
+I would favor stiff penalties for bad dog behavior. (if you dog does something
+once, they do it often, so you mostly know what you dog will do.) But I recognize
+enforcem...
+
+
+
+OKRs
+Paid Highlights delivered through API to Play On
+Paid Minutes  - Num Game Targets - (w/ customer acceptance)
+Paid Shot charts - Num Game Targets - (w/  customer acceptance)
+
+Speedup target?
+
+
+
+
+
 
 Claim: AI will likely operate with a set of overlapping and conflicting agendas.
 - Maximize ROI

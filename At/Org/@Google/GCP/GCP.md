@@ -3,6 +3,7 @@
 
 - [[rem1]] 
 - [[2025-06 Alg2]]   
+- [[2025 Make Miss]] 
 
 ## Recipes
 
@@ -20,9 +21,11 @@
       `just run 0.0.0-1c6da8_playon_download_data`
     - At the end of this you should be in inside a TMUX this container.
 - GRABBING DATA
-	- `just pull gamesets/bb/TINY/TINY/G1-1m`
+	- `just pull gamesets/bb/TINY/TINY/G1-1m`	
+	- `just pull gamesets/bb/TINY/TINY/G1-10s`
 	- `just pull gamesets/bb/NORM/NORM/G1 --gather`           # Grab game
 	- `just pull runsets/bb/NORM/update-2025-08-04/G1`     # LS
+	- runsets/bb/TINY/test-run/LT10T-01-1min
 	- `./scripts/data_manager.py ls gamesets/bb/NORM`       # Grab runset
 - RUN TINY TEST GAME
 	- Pull game from the server:
