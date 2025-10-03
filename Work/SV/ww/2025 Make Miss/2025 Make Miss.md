@@ -1,7 +1,8 @@
 .[[2025-09 Make Miss]].
-
+  Use [[2025 Alg2]] 
 - [[GCP]] 
-
+- docs:  [[001_classification_task]], 
+- 
 ## Todo
 - Run just pull on local machine
 - Run CI build on my machine

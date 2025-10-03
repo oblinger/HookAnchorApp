@@ -1,4 +1,4 @@
-.[[ai System Safety Analysis]].  >[[AGI Safety]]
+.[[ai System Safety Analysis]].  >[[AI Safety]]
 
 - [[AI Sys Safety Analysis]]
 - [[ASSA Papers]]
