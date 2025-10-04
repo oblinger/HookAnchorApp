@@ -1,5 +1,16 @@
 # DAT Structure Documentation
 
+src/utils/annotations/annotations_v2.py
+
+
+Frame skip moment.   
+- so I'm looking for frame 0 in Centerview and I'm looking for the class the runtime me data and the start field. There is my frame offset number for the AI clips.
+- and where is it in log file   "skip"  .... "processing"  
+
+- VideoReader CV  -- src/utils/cv2_video_utils.py  -- use the set frame method to skip around. for efficiency.
+- in GT.__spec__ TEST  tag   TEST_EDGE   
+
+
 This document describes the JSON data structures used in the basketball analytics pipeline output files.
 
 ---

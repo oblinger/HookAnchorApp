@@ -1,7 +1,7 @@
 .[[2025-09 Make Miss]].
   Use [[2025 Alg2]] 
 - [[GCP]] 
-- docs:  [[001_classification_task]], 
+- docs:  [[001_classification_task]], [[002_classification_papers]], 
 - 
 ## Todo
 - Run just pull on local machine

@@ -1,4 +1,4 @@
-v   m # Make/Miss Dataset
+# Make/Miss Dataset
 
 Dataset for training shot outcome classification (made vs missed shots).
 
