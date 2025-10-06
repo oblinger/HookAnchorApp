@@ -1,3 +1,4 @@
+- dentist payments
 - SKIN!!
 - ozempic
 
