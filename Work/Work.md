@@ -58,6 +58,24 @@
 # __
 
 
+Computing Plan
+
+Primary SW Infrastructure - NOW
+-- Video Storage, System DB, Backend Endpoints System
+-- Deployed on AWS through the A-round
+-- Tactical cost reduction actions:  monthly  monitoring & Rechecking, Media Convert simplifications, 
+
+Primary SW Infrastructure - POST-A
+-- Containerize Backend Infrastructure (or costed plan for this; allows us to move between providers easily)
+-- Model forward-looking computing requirements & cost
+-- Negotiate best pricing across major providers based on this context information.
+
+AI Computing
+-- x
+
+
+
+
 Tlive in SF and have a dog. Certainly | have seen many dogs in many places. And
 certainly rules about where dogs are not allowed is still a challenge even with the
 permissive rules of the city.

@@ -1,6 +1,5 @@
 # SportsVisio Response to PlayHQ AI Video Analytics and Highlights RFP
 
-**RFP Reference:** PHQ-AI-VIDEO-2025
 **Submission Date:** October 10, 2025
 **Submitted By:** SportsVisio
 
@@ -8,7 +7,80 @@
 
 ## Executive Summary
 
-[To be completed with overview of SportsVisio's proposed solution, key differentiators, and value proposition for PlayHQ partnership]
+SportsVisio is pleased to submit this proposal to provide AI-powered video analytics and highlights services for PlayHQ's basketball ecosystem, supporting 600,000+ games annually across 30,000 clubs.
+
+{{SEAN:  this section is somewhat duplicative with our solutions section.  We could just keep the summary at the top, and delete this capabilities and differentiations section.  I added it so we could brag, but the doc is getting long!  your choice!}}
+
+**Our Solution:**
+
+SportsVisio delivers a fully white-labeled backend API service that processes basketball game videos and returns structured JSON metadata containing shot events, player statistics, and highlight timestamps. PlayHQ retains complete control over the user experience, building all user-facing features on top of SportsVisio's data outputs.
+
+**Key Technical Capabilities:**
+
+- **Comprehensive Statistics:** Field goals attempted (FGA), field goals made (FGM), field goal percentage (FG%), with player-level attribution and shot-by-shot event data
+- **Highlight Metadata:** Precise timestamp data enabling PlayHQ to extract highlight clips from source videos
+- **Processing Scale:** Infrastructure designed for 600,000+ basketball games annually with sub-6-hour processing times
+- **High Accuracy:** >85% accuracy targets for shot detection, outcome classification, and player attribution
+- **RESTful API Integration:** Job-based processing model with webhook notifications and real-time status tracking
+- **PlayHQ Data Integration:** Integration with PlayHQ scoring webhooks for enhanced accuracy and continuous model improvement
+
+**Key Differentiators:**
+
+**1. AI-First Sports Analytics Company**
+
+SportsVisio is a technology-forward company focused exclusively on AI-powered sports analytics, not constrained by specific hardware partnerships or venue relationships. Our core competency is computer vision and machine learning, enabling us to:
+- Adapt to any video source (mobile uploads, fixed cameras, streaming platforms)
+- Continuously improve models based on real-world performance data
+- Innovate rapidly without dependencies on proprietary hardware ecosystems
+- Scale efficiently across diverse video conditions and environments
+
+**2. Multi-Year, Multi-Sport Model Development**
+
+SportsVisio's competitive advantage lies in our complex web of 12+ interconnected computer vision models refined over multiple years across multiple sports:
+
+- **Years of Training Data:** Models trained on thousands of hours of real-world game footage across basketball, volleyball, baseball, and other sports
+- **Cross-Sport Intelligence:** Insights and techniques from one sport inform improvements in others (e.g., ball tracking algorithms benefit from cross-sport refinement)
+- **Continuous Refinement:** Models have been battle-tested in production environments, not just research labs
+- **Grassroots Expertise:** Specific focus on challenging grassroots video conditions (mobile cameras, variable lighting, amateur setups) rather than just professional broadcast quality
+
+This multi-year development investment creates a defensible moat that cannot be replicated quickly by competitors starting from scratch.
+
+**3. Technology Platform, Not a Service**
+
+SportsVisio provides a scalable technology platform via API, not a manual annotation service:
+- Fully automated AI processing with no human-in-the-loop requirements for standard games
+- Horizontal scalability through cloud infrastructure (0-1000+ GPUs)
+- Consistent quality and processing times regardless of volume spikes
+- Cost efficiency that improves with scale, not degrades
+
+**4. White-Label Partnership Model**
+
+SportsVisio operates as transparent backend infrastructure:
+- No competing user-facing products in PlayHQ markets
+- Complete API-based integration with zero SportsVisio branding
+- PlayHQ controls 100% of user experience, pricing, and feature roadmap
+- Aligned incentives: SportsVisio succeeds when PlayHQ succeeds
+
+**Value Proposition for PlayHQ:**
+
+- **Rapid Time to Market:** No setup fees, consumption-based pricing, and April 2026 go-live target
+- **Cost-Effective Scaling:** Tiered pricing that rewards volume growth while covering early-stage costs
+- **Grassroots Focus:** Models specifically trained for community-level basketball video conditions
+- **Continuous Improvement:** PlayHQ scoring webhooks integration enables ongoing model enhancement
+- **Future-Proof Technology:** Multi-sport expansion roadmap (2 additional sports by 2027)
+- **Strategic Partnership:** Dedicated resources, transparent communication, and collaborative development approach
+
+**Commercial Terms:**
+
+- Tiered per-game pricing with volume discounts (0-50K, 50K-150K, 150K-300K, 300K+ games)
+- No setup fees, no monthly minimums, no platform fees
+- Purely consumption-based model aligned with PlayHQ's growth
+
+**Commitment to Excellence:**
+
+SportsVisio commits to 99.9% API uptime, sub-6-hour processing for standard games, >85% accuracy across all detection tasks, and 24/7 support with 90-minute response times for critical issues.
+
+We view this partnership as a multi-year strategic relationship and are committed to investing in PlayHQ-specific optimizations, model training, and collaborative development to ensure mutual success.
 
 ---
 
@@ -28,6 +100,7 @@
 
 ### 1.3 Governance Documents
 [To be completed - attach or reference relevant governance documentation]
+
 
 ---
 
@@ -54,6 +127,7 @@
 ### 2.3 References
 [To be completed with client references including contact details]
 
+
 ---
 
 ## 3. Technical Solution
@@ -65,7 +139,7 @@ SportsVisio's platform is built on a RESTful API architecture that enables seaml
 **Core Architecture Components:**
 - **Job Control API:** RESTful API for submitting video processing jobs and tracking status
 - **AI Processing Engine:** Computer vision models for player tracking, event recognition, and statistics extraction
-- **Content Delivery System:** Multi-format video output generation (horizontal & vertical highlights)
+- **Results Delivery System:** JSON metadata delivery with shot events, statistics, and highlight timestamps
 - **Data Integration Layer:** Roster synchronization and game metadata management
 - **Security Layer:** HTTPS communication, bearer token authentication, and webhook signature validation
 
@@ -306,24 +380,62 @@ SportsVisio will integrate with PlayHQ's game metadata to improve player identif
 - Flag anomalies (unexpected jersey numbers, player count mismatches) for review
 - Human-in-the-loop validation for edge cases with <80% confidence scores
 
-**AI-Only Event Detection:**
+**PlayHQ Scoring Webhooks and Events Data Integration:**
 
-SportsVisio's system operates purely from video analysis without reliance on external scoring data:
+**SportsVisio will integrate with PlayHQ's scoring webhooks and game API data** as specified in the RFP requirements. This integration provides significant value for both accuracy and continuous improvement:
 
-- All shot detection, player tracking, and statistics are derived from computer vision AI
+*Integration Approach:*
+- PlayHQ sends real-time or post-game scoring events via webhooks (shot attempts, makes/misses, etc.)
+- SportsVisio receives and processes this authoritative scoring data alongside AI video analysis
+- Bi-directional data flow enables validation and accuracy enhancement
+
+*Key Benefits:*
+
+1. **Enhanced Accuracy Through Data Fusion:**
+   - Combine AI computer vision detections with official scoring data
+   - Cross-validate AI predictions against ground truth from scorekeepers
+   - Resolve ambiguous cases using authoritative scoring events
+   - Achieve higher overall accuracy than AI-only or manual-only approaches
+
+2. **Quality Assurance and Validation:**
+   - Real-time accuracy monitoring by comparing AI detections vs. official scores
+   - Automatic flagging of discrepancies for review
+   - Performance dashboards showing AI accuracy metrics by game, team, venue
+   - Continuous quality reporting to PlayHQ
+
+3. **Continuous Model Improvement:**
+   - Use PlayHQ's scoring data as ground truth for model training
+   - Identify systematic errors and edge cases for targeted improvements
+   - Fine-tune models specifically for PlayHQ's video conditions and leagues
+   - Build PlayHQ-specific models optimized for their ecosystem
+
+4. **Handling Edge Cases:**
+   - When AI confidence is low, defer to official scoring data
+   - Fill gaps where video quality prevents AI detection
+   - Ensure complete statistics even for challenging video conditions
+
+*Data We Will Accept from PlayHQ:*
+- Shot attempt events (timestamp, player, location)
+- Shot outcomes (made/missed)
+- Game events (fouls, timeouts, substitutions - for future expansion)
+- Final box score statistics for validation
+
+*Implementation:*
+- Webhook endpoint for real-time event ingestion
+- Asynchronous processing of scoring data alongside video analysis
+- Reconciliation engine to merge AI and manual data sources
+- Confidence-weighted fusion algorithm for optimal accuracy
+
+**Fully Automated AI Capability:**
+
+While the PlayHQ scoring integration provides significant benefits, SportsVisio's system can also operate in **fully autonomous mode** using only video input:
+
+- All shot detection, player tracking, and statistics derived from computer vision AI
 - No dependency on manual scoring, shot clocks, or scoreboard data
-- Fully automated processing requires only video input + optional roster
-- Suitable for all game levels (including games without official scorers or scoreboards)
+- Suitable for games without official scorers (e.g., practices, informal games)
+- Provides backup capability if scoring data unavailable
 
-**Optional: Future Scoring Data Integration**
-
-If PlayHQ wishes to provide official scoring data (via webhooks or API), SportsVisio can use this to:
-- Validate AI predictions against ground truth for accuracy measurement
-- Provide quality assurance reporting on AI performance
-- Continuously improve models through feedback loops
-- Flag discrepancies between AI detection and official scores
-
-This integration is optional and not required for core functionality.
+This dual-mode approach gives PlayHQ maximum flexibility: enhanced accuracy when scoring data is available, plus autonomous operation when it's not.
 
 #### 3.3.3 Video Processing Workflow
 
@@ -430,6 +542,8 @@ Based on shot event detection, SportsVisio currently generates:
 
 **Roadmap for Full PlayHQ Requirements:**
 
+***{{SEAN:  Please consider this section.  Can we "get away" with delivering more advanced stats later}}***
+
 To meet PlayHQ's requirement for comprehensive statistics (assists, rebounds, steals, blocks), SportsVisio proposes a phased approach:
 
 *Phase 1 (Go-Live - April 2026):*
@@ -457,7 +571,7 @@ This phased approach allows April 2026 go-live with core capabilities while cont
 
 - **Cloud Platform:** Google Cloud Platform (GCP) as primary platform with multi-region deployment
 - **GPU Computing:** NVIDIA GPU infrastructure for AI inference
-- **Auto-Scaling:** Currently scales 0-1000 GPUs; will be extended to support PlayHQ's 600,000+ game volume
+- **Auto-Scaling:** Currently scales 0-1000 GPUs; will be extended to support PlayHQ's 600,000+based upon agreed upon game volume
 - **Container Orchestration:** Kubernetes for auto-scaling and workload management
 - **Job Queue:** Distributed job queue with priority scheduling
 - **Geographic Distribution:** Multi-region deployment for redundancy and performance
@@ -509,6 +623,7 @@ Player identification is performed exclusively through:
 - Jersey number recognition (OCR on visible numbers)
 - Court position tracking
 - Roster matching based on jersey numbers
+- Whole-body player identification is trained per-game but these models are not retained nor integrated across games.
 
 No biometric facial data is collected, processed, or stored at any point in the pipeline.
 
@@ -564,15 +679,13 @@ PlayHQ can select preferred approach based on compliance requirements and budget
 
 #### 3.3.9 Performance Commitment
 
-**Processing Time:** Guaranteed <6 hours from job submission to completion
-- **Target:** 3-5 hours average
-- **SLA:** 95% of jobs complete within 6 hours
-- **Remediation:** Service credits for SLA violations per commercial agreement
+**Processing Time:** Less than 6 hours average turnaround job submission to completion.
+(6-hour turn around assumes active game time is less than 60 minutes.  Longer active games will require additional time.)
 
 **Event Recognition Accuracy:** >85% for shot detection
 - **Current Performance:** 88-92% shot detection accuracy on test datasets
-- **Measurement:** Precision and recall against human-annotated ground truth
-- **Continuous Improvement:** Monthly model updates to maintain/improve accuracy
+- **Measurement:** We are measuring precision, recall, and F1 score against human-annotated ground truth.  All three must be above 85%
+- **Continuous Improvement:** We will be performing model updates at least quarterly to maintain/improve accuracy.
 
 **Statistics Accuracy:** >85% for player attribution and shot outcomes
 - **Current Performance:** 90% player attribution accuracy when roster provided
@@ -584,6 +697,48 @@ PlayHQ can select preferred approach based on compliance requirements and budget
 - **Timestamp Precision:** Event times accurate to 0.1 second resolution
 - **Coordinate System:** Normalized bounding boxes (0-1 scale) relative to source video dimensions
 - **Metadata Format:** Structured JSON conforming to published schema (see Appendix C)
+
+
+
+#### 3.3.10 Input Video Quality Requirements
+
+**SportsVisio's performance guarantees (processing time, accuracy thresholds, event detection) are predicated on input video meeting minimum quality standards.**
+
+This section defines the video quality requirements necessary to achieve the specified SLA targets. SportsVisio's system is designed to degrade gracefully when input quality falls below these thresholds, but accuracy and completeness guarantees only apply to videos meeting these criteria.
+
+**Minimum Video Quality Requirements:**
+
+{{JUAN: Please fill in the following minimum requirements:}}
+- **Resolution:** [e.g., 480p minimum, 720p or higher recommended]
+- **Frame Rate:** [e.g., 24 fps minimum, 30 fps recommended]
+- **Bitrate/Compression:** [e.g., minimum bitrate requirements to avoid excessive compression artifacts]
+- **Lighting Conditions:** [e.g., sufficient court lighting to distinguish players and ball]
+- **Camera Position:** [e.g., elevated side-court view covering full court preferred; avoid floor-level or behind-backboard angles]
+- **Camera Stability:** [e.g., fixed camera position preferred; handheld video acceptable with moderate stabilization]
+- **Video Codec Support:** [e.g., H.264, H.265 supported; other codecs may not process correctly]
+- **Audio Requirements:** [None - audio not required for processing]
+
+**Degraded Performance Scenarios:**
+
+When input video quality falls below minimum requirements, the following may occur:
+- **Reduced Accuracy:** Shot detection and player identification accuracy may drop below 85% targets
+- **Incomplete Event Detection:** Some events may not be detected (e.g., shots obscured by poor lighting or camera angles)
+- **Processing Delays:** Lower quality video may require additional processing time or manual review
+- **Increased Confidence Warnings:** More events flagged as low-confidence requiring validation
+
+**Graceful Degradation:**
+
+SportsVisio's system will attempt to process all submitted videos and return best-effort results even when quality requirements are not fully met. However:
+- Quality warnings will be included in API responses indicating detected quality issues
+- Low-confidence events will be flagged for optional human review
+- No SLA penalties apply when video quality issues are root cause of accuracy or processing delays
+
+**Quality Assessment:**
+
+- Automated quality assessment performed at job intake
+- Quality metrics included in job status responses
+- PlayHQ notified of quality concerns via webhook or API response
+- Guidance provided on corrective actions (e.g., re-recording with better lighting)
 
 
 ### 3.4 PART 3: Data Outputs for User Engagement & Content Distribution
@@ -649,7 +804,6 @@ Using SportsVisio's JSON outputs, PlayHQ will develop:
 - PlayHQ controls all aspects of data presentation, privacy settings, and user access
 - No SportsVisio branding or attribution required in PlayHQ's user-facing features
 
----
 
 ---
 
@@ -657,36 +811,89 @@ Using SportsVisio's JSON outputs, PlayHQ will develop:
 
 ### 4.1 Pricing Structure
 
-#### 4.1.1 Processing Fees
-[To be completed with detailed pricing]
+#### 4.1.1 Per-Game Processing Fees
 
-- **Per-Game Processing Fee:** [Amount]
-- **Volume Discount Structure:**
-  - [Tier 1: Volume and rate]
-  - [Tier 2: Volume and rate]
-  - [Tier 3: Volume and rate]
+SportsVisio proposes a tiered volume-based pricing model designed to support PlayHQ's growth while ensuring cost recovery during initial deployment phases:
 
-#### 4.1.2 Revenue Share Model (Optional)
-[To be completed with revenue share proposal if applicable]
+**Volume Tier Structure:**
 
-#### 4.1.3 Setup and Implementation Costs
-[To be completed with full breakdown]
+| Annual Volume | Per-Game Rate | Notes |
+|---------------|---------------|-------|
+| 0 - 50,000 games | $[PRICE_TIER_1] | Higher initial pricing to cover infrastructure setup and early-stage costs |
+| 50,001 - 150,000 games | $[PRICE_TIER_2] | Mid-tier pricing as volume scales |
+| 150,001 - 300,000 games | $[PRICE_TIER_3] | Reduced rate reflecting operational efficiencies |
+| 300,001+ games | $[PRICE_TIER_4] | Volume discount for scale operations |
 
-- **Initial Setup Fee:** [Amount and details]
-- **Integration Development:** [Costs]
-- **Testing and QA:** [Costs]
-- **Training and Onboarding:** [Costs]
-- **Total Implementation Cost:** [Amount]
+**Pricing Rationale:**
 
-#### 4.1.4 Ongoing Costs
-[To be completed with recurring costs]
+The tiered structure recognizes that:
+- Initial deployment requires significant infrastructure investment and integration effort
+- Early-stage volumes may not achieve full economies of scale
+- Higher per-game pricing in early tiers ensures cost recovery while PlayHQ builds adoption
+- Progressive discounts incentivize growth and reward volume commitment
+- At target scale (600,000+ games), pricing reaches highly competitive rates
 
-- **Monthly Platform Fee:** [If applicable]
-- **Support and Maintenance:** [Details]
-- **Infrastructure Costs:** [If applicable]
+**Billing:**
+- Monthly invoicing based on actual games processed
+- Volume tiers calculated on rolling 12-month basis
+- Automatic tier progression as cumulative volume increases
+
+#### 4.1.2 Setup and Implementation Costs
+
+**No Setup Fees:**
+
+SportsVisio will absorb all setup and implementation costs as part of this partnership, including:
+- API integration development and testing
+- Webhook endpoint configuration
+- PlayHQ-specific customizations
+- Quality assurance and acceptance testing
+- Technical documentation and training
+- Onboarding support
+
+This approach demonstrates SportsVisio's commitment to the PlayHQ partnership and removes barriers to rapid deployment.
+
+#### 4.1.3 Ongoing Costs
+
+**No Monthly Platform Fees:**
+
+Pricing is purely consumption-based (per-game processing fees only). There are no:
+- Monthly minimum fees
+- Platform access fees
+- API usage fees
+- Support or maintenance fees
+- Infrastructure surcharges
+
+**Additional Services (Optional):**
+
+The following services are available on request at additional cost:
+- Custom model training for specific venues or leagues: [Quote on request]
+- Priority processing (< 3 hour turnaround): [Premium pricing TBD]
+- Enhanced support SLAs (24/7 coverage): [Quote on request]
+- Data archival beyond standard retention: [Storage fees TBD]
 
 ### 4.2 Commercial Model Alignment
-[To be completed with explanation of how commercial model aligns with PlayHQ needs]
+
+**Alignment with PlayHQ's Objectives:**
+
+SportsVisio's pricing model is designed to support PlayHQ's strategic goals:
+
+1. **Low Barrier to Entry:** No setup fees or monthly minimums enable rapid launch without upfront capital investment
+
+2. **Risk Sharing:** Consumption-based pricing means costs scale directly with PlayHQ's adoption and success
+
+3. **Incentivized Growth:** Volume discounts reward PlayHQ for driving adoption across their 30,000 club network
+
+4. **Cost Predictability:** Simple per-game pricing with transparent tiers enables accurate forecasting
+
+5. **Grassroots Focus:** Pricing structure supports PlayHQ's mission to democratize advanced analytics at community level
+
+**Revenue Model:**
+
+SportsVisio charges PlayHQ on a per-game basis for AI analysis and metadata delivery. PlayHQ independently determines pricing for their end users (clubs, participants, associations) and retains all revenue from their value-added services built on SportsVisio data.
+
+**Volume Commitment:**
+
+While this proposal uses tiered pricing, SportsVisio does not require minimum volume commitments. PlayHQ pays only for games actually processed, providing maximum flexibility during launch and growth phases.
 
 ---
 
@@ -695,27 +902,133 @@ Using SportsVisio's JSON outputs, PlayHQ will develop:
 ### 5.1 Performance Guarantees
 
 #### 5.1.1 Processing Time
-- **Target:** <6 hours
-- **Guarantee:** [Specific commitment]
-- **Remediation:** [Approach if target not met]
+
+**Guaranteed Delivery Time:**
+- **Games ≤60 minutes active game time:** Processing completed within 6 hours of job submission
+- **Games >60 minutes active game time:** Processing time not guaranteed (best effort basis)
+
+**Calculation:**
+- Processing time measured from job submission (via `POST /v1/jobs`) to webhook notification of completion
+- 6-hour guarantee applies to games with active game footage of 60 minutes or less
+- Longer games (e.g., overtime, extended tournaments) processed on best-effort basis with estimated completion times provided
+
+**Scope:**
+- Guarantee assumes valid video format and accessibility
+- Excludes delays caused by video upload issues, invalid URLs, or corrupted source files
+- Excludes force majeure events (cloud provider outages, natural disasters, etc.)
 
 #### 5.1.2 System Uptime
-- **Target:** 99.90%
-- **Measurement:** [Methodology]
-- **Remediation:** [Approach for downtime]
 
-#### 5.1.3 Support Response
-- **Escalation Process:** [Defined levels and timeframes]
-- **Support Channels:** [Available channels]
-- **Response Time Commitments:** [By severity level]
+**API Availability Guarantee:**
+- **99.9% uptime** for SportsVisio API endpoints
+- Measured monthly across all API operations (job submission, status queries, result retrieval)
+
+**Infrastructure Resilience:**
+- Multi-region GPU compute availability across all major cloud regions (Google Cloud Platform primary)
+- Automatic failover between geographic regions to ensure compute capacity
+- Dynamic resource allocation across global cloud infrastructure to maintain availability
+
+**Uptime Measurement:**
+- Calculated as: `(Total Minutes in Month - Downtime Minutes) / Total Minutes in Month × 100`
+- Excludes scheduled maintenance windows (announced 48 hours in advance during periods of low usage, max 8 hours/quarter)
+- Excludes downtime caused by PlayHQ's infrastructure or third-party services
+
+**GPU Availability Commitment:**
+- SportsVisio commits to sourcing GPU compute capacity from all major geographic cloud regions
+- Maintains relationships with multiple cloud providers to maximize GPU availability
+- Automatic workload distribution across available regions to maintain processing capacity
+
+
+{{SEAN:  I think we do NOT put these into the contract.}}
+<!-- DECISION NEEDED: Should we include service credit remediation for uptime violations?
+     PROPOSAL: Do not offer service credits or financial remediation for SLA violations in initial contract.
+     Rationale: Maintains pricing competitiveness; focuses on technical excellence over contractual penalties.
+     Alternative: Could offer 10% monthly credit if uptime falls below 99.9%, subject to discussion. -->
+
+#### 5.1.3 Support Response Times
+
+**Support Channels:**
+
+SportsVisio provides multi-channel support access:
+- Email: support@sportsvisio.com
+- Voice/Telephone: [Phone number TBD]
+- WhatsApp: [WhatsApp business number TBD]
+- Slack: Dedicated shared channel for PlayHQ integration support
+
+**Response Time Commitments:**
+
+| Severity Level | Definition                                                                    | Response Time | Support Hours  |
+| -------------- | ----------------------------------------------------------------------------- | ------------- | -------------- |
+| **Critical**   | API outage, complete service disruption, data loss                            | 90 minutes    | 24/7           |
+| **High**       | Significant performance degradation, processing delays affecting >10% of jobs | 4 hours       | 24/7           |
+| **Medium**     | Isolated processing failures, accuracy concerns, feature requests             | 24 hours      | Business hours |
+| **Low**        | General inquiries, documentation requests, minor issues                       | 48 hours      | Business hours |
+
+**Support Coverage:**
+
+- **24/7 Support:** Available during weekends and any period where significant portal usage is occurring
+- **Business Hours:** Monday-Friday, 9am-6pm AEST (for non-critical issues)
+- **Escalation:** Critical issues automatically escalate to engineering team with 90-minute response SLA
+- **On-Call:** Dedicated on-call engineer for critical incidents during off-hours
+
+**Response vs. Resolution:**
+- Response time = Initial acknowledgment and triage
+- Resolution time depends on issue complexity; estimated timeline provided in initial response
+- Critical issues prioritized for same-day resolution when possible
 
 #### 5.1.4 Accuracy Guarantees
-- **Event Recognition:** [>85% guarantee]
-- **Statistics Accuracy:** [>85% guarantee]
-- **Remediation Clauses:** [Approach when accuracy falls below threshold]
+
+{{JUAN:  Please add numbers here.}}
+
+**Target Accuracy Levels:**
+- **Shot Detection:** >85% precision and recall for identifying shot attempts
+- **Shot Outcome:** >85% accuracy in classifying makes vs. misses
+- **Player Attribution:** >85% accuracy in attributing shots to correct players (when roster provided)
+
+**Measurement Methodology:**
+- Accuracy measured against human-annotated ground truth samples
+
+{{SEAN: do we sign up for ongoing analysis?  if it is not important, I say we DON'T???}}
+- Monthly accuracy reports provided to PlayHQ showing performance metrics
+- Continuous monitoring using PlayHQ scoring webhook data (when available) for validation
+
+**Quality Commitment:**
+- Continuous model improvement based on PlayHQ feedback and scoring data
+- Quarterly model updates to address systematic errors
+- PlayHQ-specific model fine-tuning using their video conditions
+
+
+{{SEAN:  I say we do NOT provide any of this...}}
+<!-- DECISION NEEDED: Should we offer remediation for accuracy violations?
+     PROPOSAL: Do not include contractual remediation for accuracy below 85%.
+     Rationale: Accuracy is subjective and hard to measure definitively; focus on continuous improvement.
+     Alternative: Could offer free reprocessing for games flagged as below-threshold, subject to discussion. -->
 
 ### 5.2 Support Model
-[To be completed with support structure details]
+
+**Dedicated Support Resources:**
+- Named technical account manager for PlayHQ integration
+- Direct access to engineering team for complex issues
+- Regular check-in calls (weekly during implementation, monthly post-launch)
+- Shared Slack channel for real-time communication
+
+**Proactive Monitoring:**
+- 24/7 automated monitoring of API health, processing queue, error rates
+- Automated alerts for anomalies or degraded performance
+- Monthly performance reports delivered to PlayHQ
+- Quarterly business reviews to discuss metrics, roadmap, and optimizations
+
+**Knowledge Base and Documentation:**
+- Comprehensive API documentation (see Appendix B and C)
+- Integration guides and code examples
+- Video tutorials for common workflows
+- Searchable knowledge base for troubleshooting
+
+**Continuous Improvement:**
+- Feedback loop from PlayHQ incorporated into product roadmap
+- Regular model updates based on PlayHQ data and feedback
+- Feature requests prioritized based on PlayHQ's strategic needs
+- Transparency into development roadmap and release schedule
 
 ---
 
@@ -724,13 +1037,16 @@ Using SportsVisio's JSON outputs, PlayHQ will develop:
 ### 6.1 Implementation Timeline
 [To be completed with detailed timeline]
 
-| Milestone | Target Date | Deliverables |
-|-----------|-------------|--------------|
-| Project Kickoff | January 2026 | [Details] |
-| Phase 1: [Name] | [Date] | [Deliverables] |
-| Phase 2: [Name] | [Date] | [Deliverables] |
-| Phase 3: [Name] | [Date] | [Deliverables] |
-| Go-Live | April 2026 | [Details] |
+***{{JASON/SEAN: what do we set here as our timeline?  normally one would do beta testing with live paid customers.  They may not even have customers to beta test with before April.  Can we declare 1 month (or 3 months of paid beta testing) in the schedule.  What I like about this is it give us a "way out" if our stats are not fully upto spec by then, but maybe they will not like seeing "beta" on the schedule in April.  Not sure, but I would love to put it if we can!}}***
+
+| Milestone                           | Target Date   | Deliverables                                                          |
+| ----------------------------------- | ------------- | --------------------------------------------------------------------- |
+| API Agreement                       | December 2025 | Cross-company agreement on detailed spec for all APIs and interfaces. |
+| Project Kickoff                     | January 2026  | Detailed PRD and Planning docs                                        |
+| Phase 1: Core Stats & Job Schedling | February 2026 | End-to-End alpha testing job processing round trip & core stats       |
+| Phase 2: Full stats & beta testing  | March 2026    | [Deliverables]                                                        |
+| Phase 3: [Name]                     | [Date]        | [Deliverables]                                                        |
+| Go-Live                             | April 2026    | [Details]                                                             |
 
 ### 6.2 Implementation Methodology
 [To be completed with project management approach]
@@ -753,41 +1069,370 @@ Using SportsVisio's JSON outputs, PlayHQ will develop:
 
 - **Year 1 Focus:** Basketball
 - **Year 2 Expansion:** [2 additional sports and timeline]
+{{JASON/SEAN:  Fill in as you like here.  I think we can justify VB and Baseball here, but we could claim soccer too if we chose.  up to you....}}
 
 ### 7.3 Technology Innovation
 [To be completed with planned innovations and enhancements]
+
+***{{JASON/SEAN:  we can wax poetic here about how we plan to do real-time stats, continuous model updating, etc.  or just remove it.  your call.}}***
 
 ---
 
 ## 8. Partnership and Support
 
 ### 8.1 Partnership Approach
-[To be completed with philosophy on partnership with PlayHQ]
+
+**SportsVisio views PlayHQ as a strategic technology partner, not just a customer.**
+
+Our partnership philosophy is built on:
+
+**Collaborative Development:**
+- PlayHQ's feedback directly influences our product roadmap
+- Joint planning sessions to align SportsVisio capabilities with PlayHQ's strategic priorities
+- Early access to beta features and experimental capabilities
+- Co-development opportunities for PlayHQ-specific requirements
+
+**Transparency and Communication:**
+- Open communication about system performance, challenges, and improvements
+- Regular sharing of accuracy metrics, processing statistics, and infrastructure health
+- Advance notice of planned changes, upgrades, or maintenance
+- Honest assessment of capabilities and limitations
+
+**Long-Term Commitment:**
+- Investment in PlayHQ-specific model training and optimization
+- Dedicated engineering resources for integration and ongoing enhancements
+- Shared success model: SportsVisio succeeds when PlayHQ succeeds
+- Multi-year partnership vision extending beyond initial basketball deployment
+
+**White-Label Partnership:**
+- SportsVisio operates as invisible backend infrastructure
+- No competing user-facing products or services in PlayHQ markets
+- Complete alignment with PlayHQ's brand and user experience goals
+- Flexibility to adapt to PlayHQ's evolving needs and business model
 
 ### 8.2 Support Structure
-[To be completed with ongoing support model]
+
+**Dedicated Support Team:**
+
+SportsVisio will provide PlayHQ with dedicated support resources:
+
+- **Technical Account Manager:** Single point of contact for all PlayHQ matters
+  - Regular check-ins (weekly during implementation, bi-weekly post-launch)
+  - Proactive monitoring of PlayHQ's usage patterns and performance
+  - Escalation management for critical issues
+
+- **Integration Engineering Support:** Direct access to engineers who built the API
+  - Technical troubleshooting and optimization guidance
+  - Custom integration assistance
+  - Performance tuning recommendations
+
+- **Data Science Team Access:** For accuracy and model performance discussions
+  - Analysis of edge cases and challenging videos
+  - Feedback on model improvements
+  - Guidance on optimal use of AI outputs
+
+**Multi-Channel Support Access:**
+
+As detailed in Section 5.1.3, PlayHQ has access to:
+- Email support (support@sportsvisio.com)
+- Voice/telephone support
+- WhatsApp business line
+- Dedicated Slack channel for real-time communication
+
+**24/7 Coverage:**
+- Critical issues: 90-minute response time, 24/7
+- On-call engineering rotation for after-hours emergencies
+- Weekend coverage during peak usage periods
 
 ### 8.3 Account Management
-[To be completed with dedicated resources for PlayHQ]
+
+**Dedicated Resources for PlayHQ:**
+
+**Primary Contacts:**
+- **Technical Account Manager:** [Name TBD] - Day-to-day technical liaison
+- **Executive Sponsor:** [Name TBD] - Executive-level relationship and escalation
+- **Integration Lead:** [Name TBD] - API integration and technical implementation
+
+**Organizational Commitment:**
+- PlayHQ designated as strategic account within SportsVisio
+- Priority access to engineering resources
+- Influence over product roadmap and feature prioritization
+- Dedicated Slack workspace for cross-team collaboration
+
+**Escalation Path:**
+1. Technical Account Manager (primary contact)
+2. VP of Engineering (technical escalations)
+3. Executive Sponsor / CEO (business or critical escalations)
 
 ### 8.4 Communication and Collaboration
-[To be completed with approach to ongoing communication]
+
+**Regular Touchpoints:**
+
+**Weekly (During Implementation Phase):**
+- Integration standup meetings (30 minutes)
+- Technical issue review and resolution planning
+- Timeline and milestone tracking
+
+**Monthly (Post-Launch):**
+- Performance review meetings
+- Accuracy metrics and quality dashboard review
+- Roadmap updates and feature discussions
+- Support ticket trends and resolution analysis
+
+**Quarterly:**
+- Business review meetings with executive sponsors
+- Strategic planning sessions
+- Roadmap alignment and prioritization
+- Performance against SLAs and accuracy targets
+
+**Ad-Hoc:**
+- Immediate communication for critical incidents
+- Slack channel for real-time technical questions
+- Email for non-urgent matters
+
+**Reporting and Transparency:**
+
+SportsVisio will provide PlayHQ with:
+
+**Monthly Performance Reports:**
+- API uptime statistics
+- Processing volume and queue metrics
+- Average processing times
+- Accuracy metrics (shot detection, player attribution)
+- Error rates and common failure modes
+- Support ticket summary
+
+**Quarterly Business Reviews:**
+- Performance against all SLA commitments
+- Accuracy trends and improvement initiatives
+- Infrastructure capacity and scaling readiness
+- Product roadmap updates
+- Feature requests status
+- Strategic discussion topics
+
+**Real-Time Dashboards:**
+- API health and status monitoring
+- Current processing queue depth
+- Recent job completion rates
+- Error rate trends
 
 ---
 
 ## 9. Compliance and Security
 
 ### 9.1 Security Compliance
-[To be completed with security certifications and compliance]
+
+**Security Architecture:**
+
+SportsVisio implements industry-standard security practices across all infrastructure and operations:
+
+**Authentication and Authorization:**
+- Bearer token authentication for all API access
+- HTTPS/TLS 1.3 encryption for all data in transit
+- HMAC-SHA256 webhook signature validation
+- API key rotation support with configurable expiration
+- Rate limiting to prevent abuse
+
+**Data Encryption:**
+- **In Transit:** TLS 1.3 for all API communications
+- **At Rest:** AES-256 encryption for all stored data (video cache, results, databases)
+- Encrypted backups with secure key management
+- Secure video URL handling (support for time-limited signed URLs)
+
+**Infrastructure Security:**
+- Cloud-native architecture on Google Cloud Platform (GCP)
+- Network isolation and virtual private clouds (VPCs)
+- Firewall rules and security groups restricting access
+- Regular security patching and updates
+- Intrusion detection and prevention systems
+- DDoS protection via cloud provider services
+
+**Application Security:**
+- Secure coding practices and code review processes
+- Regular dependency updates and vulnerability scanning
+- Input validation and sanitization on all API endpoints
+- SQL injection and XSS prevention
+- Comprehensive error handling without information leakage
+
+**Access Control:**
+- Role-based access control (RBAC) for internal systems
+- Principle of least privilege for all service accounts
+- Multi-factor authentication (MFA) for employee access
+- Audit logging of all administrative actions
+- Regular access reviews and credential rotation
+
+**Monitoring and Incident Response:**
+- 24/7 security monitoring and alerting
+- Centralized logging with tamper-proof audit trails
+- Incident response plan with defined escalation procedures
+- Security incident notification to affected customers within 72 hours
+- Regular security assessments and penetration testing
+
+**Security Certifications:**
+
+{{SEAN/JASON: Fill in if applicable, otherwise remove or mark as "in progress"}}
+- **SOC 2 Type II:** [Certification status - in progress / completed / planned]
+- **ISO 27001:** [Certification status - in progress / completed / planned]
+- **PCI DSS:** Not applicable (no payment card processing)
 
 ### 9.2 Data Privacy
-[To be completed with privacy compliance details]
+
+**Privacy Compliance Commitments:**
+
+SportsVisio is committed to protecting the privacy of PlayHQ participants and complying with all applicable data protection regulations.
+
+**GDPR Compliance (General Data Protection Regulation):**
+
+For European participants in PlayHQ competitions:
+
+- **Lawful Basis:** Processing based on legitimate interests or consent (as determined by PlayHQ as data controller)
+- **Data Processing Agreement:** SportsVisio will execute a DPA with PlayHQ defining roles and responsibilities
+- **Data Subject Rights:** Support for PlayHQ to fulfill data subject requests (access, rectification, erasure, portability)
+- **Right to Erasure:** API endpoint for data deletion upon request
+- **Data Portability:** Export capabilities in standard JSON format
+- **Breach Notification:** 72-hour notification to PlayHQ of any personal data breaches
+- **Privacy by Design:** Minimal data collection, purpose limitation, storage limitation
+- **International Transfers:** Standard Contractual Clauses (SCCs) for any data transfers outside Australia
+
+**Australian Privacy Act 1988 Compliance:**
+
+SportsVisio adheres to the 13 Australian Privacy Principles (APPs):
+
+- **Transparent Handling:** Clear documentation of data collection and use
+- **Anonymity/Pseudonymity:** Player identification via jersey numbers only (no biometric identifiers)
+- **Collection Limitation:** Only collect data necessary for video analysis services
+- **Data Quality:** Accuracy measures to ensure statistics match game events
+- **Data Security:** Encryption, access controls, and security measures (see Section 9.1)
+- **Access and Correction:** Support for PlayHQ to fulfill participant access requests
+- **Use and Disclosure:** Data used only for AI analysis services, not disclosed to third parties
+- **Cross-Border Disclosure:** Compliant handling if data processed outside Australia
+- **Government Identifiers:** Not applicable (no government IDs collected)
+- **Sensitive Information:** Not applicable (no biometric, health, or sensitive data)
+
+**Privacy Impact Assessment:**
+
+SportsVisio has conducted a Privacy Impact Assessment (PIA) for basketball video analytics services. Key findings:
+
+- **Minimal PII Collection:** Only jersey numbers, team affiliations, game metadata
+- **No Facial Recognition:** Explicitly no biometric facial data collected or processed
+- **Video Retention:** Temporary video caching only; source videos not permanently stored
+- **Results Retention:** Configurable retention periods (default 90 days) with automatic deletion
+- **Child Privacy:** Age-appropriate handling of minor participants' data
+
+**No Facial Recognition Commitment:**
+
+**SportsVisio explicitly does NOT use facial recognition technology or collect biometric identifiers.**
+
+Player identification uses only:
+- Jersey color detection
+- Jersey number OCR
+- Court position tracking
+- Whole-body tracking (per-game only, models not retained across games)
+
+**Data Minimization:**
+
+SportsVisio collects and processes only data necessary for video analysis:
+- Video URLs (not stored permanently)
+- Game metadata (teams, rosters, game IDs)
+- Jersey numbers for player attribution
+- Bounding box coordinates and timestamps
+- Shot events and statistics
+
+No collection of:
+- Facial biometrics
+- Personal identifying information beyond jersey numbers
+- Contact information
+- Demographics (age, gender, ethnicity)
+- Location data (beyond game venue from PlayHQ metadata)
 
 ### 9.3 Australian Data Residency
-[To be completed with data residency commitment]
+
+**Data Residency Commitment:**
+
+SportsVisio commits to Australian data residency for PlayHQ participant data, subject to implementation approach agreed with PlayHQ.
+
+**Option 1: Full Australian Data Residency (Recommended)**
+- All video processing infrastructure deployed in GCP Australia regions (Sydney, Melbourne)
+- All data storage (databases, object storage) hosted in Australia
+- Data never leaves Australian borders during processing or storage
+- Complies with Australian government data sovereignty requirements
+- Higher infrastructure costs (reflected in pricing)
+
+**Option 2: Hybrid Approach with Australian Metadata Storage**
+- Video processing may occur in global infrastructure for GPU availability and cost efficiency
+- All participant PII and game metadata stored exclusively in Australian regions
+- Transient video cache automatically deleted after processing
+- Results data stored in Australian regions
+- Lower infrastructure costs with maintained data residency for sensitive information
+
+**Implementation Details:**
+- Google Cloud Platform Australia regions: `australia-southeast1` (Sydney), `australia-southeast2` (Melbourne)
+- Database replication within Australian regions for redundancy
+- Data export controls preventing transfer outside Australia
+- Compliance documentation available for audit
+
+**Data Transfer Restrictions:**
+- No permanent data storage outside Australia (Option 1)
+- Transient processing data only (Option 2) with strict deletion policies
+- Standard Contractual Clauses (SCCs) for any temporary processing outside Australia
+- Data Processing Agreement (DPA) specifying data residency terms
+
+PlayHQ can select preferred approach based on compliance requirements, budget considerations, and risk assessment.
 
 ### 9.4 Insurance and Liability
-[To be completed with insurance coverage details]
+
+**Insurance Coverage:**
+
+SportsVisio maintains comprehensive insurance coverage appropriate for technology services:
+
+**Professional Indemnity Insurance:**
+- Coverage: $[AMOUNT TBD] per claim, $[AMOUNT TBD] aggregate
+- Covers professional errors, omissions, and negligent acts
+- Includes intellectual property infringement defense
+- Provider: [Insurance provider TBD]
+
+**Cyber Liability Insurance:**
+- Coverage: $[AMOUNT TBD] per incident
+- Covers data breaches, privacy violations, network security failures
+- Includes breach response costs, notification expenses, regulatory fines
+- Provider: [Insurance provider TBD]
+
+**Public Liability Insurance:**
+- Coverage: $[AMOUNT TBD] per occurrence
+- General liability for business operations
+- Provider: [Insurance provider TBD]
+
+**Certificate of Currency:**
+- Certificates of insurance available upon request
+- Coverage maintained throughout contract term
+- PlayHQ named as additional insured (if required)
+
+**Limitation of Liability:**
+
+{{SEAN/JASON: This is typically heavily negotiated. Standard tech company positions below:}}
+
+Subject to detailed terms in Master Services Agreement:
+
+**Liability Caps:**
+- SportsVisio's total liability limited to fees paid by PlayHQ in preceding 12 months
+- Exception: No cap for gross negligence, willful misconduct, or breach of confidentiality
+- Exception: No cap for third-party IP infringement claims
+
+**Excluded Damages:**
+- No liability for indirect, consequential, special, or punitive damages
+- No liability for lost profits, lost revenue, or lost business opportunities
+- No liability for PlayHQ's failure to backup data or system failures outside SportsVisio's control
+
+**Indemnification:**
+- SportsVisio indemnifies PlayHQ against third-party IP infringement claims arising from use of SportsVisio API
+- PlayHQ indemnifies SportsVisio against claims arising from PlayHQ's use of data or video content
+- Mutual indemnification for breaches of respective obligations
+
+**Force Majeure:**
+- No liability for failures due to events beyond reasonable control (natural disasters, cloud provider outages, government actions, pandemics)
+- Best efforts to mitigate and notify PlayHQ of force majeure events
+
+These terms subject to negotiation and final Master Services Agreement.
 
 ---
 
@@ -837,25 +1482,16 @@ See complete documentation for detailed endpoint specifications, request/respons
 
 See complete specification for detailed data structures, coordinate systems, and integration guidelines.
 
-### Appendix D: UI/UX Mockups
-[To be provided - mockups showing:
-- Video upload interface within PlayHQ/MyHoops app
-- Job status and progress indicators
-- Player highlight galleries
-- Statistical dashboards (player, coach, administrator views)
-- Social sharing flows
-- Badge/gamification displays]
+### Appendix D: Security and Compliance Certifications
 
-### Appendix E: Security and Compliance Certifications
+***{{SAM/SEAN:  I am not sure if we have anything to put in here.  Clearly, we will need to comply with GDPR and Australian law, but I am not sure we put anything in here now???}}***
+
+
 [To be provided:
-- SOC 2 Type II certification (if applicable)
-- ISO 27001 certification (if applicable)
-- Privacy impact assessment
-- Data processing agreement (DPA) template
 - Australian Privacy Principles compliance documentation
 - GDPR compliance attestation]
 
-### Appendix F: Case Study Details
+### Appendix E: Case Study Details
 
 **Case Study 1: Lifetime Fitness Basketball Leagues**
 [To be expanded with:
@@ -874,14 +1510,14 @@ See complete specification for detailed data structures, coordinate systems, and
 - Technical challenges and solutions
 - Outcomes and ROI]
 
-### Appendix G: References and Contact Information
+### Appendix F: References and Contact Information
 [To be provided:
 - Lifetime Fitness: Contact name, title, email, phone
 - PlayOn Sports: Contact name, title, email, phone
 - Additional references (minimum 3 total)
 - Authorization for PlayHQ to contact references]
 
-### Appendix H: Corporate Governance Documents
+### Appendix G: Corporate Governance Documents
 [To be attached:
 - Certificate of Incorporation
 - ABN/ACN registration
@@ -890,7 +1526,7 @@ See complete specification for detailed data structures, coordinate systems, and
 - Financial stability documentation
 - Insurance certificates (Professional Indemnity, Public Liability, Cyber Insurance)]
 
-### Appendix I: Terms and Conditions
+### Appendix H: Terms and Conditions
 [To be provided:
 - Master Services Agreement template
 - Service Level Agreement (SLA) details
