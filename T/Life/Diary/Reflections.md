@@ -1,6 +1,12 @@
 
 
 
+## 2025-10-07  Made big progress when focused on Make/Miss; need to focus on AI Safety
+
+- Need to make a quick initial assessment of AI safety viability in delivering a quick result as basis for talking w/ Antropic
+
+
+
 ## 2025-09-23  Biggest fail is starting each day on Hook Anchor
 
 - I will try allowing myself to fix quick bugs on the fly, but not allowing myself to work on core task during the day.

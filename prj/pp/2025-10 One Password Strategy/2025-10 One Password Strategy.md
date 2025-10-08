@@ -1,17 +1,20 @@
 
 
+# Glossary
+IAM - Identity and Access Management (controlling who has access to what systems/data)
+IGA - Identity Governance and Administration (managing user identities, access rights, and compliance)
+XAM customers - Cross-Application Management customers (users managing access across multiple applications)
+EPM - Enterprise Performance Management (business planning, budgeting, and financial consolidation systems)
+A2A - Application-to-Application (automated communication/integration between software systems)
+PPM - Project Portfolio Management (managing multiple projects and resources across an organization)
+PAM - ]
+
+# Ideas
 
 1. Agentic AI Identity - 
 2. PAM - Pluggable Authentication Modules
 3. Risk Engine - 
 4. Automation - 
-IAM - 
-IGA -
-XAM customers - 
-EPM - 
-A2A - 
-PPM - 
-
 
 Corporate Agentic AI-based automation
 - Must mirror org's current Identity & authority mgt
@@ -21,8 +24,11 @@ Corporate Agentic AI-based automation
 ==> Third-party MCP servers w/ customer credentials.
 
 ==> Open source standard for agentic identity.
-- 
 
+
+# TOP IDEAS
+## One-Two punch for Agentic Identity - 1PW UX for managed OAUTH keys & Open Source Standard for Agentic Identity (delegated OAUTH)
+## LLM-Based auto login PW reset automation
 
 
 ## Use of LLMs in understanding and strategizing about auto login failures / PW rotation failures
@@ -35,7 +41,16 @@ Corporate Agentic AI-based automation
 - Leverages existing 1Password acceptance within the SMB market to drive clients' customer adoption within their SMB customers.
 
 
+
+
 ## Open Source Standard for Agentic Identity
+- => Agentic providers calling out for Agentic identity -- need it to enable their agents
+- => Large Corp access is not the challenge, its the long tail of SMB and Personal data
+- => Delegated OAUTH is the single point solution, but can only occur as an open source / open standard
+- => 1Password is the natural leader and champion for such a standard.
+- => Pressure from customers and agent providers will push adoption of this new standard.
+- => Technical hurdles will be light -- drop in replacement for std oauth -- hurdles will be political / legal.
+- => Open source would be risk for 1password, but its a bigger risk for current oauth holders.
 - Bridge industry (Oauth, OIDC, Passkey) standards with centralized identity management.
 - Develop drop-in replacement libraries for standard auth technologies that transparently supports centralized identity management.
 - Gain momentum with key SAAS companies that want to deliver MCP servers that can be driven (without user signup) to user-proxied agentic AI

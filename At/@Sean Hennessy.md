@@ -1,5 +1,12 @@
-=[[At]]     [[@BlinkTech]] 
+=[[At]]    [Sales Lead](https://www.linkedin.com/in/sean-hennessy-07136073/)  [[@BlinkTech]] 
 
+https://www.linkedin.com/in/kefeng2020/
+
+
+
+
+- plan to charge -- per game -- verified $30/game
+- 
 
 # LOG
 

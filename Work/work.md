@@ -13,6 +13,7 @@
   Effort Analysis for BB stats
   [PlayOn](hook://playon): 
   MGT
+	 - plan for moving stuff to cloud - 
 	 - Magic Hour
 	 -  james and matty; fireball matty tell
 	-  [AWS Costs](https://drive.google.com/drive/folders/1Mnu6bwVw9bqxGq40uM_fBZ6x_75O3c6H)  (talk w/ Matty?)

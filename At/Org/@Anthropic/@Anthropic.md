@@ -11,6 +11,24 @@
 - [[Claude]]  
 - [[Claude code usage examples]]. 
 
+# INFO
+## People
+### AI Safety
+Potential Anthropic mentors include:
+
+- [Ethan Perez](https://ethanperez.net/)
+- [Jan Leike](https://jan.leike.name/)
+- [Jascha Sohl-Dickstein](https://sohldickstein.com/)
+- [Andi Peng](https://andipeng.com/)
+- [Samuel Marks](https://scholar.google.com/citations?user=fW7yK10AAAAJ&hl=en)
+- [Joe Benton](https://joejbenton.com/)
+- [Akbir Khan](https://akbir.dev/about/)
+- [Fabien Roger](https://scholar.google.com/citations?user=La75jqEAAAAJ&hl=en)
+- [Alex Tamkin](https://www.alextamkin.com/)
+- [Kyle Fish](https://twitter.com/fish_kyle3)
+- [Nina Panickssery](https://ninapanickssery.com/)
+- [Mrinank Sharma](https://www.mrinanksharma.net/)
+- [Evan Hubinger](https://evhub.github.io/)
 
 
 # Log
