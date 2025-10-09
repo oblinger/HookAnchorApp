@@ -1,5 +1,9 @@
 
 
+# WHY
+- Want to stay central 
+
+
 # Glossary
 IAM - Identity and Access Management (controlling who has access to what systems/data)
 IGA - Identity Governance and Administration (managing user identities, access rights, and compliance)

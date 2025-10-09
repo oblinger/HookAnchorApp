@@ -1,19 +1,15 @@
 
 
-- AWS Activate.
-- playon datasets: Andy6 720pNow 1080pGood.
-!metric:  Speed of our app 
 !summary single metric for BB 
-!fball Analysis & on?	
-
+  Baseball opportunity
 .**TODO**.
   [[2025 AI Codeing Brainstorm|AI-code]]  
-  Baseball opportunity
   [Schart](https://www.notion.so/sportsvisio/SHOT-CHARTS-END-2-END-1d4719d6f2bd802ca4dfc8b1e0ff1fd5?pvs=4): POC
   Effort Analysis for BB stats
   [PlayOn](hook://playon): 
   MGT
-	 - plan for moving stuff to cloud - 
+	 - [Cloud Roadmap](https://docs.google.com/document/d/1g135euS74c7FfBO6GDMRGyvi_0jXHBm4Pd4bqU9Pa94/edit?tab=t.0): plan for moving stuff to cloud - 
+	- Tracking:  playon datasets: Andy6 720pNow 1080pGood.
 	 - Magic Hour
 	 -  james and matty; fireball matty tell
 	-  [AWS Costs](https://drive.google.com/drive/folders/1Mnu6bwVw9bqxGq40uM_fBZ6x_75O3c6H)  (talk w/ Matty?)
@@ -57,45 +53,6 @@
 [[Journaling]] 
 
 # __
-
-
-Computing Plan
-
-Primary SW Infrastructure - NOW
--- Video Storage, System DB, Backend Endpoints System
--- Deployed on AWS through the A-round
--- Tactical cost reduction actions:  monthly  monitoring & Rechecking, Media Convert simplifications, 
-
-Primary SW Infrastructure - POST-A
--- Containerize Backend Infrastructure (or costed plan for this; allows us to move between providers easily)
--- Model forward-looking computing requirements & cost
--- Negotiate best pricing across major providers based on this context information.
-
-AI Computing
--- x
-
-
-
-
-Tlive in SF and have a dog. Certainly | have seen many dogs in many places. And
-certainly rules about where dogs are not allowed is still a challenge even with the
-permissive rules of the city.
-As I see it, this is common resource (public spaces) and we want to use them for
-greatest benefit of all. So we want laws that provide support both owners and
-non-owners. This requires acknowledging the inherent tradeoff involved.
-I would favor stiff penalties for bad dog behavior. (if you dog does something
-once, they do it often, so you mostly know what you dog will do.) But I recognize
-enforcem...
-
-
-
-OKRs
-Paid Highlights delivered through API to Play On
-Paid Minutes  - Num Game Targets - (w/ customer acceptance)
-Paid Shot charts - Num Game Targets - (w/  customer acceptance)
-
-Speedup target?
-
 
 
 

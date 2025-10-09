@@ -8,6 +8,7 @@
 
 - Best chance of getting Ozempic covered by insurance
 - Dermatologist
+- Cheryl - 
 
 
 185 Barry Street Lobby 1 suite 1000

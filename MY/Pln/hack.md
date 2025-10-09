@@ -1,9 +1,11 @@
-- log file trimming
+- [ ] log file trimming
 - [ ] x
 
 
+[[KMR History]] 
+
 - [ ] Personal use licence
-- [ ] the ha bin should be added to the path in the source script file
+- [ ] The ha bin should be added to the path in the source script file
 - [ ] Help doc by sections  [[HELP]] 
 - [ ] Add a 'just cmd' button
 - [ ] Delete key should prompt to delete file and maybe folder.
@@ -17,6 +19,12 @@
 - [ ] Add support for "close popup" into templates.  Move CMD+shift+2 to be a template
 - [ ] Implement activate tmux in JavasScrpt just as it works in Rust
 
+
+## Logs
+- [ ] Scan files and folders for log for "# Log" and files with Log as their name
+- [ ] Files History as their suffix serve to summarize all logs under them within the DAG
+- [ ] Maintain map of last edit times, to avoid rescanning when not needed.
+- [ ] Allow direct addition to history?
 
 
 ## DONE

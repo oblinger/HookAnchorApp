@@ -1,5 +1,5 @@
 .[[SEEK]].   [[CN]]  [[NJ.2]] 
-  [[SEEK Plan]] 
+  [[SEEK Plan]], [[SEEK Daily]], 
   [[SEEK Postings]],
   [[SEEK List]],
   [[SEEK Search]],

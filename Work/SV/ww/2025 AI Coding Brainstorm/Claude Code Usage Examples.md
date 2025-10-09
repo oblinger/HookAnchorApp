@@ -1,6 +1,37 @@
 
 [[Claude Code End-to-End Fix]] 
 
+
+
+## Example New Feature
+
+- here is a new feature spec file
+- [[HISTORY_DESIGN]] 
+
+## Using CTRL
+
+ Use my CTR L command to search to do a jsearch for coffee shops near my address at 101 bache street, 94110. 
+Then use the J Page command to get the Google directions for up to 20 of these coffee shops based on their names and address and extract the travel time to each.
+Build a table of the ten closests shops with travel time, address, and url for the coffeeshop itself.
+Also use the tab command to open a new browser tab on each of these sites.
+
+```
+  | #   | Coffee Shop            | Address          | Walking Time | Website                                   |
+  |-----|------------------------|------------------|--------------|-------------------------------------------|
+  | 1   | Pinhole Coffee         | 231 Cortland Ave | ~5 min       | https://www.pinholecoffee.com             |
+  | 2   | Martha & Bros Coffee   | 500 Cortland Ave | ~8 min       | https://www.marthabros.com/bernal-heights |
+  | 3   | CoffeeShop             | 3139 Mission St  | ~12 min      | https://coffeeshopsf.com                  |
+  | 4   | Philz Coffee           | 3101 24th St     | ~12 min      | https://www.philzcoffee.com               |
+  | 5   | Haus Coffee            | 3086 24th St     | ~13 min      | http://hauscoffeesf.com                   |
+  | 6   | Sightglass Coffee      | 3014 20th St     | ~15 min      | https://sightglasscoffee.com              |
+  | 7   | Ritual Coffee Roasters | 1026 Valencia St | ~18 min      | https://ritualcoffee.com                  |
+  | 8   | Temos Coffee           | 694 Valencia St  | ~20 min      | https://www.instagram.com/temoscoffee     |
+  | 9   | Four Barrel Coffee     | 375 Valencia St  | ~22 min      | https://www.fourbarrelcoffee.com          |
+  | 10  | Blue Bottle Coffee     | 66 Mint St       | ~25 min      | https://bluebottlecoffee.com              |
+```
+
+
+
 ## EXAMPLE: Subtle Feature: Re-add URL handling.
 
 > The URL handler is not working properly. Let's be very very careful in trying to fix this! Our current architectural idea is to use a child.APP that is embedded inside the

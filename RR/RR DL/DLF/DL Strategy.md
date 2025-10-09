@@ -6,7 +6,7 @@
 DL consideration categories
 -?-
 DATA -> MODEL -> TRAINING -> OPTIMIZER  -> TESTING
-STABILIZATION, VISUALIZATION <!--SR:!2025-08-29,1,194-->
+STABILIZATION, VISUALIZATION <!--SR:!2025-10-10,2,194-->
 
 
 DL considerations
@@ -19,7 +19,7 @@ OPTIMIZER:
 SCHEDULER: 
 TESTING: Train-validation split, Early Stopping
 STABILAIZATION: Gradient clipping
-VISUALIZATION: Monitor loss, Visualize <!--SR:!2025-08-29,1,193-->
+VISUALIZATION: Monitor loss, Visualize <!--SR:!2025-10-09,1,173-->
 
 
 
@@ -29,14 +29,14 @@ DL Performance Improvement Strategies
 -?-
 Gradient Accumulation
 Mixed Precision Training
-Distributed Training <!--SR:!2025-08-29,1,146-->
+Distributed Training <!--SR:!2025-10-09,1,146-->
 
 ### Gradient Accumulation 
 
 DL strategy: Gradient accumulation
 -?-
 A technique that enables training with smaller batch sizes by accumulating gradients over multiple steps before applying them.
-This is particularly useful when memory limitations prevent large batch sizes from being used. <!--SR:!2025-09-08,11,226-->
+This is particularly useful when memory limitations prevent large batch sizes from being used. <!--SR:!2025-11-02,25,226-->
 
 Here’s how it works: 
 Memory Efficiency: By accumulating gradients across several mini-batches, gradient accumulation reduces memory load, allowing models to simulate the effect of a larger batch size. 
@@ -52,7 +52,7 @@ Uses lower precision for specific calculations during training, which helps redu
 .
 Half-Precision Calculation: Calculations in half-precision (FP16) significantly reduce memory usage and speed up training times, especially effective for large models with high computational demands. 
 .
-Automatic Mixed Precision (AMP): Frameworks like PyTorch and TensorFlow support AMP, which automatically selects the optimal precision for each operation. <!--SR:!2025-09-07,11,226--> 
+Automatic Mixed Precision (AMP): Frameworks like PyTorch and TensorFlow support AMP, which automatically selects the optimal precision for each operation. <!--SR:!2025-11-02,25,226--> 
 
  
 
@@ -62,7 +62,7 @@ DL Strategy: Distributed Training
 For training large transformers, distributed training enables the use of multiple GPUs or TPUs in parallel, reducing the overall training time.
 There are two main strategies: 
 Data Parallelism: Each device receives a portion of the data batch, processes it, and then synchronizes gradients across all devices.  This method is popular for tasks where models do not need to be split across devices. 
-Model Parallelism: When a model is too large to fit on a single device, model parallelism splits the model itself across multiple devices, enabling larger models to be trained. <!--SR:!2025-09-02,5,234--> 
+Model Parallelism: When a model is too large to fit on a single device, model parallelism splits the model itself across multiple devices, enabling larger models to be trained. <!--SR:!2025-10-20,12,234--> 
 
 More INFO
 Work Split:
@@ -190,7 +190,7 @@ last line
 DL Strategy: Efficient {{Optimizers}}
 -?-
 Selecting the right optimizer can make a difference in both speed and performance. AdamW and LAMB are popular choices for transformer training. {{AdamW}}. 
-{{LAMB - Layer-wise Adaptive Moments}} <!--SR:!2025-08-29,1,188-->
+{{LAMB - Layer-wise Adaptive Moments}} <!--SR:!2025-10-10,2,188-->
 
 AdamW (Adam with Weight Decay): Combines Adam’s adaptive learning with weight decay, which helps in generalizing better during training. 
 

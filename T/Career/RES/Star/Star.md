@@ -1,6 +1,8 @@
 . [[S.T.A.R.]], [[RES]], [[Star Stories]], [[Star AI]]. 
 Anchor Stories: A time when you:  (a) created value,  (b) solved a messy problem,  (c) were asked to lead
 
+
+
 # __
 
 
@@ -13,9 +15,6 @@ My sweet-spot is bridging world-leading R&D into rapid productization.
 A proven AI PhD/CTO: with decade+ hands on experience in ML/DL, built 5 orgs from scratch (up to 60 engineers), funded hundreds of millions in research at DARPA, exited three companies, and brought products to market worth billions.  Looking for a hands-on role leading generative-AI based innovation.
 
 My sweet-spot is bridging world-leading R&D into rapid productization.
-
-
-
 
 
 

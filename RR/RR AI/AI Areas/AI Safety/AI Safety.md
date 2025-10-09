@@ -18,7 +18,7 @@ AGI Safety
 
 # LOG
 
-## 2025-10-07  Latent Behavior Clustering
+## 2025-10-07  [[AI Safety Action Taxonomy Construction]] 
 
 
 - Automatic Taxonomy Building: Unsupervised or semi-supervised discovery of latent behavior clusters, used to classify actions or objectives instead of linguistic concepts.

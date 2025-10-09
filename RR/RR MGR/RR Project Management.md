@@ -12,6 +12,6 @@ A PRD is a **Product Requirements Document**. It's a document that outlines what
   - Target users and use cases.
   - Feature requirements and specifications
   - Success metrics
-  - Timeline and priorities <!--SR:!2025-08-30,2,230-->
+  - Timeline and priorities <!--SR:!2025-10-15,7,250-->
 
   PRDs help align teams on what to build before development begins.
