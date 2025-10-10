@@ -6,8 +6,6 @@
 
 
 - AGI guy:  https://sjbyrnes.com/agi.html
-
-- med exercise plan weights
 - med exercise plan weights
 - weights plan
 - eye glasses
