@@ -83,15 +83,23 @@ fn compare_commands_case_insensitive(a: &Command, b: &Command) -> std::cmp::Orde
 
 /// Sort commands by relevance to the input string
 ///
+/// **UNIVERSAL SORTING FUNCTION**
+/// This function is used throughout the system for ALL command sorting:
+/// - Prefix menu commands (sorted by filter text, or anchor name if filter is empty)
+/// - Non-prefix-menu commands (sorted by full input)
+/// - All commands when no prefix menu exists (sorted by full input)
+///
 /// SORTING RULES:
 /// ==============
 /// Priority 1: Exact matches (case-insensitive)
 ///   - Commands whose name exactly matches the full input
+///   - Example: input "texter" → "texter" anchor comes first
 ///   - Example: input "FB" → "fb" alias comes first
 ///
 /// Priority 2: Prefix matches (case-insensitive)
 ///   - Commands whose name starts with the input string
 ///   - Example: input "FB" → "FBX Something" comes before "Some FB Text"
+///   - Example: input "task" → "task1_prd_text_capture_app" before "refactoring task"
 ///
 /// Priority 3: Substring matches
 ///   - Commands that contain the input but don't start with it
@@ -100,12 +108,19 @@ fn compare_commands_case_insensitive(a: &Command, b: &Command) -> std::cmp::Orde
 ///
 /// Priority 4: Alphabetical ordering (case-insensitive)
 ///   - Within each priority level, sort alphabetically
+///   - Commands starting with alphabetic characters sort before numeric characters
 ///   - Case is ignored for comparison
 ///   - Tie-breaker: Shorter command name wins if lowercase text is identical
 ///
+/// SPECIAL CASE: Empty input string
+///   - When input is empty, all commands are treated as prefix matches
+///   - Falls through to alphabetical sorting
+///   - This happens for prefix menus when typing exactly the anchor name (e.g., "texter")
+///   - In this case, the caller should pass the anchor name as input for proper exact-match sorting
+///
 /// # Arguments
 /// * `commands` - Mutable reference to vector of commands to sort
-/// * `input` - The input string to compare against
+/// * `input` - The input string to compare against (filter text, anchor name, or full input)
 fn sort_commands_by_relevance(commands: &mut Vec<Command>, input: &str) {
     commands.sort_by(|a, b| {
         let a_exact = a.command.eq_ignore_ascii_case(input);
@@ -128,41 +143,6 @@ fn sort_commands_by_relevance(commands: &mut Vec<Command>, input: &str) {
 
         // Both are same type of match - sort case-insensitively
         compare_commands_case_insensitive(a, b)
-    });
-}
-
-/// LEGACY: Old prefix menu sorting function - NO LONGER USED
-///
-/// This function used simpler 2-tier sorting (exact anchor match → alphabetical).
-/// Replaced by sort_commands_by_relevance() which provides better UX with 4-tier sorting.
-///
-/// KEPT FOR REFERENCE - DO NOT USE
-///
-/// Old sorting rules:
-/// - Priority 1: Exact anchor name matches
-/// - Priority 2: Alphabetical ordering
-///
-/// New behavior uses sort_commands_by_relevance() to sort by filter text relevance:
-/// - Priority 1: Exact matches to filter
-/// - Priority 2: Prefix matches to filter
-/// - Priority 3: Substring matches to filter
-/// - Priority 4: Alphabetical within each tier
-#[allow(dead_code)]
-fn sort_prefix_menu_commands_legacy(commands: &mut Vec<Command>, anchor_name: &str) {
-    let anchor_name_lower = anchor_name.to_lowercase();
-    commands.sort_by(|a, b| {
-        let a_is_exact = a.command.to_lowercase() == anchor_name_lower;
-        let b_is_exact = b.command.to_lowercase() == anchor_name_lower;
-
-        // Exact matches come first
-        if a_is_exact && !b_is_exact {
-            std::cmp::Ordering::Less
-        } else if !a_is_exact && b_is_exact {
-            std::cmp::Ordering::Greater
-        } else {
-            // Both are exact or both are not exact - sort case-insensitively
-            compare_commands_case_insensitive(a, b)
-        }
     });
 }
 
@@ -494,8 +474,14 @@ fn build_prefix_menu_commands(
         }
     }
 
-    // Sort prefix menu commands by relevance to filter text
-    sort_commands_by_relevance(&mut prefix_menu_commands, filter_text);
+    // When filter_text is empty, sort by relevance to anchor name (so exact anchor matches appear first)
+    // When filter_text is not empty, sort by relevance to filter text
+    let sort_key = if filter_text.is_empty() {
+        anchor_name
+    } else {
+        filter_text
+    };
+    sort_commands_by_relevance(&mut prefix_menu_commands, sort_key);
 
     // Log final result for tracker
     if anchor_name.to_lowercase() == "tracker" && !filter_text.is_empty() {

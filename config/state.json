@@ -1,15 +1,15 @@
 {
   "window_position": [
-    879.0,
-    227.0
+    0.0,
+    25.0
   ],
-  "build_time": 1760336110,
+  "build_time": 1760399784,
   "last_scan_time": null,
   "last_scan_checksum": null,
-  "last_executed_command": "1Password for Safari App",
-  "server_pid": 59857,
+  "last_executed_command": "WEF",
+  "server_pid": 78083,
   "notion_last_scan": null,
-  "anchor_name": "Hook Anchor",
-  "anchor_timestamp": 1760333096,
+  "anchor_name": "Ask",
+  "anchor_timestamp": 1760396253,
   "anchor_folder": null
 }
