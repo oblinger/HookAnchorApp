@@ -5,6 +5,106 @@ All notable changes to HookAnchor will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.14.0] - 2025-09-22
+
+### Changed
+- **BREAKING**: Refactored template variable creation to eliminate duplication
+  - Simplified variable creation pipeline for better maintainability
+  - Unified template context handling across actions
+- Updated terminology from "submenu" to "prefix menu" throughout codebase for clarity
+
+### Fixed
+- Fixed ghost input to preserve original user input for anchor commands
+- Fixed command server logging to show executed commands in anchor.log
+- Improved JavaScript action function resolution for clear_log functionality
+
+### Added
+- Enhanced event logging and clear_log functionality
+- Comprehensive Notion grabber diagnostics
+- Better patch inference logging and debugging capabilities
+
+## [0.13.0] - 2025-01-20
+
+### Added
+- **NEW**: GUI installer with automatic first-run trigger
+- **NEW**: Global hotkey support and shell integration
+- Robust uninstaller with preservation scripts in config folder
+- Automatic deployment system building from personal configs
+
+### Changed
+- **BREAKING**: Removed embedded config fallback - now uses repo configs only
+- Updated installer to use `config.yaml-latest-default.yaml` filename convention
+- Improved anchor detection and template error handling
+
+### Fixed
+- **CRITICAL**: Installer now never overwrites files without force flag
+- Fixed config system to eliminate legacy config file creation paths
+- Fixed notion command execution by removing hardcoded bypass routes
+
+### Removed
+- Removed legacy config file creation paths
+- Removed spawnDetached function (not needed with existing shell functions)
+
+## [0.12.1] - 2025-01-20
+
+### Fixed
+- Fixed DOC command persistence issues
+- Fixed submenu filtering and command editor rename feedback
+- Fixed Command Editor window sizing and input field widths
+- Fixed dialog window sizing by preventing competing resize commands
+
+### Changed
+- **BREAKING**: Removed `orphans_path` config option
+- Improved command editor Enter key behavior and anchor matching
+- Enhanced window position handling to prevent drift
+
+### Removed
+- Removed legacy orphans_path configuration
+
+## [0.12.0] - 2025-01-20
+
+### Added
+- Square bracket navigation for popup hierarchy
+- Comprehensive display logic with new build_submenu approach
+- Multiple anchors per patch with preferred anchor selection
+- Comprehensive rename system with confirmation dialogs
+
+### Changed
+- **BREAKING**: Refactored display logic with unified approach
+- Implemented unified resolve_alias method for Command
+- Added core/display module for display and filtering logic
+
+### Fixed
+- Fixed popup position drift by re-anchoring after resize
+- Fixed scanner anchor recreation and removed orphan creation
+- Fixed dialog box sizing to prevent button cutoff
+
+### Removed
+- Removed legacy keybindings and templates code paths
+
+## [0.11.0] - 2025-01-20
+
+### Added
+- Comprehensive Notion scanning with limit and incremental updates
+- Enhanced console output handling for command server
+- Better timeout and iteration limits for Notion scanning
+
+### Changed
+- **BREAKING**: Implemented println! vs logging rules throughout system
+  - CLI commands use println! for user output
+  - Library code uses logging functions only
+  - Popup/GUI code has no console output
+- Converted high-volume logs to detailed_log system
+- Simplified orphan processing to use anchor commands instead of file merging
+
+### Fixed
+- Fixed popup focus handling and rebuild improvements
+- Fixed Notion scanning hang with proper timeout handling
+- Fixed Notion logging visibility during verbose rescan
+
+### Removed
+- Removed incorrect println! usage throughout codebase
+
 ## [0.10.0] - 2025-01-20
 
 ### Changed

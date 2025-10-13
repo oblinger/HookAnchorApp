@@ -576,9 +576,22 @@ fn extract_and_validate_folder(cmd: &super::Command) -> Result<String, String> {
             cmd.arg.clone()
         },
         "markdown" | "anchor" | "doc" | "text" => {
-            // For file-based actions, extract parent folder
-            extract_folder_from_path(&cmd.arg)
-                .ok_or_else(|| format!("Could not extract folder from path: {}", cmd.arg))?
+            // For file-based actions, check if arg is a directory or file
+            let expanded_arg = if cmd.arg.starts_with("~/") {
+                cmd.arg.replacen("~", &std::env::var("HOME").unwrap_or_default(), 1)
+            } else {
+                cmd.arg.clone()
+            };
+
+            let path = Path::new(&expanded_arg);
+            if path.is_dir() {
+                // If it's already a directory (like /path/to/folder), use it directly
+                expanded_arg
+            } else {
+                // If it's a file, extract parent folder
+                extract_folder_from_path(&cmd.arg)
+                    .ok_or_else(|| format!("Could not extract folder from path: {}", cmd.arg))?
+            }
         },
         _ => {
             // Other actions don't have folder context

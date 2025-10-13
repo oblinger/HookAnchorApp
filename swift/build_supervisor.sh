@@ -15,9 +15,9 @@ echo "Building Swift Supervisor (Universal Binary)..."
 mkdir -p "$BUILD_DIR"
 
 # Build for both architectures
-ARM64_BINARY="$BUILD_DIR/HookAnchor-arm64"
-X86_BINARY="$BUILD_DIR/HookAnchor-x86_64"
-UNIVERSAL_BINARY="$BUILD_DIR/HookAnchor"
+ARM64_BINARY="$BUILD_DIR/HookAnchorSupervisor-arm64"
+X86_BINARY="$BUILD_DIR/HookAnchorSupervisor-x86_64"
+UNIVERSAL_BINARY="$BUILD_DIR/HookAnchorSupervisor"
 
 # Compile for ARM64 (Apple Silicon)
 echo "  Building for ARM64..."
@@ -46,10 +46,10 @@ lipo -create -output "$UNIVERSAL_BINARY" "$ARM64_BINARY" "$X86_BINARY"
 # Clean up architecture-specific binaries
 rm -f "$ARM64_BINARY" "$X86_BINARY"
 
-echo "HookAnchor supervisor built at: $BUILD_DIR/HookAnchor"
+echo "HookAnchor supervisor built at: $BUILD_DIR/HookAnchorSupervisor"
 
 # Make it executable
-chmod +x "$BUILD_DIR/HookAnchor"
+chmod +x "$BUILD_DIR/HookAnchorSupervisor"
 
 # Verify it's universal
 echo "  Architecture info:"
@@ -58,4 +58,4 @@ lipo -info "$UNIVERSAL_BINARY" | sed 's/^/    /'
 # IMPORTANT: Never copy binaries! The app bundle uses symlinks
 echo "✅ Build complete!"
 echo "Note: /Applications/HookAnchor.app uses symlinks to this binary"
-echo "To test, run: $BUILD_DIR/HookAnchor"
+echo "To test, run: $BUILD_DIR/HookAnchorSupervisor"

@@ -1073,7 +1073,7 @@ impl KeyHandler for JavaScriptHandler {
         let action = crate::execute::Action { params: action_params };
 
         // Execute the JavaScript function via the command server
-        match crate::execute::execute_on_server(&action) {
+        match crate::execute::execute_on_server(&action, None) {
             Ok(result) => {
                 crate::utils::log(&format!("✅ JavaScript function '{}' executed successfully: {}", self.function_name, result));
                 KeyHandlerResult::Handled

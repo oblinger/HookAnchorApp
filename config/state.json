@@ -1,14 +1,15 @@
 {
   "window_position": [
-    450.0,
-    83.0
+    879.0,
+    227.0
   ],
-  "build_time": 1758489331,
+  "build_time": 1760335333,
   "last_scan_time": null,
   "last_scan_checksum": null,
-  "last_executed_command": "Proj Notion",
-  "server_pid": 29263,
+  "last_executed_command": "1Password for Safari App",
+  "server_pid": 57225,
   "notion_last_scan": null,
-  "ghost_input": "Proj Notion",
-  "ghost_timestamp": 1758483204
+  "anchor_name": "Hook Anchor",
+  "anchor_timestamp": 1760333096,
+  "anchor_folder": null
 }

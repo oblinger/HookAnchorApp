@@ -7,17 +7,17 @@
 # APPLICATION SETTINGS
 # =================================================================
 popup_settings:
-  verbose_logging:        false        # Controls if detailed logging messages added to the log
+  verbose_logging:        true         # Controls if detailed logging messages added to the log
   merge_similar:          true         # Merging similar commands in popup
   max_rows:               25           # Max number of rows in the list of matching commands
   max_columns:            4            # Max columns in list of matching commands
   word_separators:        " ._-!"      # Word separator chars for submenus and command merging
-  scan_interval_seconds:  30           # How many seconds between automatic rescanning of the filesystem
+  scan_interval_seconds:  600          # How many seconds between automatic rescanning of the filesystem
   idle_timeout_seconds:   60           # Hide popup after this many seconds of inactivity
   countdown_seconds:      5            # Seconds for grabber countdown (default: 5)
-  ghost_timeout_seconds:  20          # Seconds to remember last executed anchor as ghost input
-  run_in_background:      true         # Keep app running in background for instant popup (experimental)
-  global_hotkey:          "opt+a"      # Global hotkey to show popup (requires accessibility permissions)
+  ghost_timeout_seconds:  3600         # Seconds to remember last executed anchor as ghost input
+  run_in_background:      true         # Keep app running in background for instant popup 
+  global_hotkey:          "Opt-`"      # Global hotkey to show popup (requires accessibility permissions)
   popup_server_retries:   3            # Number of times to retry showing the popup before rebuilding
   max_window_size:        "1700x1100"  # Maximum size for dialogs and popups in "widthxheight" format
   default_window_size:    "800x120"    # Default popup window size in "widthxheight" format
@@ -51,7 +51,8 @@ launcher_settings:
   obsidian_app_name:      "Obsidian"   # Obisidian app name
   obsidian_vault_name:    "kmr"        # Main vault used for Obsidian viewing of markdown files
   obsidian_vault_path:    "~/ob/kmr"   # Location of the main vault
-  use_javascript_tmux_activation: "false"  # Use JavaScript TMUX implementation
+  use_javascript_tmux_activation: "true"   # Use JavaScript TMUX implementation
+  tmux_startup_command:   "claude --continue --dangerously-skip-permissions"  # Command to run in tmux session after activation
 
 
 
@@ -182,10 +183,10 @@ actions:
     contents: ""
       
 
-  year:
-    description: "SUB-PAGE  - Creates an anchor and subfolder with a YYYY-MM-DD prefix"
+  date:
+    description: "DATED sub-page  - Creates an anchor and subfolder with a YYYY-MM-DD prefix"
     action_type: template
-    key: "Cmd+Opt+S"
+    key: "Cmd+Opt+D"
     name: "{{date.year}}-{{date.month}}-{{date.day}} {{input}}"
     action: "markdown"
     arg: "{{last_executed.folder}}/{{date.year}}-{{date.month}}-{{date.day}} {{input}}.md"
@@ -193,6 +194,34 @@ actions:
     flags: ""
     edit: true
     file: "{{last_executed.folder}}/{{date.year}}-{{date.month}}-{{date.day}} {{input}}.md"
+    file_rescan: true
+    contents: ""
+     
+  year:
+    description: "YEAR SUB-PAGE  - Creates an anchor and subfolder with a YYYY prefix"
+    action_type: template
+    key: "Cmd+Opt+Y"
+    name: "{{date.year}} {{input}}"
+    action: "anchor"
+    arg: "{{last_executed.folder}}/{{date.year}} {{input}}/{{date.year}} {{input}}.md"
+    patch: "{{last_executed.patch}}"
+    flags: ""
+    edit: true
+    file: "{{last_executed.folder}}/{{date.year}} {{input}}/{{date.year}} {{input}}.md"
+    file_rescan: true
+    contents: ""
+
+  month:
+    description: "MONTH SUB-PAGE  - Creates an anchor and subfolder with a YYYY-MM prefix"
+    action_type: template
+    key: "Cmd+Opt+M"
+    name: "{{date.year}}-{{date.month}} {{input}}"
+    action: "anchor"
+    arg: "{{last_executed.folder}}/{{date.year}}-{{date.month}} {{input}}/{{date.year}}-{{date.month}} {{input}}.md"
+    patch: "{{last_executed.patch}}"
+    flags: ""
+    edit: true
+    file: "{{last_executed.folder}}/{{date.year}}-{{date.month}} {{input}}/{{date.year}}-{{date.month}} {{input}}.md"
     file_rescan: true
     contents: ""
              
@@ -280,8 +309,8 @@ actions:
   # Direct TMUX activation - Same as Cmd+T keyboard shortcut
   activate_tmux:
     description: "Activate TMUX session for selected folder/anchor"
-    action_type: popup
-    popup_action: activate_tmux
+    action_type: js_function
+    function: action_activate_tmux
 
   # Test JavaScript error reporting
   test_js_error:
@@ -396,13 +425,13 @@ actions:
   # Commands reference these by name in their action field.
   
   # Browser actions
-  chrome: 
+  chrome:
     description: "Open URL in Google Chrome"
     action_type: open_url
     browser: "Google Chrome"
     url: "{{arg}}"
 
-  safari: 
+  safari:
     description: "Open URL in Safari"
     action_type: "open_url"
     browser: "Safari"
@@ -413,7 +442,7 @@ actions:
     action_type: open_url
     browser: "Brave Browser"
     url: "{{arg}}"
-    
+
   firefox:
     description: "Open URL in Firefox"
     action_type: open_url
@@ -704,3 +733,11 @@ grabber_rules:
     description: "Type text with 0.5 second delay"
     delay: 0.5  # Wait only 0.5 seconds before typing
   
+
+  # History tracking settings
+  history_settings:
+    rebuild_all: true  # Set to true for now to rebuild from scratch
+    anchor_log_indicator: "# Log"
+    anchor_levels: [1, 2]
+    history_increment_size: 1000
+    enabled: true

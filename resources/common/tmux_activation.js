@@ -1,4 +1,4 @@
-const fullPath = "{{arg}}";
+const fullPath = ctx.arg;
 const anchorDir = fullPath.substring(0, fullPath.lastIndexOf('/'));
 
 log(`ANCHOR: Opening anchor at: ${fullPath}`);

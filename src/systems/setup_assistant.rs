@@ -6,7 +6,6 @@
 use std::fs;
 use std::path::{Path, PathBuf};
 use std::process::Command;
-use serde_json::json;
 
 const KARABINER_CLI_PATH: &str = "/Library/Application Support/org.pqrs/Karabiner-Elements/bin/karabiner_cli";
 #[allow(dead_code)]
@@ -398,11 +397,11 @@ impl SetupAssistant {
 
     /// Install the Karabiner complex modification (safely with user prompts)
     pub fn install_karabiner_modification(&self) -> Result<(), Box<dyn std::error::Error>> {
-        // First check if Karabiner-Elements is installed
+        // Check if Karabiner-Elements is installed - only check Applications folder
+        // CLI binary can persist after app deletion, causing false positives
         let app_installed = std::path::Path::new("/Applications/Karabiner-Elements.app").exists();
-        let cli_installed = std::path::Path::new("/Library/Application Support/org.pqrs/Karabiner-Elements/bin/karabiner_cli").exists();
 
-        if !app_installed && !cli_installed {
+        if !app_installed {
             return Err("Karabiner-Elements is not installed. Please install it from https://karabiner-elements.pqrs.org/ first.".into());
         }
 
@@ -485,40 +484,19 @@ impl SetupAssistant {
             println!("Installing Karabiner complex modification...");
         }
         
-        let modification = json!({
-            "title": "HookAnchor",
-            "rules": [
-                {
-                    "description": "Launch HookAnchor popup with Caps Lock (when pressed alone)",
-                    "manipulators": [{
-                        "type": "basic",
-                        "from": {
-                            "key_code": "caps_lock"
-                        },
-                        "to_if_alone": [{
-                            "shell_command": "/Applications/HookAnchor.app/Contents/MacOS/hookanchor"
-                        }]
-                    }]
-                },
-                {
-                    "description": "Launch HookAnchor popup with F12+Cmd+Option",
-                    "manipulators": [{
-                        "type": "basic",
-                        "from": {
-                            "key_code": "f12",
-                            "modifiers": {
-                                "mandatory": ["left_command", "left_option"]
-                            }
-                        },
-                        "to": [{
-                            "shell_command": "/Applications/HookAnchor.app/Contents/MacOS/hookanchor"
-                        }]
-                    }]
-                }
-            ]
-        });
-        
-        fs::write(&mod_path, serde_json::to_string_pretty(&modification)?)?;
+        // Copy the static resource file from app bundle Resources
+        let exe_path = std::env::current_exe()?;
+        let resource_path = exe_path
+            .parent() // MacOS
+            .and_then(|p| p.parent()) // Contents
+            .map(|p| p.join("Resources").join("hookanchor.json"))
+            .expect("Could not determine app bundle path");
+
+        if !resource_path.exists() {
+            return Err(format!("Resource file not found: {:?}", resource_path).into());
+        }
+
+        fs::copy(&resource_path, &mod_path)?;
         
         // Enable the modification using Karabiner CLI
         println!("Enabling Karabiner modification...");
@@ -536,11 +514,11 @@ impl SetupAssistant {
     
     /// Install F12+Cmd+Option hotkey only (no Caps Lock conflicts)
     fn install_karabiner_f12_only(&self) -> Result<(), Box<dyn std::error::Error>> {
-        // First check if Karabiner-Elements is installed
+        // Check if Karabiner-Elements is installed - only check Applications folder
+        // CLI binary can persist after app deletion, causing false positives
         let app_installed = std::path::Path::new("/Applications/Karabiner-Elements.app").exists();
-        let cli_installed = std::path::Path::new("/Library/Application Support/org.pqrs/Karabiner-Elements/bin/karabiner_cli").exists();
 
-        if !app_installed && !cli_installed {
+        if !app_installed {
             return Err("Karabiner-Elements is not installed. Please install it from https://karabiner-elements.pqrs.org/ first.".into());
         }
 
@@ -556,26 +534,19 @@ impl SetupAssistant {
 
         let mod_path = karabiner_dir.join("hookanchor.json");
         
-        let modification = json!({
-            "title": "HookAnchor (F12 only)",
-            "rules": [{
-                "description": "Launch HookAnchor popup with F12+Cmd+Option",
-                "manipulators": [{
-                    "type": "basic",
-                    "from": {
-                        "key_code": "f12",
-                        "modifiers": {
-                            "mandatory": ["left_command", "left_option"]
-                        }
-                    },
-                    "to": [{
-                        "shell_command": "/Applications/HookAnchor.app/Contents/MacOS/hookanchor"
-                    }]
-                }]
-            }]
-        });
-        
-        fs::write(&mod_path, serde_json::to_string_pretty(&modification)?)?;
+        // Copy the static resource file from app bundle Resources
+        let exe_path = std::env::current_exe()?;
+        let resource_path = exe_path
+            .parent() // MacOS
+            .and_then(|p| p.parent()) // Contents
+            .map(|p| p.join("Resources").join("hookanchor.json"))
+            .expect("Could not determine app bundle path");
+
+        if !resource_path.exists() {
+            return Err(format!("Resource file not found: {:?}", resource_path).into());
+        }
+
+        fs::copy(&resource_path, &mod_path)?;
         
         println!("✅ Installed F12+Cmd+Option hotkey");
         println!("\n📝 Note: You'll need to enable the HookAnchor modification in");

@@ -107,14 +107,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 let execURL = URL(fileURLWithPath: execPath)
                 let execDir = execURL.deletingLastPathComponent()
                 
-                // First try: popup_server in same directory as HookAnchor
-                popupPath = execDir.appendingPathComponent("popup_server").path
+                // First try: HookAnchorPopupServer in same directory as HookAnchor
+                popupPath = execDir.appendingPathComponent("HookAnchorPopupServer").path
                 
                 // If not found, try development layout (up two dirs to project root)
                 if !FileManager.default.fileExists(atPath: popupPath) {
                     let parentDir = execDir.deletingLastPathComponent()
                     if parentDir.lastPathComponent == "release" || parentDir.lastPathComponent == "debug" {
-                        popupPath = execDir.appendingPathComponent("popup_server").path
+                        popupPath = execDir.appendingPathComponent("HookAnchorPopupServer").path
                     }
                 }
             }
@@ -127,7 +127,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             if let execPath = ProcessInfo.processInfo.arguments.first {
                 let execURL = URL(fileURLWithPath: execPath)
                 let projectRoot = execURL.deletingLastPathComponent().deletingLastPathComponent().deletingLastPathComponent()
-                popupPath = projectRoot.appendingPathComponent("target/release/popup_server").path
+                popupPath = projectRoot.appendingPathComponent("target/release/HookAnchorPopupServer").path
                 if !FileManager.default.fileExists(atPath: popupPath) {
                     log(" Also cannot find popup at \(popupPath)")
                     NSApplication.shared.terminate(self)
@@ -228,7 +228,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             
             // Pass the command to the ha CLI for execution
             // Using -x to execute the top match for the command
-            let haPath = "/Users/oblinger/ob/proj/HookAnchor/target/release/ha"
+            let haPath = "/Users/oblinger/ob/proj/HookAnchor/target/release/HookAnchorCommand"
             
             // Check if ha binary exists
             if FileManager.default.fileExists(atPath: haPath) {
@@ -497,25 +497,25 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             return
         }
         
-        // Check if ANY popup_server process is running (might have been started by ha --restart)
+        // Check if ANY HookAnchorPopupServer process is running (might have been started by ha --restart)
         let checkTask = Process()
         checkTask.executableURL = URL(fileURLWithPath: "/bin/sh")
-        checkTask.arguments = ["-c", "pgrep -f 'popup_server' > /dev/null 2>&1"]
+        checkTask.arguments = ["-c", "pgrep -f 'HookAnchorPopupServer' > /dev/null 2>&1"]
         
         do {
             try checkTask.run()
             checkTask.waitUntilExit()
             
             if checkTask.terminationStatus == 0 {
-                // A popup_server is already running somewhere
-                log(" Popup_server already running (launched externally)")
+                // A HookAnchorPopupServer is already running somewhere
+                log(" HookAnchorPopupServer already running (launched externally)")
                 return
             }
         } catch {
             // Ignore errors, proceed to launch
         }
         
-        // No popup_server found anywhere, restart it (but don't show window)
+        // No HookAnchorPopupServer found anywhere, restart it (but don't show window)
         log(" Popup process died, restarting...")
         launchRustPopup(showOnStart: false)
     }
@@ -524,7 +524,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Check if command server is already running
         let checkTask = Process()
         checkTask.executableURL = URL(fileURLWithPath: "/bin/sh")
-        checkTask.arguments = ["-c", "pgrep -f 'ha --start-server-daemon' > /dev/null 2>&1"]
+        checkTask.arguments = ["-c", "pgrep -f 'HookAnchorCommand --start-server' > /dev/null 2>&1"]
         
         do {
             try checkTask.run()
@@ -533,8 +533,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             if checkTask.terminationStatus != 0 {
                 // Server not running, start it
                 log("Command server not running, starting it...")
-                
-                let haPath = "/Users/oblinger/ob/proj/HookAnchor/target/release/ha"
+
+                let haPath = "/Users/oblinger/ob/proj/HookAnchor/target/release/HookAnchorCommand"
                 if FileManager.default.fileExists(atPath: haPath) {
                     let startTask = Process()
                     startTask.executableURL = URL(fileURLWithPath: haPath)

@@ -308,6 +308,7 @@ pub fn load_data(commands_override: Vec<Command>, verbose: bool) -> SysData {
                 name: patch_name.clone(), // Store original case
                 anchor_commands: if let Some(cmd) = matching_command.cloned() { vec![cmd] } else { vec![] },
                 include_commands: Vec::new(),
+                history_file: None,
             });
         }
     }

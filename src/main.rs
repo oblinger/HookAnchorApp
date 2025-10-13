@@ -80,9 +80,36 @@ fn main() -> Result<(), eframe::Error> {
             let _ = std::fs::remove_file(url_marker); // Clean up even if invalid
         }
         
-        // No URL detected - proceed with normal GUI mode
+        // Check for install marker file - if present, run installer instead of main app
+        if let Ok(exe_path) = std::env::current_exe() {
+            let marker_path = exe_path
+                .parent() // MacOS
+                .and_then(|p| p.parent()) // Contents
+                .map(|p| p.join("Resources").join("install_pending"));
+
+            if let Some(marker) = marker_path {
+                if marker.exists() {
+                    // Launch installer GUI instead of main popup
+                    let exe_dir = exe_path.parent().unwrap_or(std::path::Path::new("."));
+                    let installer_path = exe_dir.join("hookanchor_installer");
+
+                    match std::process::Command::new(&installer_path).spawn() {
+                        Ok(_) => {
+                            // Installer launched successfully, exit this process
+                            std::process::exit(0);
+                        }
+                        Err(e) => {
+                            hookanchor::utils::log_error(&format!("Failed to launch installer: {}", e));
+                            // Continue with normal app - fallback behavior
+                        }
+                    }
+                }
+            }
+        }
+
+        // No URL detected and no installer needed - proceed with normal GUI mode
         let result = hookanchor::ui::run_gui_with_prompt("", ApplicationState::minimal());
-        
+
         result
     }
 }

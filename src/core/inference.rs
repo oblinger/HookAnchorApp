@@ -16,7 +16,7 @@ use crate::core::{Command, Patch};
 // different inference strategies and provide the public API for patch inference.
 
 /// Main patch inference function that tries multiple strategies
-/// 
+///
 /// Attempts to infer a patch for a command using various strategies in priority order:
 /// 1. Alias target inheritance (highest priority)
 /// 2. File/folder-based inference for path commands
@@ -26,65 +26,65 @@ use crate::core::{Command, Patch};
 pub fn infer_patch(command: &Command, patches: &HashMap<String, Patch>) -> Option<String> {
     // Skip system-generated virtual anchor commands - they should always keep their "orphans" patch
     if command.patch == "orphans" && command.action == "anchor" && !command.flags.contains('U') {
+        crate::utils::detailed_log("PATCH_INFERENCE", &format!(
+            "Command '{}' -> NO PATCH (virtual anchor with orphans patch, not user-edited)",
+            command.command
+        ));
         return None;
     }
-    
-    // CRITICAL: Prevent cycles - an anchor cannot have itself as its patch
-    // For anchor commands, we'll check if the inferred patch would be the same as the command name
-    // This check will be enforced at the end before returning
-    
+
     // Method 1: Alias commands inherit patch from their target (HIGHEST PRIORITY)
     if command.action == "alias" {
         if let Some(target_patch) = infer_patch_from_alias_target(command, patches) {
             // Check for self-assignment (would create a cycle)
             if command.action == "anchor" && target_patch.to_lowercase() == command.command.to_lowercase() {
+                crate::utils::detailed_log("PATCH_INFERENCE", &format!(
+                    "Command '{}' -> NO PATCH (alias would create self-reference cycle with patch '{}')",
+                    command.command, target_patch
+                ));
                 return None;
             }
+            crate::utils::detailed_log("PATCH_INFERENCE", &format!(
+                "Command '{}' -> PATCH '{}' (inherited from alias target)",
+                command.command, target_patch
+            ));
             return Some(target_patch);
         }
     }
-    
+
     // Method 2: File/folder-based inference (HIGH PRIORITY for path-based commands)
     // Check if the command is path-based and extract folder information
     if command.is_path_based() {
         if let Some(inferred_patch) = infer_patch_from_command(command, patches) {
-            // Check for self-assignment (would create a cycle)
+            // Anchor commands SHOULD have their own name as their patch - this is correct design, not a cycle
             if command.action == "anchor" && inferred_patch.to_lowercase() == command.command.to_lowercase() {
-                crate::utils::detailed_log("CYCLE_PREVENTION", &format!(
-                    "Preventing cycle: anchor '{}' cannot have patch '{}'. Looking for parent patch.",
+                crate::utils::detailed_log("PATCH_INFERENCE", &format!(
+                    "Command '{}' -> PATCH '{}' (anchor gets its own name as patch - correct behavior)",
                     command.command, inferred_patch
                 ));
-                // This anchor would be assigned to itself - try to find parent patch instead
-                if let Some(hierarchy_patch) = infer_patch_from_hierarchy_for_anchor(command, patches) {
-                    crate::utils::detailed_log("CYCLE_PREVENTION", &format!(
-                        "Found parent patch '{}' for anchor '{}'",
-                        hierarchy_patch, command.command
-                    ));
-                    return Some(hierarchy_patch);
-                }
-                crate::utils::detailed_log("CYCLE_PREVENTION", &format!(
-                    "No parent patch found for anchor '{}', leaving empty",
-                    command.command
-                ));
-                return None;
+                return Some(inferred_patch);
             }
+            crate::utils::detailed_log("PATCH_INFERENCE", &format!(
+                "Command '{}' -> PATCH '{}' (inferred from file/folder path: '{}')",
+                command.command, inferred_patch, command.arg
+            ));
             return Some(inferred_patch);
         }
     }
-    
+
     // Method 3: Check for progressive word matches, preferring longer matches
     let command_words = command.command.to_lowercase();
     let mut best_match = None;
     let mut best_score = 0;
-    
+
     for patch_name in patches.keys() {
         let patch_lower = patch_name.to_lowercase();
-        
+
         // Prevent self-assignment for anchors
         if command.action == "anchor" && patch_lower == command.command.to_lowercase() {
             continue;
         }
-        
+
         // Check if patch name is contained in command name (as whole words when possible)
         if command_words.contains(&patch_lower) {
             let score = patch_name.len();
@@ -94,37 +94,58 @@ pub fn infer_patch(command: &Command, patches: &HashMap<String, Patch>) -> Optio
             }
         }
     }
-    
-    if best_match.is_some() {
-        return best_match;
+
+    if let Some(match_patch) = best_match {
+        crate::utils::detailed_log("PATCH_INFERENCE", &format!(
+            "Command '{}' -> PATCH '{}' (word matching: '{}' contains '{}')",
+            command.command, match_patch, command.command, match_patch
+        ));
+        return Some(match_patch);
     }
-    
+
     // Method 4: Year-based prefix matching
     if let Some(year_patch) = infer_patch_from_year_prefix(&command.command) {
         // Verify the patch actually exists
         if patches.contains_key(&year_patch.to_lowercase()) {
+            crate::utils::detailed_log("PATCH_INFERENCE", &format!(
+                "Command '{}' -> PATCH '{}' (year prefix matching)",
+                command.command, year_patch
+            ));
             return Some(year_patch);
         }
     }
-    
+
     // Method 5: Similarity-based fuzzy matching (lowest priority)
     let mut best_similarity = 0.0;
     let mut best_patch = None;
-    
+
     for patch_name in patches.keys() {
         // Prevent self-assignment for anchors
         if command.action == "anchor" && patch_name.to_lowercase() == command.command.to_lowercase() {
             continue;
         }
-        
+
         let similarity = calculate_similarity(&command.command.to_lowercase(), &patch_name.to_lowercase());
         if similarity > best_similarity && similarity >= 0.6 { // Threshold for fuzzy matching
             best_similarity = similarity;
             best_patch = Some(patch_name.clone());
         }
     }
-    
-    best_patch
+
+    if let Some(fuzzy_patch) = best_patch {
+        crate::utils::detailed_log("PATCH_INFERENCE", &format!(
+            "Command '{}' -> PATCH '{}' (fuzzy matching: {:.2} similarity)",
+            command.command, fuzzy_patch, best_similarity
+        ));
+        return Some(fuzzy_patch);
+    }
+
+    // No patch could be inferred
+    crate::utils::detailed_log("PATCH_INFERENCE", &format!(
+        "Command '{}' -> NO PATCH (no inference method succeeded)",
+        command.command
+    ));
+    None
 }
 
 /// Run basic patch inference with degradation prevention and logging
@@ -291,54 +312,43 @@ fn infer_patch_from_file_path(file_path: &str, patches: &HashMap<String, Patch>)
 
 /// Build a hashmap of absolute folder paths to patch names from anchor commands
 /// This creates the folder hierarchy that patch inference will use
-fn build_folder_to_patch_map(commands: &[Command]) -> HashMap<PathBuf, String> {
+pub fn build_folder_to_patch_map(commands: &[Command]) -> HashMap<PathBuf, String> {
     let mut folder_map = HashMap::new();
-    
+    let config = crate::core::sys_data::get_config();
+
     // First pass: Add all anchor commands to the map
     for cmd in commands {
         if cmd.action == "anchor" && !cmd.arg.is_empty() {
-            let path = PathBuf::from(&cmd.arg);
-            
-            // Get the parent folder of the anchor file
-            if let Some(parent) = path.parent() {
+            // Use the proper accessor that handles both file and folder anchors correctly
+            if let Some(folder_path) = cmd.get_absolute_folder_path(&config) {
                 // Canonicalize to handle symlinks and relative paths
-                if let Ok(canonical_parent) = parent.canonicalize() {
+                if let Ok(canonical_folder) = folder_path.canonicalize() {
                     // Map this folder to the anchor's command name (which becomes the patch for its contents)
-                    folder_map.insert(canonical_parent, cmd.command.clone());
-                    
+                    folder_map.insert(canonical_folder, cmd.command.clone());
+
                     crate::utils::detailed_log("PATCH_MAP", &format!(
-                        "Folder '{}' -> patch '{}'",
-                        parent.display(), cmd.command
+                        "Folder '{}' -> patch '{}' (using proper accessor)",
+                        folder_path.display(), cmd.command
                     ));
                 }
             }
         }
     }
-    
+
     folder_map
 }
 
 /// Simple patch inference: walk up the folder hierarchy until we find a mapped folder
-fn infer_patch_simple(file_path: &str, folder_map: &HashMap<PathBuf, String>) -> Option<String> {
+pub fn infer_patch_simple(file_path: &str, folder_map: &HashMap<PathBuf, String>) -> Option<String> {
     // Skip if not a file path
     if file_path.is_empty() || file_path.starts_with("http") || !file_path.contains('/') {
         return None;
     }
-    
+
     let path = Path::new(file_path);
-    
+
     // Check if this is an anchor file itself (file name without extension matches parent folder)
     if crate::utils::is_anchor_file(path) {
-        if let Some(file_stem) = path.file_stem() {
-            if let Some(parent) = path.parent() {
-                if let Some(parent_name) = parent.file_name() {
-                    // This is an anchor file - walk up to find its parent's patch
-                    crate::utils::log(&format!("  📁 Found anchor file: {} in folder {}", 
-                        file_stem.to_string_lossy(), parent_name.to_string_lossy()));
-                }
-            }
-        }
-        
         if let Some(parent) = path.parent() {
             // Start from the parent's parent to avoid self-reference
             if let Some(grandparent) = parent.parent() {
@@ -346,9 +356,10 @@ fn infer_patch_simple(file_path: &str, folder_map: &HashMap<PathBuf, String>) ->
                 loop {
                     if let Ok(canonical) = current.canonicalize() {
                         if let Some(patch) = folder_map.get(&canonical) {
-                            let file_display = path.file_stem().map(|s| s.to_string_lossy()).unwrap_or_default();
-                            crate::utils::log(&format!("  📍 Anchor '{}' -> parent folder '{}' -> patch '{}'",
-                                file_display, current.display(), patch));
+                            crate::utils::detailed_log("FOLDER_MAPPING", &format!(
+                                "Anchor file '{}' -> mapped parent folder '{}' -> patch '{}'",
+                                file_path, current.display(), patch
+                            ));
                             return Some(patch.clone());
                         }
                     }
@@ -357,22 +368,23 @@ fn infer_patch_simple(file_path: &str, folder_map: &HashMap<PathBuf, String>) ->
             }
         }
     }
-    
+
     // Regular file - walk up the hierarchy starting from its directory
     let mut current = if path.is_file() { path.parent() } else { Some(path) };
-    
+
     while let Some(dir) = current {
         if let Ok(canonical) = dir.canonicalize() {
             if let Some(patch) = folder_map.get(&canonical) {
-                let file_display = path.file_name().map(|name| name.to_string_lossy()).unwrap_or_else(|| path.to_string_lossy());
-                crate::utils::log(&format!("  📍 File '{}' -> folder '{}' -> patch '{}'",
-                    file_display, dir.display(), patch));
+                crate::utils::detailed_log("FOLDER_MAPPING", &format!(
+                    "File '{}' -> mapped folder '{}' -> patch '{}'",
+                    file_path, dir.display(), patch
+                ));
                 return Some(patch.clone());
             }
         }
         current = dir.parent();
     }
-    
+
     None
 }
 

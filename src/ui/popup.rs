@@ -703,6 +703,12 @@ impl AnchorSelector {
         // Create template context and expand all action parameters
         let mut template_context = self.create_template_context();
 
+        // Add command's arg to template context for expansion (fixes {{arg}} template expansion)
+        if !input.arg.is_empty() {
+            template_context.add_variable("arg".to_string(), input.arg.clone());
+            detailed_log("POPUP_EXEC", &format!("Added command arg to template context: '{}'", input.arg));
+        }
+
         // Check if any grabber functionality should be executed
         if let Some(grab_value) = action.get("grab") {
             if let Some(grab_seconds) = grab_value.as_u64() {
@@ -728,7 +734,13 @@ impl AnchorSelector {
             }
             // All other actions go to server
             _ => {
-                let _ = crate::execute::execute_on_server(&action);
+                // Since template expansion was already done, we can pass minimal context
+                // The arg from the command should be available for any remaining expansions
+                let mut variables = std::collections::HashMap::new();
+                if !input.arg.is_empty() {
+                    variables.insert("arg".to_string(), input.arg.clone());
+                }
+                let _ = crate::execute::execute_on_server(&action, Some(variables));
                 detailed_log("POPUP_EXEC", "Action sent to server");
                 self.should_exit = true;
             }
@@ -890,7 +902,9 @@ impl AnchorSelector {
                     // Use launcher to execute the link_to_clipboard action
                     let link_action = crate::execute::make_action("link_to_clipboard", &selected_cmd.command);
                     // Execute the action
-                    let _ = crate::execute::execute_on_server(&link_action);
+                    let mut variables = std::collections::HashMap::new();
+                    variables.insert("arg".to_string(), selected_cmd.command.clone());
+                    let _ = crate::execute::execute_on_server(&link_action, Some(variables));
                 }
             }
         }
@@ -1837,7 +1851,7 @@ impl AnchorSelector {
         grab_action_params.insert("flags".to_string(), serde_json::Value::String("G".to_string()));
         let grab_action = crate::execute::Action { params: grab_action_params };
 
-        match crate::execute::execute_on_server(&grab_action) {
+        match crate::execute::execute_on_server(&grab_action, None) {
             Ok(grab_output) => {
                 crate::utils::log(&format!("GRAB: Command server returned: '{}'", grab_output));
 
@@ -2171,7 +2185,7 @@ impl AnchorSelector {
     fn regain_focus(&self) -> Result<(), String> {
         // Call the regain_focus function from config.js
         let js_code = "regain_focus({})";
-        match crate::js::execute(js_code) {
+        match crate::js::execute_with_context(js_code, "REGAIN_FOCUS") {
             Ok(_) => Ok(()),
             Err(e) => Err(format!("Failed to execute regain_focus function: {}", e))
         }
@@ -2409,7 +2423,9 @@ impl AnchorSelector {
             let folder_action = crate::execute::make_action("folder", &path);
             utils::log(&format!("SHOW_FOLDER: Created action with type='folder', arg='{}'", path));
             // Execute the action
-            let _ = crate::execute::execute_on_server(&folder_action);
+            let mut variables = std::collections::HashMap::new();
+            variables.insert("arg".to_string(), path.clone());
+            let _ = crate::execute::execute_on_server(&folder_action, Some(variables));
             utils::log(&format!("SHOW_FOLDER: Sent folder command to server"));
         } else {
             utils::detailed_log("SHOW_FOLDER", &format!("No folder found for selected command: '{}'", cmd.command));
@@ -2463,7 +2479,9 @@ impl AnchorSelector {
         
         // Execute via server
         let contact_action = crate::execute::command_to_action(&contact_cmd);
-        let _ = crate::execute::execute_on_server(&contact_action);
+        let mut variables = std::collections::HashMap::new();
+        variables.insert("arg".to_string(), contact_cmd.arg.clone());
+        let _ = crate::execute::execute_on_server(&contact_action, Some(variables));
     }
     
     
@@ -2498,8 +2516,8 @@ impl AnchorSelector {
                     
                     // Create command to execute JavaScript action
                     let js_cmd = crate::core::Command {
-                        command: format!("JS_TMUX: {}", resolved_cmd.command),
-                        action: "activate_anchor".to_string(),
+                        command: resolved_cmd.command.clone(),
+                        action: "activate_tmux".to_string(),
                         arg: resolved_cmd.arg.clone(),
                         patch: resolved_cmd.patch.clone(),
                         flags: String::new(),
@@ -2507,7 +2525,9 @@ impl AnchorSelector {
                     
                     utils::detailed_log("TMUX", &format!("🎯 TMUX: Executing JavaScript action with arg: {}", js_cmd.arg));
                     let js_action = crate::execute::command_to_action(&js_cmd);
-                    let _ = crate::execute::execute_on_server(&js_action);
+                    let mut variables = std::collections::HashMap::new();
+                    variables.insert("arg".to_string(), js_cmd.arg.clone());
+                    let _ = crate::execute::execute_on_server(&js_action, Some(variables));
                     
                     // Request exit after triggering
                     self.should_exit = true;
@@ -3850,6 +3870,46 @@ impl eframe::App for AnchorSelector {
                     }
                     pressed
                 });
+
+                // Check for Space key to accept ghost input
+                let space_pressed = ctx.input(|i| {
+                    let pressed = i.key_pressed(egui::Key::Space);
+                    if pressed {
+                        crate::utils::log("🔑 SPACE KEY: Space key detected");
+                    }
+                    pressed
+                });
+
+                // Immediately consume space key to prevent TextEdit from processing it
+                if space_pressed {
+                    ctx.input_mut(|i| i.consume_key(egui::Modifiers::NONE, egui::Key::Space));
+                }
+
+                // Handle space key ghost input acceptance
+                if space_pressed {
+                    let current_input = if self.loading_state == LoadingState::Loaded {
+                        &self.popup_state.search_text
+                    } else {
+                        &self.pre_init_input_buffer
+                    };
+
+                    // Check conditions: empty input + anchor name exists
+                    let anchor_name = &self.popup_state.app_state.anchor_name;
+                    if current_input.is_empty() && anchor_name.is_some() {
+                        if let Some(anchor_text) = anchor_name {
+                            crate::utils::log(&format!("🔑 SPACE KEY: Accepting anchor name '{}' + space", anchor_text));
+
+                            // Set input to anchor text + space at the end
+                            let new_text = format!("{} ", anchor_text);
+                            if self.loading_state == LoadingState::Loaded {
+                                self.popup_state.update_search(new_text);
+                            } else {
+                                self.pre_init_input_buffer = new_text;
+                            }
+                        }
+                    }
+                }
+
                 if enter_pressed {
                 }
                 

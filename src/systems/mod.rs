@@ -20,6 +20,7 @@ pub(crate) mod grabber;
 pub(crate) mod obsidian;
 pub(crate) mod setup_assistant;
 pub(crate) mod popup_server;
+pub(crate) mod history;
 
 // ============================================================================
 // PUBLIC API - All external access goes through these re-exports
@@ -58,4 +59,9 @@ pub use setup_assistant::{
 pub use popup_server::{
     is_primary_popup_instance,
     PopupCommand, PopupControl
+};
+
+// History subsystem - markdown file history tracking
+pub use history::{
+    update_histories
 };

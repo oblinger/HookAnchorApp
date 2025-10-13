@@ -59,6 +59,91 @@ fn compare_commands_case_insensitive(a: &Command, b: &Command) -> std::cmp::Orde
     }
 }
 
+/// Sort commands by relevance to the input string
+///
+/// SORTING RULES:
+/// ==============
+/// Priority 1: Exact matches (case-insensitive)
+///   - Commands whose name exactly matches the full input
+///   - Example: input "FB" → "fb" alias comes first
+///
+/// Priority 2: Prefix matches (case-insensitive)
+///   - Commands whose name starts with the input string
+///   - Example: input "FB" → "FBX Something" comes before "Some FB Text"
+///
+/// Priority 3: Substring matches
+///   - Commands that contain the input but don't start with it
+///   - These use sophisticated matching (word boundaries, separators)
+///   - Example: input "FB" → "Some FB Text" appears last
+///
+/// Priority 4: Alphabetical ordering (case-insensitive)
+///   - Within each priority level, sort alphabetically
+///   - Case is ignored for comparison
+///   - Tie-breaker: Shorter command name wins if lowercase text is identical
+///
+/// # Arguments
+/// * `commands` - Mutable reference to vector of commands to sort
+/// * `input` - The input string to compare against
+fn sort_commands_by_relevance(commands: &mut Vec<Command>, input: &str) {
+    commands.sort_by(|a, b| {
+        let a_exact = a.command.eq_ignore_ascii_case(input);
+        let b_exact = b.command.eq_ignore_ascii_case(input);
+
+        if a_exact && !b_exact {
+            return std::cmp::Ordering::Less;
+        } else if !a_exact && b_exact {
+            return std::cmp::Ordering::Greater;
+        }
+
+        let a_prefix = a.command.to_lowercase().starts_with(&input.to_lowercase());
+        let b_prefix = b.command.to_lowercase().starts_with(&input.to_lowercase());
+
+        if a_prefix && !b_prefix {
+            return std::cmp::Ordering::Less;
+        } else if !a_prefix && b_prefix {
+            return std::cmp::Ordering::Greater;
+        }
+
+        // Both are same type of match - sort case-insensitively
+        compare_commands_case_insensitive(a, b)
+    });
+}
+
+/// LEGACY: Old prefix menu sorting function - NO LONGER USED
+///
+/// This function used simpler 2-tier sorting (exact anchor match → alphabetical).
+/// Replaced by sort_commands_by_relevance() which provides better UX with 4-tier sorting.
+///
+/// KEPT FOR REFERENCE - DO NOT USE
+///
+/// Old sorting rules:
+/// - Priority 1: Exact anchor name matches
+/// - Priority 2: Alphabetical ordering
+///
+/// New behavior uses sort_commands_by_relevance() to sort by filter text relevance:
+/// - Priority 1: Exact matches to filter
+/// - Priority 2: Prefix matches to filter
+/// - Priority 3: Substring matches to filter
+/// - Priority 4: Alphabetical within each tier
+#[allow(dead_code)]
+fn sort_prefix_menu_commands_legacy(commands: &mut Vec<Command>, anchor_name: &str) {
+    let anchor_name_lower = anchor_name.to_lowercase();
+    commands.sort_by(|a, b| {
+        let a_is_exact = a.command.to_lowercase() == anchor_name_lower;
+        let b_is_exact = b.command.to_lowercase() == anchor_name_lower;
+
+        // Exact matches come first
+        if a_is_exact && !b_is_exact {
+            std::cmp::Ordering::Less
+        } else if !a_is_exact && b_is_exact {
+            std::cmp::Ordering::Greater
+        } else {
+            // Both are exact or both are not exact - sort case-insensitively
+            compare_commands_case_insensitive(a, b)
+        }
+    });
+}
+
 /// Skip leading date-like characters (digits, dashes, underscores, spaces) from the beginning of a string
 /// This allows commands like "2025-09-12 Fireball Integration SOW" to match the "Fireball" anchor
 /// by ignoring the date prefix and starting the match from "Fireball"
@@ -175,7 +260,13 @@ pub fn build_prefix_menu(
         // Look for commands that exactly match this prefix
         for matching_command in all_commands {
             // Check for exact match (case-insensitive)
-            if matching_command.command.eq_ignore_ascii_case(prefix) {
+            let exact_match = matching_command.command.eq_ignore_ascii_case(prefix);
+
+            // Also check for match after skipping leading date characters (for commands like "2025 Make Miss")
+            let cmd_trimmed = skip_leading_date_chars(&matching_command.command);
+            let digit_skipped_match = cmd_trimmed.eq_ignore_ascii_case(prefix);
+
+            if exact_match || digit_skipped_match {
                 // Resolve alias to get the final command
                 crate::utils::detailed_log("BUILD_PREFIX_MENU", &format!("Found exact match for prefix '{}': {} (action: {})",
                     prefix, matching_command.command, matching_command.action));
@@ -380,23 +471,9 @@ fn build_prefix_menu_commands(
             }
         }
     }
-    
-    // Sort with exact anchor name first, then alphabetically
-    let anchor_name_lower = anchor_name.to_lowercase();
-    prefix_menu_commands.sort_by(|a, b| {
-        let a_is_exact = a.command.to_lowercase() == anchor_name_lower;
-        let b_is_exact = b.command.to_lowercase() == anchor_name_lower;
-        
-        // Exact matches come first
-        if a_is_exact && !b_is_exact {
-            std::cmp::Ordering::Less
-        } else if !a_is_exact && b_is_exact {
-            std::cmp::Ordering::Greater
-        } else {
-            // Both are exact or both are not exact - sort case-insensitively
-            compare_commands_case_insensitive(a, b)
-        }
-    });
+
+    // Sort prefix menu commands by relevance to filter text
+    sort_commands_by_relevance(&mut prefix_menu_commands, filter_text);
 
     // Log final result for tracker
     if anchor_name.to_lowercase() == "tracker" && !filter_text.is_empty() {
@@ -470,31 +547,10 @@ pub fn get_new_display_commands(
                 literal_match || resolved_matches_prefix_menu
             })
         });
-        
-        // Step 3.5: Sort prefix commands - exact matches first, then prefix matches, then substring matches
-        prefix_commands.sort_by(|a, b| {
-            let a_exact = a.command.eq_ignore_ascii_case(input);
-            let b_exact = b.command.eq_ignore_ascii_case(input);
-            
-            if a_exact && !b_exact {
-                return std::cmp::Ordering::Less;
-            } else if !a_exact && b_exact {
-                return std::cmp::Ordering::Greater;
-            }
-            
-            let a_prefix = a.command.to_lowercase().starts_with(&input.to_lowercase());
-            let b_prefix = b.command.to_lowercase().starts_with(&input.to_lowercase());
-            
-            if a_prefix && !b_prefix {
-                return std::cmp::Ordering::Less;
-            } else if !a_prefix && b_prefix {
-                return std::cmp::Ordering::Greater;
-            }
-            
-            // Both are same type of match - sort case-insensitively
-            compare_commands_case_insensitive(a, b)
-        });
-        
+
+        // Sort non-prefix-menu commands by relevance: exact → prefix → substring → alphabetical
+        sort_commands_by_relevance(&mut prefix_commands, input);
+
         // Step 4: Combine prefix menu + separator + remaining prefix commands
         let mut final_commands = prefix_menu_commands.clone();
         
@@ -523,31 +579,10 @@ pub fn get_new_display_commands(
             &config.popup_settings.word_separators,
             false
         );
-        
-        // Sort by relevance (exact matches first, then prefix matches, then substring matches)
-        matching_commands.sort_by(|a, b| {
-            let a_exact = a.command.eq_ignore_ascii_case(input);
-            let b_exact = b.command.eq_ignore_ascii_case(input);
-            
-            if a_exact && !b_exact {
-                return std::cmp::Ordering::Less;
-            } else if !a_exact && b_exact {
-                return std::cmp::Ordering::Greater;
-            }
-            
-            let a_prefix = a.command.to_lowercase().starts_with(&input.to_lowercase());
-            let b_prefix = b.command.to_lowercase().starts_with(&input.to_lowercase());
-            
-            if a_prefix && !b_prefix {
-                return std::cmp::Ordering::Less;
-            } else if !a_prefix && b_prefix {
-                return std::cmp::Ordering::Greater;
-            }
-            
-            // Both are same type of match, sort case-insensitively
-            compare_commands_case_insensitive(a, b)
-        });
-        
+
+        // Sort all commands by relevance: exact → prefix → substring → alphabetical
+        sort_commands_by_relevance(&mut matching_commands, input);
+
         return (matching_commands, false, None, 0);
     }
 }

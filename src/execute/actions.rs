@@ -760,7 +760,9 @@ fn execute_alias_action(
     
     // Execute the resolved command
     let target_action = crate::execute::command_to_action(&target_cmd);
-    let _ = crate::execute::execute_on_server(&target_action);
+    let mut variables = std::collections::HashMap::new();
+    variables.insert("arg".to_string(), target_cmd.arg.clone());
+    let _ = crate::execute::execute_on_server(&target_action, Some(variables));
     
     Ok(format!("Executed alias to: {}", target))
 }

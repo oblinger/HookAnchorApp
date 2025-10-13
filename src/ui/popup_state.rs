@@ -91,18 +91,18 @@ impl PopupState {
 
     /// Get the current search text (with ghost input fallback)
     pub fn search_text(&self) -> String {
-        // If search text is empty, try to use ghost input
+        // If search text is empty, try to use anchor name
         if self.search_text.is_empty() {
-            if let (Some(ghost_input), Some(ghost_timestamp)) = (&self.app_state.ghost_input, self.app_state.ghost_timestamp) {
+            if let (Some(anchor_name), Some(anchor_timestamp)) = (&self.app_state.anchor_name, self.app_state.anchor_timestamp) {
                 let current_time = chrono::Local::now().timestamp();
-                let seconds_since_ghost = current_time - ghost_timestamp;
-                let ghost_timeout = self.config.popup_settings.ghost_timeout_seconds.unwrap_or(180) as i64;
+                let seconds_since_anchor = current_time - anchor_timestamp;
+                let anchor_timeout = self.config.popup_settings.ghost_timeout_seconds.unwrap_or(180) as i64;
 
-                if seconds_since_ghost < ghost_timeout {
-                    // crate::utils::detailed_log("GHOST_INPUT", &format!("Using ghost input '{}' ({}s ago)", ghost_input, seconds_since_ghost));
-                    return ghost_input.clone();
+                if seconds_since_anchor < anchor_timeout {
+                    // crate::utils::detailed_log("ANCHOR_INPUT", &format!("Using anchor name '{}' ({}s ago)", anchor_name, seconds_since_anchor));
+                    return anchor_name.clone();
                 } else {
-                    // crate::utils::detailed_log("GHOST_INPUT", &format!("Ghost input '{}' expired ({}s ago, timeout: {}s)", ghost_input, seconds_since_ghost, ghost_timeout));
+                    // crate::utils::detailed_log("ANCHOR_INPUT", &format!("Anchor name '{}' expired ({}s ago, timeout: {}s)", anchor_name, seconds_since_anchor, anchor_timeout));
                 }
             }
         }
@@ -234,19 +234,19 @@ impl PopupState {
     
     /// Get hint text for the search box
     pub fn get_hint_text(&self) -> String {
-        // Check for ghost input first
-        if let (Some(ghost_input), Some(ghost_timestamp)) = (&self.app_state.ghost_input, self.app_state.ghost_timestamp) {
+        // Check for anchor name first
+        if let (Some(anchor_name), Some(anchor_timestamp)) = (&self.app_state.anchor_name, self.app_state.anchor_timestamp) {
             let current_time = chrono::Local::now().timestamp();
-            let seconds_since_ghost = current_time - ghost_timestamp;
+            let seconds_since_anchor = current_time - anchor_timestamp;
 
-            // Get ghost timeout from config (default 180 seconds)
-            let ghost_timeout = self.config.popup_settings.ghost_timeout_seconds.unwrap_or(180) as i64;
+            // Get anchor timeout from config (default 180 seconds)
+            let anchor_timeout = self.config.popup_settings.ghost_timeout_seconds.unwrap_or(180) as i64;
 
-            if seconds_since_ghost < ghost_timeout {
-                // crate::utils::detailed_log("GHOST_DISPLAY", &format!("📱 Displaying ghost input: '{}'", ghost_input));
-                return ghost_input.clone();
+            if seconds_since_anchor < anchor_timeout {
+                // crate::utils::detailed_log("ANCHOR_DISPLAY", &format!("📱 Displaying anchor name: '{}'", anchor_name));
+                return anchor_name.clone();
             } else {
-                // crate::utils::detailed_log("GHOST_DISPLAY", &format!("👻 Ghost input '{}' expired ({}s ago, timeout: {}s)", ghost_input, seconds_since_ghost, ghost_timeout));
+                // crate::utils::detailed_log("ANCHOR_DISPLAY", &format!("👻 Anchor name '{}' expired ({}s ago, timeout: {}s)", anchor_name, seconds_since_anchor, anchor_timeout));
             }
         }
 

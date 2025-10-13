@@ -107,7 +107,7 @@ echo -e "${BLUE}🔗 Creating universal binaries...${NC}"
 mkdir -p "$TEMP_BUILD_DIR/universal"
 
 # Create universal binary for each component
-for BINARY in ha popup popup_server installer_gui; do
+for BINARY in HookAnchorCommand HookAnchorPopup HookAnchorPopupServer HookAnchorInstaller; do
     echo "   Creating universal binary for $BINARY..."
     lipo -create -output "$TEMP_BUILD_DIR/universal/$BINARY" \
         "target/aarch64-apple-darwin/release/$BINARY" \
@@ -133,13 +133,32 @@ URL_HANDLER_DIR="$RESOURCES_DIR/URLHandler.app"
 mkdir -p "$MACOS_DIR"
 mkdir -p "$RESOURCES_DIR"
 
-# Copy main binaries
+# Copy main binaries (with descriptive process names for Activity Monitor)
 echo "   Installing main binaries..."
 cp "$TEMP_BUILD_DIR/universal/HookAnchor" "$MACOS_DIR/HookAnchor"
-cp "$TEMP_BUILD_DIR/universal/popup_server" "$MACOS_DIR/popup_server"
-cp "$TEMP_BUILD_DIR/universal/ha" "$MACOS_DIR/ha"
-cp "$TEMP_BUILD_DIR/universal/popup" "$MACOS_DIR/popup"
-cp "$TEMP_BUILD_DIR/universal/installer_gui" "$MACOS_DIR/installer_gui"
+cp "$TEMP_BUILD_DIR/universal/HookAnchorPopupServer" "$MACOS_DIR/HookAnchor Popup Server"
+cp "$TEMP_BUILD_DIR/universal/HookAnchorCommand" "$MACOS_DIR/HookAnchor Command"
+cp "$TEMP_BUILD_DIR/universal/HookAnchorPopup" "$MACOS_DIR/HookAnchor Popup"
+cp "$TEMP_BUILD_DIR/universal/HookAnchorInstaller" "$MACOS_DIR/HookAnchor Installer"
+
+# Create symlinks with original names for compatibility
+echo "   Creating compatibility symlinks..."
+cd "$MACOS_DIR"
+ln -sf "HookAnchor Popup Server" popup_server
+ln -sf "HookAnchor Command" ha
+ln -sf "HookAnchor Popup" popup
+ln -sf "HookAnchor Installer" installer_gui
+# Also create snake_case symlinks for any existing references
+ln -sf "HookAnchor Popup Server" hookanchor_popup_server
+ln -sf "HookAnchor Command" hookanchor_cmd
+ln -sf "HookAnchor Popup" hookanchor_popup
+ln -sf "HookAnchor Installer" hookanchor_installer
+# Create CamelCase symlinks for direct binary access
+ln -sf "HookAnchor Popup Server" HookAnchorPopupServer
+ln -sf "HookAnchor Command" HookAnchorCommand
+ln -sf "HookAnchor Popup" HookAnchorPopup
+ln -sf "HookAnchor Installer" HookAnchorInstaller
+cd - > /dev/null
 
 # 6. Create embedded URLHandler.app
 echo -e "${BLUE}🔗 Creating embedded URLHandler.app...${NC}"
@@ -201,6 +220,8 @@ cat > "$CONTENTS_DIR/Info.plist" << EOF
     <string>HookAnchor</string>
     <key>CFBundleDisplayName</key>
     <string>HookAnchor</string>
+    <key>CFBundleIconFile</key>
+    <string>AppIcon</string>
     <key>CFBundlePackageType</key>
     <string>APPL</string>
     <key>CFBundleShortVersionString</key>
@@ -224,11 +245,18 @@ EOF
 # 8. Copy resources
 echo -e "${BLUE}📦 Copying resources...${NC}"
 
-# Copy icon if it exists
-if [ -f "$PROJECT_ROOT/resources/HookAnchor.icns" ]; then
+# Copy icon if it exists (check multiple locations)
+if [ -f "$PROJECT_ROOT/installer/resources/HookAnchor.icns" ]; then
+    cp "$PROJECT_ROOT/installer/resources/HookAnchor.icns" "$RESOURCES_DIR/AppIcon.icns"
+    echo "   ✓ Copied HookAnchor.icns from installer/resources"
+elif [ -f "$PROJECT_ROOT/resources/HookAnchor.icns" ]; then
     cp "$PROJECT_ROOT/resources/HookAnchor.icns" "$RESOURCES_DIR/AppIcon.icns"
-elif [ -f "$PROJECT_ROOT/resources/icon.icns" ]; then
-    cp "$PROJECT_ROOT/resources/icon.icns" "$RESOURCES_DIR/AppIcon.icns"
+    echo "   ✓ Copied HookAnchor.icns from resources"
+elif [ -f "$PROJECT_ROOT/resources/icons/icon.icns" ]; then
+    cp "$PROJECT_ROOT/resources/icons/icon.icns" "$RESOURCES_DIR/AppIcon.icns"
+    echo "   ✓ Copied icon.icns from resources/icons"
+else
+    echo "   ⚠️  No icon file found"
 fi
 
 # Generate default configs from personal configs
@@ -326,6 +354,20 @@ if [ -d "$PROJECT_ROOT/dist/HookAnchor.app/Contents/Resources" ]; then
 else
     echo "   Warning: No distribution files found"
 fi
+
+# Copy Karabiner complex modification resource file
+echo "   Copying Karabiner resource file..."
+if [ -f "$PROJECT_ROOT/Resources/hookanchor.json" ]; then
+    cp "$PROJECT_ROOT/Resources/hookanchor.json" "$RESOURCES_DIR/"
+    echo "   ✓ Copied hookanchor.json to Resources"
+else
+    echo "   ⚠️  Warning: hookanchor.json not found in Resources/"
+fi
+
+# Create install marker file (triggers installer on first run)
+echo "   Creating install marker file..."
+touch "$RESOURCES_DIR/install_pending"
+echo "   ✓ Created install_pending marker file"
 
 # Create Uninstaller app
 echo "   Creating Uninstaller.app..."

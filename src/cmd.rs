@@ -3,7 +3,7 @@ use crate::core::{load_commands_with_data, load_commands_for_inference, filter_c
 use crate::core::commands::save_commands_to_file;
 use crate::utils;
 use crate::utils::logging::print;
-use crate::execute::{execute_on_server, make_action, command_to_action, execute_on_server_with_parameters};
+use crate::execute::{execute_on_server, make_action, command_to_action};
 
 /// Main entry point for command-line mode
 pub fn run_command_line_mode(args: Vec<String>) {
@@ -146,7 +146,9 @@ fn handle_hook_url(url: &str) {
     
     // Convert command to action and execute
     let action = command_to_action(&top_command_obj);
-    let _ = execute_on_server(&action);
+    let mut variables = HashMap::new();
+    variables.insert("arg".to_string(), top_command_obj.arg.clone());
+    let _ = execute_on_server(&action, Some(variables));
     utils::detailed_log("URL_HANDLER", "Command executed");
 }
 
@@ -200,7 +202,9 @@ fn run_exec_command(args: &[String]) {
         // Execute the actual Command object
         // Convert command to action and execute
         let action = command_to_action(&cmd);
-        let _ = execute_on_server(&action);
+        let mut variables = HashMap::new();
+        variables.insert("arg".to_string(), cmd.arg.clone());
+        let _ = execute_on_server(&action, Some(variables));
         print("Command completed");
     } else {
         print(&format!("Command '{}' not found", command));
@@ -261,7 +265,9 @@ fn run_execute_top_match(args: &[String]) {
     // Use server-based execution for consistent environment
     // Convert command to action and execute with parameters
     let action = command_to_action(&top_command_obj);
-    let _ = execute_on_server_with_parameters(&action, Some(&top_command_obj.arg), None);
+    let mut variables = std::collections::HashMap::new();
+    variables.insert("arg".to_string(), top_command_obj.arg.clone());
+    let _ = execute_on_server(&action, Some(variables));
     print("Command completed");
 }
 
@@ -349,9 +355,22 @@ fn run_test_command(args: &[String]) {
                 variables.insert(key.clone(), value.clone());
             }
             
-            // Execute the action with simplified parameters
-            let arg = if !arg_value.is_empty() { Some(arg_value.as_str()) } else { None };
-            match execute_on_server_with_parameters(action, arg, Some(variables)) {
+            // Execute the action with simplified parameters - convert variables to String HashMap
+            let mut string_variables = std::collections::HashMap::new();
+
+            // Add arg if present
+            if !arg_value.is_empty() {
+                string_variables.insert("arg".to_string(), arg_value.clone());
+            }
+
+            // Convert JsonValue variables to String variables
+            for (key, value) in variables {
+                if let Some(string_value) = value.as_str() {
+                    string_variables.insert(key, string_value.to_string());
+                }
+            }
+
+            match execute_on_server(action, if string_variables.is_empty() { None } else { Some(string_variables) }) {
                 Ok(result) => {
                     print(&format!("Action completed successfully: {}", result));
                 }
@@ -371,7 +390,9 @@ fn run_test_command(args: &[String]) {
     // Use server-based execution for testing actions
     // Create action directly and execute
     let action = make_action(&action_name, &arg_value);
-    let _ = execute_on_server(&action);
+    let mut variables = HashMap::new();
+    variables.insert("arg".to_string(), arg_value.clone());
+    let _ = execute_on_server(&action, Some(variables));
     print("Action completed");
 }
 
@@ -424,10 +445,19 @@ fn run_action_directly(args: &[String]) {
     }
     
     let action = Action { params: action_params };
-    
-    // Execute through server
+
+    // Execute through server - convert JsonValue params to String variables
     use crate::execute::execute_on_server;
-    let _ = execute_on_server(&action);
+    let mut variables = HashMap::new();
+
+    // Extract all string parameters for template expansion
+    for (key, value) in &action.params {
+        if let Some(string_val) = value.as_str() {
+            variables.insert(key.clone(), string_val.to_string());
+        }
+    }
+
+    let _ = execute_on_server(&action, if variables.is_empty() { None } else { Some(variables) });
     print(&format!("Action '{}' completed", action_type));
 }
 
@@ -1096,20 +1126,32 @@ fn run_rescan_command() {
     };
     
     print("\n📋 Initial data load...");
-    
+
     // Load existing commands from disk first (to preserve patches), then run verbose load
     let existing_commands = crate::core::load_commands();
-    let global_data = crate::core::sys_data::load_data(existing_commands, true);
-    
+    let mut global_data = crate::core::sys_data::load_data(existing_commands, true);
+
     print("\n🔍 Starting filesystem scan...");
-    
+
     // Run scan with verbose output
     let scanned_commands = crate::systems::scan_verbose(
         global_data.commands.clone(),
         &global_data,
         true
     );
-    
+
+    // Update history files after scan completes
+    print("\n📝 Updating history files...");
+    let rebuild_all = global_data.config.popup_settings.history_settings
+        .as_ref()
+        .and_then(|h| h.rebuild_all)
+        .unwrap_or(false);
+    if let Err(e) = crate::systems::update_histories(&mut global_data, rebuild_all) {
+        print(&format!("   ⚠️  History update failed: {}", e));
+    } else {
+        print("   ✅ History files updated");
+    }
+
     print("\n📊 Final Summary:");
     print(&format!("   Total commands after rescan: {}", scanned_commands.len()));
     
@@ -1424,7 +1466,9 @@ fn run_execute_launcher_command(args: &[String]) {
     
     // Create action directly and execute
     let action_obj = make_action(action, &arg);
-    let _ = execute_on_server(&action_obj);
+    let mut variables = HashMap::new();
+    variables.insert("arg".to_string(), arg.clone());
+    let _ = execute_on_server(&action_obj, Some(variables));
     utils::detailed_log("LAUNCHER_CMD", "Command completed");
 }
 

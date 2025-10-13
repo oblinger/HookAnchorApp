@@ -124,6 +124,8 @@ fn handle_hook_url(url: &str) {
     
     // Execute command - handles all retries internally
     let action = execute::command_to_action(&top_command_obj);
-    let _ = execute::execute_on_server(&action);
+    let mut variables = std::collections::HashMap::new();
+    variables.insert("arg".to_string(), decoded_query.to_string());
+    let _ = execute::execute_on_server(&action, Some(variables));
     utils::detailed_log("DISPATCHER", "Command sent to server");
 }

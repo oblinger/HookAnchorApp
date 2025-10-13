@@ -41,6 +41,8 @@ pub struct Patch {
     /// Commands with the 'I' (include) flag that have this patch
     /// These commands' folders will be included in the prefix menu
     pub include_commands: Vec<Command>,
+    /// Path to this patch's history file, if it exists
+    pub history_file: Option<PathBuf>,
 }
 
 /// Performs case-insensitive lookup of a patch
@@ -154,15 +156,29 @@ impl Command {
     
     /// Returns the absolute folder path for the command
     /// For file-based commands, returns the parent directory
-    /// For folder commands, returns the folder itself
+    /// For folder commands and directory-based anchors, returns the folder itself
     pub fn get_absolute_folder_path(&self, config: &Config) -> Option<PathBuf> {
         match self.action.as_str() {
             "folder" => {
                 // For folder commands, return the folder itself (already normalized)
                 self.get_absolute_file_path(config)
             }
+            "anchor" => {
+                // For anchor commands, check if the arg is a directory or a file
+                if let Some(path) = self.get_absolute_file_path(config) {
+                    if path.is_dir() {
+                        // If it's a directory (like /Users/oblinger/ob/bin), return it directly
+                        Some(normalize_path(path))
+                    } else {
+                        // If it's a file (like a .md file), return the parent directory
+                        path.parent().map(|parent| normalize_path(parent.to_path_buf()))
+                    }
+                } else {
+                    None
+                }
+            }
             _ => {
-                // For file-based commands, return the parent directory
+                // For other file-based commands, return the parent directory
                 // Parent path shouldn't have trailing slashes, but normalize just in case
                 self.get_absolute_file_path(config)
                     .and_then(|p| p.parent().map(|parent| normalize_path(parent.to_path_buf())))
@@ -432,6 +448,7 @@ pub fn create_patches_hashmap(commands: &[Command]) -> HashMap<String, Patch> {
             name: primary_anchor.command.clone(), // Use primary anchor's case
             anchor_commands,
             include_commands: Vec::new(),
+            history_file: None, // Will be populated by history module
         });
     }
     
@@ -462,6 +479,7 @@ pub fn create_patches_hashmap(commands: &[Command]) -> HashMap<String, Patch> {
                     name: virtual_command.command.clone(),
                     anchor_commands: vec![virtual_command],
                     include_commands: Vec::new(),
+                    history_file: None, // Will be populated by history module
                 });
             }
         }
@@ -866,22 +884,21 @@ fn is_patch_degradation(current_patch: &str, inferred_patch: &str) -> bool {
 fn build_folder_to_patch_map(commands: &[Command]) -> HashMap<PathBuf, String> {
     use std::path::PathBuf;
     let mut folder_map = HashMap::new();
-    
+    let config = crate::core::sys_data::get_config();
+
     // First pass: Add all anchor commands to the map
     for cmd in commands {
         if cmd.action == "anchor" && !cmd.arg.is_empty() {
-            let path = PathBuf::from(&cmd.arg);
-            
-            // Get the parent folder of the anchor file
-            if let Some(parent) = path.parent() {
+            // Use the proper accessor that handles both file and folder anchors correctly
+            if let Some(folder_path) = cmd.get_absolute_folder_path(&config) {
                 // Canonicalize to handle symlinks and relative paths
-                if let Ok(canonical_parent) = parent.canonicalize() {
+                if let Ok(canonical_folder) = folder_path.canonicalize() {
                     // Map this folder to the anchor's command name (which becomes the patch for its contents)
-                    folder_map.insert(canonical_parent, cmd.command.clone());
-                    
+                    folder_map.insert(canonical_folder, cmd.command.clone());
+
                     crate::utils::detailed_log("PATCH_MAP", &format!(
-                        "Folder '{}' -> patch '{}'",
-                        parent.display(), cmd.command
+                        "Folder '{}' -> patch '{}' (using proper accessor)",
+                        folder_path.display(), cmd.command
                     ));
                 }
             }

@@ -59,6 +59,7 @@
 //! - Per-directory activation scripts
 
 use rquickjs::{Context, Runtime, Function, Ctx};
+use rquickjs::function::Opt;
 use std::path::{Path, PathBuf};
 use std::fs;
 use regex::Regex;
@@ -668,10 +669,13 @@ fn setup_launcher_builtins(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Erro
         let config = crate::core::sys_data::get_config();
         if let Some(actions) = &config.actions {
             if let Some(action_def) = actions.get(action_name) {
-                match crate::execute::execute_on_server_with_parameters(
+                let mut variables = std::collections::HashMap::new();
+                if !args.is_empty() {
+                    variables.insert("arg".to_string(), args.to_string());
+                }
+                match crate::execute::execute_on_server(
                     action_def,
-                    Some(args),
-                    None
+                    if variables.is_empty() { None } else { Some(variables) }
                 ) {
                     Ok(result) => format!("Successfully launched: {} - {}", command, result),
                     Err(e) => format!("Failed to launch '{}': {}", command, e),
@@ -744,11 +748,11 @@ fn setup_launcher_builtins(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Erro
         }
     })?)?;
 
-    // save_ghost_input(anchor_name) -> saves ghost input for next popup
-    ctx.globals().set("save_ghost_input", Function::new(ctx.clone(), |anchor_name: String| {
-        match crate::core::state::save_ghost_input(&anchor_name) {
-            Ok(()) => format!("Ghost input saved: {}", anchor_name),
-            Err(e) => format!("Failed to save ghost input: {}", e),
+    // save_anchor(name, folder?) -> saves anchor name and optional folder for next popup
+    ctx.globals().set("save_anchor", Function::new(ctx.clone(), |name: String, folder: Opt<String>| {
+        match crate::core::state::save_anchor_with_folder(&name, folder.0) {
+            Ok(()) => format!("Anchor saved: {}", name),
+            Err(e) => format!("Failed to save anchor: {}", e),
         }
     })?)?;
 
@@ -773,6 +777,8 @@ fn setup_config_access(ctx: &Ctx<'_>, config: &Config) -> Result<(), Box<dyn std
             let home = std::env::var("HOME").unwrap_or_else(|_| ".".to_string());
             format!("{}/Documents", home)
         });
+    let tmux_startup_command = launcher_settings.tmux_startup_command
+        .unwrap_or_else(|| "".to_string());
     
     let get_obsidian_app_fn = Function::new(ctx.clone(), move |_ctx: Ctx<'_>| -> rquickjs::Result<String> {
         Ok(obsidian_app_name.clone())
@@ -785,11 +791,16 @@ fn setup_config_access(ctx: &Ctx<'_>, config: &Config) -> Result<(), Box<dyn std
     let get_obsidian_vault_path_fn = Function::new(ctx.clone(), move |_ctx: Ctx<'_>| -> rquickjs::Result<String> {
         Ok(obsidian_vault_path.clone())
     })?;
-    
+
+    let get_tmux_startup_command_fn = Function::new(ctx.clone(), move |_ctx: Ctx<'_>| -> rquickjs::Result<String> {
+        Ok(tmux_startup_command.clone())
+    })?;
+
     ctx.globals().set("getObsidianApp", get_obsidian_app_fn)?;
     ctx.globals().set("getObsidianVault", get_obsidian_vault_fn)?;
     ctx.globals().set("getObsidianVaultPath", get_obsidian_vault_path_fn)?;
-    
+    ctx.globals().set("getTmuxStartupCommand", get_tmux_startup_command_fn)?;
+
     Ok(())
 }
 
@@ -841,6 +852,7 @@ fn load_config_js_functions(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Err
                                     getObsidianApp: getObsidianApp,
                                     getObsidianVault: getObsidianVault,
                                     getObsidianVaultPath: getObsidianVaultPath,
+                                    getTmuxStartupCommand: getTmuxStartupCommand,
                                     launch_app: launch_app,
                                     open_folder: open_folder,
                                     open_url: open_url,
@@ -855,7 +867,7 @@ fn load_config_js_functions(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Err
                                     // spawnDetached removed - use shell("command &") instead
                                     appIsRunning: appIsRunning,
                                     encodeURIComponent: encodeURIComponent,
-                                    save_ghost_input: save_ghost_input
+                                    save_anchor: save_anchor
                                 }}
                             }};
                         }};

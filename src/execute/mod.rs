@@ -32,7 +32,6 @@ pub use self::actions::{
 pub use self::execute::{
     command_to_action,
     execute_on_server,
-    execute_on_server_with_parameters,
     activate_command_server,
     run_command_server
 };

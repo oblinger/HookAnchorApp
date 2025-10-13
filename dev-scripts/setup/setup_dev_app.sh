@@ -53,7 +53,7 @@ echo ""
 # 2. Build the project if binaries don't exist
 echo "🔨 Checking binaries..."
 
-if [ ! -f "$RELEASE_DIR/HookAnchor" ] || [ ! -f "$RELEASE_DIR/popup_server" ] || [ ! -f "$RELEASE_DIR/ha" ] || [ ! -f "$RELEASE_DIR/popup" ]; then
+if [ ! -f "$RELEASE_DIR/HookAnchorCommand" ] || [ ! -f "$RELEASE_DIR/HookAnchorPopupServer" ] || [ ! -f "$RELEASE_DIR/HookAnchorPopup" ] || [ ! -f "$RELEASE_DIR/HookAnchorSupervisor" ]; then
     echo "   Building Rust components..."
     cd "$PROJECT_DIR"
     cargo build --release
@@ -140,13 +140,21 @@ $SUDO mkdir -p "$RESOURCES_DIR"
 
 # Create symlinks to binaries (NEVER COPY!)
 echo "   Creating symlinks to binaries..."
-$SUDO ln -sf "$RELEASE_DIR/HookAnchor" "$MACOS_DIR/HookAnchor"
-$SUDO ln -sf "$RELEASE_DIR/popup_server" "$MACOS_DIR/popup_server"
-$SUDO ln -sf "$RELEASE_DIR/ha" "$MACOS_DIR/ha"
-$SUDO ln -sf "$RELEASE_DIR/popup" "$MACOS_DIR/popup"
+$SUDO ln -sf "$RELEASE_DIR/HookAnchorSupervisor" "$MACOS_DIR/HookAnchor"
+$SUDO ln -sf "$RELEASE_DIR/HookAnchorPopupServer" "$MACOS_DIR/popup_server"
+$SUDO ln -sf "$RELEASE_DIR/HookAnchorCommand" "$MACOS_DIR/ha"
+$SUDO ln -sf "$RELEASE_DIR/HookAnchorPopup" "$MACOS_DIR/popup"
 
-# Create Info.plist for main app (NO URL registration here!)
-echo "   Creating Info.plist..."
+# Create Info.plist for main app with URL handling
+echo "   Creating Info.plist with URL registration..."
+
+# Copy icon if available
+if [ -f "$PROJECT_DIR/resources/HookAnchor.icns" ]; then
+    $SUDO cp "$PROJECT_DIR/resources/HookAnchor.icns" "$RESOURCES_DIR/AppIcon.icns"
+elif [ -f "$PROJECT_DIR/resources/icon.icns" ]; then
+    $SUDO cp "$PROJECT_DIR/resources/icon.icns" "$RESOURCES_DIR/AppIcon.icns"
+fi
+
 $SUDO tee "$CONTENTS_DIR/Info.plist" > /dev/null << 'PLIST'
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -166,57 +174,6 @@ $SUDO tee "$CONTENTS_DIR/Info.plist" > /dev/null << 'PLIST'
     <true/>
     <key>LSMultipleInstancesProhibited</key>
     <true/>
-</dict>
-</plist>
-PLIST
-
-# Copy icon if available
-if [ -f "$PROJECT_DIR/resources/HookAnchor.icns" ]; then
-    $SUDO cp "$PROJECT_DIR/resources/HookAnchor.icns" "$RESOURCES_DIR/AppIcon.icns"
-elif [ -f "$PROJECT_DIR/resources/icon.icns" ]; then
-    $SUDO cp "$PROJECT_DIR/resources/icon.icns" "$RESOURCES_DIR/AppIcon.icns"
-fi
-
-# 5. Create embedded URLHandler.app for hook:// URL handling
-echo "🔗 Setting up embedded URL handler..."
-
-URL_HANDLER_DIR="$RESOURCES_DIR/URLHandler.app"
-URL_HANDLER_CONTENTS="$URL_HANDLER_DIR/Contents"
-URL_HANDLER_MACOS="$URL_HANDLER_CONTENTS/MacOS"
-
-# Create URLHandler.app structure
-echo "   Creating URLHandler.app in Resources..."
-$SUDO mkdir -p "$URL_HANDLER_MACOS"
-
-# Symlink url_launcher binary (NEVER COPY!)
-if [ -f "$RELEASE_DIR/url_launcher" ]; then
-    echo "   Creating symlink to url_launcher..."
-    $SUDO ln -sf "$RELEASE_DIR/url_launcher" "$URL_HANDLER_MACOS/url_launcher"
-else
-    echo -e "${YELLOW}   Warning: url_launcher not found, URL handling won't work${NC}"
-fi
-
-# Create Info.plist for URL handler (this registers hook:// URLs)
-echo "   Creating URLHandler Info.plist with hook:// registration..."
-$SUDO tee "$URL_HANDLER_CONTENTS/Info.plist" > /dev/null << 'URLPLIST'
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-    <key>CFBundleExecutable</key>
-    <string>url_launcher</string>
-    <key>CFBundleIdentifier</key>
-    <string>com.hookanchor.urlhandler</string>
-    <key>CFBundleName</key>
-    <string>HookAnchor URL Handler</string>
-    <key>CFBundlePackageType</key>
-    <string>APPL</string>
-    <key>CFBundleVersion</key>
-    <string>1.0</string>
-    <key>LSBackgroundOnly</key>
-    <true/>
-    <key>LSUIElement</key>
-    <true/>
     <key>CFBundleURLTypes</key>
     <array>
         <dict>
@@ -230,13 +187,13 @@ $SUDO tee "$URL_HANDLER_CONTENTS/Info.plist" > /dev/null << 'URLPLIST'
     </array>
 </dict>
 </plist>
-URLPLIST
+PLIST
 
-# Register the URL handler with Launch Services
-echo "   Registering URLHandler.app for hook:// URLs..."
-/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -f "$URL_HANDLER_DIR" 2>/dev/null || true
+# Register the app for hook:// URLs
+echo "   Registering HookAnchor.app for hook:// URLs..."
+/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -f "$APP_DIR" 2>/dev/null || true
 
-echo -e "${GREEN}✅ URL handler configured${NC}"
+echo -e "${GREEN}✅ App bundle configured with URL handling${NC}"
 echo ""
 
 # 6. Create convenience symlink in ~/bin
@@ -247,9 +204,9 @@ if [ ! -d "$HOME/bin" ]; then
     echo "   Created ~/bin directory"
 fi
 
-if [ ! -L "$HOME/bin/ha" ] || [ "$(readlink "$HOME/bin/ha")" != "$RELEASE_DIR/ha" ]; then
-    ln -sf "$RELEASE_DIR/ha" "$HOME/bin/ha"
-    echo "   Created symlink: ~/bin/ha -> $RELEASE_DIR/ha"
+if [ ! -L "$HOME/bin/ha" ] || [ "$(readlink "$HOME/bin/ha")" != "$RELEASE_DIR/HookAnchorCommand" ]; then
+    ln -sf "$RELEASE_DIR/HookAnchorCommand" "$HOME/bin/ha"
+    echo "   Created symlink: ~/bin/ha -> $RELEASE_DIR/HookAnchorCommand"
 else
     echo "   Symlink ~/bin/ha already correct"
 fi

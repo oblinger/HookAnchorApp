@@ -75,6 +75,36 @@ pub struct PopupSettings {
     /// Preferred action type for selecting primary anchor when multiple anchors exist for same patch
     /// Options: "markdown", "doc", "anchor", "text", etc. (default: "markdown")
     pub preferred_anchor: Option<String>,
+    /// History tracking settings
+    pub history_settings: Option<HistorySettings>,
+}
+
+/// History tracking settings
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(default)]
+pub struct HistorySettings {
+    /// String to look for that indicates a log section in markdown files
+    pub anchor_log_indicator: Option<String>,
+    /// Heading levels to treat as log entries (1 = H1, 2 = H2, etc.)
+    pub anchor_levels: Option<Vec<u8>>,
+    /// Minimum file size increase (in bytes) to add a new whole-file entry
+    pub history_increment_size: Option<u64>,
+    /// Enable/disable history tracking entirely
+    pub enabled: Option<bool>,
+    /// Rebuild all histories from scratch on each rescan (default: false)
+    pub rebuild_all: Option<bool>,
+}
+
+impl Default for HistorySettings {
+    fn default() -> Self {
+        HistorySettings {
+            anchor_log_indicator: Some("# Log".to_string()),
+            anchor_levels: Some(vec![1, 2]),
+            history_increment_size: Some(1000),
+            enabled: Some(true),
+            rebuild_all: Some(false),
+        }
+    }
 }
 
 /// Launcher settings section of the configuration file
@@ -91,6 +121,8 @@ pub struct LauncherSettings {
     pub flip_focus: Option<bool>,
     /// Enable JavaScript TMUX activation instead of Rust
     pub use_javascript_tmux_activation: Option<String>,
+    /// Command to run in tmux session after activation
+    pub tmux_startup_command: Option<String>,
 }
 
 impl Default for LauncherSettings {
@@ -102,6 +134,7 @@ impl Default for LauncherSettings {
             obsidian_vault_path: Some("~/Documents".to_string()),
             flip_focus: Some(false),
             use_javascript_tmux_activation: None,
+            tmux_startup_command: None,
         }
     }
 }
@@ -142,6 +175,7 @@ impl Default for PopupSettings {
             rename_patch: Some(false),
             rename_prefix: Some(false),
             preferred_anchor: Some("markdown".to_string()),
+            history_settings: Some(HistorySettings::default()),
         }
     }
 }

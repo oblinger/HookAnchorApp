@@ -26,10 +26,12 @@ pub struct AppState {
     pub server_pid: Option<u32>,
     /// ISO timestamp when Notion was last scanned
     pub notion_last_scan: Option<String>,
-    /// Ghost input - last executed anchor name
-    pub ghost_input: Option<String>,
-    /// Ghost timestamp - Unix timestamp when ghost_input was set
-    pub ghost_timestamp: Option<i64>,
+    /// Anchor name - last executed anchor name
+    pub anchor_name: Option<String>,
+    /// Anchor timestamp - Unix timestamp when anchor was last set
+    pub anchor_timestamp: Option<i64>,
+    /// Anchor folder - folder path associated with last anchor
+    pub anchor_folder: Option<String>,
 }
 
 impl Default for AppState {
@@ -42,8 +44,9 @@ impl Default for AppState {
             last_executed_command: None,
             server_pid: None,
             notion_last_scan: None,
-            ghost_input: None,
-            ghost_timestamp: None,
+            anchor_name: None,
+            anchor_timestamp: None,
+            anchor_folder: None,
         }
     }
 }
@@ -96,20 +99,26 @@ pub fn save_last_executed_command(command_name: &str) -> Result<(), Box<dyn std:
     save_state(&state)
 }
 
-/// Updates ghost input for anchor commands
-pub fn save_ghost_input(anchor_name: &str) -> Result<(), Box<dyn std::error::Error>> {
-    crate::utils::detailed_log("GHOST_SAVE", &format!("🔄 Attempting to save ghost input: '{}'", anchor_name));
+/// Updates anchor name for the last executed anchor
+pub fn save_anchor(name: &str) -> Result<(), Box<dyn std::error::Error>> {
+    save_anchor_with_folder(name, None)
+}
+
+/// Updates anchor name and folder for the last executed anchor
+pub fn save_anchor_with_folder(name: &str, folder: Option<String>) -> Result<(), Box<dyn std::error::Error>> {
+    crate::utils::detailed_log("ANCHOR_SAVE", &format!("🔄 Attempting to save anchor: '{}' with folder: {:?}", name, folder));
     let mut state = load_state();
-    let old_ghost = state.ghost_input.clone();
-    state.ghost_input = Some(anchor_name.to_string());
-    state.ghost_timestamp = Some(Local::now().timestamp());
+    let old_anchor = state.anchor_name.clone();
+    state.anchor_name = Some(name.to_string());
+    state.anchor_timestamp = Some(Local::now().timestamp());
+    state.anchor_folder = folder;
     match save_state(&state) {
         Ok(()) => {
-            crate::utils::detailed_log("GHOST_SAVE", &format!("✅ Successfully saved ghost input: '{}' (was: '{:?}')", anchor_name, old_ghost));
+            crate::utils::detailed_log("ANCHOR_SAVE", &format!("✅ Successfully saved anchor: '{}' (was: '{:?}')", name, old_anchor));
             Ok(())
         },
         Err(e) => {
-            crate::utils::detailed_log("GHOST_SAVE", &format!("❌ Failed to save ghost input: {}", e));
+            crate::utils::detailed_log("ANCHOR_SAVE", &format!("❌ Failed to save anchor: {}", e));
             Err(e)
         }
     }
