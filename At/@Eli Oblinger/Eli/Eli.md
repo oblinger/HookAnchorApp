@@ -1,9 +1,7 @@
 .[[Eli]].
-  , [[Eli Food]], [[ELI Quotes]], ,
-  :
+  , [[Eli Food]], [[ELI Quotes]], [[Eli Strategy]], 
   [[Eli Firsts]]:
   [[Eli Activities]]:
-  :
   [[Eli Friends]]:
   OLDER: , [[ELI Education]], [[Eli Math]],
   ,

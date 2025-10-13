@@ -1,6 +1,6 @@
 #log 
 n:: Quotes I have collected over the years
-
+[[Jokes]] 
 
 ## Knowlege Xenophanes
 

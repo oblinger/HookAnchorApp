@@ -1,23 +1,23 @@
+]
 
-
-| WEEKLY        |                                                                                                                                                    |     |
-| ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | --- |
-| **HOT LISTS** | [Simple Note](hook://simplenote1pass)   [Reminders](https://www.icloud.com/#reminders)  [RocMny](hook://RocketMoney1Pass)  [wef](hook://safari) sa |     |
-|               | Bk  Nails  Nose  Groc AudioMemos [[Friday]]                                                                                                        |     |
-| **CLEAN**     | [MyD](hook://MyDesktop), [DwnFdr](hook://Downloads)                                                                                                |     |
-|               | [[Reflections]]                                                                                                                                    |     |
-| **TODO**      | Clean F1 page for week.  [[quick]] & [[todo]]                                                                                                      |     |
-| **HOUSE**     | Room: [My-]Desks/Bin/Shelf  House                                                                                                                  |     |
-| **PLAN**      | Week plan                                                                                                                                          |     |
-| **IN2**       | Quick scan                                                                                                                                         |     |
-|               |                                                                                                                                                    |     |
-|               |                                                                                                                                                    |     |
-|               |                                                                                                                                                    |     |
-|               |                                                                                                                                                    |     |
-|               |                                                                                                                                                    |     |
-|               |                                                                                                                                                    |     |
-|               |                                                                                                                                                    |     |
-|               |                                                                                                                                                    |     |
+| WEEKLY        |                                                                                                                                              |     |
+| ------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | --- |
+| **HOT LISTS** | [Simple Note](hook://simplenote1pass)   [Reminders](https://www.icloud.com/#reminders)  [RocMny](hook://RocketMoney1Pass)  [wef](hook://wef) |     |
+|               | Bk  Nails  Nose  Groc AudioMemos [[Friday]]                                                                                                  |     |
+| **CLEAN**     | [MyD](hook://MyDesktop), [DwnFdr](hook://Downloads)                                                                                          |     |
+|               | [[Reflections]]                                                                                                                              |     |
+| **TODO**      | Clean F1 page for week.  [[quick]] & [[todo]]                                                                                                |     |
+| **HOUSE**     | Room: [My-]Desks/Bin/Shelf  House                                                                                                            |     |
+| **PLAN**      | Week plan                                                                                                                                    |     |
+| **IN2**       | Quick scan                                                                                                                                   |     |
+|               |                                                                                                                                              |     |
+|               |                                                                                                                                              |     |
+|               |                                                                                                                                              |     |
+|               |                                                                                                                                              |     |
+|               |                                                                                                                                              |     |
+|               |                                                                                                                                              |     |
+|               |                                                                                                                                              |     |
+|               |                                                                                                                                              |     |
 
 
 | MONTHLY     |                                                      |
