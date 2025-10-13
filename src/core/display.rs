@@ -49,10 +49,32 @@ use std::collections::HashMap;
 
 
 /// Case-insensitive alphabetical comparison for command sorting
-/// Ensures "oblinge" comes before "Oblinger 83b" (shorter wins in case-insensitive ties)
+///
+/// Sorting rules:
+/// 1. Commands starting with alphabetic characters (A-Z, a-z) come first
+/// 2. Commands starting with numeric characters (0-9) come after alphabetic
+/// 3. Within each group, sort case-insensitively alphabetically
+/// 4. Tie-breaker: Shorter command name wins if lowercase text is identical
+///
+/// Examples:
+/// - "Apple" < "Zebra" < "123 Project" < "999 Tasks"
+/// - "oblinge" < "Oblinger 83b" (shorter wins in case-insensitive tie)
 fn compare_commands_case_insensitive(a: &Command, b: &Command) -> std::cmp::Ordering {
     let a_lower = a.command.to_lowercase();
     let b_lower = b.command.to_lowercase();
+
+    // Check if commands start with digits
+    let a_starts_digit = a_lower.chars().next().map_or(false, |c| c.is_ascii_digit());
+    let b_starts_digit = b_lower.chars().next().map_or(false, |c| c.is_ascii_digit());
+
+    // If one starts with digit and other doesn't, alphabetic comes first
+    if a_starts_digit && !b_starts_digit {
+        return std::cmp::Ordering::Greater; // a (digit) comes after b (alpha)
+    } else if !a_starts_digit && b_starts_digit {
+        return std::cmp::Ordering::Less; // a (alpha) comes before b (digit)
+    }
+
+    // Both start with digit or both start with alpha - sort normally
     match a_lower.cmp(&b_lower) {
         std::cmp::Ordering::Equal => a.command.len().cmp(&b.command.len()), // Shorter wins if same text
         other => other,
