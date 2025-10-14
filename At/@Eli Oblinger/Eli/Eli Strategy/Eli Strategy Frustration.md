@@ -1,4 +1,6 @@
 
+https://www.goodinside.com/workshop/2507/building-resilience-frustration-tolerance/view/
+
 
 VACCINATION -- Talk about frustration before it happens:  what will it feel like, what to do
 

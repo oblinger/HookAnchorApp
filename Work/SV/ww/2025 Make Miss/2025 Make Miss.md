@@ -1,4 +1,4 @@
-.[[2025-09 Make Miss]].
+.[[2025-09 Make Miss]].  [[Make]] 
   Use [[2025 Alg2]] 
 - [[GCP]] 
 - docs:  [[001_classification_task]], [[002_classification_papers]], 

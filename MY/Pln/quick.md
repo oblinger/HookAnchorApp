@@ -1,8 +1,6 @@
 
 - dentist payments
-- SKIN!!
 - ozempic
-
 - Friday
 - Adam brown response 
 

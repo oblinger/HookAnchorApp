@@ -1,5 +1,19 @@
 
 
+## 2025-10-13  Focus & Deliverables
+- Letting myself off the hook w/ a diffuse set of targets, 
+- and a lazy feeling that I won't achieve them anyway
+- and by allowing other important things (Eli, Daily activities, SportsVisio to get in the way)
+
+The key is to focus on a few items, and pick achivable advancement on each.
+Here is my thinking:
+
+AIsafety: Sketch of middle-path AGI-path, Read/Think/Sketch -- systems approach to AI safety.
+Seek: Apply 3; follow recipe twice
+Lrn: Train make/miss model
+
+
+
 
 ## 2025-10-07  Made big progress when focused on Make/Miss; need to focus on AI Safety
 
