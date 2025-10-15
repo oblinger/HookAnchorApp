@@ -1,5 +1,5 @@
 .[[T]].
-  , [[Career]], [[COM]], [[Courses]], [[Doc]], [[EduCorp]], [[FIN]], [[Food]], [[Legal]], [[Life]]
+  , [[Career]], [[COM]], [[Courses]], [[Doc]], [[EduCorp]], [[FIN]], [[Food]], [[Legal]], [[Life]], [[Word]], 
   , [[MED]], [[MGR]], [[Misc]], [[Mus]], [[Tag]], [[Trash]], ,
   , [[MOV]],
   , ,

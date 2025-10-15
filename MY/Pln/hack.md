@@ -1,3 +1,4 @@
+- Anchor is a Flag; Anchor suffix used to indicate location of patch
 - [ ] log file trimming
 - [ ] x
 

@@ -1,3 +1,4 @@
+- GPU Strategy
 
 - dentist payments
 - ozempic

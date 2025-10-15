@@ -1,3 +1,5 @@
+- get five users
+- plan the patch generator (next task)
 - https://www.scalablepath.com/professional-headshot-guide-for-freelancers
 - make copy of incoming email
 - https://arxiv.org/abs/2507.21206?utm_source=alphasignal&utm_campaign=2025-07-24&asuniq=8d03a007

@@ -5,6 +5,10 @@ SalesForce, Nvidia,
 
 # LOG
 
+## 2025-10-14  Quick Health checks
+https://victormong.medium.com/crucial-health-checks-that-show-how-old-your-body-really-is-in-less-than-5-minutes-39c49a8d82b9
+
+
 ## 2025-09-30  Derm person
 
 Oh, you asked me about my dermatologist, they happen to just sent me a text, so here is the info:

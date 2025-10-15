@@ -1,4 +1,5 @@
-
+.[[AI Safety]].
+  [[AIS]] 
 AGI Safety
 
 - [[AI Sys Safety]] 

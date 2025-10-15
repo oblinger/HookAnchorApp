@@ -1,3 +1,10 @@
+2025-10-14 	[[AIS]]
+2025-10-14 	[[Motivation]]
+2025-10-14 	[[Word]]
+2025-10-13 	[[REFACTOR_PLAN]]
+2025-10-13 	[[@Thomas Bradley]]
+2025-10-13 	[[@Thomas Bradley#2025-10-13--response-to-sean-after-chat|@Thomas Bradley]]	Response to Sean After chat
+2025-10-13 	[[@Thomas Bradley#2025-10-13--intro-from-sean|@Thomas Bradley]]	Intro from Sean
 2025-10-13 	[[README]]
 2025-10-13 	[[TESTING]]
 2025-10-13 	[[@Thomas Bradley]]

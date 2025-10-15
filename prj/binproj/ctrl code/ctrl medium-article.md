@@ -1,3 +1,72 @@
+
+
+# Hallucination-Free AI-Acrobatics
+- Must get past the AI-shooting-from-the-hip answers.
+- Best is voice from you, and text-back from it.
+- 
+
+
+# Stuff sack
+
+
+> I'm looking for a travel stuff sack. I'm interested in it being as late as possible. The tiniest number of grams. Hear the words that I have to go on.: pack-it system "ultra light"
+
+> Can you build a little table of the different items you found a URL to the item the number of grams and the number of cubic centimeters in the bag
+
+ Ultra-Light Stuff Sack Comparison
+```
+  | Product                         | Size   | Weight (g) | Volume (L) | Volume (cm³) | Price  | URL                                                               |
+  |---------------------------------|--------|------------|------------|--------------|--------|-------------------------------------------------------------------|
+  | Zpacks Slim Stuff Sack          | Small  | ~14g       | ~8L        | 8,000        | $21.95 | https://zpacks.com/products/slim-stuff-sack                       |
+  | Zpacks Small Stuff Sack         | Small  | ~11g       | ~5L        | 5,000        | $19.95 | https://zpacks.com/products/small-stuff-sack                      |
+  | Dyneema Zip Ditty (Etsy)        | Medium | ~8-12g     | ~3-5L      | 3,000-5,000  | $17.00 | https://www.etsy.com/listing/680113389/                           |
+  | Eagle Creek Pack-It Reveal Sack | Medium | ~50-70g    | ~10L       | 10,000       | $20.00 | https://eaglecreek.com/products/pack-it-reveal-sack-m             |
+  | REI Lightweight Stuff Sack      | 10L    | ~28g       | ~10L       | 10,000       | $13.95 | https://www.rei.com/product/238955/                               |
+  | Hyperlite Mountain Gear         | Small  | ~6-8g      | ~5L        | 5,000        | $25.00 | https://hyperlitemountaingear.com/products/drawstring-stuff-sacks |
+```
+
+  Notes:
+  - Weights are approximate for comparable sizes
+  - cm³ = Liters × 1,000
+  - Eagle Creek is heavier due to mesh panel and structured design
+  - Dyneema/DCF options (Etsy, HMG) are lightest but most expensive per gram
+  - Zpacks offers best weight-to-price ratio
+
+  For absolute minimum weight: Hyperlite Mountain Gear (6-8g) or custom Dyneema bags
+  For best value: Zpacks Small or Slim (11-14g for under $22)
+  For Pack-It system: Eagle Creek Reveal (50-70g but integrates with their system)
+
+
+> Can you find the detailed sizing spec for these?:Eagle Creek Pack-It Isolate Cube Set, Az Blue/Grey - Set XS/S/M
+
+```
+  | Size | Dimensions (in) | Dimensions (cm)   | Weight       | Volume (L)   | Volume (cm³)  | Price  | URL                                                           |
+  |------|-----------------|-------------------|--------------|--------------|---------------|--------|---------------------------------------------------------------|
+  | XS   | 6.5 x 10 x 3    | 16.5 x 25.4 x 7.6 | 17g (0.6 oz) | ~5L          | ~5,000        | $20    | https://eaglecreek.com/products/pack-it-isolate-cube-xs       |
+  | S    | 10.5 x 7 x 3    | 26.7 x 17.8 x 7.6 | 28g (1 oz)   | ~5.8L        | ~5,800        | $20    | https://eaglecreek.com/products/pack-it-isolate-cube-s        |
+  | M    | 14 x 10 x 3     | 35.6 x 25.4 x 7.6 | 40g (1.4 oz) | ~10.8L       | ~10,800       | $25    | https://eaglecreek.com/products/pack-it-isolate-cube-m        |
+  | SET  | All 3 cubes     | -                 | ~85g (3 oz)  | ~21.6L total | ~21,600 total | $55-60 | https://eaglecreek.com/products/pack-it-isolate-cube-set-xssm |
+
+```
+
+  These are NOT ultra-light - they're 3-5x heavier than ultralight options:
+  - Zpacks: 11-14g
+  - Dyneema: 8-12g
+  - Eagle Creek Isolate: 17-40g per cube
+
+
+  Dyneema Zip Ditty Bag Variety Pack - Typical Specifications
+```
+  | Size      | Dimensions (in) | Dimensions (cm) | Weight (g) | Volume (L) | Volume (cm³) | Use Case                         |
+  |-----------|-----------------|-----------------|------------|------------|--------------|----------------------------------|
+  | Small     | 4 x 6           | 10 x 15         | 6-8g       | ~0.4L      | 400          | Phone, wallet, small electronics |
+  | Medium    | 5 x 8           | 13 x 20         | 8-10g      | ~0.8L      | 800          | Toiletries, first aid, snacks    |
+  | Large     | 7 x 10          | 18 x 25         | 10-12g     | ~1.8L      | 1,800        | Clothing, larger gear            |
+  | Set Total | 3 bags          | -               | 24-30g     | ~3L        | ~3,000       | Complete organization            |
+
+```
+
+  Price: $59 (as shown on the page)
 # Getting Hallucination-Free Information from AI: Why Coding Agents Win
 
 ## Article Outline
