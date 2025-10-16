@@ -1,13 +1,4 @@
 .[[EOCI]].   [[ASIO]] 
-  , , ,
-  , , , ,
-  , , ,
-  , , ,
-  , , ,
-  , , ,
-  , , ,
-  , ,
-  , ,
   , [[EOCD Agent]], [[EOCI Agenic Aggregation]], [[EOCI Alignment as Mind Slavery]]
   , [[EOCI Closure]], [[EOCI Consciousness]], [[EOCI Corp AI]], [[EOCI Corp Decision Making]]
   , [[EOCI Desired Knowledge Diffusion]], [[EOCI Digital Native]], [[EOCI Executive Creep]]

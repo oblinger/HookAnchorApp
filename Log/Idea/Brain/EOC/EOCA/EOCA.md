@@ -1,14 +1,10 @@
 .[[EOCA]].
-  , [[EOCA Agenda sketch 2025]],
+  [[EOCA Root]], [[EOCA Publish]]:
+  [[EOCA Agenda sketch 2025]],
   [[EOCA Civilizing tendency]],
-  [[EOCA Definitions]]
   , [[EOCA Publish]], [[EOCA Root]], [[EOCA The Writing Is On The Wall]],
-  , ,
-  , ,
-  , ,
   , [EOCA Obsidian](spot://eocaobsidian),
   DELS: ,[EOCA Obsidian](spot://eocaobsidian),
-  , ,
   , [EOCA Note](spot://eocanote),
   , [EOCA Agenda sketch 2025 Obsidian](spot://eocaagendasketch2025obsidian)
   , [EOCA Civilizing tendency Obsidian](spot://eocacivilizingtendencyobsidian)
@@ -16,19 +12,9 @@
   , [EOCA Publish Obsidian](spot://eocapublishobsidian)
   , [EOCA Root Obsidian](spot://eocarootobsidian)
   , [EOCA The Writing Is On The Wall Obsidian](spot://eocathewritingisonthewallobsidian), 
-  DELS: [EOCA Note](spot://eocanote),[EOCA Obsidian](spot://eocaobsidian),[EOCA Note](spot://eocanote),[EOCA Note](spot://eocanote),
 
   [[EOCA Civilizing tendency]]:
-  [[EOCA Definitions]]:
-  [[EOCA Publish]]:
-  [[EOCA Root]]:
   [[EOCA The Writing Is On The Wall]]:
-  DELS: [[EOCA Agenda sketch 2025]], 
-
-
-  DELS: [[EndOfMan BookOutline]], [[EOCB Book Snipits]], 
-
-
 
 
 

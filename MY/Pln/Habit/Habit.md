@@ -17,6 +17,8 @@
 
 ## = CURRENT FOCUS
 
+### - Motivational Stuff
+
 ### - [[SAVERS]] 
 ### - Bucketed Day
  (See [[Daily Schedules]])

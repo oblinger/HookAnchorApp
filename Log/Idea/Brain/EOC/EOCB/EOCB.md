@@ -1,13 +1,8 @@
 .[[EOCB]].
   , [[EOCB End Run -- Cyber Model]], [[EOCB LimitsOnAlignment]], [[EOCB Progression]]
   , [[EOCB SandboxFutility]], ,
-  , , ,
-  , ,
-  , ,
   , [EOCB Obsidian](spot://eocbobsidian), [EOCB Web Obsidian](spot://eocbwebobsidian),
-  DELS: ,[EOCB Obsidian](spot://eocbobsidian),
-  , , [EOCB Web](spot://eocbweb),
-  , ,
+  [EOCB Web](spot://eocbweb),
   , [EOCB Note](spot://eocbnote), [EOCB Web Note](spot://eocbwebnote),
   , [EOCB Book Snipits Obsidian](spot://eocbbooksnipitsobsidian)
   , [EOCB End Run -- Cyber Model Obsidian](spot://eocbendruncybermodelobsidian)

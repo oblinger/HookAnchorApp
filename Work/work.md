@@ -56,8 +56,6 @@
 
 
 
-
-
 Claim: AI will likely operate with a set of overlapping and conflicting agendas.
 - Maximize ROI
 - Maintain healthy cash flow and cash-balance
