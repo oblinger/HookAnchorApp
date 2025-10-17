@@ -1,23 +1,14 @@
 
 
-!summary single metric for BB 
-  Baseball opportunity
 .**TODO**.
-  [[2025 AI Codeing Brainstorm|AI-code]]  
-  [Schart](https://www.notion.so/sportsvisio/SHOT-CHARTS-END-2-END-1d4719d6f2bd802ca4dfc8b1e0ff1fd5?pvs=4): POC
-  Effort Analysis for BB stats
   [PlayOn](hook://playon): 
-  MGT
-	 - [Cloud Roadmap](https://docs.google.com/document/d/1g135euS74c7FfBO6GDMRGyvi_0jXHBm4Pd4bqU9Pa94/edit?tab=t.0): plan for moving stuff to cloud - 
-	- Tracking:  playon datasets: Andy6 720pNow 1080pGood.
-	 - Magic Hour
-	 -  james and matty; fireball matty tell
-	-  [AWS Costs](https://drive.google.com/drive/folders/1Mnu6bwVw9bqxGq40uM_fBZ6x_75O3c6H)  (talk w/ Matty?)
-    + turn on AI Fireballs/AR by next mgt meeting in app
-    - Followup with Playon API
-    - Pursues beta testing in app
-    - AI-code brainstorm
+	- [Cloud Roadmap](https://docs.google.com/document/d/1g135euS74c7FfBO6GDMRGyvi_0jXHBm4Pd4bqU9Pa94/edit?tab=t.0): plan for moving stuff to cloud - 
     - Darien
+  BACKLOG
+    - AI-code brainstorm    [[2025 AI Codeing Brainstorm|AI-code]]  
+	-  [AWS Costs](https://drive.google.com/drive/folders/1Mnu6bwVw9bqxGq40uM_fBZ6x_75O3c6H)  (talk w/ Matty?) 
+    - Pursues beta testing in app
+	- !summary single metric for BB 
  SOON
     Beta tester stuff
     [[@Google]] GPU  answers
@@ -27,6 +18,8 @@
     Test automation:  (1) Mery Impersonation; (2) API testing.
     Top of mind from Jason; ask for topics before (for mgt meeting)
 ## PAUSE
+  Baseball opportunity
+  Effort Analysis for BB stats
   Halo analysis
   [AI Prod Matrix](https://docs.google.com/spreadsheets/d/1iQvOKwS09QcFTqXK1Ko0ydSgwqjXItbCRrkOMZaBj40/edit?gid=0#gid=0) possible products
   [**BUG**](https://www.notion.so/sportsvisio/SOFTWARE-STABILIZATION-1eb719d6f2bd807586afdba684e60901?pvs=4): Beta, RegTst0, Factory, [R](https://www.notion.so/sportsvisio/Regression-Testing-1f4719d6f2bd80ddaa0de76008e9f41b?pvs=4) 

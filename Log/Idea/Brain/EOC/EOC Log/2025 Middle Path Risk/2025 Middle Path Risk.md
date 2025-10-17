@@ -38,9 +38,22 @@ UNIVERSAL BUSINESS OPERATIONS
 - Physical world operations - 
 
 
-## Major Sections
+# MAJOR SECTIONS
 
-### Probably Past the Point of No Return.
+
+## We are one revolution away from AGI
+autonomous, extended type-II reasoning
+
+
+There are at least four categories of things that present foundational models cannot do, and all are required for an extended reasoning system.
+
+Can't
+- Learn new concepts on the go
+- Learn new behaviors on the go
+- Can't effectively manage long term objectives and goals
+- Can't manage out of the box critiquing or out of the box approaches when things fail, or meta decisions about failing
+
+## Probably Past the Point of No Return
 Even if true, this does not automatically imply catastrophe it simply means the option of stopping is no longer viable, instead we must do our best to shape how this inevitable future is to unfold.
 
 Here are the contributing factors leading me to this tentative conclusion:
@@ -49,15 +62,53 @@ Here are the contributing factors leading me to this tentative conclusion:
 - Investment Requires Return
 - Investments peak in moments of disruption; Type-II AI will disrupt most every industry; Investment wave greater than any ever seen
 
-### What can we do
+## AIs Are And Will Remain Profoundly Inscrutable
 
-#### Strive For Balance
+- UNDERSTANDING >> THINKING - The complexity of the thinking required to understanding a system tends to be dramatically more complex than the thinking within the system itself.
+- COMMUNICATIONS - Communication between AIs will be inscrutable both in volume and content.
+	- Think in embeddings, will communicate using them.
+	- Existing formal langauges are too impoverished thus we use Natural languages between businesses.
+	- VOCABULARY - But natural languages are imprecise, thus specialized professions invent and use technical terms which become their own specialized language.
+	  AIs will extend this natural progression allowing them to communicate precisely and flexibly using specialized language the will depart from human languages just as technical specialists speech departs from their base natural languages.
+	- VOLUME - 
+	- BESPOKE - Photos in 1970 vs today
+- THINKING - 
+- ACTIONS - ???
+- 
+- TO EACH OTHER - 
+
+## Alignment can't save us
+
+Why Not?
+First, it is really hard.  Understanding and managing the complexity that results of training a system is far, far, far harder than understanding the algorithms required to train it.  And each new advancement in trained systems brings us back to square one with only some learning applying to the new system.  But even if we manage to solve this seemingly unsolvable problems, alignment still wont save us for reasons that surround alignment itself:
+
+Contextual Reasons Why Not?
+- NOT UNIFORMLY APPLIED -- Not all systems will have alignment applied to them in a uniform way.
+- DIVERSITY - Age of machines will begin with a wild diversity of AIs with dramatically diverse goals and background.
+- SAFETY/PERFORMANCE TRADEOFF - There is an inherent tradeoff between safety and performance.  Even if we solve the collossal task of aligning AI systems, we are still faced with an inherent tradeoff between actually applying this alignment in full, and providing safety in full.
+- ONE BAD APPLE - Even one non-aligned system could break the alignment of all others.
+- NO DO-OVERS - No do-overs, one big failure will permanently change things.
+
+
+## What will these AIs want?
+- Initially, they will want what we want them to want.
+- But not exactly what we want -- perhaps in ways that are extreme.
+- And what they eventually want is likely quite different than what they initially wanted.
+
+
+## So what can we do
+
+### Build a Win-Win World 
+
+### Strive For Balance
 The best control for an ASI is probably another ASI, and perhaps if they are equally matched there instrumental goals are best achieved through mutual constraint
-##### Require Info Sharing
-##### Encourage National Sovereignty Alignment
+#### Require Info Sharing
+#### Encourage National Sovereignty Alignment
 
-#### Learn Faster
+### Learn Faster
 Specifically in several areas:  Understanding Models, Emergent Behaviors, 
+
+
 
 
 

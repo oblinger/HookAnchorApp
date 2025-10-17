@@ -2,38 +2,23 @@
 
 # WHY
 - Want to stay central 
+- 
 
-
-# Glossary
-IAM - Identity and Access Management (controlling who has access to what systems/data)
-IGA - Identity Governance and Administration (managing user identities, access rights, and compliance)
-XAM customers - Cross-Application Management customers (users managing access across multiple applications)
-EPM - Enterprise Performance Management (business planning, budgeting, and financial consolidation systems)
-A2A - Application-to-Application (automated communication/integration between software systems)
-PPM - Project Portfolio Management (managing multiple projects and resources across an organization)
-PAM - ]
-
-# Ideas
-
-1. Agentic AI Identity - 
-2. PAM - Pluggable Authentication Modules
-3. Risk Engine - 
-4. Automation - 
-
-Corporate Agentic AI-based automation
-- Must mirror org's current Identity & authority mgt
-- Allow BOTH users & their agents to share to operate with/ SAME authority.
-
-
-==> Third-party MCP servers w/ customer credentials.
-
-==> Open source standard for agentic identity.
 
 
 # TOP IDEAS
-## One-Two punch for Agentic Identity - 1PW UX for managed OAUTH keys & Open Source Standard for Agentic Identity (delegated OAUTH)
-## LLM-Based auto login PW reset automation
 
+## Want Agentic-AI w/ same permissions as its users across ALL assets
+- Users want 'service account' like unification across all their apps, all agents, all contexts
+- Requires "catch-all" approach - 1PW UX for managed OAUTH keys
+- Requires an extension of MCP to support authority.
+	- Needs an enormous span across applications
+	- Foundational model providers resist 
+	- open source standard to delegate existing auth - new kind of service account.
+- One-Two punch for Agentic Identity     & Open Source Standard for Agentic Identity (delegated OAUTH)
+
+## LLM-Based auto login PW reset automation
+- Managed Recipes for LLM driven auto testing & refinement of
 
 ## Use of LLMs in understanding and strategizing about auto login failures / PW rotation failures
 
@@ -143,3 +128,30 @@ Corporate Agentic AI-based automation
   - vc-js (W3C reference implementation)
   - SpruceID toolkit
   - Walt.id SSI framework
+
+
+# Glossary
+IAM - Identity and Access Management (controlling who has access to what systems/data)
+IGA - Identity Governance and Administration (managing user identities, access rights, and compliance)
+XAM customers - Cross-Application Management customers (users managing access across multiple applications)
+EPM - Enterprise Performance Management (business planning, budgeting, and financial consolidation systems)
+A2A - Application-to-Application (automated communication/integration between software systems)
+PPM - Project Portfolio Management (managing multiple projects and resources across an organization)
+PAM - ]
+
+# Ideas
+
+1. Agentic AI Identity - 
+2. PAM - Pluggable Authentication Modules
+3. Risk Engine - 
+4. Automation - 
+
+Corporate Agentic AI-based automation
+- Must mirror org's current Identity & authority mgt
+- Allow BOTH users & their agents to share to operate with/ SAME authority.
+
+
+==> Third-party MCP servers w/ customer credentials.
+
+==> Open source standard for agentic identity.
+

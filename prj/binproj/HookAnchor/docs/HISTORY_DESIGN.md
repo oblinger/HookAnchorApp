@@ -1,4 +1,4 @@
-# History Module Design
+2# History Module Design
 
 ## Overview
 The history module maintains markdown files that track changes to markdown files in the vault. Each history file records new files and new entries (H1/H2 headings) from markdown files within its scope. History files are associated with anchors and follow the patch hierarchy.
