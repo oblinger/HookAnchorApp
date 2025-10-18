@@ -69,5 +69,7 @@ pub use history::{
     record_command_deleted,
     query_history_by_date_range,
     query_history_by_path_prefix,
+    update_command,
+    delete_command,
     HistoryEntry,
 };

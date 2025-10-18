@@ -273,3 +273,116 @@ pub struct HistoryEntry {
     pub old_values: Option<String>,
     pub new_values: Option<String>,
 }
+
+/// Compare two commands to determine if they're functionally different
+/// Ignores last_update field since that's metadata, not content
+fn commands_differ(a: &Command, b: &Command) -> bool {
+    a.patch != b.patch
+        || a.command != b.command
+        || a.action != b.action
+        || a.arg != b.arg
+        || a.flags != b.flags
+        || a.file_size != b.file_size
+}
+
+/// Update a command with history tracking
+///
+/// This is the ONLY way commands should be modified - enforces history tracking.
+///
+/// # Arguments
+/// * `commands` - Mutable reference to the commands list
+/// * `old_cmd` - Optional old version of the command (None for new commands)
+/// * `new_cmd` - New version of the command
+///
+/// # Returns
+/// Ok(()) if successful, Err if history recording fails
+///
+/// # Side Effects
+/// - Updates the commands list
+/// - Records change in history.db
+/// - Sets last_update timestamp on new_cmd
+pub fn update_command(
+    commands: &mut Vec<Command>,
+    old_cmd: Option<&Command>,
+    mut new_cmd: Command,
+) -> Result<(), Box<dyn std::error::Error>> {
+    // Initialize history database
+    let conn = initialize_history_db()?;
+
+    // Get current timestamp
+    let now = std::time::SystemTime::now()
+        .duration_since(std::time::UNIX_EPOCH)?
+        .as_secs() as i64;
+
+    // Set last_update timestamp
+    new_cmd.last_update = now;
+
+    // Update file_size if this is a file-based command
+    if new_cmd.action == "anchor" || new_cmd.action == "file" || new_cmd.action == "folder" {
+        if let Some(file_path) = new_cmd.get_absolute_file_path(&crate::core::sys_data::get_config()) {
+            if let Ok(metadata) = std::fs::metadata(&file_path) {
+                new_cmd.file_size = Some(metadata.len());
+            }
+        }
+    }
+
+    match old_cmd {
+        Some(old) => {
+            // Check if command actually changed
+            if !commands_differ(old, &new_cmd) {
+                // No change, nothing to do
+                return Ok(());
+            }
+
+            // Record modification
+            record_command_modified(&conn, old, &new_cmd, now)?;
+
+            // Update in commands list
+            if let Some(pos) = commands.iter().position(|c|
+                c.patch == old.patch && c.command == old.command && c.action == old.action
+            ) {
+                commands[pos] = new_cmd;
+            }
+        }
+        None => {
+            // New command - record creation
+            record_command_created(&conn, &new_cmd, now)?;
+
+            // Add to commands list
+            commands.push(new_cmd);
+        }
+    }
+
+    Ok(())
+}
+
+/// Delete a command with history tracking
+///
+/// # Arguments
+/// * `commands` - Mutable reference to the commands list
+/// * `cmd` - Command to delete
+///
+/// # Returns
+/// Ok(()) if successful, Err if history recording fails
+pub fn delete_command(
+    commands: &mut Vec<Command>,
+    cmd: &Command,
+) -> Result<(), Box<dyn std::error::Error>> {
+    // Initialize history database
+    let conn = initialize_history_db()?;
+
+    // Get current timestamp
+    let now = std::time::SystemTime::now()
+        .duration_since(std::time::UNIX_EPOCH)?
+        .as_secs() as i64;
+
+    // Record deletion
+    record_command_deleted(&conn, cmd, now)?;
+
+    // Remove from commands list
+    commands.retain(|c|
+        !(c.patch == cmd.patch && c.command == cmd.command && c.action == cmd.action)
+    );
+
+    Ok(())
+}
