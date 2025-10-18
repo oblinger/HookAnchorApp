@@ -386,3 +386,137 @@ pub fn delete_command(
 
     Ok(())
 }
+
+/// Rescan and update commands with history tracking
+///
+/// This function implements the complete rescan workflow:
+/// 1. Load cached commands (last known state)
+/// 2. Load commands.txt (check for manual edits)
+/// 3. Scan filesystem (check for file changes)
+/// 4. Call update_command() for any differences
+/// 5. Flush to both commands.txt and commands_cache.json
+///
+/// # Returns
+/// Updated commands list with all changes tracked in history
+pub fn rescan_with_history() -> Result<Vec<Command>, Box<dyn std::error::Error>> {
+    crate::utils::log("HISTORY_RESCAN: Starting rescan with history tracking...");
+
+    // Step 1: Load cached commands (last known state)
+    let cached_commands = crate::core::commands::load_commands_from_cache()
+        .unwrap_or_else(Vec::new);
+
+    crate::utils::log(&format!("HISTORY_RESCAN: Loaded {} commands from cache", cached_commands.len()));
+
+    // Step 2: Load commands.txt (detect manual edits)
+    let txt_commands = crate::core::commands::load_commands_raw();
+    crate::utils::log(&format!("HISTORY_RESCAN: Loaded {} commands from commands.txt", txt_commands.len()));
+
+    // Start with empty commands list that we'll build up
+    let mut updated_commands = Vec::new();
+
+    // Step 3: Compare commands.txt with cache to detect manual edits
+    for txt_cmd in &txt_commands {
+        // Find corresponding cached command
+        let cached_cmd = cached_commands.iter().find(|c|
+            c.patch == txt_cmd.patch && c.command == txt_cmd.command && c.action == txt_cmd.action
+        );
+
+        match cached_cmd {
+            Some(old) => {
+                // Command exists in cache - check if it changed
+                let mut new_cmd = txt_cmd.clone();
+
+                // If it's a file-based command, we'll update file_size later in step 4
+                // For now, just detect if the command definition itself changed
+                if commands_differ(old, &new_cmd) {
+                    crate::utils::log(&format!("HISTORY_RESCAN: Command '{}' modified in commands.txt", txt_cmd.command));
+                    update_command(&mut updated_commands, Some(old), new_cmd)?;
+                } else {
+                    // No change - just add the old command
+                    updated_commands.push(old.clone());
+                }
+            }
+            None => {
+                // New command in commands.txt
+                crate::utils::log(&format!("HISTORY_RESCAN: New command '{}' found in commands.txt", txt_cmd.command));
+                update_command(&mut updated_commands, None, txt_cmd.clone())?;
+            }
+        }
+    }
+
+    // Check for deleted commands (in cache but not in txt)
+    for cached_cmd in &cached_commands {
+        let still_exists = txt_commands.iter().any(|c|
+            c.patch == cached_cmd.patch && c.command == cached_cmd.command && c.action == cached_cmd.action
+        );
+
+        if !still_exists {
+            crate::utils::log(&format!("HISTORY_RESCAN: Command '{}' deleted from commands.txt", cached_cmd.command));
+            delete_command(&mut updated_commands, cached_cmd)?;
+        }
+    }
+
+    // Step 4: Scan filesystem for file changes
+    crate::utils::log("HISTORY_RESCAN: Scanning filesystem for file changes...");
+    let mut file_changes = 0;
+
+    for cmd in updated_commands.iter_mut() {
+        // Only check file-based commands
+        if cmd.action != "anchor" && cmd.action != "file" && cmd.action != "folder" {
+            continue;
+        }
+
+        // Get file path
+        let file_path = match cmd.get_absolute_file_path(&crate::core::sys_data::get_config()) {
+            Some(path) => path,
+            None => continue,
+        };
+
+        // Check if file exists and get current size
+        let current_metadata = match std::fs::metadata(&file_path) {
+            Ok(meta) => meta,
+            Err(_) => continue, // File doesn't exist or can't be read
+        };
+
+        let current_size = current_metadata.len();
+        let current_mtime = current_metadata.modified()
+            .ok()
+            .and_then(|t| t.duration_since(std::time::UNIX_EPOCH).ok())
+            .map(|d| d.as_secs() as i64);
+
+        // Check if file size changed
+        if cmd.file_size != Some(current_size) {
+            crate::utils::log(&format!("HISTORY_RESCAN: File size changed for '{}' ({:?} -> {})",
+                cmd.command, cmd.file_size, current_size));
+
+            // Create updated command with new file size
+            let old_cmd = cmd.clone();
+            cmd.file_size = Some(current_size);
+            if let Some(mtime) = current_mtime {
+                cmd.last_update = mtime;
+            }
+
+            // Record the change in history
+            let conn = initialize_history_db()?;
+            let timestamp = current_mtime.unwrap_or_else(|| {
+                std::time::SystemTime::now()
+                    .duration_since(std::time::UNIX_EPOCH)
+                    .unwrap()
+                    .as_secs() as i64
+            });
+            record_command_modified(&conn, &old_cmd, cmd, timestamp)?;
+
+            file_changes += 1;
+        }
+    }
+
+    crate::utils::log(&format!("HISTORY_RESCAN: Detected {} file changes", file_changes));
+
+    // Step 5: Flush to disk
+    crate::utils::log("HISTORY_RESCAN: Flushing commands to disk...");
+    crate::core::commands::flush_commands(&updated_commands)?;
+
+    crate::utils::log(&format!("HISTORY_RESCAN: Rescan complete. {} total commands", updated_commands.len()));
+
+    Ok(updated_commands)
+}

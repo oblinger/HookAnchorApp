@@ -71,5 +71,6 @@ pub use history::{
     query_history_by_path_prefix,
     update_command,
     delete_command,
+    rescan_with_history,
     HistoryEntry,
 };
