@@ -1142,15 +1142,16 @@ fn run_rescan_command() {
 
     // Update history files after scan completes
     print("\n📝 Updating history files...");
-    let rebuild_all = global_data.config.popup_settings.history_settings
-        .as_ref()
-        .and_then(|h| h.rebuild_all)
-        .unwrap_or(false);
-    if let Err(e) = crate::systems::update_histories(&mut global_data, rebuild_all) {
-        print(&format!("   ⚠️  History update failed: {}", e));
-    } else {
-        print("   ✅ History files updated");
-    }
+    // TODO: Implement new command history tracking system
+    // let rebuild_all = global_data.config.popup_settings.history_settings
+    //     .as_ref()
+    //     .and_then(|h| h.rebuild_all)
+    //     .unwrap_or(false);
+    // if let Err(e) = crate::systems::update_histories(&mut global_data, rebuild_all) {
+    //     print(&format!("   ⚠️  History update failed: {}", e));
+    // } else {
+    //     print("   ✅ History files updated");
+    // }
 
     print("\n📊 Final Summary:");
     print(&format!("   Total commands after rescan: {}", scanned_commands.len()));

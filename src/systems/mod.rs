@@ -61,7 +61,13 @@ pub use popup_server::{
     PopupCommand, PopupControl
 };
 
-// History subsystem - markdown file history tracking
+// History subsystem - command change tracking with SQLite
 pub use history::{
-    update_histories
+    initialize_history_db,
+    record_command_created,
+    record_command_modified,
+    record_command_deleted,
+    query_history_by_date_range,
+    query_history_by_path_prefix,
+    HistoryEntry,
 };
