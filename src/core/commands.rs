@@ -1645,6 +1645,75 @@ pub fn save_commands_to_file(commands: &[Command]) -> Result<(), Box<dyn std::er
     Ok(())
 }
 
+/// Get the path to the commands cache file
+fn get_commands_cache_path() -> PathBuf {
+    let config_dir = dirs::home_dir()
+        .expect("Could not find home directory")
+        .join(".config")
+        .join("hookanchor");
+
+    config_dir.join("commands_cache.json")
+}
+
+/// Save commands to cache (JSON format with metadata)
+pub fn save_commands_to_cache(commands: &[Command]) -> Result<(), Box<dyn std::error::Error>> {
+    let path = get_commands_cache_path();
+
+    // Ensure the directory exists
+    if let Some(parent) = path.parent() {
+        fs::create_dir_all(parent)?;
+    }
+
+    // Serialize to pretty JSON for readability
+    let json = serde_json::to_string_pretty(commands)?;
+
+    fs::write(&path, json)?;
+
+    crate::utils::detailed_log("CACHE_SAVE", &format!("Saved {} commands to cache", commands.len()));
+    Ok(())
+}
+
+/// Load commands from cache (JSON format with metadata)
+/// Returns None if cache doesn't exist or is invalid
+pub fn load_commands_from_cache() -> Option<Vec<Command>> {
+    let path = get_commands_cache_path();
+
+    if !path.exists() {
+        crate::utils::detailed_log("CACHE_LOAD", "Cache file does not exist");
+        return None;
+    }
+
+    match fs::read_to_string(&path) {
+        Ok(contents) => {
+            match serde_json::from_str::<Vec<Command>>(&contents) {
+                Ok(commands) => {
+                    crate::utils::detailed_log("CACHE_LOAD", &format!("Loaded {} commands from cache", commands.len()));
+                    Some(commands)
+                }
+                Err(e) => {
+                    crate::utils::log_error(&format!("Failed to parse commands cache: {}", e));
+                    None
+                }
+            }
+        }
+        Err(e) => {
+            crate::utils::log_error(&format!("Failed to read commands cache: {}", e));
+            None
+        }
+    }
+}
+
+/// Flush commands to both commands.txt and commands_cache.json
+pub fn flush_commands(commands: &[Command]) -> Result<(), Box<dyn std::error::Error>> {
+    // Save to commands.txt (human-readable)
+    save_commands_to_file(commands)?;
+
+    // Save to commands_cache.json (with metadata)
+    save_commands_to_cache(commands)?;
+
+    Ok(())
+}
+
 
 /// Filters commands based on search text with fuzzy matching and patch support
 pub(crate) fn filter_commands_with_patch_support(commands: &[Command], search_text: &str, max_results: usize, _word_separators: &str, debug: bool) -> Vec<Command> {
