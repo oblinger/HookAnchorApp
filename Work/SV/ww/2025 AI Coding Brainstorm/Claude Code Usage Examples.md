@@ -2,6 +2,57 @@
 [[Claude Code End-to-End Fix]] 
 
 
+## Buying Tea
+
+
+> I'm looking for a long list of herbal teas that I might try. Please give me a list of 20 or 30 to consider.
+
+
+> These are presently my favorites, but I'm trying to branch out: - LICORICE: Yogi Egyptian Licorice
+- CINNAMON: Harney & Sons Hot Cinnamon Spice
+- BLACK: Harney & Sons Paris Black Tea
+- GINGER: Twinings Lemon & Ginger, Eq Exch Tumeric Ginger
+- ROOIBOS: Numi Rooibos??, Equal Exchange Vanilla Rooibos
+- PEPPERMINT: Traditional Medicinals Organic Pepermint
+- SPEARIMENT:
+
+
+
+> Great, with a preference towards Amazon, please use the CTR L command to find places where I can purchase the following tea, you can do Google shopping as well as Amazon in order to figure out places in the end open a tab on each purchase option that you find, again when prices are similar, I would prefer to buy from Amazon.
+  1. Tulsi Chai (holy basil chai) - Organic India
+  2. Cardamom tea - Strong, warming, aromatic
+  Warming/Spicy (like ginger):
+  1. Turmeric blends - Gaia Golden Milk, Pukka Three Ginger
+  2. Anise/Star Anise tea - Similar to licorice but more subtle
+  3. Clove tea - Intensely warming and spicy
+  4. Fennel tea - Sweet licorice-like but lighter (Traditional Medicinals
+  5. Moroccan Mint (green tea + spearmint) - Numi, Harney & Sons
+  6. Chocolate Mint - Combines mint with cacao
+  7. Ginger Mint - Fresh, spicy-cool combo
+  8. Ginger Aid - Stronger ginger than Twinings
+  9. Licorice Root - Pure licorice (even bolder than Yogi)
+  10. Harney & Sons Bangkok - Bold, spicy, exotic
+  11. Organic India Tulsi Chai - Spicy, warming, complex
+  12. Numi Moroccan Mint - Your spearmint quest + green tea
+
+
+> Please list the list above as a sequence of markdown links to those URL pages that I can cut and paste and put into a markdown document
+
+⏺ 1. [Organic India Tulsi Chai](https://www.amazon.com/organic-india-tea-tulsi-original/s?k=organic+india+tea+tulsi+original)
+  1. [Ahmad Tea Cardamom - 20 Count (Pack of 6)](https://www.amazon.com/Ahmad-Tea-Cardamom-Count-Pack/dp/B00NBJPDVS)
+  2. [Gaia Herbs Golden Milk](https://www.amazon.com/Gaia-Herbs-Golden-Milk-Ounce/dp/B01MPXTLSH)
+  3. [Pukka Three Ginger - 20 Count (Pack of 3)](https://www.amazon.com/Pukka-Ginger-Organic-Galangal-Turmeric/dp/B07CCW93W7)
+  4. [Badia Star Anise Tea - 10 Bags](https://www.amazon.com/Badia-Star-Anise-Caffeine-Free/dp/B00CQ7KFJG)
+  5. [Clove Tea - Amazon Search](https://www.amazon.com/Clove-Tea/s?k=Clove+Tea)
+  6. [Traditional Medicinals Organic Fennel - 16 Count](https://www.amazon.com/Traditional-Medicinals-Organic-Fennel-Bags/dp/B0089VPTVM)
+  7. [Numi Moroccan Mint - 18 Count](https://www.amazon.com/Numi-Organic-Tea-Biodegradable-Non-Caffeinated/dp/B01JKTC4U0)
+  8. [Harney & Sons Moroccan Mint - 4oz Loose Leaf](https://www.amazon.com/Harney-Sons-Loose-Leaf-Tea/dp/B01DJFWDQQ)
+  9. [Harney & Sons Chocolate Mint](https://www.amazon.com/Harney-Sons-Chocolate-Flavored-Black/dp/B0035AG4XO)
+  10. [Republic of Tea Orange Ginger Mint - 36 Count](https://www.amazon.com/Republic-Tea-Orange-Ginger-36-Count/dp/B001EXNG08)
+  11. [Traditional Medicinals Ginger Aid](https://www.amazon.com/Traditional-Medicinals-Organic-Ginger-Wrapped/dp/B009S7NS9G)
+  12. [Traditional Medicinals Licorice Root](https://www.amazon.com/Traditional-Medicinals-Licorice-Root-Herbal/dp/B000VPGWUQ)
+  13. [Harney & Sons Bangkok - 20 Sachets](https://www.amazon.com/Harney-Sons-Fine-Organic-Bangkok/dp/B002YW3JE6)
+
 
 ## Example New Feature
 

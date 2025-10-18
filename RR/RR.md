@@ -1,8 +1,8 @@
-n:: Research Reference pages
+/n:: Research Reference pages
 
 .[[RR]].  [[LRN Todo]] [[RR Log]] 
   AREAS:	[[AI]], [[ML]],   [Coursera Notes](Coursera%20Notes.md) 
-  TOPICS:	, ,
+  TOPICS:	,  [[RR People]], 
   [[REF]]:		[[RefMisc]], [[Refs]],
   LOGS:	 	,
   CLOSET:	[[Research]],

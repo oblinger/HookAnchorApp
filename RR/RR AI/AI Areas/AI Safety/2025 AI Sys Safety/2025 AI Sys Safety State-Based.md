@@ -22,7 +22,12 @@
     9. goto 1
 
 
-## Approaches
+# LOG
+
+## 2025-10-17 Implementation Sketch
+
+
+## 2025-10-16  Approaches
 
  Key Insights
   1. **Perturbation as a proxy for reachability**: Brilliant insight that "close in state space" suggests "possibly reachable"
