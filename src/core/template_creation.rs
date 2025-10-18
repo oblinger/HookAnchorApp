@@ -656,6 +656,8 @@ pub fn create_command_from_template(
         arg: context.expand(&template.arg),
         patch: context.expand(&template.patch),
         flags: context.expand(&template.flags),
+        last_update: 0,
+        file_size: None,
     };
     command.update_full_line();
     command

@@ -1,15 +1,15 @@
 {
+  "anchor_folder": null,
+  "anchor_name": "Hook Anchor",
+  "anchor_timestamp": 1760755457,
+  "build_time": 1760757195,
+  "last_executed_command": "AMA Page",
+  "last_scan_checksum": null,
+  "last_scan_time": null,
+  "notion_last_scan": null,
+  "server_pid": 7417,
   "window_position": [
     289.0,
     344.0
-  ],
-  "build_time": null,
-  "last_scan_time": null,
-  "last_scan_checksum": null,
-  "last_executed_command": "AMA Page",
-  "server_pid": 7417,
-  "notion_last_scan": null,
-  "anchor_name": "Hook Anchor",
-  "anchor_timestamp": 1760755457,
-  "anchor_folder": null
+  ]
 }

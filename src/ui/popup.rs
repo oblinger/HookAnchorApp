@@ -827,6 +827,8 @@ impl AnchorSelector {
                 action: "alias".to_string(),
                 arg: last_command,
                 flags: String::new(),
+        last_update: 0,
+        file_size: None,
             };
             
             // Open command editor with the pre-filled alias command
@@ -883,6 +885,8 @@ impl AnchorSelector {
                 arg: String::new(),     // Blank arg for user to fill
                 patch: String::new(),   // Blank patch
                 flags: String::new(),   // No flags
+        last_update: 0,
+        file_size: None,
             };
             
             // Open the command editor with this new command
@@ -1615,6 +1619,8 @@ impl AnchorSelector {
             arg: updated_arg, // Use the updated arg from rename operation
             patch: new_command_patch.clone(),
             flags: new_command_flags.clone(),
+        last_update: 0,
+        file_size: None,
         };
 
         // Add the new command to UI
@@ -1889,6 +1895,8 @@ impl AnchorSelector {
                             action: action.to_string(),
                             arg: url,
                             flags: flags, // Use the detected suffix from the grabber
+        last_update: 0,
+        file_size: None,
                         }
                     )
                 } else {
@@ -2473,6 +2481,8 @@ impl AnchorSelector {
             action: "contact".to_string(),
             arg: contact_name.clone(),
             flags: String::new(),
+        last_update: 0,
+        file_size: None,
         };
         
         utils::detailed_log("SHOW_CONTACT", &format!("SHOW_CONTACT: Opening contact: {}", contact_name));
@@ -2521,6 +2531,8 @@ impl AnchorSelector {
                         arg: resolved_cmd.arg.clone(),
                         patch: resolved_cmd.patch.clone(),
                         flags: String::new(),
+        last_update: 0,
+        file_size: None,
                     };
                     
                     utils::detailed_log("TMUX", &format!("🎯 TMUX: Executing JavaScript action with arg: {}", js_cmd.arg));

@@ -19,6 +19,14 @@ pub struct  Command {
     pub action: String,
     pub arg: String,
     pub flags: String,
+
+    // Metadata for history tracking
+    #[serde(default)]
+    pub last_update: i64,        // Unix timestamp - when this command last changed
+
+    // File metadata (only for file-based actions: anchor/file/folder)
+    #[serde(default)]
+    pub file_size: Option<u64>,  // File size when we last checked
     // full_line removed per PRD - reconstructed when needed via to_new_format()
 }
 
@@ -96,6 +104,19 @@ fn normalize_path(path: PathBuf) -> PathBuf {
 }
 
 impl Command {
+    /// Create a new Command with default metadata values
+    pub fn new(patch: String, command: String, action: String, arg: String, flags: String) -> Self {
+        Command {
+            patch,
+            command,
+            action,
+            arg,
+            flags,
+            last_update: 0,
+            file_size: None,
+        }
+    }
+
     /// Returns the absolute file path for the command's argument
     /// Handles relative paths, tilde expansion, and vault-relative paths
     pub fn get_absolute_file_path(&self, config: &Config) -> Option<PathBuf> {
@@ -1326,6 +1347,8 @@ fn create_virtual_anchor_for_patch(patch_name: &str, _config: &Config) -> Option
         arg: String::new(), // NEW SYSTEM: Blank arg, no markdown file
         patch: "orphans".to_string(),
         flags: String::new(), // System-generated, so no flags needed
+        last_update: 0,
+        file_size: None,
     })
 }
 
@@ -1461,6 +1484,8 @@ pub fn parse_command_line(line: &str) -> Result<Command, String> {
             action,
             arg: arg.to_string(),
             flags,
+            last_update: 0,
+            file_size: None,
         });
     }
     
@@ -1486,11 +1511,11 @@ fn deduplicate_commands(commands: Vec<Command>) -> Vec<Command> {
             Some(existing) => {
                 // Keep the better command based on priority
                 if is_better_command(&command, existing) {
-                    crate::utils::detailed_log("AUTO_DEDUP", &format!("Replacing '{}' (patch:'{}' flags:'{}') with better version (patch:'{}' flags:'{}')", 
+                    crate::utils::detailed_log("AUTO_DEDUP", &format!("Replacing '{}' (patch:'{}' flags:'{}') with better version (patch:'{}' flags:'{}')",
                         command.command, existing.patch, existing.flags, command.patch, command.flags));
                     best_commands.insert(key, command);
                 } else {
-                    crate::utils::detailed_log("AUTO_DEDUP", &format!("Keeping existing '{}' (patch:'{}' flags:'{}') over (patch:'{}' flags:'{}')", 
+                    crate::utils::detailed_log("AUTO_DEDUP", &format!("Keeping existing '{}' (patch:'{}' flags:'{}') over (patch:'{}' flags:'{}')",
                         command.command, existing.patch, existing.flags, command.patch, command.flags));
                 }
             }
@@ -1890,6 +1915,8 @@ pub fn merge_similar_commands_with_context(commands: Vec<Command>, config: &Conf
                 action: base_command.action.clone(),
                 arg: base_command.arg.clone(),
                 flags: base_command.flags.clone(),
+        last_update: 0,
+        file_size: None,
             };
             // Set the merge flag
             merged_command.set_flag('M', "");
@@ -2103,6 +2130,8 @@ mod tests {
             action: "action".to_string(),
             arg: "argument".to_string(),
             flags: String::new(),
+        last_update: 0,
+        file_size: None,
         };
         
         let formatted = cmd.to_new_format();
@@ -2117,6 +2146,8 @@ mod tests {
             action: "action".to_string(),
             arg: "argument".to_string(),
             flags: "flag1 flag2".to_string(),
+        last_update: 0,
+        file_size: None,
         };
         
         let formatted = cmd.to_new_format();
@@ -2131,6 +2162,8 @@ mod tests {
             action: "action".to_string(),
             arg: "argument here".to_string(),
             flags: "--flag".to_string(),
+        last_update: 0,
+        file_size: None,
         };
         
         let formatted = cmd.to_new_format();
@@ -2160,6 +2193,8 @@ mod tests {
                 action: "action".to_string(),
                 arg: "arg".to_string(),
                 flags: String::new(),
+        last_update: 0,
+        file_size: None,
                 },
             Command {
                 patch: String::new(),
@@ -2167,6 +2202,8 @@ mod tests {
                 action: "action".to_string(),
                 arg: "arg".to_string(),
                 flags: String::new(),
+        last_update: 0,
+        file_size: None,
                 },
             Command {
                 patch: String::new(),
@@ -2174,6 +2211,8 @@ mod tests {
                 action: "action".to_string(),
                 arg: "arg".to_string(),
                 flags: String::new(),
+        last_update: 0,
+        file_size: None,
                 },
         ];
 
@@ -2194,6 +2233,8 @@ mod tests {
                 action: "action".to_string(),
                 arg: "arg".to_string(),
                 flags: String::new(),
+        last_update: 0,
+        file_size: None,
                 },
             Command {
                 patch: String::new(),
@@ -2201,6 +2242,8 @@ mod tests {
                 action: "action".to_string(),
                 arg: "arg".to_string(),
                 flags: String::new(),
+        last_update: 0,
+        file_size: None,
                 },
             Command {
                 patch: String::new(),
@@ -2208,6 +2251,8 @@ mod tests {
                 action: "action".to_string(),
                 arg: "arg".to_string(),
                 flags: String::new(),
+        last_update: 0,
+        file_size: None,
                 },
         ];
 
@@ -2228,6 +2273,8 @@ mod tests {
                 action: "action".to_string(),
                 arg: "arg".to_string(),
                 flags: String::new(),
+        last_update: 0,
+        file_size: None,
                 },
             Command {
                 patch: String::new(),
@@ -2235,6 +2282,8 @@ mod tests {
                 action: "action".to_string(),
                 arg: "arg".to_string(),
                 flags: String::new(),
+        last_update: 0,
+        file_size: None,
                 },
             Command {
                 patch: String::new(),
@@ -2242,6 +2291,8 @@ mod tests {
                 action: "action".to_string(),
                 arg: "arg".to_string(),
                 flags: String::new(),
+        last_update: 0,
+        file_size: None,
                 },
         ];
 
@@ -2262,6 +2313,8 @@ mod tests {
                 action: "action".to_string(),
                 arg: "arg".to_string(),
                 flags: String::new(),
+        last_update: 0,
+        file_size: None,
                 },
             Command {
                 patch: String::new(),
@@ -2269,6 +2322,8 @@ mod tests {
                 action: "action".to_string(),
                 arg: "arg".to_string(),
                 flags: String::new(),
+        last_update: 0,
+        file_size: None,
                 },
         ];
 
@@ -2288,6 +2343,8 @@ mod tests {
                 action: "action".to_string(),
                 arg: "arg".to_string(),
                 flags: String::new(),
+        last_update: 0,
+        file_size: None,
                 },
             Command {
                 patch: String::new(),
@@ -2295,6 +2352,8 @@ mod tests {
                 action: "action".to_string(),
                 arg: "arg".to_string(),
                 flags: String::new(),
+        last_update: 0,
+        file_size: None,
                 },
             Command {
                 patch: String::new(),
@@ -2302,6 +2361,8 @@ mod tests {
                 action: "action".to_string(),
                 arg: "arg".to_string(),
                 flags: String::new(),
+        last_update: 0,
+        file_size: None,
                 },
             Command {
                 patch: String::new(),
@@ -2309,6 +2370,8 @@ mod tests {
                 action: "action".to_string(),
                 arg: "arg".to_string(),
                 flags: String::new(),
+        last_update: 0,
+        file_size: None,
                 },
         ];
 

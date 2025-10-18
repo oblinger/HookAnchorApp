@@ -310,6 +310,8 @@ impl CommandEditor {
                                         action: self.action.clone(),
                                         arg: self.argument.clone(),
                                         flags: self.flags.clone(),
+        last_update: 0,
+        file_size: None,
                                     };
                                     
                                     // Early validation for self-referential aliases to prevent crashes
@@ -342,6 +344,8 @@ impl CommandEditor {
                 action: self.action.clone(),
                 arg: self.argument.clone(),
                 flags: self.flags.clone(),
+        last_update: 0,
+        file_size: None,
             };
             
             // Early validation for self-referential aliases to prevent crashes
@@ -369,6 +373,8 @@ impl CommandEditor {
             action: self.action.clone(),
             arg: self.argument.clone(),
             flags: self.flags.clone(),
+        last_update: 0,
+        file_size: None,
         };
         
         // ALWAYS add 'U' flag when a command is edited in the command editor
