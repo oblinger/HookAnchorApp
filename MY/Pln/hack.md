@@ -2,6 +2,15 @@
 - [ ] log file trimming
 - [ ] x
 
+Filtering by an anchor name is actually a fairly complex filter. We're not doing at the moment, but we can fix that. First, whenever an anchor put in, we need to find all the anchors they're under this anchor in the anchor tree. Then I think we might want to create an in Memory has map of all of these anchors, that way, when we scan through the commands, we can check to see whether or not a comman under one of those anchors.
+- if a command explicitly lists, it's patch, then that patch is used for matching and if that patch is among the anchors under the selected anchor, then it's included in the list otherwise it's filtered. If not, then the following rules are used.
+- if the prefix of the command matches one of the anchors, then it's included in the list.
+- if the file path of one of the anchors is a prefix of the file path associated with the command, then it's included in the list
+- otherwise it's filtered
+
+My only concern here is that these rules will actually slow down the filtering process. Specifically, I'm worried about that prefix match, if the tree of anchors is noticeable, then it's gonna have to check each one of those anchors to see whether or not it's a prefix. What is your thinking about the slow down involved in this entire filtering process? And can we make it faster?
+
+
 
 [[KMR History]] 
 

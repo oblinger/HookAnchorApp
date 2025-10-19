@@ -6,6 +6,29 @@ TODO
 - [ ] REMEMBER
 	- [ ] I'm thinking to add a new command called remember. This command clears the buffer and allows the user to type in new information that's gonna get remembered. There's a stack of memories and it adds to the top of the stack.
 
+  
+
+## Voice Command Trigger Words
+dictation: commence, ignite
+dictation_pause: standby
+dictation_end: halt
+delete_last_text: strike
+clear_all_text: zap
+send_text: submit
+send_text_with_return: dispatch
+send_text_to_focus: squirt
+insert_new_line: newline, break
+buffer_previous: prior
+buffer_next: post
+
+### Background Voice Commands
+dictation: commence, ignite
+dictation_end: halt
+insert_new_line: break, newline
+buffer_previous: prior
+buffer_next: post
+
+
 # LOG
 
 ### 2025-08-16  Notes

@@ -156,3 +156,85 @@ LIMIT 100;
 - **Single update path**: All command modifications go through `update_command()`
 - **Append-only history**: Never delete from `history.db`, only append
 - **No rebuild**: History is permanent, rescan only adds new entries
+
+## Anchor Selection UI
+
+The History Viewer includes a breadcrumb navigation system for filtering history by patch/anchor.
+
+### Design Philosophy
+
+**Hover-to-Navigate** - User navigates the patch tree by hovering over navigation arrows
+- Fast navigation: Just slide mouse down the tree
+- Single-path rule: Opening new tree closes previous paths
+- Escape key: Collapse one level at a time
+- No "peeking" mode: Hover = Navigate (updates history immediately)
+
+### UI Layout
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│ orphans → Projects → ML → AI Safety                         │  ← Breadcrumb row
+└─────────────────────────────────────────────────────────────┘
+
+▼ Projects                                                     ← Tree (if expanded)
+  ▶ Code
+  • ML          ← bullet indicates "in current path"
+  ▶ Research
+
+┌─────────────────────────────────────────────────────────────┐
+│ Date     Type  Command                                      │  ← History table
+├─────────────────────────────────────────────────────────────┤
+```
+
+### Navigation Behaviors
+
+**Initial State:**
+- Shows breadcrumb path from orphans to current patch
+- No tree visible
+- History table shows entries for current patch and descendants
+
+**Click Breadcrumb Item:**
+- Shows siblings of clicked item (children of its parent)
+- Example: Click "Projects" → Shows siblings (Code, Projects, Research)
+- Current path item marked with bullet (•)
+
+**Hover Arrow (150ms delay):**
+- Expands to show children
+- Immediately navigates to that item (updates breadcrumb + history)
+- Previous trees auto-close (single-path rule)
+
+**Click Item in Tree:**
+- Navigate to that patch (update breadcrumb + history)
+- Close all trees
+
+**Press Escape:**
+- First press: Collapse one level of tree
+- Continue pressing: Collapse more levels
+- When no tree expanded: Close window
+
+### Implementation
+
+**Reusable Widget:** `src/ui/breadcrumb_navigator.rs`
+- Encapsulates all navigation state and behavior
+- Exported from `ui` module for use in popup and history viewer
+- Can be integrated into any egui application
+
+**Patch Structure Enhancements:** `src/core/commands.rs`
+- Added `Patch::parent_patch_name()` - Get parent patch
+- Added `Patch::children_patch_names()` - Get list of children
+- Added `Patch::get_path_from_root()` - Get breadcrumb path
+
+**Key Files:**
+- `src/ui/breadcrumb_navigator.rs` - Widget implementation
+- `src/history_viewer.rs` - Integration into History Viewer
+- `src/core/commands.rs` - Patch accessors (lines 70-109)
+
+### Anchor Filtering
+
+When a patch is selected, the history table filters to show:
+1. **Patch match** - Entries with exact patch match (fast, O(1) lookup)
+2. **Command prefix** - Commands starting with anchor name
+3. **File path prefix** - File paths starting with anchor name
+4. **Descendants** - All entries for child patches (recursive)
+
+This gives a complete view of all activity under a given anchor.
