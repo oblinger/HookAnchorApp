@@ -5,7 +5,7 @@
 
 [package]
 name = "hookanchor"
-version = "0.14.11"
+version = "0.15.0"
 edition = "2021"
 build = "build.rs"
 
@@ -27,6 +27,11 @@ path = "src/popup_launcher.rs"
 [[bin]]
 name = "HookAnchorInstaller"
 path = "src/installer_gui.rs"
+
+# History viewer binary
+[[bin]]
+name = "HookAnchorHistoryViewer"
+path = "src/history_viewer.rs"
 
 # URL Handler binary (deprecated - moved to url_handler.rs.bak)
 # Functionality has been moved to ha binary with --hook flag
