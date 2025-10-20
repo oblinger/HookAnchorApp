@@ -470,6 +470,9 @@ pub trait PopupInterface {
     /// Show command history viewer
     fn show_history_viewer(&mut self);
 
+    /// Toggle showing files in prefix menu
+    fn toggle_show_files(&mut self);
+
     /// Handle uninstall app
     fn handle_uninstall_app(&mut self);
     
@@ -875,6 +878,7 @@ pub enum Action {
     ActivateTmux, // Renamed from ActivateAnchor
     NavigateUpHierarchy,  // Square bracket left - go to parent patch
     NavigateDownHierarchy, // Square bracket right - enter selected anchor prefix menu
+    ToggleShowFiles, // Toggle showing files in prefix menus
 }
 
 impl ActionHandler {
@@ -898,8 +902,9 @@ impl ActionHandler {
             Action::ActivateTmux => "Activate TMUX session for selected command",
             Action::NavigateUpHierarchy => "Navigate up to parent patch",
             Action::NavigateDownHierarchy => "Navigate into selected anchor prefix menu",
+            Action::ToggleShowFiles => "Toggle showing files in prefix menus",
         }.to_string();
-        
+
         Self { action, description }
     }
 }
@@ -986,9 +991,13 @@ impl KeyHandler for ActionHandler {
                 context.popup.navigate_down_hierarchy();
                 KeyHandlerResult::Handled
             },
+            Action::ToggleShowFiles => {
+                context.popup.toggle_show_files();
+                KeyHandlerResult::Handled
+            },
         }
     }
-    
+
     fn description(&self) -> &str {
         &self.description
     }
@@ -1207,6 +1216,7 @@ pub fn create_default_key_registry(config: &super::Config) -> KeyRegistry {
                                 "activate_tmux" => Box::new(ActionHandler::new(Action::ActivateTmux)), // Renamed from activate_anchor
                                 "navigate_up_hierarchy" => Box::new(ActionHandler::new(Action::NavigateUpHierarchy)),
                                 "navigate_down_hierarchy" => Box::new(ActionHandler::new(Action::NavigateDownHierarchy)),
+                                "toggle_show_files" => Box::new(ActionHandler::new(Action::ToggleShowFiles)),
                                 _ => continue, // Skip unknown popup actions
                             };
                             registry.register_keystroke(keystroke, handler);

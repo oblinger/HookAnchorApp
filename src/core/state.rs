@@ -69,6 +69,13 @@ pub struct AppState {
     pub anchor_timestamp: Option<i64>,
     /// Anchor folder - folder path associated with last anchor
     pub anchor_folder: Option<String>,
+    /// Whether to show files in prefix menus (default: true)
+    #[serde(default = "default_show_files")]
+    pub show_files: bool,
+}
+
+fn default_show_files() -> bool {
+    true
 }
 
 impl Default for AppState {
@@ -85,6 +92,7 @@ impl Default for AppState {
             anchor_name: None,
             anchor_timestamp: None,
             anchor_folder: None,
+            show_files: true,
         }
     }
 }

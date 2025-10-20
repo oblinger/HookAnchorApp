@@ -122,7 +122,20 @@ impl AnchorSelector {
     // =============================================================================
     // Window Size Management
     // =============================================================================
-    
+
+    /// Truncate command name if it exceeds max_characters from config
+    fn truncate_command_name(&self, text: String) -> String {
+        if let Some(max_len) = self.popup_state.config.popup_settings.max_characters {
+            if text.len() > max_len {
+                format!("{}...", &text[..max_len.saturating_sub(3)])
+            } else {
+                text
+            }
+        } else {
+            text
+        }
+    }
+
     /// Determine the appropriate window size mode based on current UI state
     fn determine_window_size_mode(&self) -> WindowSizeMode {
         if self.dialog.visible {
@@ -604,6 +617,23 @@ impl PopupInterface for AnchorSelector {
         self.show_history_viewer_impl();
     }
 
+    fn toggle_show_files(&mut self) {
+        // Toggle the show_files flag
+        self.popup_state.show_files = !self.popup_state.show_files;
+
+        // Update app_state and save to disk
+        self.popup_state.app_state.show_files = self.popup_state.show_files;
+        if let Err(e) = crate::core::state::save_state(&self.popup_state.app_state) {
+            crate::utils::log_error(&format!("Failed to save show_files state: {}", e));
+        }
+
+        crate::utils::log(&format!("Show files toggled to: {}", self.popup_state.show_files));
+
+        // Force display update by triggering recompute
+        // The display will automatically update on next frame since get_display_commands()
+        // checks show_files state
+    }
+
     fn handle_uninstall_app(&mut self) {
         // Call the real implementation
         self.handle_uninstall_app_impl();
@@ -702,18 +732,27 @@ impl AnchorSelector {
         detailed_log("GHOST_DEBUG", &format!("Input: '{}' (action: {}), Resolved to: '{}' (action: {})",
             input.command, input.action, resolved_command.command, resolved_command.action));
 
+        // Handle "file" action - convert to "doc" action for execution
+        let actual_input = if input.action == "file" {
+            let mut file_cmd = input.clone();
+            file_cmd.action = "doc".to_string();
+            detailed_log("FILE_EXEC", &format!("Converting file action to doc action for: {}", input.arg));
+            file_cmd
+        } else {
+            input.clone()
+        };
 
         // Convert command to action
         use crate::execute::command_to_action;
-        let mut action = command_to_action(input);
+        let mut action = command_to_action(&actual_input);
 
         // Create template context and expand all action parameters
         let mut template_context = self.create_template_context();
 
         // Add command's arg to template context for expansion (fixes {{arg}} template expansion)
-        if !input.arg.is_empty() {
-            template_context.add_variable("arg".to_string(), input.arg.clone());
-            detailed_log("POPUP_EXEC", &format!("Added command arg to template context: '{}'", input.arg));
+        if !actual_input.arg.is_empty() {
+            template_context.add_variable("arg".to_string(), actual_input.arg.clone());
+            detailed_log("POPUP_EXEC", &format!("Added command arg to template context: '{}'", actual_input.arg));
         }
 
         // Check if any grabber functionality should be executed
@@ -744,8 +783,8 @@ impl AnchorSelector {
                 // Since template expansion was already done, we can pass minimal context
                 // The arg from the command should be available for any remaining expansions
                 let mut variables = std::collections::HashMap::new();
-                if !input.arg.is_empty() {
-                    variables.insert("arg".to_string(), input.arg.clone());
+                if !actual_input.arg.is_empty() {
+                    variables.insert("arg".to_string(), actual_input.arg.clone());
                 }
                 let _ = crate::execute::execute_on_server(&action, Some(variables));
                 detailed_log("POPUP_EXEC", "Action sent to server");
@@ -867,6 +906,7 @@ impl AnchorSelector {
             "show_folder" => self.show_folder(),
             "activate_tmux" => self.activate_tmux(),
             "show_history_viewer" => self.show_history_viewer(),
+            "toggle_show_files" => self.toggle_show_files(),
             _ => crate::utils::log_error(&format!("Unknown popup action: {}", popup_action)),
         }
     }
@@ -1864,6 +1904,17 @@ impl AnchorSelector {
     /// Compute the commands to display based on current menu state
     /// Returns (commands_to_display, is_in_submenu, menu_prefix, inside_count)
     fn get_display_commands(&self) -> (Vec<Command>, bool, Option<String>, usize) {
+        // Check if we should add folder files
+        if self.popup_state.show_files && self.popup_state.is_in_prefix_menu {
+            // Get the anchor from prefix menu info
+            if let Some((_, resolved_anchor)) = &self.popup_state.prefix_menu_info {
+                // Get folder files from the anchor
+                let folder_files = self.get_folder_files(resolved_anchor);
+                return self.popup_state.get_display_commands_with_files(folder_files);
+            }
+        }
+
+        // Default: no files to add
         self.popup_state.get_display_commands()
     }
     
@@ -2517,7 +2568,62 @@ impl AnchorSelector {
         
         current_cmd
     }
-    
+
+    /// Get list of files from anchor's folder for display in prefix menu
+    /// Returns a Vec of temporary Command structs with action type "file"
+    fn get_folder_files(&self, anchor: &Command) -> Vec<Command> {
+        use std::fs;
+
+        // Get the folder path from the anchor
+        let folder_path = match anchor.get_absolute_folder_path(&self.popup_state.config) {
+            Some(path) => path,
+            None => return Vec::new(),
+        };
+
+        // Check if folder exists
+        if !folder_path.exists() || !folder_path.is_dir() {
+            return Vec::new();
+        }
+
+        // Read directory entries (non-recursive)
+        let entries = match fs::read_dir(&folder_path) {
+            Ok(entries) => entries,
+            Err(_) => return Vec::new(),
+        };
+
+        // Collect files and sort alphabetically
+        let mut files: Vec<(String, String)> = Vec::new();
+        for entry in entries {
+            if let Ok(entry) = entry {
+                let path = entry.path();
+                // Only include files, not directories
+                if path.is_file() {
+                    if let Some(file_name) = path.file_name() {
+                        let name = file_name.to_string_lossy().to_string();
+                        let full_path = path.to_string_lossy().to_string();
+                        files.push((name, full_path));
+                    }
+                }
+            }
+        }
+
+        // Sort alphabetically by file name
+        files.sort_by(|a, b| a.0.cmp(&b.0));
+
+        // Convert to Command structs with "file" action type
+        files.into_iter().map(|(name, path)| {
+            Command {
+                command: name,
+                action: "file".to_string(),
+                arg: path,
+                patch: String::new(),
+                flags: String::new(),
+                last_update: 0,
+                file_size: None,
+            }
+        }).collect()
+    }
+
     /// Show folder functionality - launches the first folder matching current search
     fn show_folder_impl(&mut self) {
         use crate::utils;
@@ -4246,8 +4352,8 @@ impl eframe::App for AnchorSelector {
                 
                 // Command list - check for submenu and display accordingly
                 // No scroll area - window will size to accommodate max_rows
-                // Only show commands if fully loaded and user has typed something (not just ghost text)
-                if self.loading_state == LoadingState::Loaded && !self.filtered_commands().is_empty() && !self.popup_state.raw_search_text().is_empty() {
+                // Show commands if fully loaded and there are filtered commands (includes prefix menus from ghost input)
+                if self.loading_state == LoadingState::Loaded && !self.filtered_commands().is_empty() {
                     // Get the display commands using our new method
                     let (display_commands, is_submenu, menu_prefix, inside_count) = self.get_display_commands();
                     
@@ -4296,7 +4402,7 @@ impl eframe::App for AnchorSelector {
                                     let is_separator = PopupState::is_separator_command(cmd);
                                     
                                     // Determine display text with same logic as rendering
-                                    let display_text = if is_submenu && !is_separator && i < inside_count {
+                                    let mut display_text = if is_submenu && !is_separator && i < inside_count {
                                         if let Some(ref prefix) = menu_prefix {
                                             if cmd.command.len() > prefix.len() {
                                                 let prefix_end = prefix.len();
@@ -4322,7 +4428,12 @@ impl eframe::App for AnchorSelector {
                                     } else {
                                         cmd.command.clone()
                                     };
-                                    
+
+                                    // Truncate if too long (but not separators)
+                                    if !is_separator {
+                                        display_text = self.truncate_command_name(display_text);
+                                    }
+
                                     // Measure the text width
                                     let text_width = if is_separator {
                                         ui.fonts(|f| f.glyph_width(&list_font_id, '—') * 3.0)
@@ -4466,7 +4577,14 @@ impl eframe::App for AnchorSelector {
                                             // Always show full command name
                                             cmd.command.clone()
                                         };
-                                        
+
+                                        // Truncate if too long (but not separators)
+                                        let display_text = if !is_separator {
+                                            self.truncate_command_name(display_text)
+                                        } else {
+                                            display_text
+                                        };
+
                                         if is_separator {
                                             // Separator - not selectable, different styling
                                             let mut separator_font_id = ui.style().text_styles.get(&egui::TextStyle::Body).unwrap().clone();
@@ -4571,7 +4689,10 @@ impl eframe::App for AnchorSelector {
                                     // Always show full command name
                                     cmd.command.clone()
                                 };
-                                
+
+                                // Truncate if too long
+                                let display_text = self.truncate_command_name(display_text);
+
                                 // Left-justified selectable label with draggable margins
                                 ui.horizontal(|ui| {
                                     // Left margin draggable area

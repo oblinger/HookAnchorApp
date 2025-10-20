@@ -11,6 +11,7 @@ popup_settings:
   merge_similar:          true         # Merging similar commands in popup
   max_rows:               25           # Max number of rows in the list of matching commands
   max_columns:            4            # Max columns in list of matching commands
+  max_characters:         30           # Maximum characters for command names before truncation
   word_separators:        " ._-!"      # Word separator chars for submenus and command merging
   scan_interval_seconds:  600          # How many seconds between automatic rescanning of the filesystem
   idle_timeout_seconds:   60           # Hide popup after this many seconds of inactivity
@@ -317,6 +318,13 @@ actions:
     popup_action: force_rebuild
     close_popup: false
   
+  kb_toggle_show_files:
+    description: "Toggle showing files in prefix menu"
+    action_type: popup
+    key: "Cmd+F"
+    popup_action: toggle_show_files
+    close_popup: false
+
   kb_activate_tmux:
     description: "Activate TMUX session for selected folder/anchor"
     action_type: popup

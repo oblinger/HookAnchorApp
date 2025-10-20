@@ -30,6 +30,8 @@ pub struct PopupState {
     pub prefix_menu_info: Option<(Command, Command)>,
     /// Number of commands in the prefix menu (before separator)
     pub prefix_menu_count: usize,
+    /// Whether to show files from anchor folder in prefix menu
+    pub show_files: bool,
 }
 
 impl PopupState {
@@ -46,6 +48,7 @@ impl PopupState {
             display_layout,
             selection,
             config,
+            show_files: app_state.show_files,  // Load from persistent state
             app_state,
             is_in_prefix_menu: false,
             prefix_menu_info: None,
@@ -69,6 +72,7 @@ impl PopupState {
             display_layout,
             selection,
             config,
+            show_files: app_state.show_files,  // Load from persistent state
             app_state,
             is_in_prefix_menu: false,
             prefix_menu_info: None,
@@ -312,6 +316,53 @@ impl PopupState {
             (self.filtered_commands.clone(), true, menu_prefix, self.prefix_menu_count)
         } else {
             (self.filtered_commands.clone(), false, None, 0)
+        }
+    }
+
+    /// Get display commands with file entries if show_files is enabled
+    /// This is called from AnchorSelector to get the final display list
+    /// Returns (commands_to_display, is_in_prefix_menu, menu_prefix, inside_count)
+    pub fn get_display_commands_with_files(&self, folder_files: Vec<Command>) -> (Vec<Command>, bool, Option<String>, usize) {
+        if self.is_in_prefix_menu && self.show_files && !folder_files.is_empty() {
+            let mut commands = self.filtered_commands.clone();
+
+            // Find the position of the "============" separator
+            let separator_pos = commands.iter().position(|cmd|
+                cmd.action == "separator" && cmd.command.starts_with("=")
+            );
+
+            if let Some(pos) = separator_pos {
+                // Create dash separator with alternating dashes and spaces for visibility
+                let dash_separator = Command {
+                    patch: String::new(),
+                    command: "- - - - - - - - - - - -".to_string(),
+                    action: "separator".to_string(),
+                    arg: String::new(),
+                    flags: String::new(),
+                    last_update: 0,
+                    file_size: None,
+                };
+
+                // Insert dash separator before "============"
+                commands.insert(pos, dash_separator);
+
+                // Insert file entries after dash separator
+                for (i, file_cmd) in folder_files.into_iter().enumerate() {
+                    commands.insert(pos + 1 + i, file_cmd);
+                }
+            }
+
+            // Extract menu prefix
+            let menu_prefix = if let Some((_, resolved_command)) = &self.prefix_menu_info {
+                Some(resolved_command.command.clone())
+            } else {
+                None
+            };
+
+            (commands, true, menu_prefix, self.prefix_menu_count)
+        } else {
+            // No files to add, return normal display commands
+            self.get_display_commands()
         }
     }
     
