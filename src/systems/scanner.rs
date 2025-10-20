@@ -66,6 +66,45 @@ use chrono::Local;
 /// NOTE: "anchor" is handled separately by delete_anchors() function
 pub const SCANNER_GENERATED_ACTIONS: &[&str] = &["markdown", "folder", "app", "open_app", "doc"];
 
+// ============================================================================
+// Scanner Result Structs (Pure Discovery Pattern)
+// ============================================================================
+
+/// Result of scanning for file modifications
+#[derive(Debug, Clone)]
+pub struct ModifiedFilesResult {
+    /// Commands that were modified: (old_command, new_command)
+    pub modifications: Vec<(Command, Command)>,
+    /// Number of files checked
+    pub files_checked: usize,
+    /// Number of modifications found
+    pub modifications_found: usize,
+}
+
+/// Result of loading manual edits from commands.txt
+#[derive(Debug, Clone)]
+pub struct ManualEditsResult {
+    /// Newly created commands (not in cache)
+    pub created: Vec<Command>,
+    /// Updated commands: (old_command, new_command)
+    pub updated: Vec<(Command, Command)>,
+    /// Number of edits applied
+    pub edits_applied: usize,
+}
+
+/// Result of scanning for new files
+#[derive(Debug, Clone)]
+pub struct NewFilesResult {
+    /// Newly discovered files
+    pub new_files: Vec<Command>,
+    /// Command names that should be removed (files deleted)
+    pub removed_commands: Vec<String>,
+    /// Statistics
+    pub files_scanned: usize,
+    pub files_added: usize,
+    pub files_removed: usize,
+}
+
 
 /// Check if a command is a Notion anchor
 /// Simple check that doesn't require accessing the actions module
@@ -411,6 +450,66 @@ pub fn scan_modified_files(commands: &mut Vec<Command>, verbose: bool) -> Result
     crate::utils::log(&format!("SCAN_MODIFIED: Detected {} file changes", file_changes));
 
     Ok(file_changes)
+}
+
+/// Scans filesystem to detect MODIFIED files (pure discovery version)
+/// Returns modifications without mutating commands or recording history
+/// Caller should use commandstore::bulk_update() to apply changes
+pub fn scan_modified_files_v2(commands: &[Command]) -> Result<ModifiedFilesResult, Box<dyn std::error::Error>> {
+    let mut modifications = Vec::new();
+    let mut files_checked = 0;
+
+    for cmd in commands.iter() {
+        // Only check file-based commands
+        if !cmd.is_path_based() {
+            continue;
+        }
+
+        files_checked += 1;
+
+        // Get file path
+        let file_path = match cmd.get_absolute_file_path(&crate::core::sys_data::get_config()) {
+            Some(path) => path,
+            None => continue,
+        };
+
+        // Check if file exists and get current size
+        let current_metadata = match std::fs::metadata(&file_path) {
+            Ok(meta) => meta,
+            Err(_) => continue, // File doesn't exist or can't be read
+        };
+
+        let current_size = current_metadata.len();
+        let current_mtime = current_metadata.modified()
+            .ok()
+            .and_then(|t| t.duration_since(std::time::UNIX_EPOCH).ok())
+            .map(|d| d.as_secs() as i64);
+
+        // Check if file size changed
+        // Only record if we have BOTH old and new sizes
+        if let Some(old_size) = cmd.file_size {
+            if old_size != current_size {
+                // Create updated command with new file size
+                let old_cmd = cmd.clone();
+                let mut new_cmd = cmd.clone();
+                new_cmd.file_size = Some(current_size);
+                if let Some(mtime) = current_mtime {
+                    new_cmd.last_update = mtime;
+                }
+
+                modifications.push((old_cmd, new_cmd));
+            }
+        }
+        // Note: If file_size is None, that's handled by scan_new_files
+    }
+
+    let modifications_found = modifications.len();
+
+    Ok(ModifiedFilesResult {
+        modifications,
+        files_checked,
+        modifications_found,
+    })
 }
 
 /// Scans filesystem for NEW files not yet in the command list
