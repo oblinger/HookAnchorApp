@@ -87,16 +87,6 @@ pub struct PopupSettings {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(default)]
 pub struct HistorySettings {
-    /// String to look for that indicates a log section in markdown files
-    pub anchor_log_indicator: Option<String>,
-    /// Heading levels to treat as log entries (1 = H1, 2 = H2, etc.)
-    pub anchor_levels: Option<Vec<u8>>,
-    /// Minimum file size increase (in bytes) to add a new whole-file entry
-    pub history_increment_size: Option<u64>,
-    /// Enable/disable history tracking entirely
-    pub enabled: Option<bool>,
-    /// Rebuild all histories from scratch on each rescan (default: false)
-    pub rebuild_all: Option<bool>,
     /// Maximum number of history entries to load in the history viewer (default: 50000)
     pub viewable_history_limit: Option<usize>,
     /// Width of the tree navigation sidebar in pixels (default: 250)
@@ -114,11 +104,6 @@ pub struct HistorySettings {
 impl Default for HistorySettings {
     fn default() -> Self {
         HistorySettings {
-            anchor_log_indicator: Some("# Log".to_string()),
-            anchor_levels: Some(vec![1, 2]),
-            history_increment_size: Some(1000),
-            enabled: Some(true),
-            rebuild_all: Some(false),
             viewable_history_limit: Some(50000),
             tree_sidebar_width: Some(250.0),
             tree_sidebar_min_width: Some(50.0),

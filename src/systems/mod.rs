@@ -21,6 +21,7 @@ pub(crate) mod obsidian;
 pub(crate) mod setup_assistant;
 pub(crate) mod popup_server;
 pub(crate) mod history;
+pub(crate) mod commandstore;
 
 // ============================================================================
 // PUBLIC API - All external access goes through these re-exports
@@ -68,11 +69,15 @@ pub use history::{
     initialize_history_db,
     record_command_created,
     record_command_modified,
-    record_command_deleted,
-    query_history_by_date_range,
-    query_history_by_path_prefix,
-    update_command,
-    delete_command,
-    rescan_with_history,
     HistoryEntry,
+};
+
+// CommandStore subsystem - unified command persistence and history
+pub use commandstore::{
+    load,            // Load commands from storage
+    add,             // Add single command
+    update,          // Update single command
+    delete,          // Delete command by name
+    bulk_add,        // Add multiple commands (for scanner)
+    bulk_update,     // Update multiple commands (for scanner)
 };
