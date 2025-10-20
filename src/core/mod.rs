@@ -43,9 +43,12 @@ pub use application_state::{
 
 // System data
 pub use sys_data::{
-    SysData, load_data, get_sys_data, get_config, 
+    SysData, load_data, get_sys_data, get_config,
     initialize_config, mark_commands_modified,
-    DEFAULT_LOG_PATH, DEFAULT_MAX_LOG_SIZE
+    DEFAULT_LOG_PATH, DEFAULT_MAX_LOG_SIZE,
+    // New unified API
+    initialize, get_commands, get_patches, set_commands
+    // add_command/delete_command exported from command_ops for backward compat
 };
 
 // Command types and operations
@@ -72,7 +75,8 @@ pub use commands::{
 
 // User-level command operations
 pub use command_ops::{
-    add_command, delete_command, rename_associated_data
+    add_command, delete_command, // Backward compat wrappers around sys_data
+    rename_associated_data
 };
 
 // Patch inference system

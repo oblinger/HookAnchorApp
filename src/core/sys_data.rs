@@ -1,7 +1,43 @@
 //! System data management and operations
-//! 
-//! This module handles all system-wide data operations including loading, saving,
-//! caching, and managing the global application state.
+//!
+//! This module manages the global singleton for application state (config, commands, patches).
+//! All command persistence, patch resolution, and history tracking handled through this interface.
+//!
+//! # Public API (Proposed Merged Interface with commandstore)
+//!
+//! ## Initialization
+//! - `initialize()` → Load config, commands, patches into singleton (call once at startup)
+//!
+//! ## Read Operations
+//! - `get_config()` → Get configuration (cached singleton)
+//! - `get_commands()` → Get copy of commands from singleton
+//! - `get_patches()` → Get copy of patches from singleton
+//! - `get_sys_data()` → Get full SysData bundle (legacy, prefer specific getters)
+//!
+//! ## Write Operations (all auto-flush: inference + save to disk)
+//! - `set_commands(Vec<Command>)` → Replace all commands, run inference, save
+//! - `add_command(Command)` → Add single command, record in history, save
+//! - `delete_command(&str)` → Delete command by name, save
+//!
+//! ## Typical Usage Patterns
+//! ```rust
+//! // Startup
+//! sys_data::initialize()?;
+//!
+//! // Batch modification (scanner, rescan, etc)
+//! let mut commands = sys_data::get_commands();
+//! // ... modify many commands ...
+//! sys_data::set_commands(commands)?; // auto-flush: inference + save
+//!
+//! // Single command from UI
+//! sys_data::add_command(new_cmd)?; // auto-flush + history
+//! sys_data::delete_command("Foo")?; // auto-flush
+//! ```
+//!
+//! ## Migration Notes
+//! - Replaces `commandstore` module entirely
+//! - Consolidates all command state management in one place
+//! - History tracking integrated with add/delete operations
 
 use std::collections::HashMap;
 use std::sync::{Mutex, OnceLock};
@@ -170,6 +206,99 @@ pub fn mark_commands_modified() {
     let flag = COMMANDS_MODIFIED.get_or_init(|| std::sync::atomic::AtomicBool::new(false));
     flag.store(true, std::sync::atomic::Ordering::Relaxed);
     crate::utils::detailed_log("COMMANDS_RELOAD", "Commands marked as modified - will reload on next get_sys_data() call");
+}
+
+// ============================================================================
+// NEW API - Command State Management
+// ============================================================================
+
+/// Initialize the system by loading config, commands, and patches into singleton
+/// Call this once at application startup
+pub fn initialize() -> Result<(), String> {
+    // Initialize config first
+    initialize_config()?;
+
+    // Load data into singleton
+    let _ = load_data(Vec::new(), false);
+
+    Ok(())
+}
+
+/// Get a copy of commands from the singleton
+pub fn get_commands() -> Vec<Command> {
+    let (sys_data, _) = get_sys_data();
+    sys_data.commands
+}
+
+/// Get a copy of patches from the singleton
+pub fn get_patches() -> HashMap<String, Patch> {
+    let (sys_data, _) = get_sys_data();
+    sys_data.patches
+}
+
+/// Replace all commands in singleton, run patch inference, and save to disk
+/// This is the primary way to perform batch modifications
+pub fn set_commands(commands: Vec<Command>) -> Result<(), Box<dyn std::error::Error>> {
+    let sys = SYS_DATA.get_or_init(|| Mutex::new(None));
+    let mut sys_data = sys.lock().unwrap();
+
+    let config = get_config();
+    let mut new_commands = commands;
+
+    // Run patch resolution (inference + normalization)
+    let resolution = crate::core::resolve_patches(&mut new_commands, false);
+    let patches = resolution.patches;
+
+    // Save to disk if changes were made
+    if resolution.changes_made {
+        crate::systems::commandstore::save(&new_commands)?;
+    }
+
+    // Update singleton
+    *sys_data = Some(SysData {
+        config,
+        commands: new_commands,
+        patches,
+    });
+
+    Ok(())
+}
+
+/// Add a single command, record in history, run inference, and save
+/// Convenience function for single-command additions from UI
+pub fn add_command(cmd: Command) -> Result<(), Box<dyn std::error::Error>> {
+    // Initialize history database
+    let conn = crate::systems::history::initialize_history_db()?;
+
+    // Get current timestamp
+    let timestamp = std::time::SystemTime::now()
+        .duration_since(std::time::UNIX_EPOCH)?
+        .as_secs() as i64;
+
+    // Record creation in history
+    crate::systems::history::record_command_created(&conn, &cmd, timestamp)?;
+
+    // Get current commands and add new one
+    let mut commands = get_commands();
+    commands.push(cmd);
+
+    // Use set_commands to handle inference and save
+    set_commands(commands)?;
+
+    Ok(())
+}
+
+/// Delete a command by name, run inference, and save
+/// Convenience function for single-command deletions from UI
+pub fn delete_command(cmd_name: &str) -> Result<(), Box<dyn std::error::Error>> {
+    // Get current commands and remove the specified one
+    let mut commands = get_commands();
+    commands.retain(|c| c.command != cmd_name);
+
+    // Use set_commands to handle inference and save
+    set_commands(commands)?;
+
+    Ok(())
 }
 
 /// Load data without caching - used as fallback when cache is locked
