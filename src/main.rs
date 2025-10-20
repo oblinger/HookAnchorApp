@@ -31,7 +31,30 @@ fn main() -> Result<(), eframe::Error> {
     hookanchor::utils::init_error_queue();
     
     let args: Vec<String> = env::args().collect();
-    
+
+    // Parse optional --input and --action flags (these are for GUI mode)
+    let mut input_text: Option<String> = None;
+    let mut action_name: Option<String> = None;
+    let mut has_other_args = false;
+
+    let mut i = 1;
+    while i < args.len() {
+        match args[i].as_str() {
+            "--input" if i + 1 < args.len() => {
+                input_text = Some(args[i + 1].clone());
+                i += 2;
+            }
+            "--action" if i + 1 < args.len() => {
+                action_name = Some(args[i + 1].clone());
+                i += 2;
+            }
+            _ => {
+                has_other_args = true;
+                i += 1;
+            }
+        }
+    }
+
     // ⚠️ CRITICAL URL HANDLING WARNING ⚠️
     // READ docs/URL_HANDLING.md BEFORE MODIFYING ANY URL HANDLING CODE!
     // Incorrect URL handling has caused system-wide lockups and lost hours of work.
@@ -41,10 +64,10 @@ fn main() -> Result<(), eframe::Error> {
     // When a URL like "hook://cnnp" is opened, macOS launches the app with no arguments (args.len() == 1)
     // and sends the URL via Apple Events to the running application.
     // URL handling must be implemented in the GUI application using Apple Event handlers.
-    
-    
-    // If arguments are provided, run in command-line mode (no GUI)
-    if args.len() > 1 {
+
+
+    // If arguments are provided (other than --input/--action), run in command-line mode (no GUI)
+    if has_other_args {
         // CLI mode needs server - ensure it's running
         if let Err(e) = hookanchor::execute::activate_command_server(false) {
             hookanchor::utils::log_error(&format!("Failed to activate command server: {}", e));
@@ -108,7 +131,9 @@ fn main() -> Result<(), eframe::Error> {
         }
 
         // No URL detected and no installer needed - proceed with normal GUI mode
-        let result = hookanchor::ui::run_gui_with_prompt("", ApplicationState::minimal());
+        let initial_input = input_text.as_deref().unwrap_or("");
+        let initial_action = action_name.as_deref();
+        let result = hookanchor::ui::run_gui_with_prompt(initial_input, initial_action, ApplicationState::minimal());
 
         result
     }

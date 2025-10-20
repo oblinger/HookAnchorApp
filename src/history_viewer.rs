@@ -531,6 +531,39 @@ impl HistoryViewer {
         }
     }
 
+    /// Edit the currently selected history entry
+    /// Opens the popup with the command pre-loaded and executes the edit_selection action
+    fn edit_selected_entry(&self) {
+        if let Some(idx) = self.selected_index {
+            if idx < self.filtered_entries.len() {
+                let entry = &self.filtered_entries[idx];
+
+                // Get the path to the ha binary
+                let exe_dir = hookanchor::utils::get_binary_dir();
+                let ha_path = exe_dir.join("ha");
+
+                // Open popup with command pre-loaded and execute edit_selection action
+                // This will: 1) Open popup, 2) Set input to command name, 3) Execute edit_selection template
+                let result = std::process::Command::new(&ha_path)
+                    .arg("--popup")
+                    .arg("--input")
+                    .arg(&entry.command)
+                    .arg("--action")
+                    .arg("edit_selection")
+                    .spawn();
+
+                match result {
+                    Ok(_) => {
+                        hookanchor::utils::log(&format!("HISTORY_VIEWER: Opened editor for command '{}'", entry.command));
+                    }
+                    Err(e) => {
+                        hookanchor::utils::log_error(&format!("HISTORY_VIEWER: Failed to open editor for '{}': {}", entry.command, e));
+                    }
+                }
+            }
+        }
+    }
+
     /// Format timestamp as readable date (date only, no time)
     fn format_timestamp(timestamp: i64) -> String {
         use chrono::{Local, TimeZone};
@@ -680,6 +713,23 @@ impl eframe::App for HistoryViewer {
                             }
                         }
                     }
+                }
+            }
+
+            // Edit selected command key (configurable via history_viewer.key_bindings.edit_selection)
+            // Default: ";" (Semicolon)
+            let config = hookanchor::core::get_config();
+            let edit_key_string = config.history_viewer
+                .as_ref()
+                .and_then(|hv| hv.key_bindings.as_ref())
+                .and_then(|kb| kb.edit_selection.as_ref())
+                .map(|s| s.as_str())
+                .unwrap_or(";");
+
+            // Parse the key string and check if it's pressed
+            if let Ok(keystroke) = hookanchor::core::Keystroke::from_key_string(edit_key_string) {
+                if i.key_pressed(keystroke.key) {
+                    self.edit_selected_entry();
                 }
             }
         });

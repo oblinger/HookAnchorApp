@@ -1199,6 +1199,7 @@ pub fn create_default_key_registry(config: &super::Config) -> KeyRegistry {
                                 "show_contact" => Box::new(ActionHandler::new(Action::ShowContact)),
                                 "show_keys" => Box::new(ActionHandler::new(Action::ShowKeys)),
                                 "show_history" => Box::new(ActionHandler::new(Action::ShowHistory)),
+                                "show_history_viewer" => Box::new(ActionHandler::new(Action::ShowHistory)),
                                 "edit_active_command" => Box::new(ActionHandler::new(Action::EditActiveCommand)),
                                 "edit_input_command" => Box::new(ActionHandler::new(Action::EditInputCommand)),
                                 "open_editor" => Box::new(ActionHandler::new(Action::OpenEditor)),

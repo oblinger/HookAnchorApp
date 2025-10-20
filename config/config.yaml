@@ -33,9 +33,17 @@ popup_settings:
   
   # Rename associated data when editing command names
   rename_doc:             true         # Rename document files when command name changes
-  rename_folder:          true         # Rename anchor folders when command name changes  
+  rename_folder:          true         # Rename anchor folders when command name changes
   rename_patch:           true         # Update patch names and commands when patch is renamed
   rename_prefix:          true         # Update command prefixes when prefix command is renamed
+
+  # History tracking settings
+  history_settings:
+    rebuild_all: true  # Set to true for now to rebuild from scratch
+    anchor_log_indicator: "# Log"
+    anchor_levels: [1, 2]
+    history_increment_size: 1000
+    enabled: true
 
   # Cloud document scanning configuration (Phase 1: Logging only)
   cloud_scan_roots:
@@ -54,6 +62,15 @@ launcher_settings:
   use_javascript_tmux_activation: "true"   # Use JavaScript TMUX implementation
   tmux_startup_command:   "claude --continue --dangerously-skip-permissions"  # Command to run in tmux session after activation
 
+
+# =================================================================
+# HISTORY VIEWER SETTINGS
+# =================================================================
+# Settings specific to the history viewer GUI
+
+history_viewer:
+  key_bindings:
+    edit_selection: ";"  # Key to edit the selected command in history viewer
 
 
 # =================================================================
@@ -293,6 +310,13 @@ actions:
   # POPUP KEYBOARD ACTIONS - Keyboard shortcuts for popup control
   # =================================================================
    
+  kb_force_rebuild:
+    description: "Force rebuild: restart server + rescan"
+    action_type: popup
+    key: "Cmd+B"
+    popup_action: force_rebuild
+    close_popup: false
+  
   kb_activate_tmux:
     description: "Activate TMUX session for selected folder/anchor"
     action_type: popup
@@ -338,7 +362,14 @@ actions:
     key: "/"
     popup_action: show_folder
     close_popup: true
-  
+
+  kb_show_history_viewer:
+    description: "Show history viewer"
+    action_type: popup
+    key: "`"
+    popup_action: show_history_viewer
+    close_popup: true
+
   kb_show_keys:
     description: "Show keyboard shortcuts"
     action_type: popup
@@ -346,13 +377,6 @@ actions:
     popup_action: show_keys
     close_popup: false
       
-  kb_force_rebuild:
-    description: "Force rebuild: restart server + rescan"
-    action_type: popup
-    key: "`"
-    popup_action: force_rebuild
-    close_popup: false
-  
   kb_execute:
     description: "Execute selected command"
     action_type: popup
@@ -732,12 +756,3 @@ grabber_rules:
     action_type: text
     description: "Type text with 0.5 second delay"
     delay: 0.5  # Wait only 0.5 seconds before typing
-  
-
-  # History tracking settings
-  history_settings:
-    rebuild_all: true  # Set to true for now to rebuild from scratch
-    anchor_log_indicator: "# Log"
-    anchor_levels: [1, 2]
-    history_increment_size: 1000
-    enabled: true

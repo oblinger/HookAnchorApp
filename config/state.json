@@ -1,15 +1,30 @@
 {
   "window_position": [
-    1618.0,
-    485.0
+    880.0,
+    440.0
   ],
-  "build_time": 1760760221,
+  "history_viewer_state": {
+    "position": [
+      -2482.0,
+      260.0
+    ],
+    "window_size": [
+      1000.0,
+      728.0
+    ],
+    "patch_filter": "2007-01 forum",
+    "name_filter": "",
+    "min_edit_size": 500,
+    "selected_action_types": [],
+    "sidebar_width": 195.6914
+  },
+  "build_time": 1760976925,
   "last_scan_time": null,
   "last_scan_checksum": null,
-  "last_executed_command": "Flix 1Pass",
-  "server_pid": 46165,
+  "last_executed_command": "App Store App",
+  "server_pid": 75020,
   "notion_last_scan": null,
-  "anchor_name": "Hook Anchor",
-  "anchor_timestamp": 1760755457,
+  "anchor_name": "Ask",
+  "anchor_timestamp": 1760976559,
   "anchor_folder": null
 }

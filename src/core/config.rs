@@ -24,6 +24,8 @@ pub struct Config {
     pub grabber_suffix_map: Option<HashMap<String, String>>,
     /// Unified actions section (new)
     pub actions: Option<HashMap<String, crate::execute::Action>>,
+    /// History viewer settings (top-level)
+    pub history_viewer: Option<HistoryViewerSettings>,
 }
 
 /// Popup settings section of the configuration file
@@ -125,6 +127,38 @@ impl Default for HistorySettings {
     }
 }
 
+/// History viewer settings (top-level section)
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(default)]
+pub struct HistoryViewerSettings {
+    /// Key bindings for history viewer
+    pub key_bindings: Option<HistoryViewerKeyBindings>,
+}
+
+/// Key bindings for history viewer
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(default)]
+pub struct HistoryViewerKeyBindings {
+    /// Key for editing selected command (default: ";")
+    pub edit_selection: Option<String>,
+}
+
+impl Default for HistoryViewerSettings {
+    fn default() -> Self {
+        HistoryViewerSettings {
+            key_bindings: Some(HistoryViewerKeyBindings::default()),
+        }
+    }
+}
+
+impl Default for HistoryViewerKeyBindings {
+    fn default() -> Self {
+        HistoryViewerKeyBindings {
+            edit_selection: Some(";".to_string()),
+        }
+    }
+}
+
 /// Launcher settings section of the configuration file
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct LauncherSettings {
@@ -206,6 +240,7 @@ impl Default for Config {
             grabber_rules: None,
             grabber_suffix_map: None,
             actions: None,
+            history_viewer: Some(HistoryViewerSettings::default()),
         }
     }
 }
@@ -330,10 +365,14 @@ fn parse_config_contents(contents: &str) -> Result<Config, Box<dyn std::error::E
         .and_then(|v| serde_yaml::from_value(v.clone()).ok());
     
     // Extract actions if it exists (unified system)
-    let actions: Option<HashMap<String, crate::execute::Action>> = 
+    let actions: Option<HashMap<String, crate::execute::Action>> =
         yaml.get("actions")
             .and_then(|v| serde_yaml::from_value(v.clone()).ok());
-    
+
+    // Extract history_viewer if it exists
+    let history_viewer = yaml.get("history_viewer")
+        .and_then(|v| serde_yaml::from_value(v.clone()).ok());
+
     Ok(Config {
         popup_settings,
         launcher_settings,
@@ -341,6 +380,7 @@ fn parse_config_contents(contents: &str) -> Result<Config, Box<dyn std::error::E
         grabber_suffix_map: yaml.get("grabber_suffix_map")
             .and_then(|v| serde_yaml::from_value(v.clone()).ok()),
         actions,
+        history_viewer,
     })
 }
 
@@ -352,6 +392,7 @@ pub(crate) fn create_default_config() -> Config {
         grabber_rules: Some(vec![]),
         grabber_suffix_map: None,
         actions: None,
+        history_viewer: Some(HistoryViewerSettings::default()),
     }
 }
 

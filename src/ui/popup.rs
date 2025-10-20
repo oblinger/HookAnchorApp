@@ -92,6 +92,8 @@ pub struct AnchorSelector {
     pending_rebuild: bool,
     /// Pending action waiting for user confirmation or input
     pending_action: Option<PendingAction>,
+    /// Action to execute immediately after initialization (from --action flag)
+    initial_action_name: Option<String>,
 }
 
 /// Loading state for deferred initialization
@@ -848,7 +850,48 @@ impl AnchorSelector {
             self.dialog.show(dialog_spec);
         }
     }
-    
+
+    /// Execute a popup action by name (for --action flag)
+    /// These are the direct popup actions like "open_editor", "exit", etc.
+    /// Note: This requires an egui context, so it can't be called from here
+    /// Instead, we'll set a flag that the update loop will process
+    fn execute_popup_action(&mut self, popup_action: &str) {
+        crate::utils::log(&format!("Executing popup action: {}", popup_action));
+        match popup_action {
+            "open_editor" => self.open_command_editor(),
+            "edit_active_command" => self.edit_active_command(),
+            "edit_input_command" => self.edit_input_command(),
+            "add_alias" => self.handle_add_alias(),
+            "execute_command" => self.execute_selected_command(),
+            "exit" => self.should_exit = true,
+            "show_folder" => self.show_folder(),
+            "activate_tmux" => self.activate_tmux(),
+            "show_history_viewer" => self.show_history_viewer(),
+            _ => crate::utils::log_error(&format!("Unknown popup action: {}", popup_action)),
+        }
+    }
+
+    /// Execute a JavaScript action by function name (for --action flag)
+    fn execute_js_action(&mut self, function_name: &str) {
+        crate::utils::log(&format!("Executing JavaScript action: {}", function_name));
+        // For now, we'll handle specific known JS actions
+        match function_name {
+            "clear_log" => {
+                // Clear the anchor log
+                if let Err(e) = std::fs::write(
+                    std::path::PathBuf::from(std::env::var("HOME").unwrap_or_else(|_| ".".to_string()))
+                        .join(".config/hookanchor/anchor.log"),
+                    ""
+                ) {
+                    crate::utils::log_error(&format!("Failed to clear log: {}", e));
+                }
+            },
+            _ => {
+                crate::utils::log_error(&format!("Unknown JavaScript function: {}", function_name));
+            }
+        }
+    }
+
     fn edit_active_command_impl(&mut self) {
         if !self.filtered_commands().is_empty() {
             let (display_commands, _is_submenu, _menu_prefix, _inside_count) = self.get_display_commands();
@@ -1485,11 +1528,67 @@ impl AnchorSelector {
             is_hidden: false,
             pending_rebuild: false,
             pending_action: None,
+            initial_action_name: None,
         };
-        
+
         result
     }
-    
+
+    pub fn new_with_prompt_and_action(initial_prompt: &str, initial_action: Option<&str>) -> Self {
+        let _startup_time = std::time::Instant::now();
+
+        // Redirect stdout/stderr to anchor log for centralized debugging
+        Self::setup_log_redirection();
+
+        // Load only app state for window positioning - this is fast
+        let state = load_state();
+
+        // Create minimal popup state for immediate UI display
+        let mut popup_state = PopupState::new_minimal();
+        popup_state.app_state = state; // Use loaded state for window position
+
+        // Set initial prompt if provided
+        if !initial_prompt.is_empty() {
+            popup_state.set_search_text_during_init(initial_prompt.to_string());
+        }
+
+        let result = Self {
+            popup_state,
+            last_saved_position: None,
+            position_set: false,
+            was_auto_positioned: false,
+            command_editor: CommandEditor::new(),
+            dialog: Dialog::new(),
+            window_size_mode: WindowSizeMode::Normal,
+            last_normal_size: None,
+            last_editor_size: None,
+            last_dialog_size: None,
+            scanner_check_pending: true,
+            grabber_countdown: None,
+            countdown_last_update: None,
+            focus_set: false,
+            request_focus: false,
+            request_cursor_at_end: false,
+            frame_count: 0,
+            window_activated: false,
+            config_error: None,
+            last_interaction_time: std::time::Instant::now(),
+            loading_state: LoadingState::NotLoaded,
+            pre_init_input_buffer: initial_prompt.to_string(),
+            search_pending_after_load: !initial_prompt.is_empty(),
+            pending_template: None,
+            key_registry: None, // Will be initialized when config is loaded
+            exit_app_key: None, // Will be populated from config
+            should_exit: false,
+            is_hidden: false,
+            pending_rebuild: false,
+            pending_action: None,
+            initial_action_name: initial_action.map(|s| s.to_string()),
+        };
+
+        result
+    }
+
     /// Start loading data in the background after UI is shown
     fn start_deferred_loading(&mut self) {
         crate::utils::detailed_log("DEFERRED_LOADING", &format!("DEFERRED_LOADING: start_deferred_loading called"));
@@ -3404,7 +3503,51 @@ impl eframe::App for AnchorSelector {
             self.search_pending_after_load = false;
             ctx.request_repaint(); // Ensure UI updates with search results
         }
-        
+
+        // If loading just completed and we have an initial action to execute, trigger it now
+        if self.loading_state == LoadingState::Loaded && self.initial_action_name.is_some() {
+            let action_name = self.initial_action_name.take().unwrap();
+
+            // Look up action from config (not a command!)
+            let config = crate::core::get_config();
+            if let Some(ref actions) = config.actions {
+                if let Some(action) = actions.get(&action_name) {
+                    crate::utils::log(&format!("Executing config action '{}' (type: {})", action_name, action.action_type()));
+
+                    // Execute based on action type
+                    match action.action_type() {
+                        "template" => {
+                            // Template actions like edit_selection
+                            self.handle_template_create_named(&action_name);
+                        },
+                        "popup" => {
+                            // Direct popup actions (exit, navigate, etc.)
+                            if let Some(popup_action) = action.get_string("action") {
+                                self.execute_popup_action(&popup_action);
+                            } else {
+                                crate::utils::log_error(&format!("Popup action '{}' missing 'action' field", action_name));
+                            }
+                        },
+                        "js" => {
+                            // JavaScript actions
+                            if let Some(function_name) = action.get_string("function") {
+                                self.execute_js_action(&function_name);
+                            } else {
+                                crate::utils::log_error(&format!("JavaScript action '{}' missing 'function' field", action_name));
+                            }
+                        },
+                        _ => {
+                            crate::utils::log_error(&format!("Unsupported action type '{}' for --action flag", action.action_type()));
+                        }
+                    }
+                } else {
+                    crate::utils::log_error(&format!("Action '{}' not found in config", action_name));
+                }
+            } else {
+                crate::utils::log_error("No actions defined in config");
+            }
+        }
+
         // On the first few frames, ensure the window is properly activated and positioned
         if self.frame_count <= 3 {
             ctx.send_viewport_cmd(egui::ViewportCommand::Focus);
@@ -4623,12 +4766,12 @@ struct PopupWithControl {
 }
 
 impl PopupWithControl {
-    fn new(initial_prompt: &str) -> Self {
+    fn new(initial_prompt: &str, initial_action: Option<&str>) -> Self {
         let control = crate::systems::popup_server::PopupControl::new();
         control.start_listener();
-        
+
         Self {
-            popup: AnchorSelector::new_with_prompt(initial_prompt),
+            popup: AnchorSelector::new_with_prompt_and_action(initial_prompt, initial_action),
             control,
         }
     }
@@ -4818,13 +4961,14 @@ impl eframe::App for PopupWithControl {
     }
 }
 
-pub fn run_gui_with_prompt(initial_prompt: &str, _app_state: super::ApplicationState) -> Result<(), eframe::Error> {
+pub fn run_gui_with_prompt(initial_prompt: &str, initial_action: Option<&str>, _app_state: super::ApplicationState) -> Result<(), eframe::Error> {
     // Debug: Log when popup is being opened
     crate::utils::detailed_log("SYSTEM", &format!("===== POPUP GUI STARTING ====="));
-    crate::utils::detailed_log("POPUP_OPEN", &format!("Opening popup with initial prompt: '{}'", initial_prompt));
-    
-    // Capture the prompt for the closure
+    crate::utils::detailed_log("POPUP_OPEN", &format!("Opening popup with initial prompt: '{}', action: {:?}", initial_prompt, initial_action));
+
+    // Capture the prompt and action for the closure
     let prompt = initial_prompt.to_string();
+    let action = initial_action.map(|s| s.to_string());
     
     // Manual window sizing - no auto-sizing constraints
     let config = crate::core::sys_data::get_config();
@@ -4891,7 +5035,7 @@ pub fn run_gui_with_prompt(initial_prompt: &str, _app_state: super::ApplicationS
                 }
             }
             
-            Ok(Box::new(PopupWithControl::new(&prompt)))
+            Ok(Box::new(PopupWithControl::new(&prompt, action.as_deref())))
         }),
     )
 }

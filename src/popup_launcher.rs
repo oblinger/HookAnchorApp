@@ -113,7 +113,32 @@ fn start_popup_server() -> Result<(), String> {
 fn main() {
     // Get command from args
     let args: Vec<String> = env::args().collect();
-    
+
+    // Parse optional --input and --action flags, and extract non-flag command
+    let mut input_text = None;
+    let mut action_name = None;
+    let mut other_command = None;
+    let mut i = 1;
+    while i < args.len() {
+        match args[i].as_str() {
+            "--input" if i + 1 < args.len() => {
+                input_text = Some(args[i + 1].clone());
+                i += 2;
+            }
+            "--action" if i + 1 < args.len() => {
+                action_name = Some(args[i + 1].clone());
+                i += 2;
+            }
+            arg if !arg.starts_with("--") && other_command.is_none() => {
+                other_command = Some(arg.to_string());
+                i += 1;
+            }
+            _ => {
+                i += 1;
+            }
+        }
+    }
+
     // Check for --server flag (used by Swift supervisor)
     if args.len() > 1 && args[1] == "--server" {
         // Run popup_server directly in server mode
@@ -149,12 +174,9 @@ fn main() {
     
     // Check if we should use server mode
     let use_server_mode = check_run_in_background();
-    
-    let command = if args.len() > 1 {
-        args[1].as_str()
-    } else {
-        "show" // Default action
-    };
+
+    // Determine the command - default to "show" if no command provided
+    let command = other_command.as_deref().unwrap_or("show");
     
     if !use_server_mode {
         // Direct mode - but first check if a server is still running from before
@@ -190,11 +212,21 @@ fn main() {
                 exit(1);
             });
             let popup_server_path = exe_dir.join("popup_server");
-            
+
+            // Build command with optional arguments
+            let mut cmd = Command::new(&popup_server_path);
+            cmd.env("HOOKANCHOR_DIRECT_MODE", "1");  // Signal to popup_server to run in direct mode
+
+            // Pass --input and --action if provided
+            if let Some(ref text) = input_text {
+                cmd.arg("--input").arg(text);
+            }
+            if let Some(ref action) = action_name {
+                cmd.arg("--action").arg(action);
+            }
+
             // Launch popup_server directly (not as daemon)
-            let status = Command::new(&popup_server_path)
-                .env("HOOKANCHOR_DIRECT_MODE", "1")  // Signal to popup_server to run in direct mode
-                .status();
+            let status = cmd.status();
             
             match status {
                 Ok(s) => {
@@ -214,8 +246,22 @@ fn main() {
     }
     
     // Server mode - use socket communication
+    // Build command with optional args
+    let full_command = if input_text.is_some() || action_name.is_some() {
+        let mut cmd_parts = vec![command.to_string()];
+        if let Some(text) = input_text {
+            cmd_parts.push(format!("--input {}", text));
+        }
+        if let Some(action) = action_name {
+            cmd_parts.push(format!("--action {}", action));
+        }
+        cmd_parts.join(" ")
+    } else {
+        command.to_string()
+    };
+
     // First try to send command
-    let _result = match send_command(command) {
+    let _result = match send_command(&full_command) {
         Ok(response) => {
             // For status command, add mode information
             if command == "status" {

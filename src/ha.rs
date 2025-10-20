@@ -32,11 +32,11 @@ fn main() {
             hookanchor::cmd::run_command_line_mode(args);
         }
 
-        // Popup mode - explicitly launch popup
-        [_, flag] if flag == "--popup" => launch_popup(),
+        // Popup mode - explicitly launch popup (possibly with --input and --action args)
+        [_, flag, ..] if flag == "--popup" => launch_popup_with_args(&args[1..]),
 
         // GUI mode - explicitly launch popup (deprecated, use --popup instead)
-        [_, flag] if flag == "--gui" => launch_popup(),
+        [_, flag] if flag == "--gui" => launch_popup_with_args(&[]),
 
         // URL handler mode - process hook URLs via server
         [_, flag, query] if flag == "--hook" => {
@@ -57,13 +57,38 @@ fn main() {
     }
 }
 
-/// Launch the GUI popup application
-fn launch_popup() {
+/// Launch the GUI popup application with optional arguments
+///
+/// Supports:
+/// - `--input <text>`: Preload text into the input box
+/// - `--action <name>`: Execute action with the given input
+fn launch_popup_with_args(args: &[String]) {
     let exe_dir = hookanchor::utils::get_binary_dir();
     let popup_path = exe_dir.join("popup");
-    
+
+    // Build command with arguments
+    let mut cmd = Command::new(&popup_path);
+
+    // Parse and pass through --input and --action arguments
+    let mut i = 1; // Skip "--popup" which is args[0]
+    while i < args.len() {
+        match args[i].as_str() {
+            "--input" if i + 1 < args.len() => {
+                cmd.arg("--input").arg(&args[i + 1]);
+                i += 2;
+            }
+            "--action" if i + 1 < args.len() => {
+                cmd.arg("--action").arg(&args[i + 1]);
+                i += 2;
+            }
+            _ => {
+                i += 1;
+            }
+        }
+    }
+
     // Launch popup as a separate process
-    match Command::new(&popup_path).spawn() {
+    match cmd.spawn() {
         Ok(_) => {
             // Dispatcher exits after launching popup
             exit(0);
