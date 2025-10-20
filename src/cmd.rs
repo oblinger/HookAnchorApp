@@ -1131,10 +1131,9 @@ fn run_rescan_command() {
     // === NEW CLEAN SINGLETON ARCHITECTURE ===
     // This eliminates duplicate history entries by using a single shared list
 
-    print("\n📂 Step 1: Loading last known state...");
+    print("\n📂 Step 1: Loading last known state from cache...");
 
-    // Load from cache (or empty if cache doesn't exist)
-    // This is our starting point - the last known state of the system
+    // Load from cache - this has file sizes, history, and complete state
     let mut commands = match crate::core::commands::load_commands_from_cache() {
         Some(cmds) => {
             print(&format!("   ✅ Loaded {} commands from cache", cmds.len()));
@@ -1146,15 +1145,26 @@ fn run_rescan_command() {
         }
     };
 
-    print("\n🔍 Step 2: Discovering new files...");
+    print("\n✏️  Step 2: Merging manual edits from commands.txt...");
 
-    // Scan filesystem for files NOT in our current list
-    // For each new file: Add to list, record "created" history entry
-    // NOTE: We call load_data() with an EMPTY vec so it:
-    // 1. Loads the config (needed by scan_new_files)
-    // 2. Does NOT run inference on incomplete data (no commands = no patches assigned = no save)
-    // 3. Avoids OVERWRITING commands.txt before we've loaded manual edits!
-    // The full inference pipeline runs inside scan_new_files after all files are discovered.
+    // Load commands.txt and merge on top of cache state
+    // This captures any manual edits while preserving file sizes and history from cache
+    match crate::systems::load_manual_edits(&mut commands, true) {
+        Ok(edits_count) => {
+            print(&format!("   ✅ Merged {} edits from commands.txt", edits_count));
+        }
+        Err(e) => {
+            print(&format!("   ⚠️  Error loading manual edits: {}", e));
+        }
+    }
+    print(&format!("   📊 Total commands after merge: {}", commands.len()));
+
+    print("\n🔍 Step 3: Scanning filesystem (discovering new files, removing stale entries)...");
+
+    // Scan filesystem - this will:
+    // - Add newly discovered files
+    // - Remove commands for files that no longer exist
+    // - Preserve user-edited commands
     let global_data = crate::core::sys_data::load_data(Vec::new(), false);
 
     let scanned_commands = crate::systems::scan_new_files(
@@ -1163,33 +1173,18 @@ fn run_rescan_command() {
         true
     );
 
-    // Update our commands list with newly discovered files
     commands = scanned_commands;
-    print(&format!("   ✅ Now tracking {} total commands", commands.len()));
+    print(&format!("   ✅ Scan complete - now tracking {} total commands", commands.len()));
 
-    print("\n📝 Step 3: Detecting file modifications...");
+    print("\n📝 Step 4: Detecting file modifications...");
 
-    // For each file in our list: Check if size changed
-    // If changed: Update size, record "modified" history entry
+    // Check if any file sizes changed and record history
     match crate::systems::scan_modified_files(&mut commands, true) {
         Ok(modified_count) => {
             print(&format!("   ✅ Processed modifications ({} files changed)", modified_count));
         }
         Err(e) => {
             print(&format!("   ⚠️  Error scanning modifications: {}", e));
-        }
-    }
-
-    print("\n✏️  Step 4: Loading manual edits from commands.txt...");
-
-    // Load user's manual edits from commands.txt and merge them
-    // This is the FINAL step - user edits override filesystem scanning
-    match crate::systems::load_manual_edits(&mut commands, true) {
-        Ok(edits_count) => {
-            print(&format!("   ✅ Processed manual edits ({} edits applied)", edits_count));
-        }
-        Err(e) => {
-            print(&format!("   ⚠️  Error loading manual edits: {}", e));
         }
     }
 
