@@ -5,6 +5,47 @@ All notable changes to HookAnchor will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.15.0] - 2025-10-20
+
+### Added
+- **NEW**: History viewer application with tree navigation and peek-on-hover functionality
+  - Browse command history organized by patch hierarchy
+  - Hover over folders to preview their history without changing filter
+  - Execute historical commands directly from viewer
+  - Navigate with arrow keys and Enter
+- **NEW**: Anchor tree navigator widget for hierarchical navigation
+  - Reusable tree navigation component
+  - Returns both clicked and hovered patches for flexible UI
+- Added centralized `get_binary_dir()` function with symlink resolution
+  - Ensures binaries can be found reliably when CLI invoked via symlink
+  - Consolidated binary path resolution across codebase
+- Added '/' key binding in history viewer to open folders in Finder
+  - Matches main popup behavior for consistency
+
+### Changed
+- **BREAKING**: Refactored CLI command structure
+  - `ha` (no arguments) now shows help instead of launching popup
+  - `ha --popup` explicitly launches popup interface
+  - `ha --search` launches history viewer
+  - Removed broken popup control commands that couldn't work from CLI
+- **BREAKING**: Refactored rescan workflow to prevent stale entries
+  - Now loads cache first, then merges commands.txt, then scans
+  - Properly removes commands for deleted files
+  - Prevents stale entries from being re-added after cleanup
+
+### Fixed
+- **CRITICAL**: Fixed duplicate history entry bug
+  - Added database-level duplicate checking for "created" entries
+  - Added duplicate checking for "modified" entries (60-second window)
+  - Prevented 6,442 duplicate entries during testing
+- **CRITICAL**: Fixed rescan to remove stale file entries
+  - Files that no longer exist are now properly removed from commands
+  - Reordered scan steps to prevent re-adding cleaned entries
+  - Tested: Successfully removed 61 stale entries for renamed folder
+- Fixed bogus modification entries in rescan
+  - Only records modifications when file size actually changes
+  - No longer creates modification entry when first setting file_size
+
 ## [0.14.0] - 2025-09-22
 
 ### Changed
