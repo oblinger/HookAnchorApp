@@ -93,12 +93,12 @@ pub use key_processing::{
     
     // Handler interfaces
     KeyHandler, KeyHandlerContext, KeyHandlerResult, PopupInterface,
-    
+
     // Built-in handlers
     TextHandler, NavigationHandler, NavigationDirection,
-    ActionHandler, Action, TemplateHandler, 
+    PopupActionHandler, TemplateHandler,
     UninstallTextHandler, ShowKeysTextHandler,
-    
+
     // Utilities
     create_default_key_registry
 };

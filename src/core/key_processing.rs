@@ -852,67 +852,47 @@ impl KeyHandler for NavigationHandler {
     }
 }
 
-/// Simple action handler for single-action commands
-pub struct ActionHandler {
-    action: Action,
+/// Handler for popup actions - uses action string directly from config
+/// This eliminates the need for a hardcoded Action enum
+pub struct PopupActionHandler {
+    action_name: String,
     description: String,
 }
 
-#[derive(Debug, Clone)]
-pub enum Action {
-    ForceRebuild,
-    StartGrabber,
-    ShowFolder,
-    ShowContact,
-    ExitApp,
-    ExecuteCommand,
-    OpenEditor,
-    AddAlias,
-    EditActiveCommand,
-    EditInputCommand,
-    LinkToClipboard,
-    ShowKeys,
-    ShowHistory,
-    UninstallApp,
-    TemplateCreate,
-    ActivateTmux, // Renamed from ActivateAnchor
-    NavigateUpHierarchy,  // Square bracket left - go to parent patch
-    NavigateDownHierarchy, // Square bracket right - enter selected anchor prefix menu
-    ToggleShowFiles, // Toggle showing files in prefix menus
-}
-
-impl ActionHandler {
-    pub fn new(action: Action) -> Self {
-        let description = match action {
-            Action::ForceRebuild => "Force rebuild command list",
-            Action::StartGrabber => "Start grabber countdown",
-            Action::ShowFolder => "Show folder of selected command",
-            Action::ShowContact => "Show contact (strips @ prefix)",
-            Action::ExitApp => "Exit application",
-            Action::ExecuteCommand => "Execute selected command",
-            Action::OpenEditor => "Open command editor",
-            Action::AddAlias => "Add alias for last command",
-            Action::EditActiveCommand => "Edit active command",
-            Action::EditInputCommand => "Create new command from input",
-            Action::LinkToClipboard => "Link to clipboard",
-            Action::ShowKeys => "Show key bindings",
-            Action::ShowHistory => "Show command history",
-            Action::UninstallApp => "Uninstall application",
-            Action::TemplateCreate => "Create template",
-            Action::ActivateTmux => "Activate TMUX session for selected command",
-            Action::NavigateUpHierarchy => "Navigate up to parent patch",
-            Action::NavigateDownHierarchy => "Navigate into selected anchor prefix menu",
-            Action::ToggleShowFiles => "Toggle showing files in prefix menus",
+impl PopupActionHandler {
+    pub fn new(action_name: String) -> Self {
+        // Generate description from action name
+        let description = match action_name.as_str() {
+            "force_rebuild" => "Force rebuild command list",
+            "start_grabber" => "Start grabber countdown",
+            "show_folder" => "Show folder of selected command",
+            "show_contact" => "Show contact (strips @ prefix)",
+            "exit" => "Exit application",
+            "execute_command" => "Execute selected command",
+            "open_editor" => "Open command editor",
+            "add_alias" => "Add alias for last command",
+            "edit_active_command" => "Edit active command",
+            "edit_input_command" => "Create new command from input",
+            "link_to_clipboard" => "Link to clipboard",
+            "show_keys" => "Show key bindings",
+            "show_history" | "show_history_viewer" => "Show command history",
+            "uninstall_app" => "Uninstall application",
+            "template_create" => "Create template",
+            "activate_tmux" => "Activate TMUX session for selected command",
+            "navigate_up_hierarchy" => "Navigate up to parent patch",
+            "navigate_down_hierarchy" => "Navigate into selected anchor prefix menu",
+            "toggle_show_files" => "Toggle showing files in prefix menus",
+            _ => &action_name, // Fallback to action name itself
         }.to_string();
 
-        Self { action, description }
+        Self { action_name, description }
     }
 }
 
-impl KeyHandler for ActionHandler {
+impl KeyHandler for PopupActionHandler {
     fn execute(&self, context: &mut KeyHandlerContext) -> KeyHandlerResult {
-        match self.action {
-            Action::ExitApp => {
+        match self.action_name.as_str() {
+            "exit" => {
                 // Only exit if no sub-interfaces are visible
                 if !context.popup.is_command_editor_visible() && !context.popup.is_dialog_visible() {
                     context.popup.request_exit();
@@ -922,79 +902,83 @@ impl KeyHandler for ActionHandler {
                     KeyHandlerResult::NotHandled
                 }
             },
-            // All other actions are always handled
-            Action::ForceRebuild => {
+            "force_rebuild" => {
                 context.popup.trigger_rebuild(context.egui_ctx);
                 KeyHandlerResult::Handled
             },
-            Action::StartGrabber => {
+            "start_grabber" => {
                 context.popup.start_grabber_countdown(context.egui_ctx);
                 KeyHandlerResult::Handled
             },
-            Action::ShowFolder => {
+            "show_folder" => {
                 context.popup.show_folder();
                 KeyHandlerResult::Handled
             },
-            Action::ShowContact => {
+            "show_contact" => {
                 context.popup.show_contact();
                 KeyHandlerResult::Handled
             },
-            Action::ActivateTmux => {
+            "activate_tmux" => {
                 context.popup.activate_tmux();
                 KeyHandlerResult::Handled
             },
-            Action::ExecuteCommand => {
+            "execute_command" => {
                 context.popup.execute_selected_command();
                 KeyHandlerResult::Handled
             },
-            Action::OpenEditor => {
+            "open_editor" => {
                 context.popup.open_command_editor();
                 KeyHandlerResult::Handled
             },
-            Action::AddAlias => {
+            "add_alias" => {
                 context.popup.handle_add_alias();
                 KeyHandlerResult::Handled
             },
-            Action::EditActiveCommand => {
+            "edit_active_command" => {
                 context.popup.edit_active_command();
                 KeyHandlerResult::Handled
             },
-            Action::EditInputCommand => {
+            "edit_input_command" => {
                 context.popup.edit_input_command();
                 KeyHandlerResult::Handled
             },
-            Action::LinkToClipboard => {
+            "link_to_clipboard" => {
                 context.popup.handle_link_to_clipboard();
                 KeyHandlerResult::Handled
             },
-            Action::ShowKeys => {
+            "show_keys" => {
                 context.popup.show_keys_dialog();
                 KeyHandlerResult::Handled
             },
-            Action::ShowHistory => {
+            "show_history" | "show_history_viewer" => {
                 context.popup.show_history_viewer();
                 KeyHandlerResult::Handled
             },
-            Action::UninstallApp => {
+            "uninstall_app" => {
                 context.popup.handle_uninstall_app();
                 KeyHandlerResult::Handled
             },
-            Action::TemplateCreate => {
+            "template_create" => {
                 context.popup.handle_template_create();
                 KeyHandlerResult::Handled
             },
-            Action::NavigateUpHierarchy => {
+            "navigate_up_hierarchy" => {
                 context.popup.navigate_up_hierarchy();
                 KeyHandlerResult::Handled
             },
-            Action::NavigateDownHierarchy => {
+            "navigate_down_hierarchy" => {
                 context.popup.navigate_down_hierarchy();
                 KeyHandlerResult::Handled
             },
-            Action::ToggleShowFiles => {
+            "toggle_show_files" => {
                 context.popup.toggle_show_files();
                 KeyHandlerResult::Handled
             },
+            _ => {
+                // Unknown action - log warning and skip
+                crate::utils::log(&format!("⚠️ Unknown popup action: {}", self.action_name));
+                KeyHandlerResult::NotHandled
+            }
         }
     }
 
@@ -1201,23 +1185,8 @@ pub fn create_default_key_registry(config: &super::Config) -> KeyRegistry {
                                         continue; // No direction specified
                                     }
                                 }
-                                "exit" => Box::new(ActionHandler::new(Action::ExitApp)),
-                                "execute_command" => Box::new(ActionHandler::new(Action::ExecuteCommand)),
-                                "force_rebuild" => Box::new(ActionHandler::new(Action::ForceRebuild)),
-                                "show_folder" => Box::new(ActionHandler::new(Action::ShowFolder)),
-                                "show_contact" => Box::new(ActionHandler::new(Action::ShowContact)),
-                                "show_keys" => Box::new(ActionHandler::new(Action::ShowKeys)),
-                                "show_history" => Box::new(ActionHandler::new(Action::ShowHistory)),
-                                "show_history_viewer" => Box::new(ActionHandler::new(Action::ShowHistory)),
-                                "edit_active_command" => Box::new(ActionHandler::new(Action::EditActiveCommand)),
-                                "edit_input_command" => Box::new(ActionHandler::new(Action::EditInputCommand)),
-                                "open_editor" => Box::new(ActionHandler::new(Action::OpenEditor)),
-                                "add_alias" => Box::new(ActionHandler::new(Action::AddAlias)),
-                                "activate_tmux" => Box::new(ActionHandler::new(Action::ActivateTmux)), // Renamed from activate_anchor
-                                "navigate_up_hierarchy" => Box::new(ActionHandler::new(Action::NavigateUpHierarchy)),
-                                "navigate_down_hierarchy" => Box::new(ActionHandler::new(Action::NavigateDownHierarchy)),
-                                "toggle_show_files" => Box::new(ActionHandler::new(Action::ToggleShowFiles)),
-                                _ => continue, // Skip unknown popup actions
+                                // All popup actions now use PopupActionHandler with the action string directly
+                                action_str => Box::new(PopupActionHandler::new(action_str.to_string()))
                             };
                             registry.register_keystroke(keystroke, handler);
                         }
