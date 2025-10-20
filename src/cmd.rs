@@ -50,7 +50,7 @@ pub fn run_command_line_mode(args: Vec<String>) {
         "--uninstall" => run_uninstall(),
         "--execute-launcher-command" => run_execute_launcher_command(&args),
         "--search" => run_search_command(),
-        "--delete-history" => run_delete_history(),
+        "--delete-history" => run_delete_history(&args),
         _ => {
             print(&format!("Unknown command: {}", args[1]));
             print("Use -h or --help for usage information");
@@ -76,7 +76,7 @@ pub fn print_help(program_name: &str) {
     print(&format!("  {} --infer-all              # Show changes and prompt to apply", program_name));
     print(&format!("  {} --rescan                 # Rescan filesystem with verbose output", program_name));
     print(&format!("  {} --rebuild                # Rebuild: restart server and rescan filesystem", program_name));
-    print(&format!("  {} --delete-history         # Delete history database and cache", program_name));
+    print(&format!("  {} --delete-history [--force] # Delete history database and cache", program_name));
     print(&format!("  {} --test-grabber           # Test grabber functionality", program_name));
     print(&format!("  {} --test-permissions       # Test accessibility permissions", program_name));
     print(&format!("  {} --grab [delay]           # Grab active app after delay", program_name));
@@ -1634,29 +1634,34 @@ fn run_search_command() {
 }
 
 /// Delete command history database and cache
-fn run_delete_history() {
+fn run_delete_history(args: &[String]) {
     use std::io::{self, Write};
 
-    print("");
-    print("⚠️  WARNING: This will permanently delete:");
-    print("  • Command history database (~/.config/hookanchor/history.db)");
-    print("  • Command cache file (~/.config/hookanchor/commands_cache.json)");
-    print("");
-    print("This action cannot be undone!");
-    print("");
-    print("Type 'yes' to confirm deletion: ");
+    // Check for --force flag
+    let force = args.iter().any(|arg| arg == "--force");
 
-    // Flush stdout to ensure prompt appears
-    io::stdout().flush().unwrap();
+    if !force {
+        print("");
+        print("⚠️  WARNING: This will permanently delete:");
+        print("  • Command history database (~/.config/hookanchor/history.db)");
+        print("  • Command cache file (~/.config/hookanchor/commands_cache.json)");
+        print("");
+        print("This action cannot be undone!");
+        print("");
+        print("Type 'yes' to confirm deletion: ");
 
-    // Read user input
-    let mut input = String::new();
-    io::stdin().read_line(&mut input).unwrap();
-    let input = input.trim();
+        // Flush stdout to ensure prompt appears
+        io::stdout().flush().unwrap();
 
-    if input != "yes" {
-        print("Deletion cancelled.");
-        return;
+        // Read user input
+        let mut input = String::new();
+        io::stdin().read_line(&mut input).unwrap();
+        let input = input.trim();
+
+        if input != "yes" {
+            print("Deletion cancelled.");
+            return;
+        }
     }
 
     // Get paths to delete
@@ -1709,13 +1714,29 @@ fn run_delete_history() {
         print("📝 Rebuilding history from scratch with accurate file creation dates...");
         print("");
 
-        // Immediately run rescan to rebuild history with correct creation dates
-        // The new architecture eliminates duplicate history entries:
-        // 1. Start with empty cache (nothing known)
-        // 2. Scan filesystem → Record "created" for all 6000+ files
-        // 3. Check for modifications → Finds NONE (just added with current sizes)
-        // 4. Load manual edits from commands.txt
-        // Result: Only "created" entries, no duplicate "modified" entries!
+        // CRITICAL ORDER: Scan filesystem FIRST with empty commands, THEN load commands.txt
+        //
+        // Step 1: Pure filesystem scan with EMPTY commands
+        // - Discovers all files and records "created" history entries with birth timestamps
+        // - Files are NOT in commands list yet, so scanner treats them as NEW
+        // - Saves to cache with metadata
+        print("🔍 Step 1: Scanning filesystem to record file creation history...");
+        let global_data = crate::core::sys_data::load_data(Vec::new(), false);
+        let scanned_commands = crate::systems::scan_new_files(Vec::new(), &global_data, true);
+
+        // Save to cache so next step loads these as existing files
+        if let Err(e) = crate::core::commands::save_commands_to_cache(&scanned_commands) {
+            print(&format!("   ⚠️  Failed to save initial cache: {}", e));
+        } else {
+            print(&format!("   ✅ Recorded creation history for {} files", scanned_commands.len()));
+        }
+
+        print("");
+        print("✏️  Step 2: Merging manual edits from commands.txt...");
+        // Step 2: Now run full rescan to merge commands.txt edits
+        // - Cache now has all files with metadata
+        // - commands.txt edits are applied on top
+        // - No duplicate "created" entries because files already exist in cache
         run_rescan_command();
     }
 

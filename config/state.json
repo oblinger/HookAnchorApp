@@ -1,30 +1,35 @@
 {
   "window_position": [
-    880.0,
-    440.0
+    688.0,
+    248.0
   ],
   "history_viewer_state": {
     "position": [
-      -2482.0,
-      260.0
+      -2476.0,
+      327.0
     ],
     "window_size": [
       1000.0,
-      728.0
+      1008.0
     ],
-    "patch_filter": "2007-01 forum",
+    "patch_filter": "",
     "name_filter": "",
     "min_edit_size": 500,
-    "selected_action_types": [],
-    "sidebar_width": 195.6914
+    "selected_action_types": [
+      "1pass",
+      "text",
+      "console"
+    ],
+    "sidebar_width": 74.0
   },
-  "build_time": 1760976925,
+  "build_time": 1760989170,
   "last_scan_time": null,
   "last_scan_checksum": null,
-  "last_executed_command": "App Store App",
-  "server_pid": 75020,
+  "last_executed_command": "WEF Shell",
+  "server_pid": 37445,
   "notion_last_scan": null,
-  "anchor_name": "Ask",
-  "anchor_timestamp": 1760976559,
-  "anchor_folder": null
+  "anchor_name": "ha",
+  "anchor_timestamp": 1760986697,
+  "anchor_folder": null,
+  "show_files": true
 }

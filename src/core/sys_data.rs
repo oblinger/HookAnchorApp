@@ -238,13 +238,23 @@ pub fn load_data(commands_override: Vec<Command>, verbose: bool) -> SysData {
     let mut commands = if use_override {
         commands_override
     } else {
-        let raw_commands = crate::core::commands::load_commands_raw();
-        if verbose {
-            println!("📋 Step 2: Loaded {} commands from disk", raw_commands.len());
-            let empty_patch_count = raw_commands.iter().filter(|c| c.patch.is_empty()).count();
-            println!("            {} commands have empty patches", empty_patch_count);
+        // Load ONLY from cache - commands.txt is only used during manual rebuild
+        // If cache doesn't exist, system starts with empty commands
+        match crate::core::commands::load_commands_from_cache() {
+            Some(cached_commands) => {
+                if verbose {
+                    println!("📋 Step 2: Loaded {} commands from cache", cached_commands.len());
+                }
+                cached_commands
+            }
+            None => {
+                if verbose {
+                    println!("📋 Step 2: No cache found - starting with empty commands");
+                    println!("            Run --rescan to rebuild from filesystem");
+                }
+                Vec::new()
+            }
         }
-        raw_commands
     };
 
     // Step 2.5: 

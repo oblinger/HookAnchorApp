@@ -235,9 +235,7 @@ pub fn load_manual_edits(commands: &mut Vec<Command>, verbose: bool) -> Result<u
         if !txt_cmd.arg.is_empty() {
             let same_file_exists = commands.iter().any(|c| c.arg == txt_cmd.arg);
             if same_file_exists && !txt_cmd.flags.contains('U') {
-                if verbose {
-                    println!("   ⏭️  Skipping duplicate '{}' (scanner already created fresh version)", txt_cmd.command);
-                }
+                crate::utils::detailed_log("MANUAL_EDITS", &format!("Skipping duplicate '{}' (scanner already created fresh version)", txt_cmd.command));
                 continue;
             }
         }
@@ -501,6 +499,9 @@ pub fn scan_new_files(commands: Vec<Command>, sys_data: &crate::core::sys_data::
                             crate::utils::log_error(&format!("Failed to record creation for '{}': {}", cmd.command, e));
                         } else {
                             recorded += 1;
+                            if verbose {
+                                println!("   📝 Created history entry: '{}'     {}", cmd.command, file_path.display());
+                            }
                         }
                     }
                 }

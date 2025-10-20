@@ -14,7 +14,7 @@ pub(crate) mod popup;
 pub(crate) mod command_editor;
 pub(crate) mod dialog;
 pub(crate) mod anchor_tree_navigator;
-mod helpers;  // Only used within UI module
+pub mod helpers;  // Used by UI module and history viewer
 
 // ============================================================================
 // PUBLIC API - All external access goes through these re-exports

@@ -6,7 +6,7 @@ use crate::core::sys_data::get_config;
 
 /// Gets the list of actions for the command editor dropdown
 /// Returns the configured actions from popup_settings.listed_actions, or default actions if not configured
-pub(super) fn get_listed_actions() -> Vec<String> {
+pub fn get_listed_actions() -> Vec<String> {
     let config = get_config();
     
     match config.popup_settings.listed_actions {

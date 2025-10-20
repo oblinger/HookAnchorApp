@@ -189,7 +189,7 @@ impl HistoryViewer {
             }
         }
 
-        hookanchor::utils::detailed_log("ANCHOR_MATCH", &format!("NO MATCH: {} (patch: {}, path: {:?})", entry.command, entry.patch, entry.file_path));
+        // Don't log NO MATCH - creates thousands of log entries that lock up the GUI
         false
     }
 
@@ -844,22 +844,13 @@ impl eframe::App for HistoryViewer {
                 ui.add_space(10.0);
 
                 // Action type multi-selector using ComboBox (before magnifying glass)
-                // Get action types from database - only show types that actually have history
-                let action_types: Vec<String> = if let Some(ref conn) = self.db_conn {
-                    conn.prepare("SELECT DISTINCT action FROM command_history ORDER BY action")
-                        .and_then(|mut stmt| {
-                            let rows = stmt.query_map([], |row| row.get::<_, String>(0))?;
-                            rows.collect::<Result<Vec<String>, _>>()
-                        })
-                        .unwrap_or_else(|_| vec![])
-                } else {
-                    vec![]
-                };
+                // Use the same action list as the command editor (from config listed_actions)
+                let action_types = hookanchor::ui::helpers::get_listed_actions();
 
                 // Calculate dropdown height based on item count
-                // Each checkbox item needs ~25px, "Clear All" button needs ~25px, separator ~10px
-                // Add extra padding at bottom ~10px
-                let dropdown_height = ((action_types.len() as f32 * 25.0) + 25.0 + 10.0 + 10.0).min(500.0);
+                // Each checkbox item needs ~30px, "Clear All" button needs ~30px, separator ~15px
+                // Add extra padding for top/bottom and dropdown chrome ~100px (generous for safety)
+                let dropdown_height = (action_types.len() as f32 * 30.0) + 30.0 + 15.0 + 100.0;
 
                 egui::ComboBox::new("action_type_selector", "")
                     .selected_text(if self.selected_action_types.is_empty() {
@@ -910,7 +901,7 @@ impl eframe::App for HistoryViewer {
                 // Push min edit size and close button to the right
                 ui.with_layout(egui::Layout::right_to_left(egui::Align::Center), |ui| {
                     // Close button on far right
-                    if ui.button("×").clicked() {
+                    if ui.button("❌").clicked() {
                         ctx.send_viewport_cmd(egui::ViewportCommand::Close);
                     }
 
