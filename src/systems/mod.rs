@@ -75,6 +75,7 @@ pub use history::{
 // CommandStore subsystem - unified command persistence and history
 pub use commandstore::{
     load,            // Load commands from storage
+    save,            // Save commands to disk (used by scanner)
     add,             // Add single command
     update,          // Update single command
     delete,          // Delete command by name

@@ -179,6 +179,16 @@ pub fn bulk_update(updates: Vec<(Command, Command)>, commands: &mut Vec<Command>
 }
 
 // ============================================================================
+// Save Operations
+// ============================================================================
+
+/// Save commands to disk (txt + cache) without recording history
+/// Used by scanner which records history manually during its workflow
+pub fn save(commands: &[Command]) -> Result<()> {
+    save_commands(commands)
+}
+
+// ============================================================================
 // Internal Helpers
 // ============================================================================
 

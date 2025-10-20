@@ -55,7 +55,6 @@ use std::process::Command as ProcessCommand;
 use std::collections::{hash_map::DefaultHasher, HashSet};
 use std::hash::{Hash, Hasher};
 use crate::core::Command;
-use crate::core::commands::save_commands_to_file;
 use crate::core::{Config, load_state, save_state};
 use crate::utils::detailed_log;
 use crate::execute::get_action;
@@ -65,45 +64,6 @@ use chrono::Local;
 /// These commands will be removed during rescanning unless they have the 'U' (user-edited) flag
 /// NOTE: "anchor" is handled separately by delete_anchors() function
 pub const SCANNER_GENERATED_ACTIONS: &[&str] = &["markdown", "folder", "app", "open_app", "doc"];
-
-// ============================================================================
-// Scanner Result Structs (Pure Discovery Pattern)
-// ============================================================================
-
-/// Result of scanning for file modifications
-#[derive(Debug, Clone)]
-pub struct ModifiedFilesResult {
-    /// Commands that were modified: (old_command, new_command)
-    pub modifications: Vec<(Command, Command)>,
-    /// Number of files checked
-    pub files_checked: usize,
-    /// Number of modifications found
-    pub modifications_found: usize,
-}
-
-/// Result of loading manual edits from commands.txt
-#[derive(Debug, Clone)]
-pub struct ManualEditsResult {
-    /// Newly created commands (not in cache)
-    pub created: Vec<Command>,
-    /// Updated commands: (old_command, new_command)
-    pub updated: Vec<(Command, Command)>,
-    /// Number of edits applied
-    pub edits_applied: usize,
-}
-
-/// Result of scanning for new files
-#[derive(Debug, Clone)]
-pub struct NewFilesResult {
-    /// Newly discovered files
-    pub new_files: Vec<Command>,
-    /// Command names that should be removed (files deleted)
-    pub removed_commands: Vec<String>,
-    /// Statistics
-    pub files_scanned: usize,
-    pub files_added: usize,
-    pub files_removed: usize,
-}
 
 
 /// Check if a command is a Notion anchor
@@ -223,7 +183,7 @@ pub fn scan_check(commands: Vec<Command>) -> Vec<Command> {
     if checksum_changed {
         // Save the scanned commands directly - patch inference should already be handled by load_data()
         // The commands passed to the scanner should already have proper patches from load_data()
-        if let Err(e) = save_commands_to_file(&scanned_commands) {
+        if let Err(e) = crate::systems::commandstore::save(&scanned_commands) {
             crate::utils::log_error(&format!("Failed to save updated commands: {}", e));
         } else {
             // Mark commands as modified since we've updated the commands file
@@ -362,72 +322,6 @@ pub fn load_manual_edits(commands: &mut Vec<Command>, verbose: bool) -> Result<u
     Ok(edits_applied)
 }
 
-/// Load manual edits from commands.txt (pure discovery version)
-/// Returns created and updated commands without mutating or recording history
-/// Caller should use commandstore::bulk_add() and bulk_update() to apply changes
-pub fn load_manual_edits_v2(commands: &[Command]) -> Result<ManualEditsResult, Box<dyn std::error::Error>> {
-    let mut created = Vec::new();
-    let mut updated = Vec::new();
-
-    // Load commands.txt
-    let txt_commands = crate::core::commands::load_commands_raw();
-    crate::utils::log(&format!("LOAD_MANUAL_EDITS_V2: Loaded {} commands from commands.txt", txt_commands.len()));
-
-    // For each command in commands.txt, check if we need to add or update it
-    for txt_cmd in txt_commands {
-        // DEDUPLICATION: If a command with the same file path already exists (from scanner),
-        // only load this txt command if it has the 'U' (user-edited) flag.
-        // This prevents scanner-generated duplicates (e.g., old open_app vs new app for same file)
-        if !txt_cmd.arg.is_empty() {
-            let same_file_exists = commands.iter().any(|c| c.arg == txt_cmd.arg);
-            if same_file_exists && !txt_cmd.flags.contains('U') {
-                crate::utils::detailed_log("MANUAL_EDITS", &format!("Skipping duplicate '{}' (scanner already created fresh version)", txt_cmd.command));
-                continue;
-            }
-        }
-
-        // Find corresponding command in our list (match by patch, command name, and action)
-        let existing = commands.iter().find(|c|
-            c.patch == txt_cmd.patch && c.command == txt_cmd.command && c.action == txt_cmd.action
-        );
-
-        match existing {
-            Some(existing_cmd) => {
-                // Command exists - check if it changed
-                // Only update if something actually changed (besides file_size which we track separately)
-                if existing_cmd.arg != txt_cmd.arg || existing_cmd.flags != txt_cmd.flags {
-                    crate::utils::log(&format!("LOAD_MANUAL_EDITS_V2: Command '{}' modified in commands.txt", txt_cmd.command));
-
-                    let old_cmd = existing_cmd.clone();
-
-                    // Preserve file_size and last_update from filesystem scan
-                    let mut updated_cmd = txt_cmd.clone();
-                    updated_cmd.file_size = existing_cmd.file_size;
-                    updated_cmd.last_update = existing_cmd.last_update;
-
-                    updated.push((old_cmd, updated_cmd));
-                }
-            }
-            None => {
-                // New command from manual edit - add it
-                crate::utils::log(&format!("LOAD_MANUAL_EDITS_V2: New command '{}' from commands.txt", txt_cmd.command));
-                created.push(txt_cmd);
-            }
-        }
-    }
-
-    let edits_applied = created.len() + updated.len();
-
-    crate::utils::log(&format!("LOAD_MANUAL_EDITS_V2: Found {} manual edits ({} created, {} updated)",
-        edits_applied, created.len(), updated.len()));
-
-    Ok(ManualEditsResult {
-        created,
-        updated,
-        edits_applied,
-    })
-}
-
 /// Scans filesystem to detect MODIFIED files and update history
 /// Compares current file sizes against stored file_size metadata
 /// Records "modified" history entries for files that changed
@@ -516,66 +410,6 @@ pub fn scan_modified_files(commands: &mut Vec<Command>, verbose: bool) -> Result
     crate::utils::log(&format!("SCAN_MODIFIED: Detected {} file changes", file_changes));
 
     Ok(file_changes)
-}
-
-/// Scans filesystem to detect MODIFIED files (pure discovery version)
-/// Returns modifications without mutating commands or recording history
-/// Caller should use commandstore::bulk_update() to apply changes
-pub fn scan_modified_files_v2(commands: &[Command]) -> Result<ModifiedFilesResult, Box<dyn std::error::Error>> {
-    let mut modifications = Vec::new();
-    let mut files_checked = 0;
-
-    for cmd in commands.iter() {
-        // Only check file-based commands
-        if !cmd.is_path_based() {
-            continue;
-        }
-
-        files_checked += 1;
-
-        // Get file path
-        let file_path = match cmd.get_absolute_file_path(&crate::core::sys_data::get_config()) {
-            Some(path) => path,
-            None => continue,
-        };
-
-        // Check if file exists and get current size
-        let current_metadata = match std::fs::metadata(&file_path) {
-            Ok(meta) => meta,
-            Err(_) => continue, // File doesn't exist or can't be read
-        };
-
-        let current_size = current_metadata.len();
-        let current_mtime = current_metadata.modified()
-            .ok()
-            .and_then(|t| t.duration_since(std::time::UNIX_EPOCH).ok())
-            .map(|d| d.as_secs() as i64);
-
-        // Check if file size changed
-        // Only record if we have BOTH old and new sizes
-        if let Some(old_size) = cmd.file_size {
-            if old_size != current_size {
-                // Create updated command with new file size
-                let old_cmd = cmd.clone();
-                let mut new_cmd = cmd.clone();
-                new_cmd.file_size = Some(current_size);
-                if let Some(mtime) = current_mtime {
-                    new_cmd.last_update = mtime;
-                }
-
-                modifications.push((old_cmd, new_cmd));
-            }
-        }
-        // Note: If file_size is None, that's handled by scan_new_files
-    }
-
-    let modifications_found = modifications.len();
-
-    Ok(ModifiedFilesResult {
-        modifications,
-        files_checked,
-        modifications_found,
-    })
 }
 
 /// Scans filesystem for NEW files not yet in the command list

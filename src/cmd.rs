@@ -1133,14 +1133,14 @@ fn run_rescan_command() {
 
     print("\n📂 Step 1: Loading last known state from cache...");
 
-    // Load from cache - this has file sizes, history, and complete state
-    let mut commands = match crate::core::commands::load_commands_from_cache() {
-        Some(cmds) => {
+    // Load from cache through commandstore
+    let mut commands = match crate::systems::commandstore::load() {
+        Ok(cmds) => {
             print(&format!("   ✅ Loaded {} commands from cache", cmds.len()));
             cmds
         }
-        None => {
-            print("   ℹ️  No cache found - starting fresh");
+        Err(e) => {
+            print(&format!("   ⚠️  Error loading cache: {}, starting fresh", e));
             Vec::new()
         }
     };
@@ -1199,8 +1199,8 @@ fn run_rescan_command() {
 
     print("\n💾 Step 7: Final save to cache...");
 
-    // Save final state to cache (load_data already saved to commands.txt)
-    match crate::core::commands::save_commands_to_cache(&commands) {
+    // Save final state through commandstore (saves both txt and cache)
+    match crate::systems::commandstore::save(&commands) {
         Ok(_) => {
             print(&format!("   ✅ Saved {} commands to cache", commands.len()));
         }
