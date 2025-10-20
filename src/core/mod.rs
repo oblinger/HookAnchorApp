@@ -31,8 +31,8 @@ pub use config::{
 
 // State management
 pub use state::{
-    AppState, load_state, save_state,
-    save_state_with_build_time, save_last_executed_command, 
+    AppState, HistoryViewerState, load_state, save_state,
+    save_state_with_build_time, save_last_executed_command,
     save_server_pid, clear_server_pid
 };
 

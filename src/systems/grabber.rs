@@ -935,15 +935,15 @@ pub fn grab(config: &Config) -> Result<GrabResult, String> {
         let mut command = Command {
             patch: "App".to_string(),  // Default patch for apps
             command: String::new(),     // Will be filled by user
-            action: "open_app".to_string(),
+            action: "app".to_string(),
             arg: context.app_path.clone(),
             flags: String::new(),
         last_update: 0,
         file_size: None,
         };
-        
-        // Try to get default patch for open_app action
-        if let Some(default_patch) = get_default_patch_for_action("open_app") {
+
+        // Try to get default patch for app action
+        if let Some(default_patch) = get_default_patch_for_action("app") {
             command.patch = default_patch.to_string();
         }
         

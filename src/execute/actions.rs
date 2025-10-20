@@ -283,7 +283,7 @@ pub(super) fn execute_locally(
         "template" => execute_template_action(action, &params),
         "popup" => execute_popup_action(action, &params),
         "open_url" => execute_open_url_action(&params),
-        "open_app" => execute_open_app_action(&params),
+        "app" => execute_open_app_action(&params),  // Renamed from open_app
         "open_folder" => execute_open_folder_action(&params),
         "open_file" => execute_open_file_action(&params),
         "shell" => execute_shell_action(&params),

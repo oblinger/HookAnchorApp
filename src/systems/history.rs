@@ -42,10 +42,17 @@ pub fn initialize_history_db() -> SqlResult<Connection> {
 
             changed_fields TEXT,
             old_values TEXT,
-            new_values TEXT
+            new_values TEXT,
+            edit_size INTEGER
         )",
         [],
     )?;
+
+    // Add edit_size column if it doesn't exist (migration for existing databases)
+    conn.execute(
+        "ALTER TABLE command_history ADD COLUMN edit_size INTEGER",
+        [],
+    ).ok(); // Ignore error if column already exists
 
     // Create indexes for fast querying
     conn.execute(
@@ -71,15 +78,60 @@ pub fn initialize_history_db() -> SqlResult<Connection> {
 
 /// Record a command creation in the history database
 pub fn record_command_created(conn: &Connection, cmd: &Command, timestamp: i64) -> SqlResult<()> {
-    let file_path = cmd.get_absolute_file_path(&crate::core::sys_data::get_config())
-        .map(|p| p.to_string_lossy().to_string());
+    let file_path_obj = cmd.get_absolute_file_path(&crate::core::sys_data::get_config());
+    let file_path = file_path_obj.as_ref().map(|p| p.to_string_lossy().to_string());
+
+    // For file-based commands, try to get the file's creation time (birth time)
+    // For non-file commands, use the provided timestamp
+    let actual_timestamp = if cmd.is_path_based() {
+        if let Some(ref path) = file_path_obj {
+            // Try to get file creation time
+            if let Ok(metadata) = std::fs::metadata(path) {
+                if let Ok(created) = metadata.created() {
+                    if let Ok(duration) = created.duration_since(std::time::UNIX_EPOCH) {
+                        duration.as_secs() as i64
+                    } else {
+                        timestamp // Fallback to provided timestamp
+                    }
+                } else {
+                    timestamp // Fallback to provided timestamp
+                }
+            } else {
+                timestamp // File doesn't exist, use provided timestamp
+            }
+        } else {
+            timestamp // No file path, use provided timestamp
+        }
+    } else {
+        timestamp // Non-file command, use provided timestamp
+    };
+
+    // Check if a "created" entry already exists for this command
+    // A command can only be created once, so we check by command name regardless of timestamp
+    let exists: bool = conn.query_row(
+        "SELECT EXISTS(SELECT 1 FROM command_history WHERE change_type = 'created' AND command = ?1)",
+        params![&cmd.command],
+        |row| row.get(0),
+    )?;
+
+    if exists {
+        // Already have a creation record for this command - skip duplicate
+        crate::utils::log(&format!(
+            "HISTORY_CREATE: Skipping duplicate creation record for '{}'",
+            cmd.command
+        ));
+        return Ok(());
+    }
+
+    // Calculate edit_size: for new files, it's just the current file size
+    let edit_size = cmd.file_size.map(|size| size as i64);
 
     conn.execute(
         "INSERT INTO command_history
-         (timestamp, change_type, patch, command, action, arg, flags, file_path, changed_fields, old_values, new_values)
-         VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, NULL, NULL, NULL)",
+         (timestamp, change_type, patch, command, action, arg, flags, file_path, changed_fields, old_values, new_values, edit_size)
+         VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, NULL, NULL, NULL, ?9)",
         params![
-            timestamp,
+            actual_timestamp,
             "created",
             &cmd.patch,
             &cmd.command,
@@ -87,8 +139,28 @@ pub fn record_command_created(conn: &Connection, cmd: &Command, timestamp: i64) 
             &cmd.arg,
             &cmd.flags,
             file_path,
+            edit_size,
         ],
     )?;
+
+    // Log the history entry creation
+    use chrono::{Local, TimeZone};
+    let date_str = if let Some(dt) = Local.timestamp_opt(actual_timestamp, 0).single() {
+        dt.format("%Y-%m-%d").to_string()
+    } else {
+        "unknown".to_string()
+    };
+
+    let size_str = if let Some(size) = edit_size {
+        format!(" size={}b", size)
+    } else {
+        String::new()
+    };
+
+    crate::utils::log(&format!(
+        "HISTORY_CREATE: [{}] action={} cmd='{}' patch='{}'{}",
+        date_str, cmd.action, cmd.command, cmd.patch, size_str
+    ));
 
     Ok(())
 }
@@ -100,8 +172,61 @@ pub fn record_command_modified(
     new_cmd: &Command,
     timestamp: i64,
 ) -> SqlResult<()> {
-    let file_path = new_cmd.get_absolute_file_path(&crate::core::sys_data::get_config())
-        .map(|p| p.to_string_lossy().to_string());
+    let file_path_obj = new_cmd.get_absolute_file_path(&crate::core::sys_data::get_config());
+    let file_path = file_path_obj.as_ref().map(|p| p.to_string_lossy().to_string());
+
+    // For file-based commands, try to get the file's modification time
+    // For non-file commands, use the provided timestamp
+    let actual_timestamp = if new_cmd.is_path_based() {
+        if let Some(ref path) = file_path_obj {
+            // Try to get file modification time
+            if let Ok(metadata) = std::fs::metadata(path) {
+                if let Ok(modified) = metadata.modified() {
+                    if let Ok(duration) = modified.duration_since(std::time::UNIX_EPOCH) {
+                        duration.as_secs() as i64
+                    } else {
+                        timestamp // Fallback to provided timestamp
+                    }
+                } else {
+                    timestamp // Fallback to provided timestamp
+                }
+            } else {
+                timestamp // File doesn't exist, use provided timestamp
+            }
+        } else {
+            timestamp // No file path, use provided timestamp
+        }
+    } else {
+        timestamp // Non-file command, use provided timestamp
+    };
+
+    // Check if a "modified" entry already exists for this command at approximately this timestamp
+    // Allow a 60-second window to account for slight timing variations
+    let exists: bool = conn.query_row(
+        "SELECT EXISTS(SELECT 1 FROM command_history
+         WHERE change_type = 'modified'
+         AND command = ?1
+         AND ABS(timestamp - ?2) < 60)",
+        params![&new_cmd.command, actual_timestamp],
+        |row| row.get(0),
+    )?;
+
+    if exists {
+        // Already have a modification record for this command at this timestamp - skip duplicate
+        crate::utils::log(&format!(
+            "HISTORY_MODIFIED: Skipping duplicate modification record for '{}'",
+            new_cmd.command
+        ));
+        return Ok(());
+    }
+
+    // Calculate edit_size: new_size - old_size (can be negative if file shrunk)
+    let edit_size = match (new_cmd.file_size, old_cmd.file_size) {
+        (Some(new_size), Some(old_size)) => Some((new_size as i64) - (old_size as i64)),
+        (Some(new_size), None) => Some(new_size as i64), // File was created
+        (None, Some(old_size)) => Some(-(old_size as i64)), // File was deleted
+        (None, None) => None, // Not a file-based command
+    };
 
     // Determine what changed
     let mut changed_fields = Vec::new();
@@ -142,10 +267,10 @@ pub fn record_command_modified(
 
     conn.execute(
         "INSERT INTO command_history
-         (timestamp, change_type, patch, command, action, arg, flags, file_path, changed_fields, old_values, new_values)
-         VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11)",
+         (timestamp, change_type, patch, command, action, arg, flags, file_path, changed_fields, old_values, new_values, edit_size)
+         VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12)",
         params![
-            timestamp,
+            actual_timestamp,
             "modified",
             &new_cmd.patch,
             &new_cmd.command,
@@ -156,6 +281,7 @@ pub fn record_command_modified(
             changed_fields_json,
             old_values_json,
             new_values_json,
+            edit_size,
         ],
     )?;
 
@@ -193,7 +319,7 @@ pub fn query_history_by_date_range(
     offset: usize,
 ) -> SqlResult<Vec<HistoryEntry>> {
     let mut stmt = conn.prepare(
-        "SELECT id, timestamp, change_type, patch, command, action, arg, flags, file_path, changed_fields, old_values, new_values
+        "SELECT id, timestamp, change_type, patch, command, action, arg, flags, file_path, changed_fields, old_values, new_values, edit_size
          FROM command_history
          WHERE timestamp BETWEEN ?1 AND ?2
          ORDER BY timestamp DESC
@@ -214,6 +340,7 @@ pub fn query_history_by_date_range(
             changed_fields: row.get(9)?,
             old_values: row.get(10)?,
             new_values: row.get(11)?,
+            edit_size: row.get(12)?,
         })
     })?;
 
@@ -230,7 +357,7 @@ pub fn query_history_by_path_prefix(
     let pattern = format!("{}%", path_prefix);
 
     let mut stmt = conn.prepare(
-        "SELECT id, timestamp, change_type, patch, command, action, arg, flags, file_path, changed_fields, old_values, new_values
+        "SELECT id, timestamp, change_type, patch, command, action, arg, flags, file_path, changed_fields, old_values, new_values, edit_size
          FROM command_history
          WHERE file_path LIKE ?1
          ORDER BY timestamp DESC
@@ -251,6 +378,7 @@ pub fn query_history_by_path_prefix(
             changed_fields: row.get(9)?,
             old_values: row.get(10)?,
             new_values: row.get(11)?,
+            edit_size: row.get(12)?,
         })
     })?;
 
@@ -272,6 +400,7 @@ pub struct HistoryEntry {
     pub changed_fields: Option<String>,
     pub old_values: Option<String>,
     pub new_values: Option<String>,
+    pub edit_size: Option<i64>,
 }
 
 /// Compare two commands to determine if they're functionally different
@@ -305,25 +434,42 @@ pub fn update_command(
     commands: &mut Vec<Command>,
     old_cmd: Option<&Command>,
     mut new_cmd: Command,
+    flush: bool,
 ) -> Result<(), Box<dyn std::error::Error>> {
     // Initialize history database
     let conn = initialize_history_db()?;
 
-    // Get current timestamp
+    // Get current timestamp (fallback for non-file commands)
     let now = std::time::SystemTime::now()
         .duration_since(std::time::UNIX_EPOCH)?
         .as_secs() as i64;
 
-    // Set last_update timestamp
-    new_cmd.last_update = now;
-
-    // Update file_size if this is a file-based command
-    if new_cmd.action == "anchor" || new_cmd.action == "file" || new_cmd.action == "folder" {
+    // Update file_size and last_update timestamp for file-based commands
+    if new_cmd.is_path_based() {
         if let Some(file_path) = new_cmd.get_absolute_file_path(&crate::core::sys_data::get_config()) {
             if let Ok(metadata) = std::fs::metadata(&file_path) {
                 new_cmd.file_size = Some(metadata.len());
+
+                // Set last_update to file's modification time
+                if let Ok(modified) = metadata.modified() {
+                    if let Ok(duration) = modified.duration_since(std::time::UNIX_EPOCH) {
+                        new_cmd.last_update = duration.as_secs() as i64;
+                    } else {
+                        new_cmd.last_update = now;
+                    }
+                } else {
+                    new_cmd.last_update = now;
+                }
+            } else {
+                // File doesn't exist - use current time
+                new_cmd.last_update = now;
             }
+        } else {
+            new_cmd.last_update = now;
         }
+    } else {
+        // Non-file command - use current time
+        new_cmd.last_update = now;
     }
 
     match old_cmd {
@@ -353,6 +499,20 @@ pub fn update_command(
         }
     }
 
+    // If flush requested, save to disk immediately
+    if flush {
+        crate::core::commands::save_commands_to_file(commands)?;
+        crate::core::commands::save_commands_to_cache(commands)?;
+    }
+
+    Ok(())
+}
+
+/// Flush commands to disk (write to commands.txt and cache)
+/// Call this after a batch of update_command calls with flush=false
+pub fn flush_commands(commands: &[Command]) -> Result<(), Box<dyn std::error::Error>> {
+    crate::core::commands::save_commands_to_file(commands)?;
+    crate::core::commands::save_commands_to_cache(commands)?;
     Ok(())
 }
 
@@ -430,7 +590,7 @@ pub fn rescan_with_history() -> Result<Vec<Command>, Box<dyn std::error::Error>>
                 // For now, just detect if the command definition itself changed
                 if commands_differ(old, &new_cmd) {
                     crate::utils::log(&format!("HISTORY_RESCAN: Command '{}' modified in commands.txt", txt_cmd.command));
-                    update_command(&mut updated_commands, Some(old), new_cmd)?;
+                    update_command(&mut updated_commands, Some(old), new_cmd, false)?; // Don't flush yet
                 } else {
                     // No change - just add the old command
                     updated_commands.push(old.clone());
@@ -439,7 +599,7 @@ pub fn rescan_with_history() -> Result<Vec<Command>, Box<dyn std::error::Error>>
             None => {
                 // New command in commands.txt
                 crate::utils::log(&format!("HISTORY_RESCAN: New command '{}' found in commands.txt", txt_cmd.command));
-                update_command(&mut updated_commands, None, txt_cmd.clone())?;
+                update_command(&mut updated_commands, None, txt_cmd.clone(), false)?; // Don't flush yet
             }
         }
     }
@@ -462,7 +622,7 @@ pub fn rescan_with_history() -> Result<Vec<Command>, Box<dyn std::error::Error>>
 
     for cmd in updated_commands.iter_mut() {
         // Only check file-based commands
-        if cmd.action != "anchor" && cmd.action != "file" && cmd.action != "folder" {
+        if !cmd.is_path_based() {
             continue;
         }
 
@@ -485,28 +645,38 @@ pub fn rescan_with_history() -> Result<Vec<Command>, Box<dyn std::error::Error>>
             .map(|d| d.as_secs() as i64);
 
         // Check if file size changed
-        if cmd.file_size != Some(current_size) {
-            crate::utils::log(&format!("HISTORY_RESCAN: File size changed for '{}' ({:?} -> {})",
-                cmd.command, cmd.file_size, current_size));
+        // IMPORTANT: Only record modifications if we have BOTH old and new file sizes
+        // If old file_size is None, we're just setting it for the first time (not a modification)
+        if let Some(old_size) = cmd.file_size {
+            if old_size != current_size {
+                crate::utils::log(&format!("HISTORY_RESCAN: File size changed for '{}' ({} -> {})",
+                    cmd.command, old_size, current_size));
 
-            // Create updated command with new file size
-            let old_cmd = cmd.clone();
+                // Create updated command with new file size
+                let old_cmd = cmd.clone();
+                cmd.file_size = Some(current_size);
+                if let Some(mtime) = current_mtime {
+                    cmd.last_update = mtime;
+                }
+
+                // Record the change in history
+                let conn = initialize_history_db()?;
+                let timestamp = current_mtime.unwrap_or_else(|| {
+                    std::time::SystemTime::now()
+                        .duration_since(std::time::UNIX_EPOCH)
+                        .unwrap()
+                        .as_secs() as i64
+                });
+                record_command_modified(&conn, &old_cmd, cmd, timestamp)?;
+
+                file_changes += 1;
+            }
+        } else {
+            // File exists but we don't have a stored size - just set it without recording modification
             cmd.file_size = Some(current_size);
             if let Some(mtime) = current_mtime {
                 cmd.last_update = mtime;
             }
-
-            // Record the change in history
-            let conn = initialize_history_db()?;
-            let timestamp = current_mtime.unwrap_or_else(|| {
-                std::time::SystemTime::now()
-                    .duration_since(std::time::UNIX_EPOCH)
-                    .unwrap()
-                    .as_secs() as i64
-            });
-            record_command_modified(&conn, &old_cmd, cmd, timestamp)?;
-
-            file_changes += 1;
         }
     }
 

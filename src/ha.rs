@@ -1,9 +1,10 @@
 //! HookAnchor Dispatcher
-//! 
+//!
 //! Main entry point that routes execution based on launch context:
 //! - URL handling (--hook) → Server communication
+//! - --popup → Launch GUI popup
 //! - CLI arguments → Command line mode
-//! - No arguments → GUI popup
+//! - No arguments → Show help
 //!
 //! ⚠️ CRITICAL: READ docs/URL_HANDLING.md BEFORE MODIFYING URL HANDLING ⚠️
 
@@ -26,12 +27,17 @@ fn main() {
     
     // Determine execution mode based on arguments
     match args.as_slice() {
-        // No arguments - launch GUI popup (normal use case)
-        [] | [_] => launch_popup(),
-        
-        // GUI mode - explicitly launch popup
+        // No arguments - show help (user should use --popup to launch GUI)
+        [] | [_] => {
+            hookanchor::cmd::run_command_line_mode(args);
+        }
+
+        // Popup mode - explicitly launch popup
+        [_, flag] if flag == "--popup" => launch_popup(),
+
+        // GUI mode - explicitly launch popup (deprecated, use --popup instead)
         [_, flag] if flag == "--gui" => launch_popup(),
-        
+
         // URL handler mode - process hook URLs via server
         [_, flag, query] if flag == "--hook" => {
             // Add hook:// prefix if not present
@@ -42,7 +48,7 @@ fn main() {
             };
             handle_hook_url(&url);
         }
-        
+
         // CLI mode - forward to command line processor
         _ => {
             // Forward to CLI handling in cmd module
@@ -53,15 +59,7 @@ fn main() {
 
 /// Launch the GUI popup application
 fn launch_popup() {
-    let exe_dir = env::current_exe()
-        .ok()
-        .and_then(|p| {
-            // Resolve symlinks to get the actual binary location
-            std::fs::canonicalize(&p).ok().or(Some(p))
-        })
-        .and_then(|p| p.parent().map(|p| p.to_path_buf()))
-        .unwrap_or_else(|| PathBuf::from("."));
-
+    let exe_dir = hookanchor::utils::get_binary_dir();
     let popup_path = exe_dir.join("popup");
     
     // Launch popup as a separate process

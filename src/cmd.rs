@@ -49,7 +49,8 @@ pub fn run_command_line_mode(args: Vec<String>) {
         "--install" => run_install(&args),
         "--uninstall" => run_uninstall(),
         "--execute-launcher-command" => run_execute_launcher_command(&args),
-        "--popup" => run_popup_command(&args),
+        "--search" => run_search_command(),
+        "--delete-history" => run_delete_history(),
         _ => {
             print(&format!("Unknown command: {}", args[1]));
             print("Use -h or --help for usage information");
@@ -62,7 +63,7 @@ pub fn print_help(program_name: &str) {
     print("HookAnchor - Universal Command Launcher");
     print("");
     print("Usage:");
-    print(&format!("  {}                          # Run GUI mode", program_name));
+    print(&format!("  {}                          # Show help", program_name));
     print(&format!("  {} -h, --help               # Show help", program_name));
     print(&format!("  {} -m, --match <query>      # Search CMDS", program_name));
     print(&format!("  {} -r, --run_fn <cmd>       # Execute specific CMD", program_name));
@@ -75,6 +76,7 @@ pub fn print_help(program_name: &str) {
     print(&format!("  {} --infer-all              # Show changes and prompt to apply", program_name));
     print(&format!("  {} --rescan                 # Rescan filesystem with verbose output", program_name));
     print(&format!("  {} --rebuild                # Rebuild: restart server and rescan filesystem", program_name));
+    print(&format!("  {} --delete-history         # Delete history database and cache", program_name));
     print(&format!("  {} --test-grabber           # Test grabber functionality", program_name));
     print(&format!("  {} --test-permissions       # Test accessibility permissions", program_name));
     print(&format!("  {} --grab [delay]           # Grab active app after delay", program_name));
@@ -85,12 +87,13 @@ pub fn print_help(program_name: &str) {
     print(&format!("  {} --install                # Run setup assistant (preserves configs)", program_name));
     print(&format!("  {} --install --force        # Force reinstall (overwrites configs)", program_name));
     print(&format!("  {} --uninstall              # Uninstall HookAnchor", program_name));
-    print(&format!("  {} --popup [show|hide|delete|status] # Manage popup window", program_name));
+    print(&format!("  {} --popup                  # Launch popup search interface", program_name));
+    print(&format!("  {} --search                 # Launch history viewer", program_name));
     print(&format!("  {} --hook <url>             # Handle hook:// URL (for URL handler)", program_name));
     print("  open 'hook://query'         # Handle hook URL via URL handler");
     print("");
     print("Examples:");
-    print(&format!("  {}           # Launch GUI", program_name));
+    print(&format!("  {} --popup           # Launch popup search interface", program_name));
     print(&format!("  {} -m spot   # Find 'spot' CMDS", program_name));
     print(&format!("  {} -x spot   # Execute top 'spot'", program_name));
     print(&format!("  {} -f spot   # Get 'spot' folders", program_name));
@@ -1105,13 +1108,13 @@ fn run_infer_all_patches(_args: &[String]) {
 fn run_rescan_command() {
     print("🚀 HookAnchor Rescan - Verbose Mode");
     print("====================================");
-    
+
     // Load configuration
     let config = crate::core::sys_data::get_config();
-    
+
     // Debug output
     print("📋 Config loaded - checking file_roots...");
-    
+
     // Get file roots
     let _file_roots = match &config.popup_settings.file_roots {
         Some(roots) => {
@@ -1124,52 +1127,110 @@ fn run_rescan_command() {
             std::process::exit(1);
         }
     };
-    
-    print("\n📋 Initial data load...");
 
-    // Load existing commands from disk first (to preserve patches), then run verbose load
-    let existing_commands = crate::core::load_commands();
-    let mut global_data = crate::core::sys_data::load_data(existing_commands, true);
+    // === NEW CLEAN SINGLETON ARCHITECTURE ===
+    // This eliminates duplicate history entries by using a single shared list
 
-    print("\n🔍 Starting filesystem scan...");
+    print("\n📂 Step 1: Loading last known state...");
 
-    // Run scan with verbose output
-    let scanned_commands = crate::systems::scan_verbose(
-        global_data.commands.clone(),
+    // Load from cache (or empty if cache doesn't exist)
+    // This is our starting point - the last known state of the system
+    let mut commands = match crate::core::commands::load_commands_from_cache() {
+        Some(cmds) => {
+            print(&format!("   ✅ Loaded {} commands from cache", cmds.len()));
+            cmds
+        }
+        None => {
+            print("   ℹ️  No cache found - starting fresh");
+            Vec::new()
+        }
+    };
+
+    print("\n🔍 Step 2: Discovering new files...");
+
+    // Scan filesystem for files NOT in our current list
+    // For each new file: Add to list, record "created" history entry
+    // NOTE: We call load_data() with an EMPTY vec so it:
+    // 1. Loads the config (needed by scan_new_files)
+    // 2. Does NOT run inference on incomplete data (no commands = no patches assigned = no save)
+    // 3. Avoids OVERWRITING commands.txt before we've loaded manual edits!
+    // The full inference pipeline runs inside scan_new_files after all files are discovered.
+    let global_data = crate::core::sys_data::load_data(Vec::new(), false);
+
+    let scanned_commands = crate::systems::scan_new_files(
+        commands.clone(),
         &global_data,
         true
     );
 
-    // Update history files after scan completes
-    print("\n📝 Updating history files...");
-    // TODO: Implement new command history tracking system
-    // let rebuild_all = global_data.config.popup_settings.history_settings
-    //     .as_ref()
-    //     .and_then(|h| h.rebuild_all)
-    //     .unwrap_or(false);
-    // if let Err(e) = crate::systems::update_histories(&mut global_data, rebuild_all) {
-    //     print(&format!("   ⚠️  History update failed: {}", e));
-    // } else {
-    //     print("   ✅ History files updated");
-    // }
+    // Update our commands list with newly discovered files
+    commands = scanned_commands;
+    print(&format!("   ✅ Now tracking {} total commands", commands.len()));
 
-    print("\n📊 Final Summary:");
-    print(&format!("   Total commands after rescan: {}", scanned_commands.len()));
-    
+    print("\n📝 Step 3: Detecting file modifications...");
+
+    // For each file in our list: Check if size changed
+    // If changed: Update size, record "modified" history entry
+    match crate::systems::scan_modified_files(&mut commands, true) {
+        Ok(modified_count) => {
+            print(&format!("   ✅ Processed modifications ({} files changed)", modified_count));
+        }
+        Err(e) => {
+            print(&format!("   ⚠️  Error scanning modifications: {}", e));
+        }
+    }
+
+    print("\n✏️  Step 4: Loading manual edits from commands.txt...");
+
+    // Load user's manual edits from commands.txt and merge them
+    // This is the FINAL step - user edits override filesystem scanning
+    match crate::systems::load_manual_edits(&mut commands, true) {
+        Ok(edits_count) => {
+            print(&format!("   ✅ Processed manual edits ({} edits applied)", edits_count));
+        }
+        Err(e) => {
+            print(&format!("   ⚠️  Error loading manual edits: {}", e));
+        }
+    }
+
+    print("\n🔄 Step 5: Running inference on complete command set...");
+
+    // NOW run inference on the COMPLETE command set (file commands + manual edits)
+    // This will assign patches, create virtual anchors, and save to disk
+    let final_data = crate::core::sys_data::load_data(commands.clone(), true);
+    commands = final_data.commands;
+
+    print(&format!("   ✅ Inference complete on {} commands", commands.len()));
+
+    print("\n💾 Step 7: Final save to cache...");
+
+    // Save final state to cache (load_data already saved to commands.txt)
+    match crate::core::commands::save_commands_to_cache(&commands) {
+        Ok(_) => {
+            print(&format!("   ✅ Saved {} commands to cache", commands.len()));
+        }
+        Err(e) => {
+            print(&format!("   ⚠️  Error saving cache: {}", e));
+        }
+    }
+
+    print("\n📊 Step 8: Final Summary:");
+    print(&format!("   Total commands: {}", commands.len()));
+
     // Count commands by action type
     let mut action_counts: std::collections::HashMap<String, usize> = std::collections::HashMap::new();
-    for cmd in &scanned_commands {
+    for cmd in &commands {
         *action_counts.entry(cmd.action.clone()).or_insert(0) += 1;
     }
-    
+
     print("\n   Commands by action type:");
     let mut sorted_actions: Vec<_> = action_counts.iter().collect();
     sorted_actions.sort_by_key(|(action, _)| (*action).clone());
-    
+
     for (action, count) in sorted_actions {
         print(&format!("     {}: {}", action, count));
     }
-    
+
     print("\n✅ Rescan complete!");
 }
 
@@ -1195,33 +1256,24 @@ fn run_install(args: &[String]) {
     print("");
 
     // Get the current executable path to find the installer_gui binary
-    match std::env::current_exe() {
-        Ok(exe_path) => {
-            // Resolve symlinks to get the actual binary location
-            let resolved_exe = std::fs::canonicalize(&exe_path).unwrap_or(exe_path);
-            let exe_dir = resolved_exe.parent().unwrap_or(std::path::Path::new("."));
-            let installer_path = exe_dir.join("installer_gui");
+    let exe_dir = utils::get_binary_dir();
+    let installer_path = exe_dir.join("installer_gui");
 
-            // Launch the GUI installer
-            match std::process::Command::new(&installer_path)
-                .spawn()
-            {
-                Ok(_) => {
-                    print("✅ GUI installer launched successfully!");
-                    print("   Complete the installation in the GUI window.");
-                }
-                Err(e) => {
-                    print(&format!("❌ Failed to launch GUI installer: {}", e));
-                    print("");
-                    print("Troubleshooting:");
-                    print(&format!("  - Make sure installer_gui binary exists at: {}", installer_path.display()));
-                    print("  - Try rebuilding with: cargo build --release");
-                    print("  - Check file permissions");
-                }
-            }
+    // Launch the GUI installer
+    match std::process::Command::new(&installer_path)
+        .spawn()
+    {
+        Ok(_) => {
+            print("✅ GUI installer launched successfully!");
+            print("   Complete the installation in the GUI window.");
         }
         Err(e) => {
-            print(&format!("❌ Could not determine executable path: {}", e));
+            print(&format!("❌ Failed to launch GUI installer: {}", e));
+            print("");
+            print("Troubleshooting:");
+            print(&format!("  - Make sure installer_gui binary exists at: {}", installer_path.display()));
+            print("  - Try rebuilding with: cargo build --release");
+            print("  - Check file permissions");
         }
     }
 }
@@ -1553,63 +1605,131 @@ fn run_rebuild_command() {
     print("\n🎉 Rebuild complete!");
 }
 
-/// Run popup management command
-fn run_popup_command(args: &[String]) {
+/// Launch history viewer
+fn run_search_command() {
     use std::process::Command;
-    
-    // Determine the popup action
-    let action = if args.len() >= 3 {
-        args[2].as_str()
-    } else {
-        "show"  // Default action
-    };
-    
-    utils::detailed_log("POPUP_CMD", &format!("Popup action requested: {}", action));
-    
-    // Validate action
-    match action {
-        "show" | "hide" | "delete" | "status" => {},
-        _ => {
-            utils::log_error(&format!("Unknown popup action: {}", action));
-            print(&format!("Unknown popup action: {}", action));
-            print("Valid actions: show, hide, delete, status");
-            std::process::exit(1);
-        }
-    }
-    
-    // Find popup launcher binary
-    let exe_path = std::env::current_exe().unwrap_or_default();
-    let exe_dir = exe_path.parent().unwrap_or(std::path::Path::new("."));
-    let popup_path = exe_dir.join("popup");
-    
-    if !popup_path.exists() {
-        utils::log_error(&format!("Popup launcher not found at: {:?}", popup_path));
-        print(&format!("Popup launcher not found at: {:?}", popup_path));
+
+    utils::detailed_log("SEARCH_CMD", "Search command requested - launching history viewer");
+
+    // Find history viewer binary
+    let exe_dir = utils::get_binary_dir();
+    let viewer_path = exe_dir.join("HookAnchorHistoryViewer");
+
+    if !viewer_path.exists() {
+        utils::log_error(&format!("History viewer not found at: {:?}", viewer_path));
+        print(&format!("History viewer not found at: {:?}", viewer_path));
         std::process::exit(1);
     }
-    
-    utils::detailed_log("POPUP_CMD", &format!("Executing popup launcher: {:?} {}", popup_path, action));
-    
-    // Execute popup launcher with action
-    match Command::new(&popup_path)
-        .arg(action)
-        .output() {
-        Ok(output) => {
-            if output.status.success() {
-                let stdout = String::from_utf8_lossy(&output.stdout);
-                utils::detailed_log("POPUP_CMD", &format!("Popup {} succeeded: {}", action, stdout.trim()));
-                print!("{}", stdout);
-            } else {
-                let stderr = String::from_utf8_lossy(&output.stderr);
-                utils::log_error(&format!("Popup {} failed: {}", action, stderr.trim()));
-                eprint!("{}", stderr);
-                std::process::exit(1);
-            }
+
+    utils::detailed_log("SEARCH_CMD", &format!("Launching history viewer: {:?}", viewer_path));
+
+    // Launch history viewer as a background process
+    match Command::new(&viewer_path)
+        .spawn() {
+        Ok(_) => {
+            utils::detailed_log("SEARCH_CMD", "History viewer launched successfully");
+            print("History viewer launched");
         }
         Err(e) => {
-            utils::log_error(&format!("Failed to execute popup launcher: {}", e));
-            print(&format!("Failed to execute popup launcher: {}", e));
+            utils::log_error(&format!("Failed to launch history viewer: {}", e));
+            print(&format!("Failed to launch history viewer: {}", e));
             std::process::exit(1);
         }
+    }
+}
+
+/// Delete command history database and cache
+fn run_delete_history() {
+    use std::io::{self, Write};
+
+    print("");
+    print("⚠️  WARNING: This will permanently delete:");
+    print("  • Command history database (~/.config/hookanchor/history.db)");
+    print("  • Command cache file (~/.config/hookanchor/commands_cache.json)");
+    print("");
+    print("This action cannot be undone!");
+    print("");
+    print("Type 'yes' to confirm deletion: ");
+
+    // Flush stdout to ensure prompt appears
+    io::stdout().flush().unwrap();
+
+    // Read user input
+    let mut input = String::new();
+    io::stdin().read_line(&mut input).unwrap();
+    let input = input.trim();
+
+    if input != "yes" {
+        print("Deletion cancelled.");
+        return;
+    }
+
+    // Get paths to delete
+    let config_dir = dirs::home_dir()
+        .expect("Could not find home directory")
+        .join(".config")
+        .join("hookanchor");
+
+    let history_db = config_dir.join("history.db");
+    let cache_file = config_dir.join("commands_cache.json");
+
+    let mut deleted_count = 0;
+    let mut errors = Vec::new();
+
+    // Delete history database
+    if history_db.exists() {
+        match std::fs::remove_file(&history_db) {
+            Ok(_) => {
+                print(&format!("✓ Deleted history database: {}", history_db.display()));
+                deleted_count += 1;
+            }
+            Err(e) => {
+                errors.push(format!("Failed to delete {}: {}", history_db.display(), e));
+            }
+        }
+    } else {
+        print(&format!("  History database not found: {}", history_db.display()));
+    }
+
+    // Delete cache file
+    if cache_file.exists() {
+        match std::fs::remove_file(&cache_file) {
+            Ok(_) => {
+                print(&format!("✓ Deleted cache file: {}", cache_file.display()));
+                deleted_count += 1;
+            }
+            Err(e) => {
+                errors.push(format!("Failed to delete {}: {}", cache_file.display(), e));
+            }
+        }
+    } else {
+        print(&format!("  Cache file not found: {}", cache_file.display()));
+    }
+
+    // Report results
+    print("");
+    if deleted_count > 0 {
+        print(&format!("✓ Successfully deleted {} file(s)", deleted_count));
+        print("");
+        print("📝 Rebuilding history from scratch with accurate file creation dates...");
+        print("");
+
+        // Immediately run rescan to rebuild history with correct creation dates
+        // The new architecture eliminates duplicate history entries:
+        // 1. Start with empty cache (nothing known)
+        // 2. Scan filesystem → Record "created" for all 6000+ files
+        // 3. Check for modifications → Finds NONE (just added with current sizes)
+        // 4. Load manual edits from commands.txt
+        // Result: Only "created" entries, no duplicate "modified" entries!
+        run_rescan_command();
+    }
+
+    if !errors.is_empty() {
+        print("");
+        print("Errors:");
+        for error in errors {
+            print(&format!("  ✗ {}", error));
+        }
+        std::process::exit(1);
     }
 }

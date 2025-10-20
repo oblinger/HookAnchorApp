@@ -596,7 +596,12 @@ impl PopupInterface for AnchorSelector {
         // Call the real implementation
         self.show_keys_dialog_impl();
     }
-    
+
+    fn show_history_viewer(&mut self) {
+        // Call the real implementation
+        self.show_history_viewer_impl();
+    }
+
     fn handle_uninstall_app(&mut self) {
         // Call the real implementation
         self.handle_uninstall_app_impl();
@@ -1041,7 +1046,39 @@ impl AnchorSelector {
         // Show the dialog
         self.dialog.show(key_lines);
     }
-    
+
+    /// Launch the history viewer with the current anchor as the default filter
+    fn show_history_viewer_impl(&mut self) {
+        // Get current anchor from app_state
+        let anchor_filter = self.popup_state.app_state.anchor_name.clone()
+            .unwrap_or_else(|| String::new());
+
+        // Get path to history_viewer binary
+        if let Ok(exe_path) = std::env::current_exe() {
+            let resolved = std::fs::canonicalize(&exe_path).unwrap_or(exe_path);
+            let exe_dir = resolved.parent().unwrap();
+            let viewer_path = exe_dir.join("HookAnchorHistoryViewer");
+
+            // Launch history viewer with anchor filter as argument
+            match std::process::Command::new(&viewer_path)
+                .arg(&anchor_filter)
+                .spawn()
+            {
+                Ok(_) => {
+                    crate::utils::log(&format!("Launched history viewer with filter: '{}'", anchor_filter));
+                    // Close popup after launching history viewer
+                    self.should_exit = true;
+                }
+                Err(e) => {
+                    crate::utils::log_error(&format!("Failed to launch history viewer: {}", e));
+                    self.dialog.show_error(&format!("Could not launch history viewer: {}", e));
+                }
+            }
+        } else {
+            self.dialog.show_error("Could not determine executable path");
+        }
+    }
+
     fn handle_template_create_impl(&mut self) {
         self.handle_template_create_named("default");
     }
@@ -1198,23 +1235,40 @@ impl AnchorSelector {
         } else {
             // Process the unified action as a template
             crate::utils::detailed_log("SYSTEM", &format!("Processing unified action template: {}", template_name));
-            
+
             // Convert unified action to template and process it
             if let Some(ref actions) = config.actions {
                 if let Some(action) = actions.get(template_name) {
                     if let Some(template) = action.to_template() {
                         crate::utils::detailed_log("TEMPLATE", &format!("TEMPLATE: Converted action to template, edit={}", template.edit));
-                        
+
                         // Check for existing command if use_existing is true
+                        // For edit_selection template, use the actual selected command (not a name search)
+                        // to ensure we get the exact command the user selected (handles case-sensitive duplicates)
                         let existing_command = if template.use_existing {
-                            let expanded_name = context.expand(&template.name);
-                            self.popup_state.commands.iter().find(|cmd| 
-                                cmd.command.eq_ignore_ascii_case(&expanded_name)
-                            ).cloned()
+                            if template_name == "edit_selection" {
+                                // Use the selected command directly from context (already populated above)
+                                if !self.filtered_commands().is_empty() {
+                                    let (display_commands, _, _, _) = self.get_display_commands();
+                                    if self.selected_index() < display_commands.len() {
+                                        Some(display_commands[self.selected_index()].clone())
+                                    } else {
+                                        None
+                                    }
+                                } else {
+                                    None
+                                }
+                            } else {
+                                // For other templates, search by name (case-insensitive for backward compatibility)
+                                let expanded_name = context.expand(&template.name);
+                                self.popup_state.commands.iter().find(|cmd|
+                                    cmd.command.eq_ignore_ascii_case(&expanded_name)
+                                ).cloned()
+                            }
                         } else {
                             None
                         };
-                        
+
                         if let Some(existing) = existing_command {
                             // Edit the existing command
                             if template.edit {
@@ -3186,28 +3240,26 @@ fn get_previous_window_location(ctx: &egui::Context, window_size: egui::Vec2) ->
 
 fn is_position_visible(pos: egui::Pos2, window_size: egui::Vec2) -> bool {
     crate::utils::detailed_log("WINDOW_POS", &format!("is_position_visible checking pos: {:?}, window_size: {:?}", pos, window_size));
-    
-    // Get all available monitors/displays
-    // For now, we'll use a basic check - ensure the window isn't completely off-screen
-    // This is a simplified version - in a full implementation you'd query actual display bounds
-    
+
     let window_rect = egui::Rect::from_min_size(pos, window_size);
     crate::utils::detailed_log("WINDOW_POS", &format!("Window rect: {:?}", window_rect));
-    
-    // Basic bounds check - assume main display is at least 1024x768
-    // In a real implementation, you'd query actual display information
+
+    // Get actual screen dimensions instead of hardcoded values
+    let (screen_width, screen_height) = get_actual_screen_dimensions();
     let main_display_rect = egui::Rect::from_min_size(
-        egui::pos2(0.0, 0.0), 
-        egui::vec2(1024.0, 768.0)
+        egui::pos2(0.0, 0.0),
+        egui::vec2(screen_width, screen_height)
     );
-    crate::utils::detailed_log("WINDOW_POS", &format!("Main display rect: {:?}", main_display_rect));
-    
+    crate::utils::detailed_log("WINDOW_POS", &format!("Main display rect: {:?} (actual screen: {}x{})", main_display_rect, screen_width, screen_height));
+
     // Check if at least part of the window is visible
     // Allow for window to be partially off-screen but require some overlap
     let min_visible_area = window_size.x.min(window_size.y) * 0.3; // 30% of smaller dimension
-    
+
     let intersection = main_display_rect.intersect(window_rect);
-    intersection.width() * intersection.height() >= min_visible_area * min_visible_area
+    let is_visible = intersection.width() * intersection.height() >= min_visible_area * min_visible_area;
+    crate::utils::detailed_log("WINDOW_POS", &format!("Position visible check: {} (intersection: {:?})", is_visible, intersection));
+    is_visible
 }
 
 /// Get the actual screen dimensions (not window dimensions)

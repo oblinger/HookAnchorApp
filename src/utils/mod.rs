@@ -38,11 +38,11 @@ pub use files::{
 
 // General utilities
 pub use utilities::{
-    init_binary_path, get_binary_path, expand_tilde, 
+    init_binary_path, get_binary_path, get_binary_dir, expand_tilde,
     launch_app_with_arg, open_url, open_folder, open_with_app,
-    execute_shell_command, execute_shell_command_with_env, 
+    execute_shell_command, execute_shell_command_with_env,
     execute_shell_command_unified, execute_shell_with_options,
-    shell_simple, shell_login, shell_hybrid, 
+    shell_simple, shell_login, shell_hybrid,
     ShellOptions
 };
 

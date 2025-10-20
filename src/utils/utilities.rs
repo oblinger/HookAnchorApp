@@ -31,6 +31,28 @@ pub fn get_binary_path() -> Option<&'static PathBuf> {
     BINARY_PATH.get()
 }
 
+/// Get the directory containing the binaries (resolves symlinks)
+///
+/// This function resolves symlinks to find the actual binary location,
+/// then returns the parent directory. This ensures that related binaries
+/// (popup, HookAnchorHistoryViewer, etc.) can be found reliably even when
+/// the CLI is invoked via a symlink.
+///
+/// # Returns
+/// The directory containing the binaries, or current directory as fallback
+pub fn get_binary_dir() -> PathBuf {
+    std::env::current_exe()
+        .ok()
+        .and_then(|exe_path| {
+            // Resolve symlinks to get the actual binary location
+            std::fs::canonicalize(&exe_path).ok().or(Some(exe_path))
+        })
+        .and_then(|resolved_path| {
+            resolved_path.parent().map(|p| p.to_path_buf())
+        })
+        .unwrap_or_else(|| PathBuf::from("."))
+}
+
 // ============================================================================
 // PATH UTILITIES
 // ============================================================================

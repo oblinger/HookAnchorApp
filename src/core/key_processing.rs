@@ -466,7 +466,10 @@ pub trait PopupInterface {
     
     /// Show the keys dialog
     fn show_keys_dialog(&mut self);
-    
+
+    /// Show command history viewer
+    fn show_history_viewer(&mut self);
+
     /// Handle uninstall app
     fn handle_uninstall_app(&mut self);
     
@@ -866,6 +869,7 @@ pub enum Action {
     EditInputCommand,
     LinkToClipboard,
     ShowKeys,
+    ShowHistory,
     UninstallApp,
     TemplateCreate,
     ActivateTmux, // Renamed from ActivateAnchor
@@ -888,6 +892,7 @@ impl ActionHandler {
             Action::EditInputCommand => "Create new command from input",
             Action::LinkToClipboard => "Link to clipboard",
             Action::ShowKeys => "Show key bindings",
+            Action::ShowHistory => "Show command history",
             Action::UninstallApp => "Uninstall application",
             Action::TemplateCreate => "Create template",
             Action::ActivateTmux => "Activate TMUX session for selected command",
@@ -959,6 +964,10 @@ impl KeyHandler for ActionHandler {
             },
             Action::ShowKeys => {
                 context.popup.show_keys_dialog();
+                KeyHandlerResult::Handled
+            },
+            Action::ShowHistory => {
+                context.popup.show_history_viewer();
                 KeyHandlerResult::Handled
             },
             Action::UninstallApp => {
@@ -1189,6 +1198,7 @@ pub fn create_default_key_registry(config: &super::Config) -> KeyRegistry {
                                 "show_folder" => Box::new(ActionHandler::new(Action::ShowFolder)),
                                 "show_contact" => Box::new(ActionHandler::new(Action::ShowContact)),
                                 "show_keys" => Box::new(ActionHandler::new(Action::ShowKeys)),
+                                "show_history" => Box::new(ActionHandler::new(Action::ShowHistory)),
                                 "edit_active_command" => Box::new(ActionHandler::new(Action::EditActiveCommand)),
                                 "edit_input_command" => Box::new(ActionHandler::new(Action::EditInputCommand)),
                                 "open_editor" => Box::new(ActionHandler::new(Action::OpenEditor)),

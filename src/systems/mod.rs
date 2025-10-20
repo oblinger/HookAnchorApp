@@ -28,8 +28,10 @@ pub(crate) mod history;
 
 // Scanner subsystem - file scanning and command discovery
 pub use scanner::{
-    scan_check,      // Main function for automatic background scanning
-    scan_verbose,    // Manual CLI rescanning with verbose output
+    scan_check,             // Main function for automatic background scanning
+    scan_new_files,         // Scan filesystem for NEW files not yet in commands
+    scan_modified_files,    // Scan for MODIFIED files and update history
+    load_manual_edits,      // Load user's manual edits from commands.txt
     SCANNER_GENERATED_ACTIONS  // Constants for generated action types
 };
 

@@ -1,55 +1,53 @@
 //! # File Scanner Module
-//! 
-//! This module handles filesystem scanning to discover and create commands for markdown files,
-//! applications, and cloud resources (Notion). The scanner maintains existing user edits while
-//! refreshing automatically generated content.
 //!
-//! ## Scanning Process Overview
-//! 
-//! ### Phase 1: Initialization
-//! 1. **Preserve existing patches**: Build a map of command→patch from existing commands
-//! 2. **Delete old anchors**: Remove non-Notion anchors (unless user-edited with 'U' flag)
-//!    - Special anchors like "orphans" and "Notion Root" are preserved
-//!    - This allows anchors to be recreated with fresh data
-//! 3. **Clean up scanner commands**: Remove scanner-generated commands (markdown/folder/app)
-//!    - Only for files within scan roots
-//!    - Preserves user-edited commands ('U' flag)
-//!    - Removes commands for non-existent files
+//! Scans the filesystem to discover markdown files, applications, and cloud resources (Notion),
+//! creating commands for each discovered item while tracking file changes in history.
 //!
-//! ### Phase 2: Build Tracking Sets (AFTER deletion)
-//! 1. **existing_commands**: Set of command names (lowercase) to prevent name collisions
-//! 2. **handled_files**: Set of file paths from remaining commands
-//!    - Built AFTER deletion so deleted anchors can be recreated
-//!    - Skips empty args (commands without files)
-//!    - Prevents creating duplicate commands for the same file
+//! ## How Scanning Works
 //!
-//! ### Phase 3: Filesystem Scan
-//! For each configured file root (e.g., ~/ob/kmr, /Applications):
-//! 1. **Process .app bundles**: Create app commands with "App" suffix
-//! 2. **Process markdown files**:
-//!    - Determine if it's an anchor (filename matches parent folder) or regular markdown
-//!    - Skip if file already in handled_files
-//!    - Skip if command name already in existing_commands
-//!    - Preserve patch from existing_patches if available
-//! 3. **Recursively scan subdirectories**
+//! The scanner uses a shared command list that gets updated through the following steps:
 //!
-//! ### Phase 4: Cloud Services
-//! 1. **Notion scanning**: If enabled, fetch pages and create anchor commands
-//!    - All Notion pages become anchors under "Notion Root" patch
+//! ```text
+//! 1. scan_new_files(commands, sys_data) → Discover new files
+//!    - Walks configured filesystem roots (e.g., ~/ob/kmr, /Applications)
+//!    - Creates commands for markdown files, .app bundles, and DOC files
+//!    - Records "created" history entries using file birth times
+//!    - Sets file_size metadata on each command
+//!    - Does NOT run inference - just discovery
+//!    - Returns updated command list
 //!
-//! ### Phase 5: Post-Processing (scan_verbose only)
-//! 1. Run full inference pipeline via load_data():
-//!    - Create patches hashmap from anchors
-//!    - Run patch inference (assigns patches to commands with empty patches)
-//!    - Normalize patch case
-//! 2. Save final commands to commands.txt
+//! 2. scan_modified_files(&mut commands) → Detect file changes
+//!    - Checks current file size against stored file_size metadata
+//!    - Records "modified" history entries when size changed
+//!    - Updates file_size and last_update timestamps
+//!    - Returns count of files modified
 //!
-//! ## Key Design Decisions
-//! 
-//! - **handled_files built AFTER deletion**: Allows recreation of deleted anchors
-//! - **Skip empty args**: Empty args don't represent files, shouldn't block other commands
-//! - **User edits preserved**: 'U' flag prevents automatic deletion/modification
-//! - **Patch preservation**: Existing patches are preserved when regenerating commands
+//! 3. load_manual_edits(&mut commands) → Apply user edits
+//!    - Loads commands.txt (user's manual edits)
+//!    - Merges user edits into command list (1pass, work, chrome, alias, url, etc.)
+//!    - Preserves file_size metadata from filesystem scan
+//!    - Returns count of edits applied
+//!
+//! 4. load_data(commands) → Run inference (done by caller, not scanner)
+//!    - Assigns patches to commands without patches
+//!    - Creates virtual anchor commands
+//!    - Normalizes patch case
+//!    - Saves complete command set to disk
+//! ```
+//!
+//! ## Key Methods
+//!
+//! - **`scan_new_files()`** - Discovers files not yet tracked, creates commands, records creation history
+//! - **`scan_modified_files()`** - Detects size changes in tracked files, records modification history
+//! - **`load_manual_edits()`** - Merges user's manual command edits from commands.txt
+//! - **`scan_check()`** - Background scanning at configured intervals
+//!
+//! ## Guarantees
+//!
+//! - **No duplicate history entries**: Each file scanned exactly once per rescan
+//! - **Accurate timestamps**: Uses file birth time for "created", modification time for "modified"
+//! - **User edits preserved**: Commands with 'U' flag never automatically deleted or modified
+//! - **Single source of truth**: Cache tracks current file state, commands.txt stores user edits
 
 use std::fs;
 use std::path::{Path, PathBuf};
@@ -204,29 +202,316 @@ pub fn scan_check(commands: Vec<Command>) -> Vec<Command> {
 
 /// Internal scan function that orchestrates all scanning operations
 fn scan(commands: Vec<Command>, sys_data: &crate::core::sys_data::SysData) -> Vec<Command> {
-    scan_verbose(commands, sys_data, false)
+    scan_new_files(commands, sys_data, false)
 }
 
-/// Manual CLI rescanning with verbose output
+/// Loads user's manual edits from commands.txt and merges them into the command list
+/// This is the FINAL step in rescan - user edits override filesystem scanning
+/// For each command in commands.txt:
+/// - If exists in commands: Update metadata if different
+/// - If NOT in commands: Add it (user manually added)
+/// Returns number of commands added/updated from manual edits
+pub fn load_manual_edits(commands: &mut Vec<Command>, verbose: bool) -> Result<usize, Box<dyn std::error::Error>> {
+    if verbose {
+        println!("\n📝 Loading manual edits from commands.txt...");
+    }
+
+    // Load commands.txt
+    let txt_commands = crate::core::commands::load_commands_raw();
+    crate::utils::log(&format!("LOAD_MANUAL_EDITS: Loaded {} commands from commands.txt", txt_commands.len()));
+
+    let mut edits_applied = 0;
+    let mut history_created = 0;
+    let mut history_modified = 0;
+
+    // Initialize history database connection
+    let conn_result = crate::systems::history::initialize_history_db();
+
+    // For each command in commands.txt, check if we need to add or update it
+    for txt_cmd in txt_commands {
+        // DEDUPLICATION: If a command with the same file path already exists (from scanner),
+        // only load this txt command if it has the 'U' (user-edited) flag.
+        // This prevents scanner-generated duplicates (e.g., old open_app vs new app for same file)
+        if !txt_cmd.arg.is_empty() {
+            let same_file_exists = commands.iter().any(|c| c.arg == txt_cmd.arg);
+            if same_file_exists && !txt_cmd.flags.contains('U') {
+                if verbose {
+                    println!("   ⏭️  Skipping duplicate '{}' (scanner already created fresh version)", txt_cmd.command);
+                }
+                continue;
+            }
+        }
+
+        // Find corresponding command in our list (match by patch, command name, and action)
+        let existing_idx = commands.iter().position(|c|
+            c.patch == txt_cmd.patch && c.command == txt_cmd.command && c.action == txt_cmd.action
+        );
+
+        match existing_idx {
+            Some(idx) => {
+                // Command exists - check if it changed
+                let existing = &commands[idx];
+
+                // Only update if something actually changed (besides file_size which we track separately)
+                if existing.arg != txt_cmd.arg || existing.flags != txt_cmd.flags {
+                    if verbose {
+                        println!("   ✏️  Updated manual edit: '{}'", txt_cmd.command);
+                    }
+                    crate::utils::log(&format!("LOAD_MANUAL_EDITS: Updating command '{}' from manual edit", txt_cmd.command));
+
+                    let old_cmd = existing.clone();
+
+                    // Preserve file_size and last_update from filesystem scan
+                    let mut updated_cmd = txt_cmd.clone();
+                    updated_cmd.file_size = existing.file_size;
+                    updated_cmd.last_update = existing.last_update;
+
+                    commands[idx] = updated_cmd.clone();
+                    edits_applied += 1;
+
+                    // Record modification in history
+                    if let Ok(ref conn) = conn_result {
+                        let timestamp = std::time::SystemTime::now()
+                            .duration_since(std::time::UNIX_EPOCH)
+                            .unwrap()
+                            .as_secs() as i64;
+                        if let Err(e) = crate::systems::history::record_command_modified(conn, &old_cmd, &updated_cmd, timestamp) {
+                            crate::utils::log_error(&format!("Failed to record modification for '{}': {}", updated_cmd.command, e));
+                        } else {
+                            history_modified += 1;
+                        }
+                    }
+                }
+            }
+            None => {
+                // New command from manual edit - add it
+                if verbose {
+                    println!("   ➕ Added manual command: '{}'", txt_cmd.command);
+                }
+                crate::utils::log(&format!("LOAD_MANUAL_EDITS: Adding new command '{}' from manual edit", txt_cmd.command));
+                commands.push(txt_cmd.clone());
+                edits_applied += 1;
+
+                // Record creation in history
+                if let Ok(ref conn) = conn_result {
+                    let timestamp = std::time::SystemTime::now()
+                        .duration_since(std::time::UNIX_EPOCH)
+                        .unwrap()
+                        .as_secs() as i64;
+                    if let Err(e) = crate::systems::history::record_command_created(conn, &txt_cmd, timestamp) {
+                        crate::utils::log_error(&format!("Failed to record creation for '{}': {}", txt_cmd.command, e));
+                    } else {
+                        history_created += 1;
+                    }
+                }
+            }
+        }
+    }
+
+    if verbose {
+        if edits_applied > 0 {
+            println!("   ✅ Applied {} manual edit(s)", edits_applied);
+        } else {
+            println!("   ✅ No manual edits to apply");
+        }
+        if history_created > 0 || history_modified > 0 {
+            println!("   📝 Recorded {} creation(s), {} modification(s) in history", history_created, history_modified);
+        }
+    }
+
+    crate::utils::log(&format!("LOAD_MANUAL_EDITS: Applied {} manual edits ({} created, {} modified in history)",
+        edits_applied, history_created, history_modified));
+
+    Ok(edits_applied)
+}
+
+/// Scans filesystem to detect MODIFIED files and update history
+/// Compares current file sizes against stored file_size metadata
+/// Records "modified" history entries for files that changed
+/// Returns number of files that were modified
+pub fn scan_modified_files(commands: &mut Vec<Command>, verbose: bool) -> Result<usize, Box<dyn std::error::Error>> {
+    if verbose {
+        println!("\n🔍 Scanning for file modifications...");
+    }
+
+    let mut file_changes = 0;
+
+    for cmd in commands.iter_mut() {
+        // Only check file-based commands
+        if !cmd.is_path_based() {
+            continue;
+        }
+
+        // Get file path
+        let file_path = match cmd.get_absolute_file_path(&crate::core::sys_data::get_config()) {
+            Some(path) => path,
+            None => continue,
+        };
+
+        // Check if file exists and get current size
+        let current_metadata = match std::fs::metadata(&file_path) {
+            Ok(meta) => meta,
+            Err(_) => continue, // File doesn't exist or can't be read
+        };
+
+        let current_size = current_metadata.len();
+        let current_mtime = current_metadata.modified()
+            .ok()
+            .and_then(|t| t.duration_since(std::time::UNIX_EPOCH).ok())
+            .map(|d| d.as_secs() as i64);
+
+        // Check if file size changed
+        // IMPORTANT: Only record modifications if we have BOTH old and new file sizes
+        // If old file_size is None, this is a newly discovered file (should be handled by scan_new_files)
+        // This prevents recording duplicate "modified" entries on every rescan
+        if let Some(old_size) = cmd.file_size {
+            if old_size != current_size {
+                if verbose {
+                    println!("   📝 File size changed: '{}' ({} -> {} bytes)",
+                        cmd.command, old_size, current_size);
+                }
+
+                crate::utils::log(&format!("SCAN_MODIFIED: File size changed for '{}' ({} -> {})",
+                    cmd.command, old_size, current_size));
+
+                // Create updated command with new file size
+                let old_cmd = cmd.clone();
+                cmd.file_size = Some(current_size);
+                if let Some(mtime) = current_mtime {
+                    cmd.last_update = mtime;
+                }
+
+                // Record the change in history
+                let conn = crate::systems::history::initialize_history_db()?;
+                let timestamp = current_mtime.unwrap_or_else(|| {
+                    std::time::SystemTime::now()
+                        .duration_since(std::time::UNIX_EPOCH)
+                        .unwrap()
+                        .as_secs() as i64
+                });
+                crate::systems::history::record_command_modified(&conn, &old_cmd, cmd, timestamp)?;
+
+                file_changes += 1;
+            }
+        } else {
+            // File exists but we don't have a stored size - update it but don't record as modification
+            cmd.file_size = Some(current_size);
+            if let Some(mtime) = current_mtime {
+                cmd.last_update = mtime;
+            }
+        }
+    }
+
+    if verbose {
+        if file_changes > 0 {
+            println!("   ✅ Detected {} file modification(s)", file_changes);
+        } else {
+            println!("   ✅ No file modifications detected");
+        }
+    }
+
+    crate::utils::log(&format!("SCAN_MODIFIED: Detected {} file changes", file_changes));
+
+    Ok(file_changes)
+}
+
+/// Scans filesystem for NEW files not yet in the command list
 /// Used for the --rescan command line option
-pub fn scan_verbose(commands: Vec<Command>, sys_data: &crate::core::sys_data::SysData, verbose: bool) -> Vec<Command> {
+/// This function discovers new files and adds them to the command list
+/// AND records "created" history entries with file birth times
+pub fn scan_new_files(commands: Vec<Command>, sys_data: &crate::core::sys_data::SysData, verbose: bool) -> Vec<Command> {
     let empty_vec = vec![];
     let file_roots = sys_data.config.popup_settings.file_roots.as_ref().unwrap_or(&empty_vec);
-    
+
     if verbose {
         println!("\n🔍 Starting filesystem scan...");
         println!("   Scanning roots: {:?}", file_roots);
     }
-    
+
     // First scan files (markdown and apps)
     let initial_count = commands.len();
     let mut commands = scan_files(commands, file_roots, &sys_data.config);
-    
+
+    let files_added = commands.len().saturating_sub(initial_count);
+
     if verbose {
-        let files_added = commands.len().saturating_sub(initial_count);
         println!("   Scan complete: {} commands total", commands.len());
         if files_added > 0 {
             println!("   Added {} new commands", files_added);
+        }
+    }
+
+    // Record "created" history entries for newly discovered files
+    if files_added > 0 {
+        if verbose {
+            println!("\n📝 Recording creation history for {} new files...", files_added);
+        }
+
+        // Initialize history database
+        match crate::systems::history::initialize_history_db() {
+            Ok(conn) => {
+                let mut recorded = 0;
+
+                // Record creation for newly added commands (from initial_count to end)
+                // CRITICAL: Also set file_size metadata so scan_modified_files knows they're up-to-date
+                for cmd in &mut commands[initial_count..] {
+                    // Only record for file-based commands
+                    if !cmd.is_path_based() {
+                        continue;
+                    }
+
+                    // Get file path
+                    let file_path = match cmd.get_absolute_file_path(&sys_data.config) {
+                        Some(path) => path,
+                        None => continue,
+                    };
+
+                    // Get file metadata (birth time + current size)
+                    let (birth_time, current_size, current_mtime) = match std::fs::metadata(&file_path) {
+                        Ok(meta) => {
+                            let birth = meta.created()
+                                .ok()
+                                .and_then(|t| t.duration_since(std::time::UNIX_EPOCH).ok())
+                                .map(|d| d.as_secs() as i64);
+
+                            let size = meta.len();
+
+                            let mtime = meta.modified()
+                                .ok()
+                                .and_then(|t| t.duration_since(std::time::UNIX_EPOCH).ok())
+                                .map(|d| d.as_secs() as i64);
+
+                            (birth, Some(size), mtime)
+                        }
+                        Err(_) => (None, None, None),
+                    };
+
+                    // Set file_size and last_update on the command
+                    // This is CRITICAL - prevents scan_modified_files from re-detecting the same file
+                    if let Some(size) = current_size {
+                        cmd.file_size = Some(size);
+                        if let Some(mtime) = current_mtime {
+                            cmd.last_update = mtime;
+                        }
+                    }
+
+                    if let Some(timestamp) = birth_time {
+                        // Record "created" history entry
+                        if let Err(e) = crate::systems::history::record_command_created(&conn, cmd, timestamp) {
+                            crate::utils::log_error(&format!("Failed to record creation for '{}': {}", cmd.command, e));
+                        } else {
+                            recorded += 1;
+                        }
+                    }
+                }
+
+                if verbose && recorded > 0 {
+                    println!("   ✅ Recorded {} creation entries", recorded);
+                }
+            }
+            Err(e) => {
+                crate::utils::log_error(&format!("Failed to initialize history DB for creation records: {}", e));
+            }
         }
     }
     
@@ -342,35 +627,18 @@ pub fn scan_verbose(commands: Vec<Command>, sys_data: &crate::core::sys_data::Sy
     // commands = scan_contacts(commands);
     
     // Patches without anchors will simply remain without anchors
-    
-    // Run full inference pipeline on scanned commands to ensure consistency
+
+    // NOTE: Do NOT run inference here! The caller (run_rescan_command) will run inference
+    // AFTER load_manual_edits() loads all the non-file commands. Running inference here
+    // would cause load_data() to save the incomplete command set to disk, wiping out
+    // all manually-created commands (1pass, work, chrome, alias, url, etc.)
+
     if verbose {
-        println!("\n🔄 Running inference pipeline on scanned commands...");
+        println!("\n🎉 File scan complete! (Inference will run after loading manual edits)");
     }
-    let global_data = crate::core::sys_data::load_data(commands, verbose);
-    
-    // Save the processed commands to ensure persistence
-    if verbose {
-        println!("\n💾 Saving processed commands...");
-    }
-    
-    if let Err(e) = crate::core::commands::save_commands_to_file(&global_data.commands) {
-        crate::utils::log_error(&format!("Failed to save commands after scan: {}", e));
-        if verbose {
-            println!("   ❌ Failed to save: {}", e);
-        }
-    } else {
-        if verbose {
-            println!("   ✅ Saved {} commands to disk", global_data.commands.len());
-        }
-    }
-    
-    if verbose {
-        println!("\n🎉 Scan and inference complete!");
-    }
-    
-    // Return the fully processed commands with all inference completed
-    global_data.commands
+
+    // Return the scanned commands WITHOUT running inference
+    commands
 }
 
 /// Scans the configured file roots and returns an updated command list
@@ -732,7 +1000,7 @@ fn process_app_bundle(path: &Path, existing_commands: &HashSet<String>, existing
     Some(Command {
         patch: preserved_patch,
         command: command_name,
-        action: "open_app".to_string(),
+        action: "app".to_string(),
         arg: full_path,
         flags: String::new(),
         last_update: 0,

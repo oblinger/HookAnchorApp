@@ -9,11 +9,48 @@ use std::env;
 use serde::{Deserialize, Serialize};
 use chrono::Local;
 
+/// History viewer state - all persistent state for the history viewer window
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(default)]
+pub struct HistoryViewerState {
+    /// Window position (top-left corner)
+    pub position: Option<(f32, f32)>,
+    /// Window size (width, height)
+    pub window_size: Option<(f32, f32)>,
+    /// Patch/anchor name filter
+    pub patch_filter: String,
+    /// Command name search filter
+    pub name_filter: String,
+    /// Minimum edit size filter in bytes (None = blank/no filter, Some(n) = filter)
+    pub min_edit_size: Option<i64>,
+    /// Selected action types for filtering
+    pub selected_action_types: Vec<String>,
+    /// Sidebar width in pixels (user can resize this)
+    pub sidebar_width: Option<f32>,
+}
+
+impl Default for HistoryViewerState {
+    fn default() -> Self {
+        HistoryViewerState {
+            position: None,
+            window_size: None,
+            patch_filter: String::new(),
+            name_filter: String::new(),
+            min_edit_size: Some(500), // Default to 500 bytes
+            selected_action_types: Vec::new(),
+            sidebar_width: None, // Use config default if not set
+        }
+    }
+}
+
 /// Application state that persists between runs
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct AppState {
     /// Last saved window position
     pub window_position: Option<(f32, f32)>,
+    /// History viewer state (all persistent state for history viewer)
+    #[serde(default)]
+    pub history_viewer_state: HistoryViewerState,
     /// Unix timestamp when this build was created
     pub build_time: Option<i64>,
     /// Unix timestamp when filesystem scan was last performed
@@ -38,6 +75,7 @@ impl Default for AppState {
     fn default() -> Self {
         AppState {
             window_position: None,
+            history_viewer_state: HistoryViewerState::default(),
             build_time: None,
             last_scan_time: None,
             last_scan_checksum: None,

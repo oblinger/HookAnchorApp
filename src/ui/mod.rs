@@ -13,6 +13,7 @@ pub(crate) mod popup_state;
 pub(crate) mod popup;
 pub(crate) mod command_editor;
 pub(crate) mod dialog;
+pub(crate) mod anchor_tree_navigator;
 mod helpers;  // Only used within UI module
 
 // ============================================================================
@@ -42,6 +43,11 @@ pub use command_editor::{
 // Dialog system
 pub use dialog::{
     Dialog, DialogElement, DialogRow
+};
+
+// Anchor tree navigator widget
+pub use anchor_tree_navigator::{
+    AnchorTreeNavigator
 };
 
 // Re-export ApplicationState from core

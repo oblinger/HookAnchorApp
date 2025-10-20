@@ -66,11 +66,52 @@ impl Patch {
     pub fn primary_anchor(&self) -> Option<&Command> {
         self.anchor_commands.first()
     }
-    
+
+    /// Get the parent patch name for this patch
+    /// Returns the patch field from the primary anchor command
+    pub fn parent_patch_name(&self) -> Option<String> {
+        self.primary_anchor()
+            .and_then(|cmd| {
+                if cmd.patch.is_empty() {
+                    None
+                } else {
+                    Some(cmd.patch.clone())
+                }
+            })
+    }
+
+    /// Get the children patch names for this patch from the patches HashMap
+    /// Returns a vector of patch names whose parent is this patch
+    pub fn children_patch_names(&self, patches: &HashMap<String, Patch>) -> Vec<String> {
+        let self_name_lower = self.name.to_lowercase();
+        let mut children = Vec::new();
+
+        for (patch_name_lower, patch) in patches {
+            if let Some(parent_name) = patch.parent_patch_name() {
+                if parent_name.to_lowercase() == self_name_lower {
+                    // Use the original case from the patch's name
+                    children.push(patch.name.clone());
+                }
+            }
+        }
+
+        // Sort children alphabetically for consistent ordering
+        children.sort_by(|a, b| a.to_lowercase().cmp(&b.to_lowercase()));
+        children
+    }
+
+    /// Get the full path from orphans root to this patch
+    /// Returns a vector of patch names from root to this patch
+    ///
+    /// TODO: Refactor get_patch_path() to use this method instead of duplicating logic
+    pub fn get_path_from_root(&self, patches: &HashMap<String, Patch>) -> Vec<String> {
+        get_patch_path(&self.name, patches)
+    }
+
     /// Get all include folders from both anchor commands with 'I' flag and include_commands
     pub fn get_all_include_folders(&self, config: &crate::core::Config) -> std::collections::HashSet<std::path::PathBuf> {
         let mut include_folders = std::collections::HashSet::new();
-        
+
         // Check anchor commands with 'I' flag
         for anchor_cmd in &self.anchor_commands {
             if anchor_cmd.flags.contains('I') {
@@ -79,14 +120,14 @@ impl Patch {
                 }
             }
         }
-        
+
         // Check include commands
         for include_cmd in &self.include_commands {
             if let Some(folder_path) = include_cmd.get_absolute_folder_path(config) {
                 include_folders.insert(folder_path);
             }
         }
-        
+
         include_folders
     }
 }
@@ -141,8 +182,9 @@ impl Command {
                     Some(Path::new(&expanded_vault).join(&self.arg))
                 }
             }
-            "open" => {
+            "open" | "open_app" | "app" => {
                 // Handle file paths (expand tilde for absolute, or assume relative to current dir)
+                // For apps, arg is the path to the .app bundle (e.g., "/Applications/1Password.app")
                 if self.arg.starts_with('/') || self.arg.starts_with('~') {
                     Some(PathBuf::from(crate::utils::expand_tilde(&self.arg)))
                 } else {
@@ -209,7 +251,7 @@ impl Command {
     
     /// Checks if this command refers to a file or folder
     pub fn is_path_based(&self) -> bool {
-        matches!(self.action.as_str(), "markdown" | "anchor" | "folder" | "doc" | "open")
+        matches!(self.action.as_str(), "markdown" | "anchor" | "folder" | "doc" | "open" | "open_app" | "app")
     }
 
     /// Gets the value of a flag by its key character
