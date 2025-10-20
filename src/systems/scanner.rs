@@ -362,6 +362,72 @@ pub fn load_manual_edits(commands: &mut Vec<Command>, verbose: bool) -> Result<u
     Ok(edits_applied)
 }
 
+/// Load manual edits from commands.txt (pure discovery version)
+/// Returns created and updated commands without mutating or recording history
+/// Caller should use commandstore::bulk_add() and bulk_update() to apply changes
+pub fn load_manual_edits_v2(commands: &[Command]) -> Result<ManualEditsResult, Box<dyn std::error::Error>> {
+    let mut created = Vec::new();
+    let mut updated = Vec::new();
+
+    // Load commands.txt
+    let txt_commands = crate::core::commands::load_commands_raw();
+    crate::utils::log(&format!("LOAD_MANUAL_EDITS_V2: Loaded {} commands from commands.txt", txt_commands.len()));
+
+    // For each command in commands.txt, check if we need to add or update it
+    for txt_cmd in txt_commands {
+        // DEDUPLICATION: If a command with the same file path already exists (from scanner),
+        // only load this txt command if it has the 'U' (user-edited) flag.
+        // This prevents scanner-generated duplicates (e.g., old open_app vs new app for same file)
+        if !txt_cmd.arg.is_empty() {
+            let same_file_exists = commands.iter().any(|c| c.arg == txt_cmd.arg);
+            if same_file_exists && !txt_cmd.flags.contains('U') {
+                crate::utils::detailed_log("MANUAL_EDITS", &format!("Skipping duplicate '{}' (scanner already created fresh version)", txt_cmd.command));
+                continue;
+            }
+        }
+
+        // Find corresponding command in our list (match by patch, command name, and action)
+        let existing = commands.iter().find(|c|
+            c.patch == txt_cmd.patch && c.command == txt_cmd.command && c.action == txt_cmd.action
+        );
+
+        match existing {
+            Some(existing_cmd) => {
+                // Command exists - check if it changed
+                // Only update if something actually changed (besides file_size which we track separately)
+                if existing_cmd.arg != txt_cmd.arg || existing_cmd.flags != txt_cmd.flags {
+                    crate::utils::log(&format!("LOAD_MANUAL_EDITS_V2: Command '{}' modified in commands.txt", txt_cmd.command));
+
+                    let old_cmd = existing_cmd.clone();
+
+                    // Preserve file_size and last_update from filesystem scan
+                    let mut updated_cmd = txt_cmd.clone();
+                    updated_cmd.file_size = existing_cmd.file_size;
+                    updated_cmd.last_update = existing_cmd.last_update;
+
+                    updated.push((old_cmd, updated_cmd));
+                }
+            }
+            None => {
+                // New command from manual edit - add it
+                crate::utils::log(&format!("LOAD_MANUAL_EDITS_V2: New command '{}' from commands.txt", txt_cmd.command));
+                created.push(txt_cmd);
+            }
+        }
+    }
+
+    let edits_applied = created.len() + updated.len();
+
+    crate::utils::log(&format!("LOAD_MANUAL_EDITS_V2: Found {} manual edits ({} created, {} updated)",
+        edits_applied, created.len(), updated.len()));
+
+    Ok(ManualEditsResult {
+        created,
+        updated,
+        edits_applied,
+    })
+}
+
 /// Scans filesystem to detect MODIFIED files and update history
 /// Compares current file sizes against stored file_size metadata
 /// Records "modified" history entries for files that changed

@@ -1,35 +1,31 @@
 {
-  "anchor_folder": null,
-  "anchor_name": "ha",
-  "anchor_timestamp": 1760986697,
-  "build_time": 1760991841,
+  "window_position": [
+    688.0,
+    248.0
+  ],
   "history_viewer_state": {
-    "min_edit_size": 500,
-    "name_filter": "",
-    "patch_filter": "",
     "position": [
       -2476.0,
       327.0
     ],
-    "selected_action_types": [
-      "1pass",
-      "text",
-      "console"
-    ],
-    "sidebar_width": 74.0,
     "window_size": [
       1000.0,
-      1008.0
-    ]
+      1036.0
+    ],
+    "patch_filter": "",
+    "name_filter": "",
+    "min_edit_size": 500,
+    "selected_action_types": [],
+    "sidebar_width": 74.0
   },
-  "last_executed_command": "WEF Shell",
-  "last_scan_checksum": null,
+  "build_time": 1760992203,
   "last_scan_time": null,
+  "last_scan_checksum": null,
+  "last_executed_command": "WEF Shell",
+  "server_pid": 45341,
   "notion_last_scan": null,
-  "server_pid": 42412,
-  "show_files": true,
-  "window_position": [
-    688.0,
-    248.0
-  ]
+  "anchor_name": "ha",
+  "anchor_timestamp": 1760986697,
+  "anchor_folder": null,
+  "show_files": true
 }

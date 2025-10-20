@@ -32,16 +32,16 @@ fn validate_alias_command(new_command: &Command, _commands: &[Command]) -> Resul
 pub fn add_command(new_command: Command, commands: &mut Vec<Command>) -> Result<(), Box<dyn std::error::Error>> {
     // Validate before making any changes
     validate_alias_command(&new_command, commands)?;
-    
-    commands.push(new_command);
-    crate::core::save_commands_to_file(commands)?;
+
+    // Use commandstore to add (automatically records history)
+    crate::systems::commandstore::add(new_command, commands)?;
     Ok(())
 }
 
 /// Deletes a command from the list and saves
 pub fn delete_command(command_to_delete: &str, commands: &mut Vec<Command>) -> Result<(), Box<dyn std::error::Error>> {
-    commands.retain(|cmd| cmd.command != command_to_delete);
-    crate::core::save_commands_to_file(commands)?;
+    // Use commandstore to delete (automatically saves)
+    crate::systems::commandstore::delete(command_to_delete, commands)?;
     Ok(())
 }
 
