@@ -1,15 +1,1 @@
-
-### --- TRACKER
--- Want to see slices of work to see where to optimize
--- 5-slice model by day by week w. percentages
--- 20-100 slice model by day by week
-
-- Compute m/c/s for each entry and show in report
-- 0min gets recorded and hide window
-- record entries for prior days
-- show reports (just try it)
-
-
-- [ ] tracker bug hit delete & time get screwed
-- [ ] time tracker, don't merge if text comment exists ???
-- [ ] pick new list name for 'wait' with unique first letter
+(See [[prj/binproj/tracker/tracker|tracker]])

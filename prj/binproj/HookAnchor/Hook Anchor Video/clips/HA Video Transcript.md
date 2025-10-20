@@ -1,10 +1,15 @@
+
+### PART 1
+
 Here is the Hook-Anchor insight:   
 I already have nicknames in my head for my important files, 
-My knoweledge manager should be remembering MY names I shouldn't be remembering its names!
+My knowledge manager should be remembering MY names, I shouldn't be remembering their names!
 
 Think of this as a universal launcher for all of your personal knowledge across all tools, 
-but one that uses names in your head not in your filesystem.
+but one that uses names in your head, not in your filesystem.
 
+
+### PART 2
 
 POPUP - The hook anchor interface looks alot like spotlight.
 
@@ -32,10 +37,16 @@ Adjusting your names on the fly keeps the crap out,
 and ensures fast effortless retrieval no matter where your info lives.
 
 
+### PART 3
 
 As you can see, adjusting names in hook anchor is lightning fast; 
 It becomes second nature to ensure the first name to mind is always the right name 
 And I think it is that immediacy that makes it a real joy to use.
+
+
+
+
+
 
 
 

@@ -2,6 +2,93 @@
 [[KM Video Summary]] 
 [[Hook Anchor Video]] 
 
+
+
+
+
+# Web Page Ideas
+
+
+
+## __
+
+Hook Anchor solves three problems that plague personal organizational systems:
+(1) Where to put stuff
+(2) How to find stuff
+(3) How to keep it all up to date
+
+
+STREAM
+- Organizational trees or tag systems often start strong, but as they grow, they become crazy hard to manage.
+- Just deciding where to put some new item or project so you have any hope of finding it becomes painful.
+
+The solution is to stop organizing globally by tree or tag and organize instead by time and stream.
+- Like a trusty journal, you always know where to put the next bit of information; it goes on the next blank page, of course!
+
+This system works well because it applies universally to all collected information, and often, we have a sense of the time period when each item was collected.
+
+We can further simplify by having a couple of journals, each with its own "stream" of content.  But it is best to start with
+We have to be very careful however to strongly limit the number of these "streams" because even small amounts of confusion about which stream a bit of information belongs in
+
+
+
+
+
+
+The solution is to STOP using using taxonomes 
+
+is to abandon any global organizational effort and instead organize things locally.
+- Do this on the fly with little thought 
+
+ANCHORS
+
+
+
+80/20 EFFORT
+
+
+
+## __ 
+The Hook Anchor System addresses is a practical instantiation of the PARA Method.
+
+## __
+
+Hook Anchor reduces key frictions in all organizational systems
+
+- Keeping the system up to date
+- 
+
+
+## __
+
+
+Hook Anchor is a Universal Launcher that spans multiple accounts, applications, and locations on and offline.
+- It learns your evolving names as you use it.
+- It groups (anchors) 
+
+## __
+
+Imagine an ideal personal organizational system.  What would it look like?
+
+MULTI-TOOL, MULTI-LOCATION
+First, it would span the full range of tools that you regularly use for work and home.  Its information would live wherever was most convenient; it would not impose structure on you; you would impose structure on it as you worked.
+
+
+80/20 NAMING
+A great assistant would keep track of the few hundred files and locations you are currently accessing and would be able to find them based on YOUR naming of them without requiring YOU to remember where they filed it.  The ideal organizational system should
+
+
+LOCALITY 
+
+
+*MULTI*  — It give you access to your info wherever you wanted it to be using which ever tool you wanted to use.
+
+NAMING -- It would learn and maintain names the names and acryonyms you have update to match names in YOUR head, rather than YOU needing to remember 
+
+ANCHOR -- 
+
+
+# __
 # Introduction
 
 I have coded, then lived and suffered a dozen personal knowledge management systems (PKMs). Over the last decade, I have converged on what I see as the outline for an ideal PKM for the professional knowledge worker.  I believe an effective PKM will somehow embody these five pivotal insights:
@@ -19,7 +106,6 @@ DIRECT ACCESS - The ideal PKM solves the lookup problem across these many indepe
 This is critical to ensure the necessary organizational work gets done, and it also improves relevance since organizational efforts are always directed towards specific tasks of importance.
 
 
-/
 
 # The Hook And Anchor System
 The Hook and Anchor System embodies these principles.  Without further ado, let's jump into it!

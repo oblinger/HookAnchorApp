@@ -1,8 +1,14 @@
 
 
-
-- [[./1 intro.txt]] [[./2 notes.txt]]  [[./3 Body.md]] 
 - [OBS App](hook://OBSapp) 
+
+
+
+
+
+
+
+
 
 
 - [ ] check marks should be bigger and more visible (bold)

@@ -285,7 +285,8 @@ HookAnchor is organized into the following main architectural layers:
 ### scanner.rs
 | Function/Struct | Description |
 |---|---|
-| `scan_verbose()` | Scans filesystem with detailed output |
+| `scan_new_files()` | Scans filesystem to discover new files not yet in commands |
+| `scan_modified_files()` | Tracks file changes and updates history |
 | `startup_check()` | Quick startup validation of commands |
 | Filesystem scanning | Recursively scans configured roots for commands |
 

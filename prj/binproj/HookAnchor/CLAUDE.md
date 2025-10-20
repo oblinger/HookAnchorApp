@@ -18,7 +18,7 @@
 
 ### ✅ ALLOWED to use println!/eprintln!:
 1. **CLI commands** (`src/ha.rs`, `src/cmd.rs`) - User expects terminal output
-2. **CLI scanner verbose mode** (`scan_verbose` function only) - User requested verbose output with `--rescan`
+2. **CLI scanner verbose mode** (`scan_new_files` function only) - User requested verbose output with `--rescan`
 3. **Command server** (`src/execute/execution_server.rs`) - ONLY for:
    - One line per command executed (with timestamp)
    - Error messages to stderr

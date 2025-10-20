@@ -1,4 +1,4 @@
-.[[lex-lexlang]].
+.[[lex_lexlang]].
   , [[README]],
   , ,
   , ,
