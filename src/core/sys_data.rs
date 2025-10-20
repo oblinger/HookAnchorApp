@@ -238,6 +238,7 @@ pub fn get_patches() -> HashMap<String, Patch> {
 
 /// Replace all commands in singleton, run patch inference, and save to disk
 /// This is the primary way to perform batch modifications
+/// Always saves (flushes) to disk regardless of whether inference made changes
 pub fn set_commands(commands: Vec<Command>) -> Result<(), Box<dyn std::error::Error>> {
     let sys = SYS_DATA.get_or_init(|| Mutex::new(None));
     let mut sys_data = sys.lock().unwrap();
@@ -249,11 +250,10 @@ pub fn set_commands(commands: Vec<Command>) -> Result<(), Box<dyn std::error::Er
     let resolution = crate::core::resolve_patches(&mut new_commands, false);
     let patches = resolution.patches;
 
-    // Save to disk if changes were made
-    if resolution.changes_made {
-        crate::core::commands::save_commands_to_file(&new_commands)?;
-        crate::core::commands::save_commands_to_cache(&new_commands)?;
-    }
+    // Always save to disk (flush)
+    // This ensures deduplication, formatting, and consistency
+    crate::core::commands::save_commands_to_file(&new_commands)?;
+    crate::core::commands::save_commands_to_cache(&new_commands)?;
 
     // Update singleton
     *sys_data = Some(SysData {
@@ -397,27 +397,27 @@ pub fn load_data(commands_override: Vec<Command>, verbose: bool) -> SysData {
     let patches = resolution.patches;
     let changes_made = resolution.changes_made;
 
-    // Step 4: Save commands if any changes were made
+    // Step 4: Always save commands (flush)
+    // This ensures deduplication, formatting, and consistency
     if verbose {
-        println!("💾 Step 4: Saving changes if needed...");
+        println!("💾 Step 4: Saving to disk...");
     }
-    if changes_made {
-        // Save commands with changes
-        if let Err(e) = crate::core::commands::save_commands_to_file(&commands) {
-            crate::utils::log_error(&format!("Failed to save commands after changes: {}", e));
-        } else if let Err(e) = crate::core::commands::save_commands_to_cache(&commands) {
-            crate::utils::log_error(&format!("Failed to save cache after changes: {}", e));
-        } else {
-            if verbose {
-                println!("   ✅ Saved {} commands with changes", commands.len());
-            }
-            // Don't clear cache here - we're already updating it
-            // clear_sys_data() would cause deadlock since we're holding the mutex
-        }
+    // Always save - ensures deduplication, formatting, consistency
+    if let Err(e) = crate::core::commands::save_commands_to_file(&commands) {
+        crate::utils::log_error(&format!("Failed to save commands: {}", e));
+    } else if let Err(e) = crate::core::commands::save_commands_to_cache(&commands) {
+        crate::utils::log_error(&format!("Failed to save cache: {}", e));
     } else {
         if verbose {
-            println!("   ⏭️  No changes to save");
+            if changes_made {
+                println!("   ✅ Saved {} commands with {} inference changes", commands.len(),
+                    if changes_made { "patch" } else { "no" });
+            } else {
+                println!("   ✅ Saved {} commands (no inference changes needed)", commands.len());
+            }
         }
+        // Don't clear cache here - we're already updating it
+        // clear_sys_data() would cause deadlock since we're holding the mutex
     }
     
     // Store in sys data for future calls (only if not using commands override)
