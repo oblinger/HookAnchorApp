@@ -1,6 +1,5 @@
 use std::collections::HashMap;
 use crate::core::{load_commands_with_data, load_commands_for_inference, filter_commands, run_patch_inference};
-use crate::core::commands::save_commands_to_file;
 use crate::utils;
 use crate::utils::logging::print;
 use crate::execute::{execute_on_server, make_action, command_to_action};
@@ -1089,7 +1088,7 @@ fn run_infer_all_patches(_args: &[String]) {
         
         // Save the updated commands to file
         if applied_count > 0 {
-            match save_commands_to_file(&commands) {
+            match crate::systems::commandstore::save(&commands) {
                 Ok(()) => {
                     print(&format!("Updated {} commands and saved to file.", applied_count));
                 }

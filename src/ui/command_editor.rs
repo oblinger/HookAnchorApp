@@ -1,7 +1,6 @@
 use eframe::egui;
 use crate::core::{Command};
 use crate::core::delete_command;
-use crate::core::commands::save_commands_to_file;
 use crate::core::Config;
 use crate::core::template_creation::{Template, TemplateContext};
 
@@ -397,16 +396,10 @@ impl CommandEditor {
     pub fn delete_original_command(&self, commands: &mut Vec<Command>) -> Result<(), String> {
         // Only delete if there was an original command
         if !self.original_command_name.is_empty() {
-            let deleted = delete_command(&self.original_command_name, commands);
-            if deleted.is_err() {
-                return Err(format!("Command '{}' not found for deletion", self.original_command_name));
-            }
-            
-            // Save the updated command list back to commands.txt
-            match save_commands_to_file(commands) {
-                Ok(_) => Ok(()),
-                Err(e) => Err(format!("Error saving commands to file after deletion: {}", e)),
-            }
+            // Delete command (auto-saves via commandstore::delete)
+            delete_command(&self.original_command_name, commands)
+                .map_err(|e| format!("Command '{}' not found for deletion: {}", self.original_command_name, e))?;
+            Ok(())
         } else {
             // Nothing to delete (this was a new command creation dialog)
             Ok(())

@@ -64,33 +64,6 @@ pub fn add(cmd: Command, commands: &mut Vec<Command>) -> Result<()> {
     Ok(())
 }
 
-/// Update an existing command
-/// Automatically records modification in history and saves to disk
-pub fn update(old_cmd: &Command, new_cmd: Command, commands: &mut Vec<Command>) -> Result<()> {
-    // Initialize history database
-    let conn = crate::systems::history::initialize_history_db()?;
-
-    // Get current timestamp
-    let timestamp = std::time::SystemTime::now()
-        .duration_since(std::time::UNIX_EPOCH)?
-        .as_secs() as i64;
-
-    // Record modification in history
-    crate::systems::history::record_command_modified(&conn, old_cmd, &new_cmd, timestamp)?;
-
-    // Update in commands list
-    if let Some(pos) = commands.iter().position(|c|
-        c.patch == old_cmd.patch && c.command == old_cmd.command && c.action == old_cmd.action
-    ) {
-        commands[pos] = new_cmd;
-    }
-
-    // Save to disk
-    save_commands(commands)?;
-
-    Ok(())
-}
-
 /// Delete a command by name
 /// Automatically saves to disk (history recording removed since record_command_deleted was unused)
 pub fn delete(cmd_name: &str, commands: &mut Vec<Command>) -> Result<()> {
@@ -101,81 +74,6 @@ pub fn delete(cmd_name: &str, commands: &mut Vec<Command>) -> Result<()> {
     save_commands(commands)?;
 
     Ok(())
-}
-
-// ============================================================================
-// Bulk Mutations (for scanner)
-// ============================================================================
-
-/// Add multiple commands in bulk
-/// Records each creation in history and saves once at the end
-pub fn bulk_add(new_commands: Vec<Command>, commands: &mut Vec<Command>) -> Result<usize> {
-    if new_commands.is_empty() {
-        return Ok(0);
-    }
-
-    // Initialize history database
-    let conn = crate::systems::history::initialize_history_db()?;
-
-    // Get current timestamp
-    let timestamp = std::time::SystemTime::now()
-        .duration_since(std::time::UNIX_EPOCH)?
-        .as_secs() as i64;
-
-    let count = new_commands.len();
-
-    // Record each creation in history
-    for cmd in &new_commands {
-        crate::systems::history::record_command_created(&conn, cmd, timestamp)?;
-    }
-
-    // Add all to commands list
-    commands.extend(new_commands);
-
-    // Save once at the end
-    save_commands(commands)?;
-
-    crate::utils::log(&format!("COMMANDSTORE: Bulk added {} commands", count));
-
-    Ok(count)
-}
-
-/// Update multiple commands in bulk
-/// Records each modification in history and saves once at the end
-pub fn bulk_update(updates: Vec<(Command, Command)>, commands: &mut Vec<Command>) -> Result<usize> {
-    if updates.is_empty() {
-        return Ok(0);
-    }
-
-    // Initialize history database
-    let conn = crate::systems::history::initialize_history_db()?;
-
-    // Get current timestamp
-    let timestamp = std::time::SystemTime::now()
-        .duration_since(std::time::UNIX_EPOCH)?
-        .as_secs() as i64;
-
-    let count = updates.len();
-
-    // Process each update
-    for (old_cmd, new_cmd) in updates {
-        // Record modification in history
-        crate::systems::history::record_command_modified(&conn, &old_cmd, &new_cmd, timestamp)?;
-
-        // Update in commands list
-        if let Some(pos) = commands.iter().position(|c|
-            c.patch == old_cmd.patch && c.command == old_cmd.command && c.action == old_cmd.action
-        ) {
-            commands[pos] = new_cmd;
-        }
-    }
-
-    // Save once at the end
-    save_commands(commands)?;
-
-    crate::utils::log(&format!("COMMANDSTORE: Bulk updated {} commands", count));
-
-    Ok(count)
 }
 
 // ============================================================================

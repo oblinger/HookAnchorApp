@@ -351,8 +351,8 @@ pub fn load_data(commands_override: Vec<Command>, verbose: bool) -> SysData {
     }
     if patches_assigned > 0 || virtual_anchors_created > 0 || normalized_patches > 0 {
         // Save commands with changes
-        
-        if let Err(e) = crate::core::commands::save_commands_to_file(&commands) {
+
+        if let Err(e) = crate::systems::commandstore::save(&commands) {
             crate::utils::log_error(&format!("Failed to save commands after changes: {}", e));
         } else {
             if verbose {

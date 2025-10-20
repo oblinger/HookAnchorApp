@@ -1373,13 +1373,9 @@ impl AnchorSelector {
                                     // Add the new command directly
                                     match crate::core::add_command(new_command, &mut self.popup_state.commands) {
                                         Ok(_) => {
-                                            // Save commands to file
-                                            if let Err(e) = crate::core::commands::save_commands_to_file(&self.popup_state.commands) {
-                                                crate::utils::log_error(&format!("Failed to save commands: {}", e));
-                                            } else {
-                                                // Mark commands as modified to trigger automatic reload
-                                                crate::core::mark_commands_modified();
-                                            }
+                                            // Command already saved by add_command (via commandstore::add)
+                                            // Mark commands as modified to trigger automatic reload
+                                            crate::core::mark_commands_modified();
                                             // Clear search and update display
                                             self.popup_state.search_text.clear();
                                             self.popup_state.update_search(String::new());
@@ -1818,11 +1814,9 @@ impl AnchorSelector {
 
         // Add the new command to UI
         use crate::core::add_command;
-        use crate::core::commands::save_commands_to_file;
         let _ = add_command(new_command, self.commands_mut());
 
-        // Save commands to file
-        save_commands_to_file(&self.commands())?;
+        // Command already saved by add_command (via commandstore::add)
 
         // Update the filtered list if we're currently filtering
         if !self.popup_state.search_text.trim().is_empty() {
@@ -2170,12 +2164,9 @@ impl AnchorSelector {
                                                         // Add command directly
                                                         match crate::core::add_command(new_command, &mut self.popup_state.commands) {
                                                             Ok(_) => {
-                                                                if let Err(e) = crate::core::commands::save_commands_to_file(&self.popup_state.commands) {
-                                                                    crate::utils::log_error(&format!("Failed to save commands: {}", e));
-                                                                } else {
-                                                                    // Mark commands as modified to trigger automatic reload
-                                                                    crate::core::mark_commands_modified();
-                                                                }
+                                                                // Command already saved by add_command (via commandstore::add)
+                                                                // Mark commands as modified to trigger automatic reload
+                                                                crate::core::mark_commands_modified();
                                                                 self.popup_state.search_text.clear();
                                                                 self.popup_state.update_search(String::new());
                                                                 
@@ -2277,12 +2268,9 @@ impl AnchorSelector {
                                                         // Add command directly
                                                         match crate::core::add_command(new_command, &mut self.popup_state.commands) {
                                                             Ok(_) => {
-                                                                if let Err(e) = crate::core::commands::save_commands_to_file(&self.popup_state.commands) {
-                                                                    crate::utils::log_error(&format!("Failed to save commands: {}", e));
-                                                                } else {
-                                                                    // Mark commands as modified to trigger automatic reload
-                                                                    crate::core::mark_commands_modified();
-                                                                }
+                                                                // Command already saved by add_command (via commandstore::add)
+                                                                // Mark commands as modified to trigger automatic reload
+                                                                crate::core::mark_commands_modified();
                                                                 self.popup_state.search_text.clear();
                                                                 self.popup_state.update_search(String::new());
                                                                 
@@ -4012,32 +4000,16 @@ impl eframe::App for AnchorSelector {
                 
                 // Add the new command
                 use crate::core::add_command;
-        use crate::core::commands::save_commands_to_file;
-                crate::utils::log(&format!("SAVE_DEBUG: About to add new command: '{}' (action: {}, arg: {})", 
+                crate::utils::log(&format!("SAVE_DEBUG: About to add new command: '{}' (action: {}, arg: {})",
                     new_command.command, new_command.action, new_command.arg));
                 match add_command(new_command, self.commands_mut()) {
                     Ok(_) => {
-                        crate::utils::log(&format!("SAVE_DEBUG: Successfully added command to memory"));
-                    }
-                    Err(e) => {
-                        crate::utils::log_error(&format!("SAVE_DEBUG: Failed to add command: {}", e));
-                        self.show_error_dialog(&format!("Failed to add command: {}", e));
-                        self.close_command_editor();
-                        command_editor_just_closed = true;
-                        return; // Exit early on error
-                    }
-                }
-                
-                // Save to file
-                crate::utils::log(&format!("SAVE_DEBUG: About to save {} commands to file", self.commands().len()));
-                match save_commands_to_file(&self.commands()) {
-                    Ok(_) => {
-                        crate::utils::log(&format!("SAVE_DEBUG: Successfully saved commands to file"));
-                        
+                        crate::utils::log(&format!("SAVE_DEBUG: Successfully added command (auto-saved via commandstore)"));
+
                         // Mark commands as modified to trigger automatic reload
                         crate::core::mark_commands_modified();
                         crate::utils::log(&format!("SAVE_DEBUG: Marked commands as modified to trigger reload"));
-                        
+
                         // Process template files if there was a pending template
                         if let (Some(template), Some(context)) = (
                             self.command_editor.pending_template.as_ref(),
@@ -4058,7 +4030,7 @@ impl eframe::App for AnchorSelector {
                                 }
                             }
                         }
-                        
+
                         // Update the filtered list if we're currently filtering
                         if !self.popup_state.search_text.trim().is_empty() {
                             // Refresh the search with updated commands
@@ -4067,7 +4039,11 @@ impl eframe::App for AnchorSelector {
                         }
                     }
                     Err(e) => {
-                        crate::utils::log_error(&format!("Error saving commands to file: {}", e));
+                        crate::utils::log_error(&format!("SAVE_DEBUG: Failed to add command: {}", e));
+                        self.show_error_dialog(&format!("Failed to add command: {}", e));
+                        self.close_command_editor();
+                        command_editor_just_closed = true;
+                        return; // Exit early on error
                     }
                 }
                 
@@ -4084,29 +4060,25 @@ impl eframe::App for AnchorSelector {
                 command_editor_just_closed = true;
             }
             CommandEditorResult::Delete(command_name) => {
-                // Delete the specified command and save to file
+                // Delete the specified command (auto-saves via commandstore)
                 use crate::core::delete_command;
-                use crate::core::commands::save_commands_to_file;
-                
+
                 let deleted = delete_command(&command_name, self.commands_mut());
                 if deleted.is_err() {
                     crate::utils::log_error(&format!("Command '{}' not found for deletion", command_name));
                 } else {
-                    // Save the updated command list back to commands.txt
-                    if let Err(e) = save_commands_to_file(&self.commands()) {
-                        crate::utils::log_error(&format!("Error saving commands to file after deletion: {}", e));
-                    } else {
-                        // Mark commands as modified to trigger automatic reload
-                        crate::core::mark_commands_modified();
-                        
-                        // Update the filtered list if we're currently filtering
-                        if !self.popup_state.search_text.trim().is_empty() {
-                            // Refresh the search with updated commands
-                            let current_search = self.popup_state.search_text.clone();
-                            self.popup_state.update_search(current_search);
-                        }
+                    // Command already saved by delete_command (via commandstore::delete)
+                    // Mark commands as modified to trigger automatic reload
+                    crate::core::mark_commands_modified();
+
+                    // Update the filtered list if we're currently filtering
+                    if !self.popup_state.search_text.trim().is_empty() {
+                        // Refresh the search with updated commands
+                        let current_search = self.popup_state.search_text.clone();
+                        self.popup_state.update_search(current_search);
                     }
                 }
+
                 self.close_command_editor();
                 command_editor_just_closed = true;
             }
