@@ -1373,7 +1373,7 @@ impl AnchorSelector {
                                     // Add the new command directly
                                     match crate::core::add_command(new_command, &mut self.popup_state.commands) {
                                         Ok(_) => {
-                                            // Command already saved by add_command (via commandstore::add)
+                                            // Command already saved by add_command (via sys_data::add_command)
                                             // Mark commands as modified to trigger automatic reload
                                             crate::core::mark_commands_modified();
                                             // Clear search and update display
@@ -1816,7 +1816,7 @@ impl AnchorSelector {
         use crate::core::add_command;
         let _ = add_command(new_command, self.commands_mut());
 
-        // Command already saved by add_command (via commandstore::add)
+        // Command already saved by add_command (via sys_data::add_command)
 
         // Update the filtered list if we're currently filtering
         if !self.popup_state.search_text.trim().is_empty() {
@@ -2164,7 +2164,7 @@ impl AnchorSelector {
                                                         // Add command directly
                                                         match crate::core::add_command(new_command, &mut self.popup_state.commands) {
                                                             Ok(_) => {
-                                                                // Command already saved by add_command (via commandstore::add)
+                                                                // Command already saved by add_command (via sys_data::add_command)
                                                                 // Mark commands as modified to trigger automatic reload
                                                                 crate::core::mark_commands_modified();
                                                                 self.popup_state.search_text.clear();
@@ -2268,7 +2268,7 @@ impl AnchorSelector {
                                                         // Add command directly
                                                         match crate::core::add_command(new_command, &mut self.popup_state.commands) {
                                                             Ok(_) => {
-                                                                // Command already saved by add_command (via commandstore::add)
+                                                                // Command already saved by add_command (via sys_data::add_command)
                                                                 // Mark commands as modified to trigger automatic reload
                                                                 crate::core::mark_commands_modified();
                                                                 self.popup_state.search_text.clear();
@@ -4004,7 +4004,7 @@ impl eframe::App for AnchorSelector {
                     new_command.command, new_command.action, new_command.arg));
                 match add_command(new_command, self.commands_mut()) {
                     Ok(_) => {
-                        crate::utils::log(&format!("SAVE_DEBUG: Successfully added command (auto-saved via commandstore)"));
+                        crate::utils::log(&format!("SAVE_DEBUG: Successfully added command (auto-saved via sys_data)"));
 
                         // Mark commands as modified to trigger automatic reload
                         crate::core::mark_commands_modified();
@@ -4067,7 +4067,7 @@ impl eframe::App for AnchorSelector {
                 if deleted.is_err() {
                     crate::utils::log_error(&format!("Command '{}' not found for deletion", command_name));
                 } else {
-                    // Command already saved by delete_command (via commandstore::delete)
+                    // Command already saved by delete_command (via sys_data::delete_command)
                     // Mark commands as modified to trigger automatic reload
                     crate::core::mark_commands_modified();
 

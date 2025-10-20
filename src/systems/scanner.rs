@@ -181,22 +181,17 @@ pub fn scan_check(commands: Vec<Command>) -> Vec<Command> {
     
     // Save commands only if checksum changed
     if checksum_changed {
-        // Save the scanned commands directly - patch inference should already be handled by load_data()
-        // The commands passed to the scanner should already have proper patches from load_data()
-        if let Err(e) = crate::systems::commandstore::save(&scanned_commands) {
+        // Use sys_data::set_commands - runs patch inference and saves
+        if let Err(e) = crate::core::set_commands(scanned_commands.clone()) {
             crate::utils::log_error(&format!("Failed to save updated commands: {}", e));
         } else {
             // Mark commands as modified since we've updated the commands file
             crate::core::mark_commands_modified();
         }
-        
-        
-        // Return the original scanned commands (should already have patches from load_data())
-        scanned_commands
-    } else {
-        // No changes, return original commands
-        scanned_commands
     }
+
+    // Return the scanned commands
+    scanned_commands
 }
 
 /// Internal scan function that orchestrates all scanning operations

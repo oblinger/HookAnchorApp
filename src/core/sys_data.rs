@@ -251,7 +251,8 @@ pub fn set_commands(commands: Vec<Command>) -> Result<(), Box<dyn std::error::Er
 
     // Save to disk if changes were made
     if resolution.changes_made {
-        crate::systems::commandstore::save(&new_commands)?;
+        crate::core::commands::save_commands_to_file(&new_commands)?;
+        crate::core::commands::save_commands_to_cache(&new_commands)?;
     }
 
     // Update singleton
@@ -402,8 +403,10 @@ pub fn load_data(commands_override: Vec<Command>, verbose: bool) -> SysData {
     }
     if changes_made {
         // Save commands with changes
-        if let Err(e) = crate::systems::commandstore::save(&commands) {
+        if let Err(e) = crate::core::commands::save_commands_to_file(&commands) {
             crate::utils::log_error(&format!("Failed to save commands after changes: {}", e));
+        } else if let Err(e) = crate::core::commands::save_commands_to_cache(&commands) {
+            crate::utils::log_error(&format!("Failed to save cache after changes: {}", e));
         } else {
             if verbose {
                 println!("   ✅ Saved {} commands with changes", commands.len());

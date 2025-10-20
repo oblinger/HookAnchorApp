@@ -396,7 +396,7 @@ impl CommandEditor {
     pub fn delete_original_command(&self, commands: &mut Vec<Command>) -> Result<(), String> {
         // Only delete if there was an original command
         if !self.original_command_name.is_empty() {
-            // Delete command (auto-saves via commandstore::delete)
+            // Delete command (auto-saves via sys_data::delete_command)
             delete_command(&self.original_command_name, commands)
                 .map_err(|e| format!("Command '{}' not found for deletion: {}", self.original_command_name, e))?;
             Ok(())

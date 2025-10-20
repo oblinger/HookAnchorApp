@@ -1088,7 +1088,7 @@ fn run_infer_all_patches(_args: &[String]) {
         
         // Save the updated commands to file
         if applied_count > 0 {
-            match crate::systems::commandstore::save(&commands) {
+            match crate::core::set_commands(commands) {
                 Ok(()) => {
                     print(&format!("Updated {} commands and saved to file.", applied_count));
                 }
@@ -1132,17 +1132,13 @@ fn run_rescan_command() {
 
     print("\n📂 Step 1: Loading last known state from cache...");
 
-    // Load from cache through commandstore
-    let mut commands = match crate::systems::commandstore::load() {
-        Ok(cmds) => {
-            print(&format!("   ✅ Loaded {} commands from cache", cmds.len()));
-            cmds
-        }
-        Err(e) => {
-            print(&format!("   ⚠️  Error loading cache: {}, starting fresh", e));
-            Vec::new()
-        }
-    };
+    // Load from cache through sys_data
+    let mut commands = crate::core::get_commands();
+    if !commands.is_empty() {
+        print(&format!("   ✅ Loaded {} commands from cache", commands.len()));
+    } else {
+        print("   Starting with empty commands");
+    }
 
     print("\n✏️  Step 2: Merging manual edits from commands.txt...");
 
@@ -1198,15 +1194,19 @@ fn run_rescan_command() {
 
     print("\n💾 Step 7: Final save to cache...");
 
-    // Save final state through commandstore (saves both txt and cache)
-    match crate::systems::commandstore::save(&commands) {
+    // Save final state through sys_data (inference + save)
+    let command_count = commands.len();
+    match crate::core::set_commands(commands) {
         Ok(_) => {
-            print(&format!("   ✅ Saved {} commands to cache", commands.len()));
+            print(&format!("   ✅ Saved {} commands to cache", command_count));
         }
         Err(e) => {
             print(&format!("   ⚠️  Error saving cache: {}", e));
         }
     }
+
+    // Reload commands for summary (after save moved ownership)
+    let commands = crate::core::get_commands();
 
     print("\n📊 Step 8: Final Summary:");
     print(&format!("   Total commands: {}", commands.len()));

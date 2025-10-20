@@ -13,6 +13,7 @@
 //! - obsidian: Obsidian vault and markdown file management
 //! - setup_assistant: First-run setup and configuration
 //! - popup_server: Server for managing popup instances via IPC
+//! - history: Command change tracking with SQLite
 
 // Internal module declarations (accessible within crate)
 pub(crate) mod scanner;
@@ -21,7 +22,6 @@ pub(crate) mod obsidian;
 pub(crate) mod setup_assistant;
 pub(crate) mod popup_server;
 pub(crate) mod history;
-pub(crate) mod commandstore;
 
 // ============================================================================
 // PUBLIC API - All external access goes through these re-exports
@@ -72,10 +72,8 @@ pub use history::{
     HistoryEntry,
 };
 
-// CommandStore subsystem - unified command persistence and history
-pub use commandstore::{
-    load,            // Load commands from storage
-    save,            // Save commands to disk (used by scanner)
-    add,             // Add single command (auto-saves)
-    delete,          // Delete command by name (auto-saves)
-};
+// CommandStore functionality moved to core::sys_data module
+// - sys_data::get_commands() - Load commands from singleton
+// - sys_data::set_commands() - Save commands with inference
+// - sys_data::add_command() - Add single command with history
+// - sys_data::delete_command() - Delete command by name
