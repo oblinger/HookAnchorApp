@@ -33,3 +33,10 @@ OLD/
 
 # Personal configuration files (too specific to user's system)
 config/commands.txt
+
+# Runtime files (logs, databases, caches, state)
+config/*.log
+config/*.db
+config/*_cache.json
+config/state.json
+config/backups/
