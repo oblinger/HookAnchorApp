@@ -257,101 +257,22 @@ pub fn load_data(commands_override: Vec<Command>, verbose: bool) -> SysData {
         }
     };
 
-    // Step 2.5: 
-    
-    // Step 3: Create patches hashmap from anchor commands
-    if verbose {
-        println!("🏷️  Step 3: Creating patches hashmap...");
-    }
-    let mut patches = crate::core::commands::create_patches_hashmap(&commands);
-    if verbose {
-        println!("   Found {} patches from anchor commands", patches.len());
-    }
-    
-    // Step 3.1: REMOVED - No longer creating physical anchor root
-    // Virtual anchor management is no longer needed
-    
-    // Step 3.2: Extract virtual anchor commands from patches and add them to commands list
-    let mut virtual_anchors_created = 0;
-    for patch in patches.values() {
-        for anchor_cmd in &patch.anchor_commands {
-            if anchor_cmd.patch == "orphans" && anchor_cmd.action == "anchor" && !anchor_cmd.flags.contains('U') {
-                if verbose {
-                    println!("   Adding virtual anchor command: {}", anchor_cmd.command);
-                }
-                commands.push(anchor_cmd.clone());
-                virtual_anchors_created += 1;
-            }
-        }
-    }
-    
-    if verbose && virtual_anchors_created > 0 {
-        println!("   Created {} virtual anchor commands", virtual_anchors_created);
-    }
-    
-    // Step 4: Infer patches for commands without patches
-    if verbose {
-        println!("🧩 Step 4: Running patch inference for commands without patches...");
-    }
-    let (patches_assigned, new_patches_to_add) = crate::core::commands::run_patch_inference(
-        &mut commands, 
-        &patches, 
-        true,  // apply_changes = true (normal operation)
-        verbose, // print_to_stdout = verbose
-        false  // overwrite_patch = false (only fill empty patches)
-    );
-    if verbose {
-        println!("   Assigned patches to {} commands", patches_assigned);
-        println!("   Need to add {} new patches", new_patches_to_add.len());
-    }
-    
-    // Add new patches to hashmap (patch_key is now in original case)
-    for patch_name in new_patches_to_add {
-        let patch_key = patch_name.to_lowercase(); // Convert to lowercase for hashmap key
-        if !patches.contains_key(&patch_key) {
-            // Find the first command whose name matches this patch name (case-insensitive)
-            let matching_command = commands.iter().find(|cmd| {
-                cmd.command.to_lowercase() == patch_key
-            });
-            
-            patches.insert(patch_key, Patch {
-                name: patch_name.clone(), // Store original case
-                anchor_commands: if let Some(cmd) = matching_command.cloned() { vec![cmd] } else { vec![] },
-                include_commands: Vec::new(),
-                history_file: None,
-            });
-        }
-    }
-    
-    // Step 4.5: Create fast lookup maps
-    if verbose {
-        println!("🗺️  Step 4.5: Creating command-to-patch lookup map...");
-    }
-    let command_to_patch = crate::core::commands::create_command_to_patch_map(&commands, &patches);
-    if verbose {
-        println!("   Created fast lookup map for {} commands", command_to_patch.len());
-    }
-    
-    // Step 4.6: Normalize patch case to match anchor commands
-    if verbose {
-        println!("🔤 Step 4.6: Normalizing patch case to match anchor commands...");
-    }
-    let normalized_patches = crate::core::commands::normalize_patch_case(&mut commands, &patches);
-    if verbose {
-        if normalized_patches > 0 {
-            println!("   Normalized case for {} patch references", normalized_patches);
-        } else {
-            println!("   No case normalization needed");
-        }
-    }
-    
-    // Step 5: Save commands if any changes were made
-    if verbose {
-        println!("💾 Step 5: Saving changes if needed...");
-    }
-    if patches_assigned > 0 || virtual_anchors_created > 0 || normalized_patches > 0 {
-        // Save commands with changes
+    // Step 2.5:
 
+    // Step 3: Resolve patches (inference + normalization)
+    if verbose {
+        println!("🧩 Step 3: Resolving patches...");
+    }
+    let resolution = crate::core::resolve_patches(&mut commands, verbose);
+    let patches = resolution.patches;
+    let changes_made = resolution.changes_made;
+
+    // Step 4: Save commands if any changes were made
+    if verbose {
+        println!("💾 Step 4: Saving changes if needed...");
+    }
+    if changes_made {
+        // Save commands with changes
         if let Err(e) = crate::systems::commandstore::save(&commands) {
             crate::utils::log_error(&format!("Failed to save commands after changes: {}", e));
         } else {

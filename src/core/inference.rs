@@ -629,3 +629,120 @@ fn calculate_similarity(s1: &str, s2: &str) -> f64 {
     
     common as f64 / longer.len() as f64
 }
+
+// ============================================================================
+// PATCH RESOLUTION - High-level orchestration
+// ============================================================================
+
+/// Result of patch resolution operation
+pub struct PatchResolutionResult {
+    pub patches: HashMap<String, Patch>,
+    pub changes_made: bool,
+}
+
+/// Resolves patches for all commands by running inference and normalization
+///
+/// This is the main entry point for patch resolution. It:
+/// 1. Creates patches hashmap from anchor commands
+/// 2. Extracts and adds virtual anchor commands for orphan patches
+/// 3. Runs patch inference to assign patches to commands without them
+/// 4. Adds new patches discovered during inference
+/// 5. Normalizes patch case to match anchor commands
+///
+/// Returns:
+/// - patches: The complete patches hashmap
+/// - changes_made: Whether any commands were modified (to determine if save is needed)
+pub fn resolve_patches(
+    commands: &mut Vec<Command>,
+    verbose: bool
+) -> PatchResolutionResult {
+    // Step 1: Create patches hashmap from anchor commands
+    if verbose {
+        println!("🏷️  Step 1: Creating patches hashmap...");
+    }
+    let mut patches = crate::core::commands::create_patches_hashmap(commands);
+    if verbose {
+        println!("   Found {} patches from anchor commands", patches.len());
+    }
+
+    // Step 2: Extract virtual anchor commands from patches and add them to commands list
+    let mut virtual_anchors_created = 0;
+    for patch in patches.values() {
+        for anchor_cmd in &patch.anchor_commands {
+            if anchor_cmd.patch == "orphans" && anchor_cmd.action == "anchor" && !anchor_cmd.flags.contains('U') {
+                if verbose {
+                    println!("   Adding virtual anchor command: {}", anchor_cmd.command);
+                }
+                commands.push(anchor_cmd.clone());
+                virtual_anchors_created += 1;
+            }
+        }
+    }
+
+    if verbose && virtual_anchors_created > 0 {
+        println!("   Created {} virtual anchor commands", virtual_anchors_created);
+    }
+
+    // Step 3: Run patch inference for commands without patches
+    if verbose {
+        println!("🧩 Step 2: Running patch inference for commands without patches...");
+    }
+    let (patches_assigned, new_patches_to_add) = crate::core::commands::run_patch_inference(
+        commands,
+        &patches,
+        true,  // apply_changes = true (normal operation)
+        verbose, // print_to_stdout = verbose
+        false  // overwrite_patch = false (only fill empty patches)
+    );
+    if verbose {
+        println!("   Assigned patches to {} commands", patches_assigned);
+        println!("   Need to add {} new patches", new_patches_to_add.len());
+    }
+
+    // Step 4: Add new patches to hashmap
+    for patch_name in new_patches_to_add {
+        let patch_key = patch_name.to_lowercase();
+        if !patches.contains_key(&patch_key) {
+            // Find the first command whose name matches this patch name (case-insensitive)
+            let matching_command = commands.iter().find(|cmd| {
+                cmd.command.to_lowercase() == patch_key
+            });
+
+            patches.insert(patch_key, Patch {
+                name: patch_name.clone(), // Store original case
+                anchor_commands: if let Some(cmd) = matching_command.cloned() { vec![cmd] } else { vec![] },
+                include_commands: Vec::new(),
+                history_file: None,
+            });
+        }
+    }
+
+    // Step 5: Normalize patch case to match anchor commands
+    if verbose {
+        println!("🔤 Step 3: Normalizing patch case to match anchor commands...");
+    }
+    let normalized_patches = crate::core::commands::normalize_patch_case(commands, &patches);
+    if verbose {
+        if normalized_patches > 0 {
+            println!("   Normalized case for {} patch references", normalized_patches);
+        } else {
+            println!("   No case normalization needed");
+        }
+    }
+
+    let changes_made = patches_assigned > 0 || virtual_anchors_created > 0 || normalized_patches > 0;
+
+    if verbose {
+        if changes_made {
+            println!("   ✅ Patch resolution complete with {} changes",
+                patches_assigned + virtual_anchors_created + normalized_patches);
+        } else {
+            println!("   ⏭️  No changes needed");
+        }
+    }
+
+    PatchResolutionResult {
+        patches,
+        changes_made,
+    }
+}

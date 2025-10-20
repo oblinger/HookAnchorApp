@@ -77,7 +77,8 @@ pub use command_ops::{
 
 // Patch inference system
 pub use inference::{
-    infer_patch, auto_assign_patches
+    infer_patch, auto_assign_patches,
+    resolve_patches, PatchResolutionResult
 };
 
 // Template creation (used by UI)
