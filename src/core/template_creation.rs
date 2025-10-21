@@ -233,21 +233,21 @@ impl TemplateContext {
             variables.insert("_last_executed_flags".to_string(), String::new());
         }
 
-        // Last anchor from state
+        // Last anchor from state - stored as object fields for JavaScript access
         if let Some(anchor_name) = &state.anchor_name {
-            variables.insert("anchor_name".to_string(), anchor_name.clone());
+            variables.insert("_last_anchor_name".to_string(), anchor_name.clone());
             if let Some(timestamp) = state.anchor_timestamp {
-                variables.insert("anchor_timestamp".to_string(), timestamp.to_string());
+                variables.insert("_last_anchor_timestamp".to_string(), timestamp.to_string());
             }
             if let Some(folder) = &state.anchor_folder {
-                variables.insert("anchor_folder".to_string(), folder.clone());
+                variables.insert("_last_anchor_folder".to_string(), folder.clone());
             } else {
-                variables.insert("anchor_folder".to_string(), String::new());
+                variables.insert("_last_anchor_folder".to_string(), String::new());
             }
         } else {
-            variables.insert("anchor_name".to_string(), String::new());
-            variables.insert("anchor_timestamp".to_string(), String::new());
-            variables.insert("anchor_folder".to_string(), String::new());
+            variables.insert("_last_anchor_name".to_string(), String::new());
+            variables.insert("_last_anchor_timestamp".to_string(), String::new());
+            variables.insert("_last_anchor_folder".to_string(), String::new());
         }
 
         // Selected command - stored as object fields for JavaScript access
@@ -486,7 +486,28 @@ impl TemplateContext {
         context.push_str(&format!("  action: {{ value: {:?}, enumerable: true }},\n", self.variables.get("_last_executed_action").unwrap_or(&String::new())));
         context.push_str(&format!("  flags: {{ value: {:?}, enumerable: true }}\n", self.variables.get("_last_executed_flags").unwrap_or(&String::new())));
         context.push_str("});\n");
-        
+
+        // Create last_anchor object with getter for folder that throws on empty
+        let anchor_name = self.variables.get("_last_anchor_name").cloned().unwrap_or_else(String::new);
+        let anchor_folder = self.variables.get("_last_anchor_folder").cloned().unwrap_or_else(String::new);
+
+        context.push_str("const last_anchor = Object.create(null, {\n");
+        context.push_str(&format!("  name: {{ value: {:?}, enumerable: true }},\n", anchor_name));
+        context.push_str(&format!("  timestamp: {{ value: {:?}, enumerable: true }},\n", self.variables.get("_last_anchor_timestamp").unwrap_or(&String::new())));
+
+        // Add folder with getter that throws error if empty
+        context.push_str("  folder: {\n");
+        context.push_str("    enumerable: true,\n");
+        context.push_str("    get: function() {\n");
+        context.push_str(&format!("      const folderValue = {:?};\n", anchor_folder));
+        context.push_str("      if (!folderValue || folderValue === '') {\n");
+        context.push_str(&format!("        throw new Error('Last anchor \"' + {:?} + '\" does not have a folder context');\n", anchor_name));
+        context.push_str("      }\n");
+        context.push_str("      return folderValue;\n");
+        context.push_str("    }\n");
+        context.push_str("  }\n");
+        context.push_str("});\n");
+
         // No legacy compatibility variables needed
 
         context
@@ -627,8 +648,15 @@ fn extract_and_validate_folder(cmd: &super::Command) -> Result<String, String> {
     if !Path::new(&expanded).exists() {
         return Err(format!("Folder does not exist: {}", expanded));
     }
-    
-    Ok(expanded)
+
+    // Remove trailing slash to avoid double slashes in templates
+    let normalized = if expanded.ends_with('/') && expanded.len() > 1 {
+        expanded[..expanded.len() - 1].to_string()
+    } else {
+        expanded
+    };
+
+    Ok(normalized)
 }
 
 /// Add date/time variables to the context
