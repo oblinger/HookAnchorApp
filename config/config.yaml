@@ -48,13 +48,6 @@ popup_settings:
   rename_prefix:          true         # Update command prefixes when prefix command is renamed
   preferred_anchor:       "markdown"   # Preferred action type when multiple anchors exist for same patch
 
-  # History tracking settings
-  history_settings:
-    rebuild_all: true  # Set to true for now to rebuild from scratch
-    anchor_log_indicator: "# Log"
-    anchor_levels: [1, 2]
-    history_increment_size: 1000
-    enabled: true
 
   # Cloud document scanning configuration (Phase 1: Logging only)
   cloud_scan_roots:
@@ -80,6 +73,29 @@ launcher_settings:
 # Settings specific to the history viewer GUI
 
 history_viewer:
+  # Maximum number of history entries to load (default: 50000)
+  # Limits memory usage when viewing command history
+  viewable_history_limit: 50000
+
+  # Width of the tree navigation sidebar in pixels (default: 250)
+  # The sidebar shows the folder hierarchy for navigating command history
+  tree_sidebar_width: 250.0
+
+  # Minimum width the sidebar can be resized to in pixels (default: 50)
+  tree_sidebar_min_width: 50.0
+
+  # Indent per level in the tree hierarchy in pixels (default: 10)
+  # Controls how much child items are indented from their parents
+  tree_indent_pixels: 10.0
+
+  # Show indent guide lines in the tree (default: true)
+  # Visual lines connecting parent/child items in the tree
+  tree_show_guides: true
+
+  # Enable peek-on-hover (default: true)
+  # When hovering over tree items, temporarily show their history in the right panel
+  peek_on_hover: true
+
   key_bindings:
     edit_selection: ";"  # Key to edit the selected command in history viewer
 
