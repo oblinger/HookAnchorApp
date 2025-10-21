@@ -1189,6 +1189,8 @@ pub fn create_default_key_registry(config: &super::Config) -> KeyRegistry {
                                 action_str => Box::new(PopupActionHandler::new(action_str.to_string()))
                             };
                             registry.register_keystroke(keystroke, handler);
+                            registered_count += 1;
+                            crate::utils::log(&format!("✅ Registered popup action '{}' to key '{}'", popup_action, key_str));
                         }
                     }
                         // Add handlers for other action types as needed

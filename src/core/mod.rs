@@ -45,11 +45,12 @@ pub use application_state::{
 // System data
 pub use sys_data::{
     // Internal use (used by other core modules and systems)
-    SysData, get_sys_data, get_config, initialize_config,
+    SysData, get_sys_data, get_config,
     DEFAULT_LOG_PATH, DEFAULT_MAX_LOG_SIZE,
     // Public API - ONLY these should be used by external code
     initialize, get_commands, get_patches, set_commands
     // add_command/delete_command exported from command_ops for backward compat
+    // NOTE: initialize_config is now private - use initialize() or get_config() instead
 };
 
 // Command types and operations

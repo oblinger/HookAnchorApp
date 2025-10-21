@@ -144,6 +144,13 @@ impl PopupState {
     }
     
     /// Navigate selection in the given direction
+    /// If layout is provided, use it instead of self.display_layout
+    /// This allows navigation with the actual display layout (including files)
+    pub fn navigate_with_layout(&mut self, direction: Direction, layout: &DisplayLayout) -> bool {
+        self.selection.navigate(direction, layout)
+    }
+
+    /// Navigate selection in the given direction using self.display_layout
     pub fn navigate(&mut self, direction: Direction) -> bool {
         self.selection.navigate(direction, &self.display_layout)
     }
@@ -286,10 +293,22 @@ impl PopupState {
     }
     
     /// Navigate horizontally (left/right) in multi-column layout
+    /// If layout is provided, use it instead of self.display_layout
+    pub fn navigate_horizontal_with_layout(&mut self, direction: i32, layout: &DisplayLayout) -> bool {
+        self.navigate_with_layout(if direction > 0 { Direction::Right } else { Direction::Left }, layout)
+    }
+
+    /// Navigate horizontally (left/right) in multi-column layout
     pub fn navigate_horizontal(&mut self, direction: i32) -> bool {
         self.navigate(if direction > 0 { Direction::Right } else { Direction::Left })
     }
-    
+
+    /// Navigate vertically (up/down) with optional layout
+    /// If layout is provided, use it instead of self.display_layout
+    pub fn navigate_vertical_with_layout(&mut self, direction: i32, layout: &DisplayLayout) -> bool {
+        self.navigate_with_layout(if direction > 0 { Direction::Down } else { Direction::Up }, layout)
+    }
+
     /// Navigate vertically (up/down)
     pub fn navigate_vertical(&mut self, direction: i32) -> bool {
         self.navigate(if direction > 0 { Direction::Down } else { Direction::Up })

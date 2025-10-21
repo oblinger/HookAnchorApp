@@ -852,11 +852,8 @@ fn run_start_server() {
 
 /// Internal daemon mode - starts persistent server
 fn run_start_server_daemon() {
-    // Initialize config FIRST - this must happen before any other operations
-    if let Err(config_error) = crate::core::sys_data::initialize_config() {
-        utils::log_error(&format!("Failed to load config: {}", config_error));
-        // Continue with default config
-    }
+    // Config will be initialized automatically by get_config() when needed
+    // No need to initialize it explicitly here
     
     utils::detailed_log("SYSTEM", &format!("Starting command server daemon..."));
     

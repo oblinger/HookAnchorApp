@@ -70,14 +70,15 @@ pub struct SysData {
 static SYS_DATA: OnceLock<Mutex<Option<SysData>>> = OnceLock::new();
 
 // Global config - loaded once at startup
-pub static CONFIG: OnceLock<Config> = OnceLock::new();
+// Private to this module - external code should use get_config() instead
+pub(crate) static CONFIG: OnceLock<Config> = OnceLock::new();
 
 // Global flag to track if commands have been modified and need reload
 static COMMANDS_MODIFIED: OnceLock<std::sync::atomic::AtomicBool> = OnceLock::new();
 
 /// Initialize the global config at application startup
-/// This MUST be called before any other operations
-pub fn initialize_config() -> Result<(), String> {
+/// This is private to sys_data - external code should use get_config() which handles initialization
+fn initialize_config() -> Result<(), String> {
     let start = std::time::Instant::now();
 
     // Check if essential config files exist - if not, run the installer
@@ -276,8 +277,98 @@ fn flush(commands: &mut Vec<Command>) -> Result<(), Box<dyn std::error::Error>> 
 
 /// Replace all commands in singleton, run patch inference, and save to disk
 /// This is the primary way to perform batch modifications
+/// Records all changes to history by comparing against cached commands
 /// Always saves (flushes) to disk regardless of whether inference made changes
 pub fn set_commands(mut commands: Vec<Command>) -> Result<(), Box<dyn std::error::Error>> {
+    // Initialize history database
+    let conn = crate::systems::history::initialize_history_db()?;
+
+    // Get current timestamp
+    let timestamp = std::time::SystemTime::now()
+        .duration_since(std::time::UNIX_EPOCH)?
+        .as_secs() as i64;
+
+    // Get cached commands for comparison
+    let cached_commands = get_commands();
+
+    // Create lookup maps for efficient comparison
+    use std::collections::HashMap;
+    let mut cached_map: HashMap<String, &Command> = HashMap::new();
+    for cmd in &cached_commands {
+        cached_map.insert(cmd.command.clone(), cmd);
+    }
+
+    let mut new_map: HashMap<String, &Command> = HashMap::new();
+    for cmd in &commands {
+        new_map.insert(cmd.command.clone(), cmd);
+    }
+
+    // Track changes for logging
+    let mut created_count = 0;
+    let mut modified_count = 0;
+    let mut deleted_count = 0;
+
+    // Find new and modified commands
+    for new_cmd in &commands {
+        if let Some(cached_cmd) = cached_map.get(&new_cmd.command) {
+            // Command exists - check if it was modified
+            if new_cmd.action != cached_cmd.action ||
+               new_cmd.arg != cached_cmd.arg ||
+               new_cmd.patch != cached_cmd.patch ||
+               new_cmd.flags != cached_cmd.flags {
+                // Command was modified - record to history
+                crate::systems::history::record_command_modified(
+                    &conn,
+                    cached_cmd,
+                    new_cmd,
+                    timestamp
+                )?;
+                modified_count += 1;
+                crate::utils::detailed_log("HISTORY", &format!(
+                    "Modified: '{}' (action: {} -> {}, patch: {} -> {})",
+                    new_cmd.command,
+                    cached_cmd.action,
+                    new_cmd.action,
+                    cached_cmd.patch,
+                    new_cmd.patch
+                ));
+            }
+        } else {
+            // Command is new - record creation to history
+            crate::systems::history::record_command_created(&conn, new_cmd, timestamp)?;
+            created_count += 1;
+            crate::utils::detailed_log("HISTORY", &format!(
+                "Created: '{}' (action: {}, patch: {})",
+                new_cmd.command,
+                new_cmd.action,
+                new_cmd.patch
+            ));
+        }
+    }
+
+    // Find deleted commands
+    for cached_cmd in &cached_commands {
+        if !new_map.contains_key(&cached_cmd.command) {
+            // Command was deleted - log it (no history recording function for deletions yet)
+            deleted_count += 1;
+            crate::utils::detailed_log("HISTORY", &format!(
+                "Deleted: '{}' (action: {}, patch: {})",
+                cached_cmd.command,
+                cached_cmd.action,
+                cached_cmd.patch
+            ));
+        }
+    }
+
+    // Log summary of changes
+    if created_count > 0 || modified_count > 0 || deleted_count > 0 {
+        crate::utils::log(&format!(
+            "SET_COMMANDS: Recorded to history - Created: {}, Modified: {}, Deleted: {}",
+            created_count, modified_count, deleted_count
+        ));
+    }
+
+    // Flush to disk with inference
     flush(&mut commands)
 }
 

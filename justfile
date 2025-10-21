@@ -12,9 +12,23 @@ default:
 
 # === BUILD COMMANDS ===
 
+# Build Swift supervisor (only if source changed or binary missing)
+build-supervisor:
+    #!/usr/bin/env bash
+    SWIFT_SRC="swift/Supervisor/HookAnchor.swift"
+    SWIFT_BIN="target/release/HookAnchorSupervisor"
+
+    # Build if binary missing or source is newer than binary
+    if [ ! -f "$SWIFT_BIN" ] || [ "$SWIFT_SRC" -nt "$SWIFT_BIN" ]; then
+        echo "🔨 Building Swift supervisor (source changed or binary missing)..."
+        ./swift/build_supervisor.sh
+    else
+        echo "✅ Swift supervisor up to date"
+    fi
+
 # Build all release binaries (with build verification)
-build:
-    @echo "🔨 Building with Just (tracked build)..."
+build: build-supervisor
+    @echo "🔨 Building Rust components with Just (tracked build)..."
     @date
     JUST=1 cargo build --release
     @echo "✅ Build complete - binaries embed build metadata for verification"

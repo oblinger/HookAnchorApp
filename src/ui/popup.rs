@@ -1770,6 +1770,8 @@ impl AnchorSelector {
         use crate::core::rename_associated_data;
         let (sys_data, _) = crate::core::get_sys_data();
         let mut patches = sys_data.patches;
+
+        crate::utils::log(&format!("RENAME: About to execute rename_associated_data: '{}' -> '{}'", old_name, new_name));
         let (updated_arg, _actions) = rename_associated_data(
             old_name,
             new_name,
@@ -1780,6 +1782,7 @@ impl AnchorSelector {
             &config,
             false, // dry_run = false
         )?;
+        crate::utils::log(&format!("RENAME: rename_associated_data completed, updated_arg: {}", updated_arg));
 
         // Delete original command from UI if needed
         if let Some(cmd_name) = original_command_to_delete {
@@ -1804,7 +1807,10 @@ impl AnchorSelector {
         use crate::core::add_command;
         let _ = add_command(new_command, self.commands_mut());
 
-        // Command already saved by add_command (via sys_data::add_command)
+        // Save all commands back to sys_data because rename_associated_data modified
+        // patches and prefixes on many commands (not just the renamed command)
+        crate::core::sys_data::set_commands(self.commands().to_vec())?;
+        crate::utils::log("RENAME: Saved all command changes (patches/prefixes) to sys_data");
 
         // Update the filtered list if we're currently filtering
         if !self.popup_state.search_text.trim().is_empty() {
@@ -1957,11 +1963,23 @@ impl AnchorSelector {
     
     // Navigate left/right in the multi-column layout
     fn navigate_horizontal(&mut self, direction: i32) {
-        self.popup_state.navigate_horizontal(direction);
+        // Calculate actual layout from display commands (may include files)
+        let (display_commands, _, _, _) = self.get_display_commands();
+        let actual_layout = crate::ui::layout::DisplayLayout::new(
+            display_commands,
+            &self.popup_state.config
+        );
+        self.popup_state.navigate_horizontal_with_layout(direction, &actual_layout);
     }
-    
+
     fn navigate_vertical(&mut self, direction: i32) {
-        self.popup_state.navigate_vertical(direction);
+        // Calculate actual layout from display commands (may include files)
+        let (display_commands, _, _, _) = self.get_display_commands();
+        let actual_layout = crate::ui::layout::DisplayLayout::new(
+            display_commands,
+            &self.popup_state.config
+        );
+        self.popup_state.navigate_vertical_with_layout(direction, &actual_layout);
     }
     
     /// Start the grabber countdown

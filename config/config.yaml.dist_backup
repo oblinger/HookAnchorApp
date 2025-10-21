@@ -20,21 +20,19 @@ popup_settings:
   merge_similar:          true         # Merging similar commands in popup
   max_rows:               25           # Max number of rows in the list of matching commands
   max_columns:            4            # Max columns in list of matching commands
-  max_characters:         30           # Maximum characters for command names before truncation
   word_separators:        " ._-!"      # Word separator chars for submenus and command merging
-  scan_interval_seconds:  600          # How many seconds between automatic rescanning of the filesystem
+  scan_interval_seconds:  30           # How many seconds between automatic rescanning of the filesystem
   idle_timeout_seconds:   60           # Hide popup after this many seconds of inactivity
   countdown_seconds:      5            # Seconds for grabber countdown (default: 5)
-  ghost_timeout_seconds:  3600         # Seconds to remember last executed anchor as ghost input
-  run_in_background:      true         # Keep app running in background for instant popup
-  global_hotkey:          "Opt-`"      # Global hotkey to show popup (requires accessibility permissions)
+  run_in_background:      true         # Keep app running in background for instant popup (experimental)
+  global_hotkey:          "cmd+z"      # Global hotkey to show popup (requires accessibility permissions)
   popup_server_retries:   3            # Number of times to retry showing the popup before rebuilding
   max_window_size:        "1700x1100"  # Maximum size for dialogs and popups in "widthxheight" format
-  default_window_size:    "600x120"    # Default popup window size in "widthxheight" format
+  default_window_size:    "800x120"    # Default popup window size in "widthxheight" format
   max_log_file_size:      10000000     # Maximum log file size in bytes (10MB) before clearing
-  file_roots:             ["~/ob/kmr", "/Applications"] # List of file scanning roots (markdown files and apps)
+  file_roots:             ["~/Documents/Notes", "/Applications"] # List of file scanning roots (markdown files and apps)
   doc_file_extensions:    "pdf,doc,docx,xls,xlsx,ppt,pptx,txt,rtf,pages,numbers,csv,html,htm" # File extensions to auto-create DOC commands for
-  skip_directory_patterns:    # Directory patterns to skip during scanning (glob patterns)
+  scan_exclusion_patterns:    # Regular expressions to exclude paths from scanning
     - "/Yore/"            # Exclude any path containing /Yore/ folder (historical files)
   listed_actions: >
     alias,anchor,app,console,doc,folder,markdown,text,
@@ -43,18 +41,9 @@ popup_settings:
   
   # Rename associated data when editing command names
   rename_doc:             true         # Rename document files when command name changes
-  rename_folder:          true         # Rename anchor folders when command name changes
+  rename_folder:          true         # Rename anchor folders when command name changes  
   rename_patch:           true         # Update patch names and commands when patch is renamed
   rename_prefix:          true         # Update command prefixes when prefix command is renamed
-  preferred_anchor:       "markdown"   # Preferred action type when multiple anchors exist for same patch
-
-  # History tracking settings
-  history_settings:
-    rebuild_all: true  # Set to true for now to rebuild from scratch
-    anchor_log_indicator: "# Log"
-    anchor_levels: [1, 2]
-    history_increment_size: 1000
-    enabled: true
 
   # Cloud document scanning configuration (Phase 1: Logging only)
   cloud_scan_roots:
@@ -68,20 +57,10 @@ popup_settings:
 launcher_settings:
   js_timeout_ms:          5000         # Max milliseconds allows for a js command execution
   obsidian_app_name:      "Obsidian"   # Obisidian app name
-  obsidian_vault_name:    "kmr"        # Main vault used for Obsidian viewing of markdown files
-  obsidian_vault_path:    "~/ob/kmr"   # Location of the main vault
-  use_javascript_tmux_activation: "true"   # Use JavaScript TMUX implementation
-  tmux_startup_command:   "claude --continue --dangerously-skip-permissions"  # Command to run in tmux session after activation
+  obsidian_vault_name:    "MyVault"        # Main vault used for Obsidian viewing of markdown files
+  obsidian_vault_path:    "~/Documents/Notes"   # Location of the main vault
+  use_javascript_tmux_activation: "false"  # Use JavaScript TMUX implementation
 
-
-# =================================================================
-# HISTORY VIEWER SETTINGS
-# =================================================================
-# Settings specific to the history viewer GUI
-
-history_viewer:
-  key_bindings:
-    edit_selection: ";"  # Key to edit the selected command in history viewer
 
 
 # =================================================================
@@ -124,7 +103,7 @@ actions:
     description: "Edit command from current input"
     action_type: template
     key: "="
-    name: "{{raw_input}}"
+    name: "{{input}}"
     action: ""
     arg: ""
     edit: true
@@ -271,40 +250,13 @@ actions:
   # POPUP KEYBOARD ACTIONS - Keyboard shortcuts for popup control
   # =================================================================
    
-  kb_force_rebuild:
-    description: "Force rebuild: restart server + rescan"
-    action_type: popup
-    key: "Cmd+B"
-    popup_action: force_rebuild
-    close_popup: false
-
-  clear_log:
-    description: "Clear anchor.log file for debugging"
-    action_type: clear_log
-    key: "Cmd+Opt+E"
-    name: "Clear Log"
-
-  kb_toggle_show_files:
-    description: "Toggle showing files in prefix menus"
-    action_type: popup
-    key: "Cmd+F"
-    popup_action: toggle_show_files
-    close_popup: false
-
   kb_activate_tmux:
     description: "Activate TMUX session for selected folder/anchor"
     action_type: popup
     key: "Cmd+T"
     popup_action: activate_tmux
     close_popup: true
-
-  kb_show_history_viewer:
-    description: "Show history viewer"
-    action_type: popup
-    key: "`"
-    popup_action: show_history_viewer
-    close_popup: true
-
+          
   # JavaScript TMUX activation - Alternative js version for testing
   activate_tmux_js:
     description: "Activate TMUX session for selected anchor (JavaScript version)"
@@ -320,12 +272,8 @@ actions:
   # Test JavaScript error reporting
   test_js_error:
     description: "Test JavaScript error reporting"
-    action_type: test_error
-
-  # Test available JavaScript builtins
-  test_builtins:
-    description: "Test available JavaScript builtins"
-    action_type: test_builtins
+    action_type: js
+    function: action_test_error
  
   show_contact:
     description: "Show contact for selected command (strips @ prefix)"
@@ -347,6 +295,13 @@ actions:
     action_type: popup
     key: "?"
     popup_action: show_keys
+    close_popup: false
+      
+  kb_force_rebuild:
+    description: "Force rebuild: restart server + rescan"
+    action_type: popup
+    key: "`"
+    popup_action: force_rebuild
     close_popup: false
   
   kb_execute:
@@ -454,38 +409,35 @@ actions:
   # Application actions
   notion:
     description: "Open Notion page"
-    action_type: notion
+    action_type: js_function
+    function: action_notion
     arg: "{{arg}}"
-
+    
   obs_url:
     description: "Open Obsidian URL"
-    action_type: app
+    action_type: open_app
     app: "Obsidian"
     arg: "{{arg}}"
-
+    
   contact:
     description: "Search for contact in Contacts app"
     action_type: contact
-
+    
   # Generic actions
   app:
     description: "Launch application by name"
-    action_type: app
+    action_type: open_app
     app: "{{arg}}"
-
+    
   url:
     description: "Open URL in default browser"
     action_type: open_url
     url: "{{arg}}"
-
+    
   doc:
     description: "Open document with default application"
     action_type: doc
-
-  console:
-    description: "Execute command in terminal window"
-    action_type: console
-
+  
   # Specialized actions (complex logic implemented in JavaScript)
   folder:
     description: "Open folder - handles relative and absolute paths"

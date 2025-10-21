@@ -1,4 +1,4 @@
-//! Command history tracking using SQLite
+u//! Command history tracking using SQLite
 //!
 //! This module provides functionality to track all changes to commands over time.
 //! It maintains a SQLite database with command history and provides query capabilities.
