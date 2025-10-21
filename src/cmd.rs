@@ -82,12 +82,13 @@ pub fn run_command_line_mode(args: Vec<String>) {
 pub fn print_help(program_name: &str) {
     print("HookAnchor - Universal Command Launcher");
     print("");
+    print("Help Topics:");
+    print(&format!("  {} -h, --help               # Show this help message", program_name));
+    print(&format!("  {} --help vars              # Template variables ({{{{input}}}}, {{{{date.year}}}}, etc.)", program_name));
+    print(&format!("  {} --help config            # Configuration file structure (YAML)", program_name));
+    print(&format!("  {} --help fns               # JavaScript functions (log, run_command, etc.)", program_name));
+    print("");
     print("Usage:");
-    print(&format!("  {}                          # Show help", program_name));
-    print(&format!("  {} -h, --help               # Show help", program_name));
-    print(&format!("  {} --help vars              # Show template variables", program_name));
-    print(&format!("  {} --help config            # Show configuration settings", program_name));
-    print(&format!("  {} --help fns               # Show JavaScript functions", program_name));
     print(&format!("  {} -m, --match <query>      # Search CMDS", program_name));
     print(&format!("  {} -r, --run_fn <cmd>       # Execute specific CMD", program_name));
     print(&format!("  {} -x, --execute <query>    # Execute top match", program_name));
