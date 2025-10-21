@@ -407,7 +407,7 @@ pub struct KeyHandlerContext<'a> {
 }
 
 /// Result of key handler execution
-#[derive(Debug)]
+#[derive(Debug, PartialEq)]
 pub enum KeyHandlerResult {
     /// Handler processed the event successfully
     Handled,
@@ -857,10 +857,15 @@ impl KeyHandler for NavigationHandler {
 pub struct PopupActionHandler {
     action_name: String,
     description: String,
+    close_popup: bool,
 }
 
 impl PopupActionHandler {
     pub fn new(action_name: String) -> Self {
+        Self::with_close_flag(action_name, false)
+    }
+
+    pub fn with_close_flag(action_name: String, close_popup: bool) -> Self {
         // Generate description from action name
         let description = match action_name.as_str() {
             "force_rebuild" => "Force rebuild command list",
@@ -885,13 +890,13 @@ impl PopupActionHandler {
             _ => &action_name, // Fallback to action name itself
         }.to_string();
 
-        Self { action_name, description }
+        Self { action_name, description, close_popup }
     }
 }
 
 impl KeyHandler for PopupActionHandler {
     fn execute(&self, context: &mut KeyHandlerContext) -> KeyHandlerResult {
-        match self.action_name.as_str() {
+        let result = match self.action_name.as_str() {
             "exit" => {
                 // Only exit if no sub-interfaces are visible
                 if !context.popup.is_command_editor_visible() && !context.popup.is_dialog_visible() {
@@ -979,7 +984,14 @@ impl KeyHandler for PopupActionHandler {
                 crate::utils::log(&format!("⚠️ Unknown popup action: {}", self.action_name));
                 KeyHandlerResult::NotHandled
             }
+        };
+
+        // Check if we should close popup after executing the action
+        if self.close_popup && result == KeyHandlerResult::Handled {
+            context.popup.request_exit();
         }
+
+        result
     }
 
     fn description(&self) -> &str {
@@ -1186,7 +1198,12 @@ pub fn create_default_key_registry(config: &super::Config) -> KeyRegistry {
                                     }
                                 }
                                 // All popup actions now use PopupActionHandler with the action string directly
-                                action_str => Box::new(PopupActionHandler::new(action_str.to_string()))
+                                action_str => {
+                                    let close_popup = action.params.get("close_popup")
+                                        .and_then(|v| v.as_bool())
+                                        .unwrap_or(false);
+                                    Box::new(PopupActionHandler::with_close_flag(action_str.to_string(), close_popup))
+                                }
                             };
                             registry.register_keystroke(keystroke, handler);
                             registered_count += 1;

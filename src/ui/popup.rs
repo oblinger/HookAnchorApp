@@ -788,7 +788,6 @@ impl AnchorSelector {
                 }
                 let _ = crate::execute::execute_on_server(&action, Some(variables));
                 detailed_log("POPUP_EXEC", "Action sent to server");
-                self.should_exit = true;
             }
         }
     }
@@ -812,7 +811,6 @@ impl AnchorSelector {
             // Handle popup control actions
             detailed_log("POPUP_LOCAL", "Handling popup control action");
             // TODO: Implement popup control (show/hide/etc)
-            self.should_exit = true;
         } else {
             // This shouldn't happen - non-UI actions should go to server
             log_error(&format!("Unexpected action type in execute_in_popup: {}", action.action_type()));
@@ -1137,8 +1135,6 @@ impl AnchorSelector {
             {
                 Ok(_) => {
                     crate::utils::log(&format!("Launched history viewer with filter: '{}'", anchor_filter));
-                    // Close popup after launching history viewer
-                    self.should_exit = true;
                 }
                 Err(e) => {
                     crate::utils::log_error(&format!("Failed to launch history viewer: {}", e));
@@ -2845,9 +2841,6 @@ impl AnchorSelector {
                     let mut variables = std::collections::HashMap::new();
                     variables.insert("arg".to_string(), js_cmd.arg.clone());
                     let _ = crate::execute::execute_on_server(&js_action, Some(variables));
-                    
-                    // Request exit after triggering
-                    self.should_exit = true;
                     return;
                 }
             }
@@ -3415,11 +3408,8 @@ impl AnchorSelector {
                 utils::detailed_log("TMUX", &format!("TMUX: {}", msg));
                 self.show_error_dialog(&msg);
             }
-            
+
         }
-        
-        // Request exit after activation
-        self.should_exit = true;
     }
 }
 
