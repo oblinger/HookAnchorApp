@@ -4634,23 +4634,46 @@ impl eframe::App for AnchorSelector {
                                             // Regular command
                                             let mut list_font_id = ui.style().text_styles.get(&egui::TextStyle::Body).unwrap().clone();
                                             list_font_id.size *= 1.5; // Make 50% larger
-                                            
+
                                             // Make merged entries (ending with "...") bold
                                             let text = if display_text.ends_with("...") {
                                                 egui::RichText::new(&display_text).font(list_font_id.clone()).strong()
                                             } else {
-                                                egui::RichText::new(&display_text).font(list_font_id)
+                                                egui::RichText::new(&display_text).font(list_font_id.clone())
                                             };
                                             
-                                            let response = ui.selectable_label(
-                                                is_selected,
-                                                text
+                                            // Custom styling to avoid gray hover state
+                                            let (rect, response) = ui.allocate_exact_size(
+                                                egui::vec2(ui.available_width(), ui.text_style_height(&egui::TextStyle::Body) * 1.5),
+                                                egui::Sense::click()
                                             );
 
                                             // Update selection on hover
                                             if response.hovered() {
                                                 self.set_selected_index(i);
                                             }
+
+                                            // Draw blue background only for selected item
+                                            if is_selected {
+                                                ui.painter().rect_filled(
+                                                    rect,
+                                                    egui::Rounding::same(4.0),
+                                                    ui.visuals().selection.bg_fill
+                                                );
+                                            }
+
+                                            // Draw text
+                                            ui.painter().text(
+                                                rect.left_center() + egui::vec2(4.0, 0.0),
+                                                egui::Align2::LEFT_CENTER,
+                                                text.text(),
+                                                list_font_id.clone(),
+                                                if is_selected {
+                                                    ui.visuals().selection.stroke.color
+                                                } else {
+                                                    ui.visuals().text_color()
+                                                }
+                                            );
 
                                             if response.clicked() {
                                                 self.set_selected_index(i);
@@ -4753,23 +4776,46 @@ impl eframe::App for AnchorSelector {
                                     // Use larger font for command list (50% bigger than body)
                                     let mut list_font_id = ui.style().text_styles.get(&egui::TextStyle::Body).unwrap().clone();
                                     list_font_id.size *= 1.5; // Make 50% larger
-                                    
+
                                     // Make merged entries (ending with "...") bold
                                     let text = if display_text.ends_with("...") {
                                         egui::RichText::new(&display_text).font(list_font_id.clone()).strong()
                                     } else {
-                                        egui::RichText::new(&display_text).font(list_font_id)
+                                        egui::RichText::new(&display_text).font(list_font_id.clone())
                                     };
                                     
-                                    let response = ui.selectable_label(
-                                        is_selected,
-                                        text
+                                    // Custom styling to avoid gray hover state
+                                    let (rect, response) = ui.allocate_exact_size(
+                                        egui::vec2(ui.available_width(), ui.text_style_height(&egui::TextStyle::Body) * 1.5),
+                                        egui::Sense::click()
                                     );
 
                                     // Update selection on hover
                                     if response.hovered() {
                                         self.set_selected_index(i);
                                     }
+
+                                    // Draw blue background only for selected item
+                                    if is_selected {
+                                        ui.painter().rect_filled(
+                                            rect,
+                                            egui::Rounding::same(4.0),
+                                            ui.visuals().selection.bg_fill
+                                        );
+                                    }
+
+                                    // Draw text
+                                    ui.painter().text(
+                                        rect.left_center() + egui::vec2(4.0, 0.0),
+                                        egui::Align2::LEFT_CENTER,
+                                        text.text(),
+                                        list_font_id.clone(),
+                                        if is_selected {
+                                            ui.visuals().selection.stroke.color
+                                        } else {
+                                            ui.visuals().text_color()
+                                        }
+                                    );
 
                                     if response.clicked() {
                                         self.set_selected_index(i);
