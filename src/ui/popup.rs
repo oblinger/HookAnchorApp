@@ -4642,39 +4642,12 @@ impl eframe::App for AnchorSelector {
                                                 egui::RichText::new(&display_text).font(list_font_id.clone())
                                             };
                                             
-                                            // Custom rendering without hover styling
-                                            let height = ui.text_style_height(&egui::TextStyle::Body) * 1.5;
-                                            let (rect, response) = ui.allocate_exact_size(
-                                                egui::vec2(ui.available_width(), height),
-                                                egui::Sense::click()
-                                            );
+                                            let response = ui.selectable_label(is_selected, text);
 
                                             // Update selection on hover (only if changed to avoid render loop)
                                             if response.hovered() && self.selected_index() != i {
                                                 self.set_selected_index(i);
                                             }
-
-                                            // Always paint background (selected = blue, unselected = window bg)
-                                            // Paint window background first to cover any hover background egui might draw
-                                            ui.painter().rect_filled(rect, egui::Rounding::same(0.0), ui.visuals().window_fill);
-
-                                            // Then paint selection highlight on top if selected
-                                            if is_selected {
-                                                ui.painter().rect_filled(rect, egui::Rounding::same(4.0), ui.visuals().selection.bg_fill);
-                                            }
-
-                                            // Draw text on top
-                                            ui.painter().text(
-                                                rect.left_center() + egui::vec2(4.0, 0.0),
-                                                egui::Align2::LEFT_CENTER,
-                                                text.text(),
-                                                list_font_id.clone(),
-                                                if is_selected {
-                                                    ui.visuals().selection.stroke.color
-                                                } else {
-                                                    ui.visuals().text_color()
-                                                }
-                                            );
 
                                             if response.clicked() {
                                                 self.set_selected_index(i);
@@ -4785,39 +4758,12 @@ impl eframe::App for AnchorSelector {
                                         egui::RichText::new(&display_text).font(list_font_id.clone())
                                     };
                                     
-                                    // Custom rendering without hover styling
-                                    let height = ui.text_style_height(&egui::TextStyle::Body) * 1.5;
-                                    let (rect, response) = ui.allocate_exact_size(
-                                        egui::vec2(ui.available_width(), height),
-                                        egui::Sense::click()
-                                    );
+                                    let response = ui.selectable_label(is_selected, text);
 
                                     // Update selection on hover (only if changed to avoid render loop)
                                     if response.hovered() && self.selected_index() != i {
                                         self.set_selected_index(i);
                                     }
-
-                                    // Always paint background (selected = blue, unselected = window bg)
-                                    // Paint window background first to cover any hover background egui might draw
-                                    ui.painter().rect_filled(rect, egui::Rounding::same(0.0), ui.visuals().window_fill);
-
-                                    // Then paint selection highlight on top if selected
-                                    if is_selected {
-                                        ui.painter().rect_filled(rect, egui::Rounding::same(4.0), ui.visuals().selection.bg_fill);
-                                    }
-
-                                    // Draw text on top
-                                    ui.painter().text(
-                                        rect.left_center() + egui::vec2(4.0, 0.0),
-                                        egui::Align2::LEFT_CENTER,
-                                        text.text(),
-                                        list_font_id.clone(),
-                                        if is_selected {
-                                            ui.visuals().selection.stroke.color
-                                        } else {
-                                            ui.visuals().text_color()
-                                        }
-                                    );
 
                                     if response.clicked() {
                                         self.set_selected_index(i);

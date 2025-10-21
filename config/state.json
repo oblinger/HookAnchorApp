@@ -2,7 +2,7 @@
   "anchor_folder": null,
   "anchor_name": "Spot",
   "anchor_timestamp": 1761077745,
-  "build_time": 1761079201,
+  "build_time": 1761079441,
   "history_viewer_state": {
     "min_edit_size": 500,
     "name_filter": "",
@@ -18,11 +18,11 @@
       1415.0
     ]
   },
-  "last_executed_command": "ha",
+  "last_executed_command": ".Spot.md.swo",
   "last_scan_checksum": null,
   "last_scan_time": null,
   "notion_last_scan": null,
-  "server_pid": 81599,
+  "server_pid": null,
   "show_files": true,
   "window_position": [
     940.0,
