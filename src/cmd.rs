@@ -1767,6 +1767,7 @@ fn run_delete_history(args: &[String]) {
 }
 
 fn print_help_vars() {
+    print("");
     print("TEMPLATE VARIABLES");
     print("");
     print("Command objects with fields (.name .path .arg .patch .folder* .action .flags):");
@@ -1800,9 +1801,11 @@ fn print_help_vars() {
     print("  {{last_anchor.name}}        Name of last anchor");
     print("  {{date.year}}-{{date.month}}-{{date.day}}  Current date");
     print("  {{input}}                   User's search text");
+    print("");
 }
 
 fn print_help_config() {
+    print("");
     print("CONFIGURATION SETTINGS");
     print("");
     print("Window & Display:");
@@ -1832,9 +1835,11 @@ fn print_help_config() {
     print("  excluded_paths            Array of paths to exclude from scan");
     print("");
     print("Location: ~/.config/hookanchor/config.yaml");
+    print("");
 }
 
 fn print_help_fns() {
+    print("");
     print("JAVASCRIPT FUNCTIONS");
     print("");
     print("Logging:");
@@ -1873,4 +1878,5 @@ fn print_help_fns() {
     print("  ctx.last_anchor_input     Last anchor for template expansion");
     print("");
     print("Location: ~/.config/hookanchor/config.js");
+    print("");
 }
