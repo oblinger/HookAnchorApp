@@ -750,9 +750,22 @@ fn setup_launcher_builtins(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Erro
 
     // save_anchor(name, folder?) -> saves anchor name and optional folder for next popup
     ctx.globals().set("save_anchor", Function::new(ctx.clone(), |name: String, folder: Opt<String>| {
-        match crate::core::state::save_anchor_with_folder(&name, folder.0) {
-            Ok(()) => format!("Anchor saved: {}", name),
-            Err(e) => format!("Failed to save anchor: {}", e),
+        crate::utils::detailed_log("ANCHOR_SAVE", &format!("🔄 JavaScript save_anchor called: '{}' with folder: {:?}", name, folder.0));
+
+        let mut state = crate::core::data::get_state();
+        state.anchor_name = Some(name.clone());
+        state.anchor_timestamp = Some(chrono::Local::now().timestamp());
+        state.anchor_folder = folder.0;
+
+        match crate::core::data::set_state(&state) {
+            Ok(()) => {
+                crate::utils::detailed_log("ANCHOR_SAVE", &format!("✅ Successfully saved anchor: '{}'", name));
+                format!("Anchor saved: {}", name)
+            },
+            Err(e) => {
+                crate::utils::detailed_log("ANCHOR_SAVE", &format!("❌ Failed to save anchor: {}", e));
+                format!("Failed to save anchor: {}", e)
+            }
         }
     })?)?;
 

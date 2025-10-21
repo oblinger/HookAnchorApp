@@ -7,13 +7,23 @@ use std::fs::OpenOptions;
 use std::io::Write;
 use chrono::Local;
 
+// =============================================================================
+// LOGGING CONSTANTS
+// =============================================================================
+
+/// Default log file path - hardcoded for reliability during early initialization
+/// Note: This is the ONLY place where the log path is defined.
+pub const DEFAULT_LOG_PATH: &str = "~/.config/hookanchor/anchor.log";
+
+/// Default maximum log file size (10MB) - used as fallback when config not available
+pub const DEFAULT_MAX_LOG_SIZE: u64 = 10_000_000;
+
 /// Clear the debug log file
-/// 
+///
 /// Removes the debug log file at the hardcoded path ~/.config/hookanchor/anchor.log
 /// to start fresh logging. Used before rebuilds and when log exceeds max size.
 pub fn clear_debug_log() {
-    // Use constant from sys_data
-    let debug_path = super::utilities::expand_tilde(crate::core::data::DEFAULT_LOG_PATH);
+    let debug_path = super::utilities::expand_tilde(DEFAULT_LOG_PATH);
     
     // Remove the file if it exists  
     if std::path::Path::new(&debug_path).exists() {
@@ -22,16 +32,15 @@ pub fn clear_debug_log() {
 }
 
 /// Check if debug log file exceeds max size and clear if needed
-/// 
+///
 /// Returns true if log was cleared, false otherwise
 pub fn check_and_clear_oversized_log() -> bool {
-    // Use constant from sys_data
-    let debug_path = super::utilities::expand_tilde(crate::core::data::DEFAULT_LOG_PATH);
-    
+    let debug_path = super::utilities::expand_tilde(DEFAULT_LOG_PATH);
+
     // Get max size from config if available, otherwise use default
     let max_size = match crate::core::data::CONFIG.get() {
         Some(cfg) => cfg.popup_settings.max_log_file_size.unwrap_or(1_000_000), // 1MB default
-        None => crate::core::data::DEFAULT_MAX_LOG_SIZE,
+        None => DEFAULT_MAX_LOG_SIZE,
     };
     
     // Log when we check (to temp file to avoid recursion)
@@ -78,8 +87,7 @@ pub fn clear_log_file() {
 /// This is the primary logging function that should be used throughout the codebase.
 /// It checks if a debug log path is configured before writing.
 pub fn log(message: &str) {
-    // Use constant from sys_data for consistency
-    let debug_path = super::utilities::expand_tilde(crate::core::data::DEFAULT_LOG_PATH);
+    let debug_path = super::utilities::expand_tilde(DEFAULT_LOG_PATH);
 
     let timestamp = Local::now().format("%Y-%m-%d %H:%M:%S");
     let log_entry = format!("{} {}\n", timestamp, message);

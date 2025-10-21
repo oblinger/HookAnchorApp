@@ -8,10 +8,8 @@
 //! is the complete specification of what this crate exports.
 
 // Internal module declarations (accessible within crate)
-pub(crate) mod config;
-pub(crate) mod state;
 pub(crate) mod application_state;
-pub(crate) mod data;               // Data layer - commands, patches, config storage
+pub(crate) mod data;               // Data layer - commands, patches, config, state storage
 pub(crate) mod build_verification;  // Build consistency verification
 pub(crate) mod template_creation;  // Used by UI and execute modules
 pub(crate) mod key_processing;     // Used by UI module
@@ -24,17 +22,14 @@ pub(crate) mod display;            // Command display and filtering logic
 // PUBLIC API - All external access goes through these re-exports
 // ============================================================================
 
-// Configuration types
-pub use config::{
-    Config, PopupSettings, LauncherSettings,
-    ConfigResult, load_config_with_error, get_config_file_path
+// Configuration types (re-exported from data layer)
+pub use data::config::{
+    Config, PopupSettings, LauncherSettings
 };
 
-// State management
-pub use state::{
-    AppState, HistoryViewerState, load_state, save_state,
-    save_state_with_build_time, save_last_executed_command,
-    save_server_pid, clear_server_pid
+// State management types (re-exported from data layer)
+pub use data::state::{
+    AppState, HistoryViewerState
 };
 
 // Application state
@@ -46,7 +41,9 @@ pub use application_state::{
 pub use data::{
     // Public API - ONLY these should be used by external code
     initialize, get_commands, get_patches, set_commands, get_config, get_sys_data,
-    add_command, delete_command
+    add_command, delete_command,
+    // State management
+    get_state, set_state
     // NOTE: Internal sys_data types are not re-exported
 };
 

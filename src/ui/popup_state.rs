@@ -4,8 +4,8 @@
 //! separated from egui-specific rendering code.
 
 use crate::core::Command;
-use crate::core::config::Config;
-use crate::core::state::AppState;
+use crate::core::Config;
+use crate::core::AppState;
 use crate::ui::layout::{DisplayLayout, Selection, Direction};
 
 /// Core popup state separated from UI concerns

@@ -206,7 +206,7 @@ impl HistoryViewer {
 
     /// Save current viewer state to state.json
     fn save_viewer_state(&self) {
-        let mut state = hookanchor::core::load_state();
+        let mut state = hookanchor::core::get_state();
 
         // Parse min_edit_size_filter to Option<i64>
         let min_edit_size = if self.min_edit_size_filter.is_empty() {
@@ -231,7 +231,7 @@ impl HistoryViewer {
         };
 
         // Save to file
-        if let Err(e) = hookanchor::core::save_state(&state) {
+        if let Err(e) = hookanchor::core::set_state(&state) {
             hookanchor::utils::log_error(&format!("Failed to save history viewer state: {}", e));
         }
     }
@@ -239,7 +239,7 @@ impl HistoryViewer {
     /// Create new history viewer, loading state from state.json
     fn new(_cc: &eframe::CreationContext<'_>) -> Self {
         // Load saved state
-        let state = hookanchor::core::load_state();
+        let state = hookanchor::core::get_state();
         let viewer_state = &state.history_viewer_state;
 
         // Initialize database connection
@@ -1166,7 +1166,7 @@ fn main() -> Result<(), eframe::Error> {
     }
 
     // Load saved window position and size from state
-    let state = hookanchor::core::load_state();
+    let state = hookanchor::core::get_state();
     let saved_position = state.history_viewer_state.position;
     let saved_size = state.history_viewer_state.window_size;
 

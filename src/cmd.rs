@@ -256,9 +256,10 @@ fn run_execute_top_match(args: &[String]) {
     print(&format!("Executing top match: {}", top_command_obj.command));
 
     // Save the last executed command for add_alias functionality
-    use crate::core::state::save_last_executed_command;
     crate::utils::detailed_log("STATE_SAVE", &format!("CLI: Attempting to save last executed command: '{}'", original_name));
-    match save_last_executed_command(&original_name) {
+    let mut state = crate::core::data::get_state();
+    state.last_executed_command = Some(original_name.clone());
+    match crate::core::data::set_state(&state) {
         Ok(_) => crate::utils::detailed_log("STATE_SAVE", "CLI: Successfully saved last executed command"),
         Err(e) => crate::utils::detailed_log("STATE_SAVE", &format!("CLI: Failed to save last executed command: {}", e)),
     }
@@ -1461,7 +1462,7 @@ fn run_restart_server() {
                 print("\n  ✅ Server started successfully!");
                 
                 // Also verify by checking the PID in state
-                let state = crate::core::state::load_state();
+                let state = crate::core::data::get_state();
                 if let Some(pid) = state.server_pid {
                     print(&format!("  📊 Server running with PID: {}", pid));
                 }

@@ -96,7 +96,7 @@ impl TemplateContext {
         add_datetime_variables(&mut variables);
 
         // Add last executed command from state (available everywhere)
-        let state = crate::core::state::load_state();
+        let state = crate::core::data::get_state();
         if let Some(last_executed_name) = &state.last_executed_command {
             let (sys_data, _) = crate::core::get_sys_data();
             if let Some(cmd) = sys_data.commands.iter().find(|c| &c.command == last_executed_name) {
@@ -189,7 +189,7 @@ impl TemplateContext {
         variables.insert("input".to_string(), input.to_string());
         
         // Last executed command from state - stored as object fields for JavaScript access
-        let state = crate::core::state::load_state();
+        let state = crate::core::data::get_state();
         if let Some(last_executed_name) = state.last_executed_command {
             // Try to find the full command details from singleton
             let (sys_data, _) = crate::core::get_sys_data();

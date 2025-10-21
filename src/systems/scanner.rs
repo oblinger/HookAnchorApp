@@ -55,7 +55,7 @@ use std::process::Command as ProcessCommand;
 use std::collections::{hash_map::DefaultHasher, HashSet};
 use std::hash::{Hash, Hasher};
 use crate::core::Command;
-use crate::core::{Config, load_state, save_state};
+use crate::core::Config;
 use crate::utils::detailed_log;
 use crate::execute::get_action;
 use chrono::Local;
@@ -129,7 +129,7 @@ fn delete_anchors(commands: &mut Vec<Command>, delete_notion_anchors: bool, verb
 /// This function should be called on application exit, not startup.
 pub fn scan_check(commands: Vec<Command>) -> Vec<Command> {
     let (sys_data, _) = crate::core::data::get_sys_data();
-    let mut state = load_state();
+    let mut state = crate::core::data::get_state();
     
     let current_time = Local::now().timestamp();
     
@@ -173,9 +173,9 @@ pub fn scan_check(commands: Vec<Command>) -> Vec<Command> {
     // Update state with scan time and checksum
     state.last_scan_time = Some(current_time);
     state.last_scan_checksum = Some(new_checksum);
-    
+
     // Save updated state
-    if let Err(e) = save_state(&state) {
+    if let Err(e) = crate::core::data::set_state(&state) {
         crate::utils::log_error(&format!("Failed to save scan state: {}", e));
     }
     

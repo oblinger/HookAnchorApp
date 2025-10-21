@@ -178,9 +178,11 @@ pub fn run_command_server() -> Result<(), Box<dyn std::error::Error>> {
     
     // Start the persistent server and get its PID
     let server_pid = super::execution_server::start_persistent_server()?;
-    
+
     // Save PID to state
-    if let Err(e) = crate::core::state::save_server_pid(server_pid) {
+    let mut state = crate::core::data::get_state();
+    state.server_pid = Some(server_pid);
+    if let Err(e) = crate::core::data::set_state(&state) {
         crate::utils::log_error(&format!("Could not save server PID: {}", e));
     }
     

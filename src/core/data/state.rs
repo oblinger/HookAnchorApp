@@ -98,88 +98,60 @@ impl Default for AppState {
 }
 
 /// Returns the path to the state.json file
-pub fn get_state_file_path() -> PathBuf {
+fn get_state_file_path() -> PathBuf {
     let home = env::var("HOME").unwrap_or_else(|_| ".".to_string());
     Path::new(&home).join(".config/hookanchor/state.json")
 }
 
 /// Loads application state from state.json file, returns default if file doesn't exist or is invalid
-pub fn load_state() -> AppState {
+/// Private to data module - external code must use get_state() from sys_data
+pub(super) fn load_state() -> AppState {
     let state_path = get_state_file_path();
     if let Ok(contents) = fs::read_to_string(&state_path) {
         match serde_json::from_str::<AppState>(&contents) {
-            Ok(state) => state,
-            Err(_) => AppState::default()
+            Ok(state) => {
+                crate::utils::detailed_log("STATE_IO", &format!(
+                    "Loaded state from disk (build_time={:?}, last_cmd={:?}, server_pid={:?}, anchor={:?}, anchor_folder={:?})",
+                    state.build_time,
+                    state.last_executed_command,
+                    state.server_pid,
+                    state.anchor_name,
+                    state.anchor_folder
+                ));
+                state
+            },
+            Err(_) => {
+                crate::utils::detailed_log("STATE_IO", "Failed to parse state.json, using default");
+                AppState::default()
+            }
         }
     } else {
+        crate::utils::detailed_log("STATE_IO", "state.json not found, using default");
         AppState::default()
     }
 }
 
 /// Saves application state to state.json file
-pub fn save_state(state: &AppState) -> Result<(), Box<dyn std::error::Error>> {
+/// Private to data module - external code must use set_state() from sys_data
+pub(super) fn save_state(state: &AppState) -> Result<(), Box<dyn std::error::Error>> {
     let state_path = get_state_file_path();
     // Ensure config directory exists
     if let Some(parent) = state_path.parent() {
         fs::create_dir_all(parent)?;
     }
-    
+
     // Serialize and save
     let json_content = serde_json::to_string_pretty(state)?;
     fs::write(&state_path, json_content)?;
-    
+
+    crate::utils::detailed_log("STATE_IO", &format!(
+        "Saved state to disk (build_time={:?}, last_cmd={:?}, server_pid={:?}, anchor={:?}, anchor_folder={:?})",
+        state.build_time,
+        state.last_executed_command,
+        state.server_pid,
+        state.anchor_name,
+        state.anchor_folder
+    ));
+
     Ok(())
-}
-
-/// Updates build time in state.json file
-pub fn save_state_with_build_time() -> Result<(), Box<dyn std::error::Error>> {
-    let mut state = load_state();
-    state.build_time = Some(Local::now().timestamp());
-    save_state(&state)
-}
-
-/// Updates last executed command in state.json file
-pub fn save_last_executed_command(command_name: &str) -> Result<(), Box<dyn std::error::Error>> {
-    let mut state = load_state();
-    state.last_executed_command = Some(command_name.to_string());
-    save_state(&state)
-}
-
-/// Updates anchor name for the last executed anchor
-pub fn save_anchor(name: &str) -> Result<(), Box<dyn std::error::Error>> {
-    save_anchor_with_folder(name, None)
-}
-
-/// Updates anchor name and folder for the last executed anchor
-pub fn save_anchor_with_folder(name: &str, folder: Option<String>) -> Result<(), Box<dyn std::error::Error>> {
-    crate::utils::detailed_log("ANCHOR_SAVE", &format!("🔄 Attempting to save anchor: '{}' with folder: {:?}", name, folder));
-    let mut state = load_state();
-    let old_anchor = state.anchor_name.clone();
-    state.anchor_name = Some(name.to_string());
-    state.anchor_timestamp = Some(Local::now().timestamp());
-    state.anchor_folder = folder;
-    match save_state(&state) {
-        Ok(()) => {
-            crate::utils::detailed_log("ANCHOR_SAVE", &format!("✅ Successfully saved anchor: '{}' (was: '{:?}')", name, old_anchor));
-            Ok(())
-        },
-        Err(e) => {
-            crate::utils::detailed_log("ANCHOR_SAVE", &format!("❌ Failed to save anchor: {}", e));
-            Err(e)
-        }
-    }
-}
-
-/// Updates server PID in state.json file
-pub fn save_server_pid(pid: u32) -> Result<(), Box<dyn std::error::Error>> {
-    let mut state = load_state();
-    state.server_pid = Some(pid);
-    save_state(&state)
-}
-
-/// Clears server PID from state.json file
-pub fn clear_server_pid() -> Result<(), Box<dyn std::error::Error>> {
-    let mut state = load_state();
-    state.server_pid = None;
-    save_state(&state)
 }

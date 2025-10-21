@@ -5,9 +5,7 @@
 
 use super::Config;
 use super::Command;
-use super::config::{load_config_with_error, ConfigResult};
-use super::state::AppState;
-use crate::{core::state::{load_state, save_state}, utils};
+use super::data::state::AppState;
 
 /// Global application state that spans both GUI and CLI modes
 pub struct ApplicationState {
@@ -39,25 +37,24 @@ impl ApplicationState {
     }
     
     /// Create new application state by loading from files
+    ///
+    /// NOTE: This assumes initialize() has already been called.
+    /// If you need to handle initialization errors, call initialize() first
+    /// and check its return value before calling this.
     pub fn new() -> Self {
-        // Load config with error handling first
-        let config_result = load_config_with_error();
-        let (config, config_error) = match config_result {
-            ConfigResult::Success(cfg) => (cfg, None),
-            ConfigResult::Error(error) => {
-                utils::detailed_log("CONFIG_ERROR", &format!("Failed to load config: {}", error));
-                (crate::core::data::get_config(), Some(error)) // Use fallback config
-            }
-        };
-        
-        // Load sys data once to get commands
+        // Get data from singleton (assumes initialize() was called)
+        let config = super::data::get_config();
         let (sys_data, _) = super::data::get_sys_data();
         let commands = sys_data.commands;
+
+        // Note: If initialization failed, initialize() would have used a default config
+        // so we don't track config_error here (it was already logged during initialize)
+        let config_error = None;
         
         // Don't scan at startup - only scan at termination
         // commands = scanner::startup_check(commands);
-        
-        let app_state = load_state();
+
+        let app_state = super::data::get_state();
         
         let application_state = Self {
             commands,
@@ -142,7 +139,7 @@ impl ApplicationState {
     /// Update window position in app state
     pub fn update_window_position(&mut self, position: (f32, f32)) {
         self.app_state.window_position = Some(position);
-        let _ = save_state(&self.app_state);
+        let _ = super::data::set_state(&self.app_state);
     }
     
     /// Get saved window position

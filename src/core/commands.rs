@@ -9,7 +9,7 @@ use std::env;
 use std::collections::HashMap;
 // sync imports removed - moved to sys_data module
 use serde::{Deserialize, Serialize};
-use crate::core::config::Config;
+use crate::core::data::config::Config;
 
 /// Represents a parsed command with its components
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
@@ -1451,13 +1451,13 @@ pub(in crate::core) fn load_commands() -> Vec<Command> {
 
 /// Load commands with config and patches
 /// INTERNAL ONLY - External code should use get_sys_data()
-pub(in crate::core) fn load_commands_with_data() -> (crate::core::config::Config, Vec<Command>, HashMap<String, Patch>) {
+pub(in crate::core) fn load_commands_with_data() -> (crate::core::data::config::Config, Vec<Command>, HashMap<String, Patch>) {
     let (global_data, _) = crate::core::data::get_sys_data();
     (global_data.config, global_data.commands, global_data.patches)
 }
 
 /// Load commands with only patches (no inference or orphan creation) - for inference analysis
-pub fn load_commands_for_inference() -> (crate::core::config::Config, Vec<Command>, HashMap<String, Patch>) {
+pub fn load_commands_for_inference() -> (crate::core::data::config::Config, Vec<Command>, HashMap<String, Patch>) {
     // Step 1: Load config
     let config = crate::core::data::get_config();
     

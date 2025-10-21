@@ -130,7 +130,7 @@ pub enum MarkdownActionStrategy {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use crate::core::config::{LauncherSettings, PopupSettings};
+    use crate::core::data::config::{LauncherSettings, PopupSettings};
     
     fn create_test_config(vault_path: &str, vault_name: &str) -> Config {
         Config {

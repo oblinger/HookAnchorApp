@@ -88,7 +88,7 @@ impl CommandServer {
         
         // Log version and build info at server startup
         let version = env!("CARGO_PKG_VERSION");
-        let state = crate::core::state::load_state();
+        let state = crate::core::data::get_state();
         let build_time_str = if let Some(build_time) = state.build_time {
             let dt = chrono::Local.timestamp_opt(build_time, 0).single()
                 .unwrap_or_else(|| chrono::Local::now());

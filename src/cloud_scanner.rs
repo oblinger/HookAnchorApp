@@ -154,26 +154,26 @@ impl NotionScanner {
     }
     
     fn get_last_scan_time(&self) -> Option<DateTime<Utc>> {
-        let state = crate::core::load_state();
-        
-        if let Some(timestamp_str) = state.notion_last_scan {
-            if let Ok(timestamp) = DateTime::parse_from_rfc3339(&timestamp_str) {
+        let state = crate::core::data::get_state();
+
+        if let Some(ref timestamp_str) = state.notion_last_scan {
+            if let Ok(timestamp) = DateTime::parse_from_rfc3339(timestamp_str) {
                 return Some(timestamp.with_timezone(&Utc));
             }
         }
         None
     }
-    
+
     fn save_last_scan_time(&self) {
-        let mut state = crate::core::load_state();
+        let mut state = crate::core::data::get_state();
         state.notion_last_scan = Some(Utc::now().to_rfc3339());
-        let _ = crate::core::save_state(&state);
+        let _ = crate::core::data::set_state(&state);
     }
-    
+
     fn clear_last_scan_time(&self) {
-        let mut state = crate::core::load_state();
+        let mut state = crate::core::data::get_state();
         state.notion_last_scan = None;
-        let _ = crate::core::save_state(&state);
+        let _ = crate::core::data::set_state(&state);
     }
 
     fn parse_page(&self, page: &serde_json::Value) -> Option<NotionPage> {

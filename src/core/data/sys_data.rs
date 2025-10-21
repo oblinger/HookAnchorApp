@@ -1,85 +1,35 @@
-//! Data Layer - Complete Public Interface
+//! Data Layer - Internal Implementation
 //!
 //! This module is the internal implementation of the data layer. External code should
-//! import from `crate::core::data` which re-exports the public interface.
+//! import from `crate::core` which re-exports the public interface.
 //!
-//! # COMPLETE PUBLIC INTERFACE (Exported via crate::core::data)
+//! # PUBLIC INTERFACE (Exported via crate::core)
 //!
-//! ## Types (from sys_data.rs)
+//! ## Data Access (from sys_data.rs, via crate::core::data)
 //! - `SysData` - Bundle containing config, commands, and patches
+//! - `initialize() -> Result<(), String>` - Load config, commands, patches into singleton
+//! - `get_sys_data() -> (SysData, bool)` - Get full SysData bundle
+//! - `get_config() -> Config` - Get configuration from singleton
+//! - `get_commands() -> Vec<Command>` - Get commands from singleton
+//! - `set_commands(Vec<Command>) -> Result<(), Box<dyn Error>>` - Replace all commands (auto-saves)
+//! - `add_command(Command) -> Result<(), Box<dyn Error>>` - Add single command (auto-saves)
+//! - `delete_command(&str) -> Result<(), Box<dyn Error>>` - Delete command by name (auto-saves)
+//! - `get_patches() -> HashMap<String, Patch>` - Get patches from singleton
+//! - `get_state() -> AppState` - Get application state (trampoline to state.rs)
+//! - `set_state(&AppState) -> Result<(), Box<dyn Error>>` - Save application state (trampoline to state.rs)
 //!
-//! ## Constants (from sys_data.rs)
-//! - `DEFAULT_LOG_PATH: &str` - Default path for log file
-//! - `DEFAULT_MAX_LOG_SIZE: u64` - Default maximum log file size
+//! ## Configuration (from config.rs, via crate::core)
+//! - `Config`, `PopupSettings`, `LauncherSettings` - Configuration types
 //!
-//! ## Initialization (from sys_data.rs)
-//! - `initialize() -> Result<(), String>` - Load config, commands, patches into singleton (call once at startup)
+//! ## State Types (from state.rs, via crate::core)
+//! - `AppState`, `HistoryViewerState` - State structure definitions
 //!
-//! ## Read Operations (from sys_data.rs)
-//! - `get_config() -> Config` - Get configuration (cached singleton)
-//! - `get_commands() -> Vec<Command>` - Get copy of commands from singleton
-//! - `get_patches() -> HashMap<String, Patch>` - Get copy of patches from singleton
-//! - `get_sys_data() -> (SysData, bool)` - Get full SysData bundle + was_reloaded flag
-//!
-//! ## Write Operations (from sys_data.rs) - All auto-flush: inference + save to disk + history
-//! - `set_commands(Vec<Command>) -> Result<(), Box<dyn Error>>` - Replace all commands, run inference, save, record changes
-//! - `add_command(Command) -> Result<(), Box<dyn Error>>` - Add single command, record in history, save
-//! - `delete_command(&str) -> Result<(), Box<dyn Error>>` - Delete command by name, record in history, save
-//!
-//! ## Internal-Only Exports (pub(crate) via data/mod.rs)
-//! - `CONFIG: OnceLock<Config>` - Global config singleton (for same-crate access only)
-//!
-//! ## Private Implementation (NOT exported outside data module)
-//! ### From storage.rs:
-//! - `load_commands_raw()` - Load commands from disk (private)
-//! - `save_commands_to_file()` - Save commands to disk (private)
-//! - `save_commands_to_cache()` - Save commands to JSON cache (private)
-//! - `load_commands_from_cache()` - Load from JSON cache (private)
-//! - `backup_commands_file()` - Create timestamped backup (private)
-//! - `deduplicate_commands()` - Remove duplicate commands (private)
-//! - `get_commands_file_path()` - Get path to commands.txt (private)
-//!
-//! ## Usage Patterns
-//! ```rust
-//! use crate::core::data;
-//!
-//! // Startup
-//! data::initialize()?;
-//!
-//! // Batch modification (scanner, rescan, etc)
-//! let mut commands = data::get_commands();
-//! // ... modify many commands ...
-//! data::set_commands(commands)?; // auto-flush: inference + save + history
-//!
-//! // Single command from UI
-//! data::add_command(new_cmd)?; // auto-flush + history
-//! data::delete_command("Foo")?; // auto-flush + history
-//! ```
-//!
-//! ## Architecture Notes
-//! - This is the ONLY way to access command data - no direct file I/O allowed
-//! - All modifications go through set_commands() which tracks history
-//! - Storage functions are private to prevent bypassing the singleton
-//! - Replaces old `commandstore` module and scattered file I/O
+
 
 use std::collections::HashMap;
 use std::sync::{Mutex, OnceLock};
-use crate::core::config::Config;
+use super::config::Config;
 use crate::core::{Command, Patch};
-
-// =============================================================================
-// GLOBAL CONSTANTS
-// =============================================================================
-// Put all hardcoded constants here instead of scattering them throughout the codebase.
-// This makes them easy to find and modify in one place.
-
-/// Default log file path - hardcoded for reliability during early initialization
-/// Note: This is the ONLY place where the log path is defined. The debug_log config
-/// parameter has been removed as it was not being used.
-pub const DEFAULT_LOG_PATH: &str = "~/.config/hookanchor/anchor.log";
-
-/// Maximum log file size if config is not loaded (10MB)
-pub const DEFAULT_MAX_LOG_SIZE: u64 = 10_000_000;
 
 /// System application data structure containing all loaded data
 #[derive(Clone, Debug)]
@@ -164,16 +114,16 @@ fn initialize_config() -> Result<(), String> {
     }
 
     // Load config using the existing load_config_with_error for proper error handling
-    match crate::core::config::load_config_with_error() {
-        crate::core::config::ConfigResult::Success(config) => {
+    match super::config::load_config_with_error() {
+        super::config::ConfigResult::Success(config) => {
             CONFIG.set(config).map_err(|_| "Config already initialized".to_string())?;
             let elapsed = start.elapsed();
             crate::utils::log(&format!("CONFIG_INIT: Config initialized at startup in {:?} ({} microseconds)", elapsed, elapsed.as_micros()));
             Ok(())
         }
-        crate::core::config::ConfigResult::Error(err) => {
+        super::config::ConfigResult::Error(err) => {
             // Use default config but return error for display
-            CONFIG.set(crate::core::config::create_default_config()).map_err(|_| "Config already initialized".to_string())?;
+            CONFIG.set(super::config::create_default_config()).map_err(|_| "Config already initialized".to_string())?;
             Err(err)
         }
     }
@@ -577,4 +527,18 @@ pub fn load_data(commands_override: Vec<Command>, verbose: bool) -> SysData {
     }
     
     sys_data_struct
+}
+
+// =============================================================================
+// STATE MANAGEMENT
+// =============================================================================
+
+/// Get application state
+pub fn get_state() -> super::state::AppState {
+    super::state::load_state()
+}
+
+/// Save application state
+pub fn set_state(state: &super::state::AppState) -> Result<(), Box<dyn std::error::Error>> {
+    super::state::save_state(state)
 }

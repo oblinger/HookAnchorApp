@@ -6,7 +6,6 @@
 //! - Automatic server restart when needed
 
 use std::sync::atomic::{AtomicBool, Ordering};
-use crate::core::state::{load_state, clear_server_pid};
 
 /// Global flag to track if server availability has been checked this session
 static SERVER_CHECKED: AtomicBool = AtomicBool::new(false);
@@ -29,9 +28,9 @@ pub(crate) fn start_server_if_needed() -> Result<(), Box<dyn std::error::Error>>
     // Log file size check is done when popup opens, not here
     
     crate::utils::detailed_log("SERVER_MGR", "Checking if command server is needed");
-    
+
     // Check PID from state.json
-    let state = load_state();
+    let state = crate::core::data::get_state();
     if let Some(pid) = state.server_pid {
         if is_process_alive(pid) {
             crate::utils::detailed_log("SERVER_MGR", &format!("Server running with PID: {}", pid));
@@ -40,7 +39,9 @@ pub(crate) fn start_server_if_needed() -> Result<(), Box<dyn std::error::Error>>
         } else {
             crate::utils::detailed_log("SERVER_MGR", &format!("Server PID {} no longer running", pid));
             // Clear stale PID
-            let _ = clear_server_pid();
+            let mut state = crate::core::data::get_state();
+            state.server_pid = None;
+            let _ = crate::core::data::set_state(&state);
         }
     }
     
@@ -61,7 +62,7 @@ pub(crate) fn start_server_if_needed() -> Result<(), Box<dyn std::error::Error>>
         }
         
         // Check if server PID is now available
-        let new_state = load_state();
+        let new_state = crate::core::data::get_state();
         if let Some(pid) = new_state.server_pid {
             if is_process_alive(pid) {
                 crate::utils::detailed_log("SERVER_MGR", &format!("Server started successfully with PID: {}", pid));
@@ -139,7 +140,7 @@ pub(crate) fn start_server_via_terminal() -> Result<(), Box<dyn std::error::Erro
 
 /// Kill existing command server if running
 pub(crate) fn kill_existing_server() -> Result<(), Box<dyn std::error::Error>> {
-    let state = load_state();
+    let state = crate::core::data::get_state();
     if let Some(pid) = state.server_pid {
         if is_process_alive(pid) {
             crate::utils::detailed_log("SERVER_MGR", &format!("Killing existing server PID: {}", pid));
@@ -160,7 +161,9 @@ pub(crate) fn kill_existing_server() -> Result<(), Box<dyn std::error::Error>> {
         }
         
         // Clear PID from state regardless
-        clear_server_pid()?;
+        let mut state = crate::core::data::get_state();
+        state.server_pid = None;
+        crate::core::data::set_state(&state)?;
     }
     
     // Reset the checked flag so next command will verify server

@@ -7,14 +7,13 @@ use std::sync::OnceLock;
 use std::collections::HashMap;
 use crate::core::Command;
 use crate::core::{
-    Config, load_state, save_state
+    Config, AppState
 };
 use crate::core::key_processing::{PopupInterface, KeyRegistry, create_default_key_registry};
 use crate::core::commands::get_patch_path;
 
 #[cfg(target_os = "macos")]
 use core_graphics::display::CGDisplay;
-use crate::core::config::{load_config_with_error, ConfigResult};
 use super::{PopupState, LayoutArrangement};
 
 use super::command_editor::{CommandEditor, CommandEditorResult};
@@ -623,7 +622,7 @@ impl PopupInterface for AnchorSelector {
 
         // Update app_state and save to disk
         self.popup_state.app_state.show_files = self.popup_state.show_files;
-        if let Err(e) = crate::core::state::save_state(&self.popup_state.app_state) {
+        if let Err(e) = crate::core::data::set_state(&self.popup_state.app_state) {
             crate::utils::log_error(&format!("Failed to save show_files state: {}", e));
         }
 
@@ -717,14 +716,15 @@ impl AnchorSelector {
 
     /// Execute a command or action
     fn execute(&mut self, input: &crate::core::Command) {
-        use crate::core::state::save_last_executed_command;
         use crate::utils::detailed_log;
 
         let search_text = self.popup_state.raw_search_text();
         detailed_log("POPUP_EXECUTE", &format!("🎯 POPUP execute() called with: '{}', search_text: '{}'", input.command, search_text));
 
         // Save the last executed command for add_alias functionality
-        let _ = save_last_executed_command(&input.command);
+        let mut state = crate::core::data::get_state();
+        state.last_executed_command = Some(input.command.clone());
+        let _ = crate::core::data::set_state(&state);
 
         // Save ghost input for commands that resolve to anchors
         let all_commands = self.commands();
@@ -860,7 +860,7 @@ impl AnchorSelector {
     
     /// Handle add alias command - opens command editor with alias action and last executed command as argument
     fn handle_add_alias_impl(&mut self) {
-        let state = crate::core::state::load_state();
+        let state = crate::core::data::get_state();
         crate::utils::detailed_log("ADD_ALIAS", &format!("=== ADD ALIAS TRIGGERED ==="));
         crate::utils::detailed_log("ADD_ALIAS", &format!("Last executed command from state: {:?}", state.last_executed_command));
         if let Some(last_command) = state.last_executed_command {
@@ -1331,8 +1331,10 @@ impl AnchorSelector {
                                 }
                             } else {
                                 // For other templates, search by name (case-insensitive for backward compatibility)
+                                // IMPORTANT: Get fresh commands from sys_data, not cached popup_state.commands
                                 let expanded_name = context.expand(&template.name);
-                                self.popup_state.commands.iter().find(|cmd|
+                                let fresh_commands = crate::core::data::get_commands();
+                                fresh_commands.iter().find(|cmd|
                                     cmd.command.eq_ignore_ascii_case(&expanded_name)
                                 ).cloned()
                             }
@@ -1507,10 +1509,10 @@ impl AnchorSelector {
         
         // Redirect stdout/stderr to anchor log for centralized debugging
         Self::setup_log_redirection();
-        
+
         // Load only app state for window positioning - this is fast
-        let state = load_state();
-        
+        let state = crate::core::data::get_state();
+
         // Create minimal popup state for immediate UI display
         let mut popup_state = PopupState::new_minimal();
         popup_state.app_state = state; // Use loaded state for window position
@@ -1564,7 +1566,7 @@ impl AnchorSelector {
         Self::setup_log_redirection();
 
         // Load only app state for window positioning - this is fast
-        let state = load_state();
+        let state = crate::core::data::get_state();
 
         // Create minimal popup state for immediate UI display
         let mut popup_state = PopupState::new_minimal();
@@ -1623,13 +1625,13 @@ impl AnchorSelector {
         crate::utils::detailed_log("DEFERRED_LOADING", &format!("DEFERRED_LOADING: Starting to load"));
         self.loading_state = LoadingState::Loading;
         let start_time = std::time::Instant::now();
-        
-        // Load commands from disk only (no filesystem scanning to avoid UI blocking)
-        let commands = crate::core::commands::load_commands_raw();
-        let (config, config_error) = match load_config_with_error() {
-            ConfigResult::Success(config) => (config, None),
-            ConfigResult::Error(error) => (crate::core::data::get_config(), Some(error)),
-        };
+
+        // Get data from singleton (initialize() was already called in main)
+        let commands = crate::core::data::get_commands();
+        let config = crate::core::data::get_config();
+
+        // Note: Config errors are handled during initialize() - we just use whatever is loaded
+        let config_error: Option<String> = None;
         
         // Initialize key registry with the loaded config
         self.key_registry = Some(create_default_key_registry(&config));
@@ -3423,21 +3425,21 @@ impl AnchorSelector {
 
 
 fn save_window_position_with_reason(pos: egui::Pos2, reason: &str) {
-    let mut state = load_state();
+    let mut state = crate::core::data::get_state();
     let old_pos = state.window_position;
-    
+
     // Log the save with reason and check for drift
     let msg = if pos.y > 600.0 {
-        format!("[POSITION-SAVE] WARNING: Saving low position ({}, {}) from {:?} - reason: {} - POSITION TOO LOW!", 
+        format!("[POSITION-SAVE] WARNING: Saving low position ({}, {}) from {:?} - reason: {} - POSITION TOO LOW!",
                 pos.x, pos.y, old_pos, reason)
     } else {
-        format!("[POSITION-SAVE] Saving position ({}, {}) from {:?} - reason: {}", 
+        format!("[POSITION-SAVE] Saving position ({}, {}) from {:?} - reason: {}",
                 pos.x, pos.y, old_pos, reason)
     };
     crate::utils::log(&msg);
-    
+
     state.window_position = Some((pos.x, pos.y));
-    match save_state(&state) {
+    match crate::core::data::set_state(&state) {
         Ok(_) => {
             crate::utils::detailed_log("WINDOW_POS", &format!("Successfully saved position"));
         }
@@ -3448,7 +3450,7 @@ fn save_window_position_with_reason(pos: egui::Pos2, reason: &str) {
 }
 
 fn load_window_position() -> Option<egui::Pos2> {
-    let state = load_state();
+    let state = crate::core::data::get_state();
     let result = state.window_position.map(|(x, y)| egui::pos2(x, y));
     
     if let Some(pos) = result {
@@ -3639,7 +3641,7 @@ impl eframe::App for AnchorSelector {
         // Reload app state from file on every update after initial loading
         // This ensures ghost input changes from the server are picked up
         if self.loading_state == LoadingState::Loaded {
-            let current_state = crate::core::state::load_state();
+            let current_state = crate::core::data::get_state();
             self.popup_state.app_state = current_state;
         }
         

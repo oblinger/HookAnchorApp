@@ -4,7 +4,7 @@
 //! works within that arrangement.
 
 use crate::core::Command;
-use crate::core::config::Config;
+use crate::core::Config;
 
 /// Represents how commands are arranged for display
 #[derive(Debug, Clone)]
