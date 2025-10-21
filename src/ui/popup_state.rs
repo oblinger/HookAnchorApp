@@ -232,6 +232,9 @@ impl PopupState {
     }
     
     /// Update display layout based on current filtered commands
+    /// Note: This calculates layout based on filtered_commands only (without folder files).
+    /// The actual rendering calculates layout dynamically from get_display_commands() which
+    /// includes folder files, ensuring window sizing and rendering use the same command count.
     fn update_display_layout(&mut self) {
         self.display_layout = DisplayLayout::new(self.filtered_commands.clone(), &self.config);
     }

@@ -1,3 +1,12 @@
+# HookAnchor Default Configuration
+# 
+# This config has a number of example templates.  Please customize as needed.
+#
+# UNIFIED ACTIONS SYSTEM:
+# All behaviors (templates, keyboard bindings, command actions) are now defined
+# in the 'actions:' section. Each action has a 'type' that determines its behavior,
+# and can optionally be bound to a keyboard key via the 'key' field.
+
 # Anchor Selector Configuration
 # Main configuration file for both popup app and launcher system
 
@@ -7,7 +16,7 @@
 # APPLICATION SETTINGS
 # =================================================================
 popup_settings:
-  verbose_logging:        true         # Controls if detailed logging messages added to the log
+  verbose_logging:        true        # Controls if detailed logging messages added to the log
   merge_similar:          true         # Merging similar commands in popup
   max_rows:               25           # Max number of rows in the list of matching commands
   max_columns:            4            # Max columns in list of matching commands
@@ -17,15 +26,15 @@ popup_settings:
   idle_timeout_seconds:   60           # Hide popup after this many seconds of inactivity
   countdown_seconds:      5            # Seconds for grabber countdown (default: 5)
   ghost_timeout_seconds:  3600         # Seconds to remember last executed anchor as ghost input
-  run_in_background:      true         # Keep app running in background for instant popup 
+  run_in_background:      true         # Keep app running in background for instant popup
   global_hotkey:          "Opt-`"      # Global hotkey to show popup (requires accessibility permissions)
   popup_server_retries:   3            # Number of times to retry showing the popup before rebuilding
   max_window_size:        "1700x1100"  # Maximum size for dialogs and popups in "widthxheight" format
-  default_window_size:    "800x120"    # Default popup window size in "widthxheight" format
+  default_window_size:    "600x120"    # Default popup window size in "widthxheight" format
   max_log_file_size:      10000000     # Maximum log file size in bytes (10MB) before clearing
   file_roots:             ["~/ob/kmr", "/Applications"] # List of file scanning roots (markdown files and apps)
   doc_file_extensions:    "pdf,doc,docx,xls,xlsx,ppt,pptx,txt,rtf,pages,numbers,csv,html,htm" # File extensions to auto-create DOC commands for
-  scan_exclusion_patterns:    # Regular expressions to exclude paths from scanning
+  skip_directory_patterns:    # Directory patterns to skip during scanning (glob patterns)
     - "/Yore/"            # Exclude any path containing /Yore/ folder (historical files)
   listed_actions: >
     alias,anchor,app,console,doc,folder,markdown,text,
@@ -37,6 +46,7 @@ popup_settings:
   rename_folder:          true         # Rename anchor folders when command name changes
   rename_patch:           true         # Update patch names and commands when patch is renamed
   rename_prefix:          true         # Update command prefixes when prefix command is renamed
+  preferred_anchor:       "markdown"   # Preferred action type when multiple anchors exist for same patch
 
   # History tracking settings
   history_settings:
@@ -91,7 +101,7 @@ actions:
     action_type: template
     key: "+"
     grab: 5
-    name: "{{input}}{{grabbed.suffix}}"
+    name: "{{input}}"
     action: "{{grabbed.action}}"
     arg: "{{grabbed.arg}}"
     edit: true
@@ -119,15 +129,7 @@ actions:
     arg: ""
     edit: true
     use_existing: true
-
-
-  clear_log:
-    description: "Clear anchor.log file for debugging"
-    action_type: js
-    function: action_clear_log
-    key: "Cmd+Opt+E"
-    name: "Clear Log"
-
+    
 
   create_alias:
     description: "Create alias to last executed command"
@@ -172,39 +174,25 @@ actions:
        
 
   ww:
-    description: "WORK      - Creates a new ww subfolder with a YYYY prefix"
+    description: "Creates a new ww subfolder with a YYYY prefix"
     action_type: template
-    key: "Cmd+Opt+W"
+    key: "Cmd+W"
     name: "{{date.year}} {{input}}"
     action: "anchor"
-    arg: "/Users/oblinger/ob/kmr/Work/SV/ww/{{date.year}} {{input}}/{{date.year}} {{input}}.md"
+    arg: "~/Work/{{date.year}} {{input}}/{{date.year}} {{input}}.md"
     patch: "WW"
     flags: ""
     edit: true
-    file: "/Users/oblinger/ob/kmr/Work/SV/ww/{{date.year}} {{input}}/{{date.year}} {{input}}.md"
+    file: "~/Work/{{date.year}} {{input}}/{{date.year}} {{input}}.md"
     file_rescan: true
     contents: |
       .[[{{date.year}}-{{date.month}} {{input}}]].
       
-  qq:
-    description: "QUICK PG  - Creates a new qq markdown document with a YYYY-MM-DD prefix"
-    action_type: template
-    key: "Cmd+Opt+Q"
-    name: "{{date.year}}-{{date.month}}-{{date.day}} {{input}}"
-    action: "anchor"
-    arg: "/Users/oblinger/ob/kmr/Work/SV/QQ/{{date.year}}-{{date.month}}-{{date.day}} {{input}}.md"
-    patch: "QQ"
-    flags: ""
-    edit: true
-    file: "/Users/oblinger/ob/kmr/Work/SV/QQ/{{date.year}}-{{date.month}}-{{date.day}} {{input}}.md"
-    file_rescan: true
-    contents: ""
-      
 
-  date:
-    description: "DATED sub-page  - Creates an anchor and subfolder with a YYYY-MM-DD prefix"
+  year:
+    description: "Creates an anchor and subfolder with a YYYY-MM-DD prefix"
     action_type: template
-    key: "Cmd+Opt+D"
+    key: "Cmd+Y"
     name: "{{date.year}}-{{date.month}}-{{date.day}} {{input}}"
     action: "markdown"
     arg: "{{last_executed.folder}}/{{date.year}}-{{date.month}}-{{date.day}} {{input}}.md"
@@ -214,59 +202,31 @@ actions:
     file: "{{last_executed.folder}}/{{date.year}}-{{date.month}}-{{date.day}} {{input}}.md"
     file_rescan: true
     contents: ""
-     
-  year:
-    description: "YEAR SUB-PAGE  - Creates an anchor and subfolder with a YYYY prefix"
-    action_type: template
-    key: "Cmd+Opt+Y"
-    name: "{{date.year}} {{input}}"
-    action: "anchor"
-    arg: "{{last_executed.folder}}/{{date.year}} {{input}}/{{date.year}} {{input}}.md"
-    patch: "{{last_executed.patch}}"
-    flags: ""
-    edit: true
-    file: "{{last_executed.folder}}/{{date.year}} {{input}}/{{date.year}} {{input}}.md"
-    file_rescan: true
-    contents: ""
-
-  month:
-    description: "MONTH SUB-PAGE  - Creates an anchor and subfolder with a YYYY-MM prefix"
-    action_type: template
-    key: "Cmd+Opt+M"
-    name: "{{date.year}}-{{date.month}} {{input}}"
-    action: "anchor"
-    arg: "{{last_executed.folder}}/{{date.year}}-{{date.month}} {{input}}/{{date.year}}-{{date.month}} {{input}}.md"
-    patch: "{{last_executed.patch}}"
-    flags: ""
-    edit: true
-    file: "{{last_executed.folder}}/{{date.year}}-{{date.month}} {{input}}/{{date.year}}-{{date.month}} {{input}}.md"
-    file_rescan: true
-    contents: ""
              
 
   prj:
-    description: "PROJECT   - Creates a new Prj project with a YYYY prefix"
+    description: "Creates a new Prj project with a YYYY prefix"
     action_type: template
-    key: "Cmd+Opt+P"
+    key: "Cmd+P"
     name: "{{date.year}} {{input}}"
     action: "anchor"
-    arg: "/Users/oblinger/ob/kmr/prj/{{date.year}} {{input}}/{{date.year}} {{input}}.md"
+    arg: "~/Documents/Notes/prj/{{date.year}} {{input}}/{{date.year}} {{input}}.md"
     patch: "Prj"
     flags: ""
     edit: true
-    file: "/Users/oblinger/ob/kmr/prj/{{date.year}} {{input}}/{{date.year}} {{input}}.md"
+    file: "~/Documents/Notes/prj/{{date.year}} {{input}}/{{date.year}} {{input}}.md"
     file_rescan: true
     contents: |
       .[[{{date.year}}-{{date.month}} {{input}}]].
       
 
   at:
-    description: "AT ENTRY  - Creates a new contact's @ entry"
+    description: "Creates a new contact's @ entry"
     action_type: template
-    key: "Cmd+Opt+A"
+    key: "Cmd+Shift+A"
     name: "@{{input}}"
     action: "anchor"
-    arg: "/Users/oblinger/ob/kmr/At/@{{input}}.md"
+    arg: "~/Documents/Notes/At/@{{input}}.md"
     patch: "At"
     flags: ""
     edit: true
@@ -276,32 +236,32 @@ actions:
     
 
   org:
-    description: "ORG ENTRY - Creates a new org @ entry"
+    description: "Creates a new org @ entry"
     action_type: template
-    key: "Cmd+Opt+O"
+    key: "Cmd+O"
     name: "@{{input}}"
     action: "anchor"
-    arg: "/Users/oblinger/ob/kmr/At/Org/@{{input}}.md"
+    arg: "~/Documents/Notes/At/Org/@{{input}}.md"
     patch: "Org"
     flags: ""
     edit: true
-    file: "/Users/oblinger/ob/kmr/At/Org/@{{input}}.md"
+    file: "~/Documents/Notes/At/Org/@{{input}}.md"
     file_rescan: true
     contents: |
       =[[Org]]   
     
   doc_page:
-    description: "DOC PAGE  - Creates a new DOC documentation file"
+    description: "Creates a new DOC documentation file"
     action_type: template
-    key: "Cmd+Opt+D"
+    key: "Cmd+D"
     name: "Doc{{input}}"
     action: "doc"
-    arg: "/Users/oblinger/ob/kmr/T/DOC/Doc{{input}}.md"
+    arg: "~/Documents/Notes/T/DOC/Doc{{input}}.md"
     patch: "DOC"
     flags: ""
     edit: true
     file_rescan: true
-    file: "/Users/oblinger/ob/kmr/At/Org/@{{input}}.md"
+    file: "~/Documents/Notes/At/Org/@{{input}}.md"
     contents: |
       #org   
       
@@ -317,9 +277,15 @@ actions:
     key: "Cmd+B"
     popup_action: force_rebuild
     close_popup: false
-  
+
+  clear_log:
+    description: "Clear anchor.log file for debugging"
+    action_type: clear_log
+    key: "Cmd+Opt+E"
+    name: "Clear Log"
+
   kb_toggle_show_files:
-    description: "Toggle showing files in prefix menu"
+    description: "Toggle showing files in prefix menus"
     action_type: popup
     key: "Cmd+F"
     popup_action: toggle_show_files
@@ -331,7 +297,14 @@ actions:
     key: "Cmd+T"
     popup_action: activate_tmux
     close_popup: true
-          
+
+  kb_show_history_viewer:
+    description: "Show history viewer"
+    action_type: popup
+    key: "`"
+    popup_action: show_history_viewer
+    close_popup: true
+
   # JavaScript TMUX activation - Alternative js version for testing
   activate_tmux_js:
     description: "Activate TMUX session for selected anchor (JavaScript version)"
@@ -341,20 +314,18 @@ actions:
   # Direct TMUX activation - Same as Cmd+T keyboard shortcut
   activate_tmux:
     description: "Activate TMUX session for selected folder/anchor"
-    action_type: js_function
-    function: action_activate_tmux
+    action_type: popup
+    popup_action: activate_tmux
 
   # Test JavaScript error reporting
   test_js_error:
     description: "Test JavaScript error reporting"
-    action_type: js
-    function: action_test_error
+    action_type: test_error
 
   # Test available JavaScript builtins
   test_builtins:
     description: "Test available JavaScript builtins"
-    action_type: js
-    function: action_test_builtins
+    action_type: test_builtins
  
   show_contact:
     description: "Show contact for selected command (strips @ prefix)"
@@ -370,21 +341,14 @@ actions:
     key: "/"
     popup_action: show_folder
     close_popup: true
-
-  kb_show_history_viewer:
-    description: "Show history viewer"
-    action_type: popup
-    key: "`"
-    popup_action: show_history_viewer
-    close_popup: true
-
+  
   kb_show_keys:
     description: "Show keyboard shortcuts"
     action_type: popup
     key: "?"
     popup_action: show_keys
     close_popup: false
-      
+  
   kb_execute:
     description: "Execute selected command"
     action_type: popup
@@ -457,13 +421,13 @@ actions:
   # Commands reference these by name in their action field.
   
   # Browser actions
-  chrome:
+  chrome: 
     description: "Open URL in Google Chrome"
     action_type: open_url
     browser: "Google Chrome"
     url: "{{arg}}"
 
-  safari:
+  safari: 
     description: "Open URL in Safari"
     action_type: "open_url"
     browser: "Safari"
@@ -474,7 +438,7 @@ actions:
     action_type: open_url
     browser: "Brave Browser"
     url: "{{arg}}"
-
+    
   firefox:
     description: "Open URL in Firefox"
     action_type: open_url
@@ -490,35 +454,38 @@ actions:
   # Application actions
   notion:
     description: "Open Notion page"
-    action_type: js_function
-    function: action_notion
+    action_type: notion
     arg: "{{arg}}"
-    
+
   obs_url:
     description: "Open Obsidian URL"
-    action_type: open_app
+    action_type: app
     app: "Obsidian"
     arg: "{{arg}}"
-    
+
   contact:
     description: "Search for contact in Contacts app"
     action_type: contact
-    
+
   # Generic actions
   app:
     description: "Launch application by name"
-    action_type: open_app
+    action_type: app
     app: "{{arg}}"
-    
+
   url:
     description: "Open URL in default browser"
     action_type: open_url
     url: "{{arg}}"
-    
+
   doc:
     description: "Open document with default application"
     action_type: doc
-  
+
+  console:
+    description: "Execute command in terminal window"
+    action_type: console
+
   # Specialized actions (complex logic implemented in JavaScript)
   folder:
     description: "Open folder - handles relative and absolute paths"
@@ -534,8 +501,7 @@ actions:
     
   anchor:
     description: "Open anchor file in Obsidian or default editor"
-    action_type: anchor
-    ghost_input: "{{raw_input}}"
+    action_type: markdown
     
   text:
     description: "Type text file contents into active application"
@@ -567,49 +533,23 @@ actions:
 # =================================================================
 # Rules for capturing application context and creating new commands
 
-# =================================================================
-# GRABBER SUFFIX MAP
-# =================================================================
-# Map from suffix strings to regex patterns for URL/path classification
-# When the grabber captures a URL/path that matches a regex pattern,
-# the corresponding suffix is appended to help distinguish sources
-grabber_suffix_map:
-  "Gdrive": "https://drive\\.google\\.com/.*|https://docs\\.google\\.com/.*"
-  "Notion": "https://www\\.notion\\.so/.*|notion://.*"
-  "Github": "https://github\\.com/.*|https://.*\\.github\\.io/.*"
-  "Obsidian": "obsidian://.*"
-  "Slack": "https://.*\\.slack\\.com/.*|slack://.*"
-  "Zoom": "https://.*\\.zoom\\.us/.*|zoommtg://.*"
-  "Figma": "https://www\\.figma\\.com/.*|figma://.*"
-  "Youtube": "https://www\\.youtube\\.com/.*|https://youtu\\.be/.*"
-  "Dropbox": "https://www\\.dropbox\\.com/.*|https://.*\\.dropbox\\.com/.*"
-  "OneDrive": "https://.*\\.sharepoint\\.com/.*|https://onedrive\\.live\\.com/.*"
-  "Confluence": "https://.*\\.atlassian\\.net/.*|https://.*\\.confluence\\.com/.*"
-  "Jira": "https://.*\\.atlassian\\.net/.*|https://.*\\.jira\\.com/.*"
-  "Trello": "https://trello\\.com/.*"
-  "Asana": "https://app\\.asana\\.com/.*"
-  "Miro": "https://miro\\.com/.*"
-  "Linear": "https://linear\\.app/.*"
-  "Discord": "https://discord\\.com/.*|discord://.*"
-  "Teams": "https://teams\\.microsoft\\.com/.*|msteams://.*"
-
 grabber_rules:
 - {"name": "Chrome URL", "action": "chrome", "group": "Web",
-  "matcher": "bundleId === 'com.google.Chrome' && props.url ? props.url : null"}
+  "matcher": "bundleId === ''com.google.Chrome'' && props.url ? props.url : null"}
 - name: Safari URL
-  matcher: 'bundleId === "com.apple.Safari" && props.url ? props.url : null'
+  matcher: 'bundleId === ''com.apple.Safari'' && props.url ? props.url : null'
   action: safari
   group: Web
 - name: Brave URL
-  matcher: 'bundleId === "com.brave.Browser" && props.url ? props.url : null'
+  matcher: 'bundleId === ''com.brave.Browser'' && props.url ? props.url : null'
   action: brave
   group: Web
 - name: Firefox URL
-  matcher: 'bundleId === "org.mozilla.firefox" && props.url ? props.url : null'
+  matcher: 'bundleId === ''org.mozilla.firefox'' && props.url ? props.url : null'
   action: firefox
   group: Web
 - name: Chrome Beta URL
-  matcher: 'bundleId === "com.google.Chrome.beta" && props.url ? props.url : null'
+  matcher: 'bundleId === ''com.google.Chrome.beta'' && props.url ? props.url : null'
   action: work
   group: Work
 - name: Finder Anchor
@@ -764,3 +704,4 @@ grabber_rules:
     action_type: text
     description: "Type text with 0.5 second delay"
     delay: 0.5  # Wait only 0.5 seconds before typing
+  

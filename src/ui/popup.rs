@@ -2809,9 +2809,10 @@ impl AnchorSelector {
                         selected_command.command, resolved_cmd.command));
                     
                     // Create command to execute JavaScript action
+                    // Use "activate_tmux_js" which is the actual JS action in config.yaml
                     let js_cmd = crate::core::Command {
                         command: resolved_cmd.command.clone(),
-                        action: "activate_tmux".to_string(),
+                        action: "activate_tmux_js".to_string(),
                         arg: resolved_cmd.arg.clone(),
                         patch: resolved_cmd.patch.clone(),
                         flags: String::new(),
@@ -4374,17 +4375,24 @@ impl eframe::App for AnchorSelector {
                 if self.loading_state == LoadingState::Loaded && !self.filtered_commands().is_empty() {
                     // Get the display commands using our new method
                     let (display_commands, is_submenu, menu_prefix, inside_count) = self.get_display_commands();
-                    
+
+                    // Recalculate layout based on ACTUAL display commands (not filtered_commands)
+                    // This is critical because display_commands may include folder files
+                    let actual_layout = crate::ui::layout::DisplayLayout::new(
+                        display_commands.clone(),
+                        &self.popup_state.config
+                    );
+
                     // Calculate required window dimensions based on final display commands
                     // Use actual font metrics for precise sizing
                     let mut input_font_id = ui.style().text_styles.get(&egui::TextStyle::Heading).unwrap().clone();
                     input_font_id.size *= 1.5; // Same scaling as used for input
                     let input_height = ui.fonts(|f| f.row_height(&input_font_id)) + 20.0; // Add padding for input box
-                    
+
                     let mut list_font_id = ui.style().text_styles.get(&egui::TextStyle::Body).unwrap().clone();
                     list_font_id.size *= 1.5; // Same scaling as used for command list
                     let row_height = ui.fonts(|f| f.row_height(&list_font_id)) + 4.0; // Add more spacing between rows
-                    
+
                     let header_height = if is_submenu {
                         let mut header_font_id = ui.style().text_styles.get(&egui::TextStyle::Heading).unwrap().clone();
                         header_font_id.size *= 1.3; // Same scaling as used for header
@@ -4392,12 +4400,12 @@ impl eframe::App for AnchorSelector {
                     } else {
                         0.0
                     };
-                    
+
                     let padding = 60.0; // Top and bottom margins - increased for safety
                     let bottom_drag_height = 20.0; // Height of bottom draggable area
                     let mid_drag_height = 18.0; // Height between input and list
-                    
-                    let (window_width, required_height) = match &self.popup_state.display_layout.arrangement {
+
+                    let (window_width, required_height) = match &actual_layout.arrangement {
                         LayoutArrangement::MultiColumn { rows, cols } => {
                             let rows_per_col = *rows;
                             let cols_to_use = *cols;
@@ -4524,11 +4532,15 @@ impl eframe::App for AnchorSelector {
                     } else {
                         crate::utils::log("🪟 SKIPPING_CONTENT_RESIZE: Dialog is visible, allowing dialog sizing to control window");
                     }
-                    
-                    // Use DisplayLayout to determine arrangement
-                    match &self.popup_state.display_layout.arrangement {
+
+                    // Use the layout and display_commands that were already calculated above for window sizing
+                    // This ensures window sizing and rendering use the exact same layout
+                    crate::utils::log(&format!("RENDER: Using layout: {:?} (calculated from {} commands)",
+                        &actual_layout.arrangement, display_commands.len()));
+                    match &actual_layout.arrangement {
                         LayoutArrangement::MultiColumn { rows, cols } => {
                             // Multi-column display
+                            crate::utils::log(&format!("RENDER: Using MultiColumn branch (rows={}, cols={})", rows, cols));
                             let rows_per_col = *rows;
                             let cols_to_use = *cols;
                             
@@ -4646,7 +4658,8 @@ impl eframe::App for AnchorSelector {
                         }
                         LayoutArrangement::SingleColumn => {
                             // Single-column display
-                        
+                            crate::utils::log("RENDER: Using SingleColumn branch");
+
                         // Show submenu header if applicable
                         if is_submenu {
                             if let Some(ref prefix) = menu_prefix {

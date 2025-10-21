@@ -72,14 +72,21 @@ impl DisplayLayout {
     fn calculate_arrangement(commands: &[Command], config: &Config) -> LayoutArrangement {
         let max_rows = config.popup_settings.max_rows;
         let max_cols = config.popup_settings.max_columns;
-        
+
+        crate::utils::log(&format!("LAYOUT: calculate_arrangement: commands.len()={}, max_rows={}, max_cols={}",
+            commands.len(), max_rows, max_cols));
+
         if commands.len() <= max_rows || max_cols == 1 {
+            crate::utils::log(&format!("LAYOUT: → Using SingleColumn (commands.len()={} <= max_rows={} or max_cols={} == 1)",
+                commands.len(), max_rows, max_cols));
             LayoutArrangement::SingleColumn
         } else {
             let cols_needed = (commands.len() + max_rows - 1) / max_rows;
             let cols_to_use = cols_needed.min(max_cols);
             let rows_per_col = (commands.len() + cols_to_use - 1) / cols_to_use;
-            
+
+            crate::utils::log(&format!("LAYOUT: → Using MultiColumn (rows={}, cols={})", rows_per_col, cols_to_use));
+
             LayoutArrangement::MultiColumn {
                 rows: rows_per_col,
                 cols: cols_to_use,
