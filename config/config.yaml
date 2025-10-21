@@ -280,8 +280,9 @@ actions:
 
   clear_log:
     description: "Clear anchor.log file for debugging"
-    action_type: clear_log
-    key: "Cmd+Opt+E"
+    action_type: js
+    function: action_clear_log
+    key: "Cmd+Shift+E"
     name: "Clear Log"
 
   kb_toggle_show_files:
