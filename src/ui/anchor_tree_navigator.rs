@@ -313,9 +313,30 @@ impl AnchorTreeNavigator {
 
         // Render the node - use full available width
         ui.horizontal(|ui| {
-            // Add indentation for tree depth
+            // Add indentation for tree depth and draw guide lines
             if depth > 0 {
                 let indent_width = self.indent_pixels * depth as f32;
+
+                // Draw vertical guide lines if enabled
+                if self.show_guides {
+                    let painter = ui.painter();
+                    let line_color = ui.visuals().weak_text_color();
+
+                    // Draw a vertical line for each level of indentation
+                    for level in 1..=depth {
+                        let x_offset = self.indent_pixels * level as f32 - (self.indent_pixels / 2.0);
+                        let rect = ui.available_rect_before_wrap();
+                        let x = rect.min.x + x_offset;
+                        let y_top = rect.min.y;
+                        let y_bottom = rect.max.y;
+
+                        painter.line_segment(
+                            [egui::pos2(x, y_top), egui::pos2(x, y_bottom)],
+                            egui::Stroke::new(1.0, line_color),
+                        );
+                    }
+                }
+
                 ui.add_space(indent_width);
             }
 

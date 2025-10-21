@@ -1,31 +1,31 @@
 {
-  "window_position": [
-    980.0,
-    282.0
-  ],
+  "anchor_folder": null,
+  "anchor_name": "Hook Anchor",
+  "anchor_timestamp": 1761063944,
+  "build_time": 1761076302,
   "history_viewer_state": {
+    "min_edit_size": 500,
+    "name_filter": "",
+    "patch_filter": "",
     "position": [
       -2538.0,
       25.0
     ],
+    "selected_action_types": [],
+    "sidebar_width": 155.0,
     "window_size": [
       1000.0,
       1415.0
-    ],
-    "patch_filter": "",
-    "name_filter": "",
-    "min_edit_size": 500,
-    "selected_action_types": [],
-    "sidebar_width": 171.0
+    ]
   },
-  "build_time": 1761075533,
-  "last_scan_time": null,
-  "last_scan_checksum": null,
   "last_executed_command": "ha",
-  "server_pid": 66711,
+  "last_scan_checksum": null,
+  "last_scan_time": null,
   "notion_last_scan": null,
-  "anchor_name": "Hook Anchor",
-  "anchor_timestamp": 1761063944,
-  "anchor_folder": null,
-  "show_files": true
+  "server_pid": 66711,
+  "show_files": true,
+  "window_position": [
+    980.0,
+    282.0
+  ]
 }
