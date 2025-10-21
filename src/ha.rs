@@ -15,10 +15,10 @@ use std::path::PathBuf;
 fn main() {
     // Initialize binary path for consistent spawning
     hookanchor::utils::init_binary_path();
-    
-    // Initialize config FIRST - this must happen before any other operations
-    if let Err(config_error) = hookanchor::core::initialize_config() {
-        hookanchor::utils::log_error(&format!("Failed to load config: {}", config_error));
+
+    // Initialize sys_data (config + cache) - this must happen before any other operations
+    if let Err(init_error) = hookanchor::core::initialize() {
+        hookanchor::utils::log_error(&format!("Failed to initialize sys_data: {}", init_error));
         // Continue with default config
     }
     

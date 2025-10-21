@@ -1,5 +1,5 @@
 use std::collections::HashMap;
-use crate::core::{load_commands_with_data, load_commands_for_inference, filter_commands, run_patch_inference};
+use crate::core::{load_commands_for_inference, filter_commands, run_patch_inference};
 use crate::utils;
 use crate::utils::logging::print;
 use crate::execute::{execute_on_server, make_action, command_to_action};
@@ -974,8 +974,10 @@ fn run_infer_patches(args: &[String]) {
 
 /// Show patch inference for a specific command
 fn run_infer_single_command(command_name: &str) {
-    // Load current commands (without inference and virtual anchor creation)
-    let (_config, commands, patches) = load_commands_with_data();
+    // Get current commands from singleton
+    let (sys_data, _) = crate::core::get_sys_data();
+    let commands = sys_data.commands;
+    let patches = sys_data.patches;
     
     // Find the command by name
     let found_command = commands.iter().find(|cmd| cmd.command == command_name);
@@ -1074,8 +1076,10 @@ fn run_infer_all_patches(_args: &[String]) {
     let input = input.trim().to_lowercase();
     
     if input == "y" || input == "yes" {
-        // Reload commands and apply changes
-        let (_config, mut commands, patches) = load_commands_with_data();
+        // Get commands from singleton and apply changes
+        let (sys_data, _) = crate::core::get_sys_data();
+        let mut commands = sys_data.commands;
+        let patches = sys_data.patches;
         
         // Second run: Apply changes without printing (already shown above)
         let (applied_count, _) = run_patch_inference(
@@ -1160,7 +1164,7 @@ fn run_rescan_command() {
     // - Add newly discovered files
     // - Remove commands for files that no longer exist
     // - Preserve user-edited commands
-    let global_data = crate::core::sys_data::load_data(Vec::new(), false);
+    let (global_data, _) = crate::core::sys_data::get_sys_data();
 
     let scanned_commands = crate::systems::scan_new_files(
         commands.clone(),
@@ -1183,25 +1187,16 @@ fn run_rescan_command() {
         }
     }
 
-    print("\n🔄 Step 5: Running inference on complete command set...");
+    print("\n🔄 Step 5: Running inference and saving...");
 
-    // NOW run inference on the COMPLETE command set (file commands + manual edits)
-    // This will assign patches, create virtual anchors, and save to disk
-    let final_data = crate::core::sys_data::load_data(commands.clone(), true);
-    commands = final_data.commands;
-
-    print(&format!("   ✅ Inference complete on {} commands", commands.len()));
-
-    print("\n💾 Step 7: Final save to cache...");
-
-    // Save final state through sys_data (inference + save)
+    // Save final state through sys_data (runs inference + saves to cache + commands.txt)
     let command_count = commands.len();
     match crate::core::set_commands(commands) {
         Ok(_) => {
-            print(&format!("   ✅ Saved {} commands to cache", command_count));
+            print(&format!("   ✅ Inference complete and saved {} commands", command_count));
         }
         Err(e) => {
-            print(&format!("   ⚠️  Error saving cache: {}", e));
+            print(&format!("   ⚠️  Error during inference/save: {}", e));
         }
     }
 
@@ -1720,7 +1715,7 @@ fn run_delete_history(args: &[String]) {
         // - Files are NOT in commands list yet, so scanner treats them as NEW
         // - Saves to cache with metadata
         print("🔍 Step 1: Scanning filesystem to record file creation history...");
-        let global_data = crate::core::sys_data::load_data(Vec::new(), false);
+        let (global_data, _) = crate::core::sys_data::get_sys_data();
         let scanned_commands = crate::systems::scan_new_files(Vec::new(), &global_data, true);
 
         // Save to cache so next step loads these as existing files

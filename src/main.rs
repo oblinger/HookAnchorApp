@@ -13,13 +13,13 @@ fn main() -> Result<(), eframe::Error> {
     // Initialize global binary path for consistent process spawning
     hookanchor::utils::init_binary_path();
     
-    // Initialize config FIRST - this must happen before any other operations
-    match hookanchor::core::initialize_config() {
+    // Initialize sys_data (config + cache) - this must happen before any other operations
+    match hookanchor::core::initialize() {
         Ok(()) => {
-            // Config loaded successfully
+            // Sys data initialized successfully (config + cache loaded)
         }
-        Err(config_error) => {
-            hookanchor::utils::log_error(&format!("Failed to load config: {}", config_error));
+        Err(init_error) => {
+            hookanchor::utils::log_error(&format!("Failed to initialize sys_data: {}", init_error));
             // Continue with default config
         }
     }

@@ -1374,8 +1374,7 @@ impl AnchorSelector {
                                     match crate::core::add_command(new_command, &mut self.popup_state.commands) {
                                         Ok(_) => {
                                             // Command already saved by add_command (via sys_data::add_command)
-                                            // Mark commands as modified to trigger automatic reload
-                                            crate::core::mark_commands_modified();
+                                            // which updates singleton directly
                                             // Clear search and update display
                                             self.popup_state.search_text.clear();
                                             self.popup_state.update_search(String::new());
@@ -1781,7 +1780,8 @@ impl AnchorSelector {
 
         // Execute the rename with dry_run = false on UI commands
         use crate::core::rename_associated_data;
-        let mut patches = crate::core::commands::create_patches_hashmap(&self.commands());
+        let (sys_data, _) = crate::core::get_sys_data();
+        let mut patches = sys_data.patches;
         let (updated_arg, _actions) = rename_associated_data(
             old_name,
             new_name,
@@ -1826,7 +1826,6 @@ impl AnchorSelector {
         }
 
         // Mark commands as modified to trigger automatic reload
-        crate::core::mark_commands_modified();
 
         // Update input field with the renamed command name for symmetric feedback
         // This ensures that after the rename dialog, the input field shows the command that was just renamed
@@ -2166,7 +2165,6 @@ impl AnchorSelector {
                                                             Ok(_) => {
                                                                 // Command already saved by add_command (via sys_data::add_command)
                                                                 // Mark commands as modified to trigger automatic reload
-                                                                crate::core::mark_commands_modified();
                                                                 self.popup_state.search_text.clear();
                                                                 self.popup_state.update_search(String::new());
                                                                 
@@ -2270,7 +2268,6 @@ impl AnchorSelector {
                                                             Ok(_) => {
                                                                 // Command already saved by add_command (via sys_data::add_command)
                                                                 // Mark commands as modified to trigger automatic reload
-                                                                crate::core::mark_commands_modified();
                                                                 self.popup_state.search_text.clear();
                                                                 self.popup_state.update_search(String::new());
                                                                 
@@ -3909,7 +3906,8 @@ impl eframe::App for AnchorSelector {
                         if has_rename_options {
                             // Perform dry-run to see what would be renamed
                             use crate::core::rename_associated_data;
-                            let mut patches = crate::core::commands::create_patches_hashmap(&self.commands());
+                            let (sys_data, _) = crate::core::get_sys_data();
+                            let mut patches = sys_data.patches;
                             match rename_associated_data(
                                 effective_old_name,
                                 &new_command.command,
@@ -4007,7 +4005,6 @@ impl eframe::App for AnchorSelector {
                         crate::utils::log(&format!("SAVE_DEBUG: Successfully added command (auto-saved via sys_data)"));
 
                         // Mark commands as modified to trigger automatic reload
-                        crate::core::mark_commands_modified();
                         crate::utils::log(&format!("SAVE_DEBUG: Marked commands as modified to trigger reload"));
 
                         // Process template files if there was a pending template
@@ -4069,7 +4066,6 @@ impl eframe::App for AnchorSelector {
                 } else {
                     // Command already saved by delete_command (via sys_data::delete_command)
                     // Mark commands as modified to trigger automatic reload
-                    crate::core::mark_commands_modified();
 
                     // Update the filtered list if we're currently filtering
                     if !self.popup_state.search_text.trim().is_empty() {

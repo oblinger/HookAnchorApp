@@ -469,7 +469,8 @@ pub(crate) fn backup_commands_file() -> Result<(), Box<dyn std::error::Error>> {
 /// Loads commands from the commands.txt file
 /// Creates a hashmap from patch names to Patch structs
 /// Creates a patch entry for every anchor command, indexed by the command's lowercase name
-pub fn create_patches_hashmap(commands: &[Command]) -> HashMap<String, Patch> {
+/// INTERNAL ONLY - External code should use get_sys_data() to get patches
+pub(in crate::core) fn create_patches_hashmap(commands: &[Command]) -> HashMap<String, Patch> {
     let mut patches = HashMap::new();
     let config = crate::core::sys_data::get_config();
     let preferred_anchor_type = config.popup_settings.preferred_anchor.as_deref().unwrap_or("markdown");
@@ -1442,16 +1443,15 @@ pub(crate) fn load_commands_raw() -> Vec<Command> {
 }
 
 /// Load commands with all derived data structures (patches, inference, orphan anchors)
-/// This is the main entry point for loading command data
-pub fn load_commands() -> Vec<Command> {
-    let global_data = crate::core::sys_data::load_data(Vec::new(), false);
+/// INTERNAL ONLY - External code should use get_commands() from sys_data
+pub(in crate::core) fn load_commands() -> Vec<Command> {
+    let (global_data, _) = crate::core::sys_data::get_sys_data();
     global_data.commands
 }
 
-/// Load commands with config and patches - main entry point for full data loading
-pub fn load_commands_with_data() -> (crate::core::config::Config, Vec<Command>, HashMap<String, Patch>) {
-    // IMPORTANT: This function should use get_sys_data() instead of load_data() to avoid deadlock
-    // load_data() is meant to be called only from get_sys_data()
+/// Load commands with config and patches
+/// INTERNAL ONLY - External code should use get_sys_data()
+pub(in crate::core) fn load_commands_with_data() -> (crate::core::config::Config, Vec<Command>, HashMap<String, Patch>) {
     let (global_data, _) = crate::core::sys_data::get_sys_data();
     (global_data.config, global_data.commands, global_data.patches)
 }

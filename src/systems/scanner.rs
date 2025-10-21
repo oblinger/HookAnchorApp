@@ -184,9 +184,6 @@ pub fn scan_check(commands: Vec<Command>) -> Vec<Command> {
         // Use sys_data::set_commands - runs patch inference and saves
         if let Err(e) = crate::core::set_commands(scanned_commands.clone()) {
             crate::utils::log_error(&format!("Failed to save updated commands: {}", e));
-        } else {
-            // Mark commands as modified since we've updated the commands file
-            crate::core::mark_commands_modified();
         }
     }
 
@@ -214,6 +211,10 @@ pub fn load_manual_edits(commands: &mut Vec<Command>, verbose: bool) -> Result<u
     let txt_commands = crate::core::commands::load_commands_raw();
     crate::utils::log(&format!("LOAD_MANUAL_EDITS: Loaded {} commands from commands.txt", txt_commands.len()));
 
+    // Count alias commands
+    let alias_count = txt_commands.iter().filter(|c| c.action == "alias").count();
+    crate::utils::log(&format!("LOAD_MANUAL_EDITS: Found {} alias commands in commands.txt", alias_count));
+
     let mut edits_applied = 0;
     let mut history_created = 0;
     let mut history_modified = 0;
@@ -223,15 +224,19 @@ pub fn load_manual_edits(commands: &mut Vec<Command>, verbose: bool) -> Result<u
 
     // For each command in commands.txt, check if we need to add or update it
     for txt_cmd in txt_commands {
-        // DEDUPLICATION: If a command with the same file path already exists (from scanner),
+        // DEDUPLICATION: If a FILE-BASED command with the same file path already exists (from scanner),
         // only load this txt command if it has the 'U' (user-edited) flag.
         // This prevents scanner-generated duplicates (e.g., old open_app vs new app for same file)
-        if !txt_cmd.arg.is_empty() {
+        // IMPORTANT: Only apply this to scanner-generated actions, not manual commands (alias, 1pass, work, etc.)
+        let is_scanner_generated = SCANNER_GENERATED_ACTIONS.contains(&txt_cmd.action.as_str());
+        if is_scanner_generated && !txt_cmd.arg.is_empty() {
             let same_file_exists = commands.iter().any(|c| c.arg == txt_cmd.arg);
             if same_file_exists && !txt_cmd.flags.contains('U') {
                 crate::utils::detailed_log("MANUAL_EDITS", &format!("Skipping duplicate '{}' (scanner already created fresh version)", txt_cmd.command));
                 continue;
             }
+        } else if txt_cmd.action == "alias" {
+            crate::utils::log(&format!("LOAD_MANUAL_EDITS: Processing alias command '{}'", txt_cmd.command));
         }
 
         // Find corresponding command in our list (match by patch, command name, and action)

@@ -43,10 +43,10 @@ pub use application_state::{
 
 // System data
 pub use sys_data::{
-    SysData, load_data, get_sys_data, get_config,
-    initialize_config, mark_commands_modified,
+    // Internal use (used by other core modules and systems)
+    SysData, get_sys_data, get_config, initialize_config,
     DEFAULT_LOG_PATH, DEFAULT_MAX_LOG_SIZE,
-    // New unified API
+    // Public API - ONLY these should be used by external code
     initialize, get_commands, get_patches, set_commands
     // add_command/delete_command exported from command_ops for backward compat
 };
@@ -55,22 +55,21 @@ pub use sys_data::{
 pub use commands::{
     // Core types
     Command, CommandTarget, Patch,
-    
-    // CRUD operations
-    load_commands, load_commands_with_data, load_commands_for_inference,
+
+    // CRUD operations (INTERNAL USE ONLY - use sys_data API instead)
+    load_commands_for_inference,
     save_commands_to_file, parse_command_line,
-    
+
     // Query and filtering
-    filter_commands, 
+    filter_commands,
     merge_similar_commands, merge_similar_commands_with_context,
-    
-    // Patch management  
-    get_patch_for_command, get_patch, create_patches_hashmap, get_patch_path,
+
+    // Patch management
+    get_patch_for_command, get_patch, get_patch_path,
     run_patch_inference,
-    
-    // Submenu and navigation (moved to display module)
-    
-    // Migration and maintenance
+
+    // NOTE: load_commands, load_commands_with_data, create_patches_hashmap are now
+    // pub(crate) only. External code MUST use sys_data::get_commands() or get_sys_data()
 };
 
 // User-level command operations
@@ -79,10 +78,10 @@ pub use command_ops::{
     rename_associated_data
 };
 
-// Patch inference system
+// Patch validation and repair system
 pub use inference::{
     infer_patch, auto_assign_patches,
-    resolve_patches, PatchResolutionResult
+    validate_and_repair_patches, PatchResolutionResult
 };
 
 // Template creation (used by UI)

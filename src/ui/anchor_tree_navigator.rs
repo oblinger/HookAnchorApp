@@ -182,15 +182,24 @@ impl AnchorTreeNavigator {
             } else {
                 // Current node: show with expand/collapse triangle
                 let children = if breadcrumb.to_lowercase() == "orphans" {
-                    // Orphans root shows all patches whose parent is "orphans"
+                    // Orphans root shows:
+                    // 1. All patches whose parent is "orphans"
+                    // 2. All patches with NO parent (top-level root patches)
+                    crate::utils::log(&format!("TREE_DEBUG_SIDEBAR: Looking for children of orphans (total patches: {})", patches.len()));
                     let mut root_patches = Vec::new();
                     for (_, patch) in patches {
                         if let Some(parent) = patch.parent_patch_name() {
+                            crate::utils::log(&format!("TREE_DEBUG_SIDEBAR:   Patch '{}' has parent '{}'", patch.name, parent));
                             if parent.to_lowercase() == "orphans" {
                                 root_patches.push(patch.name.clone());
                             }
+                        } else {
+                            // No parent - this is a root patch, goes under orphans
+                            crate::utils::log(&format!("TREE_DEBUG_SIDEBAR:   Patch '{}' has NO parent - adding to orphans", patch.name));
+                            root_patches.push(patch.name.clone());
                         }
                     }
+                    crate::utils::log(&format!("TREE_DEBUG_SIDEBAR: Found {} root patches under orphans", root_patches.len()));
                     root_patches.sort_by(|a, b| a.to_lowercase().cmp(&b.to_lowercase()));
                     root_patches
                 } else if let Some(patch) = get_patch(breadcrumb, patches) {
@@ -271,15 +280,24 @@ impl AnchorTreeNavigator {
 
         // Get children for this node
         let children = if node_name.to_lowercase() == "orphans" {
-            // Special case: orphans root shows all patches whose parent is "orphans"
+            // Special case: orphans root shows:
+            // 1. All patches whose parent is "orphans"
+            // 2. All patches with NO parent (top-level root patches)
             let mut root_patches = Vec::new();
+            crate::utils::log(&format!("TREE_DEBUG: Looking for children of orphans (total patches: {})", patches.len()));
             for (_, patch) in patches {
                 if let Some(parent) = patch.parent_patch_name() {
+                    crate::utils::log(&format!("TREE_DEBUG:   Patch '{}' has parent '{}'", patch.name, parent));
                     if parent.to_lowercase() == "orphans" {
                         root_patches.push(patch.name.clone());
                     }
+                } else {
+                    // No parent - this is a root patch, goes under orphans
+                    crate::utils::log(&format!("TREE_DEBUG:   Patch '{}' has NO parent - adding to orphans", patch.name));
+                    root_patches.push(patch.name.clone());
                 }
             }
+            crate::utils::log(&format!("TREE_DEBUG: Found {} root patches under orphans", root_patches.len()));
             root_patches.sort_by(|a, b| a.to_lowercase().cmp(&b.to_lowercase()));
             root_patches
         } else if let Some(patch) = get_patch(node_name, patches) {

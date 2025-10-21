@@ -219,8 +219,8 @@ fn infer_patch_from_command(command: &Command, patches: &HashMap<String, Patch>)
 /// Infer patch from file path, excluding a specific command to prevent self-assignment
 fn infer_patch_from_file_path_with_exclusion(file_path: &str, patches: &HashMap<String, Patch>, exclude_command: &str) -> Option<String> {
     // Build folder map from current commands, excluding the specified command
-    let (_, commands, _) = crate::core::commands::load_commands_with_data();
-    let mut filtered_commands = commands;
+    let (sys_data, _) = crate::core::get_sys_data();
+    let mut filtered_commands = sys_data.commands;
     filtered_commands.retain(|cmd| cmd.command.to_lowercase() != exclude_command.to_lowercase());
     
     let folder_map = build_folder_to_patch_map(&filtered_commands);
@@ -270,8 +270,8 @@ fn infer_patch_from_file_path_with_exclusion(file_path: &str, patches: &HashMap<
 /// Core file path-based patch inference
 fn infer_patch_from_file_path(file_path: &str, patches: &HashMap<String, Patch>) -> Option<String> {
     // Build folder map from current commands
-    let (_, commands, _) = crate::core::commands::load_commands_with_data();
-    let folder_map = build_folder_to_patch_map(&commands);
+    let (sys_data, _) = crate::core::get_sys_data();
+    let folder_map = build_folder_to_patch_map(&sys_data.commands);
     
     // Use simple inference first
     if let Some(patch) = infer_patch_simple(file_path, &folder_map) {
@@ -442,11 +442,11 @@ fn infer_patch_from_hierarchy(dir: &Path, patches: &HashMap<String, Patch>) -> O
 /// Infer patch from alias target command
 fn infer_patch_from_alias_target(command: &Command, patches: &HashMap<String, Patch>) -> Option<String> {
     if command.action == "alias" && !command.arg.is_empty() {
-        // Load all commands to find the target
-        let (_, all_commands, _) = crate::core::commands::load_commands_with_data();
-        
+        // Get all commands from singleton to find the target
+        let (sys_data, _) = crate::core::get_sys_data();
+
         // Find the target command
-        for target_cmd in &all_commands {
+        for target_cmd in &sys_data.commands {
             if target_cmd.command == command.arg {
                 if !target_cmd.patch.is_empty() {
                     crate::utils::detailed_log("ALIAS_INFERENCE", &format!(
@@ -640,52 +640,192 @@ pub struct PatchResolutionResult {
     pub changes_made: bool,
 }
 
-/// Resolves patches for all commands by running inference and normalization
+/// Validates and repairs the patch structure to ensure data integrity before saving
 ///
-/// This is the main entry point for patch resolution. It:
-/// 1. Creates patches hashmap from anchor commands
-/// 2. Extracts and adds virtual anchor commands for orphan patches
-/// 3. Runs patch inference to assign patches to commands without them
-/// 4. Adds new patches discovered during inference
-/// 5. Normalizes patch case to match anchor commands
+/// This is the main entry point for patch validation and repair. It guarantees that
+/// after this function runs, all commands have valid patches and the patch hierarchy
+/// is sound (no cycles, all anchors have parents, all patches exist).
+///
+/// Phases:
+/// 1. Validate and repair anchor commands (ensure all have parents)
+/// 2. Build patches hashmap from anchor commands
+/// 3. Detect and break cycles in patch hierarchy
+/// 4. Create virtual anchors for commands with undefined patches
+/// 5. Run patch inference to assign patches to commands without them
+/// 6. Normalize patch case to match anchor commands
 ///
 /// Returns:
 /// - patches: The complete patches hashmap
 /// - changes_made: Whether any commands were modified (to determine if save is needed)
-pub fn resolve_patches(
+pub fn validate_and_repair_patches(
     commands: &mut Vec<Command>,
     verbose: bool
 ) -> PatchResolutionResult {
-    // Step 1: Create patches hashmap from anchor commands
+    // Phase 1: Validate all anchor commands have a parent
     if verbose {
-        println!("🏷️  Step 1: Creating patches hashmap...");
+        println!("🔍 Phase 1: Validating anchor commands have parents...");
+    }
+    let mut orphaned_anchors_fixed = 0;
+    for cmd in commands.iter_mut() {
+        if cmd.action == "anchor" && cmd.patch.is_empty() {
+            if verbose {
+                println!("   Setting parent for anchor '{}' to 'orphans'", cmd.command);
+            }
+            cmd.patch = "orphans".to_string();
+            orphaned_anchors_fixed += 1;
+        }
+    }
+    if verbose && orphaned_anchors_fixed > 0 {
+        println!("   Fixed {} anchor commands with no parent", orphaned_anchors_fixed);
+    }
+
+    // Phase 2: Create patches hashmap from anchor commands
+    if verbose {
+        println!("🏷️  Phase 2: Creating patches hashmap...");
     }
     let mut patches = crate::core::commands::create_patches_hashmap(commands);
     if verbose {
         println!("   Found {} patches from anchor commands", patches.len());
     }
 
-    // Step 2: Extract virtual anchor commands from patches and add them to commands list
-    let mut virtual_anchors_created = 0;
-    for patch in patches.values() {
-        for anchor_cmd in &patch.anchor_commands {
-            if anchor_cmd.patch == "orphans" && anchor_cmd.action == "anchor" && !anchor_cmd.flags.contains('U') {
+    // Phase 3: Detect and break cycles in patch hierarchy
+    if verbose {
+        println!("🔄 Phase 3: Detecting cycles in patch hierarchy...");
+    }
+    let mut cycles_fixed = 0;
+    let mut cycles_detected = Vec::new(); // Track which patches were in cycles
+
+    // For each patch, walk up the parent tree and detect cycles
+    for (patch_name, patch) in &patches {
+        let mut visited = std::collections::HashSet::new();
+        let mut current_patch = patch_name.clone();
+
+        // Walk up the parent tree
+        loop {
+            // Add current patch to visited set
+            if visited.contains(&current_patch) {
+                // Cycle detected! Current patch is already in our path
                 if verbose {
-                    println!("   Adding virtual anchor command: {}", anchor_cmd.command);
+                    println!("   ⚠️  Cycle detected at patch '{}' (visited={:?})", current_patch, visited);
                 }
-                commands.push(anchor_cmd.clone());
-                virtual_anchors_created += 1;
+                cycles_detected.push(current_patch.clone());
+                break;
+            }
+            visited.insert(current_patch.clone());
+
+            // Get parent of current patch
+            if let Some(parent_patch) = patches.get(&current_patch).and_then(|p| p.parent_patch_name()) {
+                let parent_lower = parent_patch.to_lowercase();
+
+                // If we reached orphans, we're done (no cycle)
+                if parent_lower == "orphans" {
+                    break;
+                }
+
+                // Move to parent
+                current_patch = parent_lower;
+            } else {
+                // No parent - this means the patch has no parent or parent doesn't exist
+                break;
             }
         }
     }
 
-    if verbose && virtual_anchors_created > 0 {
-        println!("   Created {} virtual anchor commands", virtual_anchors_created);
+    // Fix cycles by setting the cycle-creating patch's parent to "orphans"
+    if !cycles_detected.is_empty() {
+        if verbose {
+            println!("   Found {} cycles to fix", cycles_detected.len());
+        }
+
+        for cycle_patch_name in cycles_detected {
+            // Find the anchor command for this patch and set its parent to orphans
+            for cmd in commands.iter_mut() {
+                if cmd.action == "anchor" && cmd.command.to_lowercase() == cycle_patch_name {
+                    if verbose {
+                        println!("   Breaking cycle: Setting parent of '{}' to 'orphans' (was '{}')", cmd.command, cmd.patch);
+                    }
+                    cmd.patch = "orphans".to_string();
+                    cycles_fixed += 1;
+                    break; // Only fix the first (primary) anchor for this patch
+                }
+            }
+        }
+
+        // Rebuild patches hashmap after fixing cycles
+        if cycles_fixed > 0 {
+            if verbose {
+                println!("   Rebuilding patches hashmap after fixing {} cycles", cycles_fixed);
+            }
+            patches = crate::core::commands::create_patches_hashmap(commands);
+        }
     }
 
-    // Step 3: Run patch inference for commands without patches
+    if verbose && cycles_fixed == 0 {
+        println!("   ✅ No cycles detected");
+    }
+
+    // Phase 4: Create virtual anchors for commands with undefined patches
     if verbose {
-        println!("🧩 Step 2: Running patch inference for commands without patches...");
+        println!("🔧 Phase 4: Creating virtual anchors for orphaned commands...");
+    }
+    let mut virtual_anchors_created = 0;
+
+    // Build set of existing patch names (lowercase for comparison)
+    let existing_patches: std::collections::HashSet<String> = patches.keys().cloned().collect();
+
+    // Find all patches that are referenced by commands but don't exist
+    let mut missing_patches = std::collections::HashSet::new();
+    for cmd in commands.iter() {
+        if !cmd.patch.is_empty() && cmd.patch != "orphans" {
+            let patch_lower = cmd.patch.to_lowercase();
+            if !existing_patches.contains(&patch_lower) {
+                missing_patches.insert(cmd.patch.clone()); // Use original case
+            }
+        }
+    }
+
+    // Create virtual anchor for each missing patch
+    for patch_name in missing_patches {
+        if verbose {
+            println!("   Creating virtual anchor for undefined patch: '{}'", patch_name);
+        }
+
+        let config = crate::core::sys_data::get_config();
+        let virtual_anchor = Command {
+            command: patch_name.clone(),
+            action: "anchor".to_string(),
+            arg: String::new(), // Virtual anchor - no file
+            patch: "orphans".to_string(),
+            flags: String::new(), // System-generated, no flags
+            last_update: 0,
+            file_size: None,
+        };
+
+        // Add to commands list
+        commands.push(virtual_anchor.clone());
+
+        // Add to patches hashmap
+        patches.insert(patch_name.to_lowercase(), Patch {
+            name: patch_name.clone(),
+            anchor_commands: vec![virtual_anchor],
+            include_commands: Vec::new(),
+            history_file: None,
+        });
+
+        virtual_anchors_created += 1;
+    }
+
+    if verbose {
+        if virtual_anchors_created > 0 {
+            println!("   Created {} virtual anchors for orphaned commands", virtual_anchors_created);
+        } else {
+            println!("   ✅ All command patches are defined");
+        }
+    }
+
+    // Phase 5: Run patch inference for commands without patches
+    if verbose {
+        println!("🧩 Phase 5: Running patch inference for commands without patches...");
     }
     let (patches_assigned, new_patches_to_add) = crate::core::commands::run_patch_inference(
         commands,
@@ -717,9 +857,9 @@ pub fn resolve_patches(
         }
     }
 
-    // Step 5: Normalize patch case to match anchor commands
+    // Phase 6: Normalize patch case to match anchor commands
     if verbose {
-        println!("🔤 Step 3: Normalizing patch case to match anchor commands...");
+        println!("🔤 Phase 6: Normalizing patch case to match anchor commands...");
     }
     let normalized_patches = crate::core::commands::normalize_patch_case(commands, &patches);
     if verbose {
@@ -730,12 +870,12 @@ pub fn resolve_patches(
         }
     }
 
-    let changes_made = patches_assigned > 0 || virtual_anchors_created > 0 || normalized_patches > 0;
+    let changes_made = orphaned_anchors_fixed > 0 || cycles_fixed > 0 || patches_assigned > 0 || virtual_anchors_created > 0 || normalized_patches > 0;
 
     if verbose {
         if changes_made {
             println!("   ✅ Patch resolution complete with {} changes",
-                patches_assigned + virtual_anchors_created + normalized_patches);
+                orphaned_anchors_fixed + cycles_fixed + patches_assigned + virtual_anchors_created + normalized_patches);
         } else {
             println!("   ⏭️  No changes needed");
         }

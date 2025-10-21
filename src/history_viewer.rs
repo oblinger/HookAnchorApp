@@ -71,13 +71,13 @@ impl HistoryViewer {
             return String::new();
         }
 
-        // Load all commands
-        let all_commands = hookanchor::core::load_commands();
+        // Get commands from singleton
+        let (sys_data, _) = hookanchor::core::get_sys_data();
 
         // Try to find a command matching the input (case-insensitive)
-        if let Some(cmd) = all_commands.iter().find(|c| c.command.eq_ignore_ascii_case(input)) {
+        if let Some(cmd) = sys_data.commands.iter().find(|c| c.command.eq_ignore_ascii_case(input)) {
             // Resolve any aliases to get the final command
-            let resolved = cmd.resolve_alias(&all_commands);
+            let resolved = cmd.resolve_alias(&sys_data.commands);
 
             // Return the resolved command name (not the patch!)
             return resolved.command;
@@ -93,26 +93,25 @@ impl HistoryViewer {
         let mut descendants = std::collections::HashSet::new();
         let anchor_lower = anchor_name.to_lowercase();
 
-        // Load commands and build patches
-        let all_commands = hookanchor::core::load_commands();
-        let patches = hookanchor::core::create_patches_hashmap(&all_commands);
+        // Get patches from singleton
+        let (sys_data, _) = hookanchor::core::get_sys_data();
 
         hookanchor::utils::log(&format!("ANCHOR_FILTER: Looking for descendants of '{}'", anchor_name));
 
         // For each patch, check if the anchor is in its parent chain
-        for (patch_name, _patch) in &patches {
-            let patch_path = hookanchor::core::get_patch_path(patch_name, &patches);
+        for (patch_name, _patch) in &sys_data.patches {
+            let patch_path = hookanchor::core::get_patch_path(patch_name, &sys_data.patches);
 
             // Check if anchor is anywhere in the path (case-insensitive)
             if patch_path.iter().any(|p| p.eq_ignore_ascii_case(anchor_name)) ||
                patch_name.eq_ignore_ascii_case(anchor_name) {
                 hookanchor::utils::log(&format!("ANCHOR_FILTER: Found descendant: {} (path: {:?})", patch_name, patch_path));
-                descendants.insert(patch_name.clone());
+                descendants.insert(patch_name.to_string());
             }
         }
 
         // Also include the anchor itself
-        descendants.insert(anchor_lower.clone());
+        descendants.insert(anchor_lower);
 
         hookanchor::utils::log(&format!("ANCHOR_FILTER: Total {} descendants found", descendants.len()));
 
@@ -249,9 +248,17 @@ impl HistoryViewer {
         let selected_action_types: std::collections::HashSet<String> =
             viewer_state.selected_action_types.iter().cloned().collect();
 
-        // Build patches cache for navigation
-        let all_commands = hookanchor::core::load_commands();
-        let patches_cache = hookanchor::core::create_patches_hashmap(&all_commands);
+        // Build patches cache for navigation from singleton
+        let (sys_data, _) = hookanchor::core::get_sys_data();
+        let patches_cache = sys_data.patches;
+
+        // Debug: Log patch count
+        hookanchor::utils::log(&format!("HISTORY_VIEWER_INIT: Loaded {} patches from singleton", patches_cache.len()));
+        hookanchor::utils::log(&format!("HISTORY_VIEWER_INIT: Loaded {} commands from singleton", sys_data.commands.len()));
+
+        // Debug: Count anchor commands
+        let anchor_count = sys_data.commands.iter().filter(|c| c.action == "anchor").count();
+        hookanchor::utils::log(&format!("HISTORY_VIEWER_INIT: Found {} anchor commands", anchor_count));
 
         // Get tree sidebar settings from config
         let config = hookanchor::core::get_config();
@@ -323,8 +330,17 @@ impl HistoryViewer {
         viewer
     }
 
+    /// Reload patches cache from singleton (call after data changes like rescan)
+    fn reload_patches(&mut self) {
+        let (sys_data, _) = hookanchor::core::get_sys_data();
+        self.patches_cache = Some(sys_data.patches);
+    }
+
     /// Reload history from database with current filters
     fn reload_history(&mut self) {
+        // Also reload patches in case they've changed (e.g., after rescan or delete-history)
+        self.reload_patches();
+
         self.history_entries.clear();
         self.filtered_entries.clear();
         self.selected_index = None;
@@ -574,29 +590,29 @@ impl HistoryViewer {
         }
     }
 
-    /// Format edit size as thousands/millions/billions of characters
-    /// Examples: 10 (10k chars), 500 (500k chars), 2M (2 million chars), 3G (3 billion chars)
+    /// Format edit size using binary prefixes (K/M/G for 1024-based units)
+    /// Examples: 15K (15 kilobytes), 2M (2 megabytes), 3G (3 gigabytes)
     fn format_edit_size(size: Option<i64>) -> String {
         match size {
             Some(s) if s > 0 => {
-                // >= 1 billion: show in gigabytes (billions of chars)
-                if s >= 1_000_000_000 {
-                    let gigabytes = (s as f64 / 1_000_000_000.0).round() as i64;
+                // >= 1 GiB (1024^3 = 1,073,741,824): show in gigabytes
+                if s >= 1_073_741_824 {
+                    let gigabytes = (s as f64 / 1_073_741_824.0).round() as i64;
                     format!("{}G", gigabytes)
                 }
-                // >= 1 million: show in megabytes (millions of chars)
-                else if s >= 1_000_000 {
-                    let megabytes = (s as f64 / 1_000_000.0).round() as i64;
+                // >= 1 MiB (1024^2 = 1,048,576): show in megabytes
+                else if s >= 1_048_576 {
+                    let megabytes = (s as f64 / 1_048_576.0).round() as i64;
                     format!("{}M", megabytes)
                 }
-                // < 1 million: show in thousands
+                // >= 1 KiB (1024): show in kilobytes
+                else if s >= 1024 {
+                    let kilobytes = (s as f64 / 1024.0).round() as i64;
+                    format!("{}K", kilobytes)
+                }
+                // < 1 KiB: show raw bytes or empty for very small values
                 else {
-                    let thousands = (s as f64 / 1000.0).round() as i64;
-                    if thousands > 0 {
-                        format!("{}", thousands)
-                    } else {
-                        String::new()
-                    }
+                    String::new()
                 }
             }
             _ => String::new(),
@@ -940,8 +956,8 @@ impl eframe::App for HistoryViewer {
 
                     // Column positions (left edge of each column)
                     let col_date = 5.0;
-                    let col_size = 100.0;    // Size column (thousands of characters)
-                    let col_type = 140.0;    // Type column
+                    let col_size = 85.0;     // Date column end (+5px for full date display)
+                    let col_type = 140.0;    // Update column (edit size with K/M/G suffix, +15px for 999G)
                     let col_command = 220.0; // Command column
                     let col_path = 520.0;    // Path column
 
@@ -963,7 +979,7 @@ impl eframe::App for HistoryViewer {
                     painter.text(
                         egui::pos2(response.rect.min.x + col_type - 10.0, header_y),  // Right-align header
                         egui::Align2::RIGHT_TOP,
-                        "Size",
+                        "Update",
                         header_font.clone(),
                         ui.style().visuals.text_color()
                     );
@@ -1131,9 +1147,9 @@ impl eframe::App for HistoryViewer {
 }
 
 fn main() -> Result<(), eframe::Error> {
-    // Initialize config before creating the viewer
-    if let Err(e) = hookanchor::core::initialize_config() {
-        hookanchor::utils::log_error(&format!("Failed to load config: {}", e));
+    // Initialize sys_data (config + cache) before creating the viewer
+    if let Err(e) = hookanchor::core::initialize() {
+        hookanchor::utils::log_error(&format!("Failed to initialize sys_data: {}", e));
         // Continue with default config
     }
 

@@ -155,41 +155,15 @@ pub fn initialize_config() -> Result<(), String> {
     }
 }
 
-/// Gets a reference to the sys data, loading it if necessary
-/// Returns (data, was_reloaded) where was_reloaded indicates if data was refreshed
+/// Gets a reference to the sys data from the singleton
+/// Panics if initialize() hasn't been called yet
 pub fn get_sys_data() -> (SysData, bool) {
-    // Check if commands have been modified and need reload
-    let flag = COMMANDS_MODIFIED.get_or_init(|| std::sync::atomic::AtomicBool::new(false));
-    let commands_dirty = flag.swap(false, std::sync::atomic::Ordering::Relaxed);
-    
     let sys = SYS_DATA.get_or_init(|| Mutex::new(None));
-    
-    // Try to acquire the lock without blocking to detect potential deadlock
-    match sys.try_lock() {
-        Ok(mut sys_data) => {
-            // If commands are dirty, clear cache to force reload
-            let was_cleared = if commands_dirty {
-                crate::utils::detailed_log("GET_SYS_DATA", "Commands modified - clearing cache for reload");
-                *sys_data = None;
-                true
-            } else {
-                false
-            };
-            
-            if let Some(ref data) = *sys_data {
-                // Cached data found, return it
-                return (data.clone(), false);
-            }
-            // Not cached or cleared due to modifications, need to load
-            drop(sys_data); // Release the lock before calling load_data
-            (load_data(Vec::new(), false), was_cleared)
-        }
-        Err(_) => {
-            // Mutex is locked, this indicates a potential deadlock
-            crate::utils::detailed_log("GET_SYS_DATA", "ERROR: Mutex is locked, potential deadlock detected");
-            // Return a fallback - load without caching (assume this is a reload)
-            (load_data_no_cache(Vec::new(), false), true)
-        }
+    let sys_data = sys.lock().unwrap();
+
+    match *sys_data {
+        Some(ref data) => (data.clone(), false),
+        None => panic!("SysData not initialized! Call initialize() at startup"),
     }
 }
 
@@ -212,14 +186,29 @@ pub fn mark_commands_modified() {
 // NEW API - Command State Management
 // ============================================================================
 
-/// Initialize the system by loading config, commands, and patches into singleton
+/// Initialize the system by loading config and cache into singleton
 /// Call this once at application startup
 pub fn initialize() -> Result<(), String> {
     // Initialize config first
     initialize_config()?;
 
-    // Load data into singleton
-    let _ = load_data(Vec::new(), false);
+    // Load commands from cache only
+    let commands = match crate::core::commands::load_commands_from_cache() {
+        Some(cached_commands) => cached_commands,
+        None => Vec::new(), // No cache - start empty, will be populated by rescan
+    };
+
+    // Create initial patches hashmap from commands
+    let patches = crate::core::commands::create_patches_hashmap(&commands);
+
+    // Store in singleton
+    let sys = SYS_DATA.get_or_init(|| Mutex::new(None));
+    let mut sys_data = sys.lock().unwrap();
+    *sys_data = Some(SysData {
+        config: get_config(),
+        commands,
+        patches,
+    });
 
     Ok(())
 }
@@ -236,33 +225,34 @@ pub fn get_patches() -> HashMap<String, Patch> {
     sys_data.patches
 }
 
-/// Replace all commands in singleton, run patch inference, and save to disk
-/// This is the primary way to perform batch modifications
-/// Always saves (flushes) to disk regardless of whether inference made changes
-pub fn set_commands(commands: Vec<Command>) -> Result<(), Box<dyn std::error::Error>> {
-    let sys = SYS_DATA.get_or_init(|| Mutex::new(None));
-    let mut sys_data = sys.lock().unwrap();
-
-    let config = get_config();
-    let mut new_commands = commands;
-
-    // Run patch resolution (inference + normalization)
-    let resolution = crate::core::resolve_patches(&mut new_commands, false);
+/// Internal function: Flush commands to disk with validation and repair
+/// This ALWAYS validates/repairs patches and saves to both cache and commands.txt
+fn flush(commands: &mut Vec<Command>) -> Result<(), Box<dyn std::error::Error>> {
+    // Step 1: Validate and repair patches (ensures data integrity)
+    let resolution = crate::core::validate_and_repair_patches(commands, false);
     let patches = resolution.patches;
 
-    // Always save to disk (flush)
-    // This ensures deduplication, formatting, and consistency
-    crate::core::commands::save_commands_to_file(&new_commands)?;
-    crate::core::commands::save_commands_to_cache(&new_commands)?;
+    // Step 2: Save to both cache and commands.txt
+    crate::core::commands::save_commands_to_file(commands)?;
+    crate::core::commands::save_commands_to_cache(commands)?;
 
-    // Update singleton
+    // Step 3: Update singleton with new commands and patches
+    let sys = SYS_DATA.get_or_init(|| Mutex::new(None));
+    let mut sys_data = sys.lock().unwrap();
     *sys_data = Some(SysData {
-        config,
-        commands: new_commands,
+        config: get_config(),
+        commands: commands.clone(),
         patches,
     });
 
     Ok(())
+}
+
+/// Replace all commands in singleton, run patch inference, and save to disk
+/// This is the primary way to perform batch modifications
+/// Always saves (flushes) to disk regardless of whether inference made changes
+pub fn set_commands(mut commands: Vec<Command>) -> Result<(), Box<dyn std::error::Error>> {
+    flush(&mut commands)
 }
 
 /// Add a single command, record in history, run inference, and save
@@ -283,8 +273,8 @@ pub fn add_command(cmd: Command) -> Result<(), Box<dyn std::error::Error>> {
     let mut commands = get_commands();
     commands.push(cmd);
 
-    // Use set_commands to handle inference and save
-    set_commands(commands)?;
+    // Flush to disk with inference
+    flush(&mut commands)?;
 
     Ok(())
 }
@@ -296,8 +286,8 @@ pub fn delete_command(cmd_name: &str) -> Result<(), Box<dyn std::error::Error>> 
     let mut commands = get_commands();
     commands.retain(|c| c.command != cmd_name);
 
-    // Use set_commands to handle inference and save
-    set_commands(commands)?;
+    // Flush to disk with inference
+    flush(&mut commands)?;
 
     Ok(())
 }
@@ -389,35 +379,39 @@ pub fn load_data(commands_override: Vec<Command>, verbose: bool) -> SysData {
 
     // Step 2.5:
 
-    // Step 3: Resolve patches (inference + normalization)
+    // Step 3: Validate and repair patches (ensures data integrity)
     if verbose {
-        println!("🧩 Step 3: Resolving patches...");
+        println!("🧩 Step 3: Validating and repairing patches...");
     }
-    let resolution = crate::core::resolve_patches(&mut commands, verbose);
+    let resolution = crate::core::validate_and_repair_patches(&mut commands, verbose);
     let patches = resolution.patches;
     let changes_made = resolution.changes_made;
 
-    // Step 4: Always save commands (flush)
-    // This ensures deduplication, formatting, and consistency
-    if verbose {
-        println!("💾 Step 4: Saving to disk...");
-    }
-    // Always save - ensures deduplication, formatting, consistency
-    if let Err(e) = crate::core::commands::save_commands_to_file(&commands) {
-        crate::utils::log_error(&format!("Failed to save commands: {}", e));
-    } else if let Err(e) = crate::core::commands::save_commands_to_cache(&commands) {
-        crate::utils::log_error(&format!("Failed to save cache: {}", e));
-    } else {
+    // Step 4: Save commands (flush) - but ONLY if not using override
+    // When using override, caller is responsible for saving (don't overwrite commands.txt during temp processing)
+    if !use_override {
         if verbose {
-            if changes_made {
-                println!("   ✅ Saved {} commands with {} inference changes", commands.len(),
-                    if changes_made { "patch" } else { "no" });
-            } else {
-                println!("   ✅ Saved {} commands (no inference changes needed)", commands.len());
-            }
+            println!("💾 Step 4: Saving to disk...");
         }
-        // Don't clear cache here - we're already updating it
-        // clear_sys_data() would cause deadlock since we're holding the mutex
+        // Always save - ensures deduplication, formatting, consistency
+        if let Err(e) = crate::core::commands::save_commands_to_file(&commands) {
+            crate::utils::log_error(&format!("Failed to save commands: {}", e));
+        } else if let Err(e) = crate::core::commands::save_commands_to_cache(&commands) {
+            crate::utils::log_error(&format!("Failed to save cache: {}", e));
+        } else {
+            if verbose {
+                if changes_made {
+                    println!("   ✅ Saved {} commands with {} inference changes", commands.len(),
+                        if changes_made { "patch" } else { "no" });
+                } else {
+                    println!("   ✅ Saved {} commands (no inference changes needed)", commands.len());
+                }
+            }
+            // Don't clear cache here - we're already updating it
+            // clear_sys_data() would cause deadlock since we're holding the mutex
+        }
+    } else if verbose {
+        println!("💾 Step 4: Skipping save (using commands override for temporary processing)");
     }
     
     // Store in sys data for future calls (only if not using commands override)

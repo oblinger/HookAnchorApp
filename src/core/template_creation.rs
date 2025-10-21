@@ -98,8 +98,8 @@ impl TemplateContext {
         // Add last executed command from state (available everywhere)
         let state = crate::core::state::load_state();
         if let Some(last_executed_name) = &state.last_executed_command {
-            let commands = crate::core::commands::load_commands();
-            if let Some(cmd) = commands.iter().find(|c| &c.command == last_executed_name) {
+            let (sys_data, _) = crate::core::get_sys_data();
+            if let Some(cmd) = sys_data.commands.iter().find(|c| &c.command == last_executed_name) {
                 let folder = match extract_and_validate_folder(cmd) {
                     Ok(f) => f,
                     Err(_) => String::new()
@@ -191,9 +191,9 @@ impl TemplateContext {
         // Last executed command from state - stored as object fields for JavaScript access
         let state = crate::core::state::load_state();
         if let Some(last_executed_name) = state.last_executed_command {
-            // Try to find the full command details
-            let commands = crate::core::commands::load_commands();
-            if let Some(cmd) = commands.iter().find(|c| c.command == last_executed_name) {
+            // Try to find the full command details from singleton
+            let (sys_data, _) = crate::core::get_sys_data();
+            if let Some(cmd) = sys_data.commands.iter().find(|c| c.command == last_executed_name) {
                 // Store last_executed command details
                 // Extract and validate folder, or use empty string if extraction fails
                 let folder = match extract_and_validate_folder(&cmd) {

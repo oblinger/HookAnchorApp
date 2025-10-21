@@ -1,31 +1,33 @@
 {
   "window_position": [
-    688.0,
-    248.0
+    843.0,
+    620.0
   ],
   "history_viewer_state": {
     "position": [
-      -2476.0,
-      327.0
+      -2509.0,
+      25.0
     ],
     "window_size": [
       1000.0,
-      1036.0
+      1415.0
     ],
-    "patch_filter": "",
+    "patch_filter": "Proj Code",
     "name_filter": "",
     "min_edit_size": 500,
-    "selected_action_types": [],
-    "sidebar_width": 74.0
+    "selected_action_types": [
+      "alias"
+    ],
+    "sidebar_width": 189.0
   },
-  "build_time": 1761001003,
+  "build_time": 1761014037,
   "last_scan_time": null,
   "last_scan_checksum": null,
-  "last_executed_command": "Downloads",
-  "server_pid": 64738,
+  "last_executed_command": "T59",
+  "server_pid": 97922,
   "notion_last_scan": null,
-  "anchor_name": "ha",
-  "anchor_timestamp": 1760986697,
+  "anchor_name": "eoc",
+  "anchor_timestamp": 1761001979,
   "anchor_folder": null,
   "show_files": true
 }
