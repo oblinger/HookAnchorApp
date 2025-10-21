@@ -4646,7 +4646,12 @@ impl eframe::App for AnchorSelector {
                                                 is_selected,
                                                 text
                                             );
-                                            
+
+                                            // Update selection on hover
+                                            if response.hovered() {
+                                                self.set_selected_index(i);
+                                            }
+
                                             if response.clicked() {
                                                 self.set_selected_index(i);
 
@@ -4760,7 +4765,12 @@ impl eframe::App for AnchorSelector {
                                         is_selected,
                                         text
                                     );
-                                    
+
+                                    // Update selection on hover
+                                    if response.hovered() {
+                                        self.set_selected_index(i);
+                                    }
+
                                     if response.clicked() {
                                         self.set_selected_index(i);
 
