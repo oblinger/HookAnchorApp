@@ -4,7 +4,7 @@
 //! the source code matches what's currently running. This prevents accidentally
 //! running stale binaries or binaries built outside the official build process.
 
-use chrono::{Local, TimeZone};
+use chrono;
 
 /// Build metadata embedded at compile time by build.rs
 pub struct BuildMetadata {
@@ -172,32 +172,21 @@ pub fn log_build_info() {
 ///
 /// This is called when build verification fails and terminate_on_failure is true
 fn show_error_dialog_and_exit(errors: &[String], warnings: &[String]) -> ! {
-    // Build the error message
-    let mut message = String::from("❌ BUILD VERIFICATION FAILED ❌\n\n");
-    message.push_str("The binary was not built correctly.\n\n");
+    let metadata = BuildMetadata::get();
 
-    if !errors.is_empty() {
-        message.push_str("ERRORS:\n");
-        for error in errors {
-            message.push_str("  ");
-            message.push_str(error);
-            message.push_str("\n");
-        }
-        message.push_str("\n");
+    // Build clean, focused error message
+    let mut message = String::from("BUILD VERIFICATION FAILED\n\n");
+    message.push_str("Use:\n");
+    message.push_str("  cd ~/ob/proj/HookAnchor && just build\n\n\n");
+    message.push_str("Build details:\n");
+    message.push_str(&format!("  Binary timestamp: {}\n", metadata.build_timestamp_str));
+    message.push_str(&format!("  Current time: {}\n", chrono::Utc::now().format("%Y-%m-%d %H:%M:%S UTC")));
+    if let Some(commit) = metadata.git_commit {
+        message.push_str(&format!("  Git commit: {}\n", &commit[..8.min(commit.len())]));
     }
-
-    if !warnings.is_empty() {
-        message.push_str("WARNINGS:\n");
-        for warning in warnings {
-            message.push_str("  ");
-            message.push_str(warning);
-            message.push_str("\n");
-        }
-        message.push_str("\n");
+    if let Some(branch) = metadata.git_branch {
+        message.push_str(&format!("  Git branch: {}\n", branch));
     }
-
-    message.push_str("SOLUTION:\n");
-    message.push_str("  Rebuild with: cd ~/ob/proj/HookAnchor && just build\n");
 
     // Show native dialog
     #[cfg(target_os = "macos")]
@@ -212,8 +201,34 @@ fn show_error_dialog_and_exit(errors: &[String], warnings: &[String]) -> ! {
             .output();
     }
 
-    // Always log before exiting
-    crate::utils::log_error(&message);
+    // Log detailed error information
+    let mut log_message = String::from("❌ BUILD VERIFICATION FAILED ❌\n\n");
+    log_message.push_str("The binary was not built correctly.\n\n");
+
+    if !errors.is_empty() {
+        log_message.push_str("ERRORS:\n");
+        for error in errors {
+            log_message.push_str("  ");
+            log_message.push_str(error);
+            log_message.push_str("\n");
+        }
+        log_message.push_str("\n");
+    }
+
+    if !warnings.is_empty() {
+        log_message.push_str("WARNINGS:\n");
+        for warning in warnings {
+            log_message.push_str("  ");
+            log_message.push_str(warning);
+            log_message.push_str("\n");
+        }
+        log_message.push_str("\n");
+    }
+
+    log_message.push_str("SOLUTION:\n");
+    log_message.push_str("  Rebuild with: cd ~/ob/proj/HookAnchor && just build\n");
+
+    crate::utils::log_error(&log_message);
 
     // Terminate
     std::process::exit(1);
