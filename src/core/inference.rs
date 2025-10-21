@@ -314,7 +314,7 @@ fn infer_patch_from_file_path(file_path: &str, patches: &HashMap<String, Patch>)
 /// This creates the folder hierarchy that patch inference will use
 pub fn build_folder_to_patch_map(commands: &[Command]) -> HashMap<PathBuf, String> {
     let mut folder_map = HashMap::new();
-    let config = crate::core::sys_data::get_config();
+    let config = crate::core::data::get_config();
 
     // First pass: Add all anchor commands to the map
     for cmd in commands {
@@ -790,7 +790,7 @@ pub fn validate_and_repair_patches(
             println!("   Creating virtual anchor for undefined patch: '{}'", patch_name);
         }
 
-        let config = crate::core::sys_data::get_config();
+        let config = crate::core::data::get_config();
         let virtual_anchor = Command {
             command: patch_name.clone(),
             action: "anchor".to_string(),

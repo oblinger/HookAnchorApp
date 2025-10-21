@@ -11,7 +11,7 @@
 pub(crate) mod config;
 pub(crate) mod state;
 pub(crate) mod application_state;
-pub(crate) mod sys_data;
+pub(crate) mod data;               // Data layer - commands, patches, config storage
 pub(crate) mod build_verification;  // Build consistency verification
 pub(crate) mod template_creation;  // Used by UI and execute modules
 pub(crate) mod key_processing;     // Used by UI module
@@ -42,15 +42,12 @@ pub use application_state::{
     ApplicationState
 };
 
-// System data
-pub use sys_data::{
-    // Internal use (used by other core modules and systems)
-    SysData, get_sys_data, get_config,
-    DEFAULT_LOG_PATH, DEFAULT_MAX_LOG_SIZE,
+// System data - re-export from data module
+pub use data::{
     // Public API - ONLY these should be used by external code
-    initialize, get_commands, get_patches, set_commands
-    // add_command/delete_command exported from command_ops for backward compat
-    // NOTE: initialize_config is now private - use initialize() or get_config() instead
+    initialize, get_commands, get_patches, set_commands, get_config, get_sys_data,
+    add_command, delete_command
+    // NOTE: Internal sys_data types are not re-exported
 };
 
 // Command types and operations
@@ -76,7 +73,6 @@ pub use commands::{
 
 // User-level command operations
 pub use command_ops::{
-    add_command, delete_command, // Backward compat wrappers around sys_data
     rename_associated_data
 };
 

@@ -170,7 +170,7 @@ impl CommandEditor {
         }
         
         // Get the config to determine window width
-        let config = crate::core::sys_data::get_config();
+        let config = crate::core::data::get_config();
         let window_width = config.popup_settings.get_default_window_width() as f32;
         
         crate::utils::log(&format!("🔧 COMMAND_EDITOR: Setting inner window to exact outer width: {}px", window_width));
@@ -397,7 +397,7 @@ impl CommandEditor {
         // Only delete if there was an original command
         if !self.original_command_name.is_empty() {
             // Delete command (auto-saves via sys_data::delete_command)
-            delete_command(&self.original_command_name, commands)
+            delete_command(&self.original_command_name)
                 .map_err(|e| format!("Command '{}' not found for deletion: {}", self.original_command_name, e))?;
             Ok(())
         } else {

@@ -1,4 +1,4 @@
-u//! Command history tracking using SQLite
+//! Command history tracking using SQLite
 //!
 //! This module provides functionality to track all changes to commands over time.
 //! It maintains a SQLite database with command history and provides query capabilities.
@@ -78,7 +78,7 @@ pub fn initialize_history_db() -> SqlResult<Connection> {
 
 /// Record a command creation in the history database
 pub fn record_command_created(conn: &Connection, cmd: &Command, timestamp: i64) -> SqlResult<()> {
-    let file_path_obj = cmd.get_absolute_file_path(&crate::core::sys_data::get_config());
+    let file_path_obj = cmd.get_absolute_file_path(&crate::core::data::get_config());
     let file_path = file_path_obj.as_ref().map(|p| p.to_string_lossy().to_string());
 
     // For file-based commands, try to get the file's creation time (birth time)
@@ -172,7 +172,7 @@ pub fn record_command_modified(
     new_cmd: &Command,
     timestamp: i64,
 ) -> SqlResult<()> {
-    let file_path_obj = new_cmd.get_absolute_file_path(&crate::core::sys_data::get_config());
+    let file_path_obj = new_cmd.get_absolute_file_path(&crate::core::data::get_config());
     let file_path = file_path_obj.as_ref().map(|p| p.to_string_lossy().to_string());
 
     // For file-based commands, try to get the file's modification time

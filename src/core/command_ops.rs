@@ -34,20 +34,20 @@ pub fn add_command(new_command: Command, commands: &mut Vec<Command>) -> Result<
     validate_alias_command(&new_command, commands)?;
 
     // Use sys_data to add (automatically records history + inference + save)
-    crate::core::sys_data::add_command(new_command)?;
+    crate::core::data::add_command(new_command)?;
 
     // Reload commands into the provided vec for backward compatibility
-    *commands = crate::core::sys_data::get_commands();
+    *commands = crate::core::data::get_commands();
     Ok(())
 }
 
 /// Deletes a command from the list and saves
 pub fn delete_command(command_to_delete: &str, commands: &mut Vec<Command>) -> Result<(), Box<dyn std::error::Error>> {
     // Use sys_data to delete (automatically saves + inference)
-    crate::core::sys_data::delete_command(command_to_delete)?;
+    crate::core::data::delete_command(command_to_delete)?;
 
     // Reload commands into the provided vec for backward compatibility
-    *commands = crate::core::sys_data::get_commands();
+    *commands = crate::core::data::get_commands();
     Ok(())
 }
 

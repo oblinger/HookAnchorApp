@@ -96,7 +96,7 @@ pub fn command_to_action(cmd: &Command) -> Action {
 /// Resolve an action name through the config to get its actual type and properties
 /// For example, "anchor" might have type: "markdown" in the config
 fn resolve_action_from_config(action_name: &str) -> HashMap<String, JsonValue> {
-    let config = crate::core::sys_data::get_config();
+    let config = crate::core::data::get_config();
     
     if let Some(actions) = &config.actions {
         if let Some(action_def) = actions.get(action_name) {

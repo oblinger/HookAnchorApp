@@ -128,7 +128,7 @@ fn delete_anchors(commands: &mut Vec<Command>, delete_notion_anchors: bool, verb
 /// Checks if filesystem scan should be performed and executes it if needed.
 /// This function should be called on application exit, not startup.
 pub fn scan_check(commands: Vec<Command>) -> Vec<Command> {
-    let (sys_data, _) = crate::core::sys_data::get_sys_data();
+    let (sys_data, _) = crate::core::data::get_sys_data();
     let mut state = load_state();
     
     let current_time = Local::now().timestamp();
@@ -192,7 +192,7 @@ pub fn scan_check(commands: Vec<Command>) -> Vec<Command> {
 }
 
 /// Internal scan function that orchestrates all scanning operations
-fn scan(commands: Vec<Command>, sys_data: &crate::core::sys_data::SysData) -> Vec<Command> {
+fn scan(commands: Vec<Command>, sys_data: &crate::core::data::SysData) -> Vec<Command> {
     scan_new_files(commands, sys_data, false)
 }
 
@@ -340,7 +340,7 @@ pub fn scan_modified_files(commands: &mut Vec<Command>, verbose: bool) -> Result
         }
 
         // Get file path
-        let file_path = match cmd.get_absolute_file_path(&crate::core::sys_data::get_config()) {
+        let file_path = match cmd.get_absolute_file_path(&crate::core::data::get_config()) {
             Some(path) => path,
             None => continue,
         };
@@ -416,7 +416,7 @@ pub fn scan_modified_files(commands: &mut Vec<Command>, verbose: bool) -> Result
 /// Used for the --rescan command line option
 /// This function discovers new files and adds them to the command list
 /// AND records "created" history entries with file birth times
-pub fn scan_new_files(commands: Vec<Command>, sys_data: &crate::core::sys_data::SysData, verbose: bool) -> Vec<Command> {
+pub fn scan_new_files(commands: Vec<Command>, sys_data: &crate::core::data::SysData, verbose: bool) -> Vec<Command> {
     let empty_vec = vec![];
     let file_roots = sys_data.config.popup_settings.file_roots.as_ref().unwrap_or(&empty_vec);
 

@@ -322,7 +322,7 @@ fn build_prefix_menu_commands(
 ) -> Vec<Command> {
     let mut prefix_menu_commands = Vec::new();
     let anchor_name = &anchor_command.command;
-    let config = crate::core::sys_data::get_config();
+    let config = crate::core::data::get_config();
     let separators = &config.popup_settings.word_separators;
 
     
@@ -442,7 +442,7 @@ fn build_prefix_menu_commands(
     // Execute include logic: if the patch has include commands or anchor commands with 'I' flag,
     // add all commands from those folders
     if let Some(patch) = patches.get(&patch_key) {
-        let config = crate::core::sys_data::get_config();
+        let config = crate::core::data::get_config();
         let include_folders = patch.get_all_include_folders(&config);
         
         if !include_folders.is_empty() {
@@ -529,7 +529,7 @@ pub fn get_new_display_commands(
         // We have a prefix menu!
         
         // Step 2: Get all commands that match the input using sophisticated matching
-        let config = crate::core::sys_data::get_config();
+        let config = crate::core::data::get_config();
         let mut prefix_commands = crate::core::commands::filter_commands_with_patch_support(
             all_commands, 
             input, 
@@ -581,7 +581,7 @@ pub fn get_new_display_commands(
         return (final_commands, true, Some((original_command, resolved_command)), prefix_menu_commands.len());
     } else {
         // No prefix menu - use sophisticated matching instead of simple contains()
-        let config = crate::core::sys_data::get_config();
+        let config = crate::core::data::get_config();
         let mut matching_commands = crate::core::commands::filter_commands_with_patch_support(
             all_commands,
             input,

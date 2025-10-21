@@ -149,7 +149,7 @@ impl AnchorSelector {
     
     /// Calculate the required window size for normal mode (command list)
     fn calculate_normal_size(&self, command_count: usize) -> egui::Vec2 {
-        let config = crate::core::sys_data::get_config();
+        let config = crate::core::data::get_config();
         let default_width = config.popup_settings.get_default_window_width() as f32;
         let max_width = config.popup_settings.get_max_window_width() as f32;
         let max_height = config.popup_settings.get_max_window_height() as f32;
@@ -195,7 +195,7 @@ impl AnchorSelector {
     /// Calculate the required window size for editor mode
     fn calculate_editor_size(&self) -> egui::Vec2 {
         // Command editor needs space for all input fields
-        let config = crate::core::sys_data::get_config();
+        let config = crate::core::data::get_config();
         let default_width = config.popup_settings.get_default_window_width() as f32;
         let default_height = config.popup_settings.get_default_window_height() as f32;
         let max_width = config.popup_settings.get_max_window_width() as f32;
@@ -1006,7 +1006,7 @@ impl AnchorSelector {
     
     /// Show all available key bindings in a dialog
     fn show_keys_dialog_impl(&mut self) {
-        let config = crate::core::sys_data::get_config();
+        let config = crate::core::data::get_config();
         let mut key_lines = vec![];
         
         // Dialog title
@@ -1233,7 +1233,7 @@ impl AnchorSelector {
         
         crate::utils::detailed_log("TEMPLATE", &format!("TEMPLATE: DEBUG 2 - TemplateContext created, about to get config"));
         // Get the specified template/action
-        let config = crate::core::sys_data::get_config();
+        let config = crate::core::data::get_config();
         
         crate::utils::detailed_log("TEMPLATE", &format!("TEMPLATE: DEBUG 3 - Config retrieved successfully"));
         // First try to find in unified actions
@@ -1359,7 +1359,7 @@ impl AnchorSelector {
                                         // Don't clear search text when opening editor - preserve input
                                 } else {
                                     // Add the new command directly
-                                    match crate::core::add_command(new_command, &mut self.popup_state.commands) {
+                                    match crate::core::add_command(new_command) {
                                         Ok(_) => {
                                             // Command already saved by add_command (via sys_data::add_command)
                                             // which updates singleton directly
@@ -1401,7 +1401,7 @@ impl AnchorSelector {
             let anchor_name = &resolved_command.command;
             let current_patch_key = anchor_name.to_lowercase();
             
-            let (sys_data, _) = crate::core::sys_data::get_sys_data();
+            let (sys_data, _) = crate::core::data::get_sys_data();
             
             // Get the current patch structure
             if let Some(current_patch) = sys_data.patches.get(&current_patch_key) {
@@ -1628,7 +1628,7 @@ impl AnchorSelector {
         let commands = crate::core::commands::load_commands_raw();
         let (config, config_error) = match load_config_with_error() {
             ConfigResult::Success(config) => (config, None),
-            ConfigResult::Error(error) => (crate::core::sys_data::get_config(), Some(error)),
+            ConfigResult::Error(error) => (crate::core::data::get_config(), Some(error)),
         };
         
         // Initialize key registry with the loaded config
@@ -1764,7 +1764,7 @@ impl AnchorSelector {
         let new_command_patch = context.get("new_command_patch").ok_or("Missing new_command_patch")?;
         let new_command_flags = context.get("new_command_flags").ok_or("Missing new_command_flags")?;
 
-        let config = crate::core::sys_data::get_config();
+        let config = crate::core::data::get_config();
 
         // Execute the rename with dry_run = false on UI commands
         use crate::core::rename_associated_data;
@@ -1788,7 +1788,7 @@ impl AnchorSelector {
         if let Some(cmd_name) = original_command_to_delete {
             if !cmd_name.is_empty() {
                 use crate::core::delete_command;
-                let _ = delete_command(cmd_name, self.commands_mut());
+                let _ = delete_command(cmd_name);
             }
         }
 
@@ -1805,11 +1805,11 @@ impl AnchorSelector {
 
         // Add the new command to UI
         use crate::core::add_command;
-        let _ = add_command(new_command, self.commands_mut());
+        let _ = add_command(new_command);
 
         // Save all commands back to sys_data because rename_associated_data modified
         // patches and prefixes on many commands (not just the renamed command)
-        crate::core::sys_data::set_commands(self.commands().to_vec())?;
+        crate::core::data::set_commands(self.commands().to_vec())?;
         crate::utils::log("RENAME: Saved all command changes (patches/prefixes) to sys_data");
 
         // Update the filtered list if we're currently filtering
@@ -1984,7 +1984,7 @@ impl AnchorSelector {
     
     /// Start the grabber countdown
     fn start_grabber_countdown(&mut self, _ctx: &egui::Context) {
-        let config = crate::core::sys_data::get_config();
+        let config = crate::core::data::get_config();
         let countdown_seconds = config.popup_settings.countdown_seconds.unwrap_or(5);
         let flip_focus = config.launcher_settings.as_ref().and_then(|ls| ls.flip_focus).unwrap_or(false);
         
@@ -2012,7 +2012,7 @@ impl AnchorSelector {
                         self.countdown_last_update = Some(std::time::Instant::now());
                         
                         // Handle focus flipping during countdown if enabled
-                        let config = crate::core::sys_data::get_config();
+                        let config = crate::core::data::get_config();
                         let flip_focus = config.launcher_settings
                             .as_ref()
                             .and_then(|ls| ls.flip_focus)
@@ -2087,7 +2087,7 @@ impl AnchorSelector {
     /// Execute the grab operation - simplified synchronous version
     fn execute_grab(&mut self, _ctx: &egui::Context) {
         crate::utils::log("GRAB: execute_grab() called");
-        let config = crate::core::sys_data::get_config();
+        let config = crate::core::data::get_config();
         
         // Check if we should flip focus
         let flip_focus = config.launcher_settings
@@ -2188,7 +2188,7 @@ impl AnchorSelector {
                             context.add_variable("grabbed_suffix".to_string(), grabbed_suffix);
                             
                             // Process the template with grabbed context
-                            let config = crate::core::sys_data::get_config();
+                            let config = crate::core::data::get_config();
                             
                             // Try to find template in unified actions first
                             let _template_found = if let Some(ref actions) = config.actions {
@@ -2219,7 +2219,7 @@ impl AnchorSelector {
                                                     } else {
                                                         crate::utils::detailed_log("GRAB", &format!("GRAB: Not opening editor (should_edit=false)"));
                                                         // Add command directly
-                                                        match crate::core::add_command(new_command, &mut self.popup_state.commands) {
+                                                        match crate::core::add_command(new_command) {
                                                             Ok(_) => {
                                                                 // Command already saved by add_command (via sys_data::add_command)
                                                                 // Mark commands as modified to trigger automatic reload
@@ -2292,7 +2292,7 @@ impl AnchorSelector {
                             context.add_variable("grabbed_suffix".to_string(), String::new());
                             
                             // Process the template
-                            let config = crate::core::sys_data::get_config();
+                            let config = crate::core::data::get_config();
                             
                             // Try to find template in unified actions first
                             let _template_found = if let Some(ref actions) = config.actions {
@@ -2322,7 +2322,7 @@ impl AnchorSelector {
                                                     } else {
                                                         crate::utils::detailed_log("GRAB", &format!("GRAB: Not opening editor (should_edit=false)"));
                                                         // Add command directly
-                                                        match crate::core::add_command(new_command, &mut self.popup_state.commands) {
+                                                        match crate::core::add_command(new_command) {
                                                             Ok(_) => {
                                                                 // Command already saved by add_command (via sys_data::add_command)
                                                                 // Mark commands as modified to trigger automatic reload
@@ -3547,7 +3547,7 @@ impl AnchorSelector {
     fn get_patch_path_display(&self, command_name: &str) -> String {
         // If we have submenu info, use that for more accurate breadcrumbs
         if let Some((_, resolved_command)) = self.popup_state.get_prefix_menu_command_info() {
-            let (sys_data, _) = crate::core::sys_data::get_sys_data();
+            let (sys_data, _) = crate::core::data::get_sys_data();
             let path = get_patch_path(&resolved_command.command, &sys_data.patches);
             
             if path.is_empty() {
@@ -3557,7 +3557,7 @@ impl AnchorSelector {
             }
         } else {
             // Fallback to old behavior
-            let (sys_data, _) = crate::core::sys_data::get_sys_data();
+            let (sys_data, _) = crate::core::data::get_sys_data();
             let path = get_patch_path(command_name, &sys_data.patches);
             
             if path.is_empty() {
@@ -3705,7 +3705,7 @@ impl eframe::App for AnchorSelector {
             
             // Also ensure proper window positioning on startup
             if self.frame_count == 2 && !self.position_set {
-                let config = crate::core::sys_data::get_config();
+                let config = crate::core::data::get_config();
                 let width = config.popup_settings.get_default_window_width() as f32;
                 let height = config.popup_settings.get_default_window_height() as f32;
                 let window_size = egui::vec2(width, height);
@@ -3729,7 +3729,7 @@ impl eframe::App for AnchorSelector {
         
         // Check for idle timeout - only when visible and not showing dialogs/editor
         if !self.is_hidden && !self.command_editor.visible && !self.dialog.visible {
-            let config = crate::core::sys_data::get_config();
+            let config = crate::core::data::get_config();
             if let Some(timeout_seconds) = config.popup_settings.idle_timeout_seconds {
                 let idle_duration = self.last_interaction_time.elapsed();
                 if idle_duration.as_secs() >= timeout_seconds {
@@ -3782,7 +3782,7 @@ impl eframe::App for AnchorSelector {
         // Set position on first frame after window is created
         if !self.position_set {
             // Use a reasonable default window size for positioning - the actual size will be auto-calculated
-            let config = crate::core::sys_data::get_config();
+            let config = crate::core::data::get_config();
             let width = config.popup_settings.get_default_window_width() as f32;
             let height = config.popup_settings.get_default_window_height() as f32;
             let window_size = egui::vec2(width, height);
@@ -3954,7 +3954,7 @@ impl eframe::App for AnchorSelector {
                     if effective_old_name != &new_command.command {
                         crate::utils::log(&format!("RENAME_DETECTED: '{}' -> '{}'", effective_old_name, new_command.command));
                         // Command name changed - check for rename side effects
-                        let config = crate::core::sys_data::get_config();
+                        let config = crate::core::data::get_config();
                         
                         // Check if any rename flags are enabled
                         let has_rename_options = config.popup_settings.rename_doc.unwrap_or(false) ||
@@ -4046,7 +4046,7 @@ impl eframe::App for AnchorSelector {
                 // Delete original command if needed
                 if let Some(cmd_name) = command_to_delete {
                     use crate::core::delete_command;
-                    let deleted = delete_command(&cmd_name, self.commands_mut());
+                    let deleted = delete_command(&cmd_name);
                     if deleted.is_err() {
                         crate::utils::log_error(&format!("Original command '{}' not found for deletion", cmd_name));
                     }
@@ -4059,7 +4059,7 @@ impl eframe::App for AnchorSelector {
                 use crate::core::add_command;
                 crate::utils::log(&format!("SAVE_DEBUG: About to add new command: '{}' (action: {}, arg: {})",
                     new_command.command, new_command.action, new_command.arg));
-                match add_command(new_command, self.commands_mut()) {
+                match add_command(new_command) {
                     Ok(_) => {
                         crate::utils::log(&format!("SAVE_DEBUG: Successfully added command (auto-saved via sys_data)"));
 
@@ -4119,7 +4119,7 @@ impl eframe::App for AnchorSelector {
                 // Delete the specified command (auto-saves via commandstore)
                 use crate::core::delete_command;
 
-                let deleted = delete_command(&command_name, self.commands_mut());
+                let deleted = delete_command(&command_name);
                 if deleted.is_err() {
                     crate::utils::log_error(&format!("Command '{}' not found for deletion", command_name));
                 } else {
@@ -4509,7 +4509,7 @@ impl eframe::App for AnchorSelector {
                         }
                         LayoutArrangement::SingleColumn => {
                             let (display_commands_single, _, _, _) = self.get_display_commands();
-                            let config = crate::core::sys_data::get_config();
+                            let config = crate::core::data::get_config();
                             let window_width = config.popup_settings.get_default_window_width() as f32;
                             let required_height = input_height + mid_drag_height + header_height + (display_commands_single.len() as f32 * row_height) + bottom_drag_height + padding;
                             (window_width, required_height)
@@ -4528,7 +4528,7 @@ impl eframe::App for AnchorSelector {
                         };
                         
                         // Apply the calculated window size to ensure it fits the content
-                        let config = crate::core::sys_data::get_config();
+                        let config = crate::core::data::get_config();
                         let max_width = config.popup_settings.get_max_window_width() as f32;
                         let max_height = config.popup_settings.get_max_window_height() as f32;
                         let default_width = config.popup_settings.get_default_window_width() as f32;
@@ -5075,7 +5075,7 @@ impl eframe::App for PopupWithControl {
                     } else {
                         // No position available, center the window
                         crate::utils::log("[SHOW] No window position available, centering on main display");
-                        let config = crate::core::sys_data::get_config();
+                        let config = crate::core::data::get_config();
                         let width = config.popup_settings.get_default_window_width() as f32;
                         let height = config.popup_settings.get_default_window_height() as f32;
                         let window_size = egui::vec2(width, height);
@@ -5141,7 +5141,7 @@ pub fn run_gui_with_prompt(initial_prompt: &str, initial_action: Option<&str>, _
     let action = initial_action.map(|s| s.to_string());
     
     // Manual window sizing - no auto-sizing constraints
-    let config = crate::core::sys_data::get_config();
+    let config = crate::core::data::get_config();
     let width = config.popup_settings.get_default_window_width() as f32;
     let height = config.popup_settings.get_default_window_height() as f32;
     // Always start visible - we'll hide it later if needed

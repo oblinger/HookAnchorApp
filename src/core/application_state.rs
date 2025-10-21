@@ -46,12 +46,12 @@ impl ApplicationState {
             ConfigResult::Success(cfg) => (cfg, None),
             ConfigResult::Error(error) => {
                 utils::detailed_log("CONFIG_ERROR", &format!("Failed to load config: {}", error));
-                (crate::core::sys_data::get_config(), Some(error)) // Use fallback config
+                (crate::core::data::get_config(), Some(error)) // Use fallback config
             }
         };
         
         // Load sys data once to get commands
-        let (sys_data, _) = super::sys_data::get_sys_data();
+        let (sys_data, _) = super::data::get_sys_data();
         let commands = sys_data.commands;
         
         // Don't scan at startup - only scan at termination

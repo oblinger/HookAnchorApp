@@ -249,7 +249,7 @@ impl Dialog {
         total_height += 15.0;
         
         // Use configured maximum window sizes
-        let config = crate::core::sys_data::get_config();
+        let config = crate::core::data::get_config();
         let max_width_available = config.popup_settings.get_max_window_width() as f32;
         let max_height_available = config.popup_settings.get_max_window_height() as f32;
         

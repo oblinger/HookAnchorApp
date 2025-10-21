@@ -351,8 +351,8 @@ fn execute_template_action(
     }
     
     // Add the command to commands.txt
-    let (mut sys_data, _) = crate::core::sys_data::get_sys_data();
-    crate::core::add_command(command.clone(), &mut sys_data.commands)?;
+    let (mut sys_data, _) = crate::core::data::get_sys_data();
+    crate::core::add_command(command.clone())?;
     
     Ok(format!("Created command: {}", command.command))
 }
@@ -595,7 +595,7 @@ fn execute_obsidian_action(
     let file = params.get("file")
         .ok_or("obsidian action requires file parameter")?;
     
-    let default_vault = crate::core::sys_data::get_config().launcher_settings
+    let default_vault = crate::core::data::get_config().launcher_settings
         .as_ref()
         .and_then(|s| s.obsidian_vault_name.as_ref())
         .unwrap_or(&"kmr".to_string())
@@ -610,7 +610,7 @@ fn execute_obsidian_action(
         urlencoding::encode(file)
     );
     
-    let obsidian_app = &crate::core::sys_data::get_config().launcher_settings
+    let obsidian_app = &crate::core::data::get_config().launcher_settings
         .as_ref()
         .and_then(|s| s.obsidian_app_name.as_ref())
         .unwrap_or(&"Obsidian".to_string())

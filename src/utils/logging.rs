@@ -13,7 +13,7 @@ use chrono::Local;
 /// to start fresh logging. Used before rebuilds and when log exceeds max size.
 pub fn clear_debug_log() {
     // Use constant from sys_data
-    let debug_path = super::utilities::expand_tilde(crate::core::sys_data::DEFAULT_LOG_PATH);
+    let debug_path = super::utilities::expand_tilde(crate::core::data::DEFAULT_LOG_PATH);
     
     // Remove the file if it exists  
     if std::path::Path::new(&debug_path).exists() {
@@ -26,12 +26,12 @@ pub fn clear_debug_log() {
 /// Returns true if log was cleared, false otherwise
 pub fn check_and_clear_oversized_log() -> bool {
     // Use constant from sys_data
-    let debug_path = super::utilities::expand_tilde(crate::core::sys_data::DEFAULT_LOG_PATH);
+    let debug_path = super::utilities::expand_tilde(crate::core::data::DEFAULT_LOG_PATH);
     
     // Get max size from config if available, otherwise use default
-    let max_size = match crate::core::sys_data::CONFIG.get() {
+    let max_size = match crate::core::data::CONFIG.get() {
         Some(cfg) => cfg.popup_settings.max_log_file_size.unwrap_or(1_000_000), // 1MB default
-        None => crate::core::sys_data::DEFAULT_MAX_LOG_SIZE,
+        None => crate::core::data::DEFAULT_MAX_LOG_SIZE,
     };
     
     // Log when we check (to temp file to avoid recursion)
@@ -79,7 +79,7 @@ pub fn clear_log_file() {
 /// It checks if a debug log path is configured before writing.
 pub fn log(message: &str) {
     // Use constant from sys_data for consistency
-    let debug_path = super::utilities::expand_tilde(crate::core::sys_data::DEFAULT_LOG_PATH);
+    let debug_path = super::utilities::expand_tilde(crate::core::data::DEFAULT_LOG_PATH);
 
     let timestamp = Local::now().format("%Y-%m-%d %H:%M:%S");
     let log_entry = format!("{} {}\n", timestamp, message);
@@ -98,7 +98,7 @@ pub fn log(message: &str) {
 /// such as logging every key press or detailed execution flow.
 pub fn detailed_log(module: &str, message: &str) {
     // Check if detailed logging is enabled
-    let verbose_enabled = match crate::core::sys_data::CONFIG.get() {
+    let verbose_enabled = match crate::core::data::CONFIG.get() {
         Some(cfg) => cfg.popup_settings.verbose_logging.unwrap_or(false),
         None => false, // Config not loaded yet, assume verbose is off
     };

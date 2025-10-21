@@ -2,7 +2,7 @@
 //!
 //! Utility functions shared across UI components
 
-use crate::core::sys_data::get_config;
+use crate::core::data::get_config;
 
 /// Gets the list of actions for the command editor dropdown
 /// Returns the configured actions from popup_settings.listed_actions, or default actions if not configured

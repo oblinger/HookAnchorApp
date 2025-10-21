@@ -472,7 +472,7 @@ pub(crate) fn backup_commands_file() -> Result<(), Box<dyn std::error::Error>> {
 /// INTERNAL ONLY - External code should use get_sys_data() to get patches
 pub(in crate::core) fn create_patches_hashmap(commands: &[Command]) -> HashMap<String, Patch> {
     let mut patches = HashMap::new();
-    let config = crate::core::sys_data::get_config();
+    let config = crate::core::data::get_config();
     let preferred_anchor_type = config.popup_settings.preferred_anchor.as_deref().unwrap_or("markdown");
     
     // First pass: Group all anchor commands by their normalized name
@@ -948,7 +948,7 @@ fn is_patch_degradation(current_patch: &str, inferred_patch: &str) -> bool {
 fn build_folder_to_patch_map(commands: &[Command]) -> HashMap<PathBuf, String> {
     use std::path::PathBuf;
     let mut folder_map = HashMap::new();
-    let config = crate::core::sys_data::get_config();
+    let config = crate::core::data::get_config();
 
     // First pass: Add all anchor commands to the map
     for cmd in commands {
@@ -1445,21 +1445,21 @@ pub(crate) fn load_commands_raw() -> Vec<Command> {
 /// Load commands with all derived data structures (patches, inference, orphan anchors)
 /// INTERNAL ONLY - External code should use get_commands() from sys_data
 pub(in crate::core) fn load_commands() -> Vec<Command> {
-    let (global_data, _) = crate::core::sys_data::get_sys_data();
+    let (global_data, _) = crate::core::data::get_sys_data();
     global_data.commands
 }
 
 /// Load commands with config and patches
 /// INTERNAL ONLY - External code should use get_sys_data()
 pub(in crate::core) fn load_commands_with_data() -> (crate::core::config::Config, Vec<Command>, HashMap<String, Patch>) {
-    let (global_data, _) = crate::core::sys_data::get_sys_data();
+    let (global_data, _) = crate::core::data::get_sys_data();
     (global_data.config, global_data.commands, global_data.patches)
 }
 
 /// Load commands with only patches (no inference or orphan creation) - for inference analysis
 pub fn load_commands_for_inference() -> (crate::core::config::Config, Vec<Command>, HashMap<String, Patch>) {
     // Step 1: Load config
-    let config = crate::core::sys_data::get_config();
+    let config = crate::core::data::get_config();
     
     // Step 2: Load commands
     let commands = load_commands_raw();

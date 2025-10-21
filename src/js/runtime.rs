@@ -69,7 +69,7 @@ use crate::utils::expand_tilde;
 
 /// Creates a JavaScript runtime with all business logic built-ins configured
 fn create_business_logic_runtime() -> Result<Context, Box<dyn std::error::Error>> {
-    let config = crate::core::sys_data::get_config();
+    let config = crate::core::data::get_config();
     create_business_logic_runtime_with_config(&config)
 }
 
@@ -666,7 +666,7 @@ fn setup_launcher_builtins(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Erro
         let args = parts.get(1).copied().unwrap_or("");
         
         // Look up action in config
-        let config = crate::core::sys_data::get_config();
+        let config = crate::core::data::get_config();
         if let Some(actions) = &config.actions {
             if let Some(action_def) = actions.get(action_name) {
                 let mut variables = std::collections::HashMap::new();

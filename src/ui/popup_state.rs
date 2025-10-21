@@ -215,7 +215,7 @@ impl PopupState {
     fn recompute_filtered_commands(&mut self) -> bool {
         use crate::core::get_new_display_commands;
 
-        let (sys_data, was_reloaded) = crate::core::sys_data::get_sys_data();
+        let (sys_data, was_reloaded) = crate::core::data::get_sys_data();
         if was_reloaded {
             crate::utils::detailed_log("POPUP_REFRESH", "Commands were reloaded - rebuilding search results");
         }

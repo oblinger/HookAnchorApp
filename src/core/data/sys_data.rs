@@ -41,8 +41,8 @@
 
 use std::collections::HashMap;
 use std::sync::{Mutex, OnceLock};
-use super::config::Config;
-use super::{Command, Patch};
+use crate::core::config::Config;
+use crate::core::{Command, Patch};
 
 // =============================================================================
 // GLOBAL CONSTANTS
@@ -141,16 +141,16 @@ fn initialize_config() -> Result<(), String> {
     }
 
     // Load config using the existing load_config_with_error for proper error handling
-    match super::config::load_config_with_error() {
-        super::config::ConfigResult::Success(config) => {
+    match crate::core::config::load_config_with_error() {
+        crate::core::config::ConfigResult::Success(config) => {
             CONFIG.set(config).map_err(|_| "Config already initialized".to_string())?;
             let elapsed = start.elapsed();
             crate::utils::log(&format!("CONFIG_INIT: Config initialized at startup in {:?} ({} microseconds)", elapsed, elapsed.as_micros()));
             Ok(())
         }
-        super::config::ConfigResult::Error(err) => {
+        crate::core::config::ConfigResult::Error(err) => {
             // Use default config but return error for display
-            CONFIG.set(super::config::create_default_config()).map_err(|_| "Config already initialized".to_string())?;
+            CONFIG.set(crate::core::config::create_default_config()).map_err(|_| "Config already initialized".to_string())?;
             Err(err)
         }
     }
@@ -260,8 +260,8 @@ fn flush(commands: &mut Vec<Command>) -> Result<(), Box<dyn std::error::Error>> 
     let patches = resolution.patches;
 
     // Step 2: Save to both cache and commands.txt
-    crate::core::commands::save_commands_to_file(commands)?;
-    crate::core::commands::save_commands_to_cache(commands)?;
+    super::storage::save_commands_to_file(commands)?;
+    super::storage::save_commands_to_cache(commands)?;
 
     // Step 3: Update singleton with new commands and patches
     let sys = SYS_DATA.get_or_init(|| Mutex::new(None));
@@ -418,7 +418,7 @@ fn load_data_no_cache(commands_override: Vec<Command>, _verbose: bool) -> SysDat
     let commands = if !commands_override.is_empty() {
         commands_override
     } else {
-        crate::core::commands::load_commands_raw()
+        super::storage::load_commands_raw()
     };
     
     // Create basic patches hashmap
@@ -511,9 +511,9 @@ pub fn load_data(commands_override: Vec<Command>, verbose: bool) -> SysData {
             println!("💾 Step 4: Saving to disk...");
         }
         // Always save - ensures deduplication, formatting, consistency
-        if let Err(e) = crate::core::commands::save_commands_to_file(&commands) {
+        if let Err(e) = super::storage::save_commands_to_file(&commands) {
             crate::utils::log_error(&format!("Failed to save commands: {}", e));
-        } else if let Err(e) = crate::core::commands::save_commands_to_cache(&commands) {
+        } else if let Err(e) = super::storage::save_commands_to_cache(&commands) {
             crate::utils::log_error(&format!("Failed to save cache: {}", e));
         } else {
             if verbose {
