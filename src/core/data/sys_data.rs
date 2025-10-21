@@ -1,29 +1,11 @@
-//! Data Layer - Internal Implementation
+//! System Data - Internal Implementation
 //!
-//! This module is the internal implementation of the data layer. External code should
-//! import from `crate::core` which re-exports the public interface.
+//! This module implements the data layer singleton and provides functions for
+//! accessing commands, config, patches, and state. See `mod.rs` for the complete
+//! public interface documentation.
 //!
-//! # PUBLIC INTERFACE (Exported via crate::core)
-//!
-//! ## Data Access (from sys_data.rs, via crate::core::data)
-//! - `SysData` - Bundle containing config, commands, and patches
-//! - `initialize() -> Result<(), String>` - Load config, commands, patches into singleton
-//! - `get_sys_data() -> (SysData, bool)` - Get full SysData bundle
-//! - `get_config() -> Config` - Get configuration from singleton
-//! - `get_commands() -> Vec<Command>` - Get commands from singleton
-//! - `set_commands(Vec<Command>) -> Result<(), Box<dyn Error>>` - Replace all commands (auto-saves)
-//! - `add_command(Command) -> Result<(), Box<dyn Error>>` - Add single command (auto-saves)
-//! - `delete_command(&str) -> Result<(), Box<dyn Error>>` - Delete command by name (auto-saves)
-//! - `get_patches() -> HashMap<String, Patch>` - Get patches from singleton
-//! - `get_state() -> AppState` - Get application state (trampoline to state.rs)
-//! - `set_state(&AppState) -> Result<(), Box<dyn Error>>` - Save application state (trampoline to state.rs)
-//!
-//! ## Configuration (from config.rs, via crate::core)
-//! - `Config`, `PopupSettings`, `LauncherSettings` - Configuration types
-//!
-//! ## State Types (from state.rs, via crate::core)
-//! - `AppState`, `HistoryViewerState` - State structure definitions
-//!
+//! External code should access this via `crate::core::data` which re-exports
+//! the public functions listed in mod.rs.
 
 
 use std::collections::HashMap;
