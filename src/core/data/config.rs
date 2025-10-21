@@ -77,8 +77,6 @@ pub struct PopupSettings {
     /// Preferred action type for selecting primary anchor when multiple anchors exist for same patch
     /// Options: "markdown", "doc", "anchor", "text", etc. (default: "markdown")
     pub preferred_anchor: Option<String>,
-    /// History tracking settings
-    pub history_settings: Option<HistorySettings>,
     /// Maximum length for command names in display (prevents wide columns, default: 30)
     pub max_characters: Option<usize>,
 }
@@ -120,6 +118,8 @@ impl Default for HistorySettings {
 pub struct HistoryViewerSettings {
     /// Key bindings for history viewer
     pub key_bindings: Option<HistoryViewerKeyBindings>,
+    /// Display settings for the tree viewer
+    pub history_settings: Option<HistorySettings>,
 }
 
 /// Key bindings for history viewer
@@ -134,6 +134,7 @@ impl Default for HistoryViewerSettings {
     fn default() -> Self {
         HistoryViewerSettings {
             key_bindings: Some(HistoryViewerKeyBindings::default()),
+            history_settings: Some(HistorySettings::default()),
         }
     }
 }
@@ -214,7 +215,6 @@ impl Default for PopupSettings {
             rename_patch: Some(false),
             rename_prefix: Some(false),
             preferred_anchor: Some("markdown".to_string()),
-            history_settings: Some(HistorySettings::default()),
             max_characters: Some(30),
         }
     }
