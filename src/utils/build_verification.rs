@@ -63,18 +63,18 @@ pub fn verify_build() -> VerificationResult {
 
     // Check 1: Was binary built with Just?
     if !metadata.built_with_just {
-        warnings.push("".to_string());
-        warnings.push("⚠️  ⚠️  ⚠️  CRITICAL WARNING ⚠️  ⚠️  ⚠️".to_string());
-        warnings.push("".to_string());
-        warnings.push("   Binary was built with 'cargo build' instead of 'just build'!".to_string());
-        warnings.push("".to_string());
-        warnings.push("   ❌ DO NOT USE: cargo build --release".to_string());
-        warnings.push("   ✅ ALWAYS USE:  just build".to_string());
-        warnings.push("".to_string());
-        warnings.push("   Rebuild now with: cd ~/ob/proj/HookAnchor && just build".to_string());
-        warnings.push("".to_string());
-        warnings.push("⚠️  ⚠️  ⚠️  ⚠️  ⚠️  ⚠️  ⚠️  ⚠️  ⚠️  ⚠️  ⚠️".to_string());
-        warnings.push("".to_string());
+        errors.push("".to_string());
+        errors.push("❌ ❌ ❌ BUILD VERIFICATION FAILED ❌ ❌ ❌".to_string());
+        errors.push("".to_string());
+        errors.push("   Binary was built with 'cargo build' instead of 'just build'!".to_string());
+        errors.push("".to_string());
+        errors.push("   ❌ DO NOT USE: cargo build --release".to_string());
+        errors.push("   ✅ ALWAYS USE:  just build".to_string());
+        errors.push("".to_string());
+        errors.push("   Rebuild now with: cd ~/ob/proj/HookAnchor && just build".to_string());
+        errors.push("".to_string());
+        errors.push("❌ ❌ ❌ ❌ ❌ ❌ ❌ ❌ ❌ ❌ ❌".to_string());
+        errors.push("".to_string());
     }
 
     // Check 2: Validate build timestamp
@@ -236,6 +236,9 @@ pub fn verify_and_log(terminate_on_failure: bool) -> bool {
     // Always log build information
     log_build_info();
 
+    // Simple log message indicating we're checking
+    crate::utils::log("Checking build validity...");
+
     // Run verification
     let result = verify_build();
 
@@ -251,20 +254,9 @@ pub fn verify_and_log(terminate_on_failure: bool) -> bool {
 
     // Summary
     if result.passed {
-        if result.warnings.is_empty() {
-            crate::utils::log("✅ Build verification PASSED - all checks OK");
-        } else {
-            crate::utils::log(&format!(
-                "✅ Build verification PASSED with {} warnings",
-                result.warnings.len()
-            ));
-        }
+        crate::utils::log("Build validity check: SUCCESS");
     } else {
-        crate::utils::log_error(&format!(
-            "❌ Build verification FAILED - {} errors found",
-            result.errors.len()
-        ));
-        crate::utils::log_error("   Running binary may be corrupted or improperly built");
+        crate::utils::log_error("Build validity check: FAILED");
 
         // If terminate_on_failure is true, show dialog and exit
         if terminate_on_failure {

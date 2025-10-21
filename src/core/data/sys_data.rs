@@ -146,17 +146,18 @@ pub fn mark_commands_modified() {
 /// Call this once at application startup
 pub fn initialize() -> Result<(), String> {
     // ==========================================================================
-    // STEP 1: Verify build consistency
+    // STEP 1: Initialize configuration
+    // ==========================================================================
+    initialize_config()?;
+
+    // ==========================================================================
+    // STEP 2: Verify build consistency
     // ==========================================================================
     // This ensures we're running code built with 'just build' and that
     // the binary matches the source code in the filesystem.
     // If verification fails, this will show a dialog and terminate the app.
+    // NOTE: This must come AFTER config initialization because logging needs config.
     crate::utils::verify_build(true);
-
-    // ==========================================================================
-    // STEP 2: Initialize configuration
-    // ==========================================================================
-    initialize_config()?;
 
     // ==========================================================================
     // STEP 3: Load commands from cache
