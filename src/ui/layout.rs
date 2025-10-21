@@ -17,12 +17,10 @@ pub struct DisplayLayout {
     pub prefix_menu_info: Option<PrefixMenuInfo>,
 }
 
-/// Different ways commands can be visually arranged
+/// Visual arrangement for commands (always multi-column, with cols=1 for single-column display)
 #[derive(Debug, Clone)]
 pub enum LayoutArrangement {
-    /// Single column layout
-    SingleColumn,
-    /// Multi-column layout with specified dimensions
+    /// Multi-column layout with specified dimensions (cols=1 for single-column display)
     MultiColumn {
         rows: usize,
         cols: usize,
@@ -76,21 +74,16 @@ impl DisplayLayout {
         crate::utils::log(&format!("LAYOUT: calculate_arrangement: commands.len()={}, max_rows={}, max_cols={}",
             commands.len(), max_rows, max_cols));
 
-        if commands.len() <= max_rows || max_cols == 1 {
-            crate::utils::log(&format!("LAYOUT: → Using SingleColumn (commands.len()={} <= max_rows={} or max_cols={} == 1)",
-                commands.len(), max_rows, max_cols));
-            LayoutArrangement::SingleColumn
-        } else {
-            let cols_needed = (commands.len() + max_rows - 1) / max_rows;
-            let cols_to_use = cols_needed.min(max_cols);
-            let rows_per_col = (commands.len() + cols_to_use - 1) / cols_to_use;
+        // ALWAYS use MultiColumn, even for small lists (cols=1)
+        let cols_needed = (commands.len() + max_rows - 1) / max_rows;
+        let cols_to_use = cols_needed.min(max_cols).max(1); // At least 1 column
+        let rows_per_col = (commands.len() + cols_to_use - 1) / cols_to_use;
 
-            crate::utils::log(&format!("LAYOUT: → Using MultiColumn (rows={}, cols={})", rows_per_col, cols_to_use));
+        crate::utils::log(&format!("LAYOUT: → Using MultiColumn (rows={}, cols={})", rows_per_col, cols_to_use));
 
-            LayoutArrangement::MultiColumn {
-                rows: rows_per_col,
-                cols: cols_to_use,
-            }
+        LayoutArrangement::MultiColumn {
+            rows: rows_per_col,
+            cols: cols_to_use,
         }
     }
     
@@ -111,13 +104,6 @@ impl DisplayLayout {
     /// Get command at visual position (row, col)
     pub fn get_command_at_position(&self, row: usize, col: usize) -> Option<&Command> {
         match &self.arrangement {
-            LayoutArrangement::SingleColumn => {
-                if col == 0 && row < self.commands.len() {
-                    Some(&self.commands[row])
-                } else {
-                    None
-                }
-            }
             LayoutArrangement::MultiColumn { rows, .. } => {
                 let index = col * rows + row;
                 self.commands.get(index)
@@ -128,13 +114,6 @@ impl DisplayLayout {
     /// Convert visual position to command index
     pub fn visual_to_index(&self, row: usize, col: usize) -> Option<usize> {
         match &self.arrangement {
-            LayoutArrangement::SingleColumn => {
-                if col == 0 && row < self.commands.len() {
-                    Some(row)
-                } else {
-                    None
-                }
-            }
             LayoutArrangement::MultiColumn { rows, .. } => {
                 let index = col * rows + row;
                 if index < self.commands.len() {
@@ -151,9 +130,8 @@ impl DisplayLayout {
         if index >= self.commands.len() {
             return None;
         }
-        
+
         match &self.arrangement {
-            LayoutArrangement::SingleColumn => Some((index, 0)),
             LayoutArrangement::MultiColumn { rows, .. } => {
                 let col = index / rows;
                 let row = index % rows;
@@ -165,7 +143,6 @@ impl DisplayLayout {
     /// Get layout dimensions (rows, cols)
     pub fn get_dimensions(&self) -> (usize, usize) {
         match &self.arrangement {
-            LayoutArrangement::SingleColumn => (self.commands.len(), 1),
             LayoutArrangement::MultiColumn { rows, cols } => (*rows, *cols),
         }
     }
