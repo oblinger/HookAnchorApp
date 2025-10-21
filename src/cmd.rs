@@ -12,8 +12,29 @@ pub fn run_command_line_mode(args: Vec<String>) {
         return;
     }
     
-    // Check for help flags
+    // Check for help flags with optional subcommands
     if args.len() >= 2 && (args[1] == "-h" || args[1] == "--help") {
+        if args.len() >= 3 {
+            match args[2].to_lowercase().as_str() {
+                "vars" => {
+                    print_help_vars();
+                    return;
+                }
+                "config" => {
+                    print_help_config();
+                    return;
+                }
+                "fns" => {
+                    print_help_fns();
+                    return;
+                }
+                _ => {
+                    print(&format!("Unknown help topic: {}", args[2]));
+                    print("Available topics: vars, config, fns");
+                    std::process::exit(1);
+                }
+            }
+        }
         print_help(&args[0]);
         return;
     }
@@ -64,6 +85,9 @@ pub fn print_help(program_name: &str) {
     print("Usage:");
     print(&format!("  {}                          # Show help", program_name));
     print(&format!("  {} -h, --help               # Show help", program_name));
+    print(&format!("  {} --help vars              # Show template variables", program_name));
+    print(&format!("  {} --help config            # Show configuration settings", program_name));
+    print(&format!("  {} --help fns               # Show JavaScript functions", program_name));
     print(&format!("  {} -m, --match <query>      # Search CMDS", program_name));
     print(&format!("  {} -r, --run_fn <cmd>       # Execute specific CMD", program_name));
     print(&format!("  {} -x, --execute <query>    # Execute top match", program_name));
@@ -1740,4 +1764,111 @@ fn run_delete_history(args: &[String]) {
         }
         std::process::exit(1);
     }
+}
+
+fn print_help_vars() {
+    print("TEMPLATE VARIABLES");
+    print("");
+    print("Object fields (name, path, arg, patch, action, flags, folder*):");
+    print("  selected        Currently selected command in popup");
+    print("  last_executed   Last command executed (any type)");
+    print("  last_anchor     Last anchor command executed");
+    print("");
+    print("Date/time fields (year, year2, month, month_short, month_name, month_abbr,");
+    print("                  day, day_short, weekday, weekday_abbr, hour, hour12,");
+    print("                  minute, second, ampm, timestamp, iso):");
+    print("  date            Current date/time components");
+    print("");
+    print("Grab fields (action, arg, app, title, text, suffix):");
+    print("  grabbed         Context from active application");
+    print("");
+    print("Environment fields (home, user, hostname, os, config_dir):");
+    print("  env             System environment information");
+    print("");
+    print("Simple variables:");
+    print("  input           User's search input text");
+    print("  raw_input       Raw input without anchor fallback");
+    print("  arg             Action argument for template expansion");
+    print("");
+    print("* folder field throws error if empty - use for commands with file context");
+    print("");
+    print("Examples:");
+    print("  {{selected.name}}           Command name of selected item");
+    print("  {{last_executed.folder}}    Folder of last command");
+    print("  {{last_anchor.name}}        Name of last anchor");
+    print("  {{date.year}}-{{date.month}}-{{date.day}}  Current date");
+    print("  {{input}}                   User's search text");
+}
+
+fn print_help_config() {
+    print("CONFIGURATION SETTINGS");
+    print("");
+    print("Window & Display:");
+    print("  max_rows                  Maximum rows in popup grid (default: 20)");
+    print("  max_columns               Maximum columns in popup grid (default: 4)");
+    print("  window_width              Popup window width in pixels");
+    print("  window_height             Popup window height in pixels");
+    print("  font_size                 UI font size in points");
+    print("  row_height                Height of each row in pixels");
+    print("  column_spacing            Space between columns in pixels");
+    print("");
+    print("Behavior:");
+    print("  anchor_timeout_seconds    Seconds to remember last anchor (default: 180)");
+    print("  close_on_execute          Auto-close popup after executing command");
+    print("  show_recent_commands      Show recently used commands at top");
+    print("  history_size              Number of recent commands to track");
+    print("");
+    print("Logging & Debug:");
+    print("  verbose_logging           Enable detailed logging");
+    print("  log_file                  Path to log file");
+    print("  detailed_log_tags         Array of log tags to enable (e.g., [\"ANCHOR\"])");
+    print("");
+    print("Scanning:");
+    print("  scan_home_folder          Include home folder in anchor scan");
+    print("  scan_desktop              Include desktop in anchor scan");
+    print("  scan_documents            Include documents in anchor scan");
+    print("  excluded_paths            Array of paths to exclude from scan");
+    print("");
+    print("Location: ~/.config/hookanchor/config.yaml");
+}
+
+fn print_help_fns() {
+    print("JAVASCRIPT FUNCTIONS");
+    print("");
+    print("Logging:");
+    print("  log(msg)                  Write to HookAnchor log");
+    print("  error(msg)                Queue error for user display");
+    print("");
+    print("State Management:");
+    print("  save_anchor(name)         Save anchor name for next popup open");
+    print("  get_state()               Get persistent state object");
+    print("  set_state(obj)            Save persistent state object");
+    print("");
+    print("Command Execution:");
+    print("  run_command(cmd)          Execute shell command, return output");
+    print("  run_command_async(cmd)    Execute shell command in background");
+    print("");
+    print("AppleScript:");
+    print("  run_applescript(script)   Execute AppleScript code");
+    print("  tell_app(app, cmd)        Tell application to execute command");
+    print("");
+    print("File System:");
+    print("  read_file(path)           Read text file contents");
+    print("  write_file(path, text)    Write text to file");
+    print("  file_exists(path)         Check if file/folder exists");
+    print("  expand_path(path)         Expand ~ and environment variables");
+    print("");
+    print("Utilities:");
+    print("  sleep(seconds)            Pause execution");
+    print("  timestamp()               Get current Unix timestamp");
+    print("  format_date(fmt, ts)      Format timestamp using strftime format");
+    print("");
+    print("Context object (ctx) - Available in all action functions:");
+    print("  ctx.arg                   Action argument");
+    print("  ctx.input                 User input text");
+    print("  ctx.command_name          Command name being executed");
+    print("  ctx.user_input            Raw user input");
+    print("  ctx.last_anchor_input     Last anchor for template expansion");
+    print("");
+    print("Location: ~/.config/hookanchor/config.js");
 }
