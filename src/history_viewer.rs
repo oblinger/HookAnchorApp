@@ -89,12 +89,24 @@ impl HistoryViewer {
 
     /// Get all patch names that are descendants of the given anchor
     /// (i.e., all patches whose parent chain includes this anchor)
+    /// Special case: "orphans" is the universal root and returns ALL patches
     fn get_descendant_patches(anchor_name: &str) -> std::collections::HashSet<String> {
         let mut descendants = std::collections::HashSet::new();
         let anchor_lower = anchor_name.to_lowercase();
 
         // Get patches from singleton
         let (sys_data, _) = hookanchor::core::get_sys_data();
+
+        // Special case: "orphans" is the universal root - includes ALL patches
+        // This is because patches with no parent are shown under "orphans" in the tree
+        if anchor_lower == "orphans" {
+            for patch_name in sys_data.patches.keys() {
+                descendants.insert(patch_name.to_string());
+            }
+            descendants.insert("orphans".to_string());
+            hookanchor::utils::log(&format!("ANCHOR_FILTER: orphans (universal root) includes ALL {} patches", descendants.len()));
+            return descendants;
+        }
 
         hookanchor::utils::log(&format!("ANCHOR_FILTER: Looking for descendants of '{}'", anchor_name));
 

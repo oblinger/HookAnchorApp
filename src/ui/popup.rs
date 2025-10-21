@@ -1887,8 +1887,60 @@ impl AnchorSelector {
     fn check_and_apply_alias(&mut self) {
         self.popup_state.check_and_apply_alias();
     }
-    
-    
+
+    /// Try to expand the current input to a full command name
+    /// If the input matches a command (especially an alias), expand it to the full/resolved name
+    /// Returns true if expansion occurred, false otherwise
+    fn try_expand_input(&mut self) -> bool {
+        let current_input = self.popup_state.search_text.trim().to_string();
+
+        if current_input.is_empty() {
+            return false;
+        }
+
+        let all_commands = self.commands();
+
+        // Look for exact match first
+        if let Some(matching_cmd) = all_commands.iter().find(|cmd|
+            cmd.command.eq_ignore_ascii_case(&current_input)
+        ) {
+            // If it's an alias, resolve it
+            let resolved = matching_cmd.resolve_alias(all_commands);
+            let expanded_name = &resolved.command;
+
+            crate::utils::log(&format!("🔄 Expanding '{}' -> '{}'", current_input, expanded_name));
+
+            // Update the search text with the expanded/resolved name
+            self.popup_state.update_search(expanded_name.clone());
+            self.request_cursor_at_end = true;
+
+            return true;
+        }
+
+        // If no exact match, try prefix match with the first filtered result
+        let filtered = self.filtered_commands();
+        if !filtered.is_empty() {
+            let first_match = &filtered[0];
+            // Only expand if the input is a clear prefix of the first match
+            if first_match.command.to_lowercase().starts_with(&current_input.to_lowercase())
+                && first_match.command.len() > current_input.len() {
+
+                let resolved = first_match.resolve_alias(all_commands);
+                let expanded_name = &resolved.command;
+
+                crate::utils::log(&format!("🔄 Expanding prefix '{}' -> '{}'", current_input, expanded_name));
+
+                self.popup_state.update_search(expanded_name.clone());
+                self.request_cursor_at_end = true;
+
+                return true;
+            }
+        }
+
+        false
+    }
+
+
     // =============================================================================
     // Layout and Display Logic
     // =============================================================================
@@ -4260,12 +4312,22 @@ impl eframe::App for AnchorSelector {
 
 
                 // Check if Enter was pressed (checked before TextEdit could consume it)
-                if enter_pressed && response.has_focus() && !self.filtered_commands().is_empty() {
-                    self.execute_selected_command();
-                    // TODO: Consider refactoring this to use centralized key handling
-                    // Clear the Enter key from input to prevent double processing
-                    crate::utils::detailed_log("KEY_DEBUG", "🔑 ALTERNATE_PATH: Consuming Enter key to prevent double processing");
-                    ctx.input_mut(|i| i.consume_key(egui::Modifiers::NONE, egui::Key::Enter));
+                if enter_pressed && response.has_focus() {
+                    // Try to expand alias/command name first
+                    let expanded = self.try_expand_input();
+
+                    if expanded {
+                        // Input was expanded - don't execute, just update filter
+                        crate::utils::detailed_log("KEY_DEBUG", "🔑 Enter key expanded input text");
+                        ctx.input_mut(|i| i.consume_key(egui::Modifiers::NONE, egui::Key::Enter));
+                    } else if !self.filtered_commands().is_empty() {
+                        // No expansion - execute selected command
+                        self.execute_selected_command();
+                        // TODO: Consider refactoring this to use centralized key handling
+                        // Clear the Enter key from input to prevent double processing
+                        crate::utils::detailed_log("KEY_DEBUG", "🔑 ALTERNATE_PATH: Consuming Enter key to prevent double processing");
+                        ctx.input_mut(|i| i.consume_key(egui::Modifiers::NONE, egui::Key::Enter));
+                    }
                 } else if response.changed() {
                     // TODO: Consider refactoring this to use centralized key handling
                     crate::utils::detailed_log("KEY_DEBUG", "🔑 ALTERNATE_PATH: TextEdit changed (text input events consumed by widget)");
