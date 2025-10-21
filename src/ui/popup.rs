@@ -4649,8 +4649,8 @@ impl eframe::App for AnchorSelector {
                                                 egui::Sense::click()
                                             );
 
-                                            // Update selection on hover
-                                            if response.hovered() {
+                                            // Update selection on hover (only if changed to avoid render loop)
+                                            if response.hovered() && self.selected_index() != i {
                                                 self.set_selected_index(i);
                                             }
 
@@ -4792,8 +4792,8 @@ impl eframe::App for AnchorSelector {
                                         egui::Sense::click()
                                     );
 
-                                    // Update selection on hover
-                                    if response.hovered() {
+                                    // Update selection on hover (only if changed to avoid render loop)
+                                    if response.hovered() && self.selected_index() != i {
                                         self.set_selected_index(i);
                                     }
 
