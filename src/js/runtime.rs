@@ -836,13 +836,13 @@ fn load_config_js_functions(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Err
                         {}
                         
                         // Create a context object with all builtins
-                        const createContext = function(arg, input, previous, grabbed, date, command_name, user_input, ghost_input) {{
+                        const createContext = function(arg, input, previous, grabbed, date, command_name, user_input, last_anchor_input) {{
                             return {{
                                 arg: arg || '',
                                 input: input || '',
                                 command_name: command_name || '',
                                 user_input: user_input || '',
-                                ghost_input: ghost_input || '',
+                                last_anchor_input: last_anchor_input || '',
                                 previous: previous || {{ name: '', folder: '', patch: '' }},
                                 grabbed: grabbed || {{ action: '', arg: '' }},
                                 date: date || {{ YYYY: '', MM: '', DD: '' }},
@@ -889,8 +889,8 @@ fn load_config_js_functions(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Err
                         let functionCount = 0;
                         for (const [name, func] of Object.entries(module.exports)) {{
                             if (typeof func === 'function') {{
-                                globalThis[name] = function(arg, input, previous, grabbed, date, command_name, user_input, ghost_input) {{
-                                    const ctx = createContext(arg, input, previous, grabbed, date, command_name, user_input, ghost_input);
+                                globalThis[name] = function(arg, input, previous, grabbed, date, command_name, user_input, last_anchor_input) {{
+                                    const ctx = createContext(arg, input, previous, grabbed, date, command_name, user_input, last_anchor_input);
                                     return func(ctx);
                                 }};
                                 functionCount++;

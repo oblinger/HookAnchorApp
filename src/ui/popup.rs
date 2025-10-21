@@ -233,7 +233,7 @@ impl AnchorSelector {
         // Calculate the required size for the new mode
         let required_size = match new_mode {
             WindowSizeMode::Normal => {
-                // Use same logic as display: only count commands if user has typed something (not just ghost text)
+                // Use same logic as display: only count commands if user has typed something (not just last anchor text)
                 let command_count = if self.loading_state == LoadingState::Loaded
                     && !self.filtered_commands().is_empty()
                     && !self.popup_state.raw_search_text().is_empty() {
@@ -726,11 +726,20 @@ impl AnchorSelector {
         state.last_executed_command = Some(input.command.clone());
         let _ = crate::core::data::set_state(&state);
 
-        // Save ghost input for commands that resolve to anchors
+        // Save last anchor for commands that resolve to anchors
         let all_commands = self.commands();
         let resolved_command = input.resolve_alias(all_commands);
-        detailed_log("GHOST_DEBUG", &format!("Input: '{}' (action: {}), Resolved to: '{}' (action: {})",
+        detailed_log("LAST_ANCHOR", &format!("Input: '{}' (action: {}), Resolved to: '{}' (action: {})",
             input.command, input.action, resolved_command.command, resolved_command.action));
+
+        // If the resolved command is an anchor, save it as the last anchor
+        if resolved_command.action == "anchor" {
+            detailed_log("LAST_ANCHOR", &format!("Saving last anchor: '{}'", resolved_command.command));
+            let mut state = crate::core::data::get_state();
+            state.anchor_name = Some(resolved_command.command.clone());
+            state.anchor_timestamp = Some(chrono::Local::now().timestamp());
+            let _ = crate::core::data::set_state(&state);
+        }
 
         // Handle "file" action - convert to "doc" action for execution
         let actual_input = if input.action == "file" {
@@ -3629,7 +3638,7 @@ impl eframe::App for AnchorSelector {
         }
 
         // Reload app state from file on every update after initial loading
-        // This ensures ghost input changes from the server are picked up
+        // This ensures last anchor changes from the server are picked up
         if self.loading_state == LoadingState::Loaded {
             let current_state = crate::core::data::get_state();
             self.popup_state.app_state = current_state;
@@ -4203,7 +4212,7 @@ impl eframe::App for AnchorSelector {
                     pressed
                 });
 
-                // Check for Space key to accept ghost input
+                // Check for Space key to accept last anchor
                 let space_pressed = ctx.input(|i| {
                     let pressed = i.key_pressed(egui::Key::Space);
                     if pressed {
@@ -4217,7 +4226,7 @@ impl eframe::App for AnchorSelector {
                     ctx.input_mut(|i| i.consume_key(egui::Modifiers::NONE, egui::Key::Space));
                 }
 
-                // Handle space key ghost input acceptance
+                // Handle space key last anchor acceptance
                 if space_pressed {
                     let current_input = if self.loading_state == LoadingState::Loaded {
                         &self.popup_state.search_text
@@ -4381,7 +4390,7 @@ impl eframe::App for AnchorSelector {
                 
                 // Command list - check for submenu and display accordingly
                 // No scroll area - window will size to accommodate max_rows
-                // Show commands if fully loaded and there are filtered commands (includes prefix menus from ghost input)
+                // Show commands if fully loaded and there are filtered commands (includes prefix menus from last anchor)
                 if self.loading_state == LoadingState::Loaded && !self.filtered_commands().is_empty() {
                     // Get the display commands using our new method
                     let (display_commands, is_submenu, menu_prefix, inside_count) = self.get_display_commands();

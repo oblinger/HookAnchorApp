@@ -50,8 +50,8 @@ pub struct PopupSettings {
     pub idle_timeout_seconds: Option<u64>,
     /// Seconds for grabber countdown (default: 5)
     pub countdown_seconds: Option<u8>,
-    /// Seconds to remember last executed anchor as ghost input (default: 180)
-    pub ghost_timeout_seconds: Option<u64>,
+    /// Seconds to remember last executed anchor (default: 180)
+    pub anchor_timeout_seconds: Option<u64>,
     /// Maximum window size for dialogs and popups in "widthxheight" format (default: "1700x1100")
     pub max_window_size: Option<String>,
     /// Default window size for popups in "widthxheight" format (default: "600x400")
@@ -207,7 +207,7 @@ impl Default for PopupSettings {
             scan_interval_seconds: Some(10),
             idle_timeout_seconds: Some(60),
             countdown_seconds: Some(5),
-            ghost_timeout_seconds: Some(180),
+            anchor_timeout_seconds: Some(180),
             max_window_size: Some("1700x1100".to_string()),
             default_window_size: Some("600x400".to_string()),
             max_log_file_size: Some(1_000_000), // 1MB default

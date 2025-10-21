@@ -93,14 +93,14 @@ impl PopupState {
         }
     }
 
-    /// Get the current search text (with ghost input fallback)
+    /// Get the current search text (with last anchor fallback)
     pub fn search_text(&self) -> String {
         // If search text is empty, try to use anchor name
         if self.search_text.is_empty() {
             if let (Some(anchor_name), Some(anchor_timestamp)) = (&self.app_state.anchor_name, self.app_state.anchor_timestamp) {
                 let current_time = chrono::Local::now().timestamp();
                 let seconds_since_anchor = current_time - anchor_timestamp;
-                let anchor_timeout = self.config.popup_settings.ghost_timeout_seconds.unwrap_or(180) as i64;
+                let anchor_timeout = self.config.popup_settings.anchor_timeout_seconds.unwrap_or(180) as i64;
 
                 if seconds_since_anchor < anchor_timeout {
                     // crate::utils::detailed_log("ANCHOR_INPUT", &format!("Using anchor name '{}' ({}s ago)", anchor_name, seconds_since_anchor));
@@ -114,7 +114,7 @@ impl PopupState {
         self.search_text.clone()
     }
 
-    /// Get the raw search text (without ghost input fallback)
+    /// Get the raw search text (without last anchor fallback)
     /// Used by UI components that need the actual input box text
     pub fn raw_search_text(&self) -> &str {
         &self.search_text
@@ -254,7 +254,7 @@ impl PopupState {
             let seconds_since_anchor = current_time - anchor_timestamp;
 
             // Get anchor timeout from config (default 180 seconds)
-            let anchor_timeout = self.config.popup_settings.ghost_timeout_seconds.unwrap_or(180) as i64;
+            let anchor_timeout = self.config.popup_settings.anchor_timeout_seconds.unwrap_or(180) as i64;
 
             if seconds_since_anchor < anchor_timeout {
                 // crate::utils::detailed_log("ANCHOR_DISPLAY", &format!("📱 Displaying anchor name: '{}'", anchor_name));

@@ -232,7 +232,24 @@ impl TemplateContext {
             variables.insert("_last_executed_action".to_string(), String::new());
             variables.insert("_last_executed_flags".to_string(), String::new());
         }
-        
+
+        // Last anchor from state
+        if let Some(anchor_name) = &state.anchor_name {
+            variables.insert("anchor_name".to_string(), anchor_name.clone());
+            if let Some(timestamp) = state.anchor_timestamp {
+                variables.insert("anchor_timestamp".to_string(), timestamp.to_string());
+            }
+            if let Some(folder) = &state.anchor_folder {
+                variables.insert("anchor_folder".to_string(), folder.clone());
+            } else {
+                variables.insert("anchor_folder".to_string(), String::new());
+            }
+        } else {
+            variables.insert("anchor_name".to_string(), String::new());
+            variables.insert("anchor_timestamp".to_string(), String::new());
+            variables.insert("anchor_folder".to_string(), String::new());
+        }
+
         // Selected command - stored as object fields for JavaScript access
         if let Some(cmd) = selected_command {
             // Extract and validate folder, or use empty string if extraction fails

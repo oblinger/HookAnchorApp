@@ -553,7 +553,7 @@ fn execute_js_function_action(
     let input = params.get("input").unwrap_or(&String::new()).clone();
     let command_name = params.get("command_name").unwrap_or(&String::new()).clone();
     let user_input = params.get("user_input").unwrap_or(&String::new()).clone();
-    let ghost_input = params.get("ghost_input").unwrap_or(&String::new()).clone();
+    let last_anchor_input = params.get("last_anchor_input").unwrap_or(&String::new()).clone();
 
     // Simply call the function that's already loaded in the JavaScript runtime
     // The function is registered as a global and expects the arguments directly
@@ -563,16 +563,16 @@ fn execute_js_function_action(
             throw new Error('JavaScript function "{func}" not found. Make sure it is exported from config.js');
         }}
 
-        // Call the function with simple arguments including ghost_input
+        // Call the function with simple arguments including last_anchor_input
         // The wrapper in js_runtime.rs will create the context object
-        {func}('{arg}', '{input}', null, null, null, '{command_name}', '{user_input}', '{ghost_input}');
+        {func}('{arg}', '{input}', null, null, null, '{command_name}', '{user_input}', '{last_anchor_input}');
     "#,
         func = function_name,
         arg = arg.replace("\\", "\\\\").replace("'", "\\'").replace("\n", "\\n").replace("\"", "\\\""),
         input = input.replace("\\", "\\\\").replace("'", "\\'").replace("\n", "\\n").replace("\"", "\\\""),
         command_name = command_name.replace("\\", "\\\\").replace("'", "\\'").replace("\n", "\\n").replace("\"", "\\\""),
         user_input = user_input.replace("\\", "\\\\").replace("'", "\\'").replace("\n", "\\n").replace("\"", "\\\""),
-        ghost_input = ghost_input.replace("\\", "\\\\").replace("'", "\\'").replace("\n", "\\n").replace("\"", "\\\"")
+        last_anchor_input = last_anchor_input.replace("\\", "\\\\").replace("'", "\\'").replace("\n", "\\n").replace("\"", "\\\"")
     );
     
     detailed_log("ACTION", &format!("Calling JavaScript: {}", js_code));

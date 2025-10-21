@@ -614,17 +614,17 @@ module.exports = {
     }
     log("=== END ANCHOR DEBUG ===");
 
-    const { command_name, arg, input, ghost_input } = ctx;
+    const { command_name, arg, input, last_anchor_input } = ctx;
 
-    // 1. Save ghost input (this is what makes anchor special)
-    // Priority: ghost_input (from template expansion) > input > command_name (fallback)
-    const ghost_text = (ghost_input && ghost_input.trim() !== '') ? ghost_input :
-                      (input && input.trim() !== '') ? input : command_name;
-    const source = (ghost_input && ghost_input.trim() !== '') ? 'ghost_input parameter' :
+    // 1. Save last anchor (this is what makes anchor special)
+    // Priority: last_anchor_input (from template expansion) > input > command_name (fallback)
+    const anchor_text = (last_anchor_input && last_anchor_input.trim() !== '') ? last_anchor_input :
+                        (input && input.trim() !== '') ? input : command_name;
+    const source = (last_anchor_input && last_anchor_input.trim() !== '') ? 'last_anchor_input parameter' :
                    (input && input.trim() !== '') ? 'input parameter' : 'command_name';
-    log(`ANCHOR: Saving ghost input: '${ghost_text}' (source: ${source})`);
-    if (ghost_text) {
-      save_anchor(ghost_text);
+    log(`ANCHOR: Saving last anchor: '${anchor_text}' (source: ${source})`);
+    if (anchor_text) {
+      save_anchor(anchor_text);
     }
 
     // If no argument, silently do nothing (virtual anchors like "Notion Root")
@@ -718,19 +718,19 @@ module.exports = {
   action_activate_tmux: function(ctx) {
     const { log, shell, shellWithExitCode, error, file_exists, dirname, shell_sync, save_anchor, getTmuxStartupCommand } = ctx.builtins;
     const fullPath = ctx.arg;
-    const { command_name, ghost_input, input } = ctx;
+    const { command_name, last_anchor_input, input } = ctx;
 
     try {
       log("🚀 TMUX_DEBUG: ==================== TMUX ACTIVATION START ====================");
       log(`🚀 TMUX_DEBUG: Received arg: '${fullPath}'`);
       log(`🚀 TMUX_DEBUG: Type of arg: ${typeof fullPath}`);
 
-      // Save ghost input first
-      const ghost_text = (ghost_input && ghost_input.trim() !== '') ? ghost_input :
-                        (input && input.trim() !== '') ? input : command_name;
-      log("TMUX_ACTIVATE", `Saving ghost input: '${ghost_text}'`);
-      if (ghost_text) {
-        save_anchor(ghost_text);
+      // Save last anchor first
+      const anchor_text = (last_anchor_input && last_anchor_input.trim() !== '') ? last_anchor_input :
+                          (input && input.trim() !== '') ? input : command_name;
+      log("TMUX_ACTIVATE", `Saving last anchor: '${anchor_text}'`);
+      if (anchor_text) {
+        save_anchor(anchor_text);
       }
 
       if (!fullPath) {

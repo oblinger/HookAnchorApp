@@ -25,7 +25,7 @@ popup_settings:
   scan_interval_seconds:  600          # How many seconds between automatic rescanning of the filesystem
   idle_timeout_seconds:   60           # Hide popup after this many seconds of inactivity
   countdown_seconds:      5            # Seconds for grabber countdown (default: 5)
-  ghost_timeout_seconds:  3600         # Seconds to remember last executed anchor as ghost input
+  anchor_timeout_seconds: 3600         # Seconds to remember last executed anchor
   run_in_background:      true         # Keep app running in background for instant popup
   global_hotkey:          "Opt-`"      # Global hotkey to show popup (requires accessibility permissions)
   popup_server_retries:   3            # Number of times to retry showing the popup before rebuilding
