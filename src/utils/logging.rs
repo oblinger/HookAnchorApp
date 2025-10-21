@@ -97,6 +97,7 @@ pub fn log(message: &str) {
         .append(true)
         .open(debug_path) {
         let _ = file.write_all(log_entry.as_bytes());
+        let _ = file.flush(); // FORCE flush to disk immediately
     }
 }
 

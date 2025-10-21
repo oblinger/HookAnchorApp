@@ -1848,16 +1848,16 @@ impl AnchorSelector {
     
     /// Backward compatibility: set selected index
     fn set_selected_index(&mut self, index: usize) {
-        // Directly set the command_index if valid
-        if index < self.popup_state.display_layout.commands.len() {
-            self.popup_state.selection.command_index = index;
-            // Update visual position based on layout
-            let (_rows, cols) = self.popup_state.get_layout_dimensions();
-            if cols > 0 {
-                let row = index / cols;
-                let col = index % cols;
-                self.popup_state.selection.visual_position = (row, col);
-            }
+        // Just set it directly - no validation needed since we're already checking against display_commands
+        // in the rendering loop
+        self.popup_state.selection.command_index = index;
+
+        // Update visual position based on layout
+        let (_rows, cols) = self.popup_state.get_layout_dimensions();
+        if cols > 0 {
+            let row = index / cols;
+            let col = index % cols;
+            self.popup_state.selection.visual_position = (row, col);
         }
     }
     
@@ -4641,12 +4641,15 @@ impl eframe::App for AnchorSelector {
                                             } else {
                                                 egui::RichText::new(&display_text).font(list_font_id.clone())
                                             };
-                                            
+
                                             let response = ui.selectable_label(is_selected, text);
 
                                             // Update selection on hover (only if changed to avoid render loop)
-                                            if response.hovered() && self.selected_index() != i {
-                                                self.set_selected_index(i);
+                                            if response.hovered() {
+                                                if self.selected_index() != i {
+                                                    self.set_selected_index(i);
+                                                    ui.ctx().request_repaint();
+                                                }
                                             }
 
                                             if response.clicked() {
@@ -4671,6 +4674,7 @@ impl eframe::App for AnchorSelector {
                         LayoutArrangement::SingleColumn => {
                             // Single-column display
                             crate::utils::log("RENDER: Using SingleColumn branch");
+                            panic!("🚨 SINGLE COLUMN PATH USED - THIS SHOULD NEVER HAPPEN!");
 
                         // Show submenu header if applicable
                         if is_submenu {
@@ -4761,8 +4765,13 @@ impl eframe::App for AnchorSelector {
                                     let response = ui.selectable_label(is_selected, text);
 
                                     // Update selection on hover (only if changed to avoid render loop)
-                                    if response.hovered() && self.selected_index() != i {
-                                        self.set_selected_index(i);
+                                    if response.hovered() {
+                                        crate::utils::log(&format!("HOVER: Item {} hovered, current_index={}", i, self.selected_index()));
+                                        if self.selected_index() != i {
+                                            crate::utils::log(&format!("HOVER: Updating selection from {} to {}", self.selected_index(), i));
+                                            self.set_selected_index(i);
+                                            ui.ctx().request_repaint();
+                                        }
                                     }
 
                                     if response.clicked() {

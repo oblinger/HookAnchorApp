@@ -1,5 +1,6 @@
 # ⚠️ CRITICAL REMINDER FOR CLAUDE ⚠️
-# AFTER EVERY `cargo build --release` YOU MUST RUN:
+# Do not run `cargo build --release` YOU MUST BOTH OF THESE INSTEAD:
+# cd ~/ob/proj/HookAnchor && just build
 # ~/ob/proj/HookAnchor/target/release/ha --restart
 # This restarts the server to use the updated binary!
 

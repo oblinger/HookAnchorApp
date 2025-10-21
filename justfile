@@ -31,6 +31,10 @@ build: build-supervisor
     @echo "🔨 Building Rust components with Just (tracked build)..."
     @date
     JUST=1 cargo build --release
+    @echo "📎 Creating symlinks..."
+    @ln -sf HookAnchorCommand target/release/ha
+    @ln -sf HookAnchorPopupServer target/release/popup_server
+    @ln -sf HookAnchorPopup target/release/popup
     @echo "✅ Build complete - binaries embed build metadata for verification"
 
 # Build for both architectures (universal binary)
