@@ -275,28 +275,23 @@ impl HistoryViewer {
         // Get tree sidebar settings from config
         let config = hookanchor::core::get_config();
         let config_tree_width = config.history_viewer.as_ref()
-            .and_then(|hv| hv.history_settings.as_ref())
-            .and_then(|hs| hs.tree_sidebar_width)
+            .and_then(|hv| hv.tree_sidebar_width)
             .unwrap_or(250.0);
         let config_tree_min_width = config.history_viewer.as_ref()
-            .and_then(|hv| hv.history_settings.as_ref())
-            .and_then(|hs| hs.tree_sidebar_min_width)
+            .and_then(|hv| hv.tree_sidebar_min_width)
             .unwrap_or(50.0);
 
         // Prefer saved sidebar width over config default (capped at 800px)
         let tree_width = viewer_state.sidebar_width.unwrap_or(config_tree_width).min(800.0);
 
         let tree_indent = config.history_viewer.as_ref()
-            .and_then(|hv| hv.history_settings.as_ref())
-            .and_then(|hs| hs.tree_indent_pixels)
+            .and_then(|hv| hv.tree_indent_pixels)
             .unwrap_or(10.0);
         let tree_guides = config.history_viewer.as_ref()
-            .and_then(|hv| hv.history_settings.as_ref())
-            .and_then(|hs| hs.tree_show_guides)
+            .and_then(|hv| hv.tree_show_guides)
             .unwrap_or(true);
         let peek_on_hover = config.history_viewer.as_ref()
-            .and_then(|hv| hv.history_settings.as_ref())
-            .and_then(|hs| hs.peek_on_hover)
+            .and_then(|hv| hv.peek_on_hover)
             .unwrap_or(true);
 
         // Resolve patch_filter alias to get the actual patch name
@@ -371,8 +366,7 @@ impl HistoryViewer {
         let limit = hookanchor::core::get_config()
             .history_viewer
             .as_ref()
-            .and_then(|hv| hv.history_settings.as_ref())
-            .and_then(|hs| hs.viewable_history_limit)
+            .and_then(|hv| hv.viewable_history_limit)
             .unwrap_or(50000);
 
         // Resolve patch filter (handles aliases and case-insensitive matching)

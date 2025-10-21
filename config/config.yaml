@@ -72,14 +72,13 @@ launcher_settings:
 # Settings specific to the history viewer GUI
 
 history_viewer:
-  # Display settings for tree navigation
-  history_settings:
-    viewable_history_limit: 50000    # Max history entries to load
-    tree_sidebar_width: 250          # Tree sidebar width in pixels
-    tree_sidebar_min_width: 50       # Minimum sidebar width in pixels
-    tree_indent_pixels: 10           # Indent per tree level in pixels
-    tree_show_guides: true           # Show tree indent guide lines
-    peek_on_hover: true              # Show history on hover
+  # Display settings
+  viewable_history_limit: 50000      # Max history entries to load
+  tree_sidebar_width: 250            # Tree sidebar width in pixels
+  tree_sidebar_min_width: 50         # Minimum sidebar width in pixels
+  tree_indent_pixels: 10             # Indent per tree level in pixels
+  tree_show_guides: true             # Show tree indent guide lines
+  peek_on_hover: true                # Show history on hover
 
   # Keyboard shortcuts
   key_bindings:
