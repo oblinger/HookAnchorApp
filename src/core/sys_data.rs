@@ -189,10 +189,26 @@ pub fn mark_commands_modified() {
 /// Initialize the system by loading config and cache into singleton
 /// Call this once at application startup
 pub fn initialize() -> Result<(), String> {
-    // Initialize config first
+    // ==========================================================================
+    // STEP 1: Verify build consistency
+    // ==========================================================================
+    // This ensures we're running code built with 'just build' and that
+    // the binary matches the source code in the filesystem
+    let verification_passed = crate::core::build_verification::verify_and_log();
+
+    if !verification_passed {
+        crate::utils::log_error("⚠️  Continuing despite build verification failure...");
+        crate::utils::log_error("   For best results, rebuild with: just build");
+    }
+
+    // ==========================================================================
+    // STEP 2: Initialize configuration
+    // ==========================================================================
     initialize_config()?;
 
-    // Load commands from cache only
+    // ==========================================================================
+    // STEP 3: Load commands from cache
+    // ==========================================================================
     let commands = match crate::core::commands::load_commands_from_cache() {
         Some(cached_commands) => cached_commands,
         None => Vec::new(), // No cache - start empty, will be populated by rescan
@@ -201,7 +217,9 @@ pub fn initialize() -> Result<(), String> {
     // Create initial patches hashmap from commands
     let patches = crate::core::commands::create_patches_hashmap(&commands);
 
-    // Store in singleton
+    // ==========================================================================
+    // STEP 4: Store in singleton
+    // ==========================================================================
     let sys = SYS_DATA.get_or_init(|| Mutex::new(None));
     let mut sys_data = sys.lock().unwrap();
     *sys_data = Some(SysData {

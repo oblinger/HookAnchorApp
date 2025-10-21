@@ -18,11 +18,11 @@
     "selected_action_types": [],
     "sidebar_width": 74.0
   },
-  "build_time": 1761016246,
+  "build_time": 1761017371,
   "last_scan_time": null,
   "last_scan_checksum": null,
   "last_executed_command": "AMA Subscriptions",
-  "server_pid": null,
+  "server_pid": 14176,
   "notion_last_scan": null,
   "anchor_name": "eoc",
   "anchor_timestamp": 1761001979,

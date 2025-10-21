@@ -1,15 +1,23 @@
 # HookAnchor Development Commands
 # Use `just <command>` to run development tasks
 
+# IMPORTANT: Build verification system
+# When you run 'just build', the build.rs script embeds build metadata that gets
+# verified at runtime to ensure you're running the correct code. This prevents
+# accidentally running stale binaries or binaries built outside the official build process.
+
 # Default recipe - show available commands
 default:
     @just --list
 
 # === BUILD COMMANDS ===
 
-# Build all release binaries
+# Build all release binaries (with build verification)
 build:
-    cargo build --release
+    @echo "🔨 Building with Just (tracked build)..."
+    @date
+    JUST=1 cargo build --release
+    @echo "✅ Build complete - binaries embed build metadata for verification"
 
 # Build for both architectures (universal binary)
 build-universal:
