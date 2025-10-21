@@ -1,31 +1,31 @@
 {
-  "anchor_folder": null,
-  "anchor_name": "Hook Anchor",
-  "anchor_timestamp": 1761063944,
-  "build_time": 1761069090,
+  "window_position": [
+    980.0,
+    282.0
+  ],
   "history_viewer_state": {
-    "min_edit_size": 500,
-    "name_filter": "",
-    "patch_filter": "",
     "position": [
       -2538.0,
       25.0
     ],
-    "selected_action_types": [],
-    "sidebar_width": 187.0,
     "window_size": [
       1000.0,
       1415.0
-    ]
+    ],
+    "patch_filter": "",
+    "name_filter": "",
+    "min_edit_size": 500,
+    "selected_action_types": [],
+    "sidebar_width": 187.0
   },
-  "last_executed_command": "HA Config",
-  "last_scan_checksum": null,
+  "build_time": 1761069090,
   "last_scan_time": null,
+  "last_scan_checksum": null,
+  "last_executed_command": "HA Config",
+  "server_pid": 34315,
   "notion_last_scan": null,
-  "server_pid": 22720,
-  "show_files": true,
-  "window_position": [
-    980.0,
-    282.0
-  ]
+  "anchor_name": "Hook Anchor",
+  "anchor_timestamp": 1761063944,
+  "anchor_folder": null,
+  "show_files": true
 }

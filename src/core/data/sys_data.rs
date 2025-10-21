@@ -1,43 +1,66 @@
-//! System data management and operations
+//! Data Layer - Complete Public Interface
 //!
-//! This module manages the global singleton for application state (config, commands, patches).
-//! All command persistence, patch resolution, and history tracking handled through this interface.
+//! This module is the internal implementation of the data layer. External code should
+//! import from `crate::core::data` which re-exports the public interface.
 //!
-//! # Public API (Proposed Merged Interface with commandstore)
+//! # COMPLETE PUBLIC INTERFACE (Exported via crate::core::data)
 //!
-//! ## Initialization
-//! - `initialize()` → Load config, commands, patches into singleton (call once at startup)
+//! ## Types (from sys_data.rs)
+//! - `SysData` - Bundle containing config, commands, and patches
 //!
-//! ## Read Operations
-//! - `get_config()` → Get configuration (cached singleton)
-//! - `get_commands()` → Get copy of commands from singleton
-//! - `get_patches()` → Get copy of patches from singleton
-//! - `get_sys_data()` → Get full SysData bundle (legacy, prefer specific getters)
+//! ## Constants (from sys_data.rs)
+//! - `DEFAULT_LOG_PATH: &str` - Default path for log file
+//! - `DEFAULT_MAX_LOG_SIZE: u64` - Default maximum log file size
 //!
-//! ## Write Operations (all auto-flush: inference + save to disk)
-//! - `set_commands(Vec<Command>)` → Replace all commands, run inference, save
-//! - `add_command(Command)` → Add single command, record in history, save
-//! - `delete_command(&str)` → Delete command by name, save
+//! ## Initialization (from sys_data.rs)
+//! - `initialize() -> Result<(), String>` - Load config, commands, patches into singleton (call once at startup)
 //!
-//! ## Typical Usage Patterns
+//! ## Read Operations (from sys_data.rs)
+//! - `get_config() -> Config` - Get configuration (cached singleton)
+//! - `get_commands() -> Vec<Command>` - Get copy of commands from singleton
+//! - `get_patches() -> HashMap<String, Patch>` - Get copy of patches from singleton
+//! - `get_sys_data() -> (SysData, bool)` - Get full SysData bundle + was_reloaded flag
+//!
+//! ## Write Operations (from sys_data.rs) - All auto-flush: inference + save to disk + history
+//! - `set_commands(Vec<Command>) -> Result<(), Box<dyn Error>>` - Replace all commands, run inference, save, record changes
+//! - `add_command(Command) -> Result<(), Box<dyn Error>>` - Add single command, record in history, save
+//! - `delete_command(&str) -> Result<(), Box<dyn Error>>` - Delete command by name, record in history, save
+//!
+//! ## Internal-Only Exports (pub(crate) via data/mod.rs)
+//! - `CONFIG: OnceLock<Config>` - Global config singleton (for same-crate access only)
+//!
+//! ## Private Implementation (NOT exported outside data module)
+//! ### From storage.rs:
+//! - `load_commands_raw()` - Load commands from disk (private)
+//! - `save_commands_to_file()` - Save commands to disk (private)
+//! - `save_commands_to_cache()` - Save commands to JSON cache (private)
+//! - `load_commands_from_cache()` - Load from JSON cache (private)
+//! - `backup_commands_file()` - Create timestamped backup (private)
+//! - `deduplicate_commands()` - Remove duplicate commands (private)
+//! - `get_commands_file_path()` - Get path to commands.txt (private)
+//!
+//! ## Usage Patterns
 //! ```rust
+//! use crate::core::data;
+//!
 //! // Startup
-//! sys_data::initialize()?;
+//! data::initialize()?;
 //!
 //! // Batch modification (scanner, rescan, etc)
-//! let mut commands = sys_data::get_commands();
+//! let mut commands = data::get_commands();
 //! // ... modify many commands ...
-//! sys_data::set_commands(commands)?; // auto-flush: inference + save
+//! data::set_commands(commands)?; // auto-flush: inference + save + history
 //!
 //! // Single command from UI
-//! sys_data::add_command(new_cmd)?; // auto-flush + history
-//! sys_data::delete_command("Foo")?; // auto-flush
+//! data::add_command(new_cmd)?; // auto-flush + history
+//! data::delete_command("Foo")?; // auto-flush + history
 //! ```
 //!
-//! ## Migration Notes
-//! - Replaces `commandstore` module entirely
-//! - Consolidates all command state management in one place
-//! - History tracking integrated with add/delete operations
+//! ## Architecture Notes
+//! - This is the ONLY way to access command data - no direct file I/O allowed
+//! - All modifications go through set_commands() which tracks history
+//! - Storage functions are private to prevent bypassing the singleton
+//! - Replaces old `commandstore` module and scattered file I/O
 
 use std::collections::HashMap;
 use std::sync::{Mutex, OnceLock};
