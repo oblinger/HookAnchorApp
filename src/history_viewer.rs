@@ -387,7 +387,7 @@ impl HistoryViewer {
         // Note: We load all entries regardless of the patch filter because
         // anchor filtering is more complex than a simple SQL query can handle
         let query = format!(
-            "SELECT id, timestamp, change_type, patch, command, action, arg, flags, file_path, changed_fields, old_values, new_values, edit_size
+            "SELECT id, timestamp, change_type, patch, command, action, arg, flags, file_path, edit_size
              FROM command_history
              ORDER BY timestamp DESC
              LIMIT {}",
@@ -407,10 +407,7 @@ impl HistoryViewer {
                         arg: row.get(6)?,
                         flags: row.get(7)?,
                         file_path: row.get(8)?,
-                        changed_fields: row.get(9)?,
-                        old_values: row.get(10)?,
-                        new_values: row.get(11)?,
-                        edit_size: row.get(12)?,
+                        edit_size: row.get(9)?,
                     })
                 });
 

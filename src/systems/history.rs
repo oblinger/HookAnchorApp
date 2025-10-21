@@ -40,9 +40,6 @@ pub fn initialize_history_db() -> SqlResult<Connection> {
             flags TEXT,
             file_path TEXT,
 
-            changed_fields TEXT,
-            old_values TEXT,
-            new_values TEXT,
             edit_size INTEGER
         )",
         [],
@@ -128,8 +125,8 @@ pub fn record_command_created(conn: &Connection, cmd: &Command, timestamp: i64) 
 
     conn.execute(
         "INSERT INTO command_history
-         (timestamp, change_type, patch, command, action, arg, flags, file_path, changed_fields, old_values, new_values, edit_size)
-         VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, NULL, NULL, NULL, ?9)",
+         (timestamp, change_type, patch, command, action, arg, flags, file_path, edit_size)
+         VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9)",
         params![
             actual_timestamp,
             "created",
@@ -228,47 +225,10 @@ pub fn record_command_modified(
         (None, None) => None, // Not a file-based command
     };
 
-    // Determine what changed
-    let mut changed_fields = Vec::new();
-    let mut old_values = serde_json::Map::new();
-    let mut new_values = serde_json::Map::new();
-
-    if old_cmd.patch != new_cmd.patch {
-        changed_fields.push("patch");
-        old_values.insert("patch".to_string(), serde_json::Value::String(old_cmd.patch.clone()));
-        new_values.insert("patch".to_string(), serde_json::Value::String(new_cmd.patch.clone()));
-    }
-    if old_cmd.arg != new_cmd.arg {
-        changed_fields.push("arg");
-        old_values.insert("arg".to_string(), serde_json::Value::String(old_cmd.arg.clone()));
-        new_values.insert("arg".to_string(), serde_json::Value::String(new_cmd.arg.clone()));
-    }
-    if old_cmd.flags != new_cmd.flags {
-        changed_fields.push("flags");
-        old_values.insert("flags".to_string(), serde_json::Value::String(old_cmd.flags.clone()));
-        new_values.insert("flags".to_string(), serde_json::Value::String(new_cmd.flags.clone()));
-    }
-    if old_cmd.action != new_cmd.action {
-        changed_fields.push("action");
-        old_values.insert("action".to_string(), serde_json::Value::String(old_cmd.action.clone()));
-        new_values.insert("action".to_string(), serde_json::Value::String(new_cmd.action.clone()));
-    }
-    if old_cmd.file_size != new_cmd.file_size {
-        changed_fields.push("file_size");
-        old_values.insert("file_size".to_string(),
-            serde_json::Value::String(format!("{:?}", old_cmd.file_size)));
-        new_values.insert("file_size".to_string(),
-            serde_json::Value::String(format!("{:?}", new_cmd.file_size)));
-    }
-
-    let changed_fields_json = serde_json::to_string(&changed_fields).unwrap();
-    let old_values_json = serde_json::to_string(&old_values).unwrap();
-    let new_values_json = serde_json::to_string(&new_values).unwrap();
-
     conn.execute(
         "INSERT INTO command_history
-         (timestamp, change_type, patch, command, action, arg, flags, file_path, changed_fields, old_values, new_values, edit_size)
-         VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12)",
+         (timestamp, change_type, patch, command, action, arg, flags, file_path, edit_size)
+         VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9)",
         params![
             actual_timestamp,
             "modified",
@@ -278,9 +238,6 @@ pub fn record_command_modified(
             &new_cmd.arg,
             &new_cmd.flags,
             file_path,
-            changed_fields_json,
-            old_values_json,
-            new_values_json,
             edit_size,
         ],
     )?;
@@ -301,8 +258,5 @@ pub struct HistoryEntry {
     pub arg: Option<String>,
     pub flags: Option<String>,
     pub file_path: Option<String>,
-    pub changed_fields: Option<String>,
-    pub old_values: Option<String>,
-    pub new_values: Option<String>,
     pub edit_size: Option<i64>,
 }
