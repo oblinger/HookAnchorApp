@@ -913,23 +913,11 @@ impl AnchorSelector {
 
     /// Execute a JavaScript action by function name (for --action flag)
     fn execute_js_action(&mut self, function_name: &str) {
-        crate::utils::log(&format!("Executing JavaScript action: {}", function_name));
-        // For now, we'll handle specific known JS actions
-        match function_name {
-            "clear_log" => {
-                // Clear the anchor log
-                if let Err(e) = std::fs::write(
-                    std::path::PathBuf::from(std::env::var("HOME").unwrap_or_else(|_| ".".to_string()))
-                        .join(".config/hookanchor/anchor.log"),
-                    ""
-                ) {
-                    crate::utils::log_error(&format!("Failed to clear log: {}", e));
-                }
-            },
-            _ => {
-                crate::utils::log_error(&format!("Unknown JavaScript function: {}", function_name));
-            }
-        }
+        crate::utils::log_error(&format!(
+            "DEPRECATED: execute_js_action called with '{}' - this should not happen! \
+            JavaScript functions should be executed via the launcher system, not this legacy path.",
+            function_name
+        ));
     }
 
     fn edit_active_command_impl(&mut self) {

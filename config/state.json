@@ -2,7 +2,7 @@
   "anchor_folder": null,
   "anchor_name": "eoc",
   "anchor_timestamp": 1761001979,
-  "build_time": 1761019817,
+  "build_time": 1761020929,
   "history_viewer_state": {
     "min_edit_size": 500,
     "name_filter": "",
@@ -18,11 +18,11 @@
       1415.0
     ]
   },
-  "last_executed_command": "AMA Subscriptions",
+  "last_executed_command": "HA Config",
   "last_scan_checksum": null,
   "last_scan_time": null,
   "notion_last_scan": null,
-  "server_pid": 14176,
+  "server_pid": 17178,
   "show_files": true,
   "window_position": [
     843.0,
