@@ -1769,20 +1769,22 @@ fn run_delete_history(args: &[String]) {
 fn print_help_vars() {
     print("TEMPLATE VARIABLES");
     print("");
-    print("Object fields (name, path, arg, patch, action, flags, folder*):");
+    print("Command objects with fields (.name .path .arg .patch .folder* .action .flags):");
     print("  selected        Currently selected command in popup");
     print("  last_executed   Last command executed (any type)");
+    print("");
+    print("Last anchor object with fields (.name .folder* .timestamp):");
     print("  last_anchor     Last anchor command executed");
     print("");
-    print("Date/time fields (year, year2, month, month_short, month_name, month_abbr,");
-    print("                  day, day_short, weekday, weekday_abbr, hour, hour12,");
-    print("                  minute, second, ampm, timestamp, iso):");
+    print("Date object with fields (.year .year2 .month .month_short .month_name .month_abbr");
+    print("                         .day .day_short .weekday .weekday_abbr .hour .hour12");
+    print("                         .minute .second .ampm .timestamp .iso):");
     print("  date            Current date/time components");
     print("");
-    print("Grab fields (action, arg, app, title, text, suffix):");
+    print("Grab object with fields (.action .arg .app .title .text .suffix):");
     print("  grabbed         Context from active application");
     print("");
-    print("Environment fields (home, user, hostname, os, config_dir):");
+    print("Environment object with fields (.home .user .hostname .os .config_dir):");
     print("  env             System environment information");
     print("");
     print("Simple variables:");
@@ -1790,7 +1792,7 @@ fn print_help_vars() {
     print("  raw_input       Raw input without anchor fallback");
     print("  arg             Action argument for template expansion");
     print("");
-    print("* folder field throws error if empty - use for commands with file context");
+    print("* .folder throws error if empty - use only for commands with file context");
     print("");
     print("Examples:");
     print("  {{selected.name}}           Command name of selected item");
