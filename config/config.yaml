@@ -48,6 +48,14 @@ popup_settings:
   rename_prefix:          true         # Update command prefixes when prefix command is renamed
   preferred_anchor:       "markdown"   # Preferred action type when multiple anchors exist for same patch
 
+  # History viewer display settings
+  history_settings:
+    viewable_history_limit: 50000      # Max history entries to load
+    tree_sidebar_width: 250            # Tree sidebar width in pixels
+    tree_sidebar_min_width: 50         # Minimum sidebar width in pixels
+    tree_indent_pixels: 10             # Indent per tree level in pixels
+    tree_show_guides: true             # Show tree indent guide lines
+    peek_on_hover: true                # Show history on hover
 
   # Cloud document scanning configuration (Phase 1: Logging only)
   cloud_scan_roots:
@@ -73,15 +81,8 @@ launcher_settings:
 # Settings specific to the history viewer GUI
 
 history_viewer:
-  viewable_history_limit: 50000      # Max history entries to load
-  tree_sidebar_width: 250            # Tree sidebar width in pixels
-  tree_sidebar_min_width: 50         # Minimum sidebar width in pixels
-  tree_indent_pixels: 10             # Indent per tree level in pixels
-  tree_show_guides: true             # Show tree indent guide lines
-  peek_on_hover: true                # Show history on hover
-
   key_bindings:
-    edit_selection: ";"  # Key to edit the selected command in history viewer
+    edit_selection: ";"              # Key to edit the selected command in history viewer
 
 
 # =================================================================
