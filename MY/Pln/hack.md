@@ -1,11 +1,13 @@
 
+- [ ] [[Hook Anchor Release]] 
+- [ ] Delete Log action does nothing
+- [ ] clean up history keys
+- [ ] Remove:  [[KMR History]] 
+- [ ] click on folder will go into folder
+- [ ] Add support for "close popup" into templates.  Move CMD+shift+2 to be a template
 
 - [ ] x
-- [ ] "clear_log" action
 - [ ] Anchor is a Flag; Anchor suffix used to indicate location of patch
-- [ ] log file trimming
-- [ ] Remove:  [[KMR History]] 
-- [ ] Personal use license2
 - [ ] The ha bin should be added to the path in the source script file
 - [ ] Help doc by sections  [[HELP]] 
 - [ ] Add a 'just cmd' button
@@ -17,8 +19,10 @@
 - [ ] "[" should go back in history
 - [ ] ANCHOR EDITOR - Extend the command editor to be the anchor editor whenever the action type is anchor
 - [ ] yore support
-- [ ] Add support for "close popup" into templates.  Move CMD+shift+2 to be a template
-- [ ] Implement activate tmux in JavasScrpt just as it works in Rust
+- [x] "clear_log" action  
+- [x] detailed messages bug
+- [x] single column
+- [x] Implement activate tmux in JavasScrpt just as it works in Rust
 
 
 ## Logs

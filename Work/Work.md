@@ -45,17 +45,11 @@
  SOON [[mgt]] [[CVP]] l
 [[Journaling]] 
 
+
+
 # __
 
 
 
-Claim: AI will likely operate with a set of overlapping and conflicting agendas.
-- Maximize ROI
-- Maintain healthy cash flow and cash-balance
-- Minimize risks to the business
-Claim: AI will need to balance self-serving and corp-serving
-
-Beta Add some text Add some text here 
-
-
-
+> I'm not really very happy with this. We worked hard to have a unified action, execution pathway, but it seems like we still don't have a unified action pathway. That is when
+  we execute a command action it's not the same as when we execute a keyboard, shortcut action.

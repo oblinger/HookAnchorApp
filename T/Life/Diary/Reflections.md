@@ -1,5 +1,14 @@
 
 
+## 2025-10-20  More Focus
+I am letting myself work today on hook anchor, I am close to a resting spot.  after this, I will only allow fixes that are getting in the way of work, or that take < 15 min.  Lets see how that works.
+
+- Need to wrap brain around ideas for AI-safety.
+- Have a concrete idea if I am "going for it"
+- Have concrete plans for rest of job search
+- Make concrete progress this week on this
+
+
 ## 2025-10-13  Focus & Deliverables
 - Letting myself off the hook w/ a diffuse set of targets, 
 - and a lazy feeling that I won't achieve them anyway
@@ -12,7 +21,17 @@ AIsafety: Sketch of middle-path AGI-path, Read/Think/Sketch -- systems approach 
 Seek: Apply 3; follow recipe twice
 Lrn: Train make/miss model
 
+~~
+The result is that I did significant work on a couple of items, but am still spending too much time on HookAnchor.
 
+- [x] [[MPR]]: Sketch of middle-path AGI-path
+- [x] [[AIS]]: R/T/Sketch systems approach
+- [ ] [[Seek]]: Apply 3; follow recipe twice
+- [x] [[Self]]: Ozempic, Basement, 
+- [ ] Cloud Roadmap
+- [x] Reach out: Dean, QL, 
+
+- [ ] [[Make]]: Train make/miss model
 
 
 ## 2025-10-07  Made big progress when focused on Make/Miss; need to focus on AI Safety

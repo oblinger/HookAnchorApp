@@ -2,6 +2,20 @@
 
 ## 2025-10-15  [[2025 Middle Path Risk]]
 
+## 2025-09-00 quick notes
+
+
+Claim: AI will likely operate with a set of overlapping and conflicting agendas.
+- Maximize ROI
+- Maintain healthy cash flow and cash-balance
+- Minimize risks to the business
+Claim: AI will need to balance self-serving and corp-serving
+
+Beta Add some text Add some text here 
+
+
+
+
 ## H3
 
 ### 2025-05-15 Long ASI note
