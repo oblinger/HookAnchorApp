@@ -74,16 +74,16 @@ pub fn clear_log_file() {
 }
 
 /// Simple logging function that checks if logging is enabled
-/// 
+///
 /// This is the primary logging function that should be used throughout the codebase.
 /// It checks if a debug log path is configured before writing.
 pub fn log(message: &str) {
     // Use constant from sys_data for consistency
     let debug_path = super::utilities::expand_tilde(crate::core::sys_data::DEFAULT_LOG_PATH);
-    
+
     let timestamp = Local::now().format("%Y-%m-%d %H:%M:%S");
     let log_entry = format!("{} {}\n", timestamp, message);
-    
+
     if let Ok(mut file) = OpenOptions::new()
         .create(true)
         .append(true)
