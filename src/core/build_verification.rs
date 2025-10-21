@@ -63,12 +63,18 @@ pub fn verify_build() -> VerificationResult {
 
     // Check 1: Was binary built with Just?
     if !metadata.built_with_just {
-        warnings.push(
-            "⚠️  Binary was built with 'cargo build' instead of 'just build'".to_string()
-        );
-        warnings.push(
-            "   This bypasses build verification. Use 'just build' for tracked builds.".to_string()
-        );
+        warnings.push("".to_string());
+        warnings.push("⚠️  ⚠️  ⚠️  CRITICAL WARNING ⚠️  ⚠️  ⚠️".to_string());
+        warnings.push("".to_string());
+        warnings.push("   Binary was built with 'cargo build' instead of 'just build'!".to_string());
+        warnings.push("".to_string());
+        warnings.push("   ❌ DO NOT USE: cargo build --release".to_string());
+        warnings.push("   ✅ ALWAYS USE:  just build".to_string());
+        warnings.push("".to_string());
+        warnings.push("   Rebuild now with: cd ~/ob/proj/HookAnchor && just build".to_string());
+        warnings.push("".to_string());
+        warnings.push("⚠️  ⚠️  ⚠️  ⚠️  ⚠️  ⚠️  ⚠️  ⚠️  ⚠️  ⚠️  ⚠️".to_string());
+        warnings.push("".to_string());
     }
 
     // Check 2: Validate build timestamp

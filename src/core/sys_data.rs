@@ -197,8 +197,16 @@ pub fn initialize() -> Result<(), String> {
     let verification_passed = crate::core::build_verification::verify_and_log();
 
     if !verification_passed {
-        crate::utils::log_error("⚠️  Continuing despite build verification failure...");
-        crate::utils::log_error("   For best results, rebuild with: just build");
+        crate::utils::log_error("");
+        crate::utils::log_error("❌ ❌ ❌ BUILD VERIFICATION FAILED ❌ ❌ ❌");
+        crate::utils::log_error("");
+        crate::utils::log_error("   The binary is corrupted or improperly built!");
+        crate::utils::log_error("");
+        crate::utils::log_error("   STOP! Rebuild immediately with:");
+        crate::utils::log_error("   cd ~/ob/proj/HookAnchor && just build");
+        crate::utils::log_error("");
+        crate::utils::log_error("❌ ❌ ❌ ❌ ❌ ❌ ❌ ❌ ❌ ❌ ❌ ❌ ❌ ❌ ❌");
+        crate::utils::log_error("");
     }
 
     // ==========================================================================
