@@ -10,7 +10,6 @@
 // Internal module declarations (accessible within crate)
 pub(crate) mod application_state;
 pub(crate) mod data;               // Data layer - commands, patches, config, state storage
-pub(crate) mod build_verification;  // Build consistency verification
 pub(crate) mod template_creation;  // Used by UI and execute modules
 pub(crate) mod key_processing;     // Used by UI module
 pub(crate) mod commands;           // Many internal functions used across crates

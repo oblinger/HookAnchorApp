@@ -168,11 +168,71 @@ pub fn log_build_info() {
     crate::utils::log("═══════════════════════════════════════════════════════");
 }
 
+/// Show error dialog and terminate the application
+///
+/// This is called when build verification fails and terminate_on_failure is true
+fn show_error_dialog_and_exit(errors: &[String], warnings: &[String]) -> ! {
+    // Build the error message
+    let mut message = String::from("❌ BUILD VERIFICATION FAILED ❌\n\n");
+    message.push_str("The binary was not built correctly.\n\n");
+
+    if !errors.is_empty() {
+        message.push_str("ERRORS:\n");
+        for error in errors {
+            message.push_str("  ");
+            message.push_str(error);
+            message.push_str("\n");
+        }
+        message.push_str("\n");
+    }
+
+    if !warnings.is_empty() {
+        message.push_str("WARNINGS:\n");
+        for warning in warnings {
+            message.push_str("  ");
+            message.push_str(warning);
+            message.push_str("\n");
+        }
+        message.push_str("\n");
+    }
+
+    message.push_str("SOLUTION:\n");
+    message.push_str("  Rebuild with: cd ~/ob/proj/HookAnchor && just build\n");
+
+    // Show native dialog
+    #[cfg(target_os = "macos")]
+    {
+        use std::process::Command;
+        let _ = Command::new("osascript")
+            .arg("-e")
+            .arg(format!(
+                r#"display dialog "{}" buttons {{"OK"}} default button "OK" with icon stop with title "Build Verification Failed""#,
+                message.replace('\n', "\\n").replace('"', "\\\"")
+            ))
+            .output();
+    }
+
+    // Always log before exiting
+    crate::utils::log_error(&message);
+
+    // Terminate
+    std::process::exit(1);
+}
+
 /// Verify build and log results
 ///
 /// This is the main entry point called from sys_data::initialize()
-/// Returns true if verification passed, false otherwise
-pub fn verify_and_log() -> bool {
+///
+/// # Arguments
+/// * `terminate_on_failure` - If true, show error dialog and terminate on verification failure
+///
+/// # Returns
+/// * `true` if verification passed
+/// * `false` if verification failed (only returned when terminate_on_failure is false)
+///
+/// # Panics
+/// Calls std::process::exit(1) if verification fails and terminate_on_failure is true
+pub fn verify_and_log(terminate_on_failure: bool) -> bool {
     // Always log build information
     log_build_info();
 
@@ -205,6 +265,11 @@ pub fn verify_and_log() -> bool {
             result.errors.len()
         ));
         crate::utils::log_error("   Running binary may be corrupted or improperly built");
+
+        // If terminate_on_failure is true, show dialog and exit
+        if terminate_on_failure {
+            show_error_dialog_and_exit(&result.errors, &result.warnings);
+        }
     }
 
     crate::utils::log(""); // Blank line for separation

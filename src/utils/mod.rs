@@ -13,6 +13,7 @@
 //! - utilities: General utility functions
 //! - subprocess: Process spawning and monitoring
 //! - error: Error queue system for user-facing errors
+//! - build_verification: Build verification and metadata
 
 // Internal module declarations (accessible within crate for internal use)
 pub(crate) mod logging;
@@ -20,6 +21,7 @@ pub(crate) mod files;
 pub(crate) mod utilities;
 pub(crate) mod subprocess;
 pub(crate) mod error;
+pub(crate) mod build_verification;
 
 // ============================================================================
 // PUBLIC API - All external access goes through these re-exports
@@ -54,6 +56,11 @@ pub use subprocess::{
 
 // Error queue system
 pub use error::{
-    init_error_queue, queue_user_error, take_next_error, 
+    init_error_queue, queue_user_error, take_next_error,
     has_errors, clear_errors
+};
+
+// Build verification
+pub use build_verification::{
+    verify_and_log as verify_build
 };
