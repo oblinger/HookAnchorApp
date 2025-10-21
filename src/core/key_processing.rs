@@ -1192,8 +1192,15 @@ pub fn create_default_key_registry(config: &super::Config) -> KeyRegistry {
                             registered_count += 1;
                             crate::utils::log(&format!("✅ Registered popup action '{}' to key '{}'", popup_action, key_str));
                         }
+                    } else {
+                        // All other action types are JavaScript actions
+                        // They follow the pattern: action_type "foo" calls "action_foo()"
+                        let function_name = format!("action_{}", action.action_type());
+                        let handler = Box::new(JavaScriptHandler::new(function_name.clone()));
+                        registry.register_keystroke(keystroke.clone(), handler);
+                        registered_count += 1;
+                        crate::utils::log(&format!("✅ Registered JavaScript action '{}' (function: {}) to key '{}'", action_name, function_name, key_str));
                     }
-                        // Add handlers for other action types as needed
                     }
                     Err(e) => {
                         crate::utils::detailed_log("KEY", &format!("❌ KEY_REGISTRY ERROR: Failed to parse key '{}' for action '{}': {}", 
