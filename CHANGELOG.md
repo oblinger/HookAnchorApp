@@ -5,6 +5,37 @@ All notable changes to HookAnchor will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.16.0] - 2025-10-21
+
+### Added
+- Added anchor flag ('a') support to mark commands as anchors independent of action type
+- Added `is_anchor()` and `set_anchor()` accessor methods to Command struct
+- Added anchor checkbox in command editor for toggling anchor status
+- Added `--help vars`, `--help config`, and `--help fns` subcommands for detailed help
+
+### Changed
+- **BREAKING**: Commands now deduplicated by name only (not name+action+arg)
+  - Only one command per name allowed in system
+  - Keeps version with best metadata (patches > flags > newer)
+- **BREAKING**: Deduplication now happens in `flush()` before saving
+  - Both commands.txt and cache files always deduplicated
+  - In-memory command list also deduplicated
+- Changed all anchor action type checks to use `is_anchor()` method
+  - Supports both legacy `action="anchor"` and new 'a' flag
+  - Enables gradual migration from action type to flag-based anchors
+- Updated all config templates to use `action: markdown` with `flags: a` instead of `action: anchor`
+- Converted 885 anchor commands in commands.txt:
+  - 682 → `markdown a` (.md files)
+  - 196 → `notion a` (Notion URLs)
+  - 7 → no action, just 'a' flag (empty args)
+- Improved help system formatting to match actual YAML structure
+- Made help subsections discoverable in main help message
+
+### Fixed
+- Fixed command editor anchor checkbox to check 'a' flag specifically (not action type)
+- Fixed anchor flag being displayed in flags text field (now hidden and managed separately)
+- Removed "Priority" checkbox from command editor (unused feature)
+
 ## [0.15.0] - 2025-10-20
 
 ### Added

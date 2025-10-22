@@ -90,7 +90,8 @@ impl CommandEditor {
             self.argument = cmd.arg.clone();
             self.patch = cmd.patch.clone();
 
-            // Extract anchor flag and remove it from flags string
+            // Extract anchor state - use is_anchor() which checks both action type and 'a' flag
+            // Then remove 'a' flag from flags string so it doesn't show in the text field
             self.is_anchor = cmd.is_anchor();
             let mut temp_cmd = cmd.clone();
             temp_cmd.remove_flag('a');
@@ -129,7 +130,8 @@ impl CommandEditor {
         self.argument = template_command.arg.clone();
         self.patch = template_command.patch.clone();
 
-        // Extract anchor flag and remove it from flags string
+        // Extract anchor state - use is_anchor() which checks both action type and 'a' flag
+        // Then remove 'a' flag from flags string so it doesn't show in the text field
         self.is_anchor = template_command.is_anchor();
         let mut temp_cmd = template_command.clone();
         temp_cmd.remove_flag('a');
@@ -146,14 +148,15 @@ impl CommandEditor {
     pub fn open_with_command(&mut self, command: Command) {
         self.visible = true;
         self.focus_requested = true;
-        
+
         // Fill in the fields from the provided command
         self.command = command.command.clone();
         self.action = command.action.clone();
         self.argument = command.arg.clone();
         self.patch = command.patch.clone();
 
-        // Extract anchor flag and remove it from flags string
+        // Extract anchor state - use is_anchor() which checks both action type and 'a' flag
+        // Then remove 'a' flag from flags string so it doesn't show in the text field
         self.is_anchor = command.is_anchor();
         let mut temp_cmd = command.clone();
         temp_cmd.remove_flag('a');
@@ -298,28 +301,10 @@ impl CommandEditor {
                                 enter_pressed = true;
                             }
                             ui.end_row();
-                            
-                            // Priority row
-                            ui.label("Priority:");
-                            ui.horizontal(|ui| {
-                                ui.checkbox(&mut self.priority, "");
-                                ui.add_space(10.0);
 
-                                // Anchor toggle button with compact font
-                                let anchor_text = if self.is_anchor {
-                                    egui::RichText::new("ANCHOR ✔")
-                                        .size(10.0)
-                                        .strong()  // Bold when checked
-                                        .color(egui::Color32::from_rgb(0, 150, 0))  // Green
-                                } else {
-                                    egui::RichText::new("anchor   ")  // Extra spaces to match size
-                                        .size(10.0)
-                                };
-                                let anchor_button = egui::Button::new(anchor_text);
-                                if ui.add(anchor_button).clicked() {
-                                    self.is_anchor = !self.is_anchor;
-                                }
-                            });
+                            // Anchor row
+                            ui.label("Anchor:");
+                            ui.checkbox(&mut self.is_anchor, "");
                             ui.end_row();
                         });
                     

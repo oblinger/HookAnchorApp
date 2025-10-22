@@ -149,10 +149,10 @@ actions:
     action_type: template
     key: "!"
     name: "{{input}}"
-    action: "anchor"
+    action: "markdown"
     arg: "{{last_executed.folder}}/{{input}}/{{input}}.md"
     patch: "{{last_executed.name}}"
-    flags: ""
+    flags: "a"
     edit: true
     file: "{{last_executed.folder}}/{{input}}/{{input}}.md"
     validate_last_executed_folder: true
@@ -179,10 +179,10 @@ actions:
     action_type: template
     key: "Cmd+W"
     name: "{{date.year}} {{input}}"
-    action: "anchor"
+    action: "markdown"
     arg: "~/Work/{{date.year}} {{input}}/{{date.year}} {{input}}.md"
     patch: "WW"
-    flags: ""
+    flags: "a"
     edit: true
     file: "~/Work/{{date.year}} {{input}}/{{date.year}} {{input}}.md"
     file_rescan: true
@@ -198,7 +198,7 @@ actions:
     action: "markdown"
     arg: "{{last_executed.folder}}/{{date.year}}-{{date.month}}-{{date.day}} {{input}}.md"
     patch: "{{last_executed.patch}}"
-    flags: ""
+    flags: "a"
     edit: true
     file: "{{last_executed.folder}}/{{date.year}}-{{date.month}}-{{date.day}} {{input}}.md"
     file_rescan: true
@@ -210,10 +210,10 @@ actions:
     action_type: template
     key: "Cmd+P"
     name: "{{date.year}} {{input}}"
-    action: "anchor"
+    action: "markdown"
     arg: "~/Documents/Notes/prj/{{date.year}} {{input}}/{{date.year}} {{input}}.md"
     patch: "Prj"
-    flags: ""
+    flags: "a"
     edit: true
     file: "~/Documents/Notes/prj/{{date.year}} {{input}}/{{date.year}} {{input}}.md"
     file_rescan: true
@@ -226,10 +226,10 @@ actions:
     action_type: template
     key: "Cmd+Shift+A"
     name: "@{{input}}"
-    action: "anchor"
+    action: "markdown"
     arg: "~/Documents/Notes/At/@{{input}}.md"
     patch: "At"
-    flags: ""
+    flags: "a"
     edit: true
     file_rescan: true
     contents: |
@@ -241,10 +241,10 @@ actions:
     action_type: template
     key: "Cmd+O"
     name: "@{{input}}"
-    action: "anchor"
+    action: "markdown"
     arg: "~/Documents/Notes/At/Org/@{{input}}.md"
     patch: "Org"
-    flags: ""
+    flags: "a"
     edit: true
     file: "~/Documents/Notes/At/Org/@{{input}}.md"
     file_rescan: true

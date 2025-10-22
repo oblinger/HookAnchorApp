@@ -203,11 +203,14 @@ fn flush(commands: &mut Vec<Command>) -> Result<(), Box<dyn std::error::Error>> 
     let resolution = crate::core::validate_and_repair_patches(commands, false);
     let patches = resolution.patches;
 
-    // Step 2: Save to both cache and commands.txt
+    // Step 2: Deduplicate commands (keeps best version of each unique command name)
+    *commands = super::storage::deduplicate_commands(commands.clone());
+
+    // Step 3: Save to both cache and commands.txt
     super::storage::save_commands_to_file(commands)?;
     super::storage::save_commands_to_cache(commands)?;
 
-    // Step 3: Update singleton with new commands and patches
+    // Step 4: Update singleton with new commands and patches
     let sys = SYS_DATA.get_or_init(|| Mutex::new(None));
     let mut sys_data = sys.lock().unwrap();
     *sys_data = Some(SysData {

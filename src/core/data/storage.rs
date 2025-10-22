@@ -85,7 +85,8 @@ pub(super) fn load_commands_raw() -> Vec<Command> {
     }
 }
 
-/// Saves commands to file with deduplication and safety checks
+/// Saves commands to file with safety checks
+/// NOTE: Deduplication should happen in flush() before calling this
 pub(super) fn save_commands_to_file(commands: &[Command]) -> Result<(), Box<dyn std::error::Error>> {
     // Create backup before saving
     backup_commands_file()?;
@@ -104,9 +105,6 @@ pub(super) fn save_commands_to_file(commands: &[Command]) -> Result<(), Box<dyn 
             cmd.patch = "Cmd".to_string();
         }
     }
-
-    // Deduplicate commands by keeping the one with the most complete information
-    updated_commands = deduplicate_commands(updated_commands);
 
     // Sort commands by patch string first, then by command name before writing to file
     updated_commands.sort_by(|a, b| {
@@ -222,17 +220,18 @@ pub(super) fn load_commands_from_cache() -> Option<Vec<Command>> {
 }
 
 /// Deduplicates commands by keeping the best version of each command
+/// Commands are considered duplicates if they have the same name
 /// Priority: commands with patches > commands without patches
 /// Then by flags: commands with flags > commands without flags
-fn deduplicate_commands(commands: Vec<Command>) -> Vec<Command> {
+pub(super) fn deduplicate_commands(commands: Vec<Command>) -> Vec<Command> {
     use std::collections::HashMap;
 
     let original_count = commands.len();
-    let mut best_commands: HashMap<(String, String, String), Command> = HashMap::new();
+    let mut best_commands: HashMap<String, Command> = HashMap::new();
 
     for command in commands {
-        // Use (command_name, action, arg) as key to identify truly identical commands
-        let key = (command.command.clone(), command.action.clone(), command.arg.clone());
+        // Use command name as the unique key - only one command per name allowed
+        let key = command.command.clone();
 
         if let Some(existing) = best_commands.get(&key) {
             // Decide which command to keep
