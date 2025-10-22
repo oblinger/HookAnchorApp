@@ -69,7 +69,7 @@ pub const SCANNER_GENERATED_ACTIONS: &[&str] = &["markdown", "folder", "app", "o
 /// Check if a command is a Notion anchor
 /// Simple check that doesn't require accessing the actions module
 fn is_notion_anchor(cmd: &Command) -> bool {
-    cmd.action == "anchor" && 
+    cmd.is_anchor() &&
     (cmd.arg.contains("notion.so") || cmd.patch == "Notion Root")
 }
 
@@ -540,7 +540,7 @@ pub fn scan_new_files(commands: Vec<Command>, sys_data: &crate::core::data::SysD
     // Only process Notion pages if we have any
     if !scan_result.notion_pages.is_empty() {
         // First, create the Notion Root anchor if it doesn't exist
-        let notion_root_exists = commands.iter().any(|c| c.command == "Notion Root" && c.action == "anchor");
+        let notion_root_exists = commands.iter().any(|c| c.command == "Notion Root" && c.is_anchor());
         if !notion_root_exists {
             commands.push(Command {
                 command: "Notion Root".to_string(),
@@ -573,9 +573,9 @@ pub fn scan_new_files(commands: Vec<Command>, sys_data: &crate::core::data::SysD
         let parent_patch = "Notion Root".to_string();
         
         // Check if a command with this name already exists as an anchor
-        if let Some(existing_cmd) = commands.iter_mut().find(|cmd| 
-            cmd.command.eq_ignore_ascii_case(&command_name) && 
-            (cmd.action == "anchor" || cmd.action == "notion")
+        if let Some(existing_cmd) = commands.iter_mut().find(|cmd|
+            cmd.command.eq_ignore_ascii_case(&command_name) &&
+            (cmd.is_anchor() || cmd.action == "notion")
         ) {
             // Update existing command to be an anchor if it was "notion"
             if existing_cmd.action == "notion" {
@@ -647,14 +647,14 @@ fn scan_files(mut commands: Vec<Command>, file_roots: &[String], config: &Config
     // Create a lookup map to preserve existing patches when regenerating commands
     let mut existing_patches: std::collections::HashMap<String, String> = std::collections::HashMap::new();
     for cmd in &commands {
-        if (cmd.action == "markdown" || cmd.action == "anchor" || cmd.action == "folder" || cmd.action == "app" || cmd.action == "open_app" || cmd.action == "doc") && !cmd.patch.is_empty() {
+        if (cmd.action == "markdown" || cmd.is_anchor() || cmd.action == "folder" || cmd.action == "app" || cmd.action == "open_app" || cmd.action == "doc") && !cmd.patch.is_empty() {
             existing_patches.insert(cmd.command.clone(), cmd.patch.clone());
         }
     }
     
     // Count commands before removal
     let _markdown_before = commands.iter().filter(|cmd| cmd.action == "markdown").count();
-    let _anchor_before = commands.iter().filter(|cmd| cmd.action == "anchor").count();
+    let _anchor_before = commands.iter().filter(|cmd| cmd.is_anchor()).count();
     let _folder_before = commands.iter().filter(|cmd| cmd.action == "folder").count();
     let _app_before = commands.iter().filter(|cmd| cmd.action == "app" || cmd.action == "open_app").count();
     let _user_edited_scanner_commands = commands.iter()
@@ -732,7 +732,7 @@ fn scan_files(mut commands: Vec<Command>, file_roots: &[String], config: &Config
     // Skip empty args - they don't represent handled files
     let mut handled_files: HashSet<String> = HashSet::new();
     for cmd in &commands {
-        if !cmd.arg.is_empty() && (cmd.action == "markdown" || cmd.action == "anchor" || cmd.action == "folder" || cmd.action == "app" || cmd.action == "open_app" || cmd.action == "doc") {
+        if !cmd.arg.is_empty() && (cmd.action == "markdown" || cmd.is_anchor() || cmd.action == "folder" || cmd.action == "app" || cmd.action == "open_app" || cmd.action == "doc") {
             handled_files.insert(cmd.arg.clone());
         }
     }
@@ -797,7 +797,7 @@ fn scan_files(mut commands: Vec<Command>, file_roots: &[String], config: &Config
     
     // Count final results
     let _markdown_after = commands.iter().filter(|cmd| cmd.action == "markdown").count();
-    let _anchor_after = commands.iter().filter(|cmd| cmd.action == "anchor").count();
+    let _anchor_after = commands.iter().filter(|cmd| cmd.is_anchor()).count();
     let _folder_after = commands.iter().filter(|cmd| cmd.action == "folder").count();
     let _app_after = commands.iter().filter(|cmd| cmd.action == "app" || cmd.action == "open_app").count();
 
@@ -1210,7 +1210,7 @@ fn calculate_commands_checksum(commands: &[Command]) -> String {
     
     // Filter only scan-generated commands (markdown, anchor, contact, folder, app, open_app, doc)
     let mut scan_commands: Vec<_> = commands.iter()
-        .filter(|cmd| cmd.action == "markdown" || cmd.action == "anchor" || cmd.action == "contact" || cmd.action == "folder" || cmd.action == "app" || cmd.action == "open_app" || cmd.action == "doc")
+        .filter(|cmd| cmd.action == "markdown" || cmd.is_anchor() || cmd.action == "contact" || cmd.action == "folder" || cmd.action == "app" || cmd.action == "open_app" || cmd.action == "doc")
         .collect();
     
     // Sort for consistent checksum - use to_new_format() for comparison

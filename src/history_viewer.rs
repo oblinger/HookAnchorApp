@@ -269,7 +269,7 @@ impl HistoryViewer {
         hookanchor::utils::log(&format!("HISTORY_VIEWER_INIT: Loaded {} commands from singleton", sys_data.commands.len()));
 
         // Debug: Count anchor commands
-        let anchor_count = sys_data.commands.iter().filter(|c| c.action == "anchor").count();
+        let anchor_count = sys_data.commands.iter().filter(|c| c.is_anchor()).count();
         hookanchor::utils::log(&format!("HISTORY_VIEWER_INIT: Found {} anchor commands", anchor_count));
 
         // Get tree sidebar settings from config

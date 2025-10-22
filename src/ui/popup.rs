@@ -733,7 +733,7 @@ impl AnchorSelector {
             input.command, input.action, resolved_command.command, resolved_command.action));
 
         // If the resolved command is an anchor, save it as the last anchor
-        if resolved_command.action == "anchor" {
+        if resolved_command.is_anchor() {
             detailed_log("LAST_ANCHOR", &format!("Saving last anchor: '{}'", resolved_command.command));
             let mut state = crate::core::data::get_state();
             state.anchor_name = Some(resolved_command.command.clone());
@@ -1442,7 +1442,7 @@ impl AnchorSelector {
         // Get the currently selected command
         if let Some(selected_command) = self.popup_state.get_selected_command() {
             // Check if the selected command is an anchor
-            if selected_command.action == "anchor" {
+            if selected_command.is_anchor() {
                 let anchor_name = &selected_command.command;
                 crate::utils::detailed_log("HIERARCHY", &format!("Navigating into anchor: {}", anchor_name));
                 

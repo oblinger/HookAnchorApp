@@ -25,7 +25,7 @@ use crate::core::{Command, Patch};
 /// 5. Similarity-based fuzzy matching (lowest priority)
 pub fn infer_patch(command: &Command, patches: &HashMap<String, Patch>) -> Option<String> {
     // Skip system-generated virtual anchor commands - they should always keep their "orphans" patch
-    if command.patch == "orphans" && command.action == "anchor" && !command.flags.contains('U') {
+    if command.patch == "orphans" && command.is_anchor() && !command.flags.contains('U') {
         crate::utils::detailed_log("PATCH_INFERENCE", &format!(
             "Command '{}' -> NO PATCH (virtual anchor with orphans patch, not user-edited)",
             command.command
@@ -37,7 +37,7 @@ pub fn infer_patch(command: &Command, patches: &HashMap<String, Patch>) -> Optio
     if command.action == "alias" {
         if let Some(target_patch) = infer_patch_from_alias_target(command, patches) {
             // Check for self-assignment (would create a cycle)
-            if command.action == "anchor" && target_patch.to_lowercase() == command.command.to_lowercase() {
+            if command.is_anchor() && target_patch.to_lowercase() == command.command.to_lowercase() {
                 crate::utils::detailed_log("PATCH_INFERENCE", &format!(
                     "Command '{}' -> NO PATCH (alias would create self-reference cycle with patch '{}')",
                     command.command, target_patch
@@ -57,7 +57,7 @@ pub fn infer_patch(command: &Command, patches: &HashMap<String, Patch>) -> Optio
     if command.is_path_based() {
         if let Some(inferred_patch) = infer_patch_from_command(command, patches) {
             // Anchor commands SHOULD have their own name as their patch - this is correct design, not a cycle
-            if command.action == "anchor" && inferred_patch.to_lowercase() == command.command.to_lowercase() {
+            if command.is_anchor() && inferred_patch.to_lowercase() == command.command.to_lowercase() {
                 crate::utils::detailed_log("PATCH_INFERENCE", &format!(
                     "Command '{}' -> PATCH '{}' (anchor gets its own name as patch - correct behavior)",
                     command.command, inferred_patch
@@ -81,7 +81,7 @@ pub fn infer_patch(command: &Command, patches: &HashMap<String, Patch>) -> Optio
         let patch_lower = patch_name.to_lowercase();
 
         // Prevent self-assignment for anchors
-        if command.action == "anchor" && patch_lower == command.command.to_lowercase() {
+        if command.is_anchor() && patch_lower == command.command.to_lowercase() {
             continue;
         }
 
@@ -121,7 +121,7 @@ pub fn infer_patch(command: &Command, patches: &HashMap<String, Patch>) -> Optio
 
     for patch_name in patches.keys() {
         // Prevent self-assignment for anchors
-        if command.action == "anchor" && patch_name.to_lowercase() == command.command.to_lowercase() {
+        if command.is_anchor() && patch_name.to_lowercase() == command.command.to_lowercase() {
             continue;
         }
 
@@ -318,7 +318,7 @@ pub fn build_folder_to_patch_map(commands: &[Command]) -> HashMap<PathBuf, Strin
 
     // First pass: Add all anchor commands to the map
     for cmd in commands {
-        if cmd.action == "anchor" && !cmd.arg.is_empty() {
+        if cmd.is_anchor() && !cmd.arg.is_empty() {
             // Use the proper accessor that handles both file and folder anchors correctly
             if let Some(folder_path) = cmd.get_absolute_folder_path(&config) {
                 // Canonicalize to handle symlinks and relative paths
@@ -398,7 +398,7 @@ pub fn infer_patch_simple(file_path: &str, folder_map: &HashMap<PathBuf, String>
 
 /// Infer patch for anchor commands by looking at their folder hierarchy
 fn infer_patch_from_hierarchy_for_anchor(command: &Command, patches: &HashMap<String, Patch>) -> Option<String> {
-    if command.action == "anchor" && !command.arg.is_empty() {
+    if command.is_anchor() && !command.arg.is_empty() {
         let path = Path::new(&command.arg);
         if let Some(parent_dir) = path.parent() {
             return infer_patch_from_hierarchy(parent_dir.parent()?, patches);
@@ -667,7 +667,7 @@ pub fn validate_and_repair_patches(
     }
     let mut orphaned_anchors_fixed = 0;
     for cmd in commands.iter_mut() {
-        if cmd.action == "anchor" && cmd.patch.is_empty() {
+        if cmd.is_anchor() && cmd.patch.is_empty() {
             if verbose {
                 println!("   Setting parent for anchor '{}' to 'orphans'", cmd.command);
             }
@@ -740,7 +740,7 @@ pub fn validate_and_repair_patches(
         for cycle_patch_name in cycles_detected {
             // Find the anchor command for this patch and set its parent to orphans
             for cmd in commands.iter_mut() {
-                if cmd.action == "anchor" && cmd.command.to_lowercase() == cycle_patch_name {
+                if cmd.is_anchor() && cmd.command.to_lowercase() == cycle_patch_name {
                     if verbose {
                         println!("   Breaking cycle: Setting parent of '{}' to 'orphans' (was '{}')", cmd.command, cmd.patch);
                     }

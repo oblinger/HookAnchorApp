@@ -321,10 +321,22 @@ impl Command {
     }
 
     /// Checks if this command is an anchor
-    /// For now, checks if action type is "anchor" or "markdown"
-    /// In the future, this will check for the 'a' flag instead
+    /// Returns true if action type is "anchor" or "markdown", OR if 'a' flag is set
     pub fn is_anchor(&self) -> bool {
-        self.action == "anchor" || self.action == "markdown"
+        self.action == "anchor" || self.action == "markdown" || self.get_flag('a').is_some()
+    }
+
+    /// Sets or clears the anchor flag
+    /// Note: Clearing the 'a' flag from a command with action="anchor" will not
+    /// remove its anchor status (the action type still makes it an anchor)
+    pub fn set_anchor(&mut self, is_anchor: bool) {
+        if is_anchor {
+            // Set the 'a' flag (empty value means just the flag key)
+            self.set_flag('a', "");
+        } else {
+            // Remove the 'a' flag
+            self.remove_flag('a');
+        }
     }
 
     /// Updates the full_line field to reflect current command state in new format
@@ -485,7 +497,7 @@ pub(in crate::core) fn create_patches_hashmap(commands: &[Command]) -> HashMap<S
     // First pass: Group all anchor commands by their normalized name
     let mut anchor_groups: HashMap<String, Vec<Command>> = HashMap::new();
     for command in commands {
-        if command.action == "anchor" {
+        if command.is_anchor() {
             let patch_key = command.command.to_lowercase();
             anchor_groups.entry(patch_key).or_insert_with(Vec::new).push(command.clone());
         }
@@ -959,7 +971,7 @@ fn build_folder_to_patch_map(commands: &[Command]) -> HashMap<PathBuf, String> {
 
     // First pass: Add all anchor commands to the map
     for cmd in commands {
-        if cmd.action == "anchor" && !cmd.arg.is_empty() {
+        if cmd.is_anchor() && !cmd.arg.is_empty() {
             // Use the proper accessor that handles both file and folder anchors correctly
             if let Some(folder_path) = cmd.get_absolute_folder_path(&config) {
                 // Canonicalize to handle symlinks and relative paths
@@ -1088,7 +1100,7 @@ pub fn run_patch_inference(
         }
         
         // Skip system-generated virtual anchor commands - they should always keep their "orphans" patch
-        if command.patch == "orphans" && command.action == "anchor" && !command.flags.contains('U') {
+        if command.patch == "orphans" && command.is_anchor() && !command.flags.contains('U') {
             continue;
         }
         
@@ -1111,7 +1123,7 @@ pub fn run_patch_inference(
                 }
                 
                 // CRITICAL: Check for self-reference (cycle prevention)
-                if command.action == "anchor" && inferred_patch.to_lowercase() == command.command.to_lowercase() {
+                if command.is_anchor() && inferred_patch.to_lowercase() == command.command.to_lowercase() {
                     crate::utils::log(&format!("  ❌ CYCLE PREVENTED: Anchor '{}' cannot have itself as patch '{}'", 
                         command.command, inferred_patch));
                     continue;
@@ -1158,7 +1170,7 @@ pub fn run_patch_inference(
     
     // Log final state of anchors for debugging
     crate::utils::log(&format!("\n=== FINAL ANCHOR STATES ==="));
-    for cmd in commands.iter().filter(|c| c.action == "anchor") {
+    for cmd in commands.iter().filter(|c| c.is_anchor()) {
         if cmd.command.to_lowercase() == "lrn" || cmd.arg.contains("Lrn") {
             crate::utils::log(&format!("  Anchor '{}': patch='{}', arg='{}'", 
                 cmd.command, cmd.patch, cmd.arg));
@@ -1293,7 +1305,7 @@ pub(crate) fn find_patches_without_anchors(patches: &HashMap<String, Patch>, com
     // First, build a set of all anchor command names (these ARE the patches)
     let anchor_names: std::collections::HashSet<String> = commands
         .iter()
-        .filter(|cmd| cmd.action == "anchor")
+        .filter(|cmd| cmd.is_anchor())
         .map(|cmd| cmd.command.to_lowercase())
         .collect();
     
@@ -1302,7 +1314,7 @@ pub(crate) fn find_patches_without_anchors(patches: &HashMap<String, Patch>, com
     ));
     
     // Log all existing anchors
-    for cmd in commands.iter().filter(|c| c.action == "anchor") {
+    for cmd in commands.iter().filter(|c| c.is_anchor()) {
         crate::utils::log(&format!("  Existing anchor: '{}' (patch: '{}')", cmd.command, cmd.patch));
     }
     

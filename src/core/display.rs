@@ -277,7 +277,7 @@ pub fn build_prefix_menu(
                     resolved_command.command, resolved_command.action));
 
                 // Check if resolved command is an anchor
-                if resolved_command.action == "anchor" {
+                if resolved_command.is_anchor() {
                     // Found our anchor! Calculate remaining characters for filtering
                     let remaining_chars = if prefix_len < input.len() {
                         &input[prefix_len..].trim_start() // Trim leading spaces from filter
