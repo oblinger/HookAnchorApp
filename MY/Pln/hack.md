@@ -1,43 +1,50 @@
 
 - [ ] [[Hook Anchor Release]] 
-- [ ] Delete Log action does nothing
-- [ ] clean up history keys
-- [ ] Remove:  [[KMR History]] 
 - [ ] click on folder will go into folder
-- [ ] Add support for "close popup" into templates.  Move CMD+shift+2 to be a template
-
-- [ ] x
-- [ ] Anchor is a Flag; Anchor suffix used to indicate location of patch
-- [ ] The ha bin should be added to the path in the source script file
-- [ ] Help doc by sections  [[HELP]] 
-- [ ] Add a 'just cmd' button
 - [ ] Delete key should prompt to delete file and maybe folder.
-- [ ] distinct names of the processes
-- [ ] .
-- [ ] help command rendering the sections
+
+FOR RELEASE
+- [ ] Adding ha to the path and the ff command etc. should all be in a script file that is inside the .app and that should be sourced by the user's init upon install.
+- [ ] Anchor is a Flag; Anchor suffix used to indicate location of patch
+- [ ] Help doc sections  [[HELP]]: vars, fns, config    help command section for Javascript variables, and section for Javascript functions
+
+## SOON
 - [ ] consider EVERY fallback in the code, and try to remove them
 - [ ] "[" should go back in history
 - [ ] ANCHOR EDITOR - Extend the command editor to be the anchor editor whenever the action type is anchor
 - [ ] yore support
+- [ ] Maintain map of last edit times, to avoid rescanning when not needed.
+
+
+The lesson I take from this is contained in the paragraph shown below in the middle.
+Their velocity INCREASED once they implemented a cool-down week between sprints, where bugs and backlog items were addressed.
+
+
+About a year ago we shifted away from our two-week engineering sprint (which to be honest, felt like one continuous multi-year sprint), to a three-week sprint followed by a one-week cooldown period.\\\\\\\|<br>\\\\\\\|The purpose of the cooldown is to shift focus away from new feature work and instead prioritize bugs, performance and scaling issues, product enhancements, quality of life improvements, and other infrastructure work.\\\\\\\|<br>\\\\\\\|The move has had a profound impact on the business.\\\\\\\|<br>\\\\\\\|It ensures that we never go more than a few weeks without addressing all of the most pressing platform issues and bugs. In turn, that means far fewer fires during sprints, giving the engineers more undisrupted time to ship new features.\\\\\\\|<br>\\\\\\\|The second and third order effects are just as notable. With less bugs plaguing our users, less support tickets are submitted, thus quicker response times and higher overall customer satisfaction. Internally, the overall vibe and operating cadence of the company feels far less chaotic and reactive than before too.\\\\\\\|<br>\\\\\\\|We have been doing cooldowns for almost a year now. While the first few were intense and felt like we were digging out of an insurmountable backlog of issues, each subsequent cooldown feels a bit more attainable and a lot less dire.\\\\\\\||
+
+
+## DONE
+- [x] Fixed anchor ghost setting
+- [ ] Fix the template double slash bug
+- [x] semi-colon should see grey item not blue one.
+- [x] Remove change fields in history DB
+- [x] TERMINATE w/ dialog when build fails
+- [x] resizing is broken
+- [x] HA = should be on HA command
+- [x] Arrow keys broken in popup
+- [x] Delete Log action does nothing
+- [x] clean up history keys
+- [x] Remove:  [[KMR History]] 
+- [x] Add support for "close popup" into templates.  Move CMD+shift+2 to be a 
+- [x] distinct names of the processes
 - [x] "clear_log" action  
 - [x] detailed messages bug
 - [x] single column
 - [x] Implement activate tmux in JavasScrpt just as it works in Rust
-
-
-## Logs
-- [ ] Scan files and folders for log for "# Log" and files with Log as their name
-- [ ] Files History as their suffix serve to summarize all logs under them within the DAG
-- [ ] Maintain map of last edit times, to avoid rescanning when not needed.
-- [ ] Allow direct addition to history?
-- get rid of /bin/sleep and any local references like /brew/... in
-
-When you have classes like session, what is the platonic approach to putting these into a module? Should they be at the top of the module, at the bottom before the main after the main?
-
-## Release Alpha 
-
-
-## DONE
+- [x] Scan files and folders for log for "# Log" and files with Log as their name
+- [x] Files History as their suffix serve to summarize all logs under them within the DAG
+- [x] Allow direct addition to history?
+- [x] get rid of /bin/sleep and any local references like /brew/... in
 - [x] svproj menu is wrong
 - [x] The menu should go away when the prefix menus is empty
 - [x] oblinger should sort to the top of the list

@@ -1,7 +1,21 @@
 
 
+  The commands are:
+  1. SV! fireball
+  2. Yore! NJ Yore
+  3. bot! Dir
+  4. bot! Notion Root
+  5. bot! Proj
+  6. bot! Proj Code
+  7. bot! Yore
 ## __
 
+### LAYER / SPEED VARIANT
+
+Hook Anchor adds a layer over your existing personal organization that radically improves three issues plaguing these systems.
+With nearly no thought or effort, you can: ***find*** your stuff, ***place*** new stuff, and keep everything ***up to date***.
+
+### LAYER
 
 Hook Anchor adds a layer over your existing personal organization to address three key issues that plague these systems:
 (1) Where to ***put*** your stuff without much thought
@@ -10,20 +24,25 @@ Hook Anchor adds a layer over your existing personal organization to address thr
 
 
 80/20 NAMING
-95% of the time, you are accessing the same 5% of your info over and over, but that 5% set gradually shifts over time.  Hook Anchor continuously adjusts its namings so the first name or acronym that comes to mind is always the right one.  The result is deliciously instant access 95% of the time.
+95% of the time, you are accessing the same 5% of your info over and over, but that active 5% gradually shifts over time.  
+Hook anchor continuously adjusts ITS namings as you use it, so the first name or acronym that comes to YOUR mind is always the right one.  
+Why should YOU need to remember IT'S names? IT should remember and YOUR active names.
+The result is deliciously instant, thought-free access 95% of the time.
 
-LOCAL-ONLY ORGANIZATION
+So what about the other 5% of the time?  
+
+
+LOCALLY ORGANIZED
+
 Taxonomies or tagging systems often start strong, but as they grow, they become crazy hard to manage.  The solution is to STOP organizing globally and start organizing locally by anchor, by time, and by stream.  Together, these methods facilitate quick finding in the 5% of cases where you don't instantly remember an item's name.
 
 
 
-BY ANCHOR
+ORGANIZE LOCALLY BY ANCHOR
 You already organize your projects and topics using folders. Hook Anchor upgrades this habit in three ways:
 - It allows those "folders" to span multiple applications/accounts, both online/offline into a single logical anchor.
 - It dramatically reduces the tagging/linking required to guarantee finding items by clicking forward without backtracking.
 - System to ensure each item has exactly one anchor as its home. 
-
-BY TIME
 
 
 BY STREAM
