@@ -310,16 +310,23 @@ impl Command {
         if self.flags.is_empty() {
             return;
         }
-        
+
         let flag_parts: Vec<String> = self.flags.split(',')
             .map(|s| s.trim().to_string())
             .filter(|s| !s.starts_with(key))
             .collect();
-        
+
         self.flags = flag_parts.join(",");
         self.update_full_line();
     }
-    
+
+    /// Checks if this command is an anchor
+    /// For now, checks if action type is "anchor" or "markdown"
+    /// In the future, this will check for the 'a' flag instead
+    pub fn is_anchor(&self) -> bool {
+        self.action == "anchor" || self.action == "markdown"
+    }
+
     /// Updates the full_line field to reflect current command state in new format
     /// NOTE: With full_line removed from struct, this is now a no-op
     pub fn update_full_line(&mut self) {
