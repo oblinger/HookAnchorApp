@@ -306,11 +306,16 @@ impl CommandEditor {
                                 ui.add_space(10.0);
 
                                 // Anchor toggle button with compact font
-                                let anchor_text = if self.is_anchor { "anchor ✓" } else { "anchor" };
-                                let anchor_button = egui::Button::new(
-                                    egui::RichText::new(anchor_text)
-                                        .size(10.0)  // Small condensed font
-                                );
+                                let anchor_text = if self.is_anchor {
+                                    egui::RichText::new("ANCHOR ✔")
+                                        .size(10.0)
+                                        .strong()  // Bold when checked
+                                        .color(egui::Color32::from_rgb(0, 150, 0))  // Green
+                                } else {
+                                    egui::RichText::new("anchor   ")  // Extra spaces to match size
+                                        .size(10.0)
+                                };
+                                let anchor_button = egui::Button::new(anchor_text);
                                 if ui.add(anchor_button).clicked() {
                                     self.is_anchor = !self.is_anchor;
                                 }
