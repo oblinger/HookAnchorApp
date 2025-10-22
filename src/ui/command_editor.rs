@@ -16,6 +16,7 @@ pub struct CommandEditor {
     pub patch: String,
     pub flags: String,
     pub priority: bool,
+    pub is_anchor: bool,
     
     // Track the original command for reference
     pub original_command: Option<Command>,
@@ -45,6 +46,7 @@ impl CommandEditor {
             patch: String::new(),
             flags: String::new(),
             priority: false,
+            is_anchor: false,
             original_command: None,
             original_command_name: String::new(),
             focus_requested: false,
@@ -87,11 +89,17 @@ impl CommandEditor {
             self.action = cmd.action.clone();
             self.argument = cmd.arg.clone();
             self.patch = cmd.patch.clone();
-            self.flags = cmd.flags.clone();
+
+            // Extract anchor flag and remove it from flags string
+            self.is_anchor = cmd.is_anchor();
+            let mut temp_cmd = cmd.clone();
+            temp_cmd.remove_flag('a');
+            self.flags = temp_cmd.flags.clone();
+
             self.priority = false;
             self.original_command_name = cmd.command.clone();
             self.original_command = Some(cmd.clone());
-            
+
         } else {
             // No command selected - populate with search text as command name and blank other fields
             self.command = search_text.to_string();
@@ -100,6 +108,7 @@ impl CommandEditor {
             self.patch = String::new();
             self.flags = String::new();
             self.priority = false;
+            self.is_anchor = false;
             self.original_command_name = String::new();
             self.original_command = None;
         }
@@ -119,9 +128,15 @@ impl CommandEditor {
         self.action = template_command.action.clone();
         self.argument = template_command.arg.clone();
         self.patch = template_command.patch.clone();
-        self.flags = template_command.flags.clone();
+
+        // Extract anchor flag and remove it from flags string
+        self.is_anchor = template_command.is_anchor();
+        let mut temp_cmd = template_command.clone();
+        temp_cmd.remove_flag('a');
+        self.flags = temp_cmd.flags.clone();
+
         self.priority = false;
-        
+
         // IMPORTANT: Mark as new command by leaving original_command_name empty
         self.original_command_name = String::new();
         self.original_command = None;
@@ -137,9 +152,15 @@ impl CommandEditor {
         self.action = command.action.clone();
         self.argument = command.arg.clone();
         self.patch = command.patch.clone();
-        self.flags = command.flags.clone();
+
+        // Extract anchor flag and remove it from flags string
+        self.is_anchor = command.is_anchor();
+        let mut temp_cmd = command.clone();
+        temp_cmd.remove_flag('a');
+        self.flags = temp_cmd.flags.clone();
+
         self.priority = false; // Default to false
-        
+
         // No original command since this is a new command
         self.original_command = None;
         self.original_command_name = String::new();
@@ -280,7 +301,20 @@ impl CommandEditor {
                             
                             // Priority row
                             ui.label("Priority:");
-                            ui.checkbox(&mut self.priority, "");
+                            ui.horizontal(|ui| {
+                                ui.checkbox(&mut self.priority, "");
+                                ui.add_space(10.0);
+
+                                // Anchor toggle button with compact font
+                                let anchor_text = if self.is_anchor { "anchor ✓" } else { "anchor" };
+                                let anchor_button = egui::Button::new(
+                                    egui::RichText::new(anchor_text)
+                                        .size(10.0)  // Small condensed font
+                                );
+                                if ui.add(anchor_button).clicked() {
+                                    self.is_anchor = !self.is_anchor;
+                                }
+                            });
                             ui.end_row();
                         });
                     
@@ -303,7 +337,7 @@ impl CommandEditor {
                                 
                                 if ui.button("Save").clicked() {
                                     // Create the new command
-                                    let new_command = Command {
+                                    let mut new_command = Command {
                                         patch: self.patch.clone(),
                                         command: self.command.clone(),
                                         action: self.action.clone(),
@@ -312,7 +346,10 @@ impl CommandEditor {
         last_update: 0,
         file_size: None,
                                     };
-                                    
+
+                                    // Apply anchor flag based on toggle state
+                                    new_command.set_anchor(self.is_anchor);
+
                                     // Early validation for self-referential aliases to prevent crashes
                                     if new_command.action == "alias" && new_command.command == new_command.arg {
                                         // Show error immediately without trying to save
@@ -337,7 +374,7 @@ impl CommandEditor {
         // Handle Enter key press from any text field or global context
         if enter_pressed && result == CommandEditorResult::None {
             // Create the new command
-            let new_command = Command {
+            let mut new_command = Command {
                 patch: self.patch.clone(),
                 command: self.command.clone(),
                 action: self.action.clone(),
@@ -346,7 +383,10 @@ impl CommandEditor {
         last_update: 0,
         file_size: None,
             };
-            
+
+            // Apply anchor flag based on toggle state
+            new_command.set_anchor(self.is_anchor);
+
             // Early validation for self-referential aliases to prevent crashes
             if new_command.action == "alias" && new_command.command == new_command.arg {
                 eprintln!("ERROR: Cannot create self-referential alias: '{}' cannot alias to itself", new_command.command);
