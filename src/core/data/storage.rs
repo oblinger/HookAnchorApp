@@ -229,7 +229,8 @@ pub(super) fn load_commands_from_cache() -> Option<Vec<Command>> {
 }
 
 /// Deduplicates commands by keeping the best version of each command
-/// Commands are considered duplicates if they have the same name
+/// Commands are considered duplicates ONLY if they have the same name AND same arg (file path)
+/// This allows multiple commands with the same name pointing to different files
 /// Priority: commands with patches > commands without patches
 /// Then by flags: commands with flags > commands without flags
 pub(super) fn deduplicate_commands(commands: Vec<Command>) -> Vec<Command> {
@@ -239,8 +240,10 @@ pub(super) fn deduplicate_commands(commands: Vec<Command>) -> Vec<Command> {
     let mut best_commands: HashMap<String, Command> = HashMap::new();
 
     for command in commands {
-        // Use command name as the unique key - only one command per name allowed
-        let key = command.command.clone();
+        // Use (command name, arg) as the unique key - allows multiple commands with same name
+        // but different file paths (e.g., duplicate files in different locations)
+        // This lets users see duplicates and clean them up manually
+        let key = format!("{}:{}", command.command, command.arg);
 
         if let Some(existing) = best_commands.get(&key) {
             // Decide which command to keep
@@ -256,7 +259,7 @@ pub(super) fn deduplicate_commands(commands: Vec<Command>) -> Vec<Command> {
     let deduped_count = original_count - result.len();
 
     if deduped_count > 0 {
-        crate::utils::detailed_log("DEDUPE", &format!("Removed {} duplicate commands", deduped_count));
+        crate::utils::detailed_log("DEDUPE", &format!("Removed {} duplicate commands (same name + same arg)", deduped_count));
     }
 
     result
