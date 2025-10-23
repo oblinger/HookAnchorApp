@@ -1576,7 +1576,67 @@ pub fn load_commands_for_inference() -> (crate::core::data::config::Config, Vec<
     (config, commands, patches)
 }
 
+// =============================================================================
+// KEY-VALUE PARSER HELPERS (for new format with F:=, A:=, etc.)
+// =============================================================================
+
+/// Parse key-value pairs from a string using := separator
+/// Handles backslash escaping for literal := in values
+/// Returns HashMap of key->value pairs
+///
+/// LEGACY: This will be removed after migration period
+fn parse_kv_pairs(input: &str) -> HashMap<String, String> {
+    let mut result = HashMap::new();
+    let mut current_key = String::new();
+    let mut current_value = String::new();
+    let mut chars = input.chars().peekable();
+    let mut in_value = false;
+
+    while let Some(ch) = chars.next() {
+        if !in_value {
+            // Looking for key
+            if ch == ':' && chars.peek() == Some(&'=') {
+                chars.next(); // consume '='
+                in_value = true;
+            } else if !ch.is_whitespace() {
+                current_key.push(ch);
+            }
+        } else {
+            // Looking for value
+            if ch == '\\' && chars.peek() == Some(&':') {
+                // Escaped := - add literal : to value
+                current_value.push(':');
+                chars.next(); // consume ':'
+                if chars.peek() == Some(&'=') {
+                    current_value.push('=');
+                    chars.next(); // consume '='
+                }
+            } else if ch == ':' && chars.peek() == Some(&'=') {
+                // Unescaped := means start of next key
+                // Save current pair
+                if !current_key.is_empty() {
+                    result.insert(current_key.trim().to_string(), current_value.trim().to_string());
+                }
+                current_key.clear();
+                current_value.clear();
+                chars.next(); // consume '='
+                in_value = false;
+            } else {
+                current_value.push(ch);
+            }
+        }
+    }
+
+    // Save last pair
+    if !current_key.is_empty() && in_value {
+        result.insert(current_key.trim().to_string(), current_value.trim().to_string());
+    }
+
+    result
+}
+
 /// Parses a command line into a Command struct
+/// LEGACY: Old format parser - will be removed after migration
 pub fn parse_command_line(line: &str) -> Result<Command, String> {
     let trimmed = line.trim();
     if trimmed.is_empty() {
@@ -1632,6 +1692,7 @@ pub fn parse_command_line(line: &str) -> Result<Command, String> {
             action,
             arg: arg.to_string(),
             flags,
+            other_params: None,
             last_update: 0,
             file_size: None,
         });
