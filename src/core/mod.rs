@@ -113,8 +113,10 @@ pub use display::{
     get_new_display_commands,
 };
 
-// Command utilities 
+// Command utilities
 pub use commands::{
     // Helper functions
     get_command_prefix,
+    // Flag constants
+    FLAG_ANCHOR, FLAG_USER_EDITED, FLAG_MERGED, FLAG_INCLUDE,
 };

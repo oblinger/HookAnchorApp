@@ -56,6 +56,7 @@ use std::collections::{hash_map::DefaultHasher, HashSet};
 use std::hash::{Hash, Hasher};
 use crate::core::Command;
 use crate::core::Config;
+use crate::core::commands::{FLAG_USER_EDITED, FLAG_ANCHOR};
 use crate::utils::detailed_log;
 use crate::execute::get_action;
 use chrono::Local;
@@ -91,7 +92,7 @@ fn delete_anchors(commands: &mut Vec<Command>, delete_notion_anchors: bool, verb
         }
         
         // Always keep user-edited commands
-        if cmd.flags.contains('U') {
+        if cmd.flags.contains(FLAG_USER_EDITED) {
             return true;
         }
         
@@ -228,7 +229,7 @@ pub fn load_manual_edits(commands: &mut Vec<Command>, verbose: bool) -> Result<u
         let is_scanner_generated = SCANNER_GENERATED_ACTIONS.contains(&txt_cmd.action.as_str());
         if is_scanner_generated && !txt_cmd.arg.is_empty() {
             let same_file_exists = commands.iter().any(|c| c.arg == txt_cmd.arg);
-            if same_file_exists && !txt_cmd.flags.contains('U') {
+            if same_file_exists && !txt_cmd.flags.contains(FLAG_USER_EDITED) {
                 crate::utils::detailed_log("MANUAL_EDITS", &format!("Skipping duplicate '{}' (scanner already created fresh version)", txt_cmd.command));
                 continue;
             }
@@ -590,7 +591,7 @@ fn scan_files(mut commands: Vec<Command>, file_roots: &[String], config: &Config
     let _folder_before = commands.iter().filter(|cmd| cmd.action == "folder").count();
     let _app_before = commands.iter().filter(|cmd| cmd.action == "app" || cmd.action == "open_app").count();
     let _user_edited_scanner_commands = commands.iter()
-        .filter(|cmd| SCANNER_GENERATED_ACTIONS.contains(&cmd.action.as_str()) && cmd.flags.contains('U'))
+        .filter(|cmd| SCANNER_GENERATED_ACTIONS.contains(&cmd.action.as_str()) && cmd.flags.contains(FLAG_USER_EDITED))
         .count();
     
     // Check if a path is within any of the scan roots
@@ -615,7 +616,7 @@ fn scan_files(mut commands: Vec<Command>, file_roots: &[String], config: &Config
     // Also validate that files actually exist for scanner-generated commands
     commands.retain(|cmd| {
         let is_scanner_generated = SCANNER_GENERATED_ACTIONS.contains(&cmd.action.as_str());
-        let is_user_edited = cmd.flags.contains('U');
+        let is_user_edited = cmd.flags.contains(FLAG_USER_EDITED);
         
         // If it's scanner-generated, check if we should keep or remove it
         if is_scanner_generated {
@@ -651,7 +652,7 @@ fn scan_files(mut commands: Vec<Command>, file_roots: &[String], config: &Config
     });
     
     let _preserved_user_edited = commands.iter()
-        .filter(|cmd| SCANNER_GENERATED_ACTIONS.contains(&cmd.action.as_str()) && cmd.flags.contains('U'))
+        .filter(|cmd| SCANNER_GENERATED_ACTIONS.contains(&cmd.action.as_str()) && cmd.flags.contains(FLAG_USER_EDITED))
         .count();
     
     // Create a set of existing command names for collision detection (lowercase for case-insensitive comparison)
@@ -1042,8 +1043,8 @@ fn process_markdown_with_root(path: &Path, _vault_root: &Path, commands: &mut Ve
         if is_anchor {
             // Find the conflicting user command and add 'a' flag to it
             for cmd in commands.iter_mut() {
-                if cmd.command.eq_ignore_ascii_case(&preferred_name) && cmd.flags.contains('U') {
-                    cmd.set_flag('a', "");
+                if cmd.command.eq_ignore_ascii_case(&preferred_name) && cmd.flags.contains(FLAG_USER_EDITED) {
+                    cmd.set_flag(FLAG_ANCHOR, "");
                     crate::utils::log(&format!("🏷️  Added anchor flag to user command '{}' (patch: {})", cmd.command, cmd.patch));
                     return None; // Don't create duplicate - user's command is now the anchor
                 }

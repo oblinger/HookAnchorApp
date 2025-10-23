@@ -7,6 +7,7 @@
 use std::collections::HashMap;
 use std::path::{Path, PathBuf};
 use crate::core::{Command, Patch};
+use super::commands::FLAG_USER_EDITED;
 
 // ============================================================================
 // PATCH INFERENCE - Main entry points and coordination logic
@@ -25,7 +26,7 @@ use crate::core::{Command, Patch};
 /// 5. Similarity-based fuzzy matching (lowest priority)
 pub fn infer_patch(command: &Command, patches: &HashMap<String, Patch>) -> Option<String> {
     // Skip system-generated virtual anchor commands - they should always keep their "orphans" patch
-    if command.patch == "orphans" && command.is_anchor() && !command.flags.contains('U') {
+    if command.patch == "orphans" && command.is_anchor() && !command.flags.contains(FLAG_USER_EDITED) {
         crate::utils::detailed_log("PATCH_INFERENCE", &format!(
             "Command '{}' -> NO PATCH (virtual anchor with orphans patch, not user-edited)",
             command.command

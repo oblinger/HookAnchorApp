@@ -10,7 +10,7 @@ use crate::core::{
     Config, AppState
 };
 use crate::core::key_processing::{PopupInterface, KeyRegistry, create_default_key_registry};
-use crate::core::commands::get_patch_path;
+use crate::core::commands::{get_patch_path, FLAG_MERGED};
 
 #[cfg(target_os = "macos")]
 use core_graphics::display::CGDisplay;
@@ -935,7 +935,7 @@ impl AnchorSelector {
                 let selected_cmd = &display_commands[self.selected_index()];
                 
                 // Don't edit if it's a separator or a merged command
-                if !PopupState::is_separator_command(selected_cmd) && selected_cmd.get_flag('M').is_none() {
+                if !PopupState::is_separator_command(selected_cmd) && selected_cmd.get_flag(FLAG_MERGED).is_none() {
                     // Edit the selected command, ignoring the search text
                     self.command_editor.edit_command(Some(selected_cmd), &selected_cmd.command);
                 }
@@ -1236,7 +1236,7 @@ impl AnchorSelector {
                     crate::utils::detailed_log("TEMPLATE", &format!("TEMPLATE: Selected command for editing: '{}'", selected_cmd.command));
                     
                     // Don't edit separator commands or merged commands
-                    if PopupState::is_separator_command(selected_cmd) || selected_cmd.get_flag('M').is_some() {
+                    if PopupState::is_separator_command(selected_cmd) || selected_cmd.get_flag(FLAG_MERGED).is_some() {
                         crate::utils::detailed_log("TEMPLATE", "TEMPLATE: Cannot edit separator or merged command");
                         self.show_error_dialog("Cannot edit separator or merged commands.");
                         return;

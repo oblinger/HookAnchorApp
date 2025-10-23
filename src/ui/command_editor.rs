@@ -1,5 +1,6 @@
 use eframe::egui;
 use crate::core::{Command};
+use crate::core::commands::{FLAG_USER_EDITED, FLAG_ANCHOR, FLAG_MERGED};
 use crate::core::delete_command;
 use crate::core::Config;
 use crate::core::template_creation::{Template, TemplateContext};
@@ -94,7 +95,7 @@ impl CommandEditor {
             // Then remove 'a' flag from flags string so it doesn't show in the text field
             self.is_anchor = cmd.is_anchor();
             let mut temp_cmd = cmd.clone();
-            temp_cmd.remove_flag('a');
+            temp_cmd.remove_flag(FLAG_ANCHOR);
             self.flags = temp_cmd.flags.clone();
 
             self.priority = false;
@@ -134,7 +135,7 @@ impl CommandEditor {
         // Then remove 'a' flag from flags string so it doesn't show in the text field
         self.is_anchor = template_command.is_anchor();
         let mut temp_cmd = template_command.clone();
-        temp_cmd.remove_flag('a');
+        temp_cmd.remove_flag(FLAG_ANCHOR);
         self.flags = temp_cmd.flags.clone();
 
         self.priority = false;
@@ -159,7 +160,7 @@ impl CommandEditor {
         // Then remove 'a' flag from flags string so it doesn't show in the text field
         self.is_anchor = command.is_anchor();
         let mut temp_cmd = command.clone();
-        temp_cmd.remove_flag('a');
+        temp_cmd.remove_flag(FLAG_ANCHOR);
         self.flags = temp_cmd.flags.clone();
 
         self.priority = false; // Default to false
@@ -412,8 +413,8 @@ impl CommandEditor {
         // ALWAYS add 'U' flag when a command is edited in the command editor
         // This indicates user-edited and prevents removal during rescan
         // Use proper flag accessor to ensure correct comma separation
-        if !new_command.flags.contains('U') {
-            new_command.set_flag('U', "");
+        if !new_command.flags.contains(FLAG_USER_EDITED) {
+            new_command.set_flag(FLAG_USER_EDITED, "");
         }
 
         let command_to_delete = if !self.original_command_name.is_empty() {

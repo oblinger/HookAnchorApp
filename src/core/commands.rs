@@ -11,6 +11,30 @@ use std::collections::HashMap;
 use serde::{Deserialize, Serialize};
 use crate::core::data::config::Config;
 
+// =============================================================================
+// FLAG CONSTANTS
+// =============================================================================
+
+/// Flag character for anchor commands
+/// Indicates that a command represents an anchor/hierarchy node
+pub const FLAG_ANCHOR: char = 'a';
+
+/// Flag character for user-edited commands
+/// Prevents scanner from automatically deleting or modifying the command
+pub const FLAG_USER_EDITED: char = 'U';
+
+/// Flag character for merged commands
+/// Indicates a command was created by merging multiple similar commands
+pub const FLAG_MERGED: char = 'M';  // Used when displaying merged ... entries
+
+/// Flag character for include commands
+/// Adds the command to its patch's include list for hierarchical filtering
+pub const FLAG_INCLUDE: char = 'I';
+
+// =============================================================================
+// COMMAND STRUCT
+// =============================================================================
+
 /// Represents a parsed command with its components
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 pub struct  Command {
@@ -112,9 +136,9 @@ impl Patch {
     pub fn get_all_include_folders(&self, config: &crate::core::Config) -> std::collections::HashSet<std::path::PathBuf> {
         let mut include_folders = std::collections::HashSet::new();
 
-        // Check anchor commands with 'I' flag
+        // Check anchor commands with include flag
         for anchor_cmd in &self.anchor_commands {
-            if anchor_cmd.flags.contains('I') {
+            if anchor_cmd.flags.contains(FLAG_INCLUDE) {
                 if let Some(folder_path) = anchor_cmd.get_absolute_folder_path(config) {
                     include_folders.insert(folder_path);
                 }
@@ -321,21 +345,21 @@ impl Command {
     }
 
     /// Checks if this command is an anchor
-    /// Returns true if action type is "anchor" OR if 'a' flag is set
+    /// Returns true if action type is "anchor" OR if anchor flag is set
     pub fn is_anchor(&self) -> bool {
-        self.action == "anchor" || self.get_flag('a').is_some()
+        self.action == "anchor" || self.get_flag(FLAG_ANCHOR).is_some()
     }
 
     /// Sets or clears the anchor flag
-    /// Note: Clearing the 'a' flag from a command with action="anchor" will not
+    /// Note: Clearing the anchor flag from a command with action="anchor" will not
     /// remove its anchor status (the action type still makes it an anchor)
     pub fn set_anchor(&mut self, is_anchor: bool) {
         if is_anchor {
-            // Set the 'a' flag (empty value means just the flag key)
-            self.set_flag('a', "");
+            // Set the anchor flag (empty value means just the flag key)
+            self.set_flag(FLAG_ANCHOR, "");
         } else {
-            // Remove the 'a' flag
-            self.remove_flag('a');
+            // Remove the anchor flag
+            self.remove_flag(FLAG_ANCHOR);
         }
     }
 
@@ -535,9 +559,9 @@ pub(crate) fn create_patches_hashmap(commands: &[Command]) -> HashMap<String, Pa
         });
     }
     
-    // Third pass: Add commands with 'I' flag to their patch's include list
+    // Third pass: Add commands with include flag to their patch's include list
     for command in commands {
-        if command.flags.contains('I') && !command.patch.is_empty() {
+        if command.flags.contains(FLAG_INCLUDE) && !command.patch.is_empty() {
             let patch_key = command.patch.to_lowercase();
             if let Some(patch) = patches.get_mut(&patch_key) {
                 patch.include_commands.push(command.clone());
@@ -1100,7 +1124,7 @@ pub fn run_patch_inference(
         }
         
         // Skip system-generated virtual anchor commands - they should always keep their "orphans" patch
-        if command.patch == "orphans" && command.is_anchor() && !command.flags.contains('U') {
+        if command.patch == "orphans" && command.is_anchor() && !command.flags.contains(FLAG_USER_EDITED) {
             continue;
         }
         
@@ -2100,7 +2124,7 @@ pub fn merge_similar_commands_with_context(commands: Vec<Command>, config: &Conf
         file_size: None,
             };
             // Set the merge flag
-            merged_command.set_flag('M', "");
+            merged_command.set_flag(FLAG_MERGED, "");
             result.push(merged_command);
         } else {
             // Single command, add as-is
