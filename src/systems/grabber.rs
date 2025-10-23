@@ -736,8 +736,9 @@ fn match_grabber_rules(
                                 action: rule.action.clone(),
                                 arg: arg.clone(),
                                 flags: detected_suffix.unwrap_or_default(), // Store suffix in flags field temporarily
-        last_update: 0,
-        file_size: None,
+                                other_params: None,
+                                last_update: 0,
+                                file_size: None,
                             };
                             
                             crate::utils::detailed_log("GRABBER_MATCH", &format!("Created command: action='{}', arg='{}'", command.action, command.arg));
@@ -786,8 +787,9 @@ fn match_grabber_rules(
                                 action,
                                 arg: arg.clone(),
                                 flags: detected_suffix.unwrap_or_default(), // Store suffix in flags field temporarily
-        last_update: 0,
-        file_size: None,
+                                other_params: None,
+                                last_update: 0,
+                                file_size: None,
                             };
                             
                             // Apply patch inference if no explicit patch was set
@@ -938,8 +940,9 @@ pub fn grab(config: &Config) -> Result<GrabResult, String> {
             action: "app".to_string(),
             arg: context.app_path.clone(),
             flags: String::new(),
-        last_update: 0,
-        file_size: None,
+            other_params: None,
+            last_update: 0,
+            file_size: None,
         };
 
         // Try to get default patch for app action

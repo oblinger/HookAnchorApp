@@ -334,6 +334,7 @@ impl CommandEditor {
                                         action: self.action.clone(),
                                         arg: self.argument.clone(),
                                         flags: self.flags.clone(),
+        other_params: None,
         last_update: 0,
         file_size: None,
                                     };
@@ -371,6 +372,7 @@ impl CommandEditor {
                 action: self.action.clone(),
                 arg: self.argument.clone(),
                 flags: self.flags.clone(),
+        other_params: None,
         last_update: 0,
         file_size: None,
             };
@@ -403,6 +405,7 @@ impl CommandEditor {
             action: self.action.clone(),
             arg: self.argument.clone(),
             flags: self.flags.clone(),
+        other_params: None,
         last_update: 0,
         file_size: None,
         };

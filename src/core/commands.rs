@@ -42,6 +42,11 @@ pub struct  Command {
     pub arg: String,
     pub flags: String,
 
+    // Extended parameters (key-value pairs beyond standard fields)
+    // Used for future extensibility (e.g., title, priority, color, etc.)
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub other_params: Option<HashMap<String, String>>,
+
     // Metadata for history tracking
     #[serde(default)]
     pub last_update: i64,        // Unix timestamp - when this command last changed
@@ -175,6 +180,7 @@ impl Command {
             action,
             arg,
             flags,
+            other_params: None,
             last_update: 0,
             file_size: None,
         }
@@ -370,33 +376,51 @@ impl Command {
     /// Converts the command to new format string
     pub fn to_new_format(&self) -> String {
         let mut result = String::new();
-        
-        // Add group if present
+
+        // Add patch if present
         if !self.patch.is_empty() {
             result.push_str(&self.patch);
             result.push_str("! ");
         }
-        
+
         // Add command and action
         result.push_str(&self.command);
         result.push(':');
         result.push_str(&self.action);
-        
-        // Add flags if present (before semicolon)
-        if !self.flags.is_empty() {
-            result.push(' ');
-            result.push_str(&self.flags);
-        }
-        
-        // Add semicolon to separate flags from arg
         result.push(';');
-        
-        // Add arg if present (after semicolon)
-        if !self.arg.is_empty() {
-            result.push(' ');
-            result.push_str(&self.arg);
+
+        // Add key-value pairs after semicolon
+        let mut kv_pairs = Vec::new();
+
+        // Add F:=flags if present
+        if !self.flags.is_empty() {
+            // Escape any := in flags value
+            let escaped_flags = self.flags.replace(":=", "\\:=");
+            kv_pairs.push(format!("F:={}", escaped_flags));
         }
-        
+
+        // Add A:=arg if present
+        if !self.arg.is_empty() {
+            // Escape any := in arg value
+            let escaped_arg = self.arg.replace(":=", "\\:=");
+            kv_pairs.push(format!("A:={}", escaped_arg));
+        }
+
+        // Add other parameters if present
+        if let Some(ref params) = self.other_params {
+            for (key, value) in params {
+                // Escape any := in value
+                let escaped_value = value.replace(":=", "\\:=");
+                kv_pairs.push(format!("{}:={}", key, escaped_value));
+            }
+        }
+
+        // Join all KV pairs with space
+        if !kv_pairs.is_empty() {
+            result.push(' ');
+            result.push_str(&kv_pairs.join(" "));
+        }
+
         result
     }
     
@@ -1440,6 +1464,7 @@ fn create_virtual_anchor_for_patch(patch_name: &str, _config: &Config, patches: 
         arg: String::new(), // NEW SYSTEM: Blank arg, no markdown file
         patch: parent_patch,
         flags: String::new(), // System-generated, so no flags needed
+        other_params: None,
         last_update: 0,
         file_size: None,
     })
@@ -1635,15 +1660,80 @@ fn parse_kv_pairs(input: &str) -> HashMap<String, String> {
     result
 }
 
+/// Parse command line in new KV format: PATCH! NAME:ACTION; F:=flags A:=arg [KEY:=VALUE ...]
+fn parse_command_line_v2(line: &str) -> Result<Command, String> {
+    let trimmed = line.trim();
+    if trimmed.is_empty() {
+        return Err("Empty line".to_string());
+    }
+
+    // Step 1: Parse PATCH! NAME:ACTION; prefix (same as old format)
+    let colon_pos = trimmed.find(':').ok_or("Missing ':' separator")?;
+    let (prefix, rest) = trimmed.split_at(colon_pos);
+    let rest = &rest[1..]; // Skip the ':'
+
+    // Parse patch and command from prefix
+    let (patch, command) = if let Some(exclaim_pos) = prefix.find("! ") {
+        let (p, c) = prefix.split_at(exclaim_pos);
+        (p.trim().to_string(), c[2..].trim().to_string())
+    } else {
+        (String::new(), prefix.trim().to_string())
+    };
+
+    // Step 2: Split on semicolon to separate action from KV pairs
+    let semicolon_pos = rest.find(';').ok_or("Missing ';' separator")?;
+    let (action_part, kv_part) = rest.split_at(semicolon_pos);
+    let action = action_part.trim().to_string();
+    let kv_part = &kv_part[1..]; // Skip the ';'
+
+    // Step 3: Parse KV pairs
+    let kv_map = parse_kv_pairs(kv_part);
+
+    // Step 4: Extract standard fields and other params
+    let flags = kv_map.get("F").cloned().unwrap_or_default();
+    let arg = kv_map.get("A").cloned().unwrap_or_default();
+
+    // Collect remaining keys into other_params
+    let other_params = if kv_map.keys().any(|k| k != "F" && k != "A") {
+        let mut params = HashMap::new();
+        for (k, v) in kv_map {
+            if k != "F" && k != "A" {
+                params.insert(k, v);
+            }
+        }
+        Some(params)
+    } else {
+        None
+    };
+
+    Ok(Command {
+        patch,
+        command,
+        action,
+        arg,
+        flags,
+        other_params,
+        last_update: 0,
+        file_size: None,
+    })
+}
+
 /// Parses a command line into a Command struct
-/// LEGACY: Old format parser - will be removed after migration
+/// Auto-detects format: uses v2 parser if := is found, otherwise uses legacy parser
 pub fn parse_command_line(line: &str) -> Result<Command, String> {
     let trimmed = line.trim();
     if trimmed.is_empty() {
         return Err("Empty line".to_string());
     }
-    
-    // Check for new format: [GROUP! ]COMMAND:ACTION FLAGS; ARG
+
+    // Auto-detect format: new format contains := for key-value pairs
+    if trimmed.contains(":=") {
+        return parse_command_line_v2(line);
+    }
+
+    // LEGACY FORMAT BELOW - will be removed after migration
+
+    // Check for old format: [GROUP! ]COMMAND:ACTION FLAGS; ARG
     // Colon is invalid in command names, so we just look for the first colon
     if let Some(colon_pos) = trimmed.find(':') {
         let (prefix, rest) = trimmed.split_at(colon_pos);
@@ -2201,6 +2291,7 @@ pub fn merge_similar_commands_with_context(commands: Vec<Command>, config: &Conf
                 action: base_command.action.clone(),
                 arg: base_command.arg.clone(),
                 flags: base_command.flags.clone(),
+        other_params: None,
         last_update: 0,
         file_size: None,
             };
@@ -2416,6 +2507,7 @@ mod tests {
             action: "action".to_string(),
             arg: "argument".to_string(),
             flags: String::new(),
+        other_params: None,
         last_update: 0,
         file_size: None,
         };
@@ -2432,6 +2524,7 @@ mod tests {
             action: "action".to_string(),
             arg: "argument".to_string(),
             flags: "flag1 flag2".to_string(),
+        other_params: None,
         last_update: 0,
         file_size: None,
         };
@@ -2448,6 +2541,7 @@ mod tests {
             action: "action".to_string(),
             arg: "argument here".to_string(),
             flags: "--flag".to_string(),
+        other_params: None,
         last_update: 0,
         file_size: None,
         };
@@ -2479,6 +2573,7 @@ mod tests {
                 action: "action".to_string(),
                 arg: "arg".to_string(),
                 flags: String::new(),
+        other_params: None,
         last_update: 0,
         file_size: None,
                 },
@@ -2488,6 +2583,7 @@ mod tests {
                 action: "action".to_string(),
                 arg: "arg".to_string(),
                 flags: String::new(),
+        other_params: None,
         last_update: 0,
         file_size: None,
                 },
@@ -2497,6 +2593,7 @@ mod tests {
                 action: "action".to_string(),
                 arg: "arg".to_string(),
                 flags: String::new(),
+        other_params: None,
         last_update: 0,
         file_size: None,
                 },
@@ -2519,6 +2616,7 @@ mod tests {
                 action: "action".to_string(),
                 arg: "arg".to_string(),
                 flags: String::new(),
+        other_params: None,
         last_update: 0,
         file_size: None,
                 },
@@ -2528,6 +2626,7 @@ mod tests {
                 action: "action".to_string(),
                 arg: "arg".to_string(),
                 flags: String::new(),
+        other_params: None,
         last_update: 0,
         file_size: None,
                 },
@@ -2537,6 +2636,7 @@ mod tests {
                 action: "action".to_string(),
                 arg: "arg".to_string(),
                 flags: String::new(),
+        other_params: None,
         last_update: 0,
         file_size: None,
                 },
@@ -2559,6 +2659,7 @@ mod tests {
                 action: "action".to_string(),
                 arg: "arg".to_string(),
                 flags: String::new(),
+        other_params: None,
         last_update: 0,
         file_size: None,
                 },
@@ -2568,6 +2669,7 @@ mod tests {
                 action: "action".to_string(),
                 arg: "arg".to_string(),
                 flags: String::new(),
+        other_params: None,
         last_update: 0,
         file_size: None,
                 },
@@ -2577,6 +2679,7 @@ mod tests {
                 action: "action".to_string(),
                 arg: "arg".to_string(),
                 flags: String::new(),
+        other_params: None,
         last_update: 0,
         file_size: None,
                 },
@@ -2599,6 +2702,7 @@ mod tests {
                 action: "action".to_string(),
                 arg: "arg".to_string(),
                 flags: String::new(),
+        other_params: None,
         last_update: 0,
         file_size: None,
                 },
@@ -2608,6 +2712,7 @@ mod tests {
                 action: "action".to_string(),
                 arg: "arg".to_string(),
                 flags: String::new(),
+        other_params: None,
         last_update: 0,
         file_size: None,
                 },
@@ -2629,6 +2734,7 @@ mod tests {
                 action: "action".to_string(),
                 arg: "arg".to_string(),
                 flags: String::new(),
+        other_params: None,
         last_update: 0,
         file_size: None,
                 },
@@ -2638,6 +2744,7 @@ mod tests {
                 action: "action".to_string(),
                 arg: "arg".to_string(),
                 flags: String::new(),
+        other_params: None,
         last_update: 0,
         file_size: None,
                 },
@@ -2647,6 +2754,7 @@ mod tests {
                 action: "action".to_string(),
                 arg: "arg".to_string(),
                 flags: String::new(),
+        other_params: None,
         last_update: 0,
         file_size: None,
                 },
@@ -2656,6 +2764,7 @@ mod tests {
                 action: "action".to_string(),
                 arg: "arg".to_string(),
                 flags: String::new(),
+        other_params: None,
         last_update: 0,
         file_size: None,
                 },

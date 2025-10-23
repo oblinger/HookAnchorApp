@@ -481,8 +481,9 @@ pub fn scan_new_files(commands: Vec<Command>, sys_data: &crate::core::data::SysD
                 arg: String::new(),  // Virtual anchor, no actual file
                 flags: String::new(),
                 patch: "orphans".to_string(),  // Notion Root is under orphans
-        last_update: 0,
-        file_size: None,
+                other_params: None,
+                last_update: 0,
+                file_size: None,
             });
             if verbose {
                 println!("   Created Notion Root anchor");
@@ -536,8 +537,9 @@ pub fn scan_new_files(commands: Vec<Command>, sys_data: &crate::core::data::SysD
                 arg: page.url,                  // URL as the arg
                 flags: String::new(),
                 patch: parent_patch,             // Parent page as the patch
-        last_update: 0,
-        file_size: None,
+                other_params: None,
+                last_update: 0,
+                file_size: None,
             });
             notion_added += 1;
         } else {
@@ -991,6 +993,7 @@ fn process_app_bundle(path: &Path, existing_commands: &HashSet<String>, folder_m
         action: "app".to_string(),
         arg: full_path,
         flags: String::new(),
+        other_params: None,
         last_update: 0,
         file_size: None,
     })
@@ -1084,6 +1087,7 @@ fn process_markdown_with_root(path: &Path, _vault_root: &Path, commands: &mut Ve
         action: action.to_string(),
         arg,
         flags,
+        other_params: None,
         last_update: 0,
         file_size: None,
     })
@@ -1155,6 +1159,7 @@ fn process_doc_file(path: &Path, existing_commands: &HashSet<String>, folder_map
         action: "doc".to_string(),
         arg: full_path,
         flags: String::new(),
+        other_params: None,
         last_update: 0,
         file_size: None,
     })
@@ -1300,8 +1305,9 @@ end tell
                         action: "contact".to_string(),
                         arg: contact_id.to_string(),
                         flags: String::new(),
-        last_update: 0,
-        file_size: None,
+                        other_params: None,
+                        last_update: 0,
+                        file_size: None,
                     });
                 }
             }
@@ -1321,8 +1327,9 @@ end tell
                     action: "contact".to_string(),
                     arg: id.to_string(),
                     flags: String::new(),
-        last_update: 0,
-        file_size: None,
+                    other_params: None,
+                    last_update: 0,
+                    file_size: None,
                 });
             }
         }

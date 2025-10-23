@@ -780,6 +780,7 @@ pub fn validate_and_repair_patches(
             arg: String::new(), // Virtual anchor - no file
             patch: "orphans".to_string(),
             flags: String::new(), // System-generated, no flags
+            other_params: None,
             last_update: 0,
             file_size: None,
         };

@@ -701,6 +701,7 @@ pub fn create_command_from_template(
         arg: context.expand(&template.arg),
         patch: context.expand(&template.patch),
         flags: context.expand(&template.flags),
+        other_params: None,
         last_update: 0,
         file_size: None,
     };
@@ -978,6 +979,7 @@ mod tests {
             arg: "/Users/test/Documents/notes/test.md".to_string(),
             patch: "TestPatch".to_string(),
             flags: String::new(),
+        other_params: None,
         };
         
         let context = TemplateContext::new("input", Some(&selected_command), None);
@@ -1022,6 +1024,7 @@ mod tests {
             arg: "/notes/{{date.year}}/{{date.month}}/{{input}}.md".to_string(),
             patch: "Notes".to_string(),
             flags: String::new(),
+        other_params: None,
             key: None,
             edit: false,
             file: None,

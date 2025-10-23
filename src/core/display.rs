@@ -571,6 +571,7 @@ pub fn get_new_display_commands(
                 action: "separator".to_string(),
                 arg: String::new(),
                 flags: String::new(),
+        other_params: None,
                 last_update: 0,
                 file_size: None,
             });

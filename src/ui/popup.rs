@@ -880,6 +880,7 @@ impl AnchorSelector {
                 action: "alias".to_string(),
                 arg: last_command,
                 flags: String::new(),
+        other_params: None,
         last_update: 0,
         file_size: None,
             };
@@ -968,8 +969,9 @@ impl AnchorSelector {
                 arg: String::new(),     // Blank arg for user to fill
                 patch: String::new(),   // Blank patch
                 flags: String::new(),   // No flags
-        last_update: 0,
-        file_size: None,
+                other_params: None,
+                last_update: 0,
+                file_size: None,
             };
             
             // Open the command editor with this new command
@@ -1819,6 +1821,7 @@ impl AnchorSelector {
             arg: updated_arg, // Use the updated arg from rename operation
             patch: new_command_patch.clone(),
             flags: new_command_flags.clone(),
+        other_params: None,
         last_update: 0,
         file_size: None,
         };
@@ -2170,8 +2173,9 @@ impl AnchorSelector {
                             action: action.to_string(),
                             arg: url,
                             flags: flags, // Use the detected suffix from the grabber
-        last_update: 0,
-        file_size: None,
+                            other_params: None,
+                            last_update: 0,
+                            file_size: None,
                         }
                     )
                 } else {
@@ -2681,6 +2685,7 @@ impl AnchorSelector {
                 arg: path,
                 patch: String::new(),
                 flags: String::new(),
+        other_params: None,
                 last_update: 0,
                 file_size: None,
             }
@@ -2803,6 +2808,7 @@ impl AnchorSelector {
             action: "contact".to_string(),
             arg: contact_name.clone(),
             flags: String::new(),
+        other_params: None,
         last_update: 0,
         file_size: None,
         };
@@ -2854,6 +2860,7 @@ impl AnchorSelector {
                         arg: resolved_cmd.arg.clone(),
                         patch: resolved_cmd.patch.clone(),
                         flags: String::new(),
+        other_params: None,
         last_update: 0,
         file_size: None,
                     };

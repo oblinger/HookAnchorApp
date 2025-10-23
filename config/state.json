@@ -2,7 +2,7 @@
   "anchor_folder": null,
   "anchor_name": "HookAnchor",
   "anchor_timestamp": 1761234154,
-  "build_time": 1761248157,
+  "build_time": 1761248905,
   "history_viewer_state": {
     "min_edit_size": 500,
     "name_filter": "",
@@ -12,7 +12,7 @@
       25.0
     ],
     "selected_action_types": [],
-    "sidebar_width": 306.0,
+    "sidebar_width": 290.0,
     "window_size": [
       1000.0,
       1415.0
@@ -22,7 +22,7 @@
   "last_scan_checksum": null,
   "last_scan_time": null,
   "notion_last_scan": null,
-  "server_pid": 68386,
+  "server_pid": 69066,
   "show_files": true,
   "window_position": [
     980.0,

@@ -322,6 +322,7 @@ fn execute_template_action(
         arg: params.get("arg").cloned().unwrap_or_default(),
         patch: params.get("patch").cloned().unwrap_or_default(),
         flags: params.get("flags").cloned().unwrap_or_default(),
+        other_params: None,
         last_update: 0,
         file_size: None,
     };
@@ -802,6 +803,7 @@ mod tests {
             arg: "/path/to/file.md".to_string(),
             patch: "TestPatch".to_string(),
             flags: String::new(),
+        other_params: None,
         last_update: 0,
         file_size: None,
         });
