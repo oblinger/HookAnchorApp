@@ -255,6 +255,15 @@ pub(super) fn deduplicate_commands(commands: Vec<Command>) -> Vec<Command> {
 
 /// Determines if new_command should replace current_command
 fn should_replace_command(current: &Command, new: &Command) -> bool {
+    // Priority 0: ALWAYS prefer anchor commands - they define the patch hierarchy
+    // Anchors must never be removed during deduplication or the hierarchy breaks
+    if new.is_anchor() && !current.is_anchor() {
+        return true;
+    }
+    if current.is_anchor() && !new.is_anchor() {
+        return false;
+    }
+
     // Priority 1: Prefer commands with patches
     if !new.patch.is_empty() && current.patch.is_empty() {
         return true;

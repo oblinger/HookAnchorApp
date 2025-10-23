@@ -62,7 +62,7 @@ use chrono::Local;
 
 /// Action types that are automatically generated and removed by the scanner
 /// These commands will be removed during rescanning unless they have the 'U' (user-edited) flag
-/// NOTE: "anchor" is handled separately by delete_anchors() function
+/// NOTE: "anchor" is NOT included - we preserve existing anchors during rescan so patch inference can work
 pub const SCANNER_GENERATED_ACTIONS: &[&str] = &["markdown", "folder", "app", "open_app", "doc"];
 
 
@@ -416,6 +416,25 @@ pub fn scan_modified_files(commands: &mut Vec<Command>, verbose: bool) -> Result
 /// Used for the --rescan command line option
 /// This function discovers new files and adds them to the command list
 /// AND records "created" history entries with file birth times
+/// Scans the filesystem for new files and creates commands for them
+///
+/// This is the top-level entry point for filesystem scanning during rescan operations.
+///
+/// Steps:
+/// 1. Calls scan_files() which:
+///    - Deletes all scanner-generated commands (markdown, folder, app, doc, anchor)
+///    - Preserves user-edited commands (those with 'U' flag)
+///    - Scans configured file_roots directories recursively
+///    - Creates new commands for:
+///      * Markdown files (with 'a' flag if they're anchor files)
+///      * App bundles (.app directories)
+///      * Doc files (configured extensions)
+///    - Leaves all command patches empty (will be filled by validate_and_repair_patches)
+/// 2. Records "created" history entries for newly discovered files
+/// 3. Returns the updated commands list
+///
+/// Note: This function does NOT assign patches to commands. That happens later in
+/// validate_and_repair_patches() which is called by flush() after set_commands().
 pub fn scan_new_files(commands: Vec<Command>, sys_data: &crate::core::data::SysData, verbose: bool) -> Vec<Command> {
     let empty_vec = vec![];
     let file_roots = sys_data.config.popup_settings.file_roots.as_ref().unwrap_or(&empty_vec);
@@ -672,9 +691,11 @@ fn scan_files(mut commands: Vec<Command>, file_roots: &[String], config: &Config
         false
     };
     
-    // Delete non-Notion file anchors before rescanning files
-    delete_anchors(&mut commands, false, true);  // false = delete non-Notion anchors, true = verbose output for debugging
-    
+    // STEP 1: Delete all non-user-edited anchors to ensure clean rebuild
+    // This is critical for the new two-pass scanner which builds folder_map incrementally
+    let anchors_deleted = delete_anchors(&mut commands, false, false);  // false = delete non-Notion anchors, false = quiet
+    crate::utils::log(&format!("Deleted {} non-user anchor commands", anchors_deleted));
+
     // Remove existing markdown and folder commands from the commands list
     // BUT ONLY for files within the directories we're about to scan
     // EXCEPT those with the "U" (user edited) flag - preserve those
@@ -737,11 +758,27 @@ fn scan_files(mut commands: Vec<Command>, file_roots: &[String], config: &Config
         }
     }
     
+    // STEP 2: Build initial folder_map from remaining user-edited anchors
+    // This map will be populated incrementally as we discover anchors during scanning
+    let mut folder_map: std::collections::HashMap<PathBuf, String> = std::collections::HashMap::new();
+    for cmd in &commands {
+        if cmd.is_anchor() && !cmd.arg.is_empty() {
+            // Get the folder path for this anchor
+            if let Some(folder_path) = cmd.get_absolute_folder_path(config) {
+                if let Ok(canonical_folder) = folder_path.canonicalize() {
+                    folder_map.insert(canonical_folder, cmd.command.clone());
+                    crate::utils::log(&format!("Initial folder_map: '{}' -> '{}'", folder_path.display(), cmd.command));
+                }
+            }
+        }
+    }
+    crate::utils::log(&format!("Built initial folder_map with {} user-edited anchors", folder_map.len()));
+
     // Collect folders during scanning
     // COMMENTED OUT: Folder scanning disabled for now - only creating commands for markdown files
     // let mut found_folders: Vec<PathBuf> = Vec::new();
-    
-    // Then scan for new files (markdown, folders, and apps)
+
+    // STEP 3: Scan for new files with depth-first two-pass algorithm
     for root in file_roots {
         let expanded_root = expand_home(root);
         let root_path = Path::new(&expanded_root);
@@ -752,7 +789,7 @@ fn scan_files(mut commands: Vec<Command>, file_roots: &[String], config: &Config
             let _commands_before_scan = commands.len();
             // COMMENTED OUT: Passing empty Vec instead of found_folders since folder scanning is disabled
             let mut dummy_folders = Vec::new();
-            scan_directory_with_root(&root_path, &root_path, &mut commands, &mut existing_commands, &mut handled_files, &mut dummy_folders, &existing_patches, config);
+            scan_directory_with_root(&root_path, &root_path, &mut commands, &mut existing_commands, &mut handled_files, &mut dummy_folders, &existing_patches, &mut folder_map, config);
             let _commands_after_scan = commands.len();
             println!("   ✅ Found {} new commands in {}", _commands_after_scan - _commands_before_scan, expanded_root);
         } else {
@@ -805,18 +842,42 @@ fn scan_files(mut commands: Vec<Command>, file_roots: &[String], config: &Config
 }
 
 
+/// Infer patch for a file by walking up its directory tree and looking in folder_map
+fn infer_patch_from_folder_map(file_path: &Path, folder_map: &std::collections::HashMap<PathBuf, String>) -> String {
+    let mut current = file_path.parent();
+
+    while let Some(dir) = current {
+        if let Ok(canonical) = dir.canonicalize() {
+            if let Some(patch) = folder_map.get(&canonical) {
+                crate::utils::detailed_log("PATCH_INFER", &format!("Inferred patch '{}' for '{}' from folder '{}'",
+                    patch, file_path.display(), canonical.display()));
+                return patch.clone();
+            }
+        }
+        current = dir.parent();
+    }
+
+    // No parent folder found in map - assign to orphans
+    crate::utils::detailed_log("PATCH_INFER", &format!("No folder match for '{}' - assigning to orphans", file_path.display()));
+    "orphans".to_string()
+}
+
 /// Recursively scans a directory for files and folders with vault root tracking
-fn scan_directory_with_root(dir: &Path, vault_root: &Path, commands: &mut Vec<Command>, existing_commands: &mut HashSet<String>, handled_files: &mut HashSet<String>, found_folders: &mut Vec<PathBuf>, existing_patches: &std::collections::HashMap<String, String>, config: &Config) {
-    scan_directory_with_root_protected(dir, vault_root, commands, existing_commands, handled_files, found_folders, existing_patches, config, &mut HashSet::new(), 0)
+fn scan_directory_with_root(dir: &Path, vault_root: &Path, commands: &mut Vec<Command>, existing_commands: &mut HashSet<String>, handled_files: &mut HashSet<String>, found_folders: &mut Vec<PathBuf>, existing_patches: &std::collections::HashMap<String, String>, folder_map: &mut std::collections::HashMap<PathBuf, String>, config: &Config) {
+    scan_directory_with_root_protected(dir, vault_root, commands, existing_commands, handled_files, found_folders, existing_patches, folder_map, config, &mut HashSet::new(), 0)
 }
 
 /// Protected version with loop detection and depth limiting
-fn scan_directory_with_root_protected(dir: &Path, vault_root: &Path, commands: &mut Vec<Command>, existing_commands: &mut HashSet<String>, handled_files: &mut HashSet<String>, found_folders: &mut Vec<PathBuf>, existing_patches: &std::collections::HashMap<String, String>, config: &Config, visited: &mut HashSet<PathBuf>, depth: usize) {
+/// NEW TWO-PASS ALGORITHM:
+/// 1. Read directory once into Vec<PathBuf>
+/// 2. Pass 1: Find and create anchor files first, add to folder_map
+/// 3. Pass 2: Process all files (assign patches using folder_map) and recurse into subdirectories
+fn scan_directory_with_root_protected(dir: &Path, vault_root: &Path, commands: &mut Vec<Command>, existing_commands: &mut HashSet<String>, handled_files: &mut HashSet<String>, found_folders: &mut Vec<PathBuf>, existing_patches: &std::collections::HashMap<String, String>, folder_map: &mut std::collections::HashMap<PathBuf, String>, config: &Config, visited: &mut HashSet<PathBuf>, depth: usize) {
     // Prevent infinite loops with depth limit
     if depth > 20 {
         return;
     }
-    
+
     // Get canonical path to detect symbolic link loops
     let canonical_dir = match dir.canonicalize() {
         Ok(path) => path,
@@ -824,17 +885,18 @@ fn scan_directory_with_root_protected(dir: &Path, vault_root: &Path, commands: &
             return;
         }
     };
-    
+
     // Check if we've already visited this directory (prevents infinite loops)
     if visited.contains(&canonical_dir) {
         return;
     }
     visited.insert(canonical_dir.clone());
-    
+
+    // Scan directory entries (single pass with incremental folder_map updates)
     if let Ok(entries) = fs::read_dir(dir) {
         for entry in entries.filter_map(Result::ok) {
             let path = entry.path();
-            
+
             // Skip hidden files and directories (those starting with .)
             if let Some(file_name) = path.file_name() {
                 if let Some(name_str) = file_name.to_str() {
@@ -871,7 +933,7 @@ fn scan_directory_with_root_protected(dir: &Path, vault_root: &Path, commands: &
                     if let Some(name_str) = file_name.to_str() {
                         if name_str.ends_with(".app") {
                             // This is an app bundle - create an APP command
-                            if let Some(command) = process_app_bundle(&path, existing_commands, existing_patches) {
+                            if let Some(command) = process_app_bundle(&path, existing_commands, folder_map) {
                                 crate::utils::detailed_log("SCANNER", &format!("Found app bundle: {} -> command: {}", 
                                     path.display(), command.command));
                                 
@@ -899,7 +961,7 @@ fn scan_directory_with_root_protected(dir: &Path, vault_root: &Path, commands: &
                 // found_folders.push(path.clone());
                 
                 // Recursively scan subdirectories (but not .app bundles)
-                scan_directory_with_root_protected(&path, vault_root, commands, existing_commands, handled_files, found_folders, existing_patches, config, visited, depth + 1);
+                scan_directory_with_root_protected(&path, vault_root, commands, existing_commands, handled_files, found_folders, existing_patches, folder_map, config, visited, depth + 1);
             } else {
                 // Process files (markdown files and DOC files)
                 let mut file_processed = false;
@@ -907,7 +969,7 @@ fn scan_directory_with_root_protected(dir: &Path, vault_root: &Path, commands: &
                 crate::utils::detailed_log("SCANNER", &format!("Processing file: {}", path.display()));
                 
                 // Try to process as markdown file first
-                if let Some(command) = process_markdown_with_root(&path, vault_root, existing_commands, &existing_patches) {
+                if let Some(command) = process_markdown_with_root(&path, vault_root, commands, existing_commands, handled_files, folder_map) {
                     // Always log found markdown files for debugging
                     crate::utils::log(&format!("📄 Found markdown: {} -> cmd: '{}' action: '{}'", 
                         path.display(), command.command, command.action));
@@ -925,6 +987,18 @@ fn scan_directory_with_root_protected(dir: &Path, vault_root: &Path, commands: &
                         existing_commands.insert(command.command.to_lowercase());
                         // Add to handled files set to prevent creating duplicate commands for this file
                         handled_files.insert(command.arg.clone());
+
+                        // If this is an anchor, add it to folder_map for its parent folder
+                        if command.is_anchor() {
+                            if let Some(parent) = path.parent() {
+                                if let Ok(canonical_parent) = parent.canonicalize() {
+                                    folder_map.insert(canonical_parent.clone(), command.command.clone());
+                                    crate::utils::log(&format!("   🏷️  Added anchor to folder_map: '{}' -> '{}'",
+                                        canonical_parent.display(), command.command));
+                                }
+                            }
+                        }
+
                         commands.push(command);
                     }
                     file_processed = true;
@@ -933,7 +1007,7 @@ fn scan_directory_with_root_protected(dir: &Path, vault_root: &Path, commands: &
                 // If not a markdown file, try to process as DOC file
                 if !file_processed {
                     crate::utils::detailed_log("SCANNER", &format!("File not processed as markdown, trying DOC: {}", path.display()));
-                    if let Some(command) = process_doc_file(&path, existing_commands, &existing_patches, config) {
+                    if let Some(command) = process_doc_file(&path, existing_commands, folder_map, config) {
                         // Always log found DOC files for debugging
                         // DOC command created successfully
                         crate::utils::log(&format!("📄 Found doc: {} -> cmd: '{}' action: '{}'", 
@@ -963,7 +1037,7 @@ fn scan_directory_with_root_protected(dir: &Path, vault_root: &Path, commands: &
 
 
 /// Processes an .app bundle and returns an APP command
-fn process_app_bundle(path: &Path, existing_commands: &HashSet<String>, existing_patches: &std::collections::HashMap<String, String>) -> Option<Command> {
+fn process_app_bundle(path: &Path, existing_commands: &HashSet<String>, folder_map: &std::collections::HashMap<PathBuf, String>) -> Option<Command> {
     // Get the app name from the path
     let app_name_with_ext = path.file_name()?.to_str()?;
     
@@ -993,12 +1067,12 @@ fn process_app_bundle(path: &Path, existing_commands: &HashSet<String>, existing
     };
     
     let full_path = path.to_string_lossy().to_string();
-    
-    // Try to preserve existing patch if this command existed before
-    let preserved_patch = existing_patches.get(&command_name).cloned().unwrap_or_else(|| "App".to_string());
-    
+
+    // Infer patch from folder hierarchy
+    let patch = infer_patch_from_folder_map(path, folder_map);
+
     Some(Command {
-        patch: preserved_patch,
+        patch,
         command: command_name,
         action: "app".to_string(),
         arg: full_path,
@@ -1009,17 +1083,24 @@ fn process_app_bundle(path: &Path, existing_commands: &HashSet<String>, existing
 }
 
 /// Processes a path and returns a command if it's a markdown file with vault root for relative paths
-fn process_markdown_with_root(path: &Path, _vault_root: &Path, existing_commands: &HashSet<String>, existing_patches: &std::collections::HashMap<String, String>) -> Option<Command> {
+fn process_markdown_with_root(path: &Path, _vault_root: &Path, commands: &mut Vec<Command>, existing_commands: &HashSet<String>, handled_files: &HashSet<String>, folder_map: &std::collections::HashMap<PathBuf, String>) -> Option<Command> {
     // Check if it's a file and has .md extension
     if !path.is_file() {
         return None;
     }
-    
+
     let extension = path.extension()?.to_str()?;
     if extension.to_lowercase() != "md" {
         return None;
     }
-    
+
+    // Check if this file is already handled by an existing command
+    let full_path = path.to_string_lossy().to_string();
+    if handled_files.contains(&full_path) {
+        crate::utils::detailed_log("SCANNER", &format!("Skipping {} - already handled by existing command", full_path));
+        return None;
+    }
+
     // Get the base name without extension
     let file_name = match path.file_stem()?.to_str() {
         Some(name) => name,
@@ -1028,53 +1109,74 @@ fn process_markdown_with_root(path: &Path, _vault_root: &Path, existing_commands
             return None;
         }
     };
-    
-    // Determine action type using the shared get_action function
-    let action = get_action(path);
-    
+
+    // Check if this is an anchor file (filename matches parent folder name)
+    let is_anchor = crate::utils::is_anchor_file(path);
+
+    // Always use "markdown" action for .md files (anchor status is indicated by 'a' flag)
+    let action = "markdown";
+
     // Create command name without suffix, but check for collisions (case-insensitive)
     let preferred_name = file_name.to_string();
-    
+
     // Special handling for files ending with "App" - always add " Markdown" suffix
     // This prevents collision with actual .app commands
     let command_name = if file_name.ends_with(" App") || file_name.ends_with("App") {
         // For App markdown files, always use " Markdown" suffix to avoid confusion with actual apps
         format!("{} Markdown", file_name)
     } else if existing_commands.contains(&preferred_name.to_lowercase()) {
-        // If collision exists, use " markdown" suffix
-        format!("{} markdown", file_name)
+        // Check if this is an anchor file with a collision
+        if is_anchor {
+            // Find the conflicting user command and add 'a' flag to it
+            for cmd in commands.iter_mut() {
+                if cmd.command.eq_ignore_ascii_case(&preferred_name) && cmd.flags.contains('U') {
+                    cmd.set_flag('a', "");
+                    crate::utils::log(&format!("🏷️  Added anchor flag to user command '{}' (patch: {})", cmd.command, cmd.patch));
+                    return None; // Don't create duplicate - user's command is now the anchor
+                }
+            }
+            // If we get here, collision wasn't with user command
+            // Anchor files always use their natural name, even with collisions
+            crate::utils::log(&format!("🎯 Creating anchor '{}' despite collision (non-user command)", preferred_name));
+            preferred_name
+        } else {
+            // Non-anchor with collision, add suffix
+            format!("{} markdown", file_name)
+        }
     } else {
         // Use the preferred name without suffix
         preferred_name
     };
     
     let full_path = path.to_string_lossy().to_string();
-    
-    // Calculate the argument based on action type
-    let arg = if action == "markdown" {
-        // For markdown entries, use absolute path (new unified approach)
-        full_path.clone()
+
+    // All markdown files use absolute path as argument
+    let arg = full_path.clone();
+
+    // Set the 'a' flag if this is an anchor file
+    let flags = if is_anchor {
+        "a".to_string()
     } else {
-        // For anchor entries, use full path as before
-        full_path.clone()
+        String::new()
     };
-    
-    // Try to preserve existing patch if this command existed before
-    let preserved_patch = existing_patches.get(&command_name).cloned().unwrap_or_else(String::new);
-    
+
+    // Determine the patch for this command using folder_map
+    // This assigns patches DURING scanning based on directory hierarchy
+    let patch = infer_patch_from_folder_map(path, folder_map);
+
     Some(Command {
-        patch: preserved_patch,
+        patch,
         command: command_name,
         action: action.to_string(),
         arg,
-        flags: String::new(),
+        flags,
         last_update: 0,
         file_size: None,
     })
 }
 
 /// Processes a path and returns a DOC command if it matches the configured file extensions
-fn process_doc_file(path: &Path, existing_commands: &HashSet<String>, existing_patches: &std::collections::HashMap<String, String>, config: &Config) -> Option<Command> {
+fn process_doc_file(path: &Path, existing_commands: &HashSet<String>, folder_map: &std::collections::HashMap<PathBuf, String>, config: &Config) -> Option<Command> {
     // Check if it's a file
     if !path.is_file() {
         return None;
@@ -1129,12 +1231,12 @@ fn process_doc_file(path: &Path, existing_commands: &HashSet<String>, existing_p
     };
     
     let full_path = path.to_string_lossy().to_string();
-    
-    // Try to preserve existing patch if this command existed before
-    let preserved_patch = existing_patches.get(&command_name).cloned().unwrap_or_else(String::new);
-    
+
+    // Infer patch from folder hierarchy
+    let patch = infer_patch_from_folder_map(path, folder_map);
+
     Some(Command {
-        patch: preserved_patch,
+        patch,
         command: command_name,
         action: "doc".to_string(),
         arg: full_path,

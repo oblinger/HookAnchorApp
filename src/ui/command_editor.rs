@@ -344,7 +344,7 @@ impl CommandEditor {
                                     if new_command.action == "alias" && new_command.command == new_command.arg {
                                         // Show error immediately without trying to save
                                         // This prevents the system from getting into a bad state
-                                        eprintln!("ERROR: Cannot create self-referential alias: '{}' cannot alias to itself", new_command.command);
+                                        crate::utils::log_error(&format!("ERROR: Cannot create self-referential alias: '{}' cannot alias to itself", new_command.command));
                                         // Don't set result, keep editor open
                                     } else {
                                         result = CommandEditorResult::Save(new_command, self.original_command_name.clone());
@@ -379,7 +379,7 @@ impl CommandEditor {
 
             // Early validation for self-referential aliases to prevent crashes
             if new_command.action == "alias" && new_command.command == new_command.arg {
-                eprintln!("ERROR: Cannot create self-referential alias: '{}' cannot alias to itself", new_command.command);
+                crate::utils::log_error(&format!("ERROR: Cannot create self-referential alias: '{}' cannot alias to itself", new_command.command));
                 // Don't set result, keep editor open
             } else {
                 result = CommandEditorResult::Save(new_command, self.original_command_name.clone());
@@ -405,20 +405,23 @@ impl CommandEditor {
         last_update: 0,
         file_size: None,
         };
-        
+
+        // Apply anchor flag based on checkbox state
+        new_command.set_anchor(self.is_anchor);
+
         // ALWAYS add 'U' flag when a command is edited in the command editor
         // This indicates user-edited and prevents removal during rescan
         // Use proper flag accessor to ensure correct comma separation
         if !new_command.flags.contains('U') {
             new_command.set_flag('U', "");
         }
-        
+
         let command_to_delete = if !self.original_command_name.is_empty() {
             Some(self.original_command_name.clone())
         } else {
             None
         };
-        
+
         (command_to_delete, new_command)
     }
     

@@ -37,7 +37,7 @@ popup_settings:
   skip_directory_patterns:    # Directory patterns to skip during scanning (glob patterns)
     - "/Yore/"            # Exclude any path containing /Yore/ folder (historical files)
   listed_actions: >
-    alias,anchor,app,console,doc,folder,markdown,text,
+    alias,app,console,doc,folder,markdown,text,
     1pass,contact,notion,obs_url,slack,
     url,brave,chrome,firefox,safari,work
   
@@ -499,11 +499,7 @@ actions:
   markdown:
     description: "Open markdown file in Obsidian or default editor"
     action_type: markdown
-    
-  anchor:
-    description: "Open anchor file in Obsidian or default editor"
-    action_type: markdown
-    
+
   text:
     description: "Type text file contents into active application"
     action_type: text

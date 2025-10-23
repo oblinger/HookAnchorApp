@@ -321,9 +321,9 @@ impl Command {
     }
 
     /// Checks if this command is an anchor
-    /// Returns true if action type is "anchor" or "markdown", OR if 'a' flag is set
+    /// Returns true if action type is "anchor" OR if 'a' flag is set
     pub fn is_anchor(&self) -> bool {
-        self.action == "anchor" || self.action == "markdown" || self.get_flag('a').is_some()
+        self.action == "anchor" || self.get_flag('a').is_some()
     }
 
     /// Sets or clears the anchor flag
@@ -489,7 +489,7 @@ pub(crate) fn backup_commands_file() -> Result<(), Box<dyn std::error::Error>> {
 /// Creates a hashmap from patch names to Patch structs
 /// Creates a patch entry for every anchor command, indexed by the command's lowercase name
 /// INTERNAL ONLY - External code should use get_sys_data() to get patches
-pub(in crate::core) fn create_patches_hashmap(commands: &[Command]) -> HashMap<String, Patch> {
+pub(crate) fn create_patches_hashmap(commands: &[Command]) -> HashMap<String, Patch> {
     let mut patches = HashMap::new();
     let config = crate::core::data::get_config();
     let preferred_anchor_type = config.popup_settings.preferred_anchor.as_deref().unwrap_or("markdown");
@@ -555,9 +555,9 @@ pub(in crate::core) fn create_patches_hashmap(commands: &[Command]) -> HashMap<S
     
     for patch_name in patches_with_commands {
         if !patches.contains_key(&patch_name) {
-            // Create virtual anchor for this patch
-            if let Some(virtual_command) = create_virtual_anchor_for_patch(&patch_name, &config) {
-                crate::utils::log(&format!("PATCH: Created virtual anchor for patch '{}'", patch_name));
+            // Create virtual anchor for this patch with inferred parent
+            if let Some(virtual_command) = create_virtual_anchor_for_patch(&patch_name, &config, &patches) {
+                crate::utils::log(&format!("PATCH: Created virtual anchor for patch '{}' with parent '{}'", patch_name, virtual_command.patch));
                 patches.insert(patch_name.clone(), Patch {
                     name: virtual_command.command.clone(),
                     anchor_commands: vec![virtual_command],
@@ -1152,11 +1152,11 @@ pub fn run_patch_inference(
                     crate::utils::log(&format!("  ✅ Inferred patch for '{}': {} -> {}", 
                         command.command, old_patch_display, inferred_patch));
                 }
-                
+
                 if print_to_stdout {
-                    println!("{}: {} -> {}", command.command, old_patch_display, inferred_patch);
+                    crate::utils::log(&format!("{}: {} -> {}", command.command, old_patch_display, inferred_patch));
                 }
-                
+
                 patches_assigned += 1;
                 
                 // Track new patches to add later - use original case for new patch names
@@ -1400,18 +1400,69 @@ pub(crate) fn create_virtual_anchors(
 
 /// Create a virtual anchor command for a patch that has no anchor
 /// This ensures every patch has at least one anchor command
-fn create_virtual_anchor_for_patch(patch_name: &str, _config: &Config) -> Option<Command> {
+/// Infers the parent patch by finding the longest matching prefix in existing patches
+fn create_virtual_anchor_for_patch(patch_name: &str, _config: &Config, patches: &HashMap<String, Patch>) -> Option<Command> {
+    // Infer parent patch by finding longest matching prefix
+    let parent_patch = infer_parent_patch_from_name(patch_name, patches);
+
+    crate::utils::detailed_log("VIRTUAL_ANCHOR", &format!(
+        "Creating virtual anchor for '{}' with parent '{}'",
+        patch_name, parent_patch
+    ));
+
     // Create the virtual anchor command - no file path needed, just blank arg
     // No flags needed - absence of 'U' flag indicates this is system-generated
     Some(Command {
         command: patch_name.to_string(),
         action: "anchor".to_string(),
         arg: String::new(), // NEW SYSTEM: Blank arg, no markdown file
-        patch: "orphans".to_string(),
+        patch: parent_patch,
         flags: String::new(), // System-generated, so no flags needed
         last_update: 0,
         file_size: None,
     })
+}
+
+/// Infer parent patch from a patch name by finding the longest matching prefix
+/// Example: "2016-00-00 ppp" -> looks for "2016-00", "2016", etc.
+fn infer_parent_patch_from_name(patch_name: &str, patches: &HashMap<String, Patch>) -> String {
+    let patch_name_lower = patch_name.to_lowercase();
+
+    // Try progressively shorter prefixes, looking for matches in existing patches
+    // Split on common separators: space, dash, underscore
+    let parts: Vec<&str> = patch_name
+        .split(|c: char| c == ' ' || c == '-' || c == '_')
+        .collect();
+
+    // Try from longest to shortest prefix
+    for len in (1..parts.len()).rev() {
+        let prefix = parts[..len].join(" ");
+        let prefix_lower = prefix.to_lowercase();
+
+        // Also try with original separators
+        if patches.contains_key(&prefix_lower) {
+            crate::utils::detailed_log("PARENT_INFERENCE", &format!(
+                "Found parent '{}' for patch '{}'", prefix, patch_name
+            ));
+            return prefix;
+        }
+
+        // Try with dashes instead of spaces
+        let prefix_dash = parts[..len].join("-");
+        let prefix_dash_lower = prefix_dash.to_lowercase();
+        if patches.contains_key(&prefix_dash_lower) {
+            crate::utils::detailed_log("PARENT_INFERENCE", &format!(
+                "Found parent '{}' for patch '{}'", prefix_dash, patch_name
+            ));
+            return prefix_dash;
+        }
+    }
+
+    // No parent found - use orphans
+    crate::utils::detailed_log("PARENT_INFERENCE", &format!(
+        "No parent found for patch '{}' - using orphans", patch_name
+    ));
+    "orphans".to_string()
 }
 
 // GlobalData has been moved to sys_data module as SysData

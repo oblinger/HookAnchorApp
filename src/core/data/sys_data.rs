@@ -53,20 +53,20 @@ fn initialize_config() -> Result<(), String> {
             config_yaml_exists, commands_txt_exists, config_js_exists
         ));
 
-        println!("\n🚀 First-time setup detected - initializing HookAnchor configuration...");
-        println!("   Missing files will be created:");
+        crate::utils::log("\n🚀 First-time setup detected - initializing HookAnchor configuration...");
+        crate::utils::log("   Missing files will be created:");
         if !config_yaml_exists {
-            println!("   • config.yaml (application configuration)");
+            crate::utils::log("   • config.yaml (application configuration)");
         }
         if !commands_txt_exists {
-            println!("   • commands.txt (command definitions)");
+            crate::utils::log("   • commands.txt (command definitions)");
         }
         if !config_js_exists {
-            println!("   • config.js (JavaScript functions)");
+            crate::utils::log("   • config.js (JavaScript functions)");
         }
 
         // Launch GUI installer for automatic installation
-        println!("   Launching GUI installer...");
+        crate::utils::log("   Launching GUI installer...");
 
         // Find the installer_gui binary in the same directory as the current executable
         let current_exe = std::env::current_exe().unwrap_or_else(|_| std::path::PathBuf::from("ha"));
@@ -80,18 +80,18 @@ fn initialize_config() -> Result<(), String> {
             match std::process::Command::new(&installer_path)
                 .spawn() {
                 Ok(_) => {
-                    println!("   GUI installer launched successfully");
-                    println!("   Please complete the setup and restart HookAnchor");
+                    crate::utils::log("   GUI installer launched successfully");
+                    crate::utils::log("   Please complete the setup and restart HookAnchor");
                     std::process::exit(0); // Exit to let user complete setup
                 },
                 Err(e) => {
-                    eprintln!("\n⚠️  Failed to launch GUI installer: {}", e);
-                    eprintln!("   You can run setup manually with: ha --install");
+                    crate::utils::log_error(&format!("\n⚠️  Failed to launch GUI installer: {}", e));
+                    crate::utils::log_error("   You can run setup manually with: ha --install");
                 }
             }
         } else {
-            eprintln!("\n⚠️  GUI installer not found at: {}", installer_path.display());
-            eprintln!("   You can run setup manually with: ha --install");
+            crate::utils::log_error(&format!("\n⚠️  GUI installer not found at: {}", installer_path.display()));
+            crate::utils::log_error("   You can run setup manually with: ha --install");
         }
     }
 
@@ -200,7 +200,7 @@ pub fn get_patches() -> HashMap<String, Patch> {
 /// This ALWAYS validates/repairs patches and saves to both cache and commands.txt
 fn flush(commands: &mut Vec<Command>) -> Result<(), Box<dyn std::error::Error>> {
     // Step 1: Validate and repair patches (ensures data integrity)
-    let resolution = crate::core::validate_and_repair_patches(commands, false);
+    let resolution = crate::core::validate_and_repair_patches(commands, true);
     let patches = resolution.patches;
 
     // Step 2: Deduplicate commands (keeps best version of each unique command name)
@@ -399,23 +399,23 @@ pub fn load_data(commands_override: Vec<Command>, verbose: bool) -> SysData {
         if let Some(ref data) = *sys_data {
             // Cached data available, no disk reads needed
             if verbose {
-                println!("⚡ Using cached data - no disk reads needed");
+                crate::utils::log("⚡ Using cached data - no disk reads needed");
             }
             return data.clone();
         }
         if verbose {
-            println!("📂 Loading data from disk...");
+            crate::utils::log("📂 Loading data from disk...");
         }
     } else {
         crate::utils::detailed_log("LOAD_DATA", &format!("Using provided commands override ({} commands)", commands_override.len()));
         if verbose {
-            println!("🔧 Using provided commands override ({} commands)", commands_override.len());
+            crate::utils::log(&format!("🔧 Using provided commands override ({} commands)", commands_override.len()));
         }
     }
-    
+
     // Step 1: Get the pre-initialized config
     if verbose {
-        println!("🔧 Step 1: Using pre-initialized configuration...");
+        crate::utils::log("🔧 Step 1: Using pre-initialized configuration...");
     }
     let config = get_config();
     
@@ -427,14 +427,14 @@ pub fn load_data(commands_override: Vec<Command>, verbose: bool) -> SysData {
         match crate::core::commands::load_commands_from_cache() {
             Some(cached_commands) => {
                 if verbose {
-                    println!("📋 Step 2: Loaded {} commands from cache", cached_commands.len());
+                    crate::utils::log(&format!("📋 Step 2: Loaded {} commands from cache", cached_commands.len()));
                 }
                 cached_commands
             }
             None => {
                 if verbose {
-                    println!("📋 Step 2: No cache found - starting with empty commands");
-                    println!("            Run --rescan to rebuild from filesystem");
+                    crate::utils::log("📋 Step 2: No cache found - starting with empty commands");
+                    crate::utils::log("            Run --rescan to rebuild from filesystem");
                 }
                 Vec::new()
             }
@@ -445,7 +445,7 @@ pub fn load_data(commands_override: Vec<Command>, verbose: bool) -> SysData {
 
     // Step 3: Validate and repair patches (ensures data integrity)
     if verbose {
-        println!("🧩 Step 3: Validating and repairing patches...");
+        crate::utils::log("🧩 Step 3: Validating and repairing patches...");
     }
     let resolution = crate::core::validate_and_repair_patches(&mut commands, verbose);
     let patches = resolution.patches;
@@ -455,7 +455,7 @@ pub fn load_data(commands_override: Vec<Command>, verbose: bool) -> SysData {
     // When using override, caller is responsible for saving (don't overwrite commands.txt during temp processing)
     if !use_override {
         if verbose {
-            println!("💾 Step 4: Saving to disk...");
+            crate::utils::log("💾 Step 4: Saving to disk...");
         }
         // Always save - ensures deduplication, formatting, consistency
         if let Err(e) = super::storage::save_commands_to_file(&commands) {
@@ -465,17 +465,17 @@ pub fn load_data(commands_override: Vec<Command>, verbose: bool) -> SysData {
         } else {
             if verbose {
                 if changes_made {
-                    println!("   ✅ Saved {} commands with {} inference changes", commands.len(),
-                        if changes_made { "patch" } else { "no" });
+                    crate::utils::log(&format!("   ✅ Saved {} commands with {} inference changes", commands.len(),
+                        if changes_made { "patch" } else { "no" }));
                 } else {
-                    println!("   ✅ Saved {} commands (no inference changes needed)", commands.len());
+                    crate::utils::log(&format!("   ✅ Saved {} commands (no inference changes needed)", commands.len()));
                 }
             }
             // Don't clear cache here - we're already updating it
             // clear_sys_data() would cause deadlock since we're holding the mutex
         }
     } else if verbose {
-        println!("💾 Step 4: Skipping save (using commands override for temporary processing)");
+        crate::utils::log("💾 Step 4: Skipping save (using commands override for temporary processing)");
     }
     
     // Store in sys data for future calls (only if not using commands override)
@@ -488,18 +488,18 @@ pub fn load_data(commands_override: Vec<Command>, verbose: bool) -> SysData {
     if !use_override {
         *sys_data = Some(sys_data_struct.clone());
     }
-    
+
     if verbose {
-        println!("\n✅ Data loading complete!");
-        println!("   Total commands: {}", sys_data_struct.commands.len());
-        println!("   Total patches: {}", sys_data_struct.patches.len());
+        crate::utils::log("\n✅ Data loading complete!");
+        crate::utils::log(&format!("   Total commands: {}", sys_data_struct.commands.len()));
+        crate::utils::log(&format!("   Total patches: {}", sys_data_struct.patches.len()));
         let commands_with_patches = sys_data_struct.commands.iter()
             .filter(|c| !c.patch.is_empty())
             .count();
-        println!("   Commands with patches: {}", commands_with_patches);
-        println!("   Commands without patches: {}", sys_data_struct.commands.len() - commands_with_patches);
+        crate::utils::log(&format!("   Commands with patches: {}", commands_with_patches));
+        crate::utils::log(&format!("   Commands without patches: {}", sys_data_struct.commands.len() - commands_with_patches));
     }
-    
+
     sys_data_struct
 }
 

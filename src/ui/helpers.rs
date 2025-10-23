@@ -6,10 +6,11 @@ use crate::core::data::get_config;
 
 /// Gets the list of actions for the command editor dropdown
 /// Returns the configured actions from popup_settings.listed_actions, or default actions if not configured
+/// Always includes an empty entry at the front to allow clearing the action
 pub fn get_listed_actions() -> Vec<String> {
     let config = get_config();
-    
-    match config.popup_settings.listed_actions {
+
+    let mut actions = match config.popup_settings.listed_actions {
         Some(actions_str) => {
             // Split by comma and trim whitespace
             actions_str
@@ -27,8 +28,12 @@ pub fn get_listed_actions() -> Vec<String> {
                 "cmd".to_string(),
                 "console".to_string(),
                 "chrome".to_string(),
-                "anchor".to_string(),
             ]
         }
-    }
+    };
+
+    // Insert empty entry at the front to allow clearing the action
+    actions.insert(0, String::new());
+
+    actions
 }
