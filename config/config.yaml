@@ -213,7 +213,7 @@ actions:
     action: "markdown"
     arg: "~/ob/kmr/prj/{{date.year}} {{input}}/{{date.year}} {{input}}.md"
     patch: "Prj"
-    flags: ""
+    flags: "A"
     edit: true
     file: "~/ob/kmr/prj/{{date.year}} {{input}}/{{date.year}} {{input}}.md"
     file_rescan: true
@@ -229,7 +229,7 @@ actions:
     action: "markdown"
     arg: "~/ob/kmr/At/@{{input}}.md"
     patch: "At"
-    flags: ""
+    flags: "A"
     edit: true
     file_rescan: true
     contents: |
@@ -244,7 +244,7 @@ actions:
     action: "markdown"
     arg: "~/ob/kmr/At/Org/@{{input}}.md"
     patch: "Org"
-    flags: ""
+    flags: "A"
     edit: true
     file: "~/ob/kmr/At/Org/@{{input}}.md"
     file_rescan: true
