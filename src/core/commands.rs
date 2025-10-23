@@ -12,6 +12,15 @@ use serde::{Deserialize, Serialize};
 use crate::core::data::config::Config;
 
 // =============================================================================
+// FORMAT VERSION
+// =============================================================================
+
+/// Current version of the commands.txt file format
+/// Version 1.0: Key-value format with F:= and A:= syntax
+/// Version 0.x (legacy): Old format without version header
+pub const COMMANDS_FORMAT_VERSION: &str = "1.0";
+
+// =============================================================================
 // FLAG CONSTANTS
 // =============================================================================
 
@@ -1494,10 +1503,13 @@ pub(crate) fn load_commands_raw() -> Vec<Command> {
         Ok(contents) => {
             let mut commands = Vec::new();
             for (line_num, line) in contents.lines().enumerate() {
-                if line.trim().is_empty() {
+                let trimmed = line.trim();
+
+                // Skip empty lines and comments
+                if trimmed.is_empty() || trimmed.starts_with("//") {
                     continue;
                 }
-                
+
                 match parse_command_line(line) {
                     Ok(mut command) => {
                         // MIGRATION: Convert old lowercase 'a' anchor flag to uppercase 'A'
@@ -1764,14 +1776,22 @@ pub fn save_commands_to_file(commands: &[Command]) -> Result<(), Box<dyn std::er
         return Err("Empty patch count exceeds safety limit".into());
     }
     
+    // Build file contents with version header
+    let mut contents = String::new();
+
+    // Add version header as first line
+    contents.push_str(&format!("// HookAnchor Commands Format - version:={}\n", COMMANDS_FORMAT_VERSION));
+
     // Convert all commands to new format and join with newlines
-    let contents = updated_commands.iter()
+    let commands_text = updated_commands.iter()
         .map(|cmd| cmd.to_new_format())
         .collect::<Vec<_>>()
         .join("\n");
-    
+
+    contents.push_str(&commands_text);
+
     // Write with better error handling that includes the file path
-    if let Err(e) = fs::write(&path, contents) {
+    if let Err(e) = fs::write(&path, &contents) {
         let error_msg = format!("Cannot write to file '{}': {}", path.display(), e);
         crate::utils::log_error(&error_msg);
         return Err(error_msg.into());

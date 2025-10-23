@@ -16,13 +16,13 @@
     "name_filter": "",
     "min_edit_size": 500,
     "selected_action_types": [],
-    "sidebar_width": 322.0
+    "sidebar_width": 306.0
   },
-  "build_time": 1761241449,
+  "build_time": 1761247828,
   "last_scan_time": null,
   "last_scan_checksum": null,
   "last_executed_command": "HookAnchor App",
-  "server_pid": 41061,
+  "server_pid": 65769,
   "notion_last_scan": null,
   "anchor_name": "HookAnchor",
   "anchor_timestamp": 1761234154,

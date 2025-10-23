@@ -7,6 +7,7 @@ use std::fs;
 use std::path::{Path, PathBuf};
 use std::env;
 use crate::core::Command;
+use crate::core::commands::COMMANDS_FORMAT_VERSION;
 
 /// Returns the path to the commands.txt file
 pub(super) fn get_commands_file_path() -> PathBuf {
@@ -144,14 +145,22 @@ pub(super) fn save_commands_to_file(commands: &[Command]) -> Result<(), Box<dyn 
         return Err("Empty patch count exceeds safety limit".into());
     }
 
+    // Build file contents with version header
+    let mut contents = String::new();
+
+    // Add version header as first line
+    contents.push_str(&format!("// HookAnchor Commands Format - version:={}\n", COMMANDS_FORMAT_VERSION));
+
     // Convert all commands to new format and join with newlines
-    let contents = updated_commands.iter()
+    let commands_text = updated_commands.iter()
         .map(|cmd| cmd.to_new_format())
         .collect::<Vec<_>>()
         .join("\n");
 
+    contents.push_str(&commands_text);
+
     // Write with better error handling that includes the file path
-    if let Err(e) = fs::write(&path, contents) {
+    if let Err(e) = fs::write(&path, &contents) {
         let error_msg = format!("Cannot write to file '{}': {}", path.display(), e);
         crate::utils::log_error(&error_msg);
         return Err(error_msg.into());
