@@ -255,7 +255,7 @@ pub fn set_commands(mut commands: Vec<Command>) -> Result<(), Box<dyn std::error
     let mut modified_count = 0;
     let mut deleted_count = 0;
 
-    // Find new and modified commands
+    // Record all new and modified commands to history
     for new_cmd in &commands {
         if let Some(cached_cmd) = cached_map.get(&new_cmd.command) {
             // Command exists - check if it was modified
@@ -263,13 +263,8 @@ pub fn set_commands(mut commands: Vec<Command>) -> Result<(), Box<dyn std::error
                new_cmd.arg != cached_cmd.arg ||
                new_cmd.patch != cached_cmd.patch ||
                new_cmd.flags != cached_cmd.flags {
-                // Command was modified - record to history
-                super::history::record_command_modified(
-                    &conn,
-                    cached_cmd,
-                    new_cmd,
-                    timestamp
-                )?;
+                // Command was modified - append to history
+                super::history::append_command(&conn, new_cmd, timestamp)?;
                 modified_count += 1;
                 crate::utils::detailed_log("HISTORY", &format!(
                     "Modified: '{}' (action: {} -> {}, patch: {} -> {})",
@@ -281,8 +276,8 @@ pub fn set_commands(mut commands: Vec<Command>) -> Result<(), Box<dyn std::error
                 ));
             }
         } else {
-            // Command is new - record creation to history
-            super::history::record_command_created(&conn, new_cmd, timestamp)?;
+            // Command is new - append to history
+            super::history::append_command(&conn, new_cmd, timestamp)?;
             created_count += 1;
             crate::utils::detailed_log("HISTORY", &format!(
                 "Created: '{}' (action: {}, patch: {})",
@@ -293,13 +288,16 @@ pub fn set_commands(mut commands: Vec<Command>) -> Result<(), Box<dyn std::error
         }
     }
 
-    // Find deleted commands
+    // Find deleted commands and record them with special action
     for cached_cmd in &cached_commands {
         if !new_map.contains_key(&cached_cmd.command) {
-            // Command was deleted - log it (no history recording function for deletions yet)
+            // Command was deleted - create deletion entry
+            let mut deleted_cmd = cached_cmd.clone();
+            deleted_cmd.action = "$DELETED$".to_string();
+            super::history::append_command(&conn, &deleted_cmd, timestamp)?;
             deleted_count += 1;
             crate::utils::detailed_log("HISTORY", &format!(
-                "Deleted: '{}' (action: {}, patch: {})",
+                "Deleted: '{}' (was action: {}, patch: {})",
                 cached_cmd.command,
                 cached_cmd.action,
                 cached_cmd.patch
@@ -322,36 +320,25 @@ pub fn set_commands(mut commands: Vec<Command>) -> Result<(), Box<dyn std::error
 /// Add a single command, record in history, run inference, and save
 /// Convenience function for single-command additions from UI
 pub fn add_command(cmd: Command) -> Result<(), Box<dyn std::error::Error>> {
-    // Initialize history database
-    let conn = super::history::initialize_history_db()?;
-
-    // Get current timestamp
-    let timestamp = std::time::SystemTime::now()
-        .duration_since(std::time::UNIX_EPOCH)?
-        .as_secs() as i64;
-
-    // Record creation in history
-    super::history::record_command_created(&conn, &cmd, timestamp)?;
-
     // Get current commands and add new one
     let mut commands = get_commands();
     commands.push(cmd);
 
-    // Flush to disk with inference
-    flush(&mut commands)?;
+    // Use set_commands which handles history recording automatically
+    set_commands(commands)?;
 
     Ok(())
 }
 
-/// Delete a command by name, run inference, and save
+/// Delete a command by name, record deletion in history, run inference, and save
 /// Convenience function for single-command deletions from UI
 pub fn delete_command(cmd_name: &str) -> Result<(), Box<dyn std::error::Error>> {
     // Get current commands and remove the specified one
     let mut commands = get_commands();
     commands.retain(|c| c.command != cmd_name);
 
-    // Flush to disk with inference
-    flush(&mut commands)?;
+    // Use set_commands which handles history recording (including deletion)
+    set_commands(commands)?;
 
     Ok(())
 }
@@ -515,4 +502,13 @@ pub fn get_state() -> super::state::AppState {
 /// Save application state
 pub fn set_state(state: &super::state::AppState) -> Result<(), Box<dyn std::error::Error>> {
     super::state::save_state(state)
+}
+
+// =============================================================================
+// HISTORY MANAGEMENT
+// =============================================================================
+
+/// Get history entries (trampoline to history module)
+pub fn get_history_entries(limit: usize) -> rusqlite::Result<Vec<super::history::HistoryEntry>> {
+    super::history::get_history_entries(limit)
 }

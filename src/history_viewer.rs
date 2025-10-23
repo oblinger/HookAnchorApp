@@ -4,14 +4,11 @@
 //! in a searchable, filterable list.
 
 use eframe::egui;
-use hookanchor::core::{initialize_history_db, HistoryEntry};
-use rusqlite::Connection;
+use hookanchor::core::{get_history_entries, HistoryEntry};
 use std::env;
 
 /// Main history viewer application
 struct HistoryViewer {
-    /// Database connection
-    db_conn: Option<Connection>,
     /// Actual selected patch filter (persisted to state)
     actual_patch_filter: String,
     /// Hover patch filter (temporary, not persisted)
@@ -242,15 +239,6 @@ impl HistoryViewer {
         let state = hookanchor::core::get_state();
         let viewer_state = &state.history_viewer_state;
 
-        // Initialize database connection
-        let db_conn = match initialize_history_db() {
-            Ok(conn) => Some(conn),
-            Err(e) => {
-                hookanchor::utils::log_error(&format!("Failed to open history database: {}", e));
-                None
-            }
-        };
-
         // Convert min_edit_size from Option<i64> to String for text field
         let min_edit_size_filter = viewer_state.min_edit_size
             .map(|n| n.to_string())
@@ -314,7 +302,6 @@ impl HistoryViewer {
         let patches_cache = Some(patches_cache);
 
         let mut viewer = Self {
-            db_conn,
             actual_patch_filter: resolved_patch.clone(),
             hover_patch_filter: None,
             peek_on_hover,
@@ -357,11 +344,6 @@ impl HistoryViewer {
         self.filtered_entries.clear();
         self.selected_index = None;
 
-        let Some(ref conn) = self.db_conn else {
-            self.error_message = Some("Database connection not available".to_string());
-            return;
-        };
-
         // Get limit from config, default to 50000
         let limit = hookanchor::core::get_config()
             .history_viewer
@@ -383,41 +365,10 @@ impl HistoryViewer {
             self.anchor_descendant_patches = None;
         }
 
-        // Query ALL history entries - we'll do anchor-based filtering in memory
-        // Note: We load all entries regardless of the patch filter because
-        // anchor filtering is more complex than a simple SQL query can handle
-        let query = format!(
-            "SELECT id, timestamp, change_type, patch, command, action, arg, flags, file_path, edit_size
-             FROM command_history
-             ORDER BY timestamp DESC
-             LIMIT {}",
-            limit
-        );
-
-        match conn.prepare(&query) {
-            Ok(mut stmt) => {
-                let entries = stmt.query_map([], |row| {
-                    Ok(HistoryEntry {
-                        id: row.get(0)?,
-                        timestamp: row.get(1)?,
-                        change_type: row.get(2)?,
-                        patch: row.get(3)?,
-                        command: row.get(4)?,
-                        action: row.get(5)?,
-                        arg: row.get(6)?,
-                        flags: row.get(7)?,
-                        file_path: row.get(8)?,
-                        edit_size: row.get(9)?,
-                    })
-                });
-
-                if let Ok(entries_iter) = entries {
-                    for entry_result in entries_iter {
-                        if let Ok(entry) = entry_result {
-                            self.history_entries.push(entry);
-                        }
-                    }
-                }
+        // Load history entries using the new API
+        match get_history_entries(limit) {
+            Ok(entries) => {
+                self.history_entries = entries;
 
                 // Log what we loaded
                 hookanchor::utils::detailed_log("VIEWER", &format!(

@@ -2,6 +2,18 @@
 //!
 //! This module provides functionality to track all changes to commands over time.
 //! It maintains a SQLite database with command history and provides query capabilities.
+//!
+//! # Architecture
+//!
+//! History recording is **completely automatic** - it happens inside sys_data functions.
+//! External code never calls history functions directly.
+//!
+//! - Command appears: Recorded with its normal action (markdown, app, etc.)
+//! - Command changes: New entry recorded with updated values
+//! - Command deleted: Special entry recorded with action="$DELETED$"
+//!
+//! The only public function is `get_history_entries()` which is exposed via sys_data
+//! for the history_viewer binary to read the history database.
 
 use rusqlite::{Connection, Result as SqlResult, params};
 use std::path::PathBuf;
@@ -21,16 +33,17 @@ fn get_history_db_path() -> PathBuf {
 }
 
 /// Initialize the history database and create tables if they don't exist
-pub fn initialize_history_db() -> SqlResult<Connection> {
+///
+/// This is pub(super) so only sys_data can call it
+pub(super) fn initialize_history_db() -> SqlResult<Connection> {
     let db_path = get_history_db_path();
     let conn = Connection::open(db_path)?;
 
-    // Create the command_history table
+    // Create the command_history table (without change_type column)
     conn.execute(
         "CREATE TABLE IF NOT EXISTS command_history (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             timestamp INTEGER NOT NULL,
-            change_type TEXT NOT NULL,
 
             patch TEXT NOT NULL,
             command TEXT NOT NULL,
@@ -45,11 +58,52 @@ pub fn initialize_history_db() -> SqlResult<Connection> {
         [],
     )?;
 
-    // Add edit_size column if it doesn't exist (migration for existing databases)
-    conn.execute(
-        "ALTER TABLE command_history ADD COLUMN edit_size INTEGER",
+    // Migration: Remove change_type column if it exists (from old schema)
+    // SQLite doesn't support DROP COLUMN directly, so we check if it exists first
+    let has_change_type: bool = conn.query_row(
+        "SELECT COUNT(*) FROM pragma_table_info('command_history') WHERE name='change_type'",
         [],
-    ).ok(); // Ignore error if column already exists
+        |row| {
+            let count: i32 = row.get(0)?;
+            Ok(count > 0)
+        },
+    ).unwrap_or(false);
+
+    if has_change_type {
+        crate::utils::log("HISTORY_MIGRATION: Removing change_type column from history database");
+
+        // Create new table without change_type
+        conn.execute(
+            "CREATE TABLE IF NOT EXISTS command_history_new (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                timestamp INTEGER NOT NULL,
+                patch TEXT NOT NULL,
+                command TEXT NOT NULL,
+                action TEXT NOT NULL,
+                arg TEXT,
+                flags TEXT,
+                file_path TEXT,
+                edit_size INTEGER
+            )",
+            [],
+        )?;
+
+        // Copy data, mapping change_type to action for deletions
+        conn.execute(
+            "INSERT INTO command_history_new (id, timestamp, patch, command, action, arg, flags, file_path, edit_size)
+             SELECT id, timestamp, patch, command,
+                    CASE WHEN change_type = 'deleted' THEN '$DELETED$' ELSE action END,
+                    arg, flags, file_path, edit_size
+             FROM command_history",
+            [],
+        )?;
+
+        // Drop old table and rename new one
+        conn.execute("DROP TABLE command_history", [])?;
+        conn.execute("ALTER TABLE command_history_new RENAME TO command_history", [])?;
+
+        crate::utils::log("HISTORY_MIGRATION: Migration complete");
+    }
 
     // Create indexes for fast querying
     conn.execute(
@@ -73,110 +127,21 @@ pub fn initialize_history_db() -> SqlResult<Connection> {
     Ok(conn)
 }
 
-/// Record a command creation in the history database
-pub fn record_command_created(conn: &Connection, cmd: &Command, timestamp: i64) -> SqlResult<()> {
+/// Append a command to the history database
+///
+/// This is the ONLY write operation. It simply appends the command's current state.
+/// To record a deletion, the command's action should be set to "$DELETED$".
+///
+/// This is pub(super) so only sys_data can call it.
+pub(super) fn append_command(conn: &Connection, cmd: &Command, timestamp: i64) -> SqlResult<()> {
     let file_path_obj = cmd.get_absolute_file_path(&crate::core::data::get_config());
     let file_path = file_path_obj.as_ref().map(|p| p.to_string_lossy().to_string());
 
-    // For file-based commands, try to get the file's creation time (birth time)
-    // For non-file commands, use the provided timestamp
-    let actual_timestamp = if cmd.is_path_based() {
+    // For file-based commands, try to get the file's creation/modification time
+    // For non-file commands or deletions, use the provided timestamp
+    let actual_timestamp = if cmd.is_path_based() && cmd.action != "$DELETED$" {
         if let Some(ref path) = file_path_obj {
-            // Try to get file creation time
-            if let Ok(metadata) = std::fs::metadata(path) {
-                if let Ok(created) = metadata.created() {
-                    if let Ok(duration) = created.duration_since(std::time::UNIX_EPOCH) {
-                        duration.as_secs() as i64
-                    } else {
-                        timestamp // Fallback to provided timestamp
-                    }
-                } else {
-                    timestamp // Fallback to provided timestamp
-                }
-            } else {
-                timestamp // File doesn't exist, use provided timestamp
-            }
-        } else {
-            timestamp // No file path, use provided timestamp
-        }
-    } else {
-        timestamp // Non-file command, use provided timestamp
-    };
-
-    // Check if a "created" entry already exists for this command
-    // A command can only be created once, so we check by command name regardless of timestamp
-    let exists: bool = conn.query_row(
-        "SELECT EXISTS(SELECT 1 FROM command_history WHERE change_type = 'created' AND command = ?1)",
-        params![&cmd.command],
-        |row| row.get(0),
-    )?;
-
-    if exists {
-        // Already have a creation record for this command - skip duplicate
-        crate::utils::log(&format!(
-            "HISTORY_CREATE: Skipping duplicate creation record for '{}'",
-            cmd.command
-        ));
-        return Ok(());
-    }
-
-    // Calculate edit_size: for new files, it's just the current file size
-    let edit_size = cmd.file_size.map(|size| size as i64);
-
-    conn.execute(
-        "INSERT INTO command_history
-         (timestamp, change_type, patch, command, action, arg, flags, file_path, edit_size)
-         VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9)",
-        params![
-            actual_timestamp,
-            "created",
-            &cmd.patch,
-            &cmd.command,
-            &cmd.action,
-            &cmd.arg,
-            &cmd.flags,
-            file_path,
-            edit_size,
-        ],
-    )?;
-
-    // Log the history entry creation
-    use chrono::{Local, TimeZone};
-    let date_str = if let Some(dt) = Local.timestamp_opt(actual_timestamp, 0).single() {
-        dt.format("%Y-%m-%d").to_string()
-    } else {
-        "unknown".to_string()
-    };
-
-    let size_str = if let Some(size) = edit_size {
-        format!(" size={}b", size)
-    } else {
-        String::new()
-    };
-
-    crate::utils::log(&format!(
-        "HISTORY_CREATE: [{}] action={} cmd='{}' patch='{}'{}",
-        date_str, cmd.action, cmd.command, cmd.patch, size_str
-    ));
-
-    Ok(())
-}
-
-/// Record a command modification in the history database
-pub fn record_command_modified(
-    conn: &Connection,
-    old_cmd: &Command,
-    new_cmd: &Command,
-    timestamp: i64,
-) -> SqlResult<()> {
-    let file_path_obj = new_cmd.get_absolute_file_path(&crate::core::data::get_config());
-    let file_path = file_path_obj.as_ref().map(|p| p.to_string_lossy().to_string());
-
-    // For file-based commands, try to get the file's modification time
-    // For non-file commands, use the provided timestamp
-    let actual_timestamp = if new_cmd.is_path_based() {
-        if let Some(ref path) = file_path_obj {
-            // Try to get file modification time
+            // Try to get file modification time for better tracking
             if let Ok(metadata) = std::fs::metadata(path) {
                 if let Ok(modified) = metadata.modified() {
                     if let Ok(duration) = modified.duration_since(std::time::UNIX_EPOCH) {
@@ -194,55 +159,91 @@ pub fn record_command_modified(
             timestamp // No file path, use provided timestamp
         }
     } else {
-        timestamp // Non-file command, use provided timestamp
+        timestamp // Non-file command or deletion, use provided timestamp
     };
 
-    // Check if a "modified" entry already exists for this command at approximately this timestamp
-    // Allow a 60-second window to account for slight timing variations
-    let exists: bool = conn.query_row(
-        "SELECT EXISTS(SELECT 1 FROM command_history
-         WHERE change_type = 'modified'
-         AND command = ?1
-         AND ABS(timestamp - ?2) < 60)",
-        params![&new_cmd.command, actual_timestamp],
-        |row| row.get(0),
-    )?;
-
-    if exists {
-        // Already have a modification record for this command at this timestamp - skip duplicate
-        crate::utils::log(&format!(
-            "HISTORY_MODIFIED: Skipping duplicate modification record for '{}'",
-            new_cmd.command
-        ));
-        return Ok(());
-    }
-
-    // Calculate edit_size: new_size - old_size (can be negative if file shrunk)
-    let edit_size = match (new_cmd.file_size, old_cmd.file_size) {
-        (Some(new_size), Some(old_size)) => Some((new_size as i64) - (old_size as i64)),
-        (Some(new_size), None) => Some(new_size as i64), // File was created
-        (None, Some(old_size)) => Some(-(old_size as i64)), // File was deleted
-        (None, None) => None, // Not a file-based command
+    // Calculate edit_size for file-based commands
+    let edit_size = if cmd.action != "$DELETED$" {
+        cmd.file_size.map(|size| size as i64)
+    } else {
+        None // Deletions don't have a size
     };
 
     conn.execute(
         "INSERT INTO command_history
-         (timestamp, change_type, patch, command, action, arg, flags, file_path, edit_size)
-         VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9)",
+         (timestamp, patch, command, action, arg, flags, file_path, edit_size)
+         VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8)",
         params![
             actual_timestamp,
-            "modified",
-            &new_cmd.patch,
-            &new_cmd.command,
-            &new_cmd.action,
-            &new_cmd.arg,
-            &new_cmd.flags,
+            &cmd.patch,
+            &cmd.command,
+            &cmd.action,
+            &cmd.arg,
+            &cmd.flags,
             file_path,
             edit_size,
         ],
     )?;
 
+    // Log the history entry
+    use chrono::{Local, TimeZone};
+    let date_str = if let Some(dt) = Local.timestamp_opt(actual_timestamp, 0).single() {
+        dt.format("%Y-%m-%d").to_string()
+    } else {
+        "unknown".to_string()
+    };
+
+    let size_str = if let Some(size) = edit_size {
+        format!(" size={}b", size)
+    } else {
+        String::new()
+    };
+
+    crate::utils::detailed_log("HISTORY", &format!(
+        "[{}] action={} cmd='{}' patch='{}'{}",
+        date_str, cmd.action, cmd.command, cmd.patch, size_str
+    ));
+
     Ok(())
+}
+
+
+/// Get history entries with a limit
+///
+/// This is the public read function exposed via sys_data for the history_viewer.
+/// Returns entries ordered by timestamp DESC (newest first).
+pub fn get_history_entries(limit: usize) -> SqlResult<Vec<HistoryEntry>> {
+    let conn = initialize_history_db()?;
+
+    let query = format!(
+        "SELECT id, timestamp, patch, command, action, arg, flags, file_path, edit_size
+         FROM command_history
+         ORDER BY timestamp DESC
+         LIMIT {}",
+        limit
+    );
+
+    let mut stmt = conn.prepare(&query)?;
+    let entries = stmt.query_map([], |row| {
+        Ok(HistoryEntry {
+            id: row.get(0)?,
+            timestamp: row.get(1)?,
+            patch: row.get(2)?,
+            command: row.get(3)?,
+            action: row.get(4)?,
+            arg: row.get(5)?,
+            flags: row.get(6)?,
+            file_path: row.get(7)?,
+            edit_size: row.get(8)?,
+        })
+    })?;
+
+    let mut result = Vec::new();
+    for entry in entries {
+        result.push(entry?);
+    }
+
+    Ok(result)
 }
 
 
@@ -251,7 +252,7 @@ pub fn record_command_modified(
 pub struct HistoryEntry {
     pub id: i64,
     pub timestamp: i64,
-    pub change_type: String,
+    // Note: No change_type field - deletions are identified by action = "$DELETED$"
     pub patch: String,
     pub command: String,
     pub action: String,
@@ -259,4 +260,11 @@ pub struct HistoryEntry {
     pub flags: Option<String>,
     pub file_path: Option<String>,
     pub edit_size: Option<i64>,
+}
+
+impl HistoryEntry {
+    /// Check if this entry represents a deletion
+    pub fn is_deletion(&self) -> bool {
+        self.action == "$DELETED$"
+    }
 }

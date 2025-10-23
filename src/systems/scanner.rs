@@ -216,11 +216,8 @@ pub fn load_manual_edits(commands: &mut Vec<Command>, verbose: bool) -> Result<u
     crate::utils::log(&format!("LOAD_MANUAL_EDITS: Found {} alias commands in commands.txt", alias_count));
 
     let mut edits_applied = 0;
-    let mut history_created = 0;
-    let mut history_modified = 0;
-
-    // Initialize history database connection
-    let conn_result = crate::core::data::initialize_history_db();
+    // History recording is now automatic in sys_data::set_commands()
+    // No need to track or record history here
 
     // For each command in commands.txt, check if we need to add or update it
     for txt_cmd in txt_commands {
@@ -265,19 +262,7 @@ pub fn load_manual_edits(commands: &mut Vec<Command>, verbose: bool) -> Result<u
 
                     commands[idx] = updated_cmd.clone();
                     edits_applied += 1;
-
-                    // Record modification in history
-                    if let Ok(ref conn) = conn_result {
-                        let timestamp = std::time::SystemTime::now()
-                            .duration_since(std::time::UNIX_EPOCH)
-                            .unwrap()
-                            .as_secs() as i64;
-                        if let Err(e) = crate::core::data::record_command_modified(conn, &old_cmd, &updated_cmd, timestamp) {
-                            crate::utils::log_error(&format!("Failed to record modification for '{}': {}", updated_cmd.command, e));
-                        } else {
-                            history_modified += 1;
-                        }
-                    }
+                    // History will be recorded automatically when set_commands is called
                 }
             }
             None => {
@@ -288,19 +273,7 @@ pub fn load_manual_edits(commands: &mut Vec<Command>, verbose: bool) -> Result<u
                 crate::utils::log(&format!("LOAD_MANUAL_EDITS: Adding new command '{}' from manual edit", txt_cmd.command));
                 commands.push(txt_cmd.clone());
                 edits_applied += 1;
-
-                // Record creation in history
-                if let Ok(ref conn) = conn_result {
-                    let timestamp = std::time::SystemTime::now()
-                        .duration_since(std::time::UNIX_EPOCH)
-                        .unwrap()
-                        .as_secs() as i64;
-                    if let Err(e) = crate::core::data::record_command_created(conn, &txt_cmd, timestamp) {
-                        crate::utils::log_error(&format!("Failed to record creation for '{}': {}", txt_cmd.command, e));
-                    } else {
-                        history_created += 1;
-                    }
-                }
+                // History will be recorded automatically when set_commands is called
             }
         }
     }
@@ -311,13 +284,9 @@ pub fn load_manual_edits(commands: &mut Vec<Command>, verbose: bool) -> Result<u
         } else {
             println!("   ✅ No manual edits to apply");
         }
-        if history_created > 0 || history_modified > 0 {
-            println!("   📝 Recorded {} creation(s), {} modification(s) in history", history_created, history_modified);
-        }
     }
 
-    crate::utils::log(&format!("LOAD_MANUAL_EDITS: Applied {} manual edits ({} created, {} modified in history)",
-        edits_applied, history_created, history_modified));
+    crate::utils::log(&format!("LOAD_MANUAL_EDITS: Applied {} manual edits", edits_applied));
 
     Ok(edits_applied)
 }
@@ -378,16 +347,7 @@ pub fn scan_modified_files(commands: &mut Vec<Command>, verbose: bool) -> Result
                     cmd.last_update = mtime;
                 }
 
-                // Record the change in history
-                let conn = crate::core::data::initialize_history_db()?;
-                let timestamp = current_mtime.unwrap_or_else(|| {
-                    std::time::SystemTime::now()
-                        .duration_since(std::time::UNIX_EPOCH)
-                        .unwrap()
-                        .as_secs() as i64
-                });
-                crate::core::data::record_command_modified(&conn, &old_cmd, cmd, timestamp)?;
-
+                // History will be recorded automatically when set_commands is called
                 file_changes += 1;
             }
         } else {
@@ -457,83 +417,33 @@ pub fn scan_new_files(commands: Vec<Command>, sys_data: &crate::core::data::SysD
         }
     }
 
-    // Record "created" history entries for newly discovered files
-    if files_added > 0 {
-        if verbose {
-            println!("\n📝 Recording creation history for {} new files...", files_added);
+    // Still need to set file_size metadata so scan_modified_files knows they're up-to-date
+    // CRITICAL: This prevents detecting files as modified right after creation
+    for cmd in &mut commands[initial_count..] {
+        // Only update for file-based commands
+        if !cmd.is_path_based() {
+            continue;
         }
 
-        // Initialize history database
-        match crate::core::data::initialize_history_db() {
-            Ok(conn) => {
-                let mut recorded = 0;
+        // Get file path
+        let file_path = match cmd.get_absolute_file_path(&sys_data.config) {
+            Some(path) => path,
+            None => continue,
+        };
 
-                // Record creation for newly added commands (from initial_count to end)
-                // CRITICAL: Also set file_size metadata so scan_modified_files knows they're up-to-date
-                for cmd in &mut commands[initial_count..] {
-                    // Only record for file-based commands
-                    if !cmd.is_path_based() {
-                        continue;
-                    }
+        // Get file metadata (size and mtime)
+        if let Ok(meta) = std::fs::metadata(&file_path) {
+            cmd.file_size = Some(meta.len());
 
-                    // Get file path
-                    let file_path = match cmd.get_absolute_file_path(&sys_data.config) {
-                        Some(path) => path,
-                        None => continue,
-                    };
-
-                    // Get file metadata (birth time + current size)
-                    let (birth_time, current_size, current_mtime) = match std::fs::metadata(&file_path) {
-                        Ok(meta) => {
-                            let birth = meta.created()
-                                .ok()
-                                .and_then(|t| t.duration_since(std::time::UNIX_EPOCH).ok())
-                                .map(|d| d.as_secs() as i64);
-
-                            let size = meta.len();
-
-                            let mtime = meta.modified()
-                                .ok()
-                                .and_then(|t| t.duration_since(std::time::UNIX_EPOCH).ok())
-                                .map(|d| d.as_secs() as i64);
-
-                            (birth, Some(size), mtime)
-                        }
-                        Err(_) => (None, None, None),
-                    };
-
-                    // Set file_size and last_update on the command
-                    // This is CRITICAL - prevents scan_modified_files from re-detecting the same file
-                    if let Some(size) = current_size {
-                        cmd.file_size = Some(size);
-                        if let Some(mtime) = current_mtime {
-                            cmd.last_update = mtime;
-                        }
-                    }
-
-                    if let Some(timestamp) = birth_time {
-                        // Record "created" history entry
-                        if let Err(e) = crate::core::data::record_command_created(&conn, cmd, timestamp) {
-                            crate::utils::log_error(&format!("Failed to record creation for '{}': {}", cmd.command, e));
-                        } else {
-                            recorded += 1;
-                            if verbose {
-                                println!("   📝 Created history entry: '{}'     {}", cmd.command, file_path.display());
-                            }
-                        }
-                    }
+            if let Ok(mtime) = meta.modified() {
+                if let Ok(duration) = mtime.duration_since(std::time::UNIX_EPOCH) {
+                    cmd.last_update = duration.as_secs() as i64;
                 }
-
-                if verbose && recorded > 0 {
-                    println!("   ✅ Recorded {} creation entries", recorded);
-                }
-            }
-            Err(e) => {
-                crate::utils::log_error(&format!("Failed to initialize history DB for creation records: {}", e));
             }
         }
     }
-    
+    // History will be recorded automatically when set_commands is called
+
     // Then scan cloud services (Notion, Google Drive)
     crate::utils::log("☁️  Scanning cloud services...");
     let scan_result = crate::cloud_scanner::scan_cloud_services();

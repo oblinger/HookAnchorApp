@@ -43,8 +43,9 @@ pub use data::{
     add_command, delete_command,
     // State management
     get_state, set_state,
-    // History tracking
-    initialize_history_db, record_command_created, record_command_modified, HistoryEntry
+    // History tracking (read-only, for history_viewer binary)
+    get_history_entries, HistoryEntry
+    // NOTE: History writing is automatic inside set_commands/add_command/delete_command
     // NOTE: Internal sys_data types are not re-exported
 };
 

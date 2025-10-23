@@ -64,6 +64,7 @@ pub use sys_data::{
     get_patches,
     get_sys_data,
     get_state,
+    get_history_entries,
     // Write operations
     set_commands,
     add_command,
@@ -71,13 +72,9 @@ pub use sys_data::{
     set_state,
 };
 
-// Re-export history functions
-pub use history::{
-    initialize_history_db,
-    record_command_created,
-    record_command_modified,
-    HistoryEntry,
-};
+// Re-export history read function (via trampoline in sys_data)
+// History writing is automatic and happens only inside sys_data
+pub use history::HistoryEntry;
 
 // Internal access to CONFIG for same-crate modules only
 pub(crate) use sys_data::CONFIG;
