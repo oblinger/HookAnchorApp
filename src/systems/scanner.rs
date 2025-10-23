@@ -982,10 +982,10 @@ fn scan_directory_pass(dir: &Path, vault_root: &Path, commands: &mut Vec<Command
 
 /// Protected version with loop detection and depth limiting
 /// TWO-PASS PER DIRECTORY ALGORITHM:
-/// At each directory level:
-/// 1. Pass 1: Find anchor files in THIS directory, add to folder_map
-/// 2. Pass 2: Process non-anchor files in THIS directory
-/// 3. Recurse into subdirectories (each does its own Pass 1+2)
+/// At each directory level, loops through entries twice:
+/// - Pass 1 (is_pass1=true): Process only anchor files, add to folder_map
+/// - Pass 2 (is_pass1=false): Process non-anchor files, recurse into subdirectories
+/// Uses boolean logic to skip inappropriate entries in each pass
 fn scan_directory_with_root_protected(dir: &Path, vault_root: &Path, commands: &mut Vec<Command>, existing_commands: &mut HashSet<String>, handled_files: &mut HashSet<String>, found_folders: &mut Vec<PathBuf>, existing_patches: &std::collections::HashMap<String, String>, folder_map: &mut std::collections::HashMap<PathBuf, String>, config: &Config, visited: &mut HashSet<PathBuf>, depth: usize) {
     // Prevent infinite loops with depth limit
     if depth > 20 {
@@ -1006,118 +1006,116 @@ fn scan_directory_with_root_protected(dir: &Path, vault_root: &Path, commands: &
     }
     visited.insert(canonical_dir.clone());
 
-    // Collect all entries in this directory first
+    // Collect all entries in this directory once
     let entries: Vec<_> = match fs::read_dir(dir) {
         Ok(entries) => entries.filter_map(Result::ok).collect(),
         Err(_) => return,
     };
 
-    // Pass 1: Process anchor files in this directory only
-    for entry in &entries {
-        let path = entry.path();
+    // Two passes over the same entries
+    for is_pass1 in [true, false] {
+        for entry in &entries {
+            let path = entry.path();
 
-        // Skip hidden files
-        if let Some(file_name) = path.file_name() {
-            if let Some(name_str) = file_name.to_str() {
-                if name_str.starts_with('.') {
-                    continue;
+            // Skip hidden files
+            if let Some(file_name) = path.file_name() {
+                if let Some(name_str) = file_name.to_str() {
+                    if name_str.starts_with('.') {
+                        continue;
+                    }
+                    // Skip directories based on config patterns
+                    if path.is_dir() && should_skip_directory(&name_str, config) {
+                        continue;
+                    }
                 }
             }
-        }
 
-        // Only process files, not directories in this pass
-        if !path.is_dir() {
-            // Process as markdown file to check if it's an anchor
-            if let Some(command) = process_markdown_with_root(&path, vault_root, commands, existing_commands, handled_files, folder_map) {
-                if command.is_anchor() && !handled_files.contains(&command.arg) {
-                    crate::utils::log(&format!("📄 PASS1: Found anchor: {} -> cmd: '{}'", path.display(), command.command));
+            // Get metadata
+            let metadata = match entry.metadata() {
+                Ok(m) => m,
+                Err(_) => continue,
+            };
 
-                    existing_commands.insert(command.command.to_lowercase());
-                    handled_files.insert(command.arg.clone());
+            // Handle directories
+            if path.is_dir() {
+                // Skip symlinked directories
+                if metadata.file_type().is_symlink() {
+                    continue;
+                }
 
-                    // Add to folder_map if directory name matches anchor name
-                    if let Some(parent) = path.parent() {
-                        if let Some(parent_dir_name) = parent.file_name().and_then(|n| n.to_str()) {
-                            if parent_dir_name == command.command {
-                                if let Ok(canonical_parent) = parent.canonicalize() {
-                                    folder_map.insert(canonical_parent.clone(), command.command.clone());
-                                    crate::utils::log(&format!("   🏷️  Added to folder_map: '{}' -> '{}'", canonical_parent.display(), command.command));
+                // Handle .app bundles (only in Pass 2)
+                if let Some(file_name) = path.file_name() {
+                    if let Some(name_str) = file_name.to_str() {
+                        if name_str.ends_with(".app") {
+                            if !is_pass1 {
+                                if let Some(command) = process_app_bundle(&path, existing_commands, folder_map) {
+                                    if !handled_files.contains(&command.arg) {
+                                        println!("      🎯 Found app: {}", command.command);
+                                        existing_commands.insert(command.command.to_lowercase());
+                                        handled_files.insert(command.arg.clone());
+                                        commands.push(command);
+                                    }
+                                }
+                            }
+                            continue; // Don't recurse into .app bundles
+                        }
+                    }
+                }
+
+                // Recurse into subdirectories only in Pass 2 (after all anchors in current dir are mapped)
+                if !is_pass1 {
+                    scan_directory_with_root_protected(&path, vault_root, commands, existing_commands, handled_files, found_folders, existing_patches, folder_map, config, visited, depth + 1);
+                }
+            } else {
+                // Process files (markdown and DOC)
+
+                // Check if this is an anchor file using the specialized function
+                let is_anchor_file = crate::utils::is_anchor_file(&path);
+
+                // Skip if wrong pass for this file type
+                // Pass 1: only anchor files; Pass 2: only non-anchor files
+                if (is_pass1 && !is_anchor_file) || (!is_pass1 && is_anchor_file) {
+                    continue;
+                }
+
+                // Try to process as markdown file
+                if let Some(command) = process_markdown_with_root(&path, vault_root, commands, existing_commands, handled_files, folder_map) {
+                    if !handled_files.contains(&command.arg) {
+                        if is_pass1 {
+                            crate::utils::log(&format!("📄 PASS1: Found anchor: {} -> cmd: '{}' patch: '{}'", path.display(), command.command, command.patch));
+                        } else {
+                            crate::utils::log(&format!("📄 PASS2: Found markdown: {} -> cmd: '{}' patch: '{}'", path.display(), command.command, command.patch));
+                        }
+
+                        existing_commands.insert(command.command.to_lowercase());
+                        handled_files.insert(command.arg.clone());
+
+                        // If this is an anchor, add to folder_map using the specialized anchor detection
+                        if is_anchor_file {
+                            if let Some(parent) = path.parent() {
+                                // Use case-insensitive comparison like is_anchor_file does
+                                if let Some(parent_dir_name) = parent.file_name().and_then(|n| n.to_str()) {
+                                    if parent_dir_name.eq_ignore_ascii_case(&command.command) {
+                                        if let Ok(canonical_parent) = parent.canonicalize() {
+                                            folder_map.insert(canonical_parent.clone(), command.command.clone());
+                                            crate::utils::log(&format!("   🏷️  Added to folder_map: '{}' -> '{}'", canonical_parent.display(), command.command));
+                                        }
+                                    }
                                 }
                             }
                         }
-                    }
 
-                    commands.push(command);
-                }
-            }
-        }
-    }
-
-    // Pass 2: Process non-anchor files in this directory only
-    for entry in &entries {
-        let path = entry.path();
-
-        // Skip hidden files and directories based on config
-        if let Some(file_name) = path.file_name() {
-            if let Some(name_str) = file_name.to_str() {
-                if name_str.starts_with('.') {
-                    continue;
-                }
-                if path.is_dir() && should_skip_directory(&name_str, config) {
-                    continue;
-                }
-            }
-        }
-
-        // Get metadata
-        let metadata = match entry.metadata() {
-            Ok(m) => m,
-            Err(_) => continue,
-        };
-
-        // Handle directories
-        if path.is_dir() {
-            // Skip symlinked directories
-            if metadata.file_type().is_symlink() {
-                continue;
-            }
-
-            // Handle .app bundles
-            if let Some(file_name) = path.file_name() {
-                if let Some(name_str) = file_name.to_str() {
-                    if name_str.ends_with(".app") {
-                        if let Some(command) = process_app_bundle(&path, existing_commands, folder_map) {
-                            if !handled_files.contains(&command.arg) {
-                                println!("      🎯 Found app: {}", command.command);
-                                existing_commands.insert(command.command.to_lowercase());
-                                handled_files.insert(command.arg.clone());
-                                commands.push(command);
-                            }
-                        }
-                        continue; // Don't recurse into .app bundles
-                    }
-                }
-            }
-
-            // Recurse into subdirectory (it will do its own Pass 1+2)
-            scan_directory_with_root_protected(&path, vault_root, commands, existing_commands, handled_files, found_folders, existing_patches, folder_map, config, visited, depth + 1);
-        } else {
-            // Process non-anchor files
-            if let Some(command) = process_markdown_with_root(&path, vault_root, commands, existing_commands, handled_files, folder_map) {
-                if !command.is_anchor() && !handled_files.contains(&command.arg) {
-                    crate::utils::log(&format!("📄 PASS2: Found markdown: {} -> cmd: '{}'", path.display(), command.command));
-                    existing_commands.insert(command.command.to_lowercase());
-                    handled_files.insert(command.arg.clone());
-                    commands.push(command);
-                }
-            } else {
-                // Try DOC file
-                if let Some(command) = process_doc_file(&path, existing_commands, folder_map, config) {
-                    if !handled_files.contains(&command.arg) {
-                        crate::utils::log(&format!("📄 PASS2: Found doc: {} -> cmd: '{}'", path.display(), command.command));
-                        existing_commands.insert(command.command.to_lowercase());
-                        handled_files.insert(command.arg.clone());
                         commands.push(command);
+                    }
+                } else if !is_pass1 {
+                    // Try DOC file (only in Pass 2)
+                    if let Some(command) = process_doc_file(&path, existing_commands, folder_map, config) {
+                        if !handled_files.contains(&command.arg) {
+                            crate::utils::log(&format!("📄 PASS2: Found doc: {} -> cmd: '{}'", path.display(), command.command));
+                            existing_commands.insert(command.command.to_lowercase());
+                            handled_files.insert(command.arg.clone());
+                            commands.push(command);
+                        }
                     }
                 }
             }
