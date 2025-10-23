@@ -222,18 +222,16 @@ pub fn load_manual_edits(commands: &mut Vec<Command>, verbose: bool) -> Result<u
 
     // For each command in commands.txt, check if we need to add or update it
     for txt_cmd in txt_commands {
-        // DEDUPLICATION: If a FILE-BASED command with the same file path already exists (from scanner),
-        // only load this txt command if it has the 'U' (user-edited) flag.
-        // This prevents scanner-generated duplicates (e.g., old open_app vs new app for same file)
-        // IMPORTANT: Only apply this to scanner-generated actions, not manual commands (alias, 1pass, work, etc.)
+        // DEDUPLICATION: Skip scanner-generated commands from commands.txt that don't have U flag
+        // The scanner will have already created fresh versions with correct data
+        // IMPORTANT: Only apply this to scanner-generated actions, not manual commands (alias, launcher, etc.)
         let is_scanner_generated = SCANNER_GENERATED_ACTIONS.contains(&txt_cmd.action.as_str());
-        if is_scanner_generated && !txt_cmd.arg.is_empty() {
-            let same_file_exists = commands.iter().any(|c| c.arg == txt_cmd.arg);
-            if same_file_exists && !txt_cmd.flags.contains(FLAG_USER_EDITED) {
-                crate::utils::detailed_log("MANUAL_EDITS", &format!("Skipping duplicate '{}' (scanner already created fresh version)", txt_cmd.command));
-                continue;
-            }
-        } else if txt_cmd.action == "alias" {
+        if is_scanner_generated && !txt_cmd.flags.contains(FLAG_USER_EDITED) {
+            crate::utils::detailed_log("MANUAL_EDITS", &format!("Skipping scanner-generated command '{}' from commands.txt (no U flag)", txt_cmd.command));
+            continue;
+        }
+
+        if txt_cmd.action == "alias" {
             crate::utils::log(&format!("LOAD_MANUAL_EDITS: Processing alias command '{}'", txt_cmd.command));
         }
 
@@ -612,48 +610,25 @@ fn scan_files(mut commands: Vec<Command>, file_roots: &[String], config: &Config
     let anchors_deleted = delete_anchors(&mut commands, false, false);  // false = delete non-Notion anchors, false = quiet
     crate::utils::log(&format!("Deleted {} non-user anchor commands", anchors_deleted));
 
-    // Remove existing markdown and folder commands from the commands list
-    // BUT ONLY for files within the directories we're about to scan
-    // EXCEPT those with the "U" (user edited) flag - preserve those
-    // Also validate that files actually exist for scanner-generated commands
+    // Simple rule: Delete all scanner-generated commands that don't have the U (user-edited) flag
+    // The scanner will recreate them if the files still exist
+    // This eliminates all special cases and complexity
     commands.retain(|cmd| {
         let is_scanner_generated = SCANNER_GENERATED_ACTIONS.contains(&cmd.action.as_str());
         let is_user_edited = cmd.flags.contains(FLAG_USER_EDITED);
-        
-        // If it's scanner-generated, check if we should keep or remove it
-        if is_scanner_generated {
-            // Check if file exists (for cleanup of missing file commands)
-            // Skip this check for virtual anchors (empty arg) and user-edited commands
-            if !cmd.arg.is_empty() && !is_user_edited {
-                let file_exists = std::path::Path::new(&cmd.arg).exists();
 
-                // Log file existence checks only in detailed/verbose mode
-                crate::utils::detailed_log("SCANNER", &format!("Checking '{}' (action: {}) - file exists: {} at path: {}",
-                    cmd.command, cmd.action, file_exists, cmd.arg));
-
-                if !file_exists {
-                    // This is important enough to always log
-                    crate::utils::detailed_log("SCANNER", &format!("SCANNER: ✅ Removing command '{}' - file no longer exists: {}", cmd.command, cmd.arg));
-                    return false; // Remove this command
-                }
-            }
-            
-            // If the file is within scan roots and not user-edited, remove it for rescan
-            // Virtual anchors (empty arg) should be preserved if user-edited
-            if !cmd.arg.is_empty() && is_within_scan_roots(&cmd.arg) && !is_user_edited {
-                crate::utils::detailed_log("SCANNER", &format!("Removing command '{}' for rescan (within scan roots)", cmd.command));
-                return false; // Remove this command so it can be rescanned
-            }
-            
-            // Keep commands that are:
-            // 1. User-edited, OR
-            // 2. Outside the scan roots (won't be rescanned)
-            crate::utils::detailed_log("SCANNER", &format!("Keeping command '{}' (user-edited: {}, outside roots: {})", 
-                cmd.command, is_user_edited, !is_within_scan_roots(&cmd.arg)));
-            return true;
+        if is_scanner_generated && !is_user_edited {
+            // Delete scanner-generated commands without U flag
+            crate::utils::detailed_log("SCANNER", &format!("Removing scanner-generated command '{}' (action: {}) for rescan", cmd.command, cmd.action));
+            return false;
         }
-        
-        // Keep command if it's NOT scanner-generated
+
+        if is_scanner_generated && is_user_edited {
+            // Keep user-edited scanner-type commands
+            crate::utils::detailed_log("SCANNER", &format!("Keeping user-edited command: '{}' (action: {})", cmd.command, cmd.action));
+        }
+
+        // Keep all user-edited commands and non-scanner-generated commands
         true
     });
     
