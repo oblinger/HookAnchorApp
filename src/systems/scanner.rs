@@ -904,13 +904,30 @@ fn scan_directory_with_root_protected(dir: &Path, vault_root: &Path, commands: &
                         // Add to handled files set to prevent creating duplicate commands for this file
                         handled_files.insert(command.arg.clone());
 
-                        // If this is an anchor, add it to folder_map for its parent folder
+                        // Debug: Log command details
+                        crate::utils::log(&format!("   📋 Command details: cmd='{}' action='{}' flags='{}' is_anchor={}",
+                            command.command, command.action, command.flags, command.is_anchor()));
+
+                        // If this is an anchor markdown in a subdirectory matching its name, map that subdirectory
+                        // Example: @Aeolus/@Aeolus.md should map @Aeolus/ -> @Aeolus
+                        // But @BTOD.md (in At/Org/) should NOT map At/Org/ -> @BTOD
                         if command.is_anchor() {
                             if let Some(parent) = path.parent() {
-                                if let Ok(canonical_parent) = parent.canonicalize() {
-                                    folder_map.insert(canonical_parent.clone(), command.command.clone());
-                                    crate::utils::log(&format!("   🏷️  Added anchor to folder_map: '{}' -> '{}'",
-                                        canonical_parent.display(), command.command));
+                                if let Some(parent_dir_name) = parent.file_name().and_then(|n| n.to_str()) {
+                                    crate::utils::log(&format!("   🔍 Checking folder_map: anchor='{}' parent_dir='{}'",
+                                        command.command, parent_dir_name));
+                                    // Only add to folder_map if the parent directory name matches the anchor name
+                                    // This prevents files like @BTOD.md from mapping their entire parent directory
+                                    if parent_dir_name == command.command {
+                                        if let Ok(canonical_parent) = parent.canonicalize() {
+                                            folder_map.insert(canonical_parent.clone(), command.command.clone());
+                                            crate::utils::log(&format!("   🏷️  Added anchor to folder_map: '{}' -> '{}'",
+                                                canonical_parent.display(), command.command));
+                                        }
+                                    } else {
+                                        crate::utils::log(&format!("   ⏭️  Skipping folder_map for '{}' - parent dir '{}' doesn't match anchor name",
+                                            command.command, parent_dir_name));
+                                    }
                                 }
                             }
                         }
@@ -1070,9 +1087,9 @@ fn process_markdown_with_root(path: &Path, _vault_root: &Path, commands: &mut Ve
     // All markdown files use absolute path as argument
     let arg = full_path.clone();
 
-    // Set the 'a' flag if this is an anchor file
+    // Set the anchor flag if this is an anchor file
     let flags = if is_anchor {
-        "a".to_string()
+        crate::core::commands::FLAG_ANCHOR.to_string()
     } else {
         String::new()
     };
