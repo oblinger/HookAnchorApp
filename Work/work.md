@@ -1,4 +1,5 @@
 
+OCT 19th - own meeting
 
 .**TODO**.
   [PlayOn](hook://playon): 
@@ -53,3 +54,13 @@
 
 > I'm not really very happy with this. We worked hard to have a unified action, execution pathway, but it seems like we still don't have a unified action pathway. That is when
   we execute a command action it's not the same as when we execute a keyboard, shortcut action.
+
+show AI running
+show fireball & magic hour
+table showing improvements
+
+https://docs.google.com/presentation/d/18-EgPTzjksHM8LPWDcRwrUl2pCflegCELsh3l2eQ8OE/edit?slide=id.g39bdd97e068_0_350#slide=id.g39bdd97e068_0_350
+
+Productized Pure AI Highlights product
+- Contract signed with Playon for 10K games in Dec & Q1
+- Active product integration work with PlayOn in full swing
