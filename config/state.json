@@ -5,24 +5,24 @@
   ],
   "history_viewer_state": {
     "position": [
-      -2551.0,
+      -2475.0,
       25.0
     ],
     "window_size": [
       1000.0,
       1415.0
     ],
-    "patch_filter": "kmr",
+    "patch_filter": "notion",
     "name_filter": "",
     "min_edit_size": 500,
     "selected_action_types": [],
-    "sidebar_width": 290.0
+    "sidebar_width": 274.0
   },
-  "build_time": 1761252244,
+  "build_time": 1761253053,
   "last_scan_time": null,
   "last_scan_checksum": null,
-  "last_executed_command": "Proj Notion",
-  "server_pid": 96628,
+  "last_executed_command": "@Epsilon Oblinger",
+  "server_pid": 99542,
   "notion_last_scan": null,
   "anchor_name": "Proj Notion",
   "anchor_timestamp": 1761249423,

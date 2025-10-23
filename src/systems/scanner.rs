@@ -623,20 +623,24 @@ fn scan_files(mut commands: Vec<Command>, file_roots: &[String], config: &Config
         // If it's scanner-generated, check if we should keep or remove it
         if is_scanner_generated {
             // Check if file exists (for cleanup of missing file commands)
-            let file_exists = std::path::Path::new(&cmd.arg).exists();
-            
-            // Log file existence checks only in detailed/verbose mode
-            crate::utils::detailed_log("SCANNER", &format!("Checking '{}' (action: {}) - file exists: {} at path: {}", 
-                cmd.command, cmd.action, file_exists, cmd.arg));
-            
-            if !file_exists {
-                // This is important enough to always log
-                crate::utils::detailed_log("SCANNER", &format!("SCANNER: ✅ Removing command '{}' - file no longer exists: {}", cmd.command, cmd.arg));
-                return false; // Remove this command
+            // Skip this check for virtual anchors (empty arg) and user-edited commands
+            if !cmd.arg.is_empty() && !is_user_edited {
+                let file_exists = std::path::Path::new(&cmd.arg).exists();
+
+                // Log file existence checks only in detailed/verbose mode
+                crate::utils::detailed_log("SCANNER", &format!("Checking '{}' (action: {}) - file exists: {} at path: {}",
+                    cmd.command, cmd.action, file_exists, cmd.arg));
+
+                if !file_exists {
+                    // This is important enough to always log
+                    crate::utils::detailed_log("SCANNER", &format!("SCANNER: ✅ Removing command '{}' - file no longer exists: {}", cmd.command, cmd.arg));
+                    return false; // Remove this command
+                }
             }
             
             // If the file is within scan roots and not user-edited, remove it for rescan
-            if is_within_scan_roots(&cmd.arg) && !is_user_edited {
+            // Virtual anchors (empty arg) should be preserved if user-edited
+            if !cmd.arg.is_empty() && is_within_scan_roots(&cmd.arg) && !is_user_edited {
                 crate::utils::detailed_log("SCANNER", &format!("Removing command '{}' for rescan (within scan roots)", cmd.command));
                 return false; // Remove this command so it can be rescanned
             }
