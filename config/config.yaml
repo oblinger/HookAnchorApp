@@ -152,7 +152,7 @@ actions:
     action: "markdown"
     arg: "{{last_executed.folder}}/{{input}}/{{input}}.md"
     patch: "{{last_executed.name}}"
-    flags: "a"
+    flags: "A"
     edit: true
     file: "{{last_executed.folder}}/{{input}}/{{input}}.md"
     validate_last_executed_folder: true
@@ -182,7 +182,7 @@ actions:
     action: "markdown"
     arg: "~/Work/{{date.year}} {{input}}/{{date.year}} {{input}}.md"
     patch: "WW"
-    flags: "a"
+    flags: "A"
     edit: true
     file: "~/Work/{{date.year}} {{input}}/{{date.year}} {{input}}.md"
     file_rescan: true
@@ -198,7 +198,7 @@ actions:
     action: "markdown"
     arg: "{{last_executed.folder}}/{{date.year}}-{{date.month}}-{{date.day}} {{input}}.md"
     patch: "{{last_executed.patch}}"
-    flags: "a"
+    flags: "A"
     edit: true
     file: "{{last_executed.folder}}/{{date.year}}-{{date.month}}-{{date.day}} {{input}}.md"
     file_rescan: true
