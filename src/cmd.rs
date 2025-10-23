@@ -1910,13 +1910,14 @@ struct CommandChange {
 fn compare_commands(old_commands: &[Command], new_commands: &[Command]) -> ComparisonResult {
     use std::collections::HashMap;
 
-    // Build hash maps for quick lookup
+    // Build hash maps for quick lookup using the same deduplication key
+    // This ensures we're comparing commands the same way the system deduplicates them
     let old_map: HashMap<String, &Command> = old_commands.iter()
-        .map(|cmd| (format!("{}:{}:{}", cmd.patch, cmd.command, cmd.action), cmd))
+        .map(|cmd| (crate::core::data::command_dedup_key(cmd), cmd))
         .collect();
 
     let new_map: HashMap<String, &Command> = new_commands.iter()
-        .map(|cmd| (format!("{}:{}:{}", cmd.patch, cmd.command, cmd.action), cmd))
+        .map(|cmd| (crate::core::data::command_dedup_key(cmd), cmd))
         .collect();
 
     let mut unchanged = Vec::new();

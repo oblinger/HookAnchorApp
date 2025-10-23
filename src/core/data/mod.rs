@@ -72,6 +72,12 @@ pub use sys_data::{
     set_state,
 };
 
+// Re-export deduplication utilities for consistent duplicate detection
+pub use storage::{
+    is_duplicate_command,
+    command_dedup_key,
+};
+
 // Re-export history read function (via trampoline in sys_data)
 // History writing is automatic and happens only inside sys_data
 pub use history::HistoryEntry;
