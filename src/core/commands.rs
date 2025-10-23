@@ -15,17 +15,9 @@ use crate::core::data::config::Config;
 // FLAG CONSTANTS
 // =============================================================================
 
-/// Flag character for anchor commands
-/// Indicates that a command represents an anchor/hierarchy node
-pub const FLAG_ANCHOR: char = 'a';
-
-/// Flag character for user-edited commands
-/// Prevents scanner from automatically deleting or modifying the command
-pub const FLAG_USER_EDITED: char = 'U';
-
-/// Flag character for merged commands
-/// Indicates a command was created by merging multiple similar commands
-pub const FLAG_MERGED: char = 'M';  // Used when displaying merged ... entries
+pub const FLAG_ANCHOR: char = 'A';       // command represents an anchor/hierarchy node
+pub const FLAG_USER_EDITED: char = 'U';  // Prevents scanner overwrite of user edited entries
+pub const FLAG_MERGED: char = 'M';       // Used when displaying merged ... entries
 
 /// Flag character for include commands
 /// Adds the command to its patch's include list for hierarchical filtering
@@ -1510,15 +1502,26 @@ pub(crate) fn load_commands_raw() -> Vec<Command> {
                 }
                 
                 match parse_command_line(line) {
-                    Ok(command) => {
+                    Ok(mut command) => {
+                        // MIGRATION: Convert old lowercase 'a' anchor flag to uppercase 'A'
+                        // This can be removed after all commands have been migrated
+                        if command.flags.contains('a') {
+                            command.remove_flag('a');
+                            command.set_flag(FLAG_ANCHOR, "");
+                            crate::utils::detailed_log("FLAG_MIGRATION", &format!(
+                                "Migrated '{}' from lowercase 'a' to uppercase 'A' flag",
+                                command.command
+                            ));
+                        }
+
                         // Debug: Log the first few commands to see if patches are being preserved
                         if line_num < 5 {
-                            crate::utils::detailed_log("PARSE_DEBUG", &format!("Parsed line {}: patch='{}', command='{}'", 
+                            crate::utils::detailed_log("PARSE_DEBUG", &format!("Parsed line {}: patch='{}', command='{}'",
                                 line_num + 1, command.patch, command.command));
                         }
                         // Also log the Patents command specifically
                         if command.command == "Patents" {
-                            crate::utils::detailed_log("PARSE_DEBUG", &format!("Found Patents command: patch='{}', command='{}', action='{}'", 
+                            crate::utils::detailed_log("PARSE_DEBUG", &format!("Found Patents command: patch='{}', command='{}', action='{}'",
                                 command.patch, command.command, command.action));
                         }
                         commands.push(command);
