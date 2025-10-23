@@ -1,31 +1,31 @@
 {
-  "anchor_folder": null,
-  "anchor_name": "Proj Notion",
-  "anchor_timestamp": 1761249423,
-  "build_time": 1761250255,
-  "history_viewer_state": {
-    "min_edit_size": 500,
-    "name_filter": "",
-    "patch_filter": "",
-    "position": [
-      -2480.0,
-      26.0
-    ],
-    "selected_action_types": [],
-    "sidebar_width": 306.0,
-    "window_size": [
-      1000.0,
-      1415.0
-    ]
-  },
-  "last_executed_command": "Proj Notion",
-  "last_scan_checksum": null,
-  "last_scan_time": null,
-  "notion_last_scan": null,
-  "server_pid": 69066,
-  "show_files": true,
   "window_position": [
     980.0,
     100.0
-  ]
+  ],
+  "history_viewer_state": {
+    "position": [
+      -2551.0,
+      25.0
+    ],
+    "window_size": [
+      1000.0,
+      1415.0
+    ],
+    "patch_filter": "",
+    "name_filter": "",
+    "min_edit_size": 500,
+    "selected_action_types": [],
+    "sidebar_width": 306.0
+  },
+  "build_time": 1761250899,
+  "last_scan_time": null,
+  "last_scan_checksum": null,
+  "last_executed_command": "Proj Notion",
+  "server_pid": 90403,
+  "notion_last_scan": null,
+  "anchor_name": "Proj Notion",
+  "anchor_timestamp": 1761249423,
+  "anchor_folder": null,
+  "show_files": true
 }

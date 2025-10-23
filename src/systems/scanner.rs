@@ -783,12 +783,10 @@ fn scan_directory_with_root(dir: &Path, vault_root: &Path, commands: &mut Vec<Co
     scan_directory_with_root_protected(dir, vault_root, commands, existing_commands, handled_files, found_folders, existing_patches, folder_map, config, &mut HashSet::new(), 0)
 }
 
-/// Protected version with loop detection and depth limiting
-/// NEW TWO-PASS ALGORITHM:
-/// 1. Read directory once into Vec<PathBuf>
-/// 2. Pass 1: Find and create anchor files first, add to folder_map
-/// 3. Pass 2: Process all files (assign patches using folder_map) and recurse into subdirectories
-fn scan_directory_with_root_protected(dir: &Path, vault_root: &Path, commands: &mut Vec<Command>, existing_commands: &mut HashSet<String>, handled_files: &mut HashSet<String>, found_folders: &mut Vec<PathBuf>, existing_patches: &std::collections::HashMap<String, String>, folder_map: &mut std::collections::HashMap<PathBuf, String>, config: &Config, visited: &mut HashSet<PathBuf>, depth: usize) {
+/// Helper function for two-pass scanning
+/// When anchor_only=true: Only process anchor markdown files, add them to folder_map
+/// When anchor_only=false: Process all non-anchor files, skip anchors (already processed)
+fn scan_directory_pass(dir: &Path, vault_root: &Path, commands: &mut Vec<Command>, existing_commands: &mut HashSet<String>, handled_files: &mut HashSet<String>, found_folders: &mut Vec<PathBuf>, existing_patches: &std::collections::HashMap<String, String>, folder_map: &mut std::collections::HashMap<PathBuf, String>, config: &Config, visited: &mut HashSet<PathBuf>, depth: usize, anchor_only: bool) {
     // Prevent infinite loops with depth limit
     if depth > 20 {
         return;
@@ -808,7 +806,7 @@ fn scan_directory_with_root_protected(dir: &Path, vault_root: &Path, commands: &
     }
     visited.insert(canonical_dir.clone());
 
-    // Scan directory entries (single pass with incremental folder_map updates)
+    // Scan directory entries
     if let Ok(entries) = fs::read_dir(dir) {
         for entry in entries.filter_map(Result::ok) {
             let path = entry.path();
@@ -819,7 +817,7 @@ fn scan_directory_with_root_protected(dir: &Path, vault_root: &Path, commands: &
                     if name_str.starts_with('.') {
                         continue;
                     }
-                    
+
                     // Skip directories based on config patterns
                     if path.is_dir() && should_skip_directory(&name_str, config) {
                         continue;
@@ -830,41 +828,44 @@ fn scan_directory_with_root_protected(dir: &Path, vault_root: &Path, commands: &
                     continue;
                 }
             }
-            
+
             // Check if it's a symlink and skip directory symlinks to prevent infinite loops
             let metadata = match entry.metadata() {
                 Ok(metadata) => metadata,
                 Err(_) => continue, // Skip if we can't read metadata
             };
-            
+
             // Process directories first (but skip directory symlinks)
             if path.is_dir() {
                 // Skip symlinked directories to prevent infinite loops
                 if metadata.file_type().is_symlink() {
                     continue;
                 }
-                
+
                 // Check if this is a .app bundle
                 if let Some(file_name) = path.file_name() {
                     if let Some(name_str) = file_name.to_str() {
                         if name_str.ends_with(".app") {
-                            // This is an app bundle - create an APP command
-                            if let Some(command) = process_app_bundle(&path, existing_commands, folder_map) {
-                                crate::utils::detailed_log("SCANNER", &format!("Found app bundle: {} -> command: {}", 
-                                    path.display(), command.command));
-                                
-                                // Check if this app is already handled
-                                if handled_files.contains(&command.arg) {
-                                    crate::utils::detailed_log("SCANNER", &format!("Skipping '{}' - app already handled: {}", 
-                                        command.command, path.display()));
-                                } else {
-                                    println!("      🎯 Found app: {}", command.command);
-                                    crate::utils::detailed_log("SCANNER", &format!("Creating new APP command '{}' -> {} {}", 
-                                        command.command, command.action, command.arg));
-                                    
-                                    existing_commands.insert(command.command.to_lowercase());
-                                    handled_files.insert(command.arg.clone());
-                                    commands.push(command);
+                            // Only process apps in non-anchor pass
+                            if !anchor_only {
+                                // This is an app bundle - create an APP command
+                                if let Some(command) = process_app_bundle(&path, existing_commands, folder_map) {
+                                    crate::utils::detailed_log("SCANNER", &format!("Found app bundle: {} -> command: {}",
+                                        path.display(), command.command));
+
+                                    // Check if this app is already handled
+                                    if handled_files.contains(&command.arg) {
+                                        crate::utils::detailed_log("SCANNER", &format!("Skipping '{}' - app already handled: {}",
+                                            command.command, path.display()));
+                                    } else {
+                                        println!("      🎯 Found app: {}", command.command);
+                                        crate::utils::detailed_log("SCANNER", &format!("Creating new APP command '{}' -> {} {}",
+                                            command.command, command.action, command.arg));
+
+                                        existing_commands.insert(command.command.to_lowercase());
+                                        handled_files.insert(command.arg.clone());
+                                        commands.push(command);
+                                    }
                                 }
                             }
                             // Don't scan inside .app bundles
@@ -872,33 +873,39 @@ fn scan_directory_with_root_protected(dir: &Path, vault_root: &Path, commands: &
                         }
                     }
                 }
-                
-                // COMMENTED OUT: Folder collection disabled - only scanning for markdown files
-                // found_folders.push(path.clone());
-                
+
                 // Recursively scan subdirectories (but not .app bundles)
-                scan_directory_with_root_protected(&path, vault_root, commands, existing_commands, handled_files, found_folders, existing_patches, folder_map, config, visited, depth + 1);
+                scan_directory_pass(&path, vault_root, commands, existing_commands, handled_files, found_folders, existing_patches, folder_map, config, visited, depth + 1, anchor_only);
             } else {
                 // Process files (markdown files and DOC files)
                 let mut file_processed = false;
-                
+
                 crate::utils::detailed_log("SCANNER", &format!("Processing file: {}", path.display()));
-                
+
                 // Try to process as markdown file first
                 if let Some(command) = process_markdown_with_root(&path, vault_root, commands, existing_commands, handled_files, folder_map) {
+                    // Check if this is an anchor based on the command's is_anchor() method
+                    let is_anchor_file = command.is_anchor();
+
+                    // Filter based on pass type
+                    if (anchor_only && !is_anchor_file) || (!anchor_only && is_anchor_file) {
+                        // Skip this file - wrong pass for this file type
+                        continue;
+                    }
+
                     // Always log found markdown files for debugging
-                    crate::utils::log(&format!("📄 Found markdown: {} -> cmd: '{}' action: '{}'", 
+                    crate::utils::log(&format!("📄 Found markdown: {} -> cmd: '{}' action: '{}'",
                         path.display(), command.command, command.action));
-                    
+
                     // Check if this file is already handled by an existing command (O(1) lookup)
                     if handled_files.contains(&command.arg) {
-                        crate::utils::log(&format!("  ⏭️  Skipping '{}' - file already handled: {}", 
+                        crate::utils::log(&format!("  ⏭️  Skipping '{}' - file already handled: {}",
                             command.command, path.display()));
                     } else {
                         // Log that we're creating a new command
-                        crate::utils::log(&format!("  ✅ Creating new {} command '{}' -> {}", 
+                        crate::utils::log(&format!("  ✅ Creating new {} command '{}' -> {}",
                             command.action, command.command, command.arg));
-                        
+
                         // Add to existing commands set to prevent future collisions (lowercase)
                         existing_commands.insert(command.command.to_lowercase());
                         // Add to handled files set to prevent creating duplicate commands for this file
@@ -936,25 +943,25 @@ fn scan_directory_with_root_protected(dir: &Path, vault_root: &Path, commands: &
                     }
                     file_processed = true;
                 }
-                
-                // If not a markdown file, try to process as DOC file
-                if !file_processed {
+
+                // If not a markdown file and not anchor_only pass, try to process as DOC file
+                if !file_processed && !anchor_only {
                     crate::utils::detailed_log("SCANNER", &format!("File not processed as markdown, trying DOC: {}", path.display()));
                     if let Some(command) = process_doc_file(&path, existing_commands, folder_map, config) {
                         // Always log found DOC files for debugging
                         // DOC command created successfully
-                        crate::utils::log(&format!("📄 Found doc: {} -> cmd: '{}' action: '{}'", 
+                        crate::utils::log(&format!("📄 Found doc: {} -> cmd: '{}' action: '{}'",
                             path.display(), command.command, command.action));
-                        
+
                         // Check if this file is already handled by an existing command (O(1) lookup)
                         if handled_files.contains(&command.arg) {
-                            crate::utils::log(&format!("  ⏭️  Skipping '{}' - file already handled: {}", 
+                            crate::utils::log(&format!("  ⏭️  Skipping '{}' - file already handled: {}",
                                 command.command, path.display()));
                         } else {
                             // Log that we're creating a new command
-                            crate::utils::log(&format!("  ✅ Creating new {} command '{}' -> {}", 
+                            crate::utils::log(&format!("  ✅ Creating new {} command '{}' -> {}",
                                 command.action, command.command, command.arg));
-                            
+
                             // Add to existing commands set to prevent future collisions (lowercase)
                             existing_commands.insert(command.command.to_lowercase());
                             // Add to handled files set to prevent creating duplicate commands for this file
@@ -965,6 +972,31 @@ fn scan_directory_with_root_protected(dir: &Path, vault_root: &Path, commands: &
                 }
             }
         }
+    }
+}
+
+/// Protected version with loop detection and depth limiting
+/// TWO-PASS ALGORITHM:
+/// Pass 1: Find all anchor files and add them to folder_map (anchor_only=true)
+/// Pass 2: Process all non-anchor files with complete folder_map (anchor_only=false)
+fn scan_directory_with_root_protected(dir: &Path, vault_root: &Path, commands: &mut Vec<Command>, existing_commands: &mut HashSet<String>, handled_files: &mut HashSet<String>, found_folders: &mut Vec<PathBuf>, existing_patches: &std::collections::HashMap<String, String>, folder_map: &mut std::collections::HashMap<PathBuf, String>, config: &Config, visited: &mut HashSet<PathBuf>, depth: usize) {
+    // Only execute two-pass logic at the top level (depth 0)
+    // Nested calls will be handled by scan_directory_pass recursion
+    if depth == 0 {
+        crate::utils::log("🔍 PASS 1: Scanning for anchor files to build folder_map...");
+        // Pass 1: Find all anchor files first and populate folder_map
+        scan_directory_pass(dir, vault_root, commands, existing_commands, handled_files, found_folders, existing_patches, folder_map, config, visited, depth, true);
+
+        // Need fresh visited set for second pass since we want to traverse the same directories again
+        let mut visited_pass2 = HashSet::new();
+
+        crate::utils::log("🔍 PASS 2: Processing non-anchor files with complete folder_map...");
+        // Pass 2: Process all non-anchor files with complete folder_map
+        scan_directory_pass(dir, vault_root, commands, existing_commands, handled_files, found_folders, existing_patches, folder_map, config, &mut visited_pass2, depth, false);
+    } else {
+        // This should never be called at depth > 0, but just in case, delegate to scan_directory_pass
+        // The recursion should happen through scan_directory_pass, not this function
+        crate::utils::log(&format!("WARNING: scan_directory_with_root_protected called at depth {}, this shouldn't happen", depth));
     }
 }
 
