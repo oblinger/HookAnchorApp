@@ -408,10 +408,11 @@ pub fn scan_new_files(commands: Vec<Command>, sys_data: &crate::core::data::SysD
     let initial_count = commands.len();
     let mut commands = scan_files(commands, file_roots, &sys_data.config);
 
-    let files_added = commands.len().saturating_sub(initial_count);
+    let new_count = commands.len();
+    let files_added = new_count.saturating_sub(initial_count);
 
     if verbose {
-        println!("   Scan complete: {} commands total", commands.len());
+        println!("   Scan complete: {} commands total", new_count);
         if files_added > 0 {
             println!("   Added {} new commands", files_added);
         }
@@ -419,7 +420,9 @@ pub fn scan_new_files(commands: Vec<Command>, sys_data: &crate::core::data::SysD
 
     // Still need to set file_size metadata so scan_modified_files knows they're up-to-date
     // CRITICAL: This prevents detecting files as modified right after creation
-    for cmd in &mut commands[initial_count..] {
+    // Note: scan_files may delete commands before adding new ones, so we can't use initial_count
+    // Instead, we need to identify which commands are file-based and newly scanned
+    for cmd in &mut commands {
         // Only update for file-based commands
         if !cmd.is_path_based() {
             continue;
