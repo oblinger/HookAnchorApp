@@ -410,8 +410,21 @@ impl CommandEditor {
         file_size: None,
         };
 
-        // Apply anchor flag based on checkbox state
-        new_command.set_anchor(self.is_anchor);
+        // Determine if this command was user-edited before we add the U flag
+        let was_user_edited = new_command.flags.contains(FLAG_USER_EDITED);
+
+        // Auto-set anchor flag for markdown files that match the anchor pattern
+        // BUT ONLY if the command wasn't already user-edited (to preserve user's explicit choices)
+        if !was_user_edited && self.action == "markdown" && !self.argument.is_empty() {
+            let path = std::path::Path::new(&self.argument);
+            if crate::utils::is_anchor_file(path) {
+                new_command.set_flag(FLAG_ANCHOR, "");
+                crate::utils::detailed_log("CMD_EDITOR", &format!("Auto-set anchor flag for '{}'", self.command));
+            }
+        } else {
+            // For user-edited commands, use the checkbox state as-is
+            new_command.set_anchor(self.is_anchor);
+        }
 
         // ALWAYS add 'U' flag when a command is edited in the command editor
         // This indicates user-edited and prevents removal during rescan

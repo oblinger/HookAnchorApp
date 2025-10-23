@@ -211,11 +211,11 @@ actions:
     key: "Cmd+P"
     name: "{{date.year}} {{input}}"
     action: "markdown"
-    arg: "~/Documents/Notes/prj/{{date.year}} {{input}}/{{date.year}} {{input}}.md"
+    arg: "~/ob/kmr/prj/{{date.year}} {{input}}/{{date.year}} {{input}}.md"
     patch: "Prj"
-    flags: "a"
+    flags: ""
     edit: true
-    file: "~/Documents/Notes/prj/{{date.year}} {{input}}/{{date.year}} {{input}}.md"
+    file: "~/ob/kmr/prj/{{date.year}} {{input}}/{{date.year}} {{input}}.md"
     file_rescan: true
     contents: |
       .[[{{date.year}}-{{date.month}} {{input}}]].
@@ -227,9 +227,9 @@ actions:
     key: "Cmd+Shift+A"
     name: "@{{input}}"
     action: "markdown"
-    arg: "~/Documents/Notes/At/@{{input}}.md"
+    arg: "~/ob/kmr/At/@{{input}}.md"
     patch: "At"
-    flags: "a"
+    flags: ""
     edit: true
     file_rescan: true
     contents: |
@@ -242,11 +242,11 @@ actions:
     key: "Cmd+O"
     name: "@{{input}}"
     action: "markdown"
-    arg: "~/Documents/Notes/At/Org/@{{input}}.md"
+    arg: "~/ob/kmr/At/Org/@{{input}}.md"
     patch: "Org"
-    flags: "a"
+    flags: ""
     edit: true
-    file: "~/Documents/Notes/At/Org/@{{input}}.md"
+    file: "~/ob/kmr/At/Org/@{{input}}.md"
     file_rescan: true
     contents: |
       =[[Org]]   
@@ -257,12 +257,12 @@ actions:
     key: "Cmd+D"
     name: "Doc{{input}}"
     action: "doc"
-    arg: "~/Documents/Notes/T/DOC/Doc{{input}}.md"
+    arg: "~/ob/kmr/T/DOC/Doc{{input}}.md"
     patch: "DOC"
     flags: ""
     edit: true
     file_rescan: true
-    file: "~/Documents/Notes/At/Org/@{{input}}.md"
+    file: "~/ob/kmr/T/DOC/Doc{{input}}.md"
     contents: |
       #org   
       
