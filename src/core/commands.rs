@@ -18,10 +18,7 @@ use crate::core::data::config::Config;
 pub const FLAG_ANCHOR: char = 'A';       // command represents an anchor/hierarchy node
 pub const FLAG_USER_EDITED: char = 'U';  // Prevents scanner overwrite of user edited entries
 pub const FLAG_MERGED: char = 'M';       // Used when displaying merged ... entries
-
-/// Flag character for include commands
-/// Adds the command to its patch's include list for hierarchical filtering
-pub const FLAG_INCLUDE: char = 'I';
+pub const FLAG_INCLUDE: char = 'I';      // Auto-includes all files in folder when viewing patch
 
 // =============================================================================
 // COMMAND STRUCT
