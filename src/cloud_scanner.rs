@@ -277,7 +277,7 @@ pub fn scan_cloud_services() -> CloudScanResult {
     let contents = match std::fs::read_to_string(&config_path) {
         Ok(c) => c,
         Err(e) => {
-            eprintln!("[CLOUD] Error reading config: {}", e);
+            crate::utils::log_error(&format!("[CLOUD] Error reading config: {}", e));
             return CloudScanResult { notion_pages, is_incremental };
         }
     };
@@ -285,7 +285,7 @@ pub fn scan_cloud_services() -> CloudScanResult {
     let config: serde_yaml::Value = match serde_yaml::from_str(&contents) {
         Ok(c) => c,
         Err(e) => {
-            eprintln!("[CLOUD] Error parsing config YAML: {}", e);
+            crate::utils::log_error(&format!("[CLOUD] Error parsing config YAML: {}", e));
             return CloudScanResult { notion_pages, is_incremental };
         }
     };

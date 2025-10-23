@@ -34,9 +34,9 @@ impl GlobalHotkey {
         crate::utils::log(&format!("Accessibility permissions check: {}", has_permissions));
 
         if !has_permissions {
-            eprintln!("❌ Missing accessibility permissions!");
-            eprintln!("Please grant HookAnchor accessibility permissions in:");
-            eprintln!("System Settings > Privacy & Security > Accessibility");
+            crate::utils::log_error("Missing accessibility permissions!");
+            crate::utils::log_error("Please grant HookAnchor accessibility permissions in:");
+            crate::utils::log_error("System Settings > Privacy & Security > Accessibility");
             request_accessibility_permission();
             return Err("Accessibility permissions required. Please grant permissions in System Settings > Privacy & Security > Accessibility".to_string());
         }
@@ -58,7 +58,6 @@ impl GlobalHotkey {
         let tap = create_event_tap()?;
         if tap.is_null() {
             let error = "Failed to create event tap. Make sure accessibility permissions are granted.";
-            eprintln!("❌ {}", error);
             crate::utils::log_error(error);
             return Err(error.to_string());
         }
@@ -69,7 +68,6 @@ impl GlobalHotkey {
         let source = create_runloop_source(tap)?;
         if source.is_null() {
             let error = "Failed to create run loop source.";
-            eprintln!("❌ {}", error);
             crate::utils::log_error(error);
             return Err(error.to_string());
         }
@@ -162,17 +160,14 @@ extern "C" fn event_tap_callback(
         let keycode_match = keycode == GLOBAL_KEYCODE as i64;
 
         if flags_match && keycode_match {
-            eprintln!("🔥 HOTKEY TRIGGERED! cmd+z detected");
             crate::utils::log(&format!("🔥 Hotkey triggered! flags: {:#x}, keycode: {}", flags, keycode));
 
             // Call our callback
             if let Some(ref callback) = GLOBAL_CALLBACK {
-                eprintln!("📞 Calling popup callback...");
-                crate::utils::log("Calling hotkey callback");
+                crate::utils::detailed_log("HOTKEY", "Calling popup callback...");
                 callback();
-                eprintln!("✅ Callback completed");
+                crate::utils::detailed_log("HOTKEY", "Callback completed");
             } else {
-                eprintln!("❌ No callback registered!");
                 crate::utils::log_error("No callback registered for hotkey");
             }
 

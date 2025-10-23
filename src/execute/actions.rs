@@ -226,10 +226,9 @@ pub(super) fn execute_locally(
     let action_arg = arg.unwrap_or_else(|| action.get_string("arg").unwrap_or(""));
     let action_flags = action.get_string("flags").unwrap_or("");
     
-    // Log main action line (to both console and log)
+    // Log main action line
     let main_log = format!("ACTION:{}  TYPE:{}  FLAGS:{}  ARG:{}", action_name, action_type, action_flags, action_arg);
     crate::utils::log(&main_log);
-    println!("{}", main_log);
     
     // Log detailed action info (only to detailed log)
     let mut details = format!("ACTION DETAILS  FLAGS:{}", action_flags);
