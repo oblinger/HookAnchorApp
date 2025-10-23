@@ -228,7 +228,7 @@ fn flush(commands: &mut Vec<Command>) -> Result<(), Box<dyn std::error::Error>> 
 /// Always saves (flushes) to disk regardless of whether inference made changes
 pub fn set_commands(mut commands: Vec<Command>) -> Result<(), Box<dyn std::error::Error>> {
     // Initialize history database
-    let conn = crate::systems::history::initialize_history_db()?;
+    let conn = super::history::initialize_history_db()?;
 
     // Get current timestamp
     let timestamp = std::time::SystemTime::now()
@@ -264,7 +264,7 @@ pub fn set_commands(mut commands: Vec<Command>) -> Result<(), Box<dyn std::error
                new_cmd.patch != cached_cmd.patch ||
                new_cmd.flags != cached_cmd.flags {
                 // Command was modified - record to history
-                crate::systems::history::record_command_modified(
+                super::history::record_command_modified(
                     &conn,
                     cached_cmd,
                     new_cmd,
@@ -282,7 +282,7 @@ pub fn set_commands(mut commands: Vec<Command>) -> Result<(), Box<dyn std::error
             }
         } else {
             // Command is new - record creation to history
-            crate::systems::history::record_command_created(&conn, new_cmd, timestamp)?;
+            super::history::record_command_created(&conn, new_cmd, timestamp)?;
             created_count += 1;
             crate::utils::detailed_log("HISTORY", &format!(
                 "Created: '{}' (action: {}, patch: {})",
@@ -323,7 +323,7 @@ pub fn set_commands(mut commands: Vec<Command>) -> Result<(), Box<dyn std::error
 /// Convenience function for single-command additions from UI
 pub fn add_command(cmd: Command) -> Result<(), Box<dyn std::error::Error>> {
     // Initialize history database
-    let conn = crate::systems::history::initialize_history_db()?;
+    let conn = super::history::initialize_history_db()?;
 
     // Get current timestamp
     let timestamp = std::time::SystemTime::now()
@@ -331,7 +331,7 @@ pub fn add_command(cmd: Command) -> Result<(), Box<dyn std::error::Error>> {
         .as_secs() as i64;
 
     // Record creation in history
-    crate::systems::history::record_command_created(&conn, &cmd, timestamp)?;
+    super::history::record_command_created(&conn, &cmd, timestamp)?;
 
     // Get current commands and add new one
     let mut commands = get_commands();

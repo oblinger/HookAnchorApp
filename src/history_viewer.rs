@@ -4,7 +4,7 @@
 //! in a searchable, filterable list.
 
 use eframe::egui;
-use hookanchor::systems::{initialize_history_db, HistoryEntry};
+use hookanchor::core::{initialize_history_db, HistoryEntry};
 use rusqlite::Connection;
 use std::env;
 

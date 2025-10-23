@@ -49,6 +49,7 @@ mod storage;
 // but they're not directly accessible outside of core
 pub(in crate::core) mod config;
 pub(in crate::core) mod state;
+pub(in crate::core) mod history;
 
 // Re-export the public interface from sys_data
 // These are the ONLY functions that external code should use
@@ -68,6 +69,14 @@ pub use sys_data::{
     add_command,
     delete_command,
     set_state,
+};
+
+// Re-export history functions
+pub use history::{
+    initialize_history_db,
+    record_command_created,
+    record_command_modified,
+    HistoryEntry,
 };
 
 // Internal access to CONFIG for same-crate modules only

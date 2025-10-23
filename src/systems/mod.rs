@@ -13,7 +13,6 @@
 //! - obsidian: Obsidian vault and markdown file management
 //! - setup_assistant: First-run setup and configuration
 //! - popup_server: Server for managing popup instances via IPC
-//! - history: Command change tracking with SQLite
 
 // Internal module declarations (accessible within crate)
 pub(crate) mod scanner;
@@ -21,7 +20,6 @@ pub(crate) mod grabber;
 pub(crate) mod obsidian;
 pub(crate) mod setup_assistant;
 pub(crate) mod popup_server;
-pub(crate) mod history;
 
 // ============================================================================
 // PUBLIC API - All external access goes through these re-exports
@@ -64,13 +62,11 @@ pub use popup_server::{
     PopupCommand, PopupControl
 };
 
-// History subsystem - command change tracking with SQLite
-pub use history::{
-    initialize_history_db,
-    record_command_created,
-    record_command_modified,
-    HistoryEntry,
-};
+// History subsystem - moved to core::data module
+// - data::initialize_history_db() - Initialize SQLite database
+// - data::record_command_created() - Record command creation
+// - data::record_command_modified() - Record command modification
+// - data::HistoryEntry - History entry type
 
 // CommandStore functionality moved to core::sys_data module
 // - sys_data::get_commands() - Load commands from singleton

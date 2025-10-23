@@ -220,7 +220,7 @@ pub fn load_manual_edits(commands: &mut Vec<Command>, verbose: bool) -> Result<u
     let mut history_modified = 0;
 
     // Initialize history database connection
-    let conn_result = crate::systems::history::initialize_history_db();
+    let conn_result = crate::core::data::initialize_history_db();
 
     // For each command in commands.txt, check if we need to add or update it
     for txt_cmd in txt_commands {
@@ -272,7 +272,7 @@ pub fn load_manual_edits(commands: &mut Vec<Command>, verbose: bool) -> Result<u
                             .duration_since(std::time::UNIX_EPOCH)
                             .unwrap()
                             .as_secs() as i64;
-                        if let Err(e) = crate::systems::history::record_command_modified(conn, &old_cmd, &updated_cmd, timestamp) {
+                        if let Err(e) = crate::core::data::record_command_modified(conn, &old_cmd, &updated_cmd, timestamp) {
                             crate::utils::log_error(&format!("Failed to record modification for '{}': {}", updated_cmd.command, e));
                         } else {
                             history_modified += 1;
@@ -295,7 +295,7 @@ pub fn load_manual_edits(commands: &mut Vec<Command>, verbose: bool) -> Result<u
                         .duration_since(std::time::UNIX_EPOCH)
                         .unwrap()
                         .as_secs() as i64;
-                    if let Err(e) = crate::systems::history::record_command_created(conn, &txt_cmd, timestamp) {
+                    if let Err(e) = crate::core::data::record_command_created(conn, &txt_cmd, timestamp) {
                         crate::utils::log_error(&format!("Failed to record creation for '{}': {}", txt_cmd.command, e));
                     } else {
                         history_created += 1;
@@ -379,14 +379,14 @@ pub fn scan_modified_files(commands: &mut Vec<Command>, verbose: bool) -> Result
                 }
 
                 // Record the change in history
-                let conn = crate::systems::history::initialize_history_db()?;
+                let conn = crate::core::data::initialize_history_db()?;
                 let timestamp = current_mtime.unwrap_or_else(|| {
                     std::time::SystemTime::now()
                         .duration_since(std::time::UNIX_EPOCH)
                         .unwrap()
                         .as_secs() as i64
                 });
-                crate::systems::history::record_command_modified(&conn, &old_cmd, cmd, timestamp)?;
+                crate::core::data::record_command_modified(&conn, &old_cmd, cmd, timestamp)?;
 
                 file_changes += 1;
             }
@@ -464,7 +464,7 @@ pub fn scan_new_files(commands: Vec<Command>, sys_data: &crate::core::data::SysD
         }
 
         // Initialize history database
-        match crate::systems::history::initialize_history_db() {
+        match crate::core::data::initialize_history_db() {
             Ok(conn) => {
                 let mut recorded = 0;
 
@@ -513,7 +513,7 @@ pub fn scan_new_files(commands: Vec<Command>, sys_data: &crate::core::data::SysD
 
                     if let Some(timestamp) = birth_time {
                         // Record "created" history entry
-                        if let Err(e) = crate::systems::history::record_command_created(&conn, cmd, timestamp) {
+                        if let Err(e) = crate::core::data::record_command_created(&conn, cmd, timestamp) {
                             crate::utils::log_error(&format!("Failed to record creation for '{}': {}", cmd.command, e));
                         } else {
                             recorded += 1;

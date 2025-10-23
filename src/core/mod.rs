@@ -42,7 +42,9 @@ pub use data::{
     initialize, get_commands, get_patches, set_commands, get_config, get_sys_data,
     add_command, delete_command,
     // State management
-    get_state, set_state
+    get_state, set_state,
+    // History tracking
+    initialize_history_db, record_command_created, record_command_modified, HistoryEntry
     // NOTE: Internal sys_data types are not re-exported
 };
 
