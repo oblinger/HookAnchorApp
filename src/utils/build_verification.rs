@@ -262,9 +262,10 @@ pub fn verify_and_log(terminate_on_failure: bool) -> bool {
         crate::utils::log(warning);
     }
 
-    // Log errors
+    // Log errors (both to file and stdout so they're visible)
     for error in &result.errors {
         crate::utils::log_error(error);
+        crate::utils::print(error);  // Also print to stdout
     }
 
     // Summary
@@ -272,6 +273,7 @@ pub fn verify_and_log(terminate_on_failure: bool) -> bool {
         crate::utils::log("Build validity check: SUCCESS");
     } else {
         crate::utils::log_error("Build validity check: FAILED");
+        crate::utils::print("Build validity check: FAILED");  // Also print to stdout
 
         // If terminate_on_failure is true, show dialog and exit
         if terminate_on_failure {

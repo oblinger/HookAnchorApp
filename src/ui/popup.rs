@@ -1772,6 +1772,30 @@ impl AnchorSelector {
         self.pending_action.is_some()
     }
 
+    /// Save a command atomically - handles both new commands and edits
+    /// If old_command_name is Some, this is an edit/rename - delete the old one first
+    /// This ensures patch inference only runs once after both delete+add are done
+    fn save_command_atomic(&mut self, new_command: Command, old_command_name: Option<&str>) -> Result<(), Box<dyn std::error::Error>> {
+        // Delete original command from UI if this is an edit/rename
+        if let Some(old_name) = old_command_name {
+            if !old_name.is_empty() {
+                crate::utils::log(&format!("SAVE: Deleting original command '{}' from UI", old_name));
+                self.commands_mut().retain(|c| c.command != old_name);
+            }
+        }
+
+        // Add the new command to UI
+        crate::utils::log(&format!("SAVE: Adding command '{}' to UI (action: {}, patch: {})",
+            new_command.command, new_command.action, new_command.patch));
+        self.commands_mut().push(new_command);
+
+        // Save all commands to disk - patch inference runs once here
+        crate::core::data::set_commands(self.commands().to_vec())?;
+        crate::utils::log("SAVE: Saved all commands to disk");
+
+        Ok(())
+    }
+
     /// Execute a rename operation with UI update - has access to &mut self unlike static version
     fn execute_rename_with_ui_update(&mut self, context: &HashMap<String, String>) -> Result<(), Box<dyn std::error::Error>> {
         let old_name = context.get("old_name").ok_or("Missing old_name")?;
@@ -3987,26 +4011,16 @@ impl eframe::App for AnchorSelector {
                 }
                 
                 // No rename side effects or user not using rename features - proceed with normal save
-                
-                // Delete original command if needed
-                if let Some(cmd_name) = command_to_delete {
-                    use crate::core::delete_command;
-                    let deleted = delete_command(&cmd_name);
-                    if deleted.is_err() {
-                        crate::utils::log_error(&format!("Original command '{}' not found for deletion", cmd_name));
-                    }
-                }
-                
-                // Clone the new command for template processing before adding it
+
+                // Clone the new command for template processing before saving it
                 let saved_command = new_command.clone();
-                
-                // Add the new command
-                use crate::core::add_command;
-                crate::utils::log(&format!("SAVE_DEBUG: About to add new command: '{}' (action: {}, arg: {})",
+
+                // Use atomic save to prevent patch inference from running twice
+                crate::utils::log(&format!("SAVE: Using atomic save for command: '{}' (action: {}, arg: {})",
                     new_command.command, new_command.action, new_command.arg));
-                match add_command(new_command) {
+                match self.save_command_atomic(new_command, command_to_delete.as_deref()) {
                     Ok(_) => {
-                        crate::utils::log(&format!("SAVE_DEBUG: Successfully added command (auto-saved via sys_data)"));
+                        crate::utils::log(&format!("SAVE: Successfully saved command atomically"));
 
                         // Mark commands as modified to trigger automatic reload
                         crate::utils::log(&format!("SAVE_DEBUG: Marked commands as modified to trigger reload"));
