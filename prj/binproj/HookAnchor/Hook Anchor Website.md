@@ -29,7 +29,28 @@ Hook anchor continuously adjusts ITS namings as you use it, so the first name or
 Why should YOU need to remember IT'S names? IT should remember and YOUR active names.
 The result is deliciously instant, thought-free access 95% of the time.
 
-So what about the other 5% of the time?  
+So what about the other 5% of the time?  We collect them into ***unified*** groups and organize them according to 3 universal dimensions: time, place, and kind.
+
+
+GROUPING BY LOGICAL ANCHOR
+You already organize your projects and topics using folders. Hook Anchor upgrades this habit:
+- It allows logical "folders" that span multiple applications/accounts, both online/offline into a single logical anchor.
+- It extends URLs on your machine so your anchor file (folder file) can directly link to external pages in google, notion, confluence, etc.
+
+
+ORGANIZING BY STREAM
+
+
+
+
+
+
+- It dramatically reduces the tagging/linking required to guarantee finding items by clicking forward without backtracking.
+- System to ensure each item has exactly one anchor as its home. 
+
+
+ANCHORING
+
 
 
 LOCALLY ORGANIZED
@@ -37,12 +58,6 @@ LOCALLY ORGANIZED
 Taxonomies or tagging systems often start strong, but as they grow, they become crazy hard to manage.  The solution is to STOP organizing globally and start organizing locally by anchor, by time, and by stream.  Together, these methods facilitate quick finding in the 5% of cases where you don't instantly remember an item's name.
 
 
-
-ORGANIZE LOCALLY BY ANCHOR
-You already organize your projects and topics using folders. Hook Anchor upgrades this habit in three ways:
-- It allows those "folders" to span multiple applications/accounts, both online/offline into a single logical anchor.
-- It dramatically reduces the tagging/linking required to guarantee finding items by clicking forward without backtracking.
-- System to ensure each item has exactly one anchor as its home. 
 
 
 BY STREAM

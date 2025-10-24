@@ -1,12 +1,26 @@
 
+
+
+
+
 - [ ] [[Hook Anchor Release]] 
+- [ ] Log does not contain JS errors
+- [ ] lets save these so they are not virtual:  Created virtual anchor for patch
+- [ ] Make dev mode run on each render (mod 10?)   make boot check only run when dev_mode is set.
+- [ ] upgrade CMD+B so it does a --restart too
+- [ ] Add categories
 - [ ] click on folder will go into folder
 - [ ] Delete key should prompt to delete file and maybe folder.
+- [x] remove println!
+- [x] move history into data
+- [ ] check for println! and eprintln! in code
 
 FOR RELEASE
+- [ ] clean up logging
+- [ ] Clean up help messages
 - [ ] Adding ha to the path and the ff command etc. should all be in a script file that is inside the .app and that should be sourced by the user's init upon install.
 - [ ] Anchor is a Flag; Anchor suffix used to indicate location of patch
-- [ ] Help doc sections  [[HELP]]: vars, fns, config    help command section for Javascript variables, and section for Javascript functions
+- [x] Help doc sections  [[HELP]]: vars, fns, config    help command section for Javascript variables, and section for Javascript functions
 
 ## SOON
 - [ ] consider EVERY fallback in the code, and try to remove them
@@ -25,7 +39,7 @@ About a year ago we shifted away from our two-week engineering sprint (which to 
 
 ## DONE
 - [x] Fixed anchor ghost setting
-- [ ] Fix the template double slash bug
+- [x] Fix the template double slash bug
 - [x] semi-colon should see grey item not blue one.
 - [x] Remove change fields in history DB
 - [x] TERMINATE w/ dialog when build fails

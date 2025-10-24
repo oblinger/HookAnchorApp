@@ -64,3 +64,7 @@ https://docs.google.com/presentation/d/18-EgPTzjksHM8LPWDcRwrUl2pCflegCELsh3l2eQ
 Productized Pure AI Highlights product
 - Contract signed with Playon for 10K games in Dec & Q1
 - Active product integration work with PlayOn in full swing
+
+
+- Roster editing - customer 
+- Uploading - 
