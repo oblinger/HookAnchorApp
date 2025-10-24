@@ -1,6 +1,6 @@
 {
   "window_position": [
-    671.0,
+    980.0,
     25.0
   ],
   "history_viewer_state": {
@@ -18,14 +18,14 @@
     "selected_action_types": [],
     "sidebar_width": 170.0
   },
-  "build_time": 1761339113,
+  "build_time": 1761342483,
   "last_scan_time": null,
   "last_scan_checksum": null,
-  "last_executed_command": "SV",
-  "server_pid": 99578,
+  "last_executed_command": "Mgt Gdrive",
+  "server_pid": 10357,
   "notion_last_scan": null,
-  "anchor_name": "SV",
-  "anchor_timestamp": 1761337474,
+  "anchor_name": "SV Mgt",
+  "anchor_timestamp": 1761341205,
   "anchor_folder": null,
   "show_files": true
 }

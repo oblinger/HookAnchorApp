@@ -53,10 +53,21 @@ pub fn command_to_action(cmd: &Command) -> Action {
     detailed_log("COMMAND_TO_ACTION", &format!("Converting command '{}' with action '{}'", cmd.command, cmd.action));
     
     let mut params = HashMap::new();
-    
+
     // Determine the action type and inherit any config-defined properties
     if cmd.action.is_empty() {
-        // If action is empty, try to infer from other fields
+        // Check if this is a virtual anchor (blank action + blank arg) - these are non-executable
+        if cmd.arg.is_empty() {
+            detailed_log("COMMAND_TO_ACTION", "Virtual anchor (blank action + arg) - not executable");
+            params.insert("action_type".to_string(), JsonValue::String("noop".to_string()));
+            params.insert("arg".to_string(), JsonValue::String(String::new()));
+            params.insert("patch".to_string(), JsonValue::String(cmd.patch.clone()));
+            params.insert("command_name".to_string(), JsonValue::String(cmd.command.clone()));
+            params.insert("flags".to_string(), JsonValue::String(cmd.flags.clone()));
+            return Action { params };
+        }
+
+        // If action is empty but arg exists, try to infer from other fields
         let inferred_type = if cmd.is_path_based() {
             if cmd.arg.ends_with(".md") {
                 "markdown"

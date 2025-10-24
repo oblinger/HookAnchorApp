@@ -489,7 +489,7 @@ pub fn scan_new_files(commands: Vec<Command>, sys_data: &crate::core::data::SysD
         if !notion_root_exists {
             commands.push(Command {
                 command: "Notion Root".to_string(),
-                action: "folder".to_string(),
+                action: String::new(),  // Virtual anchor - blank action (non-executable)
                 arg: String::new(),  // Virtual anchor, no actual file
                 flags: "A".to_string(),  // Anchor flag
                 patch: "orphans".to_string(),  // Notion Root is under orphans

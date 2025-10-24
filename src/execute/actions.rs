@@ -278,6 +278,13 @@ pub(super) fn execute_locally(
 
     // Dispatch based on action type
     match action.action_type() {
+        // Virtual anchors - non-executable
+        "noop" | "" if params.get("arg").map(|s| s.is_empty()).unwrap_or(true) => {
+            // Virtual anchor with blank action and blank arg - do nothing
+            crate::utils::detailed_log("EXECUTE", "Virtual anchor - not executing");
+            Ok("Virtual anchor (not executable)".to_string())
+        }
+
         // Builtin Rust actions
         "template" => execute_template_action(action, &params),
         "popup" => execute_popup_action(action, &params),

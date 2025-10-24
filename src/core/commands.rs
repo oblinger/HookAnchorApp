@@ -1439,7 +1439,7 @@ fn create_virtual_anchor_for_patch(patch_name: &str, _config: &Config, patches: 
     // Create the virtual anchor command - no file path needed, just blank arg
     Some(Command {
         command: patch_name.to_string(),
-        action: "folder".to_string(),  // Virtual anchor
+        action: String::new(),  // Virtual anchor - blank action (non-executable)
         arg: String::new(), // NEW SYSTEM: Blank arg, no markdown file
         patch: parent_patch,
         flags: "A".to_string(), // Anchor flag (system-generated)

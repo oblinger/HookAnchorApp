@@ -776,7 +776,7 @@ pub fn validate_and_repair_patches(
         let config = crate::core::data::get_config();
         let virtual_anchor = Command {
             command: patch_name.clone(),
-            action: "folder".to_string(),  // Virtual anchor
+            action: String::new(),  // Virtual anchor - blank action (non-executable)
             arg: String::new(), // Virtual anchor - no file
             patch: "orphans".to_string(),
             flags: "A".to_string(), // Anchor flag
