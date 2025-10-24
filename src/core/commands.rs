@@ -590,30 +590,12 @@ pub(crate) fn create_patches_hashmap(commands: &[Command]) -> HashMap<String, Pa
             }
         }
     }
-    
-    // Fourth pass: Create virtual anchors for patches that have no anchors but have commands
-    let mut patches_with_commands = std::collections::HashSet::new();
-    for command in commands {
-        if !command.patch.is_empty() && command.patch != "orphans" {
-            patches_with_commands.insert(command.patch.to_lowercase());
-        }
-    }
-    
-    for patch_name in patches_with_commands {
-        if !patches.contains_key(&patch_name) {
-            // Create virtual anchor for this patch with inferred parent
-            if let Some(virtual_command) = create_virtual_anchor_for_patch(&patch_name, &config, &patches) {
-                crate::utils::log(&format!("PATCH: Created virtual anchor for patch '{}' with parent '{}'", patch_name, virtual_command.patch));
-                patches.insert(patch_name.clone(), Patch {
-                    name: virtual_command.command.clone(),
-                    anchor_commands: vec![virtual_command],
-                    include_commands: Vec::new(),
-                    history_file: None, // Will be populated by history module
-                });
-            }
-        }
-    }
-    
+
+    // NOTE: Virtual anchor CREATION removed from here - it was creating entries in the
+    // patches HashMap but not adding them to the commands list, causing them to be lost on save.
+    // Virtual anchor creation now happens exclusively in validate_and_repair_patches() Phase 3,
+    // which properly adds them to both the commands list AND the patches HashMap.
+
     patches
 }
 
