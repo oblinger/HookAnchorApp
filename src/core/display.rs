@@ -277,10 +277,11 @@ pub fn build_prefix_menu(
             }
         }
 
-        // If we found any matching anchors, choose the one with the longest command name
+        // If we found any matching anchors, choose the one with the shortest command name
+        // This ensures we match the most input characters with the most specific anchor
         if !matching_anchors.is_empty() {
-            // Sort by resolved command name length (longest first)
-            matching_anchors.sort_by(|a, b| b.1.command.len().cmp(&a.1.command.len()));
+            // Sort by resolved command name length (shortest first)
+            matching_anchors.sort_by(|a, b| a.1.command.len().cmp(&b.1.command.len()));
             let (original_command, resolved_command) = &matching_anchors[0];
 
             // Calculate remaining chars for filtering
