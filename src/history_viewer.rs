@@ -366,7 +366,8 @@ impl HistoryViewer {
         }
 
         // Load history entries using the new API
-        match get_history_entries(limit) {
+        // exclude_deletions=true to hide $DELETED$ entries from the viewer
+        match get_history_entries(limit, true) {
             Ok(entries) => {
                 self.history_entries = entries;
 

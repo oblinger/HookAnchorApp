@@ -509,6 +509,10 @@ pub fn set_state(state: &super::state::AppState) -> Result<(), Box<dyn std::erro
 // =============================================================================
 
 /// Get history entries (trampoline to history module)
-pub fn get_history_entries(limit: usize) -> rusqlite::Result<Vec<super::history::HistoryEntry>> {
-    super::history::get_history_entries(limit)
+///
+/// # Arguments
+/// * `limit` - Maximum number of entries to return
+/// * `exclude_deletions` - If true, filters out entries with action="$DELETED$"
+pub fn get_history_entries(limit: usize, exclude_deletions: bool) -> rusqlite::Result<Vec<super::history::HistoryEntry>> {
+    super::history::get_history_entries(limit, exclude_deletions)
 }

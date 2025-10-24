@@ -212,7 +212,11 @@ pub(super) fn append_command(conn: &Connection, cmd: &Command, timestamp: i64) -
 ///
 /// This is the public read function exposed via sys_data for the history_viewer.
 /// Returns entries ordered by timestamp DESC (newest first).
-pub fn get_history_entries(limit: usize) -> SqlResult<Vec<HistoryEntry>> {
+///
+/// # Arguments
+/// * `limit` - Maximum number of entries to return
+/// * `exclude_deletions` - If true, filters out entries with action="$DELETED$"
+pub fn get_history_entries(limit: usize, exclude_deletions: bool) -> SqlResult<Vec<HistoryEntry>> {
     let conn = initialize_history_db()?;
 
     let query = format!(
@@ -241,6 +245,10 @@ pub fn get_history_entries(limit: usize) -> SqlResult<Vec<HistoryEntry>> {
     let mut result = Vec::new();
     for entry in entries {
         result.push(entry?);
+    }
+
+    if exclude_deletions {
+        result.retain(|entry| !entry.is_deletion());
     }
 
     Ok(result)
