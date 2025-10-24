@@ -787,6 +787,7 @@ pub fn validate_and_repair_patches(
 
         // Add to commands list
         commands.push(virtual_anchor.clone());
+        crate::utils::log(&format!("PATCH: Added virtual anchor '{}' to commands (patch parent: {})", patch_name, virtual_anchor.patch));
 
         // Add to patches hashmap
         patches.insert(patch_name.to_lowercase(), Patch {

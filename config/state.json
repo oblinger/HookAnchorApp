@@ -2,7 +2,7 @@
   "anchor_folder": null,
   "anchor_name": "Dreams",
   "anchor_timestamp": 1761328851,
-  "build_time": 1761331048,
+  "build_time": 1761331746,
   "history_viewer_state": {
     "min_edit_size": 500,
     "name_filter": "",
@@ -22,10 +22,10 @@
   "last_scan_checksum": null,
   "last_scan_time": null,
   "notion_last_scan": null,
-  "server_pid": 59007,
+  "server_pid": 64641,
   "show_files": true,
   "window_position": [
-    -2262.0,
-    48.0
+    -2288.0,
+    32.0
   ]
 }
