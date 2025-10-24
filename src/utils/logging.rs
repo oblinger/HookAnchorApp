@@ -102,7 +102,7 @@ pub fn log(message: &str) {
 }
 
 /// Detailed logging function that only logs when detailed_logging is enabled
-/// 
+///
 /// This function should be used for verbose logging that would normally be too noisy,
 /// such as logging every key press or detailed execution flow.
 pub fn detailed_log(module: &str, message: &str) {
@@ -111,7 +111,7 @@ pub fn detailed_log(module: &str, message: &str) {
         Some(cfg) => cfg.popup_settings.verbose_logging.unwrap_or(false),
         None => false, // Config not loaded yet, assume verbose is off
     };
-    
+
     if verbose_enabled {
         log(&format!("{}: {}", module, message));
     }

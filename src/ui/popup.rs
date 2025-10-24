@@ -4271,9 +4271,49 @@ impl eframe::App for AnchorSelector {
                     }
                 }
 
+                // Check for Left Arrow key - consume it when input is empty so TextEdit doesn't capture it
+                let left_arrow_pressed = ctx.input(|i| {
+                    i.key_pressed(egui::Key::ArrowLeft)
+                });
+
+                if left_arrow_pressed {
+                    let current_input = if self.loading_state == LoadingState::Loaded {
+                        &self.popup_state.search_text
+                    } else {
+                        &self.pre_init_input_buffer
+                    };
+
+                    // If input is empty, consume the key so TextEdit doesn't get it
+                    // This allows the key registry to handle navigation
+                    if current_input.is_empty() {
+                        ctx.input_mut(|i| i.consume_key(egui::Modifiers::NONE, egui::Key::ArrowLeft));
+                        crate::utils::detailed_log("KEY_DEBUG", "🔑 LEFT ARROW: Consumed before TextEdit (empty input)");
+                    }
+                }
+
+                // Check for Left Bracket key - consume it when input is empty so TextEdit doesn't capture it
+                let left_bracket_pressed = ctx.input(|i| {
+                    i.key_pressed(egui::Key::OpenBracket)
+                });
+
+                if left_bracket_pressed {
+                    let current_input = if self.loading_state == LoadingState::Loaded {
+                        &self.popup_state.search_text
+                    } else {
+                        &self.pre_init_input_buffer
+                    };
+
+                    // If input is empty, consume the key so TextEdit doesn't get it
+                    // This allows the key registry to handle navigation
+                    if current_input.is_empty() {
+                        ctx.input_mut(|i| i.consume_key(egui::Modifiers::NONE, egui::Key::OpenBracket));
+                        crate::utils::detailed_log("KEY_DEBUG", "🔑 LEFT BRACKET: Consumed before TextEdit (empty input)");
+                    }
+                }
+
                 if enter_pressed {
                 }
-                
+
                 let response = {
                     // Temporarily modify style for more rounded text input corners
                     let mut style = ui.style().as_ref().clone();
@@ -4567,12 +4607,12 @@ impl eframe::App for AnchorSelector {
 
                     // Use the layout and display_commands that were already calculated above for window sizing
                     // This ensures window sizing and rendering use the exact same layout
-                    crate::utils::log(&format!("RENDER: Using layout: {:?} (calculated from {} commands)",
+                    crate::utils::detailed_log("RENDER", &format!("Using layout: {:?} (calculated from {} commands)",
                         &actual_layout.arrangement, display_commands.len()));
                     match &actual_layout.arrangement {
                         LayoutArrangement::MultiColumn { rows, cols } => {
                             // Multi-column display
-                            crate::utils::log(&format!("RENDER: Using MultiColumn branch (rows={}, cols={})", rows, cols));
+                            crate::utils::detailed_log("RENDER", &format!("Using MultiColumn branch (rows={}, cols={})", rows, cols));
                             let rows_per_col = *rows;
                             let cols_to_use = *cols;
                             

@@ -79,7 +79,7 @@ module.exports = {
 
   // Execute command - handles windowed (W flag) execution
   action_cmd: function(ctx) {
-    const { log, detailedLog, shell, shellSync } = ctx.builtins;
+    const { log, shell, shellSync } = ctx.builtins;
     const fullCmd = ctx.arg;
 
     // Check if command starts with 'W ' flag (handle different separations)
@@ -135,7 +135,7 @@ module.exports = {
   // I flag: Interactive terminal that stays open
   // C flag: Interactive terminal that auto-closes when command exits
   action_console: function(ctx) {
-    const { log, detailedLog, shell, shellSync } = ctx.builtins;
+    const { log, shell, shellSync } = ctx.builtins;
     const command = ctx.arg;
     const hasInteractiveFlag = ctx.flags && ctx.flags.includes('I');
     const hasCloseFlag = ctx.flags && ctx.flags.includes('C');

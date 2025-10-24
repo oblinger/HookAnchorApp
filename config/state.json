@@ -1,31 +1,25 @@
 {
   "window_position": [
-    980.0,
-    25.0
+    -1606.0,
+    264.0
   ],
   "history_viewer_state": {
-    "position": [
-      -2475.0,
-      25.0
-    ],
-    "window_size": [
-      1000.0,
-      1415.0
-    ],
-    "patch_filter": "notion",
+    "position": null,
+    "window_size": null,
+    "patch_filter": "",
     "name_filter": "",
     "min_edit_size": 500,
     "selected_action_types": [],
-    "sidebar_width": 258.0
+    "sidebar_width": null
   },
-  "build_time": 1761259175,
+  "build_time": 1761285315,
   "last_scan_time": null,
   "last_scan_checksum": null,
-  "last_executed_command": "@Dean Chaing",
-  "server_pid": 25569,
+  "last_executed_command": "Hook Anchor Log",
+  "server_pid": null,
   "notion_last_scan": null,
-  "anchor_name": "Ask",
-  "anchor_timestamp": 1761254813,
+  "anchor_name": "Hook Anchor",
+  "anchor_timestamp": 1761281644,
   "anchor_folder": null,
   "show_files": true
 }

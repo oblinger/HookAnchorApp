@@ -1,0 +1,1140 @@
+🔍 Legacy Commands Load and Compare
+===================================
+
+📁 Legacy file: /Users/oblinger/.config/hookanchor/commands_20251017_232108.txt
+
+🔄 Step 1: Performing initial rescan...
+🚀 HookAnchor Rescan - Verbose Mode
+====================================
+📋 Config loaded - checking file_roots...
+✅ File roots found: ["~/ob/kmr", "/Applications"]
+
+📂 Step 1: Loading last known state from cache...
+   ✅ Loaded 6099 commands from cache
+
+✏️  Step 2: Merging manual edits from commands.txt...
+
+📝 Loading manual edits from commands.txt...
+   ✅ No manual edits to apply
+   ✅ Merged 0 edits from commands.txt
+   📊 Total commands after merge: 6099
+
+🔍 Step 3: Scanning filesystem (discovering new files, removing stale entries)...
+
+🔍 Starting filesystem scan...
+   Scanning roots: ["~/ob/kmr", "/Applications"]
+📂 Scanning directory: /Users/oblinger/ob/kmr
+      🎯 Found app: Obsidian Double Click App
+      🎯 Found app: Obsidian Double Click App 2
+   ✅ Found 5428 new commands in /Users/oblinger/ob/kmr
+📂 Scanning directory: /Applications
+      🎯 Found app: Google Chrome Beta App
+      🎯 Found app: Visual Studio Code App
+      🎯 Found app: VLC App
+      🎯 Found app: WhatSize App
+      🎯 Found app: Paprika Recipe Manager App
+      🎯 Found app: 1Password App
+      🎯 Found app: LM Studio App
+      🎯 Found app: Claude App
+      🎯 Found app: Timey 3 App
+      🎯 Found app: Speedtest App
+      🎯 Found app: Google Chrome App
+      🎯 Found app: Bartender 5 App
+      🎯 Found app: Anki App
+      🎯 Found app: Karabiner-Elements App
+      🎯 Found app: Karabiner-EventViewer App
+      🎯 Found app: Modern CSV App
+      🎯 Found app: TextSniper App
+      🎯 Found app: Numbers App
+      🎯 Found app: Dropbox App
+      🎯 Found app: Finicky App
+      🎯 Found app: MacWhisper App
+      🎯 Found app: FoldingText App
+      🎯 Found app: Be Focused Pro App
+      🎯 Found app: Grammarly Desktop App
+      🎯 Found app: Notion App
+      🎯 Found app: Xcode App
+      🎯 Found app: Microsoft Remote Desktop App
+      🎯 Found app: OneDrive App
+      🎯 Found app: Notion Calendar App
+      🎯 Found app: Spotify App
+      🎯 Found app: Simplenote App
+      🎯 Found app: Contacts Journal CRM App
+      🎯 Found app: PyCharm App
+      🎯 Found app: ExcalidrawZ App
+      🎯 Found app: iMovie App
+      🎯 Found app: Voice Memo App
+      🎯 Found app: Cursor App
+      🎯 Found app: Stay App
+      🎯 Found app: DaisyDisk App
+      🎯 Found app: Microsoft Word App
+      🎯 Found app: HookAnchor App
+      🎯 Found app: Amazon Kindle App
+      🎯 Found app: FreeCell App
+      🎯 Found app: Google Drive App
+      🎯 Found app: Docker App
+      🎯 Found app: Obsidian App
+      🎯 Found app: Pocket App
+      🎯 Found app: Spot5 App
+      🎯 Found app: Amphetamine App
+      🎯 Found app: Arc App
+      🎯 Found app: Microsoft Excel App
+      🎯 Found app: ChatGPT App
+      🎯 Found app: Inkjet Extended Survey Program App
+      🎯 Found app: Canon IJ Scan Utility Lite App
+      🎯 Found app: zoom.us App
+      🎯 Found app: IDLE App
+      🎯 Found app: Python Launcher App
+      🎯 Found app: WhatsApp App
+      🎯 Found app: Microsoft Outlook App
+      🎯 Found app: Keynote App
+      🎯 Found app: iStat Menus App
+      🎯 Found app: NewFileMenu App
+      🎯 Found app: Google Docs App
+      🎯 Found app: 1Password for Safari App
+      🎯 Found app: Audio Hijack App
+      🎯 Found app: Divvy App
+      🎯 Found app: Google Sheets App
+      🎯 Found app: ScratchJr App
+      🎯 Found app: Webcam Settings App
+      🎯 Found app: Brave Browser App
+      🎯 Found app: Pages App
+      🎯 Found app: GarageBand App
+      🎯 Found app: Google Slides App
+      🎯 Found app: Microsoft Edge App
+      🎯 Found app: Microsoft OneNote App
+      🎯 Found app: Docs for Xcode App
+      🎯 Found app: EasyRes App
+      🎯 Found app: Browserosaurus App
+      🎯 Found app: Pure Paste App
+      🎯 Found app: iTerm App
+      🎯 Found app: Skype App
+      🎯 Found app: GitKraken App
+      🎯 Found app: Firefox App
+      🎯 Found app: Emacs App
+      🎯 Found app: Goban App
+      🎯 Found app: WinZip App
+      🎯 Found app: BetterTouchTool App
+      🎯 Found app: lghub App
+      🎯 Found app: OBS App
+      🎯 Found app: Microsoft PowerPoint App
+      🎯 Found app: Evernote App
+      🎯 Found app: Adobe Acrobat App
+      🎯 Found app: Webex App
+      🎯 Found app: Obsidian Double Click App 3
+      🎯 Found app: Keyboard Maestro App
+      🎯 Found app: Slack App
+      🎯 Found app: Prime Video App
+      🎯 Found app: Paintbrush App
+      🎯 Found app: Yoink App
+      🎯 Found app: BetterTouchTool App 2
+      🎯 Found app: Neu App
+      🎯 Found app: Discord App
+      🎯 Found app: Dark Noise App
+      🎯 Found app: Sublime Text App
+   ✅ Found 107 new commands in /Applications
+   Scan complete: 6313 commands total
+   Added 214 new commands
+
+🎉 File scan complete! (Inference will run after loading manual edits)
+   ✅ Scan complete - now tracking 6313 total commands
+
+📝 Step 4: Detecting file modifications...
+
+🔍 Scanning for file modifications...
+   ✅ No file modifications detected
+   ✅ Processed modifications (0 files changed)
+
+🔄 Step 5: Running inference and saving...
+   ✅ Inference complete and saved 6313 commands
+
+📊 Step 8: Final Summary:
+   Total commands: 6313
+
+   Commands by action type:
+     : 1
+     1pass: 303
+     action: 2
+     alias: 20
+     anchor: 211
+     app: 106
+     brave: 1
+     chrome: 36
+     clear_log: 1
+     console: 36
+     contact: 2
+     doc: 2856
+     markdown: 2589
+     notion: 56
+     obs_url: 3
+     safari: 1
+     slack: 2
+     test: 2
+     text: 3
+     url: 14
+     work: 68
+
+✅ Rescan complete!
+✅ Initial rescan complete
+
+📥 Step 2: Loading legacy commands from file...
+✅ Loaded 6361 legacy commands
+
+💾 Step 3: Saving legacy commands (triggers flush)...
+✅ Legacy commands saved and flushed
+
+🔬 Step 4: First comparison (legacy vs. saved)...
+
+=== POST-SAVE COMPARISON ===
+
+📊 Summary:
+  Unchanged: 6104
+  Changed:   47
+  Removed:   0
+  Added:     0
+
+🔄 Changed Commands (47):
+  GIL_Penta-Chart Template and Examples ppt
+    arg:     '/Users/oblinger/ob/kmr/T/MGR/Hire/Hire Post/2011-05 CyberChief SETA/Problems/GIL_Penta-Chart Template and Examples.ppt' → '/Users/oblinger/ob/kmr/T/MGR/Hire/Hire Post/2011-05 CyberChief SETA/Interviewee Info/Gil/GIL_Penta-Chart Template and Examples.ppt'
+  z_lex_execution html
+    arg:     '/Users/oblinger/ob/kmr/prj/2018-00 UF/UF-OLD/lex-lexlang/OLD/docs copy/z_lex_execution.html' → '/Users/oblinger/ob/kmr/prj/2018-00 UF/UF-OLD/lex-lexlang/docs/z_lex_execution.html'
+  xxx xlsx
+    arg:     '/Users/oblinger/ob/kmr/T/FIN/FIN Budget/2020 Budget/MintBudget/Backups/xxx.xlsx' → '/Users/oblinger/ob/kmr/T/FIN/FIN Budget/2019 MintBudget/Backups/xxx.xlsx'
+  Penta Distributable Examples ppt
+    arg:     '/Users/oblinger/ob/kmr/T/MGR/Hire/Hire Post/2011-05 CyberChief SETA/Problems/Penta Distributable Examples.ppt' → '/Users/oblinger/ob/kmr/T/MGR/Hire/Hire Post/2011-05 CyberChief SETA/Interview Task/Penta Distributable Examples.ppt'
+  EduCorp pdf
+    arg:     '/Users/oblinger/ob/kmr/T/EduCorp/EduCorp.pdf' → '/Users/oblinger/ob/kmr/T/EduCorp/old/EduCorp.pdf'
+  Sports Visio - Stock Option Agreement - Oblinger - 900K (20230725) pdf
+    arg:     '/Users/oblinger/ob/kmr/T/Legal/2023 Legal SV/2023-07 Options Signed/just my signature/Sports Visio - Stock Option Agreement - Oblinger - 900K (20230725).pdf' → '/Users/oblinger/ob/kmr/T/Legal/2023 Legal SV/2023-07 Options Signed/2023-05-25 first version at 900K/900K/Signed/Sports Visio - Stock Option Agreement - Oblinger - 900K (20230725).pdf'
+  MintBudget12 xlsx
+    arg:     '/Users/oblinger/ob/kmr/T/FIN/FIN Budget/2020 Budget/MintBudget/Backups/old/MintBudget12.xlsx' → '/Users/oblinger/ob/kmr/T/FIN/FIN Budget/2019 MintBudget/MintBudget12.xlsx'
+  Secure Forms ppt
+    arg:     '/Users/oblinger/ob/kmr/Log/Idea/2007-00 DARPA seeds/SecureForms/09.08 Security/Secure Forms.ppt' → '/Users/oblinger/ob/kmr/Log/Idea/2007-00 DARPA seeds/SecureForms/Secure Forms.ppt'
+  z_archive html
+    arg:     '/Users/oblinger/ob/kmr/prj/2018-00 UF/UF-OLD/lex-lexlang/docs/z_archive.html' → '/Users/oblinger/ob/kmr/prj/2018-00 UF/UF-OLD/lex-lexlang/OLD/docs copy/z_archive.html'
+  uniform7_unit_calculus html
+    arg:     '/Users/oblinger/ob/kmr/prj/2018-00 UF/UF-OLD/lex-lexlang/docs/uniform7_unit_calculus.html' → '/Users/oblinger/ob/kmr/prj/2018-00 UF/UF-OLD/lex-lexlang/OLD/docs copy/uniform7_unit_calculus.html'
+  uniform2_example_syntax html
+    arg:     '/Users/oblinger/ob/kmr/prj/2018-00 UF/UF-OLD/lex-lexlang/OLD/docs copy/uniform2_example_syntax.html' → '/Users/oblinger/ob/kmr/prj/2018-00 UF/UF-OLD/lex/OLD/docs copy/uniform2_example_syntax.html'
+  Company Hypothesis Template xlsx
+    arg:     '/Users/oblinger/ob/kmr/Log/Idea/2020-12 MKT/Company Hypothesis Template.xlsx' → '/Users/oblinger/ob/kmr/Log/Idea/2020-06 OpenBricks/Company Hypothesis Template.xlsx'
+  API_REFERENCE markdown
+    arg:     '/Users/oblinger/ob/kmr/Attach/API_REFERENCE.md' → '/Users/oblinger/ob/kmr/prj/binproj/HookAnchor/docs/api/API_REFERENCE.md'
+  MintBudget01 xlsx
+    arg:     '/Users/oblinger/ob/kmr/T/FIN/FIN Budget/2020 Budget/MintBudget01.xlsx' → '/Users/oblinger/ob/kmr/T/FIN/FIN Budget/2020 Budget/other stuff/MintBudget01.xlsx'
+  MintBudget-old1 xlsx
+    arg:     '/Users/oblinger/ob/kmr/T/FIN/FIN Budget/2020 Budget/MintBudget/Backups/MintBudget-old1.xlsx' → '/Users/oblinger/ob/kmr/T/FIN/FIN Budget/2019 MintBudget/Backups/MintBudget-old1.xlsx'
+  MintBudget_11.08.03 xls
+    arg:     '/Users/oblinger/ob/kmr/T/FIN/FIN Budget/2020 Budget/MintBudget/MintBudget_11.08.03.xls' → '/Users/oblinger/ob/kmr/T/FIN/FIN Budget/2011 MintBudget/MintBudget_11.08.03.xls'
+  Sports Visio - Joint Agreement - Oblinger - 900K (20230725) pdf
+    arg:     '/Users/oblinger/ob/kmr/T/Legal/2023 Legal SV/2023-07 Options Signed/2023-05-25 first version at 900K/900K/Signed/Sports Visio - Joint Agreement - Oblinger - 900K (20230725).pdf' → '/Users/oblinger/ob/kmr/T/Legal/2023 Legal SV/2023-07 Options Signed/Final/Sports Visio - Joint Agreement - Oblinger - 900K (20230725).pdf'
+  MintBudget3from old xlsx
+    arg:     '/Users/oblinger/ob/kmr/T/FIN/FIN Budget/2020 Budget/MintBudget3from old.xlsx' → '/Users/oblinger/ob/kmr/T/FIN/FIN Budget/2019 MintBudget/other stuff/MintBudget3from old.xlsx'
+  _NOTES txt
+    arg:     '/Users/oblinger/ob/kmr/Log/Idea/2006-12 GHOST/old/_NOTES.txt' → '/Users/oblinger/ob/kmr/Log/Idea/2006-12 GHOST/_NOTES.txt'
+  Lean Canvas pptx
+    arg:     '/Users/oblinger/ob/kmr/Log/Idea/2000-00 Lean Canvas/Lean Canvas.pptx' → '/Users/oblinger/ob/kmr/Log/Idea/2020-06 OpenBricks/Lean Canvas.pptx'
+  PMSimulation - INBOX docx
+    arg:     '/Users/oblinger/ob/kmr/T/MGR/Hire/Hire Test/2019 AF Job Tests/AF_ENG_HIRING_TESTS/AF_HIRING_TESTS - PMSimulation 1/PMSimulation1 - Patrick Downing/PMSimulation - INBOX.docx' → '/Users/oblinger/ob/kmr/T/MGR/Hire/Hire Test/2019 AF Job Tests/AF_ENG_HIRING_TESTS/AF_HIRING_TESTS - PMSimulation 1/PMSimulation1 - Jess Jacobs/PMSimulation - INBOX.docx'
+  PMSimulation - INBOX ATTACHMENT - Email Thread Fro docx
+    arg:     '/Users/oblinger/ob/kmr/T/MGR/Hire/Hire Test/2019 AF Job Tests/AF_ENG_HIRING_TESTS/AF_HIRING_TESTS - PMSimulation 1/PMSimulation1 - Steven Joeseph/PMSimulation - INBOX ATTACHMENT - Email Thread Fro.docx' → '/Users/oblinger/ob/kmr/T/MGR/Hire/Hire Test/2019 AF Job Tests/AF_ENG_HIRING_TESTS/AF_HIRING_TESTS - PMSimulation 1/PMSimulation1 - Patrick Downing/PMSimulation - INBOX ATTACHMENT - Email Thread Fro.docx'
+  lex_blank html
+    arg:     '/Users/oblinger/ob/kmr/prj/2018-00 UF/UF-OLD/lex/docs/lex_blank.html' → '/Users/oblinger/ob/kmr/prj/2018-00 UF/UF-OLD/lex-lexlang/OLD/docs copy/lex_blank.html'
+  CLAUDE markdown
+    arg:     '/Users/oblinger/ob/kmr/prj/binproj/mddb-module/CLAUDE.md' → '/Users/oblinger/ob/kmr/prj/binproj/dp/CLAUDE.md'
+  uniform1_vocabulary html
+    arg:     '/Users/oblinger/ob/kmr/prj/2018-00 UF/UF-OLD/lex/OLD/docs copy/uniform1_vocabulary.html' → '/Users/oblinger/ob/kmr/prj/2018-00 UF/UF-OLD/lex-lexlang/docs/uniform1_vocabulary.html'
+  Copy of AF Code Review docx
+    arg:     '/Users/oblinger/ob/kmr/T/MGR/Hire/Hire Test/2019 AF Job Tests/AF_ENG_HIRING_TESTS/AF_HIRING_TESTS - C++ Proxy Server/EXERCISE - Renaud Amar/Copy of AF Code Review.docx' → '/Users/oblinger/ob/kmr/T/MGR/Hire/Hire Test/2019 AF Job Tests/AF_ENG_HIRING_TESTS/AF_HIRING_TESTS - C++ Proxy Server/EXERCISE - Matija Zigic/Copy of AF Code Review.docx'
+  uniform7_goals html
+    arg:     '/Users/oblinger/ob/kmr/prj/2018-00 UF/UF-OLD/lex/OLD/docs copy/uniform7_goals.html' → '/Users/oblinger/ob/kmr/prj/2018-00 UF/UF-OLD/lex-lexlang/docs/uniform7_goals.html'
+  Penta-Chart Template and Examples ppt
+    arg:     '/Users/oblinger/ob/kmr/T/MGR/Hire/Hire Post/2008-06 Junior-SETA/Problems/orig/Penta-Chart Template and Examples.ppt' → '/Users/oblinger/ob/kmr/T/MGR/Hire/Hire Post/2011-05 CyberChief SETA/Problems/Penta-Chart Template and Examples.ppt'
+  MintBudget_11_7_25 xlsx
+    arg:     '/Users/oblinger/ob/kmr/T/FIN/FIN Budget/2019 MintBudget/other stuff/MintBudget_11_7_25.xlsx' → '/Users/oblinger/ob/kmr/T/FIN/FIN Budget/2019 MintBudget/MintBudget_11_7_25.xlsx'
+  patents txt
+    arg:     '/Users/oblinger/ob/kmr/prj/2018-00 UF/UF-OLD/lex/docs_txt/patents.txt' → '/Users/oblinger/ob/kmr/prj/2018-00 UF/UF-OLD/lex-lexlang/docs_txt/patents.txt'
+  Dan Oblinger docx
+    arg:     '/Users/oblinger/ob/kmr/At/@Dan Fine/DAN FINE/Dan Oblinger.docx' → '/Users/oblinger/ob/kmr/T/Career/RES/Dan Oblinger.docx'
+  Student Insights Stories docx
+    arg:     '/Users/oblinger/ob/kmr/T/MGR/Hire/Hire Test/2019 AF Job Tests/AF_ENG_HIRING_TESTS/AF_HIRING_TESTS - QA/EXERCISE - Edwin Quillao/Edwin Working Folder/Student Insights Stories.docx' → '/Users/oblinger/ob/kmr/T/MGR/Hire/Hire Test/2019 AF Job Tests/AF_ENG_HIRING_TESTS/AF_HIRING_TESTS - QA/EXERCISE - Jezika Belandres/Working Folder - Jezika/Student Insights Stories.docx'
+  MintBudget20 xlsx
+    arg:     '/Users/oblinger/ob/kmr/T/FIN/FIN Budget/2019 MintBudget/other stuff/MintBudget20.xlsx' → '/Users/oblinger/ob/kmr/T/FIN/FIN Budget/2020 Budget/other stuff/MintBudget20.xlsx'
+  MintBudget2bad xlsx
+    arg:     '/Users/oblinger/ob/kmr/T/FIN/FIN Budget/2020 Budget/MintBudget2bad.xlsx' → '/Users/oblinger/ob/kmr/T/FIN/FIN Budget/2019 MintBudget/MintBudget2bad.xlsx'
+  uniform3_spec html
+    arg:     '/Users/oblinger/ob/kmr/prj/2018-00 UF/UF-OLD/lex-lexlang/docs/uniform3_spec.html' → '/Users/oblinger/ob/kmr/prj/2018-00 UF/UF-OLD/lex/OLD/docs copy/uniform3_spec.html'
+  MintBudget13 xlsx
+    arg:     '/Users/oblinger/ob/kmr/T/FIN/FIN Budget/2019 MintBudget/other stuff/MintBudget13.xlsx' → '/Users/oblinger/ob/kmr/T/FIN/FIN Budget/2020 Budget/other stuff/MintBudget13.xlsx'
+  PentaTask docx
+    arg:     '/Users/oblinger/ob/kmr/T/MGR/Hire/Hire Post/2011-05 CyberChief SETA/Interview Task/PentaTask.docx' → '/Users/oblinger/ob/kmr/T/MGR/Hire/Hire Post/2011-05 CyberChief SETA/Problems/PentaTask.docx'
+  Sports Visio - Pledge Agreement - Oblinger - 900K (20230725) pdf
+    arg:     '/Users/oblinger/ob/kmr/T/Legal/2023 Legal SV/2023-07 Options Signed/2023-05-25 first version at 900K/900K/Signed/Sports Visio - Pledge Agreement - Oblinger - 900K (20230725).pdf' → '/Users/oblinger/ob/kmr/T/Legal/2023 Legal SV/2023-07 Options Signed/just my signature/Sports Visio - Pledge Agreement - Oblinger - 900K (20230725).pdf'
+  Bizzy Robots Founder stock purchase agreement Augenbraun executed 5-23-15 pdf
+    arg:     '/Users/oblinger/ob/kmr/T/Legal/2015 Legal Bizzy/_Founder_EXECUTED/_Executed/Bizzy Robots Founder stock purchase agreement Augenbraun executed 5-23-15.pdf' → '/Users/oblinger/ob/kmr/T/Legal/2015 Legal Bizzy/2016.09.23 -- Executed Document   copied on 16.09.23/Bizzy Robots Founder stock purchase agreement Augenbraun executed 5-23-15.pdf'
+  MintBudget10 xlsx
+    arg:     '/Users/oblinger/ob/kmr/T/FIN/FIN Budget/2019 MintBudget/other stuff/MintBudget10.xlsx' → '/Users/oblinger/ob/kmr/T/FIN/FIN Budget/2020 Budget/other stuff/MintBudget10.xlsx'
+  uniform5_implementation html
+    arg:     '/Users/oblinger/ob/kmr/prj/2018-00 UF/UF-OLD/lex/OLD/docs copy/uniform5_implementation.html' → '/Users/oblinger/ob/kmr/prj/2018-00 UF/UF-OLD/lex-lexlang/OLD/docs copy/uniform5_implementation.html'
+  Email Replies docx
+    arg:     '/Users/oblinger/ob/kmr/T/MGR/Hire/Hire Test/2019 AF Job Tests/AF_ENG_HIRING_TESTS/AF_HIRING_TESTS - QA/EXERCISE - Charmie Quino/Working Folder - Charmie/Email Replies.docx' → '/Users/oblinger/ob/kmr/T/MGR/Hire/Hire Test/2019 AF Job Tests/AF_ENG_HIRING_TESTS/AF_HIRING_TESTS - QA/EXERCISE - Redmon Rufino/Working Folder - Redmon/Email Replies.docx'
+  Mine3 xlsx
+    arg:     '/Users/oblinger/ob/kmr/T/FIN/FIN Budget/2019 MintBudget/Backups/Mine3.xlsx' → '/Users/oblinger/ob/kmr/T/FIN/FIN Budget/2020 Budget/Backups/Mine3.xlsx'
+  MintBudget22 xlsx
+    arg:     '/Users/oblinger/ob/kmr/T/FIN/FIN Budget/2019 MintBudget/other stuff/MintBudget22.xlsx' → '/Users/oblinger/ob/kmr/T/FIN/FIN Budget/2019 MintBudget/MintBudget22.xlsx'
+  lexcore pptx
+    arg:     '/Users/oblinger/ob/kmr/prj/2018-00 UF/UF-OLD/lex-lexlang/OLD/docs copy/lexcore.pptx' → '/Users/oblinger/ob/kmr/prj/2018-00 UF/UF-OLD/lex-lexlang/docs/lexcore.pptx'
+  transactions csv
+    arg:     '/Users/oblinger/ob/kmr/T/FIN/FIN Budget/2020 Budget/transactions.csv' → '/Users/oblinger/ob/kmr/T/FIN/FIN Budget/2020 Budget/MintBudget/Small Transactions/transactions.csv'
+  MintBudget4 xlsx
+    arg:     '/Users/oblinger/ob/kmr/T/FIN/FIN Budget/2020 Budget/other stuff/MintBudget4.xlsx' → '/Users/oblinger/ob/kmr/T/FIN/FIN Budget/2020 Budget/MintBudget/Backups/old/MintBudget4.xlsx'
+
+🔄 Step 5: Performing second rescan...
+🚀 HookAnchor Rescan - Verbose Mode
+====================================
+📋 Config loaded - checking file_roots...
+✅ File roots found: ["~/ob/kmr", "/Applications"]
+
+📂 Step 1: Loading last known state from cache...
+   ✅ Loaded 6361 commands from cache
+
+✏️  Step 2: Merging manual edits from commands.txt...
+
+📝 Loading manual edits from commands.txt...
+   ✏️  Updated manual edit: 'Forum PPTX'
+   ✏️  Updated manual edit: 'Patents'
+   ✏️  Updated manual edit: 'AIS'
+   ✏️  Updated manual edit: 'as'
+   ✏️  Updated manual edit: 'AI Job Search Config'
+   ✏️  Updated manual edit: 'AIJ Config'
+   ✏️  Updated manual edit: 'cover'
+   ✏️  Updated manual edit: 'PrG'
+   ✏️  Updated manual edit: 'Ask Safety'
+   ✏️  Updated manual edit: '@Rachel Kadosh'
+   ✏️  Updated manual edit: '@Sean H'
+   ✏️  Updated manual edit: 'APIs'
+   ✏️  Updated manual edit: 'CAPS'
+   ✏️  Updated manual edit: 'CV Ana'
+   ✏️  Updated manual edit: 'CV Confluence'
+   ✏️  Updated manual edit: 'CV Data Tasks'
+   ✏️  Updated manual edit: 'CV Docs'
+   ✏️  Updated manual edit: 'CV Gdrive'
+   ✏️  Updated manual edit: 'CV Google Page'
+   ✏️  Updated manual edit: 'CV Hack Notes'
+   ✏️  Updated manual edit: 'CV HowTo'
+   ✏️  Updated manual edit: 'CV Info'
+   ✏️  Updated manual edit: 'CV Jira Page'
+   ✏️  Updated manual edit: 'CV Log'
+   ✏️  Updated manual edit: 'CV Meetings'
+   ✏️  Updated manual edit: 'CV Notion'
+   ✏️  Updated manual edit: 'CV Page'
+   ✏️  Updated manual edit: 'CV Plan'
+   ✏️  Updated manual edit: 'CV Root'
+   ✏️  Updated manual edit: 'CVT'
+   ✏️  Updated manual edit: 'DSET'
+   ✏️  Updated manual edit: 'Docs Gdrive'
+   ✏️  Updated manual edit: 'Softbank'
+   ✏️  Updated manual edit: 'Story'
+   ✏️  Updated manual edit: 'Task'
+   ✏️  Updated manual edit: 'svdata'
+   ✏️  Updated manual edit: 'Assess'
+   ✏️  Updated manual edit: 'Baseball'
+   ✏️  Updated manual edit: 'Benchmarks'
+   ✏️  Updated manual edit: 'CV Annotations'
+   ✏️  Updated manual edit: 'CV Roadmap'
+   ✏️  Updated manual edit: 'JuanDaily'
+   ✏️  Updated manual edit: 'OKRs'
+   ✏️  Updated manual edit: 'Task Tree'
+   ✏️  Updated manual edit: 'tasks'
+   ✏️  Updated manual edit: 'Data Docs'
+   ✏️  Updated manual edit: 'Data Games'
+   ✏️  Updated manual edit: 'Data Tasks'
+   ✏️  Updated manual edit: 'Dataset'
+   ✏️  Updated manual edit: 'Game'
+   ✏️  Updated manual edit: 'MPR'
+   ✏️  Updated manual edit: 'LRN.'
+   ✏️  Updated manual edit: 'NJ Lrn'
+   ✏️  Updated manual edit: 'NJYore.1'
+   ✏️  Updated manual edit: 'NJDB Template'
+   ✏️  Updated manual edit: '@BOTD'
+   ✏️  Updated manual edit: 'HookAnchor Meta'
+   ✏️  Updated manual edit: 'Pln Factory'
+   ✏️  Updated manual edit: 'Pln Work'
+   ✏️  Updated manual edit: 'BB'
+   ✏️  Updated manual edit: 'Hardball'
+   ✏️  Updated manual edit: 'Homography'
+   ✏️  Updated manual edit: 'PlayerID'
+   ✏️  Updated manual edit: 'PrN'
+   ✏️  Updated manual edit: 'Shot Charts'
+   ✏️  Updated manual edit: 'VB'
+   ✏️  Updated manual edit: 'GG'
+   ✏️  Updated manual edit: 'Game Docs'
+   ✏️  Updated manual edit: 'SV FIN'
+   ✏️  Updated manual edit: 'SV Notion'
+   ✏️  Updated manual edit: 'SV Patent Notion'
+   ✏️  Updated manual edit: 'SV Testing'
+   ✏️  Updated manual edit: 'SV Testing Confluence'
+   ✏️  Updated manual edit: 'hb'
+   ✏️  Updated manual edit: 'qball Gdrive'
+   ✏️  Updated manual edit: 'qball Old Example'
+   ✏️  Updated manual edit: 'Prod Stack'
+   ✏️  Updated manual edit: 'Q2Tasks'
+   ✏️  Updated manual edit: 'Q2exp'
+   ✏️  Updated manual edit: 'RP'
+   ✏️  Updated manual edit: 'racquet'
+   ✏️  Updated manual edit: 'Proj CV Gdrive'
+   ✏️  Updated manual edit: 'Proj Notion'
+   ✏️  Updated manual edit: 'Proj WW'
+   ✏️  Updated manual edit: 'SV C Root'
+   ✏️  Updated manual edit: 'SV Tasks'
+   ✏️  Updated manual edit: 'TT Website'
+   ✏️  Updated manual edit: 'ZZZ'
+   ✏️  Updated manual edit: 'ai System Safety Analysis'
+   ✏️  Updated manual edit: 'AI Min'
+   ✏️  Updated manual edit: 'AI Tips'
+   ✏️  Updated manual edit: 'CLAUDE'
+   ✏️  Updated manual edit: 'Hook Anchor'
+   ✏️  Updated manual edit: 'LLM chat'
+   ✏️  Updated manual edit: 'Te'
+   ✏️  Updated manual edit: 'cmd sleep'
+   ✏️  Updated manual edit: 'ec'
+   ✏️  Updated manual edit: 'test input'
+   ✏️  Updated manual edit: 'test window'
+   ✏️  Updated manual edit: 'docs'
+   ✏️  Updated manual edit: 'fireball Gdrive'
+   ✏️  Updated manual edit: 'fireball Notion'
+   ✏️  Updated manual edit: 'TT Github'
+   ✏️  Updated manual edit: 'Final MOU discussion'
+   ✏️  Updated manual edit: 'OKR DB'
+   ✏️  Updated manual edit: 'OKR Defintions'
+   ✏️  Updated manual edit: 'OKR Quarterly Lists'
+   ✏️  Updated manual edit: 'fb'
+   ✏️  Updated manual edit: 'PL'
+   ✏️  Updated manual edit: 'op'
+   ✏️  Updated manual edit: 'Hook Anchor Xtra'
+   ✏️  Updated manual edit: 'tr'
+   ✏️  Updated manual edit: 'HA'
+   ✏️  Updated manual edit: 'Q2 Experiments'
+   ✏️  Updated manual edit: 'Groc Ordering'
+   ✏️  Updated manual edit: 'MILESTONES'
+   ✏️  Updated manual edit: 'zyz'
+   ✏️  Updated manual edit: 'Canva'
+   ✏️  Updated manual edit: 'Confluence Page'
+   ✏️  Updated manual edit: 'Figma Page'
+   ✏️  Updated manual edit: 'Jira Me Page'
+   ✏️  Updated manual edit: 'All Hands'
+   ✏️  Updated manual edit: 'reco'
+   ✏️  Updated manual edit: 'texter Config'
+   ✏️  Updated manual edit: 'texter markdown'
+   ✏️  Updated manual edit: 'texter run'
+   ✏️  Updated manual edit: 'tracker info'
+   ✏️  Updated manual edit: 'SFMTA SpeedingTicket'
+   ✏️  Updated manual edit: 'WEF'
+   ✏️  Updated manual edit: 'PHQ'
+   ✏️  Updated manual edit: 'mm'
+   ✅ Applied 131 manual edit(s)
+   ✅ Merged 131 edits from commands.txt
+   📊 Total commands after merge: 6361
+
+🔍 Step 3: Scanning filesystem (discovering new files, removing stale entries)...
+
+🔍 Starting filesystem scan...
+   Scanning roots: ["~/ob/kmr", "/Applications"]
+📂 Scanning directory: /Users/oblinger/ob/kmr
+      🎯 Found app: Obsidian Double Click App
+      🎯 Found app: Obsidian Double Click App 2
+   ✅ Found 5428 new commands in /Users/oblinger/ob/kmr
+📂 Scanning directory: /Applications
+      🎯 Found app: Google Chrome Beta App
+      🎯 Found app: Visual Studio Code App
+      🎯 Found app: VLC App
+      🎯 Found app: WhatSize App
+      🎯 Found app: Paprika Recipe Manager App
+      🎯 Found app: 1Password App
+      🎯 Found app: LM Studio App
+      🎯 Found app: Claude App
+      🎯 Found app: Timey 3 App
+      🎯 Found app: Speedtest App
+      🎯 Found app: Google Chrome App
+      🎯 Found app: Bartender 5 App
+      🎯 Found app: Anki App
+      🎯 Found app: Karabiner-Elements App
+      🎯 Found app: Karabiner-EventViewer App
+      🎯 Found app: Modern CSV App
+      🎯 Found app: TextSniper App
+      🎯 Found app: Numbers App
+      🎯 Found app: Dropbox App
+      🎯 Found app: Finicky App
+      🎯 Found app: MacWhisper App
+      🎯 Found app: FoldingText App
+      🎯 Found app: Be Focused Pro App
+      🎯 Found app: Grammarly Desktop App
+      🎯 Found app: Notion App
+      🎯 Found app: Xcode App
+      🎯 Found app: Microsoft Remote Desktop App
+      🎯 Found app: OneDrive App
+      🎯 Found app: Notion Calendar App
+      🎯 Found app: Spotify App
+      🎯 Found app: Simplenote App
+      🎯 Found app: Contacts Journal CRM App
+      🎯 Found app: PyCharm App
+      🎯 Found app: ExcalidrawZ App
+      🎯 Found app: iMovie App
+      🎯 Found app: Voice Memo App
+      🎯 Found app: Cursor App
+      🎯 Found app: Stay App
+      🎯 Found app: DaisyDisk App
+      🎯 Found app: Microsoft Word App
+      🎯 Found app: HookAnchor App
+      🎯 Found app: Amazon Kindle App
+      🎯 Found app: FreeCell App
+      🎯 Found app: Google Drive App
+      🎯 Found app: Docker App
+      🎯 Found app: Obsidian App
+      🎯 Found app: Pocket App
+      🎯 Found app: Spot5 App
+      🎯 Found app: Amphetamine App
+      🎯 Found app: Arc App
+      🎯 Found app: Microsoft Excel App
+      🎯 Found app: ChatGPT App
+      🎯 Found app: Inkjet Extended Survey Program App
+      🎯 Found app: Canon IJ Scan Utility Lite App
+      🎯 Found app: zoom.us App
+      🎯 Found app: IDLE App
+      🎯 Found app: Python Launcher App
+      🎯 Found app: WhatsApp App
+      🎯 Found app: Microsoft Outlook App
+      🎯 Found app: Keynote App
+      🎯 Found app: iStat Menus App
+      🎯 Found app: NewFileMenu App
+      🎯 Found app: Google Docs App
+      🎯 Found app: 1Password for Safari App
+      🎯 Found app: Audio Hijack App
+      🎯 Found app: Divvy App
+      🎯 Found app: Google Sheets App
+      🎯 Found app: ScratchJr App
+      🎯 Found app: Webcam Settings App
+      🎯 Found app: Brave Browser App
+      🎯 Found app: Pages App
+      🎯 Found app: GarageBand App
+      🎯 Found app: Google Slides App
+      🎯 Found app: Microsoft Edge App
+      🎯 Found app: Microsoft OneNote App
+      🎯 Found app: Docs for Xcode App
+      🎯 Found app: EasyRes App
+      🎯 Found app: Browserosaurus App
+      🎯 Found app: Pure Paste App
+      🎯 Found app: iTerm App
+      🎯 Found app: Skype App
+      🎯 Found app: GitKraken App
+      🎯 Found app: Firefox App
+      🎯 Found app: Emacs App
+      🎯 Found app: Goban App
+      🎯 Found app: WinZip App
+      🎯 Found app: BetterTouchTool App
+      🎯 Found app: lghub App
+      🎯 Found app: OBS App
+      🎯 Found app: Microsoft PowerPoint App
+      🎯 Found app: Evernote App
+      🎯 Found app: Adobe Acrobat App
+      🎯 Found app: Webex App
+      🎯 Found app: Obsidian Double Click App 3
+      🎯 Found app: Keyboard Maestro App
+      🎯 Found app: Slack App
+      🎯 Found app: Prime Video App
+      🎯 Found app: Paintbrush App
+      🎯 Found app: Yoink App
+      🎯 Found app: BetterTouchTool App 2
+      🎯 Found app: Neu App
+      🎯 Found app: Discord App
+      🎯 Found app: Dark Noise App
+      🎯 Found app: Sublime Text App
+   ✅ Found 107 new commands in /Applications
+   Scan complete: 6319 commands total
+
+🎉 File scan complete! (Inference will run after loading manual edits)
+   ✅ Scan complete - now tracking 6319 total commands
+
+📝 Step 4: Detecting file modifications...
+
+🔍 Scanning for file modifications...
+   ✅ No file modifications detected
+   ✅ Processed modifications (0 files changed)
+
+🔄 Step 5: Running inference and saving...
+   ✅ Inference complete and saved 6319 commands
+
+📊 Step 8: Final Summary:
+   Total commands: 6319
+
+   Commands by action type:
+     : 1
+     1pass: 303
+     action: 2
+     alias: 21
+     anchor: 213
+     app: 106
+     brave: 1
+     chrome: 37
+     clear_log: 1
+     console: 36
+     contact: 2
+     doc: 2856
+     markdown: 2589
+     notion: 57
+     obs_url: 3
+     safari: 1
+     slack: 2
+     test: 2
+     text: 3
+     url: 15
+     work: 68
+
+✅ Rescan complete!
+✅ Second rescan complete
+
+🔬 Step 6: Second comparison (saved vs. rescanned)...
+
+=== POST-RESCAN COMPARISON ===
+
+📊 Summary:
+  Unchanged: 4570
+  Changed:   177
+  Removed:   1404
+  Added:     1406
+
+🔄 Changed Commands (177):
+  ai System Safety Analysis
+    arg:     '/Users/oblinger/ob/kmr/RR/RR AI/AI Areas/AGI Safety/ai System Safety Analysis/ai System Safety Analysis.md' → ''
+    flags:   'U' → 'U A'
+  MintBudget-old1 xlsx
+    arg:     '/Users/oblinger/ob/kmr/T/FIN/FIN Budget/2019 MintBudget/Backups/MintBudget-old1.xlsx' → '/Users/oblinger/ob/kmr/T/FIN/FIN Budget/2020 Budget/MintBudget/Backups/MintBudget-old1.xlsx'
+  PlayerID
+    arg:     'https://www.notion.so/sportsvisio/PLAYER-ID-7a28940cd36149b1a737dfecc7a49f84?pvs=4' → ''
+    flags:   'U' → 'U A'
+  Pln Factory
+    arg:     'https://www.notion.so/sportsvisio/cf65339c09c6486296f8adaa084c141a?v=f8a45e385eea4c2fb590502835f4453f&pvs=4' → ''
+    flags:   'U' → 'U A'
+  tr
+    arg:     'tracker' → ''
+    flags:   'U' → 'U A'
+  NJ Lrn
+    arg:     'Lrn' → ''
+    flags:   'U' → 'U A'
+  transactions csv
+    arg:     '/Users/oblinger/ob/kmr/T/FIN/FIN Budget/2020 Budget/MintBudget/Small Transactions/transactions.csv' → '/Users/oblinger/ob/kmr/T/FIN/FIN Budget/2011 MintBudget/transactions.csv'
+  Proj CV Gdrive
+    arg:     'https://drive.google.com/drive/folders/1-oFAo22-qNATRvvBfOwgvoRNAo9qMaWA' → ''
+    flags:   'U' → 'U A'
+  Task Page System
+    arg:     '/Users/oblinger/ob/kmr/prj/Hook Anchor  Xtra/Hook System/Task Page System.md' → '/Users/oblinger/ob/kmr/prj/binproj/HookAnchor/Hook System/Task Page System.md'
+  Proj WW
+    arg:     'ww' → ''
+    flags:   'U' → 'U A'
+  MintBudget21 xlsx
+    arg:     '/Users/oblinger/ob/kmr/T/FIN/FIN Budget/2020 Budget/other stuff/MintBudget21.xlsx' → '/Users/oblinger/ob/kmr/T/FIN/FIN Budget/2019 MintBudget/other stuff/MintBudget21.xlsx'
+  CV HowTo
+    arg:     '/Users/oblinger/ob/kmr/Work/SV/CV/CV HowTo.md' → ''
+    flags:   'U' → 'U A'
+  Final MOU discussion
+    arg:     'https://www.notion.so/25b719d6f2bd807096a9e4f4ddbf88b4' → ''
+    flags:   'U' → 'U A'
+  Dataset
+    arg:     'https://www.notion.so/sportsvisio/DATASET-2eb42687e1914aca955ddce4f06c2c1d?pvs=4' → ''
+    flags:   'U' → 'U A'
+  MPR
+    arg:     '2025 Middle Path Risk' → ''
+    flags:   'U' → 'U A'
+  CV Hack Notes
+    arg:     '/Users/oblinger/ob/kmr/Work/SV/CV/CV Hack Notes.md' → ''
+    flags:   'U' → 'U A'
+  xxx xlsx
+    arg:     '/Users/oblinger/ob/kmr/T/FIN/FIN Budget/2019 MintBudget/Backups/xxx.xlsx' → '/Users/oblinger/ob/kmr/T/FIN/FIN Budget/2020 Budget/Backups/xxx.xlsx'
+  CV Docs
+    arg:     'https://www.notion.so/sportsvisio/DOCS-56b62284f2bf457ba11c915eda5aaf4d?pvs=4' → ''
+    flags:   'U' → 'U A'
+  tracker info
+    arg:     '/Users/oblinger/.config/tracker/tracker_info.txt' → ''
+    flags:   'U' → 'U A'
+  texter run
+    arg:     'texter' → ''
+    flags:   'U' → 'U A'
+  CVT
+    arg:     'https://docs.google.com/document/d/1L6t8upbwhCegpsvtQCOOP2NC0RvKDRPFYFLsdDtq3hM/edit' → ''
+    flags:   'U' → 'U A'
+  HookAnchor Meta
+    arg:     '/Users/oblinger/ob/kmr/prj/HookAnchor Meta/HookAnchor Meta.md' → ''
+    flags:   'U' → 'U A,A'
+  Proj Notion
+    arg:     'https://www.notion.so/9d1f8e89d87442a7a22e0c2a95561319' → ''
+    flags:   'U' → 'U A'
+  Dir
+    flags:   'U' → 'U,A'
+  OKR Defintions
+    arg:     'https://www.notion.so/sportsvisio/OKR-Spec-935567c4ff0d4de99fe0709dbf2e5548?pvs=4' → ''
+    flags:   'U' → 'U A'
+  All Hands
+    arg:     'https://www.notion.so/sportsvisio/2024-05-01-All-Hands-Breakout-b69ed86845144d1c86da08b0ea8cf263?pvs=4' → ''
+    flags:   'U' → 'U A'
+  mm
+    arg:     '2025 Make Miss' → ''
+    flags:   'U' → 'U A'
+  op
+    arg:     '2025 Online Presence' → ''
+    flags:   'U' → 'U A'
+  CV Google Page
+    arg:     'https://docs.google.com/document/d/1nGCRGOZVxvIzbM0MFpspTaCtF-f8hb-K7yi3T2c6h9s/edit' → ''
+    flags:   'U' → 'U A'
+  CV Annotations
+    arg:     '/Users/oblinger/ob/kmr/Work/SV/CV/CVP/CV Annotations.md' → ''
+    flags:   'U' → 'U A'
+  Game
+    arg:     'https://www.notion.so/sportsvisio/Game-73a2a85fca754d438d0449866bd371a3?pvs=4' → ''
+    flags:   'U' → 'U A'
+  Email Replies docx
+    arg:     '/Users/oblinger/ob/kmr/T/MGR/Hire/Hire Test/2019 AF Job Tests/AF_ENG_HIRING_TESTS/AF_HIRING_TESTS - QA/EXERCISE - Redmon Rufino/Working Folder - Redmon/Email Replies.docx' → '/Users/oblinger/ob/kmr/T/MGR/Hire/Hire Test/2019 AF Job Tests/AF_ENG_HIRING_TESTS/AF_HIRING_TESTS - QA/EXERCISE - Franklin/Working Folder - Franklin/Email Replies.docx'
+  Mint2 xlsx
+    arg:     '/Users/oblinger/ob/kmr/T/FIN/FIN Budget/2020 Budget/Backups/Mint2.xlsx' → '/Users/oblinger/ob/kmr/T/FIN/FIN Budget/2019 MintBudget/Backups/Mint2.xlsx'
+  KM Anchor Implementation
+    arg:     '/Users/oblinger/ob/kmr/prj/Hook Anchor  Xtra/Hook System/KM Anchor Implementation.md' → '/Users/oblinger/ob/kmr/prj/binproj/HookAnchor/Hook System/KM Anchor Implementation.md'
+  AI Min
+    arg:     'https://www.notion.so/sportsvisio/PROJ-AI-Min-a5adfb7c1f724cd9a3f35b588aa181f7?pvs=4' → ''
+    flags:   'U' → 'U A'
+  CV Ana
+    arg:     'https://docs.google.com/document/d/1SUE-2Y6zARBB8yQltgbbNtC1M20WqpAOyRdtgJjcWNI/edit' → ''
+    flags:   'U' → 'U A'
+  MILESTONES
+    arg:     'https://www.notion.so/sportsvisio/MILESTONES-4ea18f74b0f74d4f812f556fcb60453a?pvs=4' → ''
+    flags:   'U' → 'U A'
+  OKR Quarterly Lists
+    arg:     'https://www.notion.so/sportsvisio/701ffcb882f94135bd899fb91fb64740?v=5422123002bb48579f906a11782e31ab&source=copy_link' → ''
+    flags:   'U' → 'U A'
+  BB
+    arg:     'https://www.notion.so/sportsvisio/BB-Basketball-d25c6afbf41f49819127cb67751cd2bc?pvs=4' → ''
+    flags:   'U' → 'U A'
+  Figma Page
+    arg:     'https://www.figma.com/file/bDM6JcXNFPjla25aIoaqFS/SV-Record-Design?node-id=0-1&t=xhaOv4dwcZXxMA2M-0' → ''
+    flags:   'U' → 'U A'
+  Canva
+    arg:     'https://www.canva.com/' → ''
+    flags:   'U' → 'U A'
+  Bizzy Robots Founder stock purchase agreement Augenbraun executed 5-23-15 pdf
+    arg:     '/Users/oblinger/ob/kmr/T/Legal/2015 Legal Bizzy/2016.09.23 -- Executed Document   copied on 16.09.23/Bizzy Robots Founder stock purchase agreement Augenbraun executed 5-23-15.pdf' → '/Users/oblinger/ob/kmr/T/Legal/2015 Legal Bizzy/_Founder_EXECUTED/_Executed/Bizzy Robots Founder stock purchase agreement Augenbraun executed 5-23-15.pdf'
+  KM Anchors
+    arg:     '/Users/oblinger/ob/kmr/prj/Hook Anchor  Xtra/Hook System/KM Anchors.md' → '/Users/oblinger/ob/kmr/prj/binproj/HookAnchor/Hook System/KM Anchors.md'
+  docs
+    arg:     'https://www.notion.so/sportsvisio/DOCS-56b62284f2bf457ba11c915eda5aaf4d?pvs=4' → ''
+    flags:   'U' → 'U A'
+  Data Docs
+    arg:     'https://www.notion.so/sportsvisio/DATASET-2eb42687e1914aca955ddce4f06c2c1d?pvs=4' → ''
+    flags:   'U' → 'U A'
+  HA Slide
+    arg:     '/Users/oblinger/ob/kmr/prj/Hook Anchor  Xtra/Hook Anchor Video/HA Slide.pptx' → '/Users/oblinger/ob/kmr/prj/binproj/HookAnchor/Hook Anchor Video/HA Slide.pptx'
+  Game Docs
+    arg:     'https://www.notion.so/sportsvisio/Game-v1-0-73a2a85fca754d438d0449866bd371a3?pvs=4' → ''
+    flags:   'U' → 'U A'
+  CV Roadmap
+    arg:     '/Users/oblinger/ob/kmr/Work/SV/CV/CVP/CV Roadmap.md' → ''
+    flags:   'U' → 'U A'
+  CV Root
+    arg:     'https://www.notion.so/sportsvisio/CV-e97cfd99c3ce454c899a2a6b4f845d94?pvs=4' → ''
+    flags:   'U' → 'U A'
+  MintBudget5 xlsx
+    arg:     '/Users/oblinger/ob/kmr/T/FIN/FIN Budget/2019 MintBudget/MintBudget5.xlsx' → '/Users/oblinger/ob/kmr/T/FIN/FIN Budget/2020 Budget/MintBudget5.xlsx'
+  Benchmarks
+    arg:     'https://www.notion.so/sportsvisio/Benchmarks-49c7e8c8623a49de9ebb5a612c88a298?pvs=4' → ''
+    flags:   'U' → 'U A'
+  VB
+    arg:     'https://www.notion.so/sportsvisio/VB-VOLLEYBALL-898783b11c7c4f1cb14ae09590211b25?pvs=4' → ''
+    flags:   'U' → 'U A'
+  PL
+    arg:     'https://www.notion.so/sportsvisio/PLAN-5a43c3afd3b34f9da52130a868e41a19?pvs=4' → ''
+    flags:   'U' → 'U A'
+  fireball Notion
+    arg:     'https://www.notion.so/sportsvisio/PROJ-Fireball-0c6e6156d1164819935cad1319183941?source=copy_link RULE:Notion Page' → ''
+    flags:   'U' → 'U A'
+  @BOTD
+    arg:     '/Users/oblinger/ob/kmr/At/Org/@BOTd.md' → ''
+    flags:   'U' → 'U A'
+  MintBudget3from old xlsx
+    arg:     '/Users/oblinger/ob/kmr/T/FIN/FIN Budget/2019 MintBudget/other stuff/MintBudget3from old.xlsx' → '/Users/oblinger/ob/kmr/T/FIN/FIN Budget/2020 Budget/other stuff/MintBudget3from old.xlsx'
+  0823 Tech SETA Job Posting doc
+    arg:     '/Users/oblinger/ob/kmr/T/MGR/Hire/Hire Post/2008-06 Slide-SETA/0823 Tech SETA Job Posting.doc' → '/Users/oblinger/ob/kmr/T/MGR/Hire/Hire Post/2011-05 CyberChief SETA/0823 Tech SETA Job Posting.doc'
+  Groc Ordering
+    arg:     'https://www.amazon.com/s?k=SUSHI&i=wholefoods&crid=O55692R0GYO0&sprefix=sushi%2Cwholefoods%2C124&ref=nb_sb_noss_1' → ''
+    flags:   'U' → 'U A'
+  MintBudget11 xlsx
+    arg:     '/Users/oblinger/ob/kmr/T/FIN/FIN Budget/2020 Budget/other stuff/MintBudget11.xlsx' → '/Users/oblinger/ob/kmr/T/FIN/FIN Budget/2019 MintBudget/MintBudget11.xlsx'
+  fb
+    arg:     'facebook' → ''
+    flags:   'U' → 'U A'
+  SV Notion
+    arg:     'https://www.notion.so/sportsvisio/SportsVisio-Home-c7e7a92def9b49818e3dc6bcb6523251?source=copy_link' → ''
+    flags:   'U' → 'U A'
+  Confluence Page
+    arg:     'https://software-engineering-team.atlassian.net/wiki/spaces/SPORTSVISI1/overview' → ''
+    flags:   'U' → 'U A'
+  test window
+    arg:     'echo "Hello from windowed command!" && echo "This window will close in 5 seconds..." && /bin/sleep 5' → ''
+    flags:   'W' → 'W A'
+  TT Website
+    arg:     'https://oblinger.github.io/' → ''
+    flags:   'U' → 'U A'
+  CV Gdrive
+    arg:     'https://drive.google.com/drive/folders/1vaWPZet0VTQ6uuqyUtKGxW0nu_R-RdmP' → ''
+    flags:   'U' → 'U A'
+  @Rachel Kadosh
+    arg:     '/Users/oblinger/ob/kmr/At/@Rachel Kadosh.md' → ''
+    flags:   'U' → 'U A'
+  Q2 Experiments
+    arg:     'https://www.notion.so/sportsvisio/Q2-Experiments-20fea8e1dca74986b38464f0b52ea092?pvs=4' → ''
+    flags:   'U' → 'U A'
+  ZZZ
+    arg:     'action=activate_tmux; arg=/Users/oblinger/ob/kmr/prj/binproj/ask' → ''
+    flags:   'U' → 'U A'
+  NJYore.1
+    arg:     '/Users/oblinger/ob/kmr/T/Career/NJ/NJ Todo/NJYore.1.md' → ''
+    flags:   'U' → 'U A'
+  Story
+    arg:     'https://www.notion.so/sportsvisio/STORY-7ee511bc94d641b1bf7b6bb87d48cf78?pvs=4' → ''
+    flags:   'U' → 'U A'
+  PKM
+    arg:     '/Users/oblinger/ob/kmr/prj/Hook Anchor  Xtra/Hook System/PKM.md' → '/Users/oblinger/ob/kmr/prj/binproj/HookAnchor/Hook System/PKM.md'
+  KM Meta KM
+    arg:     '/Users/oblinger/ob/kmr/prj/Hook Anchor  Xtra/Hook System/KM Meta KM.md' → '/Users/oblinger/ob/kmr/prj/binproj/HookAnchor/Hook System/KM Meta KM.md'
+  MintBudget2bad xlsx
+    arg:     '/Users/oblinger/ob/kmr/T/FIN/FIN Budget/2019 MintBudget/MintBudget2bad.xlsx' → '/Users/oblinger/ob/kmr/T/FIN/FIN Budget/2020 Budget/MintBudget/Backups/old/MintBudget2bad.xlsx'
+  Hook Anchor
+    arg:     '/Users/oblinger/ob/kmr/prj/binproj/HookAnchor/HookAnchor.md' → ''
+    flags:   'U, I' → 'U, I A'
+  MintBudget_11_7_25 xlsx
+    arg:     '/Users/oblinger/ob/kmr/T/FIN/FIN Budget/2019 MintBudget/MintBudget_11_7_25.xlsx' → '/Users/oblinger/ob/kmr/T/FIN/FIN Budget/2019 MintBudget/other stuff/MintBudget_11_7_25.xlsx'
+  KM Global 2 Local
+    arg:     '/Users/oblinger/ob/kmr/prj/Hook Anchor  Xtra/Hook System/KM Global 2 Local.md' → '/Users/oblinger/ob/kmr/prj/binproj/HookAnchor/Hook System/KM Global 2 Local.md'
+  Secure Forms ppt
+    arg:     '/Users/oblinger/ob/kmr/Log/Idea/2007-00 DARPA seeds/SecureForms/Secure Forms.ppt' → '/Users/oblinger/ob/kmr/Log/Idea/2007-00 DARPA seeds/SecureForms/09.08 Security/Secure Forms.ppt'
+  as
+    arg:     'AGI Safety' → ''
+    flags:   'U' → 'U A'
+  fireball Gdrive
+    arg:     'https://drive.google.com/drive/folders/1JNpxTsgNclNNqTjMM_8ij2TSMAA-w6wF RULE:Chrome Beta URL' → ''
+    flags:   'U' → 'U A'
+  Ask Safety
+    arg:     '/Users/oblinger/ob/kmr/RR/Ask/Ask Safety/Ask Safety.md' → ''
+    flags:   'U' → 'U A,A'
+  AIJ Config
+    arg:     '/Users/oblinger/ob/kmr/T/Career/NJ/AI Job Search/ajs_config.yaml' → ''
+    flags:   'U' → 'U A'
+  Q2exp
+    arg:     'https://www.notion.so/sportsvisio/Q2-Experiments-20fea8e1dca74986b38464f0b52ea092?pvs=4' → ''
+    flags:   'U' → 'U A'
+  OKRs
+    arg:     'https://www.notion.so/sportsvisio/OKRs-f756fd90b2b84de699166c3b2041abf4?pvs=4' → ''
+    flags:   'U' → 'U A'
+  PrN
+    arg:     'https://www.notion.so/sportsvisio/PROJ-9d1f8e89d87442a7a22e0c2a95561319?pvs=4' → ''
+    flags:   'U' → 'U A'
+  RP
+    arg:     'https://www.notion.so/sportsvisio/RP-REALPLAY-94d0c7ca6e0f4508ba47db1850c1e50a?pvs=4' → ''
+    flags:   'U' → 'U A'
+  CV Jira Page
+    arg:     'https://software-engineering-team.atlassian.net/jira/software/projects/AIT/boards/25' → ''
+    flags:   'U' → 'U A'
+  Data Tasks
+    arg:     'https://www.notion.so/sportsvisio/DATA-TASKS-Datasets-and-Metrics-95247c33d01144a4890eedaaaa7328c6?pvs=4' → ''
+    flags:   'U' → 'U A'
+  CV Log
+    arg:     '/Users/oblinger/ob/kmr/Work/SV/CV/CV Log.md' → ''
+    flags:   'U' → 'U A'
+  Te
+    arg:     'texter' → ''
+    flags:   'U' → 'U A'
+  Sports Visio - Stock Option Agreement - Oblinger - 900K (20230725) pdf
+    arg:     '/Users/oblinger/ob/kmr/T/Legal/2023 Legal SV/2023-07 Options Signed/2023-05-25 first version at 900K/900K/Signed/Sports Visio - Stock Option Agreement - Oblinger - 900K (20230725).pdf' → '/Users/oblinger/ob/kmr/T/Legal/2023 Legal SV/2023-07 Options Signed/just my signature/Sports Visio - Stock Option Agreement - Oblinger - 900K (20230725).pdf'
+  Jira Me Page
+    arg:     'https://software-engineering-team.atlassian.net/issues/?jql=created%20%3E%3D%20-30d%20AND%20assignee%20in%20(currentUser())%20order%20by%20created%20DESC' → ''
+    flags:   'U' → 'U A'
+  MintBudget20 xlsx
+    arg:     '/Users/oblinger/ob/kmr/T/FIN/FIN Budget/2020 Budget/other stuff/MintBudget20.xlsx' → '/Users/oblinger/ob/kmr/T/FIN/FIN Budget/2020 Budget/MintBudget/Backups/old/MintBudget20.xlsx'
+  DSET
+    arg:     'https://docs.google.com/document/d/1YtIvboGtTjezzD-TlXQtDXfeLCQSehaJ1HH4Xz7VHN8/edit?pli=1' → ''
+    flags:   'U' → 'U A'
+  Baseball
+    arg:     'https://www.notion.so/sportsvisio/HB-BASEBALL-Hardball-94d0c7ca6e0f4508ba47db1850c1e50a?pvs=4' → ''
+    flags:   'U' → 'U A'
+  SV Testing Confluence
+    arg:     'https://www.notion.so/sportsvisio/TESTING-82ce8f02ee97425f9981881ce74c62c6?source=copy_link' → ''
+    flags:   'U' → 'U A'
+  SV C Root
+    arg:     'https://software-engineering-team.atlassian.net/wiki/spaces/SPORTSVISI1/pages/140247041/ROOT' → ''
+    flags:   'U' → 'U A'
+  @LinkedIn
+    arg:     '/Users/oblinger/ob/kmr/At/Org/@LinkedIn.md' → '/Users/oblinger/ob/kmr/At/Org/@LinkedIn/@LinkedIn.md'
+    flags:   '' → 'A'
+  MintBudget13 xlsx
+    arg:     '/Users/oblinger/ob/kmr/T/FIN/FIN Budget/2020 Budget/other stuff/MintBudget13.xlsx' → '/Users/oblinger/ob/kmr/T/FIN/FIN Budget/2020 Budget/MintBudget13.xlsx'
+  CV Page
+    arg:     'https://www.notion.so/sportsvisio/CV-e97cfd99c3ce454c899a2a6b4f845d94?pvs=4' → ''
+    flags:   'U' → 'U A'
+  WEF
+    arg:     'open -a safari https://gmail.com' → ''
+    flags:   'U' → 'U A'
+  Docs Gdrive
+    arg:     'https://drive.google.com/drive/folders/1bMZk9PbfiTRwg23JzzwUiXlwLsOOvUfw' → ''
+    flags:   'U' → 'U A'
+  Copy of Student Insights - Test Instructions_ Emai docx
+    arg:     '/Users/oblinger/ob/kmr/T/MGR/Hire/Hire Test/2019 AF Job Tests/AF_ENG_HIRING_TESTS/AF_HIRING_TESTS - QA/EXERCISE - Mizel delos Santos/Copy of Student Insights - Test Instructions_ Emai.docx' → '/Users/oblinger/ob/kmr/T/MGR/Hire/Hire Test/2019 AF Job Tests/AF_ENG_HIRING_TESTS/AF_HIRING_TESTS - QA/EXERCISE - Harold Dennis/Copy of Student Insights - Test Instructions_ Emai.docx'
+  cmd sleep
+    arg:     'sleep 5 && echo "yo" && sleep 10' → ''
+    flags:   'W' → 'W A'
+  hb
+    arg:     'https://www.notion.so/sportsvisio/HB-HARDBALL-RealPlay-Baseball-94d0c7ca6e0f4508ba47db1850c1e50a?pvs=4' → ''
+    flags:   'U' → 'U A'
+  Student Insights Stories docx
+    arg:     '/Users/oblinger/ob/kmr/T/MGR/Hire/Hire Test/2019 AF Job Tests/AF_ENG_HIRING_TESTS/AF_HIRING_TESTS - QA/EXERCISE - Jezika Belandres/Working Folder - Jezika/Student Insights Stories.docx' → '/Users/oblinger/ob/kmr/T/MGR/Hire/Hire Test/2019 AF Job Tests/AF_ENG_HIRING_TESTS/AF_HIRING_TESTS - QA/EXERCISE - Redmon Rufino/Working Folder - Redmon/Student Insights Stories.docx'
+  PrG
+    arg:     'https://drive.google.com/drive/folders/1-oFAo22-qNATRvvBfOwgvoRNAo9qMaWA' → ''
+    flags:   'U' → 'U A'
+  KM
+    arg:     '/Users/oblinger/ob/kmr/prj/Hook Anchor  Xtra/Hook System/KM.md' → '/Users/oblinger/ob/kmr/prj/binproj/HookAnchor/Hook System/KM.md'
+  KM Overview
+    arg:     '/Users/oblinger/ob/kmr/prj/Hook Anchor  Xtra/Hook System/KM Overview.md' → '/Users/oblinger/ob/kmr/prj/binproj/HookAnchor/Hook System/KM Overview.md'
+  cover
+    arg:     '/Users/oblinger/ob/kmr/T/Career/NJ/AI Job Search/cover' → ''
+    flags:   'W,U' → 'W,U A'
+  zyz
+    arg:     'cv (Channel)' → ''
+    flags:   'U' → 'U A'
+  qball Gdrive
+    arg:     'https://drive.google.com/drive/folders/1JNpxTsgNclNNqTjMM_8ij2TSMAA-w6wF' → ''
+    flags:   'U' → 'U A'
+  Hook Anchor Xtra
+    arg:     '/Users/oblinger/ob/kmr/prj/Hook Anchor  Xtra/Hook Anchor Xtra.md' → ''
+    flags:   'U' → 'U A'
+  test input
+    arg:     'echo "What's your name?" && read name && echo "Hello, $name!" && echo "Press Enter to close..." && read' → ''
+    flags:   'W' → 'W A'
+  CV Info
+    arg:     'https://www.notion.so/sportsvisio/INFO-3cedca42241d407a9b42e83cf7139e4a?pvs=4' → ''
+    flags:   'U' → 'U A'
+  SV Tasks
+    arg:     'https://drive.google.com/drive/folders/1QNKcp_zleZ1fKllVr78v7ZC5cqCkWfj6' → ''
+    flags:   'U' → 'U A'
+  Pln Work
+    arg:     'https://www.notion.so/sportsvisio/PLAN-5a43c3afd3b34f9da52130a868e41a19?pvs=4' → ''
+    flags:   'U' → 'U A'
+  JuanDaily
+    arg:     'https://www.notion.so/168fadd778114c89a9d85610010f31b4?v=7330df51cfc640bdb20c6bf4e5b4afe9&pvs=4' → ''
+    flags:   'U' → 'U A'
+  MintBudget12 xlsx
+    arg:     '/Users/oblinger/ob/kmr/T/FIN/FIN Budget/2019 MintBudget/MintBudget12.xlsx' → '/Users/oblinger/ob/kmr/T/FIN/FIN Budget/2020 Budget/MintBudget12.xlsx'
+  Statement of Work (SoW) - Moxion - IoT Backend
+    arg:     '/Users/oblinger/ob/kmr/At/Org/@Analytics Fire/AF DOCS/PDD/Statement of Work (SoW) - Moxion - IoT Backend .pdf' → '/Users/oblinger/ob/kmr/At/Org/@Analytics Fire/AF DOCS/PDD/Statement of Work (SoW) - Moxion - IoT Backend.docx'
+  LRN.
+    arg:     '/Users/oblinger/ob/kmr/T/Career/NJ/NJ Todo/LRN..md' → ''
+    flags:   'U' → 'U A'
+  qball Old Example
+    arg:     'https://drive.google.com/file/d/1v7SFDXxd0seMpSe6LxkSONJQ3dZgoo-G/view?usp=drive_link' → ''
+    flags:   'U' → 'U A'
+  @Sean H
+    arg:     '/Users/oblinger/ob/kmr/At/@Sean H.md' → ''
+    flags:   'U' → 'U A'
+  CLAUDE markdown
+    arg:     '/Users/oblinger/ob/kmr/prj/binproj/dp/CLAUDE.md' → '/Users/oblinger/ob/kmr/prj/2025-05 Sports Data Search/CLAUDE.md'
+  Hardball
+    arg:     'https://www.notion.so/sportsvisio/HB-HARDBALL-Baseball-94d0c7ca6e0f4508ba47db1850c1e50a?pvs=4' → ''
+    flags:   'U' → 'U A'
+  svdata
+    arg:     'https://drive.google.com/drive/folders/10VWKl_3u0--LyLZmzgu8So7i1Jgq6HSr' → ''
+    flags:   'U' → 'U A'
+  Task
+    arg:     'https://www.notion.so/sportsvisio/TASK-150719d6f2bd807d91a5d6eba4d9235d?pvs=4' → ''
+    flags:   'U' → 'U A'
+  Forwardism html
+    arg:     '/Users/oblinger/ob/kmr/T/EduCorp/Forwardism.html' → '/Users/oblinger/ob/kmr/prj/gitproj/Forwardism.html'
+  CV Data Tasks
+    arg:     'https://www.notion.so/sportsvisio/DATA-TASKS-Datasets-and-Metrics-95247c33d01144a4890eedaaaa7328c6?pvs=4' → ''
+    flags:   'U' → 'U A'
+  CLAUDE
+    arg:     '/Users/oblinger/ob/kmr/T/Career/NJ/AI Job Search/CLAUDE.md' → ''
+    flags:   'U' → 'U A'
+  texter Config
+    arg:     '/Users/oblinger/ob/proj/texter/TextCapture/config/config.yaml' → ''
+    flags:   'U' → 'U A'
+  Q2Tasks
+    arg:     'https://www.notion.so/sportsvisio/Q2Tasks-a1a2cc77d0974a5982be92abe0791e5f?pvs=4' → ''
+    flags:   'U' → 'U A'
+  Data Games
+    arg:     'https://www.notion.so/sportsvisio/114719d6f2bd81839bd3ecb716b68157?v=114719d6f2bd81bfbedd000c192e71a3&pvs=4' → ''
+    flags:   'U' → 'U A'
+  Task Tree
+    arg:     'https://www.notion.so/sportsvisio/Task-Tree-7ee511bc94d641b1bf7b6bb87d48cf78?pvs=4' → ''
+    flags:   'U' → 'U A'
+  Homography
+    arg:     'https://www.notion.so/sportsvisio/HOMOGRAPHY-2181a3508fcd49d4bf91e0a9ba4aabce?pvs=4' → ''
+    flags:   'U' → 'U A'
+  Company Hypothesis Template xlsx
+    arg:     '/Users/oblinger/ob/kmr/Log/Idea/2020-06 OpenBricks/Company Hypothesis Template.xlsx' → '/Users/oblinger/ob/kmr/Log/Idea/2020-12 SmartScale/Company Hypothesis Template.xlsx'
+  Shot Charts
+    arg:     'https://www.notion.so/sportsvisio/SHOT-CHARTS-09ee6c9400f84e2ca8bd8caf4c559f59?pvs=4' → ''
+    flags:   'U' → 'U A'
+  Sports Visio - Restricted Stock Purchase Agreement - Oblinger - 900K (20230725) pdf
+    arg:     '/Users/oblinger/ob/kmr/T/Legal/2023 Legal SV/2023-07 Options Signed/just my signature/Sports Visio - Restricted Stock Purchase Agreement - Oblinger - 900K (20230725).pdf' → '/Users/oblinger/ob/kmr/T/Legal/2023 Legal SV/2023-07 Options Signed/2023-05-25 first version at 900K/900K/Signed/Sports Visio - Restricted Stock Purchase Agreement - Oblinger - 900K (20230725).pdf'
+  SV Patent Notion
+    arg:     'https://www.notion.so/sportsvisio/PATENTS-3434075a725f4997b57d9aa9bd0b818a?source=copy_link' → ''
+    flags:   'U' → 'U A'
+  Brain2 ppt
+    arg:     '/Users/oblinger/ob/kmr/Log/Idea/Brain/2007-00-00 Brain DARPA Program/Brain2.ppt' → '/Users/oblinger/ob/kmr/Log/Idea/Brain/2007-00-00 Brain DARPA Program/OLD/07.00  Brain2/Brain2.ppt'
+  Forum PPTX
+    arg:     '/Users/oblinger/ob/kmr/Log/Idea/Idea Social/2007-01 Forum/The Forum.pptx' → ''
+    flags:   'U' → 'U A'
+  Assess
+    arg:     'https://www.notion.so/sportsvisio/ASSESS-d3dd83b216db452b800c00ba7baca26c?pvs=4' → ''
+    flags:   'U' → 'U A'
+  0806 Tech SETA Job Posting doc
+    arg:     '/Users/oblinger/ob/kmr/T/MGR/Hire/Hire Post/2011-05 CyberChief SETA/0806 Tech SETA Job Posting.doc' → '/Users/oblinger/ob/kmr/T/MGR/Hire/Hire Post/2008-06 Slide-SETA/0806 Tech SETA Job Posting.doc'
+  texter markdown
+    arg:     '/Users/oblinger/ob/kmr/X/proj/texter/texter.md' → ''
+    flags:   'U' → 'U A'
+  AIS
+    arg:     'AI Safety' → ''
+    flags:   'U' → 'U A'
+  tasks
+    arg:     'https://www.notion.so/sportsvisio/57fad779ec6f4962a62b923129686875?v=0800d3134c274e33bd4a45849e187835&pvs=4' → ''
+    flags:   'U' → 'U A'
+  MintBudget01 xlsx
+    arg:     '/Users/oblinger/ob/kmr/T/FIN/FIN Budget/2020 Budget/other stuff/MintBudget01.xlsx' → '/Users/oblinger/ob/kmr/T/FIN/FIN Budget/2019 MintBudget/other stuff/MintBudget01.xlsx'
+  Copy of MintBudget xlsx
+    arg:     '/Users/oblinger/ob/kmr/T/FIN/FIN Budget/2020 Budget/MintBudget/Backups/Copy of MintBudget.xlsx' → '/Users/oblinger/ob/kmr/T/FIN/FIN Budget/2020 Budget/Backups/Copy of MintBudget.xlsx'
+  CAPS
+    arg:     'https://www.notion.so/sportsvisio/CAPS-9d1f8e89d87442a7a22e0c2a95561319?pvs=4' → ''
+    flags:   'U' → 'U A'
+  SV FIN
+    arg:     '/Users/oblinger/ob/kmr/Work/SV/SV People/SV FIN.md' → ''
+    flags:   'U' → 'U A'
+  AI Tips
+    arg:     'https://www.notion.so/sportsvisio/AI-TIPS-75b911707dea4afda6f2743da4106ed6?pvs=4' → ''
+    flags:   'U' → 'U A'
+  GG
+    arg:     'https://drive.google.com/drive/folders/1-oFAo22-qNATRvvBfOwgvoRNAo9qMaWA' → ''
+    flags:   'U' → 'U A'
+  OKR DB
+    arg:     'https://www.notion.so/sportsvisio/2025-Q3-OKR-247719d6f2bd80af9ab6d8ec09fa7b6d?v=5422123002bb48579f906a11782e31ab&source=copy_link' → ''
+    flags:   'U' → 'U A'
+  CV Notion
+    arg:     'https://www.notion.so/sportsvisio/CV-e97cfd99c3ce454c899a2a6b4f845d94?source=copy_link' → ''
+    flags:   'U' → 'U A'
+  MintBudget22 xlsx
+    arg:     '/Users/oblinger/ob/kmr/T/FIN/FIN Budget/2019 MintBudget/MintBudget22.xlsx' → '/Users/oblinger/ob/kmr/T/FIN/FIN Budget/2019 MintBudget/other stuff/MintBudget22.xlsx'
+  TT Github
+    arg:     'https://github.com/oblinger' → ''
+    flags:   'U' → 'U A'
+  racquet
+    arg:     'https://www.notion.so/sportsvisio/RACQUET-fb5e4c0a99464619bf922cf674cb5420?pvs=4' → ''
+    flags:   'U' → 'U A'
+  Softbank
+    arg:     'https://www.notion.so/sportsvisio/PROJ-Softbank-12d719d6f2bd80d0bdf7f46715533d24?pvs=4' → ''
+    flags:   'U' → 'U A'
+  CV Confluence
+    arg:     'https://software-engineering-team.atlassian.net/wiki/spaces/SVAI/overview' → ''
+    flags:   'U' → 'U A'
+  Sports Visio - Pledge Agreement - Oblinger - 900K (20230725) pdf
+    arg:     '/Users/oblinger/ob/kmr/T/Legal/2023 Legal SV/2023-07 Options Signed/just my signature/Sports Visio - Pledge Agreement - Oblinger - 900K (20230725).pdf' → '/Users/oblinger/ob/kmr/T/Legal/2023 Legal SV/2023-07 Options Signed/2023-05-25 first version at 900K/900K/Signed/Sports Visio - Pledge Agreement - Oblinger - 900K (20230725).pdf'
+  CV Plan
+    arg:     'https://www.notion.so/sportsvisio/PLAN-5a43c3afd3b34f9da52130a868e41a19?pvs=4' → ''
+    flags:   'U' → 'U A'
+  SV Testing
+    arg:     'https://www.notion.so/sportsvisio/TESTING-82ce8f02ee97425f9981881ce74c62c6?source=copy_link' → ''
+    flags:   'U' → 'U A'
+  SFMTA SpeedingTicket
+    arg:     'https://www.SFMTA/SpeedingTicket' → ''
+    flags:   'U' → 'U A'
+  GIL_Penta-Chart Template and Examples ppt
+    arg:     '/Users/oblinger/ob/kmr/T/MGR/Hire/Hire Post/2011-05 CyberChief SETA/Interviewee Info/Gil/GIL_Penta-Chart Template and Examples.ppt' → '/Users/oblinger/ob/kmr/T/MGR/Hire/Hire Post/2011-05 CyberChief SETA/Problems/GIL_Penta-Chart Template and Examples.ppt'
+  NJDB Template
+    arg:     '/Users/oblinger/ob/kmr/T/Career/NJ/TG/NJDB/_template.md' → ''
+    flags:   'U' → 'U A'
+  HA
+    arg:     'Hook Anchor' → ''
+    flags:   'U' → 'U A'
+  Patents
+    arg:     'https://www.notion.so/sportsvisio/PATENTS-3434075a725f4997b57d9aa9bd0b818a?source=copy_link' → ''
+    flags:   'U' → 'U A'
+  reco
+    arg:     '2025 Shooter Reco' → ''
+    flags:   'U' → 'U A'
+  AI Job Search Config
+    arg:     '/Users/oblinger/ob/kmr/T/Career/NJ/AI Job Search/ajs_config.yaml' → ''
+    flags:   'U' → 'U A'
+  CV Meetings
+    arg:     'https://www.notion.so/sportsvisio/MEETINGS-2c9b9d641f3c4adf9e277cb2660e9f24?pvs=4' → ''
+    flags:   'U' → 'U A'
+  ec
+    arg:     'ec' → ''
+    flags:   'C,U' → 'C,U A'
+  Prod Stack
+    arg:     'https://www.notion.so/sportsvisio/PROD-STACK-68ba2f95c28548629a7c3466decf69cc?pvs=4' → ''
+    flags:   'U' → 'U A'
+  APIs
+    arg:     'https://www.notion.so/APIs-a22511fd487d48ccbf7106d471809549?pvs=4' → ''
+    flags:   'U' → 'U A'
+  LLM chat
+    arg:     '/Users/oblinger/ob/kmr/prj/binproj/LLM chat/LLM chat.md' → ''
+    flags:   'U' → 'U A'
+  MintBudget4 xlsx
+    arg:     '/Users/oblinger/ob/kmr/T/FIN/FIN Budget/2020 Budget/MintBudget/Backups/old/MintBudget4.xlsx' → '/Users/oblinger/ob/kmr/T/FIN/FIN Budget/2020 Budget/MintBudget4.xlsx'
+  Copy of AF Code Review docx
+    arg:     '/Users/oblinger/ob/kmr/T/MGR/Hire/Hire Test/2019 AF Job Tests/AF_ENG_HIRING_TESTS/AF_HIRING_TESTS - C++ Proxy Server/EXERCISE - Matija Zigic/Copy of AF Code Review.docx' → '/Users/oblinger/ob/kmr/T/MGR/Hire/Hire Test/2019 AF Job Tests/AF_ENG_HIRING_TESTS/AF_HIRING_TESTS - C++ Proxy Server/EXERCISE - Lukasz Wojcik/Copy of AF Code Review.docx'
+  PHQ
+    arg:     '2025 PlayHQ RFP' → ''
+    flags:   'U' → 'U A'
+  Brain ppt
+    arg:     '/Users/oblinger/ob/kmr/Log/Idea/Brain/2007-00-00 Brain DARPA Program/OLD/07.00  Brain2/OLD/Brain.ppt' → '/Users/oblinger/ob/kmr/Log/Idea/Brain/2007-00-00 Brain DARPA Program/OLD/Brain.ppt'
+
+➖ Removed Commands (1404):
+  Mom (@Carolyn Oblinger:anchor)
+  GuaranteedRate 1Pass (1Pass:1pass)
+  API_REFERENCE markdown (x_ha:markdown)
+  003 UX Design (forum:markdown)
+  Wikipedia 1Pass (1Pass:1pass)
+  2020-12 SmartScale (Idea:anchor)
+  Clarifai (NJDB:anchor)
+  SVT (SV:anchor)
+  PyCharm App (app:open_app)
+  Uber 1Pass (1Pass:1pass)
+  SV App Markdown (SV Product:anchor)
+  Elai.io (NJDB:anchor)
+  ReadWise 1Pass (1Pass:1pass)
+  2015-00 Walmart (Idea:anchor)
+  DEVELOPMENT_ENV (x_ha:markdown)
+  DeepMind (NJDB:anchor)
+  tracker (orphans:anchor)
+  2023-07 Computer Vision Hire (Hire Post:anchor)
+  LegendaryWhitetails 1Pass (1Pass:1pass)
+  2020-09 CtrlSaaS (Idea:anchor)
+  ... and 1384 more
+
+➕ Added Commands (1406):
+  HookAnchor_Action_Types (HookAnchor:markdown)
+  EduCorp pdf (EduCorp:doc)
+  2023-07 Backend Architect (Hire Post:markdown)
+  LastPass 1Pass (1pass:1pass)
+  Meta Proj (Meta:markdown)
+  NJ Manual Search (SEEK:markdown)
+  Hire (MGR:markdown)
+  Matterport (NJDB:markdown)
+  OLD-CONSTRUCTS (UF-OLD:markdown)
+  DocR (Doc:markdown)
+  TripIt 1Pass (1pass:1pass)
+  Feedly 1Pass (1pass:1pass)
+  HA Video Transcript (Hook Anchor Video:markdown)
+  Safeway 1Pass (1pass:1pass)
+  km_cmd (binproj:markdown)
+  Dropbox App (orphans:app)
+  CLAUDE markdown (2025 Alg2:markdown)
+  Weee 1Pass (1pass:1pass)
+  2022-03 BeVC (prj:markdown)
+  Exponential Edu Corp (EduCorp:doc)
+  ... and 1386 more
+
+✅ Legacy load and compare complete!

@@ -286,7 +286,7 @@ pub fn build_prefix_menu(
                     };
 
                     // Debug log for any anchor found
-                    crate::utils::log(&format!("BUILD_PREFIX_MENU: Found anchor='{}' for input='{}', filter='{}'",
+                    crate::utils::detailed_log("BUILD_PREFIX_MENU", &format!("Found anchor='{}' for input='{}', filter='{}'",
                         resolved_command.command, input, remaining_chars));
 
                     crate::utils::detailed_log("BUILD_PREFIX_MENU", &format!("Building prefix menu for anchor '{}' with filter '{}'",

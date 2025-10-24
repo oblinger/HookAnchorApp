@@ -1,0 +1,1641 @@
+🔍 Legacy Commands Load and Compare
+===================================
+
+📁 Legacy file: /Users/oblinger/.config/hookanchor/commands_20251017_232108.txt
+
+🔄 Step 1: Performing initial rescan...
+🚀 HookAnchor Rescan - Verbose Mode
+====================================
+📋 Config loaded - checking file_roots...
+✅ File roots found: ["~/ob/kmr", "/Applications"]
+
+📂 Step 1: Loading last known state from cache...
+   ✅ Loaded 6319 commands from cache
+
+✏️  Step 2: Merging manual edits from commands.txt...
+
+📝 Loading manual edits from commands.txt...
+   ✅ No manual edits to apply
+   ✅ Merged 0 edits from commands.txt
+   📊 Total commands after merge: 6319
+
+🔍 Step 3: Scanning filesystem (discovering new files, removing stale entries)...
+
+🔍 Starting filesystem scan...
+   Scanning roots: ["~/ob/kmr", "/Applications"]
+📂 Scanning directory: /Users/oblinger/ob/kmr
+      🎯 Found app: Obsidian Double Click App
+      🎯 Found app: Obsidian Double Click App 2
+   ✅ Found 5428 new commands in /Users/oblinger/ob/kmr
+📂 Scanning directory: /Applications
+      🎯 Found app: Google Chrome Beta App
+      🎯 Found app: Visual Studio Code App
+      🎯 Found app: VLC App
+      🎯 Found app: WhatSize App
+      🎯 Found app: Paprika Recipe Manager App
+      🎯 Found app: 1Password App
+      🎯 Found app: LM Studio App
+      🎯 Found app: Claude App
+      🎯 Found app: Timey 3 App
+      🎯 Found app: Speedtest App
+      🎯 Found app: Google Chrome App
+      🎯 Found app: Bartender 5 App
+      🎯 Found app: Anki App
+      🎯 Found app: Karabiner-Elements App
+      🎯 Found app: Karabiner-EventViewer App
+      🎯 Found app: Modern CSV App
+      🎯 Found app: TextSniper App
+      🎯 Found app: Numbers App
+      🎯 Found app: Dropbox App
+      🎯 Found app: Finicky App
+      🎯 Found app: MacWhisper App
+      🎯 Found app: FoldingText App
+      🎯 Found app: Be Focused Pro App
+      🎯 Found app: Grammarly Desktop App
+      🎯 Found app: Notion App
+      🎯 Found app: Xcode App
+      🎯 Found app: Microsoft Remote Desktop App
+      🎯 Found app: OneDrive App
+      🎯 Found app: Notion Calendar App
+      🎯 Found app: Spotify App
+      🎯 Found app: Simplenote App
+      🎯 Found app: Contacts Journal CRM App
+      🎯 Found app: PyCharm App
+      🎯 Found app: ExcalidrawZ App
+      🎯 Found app: iMovie App
+      🎯 Found app: Voice Memo App
+      🎯 Found app: Cursor App
+      🎯 Found app: Stay App
+      🎯 Found app: DaisyDisk App
+      🎯 Found app: Microsoft Word App
+      🎯 Found app: HookAnchor App
+      🎯 Found app: Amazon Kindle App
+      🎯 Found app: FreeCell App
+      🎯 Found app: Google Drive App
+      🎯 Found app: Docker App
+      🎯 Found app: Obsidian App
+      🎯 Found app: Pocket App
+      🎯 Found app: Spot5 App
+      🎯 Found app: Amphetamine App
+      🎯 Found app: Arc App
+      🎯 Found app: Microsoft Excel App
+      🎯 Found app: ChatGPT App
+      🎯 Found app: Inkjet Extended Survey Program App
+      🎯 Found app: Canon IJ Scan Utility Lite App
+      🎯 Found app: zoom.us App
+      🎯 Found app: IDLE App
+      🎯 Found app: Python Launcher App
+      🎯 Found app: WhatsApp App
+      🎯 Found app: Microsoft Outlook App
+      🎯 Found app: Keynote App
+      🎯 Found app: iStat Menus App
+      🎯 Found app: NewFileMenu App
+      🎯 Found app: Google Docs App
+      🎯 Found app: 1Password for Safari App
+      🎯 Found app: Audio Hijack App
+      🎯 Found app: Divvy App
+      🎯 Found app: Google Sheets App
+      🎯 Found app: ScratchJr App
+      🎯 Found app: Webcam Settings App
+      🎯 Found app: Brave Browser App
+      🎯 Found app: Pages App
+      🎯 Found app: GarageBand App
+      🎯 Found app: Google Slides App
+      🎯 Found app: Microsoft Edge App
+      🎯 Found app: Microsoft OneNote App
+      🎯 Found app: Docs for Xcode App
+      🎯 Found app: EasyRes App
+      🎯 Found app: Browserosaurus App
+      🎯 Found app: Pure Paste App
+      🎯 Found app: iTerm App
+      🎯 Found app: Skype App
+      🎯 Found app: GitKraken App
+      🎯 Found app: Firefox App
+      🎯 Found app: Emacs App
+      🎯 Found app: Goban App
+      🎯 Found app: WinZip App
+      🎯 Found app: BetterTouchTool App
+      🎯 Found app: lghub App
+      🎯 Found app: OBS App
+      🎯 Found app: Microsoft PowerPoint App
+      🎯 Found app: Evernote App
+      🎯 Found app: Adobe Acrobat App
+      🎯 Found app: Webex App
+      🎯 Found app: Obsidian Double Click App 3
+      🎯 Found app: Keyboard Maestro App
+      🎯 Found app: Slack App
+      🎯 Found app: Prime Video App
+      🎯 Found app: Paintbrush App
+      🎯 Found app: Yoink App
+      🎯 Found app: BetterTouchTool App 2
+      🎯 Found app: Neu App
+      🎯 Found app: Discord App
+      🎯 Found app: Dark Noise App
+      🎯 Found app: Sublime Text App
+   ✅ Found 107 new commands in /Applications
+   Scan complete: 6319 commands total
+
+🎉 File scan complete! (Inference will run after loading manual edits)
+   ✅ Scan complete - now tracking 6319 total commands
+
+📝 Step 4: Detecting file modifications...
+
+🔍 Scanning for file modifications...
+   ✅ No file modifications detected
+   ✅ Processed modifications (0 files changed)
+
+🔄 Step 5: Running inference and saving...
+   ✅ Inference complete and saved 6319 commands
+
+📊 Step 8: Final Summary:
+   Total commands: 6319
+
+   Commands by action type:
+     : 1
+     1pass: 303
+     action: 2
+     alias: 21
+     anchor: 213
+     app: 106
+     brave: 1
+     chrome: 37
+     clear_log: 1
+     console: 36
+     contact: 2
+     doc: 2856
+     markdown: 2589
+     notion: 57
+     obs_url: 3
+     safari: 1
+     slack: 2
+     test: 2
+     text: 3
+     url: 15
+     work: 68
+
+✅ Rescan complete!
+✅ Initial rescan complete
+
+📥 Step 2: Loading legacy commands from file...
+✅ Loaded 6361 legacy commands
+
+💾 Step 3: Saving legacy commands (triggers flush)...
+✅ Legacy commands saved and flushed
+
+🔬 Step 4: First comparison (legacy vs. saved)...
+
+=== POST-SAVE COMPARISON ===
+
+📊 Summary:
+  Unchanged: 6361
+  Changed:   0
+  Removed:   0
+  Added:     0
+
+🔄 Step 5: Performing second rescan...
+🚀 HookAnchor Rescan - Verbose Mode
+====================================
+📋 Config loaded - checking file_roots...
+✅ File roots found: ["~/ob/kmr", "/Applications"]
+
+📂 Step 1: Loading last known state from cache...
+   ✅ Loaded 6361 commands from cache
+
+✏️  Step 2: Merging manual edits from commands.txt...
+
+📝 Loading manual edits from commands.txt...
+   ✏️  Updated manual edit: 'Forum PPTX'
+   ✏️  Updated manual edit: 'Patents'
+   ✏️  Updated manual edit: 'AIS'
+   ✏️  Updated manual edit: 'as'
+   ✏️  Updated manual edit: 'AI Job Search Config'
+   ✏️  Updated manual edit: 'AIJ Config'
+   ✏️  Updated manual edit: 'cover'
+   ✏️  Updated manual edit: 'PrG'
+   ✏️  Updated manual edit: 'Ask Safety'
+   ✏️  Updated manual edit: '@Rachel Kadosh'
+   ✏️  Updated manual edit: '@Sean H'
+   ✏️  Updated manual edit: 'APIs'
+   ✏️  Updated manual edit: 'CAPS'
+   ✏️  Updated manual edit: 'CV Ana'
+   ✏️  Updated manual edit: 'CV Confluence'
+   ✏️  Updated manual edit: 'CV Data Tasks'
+   ✏️  Updated manual edit: 'CV Docs'
+   ✏️  Updated manual edit: 'CV Gdrive'
+   ✏️  Updated manual edit: 'CV Google Page'
+   ✏️  Updated manual edit: 'CV Hack Notes'
+   ✏️  Updated manual edit: 'CV HowTo'
+   ✏️  Updated manual edit: 'CV Info'
+   ✏️  Updated manual edit: 'CV Jira Page'
+   ✏️  Updated manual edit: 'CV Log'
+   ✏️  Updated manual edit: 'CV Meetings'
+   ✏️  Updated manual edit: 'CV Notion'
+   ✏️  Updated manual edit: 'CV Page'
+   ✏️  Updated manual edit: 'CV Plan'
+   ✏️  Updated manual edit: 'CV Root'
+   ✏️  Updated manual edit: 'CVT'
+   ✏️  Updated manual edit: 'DSET'
+   ✏️  Updated manual edit: 'Docs Gdrive'
+   ✏️  Updated manual edit: 'Softbank'
+   ✏️  Updated manual edit: 'Story'
+   ✏️  Updated manual edit: 'Task'
+   ✏️  Updated manual edit: 'svdata'
+   ✏️  Updated manual edit: 'Assess'
+   ✏️  Updated manual edit: 'Baseball'
+   ✏️  Updated manual edit: 'Benchmarks'
+   ✏️  Updated manual edit: 'CV Annotations'
+   ✏️  Updated manual edit: 'CV Roadmap'
+   ✏️  Updated manual edit: 'JuanDaily'
+   ✏️  Updated manual edit: 'OKRs'
+   ✏️  Updated manual edit: 'Task Tree'
+   ✏️  Updated manual edit: 'tasks'
+   ✏️  Updated manual edit: 'Data Docs'
+   ✏️  Updated manual edit: 'Data Games'
+   ✏️  Updated manual edit: 'Data Tasks'
+   ✏️  Updated manual edit: 'Dataset'
+   ✏️  Updated manual edit: 'Game'
+   ✏️  Updated manual edit: 'MPR'
+   ✏️  Updated manual edit: 'LRN.'
+   ✏️  Updated manual edit: 'NJ Lrn'
+   ✏️  Updated manual edit: 'NJYore.1'
+   ✏️  Updated manual edit: 'NJDB Template'
+   ✏️  Updated manual edit: '@BOTD'
+   ✏️  Updated manual edit: 'HookAnchor Meta'
+   ✏️  Updated manual edit: 'Pln Factory'
+   ✏️  Updated manual edit: 'Pln Work'
+   ✏️  Updated manual edit: 'BB'
+   ✏️  Updated manual edit: 'Hardball'
+   ✏️  Updated manual edit: 'Homography'
+   ✏️  Updated manual edit: 'PlayerID'
+   ✏️  Updated manual edit: 'PrN'
+   ✏️  Updated manual edit: 'Shot Charts'
+   ✏️  Updated manual edit: 'VB'
+   ✏️  Updated manual edit: 'GG'
+   ✏️  Updated manual edit: 'Game Docs'
+   ✏️  Updated manual edit: 'SV FIN'
+   ✏️  Updated manual edit: 'SV Notion'
+   ✏️  Updated manual edit: 'SV Patent Notion'
+   ✏️  Updated manual edit: 'SV Testing'
+   ✏️  Updated manual edit: 'SV Testing Confluence'
+   ✏️  Updated manual edit: 'hb'
+   ✏️  Updated manual edit: 'qball Gdrive'
+   ✏️  Updated manual edit: 'qball Old Example'
+   ✏️  Updated manual edit: 'Prod Stack'
+   ✏️  Updated manual edit: 'Q2Tasks'
+   ✏️  Updated manual edit: 'Q2exp'
+   ✏️  Updated manual edit: 'RP'
+   ✏️  Updated manual edit: 'racquet'
+   ✏️  Updated manual edit: 'Proj CV Gdrive'
+   ✏️  Updated manual edit: 'Proj Notion'
+   ✏️  Updated manual edit: 'Proj WW'
+   ✏️  Updated manual edit: 'SV C Root'
+   ✏️  Updated manual edit: 'SV Tasks'
+   ✏️  Updated manual edit: 'TT Website'
+   ✏️  Updated manual edit: 'ZZZ'
+   ✏️  Updated manual edit: 'ai System Safety Analysis'
+   ✏️  Updated manual edit: 'AI Min'
+   ✏️  Updated manual edit: 'AI Tips'
+   ✏️  Updated manual edit: 'CLAUDE'
+   ✏️  Updated manual edit: 'Hook Anchor'
+   ✏️  Updated manual edit: 'LLM chat'
+   ✏️  Updated manual edit: 'Te'
+   ✏️  Updated manual edit: 'cmd sleep'
+   ✏️  Updated manual edit: 'ec'
+   ✏️  Updated manual edit: 'test input'
+   ✏️  Updated manual edit: 'test window'
+   ✏️  Updated manual edit: 'docs'
+   ✏️  Updated manual edit: 'fireball Gdrive'
+   ✏️  Updated manual edit: 'fireball Notion'
+   ✏️  Updated manual edit: 'TT Github'
+   ✏️  Updated manual edit: 'Final MOU discussion'
+   ✏️  Updated manual edit: 'OKR DB'
+   ✏️  Updated manual edit: 'OKR Defintions'
+   ✏️  Updated manual edit: 'OKR Quarterly Lists'
+   ✏️  Updated manual edit: 'fb'
+   ✏️  Updated manual edit: 'PL'
+   ✏️  Updated manual edit: 'op'
+   ✏️  Updated manual edit: 'Hook Anchor Xtra'
+   ✏️  Updated manual edit: 'tr'
+   ✏️  Updated manual edit: 'HA'
+   ✏️  Updated manual edit: 'Q2 Experiments'
+   ✏️  Updated manual edit: 'Groc Ordering'
+   ✏️  Updated manual edit: 'MILESTONES'
+   ✏️  Updated manual edit: 'zyz'
+   ✏️  Updated manual edit: 'Canva'
+   ✏️  Updated manual edit: 'Confluence Page'
+   ✏️  Updated manual edit: 'Figma Page'
+   ✏️  Updated manual edit: 'Jira Me Page'
+   ✏️  Updated manual edit: 'All Hands'
+   ✏️  Updated manual edit: 'reco'
+   ✏️  Updated manual edit: 'texter Config'
+   ✏️  Updated manual edit: 'texter markdown'
+   ✏️  Updated manual edit: 'texter run'
+   ✏️  Updated manual edit: 'tracker info'
+   ✏️  Updated manual edit: 'SFMTA SpeedingTicket'
+   ✏️  Updated manual edit: 'WEF'
+   ✏️  Updated manual edit: 'PHQ'
+   ✏️  Updated manual edit: 'mm'
+   ✅ Applied 131 manual edit(s)
+   ✅ Merged 131 edits from commands.txt
+   📊 Total commands after merge: 6361
+
+🔍 Step 3: Scanning filesystem (discovering new files, removing stale entries)...
+
+🔍 Starting filesystem scan...
+   Scanning roots: ["~/ob/kmr", "/Applications"]
+📂 Scanning directory: /Users/oblinger/ob/kmr
+      🎯 Found app: Obsidian Double Click App
+      🎯 Found app: Obsidian Double Click App 2
+   ✅ Found 5428 new commands in /Users/oblinger/ob/kmr
+📂 Scanning directory: /Applications
+      🎯 Found app: Google Chrome Beta App
+      🎯 Found app: Visual Studio Code App
+      🎯 Found app: VLC App
+      🎯 Found app: WhatSize App
+      🎯 Found app: Paprika Recipe Manager App
+      🎯 Found app: 1Password App
+      🎯 Found app: LM Studio App
+      🎯 Found app: Claude App
+      🎯 Found app: Timey 3 App
+      🎯 Found app: Speedtest App
+      🎯 Found app: Google Chrome App
+      🎯 Found app: Bartender 5 App
+      🎯 Found app: Anki App
+      🎯 Found app: Karabiner-Elements App
+      🎯 Found app: Karabiner-EventViewer App
+      🎯 Found app: Modern CSV App
+      🎯 Found app: TextSniper App
+      🎯 Found app: Numbers App
+      🎯 Found app: Dropbox App
+      🎯 Found app: Finicky App
+      🎯 Found app: MacWhisper App
+      🎯 Found app: FoldingText App
+      🎯 Found app: Be Focused Pro App
+      🎯 Found app: Grammarly Desktop App
+      🎯 Found app: Notion App
+      🎯 Found app: Xcode App
+      🎯 Found app: Microsoft Remote Desktop App
+      🎯 Found app: OneDrive App
+      🎯 Found app: Notion Calendar App
+      🎯 Found app: Spotify App
+      🎯 Found app: Simplenote App
+      🎯 Found app: Contacts Journal CRM App
+      🎯 Found app: PyCharm App
+      🎯 Found app: ExcalidrawZ App
+      🎯 Found app: iMovie App
+      🎯 Found app: Voice Memo App
+      🎯 Found app: Cursor App
+      🎯 Found app: Stay App
+      🎯 Found app: DaisyDisk App
+      🎯 Found app: Microsoft Word App
+      🎯 Found app: HookAnchor App
+      🎯 Found app: Amazon Kindle App
+      🎯 Found app: FreeCell App
+      🎯 Found app: Google Drive App
+      🎯 Found app: Docker App
+      🎯 Found app: Obsidian App
+      🎯 Found app: Pocket App
+      🎯 Found app: Spot5 App
+      🎯 Found app: Amphetamine App
+      🎯 Found app: Arc App
+      🎯 Found app: Microsoft Excel App
+      🎯 Found app: ChatGPT App
+      🎯 Found app: Inkjet Extended Survey Program App
+      🎯 Found app: Canon IJ Scan Utility Lite App
+      🎯 Found app: zoom.us App
+      🎯 Found app: IDLE App
+      🎯 Found app: Python Launcher App
+      🎯 Found app: WhatsApp App
+      🎯 Found app: Microsoft Outlook App
+      🎯 Found app: Keynote App
+      🎯 Found app: iStat Menus App
+      🎯 Found app: NewFileMenu App
+      🎯 Found app: Google Docs App
+      🎯 Found app: 1Password for Safari App
+      🎯 Found app: Audio Hijack App
+      🎯 Found app: Divvy App
+      🎯 Found app: Google Sheets App
+      🎯 Found app: ScratchJr App
+      🎯 Found app: Webcam Settings App
+      🎯 Found app: Brave Browser App
+      🎯 Found app: Pages App
+      🎯 Found app: GarageBand App
+      🎯 Found app: Google Slides App
+      🎯 Found app: Microsoft Edge App
+      🎯 Found app: Microsoft OneNote App
+      🎯 Found app: Docs for Xcode App
+      🎯 Found app: EasyRes App
+      🎯 Found app: Browserosaurus App
+      🎯 Found app: Pure Paste App
+      🎯 Found app: iTerm App
+      🎯 Found app: Skype App
+      🎯 Found app: GitKraken App
+      🎯 Found app: Firefox App
+      🎯 Found app: Emacs App
+      🎯 Found app: Goban App
+      🎯 Found app: WinZip App
+      🎯 Found app: BetterTouchTool App
+      🎯 Found app: lghub App
+      🎯 Found app: OBS App
+      🎯 Found app: Microsoft PowerPoint App
+      🎯 Found app: Evernote App
+      🎯 Found app: Adobe Acrobat App
+      🎯 Found app: Webex App
+      🎯 Found app: Obsidian Double Click App 3
+      🎯 Found app: Keyboard Maestro App
+      🎯 Found app: Slack App
+      🎯 Found app: Prime Video App
+      🎯 Found app: Paintbrush App
+      🎯 Found app: Yoink App
+      🎯 Found app: BetterTouchTool App 2
+      🎯 Found app: Neu App
+      🎯 Found app: Discord App
+      🎯 Found app: Dark Noise App
+      🎯 Found app: Sublime Text App
+   ✅ Found 107 new commands in /Applications
+   Scan complete: 6319 commands total
+
+🎉 File scan complete! (Inference will run after loading manual edits)
+   ✅ Scan complete - now tracking 6319 total commands
+
+📝 Step 4: Detecting file modifications...
+
+🔍 Scanning for file modifications...
+   ✅ No file modifications detected
+   ✅ Processed modifications (0 files changed)
+
+🔄 Step 5: Running inference and saving...
+   ✅ Inference complete and saved 6319 commands
+
+📊 Step 8: Final Summary:
+   Total commands: 6319
+
+   Commands by action type:
+     : 1
+     1pass: 303
+     action: 2
+     alias: 21
+     anchor: 213
+     app: 106
+     brave: 1
+     chrome: 37
+     clear_log: 1
+     console: 36
+     contact: 2
+     doc: 2856
+     markdown: 2589
+     notion: 57
+     obs_url: 3
+     safari: 1
+     slack: 2
+     test: 2
+     text: 3
+     url: 15
+     work: 68
+
+✅ Rescan complete!
+✅ Second rescan complete
+
+🔬 Step 6: Second comparison (saved vs. rescanned)...
+
+=== POST-RESCAN COMPARISON ===
+
+📊 Summary:
+  Unchanged: 4753
+  Changed:   542
+  Removed:   1066
+  Added:     1024
+
+🔄 Changed Commands (542):
+  Fried Archive
+    patch:   'hack' → 'SYS Hacks'
+  iRobot 1Pass
+    patch:   '1Pass' → '1pass'
+  StackOverflow 1Pass
+    patch:   '1Pass' → '1pass'
+  011 NodeBB DB Tables DataTypes and APIs
+    patch:   'forum' → '2007-01 Forum'
+  Noom 1Pass
+    patch:   '1Pass' → '1pass'
+  Passpack 1Pass
+    patch:   '1Pass' → '1pass'
+  VMware 1Pass
+    patch:   '1Pass' → '1pass'
+  OpenTable 1Pass
+    patch:   '1Pass' → '1pass'
+  Zenni 1Pass
+    patch:   '1Pass' → '1pass'
+  POLIS
+    patch:   'forum' → '2007-01 Forum'
+  PlushCare 1Pass
+    patch:   '1Pass' → '1pass'
+  Venmo 1Pass
+    patch:   '1Pass' → '1pass'
+  TaskRabbit 1Pass
+    patch:   '1Pass' → '1pass'
+  HanaHaus 1Pass
+    patch:   '1Pass' → '1pass'
+  EduCorp White Paper pdf
+    patch:   'EduCorp markdown' → 'EduCorp'
+  003 UX Design
+    patch:   'forum' → '2007-01 Forum'
+  Meta Org -old-page-
+    patch:   'Meta markdown' → 'Meta'
+  BOA 1Pass
+    patch:   '1Pass' → '1pass'
+  SeekingAlpha 1Pass
+    patch:   '1Pass' → '1pass'
+  ~$cratch
+    patch:   'SCRatch markdown' → 'SCRatch'
+  Meta Meta
+    patch:   'Meta markdown' → 'Meta'
+  Updated_Connections_with_Bay_Area_Info
+    patch:   '@LinkedIn markdown' → '@LinkedIn'
+  Seamless 1Pass
+    patch:   '1Pass' → '1pass'
+  BlueBjiou 1Pass
+    patch:   '1Pass' → '1pass'
+  09.08  Exponential Edu Corp
+    patch:   'EduCorp markdown' → 'EduCorp'
+  ConsumerReports 1Pass
+    patch:   '1Pass' → '1pass'
+  FlipBoard 1Pass
+    patch:   '1Pass' → '1pass'
+  OneMedical 1Pass
+    patch:   '1Pass' → '1pass'
+  Udemy 1Pass
+    patch:   '1Pass' → '1pass'
+  TripAdvisor 1Pass
+    patch:   '1Pass' → '1pass'
+  SimplyToImpress 1Pass
+    patch:   '1Pass' → '1pass'
+  Capabilities ppt
+    patch:   '2009-05-00 Consciousness' → '2007-00-00 Brain DARPA Program'
+  Care 1Pass
+    patch:   '1Pass' → '1pass'
+  PoshMark 1Pass
+    patch:   '1Pass' → '1pass'
+  Dan and Qingling PWA - 3.8.24
+    patch:   'FIN Retire markdown' → 'FIN Retire'
+  Bill Of Sale
+    patch:   'pp' → 'prj'
+  good-derm
+    patch:   'Attach' → 'MED Log'
+  MED Cholesterol
+    patch:   'MED Doctors' → 'MED Measurements'
+  ARCHITECTURE markdown
+    patch:   'x_ha' → 'HookAnchor'
+  EduCorp Talk
+    patch:   'EduCorp markdown' → 'EduCorp'
+  _2024-10-27AcuraTitle1
+    patch:   'pp' → 'prj'
+  z_lex html
+    patch:   'lex-lexlang' → 'UF-OLD'
+  z_lex_execution html
+    patch:   'lex-lexlang' → 'UF-OLD'
+  AltoPharmacy 1Pass
+    patch:   '1Pass' → '1pass'
+  ClipperCard 1Pass
+    patch:   '1Pass' → '1pass'
+  USER_GUIDE
+    patch:   'x_ha' → 'HookAnchor'
+  WeWork 1Pass
+    patch:   '1Pass' → '1pass'
+  Medium 1Pass
+    patch:   '1Pass' → '1pass'
+  Lutron 1Pass
+    patch:   '1Pass' → '1pass'
+  gAFdaniel 1Pass
+    patch:   '1Pass' → '1pass'
+  GoFundMe 1Pass
+    patch:   '1Pass' → '1pass'
+  Meta Set
+    patch:   'Meta markdown' → 'Meta'
+  UrbanSitter 1Pass
+    patch:   '1Pass' → '1pass'
+  TransUnion 1Pass
+    patch:   '1Pass' → '1pass'
+  Walmart 1Pass
+    patch:   '1Pass' → '1pass'
+  NicholasPension 1Pass
+    patch:   '1Pass' → '1pass'
+  dealer_PoA BLANK
+    patch:   'pp' → 'prj'
+  Amazon
+    patch:   'amazon' → 'Amazon'
+  Pantone Peri
+    patch:   'CV markdown' → 'CV'
+  ReelGood 1Pass
+    patch:   '1Pass' → '1pass'
+  uniform1_overview html
+    patch:   'lex-lexlang' → 'UF-OLD'
+  UCSF 1Pass
+    patch:   '1Pass' → '1pass'
+  gAR 1Pass
+    patch:   '1Pass' → '1pass'
+  USPS 1Pass
+    patch:   '1Pass' → '1pass'
+  NJ.2
+    patch:   'NJ' → 'NJ Todo'
+  Wise
+    patch:   '1Pass' → '1pass'
+  Untitled
+    patch:   'kmr markdown' → 'kmr'
+  patents txt
+    patch:   'lex-lexlang' → 'UF-OLD'
+  FTB 1Pass
+    patch:   '1Pass' → '1pass'
+  CLAUDE markdown
+    patch:   'prj' → 'Obsidian Double Click'
+  Fromm Pet Food Dog
+    patch:   '1Pass' → '1pass'
+  Evernote 1Pass
+    patch:   '1Pass' → '1pass'
+  EduCorp White Paper markdown
+    patch:   'EduCorp markdown' → 'EduCorp'
+  WaPo 1Pass
+    patch:   '1Pass' → '1pass'
+  SCR Qingling<>Dan Webpage
+    patch:   'SCRatch markdown' → 'SCRatch'
+  Spotify 1Pass
+    patch:   '1Pass' → '1pass'
+  Schwab 1Pass
+    patch:   '1Pass' → '1pass'
+  gAFdo 1Pass
+    patch:   '1Pass' → '1pass'
+  CLAUDE markdown
+    patch:   'prj' → 'Dev Notes'
+  EffectiveAltruism 1Pass
+    patch:   '1Pass' → '1pass'
+  IFTTT 1Pass
+    patch:   '1Pass' → '1pass'
+  Meta Time Codes
+    patch:   'Meta markdown' → 'Meta'
+  GuaranteedRate 1Pass
+    patch:   '1Pass' → '1pass'
+  Lean Canvas pptx
+    patch:   '2020-06 OpenBricks' → '2000-00 Lean Canvas'
+  EduCorpSupplement
+    patch:   'EduCorp markdown' → 'EduCorp'
+  Discord 1Pass
+    patch:   '1Pass' → '1pass'
+  pickle_classes
+    patch:   'alg2' → '2025 Alg2'
+  Ancestry 1Pass
+    patch:   '1Pass' → '1pass'
+  Experian 1Pass
+    patch:   '1Pass' → '1pass'
+  Philz
+    patch:   '1Pass' → '1pass'
+  g234234 1Pass
+    patch:   '1Pass' → '1pass'
+  Top
+    patch:   'Meta markdown' → 'Meta'
+  Zenefits 1Pass
+    patch:   '1Pass' → '1pass'
+  010 Data Ontology pdf
+    patch:   'forum' → '2007-01 Forum'
+  yCombinator 1Pass
+    patch:   '1Pass' → '1pass'
+  DATED
+    patch:   'Note markdown' → 'Note'
+  CoinBase 1Pass
+    patch:   '1Pass' → '1pass'
+  Flix 1Pass
+    patch:   '1Pass' → '1pass'
+  EpicPass 1Pass
+    patch:   '1Pass' → '1pass'
+  Clean Email
+    patch:   '1Pass' → '1pass'
+  Caviar 1Pass
+    patch:   '1Pass' → '1pass'
+  Exponential Bootstrapping
+    patch:   'EduCorp markdown' → 'EduCorp'
+  EduCorp Todos
+    patch:   'EduCorp markdown' → 'EduCorp'
+  EduCorp pptx
+    patch:   'EduCorp markdown' → 'EduCorp'
+  2016.11 Scratch
+    patch:   'SCRatch markdown' → 'SCRatch'
+  phone phone
+    patch:   'phone' → 'Phone'
+  uniform1_vocabulary html
+    patch:   'lex-lexlang' → 'UF-OLD'
+  DoorDash 1Pass
+    patch:   '1Pass' → '1pass'
+  Sam2
+    patch:   'alg2' → '2025 Alg2'
+  launcher-system
+    patch:   'x_ha' → 'HookAnchor'
+  CONFIG_REFERENCE
+    patch:   'x_ha' → 'HookAnchor'
+  Meta Log
+    patch:   'Meta markdown' → 'Meta'
+  WesternUnion 1Pass
+    patch:   '1Pass' → '1pass'
+  Meta List
+    patch:   'Meta markdown' → 'Meta'
+  _2024-10-27AcuraTitle2
+    patch:   'pp' → 'prj'
+  API_REFERENCE markdown
+    patch:   'x_ha' → 'Attach'
+  TEMPLATE_JS_VARIABLES
+    patch:   'x_ha' → 'HookAnchor'
+  TheNounProject 1Pass
+    patch:   '1Pass' → '1pass'
+  PushBullet 1Pass
+    patch:   '1Pass' → '1pass'
+  Big
+    patch:   'pp' → 'prj'
+  Wiggle 1Pass
+    patch:   '1Pass' → '1pass'
+  H&R 1Pass
+    patch:   '1Pass' → '1pass'
+  WordPress 1Pass
+    patch:   '1Pass' → '1pass'
+  installer-safety
+    patch:   'x_ha' → 'HookAnchor'
+  Disqus 1Pass
+    patch:   '1Pass' → '1pass'
+  United 1Pass
+    patch:   '1Pass' → '1pass'
+  README markdown
+    patch:   'lex-lexlang' → 'HookAnchor'
+  BillPay Joint
+    patch:   '1Pass' → '1pass'
+  Meta Productivity
+    patch:   'Meta markdown' → 'Meta'
+  AlignmentForum 1Pass
+    patch:   '1Pass' → '1pass'
+  Ring 1Pass
+    patch:   '1Pass' → '1pass'
+  response
+    patch:   'SCRatch markdown' → 'SCRatch'
+  Zwillow 1Pass
+    patch:   '1Pass' → '1pass'
+  GrubHub 1Pass
+    patch:   '1Pass' → '1pass'
+  Python Documentation
+    patch:   '' → 'orphans'
+  RoamResearch 1Pass
+    patch:   '1Pass' → '1pass'
+  AllTrails 1Pass
+    patch:   '1Pass' → '1pass'
+  TicketFasTrak 1Pass
+    patch:   '1Pass' → '1pass'
+  ThermomixRecipes 1Pass
+    patch:   '1Pass' → '1pass'
+  uniform5_implementation html
+    patch:   'lex-lexlang' → 'UF-OLD'
+  Connections
+    patch:   '@LinkedIn markdown' → '@LinkedIn'
+  Shyp 1Pass
+    patch:   '1Pass' → '1pass'
+  Exponential Edu Corp
+    patch:   'EduCorp markdown' → 'EduCorp'
+  CLAUDE markdown
+    patch:   'prj' → 'HookAnchor'
+  scanner-system
+    patch:   'x_ha' → 'HookAnchor'
+  SVCV Re-ID
+    patch:   'CV markdown' → 'CV'
+  DeltaDental 1Pass
+    patch:   '1Pass' → '1pass'
+  SimpleNote 1Pass
+    patch:   '1Pass' → '1pass'
+  @AugustineAntwi-Boasiako
+    patch:   'EduCorp markdown' → 'EduCorp'
+  Player 1Pass
+    patch:   '1Pass' → '1pass'
+  gDAD 1Pass
+    patch:   '1Pass' → '1pass'
+  Costco 1Pass
+    patch:   '1Pass' → '1pass'
+  FedEx 1Pass
+    patch:   '1Pass' → '1pass'
+  Meta Flow
+    patch:   'Meta markdown' → 'Meta'
+  Receipt_2023-11-10_Dan Acura
+    patch:   'pp' → 'prj'
+  BitDefender 1Pass
+    patch:   '1Pass' → '1pass'
+  Company Hypothesis Template xlsx
+    patch:   '2020-12 SmartScale' → '2020-06 OpenBricks'
+  Mastadon
+    patch:   '1Pass' → '1pass'
+  Audi A4 1Pass
+    patch:   '1Pass' → '1pass'
+  DocUSign 1Pass
+    patch:   '1Pass' → '1pass'
+  Forwardism markdown
+    patch:   'EduCorp markdown' → 'EduCorp'
+  README markdown
+    patch:   'lex-lexlang' → 'HookAnchor'
+  make_miss_dataset
+    patch:   'alg2' → '2025 Alg2'
+  Instacart 1Pass
+    patch:   '1Pass' → '1pass'
+  Kayak 1Pass
+    patch:   '1Pass' → '1pass'
+  EventBright 1Pass
+    patch:   '1Pass' → '1pass'
+  021 Detail Design
+    patch:   'forum' → '2007-01 Forum'
+  MicrosoftLive 1Pass
+    patch:   '1Pass' → '1pass'
+  lex_blank html
+    patch:   'lex-lexlang' → 'UF-OLD'
+  Heroku 1Pass
+    patch:   '1Pass' → '1pass'
+  NYtimes 1Pass
+    patch:   '1Pass' → '1pass'
+  EduCorp Supplement html
+    patch:   'EduCorp markdown' → 'EduCorp'
+  WebEx 1Pass
+    patch:   '1Pass' → '1pass'
+  Atlassian 1Pass
+    patch:   '1Pass' → '1pass'
+  Wikipedia 1Pass
+    patch:   '1Pass' → '1pass'
+  HomeDepot 1Pass
+    patch:   '1Pass' → '1pass'
+  RENAME_FEATURE
+    patch:   'x_ha' → 'HookAnchor'
+  WilliamsSonoma 1Pass
+    patch:   '1Pass' → '1pass'
+  Walgreens 1Pass
+    patch:   '1Pass' → '1pass'
+  SchwabPersonal 1Pass
+    patch:   '1Pass' → '1pass'
+  MacUpdate 1Pass
+    patch:   '1Pass' → '1pass'
+  Time Tracker
+    patch:   'hack' → 'SYS Hacks'
+  MED VO2Max
+    patch:   'MED Doctors' → 'MED Measurements'
+  Zazzle 1Pass
+    patch:   '1Pass' → '1pass'
+  Mulberries 1Pass
+    patch:   '1Pass' → '1pass'
+  Phone Google Voice
+    patch:   'phone' → 'Phone'
+  Fiverr 1Pass
+    patch:   '1Pass' → '1pass'
+  Phone -old-
+    patch:   'Phone markdown' → 'Phone'
+  ghana-tomatoes-sustainability-14-01436-v2
+    patch:   'EduCorp markdown' → 'EduCorp'
+  Calendly 1Pass
+    patch:   '1Pass' → '1pass'
+  Highbrow Productivity
+    patch:   'Highbrow markdown' → 'Highbrow'
+  Equifax 1Pass
+    patch:   '1Pass' → '1pass'
+  Sophos 1Pass
+    patch:   '1Pass' → '1pass'
+  GLGresearch 1Pass
+    patch:   '1Pass' → '1pass'
+  Dropbox 1Pass
+    patch:   '1Pass' → '1pass'
+  AzureStandard 1Pass
+    patch:   '1Pass' → '1pass'
+  Zoom 1Pass
+    patch:   '1Pass' → '1pass'
+  JetBlue 1Pass
+    patch:   '1Pass' → '1pass'
+  Copy of Exponential Bootstrapping
+    patch:   'EduCorp markdown' → 'EduCorp'
+  030 LATER
+    patch:   'forum' → '2007-01 Forum'
+  Niche 1Pass
+    patch:   '1Pass' → '1pass'
+  DigiStamp 1Pass
+    patch:   '1Pass' → '1pass'
+  online.dmv.dc.gov_Common_GeneralPrint
+    patch:   'pp' → 'prj'
+  GEICO 1Pass
+    patch:   '1Pass' → '1pass'
+  HELP
+    patch:   'x_ha' → 'HookAnchor'
+  MorningStar 1Pass
+    patch:   '1Pass' → '1pass'
+  BitBucket 1Pass
+    patch:   '1Pass' → '1pass'
+  Osmo 1Pass
+    patch:   '1Pass' → '1pass'
+  Logitech 1Pass
+    patch:   '1Pass' → '1pass'
+  _2024-10-27 Bill Of Sale
+    patch:   'prj markdown' → 'prj'
+  Trello 1Pass
+    patch:   '1Pass' → '1pass'
+  Greenhouse Farming
+    patch:   'EduCorp markdown' → 'EduCorp'
+  Zapier 1Pass
+    patch:   '1Pass' → '1pass'
+  uniform2_example_script html
+    patch:   'lex-lexlang' → 'UF-OLD'
+  KickStarter 1Pass
+    patch:   '1Pass' → '1pass'
+  DominosPizza 1Pass
+    patch:   '1Pass' → '1pass'
+  WellsFargo 1Pass
+    patch:   '1Pass' → '1pass'
+  Square 1Pass
+    patch:   '1Pass' → '1pass'
+  Original BB Algorithms
+    patch:   'alg2' → '2025 Alg2'
+  Limited Power Of Attorney
+    patch:   'pp' → 'prj'
+  SutterHealth 1Pass
+    patch:   '1Pass' → '1pass'
+  EduCorp pdf
+    patch:   'EduCorp markdown' → 'EduCorp'
+  EduCorp docx
+    patch:   'EduCorp markdown' → 'EduCorp'
+  AllState 1Pass
+    patch:   '1Pass' → '1pass'
+  WebMD 1Pass
+    patch:   '1Pass' → '1pass'
+  005 Forum Mechanics markdown
+    patch:   'forum' → '2007-01 Forum'
+  configuration markdown
+    patch:   'x_ha' → 'HookAnchor'
+  ~$Exponential Edu Corp
+    patch:   'EduCorp markdown' → 'EduCorp'
+  LibraryThing 1Pass
+    patch:   '1Pass' → '1pass'
+  Phone-old-
+    patch:   'Phone markdown' → 'Phone'
+  Lyft 1Pass
+    patch:   '1Pass' → '1pass'
+  Substack 1Pass
+    patch:   '1Pass' → '1pass'
+  Bright Wheel
+    patch:   '1Pass' → '1pass'
+  Copy of Exponential_Aid
+    patch:   'EduCorp markdown' → 'EduCorp'
+  Monoprice 1Pass
+    patch:   '1Pass' → '1pass'
+  RoboRock 1Pass
+    patch:   '1Pass' → '1pass'
+  Toggl 1Pass
+    patch:   '1Pass' → '1pass'
+  Quora 1Pass
+    patch:   '1Pass' → '1pass'
+  WorkFlowy 1Pass
+    patch:   '1Pass' → '1pass'
+  Pzizz 1Pass
+    patch:   '1Pass' → '1pass'
+  Mission2024
+    patch:   'Mission markdown' → 'Mission'
+  Yahoo 1Pass
+    patch:   '1Pass' → '1pass'
+  EduCorp Supplement
+    patch:   'EduCorp markdown' → 'EduCorp'
+  Weee 1Pass
+    patch:   '1Pass' → '1pass'
+  CLAUDE markdown
+    patch:   'prj' → 'dp'
+  InsightTimer 1Pass
+    patch:   '1Pass' → '1pass'
+  Rinse 1Pass
+    patch:   '1Pass' → '1pass'
+  004 UX Actions
+    patch:   'forum' → '2007-01 Forum'
+  flowers
+    patch:   '1Pass' → '1pass'
+  FileThis 1Pass
+    patch:   '1Pass' → '1pass'
+  JAVASCRIPT_API
+    patch:   'x_ha' → 'HookAnchor'
+  Meta List Codes
+    patch:   'Meta markdown' → 'Meta'
+  OnePeloton 1Pass
+    patch:   '1Pass' → '1pass'
+  README markdown
+    patch:   'lex-lexlang' → 'ctrl code'
+  groq
+    patch:   'groq' → 'Groq'
+  URL_HANDLER_ARCHITECTURE
+    patch:   'x_ha' → 'HookAnchor'
+  UPS 1Pass
+    patch:   '1Pass' → '1pass'
+  019 NodeBB Integration
+    patch:   'forum' → '2007-01 Forum'
+  Dir
+    flags:   'U' → 'U,A'
+  Exponential Aid ppt
+    patch:   'EduCorp markdown' → 'EduCorp'
+  BUILD_DISTRIBUTION
+    patch:   'x_ha' → 'HookAnchor'
+  G2 1Pass
+    patch:   '1Pass' → '1pass'
+  Coursera 1Pass
+    patch:   '1Pass' → '1pass'
+  gOBLINGER 1Pass
+    patch:   '1Pass' → '1pass'
+  RocketMortgage 1Pass
+    patch:   '1Pass' → '1pass'
+  FitBit 1Pass
+    patch:   '1Pass' → '1pass'
+  Exponential_Aid
+    patch:   'EduCorp markdown' → 'EduCorp'
+  gAcctRoot 1Pass
+    patch:   '1Pass' → '1pass'
+  DAT_structure
+    patch:   'alg2' → '2025 Alg2'
+  LoveEvery 1Pass
+    patch:   '1Pass' → '1pass'
+  DAT
+    patch:   'hack' → 'SYS Hacks'
+  CraigsList 1Pass
+    patch:   '1Pass' → '1pass'
+  SciHub 1Pass
+    patch:   '1Pass' → '1pass'
+  MyChart 1Pass
+    patch:   '1Pass' → '1pass'
+  ReadWise 1Pass
+    patch:   '1Pass' → '1pass'
+  iStatsMenu 1Pass
+    patch:   '1Pass' → '1pass'
+  Auth0 1Pass
+    patch:   '1Pass' → '1pass'
+  installer-prd
+    patch:   'x_ha' → 'HookAnchor'
+  Meta Proj
+    patch:   'Meta markdown' → 'Meta'
+  HubSpot 1Pass
+    patch:   '1Pass' → '1pass'
+  LastFM 1Pass
+    patch:   '1Pass' → '1pass'
+  EduCorp Tweaks
+    patch:   'EduCorp markdown' → 'EduCorp'
+  q2
+    patch:   'orphans' → 'Pln'
+  uniform7_goals html
+    patch:   'lex-lexlang' → 'UF-OLD'
+  TikTok 1Pass
+    patch:   '1Pass' → '1pass'
+  TEMPLATES_AND_SCRIPTING
+    patch:   'x_ha' → 'HookAnchor'
+  EduCorp Types
+    patch:   'EduCorp markdown' → 'EduCorp'
+  HookAnchor_Action_Types
+    patch:   'x_ha' → 'HookAnchor'
+  EduCorp Principles
+    patch:   'EduCorp markdown' → 'EduCorp'
+  RememberTheMilk 1Pass
+    patch:   '1Pass' → '1pass'
+  Thistle
+    patch:   '1Pass' → '1pass'
+  Delta 1Pass
+    patch:   '1Pass' → '1pass'
+  Gist 1Pass
+    patch:   '1Pass' → '1pass'
+  OCR System
+    patch:   'alg2' → '2025 Alg2'
+  Certificate of Title Temp Tag Application 08-15-2013 - English FILLABLE
+    patch:   'pp' → 'prj'
+  EduCorpDesign
+    patch:   'EduCorp markdown' → 'EduCorp'
+  Dan and Qingling PWA - 3.7.24
+    patch:   'FIN Retire markdown' → 'FIN Retire'
+  010 Data Ontology
+    patch:   'forum' → '2007-01 Forum'
+  Fandango 1Pass
+    patch:   '1Pass' → '1pass'
+  002 User Stories pdf
+    patch:   'forum' → '2007-01 Forum'
+  ContainerStore 1Pass
+    patch:   '1Pass' → '1pass'
+  idp22
+    patch:   'EduCorp markdown' → 'EduCorp'
+  popup-system
+    patch:   'x_ha' → 'HookAnchor'
+  Twitter 1Pass
+    patch:   '1Pass' → '1pass'
+  EduCorp Supplement pdf
+    patch:   'EduCorp markdown' → 'EduCorp'
+  POPUP_VISIBILITY_ARCHITECTURE
+    patch:   'x_ha' → 'HookAnchor'
+  SnapChat 1Pass
+    patch:   '1Pass' → '1pass'
+  CLAUDE markdown
+    patch:   'prj' → 'texter'
+  Forum-Old
+    patch:   'forum' → '2007-01 Forum'
+  Intelius 1Pass
+    patch:   '1Pass' → '1pass'
+  SFchronical 1Pass
+    patch:   '1Pass' → '1pass'
+  Meta Coms
+    patch:   'Meta markdown' → 'Meta'
+  Ebay 1Pass
+    patch:   '1Pass' → '1pass'
+  SCR Note
+    patch:   'SCRatch markdown' → 'SCRatch'
+  2024-05 Sell Acura
+    patch:   'pp' → 'prj'
+  AI Sys Safety
+    patch:   'agi safety' → '2025 AI Sys Safety'
+  Chewy 1Pass
+    patch:   '1Pass' → '1pass'
+  005 Forum Mechanics
+    patch:   'forum' → '2007-01 Forum'
+  WeChat 1Pass
+    patch:   '1Pass' → '1pass'
+  Xfinity 1Pass
+    patch:   '1Pass' → '1pass'
+  Glass Door 1Pass
+    patch:   '1Pass' → '1pass'
+  012 Proprietary Data Structures and Event Store
+    patch:   'forum' → '2007-01 Forum'
+  Arxiv 1Pass
+    patch:   '1Pass' → '1pass'
+  Notes markdown
+    patch:   'Note markdown' → 'Note'
+  ObsPublish 1Pass
+    patch:   '1Pass' → '1pass'
+  Expedia 1Pass
+    patch:   '1Pass' → '1pass'
+  013 APIs and Key Methods
+    patch:   'forum' → '2007-01 Forum'
+  AppleID 1Pass
+    patch:   '1Pass' → '1pass'
+  Kaggle 1Pass
+    patch:   '1Pass' → '1pass'
+  README markdown
+    patch:   'lex-lexlang' → 'HookAnchor'
+  004 UX Actions pdf
+    patch:   'forum' → '2007-01 Forum'
+  09.09  Exponential Edu Corp
+    patch:   'EduCorp markdown' → 'EduCorp'
+  Junk
+    patch:   'SCRatch markdown' → 'SCRatch'
+  Meta Work
+    patch:   'Meta markdown' → 'Meta'
+  040 V2 UX
+    patch:   'forum' → '2007-01 Forum'
+  LegendaryWhitetails 1Pass
+    patch:   '1Pass' → '1pass'
+  SFMTA 1Pass
+    patch:   '1Pass' → '1pass'
+  RocketMoney 1Pass
+    patch:   '1Pass' → '1pass'
+  CARFAX Vehicle History Report
+    patch:   'pp' → 'prj'
+  HuggingFace 1Pass
+    patch:   '1Pass' → '1pass'
+  README markdown
+    patch:   'lex-lexlang' → 'AI Job Search'
+  CLAUDE markdown
+    patch:   'prj' → '2025 Alg2'
+  Pobox 1Pass
+    patch:   '1Pass' → '1pass'
+  LinkedIn 1Pass
+    patch:   '1Pass' → '1pass'
+  Target 1Pass
+    patch:   '1Pass' → '1pass'
+  Plex 1Pass
+    patch:   '1Pass' → '1pass'
+  BillPay Personal
+    patch:   '1Pass' → '1pass'
+  DEVELOPMENT_ENV
+    patch:   'x_ha' → 'HookAnchor'
+  Sonic 1Pass
+    patch:   '1Pass' → '1pass'
+  DMVVehicleRenewal 1Pass
+    patch:   '1Pass' → '1pass'
+  Vanguard 1Pass
+    patch:   '1Pass' → '1pass'
+  alg2_state
+    patch:   'alg2' → '2025 Alg2'
+  supervisor
+    patch:   'x_ha' → 'HookAnchor'
+  Mint 1Pass
+    patch:   '1Pass' → '1pass'
+  CLAUDE markdown
+    patch:   'prj' → '2025-06 web'
+  tmux_session_output
+    patch:   'alg2' → '2025 Alg2'
+  Uber 1Pass
+    patch:   '1Pass' → '1pass'
+  Pandora 1Pass
+    patch:   '1Pass' → '1pass'
+  Gallery System
+    patch:   'alg2' → '2025 Alg2'
+  Edu Outtakes
+    patch:   'EduCorp markdown' → 'EduCorp'
+  ReadMe rtf
+    patch:   '' → 'orphans'
+  Company Hypothesis Template xlsx
+    patch:   '2020-12 SmartScale' → '2020-09 CtrlSaaS'
+  ResellerRating 1Pass
+    patch:   '1Pass' → '1pass'
+  001 README
+    patch:   'forum' → '2007-01 Forum'
+  ShortForm 1Pass
+    patch:   '1Pass' → '1pass'
+  API markdown
+    patch:   'texter markdown' → 'texter'
+  Meta Self
+    patch:   'Meta markdown' → 'Meta'
+  Redeemer 1Pass
+    patch:   '1Pass' → '1pass'
+  CLAUDE markdown
+    patch:   'prj' → 'NJ Manual Search'
+  uniform3_live html
+    patch:   'lex-lexlang' → 'UF-OLD'
+  Exponential_Aid doc
+    patch:   'EduCorp markdown' → 'EduCorp'
+  MED Blood Pressure
+    patch:   'MED Doctors' → 'MED Measurements'
+  CLAUDE markdown
+    patch:   'prj' → '2025-06 Doctor Search'
+  old
+    patch:   'orphans' → 'UF-OLD'
+  019 NodeBB Integration markdown
+    patch:   'forum' → '2007-01 Forum'
+  Temporal Difference Learning
+    patch:   'RR ML' → 'ML Alg'
+  EduCorp Billet Assessment Matrix (BAM)
+    patch:   'EduCorp markdown' → 'EduCorp'
+  _2024-10-27 Limited Power Of Attorney
+    patch:   'pp' → 'prj'
+  Starbucks 1Pass
+    patch:   '1Pass' → '1pass'
+  Reddit 1Pass
+    patch:   '1Pass' → '1pass'
+  ObsForum 1Pass
+    patch:   '1Pass' → '1pass'
+  Codility 1Pass
+    patch:   '1Pass' → '1pass'
+  Exponential Aid
+    patch:   'EduCorp markdown' → 'EduCorp'
+  Meta KMR
+    patch:   'Meta markdown' → 'Meta'
+  EV Log
+    patch:   'Meta markdown' → 'Meta'
+  ZipCar 1Pass
+    patch:   '1Pass' → '1pass'
+  ~$Edu Corp
+    patch:   'EduCorp markdown' → 'EduCorp'
+  SiriusXM 1Pass
+    patch:   '1Pass' → '1pass'
+  Pinnterest 1Pass
+    patch:   '1Pass' → '1pass'
+  CLAUDE markdown
+    patch:   'prj' → '2025-06 LinkedIn Contacts Merge'
+  API_REFERENCE
+    patch:   'Attach' → 'kmr'
+  HashiCorp 1Pass
+    patch:   '1Pass' → '1pass'
+  Paprika 1Pass
+    patch:   '1Pass' → '1pass'
+  pq
+    patch:   'pp' → 'prj'
+  GoldStar 1Pass
+    patch:   '1Pass' → '1pass'
+  EduCorp pdf
+    patch:   'EduCorp markdown' → 'EduCorp'
+  Jupiter 1Pass
+    patch:   '1Pass' → '1pass'
+  uShip 1Pass
+    patch:   '1Pass' → '1pass'
+  MossAdams 1Pass
+    patch:   '1Pass' → '1pass'
+  CLAUDE markdown
+    patch:   'prj' → 'tracker'
+  012 Note Types
+    patch:   'forum' → '2007-01 Forum'
+  CLAUDE markdown
+    patch:   'prj' → 'Spot'
+  gFLT 1Pass
+    patch:   '1Pass' → '1pass'
+  Meredith Bates - Delta Education Partners Concept Note - v.7 - Jun2018
+    patch:   'EduCorp markdown' → 'EduCorp'
+  DOL 1Pass
+    patch:   '1Pass' → '1pass'
+  PGE 1Pass
+    patch:   '1Pass' → '1pass'
+  WSJ 1Pass
+    patch:   '1Pass' → '1pass'
+  Dan Oblinger docx
+    patch:   'RES' → '@Dan Fine'
+  GoodReads 1Pass
+    patch:   '1Pass' → '1pass'
+  CV OLDTeam Planning
+    patch:   'CV markdown' → 'CV'
+  Jstor 1Pass
+    patch:   '1Pass' → '1pass'
+  DisneyPlus 1Pass
+    patch:   '1Pass' → '1pass'
+  Pocket 1Pass
+    patch:   '1Pass' → '1pass'
+  HISTORY_DESIGN
+    patch:   'Hook Anchor' → 'HookAnchor'
+  002 User Stories
+    patch:   'forum' → '2007-01 Forum'
+  pickle_structure
+    patch:   'alg2' → '2025 Alg2'
+  EduCorp White Paper
+    patch:   'EduCorp markdown' → 'EduCorp'
+  Buffer 1Pass
+    patch:   '1Pass' → '1pass'
+  CLAUDE markdown
+    patch:   'prj' → 'mddb-module'
+  _2024-10-27 Acura Title 1
+    patch:   'pp' → 'prj'
+  EduCorp Supplement Source
+    patch:   'EduCorp markdown' → 'EduCorp'
+  Asana 1Pass
+    patch:   '1Pass' → '1pass'
+  CLAUDE markdown
+    patch:   'prj' → 'km_cmd'
+  Wufoo 1Pass
+    patch:   '1Pass' → '1pass'
+  gELI 1Pass
+    patch:   '1Pass' → '1pass'
+  ThumbTack 1Pass
+    patch:   '1Pass' → '1pass'
+  RottenTomatoes 1Pass
+    patch:   '1Pass' → '1pass'
+  Instapaper 1Pass
+    patch:   '1Pass' → '1pass'
+  dispatcher
+    patch:   'x_ha' → 'HookAnchor'
+  Forwardism html
+    patch:   'gitproj' → 'EduCorp'
+  AirBnB 1Pass
+    patch:   '1Pass' → '1pass'
+  Company Hypothesis Template xlsx
+    patch:   '2020-12 SmartScale' → '2020-12 MKT'
+  _2024-10-27LimitedPowerOfAttorney
+    patch:   'pp' → 'prj'
+  Smore 1Pass
+    patch:   '1Pass' → '1pass'
+  RainMachine 1Pass
+    patch:   '1Pass' → '1pass'
+  Greenhouse Farming Data markdown
+    patch:   'EduCorp markdown' → 'EduCorp'
+  Forwardism
+    patch:   'EduCorp markdown' → 'EduCorp'
+  hack
+    patch:   'orphans' → 'Pln'
+  Proof Verification Instructions
+    patch:   'pp' → 'prj'
+  003 UX Design pdf
+    patch:   'forum' → '2007-01 Forum'
+  Skype 1Pass
+    patch:   '1Pass' → '1pass'
+  IKEA 1Pass
+    patch:   '1Pass' → '1pass'
+  CrunchBase 1Pass
+    patch:   '1Pass' → '1pass'
+  Output Format
+    patch:   'forum' → '2007-01 Forum'
+  Paypal 1Pass
+    patch:   '1Pass' → '1pass'
+  Exponential Edu Corp copy
+    patch:   'EduCorp markdown' → 'EduCorp'
+  2019.04 old Scratch
+    patch:   'SCRatch markdown' → 'SCRatch'
+  Meta Plan
+    patch:   'Meta markdown' → 'Meta'
+  Patreon 1Pass
+    patch:   '1Pass' → '1pass'
+  Kaiser 1Pass
+    patch:   '1Pass' → '1pass'
+  README markdown
+    patch:   'lex-lexlang' → '2025 Online Presence'
+  Instagram 1Pass
+    patch:   '1Pass' → '1pass'
+  Copy of Exponential_Aid doc
+    patch:   'EduCorp markdown' → 'EduCorp'
+  PrintingCenterUSA 1Pass
+    patch:   '1Pass' → '1pass'
+  SunsetScaveger 1Pass
+    patch:   '1Pass' → '1pass'
+  uniform7_unit_calculus html
+    patch:   'lex-lexlang' → 'UF-OLD'
+  Company Hypothesis Template xlsx
+    patch:   '2020-12 SmartScale' → '2016-00 TreeSheet'
+  dealer_PoA
+    patch:   'pp' → 'prj'
+  FasTrak 1Pass
+    patch:   '1Pass' → '1pass'
+  001 README markdown
+    patch:   'forum' → '2007-01 Forum'
+  IRS 1Pass
+    patch:   '1Pass' → '1pass'
+  Thermomix 1Pass
+    patch:   '1Pass' → '1pass'
+  EduCorp Billet Assessment Matrix -- BAM
+    patch:   'EduCorp markdown' → 'EduCorp'
+  Uline 1Pass
+    patch:   '1Pass' → '1pass'
+  Journaling
+    patch:   'Meta markdown' → 'Meta'
+  @Meredith Bates
+    patch:   'EduCorp markdown' → 'EduCorp'
+  WeightGuru 1Pass
+    patch:   '1Pass' → '1pass'
+  KeyboardMaestroForum 1Pass
+    patch:   '1Pass' → '1pass'
+  SouthWest 1Pass
+    patch:   '1Pass' → '1pass'
+  Meta Journaling
+    patch:   'Meta markdown' → 'Meta'
+  uniform3_spec html
+    patch:   'lex-lexlang' → 'UF-OLD'
+  BoardGameArea 1Pass
+    patch:   '1Pass' → '1pass'
+  BigCity 1Pass
+    patch:   '1Pass' → '1pass'
+  09.09  bad  Exponential Edu Corp
+    patch:   'EduCorp markdown' → 'EduCorp'
+  TripIt 1Pass
+    patch:   '1Pass' → '1pass'
+  NBA Game Run
+    patch:   'CV markdown' → 'CV'
+  Meetup 1Pass
+    patch:   '1Pass' → '1pass'
+  Plaxo 1Pass
+    patch:   '1Pass' → '1pass'
+  Highbrow 1Pass
+    patch:   '1Pass' → '1pass'
+  AlaskaAir 1Pass
+    patch:   '1Pass' → '1pass'
+  Chase 1Pass
+    patch:   '1Pass' → '1pass'
+  Twilio 1Pass
+    patch:   '1Pass' → '1pass'
+  PunchBowl 1Pass
+    patch:   '1Pass' → '1pass'
+  Lowes 1Pass
+    patch:   '1Pass' → '1pass'
+  Phone
+    patch:   'pp' → 'prj'
+  iCloud 1Pass
+    patch:   '1Pass' → '1pass'
+  Meta Sys
+    patch:   'Meta markdown' → 'Meta'
+  Feedly 1Pass
+    patch:   '1Pass' → '1pass'
+  PivotalTracker 1Pass
+    patch:   '1Pass' → '1pass'
+  ATT 1Pass
+    patch:   '1Pass' → '1pass'
+  uniform2_example_syntax html
+    patch:   'lex-lexlang' → 'UF-OLD'
+  ecard
+    patch:   '1Pass' → '1pass'
+  Gov List of Job Types
+    patch:   'EduCorp markdown' → 'EduCorp'
+  PaperlessPost 1Pass
+    patch:   '1Pass' → '1pass'
+  2024-12-00 OCRv3
+    patch:   'RES' → 'Star'
+  GreatSchools 1Pass
+    patch:   '1Pass' → '1pass'
+  Command Inference
+    patch:   'x_ha' → 'HookAnchor'
+  Gusto 1Pass
+    patch:   '1Pass' → '1pass'
+  ReserachGate 1Pass
+    patch:   '1Pass' → '1pass'
+  SchwabJoint 1Pass
+    patch:   '1Pass' → '1pass'
+  MerrilLynch 1Pass
+    patch:   '1Pass' → '1pass'
+  Neural
+    patch:   'RR ML' → 'RR DL'
+  Marriott 1Pass
+    patch:   '1Pass' → '1pass'
+  Safeway 1Pass
+    patch:   '1Pass' → '1pass'
+  JetBrains 1Pass
+    patch:   '1Pass' → '1pass'
+  Cash 1Pass
+    patch:   '1Pass' → '1pass'
+  Etsy 1Pass
+    patch:   '1Pass' → '1pass'
+  z_archive html
+    patch:   'lex-lexlang' → 'UF-OLD'
+  _2024-10-27BillOfSale
+    patch:   'pp' → 'prj'
+  Citi 1Pass
+    patch:   '1Pass' → '1pass'
+  OurPact 1Pass
+    patch:   '1Pass' → '1pass'
+  ycNews 1Pass
+    patch:   '1Pass' → '1pass'
+  MED Measure
+    patch:   'MED Doctors' → 'MED Measurements'
+  Fully 1Pass
+    patch:   '1Pass' → '1pass'
+  _2024-10-27 Acura Title 2
+    patch:   'pp' → 'prj'
+  TechCrunch 1Pass
+    patch:   '1Pass' → '1pass'
+  Jira 1pass
+    patch:   '1Pass' → '1pass'
+  Exponential Aid-old
+    patch:   'EduCorp markdown' → 'EduCorp'
+  Ask Safety Systems Approach
+    patch:   'Ask Safety markdown' → 'Ask'
+  LastPass 1Pass
+    patch:   '1Pass' → '1pass'
+  HELP_reference
+    patch:   'x_ha' → 'HookAnchor'
+  MyDomain 1Pass
+    patch:   '1Pass' → '1pass'
+  PASSWORDS 1Pass
+    patch:   '1Pass' → '1pass'
+  OFB.net 1Pass
+    patch:   '1Pass' → '1pass'
+  ~$Forum
+    patch:   'forum' → '2007-01 Forum'
+  UberEats 1Pass
+    patch:   '1Pass' → '1pass'
+  NextDoor 1Pass
+    patch:   '1Pass' → '1pass'
+  WebsturantStore 1Pass
+    patch:   '1Pass' → '1pass'
+  API_REFERENCE markdown
+    patch:   'x_ha' → 'HookAnchor'
+  CLAUDE markdown
+    patch:   'prj' → 'binproj'
+  020 NodeBB Design
+    patch:   'forum' → '2007-01 Forum'
+  License
+    patch:   '' → 'orphans'
+  Greenhouse Farming Data
+    patch:   'EduCorp markdown' → 'EduCorp'
+  Meta Group
+    patch:   'Meta markdown' → 'Meta'
+  Noterize 1Pass
+    patch:   '1Pass' → '1pass'
+  Grammarly 1Pass
+    patch:   '1Pass' → '1pass'
+  command-system
+    patch:   'x_ha' → 'HookAnchor'
+  Think.org 1Pass
+    patch:   '1Pass' → '1pass'
+  Simpler 1Pass
+    patch:   '1Pass' → '1pass'
+  CLAUDE markdown
+    patch:   'prj' → 'anchor'
+  Union 1Pass
+    patch:   '1Pass' → '1pass'
+  Upwork 1Pass
+    patch:   '1Pass' → '1pass'
+
+➖ Removed Commands (1066):
+  SV Strat (SV:anchor)
+  AssemblyAI (NJDB:anchor)
+  Highbrow markdown (Courses:anchor)
+  2011-09 Startup Ideas (Idea:anchor)
+  Alibaba (NJDB:anchor)
+  Data Games (Data:notion)
+  @Dexafit (Org:anchor)
+  Findem (NJDB:anchor)
+  phone (orphans:anchor)
+  1Pass (Local:anchor)
+  2023 Least Commitment Model For CV Pipe (ww:anchor)
+  Groq markdown (NJDB:anchor)
+  Task Page System (Hook System:markdown)
+  How to_ Hire Developers via Inbound Method (MyMgr:doc)
+  Archive (Log markdown:anchor)
+  RR AI (RR:anchor)
+  Hotels (Misc:anchor)
+  2023 Volleyball SV Product (ww:anchor)
+  2023 Bugs  Flow (ww:anchor)
+  2021-06-00 Brain3 (Brain:anchor)
+  ... and 1046 more
+
+➕ Added Commands (1024):
+  @Dexafit (Org:markdown)
+  KM Global 2 Local (Hook System:markdown)
+  lghub App (orphans:app)
+  2023 SV Notes (ww:markdown)
+  Inworld AI (NJDB:markdown)
+  uniform2_code.html html (lex_lexlang:doc)
+  2022-03-00 - Robotics_Fireside (Presentations:markdown)
+  MGR Contracts (MGR:markdown)
+  CV Notion (CV:notion)
+  ExcalidrawZ App (orphans:app)
+  2020-12 SmartScale (Idea:markdown)
+  AlienBiology (gitproj:markdown)
+  AIS (AI Areas:alias)
+  Karabiner-EventViewer App (orphans:app)
+  _lexlang2_sources_py txt (lex_lexlang:doc)
+  SV Wings (SV:markdown)
+  CV Jira Page (CV:work)
+  @LinkedIn (Org:markdown)
+  AMA (@Amazon:markdown)
+  2023 Brians Birds Eye (ww:markdown)
+  ... and 1004 more
+
+✅ Legacy load and compare complete!

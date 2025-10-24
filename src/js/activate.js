@@ -101,7 +101,7 @@ function openInObsidian(anchorPath, anchorName) {
     // Note: This assumes the anchor is within the Obsidian vault
     // Users can customize this logic for their setup
     
-    const vaultRoot = getObsidianVaultPath();
+    const vaultRoot = getConfigString("launcher_settings.obsidian_vault_path");
     
     try {
         // Calculate relative path from vault root

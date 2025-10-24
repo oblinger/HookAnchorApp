@@ -366,7 +366,46 @@ impl TemplateContext {
         // Execute the JavaScript code with context for better error reporting
         crate::js::execute_with_context(&js_code, &format!("TEMPLATE_EXPANSION({})", expr))
     }
-    
+
+    /// Helper function to create a command object in JavaScript
+    /// Used for selected, last_executed, and last_anchor objects
+    /// All command objects have the same fields: name, path, arg, patch, folder*, action, flags
+    fn create_command_object(
+        &self,
+        var_name: &str,
+        prefix: &str,
+        description: &str
+    ) -> String {
+        let mut js = String::new();
+
+        let name = self.variables.get(&format!("_{}_name", prefix)).cloned().unwrap_or_else(String::new);
+        let folder = self.variables.get(&format!("_{}_folder", prefix)).cloned().unwrap_or_else(String::new);
+
+        js.push_str(&format!("const {} = Object.create(null, {{\n", var_name));
+        js.push_str(&format!("  name: {{ value: {:?}, enumerable: true }},\n", name));
+        js.push_str(&format!("  path: {{ value: {:?}, enumerable: true }},\n", self.variables.get(&format!("_{}_path", prefix)).unwrap_or(&String::new())));
+        js.push_str(&format!("  arg: {{ value: {:?}, enumerable: true }},\n", self.variables.get(&format!("_{}_path", prefix)).unwrap_or(&String::new())));
+        js.push_str(&format!("  patch: {{ value: {:?}, enumerable: true }},\n", self.variables.get(&format!("_{}_patch", prefix)).unwrap_or(&String::new())));
+
+        // Add folder with getter that throws error if empty
+        js.push_str("  folder: {\n");
+        js.push_str("    enumerable: true,\n");
+        js.push_str("    get: function() {\n");
+        js.push_str(&format!("      const folderValue = {:?};\n", folder));
+        js.push_str("      if (!folderValue || folderValue === '') {\n");
+        js.push_str(&format!("        throw new Error('{} \"' + {:?} + '\" does not have a folder context');\n", description, name));
+        js.push_str("      }\n");
+        js.push_str("      return folderValue;\n");
+        js.push_str("    }\n");
+        js.push_str("  },\n");
+
+        js.push_str(&format!("  action: {{ value: {:?}, enumerable: true }},\n", self.variables.get(&format!("_{}_action", prefix)).unwrap_or(&String::new())));
+        js.push_str(&format!("  flags: {{ value: {:?}, enumerable: true }}\n", self.variables.get(&format!("_{}_flags", prefix)).unwrap_or(&String::new())));
+        js.push_str("});\n");
+
+        js
+    }
+
     /// Build JavaScript context with all template variables as objects
     fn build_js_context(&self) -> String {
         let mut context = String::new();
@@ -392,31 +431,8 @@ impl TemplateContext {
             context.push_str("const arg = '';\n");
         }
 
-        // Create selected object with getter for folder that throws on empty
-        let selected_name = self.variables.get("_selected_name").cloned().unwrap_or_else(String::new);
-        let selected_folder = self.variables.get("_selected_folder").cloned().unwrap_or_else(String::new);
-        
-        context.push_str("const selected = Object.create(null, {\n");
-        context.push_str(&format!("  name: {{ value: {:?}, enumerable: true }},\n", selected_name));
-        context.push_str(&format!("  path: {{ value: {:?}, enumerable: true }},\n", self.variables.get("_selected_path").unwrap_or(&String::new())));
-        context.push_str(&format!("  arg: {{ value: {:?}, enumerable: true }},\n", self.variables.get("_selected_path").unwrap_or(&String::new())));
-        context.push_str(&format!("  patch: {{ value: {:?}, enumerable: true }},\n", self.variables.get("_selected_patch").unwrap_or(&String::new())));
-        
-        // Add folder with getter that throws error if empty
-        context.push_str("  folder: {\n");
-        context.push_str("    enumerable: true,\n");
-        context.push_str("    get: function() {\n");
-        context.push_str(&format!("      const folderValue = {:?};\n", selected_folder));
-        context.push_str("      if (!folderValue || folderValue === '') {\n");
-        context.push_str(&format!("        throw new Error('Selected command \"' + {:?} + '\" does not have a folder context');\n", selected_name));
-        context.push_str("      }\n");
-        context.push_str("      return folderValue;\n");
-        context.push_str("    }\n");
-        context.push_str("  },\n");
-        
-        context.push_str(&format!("  action: {{ value: {:?}, enumerable: true }},\n", self.variables.get("_selected_action").unwrap_or(&String::new())));
-        context.push_str(&format!("  flags: {{ value: {:?}, enumerable: true }}\n", self.variables.get("_selected_flags").unwrap_or(&String::new())));
-        context.push_str("});\n");
+        // Create selected command object
+        context.push_str(&self.create_command_object("selected", "selected", "Selected command"));
         
         // Create date object
         let now = Local::now();
@@ -461,52 +477,11 @@ impl TemplateContext {
         context.push_str(&format!("  config_dir: {:?}\n", format!("{}/.config/hookanchor", home)));
         context.push_str("};\n");
         
-        // Create last_executed object with getter for folder that throws on empty
-        let last_name = self.variables.get("_last_executed_name").cloned().unwrap_or_else(String::new);
-        let last_folder = self.variables.get("_last_executed_folder").cloned().unwrap_or_else(String::new);
-        
-        context.push_str("const last_executed = Object.create(null, {\n");
-        context.push_str(&format!("  name: {{ value: {:?}, enumerable: true }},\n", last_name));
-        context.push_str(&format!("  path: {{ value: {:?}, enumerable: true }},\n", self.variables.get("_last_executed_path").unwrap_or(&String::new())));
-        context.push_str(&format!("  arg: {{ value: {:?}, enumerable: true }},\n", self.variables.get("_last_executed_path").unwrap_or(&String::new())));
-        context.push_str(&format!("  patch: {{ value: {:?}, enumerable: true }},\n", self.variables.get("_last_executed_patch").unwrap_or(&String::new())));
-        
-        // Add folder with getter that throws error if empty
-        context.push_str("  folder: {\n");
-        context.push_str("    enumerable: true,\n");
-        context.push_str("    get: function() {\n");
-        context.push_str(&format!("      const folderValue = {:?};\n", last_folder));
-        context.push_str("      if (!folderValue || folderValue === '') {\n");
-        context.push_str(&format!("        throw new Error('Last executed command \"' + {:?} + '\" does not have a folder context');\n", last_name));
-        context.push_str("      }\n");
-        context.push_str("      return folderValue;\n");
-        context.push_str("    }\n");
-        context.push_str("  },\n");
-        
-        context.push_str(&format!("  action: {{ value: {:?}, enumerable: true }},\n", self.variables.get("_last_executed_action").unwrap_or(&String::new())));
-        context.push_str(&format!("  flags: {{ value: {:?}, enumerable: true }}\n", self.variables.get("_last_executed_flags").unwrap_or(&String::new())));
-        context.push_str("});\n");
+        // Create last_executed command object
+        context.push_str(&self.create_command_object("last_executed", "last_executed", "Last executed command"));
 
-        // Create last_anchor object with getter for folder that throws on empty
-        let anchor_name = self.variables.get("_last_anchor_name").cloned().unwrap_or_else(String::new);
-        let anchor_folder = self.variables.get("_last_anchor_folder").cloned().unwrap_or_else(String::new);
-
-        context.push_str("const last_anchor = Object.create(null, {\n");
-        context.push_str(&format!("  name: {{ value: {:?}, enumerable: true }},\n", anchor_name));
-        context.push_str(&format!("  timestamp: {{ value: {:?}, enumerable: true }},\n", self.variables.get("_last_anchor_timestamp").unwrap_or(&String::new())));
-
-        // Add folder with getter that throws error if empty
-        context.push_str("  folder: {\n");
-        context.push_str("    enumerable: true,\n");
-        context.push_str("    get: function() {\n");
-        context.push_str(&format!("      const folderValue = {:?};\n", anchor_folder));
-        context.push_str("      if (!folderValue || folderValue === '') {\n");
-        context.push_str(&format!("        throw new Error('Last anchor \"' + {:?} + '\" does not have a folder context');\n", anchor_name));
-        context.push_str("      }\n");
-        context.push_str("      return folderValue;\n");
-        context.push_str("    }\n");
-        context.push_str("  }\n");
-        context.push_str("});\n");
+        // Create last_anchor command object (same fields as other command objects)
+        context.push_str(&self.create_command_object("last_anchor", "last_anchor", "Last anchor"));
 
         // No legacy compatibility variables needed
 

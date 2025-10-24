@@ -6,8 +6,9 @@
 //! # Available JavaScript Built-in Functions
 //!
 //! ## Logging Functions
-//! - `log(message)` - General logging output
-//! - `debug(message)` - Debug logging output  
+//! - `log(message)` - Write to log file only
+//! - `print(message)` - Print to console AND log to file
+//! - `debug(message)` - Debug logging output
 //! - `error(message)` - Error logging output
 //!
 //! ## File Operations
@@ -31,9 +32,7 @@
 //! - `parseYaml(text)` - Parse YAML text to JSON string
 //!
 //! ## Configuration Access
-//! - `getObsidianApp()` - Get configured Obsidian application name
-//! - `getObsidianVault()` - Get configured Obsidian vault name
-//! - `getObsidianVaultPath()` - Get configured Obsidian vault path
+//! - `getConfigString(path)` - Get config value by dot-separated path (e.g., "launcher_settings.obsidian_vault_path")
 //!
 //! ## Core System Primitives
 //! - `launch_app(app_name, arg)` - Launch macOS application with optional argument
@@ -213,12 +212,16 @@ pub fn execute_with_context(script: &str, context: &str) -> Result<String, Box<d
 fn setup_logging(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Error>> {
     // log(message) - General logging to file (always logs, not just in verbose mode)
     // log(msg) - Write message to HookAnchor log
+    // log(msg) - Write message to log file only
     ctx.globals().set("log", Function::new(ctx.clone(), |msg: String| {
-        // Use regular log for JavaScript - these are important user-defined logs
         crate::utils::log(&msg);
     }))?;
-    
-    // detailed_log(category, message) - Detailed logging (only in verbose mode)
+
+    // print(msg) - Print to console AND log to file (with '|' prefix)
+    ctx.globals().set("print", Function::new(ctx.clone(), |msg: String| {
+        crate::utils::print(&msg);
+    }))?;
+
     // detailedLog(category, msg) - Write categorized debug message (only when verbose logging enabled)
     ctx.globals().set("detailedLog", Function::new(ctx.clone(), |category: String, msg: String| {
         crate::utils::detailed_log(&category, &msg);
@@ -777,44 +780,43 @@ fn setup_launcher_builtins(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Erro
 /// Setup configuration access functions
 fn setup_config_access(ctx: &Ctx<'_>, config: &Config) -> Result<(), Box<dyn std::error::Error>> {
     // Get launcher settings with defaults
-    let launcher_settings = config.launcher_settings.as_ref()
-        .cloned()
-        .unwrap_or_default();
-    
-    // Clone config values for closures
-    let obsidian_app_name = launcher_settings.obsidian_app_name
-        .unwrap_or_else(|| "Obsidian".to_string());
-    let obsidian_vault_name = launcher_settings.obsidian_vault_name
-        .unwrap_or_else(|| "kmr".to_string());
-    let obsidian_vault_path = launcher_settings.obsidian_vault_path
-        .map(|ref p| crate::utils::expand_tilde(p))
-        .unwrap_or_else(|| {
-            let home = std::env::var("HOME").unwrap_or_else(|_| ".".to_string());
-            format!("{}/Documents", home)
-        });
-    let tmux_startup_command = launcher_settings.tmux_startup_command
-        .unwrap_or_else(|| "".to_string());
-    
-    let get_obsidian_app_fn = Function::new(ctx.clone(), move |_ctx: Ctx<'_>| -> rquickjs::Result<String> {
-        Ok(obsidian_app_name.clone())
-    })?;
-    
-    let get_obsidian_vault_fn = Function::new(ctx.clone(), move |_ctx: Ctx<'_>| -> rquickjs::Result<String> {
-        Ok(obsidian_vault_name.clone())
-    })?;
-    
-    let get_obsidian_vault_path_fn = Function::new(ctx.clone(), move |_ctx: Ctx<'_>| -> rquickjs::Result<String> {
-        Ok(obsidian_vault_path.clone())
-    })?;
+    // Create a single config accessor function that navigates using dot notation
+    // getConfigString("launcher_settings.obsidian_vault_path") returns the value
+    let config_clone = config.clone();
+    ctx.globals().set("getConfigString", Function::new(ctx.clone(), move |path: String| -> String {
+        // Convert config to serde_json::Value for easy navigation
+        let config_value = match serde_json::to_value(&config_clone) {
+            Ok(v) => v,
+            Err(_) => return String::new()  // Return empty on error
+        };
 
-    let get_tmux_startup_command_fn = Function::new(ctx.clone(), move |_ctx: Ctx<'_>| -> rquickjs::Result<String> {
-        Ok(tmux_startup_command.clone())
-    })?;
+        // Navigate through the path using dot notation
+        let parts: Vec<&str> = path.split('.').collect();
+        let mut current = &config_value;
 
-    ctx.globals().set("getObsidianApp", get_obsidian_app_fn)?;
-    ctx.globals().set("getObsidianVault", get_obsidian_vault_fn)?;
-    ctx.globals().set("getObsidianVaultPath", get_obsidian_vault_path_fn)?;
-    ctx.globals().set("getTmuxStartupCommand", get_tmux_startup_command_fn)?;
+        for part in &parts {
+            current = match current.get(part) {
+                Some(v) => v,
+                None => return String::new()  // Return empty if path not found
+            };
+        }
+
+        // Convert the value to a string
+        match current {
+            serde_json::Value::String(s) => {
+                // Expand tilde if this looks like a path
+                if s.starts_with('~') {
+                    crate::utils::expand_tilde(s)
+                } else {
+                    s.clone()
+                }
+            },
+            serde_json::Value::Number(n) => n.to_string(),
+            serde_json::Value::Bool(b) => b.to_string(),
+            serde_json::Value::Null => String::new(),
+            _ => String::new()  // Return empty for complex types
+        }
+    })?)?;
 
     Ok(())
 }
@@ -850,6 +852,7 @@ fn load_config_js_functions(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Err
                                 date: date || {{ YYYY: '', MM: '', DD: '' }},
                                 builtins: {{
                                     log: log,
+                                    print: print,
                                     debug: debug,
                                     error: error,
                                     readFile: readFile,
@@ -864,25 +867,22 @@ fn load_config_js_functions(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Err
                                     getExtension: getExtension,
                                     testRegex: testRegex,
                                     parseYaml: parseYaml,
-                                    getObsidianApp: getObsidianApp,
-                                    getObsidianVault: getObsidianVault,
-                                    getObsidianVaultPath: getObsidianVaultPath,
-                                    getTmuxStartupCommand: getTmuxStartupCommand,
-                                    launch_app: launch_app,
-                                    open_folder: open_folder,
-                                    open_url: open_url,
+                                    getConfigString: getConfigString,
+                                    launchApp: launchApp,
+                                    openFolder: openFolder,
+                                    openUrl: openUrl,
                                     shell: shell,
-                                    shell_sync: shell_sync,
+                                    shellSync: shellSync,
                                     shellWithExitCode: shellWithExitCode,
                                     commandExists: commandExists,
-                                    change_directory: change_directory,
+                                    changeDirectory: changeDirectory,
                                     launch: launch,
                                     activateApp: activateApp,
                                     runAppleScript: runAppleScript,
                                     // spawnDetached removed - use shell("command &") instead
                                     appIsRunning: appIsRunning,
                                     encodeURIComponent: encodeURIComponent,
-                                    save_anchor: save_anchor
+                                    saveAnchor: saveAnchor
                                 }}
                             }};
                         }};
@@ -896,10 +896,8 @@ fn load_config_js_functions(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Err
                                     return func(ctx);
                                 }};
                                 functionCount++;
-                                detailed_log('JS', 'Registered function: ' + name);
                             }}
                         }}
-                        detailed_log('JS', 'Total functions registered: ' + functionCount);
                     }})();
                 "#, config_js_content);
                 

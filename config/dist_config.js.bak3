@@ -33,20 +33,30 @@
 //     DD: string
 //   },
 //   builtins: {               // All builtin functions
-//     log, openFolder, shell, shellSync, launchApp, changeDirectory,
-//     readFile, expandHome, getConfigString, getConfigString,
-//     getConfigString, joinPath, file_exists, spawnDetached,
+//     log, open_folder, shell, shell_sync, launch_app, change_directory,
+//     readFile, expandHome, getObsidianVault, getObsidianVaultPath,
+//     getObsidianApp, joinPath, file_exists, spawnDetached,
 //     shellWithExitCode, encodeURIComponent, commandExists, etc.
 //   }
 // }
 
+// Helper function for printing (mimics Rust's print function)
+// Outputs to console and also logs to file with '|' prefix
+function print(message) {
+  // Print to console (if available)
+  console.log(message);
+  // Also log to file with '|' prefix to indicate console output
+  if (typeof log !== 'undefined') {
+    log('| ' + message);
+  }
+}
 
 module.exports = {
 
 
   // Open folder - handles relative and absolute paths
   action_folder: function(ctx) {
-    const { log, openFolder, joinPath } = ctx.builtins;
+    const { log, open_folder, joinPath, getObsidianVaultPath } = ctx.builtins;
     const folderPath = ctx.arg;
     
     detailedLog("FOLDER", `Starting with path: '${folderPath}'`);
@@ -57,18 +67,18 @@ module.exports = {
       detailedLog("FOLDER", `Using absolute path: '${folderPath}'`);
       try {
         openFolder(folderPath);
-        detailedLog("FOLDER", `Successfully called openFolder for: '${folderPath}'`);
+        detailedLog("FOLDER", `Successfully called open_folder for: '${folderPath}'`);
       } catch (error) {
         detailedLog("FOLDER", `Error opening folder: ${error}`);
       }
     } else {
       // Relative path - join with vault root
-      const vaultRoot = getConfigString("launcher_settings.obsidian_vault_path");
+      const vaultRoot = getObsidianVaultPath();
       const absolutePath = joinPath(vaultRoot, folderPath);
       detailedLog("FOLDER", `Converting relative path '${folderPath}' to absolute: '${absolutePath}'`);
       try {
         openFolder(absolutePath);
-        detailedLog("FOLDER", `Successfully called openFolder for: '${absolutePath}'`);
+        detailedLog("FOLDER", `Successfully called open_folder for: '${absolutePath}'`);
       } catch (error) {
         detailedLog("FOLDER", `Error opening folder: ${error}`);
       }
@@ -79,7 +89,7 @@ module.exports = {
 
   // Execute command - handles windowed (W flag) execution
   action_cmd: function(ctx) {
-    const { log, detailedLog, shell, shellSync } = ctx.builtins;
+    const { log, shell, shell_sync } = ctx.builtins;
     const fullCmd = ctx.arg;
 
     // Check if command starts with 'W ' flag (handle different separations)
@@ -135,7 +145,7 @@ module.exports = {
   // I flag: Interactive terminal that stays open
   // C flag: Interactive terminal that auto-closes when command exits
   action_console: function(ctx) {
-    const { log, detailedLog, shell, shellSync } = ctx.builtins;
+    const { log, shell, shell_sync } = ctx.builtins;
     const command = ctx.arg;
     const hasInteractiveFlag = ctx.flags && ctx.flags.includes('I');
     const hasCloseFlag = ctx.flags && ctx.flags.includes('C');
@@ -184,13 +194,13 @@ module.exports = {
 
   // Open markdown file in Obsidian or default editor
   action_markdown: function(ctx) {
-    const { log, shell, launchApp, expandHome, getConfigString, getConfigString, getConfigString, encodeURIComponent } = ctx.builtins;
+    const { log, shell, launch_app, expandHome, getObsidianVaultPath, getObsidianVault, getObsidianApp, encodeURIComponent } = ctx.builtins;
     const filePath = ctx.arg;
     
     detailedLog("MARKDOWN", `Processing file: '${filePath}'`);
 
     // Get the Obsidian vault path and expand it
-    const vaultPath = getConfigString("launcher_settings.obsidian_vault_path");
+    const vaultPath = getObsidianVaultPath();
     detailedLog("MARKDOWN", `Obsidian vault path: '${vaultPath}'`);
 
     // Normalize the file path (expand ~ and resolve ..)
@@ -214,8 +224,8 @@ module.exports = {
       
       // Encode for URL
       const encoded = encodeURIComponent(fileNameWithoutExt);
-      const vault = getConfigString("launcher_settings.obsidian_vault_name");
-      const app = getConfigString("launcher_settings.obsidian_app_name");
+      const vault = getObsidianVault();
+      const app = getObsidianApp();
       const url = `obsidian://open?vault=${vault}&file=${encoded}`;
       
       detailedLog("MARKDOWN", `Opening Obsidian with URL: ${url}`);
@@ -230,7 +240,7 @@ module.exports = {
 
   // Type text file contents into active application
   action_text: function(ctx) {
-    const { log, readFile, shell, shellSync } = ctx.builtins;
+    const { log, readFile, shell, shell_sync } = ctx.builtins;
     const filePath = ctx.arg;
     
     // Get delay parameter from action config, default to 1.0 seconds
@@ -355,7 +365,7 @@ module.exports = {
 
   // Search and fill from 1Password
   action_1pass: function(ctx) {
-    const { shell, shellSync } = ctx.builtins;
+    const { shell, shell_sync } = ctx.builtins;
     const searchTerm = ctx.arg;
     
     // Try Quick Access first (most universal)
@@ -427,7 +437,7 @@ module.exports = {
 
   // Search for contact in Contacts app
   action_contact: function(ctx) {
-    const { log, shell, shellSync, shellWithExitCode } = ctx.builtins;
+    const { log, shell, shell_sync, shellWithExitCode } = ctx.builtins;
     
     // Use the search parameter from config (e.g., "{{command}}") 
     // This allows users to control what gets searched for
@@ -524,7 +534,7 @@ module.exports = {
 
   // Navigate to Slack channel
   action_slack: function(ctx) {
-    const { shell, shellSync } = ctx.builtins;
+    const { shell, shell_sync } = ctx.builtins;
     const channel = ctx.arg;
     
     // Use AppleScript to activate Slack and navigate to channel
@@ -553,7 +563,7 @@ module.exports = {
 
   // Helper function: Give up focus to previous application
   give_up_focus: function(ctx) {
-    const { shell, shellSync } = ctx.builtins;
+    const { shell, shell_sync } = ctx.builtins;
     // Give focus to the previous application using Cmd+Tab
     shell("osascript -e 'tell application \"System Events\" to key code 48 using command down'");
     shellSync("/bin/sleep 0.15"); // Brief delay to ensure focus transfer completes
@@ -562,7 +572,7 @@ module.exports = {
 
   // Helper function: Regain focus for the anchor selector
   regain_focus: function(ctx) {
-    const { shell, shellSync } = ctx.builtins;
+    const { shell, shell_sync } = ctx.builtins;
     // Bring focus back to the anchor selector application
     shell("osascript -e 'tell application \"popup\" to activate'");
     shellSync("/bin/sleep 0.1"); // Brief delay to ensure focus transfer completes
@@ -700,7 +710,7 @@ module.exports = {
 
   // TEST: Function to test JavaScript error reporting
   action_test_error: function(ctx) {
-    const { error, detailedLog } = ctx.builtins;
+    const { error, detailed_log } = ctx.builtins;
     detailedLog("TEST_ERROR", "About to throw a JavaScript error for testing");
     
     // This will definitely throw an error
@@ -712,7 +722,7 @@ module.exports = {
   // NEW: TMUX activation using only the shell commands available to JavaScript
   // This reimplements the Rust version using shellWithExitCode, shell, and error
   action_activate_tmux: function(ctx) {
-    const { log, shell, shellWithExitCode, error, file_exists, detailedLog, dirname } = ctx.builtins;
+    const { log, shell, shellWithExitCode, error, file_exists, detailed_log, dirname } = ctx.builtins;
     const fullPath = ctx.arg;
     
     try {

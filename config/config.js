@@ -34,29 +34,19 @@
 //   },
 //   builtins: {               // All builtin functions
 //     log, openFolder, shell, shellSync, launchApp, changeDirectory,
-//     readFile, expandHome, getObsidianVault, getObsidianVaultPath,
-//     getObsidianApp, joinPath, file_exists, spawnDetached,
+//     readFile, expandHome, getConfigString, getConfigString,
+//     getConfigString, joinPath, file_exists, spawnDetached,
 //     shellWithExitCode, encodeURIComponent, commandExists, etc.
 //   }
 // }
 
-// Helper function for printing (mimics Rust's print function)
-// Outputs to console and also logs to file with '|' prefix
-function print(message) {
-  // Print to console (if available)
-  console.log(message);
-  // Also log to file with '|' prefix to indicate console output
-  if (typeof log !== 'undefined') {
-    log('| ' + message);
-  }
-}
 
 module.exports = {
 
 
   // Open folder - handles relative and absolute paths
   action_folder: function(ctx) {
-    const { log, openFolder, joinPath, getObsidianVaultPath } = ctx.builtins;
+    const { log, openFolder, joinPath } = ctx.builtins;
     const folderPath = ctx.arg;
     
     log("FOLDER", `Starting with path: '${folderPath}'`);
@@ -73,7 +63,7 @@ module.exports = {
       }
     } else {
       // Relative path - join with vault root
-      const vaultRoot = getObsidianVaultPath();
+      const vaultRoot = getConfigString("launcher_settings.obsidian_vault_path");
       const absolutePath = joinPath(vaultRoot, folderPath);
       log("FOLDER", `Converting relative path '${folderPath}' to absolute: '${absolutePath}'`);
       try {
@@ -89,7 +79,7 @@ module.exports = {
 
   // Execute command - handles windowed (W flag) execution
   action_cmd: function(ctx) {
-    const { log, shell, shellSync } = ctx.builtins;
+    const { log, detailedLog, shell, shellSync } = ctx.builtins;
     const fullCmd = ctx.arg;
 
     // Check if command starts with 'W ' flag (handle different separations)
@@ -145,7 +135,7 @@ module.exports = {
   // I flag: Interactive terminal that stays open
   // C flag: Interactive terminal that auto-closes when command exits
   action_console: function(ctx) {
-    const { log, shell, shellSync } = ctx.builtins;
+    const { log, detailedLog, shell, shellSync } = ctx.builtins;
     const command = ctx.arg;
     const hasInteractiveFlag = ctx.flags && ctx.flags.includes('I');
     const hasCloseFlag = ctx.flags && ctx.flags.includes('C');
@@ -153,20 +143,20 @@ module.exports = {
     // Determine execution mode
     if (!hasInteractiveFlag && !hasCloseFlag) {
       // Mode 1: No flags - background execution (like CMD action)
-      log("CONSOLE", `Executing in background: '${command}'`);
+      log(`Console action: Executing in background: '${command}'`);
       shell(command);
       return `Background execution: ${command}`;
     } else {
       // Mode 2 & 3: Interactive terminal execution
       const willAutoClose = hasCloseFlag;
       
-      log("CONSOLE", `Opening new terminal window with command: '${command}' (interactive: true, auto-close: ${willAutoClose})`);
+      log(`Console action: Opening new terminal window with command: '${command}' (interactive: true, auto-close: ${willAutoClose})`);
       
       // Append exit command if C flag is present (auto-close mode)
       let finalCommand = command;
       if (willAutoClose) {
         finalCommand = `${command}; exit`;
-        log("CONSOLE", `Auto-close enabled - final command: '${finalCommand}'`);
+        log(`Console action: Auto-close enabled - final command: '${finalCommand}'`);
       }
       
       // Escape both single and double quotes for AppleScript
@@ -181,7 +171,7 @@ module.exports = {
       // Activate Terminal to bring it to foreground
       shell(`osascript -e 'tell application "Terminal" to activate'`);
       
-      log("CONSOLE", `New terminal window opened and activated`);
+      log(`Console action: New terminal window opened and activated`);
       
       if (willAutoClose) {
         return `Console opened with: ${command} (auto-close)`;
@@ -194,13 +184,13 @@ module.exports = {
 
   // Open markdown file in Obsidian or default editor
   action_markdown: function(ctx) {
-    const { log, shell, launchApp, expandHome, getObsidianVaultPath, getObsidianVault, getObsidianApp, encodeURIComponent } = ctx.builtins;
+    const { log, shell, launchApp, expandHome, getConfigString, encodeURIComponent } = ctx.builtins;
     const filePath = ctx.arg;
     
     log("MARKDOWN", `Processing file: '${filePath}'`);
 
     // Get the Obsidian vault path and expand it
-    const vaultPath = getObsidianVaultPath();
+    const vaultPath = getConfigString("launcher_settings.obsidian_vault_path");
     log("MARKDOWN", `Obsidian vault path: '${vaultPath}'`);
 
     // Normalize the file path (expand ~ and resolve ..)
@@ -224,8 +214,8 @@ module.exports = {
       
       // Encode for URL
       const encoded = encodeURIComponent(fileNameWithoutExt);
-      const vault = getObsidianVault();
-      const app = getObsidianApp();
+      const vault = getConfigString("launcher_settings.obsidian_vault_name");
+      const app = getConfigString("launcher_settings.obsidian_app_name");
       const url = `obsidian://open?vault=${vault}&file=${encoded}`;
       
       log("MARKDOWN", `Opening Obsidian with URL: ${url}`);
@@ -389,13 +379,8 @@ module.exports = {
       shellSync("/bin/sleep 0.25");  // Wait for Quick Access to fully open
       
       // Type character by character for better reliability
-      shellSync(`osascript -e 'tell application "System Events"
-        repeat with i from 1 to length of "${searchTerm}"
-          set currentChar to character i of "${searchTerm}"
-          keystroke currentChar
-          delay 0.05
-        end repeat
-      end tell'`);
+      // Type the search term
+      shellSync(`osascript -e 'tell application "System Events" to keystroke "${searchTerm}"'`);
       
       shellSync("/bin/sleep 2.0");  // Wait for 1Password to search and show results
       shellSync("osascript -e 'tell application \"System Events\" to key code 36'");  // Press Enter to select and open
@@ -716,7 +701,7 @@ module.exports = {
   // NEW: TMUX activation using only the shell commands available to JavaScript
   // This reimplements the Rust version using shellWithExitCode, shell, and error
   action_activate_tmux: function(ctx) {
-    const { log, shell, shellWithExitCode, error, file_exists, dirname, shellSync, saveAnchor, getTmuxStartupCommand } = ctx.builtins;
+    const { log, shell, shellWithExitCode, error, file_exists, dirname, shellSync, saveAnchor } = ctx.builtins;
     const fullPath = ctx.arg;
     const { command_name, last_anchor_input, input } = ctx;
 
@@ -757,7 +742,7 @@ module.exports = {
 
     // 1. Open folder in Finder (matching Rust implementation)
     // COMMENTED OUT - User has separate commands for folder/markdown actions
-    // log("TMUX_DEBUG", `Line 715: Opening folder in Finder: '${folder_path}'`);
+    // log("TMUX_DEBUG", `Line 715: Opening folder in Finder: '${folder_path}');
     // try {
     //   shell(`open "${folder_path}"`);
     //   log("TMUX_DEBUG", "Line 716: Finder open command executed successfully");
@@ -912,7 +897,7 @@ module.exports = {
           shellSync("/bin/sleep 0.3");
 
           // Get startup command from config and run it if configured
-          const startupCommand = getTmuxStartupCommand();
+          const startupCommand = getConfigString("launcher_settings.tmux_startup_command");
           if (startupCommand && startupCommand.trim() !== '') {
             log("TMUX_ACTIVATE", `Running startup command in tmux session: ${startupCommand}`);
             shellSync(`/opt/homebrew/bin/tmux send-keys -t "${session_name}" "${startupCommand}" C-m`);

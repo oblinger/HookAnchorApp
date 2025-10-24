@@ -34,19 +34,29 @@
 //   },
 //   builtins: {               // All builtin functions
 //     log, openFolder, shell, shellSync, launchApp, changeDirectory,
-//     readFile, expandHome, getConfigString, getConfigString,
-//     getConfigString, joinPath, file_exists, spawnDetached,
+//     readFile, expandHome, getObsidianVault, getObsidianVaultPath,
+//     getObsidianApp, joinPath, file_exists, spawnDetached,
 //     shellWithExitCode, encodeURIComponent, commandExists, etc.
 //   }
 // }
 
+// Helper function for printing (mimics Rust's print function)
+// Outputs to console and also logs to file with '|' prefix
+function print(message) {
+  // Print to console (if available)
+  console.log(message);
+  // Also log to file with '|' prefix to indicate console output
+  if (typeof log !== 'undefined') {
+    log('| ' + message);
+  }
+}
 
 module.exports = {
 
 
   // Open folder - handles relative and absolute paths
   action_folder: function(ctx) {
-    const { log, openFolder, joinPath } = ctx.builtins;
+    const { log, openFolder, joinPath, getObsidianVaultPath } = ctx.builtins;
     const folderPath = ctx.arg;
     
     detailedLog("FOLDER", `Starting with path: '${folderPath}'`);
@@ -63,7 +73,7 @@ module.exports = {
       }
     } else {
       // Relative path - join with vault root
-      const vaultRoot = getConfigString("launcher_settings.obsidian_vault_path");
+      const vaultRoot = getObsidianVaultPath();
       const absolutePath = joinPath(vaultRoot, folderPath);
       detailedLog("FOLDER", `Converting relative path '${folderPath}' to absolute: '${absolutePath}'`);
       try {
@@ -79,7 +89,7 @@ module.exports = {
 
   // Execute command - handles windowed (W flag) execution
   action_cmd: function(ctx) {
-    const { log, detailedLog, shell, shellSync } = ctx.builtins;
+    const { log, shell, shellSync } = ctx.builtins;
     const fullCmd = ctx.arg;
 
     // Check if command starts with 'W ' flag (handle different separations)
@@ -135,7 +145,7 @@ module.exports = {
   // I flag: Interactive terminal that stays open
   // C flag: Interactive terminal that auto-closes when command exits
   action_console: function(ctx) {
-    const { log, detailedLog, shell, shellSync } = ctx.builtins;
+    const { log, shell, shellSync } = ctx.builtins;
     const command = ctx.arg;
     const hasInteractiveFlag = ctx.flags && ctx.flags.includes('I');
     const hasCloseFlag = ctx.flags && ctx.flags.includes('C');
@@ -184,13 +194,13 @@ module.exports = {
 
   // Open markdown file in Obsidian or default editor
   action_markdown: function(ctx) {
-    const { log, shell, launchApp, expandHome, getConfigString, getConfigString, getConfigString, encodeURIComponent } = ctx.builtins;
+    const { log, shell, launchApp, expandHome, getObsidianVaultPath, getObsidianVault, getObsidianApp, encodeURIComponent } = ctx.builtins;
     const filePath = ctx.arg;
     
     detailedLog("MARKDOWN", `Processing file: '${filePath}'`);
 
     // Get the Obsidian vault path and expand it
-    const vaultPath = getConfigString("launcher_settings.obsidian_vault_path");
+    const vaultPath = getObsidianVaultPath();
     detailedLog("MARKDOWN", `Obsidian vault path: '${vaultPath}'`);
 
     // Normalize the file path (expand ~ and resolve ..)
@@ -214,8 +224,8 @@ module.exports = {
       
       // Encode for URL
       const encoded = encodeURIComponent(fileNameWithoutExt);
-      const vault = getConfigString("launcher_settings.obsidian_vault_name");
-      const app = getConfigString("launcher_settings.obsidian_app_name");
+      const vault = getObsidianVault();
+      const app = getObsidianApp();
       const url = `obsidian://open?vault=${vault}&file=${encoded}`;
       
       detailedLog("MARKDOWN", `Opening Obsidian with URL: ${url}`);

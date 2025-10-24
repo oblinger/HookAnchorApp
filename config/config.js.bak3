@@ -8,7 +8,7 @@
 // 
 // All JavaScript functions have access to these built-in functions:
 // - shell(command): Execute shell command asynchronously
-// - shell_sync(command): Execute shell command synchronously  
+// - shellSync(command): Execute shell command synchronously  
 // - log(message): Log message to HookAnchor logs
 //
 
@@ -66,7 +66,7 @@ module.exports = {
       // Already absolute, use as-is
       log("FOLDER", `Using absolute path: '${folderPath}'`);
       try {
-        open_folder(folderPath);
+        openFolder(folderPath);
         log("FOLDER", `Successfully called open_folder for: '${folderPath}'`);
       } catch (error) {
         log("FOLDER", `Error opening folder: ${error}`);
@@ -77,7 +77,7 @@ module.exports = {
       const absolutePath = joinPath(vaultRoot, folderPath);
       log("FOLDER", `Converting relative path '${folderPath}' to absolute: '${absolutePath}'`);
       try {
-        open_folder(absolutePath);
+        openFolder(absolutePath);
         log("FOLDER", `Successfully called open_folder for: '${absolutePath}'`);
       } catch (error) {
         log("FOLDER", `Error opening folder: ${error}`);
@@ -104,7 +104,7 @@ module.exports = {
       shell(`osascript -e 'tell application "Terminal" to do script "${escapedCmd}"'`);
       
       // Brief delay to ensure Terminal has time to start
-      shell_sync("/bin/sleep 0.2");
+      shellSync("/bin/sleep 0.2");
       
       log("CMD", `Terminal window opened with command`);
     } else if (fullCmd.startsWith('W; ')) {
@@ -117,7 +117,7 @@ module.exports = {
       shell(`osascript -e 'tell application "Terminal" to do script "${escapedCmd}"'`);
       
       // Brief delay to ensure Terminal has time to start  
-      shell_sync("/bin/sleep 0.2");
+      shellSync("/bin/sleep 0.2");
       
       log("CMD", `Terminal window opened with command`);
     } else if (fullCmd.startsWith('W;')) {
@@ -130,7 +130,7 @@ module.exports = {
       shell(`osascript -e 'tell application "Terminal" to do script "${escapedCmd}"'`);
       
       // Brief delay to ensure Terminal has time to start  
-      shell_sync("/bin/sleep 0.2");
+      shellSync("/bin/sleep 0.2");
       
       log("CMD", `Terminal window opened with command`);
     } else {
@@ -176,7 +176,7 @@ module.exports = {
       shell(`osascript -e 'tell application "Terminal" to do script "${escapedCmd}"'`);
       
       // Brief delay to ensure Terminal has time to start
-      shell_sync("/bin/sleep 0.2");
+      shellSync("/bin/sleep 0.2");
       
       // Activate Terminal to bring it to foreground
       shell(`osascript -e 'tell application "Terminal" to activate'`);
@@ -229,7 +229,7 @@ module.exports = {
       const url = `obsidian://open?vault=${vault}&file=${encoded}`;
       
       log("MARKDOWN", `Opening Obsidian with URL: ${url}`);
-      launch_app(app, url);
+      launchApp(app, url);
     } else {
       // File is outside vault - open with default markdown editor
       log("MARKDOWN", `File is outside Obsidian vault, opening with default app`);
@@ -262,7 +262,7 @@ module.exports = {
     // Give focus back to the previous application (the one that was active before popup)
     log("TEXT", `Switching focus to previous application`);
     shell("osascript -e 'tell application \"System Events\" to key code 48 using command down'");
-    shell_sync(`/bin/sleep ${delay}`); // Wait for focus switch with configurable delay
+    shellSync(`/bin/sleep ${delay}`); // Wait for focus switch with configurable delay
 
     // Type the content using a simpler approach
     log("TEXT", `Typing content into focused application after ${delay}s delay`);
@@ -277,7 +277,7 @@ module.exports = {
     const script = `osascript -e 'tell application "System Events" to keystroke "${escapedContent}"'`;
 
     try {
-      shell_sync(script);
+      shellSync(script);
       log("TEXT", `Successfully typed content`);
     } catch (error) {
       log("TEXT", `Error typing content: ${error}`);
@@ -385,11 +385,11 @@ module.exports = {
     
     // Try Quick Access first (most universal)
     try {
-      shell_sync("osascript -e 'tell application \"System Events\" to keystroke \" \" using {shift down, command down}'");
-      shell_sync("/bin/sleep 0.25");  // Wait for Quick Access to fully open
+      shellSync("osascript -e 'tell application \"System Events\" to keystroke \" \" using {shift down, command down}'");
+      shellSync("/bin/sleep 0.25");  // Wait for Quick Access to fully open
       
       // Type character by character for better reliability
-      shell_sync(`osascript -e 'tell application "System Events"
+      shellSync(`osascript -e 'tell application "System Events"
         repeat with i from 1 to length of "${searchTerm}"
           set currentChar to character i of "${searchTerm}"
           keystroke currentChar
@@ -397,22 +397,22 @@ module.exports = {
         end repeat
       end tell'`);
       
-      shell_sync("/bin/sleep 2.0");  // Wait for 1Password to search and show results
-      shell_sync("osascript -e 'tell application \"System Events\" to key code 36'");  // Press Enter to select and open
-      shell_sync("/bin/sleep 0.5");  // Wait for action to complete
+      shellSync("/bin/sleep 2.0");  // Wait for 1Password to search and show results
+      shellSync("osascript -e 'tell application \"System Events\" to key code 36'");  // Press Enter to select and open
+      shellSync("/bin/sleep 0.5");  // Wait for action to complete
     } catch (e) {
       // Fallback 1: Try menu bar access
       try {
         shell("osascript -e 'tell application \"System Events\" to tell process \"1Password 7 - Password Manager\" to click menu bar item 1 of menu bar 1'");
-        shell_sync("/bin/sleep 0.5");
+        shellSync("/bin/sleep 0.5");
         shell(`osascript -e 'tell application "System Events" to keystroke "${searchTerm}"'`);
         shell("osascript -e 'tell application \"System Events\" to key code 36'");
       } catch (e2) {
         // Fallback 2: Open 1Password app and use search
         shell("osascript -e 'tell application \"1Password\" to activate'");
-        shell_sync("/bin/sleep 0.5");
+        shellSync("/bin/sleep 0.5");
         shell("osascript -e 'tell application \"System Events\" to keystroke \"f\" using command down'");
-        shell_sync("/bin/sleep 0.2");
+        shellSync("/bin/sleep 0.2");
         shell(`osascript -e 'tell application "System Events" to keystroke "${searchTerm}"'`);
         shell("osascript -e 'tell application \"System Events\" to key code 36'");
       }
@@ -429,7 +429,7 @@ module.exports = {
     log("DOC", `Opening document: '${filePath}'`);
     
     // Check if file exists
-    if (!file_exists(filePath)) {
+    if (!fileExists(filePath)) {
       log("DOC", `Warning - File does not exist: ${filePath}`);
       // Try to open anyway, let the OS handle the error
     }
@@ -554,13 +554,13 @@ module.exports = {
     
     // Use AppleScript to activate Slack and navigate to channel
     shell(`osascript -e 'tell application "Slack" to activate'`);
-    shell_sync("/bin/sleep 0.5");
+    shellSync("/bin/sleep 0.5");
     // Open quick switcher with Cmd+K
     shell(`osascript -e 'tell application "System Events" to keystroke "k" using {command down}'`);
-    shell_sync("/bin/sleep 0.5");
+    shellSync("/bin/sleep 0.5");
     // Type the channel name
     shell(`osascript -e 'tell application "System Events" to keystroke "${channel}"'`);
-    shell_sync("/bin/sleep 0.5");
+    shellSync("/bin/sleep 0.5");
     // Press Enter to navigate
     shell(`osascript -e 'tell application "System Events" to keystroke return'`);
   },
@@ -581,7 +581,7 @@ module.exports = {
     const { shell, shell_sync } = ctx.builtins;
     // Give focus to the previous application using Cmd+Tab
     shell("osascript -e 'tell application \"System Events\" to key code 48 using command down'");
-    shell_sync("/bin/sleep 0.15"); // Brief delay to ensure focus transfer completes
+    shellSync("/bin/sleep 0.15"); // Brief delay to ensure focus transfer completes
   },
 
 
@@ -590,130 +590,18 @@ module.exports = {
     const { shell, shell_sync } = ctx.builtins;
     // Bring focus back to the anchor selector application
     shell("osascript -e 'tell application \"popup\" to activate'");
-    shell_sync("/bin/sleep 0.1"); // Brief delay to ensure focus transfer completes
+    shellSync("/bin/sleep 0.1"); // Brief delay to ensure focus transfer completes
   },
 
 
   // REMOVED: start_claude_code - was never used
 
 
-  // Restored working tmux_activate action
-  action_activate_tmux: function(ctx) {
-    // Extract builtins we need
-    const {
-      save_ghost_input,
-      joinPath,
-      file_exists,
-      change_directory,
-      shell_sync,
-      shellWithExitCode,
-      shell,
-      getTmuxStartupCommand,
-      log,
-      debug,
-      error
-    } = ctx.builtins;
-
-    // detailed_log is a global function, not a builtin
-    const detailed_log = typeof globalThis.detailed_log !== 'undefined' ? globalThis.detailed_log : log;
-
-    const { arg, command_name, ghost_input, input } = ctx;
-
-    // The arg contains the full path to the anchor markdown file
-    const fullPath = arg;
-    const anchorDir = fullPath.substring(0, fullPath.lastIndexOf('/'));
-
-    // Save ghost input - use ghost_input parameter, fallback to input, then command_name
-    const ghost_text = (ghost_input && ghost_input.trim() !== '') ? ghost_input :
-                      (input && input.trim() !== '') ? input : command_name;
-    log("TMUX_ACTIVATE", `Saving ghost input: '${ghost_text}'`);
-    if (ghost_text) {
-      save_ghost_input(ghost_text);
-    }
-
-    log("TMUX_ACTIVATE", `Checking for tmux session in: ${anchorDir}`);
-    
-    // Check if .tmuxp.yaml exists
-    const tmuxpPath = joinPath(anchorDir, ".tmuxp.yaml");
-    if (file_exists(tmuxpPath)) {
-      log("TMUX_ACTIVATE", `Found .tmuxp.yaml at ${tmuxpPath}`);
-      
-      // Change to the anchor directory
-      change_directory(anchorDir);
-      
-      const folderName = anchorDir.split('/').pop();
-      log("TMUX_ACTIVATE", `Activating tmux session '${folderName}'`);
-      
-      try {
-        // Get existing tmux sessions
-        const sessionsResult = shellWithExitCode('/opt/homebrew/bin/tmux ls -F "#{session_name}" 2>/dev/null');
-        const sessionsData = JSON.parse(sessionsResult);
-        const existingSessions = sessionsData.exitCode === 0 ? 
-            sessionsData.stdout.trim().split('\n').filter(s => s) : [];
-        
-        // Create session if it doesn't exist
-        if (!existingSessions.includes(folderName)) {
-          log("TMUX_ACTIVATE", `Creating session '${folderName}'`);
-          const tmuxpResult = shell_sync(`tmuxp load "${tmuxpPath}" -d`);
-          log("TMUX_ACTIVATE", `tmuxp load result: ${tmuxpResult}`);
-          shell_sync("/bin/sleep 0.2");
-        }
-        
-        // Try to attach to or switch to the session (same as anchor command)
-        log("TMUX_ACTIVATE", `Attaching to session '${folderName}'`);
-        try {
-          // First try switch-client (works when already inside a tmux session)
-          log("TMUX_ACTIVATE", `Trying tmux switch-client to '${folderName}'`);
-          const switchResult = shellWithExitCode(`/opt/homebrew/bin/tmux switch-client -t "${folderName}"`);
-          const switchData = JSON.parse(switchResult);
-
-          if (switchData.exitCode === 0) {
-            log("TMUX_ACTIVATE", `Successfully switched to session '${folderName}'`);
-          } else {
-            // switch-client failed, try attach-session (works when not inside tmux)
-            log("TMUX_ACTIVATE", `Switch-client failed, trying attach-session to '${folderName}'`);
-            const attachResult = shellWithExitCode(`/opt/homebrew/bin/tmux attach-session -t "${folderName}"`);
-            const attachData = JSON.parse(attachResult);
-
-            if (attachData.exitCode === 0) {
-              log("TMUX_ACTIVATE", `Successfully attached to session '${folderName}'`);
-            } else {
-              log("TMUX_ACTIVATE", `Both switch-client and attach-session failed for '${folderName}'`);
-              log("TMUX_ACTIVATE", `Switch error: ${switchData.stderr}`);
-              log("TMUX_ACTIVATE", `Attach error: ${attachData.stderr}`);
-            }
-          }
-
-          // After switching/attaching to session, change directory and run startup command
-          log("TMUX_ACTIVATE", `Sending directory change to tmux session '${folderName}'`);
-          shell_sync(`/opt/homebrew/bin/tmux send-keys -t "${folderName}" "cd ${anchorDir}" C-m`);
-
-          // Get startup command from config and run it if configured
-          const startupCommand = getTmuxStartupCommand();
-          if (startupCommand && startupCommand.trim() !== '') {
-            log("TMUX_ACTIVATE", `Running startup command in tmux session: ${startupCommand}`);
-            shell_sync(`/opt/homebrew/bin/tmux send-keys -t "${folderName}" "${startupCommand}" C-m`);
-          }
-        } catch (e) {
-          log("TMUX_ACTIVATE", `Tmux execution error: ${e}`);
-        }
-        
-        // Activate iTerm2 (same as anchor command)
-        shell_sync("/bin/sleep 0.5");
-        shell('osascript -e \'tell application "iTerm2" to activate\'');
-        
-      } catch (error) {
-        log("TMUX_ACTIVATE", `Error with tmux session: ${error}`);
-      }
-    } else {
-      log("TMUX_ACTIVATE", `No .tmuxp.yaml found at ${tmuxpPath}, skipping`);
-    }
-  },
   
   // Anchor action - behaves exactly like markdown action
   // Anchors and markdown files are both just documents that open the same way
   action_anchor: function(ctx) {
-    const { log, error, file_exists, isDirectory, save_ghost_input } = ctx.builtins;
+    const { log, error, file_exists, isDirectory, save_anchor } = ctx.builtins;
 
     // Debug: Log everything available in the context
     log("=== ANCHOR ACTION DEBUG ===");
@@ -726,17 +614,17 @@ module.exports = {
     }
     log("=== END ANCHOR DEBUG ===");
 
-    const { command_name, arg, input, ghost_input } = ctx;
+    const { command_name, arg, input, last_anchor_input } = ctx;
 
-    // 1. Save ghost input (this is what makes anchor special)
-    // Priority: ghost_input (from template expansion) > input > command_name (fallback)
-    const ghost_text = (ghost_input && ghost_input.trim() !== '') ? ghost_input :
-                      (input && input.trim() !== '') ? input : command_name;
-    const source = (ghost_input && ghost_input.trim() !== '') ? 'ghost_input parameter' :
+    // 1. Save last anchor (this is what makes anchor special)
+    // Priority: last_anchor_input (from template expansion) > input > command_name (fallback)
+    const anchor_text = (last_anchor_input && last_anchor_input.trim() !== '') ? last_anchor_input :
+                        (input && input.trim() !== '') ? input : command_name;
+    const source = (last_anchor_input && last_anchor_input.trim() !== '') ? 'last_anchor_input parameter' :
                    (input && input.trim() !== '') ? 'input parameter' : 'command_name';
-    log(`ANCHOR: Saving ghost input: '${ghost_text}' (source: ${source})`);
-    if (ghost_text) {
-      save_ghost_input(ghost_text);
+    log(`ANCHOR: Saving last anchor: '${anchor_text}' (source: ${source})`);
+    if (anchor_text) {
+      saveAnchor(anchor_text);
     }
 
     // If no argument, silently do nothing (virtual anchors like "Notion Root")
@@ -761,7 +649,7 @@ module.exports = {
       actionType = 'obs_url';
     } else {
       // File/folder path - check if it's a directory
-      if (file_exists(arg) && isDirectory(arg)) {
+      if (fileExists(arg) && isDirectory(arg)) {
         actionType = 'folder';
       } else {
         // File path - check extension
@@ -828,14 +716,23 @@ module.exports = {
   // NEW: TMUX activation using only the shell commands available to JavaScript
   // This reimplements the Rust version using shellWithExitCode, shell, and error
   action_activate_tmux: function(ctx) {
-    const { log, shell, shellWithExitCode, error, file_exists, detailed_log, dirname } = ctx.builtins;
+    const { log, shell, shellWithExitCode, error, file_exists, dirname, shell_sync, save_anchor, getTmuxStartupCommand } = ctx.builtins;
     const fullPath = ctx.arg;
-    
+    const { command_name, last_anchor_input, input } = ctx;
+
     try {
       log("🚀 TMUX_DEBUG: ==================== TMUX ACTIVATION START ====================");
       log(`🚀 TMUX_DEBUG: Received arg: '${fullPath}'`);
       log(`🚀 TMUX_DEBUG: Type of arg: ${typeof fullPath}`);
-      
+
+      // Save last anchor first
+      const anchor_text = (last_anchor_input && last_anchor_input.trim() !== '') ? last_anchor_input :
+                          (input && input.trim() !== '') ? input : command_name;
+      log("TMUX_ACTIVATE", `Saving last anchor: '${anchor_text}'`);
+      if (anchor_text) {
+        saveAnchor(anchor_text);
+      }
+
       if (!fullPath) {
         log("🚀 TMUX_DEBUG: ERROR - No path provided");
         error("No path provided for TMUX activation");
@@ -857,52 +754,18 @@ module.exports = {
     
     log("ACTIVATE_TMUX_JS", `Starting activation for folder: ${folder_path}`);
     log("TMUX_DEBUG", `Line 703: folder_path = '${folder_path}'`);
-    
+
     // 1. Open folder in Finder (matching Rust implementation)
-    log("TMUX_DEBUG", `Line 715: Opening folder in Finder: '${folder_path}'`);
-    try {
-      shell(`open "${folder_path}"`);
-      log("TMUX_DEBUG", "Line 716: Finder open command executed successfully");
-    } catch (e) {
-      log("TMUX_DEBUG", `Line 716: ERROR opening Finder: ${e}`);
-    }
+    // COMMENTED OUT - User has separate commands for folder/markdown actions
+    // log("TMUX_DEBUG", `Line 715: Opening folder in Finder: '${folder_path}'`);
+    // try {
+    //   shell(`open "${folder_path}"`);
+    //   log("TMUX_DEBUG", "Line 716: Finder open command executed successfully");
+    // } catch (e) {
+    //   log("TMUX_DEBUG", `Line 716: ERROR opening Finder: ${e}`);
+    // }
     
-    // 2. Check for .tmuxp.yaml
-    const tmuxp_path = `${folder_path}/.tmuxp.yaml`;
-    log("TMUX_DEBUG", `Line 718: Checking for .tmuxp.yaml at: '${tmuxp_path}'`);
-    
-    if (!file_exists(tmuxp_path)) {
-      log("TMUX_DEBUG", "Line 719: No .tmuxp.yaml found");
-      log("ACTIVATE_TMUX_JS: No .tmuxp.yaml found");
-      
-      // Check for CLAUDE.md as fallback
-      const claude_path = `${folder_path}/CLAUDE.md`;
-      log("TMUX_DEBUG", `Line 723: Checking for CLAUDE.md at: '${claude_path}'`);
-      
-      if (file_exists(claude_path)) {
-        log("TMUX_DEBUG", "Line 724: Found CLAUDE.md, launching Claude Code");
-        log("ACTIVATE_TMUX_JS: Found CLAUDE.md, launching Claude Code");
-        // Change to the directory and launch Claude Code
-        const claudeCmd = `cd "${folder_path}" && /opt/homebrew/bin/claude --continue`;
-        log("TMUX_DEBUG", `Line 726: Running command: '${claudeCmd}'`);
-        log("ACTIVATE_TMUX_JS", `Running: ${claudeCmd}`);
-        try {
-          shell(claudeCmd);
-          log("TMUX_DEBUG", "Line 728: Claude command executed");
-        } catch (e) {
-          log("TMUX_DEBUG", `Line 728: ERROR running Claude: ${e}`);
-        }
-      } else {
-        log("TMUX_DEBUG", "Line 729: No CLAUDE.md found either");
-      }
-      log("TMUX_DEBUG", "Line 730: Returning early - no tmuxp.yaml");
-      return;
-    }
-    
-    log("TMUX_DEBUG", `Line 733: Found .tmuxp.yaml at ${tmuxp_path}`);
-    log("ACTIVATE_TMUX_JS", `Found .tmuxp.yaml at ${tmuxp_path}`);
-    
-    // 3. Get session name from folder name and sanitize it
+    // 2. Get session name from folder name and sanitize it
     const folder_name = folder_path.split('/').pop() || 'session';
     const session_name = folder_name
       .replace(/ /g, '_')
@@ -910,9 +773,20 @@ module.exports = {
       .replace(/\./g, '_')
       .replace(/\[/g, '_')
       .replace(/\]/g, '_');
-    
+
     log("ACTIVATE_TMUX_JS", `Folder name: '${folder_name}', Session name: '${session_name}'`);
-    
+
+    // 3. Check for .tmuxp.yaml
+    const tmuxp_path = `${folder_path}/.tmuxp.yaml`;
+    const has_tmuxp = fileExists(tmuxp_path);
+    log("TMUX_DEBUG", `Checking for .tmuxp.yaml at: '${tmuxp_path}' - ${has_tmuxp ? 'FOUND' : 'NOT FOUND'}`);
+
+    if (has_tmuxp) {
+      log("ACTIVATE_TMUX_JS", `Found .tmuxp.yaml at ${tmuxp_path}`);
+    } else {
+      log("ACTIVATE_TMUX_JS", `No .tmuxp.yaml found, will create basic session '${session_name}'`);
+    }
+
     // 4. Check if session exists
     log("TMUX_DEBUG", `Line 738: Checking if session '${session_name}' exists`);
     const checkCmd = `/opt/homebrew/bin/tmux has-session -t "${session_name}" 2>/dev/null`;
@@ -937,60 +811,56 @@ module.exports = {
     log("TMUX_DEBUG", `Line 748: Session exists: ${session_exists}`);
     
     if (!session_exists) {
-      log("TMUX_DEBUG", `Line 751: Session does not exist, creating new session '${session_name}'`);
+      log("TMUX_DEBUG", `Session does not exist, creating new session '${session_name}'`);
       log("ACTIVATE_TMUX_JS", `Creating new tmux session '${session_name}'`);
-      
-      // Create session with tmuxp
-      // Change to directory first, then load tmuxp config
-      const createCmd = `cd "${folder_path}" && /opt/homebrew/bin/tmuxp load ".tmuxp.yaml" -d 2>&1`;
-      log("TMUX_DEBUG", `Line 755: Running tmuxp command: '${createCmd}'`);
-      
-      const createResult = shellWithExitCode(createCmd);
-      log("TMUX_DEBUG", `Line 756: Raw createResult: '${createResult}'`);
-      
-      let createData;
-      try {
-        createData = JSON.parse(createResult);
-        log("TMUX_DEBUG", `Line 759: Parsed createData - exitCode: ${createData.exitCode}`);
-        log("TMUX_DEBUG", `Line 759: stdout: '${createData.stdout}'`);
-        log("TMUX_DEBUG", `Line 759: stderr: '${createData.stderr}'`);
-      } catch (e) {
-        log("TMUX_DEBUG", `Line 760: ERROR - Failed to parse create result: ${e}`);
-        log("TMUX_DEBUG", `Line 760: Raw result was: '${createResult}'`);
-        log("ACTIVATE_TMUX_JS", `Failed to parse create result: ${e}`);
-        error("Failed to create TMUX session");
-        return;
-      }
-      
-      if (createData.exitCode !== 0) {
-        log("TMUX_DEBUG", `Line 765: tmuxp failed with exit code ${createData.exitCode}`);
-        log("ACTIVATE_TMUX_JS", `tmuxp failed with exit code ${createData.exitCode}`);
-        log("ACTIVATE_TMUX_JS", `stderr: ${createData.stderr}`);
-        log("ACTIVATE_TMUX_JS", `stdout: ${createData.stdout}`);
-        error(`Failed to create TMUX session: ${createData.stderr || createData.stdout}`);
-        return;
-      }
-      
-      log("ACTIVATE_TMUX_JS: tmuxp completed successfully");
-      
-      // Wait longer for session to fully initialize
-      shell_sync("/bin/sleep 1.5");
-      
-      // Verify session was created
-      const verifyResult = shellWithExitCode(`/opt/homebrew/bin/tmux has-session -t "${session_name}" 2>/dev/null`);
-      try {
-        const verifyData = JSON.parse(verifyResult);
-        if (verifyData.exitCode !== 0) {
-          log("ACTIVATE_TMUX_JS", `WARNING: Session '${session_name}' was NOT created despite tmuxp success`);
-          // Try basic tmux fallback
-          const basicResult = shellWithExitCode(`/opt/homebrew/bin/tmux new-session -d -s "${session_name}" -c "${folder_path}" 2>&1`);
-          const basicData = JSON.parse(basicResult);
-          if (basicData.exitCode !== 0) {
-            log("ACTIVATE_TMUX_JS", `Basic tmux also failed: ${basicData.stderr}`);
-          }
+
+      if (has_tmuxp) {
+        // Create session with tmuxp
+        log("ACTIVATE_TMUX_JS", `Using tmuxp to create session from ${tmuxp_path}`);
+        const createCmd = `cd "${folder_path}" && /opt/homebrew/bin/tmuxp load ".tmuxp.yaml" -d 2>&1`;
+        log("TMUX_DEBUG", `Running tmuxp command: '${createCmd}'`);
+
+        const createResult = shellWithExitCode(createCmd);
+        log("TMUX_DEBUG", `Raw createResult: '${createResult}'`);
+
+        let createData;
+        try {
+          createData = JSON.parse(createResult);
+          log("TMUX_DEBUG", `Parsed createData - exitCode: ${createData.exitCode}`);
+        } catch (e) {
+          log("ACTIVATE_TMUX_JS", `Failed to parse create result: ${e}`);
+          error("Failed to create TMUX session");
+          return;
         }
-      } catch (e) {
-        log("ACTIVATE_TMUX_JS", `Failed to verify session creation: ${e}`);
+
+        if (createData.exitCode !== 0) {
+          log("ACTIVATE_TMUX_JS", `tmuxp failed with exit code ${createData.exitCode}: ${createData.stderr}`);
+          error(`Failed to create TMUX session: ${createData.stderr || createData.stdout}`);
+          return;
+        }
+
+        log("ACTIVATE_TMUX_JS", "tmuxp completed successfully");
+        shellSync("/bin/sleep 0.5");
+      } else {
+        // Create basic session without tmuxp
+        log("ACTIVATE_TMUX_JS", `Creating basic tmux session '${session_name}' in ${folder_path}`);
+        const basicCmd = `/opt/homebrew/bin/tmux new-session -d -s "${session_name}" -c "${folder_path}" 2>&1`;
+        log("TMUX_DEBUG", `Running basic tmux command: '${basicCmd}'`);
+
+        const basicResult = shellWithExitCode(basicCmd);
+        let basicData;
+        try {
+          basicData = JSON.parse(basicResult);
+          if (basicData.exitCode !== 0) {
+            log("ACTIVATE_TMUX_JS", `Basic tmux failed: ${basicData.stderr}`);
+            error(`Failed to create TMUX session: ${basicData.stderr}`);
+            return;
+          }
+          log("ACTIVATE_TMUX_JS", `Basic session '${session_name}' created successfully`);
+        } catch (e) {
+          log("ACTIVATE_TMUX_JS", `Failed to parse basic session result: ${e}`);
+        }
+        shellSync("/bin/sleep 0.3");
       }
     } else {
       log("TMUX_DEBUG", `Line 794: Session '${session_name}' already exists, skipping creation`);
@@ -1000,7 +870,7 @@ module.exports = {
     // Longer delay to ensure session is fully ready
     log("TMUX_DEBUG", "Line 798: Sleeping for 1 second to ensure session is ready");
     try {
-      shell_sync("/bin/sleep 1.0");
+      shellSync("/bin/sleep 1.0");
       log("TMUX_DEBUG", "Line 799: Sleep completed");
     } catch (e) {
       log("TMUX_DEBUG", `Line 799: ERROR during sleep: ${e}`);
@@ -1033,6 +903,21 @@ module.exports = {
         const switchData = JSON.parse(switchResult);
         if (switchData.exitCode === 0) {
           log("ACTIVATE_TMUX_JS", `Successfully switched to session '${session_name}'`);
+
+          // Send directory change to tmux session
+          log("TMUX_ACTIVATE", `Sending directory change to tmux session '${session_name}'`);
+          shellSync(`/opt/homebrew/bin/tmux send-keys -t "${session_name}" "cd '${folder_path}'" C-m`);
+
+          // Wait a moment for cd to complete before running startup command
+          shellSync("/bin/sleep 0.3");
+
+          // Get startup command from config and run it if configured
+          const startupCommand = getTmuxStartupCommand();
+          if (startupCommand && startupCommand.trim() !== '') {
+            log("TMUX_ACTIVATE", `Running startup command in tmux session: ${startupCommand}`);
+            shellSync(`/opt/homebrew/bin/tmux send-keys -t "${session_name}" "${startupCommand}" C-m`);
+          }
+
           // Activate Terminal to bring it to foreground
           shell(`osascript -e 'tell application "Terminal" to activate'`);
         } else {
@@ -1072,7 +957,7 @@ module.exports = {
       // Use the CLI grab command to perform the grab operation
       log("GRAB: action_grab: Calling shell_sync...");
 
-      const grab_output = shell_sync("~/ob/proj/HookAnchor/target/release/ha --grab");
+      const grab_output = shellSync("~/ob/proj/HookAnchor/target/release/ha --grab");
 
       log(`GRAB: action_grab: Raw grab output: '${grab_output}'`);
 
@@ -1110,7 +995,7 @@ module.exports = {
 
     try {
       // Clear the log file
-      const result = shell_sync("echo '' > ~/.config/hookanchor/anchor.log");
+      const result = shellSync("echo '' > ~/.config/hookanchor/anchor.log");
       log("CLEAR_LOG: Successfully cleared anchor.log");
       return "Log cleared";
     } catch (err) {

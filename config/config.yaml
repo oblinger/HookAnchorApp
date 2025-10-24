@@ -16,7 +16,7 @@
 # APPLICATION SETTINGS
 # =================================================================
 popup_settings:
-  verbose_logging:        true        # Controls if detailed logging messages added to the log
+  verbose_logging:        false     # Controls if detailed logging messages added to the log
   merge_similar:          true         # Merging similar commands in popup
   max_rows:               25           # Max number of rows in the list of matching commands
   max_columns:            4            # Max columns in list of matching commands
@@ -405,7 +405,14 @@ actions:
     key: "\\"
     popup_action: navigate_up_hierarchy
     close_popup: false
-    
+
+  kb_navigate_up_hierarchy_bracket:
+    description: "Navigate up to parent patch in hierarchy (left bracket)"
+    action_type: popup
+    key: "["
+    popup_action: navigate_up_hierarchy
+    close_popup: false
+
   kb_navigate_down_hierarchy:
     description: "Navigate down into selected anchor submenu"
     action_type: popup
