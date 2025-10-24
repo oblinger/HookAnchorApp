@@ -212,11 +212,9 @@ pub fn load_manual_edits(commands: &mut Vec<Command>, verbose: bool) -> Result<u
     let txt_commands = crate::core::commands::load_commands_raw();
     crate::utils::log(&format!("LOAD_MANUAL_EDITS: Loaded {} commands from commands.txt", txt_commands.len()));
 
-    // Count alias commands
-    let alias_count = txt_commands.iter().filter(|c| c.action == "alias").count();
-    crate::utils::log(&format!("LOAD_MANUAL_EDITS: Found {} alias commands in commands.txt", alias_count));
-
     let mut edits_applied = 0;
+    let mut commands_added = 0;
+    let mut commands_updated = 0;
     // History recording is now automatic in sys_data::set_commands()
     // No need to track or record history here
 
@@ -229,10 +227,6 @@ pub fn load_manual_edits(commands: &mut Vec<Command>, verbose: bool) -> Result<u
         if is_scanner_generated && !txt_cmd.flags.contains(FLAG_USER_EDITED) {
             crate::utils::detailed_log("MANUAL_EDITS", &format!("Skipping scanner-generated command '{}' from commands.txt (no U flag)", txt_cmd.command));
             continue;
-        }
-
-        if txt_cmd.action == "alias" {
-            crate::utils::log(&format!("LOAD_MANUAL_EDITS: Processing alias command '{}'", txt_cmd.command));
         }
 
         // Find corresponding command in our list (match by patch, command name, and action)
@@ -250,7 +244,7 @@ pub fn load_manual_edits(commands: &mut Vec<Command>, verbose: bool) -> Result<u
                     if verbose {
                         println!("   ✏️  Updated manual edit: '{}'", txt_cmd.command);
                     }
-                    crate::utils::log(&format!("LOAD_MANUAL_EDITS: Updating command '{}' from manual edit", txt_cmd.command));
+                    crate::utils::log(&format!("LOAD_MANUAL_EDITS: Updating command '{}' (action: {}) - arg or flags changed", txt_cmd.command, txt_cmd.action));
 
                     let old_cmd = existing.clone();
 
@@ -261,6 +255,7 @@ pub fn load_manual_edits(commands: &mut Vec<Command>, verbose: bool) -> Result<u
 
                     commands[idx] = updated_cmd.clone();
                     edits_applied += 1;
+                    commands_updated += 1;
                     // History will be recorded automatically when set_commands is called
                 }
             }
@@ -269,9 +264,10 @@ pub fn load_manual_edits(commands: &mut Vec<Command>, verbose: bool) -> Result<u
                 if verbose {
                     println!("   ➕ Added manual command: '{}'", txt_cmd.command);
                 }
-                crate::utils::log(&format!("LOAD_MANUAL_EDITS: Adding new command '{}' from manual edit", txt_cmd.command));
+                crate::utils::log(&format!("LOAD_MANUAL_EDITS: Adding new command '{}' (action: {}) from manual edit", txt_cmd.command, txt_cmd.action));
                 commands.push(txt_cmd.clone());
                 edits_applied += 1;
+                commands_added += 1;
                 // History will be recorded automatically when set_commands is called
             }
         }
@@ -285,7 +281,13 @@ pub fn load_manual_edits(commands: &mut Vec<Command>, verbose: bool) -> Result<u
         }
     }
 
-    crate::utils::log(&format!("LOAD_MANUAL_EDITS: Applied {} manual edits", edits_applied));
+    // Only log if actual changes were made
+    if commands_added > 0 || commands_updated > 0 {
+        crate::utils::log(&format!("LOAD_MANUAL_EDITS: Applied {} edits ({} added, {} updated)",
+            edits_applied, commands_added, commands_updated));
+    } else {
+        crate::utils::detailed_log("MANUAL_EDITS", "No changes needed - cache and commands.txt are in sync");
+    }
 
     Ok(edits_applied)
 }

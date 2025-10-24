@@ -868,7 +868,7 @@ impl PopupActionHandler {
     pub fn with_close_flag(action_name: String, close_popup: bool) -> Self {
         // Generate description from action name
         let description = match action_name.as_str() {
-            "force_rebuild" => "Force rebuild command list",
+            "force_rebuild" => "Rebuild files, command and popup server",
             "start_grabber" => "Start grabber countdown",
             "show_folder" => "Show folder of selected command",
             "show_contact" => "Show contact (strips @ prefix)",
@@ -894,8 +894,10 @@ impl PopupActionHandler {
     }
 }
 
-impl KeyHandler for PopupActionHandler {
-    fn execute(&self, context: &mut KeyHandlerContext) -> KeyHandlerResult {
+impl PopupActionHandler {
+    /// Execute a built-in popup action by name
+    /// These are Rust-implemented actions that need direct access to the popup UI state
+    fn execute_popup_builtin(&self, context: &mut KeyHandlerContext) -> KeyHandlerResult {
         let result = match self.action_name.as_str() {
             "exit" => {
                 // Only exit if no sub-interfaces are visible
@@ -992,6 +994,12 @@ impl KeyHandler for PopupActionHandler {
         }
 
         result
+    }
+}
+
+impl KeyHandler for PopupActionHandler {
+    fn execute(&self, context: &mut KeyHandlerContext) -> KeyHandlerResult {
+        self.execute_popup_builtin(context)
     }
 
     fn description(&self) -> &str {
@@ -1207,7 +1215,7 @@ pub fn create_default_key_registry(config: &super::Config) -> KeyRegistry {
                             };
                             registry.register_keystroke(keystroke, handler);
                             registered_count += 1;
-                            crate::utils::log(&format!("✅ Registered popup action '{}' to key '{}'", popup_action, key_str));
+                            crate::utils::detailed_log("KEY_REGISTRATION", &format!("Registered popup action '{}' to key '{}'", popup_action, key_str));
                         }
                     } else {
                         // All other action types are JavaScript actions
