@@ -1115,10 +1115,10 @@ pub fn run_patch_inference(
     // Build the folder → patch mapping from anchors
     let folder_map = build_folder_to_patch_map(commands);
     crate::utils::log(&format!("Built folder map with {} entries", folder_map.len()));
-    
-    // Log the folder map entries
+
+    // Log the folder map entries (detailed logging to avoid spam)
     for (folder, patch) in &folder_map {
-        crate::utils::log(&format!("  Folder: {} -> Patch: {}", folder.display(), patch));
+        crate::utils::detailed_log("PATCH", &format!("Folder: {} -> Patch: {}", folder.display(), patch));
     }
     
     for command in commands.iter_mut() {

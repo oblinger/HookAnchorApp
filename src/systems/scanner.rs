@@ -851,7 +851,7 @@ fn scan_directory_pass(dir: &Path, vault_root: &Path, commands: &mut Vec<Command
                                         crate::utils::detailed_log("SCANNER", &format!("Skipping '{}' - app already handled: {}",
                                             command.command, path.display()));
                                     } else {
-                                        println!("      🎯 Found app: {}", command.command);
+                                        crate::utils::detailed_log("SCANNER", &format!("Found app: {}", command.command));
                                         crate::utils::detailed_log("SCANNER", &format!("Creating new APP command '{}' -> {} {}",
                                             command.command, command.action, command.arg));
 
@@ -1038,7 +1038,7 @@ fn scan_directory_with_root_protected(dir: &Path, vault_root: &Path, commands: &
                             if !is_pass1 {
                                 if let Some(command) = process_app_bundle(&path, existing_commands, folder_map) {
                                     if !handled_files.contains(&command.arg) {
-                                        println!("      🎯 Found app: {}", command.command);
+                                        crate::utils::detailed_log("SCANNER", &format!("Found app: {}", command.command));
                                         existing_commands.insert(command.command.to_lowercase());
                                         handled_files.insert(command.arg.clone());
                                         commands.push(command);
