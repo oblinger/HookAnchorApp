@@ -1841,9 +1841,6 @@ fn print_help_config() {
     print("    arg:                  \"{{...}}\"     # Template for command argument");
     print("    edit:                 true          # Open editor after creation");
     print("");
-    print("Run 'ha --help vars' to see available template variables");
-    print("Run 'ha --help fns' to see available JavaScript functions");
-    print("");
 }
 
 fn print_help_fns() {
@@ -1852,7 +1849,7 @@ fn print_help_fns() {
     print("");
     print("Logging:");
     print("  log(msg)                       Write message to HookAnchor log");
-    print("  detailed_log(category, msg)    Write msg when verbose_looging is true");
+    print("  detailedLog(category, msg)     Write msg when verbose_logging is true");
     print("  error(msg)                     Queue error for user display");
     print("");
     print("File System:");
@@ -1876,18 +1873,18 @@ fn print_help_fns() {
     print("  parseYaml(text)                Parse YAML into JavaScript object");
     print("");
     print("Application Control:");
-    print("  launch_app(app, arg?)          Launch app with optional argument");
-    print("  open_folder(path)              Open folder in Finder");
-    print("  open_url(url, browser?)        Open URL (optional browser name)");
+    print("  launchApp(app, arg?)           Launch app with optional argument");
+    print("  openFolder(path)               Open folder in Finder");
+    print("  openUrl(url, browser?)         Open URL (optional browser name)");
     print("  activateApp(app_name)          Bring application to foreground");
     print("  appIsRunning(app_name)         Check if app is running (boolean)");
     print("");
     print("Shell Commands:");
     print("  shell(command)                 Execute in background (non-blocking)");
-    print("  shell_sync(command)            Execute and wait (returns output)");
+    print("  shellSync(command)             Execute and wait (returns output)");
     print("  shellWithExitCode(cmd)         Returns {stdout, stderr, exitCode}");
     print("  commandExists(command)         Check if command in PATH (boolean)");
-    print("  change_directory(path)         Change working directory");
+    print("  changeDirectory(path)          Change working directory");
     print("  spawnDetached(command)         Spawn detached background process");
     print("  spawnDetachedWithArgs(args)    Spawn with argument array");
     print("");
@@ -1898,7 +1895,7 @@ fn print_help_fns() {
     print("  launch(command_name)           Execute another HookAnchor command");
     print("");
     print("State Management:");
-    print("  save_anchor(name, folder?)     Save anchor for next popup open");
+    print("  saveAnchor(name, folder?)      Save anchor for next popup open");
     print("");
     print("Configuration Access:");
     print("  getObsidianApp()               Get Obsidian app name from config");
@@ -1935,16 +1932,9 @@ fn print_help_fns() {
     print("");
     print("Example usage in config.js:");
     print("  action_folder: function(ctx) {");
-    print("    const { log, open_folder } = ctx.builtins;");
-    print("    open_folder(ctx.arg);");
+    print("    const { log, openFolder } = ctx.builtins;");
+    print("    openFolder(ctx.arg);");
     print("  }");
-    print("");
-    print("===============================================================================");
-    print("LOCATION");
-    print("===============================================================================");
-    print("");
-    print("Built-in functions: Defined in Rust (src/js/runtime.rs)");
-    print("Config.js functions: ~/.config/hookanchor/config.js");
     print("");
 }
 

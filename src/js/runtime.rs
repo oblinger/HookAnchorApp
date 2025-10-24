@@ -212,13 +212,15 @@ pub fn execute_with_context(script: &str, context: &str) -> Result<String, Box<d
 
 fn setup_logging(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Error>> {
     // log(message) - General logging to file (always logs, not just in verbose mode)
+    // log(msg) - Write message to HookAnchor log
     ctx.globals().set("log", Function::new(ctx.clone(), |msg: String| {
         // Use regular log for JavaScript - these are important user-defined logs
         crate::utils::log(&msg);
     }))?;
     
     // detailed_log(category, message) - Detailed logging (only in verbose mode)
-    ctx.globals().set("detailed_log", Function::new(ctx.clone(), |category: String, msg: String| {
+    // detailedLog(category, msg) - Write categorized debug message (only when verbose logging enabled)
+    ctx.globals().set("detailedLog", Function::new(ctx.clone(), |category: String, msg: String| {
         crate::utils::detailed_log(&category, &msg);
     })?)?;
     
@@ -390,7 +392,8 @@ fn setup_data_parsing(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Error>> {
 
 fn setup_launcher_builtins(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Error>> {
     // launch_app(app_name, arg) -> launches macOS application
-    ctx.globals().set("launch_app", Function::new(ctx.clone(), |app: String, arg: Option<String>| {
+    // launchApp(app, arg?) - Launch application with optional argument
+    ctx.globals().set("launchApp", Function::new(ctx.clone(), |app: String, arg: Option<String>| {
         let mut cmd = std::process::Command::new("open");
         cmd.arg("-a").arg(&app);
         let arg_display = arg.clone().unwrap_or_default();
@@ -406,7 +409,8 @@ fn setup_launcher_builtins(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Erro
     })?)?;
     
     // open_folder(path) -> opens folder in Finder
-    ctx.globals().set("open_folder", Function::new(ctx.clone(), |path: String| {
+    // openFolder(path) - Open folder in Finder
+    ctx.globals().set("openFolder", Function::new(ctx.clone(), |path: String| {
         let expanded = expand_tilde(&path);
         match std::process::Command::new("open").arg(&expanded).output() {
             Ok(_) => format!("Opened folder: {}", expanded),
@@ -415,7 +419,8 @@ fn setup_launcher_builtins(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Erro
     })?)?;
     
     // open_url(url, browser) -> opens URL in specific browser
-    ctx.globals().set("open_url", Function::new(ctx.clone(), |url: String, browser: Option<String>| {
+    // openUrl(url, browser?) - Open URL in browser (optional browser name)
+    ctx.globals().set("openUrl", Function::new(ctx.clone(), |url: String, browser: Option<String>| {
         let mut cmd = std::process::Command::new("open");
         let browser_display = browser.clone().unwrap_or("default browser".to_string());
         if let Some(ref browser_name) = browser {
@@ -496,7 +501,8 @@ fn setup_launcher_builtins(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Erro
     })?)?;
     
     // shell_sync(command) -> executes shell command and waits for completion
-    ctx.globals().set("shell_sync", Function::new(ctx.clone(), |command: String| {
+    // shellSync(command) - Execute shell command and wait (blocking, returns output)
+    ctx.globals().set("shellSync", Function::new(ctx.clone(), |command: String| {
         // ALWAYS log shell commands for debugging
         crate::utils::detailed_log("SYSTEM", &format!("🐚 JS_SHELL_SYNC: Executing sync command: {}", command));
         
@@ -644,7 +650,8 @@ fn setup_launcher_builtins(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Erro
     // ============================================================================
     
     // change_directory(path) -> changes working directory
-    ctx.globals().set("change_directory", Function::new(ctx.clone(), |path: String| {
+    // changeDirectory(path) - Change working directory
+    ctx.globals().set("changeDirectory", Function::new(ctx.clone(), |path: String| {
         let expanded = expand_tilde(&path);
         match std::env::set_current_dir(&expanded) {
             Ok(_) => format!("Changed directory to: {}", expanded),
@@ -743,7 +750,8 @@ fn setup_launcher_builtins(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Erro
     })?)?;
 
     // save_anchor(name, folder?) -> saves anchor name and optional folder for next popup
-    ctx.globals().set("save_anchor", Function::new(ctx.clone(), |name: String, folder: Opt<String>| {
+    // saveAnchor(name, folder?) - Save anchor name for next popup open
+    ctx.globals().set("saveAnchor", Function::new(ctx.clone(), |name: String, folder: Opt<String>| {
         crate::utils::detailed_log("ANCHOR_SAVE", &format!("🔄 JavaScript save_anchor called: '{}' with folder: {:?}", name, folder.0));
 
         let mut state = crate::core::data::get_state();

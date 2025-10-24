@@ -8,7 +8,7 @@
 // 
 // All JavaScript functions have access to these built-in functions:
 // - shell(command): Execute shell command asynchronously
-// - shell_sync(command): Execute shell command synchronously  
+// - shellSync(command): Execute shell command synchronously  
 // - log(message): Log message to HookAnchor logs
 //
 
@@ -33,7 +33,7 @@
 //     DD: string
 //   },
 //   builtins: {               // All builtin functions
-//     log, open_folder, shell, shell_sync, launch_app, change_directory,
+//     log, openFolder, shell, shellSync, launchApp, changeDirectory,
 //     readFile, expandHome, getObsidianVault, getObsidianVaultPath,
 //     getObsidianApp, joinPath, file_exists, spawnDetached,
 //     shellWithExitCode, encodeURIComponent, commandExists, etc.
@@ -56,7 +56,7 @@ module.exports = {
 
   // Open folder - handles relative and absolute paths
   action_folder: function(ctx) {
-    const { log, open_folder, joinPath, getObsidianVaultPath } = ctx.builtins;
+    const { log, openFolder, joinPath, getObsidianVaultPath } = ctx.builtins;
     const folderPath = ctx.arg;
     
     log("FOLDER", `Starting with path: '${folderPath}'`);
@@ -66,8 +66,8 @@ module.exports = {
       // Already absolute, use as-is
       log("FOLDER", `Using absolute path: '${folderPath}'`);
       try {
-        open_folder(folderPath);
-        log("FOLDER", `Successfully called open_folder for: '${folderPath}'`);
+        openFolder(folderPath);
+        log("FOLDER", `Successfully called openFolder for: '${folderPath}'`);
       } catch (error) {
         log("FOLDER", `Error opening folder: ${error}`);
       }
@@ -77,8 +77,8 @@ module.exports = {
       const absolutePath = joinPath(vaultRoot, folderPath);
       log("FOLDER", `Converting relative path '${folderPath}' to absolute: '${absolutePath}'`);
       try {
-        open_folder(absolutePath);
-        log("FOLDER", `Successfully called open_folder for: '${absolutePath}'`);
+        openFolder(absolutePath);
+        log("FOLDER", `Successfully called openFolder for: '${absolutePath}'`);
       } catch (error) {
         log("FOLDER", `Error opening folder: ${error}`);
       }
@@ -89,7 +89,7 @@ module.exports = {
 
   // Execute command - handles windowed (W flag) execution
   action_cmd: function(ctx) {
-    const { log, shell, shell_sync } = ctx.builtins;
+    const { log, shell, shellSync } = ctx.builtins;
     const fullCmd = ctx.arg;
 
     // Check if command starts with 'W ' flag (handle different separations)
@@ -104,7 +104,7 @@ module.exports = {
       shell(`osascript -e 'tell application "Terminal" to do script "${escapedCmd}"'`);
       
       // Brief delay to ensure Terminal has time to start
-      shell_sync("/bin/sleep 0.2");
+      shellSync("/bin/sleep 0.2");
       
       log("CMD", `Terminal window opened with command`);
     } else if (fullCmd.startsWith('W; ')) {
@@ -117,7 +117,7 @@ module.exports = {
       shell(`osascript -e 'tell application "Terminal" to do script "${escapedCmd}"'`);
       
       // Brief delay to ensure Terminal has time to start  
-      shell_sync("/bin/sleep 0.2");
+      shellSync("/bin/sleep 0.2");
       
       log("CMD", `Terminal window opened with command`);
     } else if (fullCmd.startsWith('W;')) {
@@ -130,7 +130,7 @@ module.exports = {
       shell(`osascript -e 'tell application "Terminal" to do script "${escapedCmd}"'`);
       
       // Brief delay to ensure Terminal has time to start  
-      shell_sync("/bin/sleep 0.2");
+      shellSync("/bin/sleep 0.2");
       
       log("CMD", `Terminal window opened with command`);
     } else {
@@ -145,7 +145,7 @@ module.exports = {
   // I flag: Interactive terminal that stays open
   // C flag: Interactive terminal that auto-closes when command exits
   action_console: function(ctx) {
-    const { log, shell, shell_sync } = ctx.builtins;
+    const { log, shell, shellSync } = ctx.builtins;
     const command = ctx.arg;
     const hasInteractiveFlag = ctx.flags && ctx.flags.includes('I');
     const hasCloseFlag = ctx.flags && ctx.flags.includes('C');
@@ -176,7 +176,7 @@ module.exports = {
       shell(`osascript -e 'tell application "Terminal" to do script "${escapedCmd}"'`);
       
       // Brief delay to ensure Terminal has time to start
-      shell_sync("/bin/sleep 0.2");
+      shellSync("/bin/sleep 0.2");
       
       // Activate Terminal to bring it to foreground
       shell(`osascript -e 'tell application "Terminal" to activate'`);
@@ -194,7 +194,7 @@ module.exports = {
 
   // Open markdown file in Obsidian or default editor
   action_markdown: function(ctx) {
-    const { log, shell, launch_app, expandHome, getObsidianVaultPath, getObsidianVault, getObsidianApp, encodeURIComponent } = ctx.builtins;
+    const { log, shell, launchApp, expandHome, getObsidianVaultPath, getObsidianVault, getObsidianApp, encodeURIComponent } = ctx.builtins;
     const filePath = ctx.arg;
     
     log("MARKDOWN", `Processing file: '${filePath}'`);
@@ -229,7 +229,7 @@ module.exports = {
       const url = `obsidian://open?vault=${vault}&file=${encoded}`;
       
       log("MARKDOWN", `Opening Obsidian with URL: ${url}`);
-      launch_app(app, url);
+      launchApp(app, url);
     } else {
       // File is outside vault - open with default markdown editor
       log("MARKDOWN", `File is outside Obsidian vault, opening with default app`);
@@ -240,7 +240,7 @@ module.exports = {
 
   // Type text file contents into active application
   action_text: function(ctx) {
-    const { log, readFile, shell, shell_sync } = ctx.builtins;
+    const { log, readFile, shell, shellSync } = ctx.builtins;
     const filePath = ctx.arg;
     
     // Get delay parameter from action config, default to 1.0 seconds
@@ -262,7 +262,7 @@ module.exports = {
     // Give focus back to the previous application (the one that was active before popup)
     log("TEXT", `Switching focus to previous application`);
     shell("osascript -e 'tell application \"System Events\" to key code 48 using command down'");
-    shell_sync(`/bin/sleep ${delay}`); // Wait for focus switch with configurable delay
+    shellSync(`/bin/sleep ${delay}`); // Wait for focus switch with configurable delay
 
     // Type the content using a simpler approach
     log("TEXT", `Typing content into focused application after ${delay}s delay`);
@@ -277,7 +277,7 @@ module.exports = {
     const script = `osascript -e 'tell application "System Events" to keystroke "${escapedContent}"'`;
 
     try {
-      shell_sync(script);
+      shellSync(script);
       log("TEXT", `Successfully typed content`);
     } catch (error) {
       log("TEXT", `Error typing content: ${error}`);
@@ -380,16 +380,16 @@ module.exports = {
 
   // Search and fill from 1Password
   action_1pass: function(ctx) {
-    const { shell, shell_sync } = ctx.builtins;
+    const { shell, shellSync } = ctx.builtins;
     const searchTerm = ctx.arg;
     
     // Try Quick Access first (most universal)
     try {
-      shell_sync("osascript -e 'tell application \"System Events\" to keystroke \" \" using {shift down, command down}'");
-      shell_sync("/bin/sleep 0.25");  // Wait for Quick Access to fully open
+      shellSync("osascript -e 'tell application \"System Events\" to keystroke \" \" using {shift down, command down}'");
+      shellSync("/bin/sleep 0.25");  // Wait for Quick Access to fully open
       
       // Type character by character for better reliability
-      shell_sync(`osascript -e 'tell application "System Events"
+      shellSync(`osascript -e 'tell application "System Events"
         repeat with i from 1 to length of "${searchTerm}"
           set currentChar to character i of "${searchTerm}"
           keystroke currentChar
@@ -397,22 +397,22 @@ module.exports = {
         end repeat
       end tell'`);
       
-      shell_sync("/bin/sleep 2.0");  // Wait for 1Password to search and show results
-      shell_sync("osascript -e 'tell application \"System Events\" to key code 36'");  // Press Enter to select and open
-      shell_sync("/bin/sleep 0.5");  // Wait for action to complete
+      shellSync("/bin/sleep 2.0");  // Wait for 1Password to search and show results
+      shellSync("osascript -e 'tell application \"System Events\" to key code 36'");  // Press Enter to select and open
+      shellSync("/bin/sleep 0.5");  // Wait for action to complete
     } catch (e) {
       // Fallback 1: Try menu bar access
       try {
         shell("osascript -e 'tell application \"System Events\" to tell process \"1Password 7 - Password Manager\" to click menu bar item 1 of menu bar 1'");
-        shell_sync("/bin/sleep 0.5");
+        shellSync("/bin/sleep 0.5");
         shell(`osascript -e 'tell application "System Events" to keystroke "${searchTerm}"'`);
         shell("osascript -e 'tell application \"System Events\" to key code 36'");
       } catch (e2) {
         // Fallback 2: Open 1Password app and use search
         shell("osascript -e 'tell application \"1Password\" to activate'");
-        shell_sync("/bin/sleep 0.5");
+        shellSync("/bin/sleep 0.5");
         shell("osascript -e 'tell application \"System Events\" to keystroke \"f\" using command down'");
-        shell_sync("/bin/sleep 0.2");
+        shellSync("/bin/sleep 0.2");
         shell(`osascript -e 'tell application "System Events" to keystroke "${searchTerm}"'`);
         shell("osascript -e 'tell application \"System Events\" to key code 36'");
       }
@@ -452,7 +452,7 @@ module.exports = {
 
   // Search for contact in Contacts app
   action_contact: function(ctx) {
-    const { log, shell, shell_sync, shellWithExitCode } = ctx.builtins;
+    const { log, shell, shellSync, shellWithExitCode } = ctx.builtins;
     
     // Use the search parameter from config (e.g., "{{command}}") 
     // This allows users to control what gets searched for
@@ -549,18 +549,18 @@ module.exports = {
 
   // Navigate to Slack channel
   action_slack: function(ctx) {
-    const { shell, shell_sync } = ctx.builtins;
+    const { shell, shellSync } = ctx.builtins;
     const channel = ctx.arg;
     
     // Use AppleScript to activate Slack and navigate to channel
     shell(`osascript -e 'tell application "Slack" to activate'`);
-    shell_sync("/bin/sleep 0.5");
+    shellSync("/bin/sleep 0.5");
     // Open quick switcher with Cmd+K
     shell(`osascript -e 'tell application "System Events" to keystroke "k" using {command down}'`);
-    shell_sync("/bin/sleep 0.5");
+    shellSync("/bin/sleep 0.5");
     // Type the channel name
     shell(`osascript -e 'tell application "System Events" to keystroke "${channel}"'`);
-    shell_sync("/bin/sleep 0.5");
+    shellSync("/bin/sleep 0.5");
     // Press Enter to navigate
     shell(`osascript -e 'tell application "System Events" to keystroke return'`);
   },
@@ -578,19 +578,19 @@ module.exports = {
 
   // Helper function: Give up focus to previous application
   give_up_focus: function(ctx) {
-    const { shell, shell_sync } = ctx.builtins;
+    const { shell, shellSync } = ctx.builtins;
     // Give focus to the previous application using Cmd+Tab
     shell("osascript -e 'tell application \"System Events\" to key code 48 using command down'");
-    shell_sync("/bin/sleep 0.15"); // Brief delay to ensure focus transfer completes
+    shellSync("/bin/sleep 0.15"); // Brief delay to ensure focus transfer completes
   },
 
 
   // Helper function: Regain focus for the anchor selector
   regain_focus: function(ctx) {
-    const { shell, shell_sync } = ctx.builtins;
+    const { shell, shellSync } = ctx.builtins;
     // Bring focus back to the anchor selector application
     shell("osascript -e 'tell application \"popup\" to activate'");
-    shell_sync("/bin/sleep 0.1"); // Brief delay to ensure focus transfer completes
+    shellSync("/bin/sleep 0.1"); // Brief delay to ensure focus transfer completes
   },
 
 
@@ -601,7 +601,7 @@ module.exports = {
   // Anchor action - behaves exactly like markdown action
   // Anchors and markdown files are both just documents that open the same way
   action_anchor: function(ctx) {
-    const { log, error, file_exists, isDirectory, save_anchor } = ctx.builtins;
+    const { log, error, file_exists, isDirectory, saveAnchor } = ctx.builtins;
 
     // Debug: Log everything available in the context
     log("=== ANCHOR ACTION DEBUG ===");
@@ -624,7 +624,7 @@ module.exports = {
                    (input && input.trim() !== '') ? 'input parameter' : 'command_name';
     log(`ANCHOR: Saving last anchor: '${anchor_text}' (source: ${source})`);
     if (anchor_text) {
-      save_anchor(anchor_text);
+      saveAnchor(anchor_text);
     }
 
     // If no argument, silently do nothing (virtual anchors like "Notion Root")
@@ -692,7 +692,7 @@ module.exports = {
 
   // TEST: Function to test JavaScript error reporting
   action_test_error: function(ctx) {
-    const { error, detailed_log } = ctx.builtins;
+    const { error, detailedLog } = ctx.builtins;
     log("TEST_ERROR", "About to throw a JavaScript error for testing");
 
     // This will definitely throw an error
@@ -716,7 +716,7 @@ module.exports = {
   // NEW: TMUX activation using only the shell commands available to JavaScript
   // This reimplements the Rust version using shellWithExitCode, shell, and error
   action_activate_tmux: function(ctx) {
-    const { log, shell, shellWithExitCode, error, file_exists, dirname, shell_sync, save_anchor, getTmuxStartupCommand } = ctx.builtins;
+    const { log, shell, shellWithExitCode, error, file_exists, dirname, shellSync, saveAnchor, getTmuxStartupCommand } = ctx.builtins;
     const fullPath = ctx.arg;
     const { command_name, last_anchor_input, input } = ctx;
 
@@ -730,7 +730,7 @@ module.exports = {
                           (input && input.trim() !== '') ? input : command_name;
       log("TMUX_ACTIVATE", `Saving last anchor: '${anchor_text}'`);
       if (anchor_text) {
-        save_anchor(anchor_text);
+        saveAnchor(anchor_text);
       }
 
       if (!fullPath) {
@@ -840,7 +840,7 @@ module.exports = {
         }
 
         log("ACTIVATE_TMUX_JS", "tmuxp completed successfully");
-        shell_sync("/bin/sleep 0.5");
+        shellSync("/bin/sleep 0.5");
       } else {
         // Create basic session without tmuxp
         log("ACTIVATE_TMUX_JS", `Creating basic tmux session '${session_name}' in ${folder_path}`);
@@ -860,7 +860,7 @@ module.exports = {
         } catch (e) {
           log("ACTIVATE_TMUX_JS", `Failed to parse basic session result: ${e}`);
         }
-        shell_sync("/bin/sleep 0.3");
+        shellSync("/bin/sleep 0.3");
       }
     } else {
       log("TMUX_DEBUG", `Line 794: Session '${session_name}' already exists, skipping creation`);
@@ -870,7 +870,7 @@ module.exports = {
     // Longer delay to ensure session is fully ready
     log("TMUX_DEBUG", "Line 798: Sleeping for 1 second to ensure session is ready");
     try {
-      shell_sync("/bin/sleep 1.0");
+      shellSync("/bin/sleep 1.0");
       log("TMUX_DEBUG", "Line 799: Sleep completed");
     } catch (e) {
       log("TMUX_DEBUG", `Line 799: ERROR during sleep: ${e}`);
@@ -906,16 +906,16 @@ module.exports = {
 
           // Send directory change to tmux session
           log("TMUX_ACTIVATE", `Sending directory change to tmux session '${session_name}'`);
-          shell_sync(`/opt/homebrew/bin/tmux send-keys -t "${session_name}" "cd '${folder_path}'" C-m`);
+          shellSync(`/opt/homebrew/bin/tmux send-keys -t "${session_name}" "cd '${folder_path}'" C-m`);
 
           // Wait a moment for cd to complete before running startup command
-          shell_sync("/bin/sleep 0.3");
+          shellSync("/bin/sleep 0.3");
 
           // Get startup command from config and run it if configured
           const startupCommand = getTmuxStartupCommand();
           if (startupCommand && startupCommand.trim() !== '') {
             log("TMUX_ACTIVATE", `Running startup command in tmux session: ${startupCommand}`);
-            shell_sync(`/opt/homebrew/bin/tmux send-keys -t "${session_name}" "${startupCommand}" C-m`);
+            shellSync(`/opt/homebrew/bin/tmux send-keys -t "${session_name}" "${startupCommand}" C-m`);
           }
 
           // Activate Terminal to bring it to foreground
@@ -948,20 +948,20 @@ module.exports = {
   },
 
   action_grab: function(ctx) {
-    const { log, error, shell_sync } = ctx.builtins;
+    const { log, error, shellSync } = ctx.builtins;
 
     // Use log for visibility
     log("GRAB: action_grab: Starting grab operation via CLI");
 
     try {
       // Use the CLI grab command to perform the grab operation
-      log("GRAB: action_grab: Calling shell_sync...");
+      log("GRAB: action_grab: Calling shellSync...");
 
-      const grab_output = shell_sync("~/ob/proj/HookAnchor/target/release/ha --grab");
+      const grab_output = shellSync("~/ob/proj/HookAnchor/target/release/ha --grab");
 
       log(`GRAB: action_grab: Raw grab output: '${grab_output}'`);
 
-      // shell_sync wraps output with "Command executed: " prefix, strip it
+      // shellSync wraps output with "Command executed: " prefix, strip it
       let clean_output = grab_output.trim();
       if (clean_output.startsWith("Command executed: ")) {
         clean_output = clean_output.substring("Command executed: ".length);
@@ -989,13 +989,13 @@ module.exports = {
 
   // Clear the anchor.log file for debugging
   action_clear_log: function(ctx) {
-    const { log, shell_sync } = ctx.builtins;
+    const { log, shellSync } = ctx.builtins;
 
     log("CLEAR_LOG: Clearing anchor.log file for debugging");
 
     try {
       // Clear the log file
-      const result = shell_sync("echo '' > ~/.config/hookanchor/anchor.log");
+      const result = shellSync("echo '' > ~/.config/hookanchor/anchor.log");
       log("CLEAR_LOG: Successfully cleared anchor.log");
       return "Log cleared";
     } catch (err) {
