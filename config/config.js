@@ -429,7 +429,7 @@ module.exports = {
     log("DOC", `Opening document: '${filePath}'`);
     
     // Check if file exists
-    if (!file_exists(filePath)) {
+    if (!fileExists(filePath)) {
       log("DOC", `Warning - File does not exist: ${filePath}`);
       // Try to open anyway, let the OS handle the error
     }
@@ -649,7 +649,7 @@ module.exports = {
       actionType = 'obs_url';
     } else {
       // File/folder path - check if it's a directory
-      if (file_exists(arg) && isDirectory(arg)) {
+      if (fileExists(arg) && isDirectory(arg)) {
         actionType = 'folder';
       } else {
         // File path - check extension
@@ -778,7 +778,7 @@ module.exports = {
 
     // 3. Check for .tmuxp.yaml
     const tmuxp_path = `${folder_path}/.tmuxp.yaml`;
-    const has_tmuxp = file_exists(tmuxp_path);
+    const has_tmuxp = fileExists(tmuxp_path);
     log("TMUX_DEBUG", `Checking for .tmuxp.yaml at: '${tmuxp_path}' - ${has_tmuxp ? 'FOUND' : 'NOT FOUND'}`);
 
     if (has_tmuxp) {

@@ -253,13 +253,7 @@ fn setup_file_operations(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Error>
         let expanded = expand_tilde(&path);
         Path::new(&expanded).exists()
     })?)?;
-    
-    // file_exists(path) -> boolean (alias for fileExists)
-    ctx.globals().set("file_exists", Function::new(ctx.clone(), |path: String| {
-        let expanded = expand_tilde(&path);
-        Path::new(&expanded).exists()
-    })?)?;
-    
+
     // isDirectory(path) -> boolean
     ctx.globals().set("isDirectory", Function::new(ctx.clone(), |path: String| {
         let expanded = expand_tilde(&path);

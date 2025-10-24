@@ -1848,27 +1848,17 @@ fn print_help_config() {
 
 fn print_help_fns() {
     print("");
-    print("JAVASCRIPT FUNCTIONS");
-    print("");
-    print("HookAnchor provides JavaScript functions in two ways:");
-    print("1. BUILT-IN FUNCTIONS (defined in Rust, always available globally)");
-    print("2. CONFIG.JS FUNCTIONS (defined in ~/.config/hookanchor/config.js)");
-    print("");
-    print("===============================================================================");
-    print("BUILT-IN FUNCTIONS");
-    print("===============================================================================");
+    print("FUNCTIONS AVAILABLE FOR \"config.js\" EXTENSIONS");
     print("");
     print("Logging:");
     print("  log(msg)                       Write message to HookAnchor log");
-    print("  detailed_log(category, msg)    Write categorized debug message");
-    print("  debug(msg)                     Write debug message (alias for log)");
+    print("  detailed_log(category, msg)    Write msg when verbose_looging is true");
     print("  error(msg)                     Queue error for user display");
     print("");
     print("File System:");
     print("  readFile(path)                 Read text file contents");
     print("  writeFile(path, text)          Write text to file");
     print("  fileExists(path)               Check if file exists (boolean)");
-    print("  file_exists(path)              Alias for fileExists");
     print("  isDirectory(path)              Check if path is directory (boolean)");
     print("  listFiles(dir, pattern)        List files matching glob pattern");
     print("");

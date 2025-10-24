@@ -414,7 +414,7 @@ module.exports = {
     detailed_log("DOC", `Opening document: '${filePath}'`);
     
     // Check if file exists
-    if (!file_exists(filePath)) {
+    if (!fileExists(filePath)) {
       detailed_log("DOC", `Warning - File does not exist: ${filePath}`);
       // Try to open anyway, let the OS handle the error
     }
@@ -592,7 +592,7 @@ module.exports = {
     
     // Check if .tmuxp.yaml exists
     const tmuxpPath = joinPath(anchorDir, ".tmuxp.yaml");
-    if (file_exists(tmuxpPath)) {
+    if (fileExists(tmuxpPath)) {
       detailed_log("TMUX_ACTIVATE", `Found .tmuxp.yaml at ${tmuxpPath}`);
       
       // Change to the anchor directory
@@ -691,7 +691,7 @@ module.exports = {
                              '.zip', '.tar', '.gz', '.dmg', '.app'];
     const hasFileExtension = commonExtensions.some(ext => arg.toLowerCase().endsWith(ext));
     
-    if (!hasFileExtension && file_exists(arg)) {
+    if (!hasFileExtension && fileExists(arg)) {
       // Likely a folder - delegate to folder action
       detailed_log("ANCHOR", `Detected folder, delegating to action_folder`);
       return this.action_folder(ctx);
@@ -765,7 +765,7 @@ module.exports = {
     const tmuxp_path = `${folder_path}/.tmuxp.yaml`;
     detailed_log("TMUX_DEBUG", `Line 718: Checking for .tmuxp.yaml at: '${tmuxp_path}'`);
     
-    if (!file_exists(tmuxp_path)) {
+    if (!fileExists(tmuxp_path)) {
       detailed_log("TMUX_DEBUG", "Line 719: No .tmuxp.yaml found");
       log("ACTIVATE_TMUX_JS: No .tmuxp.yaml found");
       
@@ -773,7 +773,7 @@ module.exports = {
       const claude_path = `${folder_path}/CLAUDE.md`;
       detailed_log("TMUX_DEBUG", `Line 723: Checking for CLAUDE.md at: '${claude_path}'`);
       
-      if (file_exists(claude_path)) {
+      if (fileExists(claude_path)) {
         detailed_log("TMUX_DEBUG", "Line 724: Found CLAUDE.md, launching Claude Code");
         log("ACTIVATE_TMUX_JS: Found CLAUDE.md, launching Claude Code");
         // Change to the directory and launch Claude Code
