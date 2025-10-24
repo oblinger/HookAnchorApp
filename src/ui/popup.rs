@@ -1806,11 +1806,11 @@ impl AnchorSelector {
         )?;
         crate::utils::log(&format!("RENAME: rename_associated_data completed, updated_arg: {}", updated_arg));
 
-        // Delete original command from UI if needed
+        // Delete original command from UI (not from global state) if needed
         if let Some(cmd_name) = original_command_to_delete {
             if !cmd_name.is_empty() {
-                use crate::core::delete_command;
-                let _ = delete_command(cmd_name);
+                crate::utils::log(&format!("RENAME: Deleting original command '{}' from UI", cmd_name));
+                self.commands_mut().retain(|c| &c.command != cmd_name);
             }
         }
 
@@ -1826,9 +1826,9 @@ impl AnchorSelector {
         file_size: None,
         };
 
-        // Add the new command to UI
-        use crate::core::add_command;
-        let _ = add_command(new_command);
+        // Add the new command to UI (not to global state)
+        crate::utils::log(&format!("RENAME: Adding new command '{}' to UI", new_command.command));
+        self.commands_mut().push(new_command);
 
         // Save all commands back to sys_data because rename_associated_data modified
         // patches and prefixes on many commands (not just the renamed command)
