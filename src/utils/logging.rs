@@ -132,17 +132,13 @@ pub fn log_error_module(module: &str, message: &str) {
 
 
 
-/// Unified print function that both prints to console and logs
-/// 
-/// This replaces all println! and eprintln! calls throughout the codebase.
-/// The message is printed to stdout and also logged with a '|' prefix to indicate
-/// it came from a console print statement.
-/// 
-/// For error messages, prefix your string with "[ERROR]" or use log_error() directly.
+/// Print to console only (for CLI output)
+///
+/// This is for CLI commands that need to show output to the user.
+/// Use this instead of println! directly.
+///
+/// Note: This does NOT log to file. If you want to both print and log,
+/// call both print() and log() explicitly.
 pub fn print(message: &str) {
-    // Print to console
     println!("{}", message);
-    
-    // Also log it with a vertical bar prefix to indicate console output
-    log(&format!("| {}", message));
 }
