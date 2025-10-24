@@ -197,18 +197,13 @@ impl CommandEditor {
         // Get the config to determine window width
         let config = crate::core::data::get_config();
         let window_width = config.popup_settings.get_default_window_width() as f32;
-        
-        crate::utils::log(&format!("🔧 COMMAND_EDITOR: Setting inner window to exact outer width: {}px", window_width));
-        
+
         egui::Window::new("Command Editor")
             .resizable(false)
             .collapsible(false)
             .fixed_size([window_width, 260.0])
             .anchor(egui::Align2::CENTER_CENTER, [0.0, 0.0])
             .show(ctx, |ui| {
-                // Log the actual available width that egui is giving us
-                let actual_width = ui.available_width();
-                crate::utils::log(&format!("🔧 COMMAND_EDITOR ACTUAL: egui is giving us {}px available width inside the window", actual_width));
                 
                 ui.vertical(|ui| {
                     ui.add_space(10.0);
