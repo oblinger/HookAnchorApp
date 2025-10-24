@@ -1,31 +1,31 @@
 {
-  "anchor_folder": null,
-  "anchor_name": "Dreams",
-  "anchor_timestamp": 1761328851,
-  "build_time": 1761330278,
+  "window_position": [
+    -2262.0,
+    48.0
+  ],
   "history_viewer_state": {
-    "min_edit_size": 500,
-    "name_filter": "",
-    "patch_filter": "",
     "position": [
       -2381.0,
       309.0
     ],
-    "selected_action_types": [],
-    "sidebar_width": 218.0,
     "window_size": [
       1000.0,
       756.0
-    ]
+    ],
+    "patch_filter": "",
+    "name_filter": "",
+    "min_edit_size": 500,
+    "selected_action_types": [],
+    "sidebar_width": 218.0
   },
-  "last_executed_command": "Dreams",
-  "last_scan_checksum": null,
+  "build_time": 1761330669,
   "last_scan_time": null,
+  "last_scan_checksum": null,
+  "last_executed_command": "Dreams",
+  "server_pid": 57373,
   "notion_last_scan": null,
-  "server_pid": 51655,
-  "show_files": true,
-  "window_position": [
-    980.0,
-    658.0
-  ]
+  "anchor_name": "Dreams",
+  "anchor_timestamp": 1761328851,
+  "anchor_folder": null,
+  "show_files": true
 }

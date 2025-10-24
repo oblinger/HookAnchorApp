@@ -115,6 +115,15 @@ pub fn restart_popup_server() -> Result<(), String> {
 ///
 /// Wrapper around activate_command_server for consistency
 pub fn restart_command_server() -> Result<(), Box<dyn std::error::Error>> {
+    // Clear any stale lock file before restarting
+    // This ensures a forced restart (like Cmd+B) always works even if a previous
+    // startup attempt left a lock file behind
+    let lock_path = std::path::Path::new("/tmp/hookanchor_server_starting.lock");
+    if lock_path.exists() {
+        let _ = std::fs::remove_file(lock_path);
+        crate::utils::detailed_log("RESTART", "Removed server startup lock file before restart");
+    }
+
     crate::execute::activate_command_server(true)
 }
 
