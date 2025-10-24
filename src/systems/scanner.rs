@@ -67,6 +67,8 @@ use chrono::Local;
 pub const SCANNER_GENERATED_ACTIONS: &[&str] = &["markdown", "folder", "app", "open_app", "doc"];
 
 
+// TODO: DEAD CODE - Remove this function
+// This is only used by delete_anchors which is also dead code
 /// Check if a command is a Notion anchor
 /// Simple check that doesn't require accessing the actions module
 fn is_notion_anchor(cmd: &Command) -> bool {
@@ -74,13 +76,17 @@ fn is_notion_anchor(cmd: &Command) -> bool {
     (cmd.arg.contains("notion.so") || cmd.patch == "Notion Root")
 }
 
+// TODO: DEAD CODE - Remove this function
+// Previously used to delete file-based anchors, but scanner now creates markdown files
+// with action:"markdown" + 'A' flag instead of action:"anchor"
+// Only remaining use is for Notion anchor deletion which is currently disabled
 /// Delete anchor commands based on whether they are Notion anchors or not
-/// 
+///
 /// # Arguments
 /// * `commands` - Mutable reference to the command list
 /// * `delete_notion_anchors` - If true, delete Notion anchors. If false, delete non-Notion anchors
 /// * `verbose` - Whether to print verbose output
-/// 
+///
 /// Returns the number of commands deleted
 fn delete_anchors(commands: &mut Vec<Command>, delete_notion_anchors: bool, verbose: bool) -> usize {
     let initial_count = commands.len();
@@ -613,11 +619,6 @@ fn scan_files(mut commands: Vec<Command>, file_roots: &[String], config: &Config
         false
     };
     
-    // STEP 1: Delete all non-user-edited anchors to ensure clean rebuild
-    // This is critical for the new two-pass scanner which builds folder_map incrementally
-    let anchors_deleted = delete_anchors(&mut commands, false, false);  // false = delete non-Notion anchors, false = quiet
-    crate::utils::log(&format!("Deleted {} non-user anchor commands", anchors_deleted));
-
     // Simple rule: Delete all scanner-generated commands that don't have the U (user-edited) flag
     // The scanner will recreate them if the files still exist
     // This eliminates all special cases and complexity
