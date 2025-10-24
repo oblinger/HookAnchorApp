@@ -20,7 +20,7 @@ use crate::utils::detailed_log;
 fn log_and_print(prefix: &str, message: &str) {
     let formatted = format!("{}: {}", prefix, message);
     // Print to stdout so we can see what the server is doing
-    println!("{}", formatted);
+    crate::utils::print(&formatted);
     // Also log to file for persistence - use regular log() for command execution
     crate::utils::log(&formatted);
 }

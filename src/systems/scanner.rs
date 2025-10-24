@@ -129,9 +129,9 @@ fn delete_anchors(commands: &mut Vec<Command>, delete_notion_anchors: bool, verb
     let deleted = initial_count - commands.len();
     if deleted > 0 && verbose {
         if delete_notion_anchors {
-            println!("   Removed {} non-user-edited Notion anchor commands", deleted);
+            crate::utils::print(&format!("   Removed {} non-user-edited Notion anchor commands", deleted));
         } else {
-            println!("   Removed {} non-user-edited file anchor commands", deleted);
+            crate::utils::print(&format!("   Removed {} non-user-edited file anchor commands", deleted));
         }
     }
     deleted
@@ -217,7 +217,7 @@ fn scan(commands: Vec<Command>, sys_data: &crate::core::data::SysData) -> Vec<Co
 /// Returns number of commands added/updated from manual edits
 pub fn load_manual_edits(commands: &mut Vec<Command>, verbose: bool) -> Result<usize, Box<dyn std::error::Error>> {
     if verbose {
-        println!("\n📝 Loading manual edits from commands.txt...");
+        crate::utils::print("\n📝 Loading manual edits from commands.txt...");
     }
 
     // Load commands.txt
@@ -254,7 +254,7 @@ pub fn load_manual_edits(commands: &mut Vec<Command>, verbose: bool) -> Result<u
                 // Only update if something actually changed (besides file_size which we track separately)
                 if existing.arg != txt_cmd.arg || existing.flags != txt_cmd.flags {
                     if verbose {
-                        println!("   ✏️  Updated manual edit: '{}'", txt_cmd.command);
+                        crate::utils::print(&format!("   ✏️  Updated manual edit: '{}'", txt_cmd.command));
                     }
                     crate::utils::log(&format!("LOAD_MANUAL_EDITS: Updating command '{}' (action: {}) - arg or flags changed", txt_cmd.command, txt_cmd.action));
 
@@ -274,7 +274,7 @@ pub fn load_manual_edits(commands: &mut Vec<Command>, verbose: bool) -> Result<u
             None => {
                 // New command from manual edit - add it
                 if verbose {
-                    println!("   ➕ Added manual command: '{}'", txt_cmd.command);
+                    crate::utils::print(&format!("   ➕ Added manual command: '{}'", txt_cmd.command));
                 }
                 crate::utils::log(&format!("LOAD_MANUAL_EDITS: Adding new command '{}' (action: {}) from manual edit", txt_cmd.command, txt_cmd.action));
                 commands.push(txt_cmd.clone());
@@ -287,9 +287,9 @@ pub fn load_manual_edits(commands: &mut Vec<Command>, verbose: bool) -> Result<u
 
     if verbose {
         if edits_applied > 0 {
-            println!("   ✅ Applied {} manual edit(s)", edits_applied);
+            crate::utils::print(&format!("   ✅ Applied {} manual edit(s)", edits_applied));
         } else {
-            println!("   ✅ No manual edits to apply");
+            crate::utils::print("   ✅ No manual edits to apply");
         }
     }
 
@@ -310,7 +310,7 @@ pub fn load_manual_edits(commands: &mut Vec<Command>, verbose: bool) -> Result<u
 /// Returns number of files that were modified
 pub fn scan_modified_files(commands: &mut Vec<Command>, verbose: bool) -> Result<usize, Box<dyn std::error::Error>> {
     if verbose {
-        println!("\n🔍 Scanning for file modifications...");
+        crate::utils::print("\n🔍 Scanning for file modifications...");
     }
 
     let mut file_changes = 0;
@@ -346,8 +346,8 @@ pub fn scan_modified_files(commands: &mut Vec<Command>, verbose: bool) -> Result
         if let Some(old_size) = cmd.file_size {
             if old_size != current_size {
                 if verbose {
-                    println!("   📝 File size changed: '{}' ({} -> {} bytes)",
-                        cmd.command, old_size, current_size);
+                    crate::utils::print(&format!("   📝 File size changed: '{}' ({} -> {} bytes)",
+                        cmd.command, old_size, current_size));
                 }
 
                 crate::utils::log(&format!("SCAN_MODIFIED: File size changed for '{}' ({} -> {})",
@@ -374,9 +374,9 @@ pub fn scan_modified_files(commands: &mut Vec<Command>, verbose: bool) -> Result
 
     if verbose {
         if file_changes > 0 {
-            println!("   ✅ Detected {} file modification(s)", file_changes);
+            crate::utils::print(&format!("   ✅ Detected {} file modification(s)", file_changes));
         } else {
-            println!("   ✅ No file modifications detected");
+            crate::utils::print("   ✅ No file modifications detected");
         }
     }
 
@@ -413,8 +413,8 @@ pub fn scan_new_files(commands: Vec<Command>, sys_data: &crate::core::data::SysD
     let file_roots = sys_data.config.popup_settings.file_roots.as_ref().unwrap_or(&empty_vec);
 
     if verbose {
-        println!("\n🔍 Starting filesystem scan...");
-        println!("   Scanning roots: {:?}", file_roots);
+        crate::utils::print("\n🔍 Starting filesystem scan...");
+        crate::utils::print(&format!("   Scanning roots: {:?}", file_roots));
     }
 
     // First scan files (markdown and apps)
@@ -425,9 +425,9 @@ pub fn scan_new_files(commands: Vec<Command>, sys_data: &crate::core::data::SysD
     let files_added = new_count.saturating_sub(initial_count);
 
     if verbose {
-        println!("   Scan complete: {} commands total", new_count);
+        crate::utils::print(&format!("   Scan complete: {} commands total", new_count));
         if files_added > 0 {
-            println!("   Added {} new commands", files_added);
+            crate::utils::print(&format!("   Added {} new commands", files_added));
         }
     }
 
@@ -471,7 +471,7 @@ pub fn scan_new_files(commands: Vec<Command>, sys_data: &crate::core::data::SysD
             delete_anchors(&mut commands, true, verbose);  // true = delete Notion anchors
         } else {
             if verbose {
-                println!("   Incremental Notion scan - preserving existing commands");
+                crate::utils::print("   Incremental Notion scan - preserving existing commands");
             }
             crate::utils::log("[NOTION] Incremental scan - existing commands preserved");
         }
@@ -498,7 +498,7 @@ pub fn scan_new_files(commands: Vec<Command>, sys_data: &crate::core::data::SysD
                 file_size: None,
             });
             if verbose {
-                println!("   Created Notion Root anchor");
+                crate::utils::print("   Created Notion Root anchor");
             }
         }
 
@@ -562,10 +562,10 @@ pub fn scan_new_files(commands: Vec<Command>, sys_data: &crate::core::data::SysD
     
         if (notion_added > 0 || notion_updated > 0) && verbose {
             if notion_added > 0 {
-                println!("   Added {} new Notion anchor commands", notion_added);
+                crate::utils::print(&format!("   Added {} new Notion anchor commands", notion_added));
             }
             if notion_updated > 0 {
-                println!("   Updated {} existing Notion anchor commands", notion_updated);
+                crate::utils::print(&format!("   Updated {} existing Notion anchor commands", notion_updated));
             }
         }
     } // End of Notion pages processing
@@ -581,7 +581,7 @@ pub fn scan_new_files(commands: Vec<Command>, sys_data: &crate::core::data::SysD
     // all manually-created commands (1pass, work, chrome, alias, url, etc.)
 
     if verbose {
-        println!("\n🎉 File scan complete! (Inference will run after loading manual edits)");
+        crate::utils::print("\n🎉 File scan complete! (Inference will run after loading manual edits)");
     }
 
     // Return the scanned commands WITHOUT running inference
@@ -687,7 +687,7 @@ fn scan_files(mut commands: Vec<Command>, file_roots: &[String], config: &Config
         let expanded_root = expand_home(root);
         let root_path = Path::new(&expanded_root);
         
-        println!("📂 Scanning directory: {}", expanded_root);
+        crate::utils::print(&format!("📂 Scanning directory: {}", expanded_root));
         
         if root_path.exists() && root_path.is_dir() {
             let _commands_before_scan = commands.len();
@@ -695,9 +695,9 @@ fn scan_files(mut commands: Vec<Command>, file_roots: &[String], config: &Config
             let mut dummy_folders = Vec::new();
             scan_directory_with_root(&root_path, &root_path, &mut commands, &mut existing_commands, &mut handled_files, &mut dummy_folders, &existing_patches, &mut folder_map, config);
             let _commands_after_scan = commands.len();
-            println!("   ✅ Found {} new commands in {}", _commands_after_scan - _commands_before_scan, expanded_root);
+            crate::utils::print(&format!("   ✅ Found {} new commands in {}", _commands_after_scan - _commands_before_scan, expanded_root));
         } else {
-            println!("   ⚠️ Directory not found: {}", expanded_root);
+            crate::utils::print(&format!("   ⚠️ Directory not found: {}", expanded_root));
         }
     }
     

@@ -82,31 +82,31 @@ impl SetupAssistant {
     
     /// Prompt user to grant accessibility permissions to Terminal
     fn prompt_accessibility_permissions(&self) -> Result<(), Box<dyn std::error::Error>> {
-        println!("\n⚠️  Terminal needs Accessibility permissions for HookAnchor to work properly.");
-        println!("\n🎯 IMPORTANT: Since HookAnchor v0.12, we run servers through Terminal");
-        println!("   This allows the grabber to capture URLs from apps like Notion!");
+        crate::utils::print("\n⚠️  Terminal needs Accessibility permissions for HookAnchor to work properly.");
+        crate::utils::print("\n🎯 IMPORTANT: Since HookAnchor v0.12, we run servers through Terminal");
+        crate::utils::print("   This allows the grabber to capture URLs from apps like Notion!");
         
-        println!("\nThis permission is required to:");
-        println!("• Capture window information from applications");
-        println!("• Grab URLs from Notion, Obsidian, and browsers");
-        println!("• Send keyboard shortcuts to applications");
-        println!("• Enable the grabber feature (+ key in popup)");
+        crate::utils::print("\nThis permission is required to:");
+        crate::utils::print("• Capture window information from applications");
+        crate::utils::print("• Grab URLs from Notion, Obsidian, and browsers");
+        crate::utils::print("• Send keyboard shortcuts to applications");
+        crate::utils::print("• Enable the grabber feature (+ key in popup)");
         
-        println!("\n📋 Steps to grant permission:");
-        println!("1. System Settings will open to Privacy & Security → Accessibility");
-        println!("2. Click the lock icon 🔒 and enter your password");
-        println!("3. Look for 'Terminal' in the list");
-        println!("4. If Terminal is NOT in the list:");
-        println!("   • Click the '+' button");
-        println!("   • Navigate to /Applications/Utilities/");
-        println!("   • Select Terminal.app and click Open");
-        println!("5. Make sure the checkbox ✓ is enabled next to Terminal");
+        crate::utils::print("\n📋 Steps to grant permission:");
+        crate::utils::print("1. System Settings will open to Privacy & Security → Accessibility");
+        crate::utils::print("2. Click the lock icon 🔒 and enter your password");
+        crate::utils::print("3. Look for 'Terminal' in the list");
+        crate::utils::print("4. If Terminal is NOT in the list:");
+        crate::utils::print("   • Click the '+' button");
+        crate::utils::print("   • Navigate to /Applications/Utilities/");
+        crate::utils::print("   • Select Terminal.app and click Open");
+        crate::utils::print("5. Make sure the checkbox ✓ is enabled next to Terminal");
         
-        println!("\n💡 Why Terminal?");
-        println!("   HookAnchor's servers now run in Terminal windows to inherit");
-        println!("   Apple's special permissions for automation scripts.");
+        crate::utils::print("\n💡 Why Terminal?");
+        crate::utils::print("   HookAnchor's servers now run in Terminal windows to inherit");
+        crate::utils::print("   Apple's special permissions for automation scripts.");
         
-        println!("\nPress Enter to open System Settings...");
+        crate::utils::print("\nPress Enter to open System Settings...");
         std::io::stdin().read_line(&mut String::new())?;
         
         // Open System Settings to the Accessibility pane
@@ -114,18 +114,18 @@ impl SetupAssistant {
             .arg("x-apple.systempreferences:com.apple.preference.security?Privacy_Accessibility")
             .spawn()?;
         
-        println!("\nAfter enabling Terminal in Accessibility, press Enter to continue...");
+        crate::utils::print("\nAfter enabling Terminal in Accessibility, press Enter to continue...");
         std::io::stdin().read_line(&mut String::new())?;
         
         // Check again after user claims to have set permissions
         if self.check_terminal_accessibility() {
-            println!("\n✅ Great! Terminal has Accessibility permissions.");
-            println!("   The grabber feature will work correctly!");
+            crate::utils::print("\n✅ Great! Terminal has Accessibility permissions.");
+            crate::utils::print("   The grabber feature will work correctly!");
         } else {
-            println!("\n⚠️  Terminal still doesn't have Accessibility permissions.");
-            println!("   The grabber feature may not work until you grant permissions.");
-            println!("   You can add Terminal later through:");
-            println!("   System Settings → Privacy & Security → Accessibility");
+            crate::utils::print("\n⚠️  Terminal still doesn't have Accessibility permissions.");
+            crate::utils::print("   The grabber feature may not work until you grant permissions.");
+            crate::utils::print("   You can add Terminal later through:");
+            crate::utils::print("   System Settings → Privacy & Security → Accessibility");
         }
         
         Ok(())
@@ -133,16 +133,16 @@ impl SetupAssistant {
     
     /// Prompt user to install Karabiner-Elements
     fn prompt_karabiner_install(&self) -> Result<(), Box<dyn std::error::Error>> {
-        println!("⚠️  Karabiner-Elements is required but not installed.");
-        println!("\nKarabiner-Elements is needed to set up the keyboard shortcut for HookAnchor.");
-        println!("\nPlease install it from: https://karabiner-elements.pqrs.org");
-        println!("\nSteps:");
-        println!("1. Download Karabiner-Elements from the link above");
-        println!("2. Install it by opening the downloaded DMG file");
-        println!("3. Grant the necessary permissions when prompted");
-        println!("4. Re-run HookAnchor after installation\n");
+        crate::utils::print("⚠️  Karabiner-Elements is required but not installed.");
+        crate::utils::print("\nKarabiner-Elements is needed to set up the keyboard shortcut for HookAnchor.");
+        crate::utils::print("\nPlease install it from: https://karabiner-elements.pqrs.org");
+        crate::utils::print("\nSteps:");
+        crate::utils::print("1. Download Karabiner-Elements from the link above");
+        crate::utils::print("2. Install it by opening the downloaded DMG file");
+        crate::utils::print("3. Grant the necessary permissions when prompted");
+        crate::utils::print("4. Re-run HookAnchor after installation\n");
         
-        println!("Press Enter to open the download page in your browser...");
+        crate::utils::print("Press Enter to open the download page in your browser...");
         std::io::stdin().read_line(&mut String::new())?;
         
         // Open the Karabiner download page
@@ -155,7 +155,7 @@ impl SetupAssistant {
     
     /// Create the configuration directory structure
     fn create_config_directory(&self) -> Result<(), Box<dyn std::error::Error>> {
-        println!("Creating configuration directory...");
+        crate::utils::print("Creating configuration directory...");
         
         fs::create_dir_all(&self.config_dir)?;
         fs::create_dir_all(self.config_dir.join("backups"))?;
@@ -417,18 +417,18 @@ impl SetupAssistant {
         
         // Check for Caps Lock conflicts first
         
-        println!("\n🔍 Checking for existing Caps Lock mappings...");
+        crate::utils::print("\n🔍 Checking for existing Caps Lock mappings...");
         let conflicts = self.check_caps_lock_conflicts()?;
         
         if !conflicts.is_empty() {
-            println!("⚠️  Found existing Caps Lock mappings in:");
+            crate::utils::print("⚠️  Found existing Caps Lock mappings in:");
             for conflict in &conflicts {
-                println!("   - {}", conflict);
+                crate::utils::print(&format!("   - {}", conflict));
             }
-            println!("\nHookAnchor can use different hotkeys to avoid conflicts:");
-            println!("1. Caps Lock (may conflict with existing mappings)");
-            println!("2. F12+Cmd+Option (safer, less likely to conflict)");
-            println!("3. Skip Karabiner setup (configure manually later)");
+            crate::utils::print("\nHookAnchor can use different hotkeys to avoid conflicts:");
+            crate::utils::print("1. Caps Lock (may conflict with existing mappings)");
+            crate::utils::print("2. F12+Cmd+Option (safer, less likely to conflict)");
+            crate::utils::print("3. Skip Karabiner setup (configure manually later)");
             
             print!("\nChoose an option (1/2/3): ");
             use std::io::{self, Write};
@@ -440,25 +440,25 @@ impl SetupAssistant {
             
             match choice {
                 "1" => {
-                    println!("⚠️  Installing Caps Lock mapping (may cause conflicts)");
-                    println!("   You may need to disable conflicting rules manually in Karabiner");
+                    crate::utils::print("⚠️  Installing Caps Lock mapping (may cause conflicts)");
+                    crate::utils::print("   You may need to disable conflicting rules manually in Karabiner");
                 },
                 "2" => {
-                    println!("✅ Using F12+Cmd+Option hotkey (safer option)");
+                    crate::utils::print("✅ Using F12+Cmd+Option hotkey (safer option)");
                     return self.install_karabiner_f12_only();
                 },
                 "3" => {
-                    println!("⏭️  Skipping Karabiner setup");
-                    println!("   You can manually configure hotkeys in Karabiner later");
+                    crate::utils::print("⏭️  Skipping Karabiner setup");
+                    crate::utils::print("   You can manually configure hotkeys in Karabiner later");
                     return Ok(());
                 },
                 _ => {
-                    println!("Invalid choice, skipping Karabiner setup");
+                    crate::utils::print("Invalid choice, skipping Karabiner setup");
                     return Ok(());
                 }
             }
         } else {
-            println!("✅ No Caps Lock conflicts detected");
+            crate::utils::print("✅ No Caps Lock conflicts detected");
         }
         
         let mod_path = karabiner_dir.join("hookanchor.json");
@@ -470,18 +470,18 @@ impl SetupAssistant {
                 // Check if it contains the current app path
                 let current_path = "/Applications/HookAnchor.app/Contents/MacOS/hookanchor";
                 if existing_content.contains(current_path) {
-                    println!("Karabiner modification already exists and is current");
+                    crate::utils::print("Karabiner modification already exists and is current");
                     return Ok(());
                 } else {
-                    println!("Updating existing Karabiner modification...");
+                    crate::utils::print("Updating existing Karabiner modification...");
                     // Backup the existing modification
                     let backup_path = karabiner_dir.join("hookanchor.json.backup");
                     fs::copy(&mod_path, &backup_path)?;
-                    println!("  Backed up existing modification to hookanchor.json.backup");
+                    crate::utils::print("  Backed up existing modification to hookanchor.json.backup");
                 }
             }
         } else {
-            println!("Installing Karabiner complex modification...");
+            crate::utils::print("Installing Karabiner complex modification...");
         }
         
         // Copy the static resource file from app bundle Resources
@@ -499,15 +499,15 @@ impl SetupAssistant {
         fs::copy(&resource_path, &mod_path)?;
         
         // Enable the modification using Karabiner CLI
-        println!("Enabling Karabiner modification...");
+        crate::utils::print("Enabling Karabiner modification...");
         Command::new(KARABINER_CLI_PATH)
             .args(&["--select-profile", "Default profile"])
             .output()?;
         
         // Note: The user will need to manually enable the complex modification
         // in Karabiner-Elements preferences
-        println!("\n📝 Note: You'll need to enable the HookAnchor modification in");
-        println!("   Karabiner-Elements → Complex Modifications → Add rule");
+        crate::utils::print("\n📝 Note: You'll need to enable the HookAnchor modification in");
+        crate::utils::print("   Karabiner-Elements → Complex Modifications → Add rule");
         
         Ok(())
     }
@@ -548,9 +548,9 @@ impl SetupAssistant {
 
         fs::copy(&resource_path, &mod_path)?;
         
-        println!("✅ Installed F12+Cmd+Option hotkey");
-        println!("\n📝 Note: You'll need to enable the HookAnchor modification in");
-        println!("   Karabiner-Elements → Complex Modifications → Add rule");
+        crate::utils::print("✅ Installed F12+Cmd+Option hotkey");
+        crate::utils::print("\n📝 Note: You'll need to enable the HookAnchor modification in");
+        crate::utils::print("   Karabiner-Elements → Complex Modifications → Add rule");
         
         Ok(())
     }
@@ -588,7 +588,7 @@ impl SetupAssistant {
         }
 
         // Create initial commands file
-        println!("Creating initial commands file...");
+        crate::utils::print("Creating initial commands file...");
         
         let timestamp = chrono::Utc::now().format("%Y-%m-%d %H:%M:%S UTC");
         let initial_commands = format!(r#"# HookAnchor Commands
@@ -604,7 +604,7 @@ Apps! Finder : app; Finder
 "#, timestamp);
         
         fs::write(&commands_path, initial_commands)?;
-        println!("✓ Initial commands file created with starter examples");
+        crate::utils::print("✓ Initial commands file created with starter examples");
         
         Ok(())
     }
@@ -643,7 +643,7 @@ impl SetupAssistant {
     #[allow(dead_code)]
     fn remove_config_directory(&self) -> Result<(), Box<dyn std::error::Error>> {
         if !self.config_dir.exists() {
-            println!("ℹ️  Configuration directory not found");
+            crate::utils::print("ℹ️  Configuration directory not found");
             return Ok(());
         }
         
@@ -666,7 +666,7 @@ impl SetupAssistant {
         }
         
         if has_important_files {
-            println!("⚠️  Configuration directory contains {} files including commands/config.", file_count);
+            crate::utils::print(&format!("⚠️  Configuration directory contains {} files including commands/config.", file_count));
             print!("Remove all configuration and data? (y/N): ");
             
             use std::io::{self, Write};
@@ -675,14 +675,14 @@ impl SetupAssistant {
             let mut input = String::new();
             io::stdin().read_line(&mut input)?;
             let response = input.trim().to_lowercase();
-            
+
             if response != "y" && response != "yes" {
-                println!("📁 Keeping configuration directory: {}", self.config_dir.display());
+                crate::utils::print(&format!("📁 Keeping configuration directory: {}", self.config_dir.display()));
                 return Ok(());
             }
         }
         
-        println!("🗑️  Removing configuration directory...");
+        crate::utils::print("🗑️  Removing configuration directory...");
         fs::remove_dir_all(&self.config_dir)?;
         
         Ok(())
@@ -781,23 +781,23 @@ impl SetupAssistant {
             false => {
                 crate::utils::log("❌ Accessibility permissions are missing");
 
-                println!("\n🔒 ACCESSIBILITY PERMISSIONS REQUIRED");
-                println!("═══════════════════════════════════════");
-                println!("HookAnchor needs accessibility permissions to:");
-                println!("• Capture context from applications (Obsidian, Notion, etc.)");
-                println!("• Send keystrokes to copy URLs and content");
-                println!("• Detect window titles and active documents");
-                println!();
-                println!("📱 WHAT TO DO:");
-                println!("1. Click OK to open System Preferences");
-                println!("2. Navigate to Security & Privacy → Privacy → Accessibility");
-                println!("3. Click the lock icon and enter your password");
-                println!("4. Find and enable the app running HookAnchor:");
-                println!("   - Terminal (if running from command line)");
-                println!("   - HookAnchor.app (if using the app bundle)");
-                println!("   - Your IDE (if running from development environment)");
-                println!("5. Come back and test again");
-                println!();
+                crate::utils::print("\n🔒 ACCESSIBILITY PERMISSIONS REQUIRED");
+                crate::utils::print("═══════════════════════════════════════");
+                crate::utils::print("HookAnchor needs accessibility permissions to:");
+                crate::utils::print("• Capture context from applications (Obsidian, Notion, etc.)");
+                crate::utils::print("• Send keystrokes to copy URLs and content");
+                crate::utils::print("• Detect window titles and active documents");
+                crate::utils::print("");
+                crate::utils::print("📱 WHAT TO DO:");
+                crate::utils::print("1. Click OK to open System Preferences");
+                crate::utils::print("2. Navigate to Security & Privacy → Privacy → Accessibility");
+                crate::utils::print("3. Click the lock icon and enter your password");
+                crate::utils::print("4. Find and enable the app running HookAnchor:");
+                crate::utils::print("   - Terminal (if running from command line)");
+                crate::utils::print("   - HookAnchor.app (if using the app bundle)");
+                crate::utils::print("   - Your IDE (if running from development environment)");
+                crate::utils::print("5. Come back and test again");
+                crate::utils::print("");
                 print!("Press Enter to open System Preferences...");
 
                 use std::io::{self, Write};
@@ -807,8 +807,8 @@ impl SetupAssistant {
 
                 Self::open_accessibility_settings()?;
 
-                println!("\n⏳ After granting permissions, test again with:");
-                println!("   ha --test-permissions");
+                crate::utils::print("\n⏳ After granting permissions, test again with:");
+                crate::utils::print("   ha --test-permissions");
 
                 Ok(false)
             }
