@@ -489,9 +489,9 @@ pub fn scan_new_files(commands: Vec<Command>, sys_data: &crate::core::data::SysD
         if !notion_root_exists {
             commands.push(Command {
                 command: "Notion Root".to_string(),
-                action: "anchor".to_string(),
+                action: "folder".to_string(),
                 arg: String::new(),  // Virtual anchor, no actual file
-                flags: String::new(),
+                flags: "A".to_string(),  // Anchor flag
                 patch: "orphans".to_string(),  // Notion Root is under orphans
                 other_params: None,
                 last_update: 0,
@@ -525,7 +525,8 @@ pub fn scan_new_files(commands: Vec<Command>, sys_data: &crate::core::data::SysD
         ) {
             // Update existing command to be an anchor if it was "notion"
             if existing_cmd.action == "notion" {
-                existing_cmd.action = "anchor".to_string();
+                existing_cmd.action = "url".to_string();
+                existing_cmd.set_flag(crate::core::commands::FLAG_ANCHOR, "");  // Set anchor flag
                 existing_cmd.patch = parent_patch.clone();
                 notion_updated += 1;
             }
@@ -545,10 +546,10 @@ pub fn scan_new_files(commands: Vec<Command>, sys_data: &crate::core::data::SysD
             // No command with this name exists at all, create new anchor
             commands.push(Command {
                 command: command_name.clone(),
-                action: "anchor".to_string(),  // All Notion pages are anchors
-                arg: page.url,                  // URL as the arg
-                flags: String::new(),
-                patch: parent_patch,             // Parent page as the patch
+                action: "url".to_string(),  // Notion pages are URLs
+                arg: page.url,              // URL as the arg
+                flags: "A".to_string(),     // Anchor flag
+                patch: parent_patch,        // Parent page as the patch
                 other_params: None,
                 last_update: 0,
                 file_size: None,

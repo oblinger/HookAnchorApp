@@ -349,14 +349,12 @@ impl Command {
     }
 
     /// Checks if this command is an anchor
-    /// Returns true if action type is "anchor" OR if anchor flag is set
+    /// Returns true if the anchor flag ('A') is set
     pub fn is_anchor(&self) -> bool {
-        self.action == "anchor" || self.get_flag(FLAG_ANCHOR).is_some()
+        self.get_flag(FLAG_ANCHOR).is_some()
     }
 
     /// Sets or clears the anchor flag
-    /// Note: Clearing the anchor flag from a command with action="anchor" will not
-    /// remove its anchor status (the action type still makes it an anchor)
     pub fn set_anchor(&mut self, is_anchor: bool) {
         if is_anchor {
             // Set the anchor flag (empty value means just the flag key)
@@ -1439,13 +1437,12 @@ fn create_virtual_anchor_for_patch(patch_name: &str, _config: &Config, patches: 
     ));
 
     // Create the virtual anchor command - no file path needed, just blank arg
-    // No flags needed - absence of 'U' flag indicates this is system-generated
     Some(Command {
         command: patch_name.to_string(),
-        action: "anchor".to_string(),
+        action: "folder".to_string(),  // Virtual anchor
         arg: String::new(), // NEW SYSTEM: Blank arg, no markdown file
         patch: parent_patch,
-        flags: String::new(), // System-generated, so no flags needed
+        flags: "A".to_string(), // Anchor flag (system-generated)
         other_params: None,
         last_update: 0,
         file_size: None,
