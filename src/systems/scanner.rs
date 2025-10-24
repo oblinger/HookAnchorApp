@@ -84,26 +84,32 @@ fn is_notion_anchor(cmd: &Command) -> bool {
 /// Returns the number of commands deleted
 fn delete_anchors(commands: &mut Vec<Command>, delete_notion_anchors: bool, verbose: bool) -> usize {
     let initial_count = commands.len();
-    
+
     commands.retain(|cmd| {
         // Skip if not an anchor
         if cmd.action != "anchor" {
             return true;
         }
-        
+
         // Always keep user-edited commands
         if cmd.flags.contains(FLAG_USER_EDITED) {
             return true;
         }
-        
+
         // Always keep special system anchors
         if cmd.command == "orphans" || cmd.command == "Notion Root" {
             return true;
         }
-        
+
+        // Always keep virtual anchors (anchors with no file path)
+        // Virtual anchors are created by patch inference for orphaned commands
+        if cmd.arg.is_empty() {
+            return true;
+        }
+
         // Check if this is a Notion anchor
         let is_notion = is_notion_anchor(cmd);
-        
+
         // Delete based on the flag
         if delete_notion_anchors {
             // We want to delete Notion anchors, so keep non-Notion

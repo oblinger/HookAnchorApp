@@ -989,4 +989,16 @@ module.exports = {
     }
   },
 
+  // Test function that deliberately throws an error
+  action_test_error: function(ctx) {
+    const { log } = ctx.builtins;
+
+    log("TEST_ERROR: About to throw a test error");
+
+    // This will cause a ReferenceError
+    nonExistentVariable.doSomething();
+
+    return "This should never execute";
+  },
+
 };

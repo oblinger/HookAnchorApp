@@ -1,25 +1,31 @@
 {
   "window_position": [
-    -1606.0,
-    264.0
+    980.0,
+    658.0
   ],
   "history_viewer_state": {
-    "position": null,
-    "window_size": null,
+    "position": [
+      -2381.0,
+      309.0
+    ],
+    "window_size": [
+      1000.0,
+      756.0
+    ],
     "patch_filter": "",
     "name_filter": "",
     "min_edit_size": 500,
     "selected_action_types": [],
-    "sidebar_width": null
+    "sidebar_width": 218.0
   },
-  "build_time": 1761285315,
+  "build_time": 1761329320,
   "last_scan_time": null,
   "last_scan_checksum": null,
-  "last_executed_command": "Hook Anchor Log",
-  "server_pid": null,
+  "last_executed_command": "Dreams",
+  "server_pid": 51655,
   "notion_last_scan": null,
-  "anchor_name": "Hook Anchor",
-  "anchor_timestamp": 1761281644,
+  "anchor_name": "Dreams",
+  "anchor_timestamp": 1761328851,
   "anchor_folder": null,
   "show_files": true
 }
