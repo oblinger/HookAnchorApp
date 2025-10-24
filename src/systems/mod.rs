@@ -20,6 +20,7 @@ pub(crate) mod grabber;
 pub(crate) mod obsidian;
 pub(crate) mod setup_assistant;
 pub(crate) mod popup_server;
+pub(crate) mod restart;
 
 // ============================================================================
 // PUBLIC API - All external access goes through these re-exports
@@ -60,6 +61,11 @@ pub use setup_assistant::{
 pub use popup_server::{
     is_primary_popup_instance,
     PopupCommand, PopupControl
+};
+
+// Restart subsystem - system restart and rebuild operations
+pub use restart::{
+    full_system_restart
 };
 
 // History subsystem - moved to core::data module

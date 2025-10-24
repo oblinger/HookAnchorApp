@@ -2488,98 +2488,22 @@ impl AnchorSelector {
     
     /// Perform the actual rebuild work (called after UI update)
     fn perform_rebuild(&mut self) {
-        // Generate a unique build identifier (timestamp-based)
-        let build_timestamp = chrono::Local::now();
-        let build_id = build_timestamp.format("%Y%m%d_%H%M%S").to_string();
-        
-        // Log the rebuild header with timestamp and build ID
-        crate::utils::log(&"=".repeat(80));
-        crate::utils::detailed_log("SYSTEM", &format!("REBUILD SESSION: {}", build_id));
-        crate::utils::log(&format!("TIMESTAMP: {}", build_timestamp.format("%Y-%m-%d %H:%M:%S%.3f")));
-        crate::utils::log(&"=".repeat(80));
-
-        crate::utils::log("🏗️  HookAnchor Rebuild - Clean Server Restart");
-        crate::utils::log("===============================================");
-
-        // Step 1 & 2: Restart the server (kill existing and start new)
-        crate::utils::log("\n🔄 Step 1&2/3: Restarting server...");
-        let server_restart_success = match crate::execute::activate_command_server(true) {
+        // Use centralized restart function
+        match crate::systems::full_system_restart() {
             Ok(()) => {
-                crate::utils::detailed_log("REBUILD", "Server restart completed successfully");
-                crate::utils::log("  ✅ Server restarted successfully");
-                true
+                crate::utils::log("
+🎉 Rebuild completed successfully!");
+                // Exit this instance - the new popup has been started
+                std::process::exit(0);
             }
             Err(e) => {
-                crate::utils::detailed_log("REBUILD", &format!("Server restart failed: {}", e));
-                crate::utils::log(&format!("  ⚠️  Server restart failed: {}", e));
-                crate::utils::log("  ⚠️  Continuing with popup restart anyway...");
-                false
-            }
-        };
-        
-        // Only do rescan if server restart succeeded
-        if server_restart_success {
-            // Brief wait for server to be ready
-            crate::utils::log("  ⏳ Waiting for server to initialize...");
-            std::thread::sleep(std::time::Duration::from_millis(1000));
-
-            // Step 2: Call "ha --rescan" to let the CLI handle the rescan
-            crate::utils::log("\n📁 Step 2/3: Triggering filesystem rescan via server...");
-            // Use the ha binary for CLI operations, not popup_server
-            let ha_binary = std::env::current_exe()
-                .ok()
-                .and_then(|p| p.parent().map(|dir| dir.join("ha")))
-                .unwrap_or_else(|| "ha".into());
-            match std::process::Command::new(ha_binary)
-                .arg("--rescan")
-                .status() {
-                Ok(status) => {
-                    if status.success() {
-                        crate::utils::detailed_log("REBUILD", "Rescan via server completed successfully");
-                        crate::utils::log("  ✅ Filesystem rescan completed");
-                    } else {
-                        crate::utils::detailed_log("REBUILD", "Rescan via server failed");
-                        crate::utils::log("  ❌ Filesystem rescan failed");
-                    }
-                }
-                Err(e) => {
-                    crate::utils::detailed_log("REBUILD", &format!("Failed to execute rescan: {}", e));
-                    crate::utils::log(&format!("  ❌ Failed to start rescan: {}", e));
-                }
+                crate::utils::log_error(&format!("Rebuild failed: {}", e));
+                crate::utils::log("
+⚠️  Rebuild encountered errors - see log for details");
             }
         }
-        
-        // Step 3: Re-exec ourselves to pick up any new binary
-        crate::utils::log("\n🔄 Step 3/3: Restarting popup with fresh binary...");
-
-        // Get our current executable path - this will re-exec whatever is currently at this path
-        if let Ok(current_exe) = std::env::current_exe() {
-            crate::utils::log(&format!("  📦 Re-executing: {}", current_exe.display()));
-            crate::utils::detailed_log("REBUILD", &format!("Re-executing popup at: {}", current_exe.display()));
-
-            // Launch the new popup instance (no args - it will run as normal GUI)
-            match std::process::Command::new(&current_exe)
-                .spawn() {
-                Ok(_) => {
-                    crate::utils::log("  ✅ New popup instance launched");
-                    crate::utils::detailed_log("REBUILD", "Successfully spawned new popup instance");
-
-                    // Exit this instance completely (not just hide)
-                    crate::utils::log("  👋 Exiting old popup instance...");
-                    std::process::exit(0);
-                }
-                Err(e) => {
-                    crate::utils::log(&format!("  ❌ Failed to restart popup: {}", e));
-                    crate::utils::detailed_log("REBUILD", &format!("Failed to re-exec popup: {}", e));
-                }
-            }
-        } else {
-            crate::utils::log("  ⚠️  Could not determine executable path");
-            crate::utils::detailed_log("REBUILD", "Could not get current executable path");
-        }
-
-        crate::utils::log("\n🎉 Rebuild completed successfully!");
     }
+    
     
     /// Trigger filesystem rescan
     fn trigger_rescan(&mut self) {
