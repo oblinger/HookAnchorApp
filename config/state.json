@@ -1,31 +1,31 @@
 {
-  "anchor_folder": null,
-  "anchor_name": "2025 GPU Choice",
-  "anchor_timestamp": 1761334693,
-  "build_time": 1761334793,
+  "window_position": [
+    668.0,
+    189.0
+  ],
   "history_viewer_state": {
-    "min_edit_size": 500,
-    "name_filter": "",
-    "patch_filter": "",
     "position": [
       -2381.0,
       309.0
     ],
-    "selected_action_types": [],
-    "sidebar_width": 218.0,
     "window_size": [
       1000.0,
-      756.0
-    ]
+      812.0
+    ],
+    "patch_filter": "",
+    "name_filter": "",
+    "min_edit_size": 500,
+    "selected_action_types": [],
+    "sidebar_width": 186.0
   },
-  "last_executed_command": "2025 GPU Choice",
-  "last_scan_checksum": null,
+  "build_time": 1761338119,
   "last_scan_time": null,
+  "last_scan_checksum": null,
+  "last_executed_command": "SV",
+  "server_pid": 94648,
   "notion_last_scan": null,
-  "server_pid": 75734,
-  "show_files": true,
-  "window_position": [
-    980.0,
-    555.0
-  ]
+  "anchor_name": "SV",
+  "anchor_timestamp": 1761337474,
+  "anchor_folder": null,
+  "show_files": true
 }

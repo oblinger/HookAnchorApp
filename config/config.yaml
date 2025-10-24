@@ -165,7 +165,7 @@ actions:
     action_type: template
     key: "&"
     name: "{{input}}"
-    action: "doc"
+    action: "markdown"
     arg: "{{last_executed.folder}}/{{input}}.md"
     patch: "{{last_executed.patch}}"
     flags: ""

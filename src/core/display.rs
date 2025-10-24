@@ -255,49 +255,46 @@ pub fn build_prefix_menu(
 
     
     // Try all possible prefixes of the input string, starting from longest
-    // This allows "RESD" to match "RES" and show the prefix menu with "D" as filter
+    // This allows "svplan" to match "SV Plan" and "RESD" to match "RES"
     for prefix_len in (1..=input.len()).rev() {
         let prefix = &input[..prefix_len];
-        
-        // Look for commands that exactly match this prefix
-        for matching_command in all_commands {
-            // Check for exact match (case-insensitive)
-            let exact_match = matching_command.command.eq_ignore_ascii_case(prefix);
 
-            // Also check for match after skipping leading date characters (for commands like "2025 Make Miss")
-            let cmd_trimmed = skip_leading_date_chars(&matching_command.command);
-            let digit_skipped_match = cmd_trimmed.eq_ignore_ascii_case(prefix);
+        // Collect all matching anchors at this prefix length using sophisticated matching
+        let mut matching_anchors: Vec<(Command, Command)> = Vec::new(); // (original, resolved)
 
-            if exact_match || digit_skipped_match {
-                // Resolve alias to get the final command
-                crate::utils::detailed_log("BUILD_PREFIX_MENU", &format!("Found exact match for prefix '{}': {} (action: {})",
-                    prefix, matching_command.command, matching_command.action));
-                let resolved_command = matching_command.resolve_alias(all_commands);
-                crate::utils::detailed_log("BUILD_PREFIX_MENU", &format!("Resolved to: {} (action: {})",
-                    resolved_command.command, resolved_command.action));
+        for cmd in all_commands {
+            // Try matching with sophisticated matching (handles spaces, word boundaries, etc.)
+            let cmd_trimmed = skip_leading_date_chars(&cmd.command);
 
-                // Check if resolved command is an anchor
-                if resolved_command.is_anchor() {
-                    // Found our anchor! Calculate remaining characters for filtering
-                    let remaining_chars = if prefix_len < input.len() {
-                        &input[prefix_len..].trim_start() // Trim leading spaces from filter
-                    } else {
-                        ""
-                    };
-
-                    // Debug log for any anchor found
-                    crate::utils::detailed_log("BUILD_PREFIX_MENU", &format!("Found anchor='{}' for input='{}', filter='{}'",
-                        resolved_command.command, input, remaining_chars));
-
-                    crate::utils::detailed_log("BUILD_PREFIX_MENU", &format!("Building prefix menu for anchor '{}' with filter '{}'",
-                        resolved_command.command, remaining_chars));
-
-
-                    // Build the prefix menu with filtering
-                    let prefix_menu_commands = build_prefix_menu_commands(&resolved_command, all_commands, patches, remaining_chars);
-                    return Some((prefix_menu_commands, matching_command.clone(), resolved_command));
+            // Check if command matches the prefix using sophisticated matching
+            if command_matches_query(&cmd.command, prefix) || command_matches_query(&cmd_trimmed, prefix) {
+                let resolved = cmd.resolve_alias(all_commands);
+                if resolved.is_anchor() {
+                    crate::utils::detailed_log("BUILD_PREFIX_MENU", &format!("Found matching anchor for prefix '{}': {} -> {}",
+                        prefix, cmd.command, resolved.command));
+                    matching_anchors.push((cmd.clone(), resolved));
                 }
             }
+        }
+
+        // If we found any matching anchors, choose the one with the longest command name
+        if !matching_anchors.is_empty() {
+            // Sort by resolved command name length (longest first)
+            matching_anchors.sort_by(|a, b| b.1.command.len().cmp(&a.1.command.len()));
+            let (original_command, resolved_command) = &matching_anchors[0];
+
+            // Calculate remaining chars for filtering
+            let remaining_chars = if prefix_len < input.len() {
+                &input[prefix_len..].trim_start()
+            } else {
+                ""
+            };
+
+            crate::utils::detailed_log("BUILD_PREFIX_MENU", &format!("Selected longest anchor='{}' for input='{}', filter='{}'",
+                resolved_command.command, input, remaining_chars));
+
+            let prefix_menu_commands = build_prefix_menu_commands(&resolved_command, all_commands, patches, remaining_chars);
+            return Some((prefix_menu_commands, original_command.clone(), resolved_command.clone()));
         }
     }
     
@@ -325,7 +322,9 @@ fn build_prefix_menu_commands(
     let config = crate::core::data::get_config();
     let separators = &config.popup_settings.word_separators;
 
-    
+    // Add the anchor command itself as the first item in the menu
+    prefix_menu_commands.push(anchor_command.clone());
+
     // Find all commands that have the anchor name as a prefix
     for cmd in all_commands {
         if cmd.action == "separator" {
