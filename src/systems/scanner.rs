@@ -1070,9 +1070,9 @@ fn scan_directory_with_root_protected(dir: &Path, vault_root: &Path, commands: &
                 if let Some(command) = process_markdown_with_root(&path, vault_root, commands, existing_commands, handled_files, folder_map) {
                     if !handled_files.contains(&command.arg) {
                         if is_pass1 {
-                            crate::utils::log(&format!("📄 PASS1: Found anchor: {} -> cmd: '{}' patch: '{}'", path.display(), command.command, command.patch));
+                            crate::utils::detailed_log("SCANNER", &format!("PASS1: Found anchor: {} -> cmd: '{}' patch: '{}'", path.display(), command.command, command.patch));
                         } else {
-                            crate::utils::log(&format!("📄 PASS2: Found markdown: {} -> cmd: '{}' patch: '{}'", path.display(), command.command, command.patch));
+                            crate::utils::detailed_log("SCANNER", &format!("PASS2: Found markdown: {} -> cmd: '{}' patch: '{}'", path.display(), command.command, command.patch));
                         }
 
                         existing_commands.insert(command.command.to_lowercase());
@@ -1086,7 +1086,7 @@ fn scan_directory_with_root_protected(dir: &Path, vault_root: &Path, commands: &
                                     if parent_dir_name.eq_ignore_ascii_case(&command.command) {
                                         if let Ok(canonical_parent) = parent.canonicalize() {
                                             folder_map.insert(canonical_parent.clone(), command.command.clone());
-                                            crate::utils::log(&format!("   🏷️  Added to folder_map: '{}' -> '{}'", canonical_parent.display(), command.command));
+                                            crate::utils::detailed_log("SCANNER", &format!("Added to folder_map: '{}' -> '{}'", canonical_parent.display(), command.command));
                                         }
                                     }
                                 }
@@ -1099,7 +1099,7 @@ fn scan_directory_with_root_protected(dir: &Path, vault_root: &Path, commands: &
                     // Try DOC file (only in Pass 2)
                     if let Some(command) = process_doc_file(&path, existing_commands, folder_map, config) {
                         if !handled_files.contains(&command.arg) {
-                            crate::utils::log(&format!("📄 PASS2: Found doc: {} -> cmd: '{}'", path.display(), command.command));
+                            crate::utils::detailed_log("SCANNER", &format!("PASS2: Found doc: {} -> cmd: '{}'", path.display(), command.command));
                             existing_commands.insert(command.command.to_lowercase());
                             handled_files.insert(command.arg.clone());
                             commands.push(command);
