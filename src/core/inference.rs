@@ -769,6 +769,19 @@ pub fn validate_and_repair_patches(
 
     // Create virtual anchor for each missing patch
     for patch_name in missing_patches {
+        // Check if there's already a user-edited command with this name
+        let has_user_edited = commands.iter().any(|cmd|
+            cmd.command.eq_ignore_ascii_case(&patch_name) &&
+            cmd.get_flag(crate::core::commands::FLAG_USER_EDITED).is_some()
+        );
+
+        if has_user_edited {
+            if verbose {
+                crate::utils::log(&format!("   Skipping virtual anchor for '{}' - user-edited version exists", patch_name));
+            }
+            continue;
+        }
+
         if verbose {
             crate::utils::log(&format!("   Creating virtual anchor for undefined patch: '{}'", patch_name));
         }
@@ -779,7 +792,7 @@ pub fn validate_and_repair_patches(
             action: String::new(),  // Virtual anchor - blank action (non-executable)
             arg: String::new(), // Virtual anchor - no file
             patch: "orphans".to_string(),
-            flags: "A".to_string(), // Anchor flag
+            flags: "A".to_string(), // Anchor flag (no U flag - system-generated)
             other_params: None,
             last_update: 0,
             file_size: None,
