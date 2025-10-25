@@ -15,11 +15,11 @@
 - [x] move history into data
 - [x] Log does not contain JS errors
 - [x] Fix rebuild CMD+B command
+- [x] check for println! and eprintln! in code
 - [ ] Make dev mode run on each render (mod 10?)   make boot check only run when dev_mode is set.
 - [ ] Add categories
 - [ ] click on folder will go into folder
 - [ ] Delete key should prompt to delete file and maybe folder.
-- [ ] check for println! and eprintln! in code
 - [ ] remove the 'js' and 'js_function' action types since they are not needed.
 
 FOR RELEASE
@@ -28,6 +28,11 @@ FOR RELEASE
 - [ ] Adding ha to the path and the ff command etc. should all be in a script file that is inside the .app and that should be sourced by the user's init upon install.
 - [ ] Anchor is a Flag; Anchor suffix used to indicate location of patch
 - [x] Help doc sections  [[HELP]]: vars, fns, config    help command section for Javascript variables, and section for Javascript functions
+
+
+ANCHOR MATCHING
+- Should "hack" match "sys hacks"?
+- 
 
 ## SOON
 - [ ] consider EVERY fallback in the code, and try to remove them
