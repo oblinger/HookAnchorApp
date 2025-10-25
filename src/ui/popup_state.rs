@@ -14,8 +14,11 @@ pub struct PopupState {
     pub commands: Vec<Command>,
     /// Current search text
     pub search_text: String,
-    /// Commands that match current search
+    /// Commands that match current search (before adding files)
     pub filtered_commands: Vec<Command>,
+    /// Complete display commands (filtered_commands + folder files if applicable)
+    /// This is the authoritative list used for rendering and layout
+    pub display_commands: Vec<Command>,
     /// Display layout and navigation
     pub display_layout: DisplayLayout,
     /// Current selection
@@ -38,13 +41,15 @@ impl PopupState {
     /// Create new popup state
     pub fn new(commands: Vec<Command>, config: Config, app_state: AppState) -> Self {
         let filtered_commands = Vec::new();
+        let display_commands = Vec::new();
         let display_layout = DisplayLayout::new(Vec::new(), &config);
         let selection = Selection::new();
-        
+
         PopupState {
             commands,
             search_text: String::new(),
             filtered_commands,
+            display_commands,
             display_layout,
             selection,
             config,
@@ -62,13 +67,15 @@ impl PopupState {
         let config = Config::default();
         let app_state = AppState::default();
         let filtered_commands = Vec::new();
+        let display_commands = Vec::new();
         let display_layout = DisplayLayout::new(Vec::new(), &config);
         let selection = Selection::new();
-        
+
         PopupState {
             commands: Vec::new(),
             search_text: String::new(),
             filtered_commands,
+            display_commands,
             display_layout,
             selection,
             config,
@@ -85,9 +92,10 @@ impl PopupState {
 
         self.search_text = new_search;
         let was_reloaded = self.recompute_filtered_commands();
-        self.update_display_layout();
+        self.update_display_commands();  // Compute complete list (filtered + files)
+        self.update_display_layout();    // Build layout from complete list
         self.selection.reset(&self.display_layout);
-        
+
         if was_reloaded {
             crate::utils::detailed_log("POPUP_REFRESH", "Commands were reloaded - display fully refreshed");
         }
@@ -238,12 +246,57 @@ impl PopupState {
         was_reloaded
     }
     
-    /// Update display layout based on current filtered commands
-    /// Note: This calculates layout based on filtered_commands only (without folder files).
-    /// The actual rendering calculates layout dynamically from get_display_commands() which
-    /// includes folder files, ensuring window sizing and rendering use the same command count.
-    fn update_display_layout(&mut self) {
-        self.display_layout = DisplayLayout::new(self.filtered_commands.clone(), &self.config);
+    /// Update display_commands from filtered_commands, adding folder files if applicable
+    /// This creates the complete, authoritative command list for rendering
+    pub fn update_display_commands(&mut self) {
+        // Start with filtered commands
+        let mut commands = self.filtered_commands.clone();
+
+        // Add folder files if we're in prefix menu mode with show_files enabled
+        if self.show_files && self.is_in_prefix_menu {
+            if let Some((_, resolved_anchor)) = &self.prefix_menu_info {
+                // Get folder files using the utility function
+                let folder_files = crate::core::get_folder_files(resolved_anchor, &self.config);
+
+                if !folder_files.is_empty() {
+                    // Find the position of the "============" separator
+                    let separator_pos = commands.iter().position(|cmd|
+                        cmd.action == "separator" && cmd.command.starts_with("=")
+                    );
+
+                    if let Some(pos) = separator_pos {
+                        // Create dash separator with alternating dashes and spaces for visibility
+                        let dash_separator = Command {
+                            patch: String::new(),
+                            command: "- - - - - - - - - - - -".to_string(),
+                            action: "separator".to_string(),
+                            arg: String::new(),
+                            flags: String::new(),
+                            other_params: None,
+                            last_update: 0,
+                            file_size: None,
+                        };
+
+                        // Insert dash separator before "============"
+                        commands.insert(pos, dash_separator);
+
+                        // Insert file entries after dash separator
+                        for (i, file_cmd) in folder_files.into_iter().enumerate() {
+                            commands.insert(pos + 1 + i, file_cmd);
+                        }
+                    }
+                }
+            }
+        }
+
+        // Store the complete display commands
+        self.display_commands = commands;
+    }
+
+    /// Update display layout based on complete display commands
+    /// This must be called after update_display_commands()
+    pub fn update_display_layout(&mut self) {
+        self.display_layout = DisplayLayout::new(self.display_commands.clone(), &self.config);
     }
     
     /// Get hint text for the search box
@@ -322,71 +375,6 @@ impl PopupState {
     /// Check and apply alias if search text matches - removed since rewrite action is deprecated
     pub fn check_and_apply_alias(&mut self) {
         // This functionality has been removed along with the rewrite action type
-    }
-    
-    /// Get display commands with prefix menu information
-    /// Returns (commands_to_display, is_in_prefix_menu, menu_prefix, inside_count)
-    pub fn get_display_commands(&self) -> (Vec<Command>, bool, Option<String>, usize) {
-        if self.is_in_prefix_menu {
-            // Extract the resolved command name for the menu prefix
-            let menu_prefix = if let Some((_, resolved_command)) = &self.prefix_menu_info {
-                Some(resolved_command.command.clone())
-            } else {
-                None
-            };
-
-            (self.filtered_commands.clone(), true, menu_prefix, self.prefix_menu_count)
-        } else {
-            (self.filtered_commands.clone(), false, None, 0)
-        }
-    }
-
-    /// Get display commands with file entries if show_files is enabled
-    /// This is called from AnchorSelector to get the final display list
-    /// Returns (commands_to_display, is_in_prefix_menu, menu_prefix, inside_count)
-    pub fn get_display_commands_with_files(&self, folder_files: Vec<Command>) -> (Vec<Command>, bool, Option<String>, usize) {
-        if self.is_in_prefix_menu && self.show_files && !folder_files.is_empty() {
-            let mut commands = self.filtered_commands.clone();
-
-            // Find the position of the "============" separator
-            let separator_pos = commands.iter().position(|cmd|
-                cmd.action == "separator" && cmd.command.starts_with("=")
-            );
-
-            if let Some(pos) = separator_pos {
-                // Create dash separator with alternating dashes and spaces for visibility
-                let dash_separator = Command {
-                    patch: String::new(),
-                    command: "- - - - - - - - - - - -".to_string(),
-                    action: "separator".to_string(),
-                    arg: String::new(),
-                    flags: String::new(),
-        other_params: None,
-                    last_update: 0,
-                    file_size: None,
-                };
-
-                // Insert dash separator before "============"
-                commands.insert(pos, dash_separator);
-
-                // Insert file entries after dash separator
-                for (i, file_cmd) in folder_files.into_iter().enumerate() {
-                    commands.insert(pos + 1 + i, file_cmd);
-                }
-            }
-
-            // Extract menu prefix
-            let menu_prefix = if let Some((_, resolved_command)) = &self.prefix_menu_info {
-                Some(resolved_command.command.clone())
-            } else {
-                None
-            };
-
-            (commands, true, menu_prefix, self.prefix_menu_count)
-        } else {
-            // No files to add, return normal display commands
-            self.get_display_commands()
-        }
     }
     
     /// Get prefix menu information for breadcrumb display and prefix trimming

@@ -235,9 +235,12 @@ impl Selection {
     
     /// Reset selection to first valid command
     pub fn reset(&mut self, layout: &DisplayLayout) {
+        crate::utils::log(&format!("SELECTION_RESET: Before reset - position={:?}, index={}",
+            self.visual_position, self.command_index));
+
         self.visual_position = (0, 0);
         self.command_index = 0;
-        
+
         // Skip to first non-separator command
         while let Some(cmd) = self.get_command(layout) {
             if cmd.action != "separator" {
@@ -247,6 +250,9 @@ impl Selection {
                 break;
             }
         }
+
+        crate::utils::log(&format!("SELECTION_RESET: After reset - position={:?}, index={}",
+            self.visual_position, self.command_index));
     }
 }
 

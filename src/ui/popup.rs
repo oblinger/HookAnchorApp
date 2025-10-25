@@ -158,11 +158,11 @@ impl AnchorSelector {
         
         // If we have commands, calculate optimal width based on content
         if command_count > 0 {
-            let (display_commands, _, _, _) = self.get_display_commands();
-            
+            let display_commands = &self.popup_state.display_commands;
+
             // Estimate the width needed for the longest command text
             let mut max_text_width: f32 = 0.0;
-            for cmd in &display_commands {
+            for cmd in display_commands {
                 // Rough estimation: ~8 pixels per character + padding
                 let estimated_width = (cmd.command.len() as f32 * 8.0) + 40.0;
                 max_text_width = max_text_width.max(estimated_width);
@@ -237,8 +237,7 @@ impl AnchorSelector {
                 let command_count = if self.loading_state == LoadingState::Loaded
                     && !self.filtered_commands().is_empty()
                     && !self.popup_state.raw_search_text().is_empty() {
-                    let (display_commands, _, _, _) = self.get_display_commands();
-                    display_commands.len()
+                    self.popup_state.display_commands.len()
                 } else {
                     0 // No commands to display, so size for empty state
                 };
@@ -628,9 +627,10 @@ impl PopupInterface for AnchorSelector {
 
         crate::utils::log(&format!("Show files toggled to: {}", self.popup_state.show_files));
 
-        // Force display update by triggering recompute
-        // The display will automatically update on next frame since get_display_commands()
-        // checks show_files state
+        // Force display update by recomputing display commands and layout
+        self.popup_state.update_display_commands();
+        self.popup_state.update_display_layout();
+        self.popup_state.selection.reset(&self.popup_state.display_layout);
     }
 
     fn handle_uninstall_app(&mut self) {
@@ -828,13 +828,15 @@ impl AnchorSelector {
     
     /// Execute the currently selected command
     fn execute_selected_command_impl(&mut self) {
-        
+
+
         if !self.filtered_commands().is_empty() {
-            let (display_commands, _is_submenu, _menu_prefix, _inside_count) = self.get_display_commands();
-            
-            if self.selected_index() < display_commands.len() {
-                let selected_cmd = &display_commands[self.selected_index()];
-                
+            let selected_idx = self.selected_index();
+            let display_commands = self.popup_state.display_commands.clone();
+
+            if selected_idx < display_commands.len() {
+                let selected_cmd = &display_commands[selected_idx];
+
                 // Don't execute if it's a separator
                 if !PopupState::is_separator_command(selected_cmd) {
                     // Use unified execution with state saving
@@ -930,8 +932,8 @@ impl AnchorSelector {
 
     fn edit_active_command_impl(&mut self) {
         if !self.filtered_commands().is_empty() {
-            let (display_commands, _is_submenu, _menu_prefix, _inside_count) = self.get_display_commands();
-            
+            let display_commands = &self.popup_state.display_commands;
+
             if self.selected_index() < display_commands.len() {
                 let selected_cmd = &display_commands[self.selected_index()];
                 
@@ -981,8 +983,8 @@ impl AnchorSelector {
     
     fn handle_link_to_clipboard_impl(&mut self) {
         if !self.filtered_commands().is_empty() {
-            let (display_commands, _is_submenu, _menu_prefix, _inside_count) = self.get_display_commands();
-            
+            let display_commands = &self.popup_state.display_commands;
+
             if self.selected_index() < display_commands.len() {
                 let selected_cmd = &display_commands[self.selected_index()];
                 
@@ -1206,7 +1208,7 @@ impl AnchorSelector {
 
         // Add popup-specific variables (selected command, previous command, etc.)
         let selected_command = if !self.filtered_commands().is_empty() {
-            let (display_commands, _, _, _) = self.get_display_commands();
+            let display_commands = &self.popup_state.display_commands;
             if self.selected_index() < display_commands.len() {
                 Some(display_commands[self.selected_index()].clone())
             } else {
@@ -1229,7 +1231,7 @@ impl AnchorSelector {
         if template_name == "edit_selection" {
             // Only validate if we actually have commands to validate
             if !self.filtered_commands().is_empty() {
-                let (display_commands, _, _, _) = self.get_display_commands();
+                let display_commands = &self.popup_state.display_commands;
                 let selected_idx = self.selected_index();
                 crate::utils::detailed_log("TEMPLATE", &format!("TEMPLATE: edit_selection - selected_index={}, display_commands.len()={}", selected_idx, display_commands.len()));
                 
@@ -1340,7 +1342,7 @@ impl AnchorSelector {
                             if template_name == "edit_selection" {
                                 // Use the selected command directly from context (already populated above)
                                 if !self.filtered_commands().is_empty() {
-                                    let (display_commands, _, _, _) = self.get_display_commands();
+                                    let display_commands = &self.popup_state.display_commands;
                                     if self.selected_index() < display_commands.len() {
                                         Some(display_commands[self.selected_index()].clone())
                                     } else {
@@ -1901,12 +1903,24 @@ impl AnchorSelector {
         // in the rendering loop
         self.popup_state.selection.command_index = index;
 
-        // Update visual position based on layout
-        let (_rows, cols) = self.popup_state.get_layout_dimensions();
-        if cols > 0 {
-            let row = index / cols;
-            let col = index % cols;
+        // Update visual position based on layout (column-first layout)
+        let (rows, _cols) = self.popup_state.get_layout_dimensions();
+        if rows > 0 {
+            let col = index / rows;  // Column-first: which column
+            let row = index % rows;  // Column-first: position within column
             self.popup_state.selection.visual_position = (row, col);
+
+            // Log with limited backtrace to see WHO called this
+            let backtrace = std::backtrace::Backtrace::capture();
+            let bt_string = format!("{}", backtrace);
+            let caller = bt_string.lines()
+                .skip_while(|line| line.contains("set_selected_index") || line.contains("backtrace"))
+                .take(3)
+                .collect::<Vec<_>>()
+                .join(" | ");
+
+            crate::utils::log(&format!("SET_SELECTED_INDEX: index={} -> position=({}, {}) | CALLER: {}",
+                index, row, col, caller));
         }
     }
     
@@ -1986,47 +2000,19 @@ impl AnchorSelector {
     // Layout and Display Logic
     // =============================================================================
     
-    
-    /// Compute the commands to display based on current menu state
-    /// Returns (commands_to_display, is_in_submenu, menu_prefix, inside_count)
-    fn get_display_commands(&self) -> (Vec<Command>, bool, Option<String>, usize) {
-        // Check if we should add folder files
-        if self.popup_state.show_files && self.popup_state.is_in_prefix_menu {
-            // Get the anchor from prefix menu info
-            if let Some((_, resolved_anchor)) = &self.popup_state.prefix_menu_info {
-                // Get folder files from the anchor
-                let folder_files = self.get_folder_files(resolved_anchor);
-                return self.popup_state.get_display_commands_with_files(folder_files);
-            }
-        }
-
-        // Default: no files to add
-        self.popup_state.get_display_commands()
-    }
-    
     // =============================================================================
     // Navigation Logic
     // =============================================================================
     
     // Navigate left/right in the multi-column layout
     fn navigate_horizontal(&mut self, direction: i32) {
-        // Calculate actual layout from display commands (may include files)
-        let (display_commands, _, _, _) = self.get_display_commands();
-        let actual_layout = crate::ui::layout::DisplayLayout::new(
-            display_commands,
-            &self.popup_state.config
-        );
-        self.popup_state.navigate_horizontal_with_layout(direction, &actual_layout);
+        // Use the display_layout that was already computed in PopupState
+        self.popup_state.navigate_horizontal_with_layout(direction, &self.popup_state.display_layout.clone());
     }
 
     fn navigate_vertical(&mut self, direction: i32) {
-        // Calculate actual layout from display commands (may include files)
-        let (display_commands, _, _, _) = self.get_display_commands();
-        let actual_layout = crate::ui::layout::DisplayLayout::new(
-            display_commands,
-            &self.popup_state.config
-        );
-        self.popup_state.navigate_vertical_with_layout(direction, &actual_layout);
+        // Use the display_layout that was already computed in PopupState
+        self.popup_state.navigate_vertical_with_layout(direction, &self.popup_state.display_layout.clone());
     }
     
     /// Start the grabber countdown
@@ -2582,62 +2568,6 @@ impl AnchorSelector {
         }
         
         current_cmd
-    }
-
-    /// Get list of files from anchor's folder for display in prefix menu
-    /// Returns a Vec of temporary Command structs with action type "file"
-    fn get_folder_files(&self, anchor: &Command) -> Vec<Command> {
-        use std::fs;
-
-        // Get the folder path from the anchor
-        let folder_path = match anchor.get_absolute_folder_path(&self.popup_state.config) {
-            Some(path) => path,
-            None => return Vec::new(),
-        };
-
-        // Check if folder exists
-        if !folder_path.exists() || !folder_path.is_dir() {
-            return Vec::new();
-        }
-
-        // Read directory entries (non-recursive)
-        let entries = match fs::read_dir(&folder_path) {
-            Ok(entries) => entries,
-            Err(_) => return Vec::new(),
-        };
-
-        // Collect files and sort alphabetically
-        let mut files: Vec<(String, String)> = Vec::new();
-        for entry in entries {
-            if let Ok(entry) = entry {
-                let path = entry.path();
-                // Only include files, not directories
-                if path.is_file() {
-                    if let Some(file_name) = path.file_name() {
-                        let name = file_name.to_string_lossy().to_string();
-                        let full_path = path.to_string_lossy().to_string();
-                        files.push((name, full_path));
-                    }
-                }
-            }
-        }
-
-        // Sort alphabetically by file name
-        files.sort_by(|a, b| a.0.cmp(&b.0));
-
-        // Convert to Command structs with "file" action type
-        files.into_iter().map(|(name, path)| {
-            Command {
-                command: name,
-                action: "file".to_string(),
-                arg: path,
-                patch: String::new(),
-                flags: String::new(),
-        other_params: None,
-                last_update: 0,
-                file_size: None,
-            }
-        }).collect()
     }
 
     /// Show folder functionality - launches the first folder matching current search
@@ -4342,7 +4272,7 @@ impl eframe::App for AnchorSelector {
                         // Normal operation
                         // Check for alias replacement
                         self.check_and_apply_alias();
-                        
+
                         // ALWAYS update search results after any text change
                         let current_search = self.popup_state.search_text.clone();
                         self.popup_state.update_search(current_search);
@@ -4390,15 +4320,13 @@ impl eframe::App for AnchorSelector {
                 // No scroll area - window will size to accommodate max_rows
                 // Show commands if fully loaded and there are filtered commands (includes prefix menus from last anchor)
                 if self.loading_state == LoadingState::Loaded && !self.filtered_commands().is_empty() {
-                    // Get the display commands using our new method
-                    let (display_commands, is_submenu, menu_prefix, inside_count) = self.get_display_commands();
-
-                    // Recalculate layout based on ACTUAL display commands (not filtered_commands)
-                    // This is critical because display_commands may include folder files
-                    let actual_layout = crate::ui::layout::DisplayLayout::new(
-                        display_commands.clone(),
-                        &self.popup_state.config
-                    );
+                    // Use the display commands and layout that PopupState already computed
+                    // Clone to avoid borrow conflicts in the rendering closure
+                    let display_commands = self.popup_state.display_commands.clone();
+                    let is_submenu = self.popup_state.is_in_prefix_menu;
+                    let menu_prefix = self.popup_state.prefix_menu_info.as_ref().map(|(_, resolved)| resolved.command.clone());
+                    let inside_count = self.popup_state.prefix_menu_count;
+                    let actual_layout = &self.popup_state.display_layout;
 
                     // Calculate required window dimensions based on final display commands
                     // Use actual font metrics for precise sizing
@@ -4429,10 +4357,7 @@ impl eframe::App for AnchorSelector {
                             
                             // Calculate actual column widths by measuring the text
                             let mut column_widths = vec![0.0f32; cols_to_use];
-                            
-                            // Get display commands with same logic as rendering
-                            let (display_commands, is_submenu, menu_prefix, inside_count) = self.get_display_commands();
-                            
+
                             // Measure each command's text width
                             for col in 0..cols_to_use {
                                 for row in 0..rows_per_col {
@@ -4553,7 +4478,7 @@ impl eframe::App for AnchorSelector {
                             crate::utils::detailed_log("RENDER", &format!("Using MultiColumn branch (rows={}, cols={})", rows, cols));
                             let rows_per_col = *rows;
                             let cols_to_use = *cols;
-                            
+
                             // Show submenu header if applicable (even in multi-column mode)
                             if is_submenu {
                                 if let Some(ref prefix) = menu_prefix {
@@ -4644,11 +4569,15 @@ impl eframe::App for AnchorSelector {
 
                                             let response = ui.selectable_label(is_selected, text);
 
-                                            // Update selection on hover (only if changed to avoid render loop)
+                                            // Update selection on hover - validate coordinates to prevent stale hover from cached position
                                             if response.hovered() {
-                                                if self.selected_index() != i {
-                                                    self.set_selected_index(i);
-                                                    ui.ctx().request_repaint();
+                                                let hover_pos = ctx.input(|i| i.pointer.hover_pos());
+                                                // Validate pointer is actually inside button (not stale coordinates from different display)
+                                                if hover_pos.map_or(false, |pos| response.rect.contains(pos)) {
+                                                    if self.selected_index() != i {
+                                                        self.set_selected_index(i);
+                                                        ui.ctx().request_repaint();
+                                                    }
                                                 }
                                             }
 

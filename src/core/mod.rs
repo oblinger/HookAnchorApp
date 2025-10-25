@@ -14,6 +14,7 @@ pub(crate) mod template_creation;  // Used by UI and execute modules
 pub(crate) mod key_processing;     // Used by UI module
 pub(crate) mod commands;           // Many internal functions used across crates
 pub(crate) mod command_ops;        // User-level command operations
+pub(crate) mod command_utils;      // Read-only command utility functions
 pub(crate) mod inference;          // Patch inference and auto-assignment logic
 pub(crate) mod display;            // Command display and filtering logic
 
@@ -119,4 +120,8 @@ pub use commands::{
     get_command_prefix,
     // Flag constants
     FLAG_ANCHOR, FLAG_USER_EDITED, FLAG_MERGED, FLAG_INCLUDE,
+};
+
+pub use command_utils::{
+    get_folder_files
 };
