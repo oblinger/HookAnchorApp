@@ -222,6 +222,9 @@ impl Selection {
             
             self.visual_position = (new_row, new_col);
             self.command_index = new_index;
+            crate::utils::log(&format!("SELECTION_NAV: {:?} to position=({}, {}), index={}, cmd='{}'",
+                direction, new_row, new_col, new_index,
+                layout.commands.get(new_index).map(|c| c.command.as_str()).unwrap_or("None")));
             true
         } else {
             false // No valid command at new position
@@ -237,16 +240,25 @@ impl Selection {
     pub fn reset(&mut self, layout: &DisplayLayout) {
         self.visual_position = (0, 0);
         self.command_index = 0;
-        
+
+        crate::utils::log(&format!("SELECTION_RESET: Starting reset - position=(0,0), index=0"));
+
         // Skip to first non-separator command
         while let Some(cmd) = self.get_command(layout) {
             if cmd.action != "separator" {
+                crate::utils::log(&format!("SELECTION_RESET: Found first non-separator at position={:?}, index={}, command='{}'",
+                    self.visual_position, self.command_index, cmd.command));
                 break;
             }
+            crate::utils::log(&format!("SELECTION_RESET: Skipping separator at position={:?}, index={}",
+                self.visual_position, self.command_index));
             if !self.navigate(Direction::Down, layout) {
                 break;
             }
         }
+
+        crate::utils::log(&format!("SELECTION_RESET: Final position={:?}, index={}",
+            self.visual_position, self.command_index));
     }
 }
 

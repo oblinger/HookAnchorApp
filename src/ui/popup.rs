@@ -93,6 +93,9 @@ pub struct AnchorSelector {
     pending_action: Option<PendingAction>,
     /// Action to execute immediately after initialization (from --action flag)
     initial_action_name: Option<String>,
+    /// Track whether user is navigating with keyboard (true) or mouse (false)
+    /// Used to prevent mouse hover from interfering with keyboard navigation
+    using_keyboard_navigation: bool,
 }
 
 /// Loading state for deferred initialization
@@ -1574,6 +1577,7 @@ impl AnchorSelector {
             pending_rebuild: false,
             pending_action: None,
             initial_action_name: None,
+            using_keyboard_navigation: true,
         };
 
         result
@@ -1629,6 +1633,7 @@ impl AnchorSelector {
             pending_rebuild: false,
             pending_action: None,
             initial_action_name: initial_action.map(|s| s.to_string()),
+            using_keyboard_navigation: true,
         };
 
         result
@@ -2010,6 +2015,9 @@ impl AnchorSelector {
     
     // Navigate left/right in the multi-column layout
     fn navigate_horizontal(&mut self, direction: i32) {
+        // User is using arrow keys - switch to keyboard navigation mode
+        self.using_keyboard_navigation = true;
+
         // Calculate actual layout from display commands (may include files)
         let (display_commands, _, _, _) = self.get_display_commands();
         let actual_layout = crate::ui::layout::DisplayLayout::new(
@@ -2020,6 +2028,9 @@ impl AnchorSelector {
     }
 
     fn navigate_vertical(&mut self, direction: i32) {
+        // User is using arrow keys - switch to keyboard navigation mode
+        self.using_keyboard_navigation = true;
+
         // Calculate actual layout from display commands (may include files)
         let (display_commands, _, _, _) = self.get_display_commands();
         let actual_layout = crate::ui::layout::DisplayLayout::new(
@@ -3606,6 +3617,14 @@ impl eframe::App for AnchorSelector {
         }
 
         // Reload app state from file on every update after initial loading
+        // Detect mouse movement to switch from keyboard to mouse mode
+        // Only if user moved mouse, not just hovering in same position
+        ctx.input(|input| {
+            if input.pointer.is_moving() {
+                self.using_keyboard_navigation = false;
+            }
+        });
+
         // This ensures last anchor changes from the server are picked up
         if self.loading_state == LoadingState::Loaded {
             let current_state = crate::core::data::get_state();
@@ -4337,12 +4356,16 @@ impl eframe::App for AnchorSelector {
                 } else if response.changed() {
                     // TODO: Consider refactoring this to use centralized key handling
                     crate::utils::detailed_log("KEY_DEBUG", "🔑 ALTERNATE_PATH: TextEdit changed (text input events consumed by widget)");
+
+                    // User is typing - switch to keyboard navigation mode
+                    self.using_keyboard_navigation = true;
+
                     // Always update search when text field is changed
                     if self.loading_state == LoadingState::Loaded {
                         // Normal operation
                         // Check for alias replacement
                         self.check_and_apply_alias();
-                        
+
                         // ALWAYS update search results after any text change
                         let current_search = self.popup_state.search_text.clone();
                         self.popup_state.update_search(current_search);
@@ -4644,8 +4667,8 @@ impl eframe::App for AnchorSelector {
 
                                             let response = ui.selectable_label(is_selected, text);
 
-                                            // Update selection on hover (only if changed to avoid render loop)
-                                            if response.hovered() {
+                                            // Update selection on hover only if user is using mouse, not keyboard
+                                            if response.hovered() && !self.using_keyboard_navigation {
                                                 if self.selected_index() != i {
                                                     self.set_selected_index(i);
                                                     ui.ctx().request_repaint();
@@ -4653,6 +4676,8 @@ impl eframe::App for AnchorSelector {
                                             }
 
                                             if response.clicked() {
+                                                // Switch to mouse mode and update selection
+                                                self.using_keyboard_navigation = false;
                                                 self.set_selected_index(i);
 
                                                 // Use unified execution with state saving
