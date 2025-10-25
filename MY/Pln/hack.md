@@ -1,23 +1,30 @@
 
 
 
+🚀 HookAnchor Rescan - Verbose Mode
 
 
 - [ ] [[Hook Anchor Release]] 
-- [ ] Log does not contain JS errors
-- [ ] lets save these so they are not virtual:  Created virtual anchor for patch
+- [x] upgrade CMD+B so it does a --restart too
+- [x] Delete log does not work
+- [x] how many lines of code  29,685rust, 639swift, 3,452javascript
+- [x] Make virtual anchors into real anchors
+- [x] remove $DELETED$ from the log
+- [x] lets save these so they are not virtual:  Created virtual anchor for patch
+- [x] remove println!
+- [x] move history into data
+- [x] Log does not contain JS errors
+- [x] Fix rebuild CMD+B command
 - [ ] Make dev mode run on each render (mod 10?)   make boot check only run when dev_mode is set.
-- [ ] upgrade CMD+B so it does a --restart too
 - [ ] Add categories
 - [ ] click on folder will go into folder
 - [ ] Delete key should prompt to delete file and maybe folder.
-- [x] remove println!
-- [x] move history into data
 - [ ] check for println! and eprintln! in code
+- [ ] remove the 'js' and 'js_function' action types since they are not needed.
 
 FOR RELEASE
 - [ ] clean up logging
-- [ ] Clean up help messages
+- [x] Clean up help messages
 - [ ] Adding ha to the path and the ff command etc. should all be in a script file that is inside the .app and that should be sourced by the user's init upon install.
 - [ ] Anchor is a Flag; Anchor suffix used to indicate location of patch
 - [x] Help doc sections  [[HELP]]: vars, fns, config    help command section for Javascript variables, and section for Javascript functions
