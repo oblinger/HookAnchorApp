@@ -1,27 +1,92 @@
+//! Dialog System - Modal dialogs for user interaction
+//!
+//! ## Dialog (struct) -- Template driven dialog manager.  Public Methods:
+//! - `new() -> Self` - Creates new empty dialog
+//! - `show(&mut self, spec_strings: Vec<String>)` - Shows dialog with given spec strings
+//! - `update(&mut self, ctx: &egui::Context) -> bool` - Renders dialog and handles interactions (returns true when dialog closes)
+//! - `take_result(&mut self) -> Option<HashMap<String, String>>` - Retrieves result after dialog closes
+//! - `is_visible(&self) -> bool` - Check if dialog is currently shown
+//!
+//! ## Error Handling
+//! For error dialogs, use `crate::utils::queue_user_error()` which queues errors for automatic display.
+//!
+//! ## Spec String Format
+//! Each spec string starts with a control character that defines the element type:
+//! - `=Title` - Sets dialog window title (not visible content)
+//! - `#Text` - Large heading text (starts new row)
+//! - `'Text` - Label text (normal size)
+//! - `$key,placeholder` - Input field with key and placeholder text
+//! - `&Text` - Multi-line text box (auto-sized, read-only)
+//! - `^Text` - Multi-line text box with scrolling (for long content)
+//! - `!Text` - Button (buttons on same row if consecutive)
+//!
+//! ## Result Format
+//! When a dialog closes, `take_result()` returns a HashMap with:
+//! - `"exit"` key contains the button text that was clicked ("OK", "Cancel", etc.)
+//! - Other keys contain input field values (keyed by the name from `$key,placeholder`)
+//!
+//! ## Example Usage
+//! ```rust
+//! use std::collections::HashMap;
+//! use crate::ui::dialog::Dialog;
+//!
+//! let mut dialog = Dialog::new();
+//!
+//! // Show a confirmation dialog
+//! dialog.show(vec![
+//!     "=Confirm Action".to_string(),
+//!     "#Please Confirm".to_string(),
+//!     "'Are you sure you want to proceed?".to_string(),
+//!     "$reason,Enter reason here".to_string(),
+//!     "!OK".to_string(),
+//!     "!Cancel".to_string(),
+//! ]);
+//!
+//! // In your main update loop
+//! loop {
+//!     // Check if dialog is open and skip other input handling
+//!     if dialog.is_visible() {
+//!         // Dialog handles its own input
+//!     }
+//!
+//!     // Update dialog (renders and handles input)
+//!     if dialog.update(ctx) {
+//!         // Dialog was closed - retrieve result
+//!         if let Some(result) = dialog.take_result() {
+//!             let button_pressed = result.get("exit").unwrap();
+//!             if button_pressed == "OK" {
+//!                 let user_reason = result.get("reason").unwrap();
+//!                 // Process confirmation...
+//!             }
+//!         }
+//!     }
+//! }
+//! ```
+
 use eframe::egui;
 use std::collections::HashMap;
 
 #[derive(Debug, Clone)]
-#[allow(dead_code)]
-pub enum DialogElement {
+enum DialogElement {
     Title(String),
     Label(String),
     Input { key: String, placeholder: String },
     TextBox { content: String },
+    ScrollableTextBox { content: String },
     Button { text: String },
 }
 
 #[derive(Debug, Clone)]
-pub struct DialogRow {
-    pub elements: Vec<DialogElement>,
+struct DialogRow {
+    elements: Vec<DialogElement>,
 }
 
 pub struct Dialog {
-    pub visible: bool,
-    pub rows: Vec<DialogRow>,
-    pub input_values: HashMap<String, String>,
-    pub result: Option<HashMap<String, String>>,
-    pub title: String,
+    visible: bool,
+    rows: Vec<DialogRow>,
+    input_values: HashMap<String, String>,
+    result: Option<HashMap<String, String>>,
+    title: String,
 }
 
 impl Dialog {
@@ -34,8 +99,7 @@ impl Dialog {
             title: "Dialog".to_string(),
         }
     }
-    
-    #[allow(dead_code)]
+
     pub fn show(&mut self, spec_strings: Vec<String>) {
         crate::utils::detailed_log("DIALOG", "Dialog opened");
         self.visible = true;
@@ -46,29 +110,15 @@ impl Dialog {
         
         self.parse_spec_strings(spec_strings);
     }
-    
-    /// Shows an error dialog with the given error message
-    pub fn show_error(&mut self, error_message: &str) {
-        let spec_strings = vec![
-            "=Error".to_string(),
-            format!("&{}", error_message), // Use TextBox (&) instead of Label (#) for wrapping
-            "!Exit".to_string(),
-        ];
-        self.show(spec_strings);
-    }
-    
-    #[allow(dead_code)]
-    pub fn hide(&mut self) {
-        self.visible = false;
-        self.result = None;
-    }
-    
+
     pub fn take_result(&mut self) -> Option<HashMap<String, String>> {
         self.result.take()
     }
-    
-    
-    #[allow(dead_code)]
+
+    pub fn is_visible(&self) -> bool {
+        self.visible
+    }
+
     fn parse_spec_strings(&mut self, spec_strings: Vec<String>) {
         let mut current_row = DialogRow { elements: Vec::new() };
         let mut last_was_button = false;
@@ -133,12 +183,23 @@ impl Dialog {
                     last_was_button = false;
                 }
                 '&' => {
-                    // TextBox - multi-line text display, starts a new row
+                    // TextBox - multi-line text display (auto-sized), starts a new row
                     if !current_row.elements.is_empty() {
                         self.rows.push(current_row);
                         current_row = DialogRow { elements: Vec::new() };
                     }
                     current_row.elements.push(DialogElement::TextBox { content: rest.to_string() });
+                    self.rows.push(current_row);
+                    current_row = DialogRow { elements: Vec::new() };
+                    last_was_button = false;
+                }
+                '^' => {
+                    // ScrollableTextBox - multi-line text display with scrolling, starts a new row
+                    if !current_row.elements.is_empty() {
+                        self.rows.push(current_row);
+                        current_row = DialogRow { elements: Vec::new() };
+                    }
+                    current_row.elements.push(DialogElement::ScrollableTextBox { content: rest.to_string() });
                     self.rows.push(current_row);
                     current_row = DialogRow { elements: Vec::new() };
                     last_was_button = false;
@@ -170,117 +231,6 @@ impl Dialog {
         if !current_row.elements.is_empty() {
             self.rows.push(current_row);
         }
-    }
-    
-    /// Calculate the required dialog size using simple estimation (performance optimized)
-    pub fn calculate_required_size(&self, _ctx: &egui::Context) -> (f32, f32) {
-        let mut max_width = 450.0f32; // minimum width for rename dialogs
-        let mut total_height = 5.0f32; // very minimal base padding
-        
-        for (row_index, row) in self.rows.iter().enumerate() {
-            let mut row_width = 30.0f32; // left + right padding
-            let mut row_height = 6.0f32; // minimum row height for spacing
-            
-            // Skip completely empty rows - they shouldn't add any height
-            let is_empty_row = row.elements.is_empty() || 
-                (row.elements.len() == 1 && 
-                 matches!(row.elements[0], DialogElement::Label(ref s) if s.is_empty()));
-            
-            if !is_empty_row {
-                // Calculate size for each element in the row
-                for element in row.elements.iter() {
-                    match element {
-                        DialogElement::Title(text) => {
-                            // Dialog window title (larger font, centered)
-                            row_width += text.len() as f32 * 12.0 + 30.0; // larger font + margins
-                            row_height = row_height.max(20.0); // realistic height for title
-                        }
-                        DialogElement::Label(text) => {
-                            if !text.is_empty() {
-                                // Header text like "Available keyboard shortcuts:"
-                                row_width += text.len() as f32 * 8.0 + 15.0;
-                                row_height = row_height.max(25.0);
-                            }
-                        }
-                        DialogElement::Input { .. } => {
-                            // Fixed width for input fields
-                            row_width += 200.0;
-                            row_height = row_height.max(25.0);
-                        }
-                        DialogElement::TextBox { content } => {
-                            // Calculate textbox dimensions based on content
-                            let lines: Vec<&str> = content.lines().collect();
-                            let line_count = lines.len().max(1);
-                            
-                            // Find the longest line for width calculation  
-                            let max_line_length = lines.iter()
-                                .map(|line| line.len())
-                                .max()
-                                .unwrap_or(0);
-                            
-                            // Make dialog width just big enough for the content with reasonable margins
-                            // The textbox will fill available width minus 20px, so dialog should be content + margins
-                            let content_width = max_line_length as f32 * 7.5;
-                            let needed_width = content_width + 60.0; // 20px textbox margins + 40px dialog margins
-                            // Reduced by 2px per line based on observation
-                            let textbox_height = line_count as f32 * 16.0 + 15.0;
-                            
-                            row_width += needed_width;
-                            row_height = row_height.max(textbox_height);
-                        }
-                        DialogElement::Button { text } => {
-                            // Button with proper sizing
-                            let button_width = (text.len() as f32 * 8.0 + 30.0).max(80.0);
-                            row_width += button_width + 15.0; // button + spacing
-                            row_height = row_height.max(32.0); // button row height
-                        }
-                    }
-                }
-                
-                // Update maximums only for non-empty rows
-                max_width = max_width.max(row_width);
-                total_height += row_height + 1.0; // row height + very minimal inter-row spacing
-            }
-        }
-        
-        // No extra spacing for button rows - they already have adequate height
-        
-        // Add safety margin for egui framework overhead
-        total_height += 15.0;
-        
-        // Use configured maximum window sizes
-        let config = crate::core::data::get_config();
-        let max_width_available = config.popup_settings.get_max_window_width() as f32;
-        let max_height_available = config.popup_settings.get_max_window_height() as f32;
-        
-        // Add very minimal window chrome margins
-        let pad = 5.0; // Very minimal padding around dialog edges
-        let final_width_with_margin = max_width + (pad * 2.0);
-        let final_height_with_margin = total_height + (pad * 2.0);
-        
-        // Add window overhead to account for window chrome and margins
-        let estimated_egui_overhead = 40.0;
-        let content_height_needed = total_height;
-        let window_height_needed = content_height_needed + estimated_egui_overhead;
-        
-        // Use calculated size but constrain to configured maximums
-        let final_width = final_width_with_margin.max(400.0).min(max_width_available);
-        let final_height = window_height_needed.max(100.0).min(max_height_available);
-        
-        (final_width, final_height)
-    }
-    
-    /// Create a test rename dialog for debugging size calculation
-    #[allow(dead_code)]
-    pub fn create_test_rename_dialog(&mut self) {
-        let dialog_spec = vec![
-            "=Confirm Rename".to_string(),
-            "'Renaming \"p proj\" to \"p proj2\"".to_string(),
-            "&The following changes will be made:\n\n• Update patch from p proj to p proj2 for the following commands:\nASIN_lkp_lkp\n\n• Lorem ipsum dolor sit amet, consectetur adipiscing elit".to_string(),
-            "!OK".to_string(),
-            "!Cancel".to_string(),
-        ];
-        self.show(dialog_spec);
     }
 
     pub fn update(&mut self, ctx: &egui::Context) -> bool {
@@ -332,16 +282,16 @@ impl Dialog {
                     for row in &self.rows {
                         // Check row type
                         let is_button_row = row.elements.iter().all(|e| matches!(e, DialogElement::Button { .. }));
-                        let has_textbox = row.elements.iter().any(|e| matches!(e, DialogElement::TextBox { .. }));
+                        let has_scrollable_textbox = row.elements.iter().any(|e| matches!(e, DialogElement::ScrollableTextBox { .. }));
 
                         if is_button_row {
                             // Render buttons at bottom (outside scroll area)
                             continue;
-                        } else if has_textbox {
-                            // Wrap ONLY the textbox content in a scroll area
+                        } else if has_scrollable_textbox {
+                            // Wrap ONLY the scrollable textbox content in a scroll area
                             for element in &row.elements {
-                                if let DialogElement::TextBox { content } = element {
-                                    // Put textbox inside scroll area
+                                if let DialogElement::ScrollableTextBox { content } = element {
+                                    // Put scrollable textbox inside scroll area
                                     egui::ScrollArea::vertical()
                                         .min_scrolled_height(550.0)
                                         .auto_shrink([false, false])
@@ -363,7 +313,7 @@ impl Dialog {
                             }
                             ui.add_space(2.0);
                         } else {
-                            // Regular content rows (titles, labels, inputs) - no scroll
+                            // Regular content rows (titles, labels, inputs, textbox) - no scroll
                             ui.horizontal(|ui| {
                                 for element in &row.elements {
                                     match element {
@@ -381,6 +331,20 @@ impl Dialog {
                                                 .desired_width(220.0)
                                                 .hint_text(egui::RichText::new(placeholder).size(13.0).color(egui::Color32::LIGHT_GRAY));
                                             ui.add(text_edit);
+                                        }
+                                        DialogElement::TextBox { content } => {
+                                            // Auto-sized textbox (no scrolling) - restored original behavior
+                                            let lines: Vec<&str> = content.lines().collect();
+                                            let line_count = lines.len().max(1);
+                                            let text_height = line_count as f32 * 16.0 + 10.0;
+
+                                            ui.add_sized(
+                                                [ui.available_width() - 20.0, text_height],
+                                                egui::TextEdit::multiline(&mut content.clone())
+                                                    .font(egui::TextStyle::Monospace)
+                                                    .text_color(egui::Color32::BLACK)
+                                                    .interactive(false)
+                                            );
                                         }
                                         _ => {}
                                     }

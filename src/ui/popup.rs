@@ -137,7 +137,7 @@ impl AnchorSelector {
 
     /// Determine the appropriate window size mode based on current UI state
     fn determine_window_size_mode(&self) -> WindowSizeMode {
-        if self.dialog.visible {
+        if self.dialog.is_visible() {
             WindowSizeMode::Dialog
         } else if self.command_editor.visible {
             WindowSizeMode::Editor
@@ -429,7 +429,7 @@ impl AnchorSelector {
             return false; // No keys processed here
         }
         
-        if self.dialog.visible {
+        if self.dialog.is_visible() {
             // When dialog is visible, we don't process ANY keys here
             // The dialog will handle its own keys in its update() method
             return false; // No keys processed here
@@ -654,7 +654,7 @@ impl PopupInterface for AnchorSelector {
     }
     
     fn is_dialog_visible(&self) -> bool {
-        self.dialog.visible
+        self.dialog.is_visible()
     }
     
     fn close_command_editor(&mut self) {
@@ -664,16 +664,13 @@ impl PopupInterface for AnchorSelector {
         // Request focus on input field
         self.request_focus = true;
     }
-    
+
     fn close_dialog(&mut self) {
-        crate::utils::log("🪟 DIALOG CLOSE: close_dialog() called - setting visible=false");
-        self.dialog.visible = false;
-        // Reset window size when closing dialog
-        self.window_size_mode = WindowSizeMode::Normal;
-        // Request focus on input field
-        self.request_focus = true;
+        // Dialog closes automatically via update() when user clicks button
+        // This trait method exists for API compatibility but isn't used
+        crate::utils::log("DIALOG: close_dialog() called but dialogs close automatically");
     }
-    
+
     fn get_search_text(&self) -> &str {
         &self.popup_state.search_text
     }
@@ -704,10 +701,14 @@ impl AnchorSelector {
     
     /// Display an error dialog to the user
     /// This is a generic function for showing errors in a popup dialog
-    /// This is private - errors should be queued via queue_user_error() 
+    /// This is private - errors should be queued via queue_user_error()
     /// and displayed automatically by the UI
     fn show_error_dialog(&mut self, error_message: &str) {
-        self.dialog.show_error(error_message);
+        self.dialog.show(vec![
+            "=Error".to_string(),
+            format!("&{}", error_message),
+            "!Exit".to_string(),
+        ]);
     }
     
     // =============================================================================
@@ -1164,11 +1165,11 @@ impl AnchorSelector {
                 }
                 Err(e) => {
                     crate::utils::log_error(&format!("Failed to launch history viewer: {}", e));
-                    self.dialog.show_error(&format!("Could not launch history viewer: {}", e));
+                    self.show_error_dialog(&format!("Could not launch history viewer: {}", e));
                 }
             }
         } else {
-            self.dialog.show_error("Could not determine executable path");
+            self.show_error_dialog("Could not determine executable path");
         }
     }
 
@@ -1675,7 +1676,7 @@ impl AnchorSelector {
         // Show config error if any
         if let Some(error) = config_error {
             self.config_error = Some(error.clone());
-            self.dialog.show_error(&error);
+            self.show_error_dialog(&error);
         }
         
         self.loading_state = LoadingState::Loaded;
@@ -3657,17 +3658,17 @@ impl eframe::App for AnchorSelector {
         
         // Check if we need active updates (animations, countdowns, etc.)
         let has_input = ctx.input(|i| !i.events.is_empty() || i.pointer.any_down() || i.keys_down.len() > 0);
-        let has_active_ui = self.command_editor.visible 
-            || self.dialog.visible 
+        let has_active_ui = self.command_editor.visible
+            || self.dialog.is_visible()
             || self.grabber_countdown.is_some();
-        
+
         // Update interaction time if there's user input
         if has_input {
             self.last_interaction_time = std::time::Instant::now();
         }
-        
+
         // Check for idle timeout - only when visible and not showing dialogs/editor
-        if !self.is_hidden && !self.command_editor.visible && !self.dialog.visible {
+        if !self.is_hidden && !self.command_editor.visible && !self.dialog.is_visible() {
             let config = crate::core::data::get_config();
             if let Some(timeout_seconds) = config.popup_settings.idle_timeout_seconds {
                 let idle_duration = self.last_interaction_time.elapsed();
@@ -3981,7 +3982,7 @@ impl eframe::App for AnchorSelector {
                                         let dialog_spec = vec![
                                             "=Confirm Rename".to_string(),
                                             format!("'Renaming \"{}\" to \"{}\"", effective_old_name, new_command.command),
-                                            format!("&The following changes will be made:\n\n• {}", action_list),
+                                            format!("^The following changes will be made:\n\n• {}", action_list),
                                             "!OK".to_string(),
                                             "!Cancel".to_string(),
                                         ];
@@ -4515,7 +4516,7 @@ impl eframe::App for AnchorSelector {
                     };
                     
                     // Skip content-based window sizing when dialog is visible to avoid competing with dialog sizing
-                    if !self.dialog.visible {
+                    if !self.dialog.is_visible() {
                         // Determine the correct window size based on current mode
                         let (final_width, final_height) = if self.command_editor.visible {
                             // Use calculated editor size when command editor is open

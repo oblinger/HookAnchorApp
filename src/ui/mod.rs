@@ -41,9 +41,7 @@ pub use command_editor::{
 };
 
 // Dialog system
-pub use dialog::{
-    Dialog, DialogElement, DialogRow
-};
+pub use dialog::Dialog;
 
 // Anchor tree navigator widget
 pub use anchor_tree_navigator::{
