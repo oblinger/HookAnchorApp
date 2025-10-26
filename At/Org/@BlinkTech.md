@@ -1,4 +1,0 @@
-=[[Org]]   
-
-
-[[@Sean Hennessy]] 

@@ -24,6 +24,7 @@
 | **A** | App             | **XXXX**             | Mac App. Launches it.                                                       |
 | **C** | Code            | **XXXX Code**        | Project's source                                                            |
 | **L** | Log             | **XXXX Log**         | Log of related content                                                      |
+| **O** | Org             | **XXXX Org**         |                                                                             |
 | **P** | Page            | **XXXX Page**        | Launches a URL page                                                         |
 | **T** | Todo            | **XXXX Todo** or "." | Todo list for XXXX.  "XXXX." can be an alias                                |
 | **W** | Web App         | **XXXX Web**         | Launches Web App                                                            |
@@ -37,7 +38,11 @@
 |       |                 |                      |                                                                             |
 |       | **TARGET**      |                      |                                                                             |
 |       |                 |                      |                                                                             |
-
+|       |                 |                      |                                                                             |
+|       |                 |                      |                                                                             |
+Projects
+Planning - 
+Todo - Task
 
 a b c D E f g H I J K l m n O p Q R s t U V W X y Z
 
