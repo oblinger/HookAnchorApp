@@ -1832,6 +1832,46 @@ impl AnchorSelector {
         )?;
         crate::utils::log(&format!("RENAME: rename_associated_data completed, updated_arg: {}", updated_arg));
 
+        // Check if this is an anchor file rename where filename matches folder name
+        // Check for both "anchor" and "markdown" actions since both can be anchor files
+        if action == "anchor" || action == "markdown" {
+            use std::path::Path;
+            let arg_path = Path::new(current_arg);
+
+            // Check if the file stem (without extension) matches the old command name
+            if let Some(file_stem) = arg_path.file_stem() {
+                if let Some(file_stem_str) = file_stem.to_str() {
+                    if file_stem_str == old_name {
+                        // This is an anchor file - check if folder name also matches
+                        if let Some(parent) = arg_path.parent() {
+                            if let Some(folder_name) = parent.file_name() {
+                                if let Some(folder_name_str) = folder_name.to_str() {
+                                    if folder_name_str == old_name {
+                                        // Folder name matches - rename the folder too
+                                        use crate::core::command_ops::rename_folder;
+                                        crate::utils::log(&format!("RENAME_FOLDER: Executing folder rename: '{}' -> '{}'", folder_name_str, new_name));
+                                        match rename_folder(
+                                            parent.to_str().unwrap_or(""),
+                                            new_name,
+                                            self.commands_mut(),
+                                            false, // dry_run = false
+                                        ) {
+                                            Ok(_) => {
+                                                crate::utils::log("RENAME_FOLDER: Folder rename completed successfully");
+                                            }
+                                            Err(e) => {
+                                                return Err(format!("Failed to rename folder: {}", e).into());
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
         // Delete original command from UI (not from global state) if needed
         if let Some(cmd_name) = original_command_to_delete {
             if !cmd_name.is_empty() {
@@ -3876,8 +3916,49 @@ impl eframe::App for AnchorSelector {
                                 &config,
                                 true, // dry_run = true
                             ) {
-                                Ok((updated_arg, actions)) => {
+                                Ok((updated_arg, mut actions)) => {
                                     crate::utils::log(&format!("RENAME_DRY_RUN: Found {} actions: {:?}", actions.len(), actions));
+
+                                    // Check if this is an anchor file rename where filename matches folder name
+                                    // Check for both "anchor" and "markdown" actions since both can be anchor files
+                                    if new_command.action == "anchor" || new_command.action == "markdown" {
+                                        use std::path::Path;
+                                        let arg_path = Path::new(&new_command.arg);
+
+                                        // Check if the file stem (without extension) matches the old command name
+                                        if let Some(file_stem) = arg_path.file_stem() {
+                                            if let Some(file_stem_str) = file_stem.to_str() {
+                                                if file_stem_str == effective_old_name {
+                                                    // This is an anchor file - check if folder name also matches
+                                                    if let Some(parent) = arg_path.parent() {
+                                                        if let Some(folder_name) = parent.file_name() {
+                                                            if let Some(folder_name_str) = folder_name.to_str() {
+                                                                if folder_name_str == effective_old_name {
+                                                                    // Folder name matches - rename the folder too
+                                                                    use crate::core::command_ops::rename_folder;
+                                                                    match rename_folder(
+                                                                        parent.to_str().unwrap_or(""),
+                                                                        &new_command.command,
+                                                                        self.commands_mut(),
+                                                                        true, // dry_run = true
+                                                                    ) {
+                                                                        Ok(folder_actions) => {
+                                                                            crate::utils::log(&format!("RENAME_FOLDER_DRY_RUN: Found {} folder actions", folder_actions.len()));
+                                                                            actions.extend(folder_actions);
+                                                                        }
+                                                                        Err(e) => {
+                                                                            crate::utils::log(&format!("RENAME_FOLDER_DRY_RUN: Error: {}", e));
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+
                                     if !actions.is_empty() {
                                         // There are side effects - show confirmation dialog
                                         let mut context = HashMap::new();

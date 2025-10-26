@@ -308,51 +308,62 @@ impl Dialog {
             });
         }
         
-        // Calculate required window size based on content
-        let (required_width, required_height) = self.calculate_required_size(ctx);
+        // Use hard-coded size for the dialog window to allow scrolling
+        let window_width = 800.0;
+        let window_height = 600.0;
 
         egui::Window::new(&self.title)
-            .min_size([required_width, required_height])
-            .max_size([required_width, required_height])
-            .default_size([required_width, required_height])
+            .fixed_size([window_width, window_height])
             .resizable(false)
             .collapsible(false)
             .anchor(egui::Align2::CENTER_CENTER, [0.0, 0.0])
             .show(ctx, |ui| {
                 let pad = 5.0;
+                // Force the window to be the size we want by allocating space
+                ui.set_min_width(window_width - 10.0);
+                ui.set_min_height(window_height - 10.0);
+
                 // Add padding around the dialog content
                 ui.add_space(pad);
                 ui.horizontal(|ui| {
                     ui.add_space(pad);
                     ui.vertical(|ui| {
+                    // Process each row and handle textbox elements specially
                     for row in &self.rows {
-                        // Check if this row contains only buttons
+                        // Check row type
                         let is_button_row = row.elements.iter().all(|e| matches!(e, DialogElement::Button { .. }));
-                        
+                        let has_textbox = row.elements.iter().any(|e| matches!(e, DialogElement::TextBox { .. }));
+
                         if is_button_row {
-                            // Center button rows using centered horizontal layout
-                            ui.with_layout(egui::Layout::top_down(egui::Align::Center), |ui| {
-                                ui.horizontal(|ui| {
-                                    for (i, element) in row.elements.iter().enumerate() {
-                                        if i > 0 {
-                                            ui.add_space(10.0);
-                                        }
-                                        if let DialogElement::Button { text } = element {
-                                            let button_width = (text.len() as f32 * 8.0).max(80.0);
-                                            let button = egui::Button::new(egui::RichText::new(text).size(14.0))
-                                                .min_size([button_width, 28.0].into());
-                                            if ui.add(button).clicked() {
-                                                button_pressed = Some(text.clone());
-                                                should_close = true;
-                                            }
-                                        }
-                                    }
-                                });
-                                // Add very minimal padding after button rows
-                                ui.add_space(3.0);
-                            });
+                            // Render buttons at bottom (outside scroll area)
+                            continue;
+                        } else if has_textbox {
+                            // Wrap ONLY the textbox content in a scroll area
+                            for element in &row.elements {
+                                if let DialogElement::TextBox { content } = element {
+                                    // Put textbox inside scroll area
+                                    egui::ScrollArea::vertical()
+                                        .min_scrolled_height(550.0)
+                                        .auto_shrink([false, false])
+                                        .show(ui, |ui| {
+                                            // Calculate height for content
+                                            let lines: Vec<&str> = content.lines().collect();
+                                            let line_count = lines.len().max(1);
+                                            let text_height = line_count as f32 * 16.0 + 10.0;
+
+                                            ui.add_sized(
+                                                [ui.available_width() - 20.0, text_height],
+                                                egui::TextEdit::multiline(&mut content.clone())
+                                                    .font(egui::TextStyle::Monospace)
+                                                    .text_color(egui::Color32::BLACK)
+                                                    .interactive(false)
+                                            );
+                                        });
+                                }
+                            }
+                            ui.add_space(2.0);
                         } else {
-                            // Regular layout for non-button rows
+                            // Regular content rows (titles, labels, inputs) - no scroll
                             ui.horizontal(|ui| {
                                 for element in &row.elements {
                                     match element {
@@ -371,22 +382,26 @@ impl Dialog {
                                                 .hint_text(egui::RichText::new(placeholder).size(13.0).color(egui::Color32::LIGHT_GRAY));
                                             ui.add(text_edit);
                                         }
-                                        DialogElement::TextBox { content } => {
-                                            // Calculate height based on actual content lines
-                                            let lines: Vec<&str> = content.lines().collect();
-                                            let line_count = lines.len().max(1);
-                                            let text_height = line_count as f32 * 16.0 + 10.0; // Match sizing calc
-                                            
-                                            // Use available width (looks better) but calculated height
-                                            ui.add_sized(
-                                                [ui.available_width() - 20.0, text_height],
-                                                egui::TextEdit::multiline(&mut content.clone())
-                                                    .font(egui::TextStyle::Monospace)
-                                                    .text_color(egui::Color32::BLACK)
-                                                    .interactive(false) // Read-only
-                                            );
+                                        _ => {}
+                                    }
+                                }
+                            });
+                            ui.add_space(2.0);
+                        }
+                    }
+
+                    // Render button rows at the bottom (outside scroll area)
+                    ui.add_space(10.0);
+                    for row in &self.rows {
+                        let is_button_row = row.elements.iter().all(|e| matches!(e, DialogElement::Button { .. }));
+                        if is_button_row {
+                            ui.with_layout(egui::Layout::top_down(egui::Align::Center), |ui| {
+                                ui.horizontal(|ui| {
+                                    for (i, element) in row.elements.iter().enumerate() {
+                                        if i > 0 {
+                                            ui.add_space(10.0);
                                         }
-                                        DialogElement::Button { text } => {
+                                        if let DialogElement::Button { text } = element {
                                             let button_width = (text.len() as f32 * 8.0).max(80.0);
                                             let button = egui::Button::new(egui::RichText::new(text).size(14.0))
                                                 .min_size([button_width, 28.0].into());
@@ -396,11 +411,12 @@ impl Dialog {
                                             }
                                         }
                                     }
-                                }
+                                });
                             });
+                            ui.add_space(3.0);
                         }
-                        ui.add_space(2.0);
                     }
+
                     ui.add_space(pad); // Bottom padding
                 });
                 ui.add_space(pad); // Right padding

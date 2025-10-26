@@ -228,6 +228,46 @@ pub fn command_matches_query(command: &str, query: &str) -> bool {
     command_matches_query_with_debug(command, query, false) >= 0
 }
 
+/// Check if a prefix has fully matched to the END of a command name
+///
+/// This is stricter than command_matches_query - it requires that the match
+/// extends all the way to the end of the command, not just a partial match.
+/// Normalizes both strings by removing separators and converting to lowercase
+/// before comparing lengths.
+///
+/// # Arguments
+/// * `prefix` - The search prefix to match
+/// * `command` - The command name to match against
+///
+/// # Returns
+/// * `bool` - true if prefix fully matches to end of command, false otherwise
+///
+/// # Examples
+/// * `prefix_fully_matches_anchor("facebook", "facebook")` → true
+/// * `prefix_fully_matches_anchor("facebookpage", "facebook")` → true
+/// * `prefix_fully_matches_anchor("face", "facebook")` → false (partial only)
+/// * `prefix_fully_matches_anchor("face", "Hugging Face")` → false (partial only)
+fn prefix_fully_matches_anchor(prefix: &str, command: &str) -> bool {
+    // First check if it matches at all
+    if !command_matches_query(command, prefix) {
+        return false;
+    }
+
+    // Normalize both strings: lowercase + remove separators
+    let separators = " ._-";
+    let prefix_normalized: String = prefix.to_lowercase()
+        .chars()
+        .filter(|c| !separators.contains(*c))
+        .collect();
+    let command_normalized: String = command.to_lowercase()
+        .chars()
+        .filter(|c| !separators.contains(*c))
+        .collect();
+
+    // Check if normalized prefix length >= normalized command length
+    prefix_normalized.len() >= command_normalized.len()
+}
+
 
 /// Build prefix menu by scanning backwards from input string to find first anchor
 ///
@@ -266,8 +306,8 @@ pub fn build_prefix_menu(
             // Try matching with sophisticated matching (handles spaces, word boundaries, etc.)
             let cmd_trimmed = skip_leading_date_chars(&cmd.command);
 
-            // Check if command matches the prefix using sophisticated matching
-            if command_matches_query(&cmd.command, prefix) || command_matches_query(&cmd_trimmed, prefix) {
+            // Check if prefix fully matches to END of command (not just partial match)
+            if prefix_fully_matches_anchor(prefix, &cmd.command) || prefix_fully_matches_anchor(prefix, &cmd_trimmed) {
                 let resolved = cmd.resolve_alias(all_commands);
                 if resolved.is_anchor() {
                     crate::utils::detailed_log("BUILD_PREFIX_MENU", &format!("Found matching anchor for prefix '{}': {} -> {}",

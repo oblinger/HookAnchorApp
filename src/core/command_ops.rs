@@ -362,3 +362,94 @@ pub fn rename_associated_data(
     
     Ok((updated_arg, actions))
 }
+
+/// Rename a folder and update all command ARGs that reference it
+///
+/// This handles the special case when renaming an anchor file (where filename matches folder name).
+/// It renames the containing folder and updates all commands whose ARG paths reference the old folder.
+///
+/// Parameters:
+/// - old_folder_path: The current path to the folder
+/// - new_folder_name: The new name for the folder (just the name, not full path)
+/// - commands: Mutable reference to all commands
+/// - dry_run: If true, only returns descriptions without making changes
+///
+/// Returns: Vec<String> of action descriptions
+pub fn rename_folder(
+    old_folder_path: &str,
+    new_folder_name: &str,
+    commands: &mut [Command],
+    dry_run: bool,
+) -> Result<Vec<String>, Box<dyn std::error::Error>> {
+    use std::fs;
+    use std::path::Path;
+    use std::path::PathBuf;
+
+    let mut actions = Vec::new();
+    let old_path = Path::new(old_folder_path);
+
+    // Validate that the old folder exists
+    if !old_path.exists() || !old_path.is_dir() {
+        return Err(format!("Folder does not exist: {}", old_folder_path).into());
+    }
+
+    // Build new folder path (same parent, new name)
+    let new_folder_path = old_path.parent()
+        .ok_or("Cannot determine parent directory")?
+        .join(new_folder_name);
+
+    // Check if target already exists
+    if new_folder_path.exists() {
+        return Err(format!("Target folder already exists: {}", new_folder_path.display()).into());
+    }
+
+    // Find all commands with ARGs that reference this folder
+    let mut affected_commands = Vec::new();
+    let old_path_str = old_folder_path.to_string();
+
+    for cmd in commands.iter() {
+        // Check if the arg starts with the old folder path
+        if cmd.arg.starts_with(&old_path_str) {
+            affected_commands.push((cmd.command.clone(), cmd.arg.clone()));
+        }
+    }
+
+    // Build single-line action description with full path and count
+    let path_update_info = if !affected_commands.is_empty() {
+        format!(" (update {} command path{})",
+            affected_commands.len(),
+            if affected_commands.len() == 1 { "" } else { "s" })
+    } else {
+        String::new()
+    };
+
+    actions.push(format!("FOLDER -- Rename folder: {} → {}{}",
+        old_folder_path, new_folder_name, path_update_info));
+
+    // Execute if not dry run
+    if !dry_run {
+        crate::utils::log(&format!("RENAME_FOLDER: Renaming {} -> {}",
+            old_path.display(), new_folder_path.display()));
+
+        // Rename the folder
+        fs::rename(old_path, &new_folder_path)?;
+
+        // Update all affected command ARGs
+        let new_path_str = new_folder_path.to_string_lossy().to_string();
+        for cmd in commands.iter_mut() {
+            if cmd.arg.starts_with(&old_path_str) {
+                let old_cmd_arg = cmd.arg.clone();
+                cmd.arg = cmd.arg.replacen(&old_path_str, &new_path_str, 1);
+                cmd.update_full_line();
+
+                crate::utils::log(&format!("RENAME_FOLDER: Updated command '{}' arg: {} -> {}",
+                    cmd.command, old_cmd_arg, cmd.arg));
+            }
+        }
+
+        crate::utils::log(&format!("RENAME_FOLDER: Updated {} command ARGs",
+            affected_commands.len()));
+    }
+
+    Ok(actions)
+}
