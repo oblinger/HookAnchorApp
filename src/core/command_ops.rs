@@ -414,17 +414,16 @@ pub fn rename_folder(
         }
     }
 
-    // Build single-line action description with full path and count
-    let path_update_info = if !affected_commands.is_empty() {
-        format!(" (update {} command path{})",
-            affected_commands.len(),
-            if affected_commands.len() == 1 { "" } else { "s" })
-    } else {
-        String::new()
-    };
+    // Build action description
+    actions.push(format!("FOLDER -- Rename folder: {} → {}",
+        old_folder_path, new_folder_name));
 
-    actions.push(format!("FOLDER -- Rename folder: {} → {}{}",
-        old_folder_path, new_folder_name, path_update_info));
+    // Add indented line for path updates if any commands are affected
+    if !affected_commands.is_empty() {
+        actions.push(format!("  Update file paths in {} command{} to match new folder",
+            affected_commands.len(),
+            if affected_commands.len() == 1 { "" } else { "s" }));
+    }
 
     // Execute if not dry run
     if !dry_run {

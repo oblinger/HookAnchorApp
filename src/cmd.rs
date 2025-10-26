@@ -1183,6 +1183,14 @@ fn run_rescan_command() {
     }
     print(&format!("   📊 Total commands after merge: {}", commands.len()));
 
+    // Track HA alias after loading manual edits
+    let ha_after_load = commands.iter().find(|c| c.command == "HA" && c.action == "alias");
+    if let Some(ha) = ha_after_load {
+        crate::utils::log(&format!("ALIAS_TRACK: HA alias found after load_manual_edits - patch:'{}' flags:'{}' arg:'{}'", ha.patch, ha.flags, ha.arg));
+    } else {
+        crate::utils::log("ALIAS_TRACK: HA alias NOT found after load_manual_edits");
+    }
+
     print("\n🔍 Step 3: Scanning filesystem (discovering new files, removing stale entries)...");
 
     // Scan filesystem - this will:
@@ -1200,6 +1208,14 @@ fn run_rescan_command() {
     commands = scanned_commands;
     print(&format!("   ✅ Scan complete - now tracking {} total commands", commands.len()));
 
+    // Track HA alias after filesystem scan
+    let ha_after_scan = commands.iter().find(|c| c.command == "HA" && c.action == "alias");
+    if let Some(ha) = ha_after_scan {
+        crate::utils::log(&format!("ALIAS_TRACK: HA alias found after scan_new_files - patch:'{}' flags:'{}' arg:'{}'", ha.patch, ha.flags, ha.arg));
+    } else {
+        crate::utils::log("ALIAS_TRACK: HA alias NOT found after scan_new_files");
+    }
+
     print("\n📝 Step 4: Detecting file modifications...");
 
     // Check if any file sizes changed and record history
@@ -1210,6 +1226,14 @@ fn run_rescan_command() {
         Err(e) => {
             print(&format!("   ⚠️  Error scanning modifications: {}", e));
         }
+    }
+
+    // Track HA alias after modification scan
+    let ha_after_mod = commands.iter().find(|c| c.command == "HA" && c.action == "alias");
+    if let Some(ha) = ha_after_mod {
+        crate::utils::log(&format!("ALIAS_TRACK: HA alias found after scan_modified_files - patch:'{}' flags:'{}' arg:'{}'", ha.patch, ha.flags, ha.arg));
+    } else {
+        crate::utils::log("ALIAS_TRACK: HA alias NOT found after scan_modified_files");
     }
 
     print("\n🔄 Step 5: Running inference and saving...");
@@ -1227,6 +1251,14 @@ fn run_rescan_command() {
 
     // Reload commands for summary (after save moved ownership)
     let commands = crate::core::get_commands();
+
+    // Track HA alias after set_commands (final state)
+    let ha_after_save = commands.iter().find(|c| c.command == "HA" && c.action == "alias");
+    if let Some(ha) = ha_after_save {
+        crate::utils::log(&format!("ALIAS_TRACK: HA alias found after set_commands - patch:'{}' flags:'{}' arg:'{}'", ha.patch, ha.flags, ha.arg));
+    } else {
+        crate::utils::log("ALIAS_TRACK: HA alias NOT found after set_commands - IT WAS LOST!");
+    }
 
     print("\n📊 Step 8: Final Summary:");
     print(&format!("   Total commands: {}", commands.len()));

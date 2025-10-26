@@ -211,7 +211,14 @@ pub(super) fn load_commands_from_cache() -> Option<Vec<Command>> {
     match fs::read_to_string(&path) {
         Ok(contents) => {
             match serde_json::from_str::<Vec<Command>>(&contents) {
-                Ok(commands) => {
+                Ok(mut commands) => {
+                    // Sanitize flags for all commands loaded from cache
+                    // Flags should only contain alphabetic characters (no commas, spaces, etc.)
+                    for cmd in &mut commands {
+                        cmd.flags = cmd.flags.chars()
+                            .filter(|c| c.is_alphabetic())
+                            .collect();
+                    }
                     crate::utils::detailed_log("CACHE_LOAD", &format!("Loaded {} commands from cache", commands.len()));
                     Some(commands)
                 }
@@ -260,7 +267,18 @@ pub(super) fn deduplicate_commands(commands: Vec<Command>) -> Vec<Command> {
         if let Some(existing) = best_commands.get(&key) {
             // Decide which command to keep
             if should_replace_command(existing, &command) {
+                crate::utils::detailed_log("DEDUPE", &format!(
+                    "Replacing '{}' (action:'{}' patch:'{}' flags:'{}' arg:'{}') with better version (patch:'{}' flags:'{}' arg:'{}')",
+                    existing.command, existing.action, existing.patch, existing.flags, existing.arg,
+                    command.patch, command.flags, command.arg
+                ));
                 best_commands.insert(key, command);
+            } else {
+                crate::utils::detailed_log("DEDUPE", &format!(
+                    "Keeping existing '{}' (action:'{}' patch:'{}' flags:'{}' arg:'{}') over duplicate (patch:'{}' flags:'{}' arg:'{}')",
+                    existing.command, existing.action, existing.patch, existing.flags, existing.arg,
+                    command.patch, command.flags, command.arg
+                ));
             }
         } else {
             best_commands.insert(key, command);

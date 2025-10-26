@@ -283,53 +283,30 @@ impl Command {
     }
 
     /// Gets the value of a flag by its key character
-    /// Returns the string after the flag key, or None if the flag doesn't exist
+    /// Returns Some("") if the flag exists, None if not
+    /// In new format, flags are single characters only (e.g., "UA" not "U,A")
     pub fn get_flag(&self, key: char) -> Option<String> {
         if self.flags.is_empty() {
             return None;
         }
-        
-        // Split by commas and look for the flag
-        for flag_part in self.flags.split(',') {
-            let flag_part = flag_part.trim();
-            if flag_part.starts_with(key) {
-                // Return the part after the flag key (empty string if flag is just the key)
-                return Some(flag_part[1..].to_string());
-            }
+
+        // In new format, flags are concatenated single letters (e.g., "UA")
+        // Just check if the character is present
+        if self.flags.contains(key) {
+            return Some(String::new());
         }
         None
     }
     
-    /// Sets the value of a flag by its key character
-    /// If the flag exists, updates its value; if not, adds it
-    pub fn set_flag(&mut self, key: char, value: &str) {
-        let new_flag = format!("{}{}", key, value);
-        
-        if self.flags.is_empty() {
-            self.flags = new_flag;
-            self.update_full_line();
-            return;
+    /// Sets a flag by its key character
+    /// In new format, flags are single characters only (no values)
+    /// If value is provided, it's ignored (for backward compatibility)
+    pub fn set_flag(&mut self, key: char, _value: &str) {
+        // In new format, flags are just concatenated single letters (e.g., "UA")
+        // If flag doesn't exist, add it
+        if !self.flags.contains(key) {
+            self.flags.push(key);
         }
-        
-        // Check if flag already exists and replace it
-        let mut flag_parts: Vec<String> = self.flags.split(',')
-            .map(|s| s.trim().to_string())
-            .collect();
-        
-        let mut found = false;
-        for part in flag_parts.iter_mut() {
-            if part.starts_with(key) {
-                *part = new_flag.clone();
-                found = true;
-                break;
-            }
-        }
-        
-        if !found {
-            flag_parts.push(new_flag);
-        }
-        
-        self.flags = flag_parts.join(",");
         self.update_full_line();
     }
     
@@ -339,12 +316,11 @@ impl Command {
             return;
         }
 
-        let flag_parts: Vec<String> = self.flags.split(',')
-            .map(|s| s.trim().to_string())
-            .filter(|s| !s.starts_with(key))
+        // In new format, flags are concatenated single letters (e.g., "UA")
+        // Just remove the character from the string
+        self.flags = self.flags.chars()
+            .filter(|&c| c != key)
             .collect();
-
-        self.flags = flag_parts.join(",");
         self.update_full_line();
     }
 
@@ -1617,14 +1593,40 @@ fn parse_kv_pairs(input: &str) -> HashMap<String, String> {
                 }
             } else if ch == ':' && chars.peek() == Some(&'=') {
                 // Unescaped := means start of next key
-                // Save current pair
-                if !current_key.is_empty() {
-                    result.insert(current_key.trim().to_string(), current_value.trim().to_string());
+                // Scan backwards in current_value to find last space
+                // Everything before last space is the actual value
+                // Everything after last space is the next key
+
+                let value_str = current_value.as_str();
+                if let Some(last_space_pos) = value_str.rfind(' ') {
+                    // Split at last space
+                    let actual_value = &value_str[..last_space_pos];
+                    let next_key = &value_str[last_space_pos + 1..];
+
+                    // Save current pair with corrected value
+                    if !current_key.is_empty() {
+                        result.insert(current_key.trim().to_string(), actual_value.trim().to_string());
+                    }
+
+                    // Set up for next key-value pair
+                    current_key = next_key.to_string();
+                    current_value.clear();
+                    chars.next(); // consume '='
+                    // Stay in value mode (in_value remains true)
+                } else {
+                    // No space found - malformed input, treat whole thing as value
+                    crate::utils::detailed_log("PARSE_KV", &format!(
+                        "Warning: No space before next key in KV pairs. Key='{}', Value='{}'",
+                        current_key, current_value
+                    ));
+                    if !current_key.is_empty() {
+                        result.insert(current_key.trim().to_string(), current_value.trim().to_string());
+                    }
+                    current_key.clear();
+                    current_value.clear();
+                    chars.next(); // consume '='
+                    in_value = false;
                 }
-                current_key.clear();
-                current_value.clear();
-                chars.next(); // consume '='
-                in_value = false;
             } else {
                 current_value.push(ch);
             }
@@ -1669,7 +1671,13 @@ fn parse_command_line_v2(line: &str) -> Result<Command, String> {
     let kv_map = parse_kv_pairs(kv_part);
 
     // Step 4: Extract standard fields and other params
-    let flags = kv_map.get("F").cloned().unwrap_or_default();
+    // Sanitize flags: remove commas, spaces, and any other invalid characters
+    // Flags should only be single letters concatenated together (e.g., "UA", not "U,A" or "U A")
+    let flags = kv_map.get("F")
+        .map(|f| f.chars()
+            .filter(|c| c.is_alphabetic())
+            .collect::<String>())
+        .unwrap_or_default();
     let arg = kv_map.get("A").cloned().unwrap_or_default();
 
     // Collect remaining keys into other_params
