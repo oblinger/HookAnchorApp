@@ -23,6 +23,9 @@ pub mod utils;
 // Major subsystems
 pub mod systems;
 
+// Prelude for common imports
+pub mod prelude;
+
 // Cloud scanning module
 pub mod cloud_scanner;
 

@@ -14,6 +14,7 @@
 //! - subprocess: Process spawning and monitoring
 //! - error: Error queue system for user-facing errors
 //! - build_verification: Build verification and metadata
+//! - dialog: Dialog helper functions (fatal_error, warning, dialog)
 
 // Internal module declarations (accessible within crate for internal use)
 pub(crate) mod logging;
@@ -22,6 +23,7 @@ pub(crate) mod utilities;
 pub(crate) mod subprocess;
 pub(crate) mod error;
 pub(crate) mod build_verification;
+pub(crate) mod dialog;
 
 // ============================================================================
 // PUBLIC API - All external access goes through these re-exports
@@ -63,4 +65,9 @@ pub use error::{
 // Build verification
 pub use build_verification::{
     verify_and_log as verify_build
+};
+
+// Dialog helper functions
+pub use dialog::{
+    fatal_error, warning, dialog
 };
