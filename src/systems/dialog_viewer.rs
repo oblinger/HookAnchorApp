@@ -209,14 +209,14 @@ impl eframe::App for DialogApp {
             .collapsible(false)
             .anchor(egui::Align2::CENTER_CENTER, [0.0, 0.0])
             .show(ctx, |ui| {
-                let pad = 5.0;
-                ui.set_min_width(window_width - 10.0);
-                ui.set_min_height(window_height - 10.0);
+                let pad = 10.0;
+                let content_width = window_width - (pad * 2.0) - 20.0; // Account for padding and margins
 
                 ui.add_space(pad);
                 ui.horizontal(|ui| {
                     ui.add_space(pad);
                     ui.vertical(|ui| {
+                        ui.set_width(content_width);
                         // Render content rows
                         for row in &self.rows {
                             let is_button_row = row.elements.iter().all(|e| matches!(e, DialogElement::Button { .. }));
@@ -228,7 +228,7 @@ impl eframe::App for DialogApp {
                                 for element in &row.elements {
                                     if let DialogElement::ScrollableTextBox { content } = element {
                                         egui::ScrollArea::vertical()
-                                            .min_scrolled_height(550.0)
+                                            .max_height(480.0)
                                             .auto_shrink([false, false])
                                             .show(ui, |ui| {
                                                 let lines: Vec<&str> = content.lines().collect();
@@ -236,7 +236,7 @@ impl eframe::App for DialogApp {
                                                 let text_height = line_count as f32 * 16.0 + 10.0;
 
                                                 ui.add_sized(
-                                                    [ui.available_width() - 20.0, text_height],
+                                                    [content_width - 10.0, text_height],
                                                     egui::TextEdit::multiline(&mut content.clone())
                                                         .font(egui::TextStyle::Monospace)
                                                         .text_color(egui::Color32::BLACK)
@@ -272,7 +272,7 @@ impl eframe::App for DialogApp {
                                                 let text_height = line_count as f32 * 16.0 + 10.0;
 
                                                 ui.add_sized(
-                                                    [ui.available_width() - 20.0, text_height],
+                                                    [content_width, text_height],
                                                     egui::TextEdit::multiline(&mut content.clone())
                                                         .font(egui::TextStyle::Monospace)
                                                         .text_color(egui::Color32::BLACK)
@@ -367,7 +367,8 @@ fn main() {
     let options = eframe::NativeOptions {
         viewport: egui::ViewportBuilder::default()
             .with_inner_size([800.0, 600.0])
-            .with_resizable(false),
+            .with_resizable(false)
+            .with_always_on_top(),
         ..Default::default()
     };
 
