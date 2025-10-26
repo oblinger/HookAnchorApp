@@ -93,6 +93,8 @@ pub struct AnchorSelector {
     pending_action: Option<PendingAction>,
     /// Action to execute immediately after initialization (from --action flag)
     initial_action_name: Option<String>,
+    /// External dialog state (subprocess-based dialog)
+    external_dialog_state: Option<ExternalDialogState>,
 }
 
 /// Loading state for deferred initialization
@@ -115,6 +117,16 @@ pub struct PendingAction {
     pub context: HashMap<String, String>,
     /// Callback function to execute with final context (including user input)
     pub callback: Box<dyn FnOnce(&HashMap<String, String>) -> Result<(), Box<dyn std::error::Error>>>,
+}
+
+/// External dialog state - tracks subprocess-based dialog
+struct ExternalDialogState {
+    /// Subprocess handle for HookAnchorDialog binary
+    child: std::process::Child,
+    /// Context data for the action
+    context: HashMap<String, String>,
+    /// Callback to execute when dialog completes
+    callback: Box<dyn FnOnce(&HashMap<String, String>) -> Result<(), Box<dyn std::error::Error>>>,
 }
 
 impl AnchorSelector {
@@ -1577,6 +1589,7 @@ impl AnchorSelector {
             pending_rebuild: false,
             pending_action: None,
             initial_action_name: None,
+            external_dialog_state: None,
         };
 
         result
@@ -1632,6 +1645,7 @@ impl AnchorSelector {
             pending_rebuild: false,
             pending_action: None,
             initial_action_name: initial_action.map(|s| s.to_string()),
+            external_dialog_state: None,
         };
 
         result
@@ -1773,6 +1787,127 @@ impl AnchorSelector {
     /// Check if there is a pending action waiting for user input
     pub fn has_pending_action(&self) -> bool {
         self.pending_action.is_some()
+    }
+
+    // =============================================================================
+    // External Dialog System (subprocess-based)
+    // =============================================================================
+
+    /// Spawn an external dialog subprocess with callback
+    pub fn show_external_dialog(
+        &mut self,
+        spec_strings: Vec<String>,
+        context: HashMap<String, String>,
+        callback: Box<dyn FnOnce(&HashMap<String, String>) -> Result<(), Box<dyn std::error::Error>>>,
+    ) {
+        use std::process::Command;
+
+        let exe_dir = crate::utils::get_binary_dir();
+        let dialog_path = exe_dir.join("HookAnchorDialog");
+
+        if !dialog_path.exists() {
+            crate::utils::log_error(&format!("External dialog binary not found: {:?}", dialog_path));
+            self.show_error_dialog("Dialog system not available");
+            return;
+        }
+
+        // Build command with spec strings
+        let mut cmd = Command::new(&dialog_path);
+        for spec in &spec_strings {
+            cmd.arg("--spec");
+            cmd.arg(spec);
+        }
+
+        // Spawn subprocess
+        match cmd.spawn() {
+            Ok(child) => {
+                crate::utils::log(&format!("EXTERNAL_DIALOG: Spawned subprocess (pid: {:?})", child.id()));
+                self.external_dialog_state = Some(ExternalDialogState {
+                    child,
+                    context,
+                    callback,
+                });
+            }
+            Err(e) => {
+                crate::utils::log_error(&format!("Failed to spawn external dialog: {}", e));
+                self.show_error_dialog(&format!("Failed to show dialog: {}", e));
+            }
+        }
+    }
+
+    /// Poll external dialog subprocess (call every frame)
+    fn poll_external_dialog(&mut self) {
+        if let Some(mut state) = self.external_dialog_state.take() {
+            // Non-blocking check if subprocess finished
+            match state.child.try_wait() {
+                Ok(Some(status)) => {
+                    crate::utils::log(&format!("EXTERNAL_DIALOG: Subprocess finished with status: {}", status));
+
+                    // Read stdout to get JSON result
+                    match state.child.wait_with_output() {
+                        Ok(output) => {
+                            if let Ok(json_str) = String::from_utf8(output.stdout) {
+                                if let Ok(mut result) = serde_json::from_str::<HashMap<String, String>>(&json_str) {
+                                    crate::utils::log(&format!("EXTERNAL_DIALOG: Got result: {:?}", result));
+
+                                    // Merge context with result
+                                    result.extend(state.context);
+
+                                    // Execute callback
+                                    match (state.callback)(&result) {
+                                        Ok(()) => {
+                                            crate::utils::log("EXTERNAL_DIALOG: Callback executed successfully");
+
+                                            // Check if this is a rename operation that needs special handling
+                                            if result.get("operation") == Some(&"rename".to_string()) {
+                                                let empty_string = String::new();
+                                                let exit_button = result.get("exit").unwrap_or(&empty_string);
+                                                if exit_button == "OK" {
+                                                    // User confirmed rename - execute it with access to self
+                                                    match self.execute_rename_with_ui_update(&result) {
+                                                        Ok(()) => {
+                                                            crate::utils::log("EXTERNAL_DIALOG: Rename action executed successfully");
+                                                        }
+                                                        Err(e) => {
+                                                            let error_msg = format!("Rename action failed: {}", e);
+                                                            crate::utils::log_error(&error_msg);
+                                                            self.show_error_dialog(&error_msg);
+                                                        }
+                                                    }
+                                                }
+                                                // If Cancel or Escape, do nothing
+                                            }
+                                        }
+                                        Err(e) => {
+                                            let error_msg = format!("External dialog callback failed: {}", e);
+                                            crate::utils::log_error(&error_msg);
+                                            self.show_error_dialog(&error_msg);
+                                        }
+                                    }
+                                } else {
+                                    crate::utils::log_error(&format!("EXTERNAL_DIALOG: Failed to parse JSON: {}", json_str));
+                                }
+                            } else {
+                                crate::utils::log_error("EXTERNAL_DIALOG: Failed to read stdout as UTF-8");
+                            }
+                        }
+                        Err(e) => {
+                            crate::utils::log_error(&format!("EXTERNAL_DIALOG: Failed to read output: {}", e));
+                        }
+                    }
+
+                    // Dialog finished - state is dropped
+                }
+                Ok(None) => {
+                    // Still running - put state back
+                    self.external_dialog_state = Some(state);
+                }
+                Err(e) => {
+                    crate::utils::log_error(&format!("EXTERNAL_DIALOG: Error checking subprocess: {}", e));
+                    // Drop state on error
+                }
+            }
+        }
     }
 
     /// Save a command atomically - handles both new commands and edits
@@ -3543,7 +3678,10 @@ impl eframe::App for AnchorSelector {
         if self.popup_state.check_for_reload() {
             ctx.request_repaint();
         }
-        
+
+        // Poll external dialog subprocess (non-blocking)
+        self.poll_external_dialog();
+
         // Enhanced debugging for visibility issues
         if self.frame_count < 10 || self.frame_count % 60 == 0 {  // Log first 10 frames and then every second
             let viewport_info = ctx.input(|i| {
@@ -3986,24 +4124,22 @@ impl eframe::App for AnchorSelector {
                                             "!OK".to_string(),
                                             "!Cancel".to_string(),
                                         ];
-                                        
-                                        // Queue the rename action - action callback simplified for UI thread execution
-                                        
-                                        self.queue_action(context, Box::new(move |final_context| {
+
+                                        // Show EXTERNAL dialog (subprocess-based) with callback
+                                        self.show_external_dialog(dialog_spec, context, Box::new(move |final_context| {
                                             let empty_string = String::new();
                                             let exit_button = final_context.get("exit").unwrap_or(&empty_string);
                                             if exit_button == "OK" {
-                                                // User confirmed - we need to execute this in the main UI thread
-                                                // Store the rename execution details for the main update loop
-                                                // This will be handled in complete_action where we have &mut self
+                                                // User confirmed
+                                                crate::utils::log("EXTERNAL_DIALOG: User confirmed rename");
                                                 Ok(())
                                             } else {
                                                 // Cancel - do nothing
+                                                crate::utils::log("EXTERNAL_DIALOG: User cancelled rename");
                                                 Ok(())
                                             }
                                         }));
-                                        
-                                        self.dialog.show(dialog_spec);
+
                                         self.close_command_editor();
                                         command_editor_just_closed = true;
                                         return; // Exit early to wait for user confirmation
