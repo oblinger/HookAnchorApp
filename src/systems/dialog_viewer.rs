@@ -26,6 +26,9 @@ use eframe::egui;
 use std::collections::HashMap;
 use std::sync::{Arc, Mutex};
 
+// Height constant for scrollable text areas
+const SCROLL_AREA_HEIGHT: f32 = 350.0;
+
 #[derive(Debug, Clone)]
 enum DialogElement {
     Title(String),
@@ -199,45 +202,53 @@ impl eframe::App for DialogApp {
             }
         }
 
-        // Fixed window size
+        // Use CentralPanel for full window content (no internal window frame)
         let window_width = 800.0;
-        let window_height = 600.0;
 
-        egui::Window::new(&self.title)
-            .fixed_size([window_width, window_height])
-            .resizable(false)
-            .collapsible(false)
-            .anchor(egui::Align2::CENTER_CENTER, [0.0, 0.0])
-            .show(ctx, |ui| {
-                let pad = 10.0;
-                let content_width = window_width - (pad * 2.0) - 20.0; // Account for padding and margins
+        egui::CentralPanel::default().show(ctx, |ui| {
+            let pad = 20.0;
+            let content_width = window_width - (pad * 2.0);
 
-                ui.add_space(pad);
-                ui.horizontal(|ui| {
-                    ui.add_space(pad);
-                    ui.vertical(|ui| {
-                        ui.set_width(content_width);
-                        // Render content rows
-                        for row in &self.rows {
-                            let is_button_row = row.elements.iter().all(|e| matches!(e, DialogElement::Button { .. }));
-                            let has_scrollable_textbox = row.elements.iter().any(|e| matches!(e, DialogElement::ScrollableTextBox { .. }));
+            ui.add_space(pad);
 
-                            if is_button_row {
-                                continue; // Render buttons at bottom
-                            } else if has_scrollable_textbox {
+            ui.vertical(|ui| {
+                ui.set_width(content_width);
+
+                // Render content rows
+                for row in &self.rows {
+                    let is_button_row = row.elements.iter().all(|e| matches!(e, DialogElement::Button { .. }));
+                    let has_scrollable_textbox = row.elements.iter().any(|e| matches!(e, DialogElement::ScrollableTextBox { .. }));
+
+                    if is_button_row {
+                        continue; // Render buttons at bottom
+                    } else if has_scrollable_textbox {
+                        // Scroll area with padding - indented more than labels for visual hierarchy
+                        ui.add_space(10.0);
+
+                        // Create centered container for scroll area with extra indent
+                        ui.horizontal(|ui| {
+                            ui.add_space(35.0); // Larger left margin for hierarchy
+
+                            ui.vertical(|ui| {
+                                let scroll_width = content_width - 70.0; // Account for both margins (35px each side)
+
                                 for element in &row.elements {
                                     if let DialogElement::ScrollableTextBox { content } = element {
                                         egui::ScrollArea::vertical()
-                                            .max_height(480.0)
+                                            .max_height(SCROLL_AREA_HEIGHT)
+                                            .min_scrolled_height(SCROLL_AREA_HEIGHT)
                                             .auto_shrink([false, false])
                                             .show(ui, |ui| {
-                                                let lines: Vec<&str> = content.lines().collect();
+                                                // Trim trailing newlines to avoid blank space at bottom
+                                                let trimmed_content = content.trim_end();
+                                                let lines: Vec<&str> = trimmed_content.lines().collect();
                                                 let line_count = lines.len().max(1);
-                                                let text_height = line_count as f32 * 16.0 + 10.0;
+                                                // Size text box to content with small padding
+                                                let text_height = line_count as f32 * 16.0 + 20.0;
 
                                                 ui.add_sized(
-                                                    [content_width - 10.0, text_height],
-                                                    egui::TextEdit::multiline(&mut content.clone())
+                                                    [scroll_width, text_height],
+                                                    egui::TextEdit::multiline(&mut trimmed_content.to_string())
                                                         .font(egui::TextStyle::Monospace)
                                                         .text_color(egui::Color32::BLACK)
                                                         .interactive(false)
@@ -245,80 +256,86 @@ impl eframe::App for DialogApp {
                                             });
                                     }
                                 }
-                                ui.add_space(2.0);
-                            } else {
-                                // Regular content rows
-                                ui.horizontal(|ui| {
-                                    for element in &row.elements {
-                                        match element {
-                                            DialogElement::Title(text) => {
-                                                ui.heading(egui::RichText::new(text).size(18.0));
-                                            }
-                                            DialogElement::Label(text) => {
-                                                ui.label(egui::RichText::new(text).size(14.0));
-                                            }
-                                            DialogElement::Input { key, placeholder } => {
-                                                let current_value = self.input_values.get_mut(key).unwrap();
-                                                let text_edit = egui::TextEdit::singleline(current_value)
-                                                    .font(egui::TextStyle::Body)
-                                                    .text_color(egui::Color32::BLACK)
-                                                    .desired_width(220.0)
-                                                    .hint_text(egui::RichText::new(placeholder).size(13.0).color(egui::Color32::LIGHT_GRAY));
-                                                ui.add(text_edit);
-                                            }
-                                            DialogElement::TextBox { content } => {
-                                                let lines: Vec<&str> = content.lines().collect();
-                                                let line_count = lines.len().max(1);
-                                                let text_height = line_count as f32 * 16.0 + 10.0;
+                            });
 
-                                                ui.add_sized(
-                                                    [content_width, text_height],
-                                                    egui::TextEdit::multiline(&mut content.clone())
-                                                        .font(egui::TextStyle::Monospace)
-                                                        .text_color(egui::Color32::BLACK)
-                                                        .interactive(false)
-                                                );
-                                            }
-                                            _ => {}
-                                        }
-                                    }
-                                });
-                                ui.add_space(2.0);
-                            }
-                        }
+                            ui.add_space(35.0); // Right margin to match left
+                        });
 
-                        // Render button rows at bottom
                         ui.add_space(10.0);
-                        for row in &self.rows {
-                            let is_button_row = row.elements.iter().all(|e| matches!(e, DialogElement::Button { .. }));
-                            if is_button_row {
-                                ui.with_layout(egui::Layout::top_down(egui::Align::Center), |ui| {
-                                    ui.horizontal(|ui| {
-                                        for (i, element) in row.elements.iter().enumerate() {
-                                            if i > 0 {
-                                                ui.add_space(10.0);
-                                            }
-                                            if let DialogElement::Button { text } = element {
-                                                let button_width = (text.len() as f32 * 8.0).max(80.0);
-                                                let button = egui::Button::new(egui::RichText::new(text).size(14.0))
-                                                    .min_size([button_width, 28.0].into());
-                                                if ui.add(button).clicked() {
-                                                    self.button_pressed = Some(text.clone());
-                                                    self.should_close = true;
-                                                }
-                                            }
-                                        }
-                                    });
-                                });
-                                ui.add_space(3.0);
-                            }
-                        }
+                    } else {
+                        // Regular content rows with moderate left padding
+                        ui.horizontal(|ui| {
+                            ui.add_space(25.0); // Less than scroll area for visual hierarchy
 
-                        ui.add_space(pad);
-                    });
-                    ui.add_space(pad);
-                });
-            });
+                            for element in &row.elements {
+                                match element {
+                                    DialogElement::Title(text) => {
+                                        ui.heading(egui::RichText::new(text).size(18.0));
+                                    }
+                                    DialogElement::Label(text) => {
+                                        ui.label(egui::RichText::new(text).size(14.0));
+                                    }
+                                    DialogElement::Input { key, placeholder } => {
+                                        let current_value = self.input_values.get_mut(key).unwrap();
+                                        let text_edit = egui::TextEdit::singleline(current_value)
+                                            .font(egui::TextStyle::Body)
+                                            .text_color(egui::Color32::BLACK)
+                                            .desired_width(220.0)
+                                            .hint_text(egui::RichText::new(placeholder).size(13.0).color(egui::Color32::LIGHT_GRAY));
+                                        ui.add(text_edit);
+                                    }
+                                    DialogElement::TextBox { content } => {
+                                        let lines: Vec<&str> = content.lines().collect();
+                                        let line_count = lines.len().max(1);
+                                        let text_height = line_count as f32 * 16.0 + 10.0;
+
+                                        ui.add_sized(
+                                            [content_width - 25.0, text_height], // Reduce width to account for left padding
+                                            egui::TextEdit::multiline(&mut content.clone())
+                                                .font(egui::TextStyle::Monospace)
+                                                .text_color(egui::Color32::BLACK)
+                                                .interactive(false)
+                                        );
+                                    }
+                                    _ => {}
+                                }
+                            }
+                        });
+                        ui.add_space(2.0);
+                    }
+                }
+
+                // Render button rows at bottom - aligned with labels
+                ui.add_space(10.0);
+                for row in &self.rows {
+                    let is_button_row = row.elements.iter().all(|e| matches!(e, DialogElement::Button { .. }));
+                    if is_button_row {
+                        // Align buttons with labels (25px left padding)
+                        ui.horizontal(|ui| {
+                            ui.add_space(25.0); // Same padding as labels
+
+                            for (i, element) in row.elements.iter().enumerate() {
+                                if i > 0 {
+                                    ui.add_space(10.0);
+                                }
+                                if let DialogElement::Button { text } = element {
+                                    let button_width = (text.len() as f32 * 8.0).max(80.0);
+                                    let button = egui::Button::new(egui::RichText::new(text).size(14.0))
+                                        .min_size([button_width, 28.0].into());
+                                    if ui.add(button).clicked() {
+                                        self.button_pressed = Some(text.clone());
+                                        self.should_close = true;
+                                    }
+                                }
+                            }
+                        });
+                        ui.add_space(3.0);
+                    }
+                }
+
+                ui.add_space(pad);
+            }); // Close ui.vertical
+        }); // Close CentralPanel
 
         if self.should_close {
             // Create result hashmap
@@ -345,11 +362,11 @@ impl eframe::App for DialogApp {
 fn main() {
     let args: Vec<String> = std::env::args().collect();
 
-    // Parse command-line arguments to build spec strings
-    let spec_strings = parse_args(&args);
+    // Parse command-line arguments to build spec strings and extract position
+    let (spec_strings, position) = parse_args(&args);
 
     if spec_strings.is_empty() {
-        eprintln!("Usage: HookAnchorDialog --spec <spec> [--spec <spec> ...]");
+        eprintln!("Usage: HookAnchorDialog --spec <spec> [--spec <spec> ...] [--position x,y]");
         eprintln!("   or: HookAnchorDialog --error <message>");
         eprintln!("   or: HookAnchorDialog --warning <message>");
         eprintln!("   or: HookAnchorDialog --fatal <message>");
@@ -362,18 +379,31 @@ fn main() {
 
     // Create dialog app
     let app = DialogApp::new(spec_strings, result_storage_clone);
+    let window_title = app.title.clone();
 
     // Run egui application
+    // Height: header(60) + SCROLL_AREA_HEIGHT + buttons(50) + padding(40) = 750
+    let dialog_height = 60.0 + SCROLL_AREA_HEIGHT + 50.0 + 40.0;
+    let mut viewport_builder = egui::ViewportBuilder::default()
+        .with_inner_size([800.0, dialog_height])
+        .with_resizable(false)
+        .with_always_on_top();
+
+    // If position provided, use it exactly as given (popup.rs handles offset calculation)
+    if let Some((x, y)) = position {
+        eprintln!("DIALOG_VIEWER: Received position x={}, y={}, setting dialog at exact position", x, y);
+        viewport_builder = viewport_builder.with_position([x, y]);
+    } else {
+        eprintln!("DIALOG_VIEWER: No position provided, using default");
+    }
+
     let options = eframe::NativeOptions {
-        viewport: egui::ViewportBuilder::default()
-            .with_inner_size([800.0, 600.0])
-            .with_resizable(false)
-            .with_always_on_top(),
+        viewport: viewport_builder,
         ..Default::default()
     };
 
     let _ = eframe::run_native(
-        "Dialog",
+        &window_title,
         options,
         Box::new(|_cc| Ok(Box::new(app))),
     );
@@ -389,12 +419,28 @@ fn main() {
     };
 }
 
-fn parse_args(args: &[String]) -> Vec<String> {
+fn parse_args(args: &[String]) -> (Vec<String>, Option<(f32, f32)>) {
     let mut spec_strings = Vec::new();
+    let mut position: Option<(f32, f32)> = None;
     let mut i = 1; // Skip program name
 
     while i < args.len() {
         match args[i].as_str() {
+            "--position" => {
+                if i + 1 < args.len() {
+                    // Parse position as "x,y"
+                    let parts: Vec<&str> = args[i + 1].split(',').collect();
+                    if parts.len() == 2 {
+                        if let (Ok(x), Ok(y)) = (parts[0].parse::<f32>(), parts[1].parse::<f32>()) {
+                            position = Some((x, y));
+                        }
+                    }
+                    i += 2;
+                } else {
+                    eprintln!("--position requires an argument");
+                    i += 1;
+                }
+            }
             "--spec" => {
                 if i + 1 < args.len() {
                     spec_strings.push(args[i + 1].clone());
@@ -450,5 +496,5 @@ fn parse_args(args: &[String]) -> Vec<String> {
         }
     }
 
-    spec_strings
+    (spec_strings, position)
 }

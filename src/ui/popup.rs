@@ -1799,6 +1799,7 @@ impl AnchorSelector {
         spec_strings: Vec<String>,
         context: HashMap<String, String>,
         callback: Box<dyn FnOnce(&HashMap<String, String>) -> Result<(), Box<dyn std::error::Error>>>,
+        window_position: Option<(f32, f32, f32)>, // (x, y, width)
     ) {
         use std::process::Command;
 
@@ -1817,6 +1818,20 @@ impl AnchorSelector {
             cmd.arg("--spec");
             cmd.arg(spec);
         }
+
+        // Add position argument if provided
+        if let Some((popup_x, popup_y, _popup_width)) = window_position {
+            // Position dialog 25px down and 25px right from popup's top-left corner
+            let dialog_x = popup_x + 25.0;
+            let dialog_y = popup_y + 25.0;
+            crate::utils::log(&format!("DIALOG_POS: offset 25px from popup: popup_x={}, popup_y={}, dialog_x={}, dialog_y={}",
+                popup_x, popup_y, dialog_x, dialog_y));
+            cmd.arg("--position");
+            cmd.arg(format!("{},{}", dialog_x, dialog_y));
+        }
+
+        // Configure stdout to be captured so we can read the JSON result
+        cmd.stdout(std::process::Stdio::piped());
 
         // Spawn subprocess
         match cmd.spawn() {
@@ -1843,10 +1858,13 @@ impl AnchorSelector {
                 Ok(Some(status)) => {
                     crate::utils::log(&format!("EXTERNAL_DIALOG: Subprocess finished with status: {}", status));
 
-                    // Read stdout to get JSON result
-                    match state.child.wait_with_output() {
-                        Ok(output) => {
-                            if let Ok(json_str) = String::from_utf8(output.stdout) {
+                    // Read stdout to get JSON result - stdout is still available after try_wait()
+                    if let Some(mut stdout) = state.child.stdout.take() {
+                        use std::io::Read;
+                        let mut json_str = String::new();
+                        match stdout.read_to_string(&mut json_str) {
+                            Ok(_) => {
+                                crate::utils::log(&format!("EXTERNAL_DIALOG: Read {} bytes from stdout", json_str.len()));
                                 if let Ok(mut result) = serde_json::from_str::<HashMap<String, String>>(&json_str) {
                                     crate::utils::log(&format!("EXTERNAL_DIALOG: Got result: {:?}", result));
 
@@ -1876,24 +1894,29 @@ impl AnchorSelector {
                                                     }
                                                 }
                                                 // If Cancel or Escape, do nothing
+
+                                                // Close command editor now that dialog is complete
+                                                self.close_command_editor();
                                             }
                                         }
                                         Err(e) => {
                                             let error_msg = format!("External dialog callback failed: {}", e);
                                             crate::utils::log_error(&error_msg);
                                             self.show_error_dialog(&error_msg);
+                                            // Close command editor even on error
+                                            self.close_command_editor();
                                         }
                                     }
                                 } else {
                                     crate::utils::log_error(&format!("EXTERNAL_DIALOG: Failed to parse JSON: {}", json_str));
                                 }
-                            } else {
-                                crate::utils::log_error("EXTERNAL_DIALOG: Failed to read stdout as UTF-8");
+                            }
+                            Err(e) => {
+                                crate::utils::log_error(&format!("EXTERNAL_DIALOG: Failed to read stdout: {}", e));
                             }
                         }
-                        Err(e) => {
-                            crate::utils::log_error(&format!("EXTERNAL_DIALOG: Failed to read output: {}", e));
-                        }
+                    } else {
+                        crate::utils::log_error("EXTERNAL_DIALOG: stdout not available (not piped?)");
                     }
 
                     // Dialog finished - state is dropped
@@ -1956,7 +1979,7 @@ impl AnchorSelector {
         let mut patches = sys_data.patches;
 
         crate::utils::log(&format!("RENAME: About to execute rename_associated_data: '{}' -> '{}'", old_name, new_name));
-        let (updated_arg, _actions) = rename_associated_data(
+        let (mut updated_arg, _actions) = rename_associated_data(
             old_name,
             new_name,
             current_arg,
@@ -1994,6 +2017,15 @@ impl AnchorSelector {
                                         ) {
                                             Ok(_) => {
                                                 crate::utils::log("RENAME_FOLDER: Folder rename completed successfully");
+
+                                                // Update the arg path to reflect the new folder name
+                                                let new_folder_path = parent.parent()
+                                                    .map(|p| p.join(new_name))
+                                                    .unwrap_or_else(|| std::path::PathBuf::from(new_name));
+                                                let new_file_name = format!("{}.md", new_name);
+                                                let new_full_path = new_folder_path.join(&new_file_name);
+                                                updated_arg = new_full_path.to_string_lossy().to_string();
+                                                crate::utils::log(&format!("RENAME_FOLDER: Updated arg to: {}", updated_arg));
                                             }
                                             Err(e) => {
                                                 return Err(format!("Failed to rename folder: {}", e).into());
@@ -3891,6 +3923,23 @@ impl eframe::App for AnchorSelector {
         // Draw custom rounded background with heavy shadow
         let screen_rect = ctx.screen_rect();
         let painter = ctx.layer_painter(egui::LayerId::background());
+
+        // Get window position for positioning external dialogs
+        let window_position = ctx.input(|i| {
+            // Try outer_rect first, fallback to calculating from inner_rect
+            if let Some(outer_rect) = i.viewport().outer_rect {
+                crate::utils::log(&format!("POS_DEBUG: Using outer_rect: left={}, top={}, width={}",
+                    outer_rect.left(), outer_rect.top(), screen_rect.width()));
+                Some((outer_rect.left(), outer_rect.top(), screen_rect.width()))
+            } else if let Some(inner_rect) = i.viewport().inner_rect {
+                crate::utils::log(&format!("POS_DEBUG: Using inner_rect: left={}, top={}, width={}",
+                    inner_rect.left(), inner_rect.top(), screen_rect.width()));
+                Some((inner_rect.left(), inner_rect.top(), screen_rect.width()))
+            } else {
+                crate::utils::log("POS_DEBUG: No rect available");
+                None
+            }
+        });
         
         // Draw multiple shadow layers for a much darker shadow effect
         // Use negative offsets to draw shadows "behind" the main rect, not extending beyond window bounds
@@ -4060,6 +4109,9 @@ impl eframe::App for AnchorSelector {
 
                                     // Check if this is an anchor file rename where filename matches folder name
                                     // Check for both "anchor" and "markdown" actions since both can be anchor files
+                                    crate::utils::log(&format!("FOLDER_CHECK: Checking for folder rename. action={}, arg={}, old_name={}",
+                                        new_command.action, new_command.arg, effective_old_name));
+
                                     if new_command.action == "anchor" || new_command.action == "markdown" {
                                         use std::path::Path;
                                         let arg_path = Path::new(&new_command.arg);
@@ -4067,11 +4119,16 @@ impl eframe::App for AnchorSelector {
                                         // Check if the file stem (without extension) matches the old command name
                                         if let Some(file_stem) = arg_path.file_stem() {
                                             if let Some(file_stem_str) = file_stem.to_str() {
+                                                crate::utils::log(&format!("FOLDER_CHECK: file_stem='{}', comparing to old_name='{}', match={}",
+                                                    file_stem_str, effective_old_name, file_stem_str == effective_old_name));
                                                 if file_stem_str == effective_old_name {
                                                     // This is an anchor file - check if folder name also matches
                                                     if let Some(parent) = arg_path.parent() {
+                                                        crate::utils::log(&format!("FOLDER_CHECK: parent path exists: {}", parent.display()));
                                                         if let Some(folder_name) = parent.file_name() {
                                                             if let Some(folder_name_str) = folder_name.to_str() {
+                                                                crate::utils::log(&format!("FOLDER_CHECK: folder_name='{}', comparing to old_name='{}', match={}",
+                                                                    folder_name_str, effective_old_name, folder_name_str == effective_old_name));
                                                                 if folder_name_str == effective_old_name {
                                                                     // Folder name matches - rename the folder too
                                                                     use crate::core::command_ops::rename_folder;
@@ -4114,23 +4171,37 @@ impl eframe::App for AnchorSelector {
                                         context.insert("new_command_arg".to_string(), new_command.arg.clone());
                                         context.insert("new_command_patch".to_string(), new_command.patch.clone());
                                         context.insert("new_command_flags".to_string(), new_command.flags.clone());
-                                        
-                                        // Show confirmation dialog with actions
-                                        let action_list = actions.join("\n• ");
+
+                                        // Mark this as a rename operation so poll_external_dialog knows to call execute_rename_with_ui_update
+                                        context.insert("operation".to_string(), "rename".to_string());
+
+                                        // Close command editor NOW (before showing dialog) so window is stable for positioning
+                                        self.close_command_editor();
+                                        command_editor_just_closed = true;
+
+                                        // Use window position from beginning of update() - this is the main popup's top-left corner
+                                        // which doesn't move (size may change but position stays fixed)
+                                        if let Some((x, y, w)) = window_position {
+                                            crate::utils::log(&format!("RENAME_DIALOG_POS: Using popup position: x={}, y={}, w={}", x, y, w));
+                                        }
+
+                                        // Show confirmation dialog with actions (actions already have bullets)
+                                        let action_list = actions.join("\n");
                                         let dialog_spec = vec![
                                             "=Confirm Rename".to_string(),
                                             format!("'Renaming \"{}\" to \"{}\"", effective_old_name, new_command.command),
-                                            format!("^The following changes will be made:\n\n• {}", action_list),
+                                            format!("^The following changes will be made:\n\n{}", action_list),
                                             "!OK".to_string(),
                                             "!Cancel".to_string(),
                                         ];
 
                                         // Show EXTERNAL dialog (subprocess-based) with callback
+                                        // The actual rename execution happens in poll_external_dialog via execute_rename_with_ui_update
                                         self.show_external_dialog(dialog_spec, context, Box::new(move |final_context| {
                                             let empty_string = String::new();
                                             let exit_button = final_context.get("exit").unwrap_or(&empty_string);
                                             if exit_button == "OK" {
-                                                // User confirmed
+                                                // User confirmed - actual execution happens in poll_external_dialog
                                                 crate::utils::log("EXTERNAL_DIALOG: User confirmed rename");
                                                 Ok(())
                                             } else {
@@ -4138,10 +4209,8 @@ impl eframe::App for AnchorSelector {
                                                 crate::utils::log("EXTERNAL_DIALOG: User cancelled rename");
                                                 Ok(())
                                             }
-                                        }));
+                                        }), window_position);
 
-                                        self.close_command_editor();
-                                        command_editor_just_closed = true;
                                         return; // Exit early to wait for user confirmation
                                     } else {
                                         // No side effects found by dry-run - proceed with direct rename
