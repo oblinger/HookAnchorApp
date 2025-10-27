@@ -279,14 +279,21 @@ pub fn command_dedup_key(cmd: &Command) -> String {
 /// This allows multiple commands with the same name pointing to different files
 /// Priority: commands with patches > commands without patches
 /// Then by flags: commands with flags > commands without flags
+/// SPECIAL CASE: Virtual orphan anchors are removed if a real anchor with same name exists
 pub(super) fn deduplicate_commands(commands: Vec<Command>) -> Vec<Command> {
     use std::collections::HashMap;
 
     let original_count = commands.len();
     let mut best_commands: HashMap<String, Command> = HashMap::new();
+    let mut commands_by_name: HashMap<String, Vec<Command>> = HashMap::new();
 
+    // First pass: Standard deduplication by (name, action, arg)
     for command in commands {
         let key = command_dedup_key(&command);
+        let name_key = command.command.to_lowercase();
+
+        // Track all commands with this name for cross-action deduplication
+        commands_by_name.entry(name_key).or_insert_with(Vec::new).push(command.clone());
 
         if let Some(existing) = best_commands.get(&key) {
             // Decide which command to keep
@@ -309,11 +316,47 @@ pub(super) fn deduplicate_commands(commands: Vec<Command>) -> Vec<Command> {
         }
     }
 
+    // Second pass: Remove virtual orphan anchors when real anchors exist
+    let mut to_remove = Vec::new();
+    for (name, cmds) in commands_by_name.iter() {
+        // Check if we have both a virtual orphan anchor and a real anchor
+        // A "real anchor" is either:
+        // 1. A command with 'A' flag (cmd.is_anchor()) that's not in orphans patch
+        // 2. A command with action="anchor" (even without 'A' flag)
+        let has_real_anchor = cmds.iter().any(|cmd|
+            (cmd.is_anchor() || cmd.action == "anchor") &&
+            cmd.patch != "orphans" &&
+            !cmd.action.is_empty() // Must have some action to be a real anchor
+        );
+
+        if has_real_anchor {
+            // Find virtual orphan anchors with this name
+            for cmd in cmds.iter() {
+                if cmd.is_anchor() &&
+                   cmd.action.is_empty() && // Virtual anchors have empty action
+                   cmd.patch == "orphans" &&
+                   !cmd.flags.contains('U') { // Not user-edited
+                    let key = command_dedup_key(cmd);
+                    to_remove.push(key.clone());
+                    crate::utils::detailed_log("DEDUPE", &format!(
+                        "Removing virtual orphan anchor '{}' (patch:'{}') because real anchor exists",
+                        cmd.command, cmd.patch
+                    ));
+                }
+            }
+        }
+    }
+
+    // Remove virtual orphan anchors
+    for key in to_remove {
+        best_commands.remove(&key);
+    }
+
     let result: Vec<Command> = best_commands.into_values().collect();
     let deduped_count = original_count - result.len();
 
     if deduped_count > 0 {
-        crate::utils::detailed_log("DEDUPE", &format!("Removed {} duplicate commands (same name + action + arg)", deduped_count));
+        crate::utils::detailed_log("DEDUPE", &format!("Removed {} duplicate commands (same name + action + arg + virtual orphans)", deduped_count));
     }
 
     result
