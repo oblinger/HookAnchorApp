@@ -2,7 +2,15 @@
 
 
 🚀 HookAnchor Rescan - Verbose Mode
-
+- [ ] Patents notion page is lost
+- [ ] Remove Allow dead code markers
+- [ ] move history viewer
+- [ ] move installer_gui
+- [ ] Fix so one can navigate over "= = ="
+CONFIG_REFERENCE
+extra lines in the help message
+HADO shows wrong match
+- [ ]  new dialog system.  [[003 dialog_viewer_system]] 
 
 - [ ] [[Hook Anchor Release]] 
 - [x] upgrade CMD+B so it does a --restart too
@@ -16,6 +24,7 @@
 - [x] Log does not contain JS errors
 - [x] Fix rebuild CMD+B command
 - [x] check for println! and eprintln! in code
+- [ ] Allow dead code markers
 - [ ] Make dev mode run on each render (mod 10?)   make boot check only run when dev_mode is set.
 - [ ] Add categories
 - [ ] click on folder will go into folder

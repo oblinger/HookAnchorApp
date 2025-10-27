@@ -1,5 +1,28 @@
 
 
+## 2025-10-26  Dave & Dan Repairing a Rocket; Letty trouble
+
+
+Context, Dan and Dave are floating in space hanging on the side of a booster rocket that is about to ignite, and we need to secure some stuff to the side of the rocket as well as ourselves so we can "hang on" while it goes!
+
+
+I dreamed that I was in outer space. Well, I don't know. I think I was in low Earth orbit or something. I was with Dave. We were near the side of a rocket and we're floating. I don't feel like we had a space suit on, though, but we're floating. And our job is to get the engines ready, and we have to put these bolts and nuts together in order to stand on top of these. The metal things that need to be in place for the engines to fire and for us to have a place to hang on. And that's what our job is outside this spaceship. And we're floating. 
+
+And I remember saying to Dave that it's a great idea for a job, but I didn't think about the fact that I'm going to have to be like in outer space way up in the air. And yeah, we were about to blast off. And we're going to be on the outside of the ship while it happens. 
+
+Still I don't seem so worried ... I'm getting my cell phone out to take a selfie of you and me while we are floating around. I was like, "well, let's remember this moment." 
+As I am taking the picture of us, somehow (on the side of the rocket? or in a window into the rocket on the wall is a picture of one of Dave's friends.  Dave began explaining who the person was.  
+
+But anyway, we were getting ready because it was going to be, you know, like, everything was done. We were three minutes from blasting off, but we weren't on the ground. We were already floating. I don't know. 
+
+And then Dave tells me of trouble with Letty.  I don't know —they were jealous of each other, and it had escalated further. Now they were basically dating other people. It seemed like everything was falling apart, but for no good reason it was falling apart. Neither person was really doing anything wrong, but was just kind of less and less trust. 
+Then I was trying to think about, like, can I somehow help to save this situation? 
+
+Yeah. and that is the end of the dream....
+
+
+
+
 ## 2025-10-24  
 
 
