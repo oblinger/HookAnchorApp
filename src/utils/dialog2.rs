@@ -92,6 +92,30 @@ pub fn error(message: &str) {
     );
 }
 
+/// Show info dialog (non-blocking)
+///
+/// Spawns an informational dialog to display information to the user.
+/// Use this for displaying generated content, status messages, or other
+/// non-error/warning information.
+///
+/// # Example
+/// ```no_run
+/// crate::utils::info("Operation completed successfully");
+/// ```
+pub fn info(message: &str) {
+    crate::utils::log(&format!("INFO: {}", message));
+
+    let _ = crate::systems::spawn_dialog(
+        vec![
+            "=Information".to_string(),
+            "#Info".to_string(),
+            format!("'{}", message),
+            "!OK".to_string(),
+        ],
+        None,
+    );
+}
+
 /// Spawn a dialog (non-blocking, returns handle for popup to manage)
 ///
 /// **IMPORTANT**: This function requires the popup update loop to be running.

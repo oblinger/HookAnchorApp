@@ -903,13 +903,8 @@ impl AnchorSelector {
             // Open command editor with the pre-filled alias command
             self.command_editor.open_with_command(alias_command);
         } else {
-            // If no last command available, show error dialog
-            let dialog_spec = vec![
-                "=Error".to_string(),
-                "No last executed command available for alias creation.".to_string(),
-                "!OK".to_string(),
-            ];
-            self.dialog.show(dialog_spec);
+            // If no last command available, show error
+            crate::utils::error("No last executed command available for alias creation.");
         }
     }
 
@@ -1016,7 +1011,7 @@ impl AnchorSelector {
     
     /// Handle uninstall app request
     fn handle_uninstall_app_impl(&mut self) {
-        // Show simple warning dialog with OK/Cancel
+        // Show confirmation dialog with OK/Cancel using external dialog system
         let spec_strings = vec![
             "=Uninstall HookAnchor".to_string(),
             "#This will remove HookAnchor app and Karabiner config.".to_string(),
@@ -1024,8 +1019,37 @@ impl AnchorSelector {
             "!OK".to_string(),
             "!Cancel".to_string(),
         ];
-        
-        self.dialog.show(spec_strings);
+
+        self.show_external_dialog(
+            spec_strings,
+            HashMap::new(),
+            Box::new(|result| {
+                if result.get("exit") == Some(&"OK".to_string()) {
+                    // Execute uninstall using the shell script
+                    std::thread::spawn(|| {
+                        let config_dir = dirs::home_dir()
+                            .map(|h| h.join(".config").join("hookanchor"))
+                            .unwrap_or_else(|| std::path::PathBuf::from(".config/hookanchor"));
+                        let uninstall_script = config_dir.join("uninstall.sh");
+
+                        if uninstall_script.exists() {
+                            match std::process::Command::new("bash")
+                                .arg(&uninstall_script)
+                                .spawn() {
+                                Ok(_) => {
+                                    std::process::exit(0);
+                                },
+                                Err(_) => {
+                                    // Silent failure - uninstall script will log errors
+                                }
+                            }
+                        }
+                    });
+                }
+                Ok(())
+            }),
+            self.cached_window_position
+        );
     }
     
     /// Show all available key bindings in a dialog
@@ -1139,7 +1163,11 @@ impl AnchorSelector {
         key_lines.push("!OK".to_string());
         
         // Show the dialog
-        self.dialog.show(key_lines);
+        // OLD BLOCKING DIALOG (kept for reference):
+        // self.dialog.show(key_lines);
+
+        // NEW NON-BLOCKING DIALOG:
+        let _ = crate::utils::dialog2(key_lines, None);
     }
 
     /// Launch the history viewer with the current anchor as the default filter
@@ -2305,6 +2333,34 @@ impl AnchorSelector {
             Ok(grab_output) => {
                 crate::utils::log(&format!("GRAB: Command server returned: '{}'", grab_output));
 
+                // Check if server returned NoRuleMatched error
+                if grab_output.starts_with("No grabber rule matched for:") {
+                    // Parse app info from error message
+                    let lines: Vec<&str> = grab_output.lines().collect();
+                    let app_name = lines.iter()
+                        .find(|l| l.contains("App:"))
+                        .and_then(|l| l.split("App:").nth(1))
+                        .map(|s| s.trim().to_string())
+                        .unwrap_or_else(|| "Unknown App".to_string());
+                    let bundle_id = lines.iter()
+                        .find(|l| l.contains("Bundle ID:"))
+                        .and_then(|l| l.split("Bundle ID:").nth(1))
+                        .map(|s| s.trim().to_string())
+                        .unwrap_or_else(|| "unknown.bundle".to_string());
+
+                    crate::utils::log(&format!("🔴 GRAB NoRuleMatched for app: {}", app_name));
+
+                    // Clear any pending template
+                    self.pending_template.take();
+
+                    // Generate the template text
+                    let template_text = format!("# Grabber Rule Template\n\n- name: {}\n  matcher: 'bundleId === \"{}\"'\n  action: doc\n  group: Apps", app_name, bundle_id);
+
+                    // Show template as info
+                    crate::utils::info(&format!("Grabber Rule Template for {}:\n\n{}", app_name, template_text));
+                    return;
+                }
+
                 // Parse grab output and create grab_result
                 let parts: Vec<&str> = grab_output.trim().split_whitespace().collect();
                 let grab_result = if parts.len() >= 2 {
@@ -2358,7 +2414,7 @@ impl AnchorSelector {
 
                 match grab_result {
                     crate::systems::grabber::GrabResult::RuleMatched(rule_name, mut command) => {
-                        crate::utils::log(&format!("GRAB: RuleMatched - rule='{}', command.action='{}', command.arg='{}'", rule_name, command.action, command.arg));
+                        crate::utils::log(&format!("🟢 GRAB: RuleMatched - rule='{}', command.action='{}', command.arg='{}'", rule_name, command.action, command.arg));
                         
                         // Check if we have a pending template
                         if let Some((template_name, mut context)) = self.pending_template.take() {
@@ -2472,18 +2528,22 @@ impl AnchorSelector {
                         }
                     }
                     crate::systems::grabber::GrabResult::NoRuleMatched(grab_context) => {
+                        crate::utils::log(&format!("🔴 GRAB NoRuleMatched for app: {}", grab_context.app_name));
+                        // TEMPORARILY DISABLED: pending template fallback creates "app" action
+                        // We want to test the template info dialog instead
+                        /*
                         // Check if we have a pending template
                         if let Some((template_name, mut context)) = self.pending_template.take() {
-                            
+
                             // Add generic grabbed variables when no rule matched
                             context.add_variable("grabbed_action".to_string(), "app".to_string());
                             context.add_variable("grabbed_arg".to_string(), grab_context.app_name.clone());
                             context.add_variable("grabbed_rule".to_string(), "NoRuleMatched".to_string());
                             context.add_variable("grabbed_suffix".to_string(), String::new());
-                            
+
                             // Process the template
                             let config = crate::core::data::get_config();
-                            
+
                             // Try to find template in unified actions first
                             let _template_found = if let Some(ref actions) = config.actions {
                                 if let Some(action) = actions.get(&template_name) {
@@ -2500,10 +2560,10 @@ impl AnchorSelector {
                                                     let should_edit = action.params.get("edit")
                                                         .and_then(|v| v.as_bool())
                                                         .unwrap_or(false);
-                                                    
-                                                    crate::utils::detailed_log("GRAB", &format!("GRAB: Template created command '{}', should_edit={}", 
+
+                                                    crate::utils::detailed_log("GRAB", &format!("GRAB: Template created command '{}', should_edit={}",
                                                         new_command.command, should_edit));
-                                                    
+
                                                     if should_edit {
                                                         crate::utils::detailed_log("GRAB", &format!("GRAB: Opening command editor for template (should_edit=true)"));
                                                         crate::utils::log(&format!("GRAB: command_editor.visible before={}", self.command_editor.visible));
@@ -2518,7 +2578,7 @@ impl AnchorSelector {
                                                                 // Mark commands as modified to trigger automatic reload
                                                                 self.popup_state.search_text.clear();
                                                                 self.popup_state.update_search(String::new());
-                                                                
+
                                                                 // Trigger rescan if requested
                                                                 let file_rescan = action.params.get("file_rescan")
                                                                     .and_then(|v| v.as_bool())
@@ -2556,21 +2616,19 @@ impl AnchorSelector {
                                 crate::utils::log("GRAB: No unified actions configured");
                                 false
                             };
-                            
+
                         } else {
-                            // Normal grab behavior (no template)
-                            // Generate the template text
-                            let template_text = crate::systems::grabber::generate_rule_template_text(&grab_context);
-                            
-                            // Show template dialog using the new TextBox field type
-                            let dialog_spec = vec![
-                                format!("=Grabber Rule Template - {}", grab_context.app_name),
-                                format!("&{}", template_text),
-                                "!OK".to_string(),
-                            ];
-                            
-                            self.dialog.show(dialog_spec);
-                        }
+                        */
+                        // Clear any pending template (commented out code above would have taken it)
+                        self.pending_template.take();
+
+                        // Normal grab behavior (no template)
+                        // Generate the template text
+                        let template_text = crate::systems::grabber::generate_rule_template_text(&grab_context);
+
+                        // Show template as info
+                        crate::utils::info(&format!("Grabber Rule Template for {}:\n\n{}", grab_context.app_name, template_text));
+                        // }  // Commented out closing brace for the if-let
                     }
                 }
             }

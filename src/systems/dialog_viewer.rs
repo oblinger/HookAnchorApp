@@ -68,6 +68,68 @@ impl DialogApp {
         app
     }
 
+    /// Calculate the required height for dialog content
+    fn calculate_content_height(&self) -> f32 {
+        let mut total_height = 0.0;
+
+        // Top padding
+        total_height += 20.0;
+
+        for row in &self.rows {
+            let has_scrollable_textbox = row.elements.iter().any(|e| matches!(e, DialogElement::ScrollableTextBox { .. }));
+            let is_button_row = row.elements.iter().all(|e| matches!(e, DialogElement::Button { .. }));
+
+            if is_button_row {
+                // Button row: spacing + button height + spacing
+                total_height += 10.0 + 28.0 + 3.0;
+            } else if has_scrollable_textbox {
+                // Scrollable textbox area
+                total_height += 10.0; // Top spacing
+                for element in &row.elements {
+                    if let DialogElement::ScrollableTextBox { content } = element {
+                        let trimmed_content = content.trim_end();
+                        let line_count = trimmed_content.lines().count().max(1);
+                        let text_height = line_count as f32 * 16.0 + 20.0;
+                        // Cap at SCROLL_AREA_HEIGHT max, but use actual if smaller
+                        let actual_height = text_height.min(SCROLL_AREA_HEIGHT);
+                        total_height += actual_height;
+                    }
+                }
+                total_height += 10.0; // Bottom spacing
+            } else {
+                // Regular row
+                for element in &row.elements {
+                    match element {
+                        DialogElement::Title(_) => {
+                            total_height += 25.0; // Title height estimate
+                        }
+                        DialogElement::Label(_) => {
+                            total_height += 20.0; // Label height estimate
+                        }
+                        DialogElement::Input { .. } => {
+                            total_height += 30.0; // Input field height
+                        }
+                        DialogElement::TextBox { content } => {
+                            let line_count = content.lines().count().max(1);
+                            let text_height = line_count as f32 * 16.0 + 10.0;
+                            total_height += text_height;
+                        }
+                        _ => {}
+                    }
+                }
+                total_height += 2.0; // Row spacing
+            }
+        }
+
+        // Bottom padding
+        total_height += 20.0;
+
+        // Add some extra buffer for safety
+        total_height += 40.0;
+
+        total_height
+    }
+
     fn parse_spec_strings(&mut self, spec_strings: Vec<String>) {
         let mut current_row = DialogRow { elements: Vec::new() };
         let mut last_was_button = false;
@@ -382,8 +444,12 @@ fn main() {
     let window_title = app.title.clone();
 
     // Run egui application
-    // Height: header(60) + SCROLL_AREA_HEIGHT + buttons(50) + padding(40) = 750
-    let dialog_height = 60.0 + SCROLL_AREA_HEIGHT + 50.0 + 40.0;
+    // Calculate height dynamically based on content, with a reasonable max
+    let calculated_height = app.calculate_content_height();
+    let max_height = 900.0; // Maximum dialog height to prevent huge dialogs
+    let min_height = 200.0; // Minimum dialog height
+    let dialog_height = calculated_height.clamp(min_height, max_height);
+
     let mut viewport_builder = egui::ViewportBuilder::default()
         .with_inner_size([800.0, dialog_height])
         .with_resizable(false)
