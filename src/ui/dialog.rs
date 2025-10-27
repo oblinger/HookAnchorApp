@@ -258,20 +258,27 @@ impl Dialog {
             });
         }
         
-        // Use hard-coded size for the dialog window to allow scrolling
+        // Use fixed width and height (overshooting by 200px to verify we control size)
         let window_width = 800.0;
-        let window_height = 600.0;
+        // Components: title(30) + label(25) + scroll(600) + buttons(40) + padding(50) = ~745
+        // Add 200px overshoot = 945
+        let window_height = 945.0;
 
         egui::Window::new(&self.title)
-            .fixed_size([window_width, window_height])
+            .min_width(window_width)
+            .min_height(window_height)
+            .max_width(window_width)
+            .max_height(window_height)
+            .default_size([window_width, window_height])
             .resizable(false)
             .collapsible(false)
             .anchor(egui::Align2::CENTER_CENTER, [0.0, 0.0])
             .show(ctx, |ui| {
                 let pad = 5.0;
-                // Force the window to be the size we want by allocating space
-                ui.set_min_width(window_width - 10.0);
-                ui.set_min_height(window_height - 10.0);
+
+                // Force the UI to take up the full window size we specified
+                ui.allocate_space(egui::vec2(window_width - 20.0, window_height - 40.0));
+                ui.set_min_size(egui::vec2(window_width - 20.0, window_height - 40.0));
 
                 // Add padding around the dialog content
                 ui.add_space(pad);
@@ -291,9 +298,9 @@ impl Dialog {
                             // Wrap ONLY the scrollable textbox content in a scroll area
                             for element in &row.elements {
                                 if let DialogElement::ScrollableTextBox { content } = element {
-                                    // Put scrollable textbox inside scroll area
+                                    // Put scrollable textbox inside scroll area (fixed 600px height)
                                     egui::ScrollArea::vertical()
-                                        .min_scrolled_height(550.0)
+                                        .min_scrolled_height(600.0)
                                         .auto_shrink([false, false])
                                         .show(ui, |ui| {
                                             // Calculate height for content

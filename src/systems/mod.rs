@@ -21,6 +21,7 @@ pub(crate) mod obsidian;
 pub(crate) mod setup_assistant;
 pub(crate) mod popup_server;
 pub(crate) mod restart;
+pub(crate) mod dialog_manager;
 
 // ============================================================================
 // PUBLIC API - All external access goes through these re-exports
@@ -66,6 +67,13 @@ pub use popup_server::{
 // Restart subsystem - system restart and rebuild operations
 pub use restart::{
     full_system_restart
+};
+
+// Dialog manager - non-blocking dialog subprocess management
+pub use dialog_manager::{
+    spawn_dialog,       // Spawn dialog subprocess
+    poll_dialog,        // Poll dialog for completion (non-blocking)
+    DialogHandle        // Handle to active dialog subprocess
 };
 
 // History subsystem - moved to core::data module

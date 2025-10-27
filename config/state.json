@@ -1,31 +1,31 @@
 {
-  "window_position": [
-    980.0,
-    368.0
-  ],
+  "anchor_folder": null,
+  "anchor_name": "Dreams",
+  "anchor_timestamp": 1761523052,
+  "build_time": 1761529969,
   "history_viewer_state": {
+    "min_edit_size": 500,
+    "name_filter": "",
+    "patch_filter": "",
     "position": [
       -2381.0,
       309.0
     ],
+    "selected_action_types": [],
+    "sidebar_width": 170.0,
     "window_size": [
       1000.0,
       840.0
-    ],
-    "patch_filter": "",
-    "name_filter": "",
-    "min_edit_size": 500,
-    "selected_action_types": [],
-    "sidebar_width": 170.0
+    ]
   },
-  "build_time": 1761515684,
-  "last_scan_time": null,
+  "last_executed_command": "Dreams",
   "last_scan_checksum": null,
-  "last_executed_command": "Hook Anchor Log",
-  "server_pid": 10222,
+  "last_scan_time": null,
   "notion_last_scan": null,
-  "anchor_name": "HA2",
-  "anchor_timestamp": 1761506621,
-  "anchor_folder": null,
-  "show_files": true
+  "server_pid": 77427,
+  "show_files": true,
+  "window_position": [
+    980.0,
+    29.0
+  ]
 }
