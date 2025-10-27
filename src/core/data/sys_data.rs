@@ -199,18 +199,35 @@ pub fn get_patches() -> HashMap<String, Patch> {
 /// Internal function: Flush commands to disk with validation and repair
 /// This ALWAYS validates/repairs patches and saves to both cache and commands.txt
 fn flush(commands: &mut Vec<Command>) -> Result<(), Box<dyn std::error::Error>> {
+    let initial_count = commands.len();
+    crate::utils::detailed_log("FLUSH", &format!("Starting flush operation with {} commands", initial_count));
+
     // Step 1: Validate and repair patches (ensures data integrity)
+    crate::utils::detailed_log("FLUSH", "Step 1: Validating and repairing patches...");
     let resolution = crate::core::validate_and_repair_patches(commands, true);
     let patches = resolution.patches;
+    let after_validation_count = commands.len();
+    if after_validation_count != initial_count {
+        crate::utils::log(&format!("FLUSH: Validation added/removed {} commands (now {})",
+            after_validation_count as i32 - initial_count as i32, after_validation_count));
+    }
 
     // Step 2: Deduplicate commands (keeps best version of each unique command name)
+    crate::utils::detailed_log("FLUSH", "Step 2: Deduplicating commands...");
     *commands = super::storage::deduplicate_commands(commands.clone());
+    let after_dedup_count = commands.len();
+    if after_dedup_count != after_validation_count {
+        crate::utils::log(&format!("FLUSH: Deduplication removed {} duplicate commands (now {})",
+            after_validation_count - after_dedup_count, after_dedup_count));
+    }
 
     // Step 3: Save to both cache and commands.txt
+    crate::utils::detailed_log("FLUSH", "Step 3: Saving to disk...");
     super::storage::save_commands_to_file(commands)?;
     super::storage::save_commands_to_cache(commands)?;
 
     // Step 4: Update singleton with new commands and patches
+    crate::utils::detailed_log("FLUSH", "Step 4: Updating singleton...");
     let sys = SYS_DATA.get_or_init(|| Mutex::new(None));
     let mut sys_data = sys.lock().unwrap();
     *sys_data = Some(SysData {
@@ -219,6 +236,7 @@ fn flush(commands: &mut Vec<Command>) -> Result<(), Box<dyn std::error::Error>> 
         patches,
     });
 
+    crate::utils::detailed_log("FLUSH", &format!("Flush complete - final count: {} commands", commands.len()));
     Ok(())
 }
 
