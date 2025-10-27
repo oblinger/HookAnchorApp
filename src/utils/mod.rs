@@ -24,6 +24,7 @@ pub(crate) mod subprocess;
 pub(crate) mod error;
 pub(crate) mod build_verification;
 pub(crate) mod dialog;
+pub(crate) mod dialog2;
 
 // ============================================================================
 // PUBLIC API - All external access goes through these re-exports
@@ -67,7 +68,15 @@ pub use build_verification::{
     verify_and_log as verify_build
 };
 
-// Dialog helper functions
+// Dialog helper functions (old blocking system)
 pub use dialog::{
     fatal_error, warning, dialog
+};
+
+// Dialog2 helper functions (new non-blocking system)
+pub use dialog2::{
+    fatal_error as fatal_error2,
+    warning as warning2,
+    dialog as dialog2,
+    blocking_dialog
 };

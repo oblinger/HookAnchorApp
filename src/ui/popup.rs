@@ -713,16 +713,29 @@ impl PopupInterface for AnchorSelector {
 
 impl AnchorSelector {
     
-    /// Display an error dialog to the user
-    /// This is a generic function for showing errors in a popup dialog
-    /// This is private - errors should be queued via queue_user_error()
-    /// and displayed automatically by the UI
+    /// Display an error dialog to the user (non-blocking, external dialog)
+    ///
+    /// This function:
+    /// - Automatically logs the error to anchor.log
+    /// - Shows a non-blocking external dialog
+    /// - Returns immediately (dialog runs in separate process)
     fn show_error_dialog(&mut self, error_message: &str) {
-        self.dialog.show(vec![
+        // Log the error automatically
+        crate::utils::log_error(error_message);
+
+        // Show external dialog (non-blocking)
+        let dialog_spec = vec![
             "=Error".to_string(),
-            format!("&{}", error_message),
-            "!Exit".to_string(),
-        ]);
+            format!("'{}", error_message),
+            "!OK".to_string(),
+        ];
+
+        self.show_external_dialog(
+            dialog_spec,
+            HashMap::new(),
+            Box::new(|_| Ok(())),  // No callback needed for simple errors
+            self.cached_window_position
+        );
     }
     
     // =============================================================================
@@ -1178,7 +1191,6 @@ impl AnchorSelector {
                     crate::utils::log(&format!("Launched history viewer with filter: '{}'", anchor_filter));
                 }
                 Err(e) => {
-                    crate::utils::log_error(&format!("Failed to launch history viewer: {}", e));
                     self.show_error_dialog(&format!("Could not launch history viewer: {}", e));
                 }
             }
@@ -2003,8 +2015,8 @@ impl AnchorSelector {
         callback: Box<dyn FnOnce(&HashMap<String, String>) -> Result<(), Box<dyn std::error::Error>>>,
         window_position: Option<(f32, f32, f32)>, // (x, y, width)
     ) {
-        // Spawn dialog using dialog_manager
-        match crate::systems::spawn_dialog(spec_strings, window_position) {
+        // Spawn dialog using dialog2
+        match crate::utils::dialog2(spec_strings, window_position) {
             Some(handle) => {
                 self.external_dialog_state = Some(ExternalDialogState {
                     handle,
@@ -3891,7 +3903,10 @@ impl eframe::App for AnchorSelector {
                 None
             }
         });
-        
+
+        // Cache window position for external dialogs called outside update loop
+        self.cached_window_position = window_position;
+
         // Draw multiple shadow layers for a much darker shadow effect
         // Use negative offsets to draw shadows "behind" the main rect, not extending beyond window bounds
         let shadow_offsets = [6.0, 5.0, 4.0, 3.0, 2.0, 1.0];
@@ -4183,10 +4198,20 @@ impl eframe::App for AnchorSelector {
                 // Clone the new command for template processing before saving it
                 let saved_command = new_command.clone();
 
-                // Use atomic save to prevent patch inference from running twice
-                crate::utils::log(&format!("SAVE: Using atomic save for command: '{}' (action: {}, arg: {})",
-                    new_command.command, new_command.action, new_command.arg));
-                match self.save_command_atomic(new_command, command_to_delete.as_deref()) {
+                // TEMPORARY TEST: Trigger different error types based on command name
+                let test_result = if new_command.command == "TESTERROR" {
+                    Err("Test error triggered - command named TESTERROR".into())
+                } else if new_command.command == "FATALERROR" {
+                    // Trigger fatal error (will exit app)
+                    crate::utils::fatal_error2("Test fatal error - command named FATALERROR");
+                } else {
+                    // Use atomic save to prevent patch inference from running twice
+                    crate::utils::log(&format!("SAVE: Using atomic save for command: '{}' (action: {}, arg: {})",
+                        new_command.command, new_command.action, new_command.arg));
+                    self.save_command_atomic(new_command, command_to_delete.as_deref())
+                };
+
+                match test_result {
                     Ok(_) => {
                         crate::utils::log(&format!("SAVE: Successfully saved command atomically"));
 
@@ -4223,7 +4248,20 @@ impl eframe::App for AnchorSelector {
                     }
                     Err(e) => {
                         crate::utils::log_error(&format!("SAVE_DEBUG: Failed to add command: {}", e));
-                        self.show_error_dialog(&format!("Failed to add command: {}", e));
+
+                        // Show error using external dialog system
+                        let dialog_spec = vec![
+                            "=Error".to_string(),
+                            format!("'Failed to add command: {}", e),
+                            "!OK".to_string(),
+                        ];
+                        self.show_external_dialog(
+                            dialog_spec,
+                            HashMap::new(),
+                            Box::new(|_| Ok(())),
+                            self.cached_window_position
+                        );
+
                         self.close_command_editor();
                         command_editor_just_closed = true;
                         return; // Exit early on error

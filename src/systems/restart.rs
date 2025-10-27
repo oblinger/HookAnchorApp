@@ -22,10 +22,10 @@ pub fn kill_popup_servers() -> Result<bool, String> {
     }
 }
 
-/// Start popup_server via Terminal for proper Accessibility permissions (macOS)
+/// Start popup_server as background process
 ///
-/// On macOS, starting via Terminal allows the popup to inherit Accessibility permissions,
-/// which is needed for the grabber to send keystrokes.
+/// Spawns popup_server directly as a background daemon process.
+/// No Terminal tab needed - logs go to anchor.log.
 ///
 /// Returns the path to the popup_server that was started
 pub fn start_popup_server() -> Result<PathBuf, String> {
@@ -36,39 +36,13 @@ pub fn start_popup_server() -> Result<PathBuf, String> {
         return Err(format!("popup_server not found at: {}", popup_server_path.display()));
     }
 
-    #[cfg(target_os = "macos")]
-    {
-        // Start via Terminal for Accessibility permissions
-        let escaped_path = popup_server_path.display().to_string().replace("\"", "\\\"");
-        let script = format!(
-            r#"tell application "Terminal" to do script "cd ~ && \"{}\" 2>&1""#,
-            escaped_path
-        );
+    // Start directly as background process
+    Command::new(&popup_server_path)
+        .spawn()
+        .map_err(|e| format!("Failed to start popup_server: {}", e))?;
 
-        match Command::new("osascript")
-            .args(["-e", &script])
-            .output() {
-            Ok(output) => {
-                if output.status.success() {
-                    Ok(popup_server_path)
-                } else {
-                    let stderr = String::from_utf8_lossy(&output.stderr);
-                    Err(format!("AppleScript failed: {}", stderr))
-                }
-            }
-            Err(e) => Err(format!("Failed to execute osascript: {}", e))
-        }
-    }
-
-    #[cfg(not(target_os = "macos"))]
-    {
-        // Non-macOS: start directly
-        Command::new(&popup_server_path)
-            .spawn()
-            .map_err(|e| format!("Failed to start popup_server: {}", e))?;
-
-        Ok(popup_server_path)
-    }
+    crate::utils::log(&format!("Spawned popup_server: {}", popup_server_path.display()));
+    Ok(popup_server_path)
 }
 
 /// Get the path to popup_server binary

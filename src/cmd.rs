@@ -1442,35 +1442,15 @@ fn run_restart_server() {
         Err(e) => print(&format!("  ⚠️  Failed to kill popup_server: {}", e)),
     }
     
-    // Start popup_server via Terminal for proper permissions
-    print("  Starting popup_server via Terminal...");
-    let binary_path = crate::utils::get_binary_path()
-        .and_then(|p| p.parent().map(|d| d.to_path_buf()))
-        .unwrap_or_else(|| std::path::PathBuf::from("/Users/oblinger/ob/proj/HookAnchor/target/release"));
-    let popup_server_path = binary_path.join("popup_server");
-    
-    if popup_server_path.exists() {
-        let escaped_path = popup_server_path.display().to_string().replace("\"", "\\\"");
-        let script = format!(
-            r#"tell application "Terminal" to do script "cd ~ && \"{}\" 2>&1""#,
-            escaped_path
-        );
-        
-        match Command::new("osascript")
-            .args(["-e", &script])
-            .output() {
-            Ok(output) => {
-                if output.status.success() {
-                    print("  ✅ popup_server started via Terminal (inherits Accessibility permissions)");
-                } else {
-                    print(&format!("  ⚠️  Failed to start popup_server via Terminal: {}", 
-                            String::from_utf8_lossy(&output.stderr)));
-                }
-            }
-            Err(e) => print(&format!("  ⚠️  Failed to execute AppleScript: {}", e)),
+    // Start popup_server (no Terminal tab needed - runs in background)
+    print("  Starting popup_server...");
+    match crate::systems::start_popup_server() {
+        Ok(path) => {
+            print(&format!("  ✅ popup_server started: {}", path.display()));
         }
-    } else {
-        print(&format!("  ⚠️  popup_server not found at: {}", popup_server_path.display()));
+        Err(e) => {
+            print(&format!("  ⚠️  Failed to start popup_server: {}", e));
+        }
     }
     
     // Restart the server (kill existing and start new)
