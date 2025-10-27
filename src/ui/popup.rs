@@ -713,7 +713,8 @@ impl PopupInterface for AnchorSelector {
 
 impl AnchorSelector {
     
-    /// OLD BLOCKING DIALOG SYSTEM - DO NOT USE
+    // OLD DIALOG SYSTEM - TO BE REMOVED
+    // Old inline dialog function - kept temporarily for emergency rollback only
     #[allow(dead_code)]
     fn show_error_dialog_OLD_DO_NOT_USE(&mut self, error_message: &str) {
         self.dialog.show(vec![

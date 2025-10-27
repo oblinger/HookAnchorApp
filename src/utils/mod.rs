@@ -14,7 +14,7 @@
 //! - subprocess: Process spawning and monitoring
 //! - error: Error queue system for user-facing errors
 //! - build_verification: Build verification and metadata
-//! - dialog: Dialog helper functions (fatal_error, warning, dialog)
+//! - dialog2: Dialog helper functions (new non-blocking external system)
 
 // Internal module declarations (accessible within crate for internal use)
 pub(crate) mod logging;
@@ -23,7 +23,8 @@ pub(crate) mod utilities;
 pub(crate) mod subprocess;
 pub(crate) mod error;
 pub(crate) mod build_verification;
-pub(crate) mod dialog;
+// OLD DIALOG SYSTEM - TO BE REMOVED
+// pub(crate) mod dialog_old;
 pub(crate) mod dialog2;
 
 // ============================================================================
@@ -68,10 +69,11 @@ pub use build_verification::{
     verify_and_log as verify_build
 };
 
+// OLD DIALOG SYSTEM - TO BE REMOVED
 // Dialog helper functions (old blocking system)
-pub use dialog::{
-    fatal_error, warning, dialog
-};
+// pub use dialog_old::{
+//     fatal_error, warning, dialog
+// };
 
 // Dialog2 helper functions (new non-blocking system)
 pub use dialog2::{

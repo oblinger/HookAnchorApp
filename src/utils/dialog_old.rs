@@ -1,7 +1,11 @@
-//! Dialog Helper Functions
+//! OLD DIALOG SYSTEM - TO BE REMOVED
+//!
+//! Dialog Helper Functions (OLD BLOCKING SYSTEM)
 //!
 //! This module provides helper functions to launch the standalone HookAnchorDialog binary.
 //! All functions are blocking - they wait for user interaction before returning/exiting.
+//!
+//! **DEPRECATED**: This is the old blocking dialog system. Use dialog2.rs instead.
 
 use std::collections::HashMap;
 use std::process::Command;
