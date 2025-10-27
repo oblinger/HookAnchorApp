@@ -516,3 +516,14 @@ pub fn set_state(state: &super::state::AppState) -> Result<(), Box<dyn std::erro
 pub fn get_history_entries(limit: usize, exclude_deletions: bool) -> rusqlite::Result<Vec<super::history::HistoryEntry>> {
     super::history::get_history_entries(limit, exclude_deletions)
 }
+
+/// Delete history -- This function coordinates a complete reset of the history and cache system 
+///
+/// # Returns
+/// * `Ok((history_deleted, cache_deleted))` - Tuple of booleans indicating what was deleted
+/// * `Err(String)` - Error message if deletion fails
+pub fn delete_history() -> Result<(bool, bool), String> {
+    let history_deleted = super::history::delete_history_db()?;
+    let cache_deleted = super::storage::delete_cache()?;
+    Ok((history_deleted, cache_deleted))
+}

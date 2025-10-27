@@ -1664,7 +1664,25 @@ fn run_search_command() {
     }
 }
 
-/// Delete command history database and cache
+/// Delete history database and command cache
+///
+/// This CLI command performs a complete reset by calling `delete_history()` from the
+/// data layer, which executes the following steps:
+///
+/// 1. **Delete history database** (~/.config/hookanchor/history.db)
+///    - Removes all command execution history
+///    - Removes all file modification tracking records
+///
+/// 2. **Delete command cache** (~/.config/hookanchor/commands_cache.json)
+///    - Forces full filesystem rescan on next startup
+///    - Ensures cache and history stay in sync (no orphaned cache entries)
+///
+/// After deletion, this command performs a two-step rebuild:
+/// - Step 1: Scan filesystem with empty commands to record file creation timestamps
+/// - Step 2: Run full rescan to merge manual edits from commands.txt
+///
+/// This operation is irreversible. Historical execution data is lost forever, but the
+/// next rescan will rebuild the cache from scratch by scanning all file_roots.
 fn run_delete_history(args: &[String]) {
     use std::io::{self, Write};
 
@@ -1695,89 +1713,62 @@ fn run_delete_history(args: &[String]) {
         }
     }
 
-    // Get paths to delete
-    let config_dir = dirs::home_dir()
-        .expect("Could not find home directory")
-        .join(".config")
-        .join("hookanchor");
-
-    let history_db = config_dir.join("history.db");
-    let cache_file = config_dir.join("commands_cache.json");
-
-    let mut deleted_count = 0;
-    let mut errors = Vec::new();
-
-    // Delete history database
-    if history_db.exists() {
-        match std::fs::remove_file(&history_db) {
-            Ok(_) => {
-                print(&format!("✓ Deleted history database: {}", history_db.display()));
-                deleted_count += 1;
+    // Delete history and cache through data layer
+    match crate::core::data::delete_history() {
+        Ok((history_deleted, cache_deleted)) => {
+            print("");
+            if history_deleted {
+                print("✓ Deleted history database");
+            } else {
+                print("  History database not found (already deleted)");
             }
-            Err(e) => {
-                errors.push(format!("Failed to delete {}: {}", history_db.display(), e));
+            if cache_deleted {
+                print("✓ Deleted command cache");
+            } else {
+                print("  Command cache not found (already deleted)");
+            }
+
+            let deleted_count = [history_deleted, cache_deleted].iter().filter(|&&x| x).count();
+
+            // Report results
+            print("");
+            if deleted_count > 0 {
+                print(&format!("✓ Successfully deleted {} file(s)", deleted_count));
+                print("");
+                print("📝 Rebuilding history from scratch with accurate file creation dates...");
+                print("");
+
+                // CRITICAL ORDER: Scan filesystem FIRST with empty commands, THEN load commands.txt
+                //
+                // Step 1: Pure filesystem scan with EMPTY commands
+                // - Discovers all files and records "created" history entries with birth timestamps
+                // - Files are NOT in commands list yet, so scanner treats them as NEW
+                // - Saves to cache with metadata
+                print("🔍 Step 1: Scanning filesystem to record file creation history...");
+                let (global_data, _) = crate::core::data::get_sys_data();
+                let scanned_commands = crate::systems::scan_new_files(Vec::new(), &global_data, true);
+
+                // Save to cache so next step loads these as existing files
+                if let Err(e) = crate::core::commands::save_commands_to_cache(&scanned_commands) {
+                    print(&format!("   ⚠️  Failed to save initial cache: {}", e));
+                } else {
+                    print(&format!("   ✅ Recorded creation history for {} files", scanned_commands.len()));
+                }
+
+                print("");
+                print("✏️  Step 2: Merging manual edits from commands.txt...");
+                // Step 2: Now run full rescan to merge commands.txt edits
+                // - Cache now has all files with metadata
+                // - commands.txt edits are applied on top
+                // - No duplicate "created" entries because files already exist in cache
+                run_rescan_command();
             }
         }
-    } else {
-        print(&format!("  History database not found: {}", history_db.display()));
-    }
-
-    // Delete cache file
-    if cache_file.exists() {
-        match std::fs::remove_file(&cache_file) {
-            Ok(_) => {
-                print(&format!("✓ Deleted cache file: {}", cache_file.display()));
-                deleted_count += 1;
-            }
-            Err(e) => {
-                errors.push(format!("Failed to delete {}: {}", cache_file.display(), e));
-            }
+        Err(e) => {
+            print("");
+            print(&format!("✗ Error: {}", e));
+            std::process::exit(1);
         }
-    } else {
-        print(&format!("  Cache file not found: {}", cache_file.display()));
-    }
-
-    // Report results
-    print("");
-    if deleted_count > 0 {
-        print(&format!("✓ Successfully deleted {} file(s)", deleted_count));
-        print("");
-        print("📝 Rebuilding history from scratch with accurate file creation dates...");
-        print("");
-
-        // CRITICAL ORDER: Scan filesystem FIRST with empty commands, THEN load commands.txt
-        //
-        // Step 1: Pure filesystem scan with EMPTY commands
-        // - Discovers all files and records "created" history entries with birth timestamps
-        // - Files are NOT in commands list yet, so scanner treats them as NEW
-        // - Saves to cache with metadata
-        print("🔍 Step 1: Scanning filesystem to record file creation history...");
-        let (global_data, _) = crate::core::data::get_sys_data();
-        let scanned_commands = crate::systems::scan_new_files(Vec::new(), &global_data, true);
-
-        // Save to cache so next step loads these as existing files
-        if let Err(e) = crate::core::commands::save_commands_to_cache(&scanned_commands) {
-            print(&format!("   ⚠️  Failed to save initial cache: {}", e));
-        } else {
-            print(&format!("   ✅ Recorded creation history for {} files", scanned_commands.len()));
-        }
-
-        print("");
-        print("✏️  Step 2: Merging manual edits from commands.txt...");
-        // Step 2: Now run full rescan to merge commands.txt edits
-        // - Cache now has all files with metadata
-        // - commands.txt edits are applied on top
-        // - No duplicate "created" entries because files already exist in cache
-        run_rescan_command();
-    }
-
-    if !errors.is_empty() {
-        print("");
-        print("Errors:");
-        for error in errors {
-            print(&format!("  ✗ {}", error));
-        }
-        std::process::exit(1);
     }
 }
 

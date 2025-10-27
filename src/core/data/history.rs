@@ -255,6 +255,31 @@ pub fn get_history_entries(limit: usize, exclude_deletions: bool) -> SqlResult<V
 }
 
 
+/// Delete the history database file
+///
+/// This function removes the SQLite database file at ~/.config/hookanchor/history.db.
+/// All command execution history and file modification tracking records are permanently lost.
+///
+/// This is pub(super) so only sys_data can call it as part of coordinated cleanup operations.
+///
+/// # Returns
+/// * `Ok(true)` - Database file existed and was deleted
+/// * `Ok(false)` - Database file did not exist (nothing to delete)
+/// * `Err(String)` - Failed to delete existing database file
+pub(super) fn delete_history_db() -> Result<bool, String> {
+    let db_path = get_history_db_path();
+
+    if db_path.exists() {
+        std::fs::remove_file(&db_path)
+            .map_err(|e| format!("Failed to delete history database: {}", e))?;
+        crate::utils::log(&format!("Deleted history database: {}", db_path.display()));
+        Ok(true)
+    } else {
+        Ok(false)
+    }
+}
+
+
 /// Represents a single history entry from the database
 #[derive(Debug, Clone)]
 pub struct HistoryEntry {

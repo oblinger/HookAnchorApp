@@ -235,6 +235,30 @@ pub(super) fn load_commands_from_cache() -> Option<Vec<Command>> {
     }
 }
 
+/// Delete the command cache file
+///
+/// This function removes the JSON cache file at ~/.config/hookanchor/commands_cache.json.
+/// The next rescan will rebuild the cache from scratch by scanning all file_roots.
+///
+/// This is pub(super) so only sys_data can call it as part of coordinated cleanup operations.
+///
+/// # Returns
+/// * `Ok(true)` - Cache file existed and was deleted
+/// * `Ok(false)` - Cache file did not exist (nothing to delete)
+/// * `Err(String)` - Failed to delete existing cache file
+pub(super) fn delete_cache() -> Result<bool, String> {
+    let cache_path = get_commands_cache_path();
+
+    if cache_path.exists() {
+        std::fs::remove_file(&cache_path)
+            .map_err(|e| format!("Failed to delete command cache: {}", e))?;
+        crate::utils::log(&format!("Deleted command cache: {}", cache_path.display()));
+        Ok(true)
+    } else {
+        Ok(false)
+    }
+}
+
 /// Determines if two commands are duplicates
 /// Commands are duplicates if they have the same name, action, and arg
 /// This allows the same command name to exist multiple times if pointing to different files

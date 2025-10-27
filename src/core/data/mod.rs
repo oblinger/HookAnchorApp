@@ -70,6 +70,8 @@ pub use sys_data::{
     add_command,
     delete_command,
     set_state,
+    // History management
+    delete_history,
 };
 
 // Re-export deduplication utilities for consistent duplicate detection
