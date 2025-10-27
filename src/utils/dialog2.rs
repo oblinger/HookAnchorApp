@@ -48,7 +48,7 @@ pub fn fatal_error(message: &str) -> ! {
 ///
 /// # Example
 /// ```no_run
-/// crate::utils::dialog2::warning("Using default value");
+/// crate::utils::warning2("Using default value");
 /// // Execution continues immediately
 /// ```
 pub fn warning(message: &str) {
@@ -58,6 +58,33 @@ pub fn warning(message: &str) {
         vec![
             "=Warning".to_string(),
             "#⚠️  Warning".to_string(),
+            format!("'{}", message),
+            "!OK".to_string(),
+        ],
+        None,
+    );
+}
+
+/// Show error dialog (non-blocking)
+///
+/// Spawns an error dialog for recoverable errors. The operation is stopped
+/// but the application continues running. Dialog stays visible until dismissed.
+///
+/// Use this for errors that prevent the current operation from completing
+/// but don't require terminating the entire application.
+///
+/// # Example
+/// ```no_run
+/// crate::utils::error("Could not save file: permission denied");
+/// // Operation stopped, but app continues
+/// ```
+pub fn error(message: &str) {
+    crate::utils::log_error(message);
+
+    let _ = crate::systems::spawn_dialog(
+        vec![
+            "=Error".to_string(),
+            "#❌ Error".to_string(),
             format!("'{}", message),
             "!OK".to_string(),
         ],

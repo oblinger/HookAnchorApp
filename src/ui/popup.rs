@@ -713,29 +713,14 @@ impl PopupInterface for AnchorSelector {
 
 impl AnchorSelector {
     
-    /// Display an error dialog to the user (non-blocking, external dialog)
-    ///
-    /// This function:
-    /// - Automatically logs the error to anchor.log
-    /// - Shows a non-blocking external dialog
-    /// - Returns immediately (dialog runs in separate process)
-    fn show_error_dialog(&mut self, error_message: &str) {
-        // Log the error automatically
-        crate::utils::log_error(error_message);
-
-        // Show external dialog (non-blocking)
-        let dialog_spec = vec![
+    /// OLD BLOCKING DIALOG SYSTEM - DO NOT USE
+    #[allow(dead_code)]
+    fn show_error_dialog_OLD_DO_NOT_USE(&mut self, error_message: &str) {
+        self.dialog.show(vec![
             "=Error".to_string(),
-            format!("'{}", error_message),
-            "!OK".to_string(),
-        ];
-
-        self.show_external_dialog(
-            dialog_spec,
-            HashMap::new(),
-            Box::new(|_| Ok(())),  // No callback needed for simple errors
-            self.cached_window_position
-        );
+            format!("&{}", error_message),
+            "!Exit".to_string(),
+        ]);
     }
     
     // =============================================================================
@@ -1191,11 +1176,11 @@ impl AnchorSelector {
                     crate::utils::log(&format!("Launched history viewer with filter: '{}'", anchor_filter));
                 }
                 Err(e) => {
-                    self.show_error_dialog(&format!("Could not launch history viewer: {}", e));
+                    crate::utils::error(&format!("Could not launch history viewer: {}", e));
                 }
             }
         } else {
-            self.show_error_dialog("Could not determine executable path");
+            crate::utils::error("Could not determine executable path");
         }
     }
 
@@ -1269,7 +1254,7 @@ impl AnchorSelector {
                     // Don't edit separator commands or merged commands
                     if PopupState::is_separator_command(selected_cmd) || selected_cmd.get_flag(FLAG_MERGED).is_some() {
                         crate::utils::detailed_log("TEMPLATE", "TEMPLATE: Cannot edit separator or merged command");
-                        self.show_error_dialog("Cannot edit separator or merged commands.");
+                        crate::utils::error("Cannot edit separator or merged commands.");
                         return;
                     }
                 }
@@ -1324,7 +1309,7 @@ impl AnchorSelector {
                     let error_msg = format!("ERROR: Action '{}' exists but is not a template (type='{}').\nTo use this key binding, rename your template action to avoid name collision.", 
                         template_name, action.action_type());
                     crate::utils::detailed_log("TEMPLATE", &format!("TEMPLATE: {}", error_msg));
-                    self.show_error_dialog(&error_msg);
+                    crate::utils::error(&error_msg);
                     false
                 }
             } else {
@@ -1351,7 +1336,7 @@ impl AnchorSelector {
                 }
             }
             crate::utils::log_error(&full_error);
-            self.show_error_dialog(&full_error);
+            crate::utils::error(&full_error);
         } else {
             // Process the unified action as a template
             crate::utils::detailed_log("SYSTEM", &format!("Processing unified action template: {}", template_name));
@@ -1424,19 +1409,19 @@ impl AnchorSelector {
                                             }
                                         }
                                         Err(e) => {
-                                            self.show_error_dialog(&format!("Failed to add command: {}", e));
+                                            crate::utils::error(&format!("Failed to add command: {}", e));
                                         }
                                     }
                                 }
                             }
                             Err(e) => {
-                                self.show_error_dialog(&format!("Failed to create command from '{}' template: {}", template_name, e));
+                                crate::utils::error(&format!("Failed to create command from '{}' template: {}", template_name, e));
                             }
                         }
                         }
                     } else {
                         // Failed to convert action to template format
-                        self.show_error_dialog(&format!("Failed to convert action '{}' to template format. Check your template configuration.", template_name));
+                        crate::utils::error(&format!("Failed to convert action '{}' to template format. Check your template configuration.", template_name));
                     }
                 }
             }
@@ -1706,7 +1691,7 @@ impl AnchorSelector {
         // Show config error if any
         if let Some(error) = config_error {
             self.config_error = Some(error.clone());
-            self.show_error_dialog(&error);
+            crate::utils::error(&error);
         }
         
         self.loading_state = LoadingState::Loaded;
@@ -1771,7 +1756,7 @@ impl AnchorSelector {
                         Err(e) => {
                             let error_msg = format!("Rename action failed: {}", e);
                             crate::utils::log_error(&error_msg);
-                            self.show_error_dialog(&error_msg);
+                            crate::utils::error(&error_msg);
                         }
                     }
                 }
@@ -1785,7 +1770,7 @@ impl AnchorSelector {
                     Err(e) => {
                         let error_msg = format!("Action failed: {}", e);
                         crate::utils::log_error(&error_msg);
-                        self.show_error_dialog(&error_msg);
+                        crate::utils::error(&error_msg);
                     }
                 }
             }
@@ -2025,7 +2010,7 @@ impl AnchorSelector {
                 });
             }
             None => {
-                self.show_error_dialog("Failed to show dialog");
+                crate::utils::error("Failed to show dialog");
             }
         }
     }
@@ -2060,7 +2045,7 @@ impl AnchorSelector {
                                         Err(e) => {
                                             let error_msg = format!("Rename action failed: {}", e);
                                             crate::utils::log_error(&error_msg);
-                                            self.show_error_dialog(&error_msg);
+                                            crate::utils::error(&error_msg);
                                         }
                                     }
                                 }
@@ -2073,7 +2058,7 @@ impl AnchorSelector {
                         Err(e) => {
                             let error_msg = format!("External dialog callback failed: {}", e);
                             crate::utils::log_error(&error_msg);
-                            self.show_error_dialog(&error_msg);
+                            crate::utils::error(&error_msg);
                             // Close command editor even on error
                             self.close_command_editor();
                         }
@@ -2084,7 +2069,7 @@ impl AnchorSelector {
                 Some(Err(error)) => {
                     // Dialog failed
                     crate::utils::log_error(&format!("EXTERNAL_DIALOG: {}", error));
-                    self.show_error_dialog(&format!("Dialog error: {}", error));
+                    crate::utils::error(&format!("Dialog error: {}", error));
                     // Drop state on error
                 }
                 None => {
@@ -2440,20 +2425,20 @@ impl AnchorSelector {
                                                                 }
                                                             }
                                                             Err(e) => {
-                                                                self.show_error_dialog(&format!("Failed to add command: {}", e));
+                                                                crate::utils::error(&format!("Failed to add command: {}", e));
                                                             }
                                                         }
                                                     }
                                                 }
                                                 Err(e) => {
                                                     crate::utils::detailed_log("GRAB", &format!("GRAB: process_template failed: {}", e));
-                                                    self.show_error_dialog(&format!("Failed to create command from template: {}", e));
+                                                    crate::utils::error(&format!("Failed to create command from template: {}", e));
                                                 }
                                             }
                                             true
                                         } else {
                                             crate::utils::detailed_log("GRAB", &format!("GRAB: Failed to convert action '{}' to template", template_name));
-                                            self.show_error_dialog(&format!("Failed to convert grab action '{}' to template format. Check your template configuration.", template_name));
+                                            crate::utils::error(&format!("Failed to convert grab action '{}' to template format. Check your template configuration.", template_name));
                                             false
                                         }
                                     } else {
@@ -2543,20 +2528,20 @@ impl AnchorSelector {
                                                                 }
                                                             }
                                                             Err(e) => {
-                                                                self.show_error_dialog(&format!("Failed to add command: {}", e));
+                                                                crate::utils::error(&format!("Failed to add command: {}", e));
                                                             }
                                                         }
                                                     }
                                                 }
                                                 Err(e) => {
                                                     crate::utils::detailed_log("GRAB", &format!("GRAB: process_template failed: {}", e));
-                                                    self.show_error_dialog(&format!("Failed to create command from template: {}", e));
+                                                    crate::utils::error(&format!("Failed to create command from template: {}", e));
                                                 }
                                             }
                                             true
                                         } else {
                                             crate::utils::detailed_log("GRAB", &format!("GRAB: Failed to convert action '{}' to template", template_name));
-                                            self.show_error_dialog(&format!("Failed to convert grab action '{}' to template format. Check your template configuration.", template_name));
+                                            crate::utils::error(&format!("Failed to convert grab action '{}' to template format. Check your template configuration.", template_name));
                                             false
                                         }
                                     } else {
@@ -3022,7 +3007,7 @@ impl AnchorSelector {
                         // No session_name found in YAML - this is an error
                         utils::detailed_log("TMUX", &format!("TMUX: ERROR - No session_name found in .tmuxp.yaml"));
                         utils::detailed_log("TMUX_RUST", "Line 2373: ERROR - .tmuxp.yaml missing session_name field");
-                        self.show_error_dialog(&format!(
+                        crate::utils::error(&format!(
                             "The .tmuxp.yaml file at:\n{}\n\nis missing a 'session_name' field.\n\nPlease add:\nsession_name: <name>\n\nto the file.",
                             tmuxp_path.display()
                         ));
@@ -3032,7 +3017,7 @@ impl AnchorSelector {
                 Err(e) => {
                     utils::detailed_log("TMUX", &format!("TMUX: ERROR - Failed to read .tmuxp.yaml: {}", e));
                     utils::detailed_log("TMUX_RUST", &format!("Line 2382: Failed to read .tmuxp.yaml: {}", e));
-                    self.show_error_dialog(&format!(
+                    crate::utils::error(&format!(
                         "Failed to read .tmuxp.yaml file:\n{}\n\nError: {}",
                         tmuxp_path.display(),
                         e
@@ -3181,9 +3166,9 @@ impl AnchorSelector {
                                 // Check if tmuxp can't find tmux in PATH
                                 let stdout = String::from_utf8_lossy(&output.stdout);
                                 if stdout.contains("tmux not found") {
-                                    self.show_error_dialog("tmuxp cannot find tmux in PATH.\nEnsure tmux is installed and in your PATH.");
+                                    crate::utils::error("tmuxp cannot find tmux in PATH.\nEnsure tmux is installed and in your PATH.");
                                 } else {
-                                    self.show_error_dialog(&format!(
+                                    crate::utils::error(&format!(
                                         "Failed to create TMUX session '{}' with tmuxp.\nCheck ~/.config/hookanchor/anchor.log for details.",
                                         session_name
                                     ));
@@ -3238,7 +3223,7 @@ impl AnchorSelector {
                     session_name, session_name
                 );
                 utils::detailed_log("TMUX", &format!("TMUX: {}", error_msg));
-                self.show_error_dialog(&error_msg);
+                crate::utils::error(&error_msg);
                 return;
             }
             
@@ -3255,7 +3240,7 @@ impl AnchorSelector {
                     } else {
                         let stderr = String::from_utf8_lossy(&output.stderr);
                         utils::detailed_log("TMUX", &format!("TMUX: Failed to switch: {}", stderr));
-                        self.show_error_dialog(&format!(
+                        crate::utils::error(&format!(
                             "Failed to switch to TMUX session '{}': {}",
                             session_name, stderr
                         ));
@@ -3263,7 +3248,7 @@ impl AnchorSelector {
                 }
                 Err(e) => {
                     utils::detailed_log("TMUX", &format!("TMUX: Failed to run switch-client: {}", e));
-                    self.show_error_dialog(&format!(
+                    crate::utils::error(&format!(
                         "Failed to switch to TMUX session '{}': {}",
                         session_name, e
                     ));
@@ -3420,13 +3405,13 @@ impl AnchorSelector {
                         } else {
                             let stderr = String::from_utf8_lossy(&output.stderr);
                             utils::detailed_log("TMUX", &format!("TMUX: Failed to create session: {}", stderr));
-                            self.show_error_dialog(&format!("Failed to create TMUX session: {}", stderr));
+                            crate::utils::error(&format!("Failed to create TMUX session: {}", stderr));
                             return;
                         }
                     }
                     Err(e) => {
                         utils::detailed_log("TMUX", &format!("TMUX: Error executing tmux command: {}", e));
-                        self.show_error_dialog(&format!("Failed to execute tmux: {}", e));
+                        crate::utils::error(&format!("Failed to execute tmux: {}", e));
                         return;
                     }
                 }
@@ -3484,7 +3469,7 @@ impl AnchorSelector {
                     session_name, session_name
                 );
                 utils::detailed_log("TMUX", &format!("TMUX: {}", msg));
-                self.show_error_dialog(&msg);
+                crate::utils::error(&msg);
             }
 
         }
@@ -3943,7 +3928,7 @@ impl eframe::App for AnchorSelector {
         // Check for queued errors and display them
         if crate::utils::error::has_errors() {
             if let Some(error_message) = crate::utils::error::take_next_error() {
-                self.show_error_dialog(&error_message);
+                crate::utils::error(&error_message);
             }
         }
         
@@ -4186,7 +4171,7 @@ impl eframe::App for AnchorSelector {
                                     }
                                 }
                                 Err(e) => {
-                                    self.show_error_dialog(&format!("Error checking rename effects: {}", e));
+                                    crate::utils::error(&format!("Error checking rename effects: {}", e));
                                 }
                             }
                         }
@@ -4229,7 +4214,7 @@ impl eframe::App for AnchorSelector {
                                 context,
                                 &saved_command
                             ) {
-                                self.show_error_dialog(&format!("Failed to create template files: {}", e));
+                                crate::utils::error(&format!("Failed to create template files: {}", e));
                             } else {
                                 crate::utils::detailed_log("TEMPLATE", &format!("TEMPLATE: Successfully created template files"));
                                 // Trigger rescan if requested

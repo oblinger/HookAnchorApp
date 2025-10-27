@@ -77,6 +77,7 @@ pub use dialog::{
 pub use dialog2::{
     fatal_error as fatal_error2,
     warning as warning2,
+    error,                      // Non-blocking error dialog
     dialog as dialog2,
     blocking_dialog
 };
