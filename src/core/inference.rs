@@ -58,19 +58,21 @@ pub fn infer_patch(command: &Command, patches: &HashMap<String, Patch>) -> Optio
     // Check if the command is path-based and extract folder information
     if command.is_path_based() {
         if let Some(inferred_patch) = infer_patch_from_command(command, patches) {
-            // Anchor commands SHOULD have their own name as their patch - this is correct design, not a cycle
+            // Prevent self-assignment for anchors (would break tree hierarchy)
+            // Anchors DEFINE patches but should be IN their parent patch, not their own
             if command.is_anchor() && inferred_patch.to_lowercase() == command.command.to_lowercase() {
                 crate::utils::detailed_log("PATCH_INFERENCE", &format!(
-                    "Command '{}' -> PATCH '{}' (anchor gets its own name as patch - correct behavior)",
+                    "Command '{}' -> REJECTED self-assignment '{}' (anchors must be in parent patch, not their own)",
                     command.command, inferred_patch
+                ));
+                // Continue to other inference methods
+            } else {
+                crate::utils::detailed_log("PATCH_INFERENCE", &format!(
+                    "Command '{}' -> PATCH '{}' (inferred from file/folder path: '{}')",
+                    command.command, inferred_patch, command.arg
                 ));
                 return Some(inferred_patch);
             }
-            crate::utils::detailed_log("PATCH_INFERENCE", &format!(
-                "Command '{}' -> PATCH '{}' (inferred from file/folder path: '{}')",
-                command.command, inferred_patch, command.arg
-            ));
-            return Some(inferred_patch);
         }
     }
 
@@ -354,21 +356,23 @@ pub fn infer_patch_simple(file_path: &str, folder_map: &HashMap<PathBuf, String>
         if let Some(parent) = path.parent() {
             // Start from the parent's parent to avoid self-reference
             if let Some(grandparent) = parent.parent() {
-                let mut current = grandparent;
-                loop {
-                    if let Ok(canonical) = current.canonicalize() {
+                let mut current = Some(grandparent);
+                while let Some(dir) = current {
+                    if let Ok(canonical) = dir.canonicalize() {
                         if let Some(patch) = folder_map.get(&canonical) {
                             crate::utils::detailed_log("FOLDER_MAPPING", &format!(
                                 "Anchor file '{}' -> mapped parent folder '{}' -> patch '{}'",
-                                file_path, current.display(), patch
+                                file_path, dir.display(), patch
                             ));
                             return Some(patch.clone());
                         }
                     }
-                    current = current.parent()?;
+                    current = dir.parent();
                 }
             }
         }
+        // If folder_map didn't work, fall through to regular file logic
+        // which will use directory-name matching as fallback
     }
 
     // Regular file - walk up the hierarchy starting from its directory
