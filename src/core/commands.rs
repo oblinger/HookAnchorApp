@@ -1101,8 +1101,13 @@ pub fn run_patch_inference(
             continue;
         }
         
-        // Skip system-generated virtual anchor commands - they should always keep their "orphans" patch
-        if command.patch == "orphans" && command.is_anchor() && !command.flags.contains(FLAG_USER_EDITED) {
+        // Skip system-generated virtual anchor commands (empty action) - they should always keep their "orphans" patch
+        // Real file-based anchors in orphans SHOULD be processed for inference
+        if command.patch == "orphans" && command.is_anchor() && command.action.is_empty() && !command.flags.contains(FLAG_USER_EDITED) {
+            crate::utils::detailed_log("PATCH_INFERENCE", &format!(
+                "Command '{}' -> SKIPPED (virtual anchor in orphans)",
+                command.command
+            ));
             continue;
         }
         
