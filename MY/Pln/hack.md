@@ -1,10 +1,13 @@
+- confirm dialog for small rename has too much space so cannot see buttons
+- start selection w/ mouse should not happen until real movement
 
 
 
 🚀 HookAnchor Rescan - Verbose Mode
-- [ ] Patents notion page is lost
+- [x] Patents notion page is lost
 - [ ] Remove Allow dead code markers
-- [ ] move history viewer
+- [ ] create bin folder
+- [x] move history viewer
 - [ ] move installer_gui
 - [ ] Fix so one can navigate over "= = ="
 CONFIG_REFERENCE

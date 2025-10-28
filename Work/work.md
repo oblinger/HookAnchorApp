@@ -2,6 +2,7 @@
 
 .**TODO**.
 	- [Cloud Roadmap](https://docs.google.com/document/d/1g135euS74c7FfBO6GDMRGyvi_0jXHBm4Pd4bqU9Pa94/edit?tab=t.0): plan for moving stuff to cloud - 
+	- [Media convert](https://www.notion.so/sportsvisio/SV-Hybrid-Media-Convert-Prototype-27d719d6f2bd805084dfeb5b166debcb?source=copy_link) 
     - Darien
     - OCT 19th - own meeting
   BACKLOG
@@ -51,21 +52,10 @@
 # __
 
 
-
-> I'm not really very happy with this. We worked hard to have a unified action, execution pathway, but it seems like we still don't have a unified action pathway. That is when
-  we execute a command action it's not the same as when we execute a keyboard, shortcut action.
-
 show AI running
 show fireball & magic hour
 table showing improvements
 
 https://docs.google.com/presentation/d/18-EgPTzjksHM8LPWDcRwrUl2pCflegCELsh3l2eQ8OE/edit?slide=id.g39bdd97e068_0_350#slide=id.g39bdd97e068_0_350
 
-Productized Pure AI Highlights product
-- Contract signed with Playon for 10K games in Dec & Q1
-- Active product integration work with PlayOn in full swing
-
-
-- Roster editing - customer 
-- Uploading - 
 
