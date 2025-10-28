@@ -351,33 +351,16 @@ pub fn infer_patch_simple(file_path: &str, folder_map: &HashMap<PathBuf, String>
 
     let path = Path::new(file_path);
 
-    // Check if this is an anchor file itself (file name without extension matches parent folder)
-    if crate::utils::is_anchor_file(path) {
-        if let Some(parent) = path.parent() {
-            // Start from the parent's parent to avoid self-reference
-            if let Some(grandparent) = parent.parent() {
-                let mut current = Some(grandparent);
-                while let Some(dir) = current {
-                    if let Ok(canonical) = dir.canonicalize() {
-                        if let Some(patch) = folder_map.get(&canonical) {
-                            crate::utils::detailed_log("FOLDER_MAPPING", &format!(
-                                "Anchor file '{}' -> mapped parent folder '{}' -> patch '{}'",
-                                file_path, dir.display(), patch
-                            ));
-                            return Some(patch.clone());
-                        }
-                    }
-                    current = dir.parent();
-                }
-            }
-        }
-        // If folder_map didn't work, fall through to regular file logic
-        // which will use directory-name matching as fallback
-    }
+    // Determine starting point: grandparent for anchor files (to avoid self-reference), parent for regular files
+    let mut current = if crate::utils::is_anchor_file(path) {
+        // Anchor files: start from grandparent to avoid self-reference
+        path.parent().and_then(|p| p.parent())
+    } else {
+        // Regular files: start from parent directory
+        if path.is_file() { path.parent() } else { Some(path) }
+    };
 
-    // Regular file - walk up the hierarchy starting from its directory
-    let mut current = if path.is_file() { path.parent() } else { Some(path) };
-
+    // Walk up the directory tree checking folder_map at each level
     while let Some(dir) = current {
         if let Ok(canonical) = dir.canonicalize() {
             if let Some(patch) = folder_map.get(&canonical) {
