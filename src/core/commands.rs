@@ -1111,9 +1111,11 @@ pub fn run_patch_inference(
             continue;
         }
         
-        // Check if we should process this command based on overwrite_patch setting
-        let should_process = overwrite_patch || command.patch.is_empty();
-        
+        // Run inference on all non-user-edited commands
+        // If we computed the patch automatically before (no U flag), keep recomputing it
+        // This ensures patches stay up-to-date as files move or hierarchy changes
+        let should_process = !command.flags.contains(FLAG_USER_EDITED);
+
         if should_process {
             // Use simple inference for path-based commands
             let inferred_patch = if command.is_path_based() && !command.arg.is_empty() {
@@ -1137,19 +1139,22 @@ pub fn run_patch_inference(
                 }
                 
                 // ANTI-DEGRADATION PROTECTION: Don't replace specific patches with generic ones
-                if !command.patch.is_empty() && overwrite_patch {
+                if !command.patch.is_empty() {
                     if is_patch_degradation(&command.patch, &inferred_patch) {
                         // Skip this change - would degrade patch quality
+                        crate::utils::detailed_log("PATCH_INFERENCE", &format!(
+                            "Command '{}' -> REJECTED degradation from '{}' to '{}'",
+                            command.command, command.patch, inferred_patch
+                        ));
                         continue;
                     }
                 }
                 
                 let old_patch_display = if command.patch.is_empty() { "(empty)".to_string() } else { command.patch.clone() };
-                
-                // Apply changes based on the overwrite_patch setting
-                // In normal operation (overwrite_patch = false), only fill empty patches
-                // In --infer-all mode (overwrite_patch = true), overwrite existing patches too
-                if apply_changes && (overwrite_patch || command.patch.is_empty()) {
+
+                // Apply changes - we already checked should_process (non-user-edited)
+                // All non-user-edited commands get their patches re-inferred to stay up-to-date
+                if apply_changes {
                     // Debug: Log when we're about to assign a patch
                     if inferred_patch.is_empty() {
                         crate::utils::log(&format!("  ⚠️ WARNING: About to assign EMPTY patch to command '{}' (was: '{}')", 
