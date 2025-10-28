@@ -8,8 +8,6 @@ use std::path::{Path, PathBuf};
 use std::process::Command;
 
 const KARABINER_CLI_PATH: &str = "/Library/Application Support/org.pqrs/Karabiner-Elements/bin/karabiner_cli";
-#[allow(dead_code)]
-const KARABINER_CONFIG_DIR: &str = "~/.config/karabiner/assets/complex_modifications";
 
 pub struct SetupAssistant {
     config_dir: PathBuf,
@@ -639,64 +637,6 @@ impl SetupAssistant {
         Ok(())
     }
 
-    /// Remove configuration directory (with user confirmation for data)
-    #[allow(dead_code)]
-    fn remove_config_directory(&self) -> Result<(), Box<dyn std::error::Error>> {
-        if !self.config_dir.exists() {
-            crate::utils::print("ℹ️  Configuration directory not found");
-            return Ok(());
-        }
-        
-        // Check if there are any important files
-        let mut has_important_files = false;
-        let mut file_count = 0;
-        
-        if let Ok(entries) = fs::read_dir(&self.config_dir) {
-            for entry in entries {
-                if let Ok(entry) = entry {
-                    file_count += 1;
-                    let file_name = entry.file_name();
-                    if let Some(name) = file_name.to_str() {
-                        if name.ends_with(".txt") || name.ends_with(".yaml") || name.contains("command") {
-                            has_important_files = true;
-                        }
-                    }
-                }
-            }
-        }
-        
-        if has_important_files {
-            crate::utils::print(&format!("⚠️  Configuration directory contains {} files including commands/config.", file_count));
-            print!("Remove all configuration and data? (y/N): ");
-            
-            use std::io::{self, Write};
-            io::stdout().flush()?;
-            
-            let mut input = String::new();
-            io::stdin().read_line(&mut input)?;
-            let response = input.trim().to_lowercase();
-
-            if response != "y" && response != "yes" {
-                crate::utils::print(&format!("📁 Keeping configuration directory: {}", self.config_dir.display()));
-                return Ok(());
-            }
-        }
-        
-        crate::utils::print("🗑️  Removing configuration directory...");
-        fs::remove_dir_all(&self.config_dir)?;
-        
-        Ok(())
-    }
-    
-    /// Remove configuration directory (silent version without user confirmation)
-    #[allow(dead_code)]
-    fn remove_config_directory_silent(&self) -> Result<(), Box<dyn std::error::Error>> {
-        if self.config_dir.exists() {
-            fs::remove_dir_all(&self.config_dir)?;
-        }
-
-        Ok(())
-    }
 
     /// Test if the current application has accessibility permissions
     pub fn test_accessibility_permissions() -> Result<bool, Box<dyn std::error::Error>> {

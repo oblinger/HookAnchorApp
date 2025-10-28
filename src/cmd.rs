@@ -911,43 +911,6 @@ fn run_start_server_daemon() {
     }
 }
 
-/// Checks if the new_patch is associated with a parent directory of the current_patch
-#[allow(dead_code)]
-fn is_parent_directory_patch(current_patch: &str, new_patch: &str, patches: &std::collections::HashMap<String, crate::core::Patch>) -> bool {
-    use std::path::Path;
-    
-    // Get the linked commands for both patches
-    let current_linked = crate::core::commands::get_patch(current_patch, patches).and_then(|p| p.primary_anchor());
-    let new_linked = crate::core::commands::get_patch(new_patch, patches).and_then(|p| p.primary_anchor());
-    
-    if let (Some(current_cmd), Some(new_cmd)) = (current_linked, new_linked) {
-        // Both patches have linked commands - compare their directory paths
-        if current_cmd.is_path_based() && new_cmd.is_path_based() {
-            let current_path = Path::new(&current_cmd.arg);
-            let new_path = Path::new(&new_cmd.arg);
-            
-            // Get directories containing the files
-            let current_dir = if current_path.is_file() || current_cmd.arg.contains('.') {
-                current_path.parent()
-            } else {
-                Some(current_path)
-            };
-            
-            let new_dir = if new_path.is_file() || new_cmd.arg.contains('.') {
-                new_path.parent()
-            } else {
-                Some(new_path)
-            };
-            
-            if let (Some(current_dir), Some(new_dir)) = (current_dir, new_dir) {
-                // Check if new_dir is a parent of current_dir
-                return current_dir.starts_with(new_dir) && current_dir != new_dir;
-            }
-        }
-    }
-    
-    false
-}
 
 /// Show which commands would have their patches changed by inference
 fn run_infer_patches(args: &[String]) {
