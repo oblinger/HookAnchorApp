@@ -27,6 +27,8 @@ pub struct HistoryViewerState {
     pub selected_action_types: Vec<String>,
     /// Sidebar width in pixels (user can resize this)
     pub sidebar_width: Option<f32>,
+    /// Show current commands instead of history
+    pub show_current_commands: bool,
 }
 
 impl Default for HistoryViewerState {
@@ -39,6 +41,7 @@ impl Default for HistoryViewerState {
             min_edit_size: Some(500), // Default to 500 bytes
             selected_action_types: Vec::new(),
             sidebar_width: None, // Use config default if not set
+            show_current_commands: false, // Default to history mode
         }
     }
 }
