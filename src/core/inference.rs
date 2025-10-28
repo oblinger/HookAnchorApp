@@ -247,12 +247,10 @@ fn infer_patch_from_file_path_with_exclusion(file_path: &str, patches: &HashMap<
     
     // Fallback to walking up the directory hierarchy
     let path = Path::new(file_path);
-    let mut current_dir = if path.is_file() {
-        path.parent()
-    } else {
-        Some(path)
-    };
-    
+    // FIXED: For folders, start with parent. For files, start with containing directory.
+    // Both cases should check the PARENT, not the item itself.
+    let mut current_dir = path.parent();
+
     while let Some(dir) = current_dir {
         if let Some(dir_name) = dir.file_name() {
             if let Some(dir_str) = dir_name.to_str() {
@@ -262,10 +260,10 @@ fn infer_patch_from_file_path_with_exclusion(file_path: &str, patches: &HashMap<
                     if patch_name.to_lowercase() == exclude_command.to_lowercase() {
                         continue;
                     }
-                    
+
                     if patch_name.to_lowercase() == dir_str.to_lowercase() {
                         crate::utils::detailed_log("PATCH_INFERENCE", &format!(
-                            "Found patch '{}' from directory name '{}' for path '{}'", 
+                            "Found patch '{}' from directory name '{}' for path '{}'",
                             patch_name, dir_str, file_path
                         ));
                         return Some(patch_name.clone());
@@ -275,7 +273,7 @@ fn infer_patch_from_file_path_with_exclusion(file_path: &str, patches: &HashMap<
         }
         current_dir = dir.parent();
     }
-    
+
     None
 }
 
@@ -284,7 +282,7 @@ fn infer_patch_from_file_path(file_path: &str, patches: &HashMap<String, Patch>)
     // Build folder map from current commands
     let (sys_data, _) = crate::core::get_sys_data();
     let folder_map = build_folder_to_patch_map(&sys_data.commands);
-    
+
     // Use simple inference first
     if let Some(patch) = infer_patch_simple(file_path, &folder_map) {
         // Double-check that the patch exists in our patches map
@@ -292,14 +290,12 @@ fn infer_patch_from_file_path(file_path: &str, patches: &HashMap<String, Patch>)
             return Some(patch);
         }
     }
-    
+
     // Fallback to walking up the directory hierarchy
     let path = Path::new(file_path);
-    let mut current_dir = if path.is_file() {
-        path.parent()
-    } else {
-        Some(path)
-    };
+    // FIXED: For folders, start with parent. For files, start with containing directory.
+    // Both cases should check the PARENT, not the item itself.
+    let mut current_dir = path.parent();
     
     while let Some(dir) = current_dir {
         if let Some(dir_name) = dir.file_name() {
