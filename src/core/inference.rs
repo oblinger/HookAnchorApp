@@ -25,10 +25,13 @@ use super::commands::FLAG_USER_EDITED;
 /// 4. Year-based prefix matching
 /// 5. Similarity-based fuzzy matching (lowest priority)
 pub fn infer_patch(command: &Command, patches: &HashMap<String, Patch>) -> Option<String> {
-    // NEVER override user-edited commands - they've explicitly set their patch
-    if command.flags.contains(FLAG_USER_EDITED) {
+    // Don't override user-edited commands UNLESS they're in orphans or have no patch
+    // If user explicitly set a real patch, respect it. But if it's orphans/empty, try to infer.
+    if command.flags.contains(FLAG_USER_EDITED)
+        && !command.patch.is_empty()
+        && command.patch != "orphans" {
         crate::utils::detailed_log("PATCH_INFERENCE", &format!(
-            "Command '{}' -> NO INFERENCE (user-edited, preserving patch '{}')",
+            "Command '{}' -> NO INFERENCE (user-edited with explicit patch '{}')",
             command.command, command.patch
         ));
         return None;
@@ -355,13 +358,14 @@ pub fn infer_patch_simple(file_path: &str, folder_map: &HashMap<PathBuf, String>
 
     let path = Path::new(file_path);
 
-    // Determine starting point: grandparent for anchor files (to avoid self-reference), parent for regular files
+    // Determine starting point: grandparent for anchor files (to avoid self-reference), parent for all others
     let mut current = if crate::utils::is_anchor_file(path) {
         // Anchor files: start from grandparent to avoid self-reference
         path.parent().and_then(|p| p.parent())
     } else {
-        // Regular files: start from parent directory
-        if path.is_file() { path.parent() } else { Some(path) }
+        // Regular files and folders: start from parent directory
+        // Both should look at their PARENT, not themselves
+        path.parent()
     };
 
     // Walk up the directory tree checking folder_map at each level
