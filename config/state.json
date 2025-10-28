@@ -1,26 +1,26 @@
 {
-  "anchor_folder": null,
-  "anchor_name": "@Qingling Oblinger",
-  "anchor_timestamp": 1761685045,
-  "build_time": 1761687068,
-  "history_viewer_state": {
-    "min_edit_size": 500,
-    "name_filter": "",
-    "patch_filter": "",
-    "position": null,
-    "selected_action_types": [],
-    "show_current_commands": false,
-    "sidebar_width": null,
-    "window_size": null
-  },
-  "last_executed_command": "@Qingling Oblinger",
-  "last_scan_checksum": null,
-  "last_scan_time": null,
-  "notion_last_scan": null,
-  "server_pid": 89784,
-  "show_files": true,
   "window_position": [
-    580.0,
-    91.0
-  ]
+    980.0,
+    202.0
+  ],
+  "history_viewer_state": {
+    "position": null,
+    "window_size": null,
+    "patch_filter": "",
+    "name_filter": "",
+    "min_edit_size": 500,
+    "selected_action_types": [],
+    "sidebar_width": null,
+    "show_current_commands": false
+  },
+  "build_time": 1761690359,
+  "last_scan_time": null,
+  "last_scan_checksum": null,
+  "last_executed_command": "@Dugan Studebaker",
+  "server_pid": 99398,
+  "notion_last_scan": null,
+  "anchor_name": "@Dugan Studebaker",
+  "anchor_timestamp": 1761689718,
+  "anchor_folder": null,
+  "show_files": true
 }

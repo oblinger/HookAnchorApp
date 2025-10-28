@@ -37,15 +37,6 @@ pub fn infer_patch(command: &Command, patches: &HashMap<String, Patch>) -> Optio
         return None;
     }
 
-    // Skip system-generated virtual anchor commands (empty action) - they should always keep their "orphans" patch
-    if command.patch == "orphans" && command.is_anchor() && command.action.is_empty() {
-        crate::utils::detailed_log("PATCH_INFERENCE", &format!(
-            "Command '{}' -> NO PATCH (virtual anchor with orphans patch)",
-            command.command
-        ));
-        return None;
-    }
-
     // Method 1: Alias commands inherit patch from their target (HIGHEST PRIORITY)
     if command.action == "alias" {
         if let Some(target_patch) = infer_patch_from_alias_target(command, patches) {
