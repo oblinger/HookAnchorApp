@@ -1,0 +1,1204 @@
+🔍 Legacy Commands Load and Compare
+===================================
+
+📁 Legacy file: /Users/oblinger/.config/hookanchor/commands_20251017_232108.txt
+
+🔄 Step 1: Performing initial rescan...
+🚀 HookAnchor Rescan - Verbose Mode
+====================================
+📋 Config loaded - checking file_roots...
+✅ File roots found: ["~/ob/kmr", "/Applications"]
+
+📂 Step 1: Loading last known state from cache...
+   ✅ Loaded 6791 commands from cache
+
+✏️  Step 2: Merging manual edits from commands.txt...
+
+📝 Loading manual edits from commands.txt...
+   ✏️  Updated manual edit: 'cover'
+   ✏️  Updated manual edit: 'Hook Anchor'
+   ✏️  Updated manual edit: 'ec'
+   ✅ Applied 3 manual edit(s)
+   ✅ Merged 3 edits from commands.txt
+   📊 Total commands after merge: 6791
+
+🔍 Step 3: Scanning filesystem (discovering new files, removing stale entries)...
+
+🔍 Starting filesystem scan...
+   Scanning roots: ["~/ob/kmr", "/Applications"]
+   Scan complete: 8538 commands total
+   Added 1747 new commands
+
+🎉 File scan complete! (Inference will run after loading manual edits)
+   ✅ Scan complete - now tracking 8538 total commands
+
+📝 Step 4: Detecting file modifications...
+
+🔍 Scanning for file modifications...
+   📝 File size changed: 'legacy_output_3' (1039 -> 1256 bytes)
+   📝 File size changed: 'legacy_output_3' (1039 -> 1322 bytes)
+   ✅ Detected 2 file modification(s)
+   ✅ Processed modifications (2 files changed)
+
+🔄 Step 5: Running inference and saving...
+   ⚠️  Error during inference/save: Empty patch count exceeds safety limit
+
+📊 Step 8: Final Summary:
+   Total commands: 6791
+
+   Commands by action type:
+     : 431
+     1pass: 303
+     action: 2
+     alias: 21
+     anchor: 19
+     app: 2
+     brave: 1
+     chrome: 37
+     clear_log: 1
+     console: 36
+     contact: 2
+     doc: 2862
+     folder: 908
+     markdown: 1909
+     notion: 57
+     obs_url: 3
+     open_app: 106
+     safari: 1
+     slack: 2
+     test: 2
+     text: 3
+     url: 15
+     work: 68
+
+✅ Rescan complete!
+✅ Initial rescan complete
+
+📥 Step 2: Loading legacy commands from file...
+✅ Loaded 6361 legacy commands
+
+💾 Step 3: Saving legacy commands (triggers flush)...
+✅ Legacy commands saved and flushed
+
+🔬 Step 4: First comparison (legacy vs. saved)...
+
+=== POST-SAVE COMPARISON ===
+
+📊 Summary:
+  Unchanged: 5923
+  Changed:   438
+  Removed:   0
+  Added:     0
+
+🔄 Changed Commands (438):
+  2000-00-00 IBM-years
+    flags:   '' → 'A'
+  2023 Headless Record Flow
+    flags:   '' → 'A'
+  @Carolyn Oblinger
+    flags:   '' → 'A'
+  2016-00-00 PPP
+    flags:   '' → 'A'
+  Mom
+    flags:   '' → 'A'
+  RR Comp
+    flags:   '' → 'A'
+  2015 Legal Bizzy
+    flags:   '' → 'A'
+  SEEK
+    flags:   '' → 'A'
+  @Yashin Lin
+    flags:   '' → 'A'
+  Hire
+    flags:   '' → 'A'
+  NJ Manual Search
+    flags:   '' → 'A'
+  Mus
+    flags:   '' → 'A'
+  SV Roots
+    flags:   '' → 'A'
+  RR Misc
+    flags:   '' → 'A'
+  2023-Reset-DanO-Role
+    flags:   '' → 'A'
+  Legal
+    flags:   '' → 'A'
+  ufBrick
+    flags:   '' → 'A'
+  Food
+    flags:   '' → 'A'
+  Star
+    flags:   '' → 'A'
+  2023 Belief Propagation
+    flags:   '' → 'A'
+  MY Content
+    flags:   '' → 'A'
+  MAC Apps
+    flags:   '' → 'A'
+  Satiety Index
+    flags:   '' → 'A'
+  SV Software
+    flags:   '' → 'A'
+  Hook Anchor Video
+    flags:   '' → 'A'
+  2023 Customer Acquisition
+    flags:   '' → 'A'
+  2010-08 Siege
+    flags:   '' → 'A'
+  Yore
+    flags:   'U' → 'UA'
+  MED
+    flags:   '' → 'A'
+  Phone markdown
+    flags:   '' → 'A'
+  2022-01-00 Nanny
+    flags:   '' → 'A'
+  CV
+    flags:   '' → 'A'
+  proj code
+    flags:   '' → 'A'
+  Log
+    flags:   '' → 'A'
+  FIN Bills
+    flags:   '' → 'A'
+  AMA
+    flags:   '' → 'A'
+  MyMgr
+    flags:   '' → 'A'
+  FIN
+    flags:   '' → 'A'
+  Notion Root
+    flags:   'U' → 'UA'
+  SYS Misc
+    flags:   '' → 'A'
+  2006-11 DARPA Game World
+    flags:   '' → 'A'
+  web app
+    flags:   '' → 'A'
+  2019 AF Job Tests
+    flags:   '' → 'A'
+  2024-11-01 SV Pitch Deck
+    flags:   '' → 'A'
+  RR Philosophy
+    flags:   '' → 'A'
+  NJ
+    flags:   '' → 'A'
+  SV Page
+    flags:   '' → 'A'
+  2023 Game Management
+    flags:   '' → 'A'
+  2006-10 Emergent Good
+    flags:   '' → 'A'
+  kmr
+    flags:   '' → 'A'
+  tst
+    flags:   '' → 'A'
+  SV Proj
+    flags:   '' → 'A'
+  TG
+    flags:   '' → 'A'
+  Spot
+    flags:   '' → 'A'
+  SYS Hacks
+    flags:   '' → 'A'
+  2025 Online Presence
+    flags:   '' → 'A'
+  2023-07 ML-CV Ops Job Post
+    flags:   '' → 'A'
+  2007-00 Village First
+    flags:   '' → 'A'
+  Book Summary
+    flags:   '' → 'A'
+  Tag
+    flags:   '' → 'A'
+  TEMPLATER
+    flags:   '' → 'A'
+  RacePitchArchive
+    flags:   '' → 'A'
+  2022-03-00 - Robotics_Fireside
+    flags:   '' → 'A'
+  SV Org
+    flags:   '' → 'A'
+  EOCI
+    flags:   '' → 'A'
+  2010-10 Good With Money
+    flags:   '' → 'A'
+  MgrTracking
+    flags:   '' → 'A'
+  SV Log
+    flags:   '' → 'A'
+  TT
+    flags:   '' → 'A'
+  sv proj aliases
+    flags:   '' → 'A'
+  2022-03 BeVC
+    flags:   '' → 'A'
+  RR CV
+    flags:   '' → 'A'
+  2013-08 Crowd Self Assessment
+    flags:   '' → 'A'
+  2023-07 Computer Vision Hire
+    flags:   '' → 'A'
+  2025 Shooter Reco
+    flags:   '' → 'A'
+  RR Web
+    flags:   '' → 'A'
+  hack
+    flags:   '' → 'A'
+  @Schwab
+    flags:   '' → 'A'
+  2011-03 Entity Search
+    flags:   '' → 'A'
+  OBS
+    flags:   '' → 'A'
+  FIN Net Worth
+    flags:   '' → 'A'
+  NJDB
+    flags:   '' → 'A'
+  @Qingling Oblinger
+    flags:   '' → 'A'
+  2025-06 LinkedIn Contacts Merge
+    flags:   '' → 'A'
+  2023 SV Patents
+    flags:   '' → 'A'
+  Log markdown
+    flags:   '' → 'A'
+  Torch Module
+    flags:   '' → 'A'
+  MED Log
+    flags:   '' → 'A'
+  @Cigna
+    flags:   '' → 'A'
+  COM Msg
+    flags:   '' → 'A'
+  CV Alg
+    flags:   '' → 'A'
+  LANG
+    flags:   '' → 'A'
+  2022-02 Yearbook
+    flags:   '' → 'A'
+  Writing
+    flags:   '' → 'A'
+  2023-10-01 Special Olympics
+    flags:   '' → 'A'
+  sv app
+    flags:   '' → 'A'
+  DL Topic
+    flags:   '' → 'A'
+  Biking
+    flags:   '' → 'A'
+  @Google
+    flags:   '' → 'A'
+  Spot Cmdr
+    flags:   '' → 'A'
+  DocTorch
+    flags:   '' → 'A'
+  FIN Tracking
+    flags:   '' → 'A'
+  RR Systems
+    flags:   '' → 'A'
+  git
+    flags:   '' → 'A'
+  2025 Make Miss
+    flags:   '' → 'A'
+  WP
+    flags:   '' → 'A'
+  2017 Legal Ob Labs
+    flags:   '' → 'A'
+  @Mike Seibert
+    flags:   '' → 'A'
+  2017-09 Elastic Block Chain
+    flags:   '' → 'A'
+  web
+    flags:   '' → 'A'
+  INTERVIEW
+    flags:   '' → 'A'
+  slack
+    flags:   '' → 'A'
+  QQ
+    flags:   '' → 'A'
+  EOCP
+    flags:   '' → 'A'
+  RES Examples
+    flags:   '' → 'A'
+  Friday
+    flags:   '' → 'A'
+  Recipe
+    flags:   '' → 'A'
+  Ask Safety markdown
+    flags:   '' → 'A'
+  meditation
+    flags:   '' → 'A'
+  Food Research
+    flags:   '' → 'A'
+  MED Exercise
+    flags:   '' → 'A'
+  TXT
+    flags:   '' → 'A'
+  Book
+    flags:   '' → 'A'
+  _outputs
+    flags:   '' → 'A'
+  GHOST-other
+    flags:   '' → 'A'
+  EOCA
+    flags:   '' → 'A'
+  view
+    flags:   '' → 'A'
+  FIN Budget
+    flags:   '' → 'A'
+  @Amazon
+    flags:   '' → 'A'
+  Test
+    flags:   '' → 'A'
+  ABIO Results
+    flags:   '' → 'A'
+  2007-01 DARPA GUST
+    flags:   '' → 'A'
+  2023 Minutes Stat Calculations and Annotations
+    flags:   '' → 'A'
+  SNIP
+    flags:   '' → 'A'
+  Closet
+    flags:   '' → 'A'
+  2020-10 MedAR
+    flags:   '' → 'A'
+  RR Stat
+    flags:   '' → 'A'
+  2025 Middle Path Risk
+    flags:   '' → 'A'
+  Measuring Intelligence
+    flags:   '' → 'A'
+  TXT Log
+    flags:   '' → 'A'
+  My Stuff
+    flags:   '' → 'A'
+  alg2
+    flags:   '' → 'A'
+  RR Med
+    flags:   '' → 'A'
+  ww
+    flags:   '' → 'A'
+  agi safety
+    flags:   '' → 'A'
+  POL
+    flags:   '' → 'A'
+  phone
+    flags:   '' → 'A'
+  groq
+    flags:   '' → 'A'
+  app
+    flags:   '' → 'A'
+  2023 Team Hiring
+    flags:   '' → 'A'
+  q2
+    flags:   '' → 'A'
+  2023 Backend Architect Test
+    flags:   '' → 'A'
+  At
+    flags:   '' → 'A'
+  Race
+    flags:   '' → 'A'
+  kmr markdown
+    flags:   '' → 'A'
+  work
+    flags:   '' → 'A'
+  2020-07 Autonomy
+    flags:   '' → 'A'
+  fireball
+    flags:   'U' → 'UA'
+  Myfo
+    flags:   '' → 'A'
+  Attach
+    flags:   '' → 'A'
+  Proj Notion
+    flags:   'U' → 'UA'
+  Eli
+    flags:   '' → 'A'
+  2020-07 Spot Pricing
+    flags:   '' → 'A'
+  House
+    flags:   '' → 'A'
+  Obsidian Double Click
+    flags:   '' → 'A'
+  OLD Weekly
+    flags:   '' → 'A'
+  ArmChair
+    flags:   '' → 'A'
+  MY
+    flags:   '' → 'A'
+  ToBuy
+    flags:   '' → 'A'
+  Google
+    flags:   '' → 'A'
+  Arch
+    flags:   '' → 'A'
+  EOCT
+    flags:   '' → 'A'
+  Service
+    flags:   '' → 'A'
+  2025-06 web
+    flags:   '' → 'A'
+  SV Wings
+    flags:   '' → 'A'
+  Bee Keeping
+    flags:   '' → 'A'
+  Measure
+    flags:   '' → 'A'
+  Taxes
+    flags:   '' → 'A'
+  Career
+    flags:   '' → 'A'
+  2018-00 UF
+    flags:   '' → 'A'
+  Courses
+    flags:   '' → 'A'
+  DL Alg
+    flags:   '' → 'A'
+  Idea
+    flags:   '' → 'A'
+  2025-06 Doctor Search
+    flags:   '' → 'A'
+  2007-12 DARPA Go-Play
+    flags:   '' → 'A'
+  Data
+    flags:   '' → 'A'
+  MOV
+    flags:   '' → 'A'
+  SVT
+    flags:   '' → 'A'
+  2021-04 FindDayCare
+    flags:   '' → 'A'
+  2025-06 Sports Tracking Papers
+    flags:   '' → 'A'
+  2023-07 Task Rabbit
+    flags:   '' → 'A'
+  2007-02 DARPA DHO
+    flags:   '' → 'A'
+  CVP
+    flags:   '' → 'A'
+  pprj
+    flags:   '' → 'A'
+  Doc
+    flags:   '' → 'A'
+  2009-10 Contacts Caddy
+    flags:   '' → 'A'
+  Bio
+    flags:   '' → 'A'
+  Mgt
+    flags:   '' → 'A'
+  SV Strat
+    flags:   '' → 'A'
+  AF DOCS
+    flags:   '' → 'A'
+  LI
+    flags:   '' → 'A'
+  gitproj
+    flags:   '' → 'A'
+  2011-03 Unstoppable Consensus
+    flags:   '' → 'A'
+  mddb-module
+    flags:   '' → 'A'
+  DocTmux
+    flags:   '' → 'A'
+  DocSklearn
+    flags:   '' → 'A'
+  RealEstate
+    flags:   '' → 'A'
+  prj
+    flags:   '' → 'A'
+  2023-07 Director of SW
+    flags:   '' → 'A'
+  Nicholas Consultants Deferred Comp Plan
+    flags:   '' → 'A'
+  2006-00 Nanofabrication
+    flags:   '' → 'A'
+  Note markdown
+    flags:   '' → 'A'
+  2014 Rule Trainer
+    flags:   '' → 'A'
+  Dev Notes
+    flags:   '' → 'A'
+  2023-07 Backend Architect
+    flags:   '' → 'A'
+  2000-00 Lean Canvas
+    flags:   '' → 'A'
+  scr
+    flags:   '' → 'A'
+  2023 SV Roles and Responsibilities
+    flags:   '' → 'A'
+  INV
+    flags:   '' → 'A'
+  @Eli Oblinger
+    flags:   '' → 'A'
+  RES
+    flags:   '' → 'A'
+  DLF
+    flags:   '' → 'A'
+  @BallerTV
+    flags:   '' → 'A'
+  Habit
+    flags:   '' → 'A'
+  COM
+    flags:   '' → 'A'
+  @Jason Syversen
+    flags:   '' → 'A'
+  Mission Statement
+    flags:   '' → 'A'
+  @Merrill
+    flags:   '' → 'A'
+  get
+    flags:   '' → 'A'
+  DocEmacs
+    flags:   '' → 'A'
+  @Epsilon Oblinger
+    flags:   '' → 'A'
+  @Dan Fine
+    flags:   '' → 'A'
+  2009-03 Team Saver
+    flags:   '' → 'A'
+  Productivity
+    flags:   '' → 'A'
+  @Analytics Fire
+    flags:   '' → 'A'
+  2021-06-00 Brain3
+    flags:   '' → 'A'
+  2023 CV Engineer Test
+    flags:   '' → 'A'
+  2023 Tournament Flow
+    flags:   '' → 'A'
+  AF Acquisition
+    flags:   '' → 'A'
+  RES Versions
+    flags:   '' → 'A'
+  Hire Test
+    flags:   '' → 'A'
+  Diary
+    flags:   '' → 'A'
+  Circle
+    flags:   '' → 'A'
+  EOC
+    flags:   '' → 'A'
+  Mission markdown
+    flags:   '' → 'A'
+  House Crime
+    flags:   '' → 'A'
+  2007-08 Patent Value
+    flags:   '' → 'A'
+  2023 Legal SV
+    flags:   '' → 'A'
+  Read
+    flags:   '' → 'A'
+  @Seneca
+    flags:   '' → 'A'
+  SV Ops
+    flags:   '' → 'A'
+  Highbrow markdown
+    flags:   '' → 'A'
+  Interviewing Book
+    flags:   '' → 'A'
+  pp
+    flags:   '' → 'A'
+  RR Articles
+    flags:   '' → 'A'
+  FIN Retire markdown
+    flags:   '' → 'A'
+  2024 Architect Test
+    flags:   '' → 'A'
+  2009-00 DARPA Energy
+    flags:   '' → 'A'
+  @Maxim Dorogov
+    flags:   '' → 'A'
+  AI Job Search
+    flags:   '' → 'A'
+  Ask
+    flags:   '' → 'A'
+  2024-09-03 Staffing Stuff
+    flags:   '' → 'A'
+  Life
+    flags:   '' → 'A'
+  2020-12 SmartScale
+    flags:   '' → 'A'
+  cmd
+    flags:   '' → 'A'
+  SV People
+    flags:   '' → 'A'
+  x_ha
+    flags:   '' → 'A'
+  RR MGR
+    flags:   '' → 'A'
+  SEEK Apply
+    flags:   '' → 'A'
+  Torch Libraries
+    flags:   '' → 'A'
+  texter
+    flags:   '' → 'A'
+  2023 SV Roadmap
+    flags:   '' → 'A'
+  AI Areas
+    flags:   '' → 'A'
+  2023 Four Pillars
+    flags:   '' → 'A'
+  2025 AI Coding Brainstorm
+    flags:   '' → 'A'
+  2025 NLP at SV
+    flags:   '' → 'A'
+  2020-08 Race Pitch
+    flags:   '' → 'A'
+  PenFed
+    flags:   '' → 'A'
+  aij
+    flags:   '' → 'A'
+  2025-05-14 My 60th Birthday
+    flags:   '' → 'A'
+  2022-05 Enxt
+    flags:   '' → 'A'
+  OLDER Remote Presence
+    flags:   '' → 'A'
+  DocApplescript
+    flags:   '' → 'A'
+  Idea Social
+    flags:   '' → 'A'
+  2013-01 Better Voting
+    flags:   '' → 'A'
+  2025 PlayOn Highlights Product
+    flags:   '' → 'A'
+  UF-OLD
+    flags:   '' → 'A'
+  @LinkedIn markdown
+    flags:   '' → 'A'
+  SV Archive
+    flags:   '' → 'A'
+  Receipts
+    flags:   '' → 'A'
+  Misc
+    flags:   '' → 'A'
+  NJ16
+    flags:   '' → 'A'
+  time
+    flags:   '' → 'A'
+  2019 ML Test - Billionaire Billy Big Boots
+    flags:   '' → 'A'
+  2016-00 TreeSheet
+    flags:   '' → 'A'
+  prj markdown
+    flags:   '' → 'A'
+  Org
+    flags:   '' → 'A'
+  family
+    flags:   '' → 'A'
+  Dir
+    flags:   'U' → 'UA'
+  2025 TeamSaver
+    flags:   '' → 'A'
+  2022-05 Virtual Tour Guide
+    flags:   '' → 'A'
+  Stat Alg
+    flags:   '' → 'A'
+  Palestinians
+    flags:   '' → 'A'
+  RR Blog
+    flags:   '' → 'A'
+  Eli Interactions
+    flags:   '' → 'A'
+  2007-00-00 Brain DARPA Program
+    flags:   '' → 'A'
+  Buy
+    flags:   '' → 'A'
+  Pln
+    flags:   '' → 'A'
+  @Anthropic
+    flags:   '' → 'A'
+  Alibaba
+    flags:   '' → 'A'
+  FIN Log
+    flags:   '' → 'A'
+  Archive
+    flags:   '' → 'A'
+  UfApps
+    flags:   '' → 'A'
+  AF_ENG_HIRING_TESTS
+    flags:   '' → 'A'
+  2024-04-01 Resume Rewrite
+    flags:   '' → 'A'
+  2024-08-25 Softbank SV Analysis
+    flags:   '' → 'A'
+  ABio
+    flags:   '' → 'A'
+  DL Visualization
+    flags:   '' → 'A'
+  2008-11 Smart Grid
+    flags:   '' → 'A'
+  EduCorp markdown
+    flags:   '' → 'A'
+  2020-06 OpenBricks
+    flags:   '' → 'A'
+  Seek Search
+    flags:   '' → 'A'
+  DocPython
+    flags:   '' → 'A'
+  ML Alg
+    flags:   '' → 'A'
+  RR ML
+    flags:   '' → 'A'
+  NJ Todo
+    flags:   '' → 'A'
+  AlienBiology
+    flags:   '' → 'A'
+  NJ Yore
+    flags:   'U' → 'UA'
+  Presentations
+    flags:   '' → 'A'
+  2011-09 Word_War
+    flags:   '' → 'A'
+  lex-lexlang
+    flags:   '' → 'A'
+  pl
+    flags:   '' → 'A'
+  2018-00 Alloy
+    flags:   '' → 'A'
+  Web25
+    flags:   '' → 'A'
+  SV Individuals
+    flags:   '' → 'A'
+  Glycemic Index
+    flags:   '' → 'A'
+  ob
+    flags:   '' → 'A'
+  2007-01 Forum
+    flags:   '' → 'A'
+  Eli Strategy
+    flags:   '' → 'A'
+  SCRatch markdown
+    flags:   '' → 'A'
+  mate
+    flags:   '' → 'A'
+  @Vanguard
+    flags:   '' → 'A'
+  2022-10-17 SV90
+    flags:   '' → 'A'
+  2024-08 Backend Architect
+    flags:   '' → 'A'
+  CV markdown
+    flags:   '' → 'A'
+  Jnl
+    flags:   '' → 'A'
+  FIN Topics
+    flags:   '' → 'A'
+  nr
+    flags:   '' → 'A'
+  2006-12 GHOST
+    flags:   '' → 'A'
+  2025 Budget
+    flags:   '' → 'A'
+  ctrl code
+    flags:   '' → 'A'
+  MGR Docs
+    flags:   '' → 'A'
+  facebook
+    flags:   '' → 'A'
+  DocR
+    flags:   '' → 'A'
+  Returns
+    flags:   '' → 'A'
+  OLD-Markdown
+    flags:   '' → 'A'
+  2020-12 MKT
+    flags:   '' → 'A'
+  EOCB
+    flags:   '' → 'A'
+  MGR
+    flags:   '' → 'A'
+  Brain
+    flags:   '' → 'A'
+  STARTUPS
+    flags:   '' → 'A'
+  SV
+    flags:   '' → 'A'
+  ALL
+    flags:   'U' → 'UA'
+  MED Doctors
+    flags:   '' → 'A'
+  2020-09 CtrlSaaS
+    flags:   '' → 'A'
+  NJ Thesis
+    flags:   '' → 'A'
+  OLD-CONSTRUCTS
+    flags:   '' → 'A'
+  2025 AI Sys Safety
+    flags:   '' → 'A'
+  RR Leet
+    flags:   '' → 'A'
+  Activities
+    flags:   '' → 'A'
+  2009-05-00 Consciousness
+    flags:   '' → 'A'
+  RR AI
+    flags:   '' → 'A'
+  SF
+    flags:   '' → 'A'
+  binproj
+    flags:   '' → 'A'
+  RR PAPERS
+    flags:   '' → 'A'
+  2024-01 Retirement Planning
+    flags:   '' → 'A'
+  ai
+    flags:   '' → 'A'
+  Meet
+    flags:   '' → 'A'
+  SV Product
+    flags:   '' → 'A'
+  2023 GPT Report
+    flags:   '' → 'A'
+  2025 playHQ RFP
+    flags:   '' → 'A'
+  ufPublish
+    flags:   '' → 'A'
+  Hire Post
+    flags:   '' → 'A'
+  @Facet
+    flags:   '' → 'A'
+  Set
+    flags:   '' → 'A'
+  2010-10 Gov Cloud
+    flags:   '' → 'A'
+  SYS
+    flags:   '' → 'A'
+  noise
+    flags:   '' → 'A'
+  tracker
+    flags:   '' → 'A'
+  Bought
+    flags:   '' → 'A'
+  KM
+    flags:   '' → 'A'
+  ELI Log
+    flags:   '' → 'A'
+  Meta markdown
+    flags:   '' → 'A'
+  FIN Analysis
+    flags:   '' → 'A'
+  VC ORG
+    flags:   '' → 'A'
+  Local
+    flags:   '' → 'A'
+  RR DL
+    flags:   '' → 'A'
+  T
+    flags:   '' → 'A'
+  Weekly
+    flags:   '' → 'A'
+  trip
+    flags:   '' → 'A'
+  @Hackers
+    flags:   '' → 'A'
+  2022-03 BeFAANG
+    flags:   '' → 'A'
+  DocObsidian
+    flags:   '' → 'A'
+  2009-00 User Controlled Identifier
+    flags:   '' → 'A'
+  RR
+    flags:   '' → 'A'
+  2007-00 DARPA seeds
+    flags:   '' → 'A'
+  1Pass
+    flags:   '' → 'A'
+  MAC
+    flags:   '' → 'A'
+  Lrn
+    flags:   '' → 'A'
+  Humor
+    flags:   '' → 'A'
+  2008-10 New Kind Of Warrant
+    flags:   '' → 'A'
+  NJ22
+    flags:   '' → 'A'
+  Forum
+    flags:   '' → 'A'
+  Parents
+    flags:   '' → 'A'
+  Amazon
+    flags:   '' → 'A'
+  OpenAI
+    flags:   '' → 'A'
+  DL Activation
+    flags:   '' → 'A'
+  EOC Log
+    flags:   '' → 'A'
+  news
+    flags:   '' → 'A'
+  old
+    flags:   '' → 'A'
+  docs
+    flags:   'U' → 'UA'
+  2017 PM Simulation - BP Sox
+    flags:   '' → 'A'
+  rd
+    flags:   '' → 'A'
+  GCP
+    flags:   '' → 'A'
+  2015-07 Home Robot
+    flags:   '' → 'A'
+  QUICKADD
+    flags:   '' → 'A'
+  texter markdown
+    flags:   'U' → 'UA'
+  DocJavascript
+    flags:   '' → 'A'
+  2009-03 State Edu Testing
+    flags:   '' → 'A'
+  2015-00-00 The Sentient Weapon
+    flags:   '' → 'A'
+  @Big City Montessori School
+    flags:   '' → 'A'
+  @Alta Vista
+    flags:   '' → 'A'
+  Hook System
+    flags:   '' → 'A'
+  SP
+    flags:   '' → 'A'
+  askAI
+    flags:   '' → 'A'
+  okr
+    flags:   '' → 'A'
+  Hook Anchor
+    flags:   'U, I' → 'U, IA'
+  AI Safety
+    flags:   '' → 'A'
+
+🔄 Step 5: Performing second rescan...
+🚀 HookAnchor Rescan - Verbose Mode
+====================================
+📋 Config loaded - checking file_roots...
+✅ File roots found: ["~/ob/kmr", "/Applications"]
+
+📂 Step 1: Loading last known state from cache...
+   ✅ Loaded 6361 commands from cache
+
+✏️  Step 2: Merging manual edits from commands.txt...
+
+📝 Loading manual edits from commands.txt...
+   ✏️  Updated manual edit: 'cover'
+   ✏️  Updated manual edit: 'Hook Anchor'
+   ✏️  Updated manual edit: 'ec'
+   ✅ Applied 3 manual edit(s)
+   ✅ Merged 3 edits from commands.txt
+   📊 Total commands after merge: 6361
+
+🔍 Step 3: Scanning filesystem (discovering new files, removing stale entries)...
+
+🔍 Starting filesystem scan...
+   Scanning roots: ["~/ob/kmr", "/Applications"]
+   Scan complete: 8110 commands total
+   Added 1749 new commands
+
+🎉 File scan complete! (Inference will run after loading manual edits)
+   ✅ Scan complete - now tracking 8110 total commands
+
+📝 Step 4: Detecting file modifications...
+
+🔍 Scanning for file modifications...
+   📝 File size changed: 'legacy_output_3' (19911 -> 20128 bytes)
+   📝 File size changed: 'legacy_output_3' (19911 -> 20196 bytes)
+   ✅ Detected 2 file modification(s)
+   ✅ Processed modifications (2 files changed)
+
+🔄 Step 5: Running inference and saving...
+   ✅ Inference complete and saved 8110 commands
+
+📊 Step 8: Final Summary:
+   Total commands: 8144
+
+   Commands by action type:
+     : 35
+     1pass: 303
+     action: 2
+     alias: 21
+     anchor: 19
+     app: 112
+     brave: 1
+     chrome: 37
+     clear_log: 1
+     console: 36
+     contact: 2
+     doc: 4644
+     markdown: 2780
+     notion: 57
+     obs_url: 3
+     safari: 1
+     slack: 2
+     test: 2
+     text: 3
+     url: 15
+     work: 68
+
+✅ Rescan complete!
+✅ Second rescan complete
+
+🔬 Step 6: Second comparison (saved vs. rescanned)...
+
+=== POST-RESCAN COMPARISON ===
+
+📊 Summary:
+  Unchanged: 4809
+  Changed:   53
+  Removed:   1499
+  Added:     3282
+
+🔄 Changed Commands (53):
+  020 NodeBB Design
+    patch:   'forum' → 'Forum'
+  003 UX Design pdf
+    patch:   'forum' → 'Forum'
+  Hook Anchor
+    flags:   'U, IA' → 'UIA'
+  010 Data Ontology pdf
+    patch:   'forum' → 'Forum'
+  Arch
+    patch:   'arch' → 'orphans'
+  004 UX Actions
+    patch:   'forum' → 'Forum'
+  cover
+    flags:   'W,U' → 'WU'
+  MOV ReelGood Page
+    patch:   'mov' → 'MOV'
+  TRIP
+    flags:   '' → 'A'
+  011 NodeBB DB Tables DataTypes and APIs
+    patch:   'forum' → 'Forum'
+  021 Detail Design
+    patch:   'forum' → 'Forum'
+  MOV Streaming Page
+    patch:   'mov' → 'MOV'
+  019 NodeBB Integration markdown
+    patch:   'forum' → 'Forum'
+  Output Format
+    patch:   'forum' → 'Forum'
+  PL
+    flags:   'U' → 'UA'
+  002 User Stories pdf
+    patch:   'forum' → 'Forum'
+  old
+    flags:   '' → 'A'
+  groq
+    patch:   'groq' → 'orphans'
+  ~$Forum
+    patch:   'forum' → 'Forum'
+  SP grab
+    patch:   'sp' → 'SP'
+  LI Me
+    patch:   'li' → 'LI'
+  010 Data Ontology
+    patch:   'forum' → 'Forum'
+  Hook Anchor System
+    patch:   'km' → 'KM'
+  All Hands
+    patch:   'sv log' → 'SV Log'
+  hack
+    flags:   '' → 'A'
+  002 User Stories
+    patch:   'forum' → 'Forum'
+  004 UX Actions pdf
+    patch:   'forum' → 'Forum'
+  SP build
+    patch:   'sp' → 'SP'
+  005 Forum Mechanics
+    patch:   'forum' → 'Forum'
+  ec
+    flags:   'C,U' → 'CU'
+  019 NodeBB Integration
+    patch:   'forum' → 'Forum'
+  MOV Rotten Tomatos Page
+    patch:   'mov' → 'MOV'
+  web
+    flags:   '' → 'A'
+  SP add
+    patch:   'sp' → 'SP'
+  POLIS
+    patch:   'forum' → 'Forum'
+  SP delete
+    patch:   'sp' → 'SP'
+  030 LATER
+    patch:   'forum' → 'Forum'
+  Forum-Old
+    patch:   'forum' → 'Forum'
+  005 Forum Mechanics markdown
+    patch:   'forum' → 'Forum'
+  001 README
+    patch:   'forum' → 'Forum'
+  013 APIs and Key Methods
+    patch:   'forum' → 'Forum'
+  docs
+    patch:   'docs' → 'orphans'
+  Amazon
+    patch:   'amazon' → 'orphans'
+  MOV Prime Video
+    patch:   'mov' → 'MOV'
+  012 Note Types
+    patch:   'forum' → 'Forum'
+  Phone
+    flags:   '' → 'A'
+  SP edit
+    patch:   'sp' → 'SP'
+  001 README markdown
+    patch:   'forum' → 'Forum'
+  012 Proprietary Data Structures and Event Store
+    patch:   'forum' → 'Forum'
+  KM script
+    patch:   'km' → 'KM'
+  LI School Search
+    patch:   'li' → 'LI'
+  003 UX Design
+    patch:   'forum' → 'Forum'
+  040 V2 UX
+    patch:   'forum' → 'Forum'
+
+➖ Removed Commands (1499):
+  TEMPLATE_CREATION_PLAN (Dev Notes:markdown)
+  G91 (Notion Root:folder)
+  007 Practical 3D Asset Generation： A Step-by-Step Guide (Web25:doc)
+  slack (orphans:folder)
+  HookAnchor_Action_Types (x_ha:markdown)
+  uniform7_oblits html (lex-lexlang:doc)
+  DL Visualization (DLF:folder)
+  Instagram Lead generation (Notion Root:folder)
+  Create a content calendar together with the Coach Portal team SportsVisio Basketball and SportsVisio Volleyball (Notion Root:folder)
+  uniform5_implementation html (lex-lexlang:doc)
+  Apply for Fiba Approved Software (Notion Root:folder)
+  2025-09-03 (Notion Root:folder)
+  Claude App (app:open_app)
+  2016-03 (PenFed:doc)
+  Torch Libraries (DocTorch:folder)
+  Anki App (app:open_app)
+  uniform3_society (2018-00 UF:doc)
+  Set up campaigns with the goal of leading to direct messages DMs (Notion Root:folder)
+  RR Web (RR:folder)
+  VSL AAU Parent Audience (Notion Root:folder)
+  ... and 1479 more
+
+➕ Added Commands (3282):
+  @Genentech (At:markdown)
+  commands_20251020_094139 (kmr:doc)
+  retirement-withdrawals (At:doc)
+  execution (UF-OLD:doc)
+  commands_20251018_222506 (binproj:doc)
+  commands_20251020_160214 (kmr:doc)
+  commands_20251024_133002 (binproj:doc)
+  @Instacart (At:markdown)
+  @Citizen VC (At:markdown)
+  commands_20251018_103837 (binproj:doc)
+  commands_20251020_080312 (binproj:doc)
+  commands_20251026_103941 (kmr:doc)
+  chinese_cht_dict (prj markdown:doc)
+  @Humanoid (At:markdown)
+  @Oracle (At:markdown)
+  Idea Social (Idea:markdown)
+  commands_20251025_225153 (binproj:doc)
+  texter (orphans:markdown)
+  commands_20251024_122854 (kmr:doc)
+  @Netflix 1 (At:markdown)
+  ... and 3262 more
+
+✅ Legacy load and compare complete!

@@ -616,6 +616,69 @@ fn has_changed(old: &Command, new: &Command) -> bool {
     old.file_size != new.file_size
 }
 
+/// Update or create a command in the command list
+/// Returns true if command was added or updated, false if unchanged
+fn update_or_create_command(
+    new_cmd: Command,
+    commands: &mut Vec<Command>,
+    config: &Config,
+) -> bool {
+    // Get absolute file path for comparison
+    let file_path = match new_cmd.get_absolute_file_path(config) {
+        Some(path) => path.to_string_lossy().to_string(),
+        None => return false, // Skip if we can't get path
+    };
+
+    // Find existing command by file path
+    let existing_idx = commands.iter().position(|cmd| {
+        if let Some(existing_path) = cmd.get_absolute_file_path(config) {
+            existing_path.to_string_lossy() == file_path
+        } else {
+            false
+        }
+    });
+
+    match existing_idx {
+        Some(idx) => {
+            let existing = &commands[idx];
+
+            // Check if user-edited - preserve if so
+            if existing.flags.contains(FLAG_USER_EDITED) {
+                crate::utils::detailed_log("UPDATE_CMD", &format!(
+                    "Unchanged: '{}' - user-edited, preserving",
+                    existing.command
+                ));
+                return false;
+            }
+
+            // Check for changes
+            if has_changed(existing, &new_cmd) {
+                crate::utils::log(&format!(
+                    "Updated: '{}' - file modified",
+                    new_cmd.command
+                ));
+                commands[idx] = new_cmd;
+                return true;
+            } else {
+                crate::utils::detailed_log("UPDATE_CMD", &format!(
+                    "Unchanged: '{}' - no changes detected",
+                    existing.command
+                ));
+                return false;
+            }
+        }
+        None => {
+            // New command
+            crate::utils::log(&format!(
+                "Created: '{}' - new file discovered at {}",
+                new_cmd.command, file_path
+            ));
+            commands.push(new_cmd);
+            return true;
+        }
+    }
+}
+
 /// Phase 1: Discover all files in scan roots and build HashMap
 /// Returns HashMap keyed by absolute file path
 fn discover_files(file_roots: &[String], config: &Config) -> std::collections::HashMap<String, Command> {
@@ -835,8 +898,46 @@ fn scan_files_merge_based(
     });
 
     // Phase 3: Add remaining discovered files (new files not in existing commands)
-    crate::utils::detailed_log("SCANNER", "Phase 3: Adding new files...");
+    // IMPORTANT: Process anchor files FIRST so they're in folder_map for child files
+    crate::utils::detailed_log("SCANNER", "Phase 3a: Adding new anchor files first...");
+
+    // Separate anchors and non-anchors
+    let mut anchor_files = Vec::new();
+    let mut regular_files = Vec::new();
+
     for (file_path, cmd) in discovered_files {
+        let path = Path::new(&file_path);
+        if crate::utils::is_anchor_file(path) {
+            anchor_files.push((file_path, cmd));
+        } else {
+            regular_files.push((file_path, cmd));
+        }
+    }
+
+    // Add anchors first - we'll run full inference after all anchors are added
+    for (file_path, cmd) in anchor_files {
+        stats.created += 1;
+        crate::utils::log(&format!(
+            "Created: '{}' (anchor) - new file discovered at {}",
+            cmd.command, file_path
+        ));
+        commands.push(cmd);
+    }
+
+    // Run inference now that all anchors are in the list
+    // This ensures folder_map includes the new anchors for regular file inference
+    crate::utils::detailed_log("SCANNER", "Running inference on anchors...");
+    if let Err(e) = crate::core::set_commands(commands.clone()) {
+        crate::utils::log_error(&format!("Failed to run inference on anchors: {}", e));
+    }
+
+    // Reload commands with inferred patches
+    let (sys_data, _) = crate::core::get_sys_data();
+    commands = sys_data.commands;
+
+    // Now add regular files - anchors are in folder_map
+    crate::utils::detailed_log("SCANNER", "Phase 3b: Adding new regular files...");
+    for (file_path, cmd) in regular_files {
         stats.created += 1;
         crate::utils::log(&format!(
             "Created: '{}' - new file discovered at {}",

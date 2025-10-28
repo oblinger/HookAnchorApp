@@ -931,7 +931,10 @@ pub fn grab(config: &Config) -> Result<GrabResult, String> {
     } else {
         crate::utils::detailed_log("GRABBER", "No grabber rules configured - using app fallback");
     }
-    
+
+    // TEMPORARILY DISABLED: fallback app command creation
+    // We want to test the NoRuleMatched template dialog instead
+    /*
     // Create a fallback app command if we have an app path
     if !context.app_path.is_empty() {
         let mut command = Command {
@@ -949,11 +952,12 @@ pub fn grab(config: &Config) -> Result<GrabResult, String> {
         if let Some(default_patch) = get_default_patch_for_action("app") {
             command.patch = default_patch.to_string();
         }
-        
+
         crate::utils::detailed_log("GRABBER", &format!("Created fallback app command with path: '{}'", context.app_path));
         return Ok(GrabResult::RuleMatched("App Fallback".to_string(), command));
     }
-    
+    */
+
     Ok(GrabResult::NoRuleMatched(context))
 }
 

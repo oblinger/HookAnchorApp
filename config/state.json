@@ -1,7 +1,7 @@
 {
   "window_position": [
-    698.0,
-    206.0
+    632.0,
+    -1072.0
   ],
   "history_viewer_state": {
     "position": [
@@ -10,22 +10,23 @@
     ],
     "window_size": [
       1000.0,
-      840.0
+      1036.0
     ],
-    "patch_filter": "",
+    "patch_filter": "2025-06 web",
     "name_filter": "",
     "min_edit_size": 500,
     "selected_action_types": [],
-    "sidebar_width": 170.0
+    "sidebar_width": 106.875,
+    "show_current_commands": false
   },
-  "build_time": 1761539729,
+  "build_time": 1761627227,
   "last_scan_time": null,
   "last_scan_checksum": null,
-  "last_executed_command": "Test",
-  "server_pid": 16234,
+  "last_executed_command": "SimpleNote 1Pass",
+  "server_pid": 87820,
   "notion_last_scan": null,
-  "anchor_name": "Test",
-  "anchor_timestamp": 1761531722,
+  "anchor_name": "kmr",
+  "anchor_timestamp": 1761626443,
   "anchor_folder": null,
   "show_files": true
 }
