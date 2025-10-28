@@ -25,11 +25,19 @@ use super::commands::FLAG_USER_EDITED;
 /// 4. Year-based prefix matching
 /// 5. Similarity-based fuzzy matching (lowest priority)
 pub fn infer_patch(command: &Command, patches: &HashMap<String, Patch>) -> Option<String> {
-    // Skip system-generated virtual anchor commands (empty action) - they should always keep their "orphans" patch
-    // But DO allow inference for real file/folder-based anchors that happen to be in orphans patch
-    if command.patch == "orphans" && command.is_anchor() && command.action.is_empty() && !command.flags.contains(FLAG_USER_EDITED) {
+    // NEVER override user-edited commands - they've explicitly set their patch
+    if command.flags.contains(FLAG_USER_EDITED) {
         crate::utils::detailed_log("PATCH_INFERENCE", &format!(
-            "Command '{}' -> NO PATCH (virtual anchor with orphans patch, not user-edited)",
+            "Command '{}' -> NO INFERENCE (user-edited, preserving patch '{}')",
+            command.command, command.patch
+        ));
+        return None;
+    }
+
+    // Skip system-generated virtual anchor commands (empty action) - they should always keep their "orphans" patch
+    if command.patch == "orphans" && command.is_anchor() && command.action.is_empty() {
+        crate::utils::detailed_log("PATCH_INFERENCE", &format!(
+            "Command '{}' -> NO PATCH (virtual anchor with orphans patch)",
             command.command
         ));
         return None;

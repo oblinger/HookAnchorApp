@@ -1,7 +1,7 @@
 {
   "window_position": [
-    632.0,
-    -1072.0
+    648.0,
+    -1136.0
   ],
   "history_viewer_state": {
     "position": [
@@ -19,11 +19,11 @@
     "sidebar_width": 106.875,
     "show_current_commands": false
   },
-  "build_time": 1761627227,
+  "build_time": 1761627796,
   "last_scan_time": null,
   "last_scan_checksum": null,
-  "last_executed_command": "SimpleNote 1Pass",
-  "server_pid": 87820,
+  "last_executed_command": "WEF",
+  "server_pid": 91077,
   "notion_last_scan": null,
   "anchor_name": "kmr",
   "anchor_timestamp": 1761626443,

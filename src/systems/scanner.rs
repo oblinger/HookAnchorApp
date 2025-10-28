@@ -914,7 +914,7 @@ fn scan_files_merge_based(
         }
     }
 
-    // Add anchors first - we'll run full inference after all anchors are added
+    // Add anchors first
     for (file_path, cmd) in anchor_files {
         stats.created += 1;
         crate::utils::log(&format!(
@@ -924,18 +924,7 @@ fn scan_files_merge_based(
         commands.push(cmd);
     }
 
-    // Run inference now that all anchors are in the list
-    // This ensures folder_map includes the new anchors for regular file inference
-    crate::utils::detailed_log("SCANNER", "Running inference on anchors...");
-    if let Err(e) = crate::core::set_commands(commands.clone()) {
-        crate::utils::log_error(&format!("Failed to run inference on anchors: {}", e));
-    }
-
-    // Reload commands with inferred patches
-    let (sys_data, _) = crate::core::get_sys_data();
-    commands = sys_data.commands;
-
-    // Now add regular files - anchors are in folder_map
+    // Now add regular files
     crate::utils::detailed_log("SCANNER", "Phase 3b: Adding new regular files...");
     for (file_path, cmd) in regular_files {
         stats.created += 1;
@@ -945,6 +934,20 @@ fn scan_files_merge_based(
         ));
         commands.push(cmd);
     }
+
+    // IMPORTANT: Run inference on ALL commands (not just new ones)
+    // This updates patches for:
+    // - New anchor files (so their children can find them in folder_map)
+    // - Existing anchors that had wrong patches
+    // - Regular files whose parent anchors have now been added/fixed
+    crate::utils::detailed_log("SCANNER", "Running inference on all commands after scan...");
+    if let Err(e) = crate::core::set_commands(commands.clone()) {
+        crate::utils::log_error(&format!("Failed to run inference: {}", e));
+    }
+
+    // Reload commands with updated patches
+    let (sys_data, _) = crate::core::get_sys_data();
+    commands = sys_data.commands;
 
     // Log summary
     crate::utils::log(&format!(
