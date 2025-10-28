@@ -628,6 +628,22 @@ impl HistoryViewer {
         arg.to_string()
     }
 
+    /// Format number with commas for thousands separator
+    fn format_number_with_commas(n: usize) -> String {
+        let s = n.to_string();
+        let mut result = String::new();
+        let chars: Vec<char> = s.chars().collect();
+
+        for (i, c) in chars.iter().enumerate() {
+            if i > 0 && (chars.len() - i) % 3 == 0 {
+                result.push(',');
+            }
+            result.push(*c);
+        }
+
+        result
+    }
+
     /// Calculate the display type for an entry
     /// If entry has a file_path, use the file extension with "." prefix
     /// Otherwise, use the action type (no prefix)
@@ -801,7 +817,7 @@ impl eframe::App for HistoryViewer {
 
                 // Tree in the middle with vertical scroll
                 let available_height = ui.available_height();
-                let entry_count_height = 35.0; // Reserve space for separator + "Showing X entries" + padding
+                let entry_count_height = 35.0; // Reserve space for separator + entry count label + padding
 
                 // Set ScrollArea to use full sidebar width
                 egui::ScrollArea::vertical()
@@ -846,7 +862,7 @@ impl eframe::App for HistoryViewer {
                 ui.add_space(3.0);
                 ui.separator();
                 ui.add_space(2.0);
-                ui.label(format!("Showing {} entries", self.filtered_entries.len()));
+                ui.label(format!("{} entries", Self::format_number_with_commas(self.filtered_entries.len())));
             });
 
         // Main content panel on the right
