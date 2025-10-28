@@ -223,8 +223,18 @@ pub fn run_basic_patch_inference(
 
 /// Infer patch from command's file path or argument
 fn infer_patch_from_command(command: &Command, patches: &HashMap<String, Patch>) -> Option<String> {
-    // Use the arg field for file path inference
-    if !command.arg.is_empty() {
+    // Use get_absolute_folder_path to normalize the path:
+    // - For files: returns parent directory (folder containing the file)
+    // - For folders: returns the folder itself
+    // - For anchors: smart logic for both cases
+    //
+    // This gives us the folder that this command represents/is in, and we pass
+    // that to inference which will check folder_map to find the patch
+    let config = crate::core::data::get_config();
+    if let Some(folder_path) = command.get_absolute_folder_path(&config) {
+        infer_patch_from_file_path(folder_path.to_str()?, patches)
+    } else if !command.arg.is_empty() {
+        // Fallback to raw arg if get_absolute_folder_path returns None
         infer_patch_from_file_path(&command.arg, patches)
     } else {
         None
@@ -296,9 +306,9 @@ fn infer_patch_from_file_path(file_path: &str, patches: &HashMap<String, Patch>)
 
     // Fallback to walking up the directory hierarchy
     let path = Path::new(file_path);
-    // FIXED: For folders, start with parent. For files, start with containing directory.
-    // Both cases should check the PARENT, not the item itself.
-    let mut current_dir = path.parent();
+    // At this point, file_path should already be a directory (from infer_patch_from_command)
+    // Start checking from this directory
+    let mut current_dir = Some(path);
     
     while let Some(dir) = current_dir {
         if let Some(dir_name) = dir.file_name() {
@@ -358,13 +368,18 @@ pub fn infer_patch_simple(file_path: &str, folder_map: &HashMap<PathBuf, String>
 
     let path = Path::new(file_path);
 
-    // Determine starting point: grandparent for anchor files (to avoid self-reference), parent for all others
+    // Determine starting point based on what we're looking at:
+    // - Anchor files: start from grandparent to avoid self-reference
+    // - Regular files: start from parent directory (the folder containing them)
+    // - Directories: start from the directory itself (folder_map has this folder's patch)
     let mut current = if crate::utils::is_anchor_file(path) {
         // Anchor files: start from grandparent to avoid self-reference
         path.parent().and_then(|p| p.parent())
+    } else if path.is_dir() {
+        // Directories: check the directory itself in folder_map
+        Some(path)
     } else {
-        // Regular files and folders: start from parent directory
-        // Both should look at their PARENT, not themselves
+        // Regular files: check their containing directory
         path.parent()
     };
 
