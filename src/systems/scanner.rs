@@ -701,6 +701,7 @@ fn is_within_scan_roots(file_path: &Path, scan_roots: &[String]) -> bool {
 fn has_changed(old: &Command, new: &Command) -> bool {
     old.action != new.action ||
     old.arg != new.arg ||
+    old.flags != new.flags ||
     old.file_size != new.file_size
 }
 
@@ -877,12 +878,20 @@ fn discover_files_recursive(
                             .ok()
                             .map(|m| m.len());
 
+                        // Check if this is an anchor file (filename matches parent folder name)
+                        let is_anchor = action == "markdown"
+                            && path.parent()
+                                .and_then(|p| p.file_name())
+                                .and_then(|n| n.to_str())
+                                .map(|parent_str| parent_str == name_str)
+                                .unwrap_or(false);
+
                         let command = Command {
                             command: name_str.to_string(),
                             action: action.to_string(),
                             arg: file_path_str.clone(),
                             patch: String::new(), // Will be assigned during inference
-                            flags: String::new(),
+                            flags: if is_anchor { "A".to_string() } else { String::new() },
                             other_params: None,
                             last_update: 0,
                             file_size,
@@ -967,6 +976,7 @@ fn scan_files_merge_based(
                 let old_size = cmd.file_size;
                 cmd.action = new_cmd.action;
                 cmd.arg = new_cmd.arg;
+                cmd.flags = new_cmd.flags; // Update flags to reflect anchor status
                 cmd.file_size = new_cmd.file_size;
                 cmd.last_update = new_cmd.last_update;
 

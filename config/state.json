@@ -1,32 +1,26 @@
 {
-  "anchor_folder": null,
-  "anchor_name": "Hook Anchor",
-  "anchor_timestamp": 1761660749,
-  "build_time": 1761669856,
-  "history_viewer_state": {
-    "min_edit_size": 500,
-    "name_filter": "",
-    "patch_filter": "2025-06 web",
-    "position": [
-      -2381.0,
-      309.0
-    ],
-    "selected_action_types": [],
-    "show_current_commands": false,
-    "sidebar_width": 106.875,
-    "window_size": [
-      1000.0,
-      1036.0
-    ]
-  },
-  "last_executed_command": "Hook Anchor",
-  "last_scan_checksum": null,
-  "last_scan_time": null,
-  "notion_last_scan": null,
-  "server_pid": 49365,
-  "show_files": true,
   "window_position": [
-    980.0,
-    274.0
-  ]
+    928.0,
+    25.0
+  ],
+  "history_viewer_state": {
+    "position": null,
+    "window_size": null,
+    "patch_filter": "",
+    "name_filter": "",
+    "min_edit_size": 500,
+    "selected_action_types": [],
+    "sidebar_width": null,
+    "show_current_commands": false
+  },
+  "build_time": 1761672587,
+  "last_scan_time": null,
+  "last_scan_checksum": null,
+  "last_executed_command": "@Qingling Oblinger",
+  "server_pid": 64219,
+  "notion_last_scan": null,
+  "anchor_name": "@Qingling Oblinger",
+  "anchor_timestamp": 1761672503,
+  "anchor_folder": null,
+  "show_files": true
 }
