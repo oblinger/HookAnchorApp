@@ -589,9 +589,291 @@ pub fn scan_new_files(commands: Vec<Command>, sys_data: &crate::core::data::SysD
     commands
 }
 
+/// Statistics from merge-based scanning
+#[derive(Debug, Default)]
+struct ScanStats {
+    created: usize,
+    updated: usize,
+    deleted: usize,
+    unchanged: usize,
+}
+
+/// Check if a file path is within any of the configured scan roots
+fn is_within_scan_roots(file_path: &Path, scan_roots: &[String]) -> bool {
+    for root in scan_roots {
+        let expanded_root = expand_home(root);
+        if file_path.starts_with(&expanded_root) {
+            return true;
+        }
+    }
+    false
+}
+
+/// Check if a command has changed by comparing key fields
+fn has_changed(old: &Command, new: &Command) -> bool {
+    old.action != new.action ||
+    old.arg != new.arg ||
+    old.file_size != new.file_size
+}
+
+/// Phase 1: Discover all files in scan roots and build HashMap
+/// Returns HashMap keyed by absolute file path
+fn discover_files(file_roots: &[String], config: &Config) -> std::collections::HashMap<String, Command> {
+    use std::collections::HashMap;
+
+    let mut discovered = HashMap::new();
+
+    for root in file_roots {
+        let expanded_root = expand_home(root);
+        let root_path = Path::new(&expanded_root);
+
+        if !root_path.exists() || !root_path.is_dir() {
+            crate::utils::detailed_log("SCANNER", &format!("Skipping non-existent root: {}", expanded_root));
+            continue;
+        }
+
+        crate::utils::detailed_log("SCANNER", &format!("Discovering files in: {}", expanded_root));
+        discover_files_recursive(root_path, root_path, &mut discovered, config);
+    }
+
+    crate::utils::detailed_log("SCANNER", &format!("Discovered {} files total", discovered.len()));
+    discovered
+}
+
+/// Recursively discover files in a directory
+fn discover_files_recursive(
+    dir: &Path,
+    vault_root: &Path,
+    discovered: &mut std::collections::HashMap<String, Command>,
+    config: &Config
+) {
+    let entries = match fs::read_dir(dir) {
+        Ok(entries) => entries,
+        Err(e) => {
+            crate::utils::detailed_log("SCANNER", &format!("Cannot read directory {}: {}", dir.display(), e));
+            return;
+        }
+    };
+
+    for entry in entries {
+        let entry = match entry {
+            Ok(e) => e,
+            Err(_) => continue,
+        };
+
+        let path = entry.path();
+
+        // Skip hidden files/folders (starting with .)
+        if let Some(name) = path.file_name() {
+            if let Some(name_str) = name.to_str() {
+                if name_str.starts_with('.') {
+                    continue;
+                }
+            }
+        }
+
+        if path.is_dir() {
+            // Check if it's an .app bundle
+            if let Some(ext) = path.extension() {
+                if ext == "app" {
+                    // Create app command
+                    if let Some(app_name) = path.file_stem() {
+                        if let Some(name_str) = app_name.to_str() {
+                            let app_path = path.to_string_lossy().to_string();
+
+                            // Get file metadata for size (for .app bundles, this will be the bundle directory size)
+                            let file_size = fs::metadata(&path)
+                                .ok()
+                                .map(|m| m.len());
+
+                            let command = Command {
+                                command: format!("{} App", name_str),
+                                action: "app".to_string(),
+                                arg: app_path.clone(),
+                                patch: String::new(), // Will be assigned during inference
+                                flags: String::new(),
+                                other_params: None,
+                                last_update: 0,
+                                file_size,
+                            };
+                            discovered.insert(app_path, command);
+                        }
+                    }
+                    continue; // Don't recurse into .app bundles
+                }
+            }
+
+            // Recurse into regular directories
+            discover_files_recursive(&path, vault_root, discovered, config);
+        } else if path.is_file() {
+            // Check file extension
+            if let Some(ext) = path.extension() {
+                let ext_str = ext.to_str().unwrap_or("");
+
+                let action = match ext_str {
+                    "md" => "markdown",
+                    "doc" | "docx" | "txt" | "rtf" | "pdf" | "ppt" | "pptx" | "xls" | "xlsx" | "csv" | "numbers" | "pages" | "key" => "doc",
+                    _ => continue, // Skip other file types
+                };
+
+                // Create command for this file
+                if let Some(file_name) = path.file_stem() {
+                    if let Some(name_str) = file_name.to_str() {
+                        let file_path_str = path.to_string_lossy().to_string();
+
+                        // Get file metadata for size
+                        let file_size = fs::metadata(&path)
+                            .ok()
+                            .map(|m| m.len());
+
+                        let command = Command {
+                            command: name_str.to_string(),
+                            action: action.to_string(),
+                            arg: file_path_str.clone(),
+                            patch: String::new(), // Will be assigned during inference
+                            flags: String::new(),
+                            other_params: None,
+                            last_update: 0,
+                            file_size,
+                        };
+                        discovered.insert(file_path_str, command);
+                    }
+                }
+            }
+        }
+    }
+}
+
+/// Merge-based scanning: intelligently merge discovered files with existing commands
+/// This eliminates history churn by only recording actual changes
+fn scan_files_merge_based(
+    mut commands: Vec<Command>,
+    file_roots: &[String],
+    config: &Config
+) -> (Vec<Command>, ScanStats) {
+    use std::collections::HashMap;
+
+    let mut stats = ScanStats::default();
+
+    // Phase 1: Discover all files in scan roots
+    crate::utils::detailed_log("SCANNER", "Phase 1: Discovering files in scan roots...");
+    let mut discovered_files = discover_files(file_roots, config);
+
+    // Phase 2: Process existing commands
+    crate::utils::detailed_log("SCANNER", "Phase 2: Processing existing commands...");
+    commands.retain_mut(|cmd| {
+        // Skip non-scanner-generated actions (alias, url, 1pass, work, chrome, etc.)
+        if !SCANNER_GENERATED_ACTIONS.contains(&cmd.action.as_str()) {
+            stats.unchanged += 1;
+            return true; // Keep
+        }
+
+        // Get absolute file path for this command
+        let file_path = match cmd.get_absolute_file_path(config) {
+            Some(path) => path,
+            None => {
+                // Command doesn't have a valid path - keep it unchanged
+                stats.unchanged += 1;
+                return true;
+            }
+        };
+
+        // Check if file is within scan roots
+        if !is_within_scan_roots(&file_path, file_roots) {
+            // Outside scan scope - don't touch
+            stats.unchanged += 1;
+            crate::utils::detailed_log("SCANNER", &format!(
+                "Keeping '{}' - outside scan roots", cmd.command
+            ));
+            return true;
+        }
+
+        // File is within scan roots - check if it still exists
+        let file_path_str = file_path.to_string_lossy().to_string();
+        if let Some(new_cmd) = discovered_files.remove(&file_path_str) {
+            // File still exists
+
+            // If user-edited, preserve the existing command completely
+            if cmd.flags.contains(FLAG_USER_EDITED) {
+                stats.unchanged += 1;
+                crate::utils::detailed_log("SCANNER", &format!(
+                    "Preserving user-edited '{}' (U flag)", cmd.command
+                ));
+                return true;
+            }
+
+            // Not user-edited - check for changes
+            if has_changed(cmd, &new_cmd) {
+                // Update command with new data
+                let old_action = cmd.action.clone();
+                let old_size = cmd.file_size;
+                cmd.action = new_cmd.action;
+                cmd.arg = new_cmd.arg;
+                cmd.file_size = new_cmd.file_size;
+                cmd.last_update = new_cmd.last_update;
+
+                stats.updated += 1;
+                crate::utils::log(&format!(
+                    "Updated: '{}' - action:{:?}→{:?}, size:{:?}→{:?}",
+                    cmd.command, old_action, cmd.action, old_size, cmd.file_size
+                ));
+            } else {
+                // No change
+                stats.unchanged += 1;
+            }
+
+            return true; // Keep command
+        } else {
+            // File no longer exists - delete command even if user-edited
+            stats.deleted += 1;
+            crate::utils::log(&format!(
+                "Deleted: '{}' - file no longer exists at {}",
+                cmd.command, file_path_str
+            ));
+            return false; // Remove from list
+        }
+    });
+
+    // Phase 3: Add remaining discovered files (new files not in existing commands)
+    crate::utils::detailed_log("SCANNER", "Phase 3: Adding new files...");
+    for (file_path, cmd) in discovered_files {
+        stats.created += 1;
+        crate::utils::log(&format!(
+            "Created: '{}' - new file discovered at {}",
+            cmd.command, file_path
+        ));
+        commands.push(cmd);
+    }
+
+    // Log summary
+    crate::utils::log(&format!(
+        "Scan complete: +{} created, ~{} updated, -{} deleted, ={} unchanged",
+        stats.created, stats.updated, stats.deleted, stats.unchanged
+    ));
+
+    (commands, stats)
+}
+
 /// Scans the configured file roots and returns an updated command list
-fn scan_files(mut commands: Vec<Command>, file_roots: &[String], config: &Config) -> Vec<Command> {
-    
+fn scan_files(commands: Vec<Command>, file_roots: &[String], config: &Config) -> Vec<Command> {
+    // Use merge-based scanning to eliminate history churn
+    // This intelligently merges discovered files with existing commands,
+    // only logging actual changes (created/updated/deleted)
+    let (commands, _stats) = scan_files_merge_based(commands, file_roots, config);
+
+    // OLD APPROACH (deleted): The old code deleted all non-user-edited scanner commands
+    // then recreated them, causing massive history churn for unchanged files.
+    // The new merge-based approach preserves existing commands and their patches,
+    // only making changes when files are actually added, modified, or removed.
+
+    commands
+}
+
+// OLD IMPLEMENTATION: Preserved below for reference, can be deleted after testing
+// The old scan_files implementation that caused history churn
+#[allow(dead_code)]
+fn scan_files_old_delete_recreate_approach(mut commands: Vec<Command>, file_roots: &[String], config: &Config) -> Vec<Command> {
+
     // Create a lookup map to preserve existing patches when regenerating commands
     let mut existing_patches: std::collections::HashMap<String, String> = std::collections::HashMap::new();
     for cmd in &commands {
@@ -599,7 +881,7 @@ fn scan_files(mut commands: Vec<Command>, file_roots: &[String], config: &Config
             existing_patches.insert(cmd.command.clone(), cmd.patch.clone());
         }
     }
-    
+
     // Count commands before removal
     let _markdown_before = commands.iter().filter(|cmd| cmd.action == "markdown").count();
     let _anchor_before = commands.iter().filter(|cmd| cmd.is_anchor()).count();
@@ -608,18 +890,7 @@ fn scan_files(mut commands: Vec<Command>, file_roots: &[String], config: &Config
     let _user_edited_scanner_commands = commands.iter()
         .filter(|cmd| SCANNER_GENERATED_ACTIONS.contains(&cmd.action.as_str()) && cmd.flags.contains(FLAG_USER_EDITED))
         .count();
-    
-    // Check if a path is within any of the scan roots
-    let is_within_scan_roots = |path: &str| -> bool {
-        for root in file_roots {
-            let expanded_root = expand_home(root);
-            if path.starts_with(&expanded_root) {
-                return true;
-            }
-        }
-        false
-    };
-    
+
     // Simple rule: Delete all scanner-generated commands that don't have the U (user-edited) flag
     // The scanner will recreate them if the files still exist
     // This eliminates all special cases and complexity
@@ -641,18 +912,18 @@ fn scan_files(mut commands: Vec<Command>, file_roots: &[String], config: &Config
         // Keep all user-edited commands and non-scanner-generated commands
         true
     });
-    
+
     let _preserved_user_edited = commands.iter()
         .filter(|cmd| SCANNER_GENERATED_ACTIONS.contains(&cmd.action.as_str()) && cmd.flags.contains(FLAG_USER_EDITED))
         .count();
-    
+
     // Create a set of existing command names for collision detection (lowercase for case-insensitive comparison)
     // This is done AFTER removing old scanner-generated commands to avoid false collisions
     // Include ALL remaining commands to properly detect collisions with user commands and non-scanner commands
     let mut existing_commands: HashSet<String> = commands.iter()
         .map(|cmd| cmd.command.to_lowercase())
         .collect();
-    
+
     // Create a set of file paths that are already handled by remaining commands
     // This is done AFTER deletion to allow recreation of deleted anchors
     // Skip empty args - they don't represent handled files
@@ -662,7 +933,7 @@ fn scan_files(mut commands: Vec<Command>, file_roots: &[String], config: &Config
             handled_files.insert(cmd.arg.clone());
         }
     }
-    
+
     // STEP 2: Build initial folder_map from remaining user-edited anchors
     // This map will be populated incrementally as we discover anchors during scanning
     let mut folder_map: std::collections::HashMap<PathBuf, String> = std::collections::HashMap::new();
