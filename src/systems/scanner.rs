@@ -507,7 +507,7 @@ pub fn scan_new_files(commands: Vec<Command>, sys_data: &crate::core::data::SysD
 
     // First scan files (markdown and apps)
     let initial_count = commands.len();
-    let mut commands = scan_files(commands, file_roots, &sys_data.config);
+    let mut commands = scan_files(commands, file_roots, &sys_data.config, verbose);
 
     let new_count = commands.len();
     let files_added = new_count.saturating_sub(initial_count);
@@ -900,7 +900,8 @@ fn discover_files_recursive(
 fn scan_files_merge_based(
     mut commands: Vec<Command>,
     file_roots: &[String],
-    config: &Config
+    config: &Config,
+    verbose: bool
 ) -> (Vec<Command>, ScanStats) {
     use std::collections::HashMap;
 
@@ -970,6 +971,11 @@ fn scan_files_merge_based(
                 cmd.last_update = new_cmd.last_update;
 
                 stats.updated += 1;
+                if verbose {
+                    crate::utils::print(&format!("   Updated: '{}' - action:{:?}→{:?}, size:{:?}→{:?}",
+                        cmd.command, old_action, cmd.action, old_size, cmd.file_size
+                    ));
+                }
                 crate::utils::log(&format!(
                     "Updated: '{}' - action:{:?}→{:?}, size:{:?}→{:?}",
                     cmd.command, old_action, cmd.action, old_size, cmd.file_size
@@ -986,6 +992,11 @@ fn scan_files_merge_based(
         } else {
             // File no longer exists - delete command even if user-edited
             stats.deleted += 1;
+            if verbose {
+                crate::utils::print(&format!("   Deleted: '{}' - file no longer exists at {}",
+                    cmd.command, file_path_str
+                ));
+            }
             crate::utils::log(&format!(
                 "Deleted: '{}' - file no longer exists at {}",
                 cmd.command, file_path_str
@@ -1024,10 +1035,10 @@ fn scan_files_merge_based(
         // Stats tracking: All discovered files count as "created" from scanner's perspective
         // (even if merge_commands merged them into existing virtual anchors)
         stats.created += 1;
-        crate::utils::log(&format!(
-            "Created: '{}' (anchor) - new file discovered at {}",
-            cmd_name, file_path
-        ));
+        if verbose {
+            crate::utils::print(&format!("   Created: '{}' (anchor) - new file discovered at {}", cmd_name, file_path));
+        }
+        crate::utils::log(&format!("Created: '{}' (anchor) - new file discovered at {}", cmd_name, file_path));
     }
 
     // Now add regular files (using merge_commands to handle collisions)
@@ -1044,10 +1055,10 @@ fn scan_files_merge_based(
         // Stats tracking: All discovered files count as "created" from scanner's perspective
         // (even if merge_commands merged them into existing virtual anchors)
         stats.created += 1;
-        crate::utils::log(&format!(
-            "Created: '{}' - new file discovered at {}",
-            cmd_name, file_path
-        ));
+        if verbose {
+            crate::utils::print(&format!("   Created: '{}' - new file discovered at {}", cmd_name, file_path));
+        }
+        crate::utils::log(&format!("Created: '{}' - new file discovered at {}", cmd_name, file_path));
     }
 
     // IMPORTANT: Run inference on ALL commands (not just new ones)
@@ -1074,11 +1085,11 @@ fn scan_files_merge_based(
 }
 
 /// Scans the configured file roots and returns an updated command list
-fn scan_files(commands: Vec<Command>, file_roots: &[String], config: &Config) -> Vec<Command> {
+fn scan_files(commands: Vec<Command>, file_roots: &[String], config: &Config, verbose: bool) -> Vec<Command> {
     // Use merge-based scanning to eliminate history churn
     // This intelligently merges discovered files with existing commands,
     // only logging actual changes (created/updated/deleted)
-    let (commands, _stats) = scan_files_merge_based(commands, file_roots, config);
+    let (commands, _stats) = scan_files_merge_based(commands, file_roots, config, verbose);
 
     // OLD APPROACH (deleted): The old code deleted all non-user-edited scanner commands
     // then recreated them, causing massive history churn for unchanged files.
