@@ -1,7 +1,7 @@
 {
   "window_position": [
-    928.0,
-    25.0
+    580.0,
+    206.0
   ],
   "history_viewer_state": {
     "position": null,
@@ -13,14 +13,14 @@
     "sidebar_width": null,
     "show_current_commands": false
   },
-  "build_time": 1761672587,
+  "build_time": 1761683050,
   "last_scan_time": null,
   "last_scan_checksum": null,
-  "last_executed_command": "@Qingling Oblinger",
-  "server_pid": 64219,
+  "last_executed_command": "MY",
+  "server_pid": 83946,
   "notion_last_scan": null,
-  "anchor_name": "@Qingling Oblinger",
-  "anchor_timestamp": 1761672503,
+  "anchor_name": "Hook Anchor",
+  "anchor_timestamp": 1761682865,
   "anchor_folder": null,
   "show_files": true
 }

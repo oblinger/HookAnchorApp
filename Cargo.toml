@@ -13,31 +13,31 @@ build = "build.rs"
 # HA binary (main command-line entry point)
 [[bin]]
 name = "HookAnchorCommand"
-path = "src/ha.rs"
+path = "src/bin/ha.rs"
 
 # GUI popup binary (main application)
 [[bin]]
 name = "HookAnchorPopupServer"
-path = "src/main.rs"
+path = "src/bin/main.rs"
 
 [[bin]]
 name = "HookAnchorPopup"
-path = "src/popup_launcher.rs"
+path = "src/bin/popup_launcher.rs"
 
 # GUI installer binary
 [[bin]]
 name = "HookAnchorInstaller"
-path = "src/installer_gui.rs"
+path = "src/bin/installer_gui.rs"
 
 # History viewer binary
 [[bin]]
 name = "HookAnchorHistoryViewer"
-path = "src/history_viewer.rs"
+path = "src/bin/history_viewer.rs"
 
 # Dialog viewer binary
 [[bin]]
 name = "HookAnchorDialog"
-path = "src/dialog_viewer.rs"
+path = "src/bin/dialog_viewer.rs"
 
 # URL Handler binary (deprecated - moved to url_handler.rs.bak)
 # Functionality has been moved to ha binary with --hook flag
