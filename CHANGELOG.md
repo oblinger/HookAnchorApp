@@ -5,6 +5,17 @@ All notable changes to HookAnchor will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.17.0] - 2025-10-27
+
+### Fixed
+- **MAJOR FIX**: Virtual anchor creation now reuses existing commands instead of creating orphans
+  - When a patch needs an anchor, the system now searches for ANY command (not just anchors) with the patch name
+  - If found, sets the anchor flag on the existing command (e.g., folder entry becomes both folder and anchor)
+  - Only creates new orphan anchor entry if no command exists with that name
+  - Reduces orphan creation dramatically (from 430 to 0 in legacy import testing)
+  - Example: `Doc! DocPython:folder` now becomes `Doc! DocPython:folder; F:=A` instead of creating `orphans! DocPython:; F:=A`
+- Improved patch validation logic in `validate_and_repair_patches()` Phase 3
+
 ## [0.16.0] - 2025-10-21
 
 ### Added

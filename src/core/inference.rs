@@ -769,19 +769,39 @@ pub fn validate_and_repair_patches(
 
     // Create virtual anchor for each missing patch
     for patch_name in missing_patches {
-        // Check if there's already an anchor command with this name
-        // (regardless of which patch it's in or whether it's user-edited)
-        let anchor_exists = commands.iter().any(|cmd|
-            cmd.command.eq_ignore_ascii_case(&patch_name) && cmd.is_anchor()
+        // Check if there's ANY command (anchor or not) with this name
+        // We prefer to reuse existing commands rather than creating orphans
+        let existing_cmd_idx = commands.iter().position(|cmd|
+            cmd.command.eq_ignore_ascii_case(&patch_name)
         );
 
-        if anchor_exists {
-            if verbose {
-                crate::utils::log(&format!("   Skipping virtual anchor for '{}' - anchor already exists", patch_name));
+        if let Some(idx) = existing_cmd_idx {
+            // Found existing command with this name
+            if commands[idx].is_anchor() {
+                // Already an anchor - nothing to do
+                if verbose {
+                    crate::utils::log(&format!("   Skipping '{}' - already has anchor flag", patch_name));
+                }
+                continue;
+            } else {
+                // Not an anchor yet - set the anchor flag on existing command
+                commands[idx].set_anchor(true);
+                if verbose {
+                    crate::utils::log(&format!("   Set anchor flag on existing command '{}' (patch: {})", patch_name, commands[idx].patch));
+                }
+
+                // Update the patches hashmap to include this command as an anchor
+                let patch_lower = commands[idx].patch.to_lowercase();
+                if let Some(patch) = patches.get_mut(&patch_lower) {
+                    patch.anchor_commands.push(commands[idx].clone());
+                }
+
+                virtual_anchors_created += 1;
+                continue;
             }
-            continue;
         }
 
+        // No existing command found - create new orphan anchor
         if verbose {
             crate::utils::log(&format!("   Creating virtual anchor for undefined patch: '{}'", patch_name));
         }
