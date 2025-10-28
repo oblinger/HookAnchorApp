@@ -7,8 +7,6 @@ use crate::core::template_creation::{Template, TemplateContext};
 
 pub struct CommandEditor {
     pub visible: bool,
-    #[allow(dead_code)]
-    pub position: egui::Pos2,
     
     // Editable fields
     pub command: String,
@@ -40,7 +38,6 @@ impl CommandEditor {
     pub fn new() -> Self {
         Self {
             visible: false,
-            position: egui::pos2(0.0, 0.0),
             command: String::new(),
             action: String::new(),
             argument: String::new(),
@@ -424,19 +421,6 @@ impl CommandEditor {
         (command_to_delete, new_command)
     }
     
-    #[allow(dead_code)]
-    pub fn delete_original_command(&self, commands: &mut Vec<Command>) -> Result<(), String> {
-        // Only delete if there was an original command
-        if !self.original_command_name.is_empty() {
-            // Delete command (auto-saves via sys_data::delete_command)
-            delete_command(&self.original_command_name)
-                .map_err(|e| format!("Command '{}' not found for deletion: {}", self.original_command_name, e))?;
-            Ok(())
-        } else {
-            // Nothing to delete (this was a new command creation dialog)
-            Ok(())
-        }
-    }
 }
 
 #[derive(Debug, PartialEq)]

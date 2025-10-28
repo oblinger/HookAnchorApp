@@ -108,9 +108,6 @@ enum LoadingState {
     Loading,
     /// Data loading completed
     Loaded,
-    /// Error occurred during loading
-    #[allow(dead_code)]
-    Error(String),
 }
 
 /// Action to be executed after user confirms via dialog or other UI component
@@ -714,15 +711,6 @@ impl PopupInterface for AnchorSelector {
 impl AnchorSelector {
     
     // OLD DIALOG SYSTEM - TO BE REMOVED
-    // Old inline dialog function - kept temporarily for emergency rollback only
-    #[allow(dead_code)]
-    fn show_error_dialog_OLD_DO_NOT_USE(&mut self, error_message: &str) {
-        self.dialog.show(vec![
-            "=Error".to_string(),
-            format!("&{}", error_message),
-            "!Exit".to_string(),
-        ]);
-    }
     
     // =============================================================================
     // Unified Action Execution System
@@ -4969,95 +4957,6 @@ impl eframe::App for AnchorSelector {
     }
 }
 
-/// Embedded icon data compiled into the binary at build time
-#[allow(dead_code)]
-static EMBEDDED_ICON_PNG: &[u8] = include_bytes!("../../resources/icons/popup.png");
-
-/// Cached icon data to avoid repeated PNG decoding
-#[allow(dead_code)]
-static CACHED_ICON: OnceLock<IconData> = OnceLock::new();
-
-/// Load app icon with compile-time embedded data (no file I/O or ICNS parsing)
-#[allow(dead_code)]
-fn load_app_icon() -> IconData {
-    CACHED_ICON.get_or_init(|| {
-        // Decode the embedded PNG data
-        if let Ok(decoded) = decode_png_to_rgba(EMBEDDED_ICON_PNG) {
-            IconData {
-                rgba: decoded.0,
-                width: decoded.1,
-                height: decoded.2,
-            }
-        } else {
-            // Fallback: create a simple colored icon
-            crate::utils::detailed_log("ICON", "Failed to decode embedded icon, using fallback");
-            create_fallback_icon()
-        }
-    }).clone()
-}
-
-
-#[allow(dead_code)]
-fn decode_png_to_rgba(png_data: &[u8]) -> Result<(Vec<u8>, u32, u32), Box<dyn std::error::Error>> {
-    use image::io::Reader as ImageReader;
-    use image::ImageFormat;
-    use std::io::Cursor;
-    
-    // Create a cursor from the PNG data
-    let cursor = Cursor::new(png_data);
-    let reader = ImageReader::with_format(cursor, ImageFormat::Png);
-    
-    // Decode the image
-    let img = reader.decode()?;
-    
-    // Convert to RGBA8
-    let rgba_img = img.to_rgba8();
-    let width = rgba_img.width();
-    let height = rgba_img.height();
-    
-    // Convert to Vec<u8>
-    let rgba_data = rgba_img.into_raw();
-    
-    Ok((rgba_data, width, height))
-}
-
-#[allow(dead_code)]
-fn create_fallback_icon() -> IconData {
-    // Create a simple 32x32 blue anchor icon as fallback
-    let width = 32u32;
-    let height = 32u32;
-    let mut rgba = vec![0u8; (width * height * 4) as usize];
-    
-    // Create a simple anchor shape in blue
-    for y in 0..height {
-        for x in 0..width {
-            let idx = ((y * width + x) * 4) as usize;
-            let dx = x as i32 - 16;
-            let dy = y as i32 - 16;
-            
-            // Simple anchor shape
-            let is_anchor = (dx.abs() < 2 && dy > -10 && dy < 10) || 
-                          (dy.abs() < 2 && dx.abs() < 8 && dy > 8) ||
-                          (dx * dx + (dy + 8) * (dy + 8) < 16) ||
-                          (dx * dx + (dy - 8) * (dy - 8) < 16);
-            
-            if is_anchor {
-                rgba[idx] = 0;     // R
-                rgba[idx + 1] = 100; // G
-                rgba[idx + 2] = 200; // B
-                rgba[idx + 3] = 255; // A
-            } else {
-                rgba[idx + 3] = 0; // Transparent
-            }
-        }
-    }
-    
-    IconData {
-        rgba,
-        width,
-        height,
-    }
-}
 
 /// Wrapper that includes popup control socket
 struct PopupWithControl {
