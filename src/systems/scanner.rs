@@ -66,6 +66,94 @@ use chrono::Local;
 /// NOTE: "anchor" is NOT included - we preserve existing anchors during rescan so patch inference can work
 pub const SCANNER_GENERATED_ACTIONS: &[&str] = &["markdown", "folder", "app", "open_app", "doc"];
 
+// =============================================================================
+// COMMAND MERGE LOGIC
+// =============================================================================
+
+/// Get the suffix for a command name based on its action type
+/// Used when keeping commands distinct during merge
+fn get_action_suffix(action: &str) -> &str {
+    match action {
+        "markdown" => " markdown",
+        "doc" => " doc",
+        "app" | "open_app" => " app",
+        "folder" => " folder",
+        "anchor" => " anchor",
+        _ => "", // Unknown action - no suffix
+    }
+}
+
+/// Merge or add a new command to the command list
+///
+/// If a command with the same name exists, applies merge rules. Otherwise adds new command.
+///
+/// # Rules (checked in order):
+/// 1. User-edited with matching arg: existing.U && existing.arg == new.arg → Discard new
+/// 2. Virtual anchor (no action): existing.action.is_empty() → Merge new data into existing
+/// 3. Real command with action: existing.action is set → Keep distinct (add with suffix)
+/// 4. No collision: Add new command as-is
+///
+/// # Arguments
+/// * `commands` - Mutable reference to the command list
+/// * `new` - The command being added
+/// * `suffix` - Suffix to add to command name if keeping distinct (e.g., " markdown")
+pub fn merge_commands(commands: &mut Vec<Command>, new: Command, suffix: &str) {
+    // Find existing command with same name (case-insensitive)
+    let new_name_lower = new.command.to_lowercase();
+    let existing_idx = commands.iter().position(|cmd| cmd.command.to_lowercase() == new_name_lower);
+
+    match existing_idx {
+        Some(idx) => {
+            let existing = &commands[idx];
+
+            // Rule 1: User-edited with matching arg → Discard new
+            if existing.flags.contains(FLAG_USER_EDITED) && !existing.arg.is_empty() && existing.arg == new.arg {
+                crate::utils::detailed_log("MERGE", &format!(
+                    "Rule 1: Discard '{}' - user-edited existing with same arg '{}'",
+                    new.command, existing.arg
+                ));
+                return;
+            }
+
+            // Rule 2: Virtual anchor (no action) → Merge new data into existing
+            if existing.action.is_empty() {
+                let mut merged = existing.clone();
+                merged.action = new.action.clone();
+                merged.arg = new.arg.clone();
+                merged.file_size = new.file_size;
+                merged.last_update = new.last_update;
+                // Preserve existing patch and flags (especially if user-edited)
+                crate::utils::detailed_log("MERGE", &format!(
+                    "Rule 2: Merge into existing '{}' - virtual anchor gets action '{}' and arg '{}'",
+                    merged.command, merged.action, merged.arg
+                ));
+                commands[idx] = merged;
+                return;
+            }
+
+            // Rule 3: Real command with action → Keep distinct (add with suffix)
+            let mut distinct_cmd = new;
+            distinct_cmd.command = format!("{}{}", distinct_cmd.command, suffix);
+            crate::utils::detailed_log("MERGE", &format!(
+                "Rule 3: Keep distinct '{}' - existing has action '{}', new has action '{}'",
+                distinct_cmd.command, existing.action, distinct_cmd.action
+            ));
+            commands.push(distinct_cmd);
+        }
+        None => {
+            // Rule 4: No collision → Add new command as-is
+            crate::utils::detailed_log("MERGE", &format!(
+                "Rule 4: Add new command '{}' (no collision)",
+                new.command
+            ));
+            commands.push(new);
+        }
+    }
+}
+
+// =============================================================================
+// HELPER FUNCTIONS
+// =============================================================================
 
 // TODO: DEAD CODE - Remove this function
 // This is only used by delete_anchors which is also dead code
@@ -828,6 +916,9 @@ fn scan_files_merge_based(
         // Skip non-scanner-generated actions (alias, url, 1pass, work, chrome, etc.)
         if !SCANNER_GENERATED_ACTIONS.contains(&cmd.action.as_str()) {
             stats.unchanged += 1;
+            crate::utils::detailed_log("SCANNER", &format!(
+                "Unchanged: '{}' (non-scanner action: {})", cmd.command, cmd.action
+            ));
             return true; // Keep
         }
 
@@ -837,6 +928,9 @@ fn scan_files_merge_based(
             None => {
                 // Command doesn't have a valid path - keep it unchanged
                 stats.unchanged += 1;
+                crate::utils::detailed_log("SCANNER", &format!(
+                    "Unchanged: '{}' (no valid file path)", cmd.command
+                ));
                 return true;
             }
         };
@@ -846,7 +940,7 @@ fn scan_files_merge_based(
             // Outside scan scope - don't touch
             stats.unchanged += 1;
             crate::utils::detailed_log("SCANNER", &format!(
-                "Keeping '{}' - outside scan roots", cmd.command
+                "Unchanged: '{}' (outside scan roots)", cmd.command
             ));
             return true;
         }
@@ -860,7 +954,7 @@ fn scan_files_merge_based(
             if cmd.flags.contains(FLAG_USER_EDITED) {
                 stats.unchanged += 1;
                 crate::utils::detailed_log("SCANNER", &format!(
-                    "Preserving user-edited '{}' (U flag)", cmd.command
+                    "Unchanged: '{}' (user-edited, U flag)", cmd.command
                 ));
                 return true;
             }
@@ -883,6 +977,9 @@ fn scan_files_merge_based(
             } else {
                 // No change
                 stats.unchanged += 1;
+                crate::utils::detailed_log("SCANNER", &format!(
+                    "Unchanged: '{}' (no file changes detected)", cmd.command
+                ));
             }
 
             return true; // Keep command
@@ -914,25 +1011,43 @@ fn scan_files_merge_based(
         }
     }
 
-    // Add anchors first
+    // Add anchors first (using merge_commands to handle collisions with virtual anchors)
     for (file_path, cmd) in anchor_files {
+        let cmd_name = cmd.command.clone();
+        let action = cmd.action.clone();
+        let suffix = get_action_suffix(&action);
+
+        // merge_commands handles: discard, merge into existing virtual anchor, keep distinct, or add new
+        // It logs the specific merge action taken (via MERGE: logs)
+        merge_commands(&mut commands, cmd, suffix);
+
+        // Stats tracking: All discovered files count as "created" from scanner's perspective
+        // (even if merge_commands merged them into existing virtual anchors)
         stats.created += 1;
         crate::utils::log(&format!(
             "Created: '{}' (anchor) - new file discovered at {}",
-            cmd.command, file_path
+            cmd_name, file_path
         ));
-        commands.push(cmd);
     }
 
-    // Now add regular files
+    // Now add regular files (using merge_commands to handle collisions)
     crate::utils::detailed_log("SCANNER", "Phase 3b: Adding new regular files...");
     for (file_path, cmd) in regular_files {
+        let cmd_name = cmd.command.clone();
+        let action = cmd.action.clone();
+        let suffix = get_action_suffix(&action);
+
+        // merge_commands handles: discard, merge into existing virtual anchor, keep distinct, or add new
+        // It logs the specific merge action taken (via MERGE: logs)
+        merge_commands(&mut commands, cmd, suffix);
+
+        // Stats tracking: All discovered files count as "created" from scanner's perspective
+        // (even if merge_commands merged them into existing virtual anchors)
         stats.created += 1;
         crate::utils::log(&format!(
             "Created: '{}' - new file discovered at {}",
-            cmd.command, file_path
+            cmd_name, file_path
         ));
-        commands.push(cmd);
     }
 
     // IMPORTANT: Run inference on ALL commands (not just new ones)
@@ -1876,6 +1991,7 @@ end tell
 
 #[cfg(test)]
 mod tests {
+    use super::*;
     use std::path::PathBuf;
     use crate::utils::is_anchor_file;
 
@@ -1884,13 +2000,220 @@ mod tests {
         // Test case: ProjectName/ProjectName.md (should be anchor)
         let path = PathBuf::from("/home/user/ProjectName/ProjectName.md");
         assert!(is_anchor_file(&path));
-        
+
         // Test case: ProjectName/readme.md (should not be anchor)
         let path = PathBuf::from("/home/user/ProjectName/readme.md");
         assert!(!is_anchor_file(&path));
-        
+
         // Test case: projectname/PROJECTNAME.md (should be anchor - case insensitive)
         let path = PathBuf::from("/home/user/projectname/PROJECTNAME.md");
         assert!(is_anchor_file(&path));
+    }
+
+    // =============================================================================
+    // MERGE FUNCTION TESTS
+    // =============================================================================
+
+    fn make_command(name: &str, action: &str, arg: &str, flags: &str) -> Command {
+        Command {
+            patch: "test".to_string(),
+            command: name.to_string(),
+            action: action.to_string(),
+            arg: arg.to_string(),
+            flags: flags.to_string(),
+            other_params: None,
+            last_update: 0,
+            file_size: None,
+        }
+    }
+
+    #[test]
+    fn test_merge_rule1_user_edited_same_arg_discard() {
+        // Rule 1: User-edited with matching arg → Discard new
+        let mut commands = vec![
+            make_command("prj", "anchor", "/path/to/prj.md", "UA"),
+        ];
+        let new = make_command("prj", "markdown", "/path/to/prj.md", "A");
+
+        merge_commands(&mut commands, new, " markdown");
+
+        // Should still have only 1 command (new was discarded)
+        assert_eq!(commands.len(), 1);
+        assert_eq!(commands[0].command, "prj");
+        assert_eq!(commands[0].action, "anchor"); // Original unchanged
+    }
+
+    #[test]
+    fn test_merge_rule2_virtual_anchor_merge() {
+        // Rule 2: Virtual anchor (empty action) → Merge new data into existing
+        let mut commands = vec![
+            make_command("prj", "", "", "A"),
+        ];
+        let new = make_command("prj", "markdown", "/path/to/prj.md", "A");
+
+        merge_commands(&mut commands, new, " markdown");
+
+        // Should still have 1 command (merged)
+        assert_eq!(commands.len(), 1);
+        assert_eq!(commands[0].command, "prj");
+        assert_eq!(commands[0].action, "markdown"); // Got new action
+        assert_eq!(commands[0].arg, "/path/to/prj.md"); // Got new arg
+        assert_eq!(commands[0].flags, "A"); // Preserved existing flags
+    }
+
+    #[test]
+    fn test_merge_rule3_real_command_keep_distinct() {
+        // Rule 3: Real command with action → Keep distinct with suffix
+        let mut commands = vec![
+            make_command("prj", "anchor", "/path/to/prj.md", "A"),
+        ];
+        let new = make_command("prj", "markdown", "/path/to/prj.md", "A");
+
+        merge_commands(&mut commands, new, " markdown");
+
+        // Should have 2 commands (kept distinct)
+        assert_eq!(commands.len(), 2);
+        assert_eq!(commands[0].command, "prj");
+        assert_eq!(commands[0].action, "anchor");
+        assert_eq!(commands[1].command, "prj markdown"); // Got suffix
+        assert_eq!(commands[1].action, "markdown");
+    }
+
+    #[test]
+    fn test_merge_rule4_no_collision_add() {
+        // Rule 4: No collision → Add new command
+        let mut commands = vec![
+            make_command("other", "anchor", "/path/other.md", "A"),
+        ];
+        let new = make_command("prj", "markdown", "/path/to/prj.md", "A");
+
+        merge_commands(&mut commands, new, " markdown");
+
+        // Should have 2 commands (new added)
+        assert_eq!(commands.len(), 2);
+        assert_eq!(commands[0].command, "other");
+        assert_eq!(commands[1].command, "prj"); // Added as-is
+        assert_eq!(commands[1].action, "markdown");
+    }
+
+    #[test]
+    fn test_merge_user_edited_without_arg_proceeds_to_other_rules() {
+        // User flag set but no arg → should proceed to other rules (not Rule 1)
+        let mut commands = vec![
+            make_command("prj", "anchor", "", "U"),
+        ];
+        let new = make_command("prj", "markdown", "/path/to/prj.md", "A");
+
+        merge_commands(&mut commands, new, " markdown");
+
+        // Should hit Rule 3 (real command with action) - keep distinct
+        assert_eq!(commands.len(), 2);
+        assert_eq!(commands[1].command, "prj markdown");
+    }
+
+    #[test]
+    fn test_merge_preserves_file_metadata() {
+        // Verify file_size and last_update are updated when merging
+        let mut commands = vec![
+            Command {
+                patch: "test".to_string(),
+                command: "prj".to_string(),
+                action: "".to_string(),
+                arg: "".to_string(),
+                flags: "A".to_string(),
+                other_params: None,
+                last_update: 12345,
+                file_size: Some(500),
+            }
+        ];
+
+        let new = Command {
+            patch: "test".to_string(),
+            command: "prj".to_string(),
+            action: "markdown".to_string(),
+            arg: "/path/to/prj.md".to_string(),
+            flags: "A".to_string(),
+            other_params: None,
+            last_update: 67890,
+            file_size: Some(1000),
+        };
+
+        merge_commands(&mut commands, new, " markdown");
+
+        // Should get new file metadata
+        assert_eq!(commands.len(), 1);
+        assert_eq!(commands[0].file_size, Some(1000));
+        assert_eq!(commands[0].last_update, 67890);
+    }
+
+    #[test]
+    fn test_merge_preserves_patch_and_flags() {
+        // Verify patch and flags are preserved from existing when merging
+        let mut commands = vec![
+            Command {
+                patch: "important".to_string(),
+                command: "prj".to_string(),
+                action: "".to_string(),
+                arg: "".to_string(),
+                flags: "AUI".to_string(), // Multiple flags
+                other_params: None,
+                last_update: 0,
+                file_size: None,
+            }
+        ];
+
+        let new = Command {
+            patch: "orphans".to_string(),
+            command: "prj".to_string(),
+            action: "markdown".to_string(),
+            arg: "/path/to/prj.md".to_string(),
+            flags: "A".to_string(),
+            other_params: None,
+            last_update: 0,
+            file_size: None,
+        };
+
+        merge_commands(&mut commands, new, " markdown");
+
+        // Should preserve existing patch and flags
+        assert_eq!(commands.len(), 1);
+        assert_eq!(commands[0].patch, "important");
+        assert_eq!(commands[0].flags, "AUI");
+    }
+
+    #[test]
+    fn test_merge_different_suffixes() {
+        // Test that different suffixes are applied correctly
+        let mut commands = vec![
+            make_command("test", "action1", "/path1", ""),
+        ];
+
+        let new1 = make_command("test", "action2", "/path2", "");
+        merge_commands(&mut commands, new1, " folder");
+
+        let new2 = make_command("test", "action3", "/path3", "");
+        merge_commands(&mut commands, new2, " markdown");
+
+        // Should have 3 commands with different suffixes
+        assert_eq!(commands.len(), 3);
+        assert_eq!(commands[0].command, "test");
+        assert_eq!(commands[1].command, "test folder");
+        assert_eq!(commands[2].command, "test markdown");
+    }
+
+    #[test]
+    fn test_merge_case_insensitive_matching() {
+        // Verify that command name matching is case-insensitive
+        let mut commands = vec![
+            make_command("PRJ", "anchor", "/path/to/prj.md", "A"),
+        ];
+        let new = make_command("prj", "markdown", "/path/to/prj.md", "A");
+
+        merge_commands(&mut commands, new, " markdown");
+
+        // Should recognize collision despite case difference
+        assert_eq!(commands.len(), 2);
+        assert_eq!(commands[0].command, "PRJ");
+        assert_eq!(commands[1].command, "prj markdown");
     }
 }

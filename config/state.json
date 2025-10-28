@@ -1,7 +1,7 @@
 {
   "window_position": [
-    648.0,
-    -1136.0
+    980.0,
+    274.0
   ],
   "history_viewer_state": {
     "position": [
@@ -19,14 +19,14 @@
     "sidebar_width": 106.875,
     "show_current_commands": false
   },
-  "build_time": 1761627796,
+  "build_time": 1761665952,
   "last_scan_time": null,
   "last_scan_checksum": null,
-  "last_executed_command": "WEF",
-  "server_pid": 91077,
+  "last_executed_command": "Hook Anchor",
+  "server_pid": 35694,
   "notion_last_scan": null,
-  "anchor_name": "kmr",
-  "anchor_timestamp": 1761626443,
+  "anchor_name": "Hook Anchor",
+  "anchor_timestamp": 1761660749,
   "anchor_folder": null,
   "show_files": true
 }

@@ -28,6 +28,7 @@ use std::sync::{Arc, Mutex};
 
 // Height constant for scrollable text areas
 const SCROLL_AREA_HEIGHT: f32 = 350.0;
+const SCROLL_THRESHOLD_LINES: usize = 18; // Use scrollable textbox if content exceeds this many lines
 
 #[derive(Debug, Clone)]
 enum DialogElement {
@@ -86,13 +87,10 @@ impl DialogApp {
                 // Scrollable textbox area
                 total_height += 10.0; // Top spacing
                 for element in &row.elements {
-                    if let DialogElement::ScrollableTextBox { content } = element {
-                        let trimmed_content = content.trim_end();
-                        let line_count = trimmed_content.lines().count().max(1);
-                        let text_height = line_count as f32 * 16.0 + 20.0;
-                        // Cap at SCROLL_AREA_HEIGHT max, but use actual if smaller
-                        let actual_height = text_height.min(SCROLL_AREA_HEIGHT);
-                        total_height += actual_height;
+                    if let DialogElement::ScrollableTextBox { .. } = element {
+                        // Always use full SCROLL_AREA_HEIGHT since ScrollArea has min_scrolled_height
+                        // The scroll area always takes up this space regardless of content size
+                        total_height += SCROLL_AREA_HEIGHT;
                     }
                 }
                 total_height += 10.0; // Bottom spacing
@@ -194,7 +192,7 @@ impl DialogApp {
                     last_was_button = false;
                 }
                 '&' => {
-                    // TextBox - multi-line text display (auto-sized)
+                    // TextBox - multi-line text display (auto-sized, always fixed size)
                     if !current_row.elements.is_empty() {
                         self.rows.push(current_row);
                         current_row = DialogRow { elements: Vec::new() };
@@ -205,12 +203,24 @@ impl DialogApp {
                     last_was_button = false;
                 }
                 '^' => {
-                    // ScrollableTextBox - multi-line text display with scrolling
+                    // Smart TextBox - automatically chooses scrollable vs fixed based on content size
+                    // If content is long (> SCROLL_THRESHOLD_LINES), uses scrollable with fixed height
+                    // If content is short, uses regular textbox that sizes to content
                     if !current_row.elements.is_empty() {
                         self.rows.push(current_row);
                         current_row = DialogRow { elements: Vec::new() };
                     }
-                    current_row.elements.push(DialogElement::ScrollableTextBox { content: rest.to_string() });
+
+                    // Check line count to decide which type of textbox to use
+                    let line_count = rest.lines().count();
+                    if line_count > SCROLL_THRESHOLD_LINES {
+                        // Long content - use scrollable textbox with fixed height
+                        current_row.elements.push(DialogElement::ScrollableTextBox { content: rest.to_string() });
+                    } else {
+                        // Short content - use regular textbox that sizes to content
+                        current_row.elements.push(DialogElement::TextBox { content: rest.to_string() });
+                    }
+
                     self.rows.push(current_row);
                     current_row = DialogRow { elements: Vec::new() };
                     last_was_button = false;
