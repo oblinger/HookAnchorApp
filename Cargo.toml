@@ -37,7 +37,7 @@ path = "src/history_viewer.rs"
 # Dialog viewer binary
 [[bin]]
 name = "HookAnchorDialog"
-path = "src/systems/dialog_viewer.rs"
+path = "src/dialog_viewer.rs"
 
 # URL Handler binary (deprecated - moved to url_handler.rs.bak)
 # Functionality has been moved to ha binary with --hook flag
