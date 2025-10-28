@@ -1026,6 +1026,8 @@ fn scan_files_merge_based(
     for (file_path, cmd) in anchor_files {
         let cmd_name = cmd.command.clone();
         let action = cmd.action.clone();
+        let flags = cmd.flags.clone();
+        let arg = cmd.arg.clone();
         let suffix = get_action_suffix(&action);
 
         // merge_commands handles: discard, merge into existing virtual anchor, keep distinct, or add new
@@ -1036,9 +1038,11 @@ fn scan_files_merge_based(
         // (even if merge_commands merged them into existing virtual anchors)
         stats.created += 1;
         if verbose {
-            crate::utils::print(&format!("   Created: '{}' (anchor) - new file discovered at {}", cmd_name, file_path));
+            crate::utils::print(&format!("   Created '{}' action='{}' flags='{}' args='{}'",
+                cmd_name, action, flags, arg));
         }
-        crate::utils::log(&format!("Created: '{}' (anchor) - new file discovered at {}", cmd_name, file_path));
+        crate::utils::log(&format!("Created '{}' action='{}' flags='{}' args='{}'",
+            cmd_name, action, flags, arg));
     }
 
     // Now add regular files (using merge_commands to handle collisions)
@@ -1046,6 +1050,8 @@ fn scan_files_merge_based(
     for (file_path, cmd) in regular_files {
         let cmd_name = cmd.command.clone();
         let action = cmd.action.clone();
+        let flags = cmd.flags.clone();
+        let arg = cmd.arg.clone();
         let suffix = get_action_suffix(&action);
 
         // merge_commands handles: discard, merge into existing virtual anchor, keep distinct, or add new
@@ -1056,9 +1062,11 @@ fn scan_files_merge_based(
         // (even if merge_commands merged them into existing virtual anchors)
         stats.created += 1;
         if verbose {
-            crate::utils::print(&format!("   Created: '{}' - new file discovered at {}", cmd_name, file_path));
+            crate::utils::print(&format!("   Created '{}' action='{}' flags='{}' args='{}'",
+                cmd_name, action, flags, arg));
         }
-        crate::utils::log(&format!("Created: '{}' - new file discovered at {}", cmd_name, file_path));
+        crate::utils::log(&format!("Created '{}' action='{}' flags='{}' args='{}'",
+            cmd_name, action, flags, arg));
     }
 
     // IMPORTANT: Run inference on ALL commands (not just new ones)
