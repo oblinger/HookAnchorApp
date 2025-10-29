@@ -1,21 +1,29 @@
-- confirm dialog for small rename has too much space so cannot see buttons
-- start selection w/ mouse should not happen until real movement
 
 
-
-🚀 HookAnchor Rescan - Verbose Mode
-- [x] Patents notion page is lost
-- [ ] Remove Allow dead code markers
-- [ ] create bin folder
-- [x] move history viewer
-- [ ] move installer_gui
-- [ ] Fix so one can navigate over "= = ="
-CONFIG_REFERENCE
-extra lines in the help message
-HADO shows wrong match
-- [ ]  new dialog system.  [[003 dialog_viewer_system]] 
 
 - [ ] [[Hook Anchor Release]] 
+- [ ] ChildTemplate anchor var tied to "+" key.   " * " does grab
+- [ ] New template actions list
+- [ ] start selection w/ mouse should not happen til real move
+- [ ] Make dev mode run on each render (mod 10?)   make boot check only run when dev_mode is set.
+- [ ] Add categories
+- [ ] click on folder will go into folder
+- [ ] Delete key should prompt to delete file and maybe folder.
+- [ ] remove the 'js' and 'js_function' action types since they are not needed.
+- [ ] Remove any code associated with anchor actions
+- [x] confirm dialog for small rename has too much space so cannot see buttons
+- [x] commands still exists...  
+- [x]  the hook url is broken
+🚀 HookAnchor Rescan - Verbose Mode
+- [x] Patents notion page is lost
+- [x] Remove Allow dead code markers
+- [x] create bin folder
+- [x] move history viewer
+- [x] move installer_gui
+- [x] Fix so one can navigate over "= = ="
+- [x] CONFIG_REFERENCE
+- [x] HADO shows wrong match
+- [x]  new dialog system.  [[003 dialog_viewer_system]] 
 - [x] upgrade CMD+B so it does a --restart too
 - [x] Delete log does not work
 - [x] how many lines of code  29,685rust, 639swift, 3,452javascript
@@ -27,18 +35,13 @@ HADO shows wrong match
 - [x] Log does not contain JS errors
 - [x] Fix rebuild CMD+B command
 - [x] check for println! and eprintln! in code
-- [ ] Allow dead code markers
-- [ ] Make dev mode run on each render (mod 10?)   make boot check only run when dev_mode is set.
-- [ ] Add categories
-- [ ] click on folder will go into folder
-- [ ] Delete key should prompt to delete file and maybe folder.
-- [ ] remove the 'js' and 'js_function' action types since they are not needed.
+- [x] Allow dead code markers
 
 FOR RELEASE
 - [ ] clean up logging
 - [x] Clean up help messages
 - [ ] Adding ha to the path and the ff command etc. should all be in a script file that is inside the .app and that should be sourced by the user's init upon install.
-- [ ] Anchor is a Flag; Anchor suffix used to indicate location of patch
+- [x] Anchor is a Flag; Anchor suffix used to indicate location of patch
 - [x] Help doc sections  [[HELP]]: vars, fns, config    help command section for Javascript variables, and section for Javascript functions
 
 

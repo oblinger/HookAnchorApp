@@ -1,5 +1,9 @@
 
 
+
+## 2025-10-28  
+
+
 ## 2025-10-20  More Focus
 I am letting myself work today on hook anchor, I am close to a resting spot.  after this, I will only allow fixes that are getting in the way of work, or that take < 15 min.  Lets see how that works.
 

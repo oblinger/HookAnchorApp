@@ -13,7 +13,45 @@
 
 # LOG
 
-### t2019-00-00 - QL Notes
+## 2025-10-28  VP @ 1pw
+
+- https://jobs.ashbyhq.com/1password/7dc336bd-42f2-4902-af03-1abc8588e498
+
+
+
+
+Nancy,
+
+My husband (AI CTO/PhD) and I have been talking a lot about how this agentic-AI moment is magical for 1Password.
+He is super excited about it, and I thought it might be fun for you to chat with him.
+
+-- Dan
+
+
+
+
+
+
+is a long time 1-password fan, he has thinking alot about our move into Agentic AI, and would love to chat.
+
+We have been talking alot about 
+We talk all the time about how this Agentic-AI moment could be magical for 1password. 
+
+He is super excited about it, and I thought it might be fun for you to caht with him.
+
+
+
+
+has been talking with me for the last few weeks about this being a magical time for 1-password, as the larger community is clamoring for a new authentication solution that will allow users to share credentials across all apps and all their AI-agents.  He thinks that 1Password already has a widespread presence on desktops, which might give us a leg up in winning the adoption race.  He is now the CTO at a Computer Vision start-up, developing and scaling the latest AI algorithms.  In his career, he has been on a governmental advisory board at DARPA, developed standards with NIST, and built 5 AI-teams from scratch.  If you have time and interest, he would love to talk about 1-Password's AI strategy and whether he might fit into it.
+
+
+
+Nancy,
+
+My husband (Startup CTO & PhD in AI) has been talking with me for the last weeks about this being a magical time for 1-password as the larger community is clamoring for a new authentication solution that will allow users to share credentials across all apps across all their AI-agents.  He thinks the fact that 1password is already installed on many desktops might afford us a leg up in winning the adoption race.  I know our teams are already thinking hard about this problem, still I thought you might have an interest in chatting with him about these opportunities.
+
+
+## t2019-00-00 - QL Notes
 Incrementality:
 -- Ads are not randomly provided, but aimed at good prospects boosting results
     people choose when to be advertized to

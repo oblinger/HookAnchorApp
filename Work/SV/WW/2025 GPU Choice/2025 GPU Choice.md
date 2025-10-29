@@ -1,10 +1,83 @@
 
+- [T59](https://docs.google.com/document/d/1g135euS74c7FfBO6GDMRGyvi_0jXHBm4Pd4bqU9Pa94/edit?tab=t.0) 
 
 
-Pricing Notes:
+# Roadmap
 
+## SW Tactical Shifts
+- Trimming the sails - S3/videos, EC2, images, 
+- Media Convert Solution
 
+## Microsoft Credits
+- Media Convert Phase I, II, III
+	Activate Credits in phase III.
+- AI-GPU & Media Convert will eat credits
+
+## AWS Rearchitecting
+- AWS Spot instances (save up to 90%)
+- ARM / Graviton
+
+## A-Round
+## Big III Pricing
+
+### AI - Roadmap
+
+# __
+## Questions
+- 
 # Log
+
+## 2025-10-28  AWS Spot Instances
+
+
+  How Volatile Are Spot Instances?
+
+  Overall Interruption Rate:
+  - Average across all regions/instance types: <5% (historically)
+  - However, some instance types and regions can have >20% interruption rates
+  - Recent trends (2023-2024) show increasing volatility - some regions saw interruption rates spike as much as 55% in us-east-1
+
+  Interruption Rate Categories (per AWS Spot Instance Advisor):
+  - <5% (most stable)
+  - 5-10%
+  - 10-15%
+  - 15-20%
+  - 20% (most volatile)
+
+  Mean Runtime Before Interruption
+
+  Average: ~4 hours before interruption
+
+  But the range is extremely wide:
+  - Some instances terminated after just 10 hours
+  - Others ran for 257-351 days before shutdown
+  - Highly dependent on instance type, region, and availability zone
+
+  How Often Are They Unavailable?
+
+  The Bad News:
+  - AWS doesn't publish historical capacity availability data
+  - Capacity shortages can happen at any time, even when prices are low
+  - "No capacity available" errors are common during high-demand periods
+
+  Key Insight:
+  - Capacity shortages ≠ interruptions
+  - You can fail to launch a spot instance (no capacity)
+  - OR get one that runs for hours/days and then gets interrupted
+
+  Practical Takeaways
+
+  For Reliability:
+  1. Diversify - Use multiple instance types across multiple AZs
+  2. Check the Spot Instance Advisor (https://aws.amazon.com/ec2/spot/instance-advisor/) before choosing instance types
+  3. Avoid instance types with >10% interruption rates for critical workloads
+  4. Expect interruptions but with 2-minute warning to checkpoint/save state
+
+  For Workloads:
+  - ✅ Good for: Batch jobs, stateless apps, fault-tolerant systems
+  - ❌ Bad for: Long-running databases, stateful apps without checkpointing
+
+  Reality: Spot instances are increasingly volatile since 2023 but still viable if you architect for interruptions.
 
 ## 2025-10-24  Emily Gay
 

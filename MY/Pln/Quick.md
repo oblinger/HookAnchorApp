@@ -1,12 +1,7 @@
 - walgreens
-- more annotation tasks
-- GPU Strategy
-- dentist payments
+- Get LOE for MediaConvert Phase I,II,III
 - ozempic
 - Friday
-
-- Adam brown response 
-- daveo
 
 - [[med]] 
 - credit cards loaded correctly
