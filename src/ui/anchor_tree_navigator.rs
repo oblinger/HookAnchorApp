@@ -185,21 +185,21 @@ impl AnchorTreeNavigator {
                     // Orphans root shows:
                     // 1. All patches whose parent is "orphans"
                     // 2. All patches with NO parent (top-level root patches)
-                    crate::utils::log(&format!("TREE_DEBUG_SIDEBAR: Looking for children of orphans (total patches: {})", patches.len()));
+                    crate::utils::detailed_log("TREE_DEBUG_SIDEBAR", &format!("Looking for children of orphans (total patches: {})", patches.len()));
                     let mut root_patches = Vec::new();
                     for (_, patch) in patches {
                         if let Some(parent) = patch.parent_patch_name() {
-                            crate::utils::log(&format!("TREE_DEBUG_SIDEBAR:   Patch '{}' has parent '{}'", patch.name, parent));
+                            crate::utils::detailed_log("TREE_DEBUG_SIDEBAR", &format!("  Patch '{}' has parent '{}'", patch.name, parent));
                             if parent.to_lowercase() == "orphans" {
                                 root_patches.push(patch.name.clone());
                             }
                         } else {
                             // No parent - this is a root patch, goes under orphans
-                            crate::utils::log(&format!("TREE_DEBUG_SIDEBAR:   Patch '{}' has NO parent - adding to orphans", patch.name));
+                            crate::utils::detailed_log("TREE_DEBUG_SIDEBAR", &format!("  Patch '{}' has NO parent - adding to orphans", patch.name));
                             root_patches.push(patch.name.clone());
                         }
                     }
-                    crate::utils::log(&format!("TREE_DEBUG_SIDEBAR: Found {} root patches under orphans", root_patches.len()));
+                    crate::utils::detailed_log("TREE_DEBUG_SIDEBAR", &format!("Found {} root patches under orphans", root_patches.len()));
                     root_patches.sort_by(|a, b| a.to_lowercase().cmp(&b.to_lowercase()));
                     root_patches
                 } else if let Some(patch) = get_patch(breadcrumb, patches) {

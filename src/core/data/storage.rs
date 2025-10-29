@@ -122,7 +122,7 @@ pub(super) fn save_commands_to_file(commands: &[Command]) -> Result<(), Box<dyn 
             empty_patch_count += 1;
 
             // Only log as potential bug for actions that typically need patches
-            let actions_that_need_patches = ["anchor", "markdown", "doc", "cmd"];
+            let actions_that_need_patches = ["markdown", "doc", "cmd"];
             if actions_that_need_patches.contains(&cmd.action.as_str()) {
                 crate::utils::detailed_log("EMPTY_PATCH_BUG", &format!("Command with EMPTY patch during save: '{}' (action: {}, arg: {})",
                     cmd.command, cmd.action, cmd.arg));
@@ -320,11 +320,10 @@ pub(super) fn deduplicate_commands(commands: Vec<Command>) -> Vec<Command> {
     let mut to_remove = Vec::new();
     for (name, cmds) in commands_by_name.iter() {
         // Check if we have both a virtual orphan anchor and a real anchor
-        // A "real anchor" is either:
-        // 1. A command with 'A' flag (cmd.is_anchor()) that's not in orphans patch
-        // 2. A command with action="anchor" (even without 'A' flag)
+        // A "real anchor" is a command with 'A' flag that's not in orphans patch
+        // and has some action (virtual anchors have empty action)
         let has_real_anchor = cmds.iter().any(|cmd|
-            (cmd.is_anchor() || cmd.action == "anchor") &&
+            cmd.is_anchor() &&
             cmd.patch != "orphans" &&
             !cmd.action.is_empty() // Must have some action to be a real anchor
         );

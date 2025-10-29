@@ -194,7 +194,7 @@ impl Command {
                 // Arg is already absolute path for new markdown action
                 Some(PathBuf::from(&self.arg))
             },
-            "anchor" | "doc" => {
+            "doc" => {
                 // Already absolute, just expand tilde
                 Some(PathBuf::from(crate::utils::expand_tilde(&self.arg)))
             }
@@ -254,20 +254,6 @@ impl Command {
                 // For folder commands, return the folder itself (already normalized)
                 self.get_absolute_file_path(config)
             }
-            "anchor" => {
-                // For anchor commands, check if the arg is a directory or a file
-                if let Some(path) = self.get_absolute_file_path(config) {
-                    if path.is_dir() {
-                        // If it's a directory (like /Users/oblinger/ob/bin), return it directly
-                        Some(normalize_path(path))
-                    } else {
-                        // If it's a file (like a .md file), return the parent directory
-                        path.parent().map(|parent| normalize_path(parent.to_path_buf()))
-                    }
-                } else {
-                    None
-                }
-            }
             _ => {
                 // For other file-based commands, return the parent directory
                 // Parent path shouldn't have trailing slashes, but normalize just in case
@@ -279,7 +265,7 @@ impl Command {
     
     /// Checks if this command refers to a file or folder
     pub fn is_path_based(&self) -> bool {
-        matches!(self.action.as_str(), "markdown" | "anchor" | "folder" | "doc" | "open" | "open_app" | "app")
+        matches!(self.action.as_str(), "markdown" | "folder" | "doc" | "open" | "open_app" | "app")
     }
 
     /// Gets the value of a flag by its key character
@@ -1015,10 +1001,12 @@ pub fn run_patch_inference(
             continue;
         }
         
-        // Run inference on all non-user-edited commands
-        // If we computed the patch automatically before (no U flag), keep recomputing it
-        // This ensures patches stay up-to-date as files move or hierarchy changes
-        let should_process = !command.flags.contains(FLAG_USER_EDITED);
+        // Run inference on commands that need it
+        // Skip user-edited commands UNLESS they're in orphans or have empty patch
+        // (those need help finding the right patch)
+        let should_process = !command.flags.contains(FLAG_USER_EDITED)
+            || command.patch.is_empty()
+            || command.patch == "orphans";
 
         if should_process {
             // Use simple inference for path-based commands
@@ -1701,7 +1689,7 @@ pub fn save_commands_to_file(commands: &[Command]) -> Result<(), Box<dyn std::er
             empty_patch_commands.push(cmd.command.clone());
             
             // Only log as potential bug for actions that typically need patches
-            let actions_that_need_patches = ["anchor", "markdown", "doc", "cmd"];
+            let actions_that_need_patches = ["markdown", "doc", "cmd"];
             if actions_that_need_patches.contains(&cmd.action.as_str()) {
                 crate::utils::detailed_log("EMPTY_PATCH_BUG", &format!("Command with EMPTY patch during save: '{}' (action: {}, arg: {})", 
                     cmd.command, cmd.action, cmd.arg));

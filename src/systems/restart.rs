@@ -10,16 +10,30 @@ use std::path::PathBuf;
 ///
 /// Returns Ok(true) if processes were killed, Ok(false) if none found, Err on failure
 pub fn kill_popup_servers() -> Result<bool, String> {
-    match Command::new("pkill")
-        .arg("-f")
-        .arg("popup_server")
-        .output() {
-        Ok(output) => {
-            // pkill returns 0 if processes were killed, 1 if none found
-            Ok(output.status.success())
+    // Kill both old and new popup server binary names
+    // - popup_server (new binary name)
+    // - HookAnchorPopupServer (old binary name)
+    let patterns = vec!["popup_server", "HookAnchorPopupServer"];
+    let mut any_killed = false;
+
+    for pattern in patterns {
+        match Command::new("pkill")
+            .arg("-f")
+            .arg(pattern)
+            .output() {
+            Ok(output) => {
+                if output.status.success() {
+                    any_killed = true;
+                    crate::utils::detailed_log("RESTART", &format!("Killed processes matching: {}", pattern));
+                }
+            }
+            Err(e) => {
+                crate::utils::detailed_log("RESTART", &format!("Failed to pkill {}: {}", pattern, e));
+            }
         }
-        Err(e) => Err(format!("Failed to execute pkill: {}", e))
     }
+
+    Ok(any_killed)
 }
 
 /// Start popup_server as background process

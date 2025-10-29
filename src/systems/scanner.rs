@@ -78,7 +78,6 @@ fn get_action_suffix(action: &str) -> &str {
         "doc" => " doc",
         "app" | "open_app" => " app",
         "folder" => " folder",
-        "anchor" => " anchor",
         _ => "", // Unknown action - no suffix
     }
 }
@@ -180,8 +179,8 @@ fn delete_anchors(commands: &mut Vec<Command>, delete_notion_anchors: bool, verb
     let initial_count = commands.len();
 
     commands.retain(|cmd| {
-        // Skip if not an anchor
-        if cmd.action != "anchor" {
+        // Skip if not an anchor (check anchor flag, not action)
+        if !cmd.is_anchor() {
             return true;
         }
 
@@ -550,7 +549,7 @@ pub fn scan_new_files(commands: Vec<Command>, sys_data: &crate::core::data::SysD
 
     // Then scan cloud services (Notion, Google Drive)
     crate::utils::log("☁️  Scanning cloud services...");
-    let scan_result = crate::cloud_scanner::scan_cloud_services();
+    let scan_result = super::cloud_scanner::scan_cloud_services();
     
     // Only process Notion commands if we actually got pages (meaning scan was enabled)
     if !scan_result.notion_pages.is_empty() {
@@ -1913,7 +1912,7 @@ mod tests {
     fn test_merge_rule1_user_edited_same_arg_discard() {
         // Rule 1: User-edited with matching arg → Discard new
         let mut commands = vec![
-            make_command("prj", "anchor", "/path/to/prj.md", "UA"),
+            make_command("prj", "markdown", "/path/to/prj.md", "UA"),
         ];
         let new = make_command("prj", "markdown", "/path/to/prj.md", "A");
 
@@ -1922,7 +1921,7 @@ mod tests {
         // Should still have only 1 command (new was discarded)
         assert_eq!(commands.len(), 1);
         assert_eq!(commands[0].command, "prj");
-        assert_eq!(commands[0].action, "anchor"); // Original unchanged
+        assert_eq!(commands[0].action, "markdown"); // Original unchanged
     }
 
     #[test]
@@ -1947,7 +1946,7 @@ mod tests {
     fn test_merge_rule3_real_command_keep_distinct() {
         // Rule 3: Real command with action → Keep distinct with suffix
         let mut commands = vec![
-            make_command("prj", "anchor", "/path/to/prj.md", "A"),
+            make_command("prj", "folder", "/path/to/prj", "A"),
         ];
         let new = make_command("prj", "markdown", "/path/to/prj.md", "A");
 
@@ -1956,7 +1955,7 @@ mod tests {
         // Should have 2 commands (kept distinct)
         assert_eq!(commands.len(), 2);
         assert_eq!(commands[0].command, "prj");
-        assert_eq!(commands[0].action, "anchor");
+        assert_eq!(commands[0].action, "folder");
         assert_eq!(commands[1].command, "prj markdown"); // Got suffix
         assert_eq!(commands[1].action, "markdown");
     }
@@ -1965,7 +1964,7 @@ mod tests {
     fn test_merge_rule4_no_collision_add() {
         // Rule 4: No collision → Add new command
         let mut commands = vec![
-            make_command("other", "anchor", "/path/other.md", "A"),
+            make_command("other", "markdown", "/path/other.md", "A"),
         ];
         let new = make_command("prj", "markdown", "/path/to/prj.md", "A");
 
@@ -1982,7 +1981,7 @@ mod tests {
     fn test_merge_user_edited_without_arg_proceeds_to_other_rules() {
         // User flag set but no arg → should proceed to other rules (not Rule 1)
         let mut commands = vec![
-            make_command("prj", "anchor", "", "U"),
+            make_command("prj", "folder", "/path/to/prj", "U"),
         ];
         let new = make_command("prj", "markdown", "/path/to/prj.md", "A");
 
@@ -2087,7 +2086,7 @@ mod tests {
     fn test_merge_case_insensitive_matching() {
         // Verify that command name matching is case-insensitive
         let mut commands = vec![
-            make_command("PRJ", "anchor", "/path/to/prj.md", "A"),
+            make_command("PRJ", "folder", "/path/to/prj", "A"),
         ];
         let new = make_command("prj", "markdown", "/path/to/prj.md", "A");
 

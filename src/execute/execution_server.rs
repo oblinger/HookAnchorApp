@@ -391,10 +391,15 @@ impl CommandClient {
         stream.write_all(b"\n")?;
         stream.flush()?;
         
-        // Wait for response
+        // Wait for response (read line-by-line since server sends response with newline)
+        let mut reader = std::io::BufReader::new(stream);
         let mut response_data = String::new();
-        match stream.read_to_string(&mut response_data) {
-            Ok(_) => {
+        match reader.read_line(&mut response_data) {
+            Ok(bytes_read) => {
+                if bytes_read == 0 {
+                    detailed_log("CMD_CLIENT", "Server closed connection without sending response");
+                    return Err("Server closed connection without sending response".into());
+                }
                 let response: CommandResponse = serde_json::from_str(&response_data.trim())?;
                 detailed_log("CMD_CLIENT", &format!("Received response: success={}", response.success));
                 Ok(response)

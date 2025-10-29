@@ -108,6 +108,8 @@ fn get_state_file_path() -> PathBuf {
 
 /// Loads application state from state.json file, returns default if file doesn't exist or is invalid
 /// Private to data module - external code must use get_state() from sys_data
+/// NOTE: This is called frequently by the UI (every frame) to pick up server changes
+/// Detailed logging is intentional - when detailed logging is enabled, we need visibility into this polling
 pub(super) fn load_state() -> AppState {
     let state_path = get_state_file_path();
     if let Ok(contents) = fs::read_to_string(&state_path) {

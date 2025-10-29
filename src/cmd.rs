@@ -507,15 +507,6 @@ fn run_folder_command(args: &[String]) {
                 // For folder commands, the arg is already the folder path
                 Some(command.arg.clone())
             },
-            "anchor" => {
-                // For anchor commands, the arg is the full path to the .md file
-                // Return the directory containing the .md file
-                if let Some(last_slash) = command.arg.rfind('/') {
-                    Some(command.arg[..last_slash].to_string())
-                } else {
-                    Some(command.arg.clone())
-                }
-            },
             "markdown" => {
                 // For markdown commands, arg is already absolute path - return the directory
                 if let Some(last_slash) = command.arg.rfind('/') {
@@ -602,15 +593,6 @@ fn run_folder_with_commands(args: &[String]) {
             "folder" => {
                 // For folder commands, the arg is already the folder path
                 Some(command.arg.clone())
-            },
-            "anchor" => {
-                // For anchor commands, the arg is the full path to the .md file
-                // Return the directory containing the .md file
-                if let Some(last_slash) = command.arg.rfind('/') {
-                    Some(command.arg[..last_slash].to_string())
-                } else {
-                    Some(command.arg.clone())
-                }
             },
             "markdown" => {
                 // For markdown commands, arg is already absolute path - return the directory
@@ -1800,7 +1782,7 @@ fn print_help_config() {
     print("  run_in_background:      false         # Keep app running for instant popup");
     print("  merge_similar:          true          # Merge commands ending with \"...\"");
     print("  word_separators:        \" ._-\"        # Characters for word boundaries");
-    print("  listed_actions:         \"app,url,folder,cmd,chrome,anchor\"  # Editor dropdown");
+    print("  listed_actions:         \"app,url,folder,cmd,chrome\"  # Editor dropdown");
     print("  preferred_anchor:       \"markdown\"    # Preferred anchor type when multiple exist");
     print("");
     print("  # Timeouts");

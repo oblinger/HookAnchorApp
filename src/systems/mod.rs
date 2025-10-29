@@ -22,6 +22,7 @@ pub(crate) mod setup_assistant;
 pub(crate) mod popup_server;
 pub(crate) mod restart;
 pub(crate) mod dialog_manager;
+pub(crate) mod cloud_scanner;
 
 // ============================================================================
 // PUBLIC API - All external access goes through these re-exports

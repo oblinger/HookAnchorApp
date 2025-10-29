@@ -201,7 +201,7 @@ impl Default for PopupSettings {
             max_rows: 20,
             max_columns: 3,
             verbose_logging: Some(false),
-            listed_actions: Some("app,url,folder,cmd,chrome,anchor".to_string()),
+            listed_actions: Some("app,url,folder,cmd,chrome".to_string()),
             merge_similar: true,
             word_separators: " ._-".to_string(),
             scan_interval_seconds: Some(10),

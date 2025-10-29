@@ -363,8 +363,12 @@ fn build_prefix_menu_commands(
     let config = crate::core::data::get_config();
     let separators = &config.popup_settings.word_separators;
 
-    // Add the anchor command itself as the first item in the menu
-    prefix_menu_commands.push(anchor_command.clone());
+    // Add the anchor command itself only if it matches the filter
+    // If filter_text is empty, always include the anchor (full match)
+    // If filter_text exists, only include if anchor name matches it
+    if filter_text.is_empty() || command_matches_query_with_debug(&anchor_command.command, filter_text, false) >= 0 {
+        prefix_menu_commands.push(anchor_command.clone());
+    }
 
     // Find all commands that have the anchor name as a prefix
     for cmd in all_commands {
@@ -378,9 +382,9 @@ fn build_prefix_menu_commands(
         let cmd_lower = cmd_trimmed.to_lowercase();
         let anchor_lower = anchor_name.to_lowercase();
 
-        // Log tracker info specifically
+        // Log tracker info specifically (detailed log only)
         if cmd.command.to_lowercase().contains("tracker info") && !filter_text.is_empty() {
-            crate::utils::log(&format!("PREFIX_MENU: Checking 'tracker info' - cmd_trimmed='{}', anchor_name='{}', filter_text='{}'",
+            crate::utils::detailed_log("PREFIX_MENU", &format!("Checking 'tracker info' - cmd_trimmed='{}', anchor_name='{}', filter_text='{}'",
                 cmd_trimmed, anchor_name, filter_text));
         }
 

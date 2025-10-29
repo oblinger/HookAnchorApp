@@ -95,7 +95,7 @@ pub fn rename_associated_data(
     // 1. Document Renaming
     if config.popup_settings.rename_doc.unwrap_or(false) {
         // Check if this is a document action
-        if matches!(action, "markdown" | "text" | "doc" | "anchor") {
+        if matches!(action, "markdown" | "text" | "doc") {
             let path = Path::new(current_arg);
             if path.exists() && path.is_file() {
                 // Check if the file basename matches the old command name
@@ -138,7 +138,10 @@ pub fn rename_associated_data(
     }
     
     // 2. Folder Renaming (for anchor commands)
-    if config.popup_settings.rename_folder.unwrap_or(false) && action == "anchor" {
+    // NOTE: This code is currently unreachable since we no longer have action="anchor"
+    // Anchor status is now determined by the 'A' flag, not the action type
+    // TODO: Update this to check anchor flag when we refactor to pass full command
+    if config.popup_settings.rename_folder.unwrap_or(false) && false { // Disabled: no longer have anchor action
         let path = Path::new(&updated_arg);
         
         // For anchor files, check if folder name matches old command name

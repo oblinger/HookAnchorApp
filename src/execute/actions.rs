@@ -743,12 +743,9 @@ pub fn get_action(path: &std::path::Path) -> &'static str {
         
         match extension.as_deref() {
             Some("md") => {
-                // Use the helper function for consistent anchor detection
-                if crate::utils::is_anchor_file(path) {
-                    "anchor"
-                } else {
-                    "markdown"
-                }
+                // Always return "markdown" for .md files
+                // Anchor status is determined by the 'A' flag, not the action type
+                "markdown"
             },
             Some("txt") | Some("text") => "text",
             Some("pdf") | Some("doc") | Some("docx") => "doc",
@@ -787,7 +784,7 @@ pub fn get_action_for_arg(arg: &str) -> &'static str {
 pub fn get_default_patch_for_action(action: &str) -> Option<&'static str> {
     match action {
         "folder" => Some("Folders"),
-        "markdown" | "anchor" => Some("Anchors"),
+        "markdown" => Some("Anchors"),
         "doc" | "text" => Some("Documents"),
         "app" => Some("Apps"),
         "url" => Some("URLs"),

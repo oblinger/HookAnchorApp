@@ -588,7 +588,7 @@ fn extract_and_validate_folder(cmd: &super::Command) -> Result<String, String> {
             // For folder action, the arg is the folder itself
             cmd.arg.clone()
         },
-        "markdown" | "anchor" | "doc" | "text" => {
+        "markdown" | "doc" | "text" => {
             // For file-based actions, check if arg is a directory or file
             let expanded_arg = if cmd.arg.starts_with("~/") {
                 cmd.arg.replacen("~", &std::env::var("HOME").unwrap_or_default(), 1)

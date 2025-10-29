@@ -281,7 +281,3 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - Popup position issues
 - tmux activation handling
-
-## Earlier Versions
-
-Previous versions did not maintain a formal changelog. This changelog was created starting from version 0.5.0 based on git history.

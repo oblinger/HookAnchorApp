@@ -26,8 +26,5 @@ pub mod systems;
 // Prelude for common imports
 pub mod prelude;
 
-// Cloud scanning module
-pub mod cloud_scanner;
-
 // All exports are now controlled through individual mod.rs files
 // Access via: core::, execute::, ui::, js::, systems::, utils:: namespaces

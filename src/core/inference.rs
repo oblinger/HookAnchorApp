@@ -217,19 +217,20 @@ fn infer_patch_from_command(command: &Command, patches: &HashMap<String, Patch>)
     // Use get_absolute_folder_path to normalize the path:
     // - For files: returns parent directory (folder containing the file)
     // - For folders: returns the folder itself
-    // - For anchors: smart logic for both cases
     //
     // This gives us the folder that this command represents/is in, and we pass
     // that to inference which will check folder_map to find the patch
     let config = crate::core::data::get_config();
-    if let Some(folder_path) = command.get_absolute_folder_path(&config) {
-        infer_patch_from_file_path(folder_path.to_str()?, patches)
-    } else if !command.arg.is_empty() {
-        // Fallback to raw arg if get_absolute_folder_path returns None
-        infer_patch_from_file_path(&command.arg, patches)
-    } else {
-        None
+    let mut folder_path = command.get_absolute_folder_path(&config)?;
+
+    // SPECIAL CASE FOR ANCHORS:
+    // Anchors DEFINE the patch for their folder, but they themselves belong to the PARENT patch
+    // So for anchors, go up one more directory before inferring
+    if command.is_anchor() {
+        folder_path = folder_path.parent()?.to_path_buf();
     }
+
+    infer_patch_from_file_path(folder_path.to_str()?, patches)
 }
 
 /// Infer patch from file path, excluding a specific command to prevent self-assignment

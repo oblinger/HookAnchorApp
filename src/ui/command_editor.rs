@@ -256,6 +256,7 @@ impl CommandEditor {
                             
                             // Action row (dropdown)
                             ui.label("Action:");
+                            let combo_id = ui.id().with("action_combo");
                             egui::ComboBox::from_id_salt("action_combo")
                                 .selected_text(&self.action)
                                 .height(400.0) // Make dropdown tall enough to show all options
@@ -264,8 +265,8 @@ impl CommandEditor {
                                     let actions = super::helpers::get_listed_actions();
                                     for action in &actions {
                                         if ui.selectable_value(&mut self.action, action.clone(), action).clicked() {
-                                            // Selection was made, close the combo box by losing focus
-                                            ui.memory_mut(|mem| mem.stop_text_input());
+                                            // Close the combo box dropdown by closing its popup
+                                            ui.memory_mut(|mem| mem.close_popup());
                                         }
                                     }
                                 });

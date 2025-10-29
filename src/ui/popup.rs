@@ -93,6 +93,8 @@ pub struct AnchorSelector {
     pending_rebuild: bool,
     /// Pending action waiting for user confirmation or input
     pending_action: Option<PendingAction>,
+    /// Last modification time of state.json file (for efficient polling)
+    last_state_mod_time: Option<std::time::SystemTime>,
     /// Action to execute immediately after initialization (from --action flag)
     initial_action_name: Option<String>,
     /// External dialog state (subprocess-based dialog)
@@ -348,14 +350,16 @@ impl AnchorSelector {
             // Clear the search input for next time
             self.popup_state.search_text.clear();
             self.popup_state.update_search(String::new());
-            
+
             // IMPORTANT: Restore focus to the previous application before hiding
             // This ensures that text insertion and other operations work correctly
-            crate::utils::detailed_log("EXIT_OR_HIDE", "Restoring focus to previous application");
-            if let Err(e) = self.regain_focus() {
-                crate::utils::log_error(&format!("Failed to restore focus before hiding: {}", e));
-            }
-            
+            // COMMENTED OUT: Testing if focus restoration is needed when hiding
+            // If the window is being hidden anyway, we may not need to explicitly restore focus
+            // crate::utils::detailed_log("EXIT_OR_HIDE", "Restoring focus to previous application");
+            // if let Err(e) = self.regain_focus() {
+            //     crate::utils::log_error(&format!("Failed to restore focus before hiding: {}", e));
+            // }
+
             // Hide the window using egui's viewport command
             crate::utils::detailed_log("EXIT_OR_HIDE", "Sending ViewportCommand::Visible(false)");
             ctx.send_viewport_cmd(egui::ViewportCommand::Visible(false));
@@ -1605,6 +1609,7 @@ impl AnchorSelector {
             is_hidden: false,
             pending_rebuild: false,
             pending_action: None,
+            last_state_mod_time: None,
             initial_action_name: None,
             external_dialog_state: None,
         };
@@ -1662,6 +1667,7 @@ impl AnchorSelector {
             is_hidden: false,
             pending_rebuild: false,
             pending_action: None,
+            last_state_mod_time: None,
             initial_action_name: initial_action.map(|s| s.to_string()),
             external_dialog_state: None,
         };
@@ -1865,8 +1871,8 @@ impl AnchorSelector {
         crate::utils::log(&format!("RENAME: rename_associated_data completed, updated_arg: {}", updated_arg));
 
         // Check if this is an anchor file rename where filename matches folder name
-        // Check for both "anchor" and "markdown" actions since both can be anchor files
-        if action == "anchor" || action == "markdown" {
+        // Check if the command has the anchor flag ('A')
+        if new_command_flags.contains('A') {
             use std::path::Path;
             let arg_path = Path::new(current_arg);
 
@@ -3741,11 +3747,28 @@ impl eframe::App for AnchorSelector {
             ctx.request_repaint(); // Ensure we update when loading completes
         }
 
-        // Reload app state from file on every update after initial loading
+        // Check if state.json has been modified (efficient polling via mod time)
         // This ensures last anchor changes from the server are picked up
         if self.loading_state == LoadingState::Loaded {
-            let current_state = crate::core::data::get_state();
-            self.popup_state.app_state = current_state;
+            let state_path = std::path::Path::new(&std::env::var("HOME").unwrap_or_else(|_| ".".to_string()))
+                .join(".config/hookanchor/state.json");
+
+            if let Ok(metadata) = std::fs::metadata(&state_path) {
+                if let Ok(mod_time) = metadata.modified() {
+                    // Check if file has changed since last check
+                    let should_reload = match self.last_state_mod_time {
+                        None => true, // First time - always load
+                        Some(last_time) => mod_time > last_time, // Only reload if file changed
+                    };
+
+                    if should_reload {
+                        // File changed or first load - reload state from disk
+                        let current_state = crate::core::data::get_state();
+                        self.popup_state.app_state = current_state;
+                        self.last_state_mod_time = Some(mod_time);
+                    }
+                }
+            }
         }
         
         // If loading just completed and we have pending search, trigger it now
@@ -3923,15 +3946,10 @@ impl eframe::App for AnchorSelector {
         let window_position = ctx.input(|i| {
             // Try outer_rect first, fallback to calculating from inner_rect
             if let Some(outer_rect) = i.viewport().outer_rect {
-                crate::utils::log(&format!("POS_DEBUG: Using outer_rect: left={}, top={}, width={}",
-                    outer_rect.left(), outer_rect.top(), screen_rect.width()));
                 Some((outer_rect.left(), outer_rect.top(), screen_rect.width()))
             } else if let Some(inner_rect) = i.viewport().inner_rect {
-                crate::utils::log(&format!("POS_DEBUG: Using inner_rect: left={}, top={}, width={}",
-                    inner_rect.left(), inner_rect.top(), screen_rect.width()));
                 Some((inner_rect.left(), inner_rect.top(), screen_rect.width()))
             } else {
-                crate::utils::log("POS_DEBUG: No rect available");
                 None
             }
         });
@@ -4106,11 +4124,11 @@ impl eframe::App for AnchorSelector {
                                     crate::utils::log(&format!("RENAME_DRY_RUN: Found {} actions: {:?}", actions.len(), actions));
 
                                     // Check if this is an anchor file rename where filename matches folder name
-                                    // Check for both "anchor" and "markdown" actions since both can be anchor files
-                                    crate::utils::log(&format!("FOLDER_CHECK: Checking for folder rename. action={}, arg={}, old_name={}",
-                                        new_command.action, new_command.arg, effective_old_name));
+                                    // Check if the command has the anchor flag ('A')
+                                    crate::utils::log(&format!("FOLDER_CHECK: Checking for folder rename. action={}, arg={}, old_name={}, is_anchor={}",
+                                        new_command.action, new_command.arg, effective_old_name, new_command.is_anchor()));
 
-                                    if new_command.action == "anchor" || new_command.action == "markdown" {
+                                    if new_command.is_anchor() {
                                         use std::path::Path;
                                         let arg_path = Path::new(&new_command.arg);
 
