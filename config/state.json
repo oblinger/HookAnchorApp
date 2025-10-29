@@ -1,32 +1,32 @@
 {
-  "anchor_folder": null,
-  "anchor_name": "Hook Anchor",
-  "anchor_timestamp": 1761752108,
-  "build_time": 1761757443,
+  "window_position": [
+    980.0,
+    -156.0
+  ],
   "history_viewer_state": {
-    "min_edit_size": 500,
-    "name_filter": "",
-    "patch_filter": "Hook Anchor Docs",
     "position": [
       -2441.0,
       182.0
     ],
-    "selected_action_types": [],
-    "show_current_commands": true,
-    "sidebar_width": 170.0,
     "window_size": [
       1000.0,
       840.0
-    ]
+    ],
+    "patch_filter": "Hook Anchor Docs",
+    "name_filter": "",
+    "min_edit_size": 500,
+    "selected_action_types": [],
+    "sidebar_width": 170.0,
+    "show_current_commands": true
   },
-  "last_executed_command": "Hook Anchor Log",
-  "last_scan_checksum": null,
+  "build_time": 1761762421,
   "last_scan_time": null,
+  "last_scan_checksum": null,
+  "last_executed_command": "Ask",
+  "server_pid": 44957,
   "notion_last_scan": null,
-  "server_pid": 30900,
-  "show_files": true,
-  "window_position": [
-    979.0,
-    459.0
-  ]
+  "anchor_name": "Ask",
+  "anchor_timestamp": 1761762002,
+  "anchor_folder": null,
+  "show_files": true
 }

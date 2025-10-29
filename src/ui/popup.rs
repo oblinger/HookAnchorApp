@@ -4428,20 +4428,12 @@ impl eframe::App for AnchorSelector {
 
                 // Check for Space key to accept last anchor
                 let space_pressed = ctx.input(|i| {
-                    let pressed = i.key_pressed(egui::Key::Space);
-                    if pressed {
-                        crate::utils::log("🔑 SPACE KEY: Space key detected");
-                    }
-                    pressed
+                    i.key_pressed(egui::Key::Space)
                 });
-
-                // Immediately consume space key to prevent TextEdit from processing it
-                if space_pressed {
-                    ctx.input_mut(|i| i.consume_key(egui::Modifiers::NONE, egui::Key::Space));
-                }
 
                 // Handle space key last anchor acceptance
                 if space_pressed {
+                    crate::utils::log("🔑 SPACE KEY: Space key detected");
                     let current_input = if self.loading_state == LoadingState::Loaded {
                         &self.popup_state.search_text
                     } else {
@@ -4450,17 +4442,32 @@ impl eframe::App for AnchorSelector {
 
                     // Check conditions: empty input + anchor name exists
                     let anchor_name = &self.popup_state.app_state.anchor_name;
+                    crate::utils::log(&format!("🔑 SPACE KEY: current_input='{}' (empty={}), anchor_name={:?}",
+                        current_input, current_input.is_empty(), anchor_name));
+
                     if current_input.is_empty() && anchor_name.is_some() {
                         if let Some(anchor_text) = anchor_name {
                             crate::utils::log(&format!("🔑 SPACE KEY: Accepting anchor name '{}' + space", anchor_text));
 
-                            // Set input to anchor text + space at the end
+                            // Consume the space key FIRST to prevent TextEdit from processing it
+                            ctx.input_mut(|i| i.consume_key(egui::Modifiers::NONE, egui::Key::Space));
+                            crate::utils::log("🔑 SPACE KEY: Consumed space key before TextEdit");
+
+                            // Set input to anchor text + space (we control both)
                             let new_text = format!("{} ", anchor_text);
                             if self.loading_state == LoadingState::Loaded {
-                                self.popup_state.update_search(new_text);
+                                self.popup_state.update_search(new_text.clone());
+                                crate::utils::log(&format!("🔑 SPACE KEY: Set search_text to '{}' (len={})",
+                                    self.popup_state.search_text, self.popup_state.search_text.len()));
                             } else {
-                                self.pre_init_input_buffer = new_text;
+                                self.pre_init_input_buffer = new_text.clone();
+                                crate::utils::log(&format!("🔑 SPACE KEY: Set pre_init_buffer to '{}' (len={})",
+                                    self.pre_init_input_buffer, self.pre_init_input_buffer.len()));
                             }
+
+                            // Request cursor be positioned at the end of the text
+                            self.request_cursor_at_end = true;
+                            crate::utils::log("🔑 SPACE KEY: Requested cursor at end of input");
                         }
                     }
                 }
@@ -4542,7 +4549,26 @@ impl eframe::App for AnchorSelector {
 
                     // Handle cursor positioning AFTER rendering the TextEdit
                     if self.request_cursor_at_end {
-                        crate::utils::log(&format!("CURSOR_DEBUG: About to manually set cursor at end for text length {}", text_len));
+                        // Check if TextEdit added an unwanted space at the beginning
+                        let actual_text = if self.loading_state == LoadingState::Loaded {
+                            &self.popup_state.search_text
+                        } else {
+                            &self.pre_init_input_buffer
+                        };
+
+                        crate::utils::log(&format!("CURSOR_DEBUG: text_len={}, actual_text='{}' (len={})",
+                            text_len, actual_text, actual_text.len()));
+
+                        // If TextEdit added a space at the beginning despite our consumption, remove it
+                        if actual_text.starts_with(' ') && actual_text.len() > text_len {
+                            crate::utils::log("CURSOR_DEBUG: Detected unwanted leading space, removing it");
+                            let fixed_text = actual_text.trim_start().to_string();
+                            if self.loading_state == LoadingState::Loaded {
+                                self.popup_state.search_text = fixed_text;
+                            } else {
+                                self.pre_init_input_buffer = fixed_text;
+                            }
+                        }
 
                         if let Some(mut state) = egui::TextEdit::load_state(ui.ctx(), text_edit_response.id) {
                             // Manually set cursor to end position

@@ -563,8 +563,8 @@ module.exports = {
   // Helper function: Regain focus for the anchor selector
   regain_focus: function(ctx) {
     const { shell, shellSync } = ctx.builtins;
-    // Bring focus back to the anchor selector application
-    shell("osascript -e 'tell application \"popup\" to activate'");
+    // Bring focus back to the popup_server process
+    shell("osascript -e 'tell application \"System Events\" to set frontmost of process \"popup_server\" to true'");
     shellSync("/bin/sleep 0.1"); // Brief delay to ensure focus transfer completes
   },
 
