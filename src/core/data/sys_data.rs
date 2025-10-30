@@ -9,15 +9,16 @@
 
 
 use std::collections::HashMap;
-use std::sync::{Mutex, OnceLock};
+use std::sync::{Arc, Mutex, OnceLock};
 use super::config::Config;
 use crate::core::{Command, Patch};
 
 /// System application data structure containing all loaded data
+/// Note: commands field is Arc<Vec<Command>> - use &*sys_data.commands to get &[Command]
 #[derive(Clone, Debug)]
 pub struct SysData {
     pub config: Config,
-    pub commands: Vec<Command>,
+    pub commands: Arc<Vec<Command>>,  // Arc for efficient read-only access (cloning is cheap)
     pub patches: HashMap<String, Patch>,
 }
 
@@ -129,6 +130,46 @@ pub fn get_config() -> Config {
     CONFIG.get().expect("Config not initialized! Call initialize_config() at startup").clone()
 }
 
+/// Gets an Arc reference to the commands list (internal, fast access)
+/// This is very fast - just clones the Arc pointer (~5ns), not the data
+/// Use this for hot paths that only read commands
+/// Panics if initialize() hasn't been called yet
+pub fn get_commands_arc() -> Arc<Vec<Command>> {
+    let sys = SYS_DATA.get_or_init(|| Mutex::new(None));
+    let sys_data = sys.lock().unwrap();
+
+    match *sys_data {
+        Some(ref data) => Arc::clone(&data.commands),
+        None => panic!("SysData not initialized! Call initialize() at startup"),
+    }
+}
+
+/// Get commands as a Vec - standard access for general use
+/// Clones from internal Arc
+pub fn get_commands() -> Vec<Command> {
+    let commands_arc = get_commands_arc();
+    (*commands_arc).clone()
+}
+
+/// Updates the commands in the singleton with a new list
+/// Creates a new Arc, invalidating old snapshots (old Arc stays alive until last reference drops)
+/// Also updates the patches hashmap to stay in sync
+/// Call this after flushing commands to disk
+pub fn update_commands(new_commands: Vec<Command>) {
+    let sys = SYS_DATA.get().expect("SysData not initialized! Call initialize() at startup");
+    let mut sys_data = sys.lock().unwrap();
+
+    if let Some(ref mut data) = *sys_data {
+        // Create new Arc with updated commands
+        data.commands = Arc::new(new_commands.clone());
+
+        // Update patches to stay in sync
+        data.patches = crate::core::commands::create_patches_hashmap(&new_commands);
+
+        crate::utils::log("SYS_DATA: Commands updated, old Arc invalidated");
+    }
+}
+
 /// Mark that commands have been modified and need to be reloaded
 /// This is the standard way to indicate that command data has changed
 /// The next call to get_sys_data() will automatically reload
@@ -177,18 +218,13 @@ pub fn initialize() -> Result<(), String> {
     let mut sys_data = sys.lock().unwrap();
     *sys_data = Some(SysData {
         config: get_config(),
-        commands,
+        commands: Arc::new(commands),  // Wrap in Arc for efficient access
         patches,
     });
 
     Ok(())
 }
 
-/// Get a copy of commands from the singleton
-pub fn get_commands() -> Vec<Command> {
-    let (sys_data, _) = get_sys_data();
-    sys_data.commands
-}
 
 /// Get a copy of patches from the singleton
 pub fn get_patches() -> HashMap<String, Patch> {
@@ -199,13 +235,16 @@ pub fn get_patches() -> HashMap<String, Patch> {
 /// Internal function: Flush commands to disk with validation and repair
 /// This ALWAYS validates/repairs patches and saves to both cache and commands.txt
 fn flush(commands: &mut Vec<Command>) -> Result<(), Box<dyn std::error::Error>> {
+    let flush_start = std::time::Instant::now();
     let initial_count = commands.len();
-    crate::utils::detailed_log("FLUSH", &format!("Starting flush operation with {} commands", initial_count));
+    crate::utils::log(&format!("⏱️ FLUSH: Starting with {} commands", initial_count));
 
     // Step 1: Validate and repair patches (ensures data integrity)
-    crate::utils::detailed_log("FLUSH", "Step 1: Validating and repairing patches...");
+    let step1_start = std::time::Instant::now();
     let resolution = crate::core::validate_and_repair_patches(commands, true);
     let patches = resolution.patches;
+    crate::utils::log(&format!("⏱️ FLUSH: Step 1 (validate/repair): {:?}", step1_start.elapsed()));
+
     let after_validation_count = commands.len();
     if after_validation_count != initial_count {
         crate::utils::log(&format!("FLUSH: Validation added/removed {} commands (now {})",
@@ -213,8 +252,10 @@ fn flush(commands: &mut Vec<Command>) -> Result<(), Box<dyn std::error::Error>> 
     }
 
     // Step 2: Deduplicate commands (keeps best version of each unique command name)
-    crate::utils::detailed_log("FLUSH", "Step 2: Deduplicating commands...");
+    let step2_start = std::time::Instant::now();
     *commands = super::storage::deduplicate_commands(commands.clone());
+    crate::utils::log(&format!("⏱️ FLUSH: Step 2 (deduplicate): {:?}", step2_start.elapsed()));
+
     let after_dedup_count = commands.len();
     if after_dedup_count != after_validation_count {
         crate::utils::log(&format!("FLUSH: Deduplication removed {} duplicate commands (now {})",
@@ -222,21 +263,17 @@ fn flush(commands: &mut Vec<Command>) -> Result<(), Box<dyn std::error::Error>> 
     }
 
     // Step 3: Save to both cache and commands.txt
-    crate::utils::detailed_log("FLUSH", "Step 3: Saving to disk...");
+    let step3_start = std::time::Instant::now();
     super::storage::save_commands_to_file(commands)?;
     super::storage::save_commands_to_cache(commands)?;
+    crate::utils::log(&format!("⏱️ FLUSH: Step 3 (save to disk): {:?}", step3_start.elapsed()));
 
-    // Step 4: Update singleton with new commands and patches
-    crate::utils::detailed_log("FLUSH", "Step 4: Updating singleton...");
-    let sys = SYS_DATA.get_or_init(|| Mutex::new(None));
-    let mut sys_data = sys.lock().unwrap();
-    *sys_data = Some(SysData {
-        config: get_config(),
-        commands: commands.clone(),
-        patches,
-    });
+    // Step 4: Update singleton with new commands (creates new Arc, invalidates old snapshots)
+    let step4_start = std::time::Instant::now();
+    update_commands(commands.clone());
+    crate::utils::log(&format!("⏱️ FLUSH: Step 4 (update singleton): {:?}", step4_start.elapsed()));
 
-    crate::utils::detailed_log("FLUSH", &format!("Flush complete - final count: {} commands", commands.len()));
+    crate::utils::log(&format!("⏱️ FLUSH: TOTAL TIME: {:?}", flush_start.elapsed()));
     Ok(())
 }
 
@@ -245,8 +282,13 @@ fn flush(commands: &mut Vec<Command>) -> Result<(), Box<dyn std::error::Error>> 
 /// Records all changes to history by comparing against cached commands
 /// Always saves (flushes) to disk regardless of whether inference made changes
 pub fn set_commands(mut commands: Vec<Command>) -> Result<(), Box<dyn std::error::Error>> {
+    let set_commands_start = std::time::Instant::now();
+    crate::utils::log(&format!("⏱️ SET_COMMANDS: Starting with {} commands", commands.len()));
+
     // Initialize history database
+    let history_init_start = std::time::Instant::now();
     let conn = super::history::initialize_history_db()?;
+    crate::utils::log(&format!("⏱️ SET_COMMANDS: History DB init: {:?}", history_init_start.elapsed()));
 
     // Get current timestamp
     let timestamp = std::time::SystemTime::now()
@@ -254,9 +296,12 @@ pub fn set_commands(mut commands: Vec<Command>) -> Result<(), Box<dyn std::error
         .as_secs() as i64;
 
     // Get cached commands for comparison
+    let get_cached_start = std::time::Instant::now();
     let cached_commands = get_commands();
+    crate::utils::log(&format!("⏱️ SET_COMMANDS: Get cached commands: {:?}", get_cached_start.elapsed()));
 
     // Create lookup maps for efficient comparison
+    let map_start = std::time::Instant::now();
     use std::collections::HashMap;
     let mut cached_map: HashMap<String, &Command> = HashMap::new();
     for cmd in &cached_commands {
@@ -267,6 +312,7 @@ pub fn set_commands(mut commands: Vec<Command>) -> Result<(), Box<dyn std::error
     for cmd in &commands {
         new_map.insert(cmd.command.clone(), cmd);
     }
+    crate::utils::log(&format!("⏱️ SET_COMMANDS: Create lookup maps: {:?}", map_start.elapsed()));
 
     // Track changes for logging
     let mut created_count = 0;
@@ -274,6 +320,7 @@ pub fn set_commands(mut commands: Vec<Command>) -> Result<(), Box<dyn std::error
     let mut deleted_count = 0;
 
     // Record all new and modified commands to history
+    let history_record_start = std::time::Instant::now();
     for new_cmd in &commands {
         if let Some(cached_cmd) = cached_map.get(&new_cmd.command) {
             // Command exists - check if it was modified
@@ -323,6 +370,8 @@ pub fn set_commands(mut commands: Vec<Command>) -> Result<(), Box<dyn std::error
         }
     }
 
+    crate::utils::log(&format!("⏱️ SET_COMMANDS: Record history: {:?}", history_record_start.elapsed()));
+
     // Log summary of changes
     if created_count > 0 || modified_count > 0 || deleted_count > 0 {
         crate::utils::log(&format!(
@@ -332,7 +381,12 @@ pub fn set_commands(mut commands: Vec<Command>) -> Result<(), Box<dyn std::error
     }
 
     // Flush to disk with inference
-    flush(&mut commands)
+    let flush_start = std::time::Instant::now();
+    let result = flush(&mut commands);
+    crate::utils::log(&format!("⏱️ SET_COMMANDS: Flush (includes inference): {:?}", flush_start.elapsed()));
+    crate::utils::log(&format!("⏱️ SET_COMMANDS: TOTAL TIME: {:?}", set_commands_start.elapsed()));
+
+    result
 }
 
 /// Add a single command, record in history, run inference, and save
@@ -378,7 +432,7 @@ fn load_data_no_cache(commands_override: Vec<Command>, _verbose: bool) -> SysDat
     
     SysData {
         config,
-        commands,
+        commands: Arc::new(commands),
         patches,
     }
 }
@@ -486,7 +540,7 @@ pub fn load_data(commands_override: Vec<Command>, verbose: bool) -> SysData {
     // Store in sys data for future calls (only if not using commands override)
     let sys_data_struct = SysData {
         config,
-        commands,
+        commands: Arc::new(commands),  // Wrap in Arc for efficient access
         patches,
     };
     

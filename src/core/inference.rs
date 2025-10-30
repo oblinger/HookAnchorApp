@@ -154,6 +154,85 @@ pub fn infer_patch(command: &Command, patches: &HashMap<String, Patch>) -> Optio
     None
 }
 
+/// Unified patch inference algorithm
+///
+/// Steps (in priority order):
+/// 1. Resolve aliases to get base command
+/// 2. Path-based: Get command's folder via get_absolute_folder_path(), use parent if anchor, walk up checking folder_map
+/// 3. Progressive word prefix: Split command name by whitespace chars (from config), try 1-word, 2-word, 3-word prefixes (case-insensitive)
+/// 4. Return None if no match (caller assigns "orphans")
+pub fn infer_patch_unified(
+    command: &Command,
+    patches: &HashMap<String, Patch>,
+    folder_map: &HashMap<PathBuf, String>
+) -> Option<String> {
+    let config = crate::core::data::get_config();
+
+    // Step 1: Resolve aliases (using fast Arc-based command access)
+    let commands = crate::core::data::get_commands_arc();
+    let resolved_command = command.resolve_alias(&commands);
+
+    // Step 2: Path-based inference
+    if let Some(mut folder_path) = resolved_command.get_absolute_folder_path(&config) {
+        // If anchor, go up one level to parent
+        if resolved_command.is_anchor() {
+            if let Some(parent) = folder_path.parent() {
+                folder_path = parent.to_path_buf();
+            }
+        }
+
+        // Walk up directory tree checking folder_map
+        let mut current = Some(folder_path.as_path());
+        while let Some(dir) = current {
+            if let Ok(canonical) = dir.canonicalize() {
+                if let Some(patch_name) = folder_map.get(&canonical) {
+                    // Prevent self-assignment for anchors
+                    if resolved_command.is_anchor() && patch_name.to_lowercase() == resolved_command.command.to_lowercase() {
+                        current = dir.parent();
+                        continue;
+                    }
+                    return Some(patch_name.clone());
+                }
+            }
+            current = dir.parent();
+        }
+    }
+
+    // Step 3: Progressive word prefix matching
+    // Split by word separator characters from config
+    let separators: Vec<char> = config.popup_settings.word_separators.chars().collect();
+    let words: Vec<&str> = resolved_command.command
+        .split(|c: char| separators.contains(&c))
+        .filter(|w| !w.is_empty())
+        .collect();
+
+    let mut best_match: Option<String> = None;
+    let mut best_len = 0;
+
+    // Try progressively longer prefixes (1 word, 2 words, 3 words, etc.)
+    for word_count in 1..=words.len() {
+        let prefix = words[..word_count].join(" ").to_lowercase();
+
+        // Check all patches for case-insensitive match
+        for patch_name in patches.keys() {
+            if patch_name.to_lowercase() == prefix {
+                // Prevent self-assignment for anchors
+                if resolved_command.is_anchor() && patch_name.to_lowercase() == resolved_command.command.to_lowercase() {
+                    continue;
+                }
+
+                // Prefer longer matches
+                if prefix.len() > best_len {
+                    best_match = Some(patch_name.clone());
+                    best_len = prefix.len();
+                }
+            }
+        }
+    }
+
+    best_match
+}
+
 /// Run basic patch inference with degradation prevention and logging
 /// This is a simplified version - the main CLI version is in commands.rs
 pub fn run_basic_patch_inference(
@@ -221,23 +300,44 @@ fn infer_patch_from_command(command: &Command, patches: &HashMap<String, Patch>)
     // This gives us the folder that this command represents/is in, and we pass
     // that to inference which will check folder_map to find the patch
     let config = crate::core::data::get_config();
+
+    crate::utils::detailed_log("PATCH_INFERENCE_DETAIL", &format!(
+        "=== Inferring patch for command '{}' (anchor={}, action={}, arg={})",
+        command.command, command.is_anchor(), command.action, command.arg
+    ));
+
     let mut folder_path = command.get_absolute_folder_path(&config)?;
+    crate::utils::detailed_log("PATCH_INFERENCE_DETAIL", &format!(
+        "  Initial folder_path: {:?}",
+        folder_path
+    ));
 
     // SPECIAL CASE FOR ANCHORS:
     // Anchors DEFINE the patch for their folder, but they themselves belong to the PARENT patch
     // So for anchors, go up one more directory before inferring
     if command.is_anchor() {
+        crate::utils::detailed_log("PATCH_INFERENCE_DETAIL", "  Command is an anchor - going up one directory");
         folder_path = folder_path.parent()?.to_path_buf();
+        crate::utils::detailed_log("PATCH_INFERENCE_DETAIL", &format!(
+            "  Parent folder_path: {:?}",
+            folder_path
+        ));
     }
 
-    infer_patch_from_file_path(folder_path.to_str()?, patches)
+    let result = infer_patch_from_file_path(folder_path.to_str()?, patches);
+    crate::utils::detailed_log("PATCH_INFERENCE_DETAIL", &format!(
+        "  Inferred patch result: {:?}",
+        result
+    ));
+
+    result
 }
 
 /// Infer patch from file path, excluding a specific command to prevent self-assignment
 fn infer_patch_from_file_path_with_exclusion(file_path: &str, patches: &HashMap<String, Patch>, exclude_command: &str) -> Option<String> {
     // Build folder map from current commands, excluding the specified command
     let (sys_data, _) = crate::core::get_sys_data();
-    let mut filtered_commands = sys_data.commands;
+    let mut filtered_commands = (*sys_data.commands).clone();
     filtered_commands.retain(|cmd| cmd.command.to_lowercase() != exclude_command.to_lowercase());
     
     let folder_map = build_folder_to_patch_map(&filtered_commands);
@@ -353,6 +453,12 @@ pub fn build_folder_to_patch_map(commands: &[Command]) -> HashMap<PathBuf, Strin
 
 /// Simple patch inference: walk up the folder hierarchy until we find a mapped folder
 pub fn infer_patch_simple(file_path: &str, folder_map: &HashMap<PathBuf, String>) -> Option<String> {
+    infer_patch_simple_with_anchor_flag(file_path, folder_map, false)
+}
+
+/// Infer patch from file path with optional anchor flag
+/// If is_anchor=true, will go up one extra directory to find parent patch
+pub fn infer_patch_simple_with_anchor_flag(file_path: &str, folder_map: &HashMap<PathBuf, String>, is_anchor: bool) -> Option<String> {
     // Skip if not a file path
     if file_path.is_empty() || file_path.starts_with("http") || !file_path.contains('/') {
         return None;
@@ -361,11 +467,11 @@ pub fn infer_patch_simple(file_path: &str, folder_map: &HashMap<PathBuf, String>
     let path = Path::new(file_path);
 
     // Determine starting point based on what we're looking at:
-    // - Anchor files: start from grandparent to avoid self-reference
+    // - Anchors (by flag or file pattern): start from grandparent to avoid self-reference
     // - Regular files: start from parent directory (the folder containing them)
     // - Directories: start from the directory itself (folder_map has this folder's patch)
-    let mut current = if crate::utils::is_anchor_file(path) {
-        // Anchor files: start from grandparent to avoid self-reference
+    let mut current = if is_anchor || crate::utils::is_anchor_file(path) {
+        // Anchors: start from grandparent to avoid self-reference
         path.parent().and_then(|p| p.parent())
     } else if path.is_dir() {
         // Directories: check the directory itself in folder_map
@@ -450,7 +556,7 @@ fn infer_patch_from_alias_target(command: &Command, patches: &HashMap<String, Pa
         let (sys_data, _) = crate::core::get_sys_data();
 
         // Find the target command
-        for target_cmd in &sys_data.commands {
+        for target_cmd in sys_data.commands.iter() {
             if target_cmd.command == command.arg {
                 if !target_cmd.patch.is_empty() {
                     crate::utils::detailed_log("ALIAS_INFERENCE", &format!(

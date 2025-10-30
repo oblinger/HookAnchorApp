@@ -45,7 +45,7 @@ impl ApplicationState {
         // Get data from singleton (assumes initialize() was called)
         let config = super::data::get_config();
         let (sys_data, _) = super::data::get_sys_data();
-        let commands = sys_data.commands;
+        let commands = (*sys_data.commands).clone();  // Clone Vec from Arc
 
         // Note: If initialization failed, initialize() would have used a default config
         // so we don't track config_error here (it was already logged during initialize)

@@ -1048,7 +1048,7 @@ fn run_infer_all_patches(_args: &[String]) {
     if input == "y" || input == "yes" {
         // Get commands from singleton and apply changes
         let (sys_data, _) = crate::core::get_sys_data();
-        let mut commands = sys_data.commands;
+        let mut commands = (*sys_data.commands).clone();
         let patches = sys_data.patches;
         
         // Second run: Apply changes without printing (already shown above)

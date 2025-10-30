@@ -1090,7 +1090,7 @@ fn scan_files_merge_based(
 
     // Reload commands with updated patches
     let (sys_data, _) = crate::core::get_sys_data();
-    commands = sys_data.commands;
+    commands = (*sys_data.commands).clone();
 
     // Log summary
     crate::utils::log(&format!(

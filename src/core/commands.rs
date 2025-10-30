@@ -990,7 +990,7 @@ pub fn run_patch_inference(
     for (folder, patch) in &folder_map {
         crate::utils::detailed_log("PATCH", &format!("Folder: {} -> Patch: {}", folder.display(), patch));
     }
-    
+
     for command in commands.iter_mut() {
         // Skip the orphans root command - it should never have a patch
         if command.command == "orphans" {
@@ -1014,13 +1014,27 @@ pub fn run_patch_inference(
             || !command.has_patch();
 
         if should_process {
-            // Use simple inference for path-based commands
-            let inferred_patch = if command.is_path_based() && !command.arg.is_empty() {
-                infer_patch_simple(&command.arg, &folder_map)
-            } else {
-                // Fall back to old inference for non-path commands
-                infer_patch(command, patches)
-            };
+            crate::utils::detailed_log("PATCH_INFERENCE_DETAIL", &format!(
+                "Processing command '{}' (path_based={}, arg='{}', has_patch={})",
+                command.command, command.is_path_based(), command.arg, command.has_patch()
+            ));
+
+            // LEGACY PATCH INFERENCE - replaced with unified algorithm
+            // let inferred_patch = if command.is_path_based() && !command.arg.is_empty() {
+            //     crate::utils::detailed_log("PATCH_INFERENCE_DETAIL", &format!(
+            //         "  Using infer_patch_simple with arg '{}'",
+            //         command.arg
+            //     ));
+            //     infer_patch_simple(&command.arg, &folder_map)
+            // } else {
+            //     crate::utils::detailed_log("PATCH_INFERENCE_DETAIL",
+            //         "  Using infer_patch (legacy inference)");
+            //     // Fall back to old inference for non-path commands
+            //     infer_patch(command, patches)
+            // };
+
+            // Use unified patch inference algorithm
+            let inferred_patch = crate::core::inference::infer_patch_unified(command, patches, &folder_map);
             
             if let Some(inferred_patch) = inferred_patch {
                 // Skip if patch wouldn't change - always skip when values are the same
@@ -1340,14 +1354,14 @@ pub(crate) fn load_commands_raw() -> Vec<Command> {
 /// INTERNAL ONLY - External code should use get_commands() from sys_data
 pub(in crate::core) fn load_commands() -> Vec<Command> {
     let (global_data, _) = crate::core::data::get_sys_data();
-    global_data.commands
+    (*global_data.commands).clone()
 }
 
 /// Load commands with config and patches
 /// INTERNAL ONLY - External code should use get_sys_data()
 pub(in crate::core) fn load_commands_with_data() -> (crate::core::data::config::Config, Vec<Command>, HashMap<String, Patch>) {
     let (global_data, _) = crate::core::data::get_sys_data();
-    (global_data.config, global_data.commands, global_data.patches)
+    (global_data.config, (*global_data.commands).clone(), global_data.patches)
 }
 
 /// Load commands with only patches (no inference or orphan creation) - for inference analysis

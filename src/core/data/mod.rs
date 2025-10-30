@@ -60,6 +60,7 @@ pub use sys_data::{
     initialize,
     // Read operations
     get_commands,
+    get_commands_arc,  // Fast Arc-based access for hot paths
     get_config,
     get_patches,
     get_sys_data,
