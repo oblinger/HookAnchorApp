@@ -1677,19 +1677,31 @@ impl AnchorSelector {
 
     /// Start loading data in the background after UI is shown
     fn start_deferred_loading(&mut self) {
-        crate::utils::detailed_log("DEFERRED_LOADING", &format!("DEFERRED_LOADING: start_deferred_loading called"));
         if self.loading_state != LoadingState::NotLoaded {
-            crate::utils::detailed_log("DEFERRED_LOADING", &format!("DEFERRED_LOADING: Already loading or loaded, state={:?}", self.loading_state));
             return; // Already loading or loaded
         }
-        
-        crate::utils::detailed_log("DEFERRED_LOADING", &format!("DEFERRED_LOADING: Starting to load"));
+
+        crate::utils::log("⏱️ DEFERRED_LOADING: Starting data load...");
         self.loading_state = LoadingState::Loading;
         let start_time = std::time::Instant::now();
 
-        // Get data from singleton (initialize() was already called in main)
+        // Initialize sys_data NOW (deferred from main for faster window display)
+        let init_start = std::time::Instant::now();
+        match crate::core::initialize() {
+            Ok(()) => {
+                crate::utils::log(&format!("⏱️ DEFERRED_LOADING: Data loaded in {:?}", init_start.elapsed()));
+            }
+            Err(init_error) => {
+                crate::utils::log_error(&format!("Failed to initialize sys_data: {}", init_error));
+                // Continue with default config
+            }
+        }
+
+        // Get data from singleton (now initialized)
         let commands = crate::core::data::get_commands();
         let config = crate::core::data::get_config();
+
+        crate::utils::log(&format!("⏱️ DEFERRED_LOADING: Loaded {} commands", commands.len()));
 
         // Note: Config errors are handled during initialize() - we just use whatever is loaded
         let config_error: Option<String> = None;
@@ -1718,13 +1730,7 @@ impl AnchorSelector {
         }
         
         self.loading_state = LoadingState::Loaded;
-        let _elapsed = start_time.elapsed();
-        
-        // Debug log
-        if let Ok(mut file) = std::fs::OpenOptions::new().create(true).append(true).open("/tmp/hookanchor_debug.log") {
-            use std::io::Write;
-            let _ = writeln!(file, "📦 DEFERRED LOADING: Complete!");
-        }
+        crate::utils::log(&format!("⏱️ DEFERRED_LOADING: Total time: {:?}", start_time.elapsed()));
         
     }
     

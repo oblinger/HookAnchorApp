@@ -12,24 +12,15 @@ use hookanchor::core::ApplicationState;
 fn main() -> Result<(), eframe::Error> {
     // Initialize global binary path for consistent process spawning
     hookanchor::utils::init_binary_path();
-    
-    // Initialize sys_data (config + cache) - this must happen before any other operations
-    match hookanchor::core::initialize() {
-        Ok(()) => {
-            // Sys data initialized successfully (config + cache loaded)
-        }
-        Err(init_error) => {
-            hookanchor::utils::log_error(&format!("Failed to initialize sys_data: {}", init_error));
-            // Continue with default config
-        }
-    }
-    
-    // Defer non-critical operations for faster startup
-    // We'll do minimal logging until after the GUI is shown
-    
+
     // Initialize the global error queue for user error display
     hookanchor::utils::init_error_queue();
-    
+
+    // Initialize minimal sys_data (config + empty commands) for GUI mode
+    // This prevents panics when UI tries to access data before it's loaded
+    // Full data loading happens in deferred_loading after window is shown
+    let _ = hookanchor::core::initialize_minimal();
+
     let args: Vec<String> = env::args().collect();
 
     // Parse optional --input and --action flags (these are for GUI mode)
@@ -68,15 +59,26 @@ fn main() -> Result<(), eframe::Error> {
 
     // If arguments are provided (other than --input/--action), run in command-line mode (no GUI)
     if has_other_args {
+        // CLI mode - initialize sys_data immediately (needed for commands to work)
+        match hookanchor::core::initialize() {
+            Ok(()) => {
+                // Sys data initialized successfully (config + cache loaded)
+            }
+            Err(init_error) => {
+                hookanchor::utils::log_error(&format!("Failed to initialize sys_data: {}", init_error));
+                // Continue with default config
+            }
+        }
+
         // CLI mode needs server - ensure it's running
         if let Err(e) = hookanchor::execute::activate_command_server(false) {
             hookanchor::utils::log_error(&format!("Failed to activate command server: {}", e));
             // Continue - commands will show error dialogs when server is needed
         }
-        
+
         // CLI mode can create its own ApplicationState
         hookanchor::cmd::run_command_line_mode(args);
-        
+
         // Note: We don't shutdown the server here since CLI commands
         // may spawn background processes that need the server
         Ok(())
@@ -84,10 +86,12 @@ fn main() -> Result<(), eframe::Error> {
         // GUI mode - check if we're handling a URL immediately (no delay needed)
         // Check if any URL was passed via environment
         if let Ok(url) = env::var("HOOK_URL_HANDLER") {
+            // URL handler mode - initialize sys_data immediately
+            let _ = hookanchor::core::initialize();
             hookanchor::cmd::run_command_line_mode(vec!["ha".to_string(), url]);
             return Ok(());
         }
-        
+
         // For now, implement a check for recent URL file to handle URL events
         // This is a temporary solution until we implement proper Apple Event handling
         let url_marker = "/tmp/hookanchor_url_launch";
@@ -96,6 +100,8 @@ fn main() -> Result<(), eframe::Error> {
                 let url = url_content.trim();
                 if !url.is_empty() && url.starts_with("hook://") {
                     let _ = std::fs::remove_file(url_marker);
+                    // URL handler mode - initialize sys_data immediately
+                    let _ = hookanchor::core::initialize();
                     hookanchor::cmd::run_command_line_mode(vec!["ha".to_string(), url.to_string()]);
                     return Ok(());
                 }

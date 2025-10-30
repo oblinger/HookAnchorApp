@@ -32,9 +32,33 @@ pub(crate) static CONFIG: OnceLock<Config> = OnceLock::new();
 // Global flag to track if commands have been modified and need reload
 static COMMANDS_MODIFIED: OnceLock<std::sync::atomic::AtomicBool> = OnceLock::new();
 
+/// Initialize minimal sys_data with empty commands for GUI startup
+/// This prevents panics when UI tries to access data before it's loaded
+pub fn initialize_minimal() -> Result<(), String> {
+    // Initialize config first
+    initialize_config()?;
+
+    // Create minimal SysData with empty commands
+    let sys = SYS_DATA.get_or_init(|| Mutex::new(None));
+    let mut sys_data = sys.lock().unwrap();
+    *sys_data = Some(SysData {
+        config: get_config(),
+        commands: Arc::new(Vec::new()),
+        patches: std::collections::HashMap::new(),
+    });
+
+    crate::utils::log("SYS_DATA: Minimal initialization complete (empty commands)");
+    Ok(())
+}
+
 /// Initialize the global config at application startup
-/// This is private to sys_data - external code should use get_config() which handles initialization
-fn initialize_config() -> Result<(), String> {
+/// This can be called multiple times safely - only the first call does the work
+pub fn initialize_config() -> Result<(), String> {
+    // If already initialized, return immediately
+    if CONFIG.get().is_some() {
+        return Ok(());
+    }
+
     let start = std::time::Instant::now();
 
     // Check if essential config files exist - if not, run the installer
@@ -187,7 +211,7 @@ pub fn mark_commands_modified() {
 /// Call this once at application startup
 pub fn initialize() -> Result<(), String> {
     // ==========================================================================
-    // STEP 1: Initialize configuration
+    // STEP 1: Initialize configuration (idempotent - safe to call multiple times)
     // ==========================================================================
     initialize_config()?;
 

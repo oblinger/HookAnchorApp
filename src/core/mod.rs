@@ -40,7 +40,7 @@ pub use application_state::{
 // System data - re-export from data module
 pub use data::{
     // Public API - ONLY these should be used by external code
-    initialize, get_commands, get_patches, set_commands, get_config, get_sys_data,
+    initialize, initialize_config, initialize_minimal, get_commands, get_patches, set_commands, get_config, get_sys_data,
     add_command, delete_command,
     // State management
     get_state, set_state,

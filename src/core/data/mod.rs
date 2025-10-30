@@ -58,6 +58,8 @@ pub use sys_data::{
     SysData,
     // Initialization
     initialize,
+    initialize_config,  // Lightweight config-only initialization
+    initialize_minimal, // Minimal initialization with empty data (GUI startup)
     // Read operations
     get_commands,
     get_commands_arc,  // Fast Arc-based access for hot paths

@@ -1,32 +1,32 @@
 {
-  "anchor_folder": null,
-  "anchor_name": "Hook Anchor Config",
-  "anchor_timestamp": 1761790783,
-  "build_time": 1761799080,
+  "window_position": [
+    967.0,
+    -358.0
+  ],
   "history_viewer_state": {
-    "min_edit_size": 500,
-    "name_filter": "",
-    "patch_filter": "Hook Anchor Docs",
     "position": [
       -2441.0,
       182.0
     ],
-    "selected_action_types": [],
-    "show_current_commands": true,
-    "sidebar_width": 154.0,
     "window_size": [
       1000.0,
       868.0
-    ]
+    ],
+    "patch_filter": "Hook Anchor Docs",
+    "name_filter": "",
+    "min_edit_size": 500,
+    "selected_action_types": [],
+    "sidebar_width": 154.0,
+    "show_current_commands": true
   },
-  "last_executed_command": "Command Inference",
-  "last_scan_checksum": null,
+  "build_time": 1761844819,
   "last_scan_time": null,
+  "last_scan_checksum": null,
+  "last_executed_command": "HookAnchor App",
+  "server_pid": 33087,
   "notion_last_scan": null,
-  "server_pid": 90757,
-  "show_files": true,
-  "window_position": [
-    572.0,
-    25.0
-  ]
+  "anchor_name": "Hook Anchor",
+  "anchor_timestamp": 1761843634,
+  "anchor_folder": null,
+  "show_files": true
 }
