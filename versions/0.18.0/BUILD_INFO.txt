@@ -1,0 +1,6 @@
+HookAnchor Version 0.18.0
+Built: Wed Oct 29 21:38:26 PDT 2025
+Git Commit: 43c2f45e3b6e30f487a2b947974705014ce586e1
+Branch: main
+Builder: oblinger@Daniels-MacBook-Pro.local
+Architecture: Universal (x86_64 + arm64)

@@ -120,7 +120,7 @@ cp "target/release/url_launcher" "$TEMP_BUILD_DIR/universal/url_launcher"
 
 # Copy supervisor (Swift, single arch for now)
 echo "   Copying HookAnchor supervisor..."
-cp "target/release/HookAnchor" "$TEMP_BUILD_DIR/universal/HookAnchor"
+cp "target/release/HookAnchorSupervisor" "$TEMP_BUILD_DIR/universal/HookAnchor"
 
 # 5. Create app bundle structure
 echo -e "${BLUE}📦 Creating HookAnchor.app bundle...${NC}"
