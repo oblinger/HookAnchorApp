@@ -327,6 +327,12 @@ impl Command {
         }
     }
 
+    /// Returns true if the command has a real patch assigned
+    /// Returns false if patch is empty or "orphans" (which are semantically equivalent - no patch assigned)
+    pub fn has_patch(&self) -> bool {
+        !self.patch.is_empty() && self.patch != "orphans"
+    }
+
     /// Updates the full_line field to reflect current command state in new format
     /// NOTE: With full_line removed from struct, this is now a no-op
     pub fn update_full_line(&mut self) {
@@ -1002,11 +1008,10 @@ pub fn run_patch_inference(
         }
         
         // Run inference on commands that need it
-        // Skip user-edited commands UNLESS they're in orphans or have empty patch
+        // Skip user-edited commands UNLESS they don't have a patch assigned
         // (those need help finding the right patch)
         let should_process = !command.flags.contains(FLAG_USER_EDITED)
-            || command.patch.is_empty()
-            || command.patch == "orphans";
+            || !command.has_patch();
 
         if should_process {
             // Use simple inference for path-based commands
