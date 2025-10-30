@@ -672,6 +672,10 @@ fn match_grabber_rules(
     // Load patches data for patch inference
     let (sys_data, _) = crate::core::data::get_sys_data();
     let patches = &sys_data.patches;
+
+    // Build folder map for unified patch inference
+    let commands_for_folder_map = crate::core::data::get_commands();
+    let folder_map = crate::core::inference::build_folder_to_patch_map(&commands_for_folder_map);
     
     let rt = Runtime::new().ok()?;
     let ctx = Context::full(&rt).ok()?;
@@ -749,7 +753,7 @@ fn match_grabber_rules(
                                 if let Some(default_patch) = crate::execute::get_default_patch_for_action(&command.action) {
                                     crate::utils::detailed_log("GRABBER", &format!("Using default patch '{}' for action '{}'", default_patch, command.action));
                                     command.patch = default_patch.to_string();
-                                } else if let Some(inferred_patch) = crate::core::commands::infer_patch(&command, patches) {
+                                } else if let Some(inferred_patch) = crate::core::inference::infer_patch_unified(&command, patches, &folder_map) {
                                     crate::utils::detailed_log("GRABBER", &format!("Inferred patch '{}' for grabbed command", inferred_patch));
                                     command.patch = inferred_patch;
                                 } else {
@@ -798,7 +802,7 @@ fn match_grabber_rules(
                                 if let Some(default_patch) = get_default_patch_for_action(&command.action) {
                                     crate::utils::detailed_log("GRABBER", &format!("Using default patch '{}' for action '{}'", default_patch, command.action));
                                     command.patch = default_patch.to_string();
-                                } else if let Some(inferred_patch) = crate::core::commands::infer_patch(&command, patches) {
+                                } else if let Some(inferred_patch) = crate::core::inference::infer_patch_unified(&command, patches, &folder_map) {
                                     crate::utils::detailed_log("GRABBER", &format!("Inferred patch '{}' for grabbed command", inferred_patch));
                                     command.patch = inferred_patch;
                                 } else {

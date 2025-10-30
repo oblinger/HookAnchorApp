@@ -243,16 +243,19 @@ pub fn run_basic_patch_inference(
     let start_time = std::time::Instant::now();
     let mut inferred_count = 0;
     let mut skipped_count = 0;
-    
+
+    // Build folder map for unified inference
+    let folder_map = build_folder_to_patch_map(commands);
+
     for command in commands.iter_mut() {
         // Skip commands that already have patches unless we're forcing re-inference
         if !command.patch.is_empty() && !skip_degradation_check {
             continue;
         }
-        
+
         let old_patch = command.patch.clone();
-        
-        if let Some(inferred_patch) = infer_patch(command, patches) {
+
+        if let Some(inferred_patch) = infer_patch_unified(command, patches, &folder_map) {
             // Check for degradation if we have an existing patch
             if !old_patch.is_empty() && !skip_degradation_check {
                 if is_patch_degradation(&old_patch, &inferred_patch) {
@@ -554,9 +557,13 @@ fn infer_patch_from_alias_target(command: &Command, patches: &HashMap<String, Pa
     if command.action == "alias" && !command.arg.is_empty() {
         // Get all commands from singleton to find the target
         let (sys_data, _) = crate::core::get_sys_data();
+        let commands_arc = &sys_data.commands;
+
+        // Build folder map for unified inference
+        let folder_map = build_folder_to_patch_map(commands_arc);
 
         // Find the target command
-        for target_cmd in sys_data.commands.iter() {
+        for target_cmd in commands_arc.iter() {
             if target_cmd.command == command.arg {
                 if !target_cmd.patch.is_empty() {
                     crate::utils::detailed_log("ALIAS_INFERENCE", &format!(
@@ -566,7 +573,7 @@ fn infer_patch_from_alias_target(command: &Command, patches: &HashMap<String, Pa
                     return Some(target_cmd.patch.clone());
                 }
                 // If target doesn't have a patch, try to infer one for it
-                if let Some(inferred_patch) = infer_patch(target_cmd, patches) {
+                if let Some(inferred_patch) = infer_patch_unified(target_cmd, patches, &folder_map) {
                     crate::utils::detailed_log("ALIAS_INFERENCE", &format!(
                         "Alias '{}' inherits inferred patch '{}' from target '{}'",
                         command.command, inferred_patch, target_cmd.command
@@ -623,14 +630,17 @@ pub fn auto_assign_patches(commands: &mut Vec<Command>) {
     let patches = crate::core::commands::create_patches_hashmap(commands);
     let start_time = std::time::Instant::now();
     let mut assigned_count = 0;
-    
+
+    // Build folder map for unified inference
+    let folder_map = build_folder_to_patch_map(commands);
+
     for command in commands.iter_mut() {
         // Skip commands that already have patches
         if !command.patch.is_empty() {
             continue;
         }
-        
-        if let Some(patch) = infer_patch(command, &patches) {
+
+        if let Some(patch) = infer_patch_unified(command, &patches, &folder_map) {
             command.patch = patch.clone();
             command.update_full_line();
             assigned_count += 1;

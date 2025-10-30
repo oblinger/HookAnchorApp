@@ -946,19 +946,22 @@ fn run_infer_patches(args: &[String]) {
 fn run_infer_single_command(command_name: &str) {
     // Get current commands from singleton
     let (sys_data, _) = crate::core::get_sys_data();
-    let commands = sys_data.commands;
+    let commands_arc = sys_data.commands;
     let patches = sys_data.patches;
-    
+
+    // Build folder map for unified inference
+    let folder_map = crate::core::inference::build_folder_to_patch_map(&commands_arc);
+
     // Find the command by name
-    let found_command = commands.iter().find(|cmd| cmd.command == command_name);
-    
+    let found_command = commands_arc.iter().find(|cmd| cmd.command == command_name);
+
     match found_command {
         Some(command) => {
             print(&format!("Command: {}", command.command));
             print(&format!("Current patch: '{}'", command.patch));
-            
+
             // Test patch inference on this specific command
-            match crate::core::commands::infer_patch(command, &patches) {
+            match crate::core::inference::infer_patch_unified(command, &patches, &folder_map) {
                 Some(inferred_patch) => {
                     print(&format!("Inferred patch: '{}'", inferred_patch));
                     
@@ -981,9 +984,9 @@ fn run_infer_single_command(command_name: &str) {
         }
         None => {
             print(&format!("Command '{}' not found.", command_name));
-            
+
             // Show similar commands as suggestions
-            let similar_commands: Vec<&crate::core::Command> = commands.iter()
+            let similar_commands: Vec<&crate::core::Command> = commands_arc.iter()
                 .filter(|cmd| cmd.command.to_lowercase().contains(&command_name.to_lowercase()))
                 .take(5)
                 .collect();
