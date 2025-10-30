@@ -3,14 +3,19 @@
 
 - [ ] [[Hook Anchor Release]] 
 - [ ] ChildTemplate anchor var tied to "+" key.   " * " does grab
+
+- [ ] Add categories
 - [ ] New template actions list
 - [ ] start selection w/ mouse should not happen til real move
 - [ ] Make dev mode run on each render (mod 10?)   make boot check only run when dev_mode is set.
-- [ ] Add categories
 - [ ] click on folder will go into folder
 - [ ] Delete key should prompt to delete file and maybe folder.
 - [ ] remove the 'js' and 'js_function' action types since they are not needed.
-- [ ] Remove any code associated with anchor actions
+- [x] Remove any code associated with anchor actions
+- [x] Press space to accept an anchor
+- [x] remove "anchor" from code
+- [x] markdown dropdown does not auto close
+- [x] remove or fix 'regain_focus'
 - [x] confirm dialog for small rename has too much space so cannot see buttons
 - [x] commands still exists...  
 - [x]  the hook url is broken

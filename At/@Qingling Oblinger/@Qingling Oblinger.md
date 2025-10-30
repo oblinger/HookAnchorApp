@@ -22,7 +22,17 @@
 
 Nancy,
 
-My husband (AI CTO/PhD) and I have been talking a lot about how this agentic-AI moment is magical for 1Password.
+My husband (AI CTO/PhD) has been telling me how this "agentic AI" moment cries out for an open-standards solution where 1Password's desktop install base could allow us to come out on top.  He also has thoughts about how LLMs could "auto correct" a lot of our browser scripts w/o human labor. He is excited about this window of opportunity. I know we are already moving in these directions, still perhaps there is value in you having a conversation with him.
+
+Let me know,
+Qingling
+
+
+
+planning for these things, still I thought it might be a useful 
+
+
+as a magic window where 1Password mighand I have been talking a lot about how this agentic-AI moment is magical for 1Password.
 He is super excited about it, and I thought it might be fun for you to chat with him.
 
 -- Dan

@@ -1,6 +1,10 @@
 # Cigna Insurance Information
 
 
+Advantage 3 Tier
+
+
+
 ## Plan Details
 - **Insurance Provider**: Cigna
 - **Plan Name**: Open Access Plus
@@ -8,7 +12,8 @@
 
 ## Contact Information
 - **Customer Service**: 1-800-997-1654
-- **Claims**: 1-800-882-4462
+- **Claims / Provider Line**: 1-800-882-4462
+- **Member Services**:  866-494-2111
 
 ## Mental Health Therapy Coverage
 
@@ -37,3 +42,13 @@
 
 ## Resources
 - [Cigna Contact Information](https://www.cigna.com/contact-us/)
+
+
+
+# Log 
+
+Express Scripts - 
+
+Good Rx - 
+
+Not Covered At 

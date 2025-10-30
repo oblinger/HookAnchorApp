@@ -5,6 +5,43 @@ SalesForce, Nvidia,
 
 # LOG
 
+## 2025-10-29  Cheaper price for GLP-1 Drug
+Todo:
+- Check Cigna Zepbound
+
+xxx
+  Semaglutide (same active ingredient as Wegovy):
+
+  - Ozempic - approved for type 2 diabetes (also semaglutide, but lower doses than Wegovy)
+  - Rybelsus - oral version of semaglutide for type 2 diabetes
+
+  Other GLP-1 Receptor Agonists:
+
+  Liraglutide:
+  - Saxenda - for weight management (3.0 mg daily injection)
+  - Victoza - for type 2 diabetes (lower dose)
+  Tirzepatide (GLP-1 + GIP dual agonist):
+  - Zepbound - for weight management
+  - Mounjaro - for type 2 diabetes
+  - Note: Often considered more effective than semaglutide
+  Dulaglutide:
+  - Trulicity - once-weekly injection for type 2 diabetes
+  Exenatide:
+  - Byetta - twice-daily injection
+  - Bydureon - once-weekly injection
+  Others:
+  - Adlyxin (lixisenatide) - daily injection
+  - Tanzeum (albiglutide) - discontinued in some markets
+
+  Key Differences:
+  - Semaglutide (Wegovy/Ozempic): Currently most popular, once-weekly
+  - Tirzepatide (Zepbound/Mounjaro): Dual-action, potentially stronger weight loss
+  - Liraglutide (Saxenda): Daily injection, older medication
+  - Dulaglutide (Trulicity): Once-weekly, primarily for diabetes
+
+  Most of these are prescription-only. Tirzepatide (Zepbound/Mounjaro) is gaining popularity as it may offer better results than semaglutide for weight loss.
+
+
 ## 2025-10-14  Quick Health checks
 https://victormong.medium.com/crucial-health-checks-that-show-how-old-your-body-really-is-in-less-than-5-minutes-39c49a8d82b9
 
