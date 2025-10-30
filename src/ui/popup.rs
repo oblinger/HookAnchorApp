@@ -73,6 +73,8 @@ pub struct AnchorSelector {
     config_error: Option<String>,
     /// Last user interaction time for idle timeout
     last_interaction_time: std::time::Instant,
+    /// Track when show command was received for timing measurements
+    show_command_start: Option<std::time::Instant>,
     /// Loading state for deferred initialization
     loading_state: LoadingState,
     /// Buffer for keyboard input captured before full initialization
@@ -1599,6 +1601,7 @@ impl AnchorSelector {
             window_activated: false,
             config_error: None,
             last_interaction_time: std::time::Instant::now(),
+            show_command_start: None,
             loading_state: LoadingState::NotLoaded,
             pre_init_input_buffer: initial_prompt.to_string(),
             search_pending_after_load: !initial_prompt.is_empty(),
@@ -1657,6 +1660,7 @@ impl AnchorSelector {
             window_activated: false,
             config_error: None,
             last_interaction_time: std::time::Instant::now(),
+            show_command_start: None,
             loading_state: LoadingState::NotLoaded,
             pre_init_input_buffer: initial_prompt.to_string(),
             search_pending_after_load: !initial_prompt.is_empty(),
@@ -3690,6 +3694,9 @@ impl eframe::App for AnchorSelector {
     }
     
     fn update(&mut self, ctx: &egui::Context, _frame: &mut eframe::Frame) {
+        // ⏱️ Track if window just became visible (for timing analysis)
+        let was_hidden_last_frame = self.is_hidden;
+
         // 🔑 UPSTREAM OS EVENT LOGGING - Log ALL events from operating system first
         ctx.input(|input| {
             if !input.events.is_empty() {
@@ -3705,6 +3712,12 @@ impl eframe::App for AnchorSelector {
                 }
             }
         });
+
+        // ⏱️ Log when window first becomes visible after being hidden
+        if was_hidden_last_frame && !self.is_hidden {
+            crate::utils::log(&format!("⏱️ [VISIBILITY_TIMING] First frame after becoming visible - frame_count={}, focus_set={}",
+                self.frame_count, self.focus_set));
+        }
 
         // Check if we have a pending rebuild to perform
         if self.pending_rebuild {
@@ -4655,7 +4668,20 @@ impl eframe::App for AnchorSelector {
                     if response.has_focus() {
                         self.focus_set = true;
                         self.request_focus = false;  // Clear the request
+
+                        // Calculate total time from show command to focus ready
+                        let total_time_msg = if let Some(start) = self.show_command_start {
+                            format!(" (total time from show command: {:?})", start.elapsed())
+                        } else {
+                            String::new()
+                        };
+
+                        crate::utils::log(&format!("⏱️ [FOCUS_TIMING] Focus successfully set on frame {} - INPUT READY FOR USER{}",
+                            self.frame_count, total_time_msg));
                         crate::utils::detailed_log("FOCUS", &format!("Focus successfully set on frame {}", self.frame_count));
+
+                        // Clear the timer
+                        self.show_command_start = None;
                     } else if self.frame_count % 5 == 0 && self.frame_count <= 15 {
                         // Log focus attempts every 5 frames for debugging
                         crate::utils::detailed_log("FOCUS", &format!("Focus attempt on frame {} - window focused: {}", 
@@ -5036,10 +5062,15 @@ impl eframe::App for PopupWithControl {
         if let Some(command) = self.control.process_commands(ctx) {
             match command {
                 crate::systems::popup_server::PopupCommand::Show => {
+                    let show_start = std::time::Instant::now();
                     crate::utils::log("===== SHOW COMMAND RECEIVED =====");
+                    crate::utils::log(&format!("⏱️ [SHOW_TIMING] Command received at {:?}", show_start));
                     crate::utils::log(&format!("[SHOW] Current frame: {}", self.popup.frame_count));
-                    crate::utils::log(&format!("[SHOW] is_hidden={}, should_exit={}", 
+                    crate::utils::log(&format!("[SHOW] is_hidden={}, should_exit={}",
                         self.popup.is_hidden, self.popup.should_exit));
+
+                    // Store the show start time for measuring total time to focus
+                    self.popup.show_command_start = Some(show_start);
                     
                     // Get current window state
                     let viewport_info = ctx.input(|i| {
@@ -5070,22 +5101,11 @@ impl eframe::App for PopupWithControl {
                     
                     crate::utils::detailed_log("SHOW", "Sending ViewportCommand::Minimized(false)");
                     ctx.send_viewport_cmd(egui::ViewportCommand::Minimized(false));
-                    
-                    // Use AppleScript to ensure the window comes to front on macOS
-                    crate::utils::detailed_log("SYSTEM", &format!("[SHOW] Using AppleScript to activate popup_server"));
-                    let activate_script = r#"tell application "System Events"
-                        set frontProcess to first process whose unix id is "#.to_string() + &std::process::id().to_string() + r#"
-                        set frontmost of frontProcess to true
-                    end tell"#;
-                    
-                    if let Err(e) = std::process::Command::new("osascript")
-                        .arg("-e")
-                        .arg(&activate_script)
-                        .output() {
-                        crate::utils::log(&format!("[SHOW] AppleScript activation failed: {}", e));
-                    } else {
-                        crate::utils::log("[SHOW] AppleScript activation succeeded");
-                    }
+
+                    // REMOVED: AppleScript activation (was taking 176-368ms!)
+                    // The ViewportCommand::Focus above should be sufficient for egui/eframe windows
+                    // If focus issues occur, we may need a faster native solution
+                    crate::utils::log("[SHOW] Relying on ViewportCommand::Focus (AppleScript removed for speed)");
                     
                     // CRITICAL: Position window on screen if it's off-screen
                     let current_pos = ctx.input(|i| i.viewport().outer_rect);
@@ -5189,8 +5209,9 @@ impl eframe::App for PopupWithControl {
                     crate::utils::log("[SHOW] Requesting repaint");
                     ctx.request_repaint();
                     
-                    crate::utils::log(&format!("[SHOW] After: is_hidden={}, should_exit={}", 
+                    crate::utils::log(&format!("[SHOW] After: is_hidden={}, should_exit={}",
                         self.popup.is_hidden, self.popup.should_exit));
+                    crate::utils::log(&format!("⏱️ [SHOW_TIMING] Command processing complete in {:?}", show_start.elapsed()));
                     crate::utils::log("===== SHOW COMMAND COMPLETE =====");
                 }
                 crate::systems::popup_server::PopupCommand::Hide => {
