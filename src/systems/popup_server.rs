@@ -98,11 +98,12 @@ impl PopupControl {
             if let Some(command) = pending.take() {
                 match &command {
                     PopupCommand::Show => {
-                        crate::utils::detailed_log("POPUP_SERVER", "Processing show command");
+                        crate::utils::log("⏱️ POPUP_SERVER: Processing 'show' in update loop");
                         // Show the window and focus it
                         ctx.send_viewport_cmd(egui::ViewportCommand::Visible(true));
                         ctx.send_viewport_cmd(egui::ViewportCommand::Focus);
                         ctx.request_repaint();
+                        crate::utils::log("⏱️ POPUP_SERVER: Viewport commands sent");
                     }
                     PopupCommand::Hide => {
                         crate::utils::detailed_log("POPUP_SERVER", "Processing hide command");
@@ -139,6 +140,7 @@ fn handle_client(stream: &mut UnixStream, pending_command: &Arc<Mutex<Option<Pop
             
             let (command, mut response) = match command_str {
                 "show" => {
+                    crate::utils::log("⏱️ POPUP_SERVER: Received 'show' command");
                     (Some(PopupCommand::Show), String::from("Processing show command..."))
                 }
                 "hide" => {

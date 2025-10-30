@@ -326,9 +326,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func showRustWindow() {
+        let startTime = Date()
         NSLog("HookAnchor: [SHOW CHAIN] Step 1: showRustWindow() called")
-        log("[SHOW] Initiating popup display sequence")
-        
+        log("⏱️ [SHOW] Starting popup display sequence")
+
         // Prevent too-rapid repeated shows
         let now = Date()
         let timeSinceLast = now.timeIntervalSince(lastShowTime)
@@ -338,16 +339,20 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             return
         }
         lastShowTime = now
-        
+
         NSLog("HookAnchor: [SHOW CHAIN] Step 2: Checking popup_server process")
-        log("[SHOW] Ensuring popup_server is running")
+        let beforeEnsure = Date()
         // First ensure the popup is running
         ensurePopupRunning()
-        
+        let ensureDuration = Date().timeIntervalSince(beforeEnsure) * 1000
+        log(String(format: "⏱️ [SHOW] ensurePopupRunning: %.2fms", ensureDuration))
+
         // Send "show" command to popup_server via Unix socket
         let socketPath = "/tmp/hookanchor_popup.sock"
-        
+
+        let beforeSocket = Date()
         DispatchQueue.global(qos: .userInitiated).async {
+            let socketStartTime = Date()
             let fileManager = FileManager.default
             
             // Check if socket exists
@@ -373,12 +378,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                     }
                     
                     if connectResult == 0 {
+                        let connectDuration = Date().timeIntervalSince(socketStartTime) * 1000
+                        self.log(String(format: "⏱️ [SHOW] Socket connect: %.2fms", connectDuration))
+
                         // Send "show" command
                         let command = "show\n"
+                        let beforeSend = Date()
                         command.withCString { cString in
                             send(sock, cString, strlen(cString), 0)
                         }
-                        self.log(" Sent 'show' command to popup_server")
+                        let sendDuration = Date().timeIntervalSince(beforeSend) * 1000
+                        self.log(String(format: "⏱️ [SHOW] Socket send: %.2fms", sendDuration))
                         
                         // Verify window became visible after a short delay
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) { [weak self] in
@@ -496,8 +506,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             // Process is still running
             return
         }
-        
-        // Check if ANY popup_server process is running (might have been started by ha --restart)
+
+        // FAST CHECK: If the socket file exists, the server is running (avoid expensive pgrep)
+        let socketPath = "/tmp/hookanchor_popup.sock"
+        if FileManager.default.fileExists(atPath: socketPath) {
+            // Socket exists, server is running
+            return
+        }
+
+        // Socket doesn't exist - do the expensive process check only as last resort
         let checkTask = Process()
         checkTask.executableURL = URL(fileURLWithPath: "/bin/sh")
         checkTask.arguments = ["-c", "pgrep -f 'popup_server' > /dev/null 2>&1"]
@@ -507,8 +524,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             checkTask.waitUntilExit()
 
             if checkTask.terminationStatus == 0 {
-                // A popup_server is already running somewhere
-                log(" popup_server already running (launched externally)")
+                // A popup_server is running but socket doesn't exist yet (race condition)
+                // Wait a moment for socket to be created
+                Thread.sleep(forTimeInterval: 0.01)
                 return
             }
         } catch {
