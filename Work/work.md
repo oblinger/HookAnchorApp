@@ -6,6 +6,7 @@
 	- [Media convert](https://www.notion.so/sportsvisio/SV-Hybrid-Media-Convert-Prototype-27d719d6f2bd805084dfeb5b166debcb?source=copy_link) 
     - Darien
     - OCT 19th - own meeting
+    - [[PHQ]] 
   BACKLOG
     - AI-code brainstorm    [[2025 AI Codeing Brainstorm|AI-code]]  
 	-  [AWS Costs](https://drive.google.com/drive/folders/1Mnu6bwVw9bqxGq40uM_fBZ6x_75O3c6H)  (talk w/ Matty?) 

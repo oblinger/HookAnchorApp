@@ -3,26 +3,20 @@
   TOPS:		[[RES Pyramid]], [[Star]], [[Star Stories]], [[RES Parts]], [[RES Highlights]],
   FACTS:	[[RES Src Info]], [[RES Numbers]], [[RES Patents]], [[RES Papers]],
   OTHER:	 [[Star AI]], [[RES References]],
-  DIRS:		, , ,
+  DIRS:		
   CLOSET:	[[Resume]],
   .
 - [[Star Instant Design Story]],
 - [[2024-04-01 Resume Rewrite]],
   , [[WarStories]],
-  , ,
-  , , ,
   , [[RES Todo]],
-  , ,
   DELS: [[WarStories]],
-  , ,
   , [RES Examples Obsidian](spot://resexamplesobsidian)
   , [RES Job History Obsidian](spot://resjobhistoryobsidian), [RES Obsidian](spot://resobsidian)
   , [RES Versions Obsidian](spot://resversionsobsidian),
   DELS: [[WarStories]],,[RES Obsidian](spot://resobsidian),
   , [RES Examples](spot://resexamples), [RES Job History](spot://resjobhistory)
   , , [RES Versions](spot://resversions),
-  , ,
-  , ,
   , [RES Examples Note](spot://resexamplesnote), [RES Job History Note](spot://resjobhistorynote)
   , [RES Note](spot://resnote), [RES Versions Note](spot://resversionsnote),
   , [RES Highlights Obsidian](spot://reshighlightsobsidian)

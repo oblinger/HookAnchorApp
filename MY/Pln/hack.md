@@ -1,3 +1,7 @@
+- delete second name w/ duplicate names failed silently.
+- hook://anchor_popup   URL ability to trigger popup on given input
+- right "]" need to update input box with space and carot at end of input
+- when matching a name.  prefix matches should match first, then first char matches then infix matches
 
 
 

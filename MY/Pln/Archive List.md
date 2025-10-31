@@ -5,7 +5,7 @@
 MX EL: writeLst Matrix, Nts,
 
 
-- Fix [[JJ]] tree
+- Fix [[Proj Directories]] tree
 - plain clip
 .AirMax
 - Auto create/overwrite  XXX Folder command for every anchor file

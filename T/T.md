@@ -24,7 +24,7 @@
 #top
 n:: Major topic roots
 
-- [[JJ]], [[j J]], 
+- [[Proj Directories]], [[j J]], 
 
 
 

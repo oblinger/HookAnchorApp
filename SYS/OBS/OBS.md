@@ -1,5 +1,10 @@
-.[[Obs]].
-  ADDS:   [Plugins Folder](spot://pluginsfolder)
+
+.[[OBS]].
+  [[Facet]] 
+  [[DoubleKey]] 
+  [[OBS Setup]] 
+  [Plugins Folder](spot://pluginsfolder)
+  popup: view
 
 
 

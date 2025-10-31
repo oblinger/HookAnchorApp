@@ -1,4 +1,4 @@
-.[[SVT]]. SV Tooling
+.[[SVT]]. SV Tooling   (See ST for SV Tasks)
   APPS:	[[SVT Jira]], [[SVT Bitbucket]], [[SVT Clickup]], [[SVT Confluence]], [[SVT Google Drive]], [[SVT Polaris]],
   .		[[SVT Sentry]], [[SVT Slack]],
   [[SVT Virtual Box Notes]],

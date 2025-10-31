@@ -7,7 +7,10 @@ SalesForce, Nvidia,
 
 ## 2025-10-29  Cheaper price for GLP-1 Drug
 Todo:
+- Call Wegovy Savings Program   1-800-411-4728
+	- Probably eligible, < $499 maybe $0
 - Check Cigna Zepbound
+- $499 or less; Wegovy Card:  https://www.wegovy.com/coverage-and-savings/save-on-wegovy.html
 
 xxx
   Semaglutide (same active ingredient as Wegovy):

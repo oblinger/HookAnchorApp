@@ -1,5 +1,5 @@
 
-- [[MAC Apps]], 
+- [[MAC Apps]], [[OBS Setup]],
 
 ### CAPS LOCK MENU
 - KARABINER maps caps alone to Opt-Cmd-F12
