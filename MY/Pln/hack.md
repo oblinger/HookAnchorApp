@@ -1,3 +1,5 @@
+- fixup the hook_anchor_zshrc for dist
+- once all items in a prefix menu are filtered, the whole prefix menu (and it files menu) should be removed
 - delete second name w/ duplicate names failed silently.
 - hook://anchor_popup   URL ability to trigger popup on given input
 - right "]" need to update input box with space and carot at end of input

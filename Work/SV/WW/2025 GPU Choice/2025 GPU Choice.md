@@ -27,6 +27,12 @@
 - 
 # Log
 
+
+## 2025-10-31  GCP Spot pricing
+
+- [GPU](https://cloud.google.com/spot-vms/pricing?e=48754805&hl=en#gpu-pricing)  H200 ~ $3.724
+
+
 ## 2025-10-28  AWS Spot Instances
 
 

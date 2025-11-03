@@ -1,6 +1,8 @@
 
 
 # ELI
+
+# zzz
 ## ELI ATTRIBUTES
 
 SENSITIVE - 
@@ -42,6 +44,33 @@ momentary disengagement from Eli followed by an invitation for appropriate inter
 - Maybe you want that
 
 # LOG
+
+
+## No  Drama Discipline - Chapter 1
+
+-- No one-size-fits-all response!
+- Need to experiment on what works
+
+-- PAUSE.  Then ask:  
+- Why did they do that?  
+- What do we want to teach?  and  
+- How can we best teach the approach?
+
+-- What do we want to teach:
+  - There are better alternatives to hitting
+
+-- Problem Solve Later In a Teachable Moment
+
+
+
+
+-- Get eye contact
+
+
+Not a teachable moment
+
+
+## --
 ### 2023-06-08  From sensitivity class
 
 - Going to school; 

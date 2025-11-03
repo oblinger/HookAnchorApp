@@ -28,6 +28,14 @@ LATER
 
 
 
+TRAIN
+- ML - Model building
+
+ADD TO WAR 
+- Productization
+
+
+
 
 
 

@@ -1,16 +1,24 @@
 .[[MED Log]].  [[MED]] 
   , [[Data 23andme]], 
 
-SalesForce, Nvidia, 
 
 # LOG
 
+## 2025-11-01  Doctor provide prescription - Cigna
+- Wegovy 0.25mg/0.5ml Inj ( 4 Pens)
+
+Evernorth - part of enguide - 
+- Require PA - but exclude 
+
 ## 2025-10-29  Cheaper price for GLP-1 Drug
 Todo:
-- Call Wegovy Savings Program   1-800-411-4728
+- !! Call Wegovy Savings Program   1-800-411-4728
 	- Probably eligible, < $499 maybe $0
-- Check Cigna Zepbound
+- !! Check Cigna Zepbound
 - $499 or less; Wegovy Card:  https://www.wegovy.com/coverage-and-savings/save-on-wegovy.html
+- Zepbound: (preferred for weight loss GPL-1 GIP)
+- Individual family plan:  866-494-2111
+- 
 
 xxx
   Semaglutide (same active ingredient as Wegovy):

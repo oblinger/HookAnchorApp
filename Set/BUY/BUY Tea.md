@@ -1,10 +1,10 @@
 ### BUY TEAS
-- LICORICE: Yogi Egyptian Licorice
+- LICORICE: Yogi Egyptian Licorice, TradMed Fennel
 - CINNAMON: Harney & Sons Hot Cinnamon Spice
 - BLACK: Harney & Sons Paris Black Tea
 - GINGER: Twinings Lemon & Ginger, Eq Exch Tumeric Ginger
 - ROOIBOS: Numi Rooibos??, Equal Exchange Vanilla Rooibos
-- PEPPERMINT: Traditional Medicinals Organic Pepermint
+- PEPPERMINT: TradMed Organic Peppermint
 - SPEARIMENT:
 - GREEN TEA:
 - CHAI??:
@@ -16,6 +16,7 @@ Chamomile, Fennel, Tulsi, Honeybush,
 - Spearmint, Pepermint,
 - Rooibos, 
 - Cinnamon, Jasmine, 
+- Harneys Chocolate?
 
 
 Green???

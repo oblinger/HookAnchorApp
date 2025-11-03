@@ -1,15 +1,14 @@
-.[[NJ Todo]].   [[NJ]]
+.[[NJ Todo]].   [[NJ]]  [[Apply]]  
 - [[NJ.2]]: Build Lists: BigCo & Startup: Companies, People, Filters
   [[DL proj]],
   [[NJ.1]],
 
+
+
 - [ ] [[NJ Log]] - Sign up for 'seek' websites to get stream 
-
-
 - [ ] Build list of Tier II targets
 - [ ] Outreach
-- [ ] 	
-- fun list, papers list, torch practice, transformers class, book on behavioral questions
+- [ ] fun list, papers list, torch practice, transformers class, book on behavioral questions
 
 [[NJ.1]] 
 - [ ] LinkedIn:  to joe; Update it
@@ -18,11 +17,11 @@
 - Find MGR courses/books to read
 - [[RES Pyramid]], [[RES Parts]], 
 - Pick [[BOD]]
-- Find the job posts; find people associated
+- Find the job posts; find people associated with them
 - Resume match website
 
 
-- [[Star Stories]]: Ability to speak from first-person perspective about coding tasks
+- [[Star Stories]]: Ability to speak from a first-person perspective about coding tasks
 ## TODO
 - [ ] +[[TG]]: Figure top 20 list.
 - [ ] +Read Manager's Path
