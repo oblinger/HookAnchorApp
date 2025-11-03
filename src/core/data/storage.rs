@@ -41,6 +41,26 @@ fn backup_commands_file() -> Result<(), Box<dyn std::error::Error>> {
     Ok(())
 }
 
+/// Creates a backup of the cache file before saving
+fn backup_cache_file() -> Result<(), Box<dyn std::error::Error>> {
+    let cache_path = get_commands_cache_path();
+    let backups_path = get_backups_folder_path();
+
+    // Create backups directory if it doesn't exist
+    fs::create_dir_all(&backups_path)?;
+
+    // Only backup if the cache file exists
+    if cache_path.exists() {
+        let timestamp = chrono::Local::now().format("%Y%m%d_%H%M%S");
+        let backup_name = format!("cache_{}.json", timestamp);
+        let backup_path = backups_path.join(backup_name);
+
+        fs::copy(&cache_path, backup_path)?;
+    }
+
+    Ok(())
+}
+
 /// Loads commands from the commands.txt file without any processing
 /// This is the raw loading function used by sys_data::load_data()
 pub(super) fn load_commands_raw() -> Vec<Command> {
@@ -182,6 +202,9 @@ fn get_commands_cache_path() -> PathBuf {
 
 /// Save commands to cache (JSON format with metadata)
 pub(super) fn save_commands_to_cache(commands: &[Command]) -> Result<(), Box<dyn std::error::Error>> {
+    // Create backup before saving
+    backup_cache_file()?;
+
     let path = get_commands_cache_path();
 
     // Ensure the directory exists
