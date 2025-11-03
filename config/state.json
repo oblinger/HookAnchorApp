@@ -1,32 +1,32 @@
 {
   "window_position": [
-    779.0,
-    223.0
+    950.0,
+    25.0
   ],
   "history_viewer_state": {
     "position": [
-      -2441.0,
-      182.0
+      -2250.0,
+      120.0
     ],
     "window_size": [
       1000.0,
-      868.0
+      1120.0
     ],
-    "patch_filter": "Hook Anchor Docs",
+    "patch_filter": "",
     "name_filter": "",
     "min_edit_size": 500,
     "selected_action_types": [],
-    "sidebar_width": 154.0,
-    "show_current_commands": true
+    "sidebar_width": 102.0,
+    "show_current_commands": false
   },
-  "build_time": 1761857176,
+  "build_time": 1762210187,
   "last_scan_time": null,
   "last_scan_checksum": null,
-  "last_executed_command": "pp",
-  "server_pid": 51914,
+  "last_executed_command": "SprintPlanning",
+  "server_pid": 77502,
   "notion_last_scan": null,
-  "anchor_name": "pp",
-  "anchor_timestamp": 1761850692,
+  "anchor_name": "2025 GPU Choice",
+  "anchor_timestamp": 1762205746,
   "anchor_folder": null,
   "show_files": true
 }

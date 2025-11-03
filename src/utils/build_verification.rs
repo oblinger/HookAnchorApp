@@ -125,6 +125,50 @@ pub fn verify_build() -> VerificationResult {
     }
 }
 
+/// Check if developer mode is enabled based on configuration
+///
+/// Developer mode logic:
+/// - If config value is "true" (case-insensitive), always enable developer mode
+/// - If config value is "false" (case-insensitive), always disable developer mode
+/// - If config value is any other string, compare it to the current hostname (case-insensitive)
+///   - If it matches the hostname, enable developer mode
+///   - If it doesn't match, disable developer mode
+/// - If config value is None, default to false (disabled)
+///
+/// # Returns
+/// * `true` if developer mode should be enabled
+/// * `false` if developer mode should be disabled
+pub fn is_developer_mode() -> bool {
+    // Get config
+    let config = crate::core::data::get_config();
+
+    // Get developer_mode setting from config
+    let developer_mode_value = match &config.popup_settings.developer_mode {
+        Some(value) => value.trim(),
+        None => return false,  // Default: developer mode disabled
+    };
+
+    // Check for explicit "true" or "false"
+    let lower_value = developer_mode_value.to_lowercase();
+    if lower_value == "true" {
+        return true;
+    }
+    if lower_value == "false" {
+        return false;
+    }
+
+    // Otherwise, treat as hostname and compare to current machine's hostname
+    let current_hostname = match std::process::Command::new("hostname")
+        .output()
+    {
+        Ok(output) => String::from_utf8_lossy(&output.stdout).trim().to_string(),
+        Err(_) => return false,  // Can't get hostname, default to disabled
+    };
+
+    // Case-insensitive hostname comparison
+    developer_mode_value.eq_ignore_ascii_case(&current_hostname)
+}
+
 /// Log build metadata at startup (informational)
 pub fn log_build_info() {
     let metadata = BuildMetadata::get();
@@ -250,6 +294,15 @@ fn show_error_dialog_and_exit(errors: &[String], warnings: &[String]) -> ! {
 pub fn verify_and_log(terminate_on_failure: bool) -> bool {
     // Always log build information
     log_build_info();
+
+    // Check if we're in developer mode
+    if !is_developer_mode() {
+        crate::utils::log("Developer mode: DISABLED (skipping build verification)");
+        crate::utils::log(""); // Blank line for separation
+        return true;  // Skip verification, return success
+    }
+
+    crate::utils::log("Developer mode: ENABLED (performing build verification)");
 
     // Simple log message indicating we're checking
     crate::utils::log("Checking build validity...");

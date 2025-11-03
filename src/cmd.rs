@@ -491,89 +491,121 @@ fn run_action_directly(args: &[String]) {
     print(&format!("Action '{}' completed", action_type));
 }
 
+/// Extract folder path from a command
+fn extract_folder_path(command: &crate::core::Command) -> Option<String> {
+    match command.action.as_str() {
+        "folder" => {
+            // For folder commands, the arg is already the folder path
+            Some(command.arg.clone())
+        },
+        "markdown" => {
+            // For markdown commands, arg is already absolute path - return the directory
+            if let Some(last_slash) = command.arg.rfind('/') {
+                Some(command.arg[..last_slash].to_string())
+            } else {
+                Some(command.arg.clone())
+            }
+        },
+        _ => {
+            // Skip commands that don't have folders
+            None
+        }
+    }
+}
+
+/// Shared folder matching logic for both -f and -F flags
+/// Returns (command_name, folder_path) pairs
+/// For exact matches, returns single result; for fuzzy matches, returns multiple
+fn get_folder_matches(query: &str, include_command_names: bool) -> Vec<(String, String)> {
+    let (sys_data, _) = crate::core::data::get_sys_data();
+
+    // Use the same display logic as the popup to get matching commands
+    let (display_commands, _, _, _) = crate::core::get_new_display_commands(query, &sys_data.commands, &sys_data.patches);
+
+    if display_commands.is_empty() {
+        return Vec::new();
+    }
+
+    // Check for exact match BEFORE resolving aliases (check original command names)
+    // Find first non-separator command
+    let first_non_separator = display_commands.iter()
+        .find(|cmd| cmd.action != "separator");
+
+    if let Some(first_cmd) = first_non_separator {
+        let query_lower = query.to_lowercase();
+        let query_folder_pattern = format!("{} folder", query_lower);
+        let cmd_lower = first_cmd.command.to_lowercase();
+
+        // Check if the original command name (before alias resolution) matches exactly
+        if cmd_lower == query_lower || cmd_lower == query_folder_pattern {
+            // Found exact match - resolve alias if needed
+            let resolved_cmd = if first_cmd.action == "alias" {
+                first_cmd.resolve_alias(&sys_data.commands)
+            } else {
+                first_cmd.clone()
+            };
+
+            // Return just that single match
+            if let Some(folder_path) = extract_folder_path(&resolved_cmd) {
+                return vec![(resolved_cmd.command, folder_path)];
+            }
+        }
+    }
+
+    // No exact match found - expand aliases for fuzzy results and take first 100
+    let display_commands: Vec<_> = display_commands.into_iter()
+        .filter(|cmd| cmd.action != "separator")  // Skip separators
+        .map(|cmd| {
+            if cmd.action == "alias" {
+                cmd.resolve_alias(&sys_data.commands)
+            } else {
+                cmd
+            }
+        })
+        .take(100)
+        .collect();
+
+    // Collect folder matches
+    if include_command_names {
+        // For -F flag: return all command -> path pairs
+        display_commands.iter()
+            .filter_map(|cmd| {
+                extract_folder_path(cmd).map(|path| (cmd.command.clone(), path))
+            })
+            .collect()
+    } else {
+        // For -f flag: return unique folder paths (deduplicate)
+        let mut folder_paths = std::collections::HashSet::new();
+        for command in &display_commands {
+            if let Some(path) = extract_folder_path(command) {
+                folder_paths.insert(path);
+            }
+        }
+
+        let mut paths: Vec<String> = folder_paths.into_iter().collect();
+        paths.sort(); // Sort for consistent output
+
+        // Return as (empty_name, path) pairs for consistency
+        paths.into_iter().map(|path| (String::new(), path)).collect()
+    }
+}
+
 fn run_folder_command(args: &[String]) {
     if args.len() < 3 {
         print(&format!("Usage: {} -f, --folders <query>", args[0]));
         std::process::exit(1);
     }
-    
+
     let query = &args[2];
-    let (sys_data, _) = crate::core::data::get_sys_data();
-    
-    // Helper function to extract folder path from a command
-    let extract_folder_path = |command: &crate::core::Command| -> Option<String> {
-        match command.action.as_str() {
-            "folder" => {
-                // For folder commands, the arg is already the folder path
-                Some(command.arg.clone())
-            },
-            "markdown" => {
-                // For markdown commands, arg is already absolute path - return the directory
-                if let Some(last_slash) = command.arg.rfind('/') {
-                    Some(command.arg[..last_slash].to_string())
-                } else {
-                    Some(command.arg.clone())
-                }
-            },
-            _ => {
-                // Skip commands that don't have folders
-                None
-            }
-        }
-    };
-    
-    // Use the same display logic as the popup, with aliases expanded
-    let (mut display_commands, _, _, _) = crate::core::get_new_display_commands(query, &sys_data.commands, &sys_data.patches);
-    // Expand aliases for display
-    display_commands = display_commands.into_iter().map(|cmd| {
-        if cmd.action == "alias" {
-            cmd.resolve_alias(&sys_data.commands)
-        } else {
-            cmd
-        }
-    }).take(100).collect();
-    
-    if display_commands.is_empty() {
+    let matches = get_folder_matches(query, false);
+
+    if matches.is_empty() {
         print(&format!("No commands found matching: {}", query));
         std::process::exit(1);
     }
-    
-    // Check for exact match first (if first command is exact match, return just that)
-    if !display_commands.is_empty() && !crate::ui::PopupState::is_separator_command(&display_commands[0]) {
-        let first_cmd = &display_commands[0];
-        let query_lower = query.to_lowercase();
-        let query_folder_pattern = format!("{} folder", query_lower);
-        let cmd_lower = first_cmd.command.to_lowercase();
-        
-        if cmd_lower == query_lower || cmd_lower == query_folder_pattern {
-            // Found exact match, return just that folder
-            if let Some(folder_path) = extract_folder_path(first_cmd) {
-                print(&format!("{}", folder_path));
-                return;
-            }
-        }
-    }
-    
-    // Collect unique folder paths from all matching commands (skip separators)
-    let mut folder_paths = std::collections::HashSet::new();
-    
-    for command in &display_commands {
-        // Skip separator commands
-        if crate::ui::PopupState::is_separator_command(command) {
-            continue;
-        }
-        
-        // Add to set if we got a valid folder path
-        if let Some(path) = extract_folder_path(command) {
-            folder_paths.insert(path);
-        }
-    }
-    
-    // Output each unique folder path on its own line
-    let mut paths: Vec<String> = folder_paths.into_iter().collect();
-    paths.sort(); // Sort for consistent output
-    
-    for path in paths {
+
+    // Output just folder paths (command names are empty for -f)
+    for (_, path) in matches {
         print(&format!("{}", path));
     }
 }
@@ -583,74 +615,18 @@ fn run_folder_with_commands(args: &[String]) {
         print(&format!("Usage: {} -F, --named-folders <query>", args[0]));
         std::process::exit(1);
     }
-    
+
     let query = &args[2];
-    let (sys_data, _) = crate::core::data::get_sys_data();
-    
-    // Helper function to extract folder path from a command
-    let extract_folder_path = |command: &crate::core::Command| -> Option<String> {
-        match command.action.as_str() {
-            "folder" => {
-                // For folder commands, the arg is already the folder path
-                Some(command.arg.clone())
-            },
-            "markdown" => {
-                // For markdown commands, arg is already absolute path - return the directory
-                if let Some(last_slash) = command.arg.rfind('/') {
-                    Some(command.arg[..last_slash].to_string())
-                } else {
-                    Some(command.arg.clone())
-                }
-            },
-            _ => {
-                // Skip commands that don't have folders
-                None
-            }
-        }
-    };
-    
-    // Use the same display logic as the popup, with aliases expanded
-    let (mut display_commands, _, _, _) = crate::core::get_new_display_commands(query, &sys_data.commands, &sys_data.patches);
-    // Expand aliases for display
-    display_commands = display_commands.into_iter().map(|cmd| {
-        if cmd.action == "alias" {
-            cmd.resolve_alias(&sys_data.commands)
-        } else {
-            cmd
-        }
-    }).take(100).collect();
-    
-    if display_commands.is_empty() {
+    let matches = get_folder_matches(query, true);
+
+    if matches.is_empty() {
         print(&format!("No commands found matching: {}", query));
         std::process::exit(1);
     }
-    
-    // Check for exact match first (if first command is exact match, return just that)
-    if !display_commands.is_empty() && !crate::ui::PopupState::is_separator_command(&display_commands[0]) {
-        let first_cmd = &display_commands[0];
-        let query_lower = query.to_lowercase();
-        let query_folder_pattern = format!("{} folder", query_lower);
-        let cmd_lower = first_cmd.command.to_lowercase();
-        
-        if cmd_lower == query_lower || cmd_lower == query_folder_pattern {
-            // Found exact match, return just that command -> path
-            if let Some(folder_path) = extract_folder_path(first_cmd) {
-                print(&format!("{} -> {}", first_cmd.command, folder_path));
-                return;
-            }
-        }
-    }
-    
-    // Output in "command -> path" format for fuzzy finder (skip separators)
-    for command in &display_commands {
-        // Skip separator commands
-        if crate::ui::PopupState::is_separator_command(command) {
-            continue;
-        }
-        
-        if let Some(path) = extract_folder_path(command) {
-                print(&format!("{} -> {}", command.command, path));
-        }
+
+    // Output in "command -> path" format
+    for (command_name, path) in matches {
+        print(&format!("{} -> {}", command_name, path));
     }
 }
 

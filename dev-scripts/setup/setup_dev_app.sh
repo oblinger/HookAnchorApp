@@ -155,6 +155,21 @@ elif [ -f "$PROJECT_DIR/resources/icon.icns" ]; then
     $SUDO cp "$PROJECT_DIR/resources/icon.icns" "$RESOURCES_DIR/AppIcon.icns"
 fi
 
+# Create symlinks to HTML documentation (in Obsidian vault)
+DOCS_SOURCE_DIR="/Users/oblinger/ob/kmr/prj/binproj/Hook Anchor/docs/User Docs"
+if [ -d "$DOCS_SOURCE_DIR" ]; then
+    for html_file in "$DOCS_SOURCE_DIR"/*.html; do
+        if [ -f "$html_file" ]; then
+            filename=$(basename "$html_file")
+            $SUDO ln -sf "$html_file" "$RESOURCES_DIR/$filename"
+            echo "   Linked: $filename"
+        fi
+    done
+    echo "   ✓ Documentation symlinks created"
+else
+    echo "   ⚠️  Warning: Docs directory not found at $DOCS_SOURCE_DIR"
+fi
+
 $SUDO tee "$CONTENTS_DIR/Info.plist" > /dev/null << 'PLIST'
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">

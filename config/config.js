@@ -1,15 +1,20 @@
 // HookAnchor Default JavaScript Configuration
-// 
+//
 // This file contains JavaScript functions used by HookAnchor actions.
 // It is automatically generated from the developer's personal config during build.
 // Personal paths and values have been replaced with generic defaults.
-// 
+//
 // Copy this to ~/.config/hookanchor/config.js and customize as needed.
-// 
+//
 // All JavaScript functions have access to these built-in functions:
 // - shell(command): Execute shell command asynchronously
-// - shellSync(command): Execute shell command synchronously  
+// - shellSync(command): Execute shell command synchronously
 // - log(message): Log message to HookAnchor logs
+//
+// ⚠️  IMPORTANT: DO NOT CREATE NEW ACTION TYPES WITHOUT EXPLICIT APPROVAL
+// ⚠️  The existing action types (cmd, js, popup, template) should be sufficient.
+// ⚠️  If you think you need a new action type, discuss with the developer FIRST.
+// ⚠️  The "cmd" action type can handle ANY command that JavaScript can execute.
 //
 
 // HookAnchor Configuration Functions
@@ -381,7 +386,12 @@ module.exports = {
       // Type character by character for better reliability
       // Type the search term
       shellSync(`osascript -e 'tell application "System Events" to keystroke "${searchTerm}"'`);
-      
+
+      shellSync("/bin/sleep 0.5");  // Wait for 1Password popup to populate
+
+      // Send space as separate keystroke to help with selection
+      shellSync(`osascript -e 'tell application "System Events" to keystroke " "'`);
+
       shellSync("/bin/sleep 2.0");  // Wait for 1Password to search and show results
       shellSync("osascript -e 'tell application \"System Events\" to key code 36'");  // Press Enter to select and open
       shellSync("/bin/sleep 0.5");  // Wait for action to complete
@@ -391,6 +401,8 @@ module.exports = {
         shell("osascript -e 'tell application \"System Events\" to tell process \"1Password 7 - Password Manager\" to click menu bar item 1 of menu bar 1'");
         shellSync("/bin/sleep 0.5");
         shell(`osascript -e 'tell application "System Events" to keystroke "${searchTerm}"'`);
+        shellSync("/bin/sleep 0.5");
+        shell(`osascript -e 'tell application "System Events" to keystroke " "'`);
         shell("osascript -e 'tell application \"System Events\" to key code 36'");
       } catch (e2) {
         // Fallback 2: Open 1Password app and use search
@@ -399,6 +411,8 @@ module.exports = {
         shell("osascript -e 'tell application \"System Events\" to keystroke \"f\" using command down'");
         shellSync("/bin/sleep 0.2");
         shell(`osascript -e 'tell application "System Events" to keystroke "${searchTerm}"'`);
+        shellSync("/bin/sleep 0.5");
+        shell(`osascript -e 'tell application "System Events" to keystroke " "'`);
         shell("osascript -e 'tell application \"System Events\" to key code 36'");
       }
     }

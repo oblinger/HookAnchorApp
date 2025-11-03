@@ -67,31 +67,31 @@ impl InstallerGui {
             InstallComponent {
                 name: "Karabiner-Elements Application".to_string(),
                 description: "Status of Karabiner-Elements installation (required for hotkeys)".to_string(),
-                status: InstallStatus::NotInstalled,
+                status: InstallStatus::Selected,  // Default to selected
                 required: false,
             },
             InstallComponent {
                 name: "Karabiner-Elements Configuration".to_string(),
                 description: "Pre-install Caps Lock hotkey configuration for HookAnchor".to_string(),
-                status: InstallStatus::NotInstalled,
+                status: InstallStatus::Selected,  // Default to selected
                 required: false,
             },
             InstallComponent {
                 name: "Configuration Files".to_string(),
                 description: "All config files: config.yaml, config.js, shell integration, commands.txt, uninstaller, and distribution templates".to_string(),
-                status: InstallStatus::NotInstalled,
+                status: InstallStatus::Selected,  // Default to selected
                 required: true,
             },
             InstallComponent {
                 name: "Shell Integration Status".to_string(),
                 description: "User added shell integration to ~/.zshrc".to_string(),
-                status: InstallStatus::NotInstalled,
+                status: InstallStatus::Selected,  // Default to selected
                 required: false,
             },
             InstallComponent {
                 name: "Accessibility Permissions".to_string(),
                 description: "Required for grabber to capture URLs from Obsidian, Notion, etc.".to_string(),
-                status: InstallStatus::NotInstalled,
+                status: InstallStatus::Selected,  // Default to selected
                 required: true,
             },
         ];

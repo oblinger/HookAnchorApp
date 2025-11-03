@@ -319,32 +319,20 @@ cp "$PROJECT_ROOT/dev-scripts/uninstall.sh" "$RESOURCES_DIR/dist_uninstall.sh"
 
 # Create dist_hook_anchor_zshrc (shell integration file)
 echo "   Creating distribution zshrc..."
-cat > "$RESOURCES_DIR/dist_hook_anchor_zshrc" << 'EOF'
-# HookAnchor Shell Integration
-# This file provides shell functions for HookAnchor integration
+cp "$PROJECT_ROOT/config/hook_anchor_zshrc" "$RESOURCES_DIR/dist_hook_anchor_zshrc"
 
-# Add ~/bin to PATH if it exists and isn't already there
-if [[ -d "$HOME/bin" && ":$PATH:" != *":$HOME/bin:"* ]]; then
-    export PATH="$HOME/bin:$PATH"
+# Generate HTML documentation
+echo "   Generating HTML documentation..."
+cd "$PROJECT_ROOT"
+just docs
+# Copy HTML files to Resources (docs are in Obsidian vault, not code repo)
+DOCS_DIR="/Users/oblinger/ob/kmr/prj/binproj/Hook Anchor/docs/User Docs"
+if [ -f "$DOCS_DIR/README.html" ]; then
+    cp "$DOCS_DIR"/*.html "$RESOURCES_DIR/"
+    echo "   ✓ Copied HTML documentation to Resources"
+else
+    echo "   ⚠️  Warning: No HTML docs found at $DOCS_DIR"
 fi
-
-# HookAnchor shortcut function
-ha() {
-    if command -v ~/bin/ha >/dev/null 2>&1; then
-        ~/bin/ha "$@"
-    elif command -v /Applications/HookAnchor.app/Contents/MacOS/ha >/dev/null 2>&1; then
-        /Applications/HookAnchor.app/Contents/MacOS/ha "$@"
-    else
-        echo "HookAnchor not found. Please run the installer."
-        return 1
-    fi
-}
-
-# Quick popup launcher
-hook() {
-    ha -m "$*"
-}
-EOF
 
 # Copy other distribution default files
 echo "   Copying distribution default files..."

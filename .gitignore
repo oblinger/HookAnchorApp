@@ -40,3 +40,6 @@ config/*.db
 config/*_cache.json
 config/state.json
 config/backups/
+
+# Generated documentation (HTML from markdown)
+docs/User Docs/*.html

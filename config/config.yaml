@@ -1,12 +1,3 @@
-# HookAnchor Default Configuration
-# 
-# This config has a number of example templates.  Please customize as needed.
-#
-# UNIFIED ACTIONS SYSTEM:
-# All behaviors (templates, keyboard bindings, command actions) are now defined
-# in the 'actions:' section. Each action has a 'type' that determines its behavior,
-# and can optionally be bound to a keyboard key via the 'key' field.
-
 # Anchor Selector Configuration
 # Main configuration file for both popup app and launcher system
 
@@ -47,6 +38,13 @@ popup_settings:
   rename_patch:           true         # Update patch names and commands when patch is renamed
   rename_prefix:          true         # Update command prefixes when prefix command is renamed
   preferred_anchor:       "markdown"   # Preferred action type when multiple anchors exist for same patch
+
+  # Developer mode - controls build verification behavior
+  # Options:
+  #   "true"  - Always enable developer mode (build verification active)
+  #   "false" - Always disable developer mode (skip build verification)
+  #   "hostname" - Enable only on machines matching this hostname (e.g., "Daniels-MacBook-Pro.local")
+  developer_mode:         "Daniels-MacBook-Pro.local"  # Current dev machine
 
   # Cloud document scanning configuration (Phase 1: Logging only)
   cloud_scan_roots:
@@ -348,6 +346,13 @@ actions:
     action_type: popup
     key: "?"
     popup_action: show_keys
+    close_popup: false
+
+  kb_open_user_guide:
+    description: "Open User Guide (HTML documentation)"
+    action_type: cmd
+    key: "Cmd+Shift+H"
+    arg: "open /Applications/HookAnchor.app/Contents/Resources/USER_GUIDE.html"
     close_popup: false
   
   kb_execute:

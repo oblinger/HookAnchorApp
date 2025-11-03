@@ -79,6 +79,11 @@ pub struct PopupSettings {
     pub preferred_anchor: Option<String>,
     /// Maximum length for command names in display (prevents wide columns, default: 30)
     pub max_characters: Option<usize>,
+    /// Developer mode - controls build verification behavior
+    /// - "true" or "false": explicitly enable/disable developer mode
+    /// - hostname string: enable developer mode only on that specific machine
+    /// When enabled, build verification is active. When disabled, build verification is skipped.
+    pub developer_mode: Option<String>,
 }
 
 /// History tracking settings
@@ -231,6 +236,7 @@ impl Default for PopupSettings {
             rename_prefix: Some(false),
             preferred_anchor: Some("markdown".to_string()),
             max_characters: Some(30),
+            developer_mode: None,
         }
     }
 }

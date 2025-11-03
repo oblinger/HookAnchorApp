@@ -141,6 +141,57 @@ migrate-obsidian:
 
 # === UTILITY COMMANDS ===
 
+# Generate HTML documentation from markdown
+docs:
+    #!/usr/bin/env bash
+    set -e
+    echo "📚 Generating HTML documentation..."
+
+    # Docs are in Obsidian vault, not in the code repo
+    DOCS_DIR="/Users/oblinger/ob/kmr/prj/binproj/Hook Anchor/docs/User Docs"
+
+    # Check if pandoc is installed
+    if ! command -v pandoc &> /dev/null; then
+        echo "❌ Error: pandoc is not installed"
+        echo "Install with: brew install pandoc"
+        exit 1
+    fi
+
+    # Copy CSS file to docs directory
+    PROJECT_ROOT="{{justfile_directory()}}"
+    cp "$PROJECT_ROOT/docs-style.css" "$DOCS_DIR/docs-style.css"
+
+    # Convert each markdown file to HTML with nice styling
+    for md_name in README USER_GUIDE TEMPLATES_AND_SCRIPTING; do
+        md_file="$DOCS_DIR/${md_name}.md"
+        if [ -f "$md_file" ]; then
+            html_file="$DOCS_DIR/${md_name}.html"
+            echo "  Converting ${md_name}.md → ${md_name}.html..."
+
+            # First convert markdown links to point to HTML files
+            temp_md="$DOCS_DIR/.${md_name}_temp.md"
+            sed 's/\.md)/.html)/g' "$md_file" > "$temp_md"
+
+            pandoc "$temp_md" \
+                --standalone \
+                --from markdown \
+                --to html5 \
+                --css=docs-style.css \
+                --metadata title="HookAnchor - ${md_name//_/ }" \
+                --highlight-style=tango \
+                --table-of-contents \
+                --toc-depth=3 \
+                -o "$html_file"
+
+            rm "$temp_md"
+        else
+            echo "  ⚠️  ${md_name}.md not found at: $md_file"
+        fi
+    done
+
+    echo "✅ Documentation generated in $DOCS_DIR/"
+    echo "📖 Open with: open '$DOCS_DIR/USER_GUIDE.html'"
+
 # Show version from Cargo.toml
 version:
     @grep '^version = ' Cargo.toml | head -1 | sed 's/version = "\(.*\)"/\1/'
