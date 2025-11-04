@@ -1,7 +1,7 @@
 {
   "window_position": [
     980.0,
-    -246.0
+    -460.0
   ],
   "history_viewer_state": {
     "position": [
@@ -19,11 +19,11 @@
     "sidebar_width": 102.0,
     "show_current_commands": false
   },
-  "build_time": 1762216662,
+  "build_time": 1762216960,
   "last_scan_time": null,
   "last_scan_checksum": null,
   "last_executed_command": "AMA",
-  "server_pid": 92253,
+  "server_pid": 95847,
   "notion_last_scan": null,
   "anchor_name": "AMA",
   "anchor_timestamp": 1762216549,

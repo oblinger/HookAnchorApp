@@ -388,10 +388,7 @@ fn build_prefix_menu_commands(
                 cmd_trimmed, anchor_name, filter_text));
         }
 
-        let matches_prefix = if cmd_lower == anchor_lower {
-            // Exact match
-            true
-        } else if cmd_lower.starts_with(&anchor_lower) {
+        let matches_prefix = if cmd_lower.starts_with(&anchor_lower) && cmd_lower != anchor_lower {
             // Check if the character after the anchor name is a separator
             let next_char_pos = anchor_lower.len();
             if next_char_pos < cmd_trimmed.len() {
@@ -459,32 +456,41 @@ fn build_prefix_menu_commands(
     let patch_key = anchor_name.to_lowercase();
 
     // Execute include logic: if the patch has include commands or anchor commands with 'I' flag,
-    // add all commands from those folders
+    // add all commands from those folders that match the prefix
     if let Some(patch) = patches.get(&patch_key) {
         let config = crate::core::data::get_config();
         let include_folders = patch.get_all_include_folders(&config);
-        
+
         if !include_folders.is_empty() {
+            // Build the prefix to match against (anchor name + space)
+            let prefix_with_space = format!("{} ", anchor_name);
+            let prefix_lower = prefix_with_space.to_lowercase();
+
             for cmd in all_commands {
                 if cmd.action == "separator" {
                     continue;
                 }
-                
+
                 // Skip if already in prefix_menu_commands
                 if prefix_menu_commands.iter().any(|existing| existing.command == cmd.command && existing.action == cmd.action) {
                     continue;
                 }
-                
+
                 // Check if this command is in one of the include folders
                 if let Some(cmd_folder) = cmd.get_absolute_folder_path(&config) {
                     if include_folders.contains(&cmd_folder) {
-                        // Apply filter if provided
-                        if filter_text.is_empty() {
-                            prefix_menu_commands.push(cmd.clone());
-                        } else {
-                            // Check if command name starts with the filter text
-                            if cmd.command.to_lowercase().starts_with(&filter_text.to_lowercase()) {
+                        // ONLY add to prefix menu if command actually starts with the prefix
+                        let cmd_lower = cmd.command.to_lowercase();
+
+                        if cmd_lower.starts_with(&prefix_lower) {
+                            // Apply additional filter if provided
+                            if filter_text.is_empty() {
                                 prefix_menu_commands.push(cmd.clone());
+                            } else {
+                                // Check if command name starts with the filter text
+                                if cmd_lower.starts_with(&filter_text.to_lowercase()) {
+                                    prefix_menu_commands.push(cmd.clone());
+                                }
                             }
                         }
                     }
