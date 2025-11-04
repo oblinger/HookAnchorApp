@@ -3759,6 +3759,32 @@ impl eframe::App for AnchorSelector {
             self.frame_count += 1;
         }
 
+        // 🖱️ MOUSE MOTION THRESHOLD: Track mouse position and detect motion
+        // Initialize lock position if not set (first frame)
+        if self.popup_state.mouse_lock_pos.is_none() {
+            let mouse_pos = ctx.input(|i| i.pointer.hover_pos());
+            if let Some(pos) = mouse_pos {
+                self.popup_state.mouse_lock_pos = Some((pos.x, pos.y));
+                self.popup_state.mouse_unlocked = false;
+                crate::utils::detailed_log("MOUSE_LOCK", &format!("🖱️ Mouse locked at ({:.1}, {:.1})", pos.x, pos.y));
+            }
+        }
+
+        // Check if mouse has moved beyond 20 pixel threshold
+        if !self.popup_state.mouse_unlocked {
+            let mouse_pos = ctx.input(|i| i.pointer.hover_pos());
+            if let (Some(current), Some(locked)) = (mouse_pos, self.popup_state.mouse_lock_pos) {
+                let dx = current.x - locked.0;
+                let dy = current.y - locked.1;
+                let distance = (dx * dx + dy * dy).sqrt();
+
+                if distance > 20.0 {
+                    self.popup_state.mouse_unlocked = true;
+                    crate::utils::detailed_log("MOUSE_UNLOCK", &format!("🖱️ Mouse unlocked - moved {:.1} pixels from locked position", distance));
+                }
+            }
+        }
+
         // Start deferred loading on second frame (after UI is shown)
         if self.frame_count == 2 && self.loading_state == LoadingState::NotLoaded {
             crate::utils::detailed_log("POPUP", &format!("POPUP: Starting deferred loading on frame 2"));
@@ -4953,8 +4979,9 @@ impl eframe::App for AnchorSelector {
 
                                             let response = ui.selectable_label(is_selected, text);
 
-                                            // Update selection on hover - validate coordinates to prevent stale hover from cached position
-                                            if response.hovered() {
+                                            // Update selection on hover - but only if mouse has moved beyond threshold
+                                            // This prevents false hover detection when popup opens with mouse already under it
+                                            if self.popup_state.mouse_unlocked && response.hovered() {
                                                 let hover_pos = ctx.input(|i| i.pointer.hover_pos());
                                                 // Validate pointer is actually inside button (not stale coordinates from different display)
                                                 if hover_pos.map_or(false, |pos| response.rect.contains(pos)) {

@@ -35,6 +35,10 @@ pub struct PopupState {
     pub prefix_menu_count: usize,
     /// Whether to show files from anchor folder in prefix menu
     pub show_files: bool,
+    /// Initial mouse position when popup opened (for motion threshold detection)
+    pub mouse_lock_pos: Option<(f32, f32)>,
+    /// Whether mouse has moved beyond the threshold (20 pixels)
+    pub mouse_unlocked: bool,
 }
 
 impl PopupState {
@@ -58,6 +62,8 @@ impl PopupState {
             is_in_prefix_menu: false,
             prefix_menu_info: None,
             prefix_menu_count: 0,
+            mouse_lock_pos: None,
+            mouse_unlocked: false,
         }
     }
     
@@ -84,6 +90,8 @@ impl PopupState {
             is_in_prefix_menu: false,
             prefix_menu_info: None,
             prefix_menu_count: 0,
+            mouse_lock_pos: None,
+            mouse_unlocked: false,
         }
     }
     
@@ -95,6 +103,10 @@ impl PopupState {
         self.update_display_commands();  // Compute complete list (filtered + files)
         self.update_display_layout();    // Build layout from complete list
         self.selection.reset(&self.display_layout);
+
+        // Reset mouse lock when search changes
+        self.mouse_lock_pos = None;
+        self.mouse_unlocked = false;
 
         if was_reloaded {
             crate::utils::detailed_log("POPUP_REFRESH", "Commands were reloaded - display fully refreshed");

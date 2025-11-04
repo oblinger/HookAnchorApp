@@ -76,66 +76,31 @@ impl Keystroke {
                     return false;
                 }
                 
-                let modifiers_match = Modifiers::from_egui(modifiers) == self.modifiers;
-                let key_match = *key == self.key;
-                
                 // Log detailed matching for bracket keys
                 if *key == egui::Key::OpenBracket || *key == egui::Key::CloseBracket {
-                    crate::utils::detailed_log("BRACKET_MATCH", &format!("key_match={} (key={:?} vs self.key={:?}), modifiers_match={} (modifiers={:?} vs self.modifiers={:?})", 
-                        key_match, key, self.key, modifiers_match, Modifiers::from_egui(modifiers), self.modifiers));
+                    crate::utils::detailed_log("BRACKET_MATCH", &format!("key={:?} vs self.key={:?}, modifiers={:?} vs self.modifiers={:?}",
+                        key, self.key, Modifiers::from_egui(modifiers), self.modifiers));
                 }
-                
-                // Special cases for shifted punctuation characters
-                // Some keyboards/systems send different key codes for these
-                // egui only has certain special key variants available
-                
-                // First check if the incoming key is one of the special variants
-                // and map it back to the base key + shift
-                if modifiers_match {
-                    // If we receive Questionmark, check if we're looking for Slash+Shift
-                    if *key == egui::Key::Questionmark && self.key == egui::Key::Slash && self.modifiers.shift {
-                        return true;
-                    }
-                    // If we receive Plus, check if we're looking for Equals+Shift
-                    if *key == egui::Key::Plus && self.key == egui::Key::Equals && self.modifiers.shift {
-                        return true;
-                    }
-                    // If we receive Pipe, check if we're looking for Backslash+Shift
-                    if *key == egui::Key::Pipe && self.key == egui::Key::Backslash && self.modifiers.shift {
-                        return true;
-                    }
-                    // If we receive Colon, check if we're looking for Semicolon+Shift
-                    if *key == egui::Key::Colon && self.key == egui::Key::Semicolon && self.modifiers.shift {
-                        return true;
-                    }
-                }
-                
-                if self.modifiers.shift && modifiers_match {
-                    match self.key {
-                        // Plus key: can come through as Plus or Equals+Shift
-                        egui::Key::Equals => {
-                            return *key == egui::Key::Equals || *key == egui::Key::Plus;
-                        }
-                        // Question mark: can come through as Questionmark or Slash+Shift
-                        egui::Key::Slash => {
-                            return *key == egui::Key::Slash || *key == egui::Key::Questionmark;
-                        }
-                        // Pipe: can come through as Pipe or Backslash+Shift
-                        egui::Key::Backslash => {
-                            return *key == egui::Key::Backslash || *key == egui::Key::Pipe;
-                        }
-                        // Colon: can come through as Colon or Semicolon+Shift
-                        egui::Key::Semicolon => {
-                            return *key == egui::Key::Semicolon || *key == egui::Key::Colon;
-                        }
-                        // For other shifted keys, just use normal matching
-                        // The numbered keys and other punctuation don't have special variants in egui
-                        _ => {}
-                    }
-                }
-                
-                // Normal key matching
-                *key == self.key && modifiers_match
+
+                // For logical punctuation keys (?, +, |, :), ignore shift in modifier matching
+                // egui sends these as separate Key variants (Questionmark, Plus, etc.)
+                let is_logical_punctuation = LOGICAL_PUNCTUATION_KEYS.contains(key);
+
+                let modifiers_match = if is_logical_punctuation {
+                    // Compare modifiers ignoring shift
+                    let incoming = Modifiers::from_egui(modifiers);
+                    incoming.ctrl == self.modifiers.ctrl &&
+                    incoming.alt == self.modifiers.alt &&
+                    incoming.cmd == self.modifiers.cmd
+                } else {
+                    // Normal comparison including shift
+                    Modifiers::from_egui(modifiers) == self.modifiers
+                };
+
+                // Key matching
+                let key_match = *key == self.key;
+
+                key_match && modifiers_match
             }
             _ => false
         }
@@ -229,21 +194,20 @@ impl Keystroke {
     /// Parse a key string into egui::Key + Modifiers
     fn parse_key_string(key_str: &str) -> Result<Self, String> {
         // Special case: if the entire string is just "+", treat it as the plus character
-        // (Shift+Equals). Without this, it would be parsed as a chord with empty parts.
         if key_str == "+" {
-            return Ok(Self::new(egui::Key::Equals, Modifiers { shift: true, ..Modifiers::none() }));
+            return Self::char_to_keystroke("+");
         }
-        
+
         // Handle chord notation (contains '+')
         if key_str.contains('+') {
             let parts: Vec<&str> = key_str.split('+').collect();
             if parts.len() < 2 {
                 return Err(format!("Invalid chord format: {}", key_str));
             }
-            
+
             let mut modifiers = Modifiers::none();
             let key_part = parts[parts.len() - 1]; // Last part is the key
-            
+
             // Parse modifiers
             for modifier in &parts[..parts.len() - 1] {
                 match modifier.to_lowercase().as_str() {
@@ -254,13 +218,30 @@ impl Keystroke {
                     _ => return Err(format!("Unknown modifier: {}", modifier)),
                 }
             }
-            
-            let key = Self::string_to_egui_key(key_part)?;
-            return Ok(Self::new(key, modifiers));
+
+            // Parse the key part using the same logic as single characters
+            let base_keystroke = Self::char_to_keystroke(key_part)?;
+
+            // Merge the parsed modifiers with any modifiers from the character itself
+            let merged_modifiers = Modifiers {
+                ctrl: modifiers.ctrl || base_keystroke.modifiers.ctrl,
+                alt: modifiers.alt || base_keystroke.modifiers.alt,
+                shift: modifiers.shift || base_keystroke.modifiers.shift,
+                cmd: modifiers.cmd || base_keystroke.modifiers.cmd,
+            };
+
+            return Ok(Self::new(base_keystroke.key, merged_modifiers));
         }
-        
-        // Handle shifted characters that should map to base key + shift
-        let (key, extra_modifiers) = match key_str {
+
+        // Single character - use the helper function
+        Self::char_to_keystroke(key_str)
+    }
+
+    /// Convert a single character string to a Keystroke (Key + Modifiers)
+    /// This is the single source of truth for character-to-key mapping
+    fn char_to_keystroke(s: &str) -> Result<Self, String> {
+        let (key, modifiers) = match s {
+            // Shifted numbers - use base key + shift
             "!" => (egui::Key::Num1, Modifiers { shift: true, ..Modifiers::none() }),
             "@" => (egui::Key::Num2, Modifiers { shift: true, ..Modifiers::none() }),
             "#" => (egui::Key::Num3, Modifiers { shift: true, ..Modifiers::none() }),
@@ -271,28 +252,31 @@ impl Keystroke {
             "*" => (egui::Key::Num8, Modifiers { shift: true, ..Modifiers::none() }),
             "(" => (egui::Key::Num9, Modifiers { shift: true, ..Modifiers::none() }),
             ")" => (egui::Key::Num0, Modifiers { shift: true, ..Modifiers::none() }),
+
+            // Shifted punctuation WITHOUT logical variants - use base key + shift
             "_" => (egui::Key::Minus, Modifiers { shift: true, ..Modifiers::none() }),
-            "+" => (egui::Key::Equals, Modifiers { shift: true, ..Modifiers::none() }),
-            // Square brackets - these keys exist on US keyboards
-            "[" => (egui::Key::OpenBracket, Modifiers::none()),
-            "]" => (egui::Key::CloseBracket, Modifiers::none()),
-            "{" => (egui::Key::OpenBracket, Modifiers { shift: true, ..Modifiers::none() }),
-            "}" => (egui::Key::CloseBracket, Modifiers { shift: true, ..Modifiers::none() }),
-            "|" => (egui::Key::Backslash, Modifiers { shift: true, ..Modifiers::none() }),
-            ":" => (egui::Key::Semicolon, Modifiers { shift: true, ..Modifiers::none() }),
             "\"" => (egui::Key::Quote, Modifiers { shift: true, ..Modifiers::none() }),
             "<" => (egui::Key::Comma, Modifiers { shift: true, ..Modifiers::none() }),
             ">" => (egui::Key::Period, Modifiers { shift: true, ..Modifiers::none() }),
-            "?" => (egui::Key::Slash, Modifiers { shift: true, ..Modifiers::none() }),
             "~" => (egui::Key::Backtick, Modifiers { shift: true, ..Modifiers::none() }),
+            "{" => (egui::Key::OpenBracket, Modifiers { shift: true, ..Modifiers::none() }),
+            "}" => (egui::Key::CloseBracket, Modifiers { shift: true, ..Modifiers::none() }),
+
+            // Logical punctuation WITH variants - use logical key WITHOUT shift
+            // These match egui's behavior where it sends separate Key enum variants
+            "?" => (egui::Key::Questionmark, Modifiers::none()),
+            "+" => (egui::Key::Plus, Modifiers::none()),
+            "|" => (egui::Key::Pipe, Modifiers::none()),
+            ":" => (egui::Key::Colon, Modifiers::none()),
+
+            // All other keys (letters, unshifted punctuation, etc.)
             _ => {
-                // Single key without modifiers
-                let key = Self::string_to_egui_key(key_str)?;
+                let key = Self::string_to_egui_key(s)?;
                 (key, Modifiers::none())
             }
         };
-        
-        Ok(Self::new(key, extra_modifiers))
+
+        Ok(Self::new(key, modifiers))
     }
     
     /// Convert a string to egui::Key
@@ -386,6 +370,15 @@ impl Keystroke {
 // ================================================================================================
 
 use std::collections::HashMap;
+
+/// Logical punctuation keys that egui sends when shifted
+/// For these keys, we should ignore the shift modifier in matching
+const LOGICAL_PUNCTUATION_KEYS: &[egui::Key] = &[
+    egui::Key::Questionmark,  // Shift+/
+    egui::Key::Plus,          // Shift+=
+    egui::Key::Pipe,          // Shift+\
+    egui::Key::Colon,         // Shift+;
+];
 
 /// Trait for key event handlers
 pub trait KeyHandler {
