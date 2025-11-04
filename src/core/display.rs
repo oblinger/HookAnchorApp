@@ -455,34 +455,9 @@ fn build_prefix_menu_commands(
             }
         }
     }
-    
-    // Find all commands that have this anchor as their patch
+
     let patch_key = anchor_name.to_lowercase();
-    for cmd in all_commands {
-        if cmd.action == "separator" {
-            continue;
-        }
-        
-        if cmd.patch.to_lowercase() == patch_key {
-            // Apply additional filtering based on remaining characters
-            // Only include if filter_text is empty or the command name starts with filter_text
-            if filter_text.is_empty() {
-                // Avoid duplicates
-                if !prefix_menu_commands.iter().any(|existing: &Command| existing.command == cmd.command && existing.action == cmd.action) {
-                    prefix_menu_commands.push(cmd.clone());
-                }
-            } else {
-                // Check if command name starts with the filter text
-                if cmd.command.to_lowercase().starts_with(&filter_text.to_lowercase()) {
-                    // Avoid duplicates
-                    if !prefix_menu_commands.iter().any(|existing| existing.command == cmd.command && existing.action == cmd.action) {
-                        prefix_menu_commands.push(cmd.clone());
-                    }
-                }
-            }
-        }
-    }
-    
+
     // Execute include logic: if the patch has include commands or anchor commands with 'I' flag,
     // add all commands from those folders
     if let Some(patch) = patches.get(&patch_key) {

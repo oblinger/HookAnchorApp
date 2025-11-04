@@ -1,7 +1,7 @@
 {
   "window_position": [
-    950.0,
-    25.0
+    980.0,
+    -246.0
   ],
   "history_viewer_state": {
     "position": [
@@ -19,14 +19,14 @@
     "sidebar_width": 102.0,
     "show_current_commands": false
   },
-  "build_time": 1762210728,
+  "build_time": 1762216662,
   "last_scan_time": null,
   "last_scan_checksum": null,
-  "last_executed_command": "SprintPlanning",
-  "server_pid": 81459,
+  "last_executed_command": "AMA",
+  "server_pid": 92253,
   "notion_last_scan": null,
-  "anchor_name": "2025 GPU Choice",
-  "anchor_timestamp": 1762205746,
+  "anchor_name": "AMA",
+  "anchor_timestamp": 1762216549,
   "anchor_folder": null,
   "show_files": true
 }
