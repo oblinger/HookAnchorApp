@@ -334,6 +334,16 @@ else
     echo "   ⚠️  Warning: No HTML docs found at $DOCS_DIR"
 fi
 
+# Copy LICENSE to app bundle
+echo "   Copying LICENSE to app bundle..."
+if [ -f "$DOCS_DIR/LICENSE.txt" ]; then
+    cp "$DOCS_DIR/LICENSE.txt" "$RESOURCES_DIR/LICENSE.txt"
+    echo "   ✓ Copied LICENSE.txt to app Resources"
+else
+    echo "   ❌ ERROR: LICENSE.txt not found in $DOCS_DIR"
+    exit 1
+fi
+
 # Copy other distribution default files
 echo "   Copying distribution default files..."
 if [ -d "$PROJECT_ROOT/dist/HookAnchor.app/Contents/Resources" ]; then
@@ -419,6 +429,17 @@ hdiutil attach "$TEMP_BUILD_DIR/temp.dmg" -mountpoint "$TEMP_BUILD_DIR/dmg_mount
 # Copy contents
 cp -R "$DIST_DIR/HookAnchor.app" "$TEMP_BUILD_DIR/dmg_mount/"
 cp "$DIST_DIR/README.md" "$TEMP_BUILD_DIR/dmg_mount/"
+
+# Copy LICENSE to DMG root
+DOCS_DIR="/Users/oblinger/ob/kmr/prj/binproj/Hook Anchor/docs/User Docs"
+if [ -f "$DOCS_DIR/LICENSE.txt" ]; then
+    cp "$DOCS_DIR/LICENSE.txt" "$TEMP_BUILD_DIR/dmg_mount/LICENSE.txt"
+    echo "   ✓ Added LICENSE.txt to DMG"
+else
+    echo "   ❌ ERROR: LICENSE.txt not found in $DOCS_DIR"
+    exit 1
+fi
+
 ln -s /Applications "$TEMP_BUILD_DIR/dmg_mount/Applications"
 
 # Create a simple background image or use existing

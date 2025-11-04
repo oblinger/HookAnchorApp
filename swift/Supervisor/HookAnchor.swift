@@ -1,6 +1,7 @@
 import Cocoa
 import Foundation
 import Darwin
+import Carbon
 
 // Main entry point for the application
 class HookAnchorMain {
@@ -69,11 +70,141 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             }
         }
     }
+
+    func setupApplicationMenu() {
+        // Create main menu bar
+        let mainMenu = NSMenu()
+
+        // Create HookAnchor menu
+        let appMenuItem = NSMenuItem()
+        mainMenu.addItem(appMenuItem)
+
+        let appMenu = NSMenu()
+        appMenuItem.submenu = appMenu
+
+        // Add "Show HookAnchor" menu item
+        // This exact text must be used in System Settings → Keyboard → App Shortcuts
+        let showItem = NSMenuItem(
+            title: "Show HookAnchor",
+            action: #selector(menuShowHookAnchor),
+            keyEquivalent: ""
+        )
+        appMenu.addItem(showItem)
+
+        // Add separator
+        appMenu.addItem(NSMenuItem.separator())
+
+        // Add Quit menu item
+        let quitItem = NSMenuItem(
+            title: "Quit HookAnchor",
+            action: #selector(NSApplication.terminate(_:)),
+            keyEquivalent: "q"
+        )
+        appMenu.addItem(quitItem)
+
+        // Set the menu bar
+        NSApp.mainMenu = mainMenu
+
+        log("Application menu created with 'Show HookAnchor' item")
+    }
+
+    @objc func menuShowHookAnchor() {
+        log("Menu: Show HookAnchor triggered")
+        showRustWindow()
+    }
+
+    func setupGlobalHotkey() {
+        // Read hotkey configuration from config file
+        let homeDir = FileManager.default.homeDirectoryForCurrentUser.path
+        let configPath = "\(homeDir)/.config/hookanchor/config.yaml"
+
+        var keyCode: UInt32 = 49 // Space key by default
+        var modifiers: UInt32 = UInt32(optionKey) // Option modifier by default
+
+        // Try to read config file
+        if let configData = try? String(contentsOfFile: configPath, encoding: .utf8) {
+            // Parse global_hotkey line (simple parsing for "global_hotkey: Option+Space")
+            let lines = configData.components(separatedBy: .newlines)
+            for line in lines {
+                if line.hasPrefix("global_hotkey:") {
+                    let value = line.replacingOccurrences(of: "global_hotkey:", with: "").trimmingCharacters(in: .whitespaces)
+                    let parts = value.components(separatedBy: "+")
+
+                    // Parse modifiers and key
+                    var parsedModifiers: UInt32 = 0
+                    var parsedKey: UInt32?
+
+                    for part in parts {
+                        let trimmed = part.trimmingCharacters(in: .whitespaces)
+                        switch trimmed.lowercased() {
+                        case "option", "alt":
+                            parsedModifiers |= UInt32(optionKey)
+                        case "command", "cmd":
+                            parsedModifiers |= UInt32(cmdKey)
+                        case "control", "ctrl":
+                            parsedModifiers |= UInt32(controlKey)
+                        case "shift":
+                            parsedModifiers |= UInt32(shiftKey)
+                        case "space":
+                            parsedKey = 49
+                        case "return", "enter":
+                            parsedKey = 36
+                        case "`", "backtick":
+                            parsedKey = 50
+                        default:
+                            break
+                        }
+                    }
+
+                    if parsedKey != nil {
+                        keyCode = parsedKey!
+                        modifiers = parsedModifiers
+                    }
+                    break
+                }
+            }
+        }
+
+        // Create hotkey ID
+        let hotKeyID = EventHotKeyID(signature: 0x484B4152, id: 1) // 'HKAR'
+
+        // Register the hotkey
+        let registerResult = RegisterEventHotKey(
+            keyCode,
+            modifiers,
+            hotKeyID,
+            GetEventDispatcherTarget(),
+            0,
+            &hotKeyRef
+        )
+
+        if registerResult == noErr {
+            log("Global hotkey registered successfully (keyCode=\(keyCode), modifiers=\(modifiers))")
+        } else {
+            log("Failed to register global hotkey: \(registerResult)")
+        }
+
+        // Install event handler
+        let eventSpec = [EventTypeSpec(eventClass: OSType(kEventClassKeyboard),
+                                       eventKind: UInt32(kEventHotKeyPressed))]
+
+        InstallEventHandler(GetEventDispatcherTarget(),
+                           hotKeyEventHandler,
+                           1,
+                           eventSpec,
+                           UnsafeMutableRawPointer(Unmanaged.passUnretained(self).toOpaque()),
+                           &eventHandler)
+    }
+
     var rustPopupProcess: Process?
     var rustPopupPID: pid_t = 0
     var popupPath: String = ""
     var lastShowTime: Date = Date.distantPast
     // Removed timer - no need for continuous monitoring
+
+    // Global hotkey registration
+    var eventHandler: EventHandlerRef?
+    var hotKeyRef: EventHotKeyRef?
     
     func applicationWillFinishLaunching(_ notification: Notification) {
         // Register for URL events BEFORE launch completes - this is critical!
@@ -89,10 +220,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ notification: Notification) {
         log("Starting up...")
         log("URL event handler already registered")
-        
+
         // Ensure command server is running before we do anything else
         startCommandServerIfNeeded()
-        
+
+        // Set up application menu (enables keyboard shortcuts via System Settings)
+        setupApplicationMenu()
+
+        // Set up global hotkey (Option+Space by default)
+        setupGlobalHotkey()
+
         // Set up as background app (no dock icon)
         NSApp.setActivationPolicy(.accessory)
         
@@ -581,4 +718,45 @@ extension Bundle {
     static var isAppBundle: Bool {
         return Bundle.main.bundleURL.pathExtension == "app"
     }
+}
+
+// Global hotkey event handler (C callback)
+private func hotKeyEventHandler(
+    eventHandlerCall: EventHandlerCallRef?,
+    event: EventRef?,
+    userData: UnsafeMutableRawPointer?
+) -> OSStatus {
+    guard let userData = userData else {
+        return OSStatus(eventNotHandledErr)
+    }
+
+    // Get the AppDelegate instance from userData
+    let appDelegate = Unmanaged<AppDelegate>.fromOpaque(userData).takeUnretainedValue()
+
+    // Extract hotkey ID from event
+    var hotKeyID = EventHotKeyID()
+    let error = GetEventParameter(
+        event,
+        UInt32(kEventParamDirectObject),
+        UInt32(typeEventHotKeyID),
+        nil,
+        MemoryLayout<EventHotKeyID>.size,
+        nil,
+        &hotKeyID
+    )
+
+    if error != noErr {
+        return error
+    }
+
+    // Verify it's our hotkey
+    if hotKeyID.signature == 0x484B4152 && hotKeyID.id == 1 {
+        // Trigger the show window action
+        DispatchQueue.main.async {
+            appDelegate.showRustWindow()
+        }
+        return noErr
+    }
+
+    return OSStatus(eventNotHandledErr)
 }
