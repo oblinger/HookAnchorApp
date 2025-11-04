@@ -3,7 +3,8 @@
 - [[Hook Anchor Website]]  
 - [[Hook Anchor Video]] 
 
-- [ ] Release Video
-- [ ] Personal Use license2
 
-- [ ] Hook Anchor Web Page
+
+- [ ] best redit groups (build list)
+- [ ] choose list where it will be released
+- [ ] write release text

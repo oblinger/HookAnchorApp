@@ -1,6 +1,13 @@
 
 
 
+## 2025-11-03  Narrowing ...
+
+- Each 1/2 of focused work is precious, I need to get a good handful of these each day, then use well.
+- Narrowing focus to
+	-  CIAO prep; ML Prep; Applying; AI-safety
+	- Tiny work on HookAnchor and SV
+
 ## 2025-10-28  
 
 

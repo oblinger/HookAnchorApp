@@ -1,12 +1,13 @@
 
 
 .**TODO**.
-- collect more data (james is asking) 
-	- [Cloud Roadmap](https://docs.google.com/document/d/1g135euS74c7FfBO6GDMRGyvi_0jXHBm4Pd4bqU9Pa94/edit?tab=t.0): plan for moving stuff to cloud - 
-	- [Media convert](https://www.notion.so/sportsvisio/SV-Hybrid-Media-Convert-Prototype-27d719d6f2bd805084dfeb5b166debcb?source=copy_link):
-    - Darien
-    - OCT 19th - own meeting
-    - [[PHQ]] 
+ - collect more data (james is asking) 
+ - Roster - get and use
+ - [Cloud Roadmap](https://docs.google.com/document/d/1g135euS74c7FfBO6GDMRGyvi_0jXHBm4Pd4bqU9Pa94/edit?tab=t.0): plan for moving stuff to cloud - 
+ - [Media convert](https://www.notion.so/sportsvisio/SV-Hybrid-Media-Convert-Prototype-27d719d6f2bd805084dfeb5b166debcb?source=copy_link):
+ - Darien
+ - OCT 19th - own meeting
+ - [[PHQ]] 
   BACKLOG
     - AI-code brainstorm    [[2025 AI Codeing Brainstorm|AI-code]]  
 	-  [AWS Costs](https://drive.google.com/drive/folders/1Mnu6bwVw9bqxGq40uM_fBZ6x_75O3c6H)  (talk w/ Matty?) 

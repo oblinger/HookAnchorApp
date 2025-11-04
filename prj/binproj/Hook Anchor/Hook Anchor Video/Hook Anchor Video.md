@@ -4,13 +4,6 @@
 
 
 
-
-
-
-
-
-
-
 - [ ] check marks should be bigger and more visible (bold)
 - [ ] The latest dist_.... files should be copied into the user's config folder so they can see and use the latest code in there config.js config.yaml or hook_anchor_zshrc file.  Those files should always be copied over so the user has ready access to them.
 

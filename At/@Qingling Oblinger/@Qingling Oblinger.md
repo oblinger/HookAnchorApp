@@ -13,6 +13,16 @@
 
 # LOG
 
+## 2025-11-03  Fireworks AI
+
+XXXX,
+
+My husband has been thinking about chat-based construction of agentic workflows.  Companies like mine can gain notable value from Agentic workflows, but we often don't have the Dev resources to allocate.  Dan thinks LLMs themselves could be used to drive full construction entirely via chat.
+
+He would love to get your thoughts on this direction, especially since he thinks it is a natural extension of Fireworks existing agent offering.  He would love to chat with you about it if you have the time and interest for a coffee.
+
+
+
 ## 2025-10-28  VP @ 1pw
 
 - https://jobs.ashbyhq.com/1password/7dc336bd-42f2-4902-af03-1abc8588e498

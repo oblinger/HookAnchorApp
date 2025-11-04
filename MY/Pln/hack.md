@@ -1,15 +1,21 @@
-- fixup the hook_anchor_zshrc for dist
-- once all items in a prefix menu are filtered, the whole prefix menu (and it files menu) should be removed
-- delete second name w/ duplicate names failed silently.
-- hook://anchor_popup   URL ability to trigger popup on given input
-- right "]" need to update input box with space and carot at end of input
-- when matching a name.  prefix matches should match first, then first char matches then infix matches
-
 
 
 - [ ] [[Hook Anchor Release]] 
-- [ ] ChildTemplate anchor var tied to "+" key.   " * " does grab
+- [ ] fix key processing
+- [ ] [[Website]] : Hook Anchor Web Page
+- [x] Release Video
+- [ ] ReadMe should get both shortcuts working (Karabiner&ke)
+- [ ] Personal Use license2
+- [ ] does the installer add line to ~/.zshrc ?
+- [ ] 2025-11-03 21:48:37 ❌ ERROR: Recursive aliases: alias 'JJ PP' points to non-existent command 'PP'
 
+- [ ] dry code
+- [ ] ChildTemplate anchor var tied to "+" key.   " * " does grab
+- [ ] once all items in a prefix menu are filtered, the whole prefix menu (and it files menu) should be removed
+- [ ] delete second name w/ duplicate names failed silently.
+- [ ] hook://anchor_popup   URL ability to trigger popup on given input
+- [ ] right "]" need to update input box with space and carot at end of input
+- [ ] when matching a name.  prefix matches should match first, then first char matches then infix matches
 - [ ] Add categories
 - [ ] New template actions list
 - [ ] start selection w/ mouse should not happen til real move
@@ -17,6 +23,10 @@
 - [ ] click on folder will go into folder
 - [ ] Delete key should prompt to delete file and maybe folder.
 - [ ] remove the 'js' and 'js_function' action types since they are not needed.
+- [x] fixup the hook_anchor_zshrc for dist
+- [x] Update Docs
+- [x] Make Docs into HTML
+- [ ] Make Docs viewable by keystroke
 - [x] Remove any code associated with anchor actions
 - [x] Press space to accept an anchor
 - [x] remove "anchor" from code

@@ -2,7 +2,7 @@
 prefix menu should disappear once all items and files have been filtered out
 files should be filtered along with commands in prefix menu
 
-# PAGE INTRO
+# PROJECT PAGE
 
 Context:  I have written, used, and suffered with at least five personal knowledge systems over the decades.  In the last 5 years, I have landed on three principles that I think are essential for best-in-class knowledge management.  I describe them here, and they are the center of a Mac App I have written that helps implement these principles.  Still, the principles are more general, as I had been following them for years w/o the aid of this app.
 
@@ -45,8 +45,11 @@ No matter what organizational system and tools you use, access and upkeep can be
 
 
 
+{{Context:  The text below should be in a follow on page that is references at the end of the project page}}
 
-# Practical Application
+
+
+# Beginning with Hook Anchor
 
 Here are some practical ways to dip your toes into the Hook Anchor system.  These notes are geared towards users of my HookAnchor Mac application, but they are also broadly relevant for implementing the method without the application.
 
@@ -124,6 +127,10 @@ Person entries are so useful, I have extended the person template to cover any e
 
 
 
+# OLDER STUFF
+
+
+
 
 
 
@@ -147,10 +154,6 @@ T
 
 Once you are gaining solid value 
 Start identifying and codifying 
-
-
-
-# OLDER STUFF
 
 
 

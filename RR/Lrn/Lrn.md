@@ -6,6 +6,7 @@
   , [Lrn Note](spot://lrnnote),
   , [Lrn Mgt Obsidian](spot://lrnmgtobsidian), [LRN Read Obsidian](spot://lrnreadobsidian)
   , [LRN Todo Obsidian](spot://lrntodoobsidian), 
+  [[CIAO]] 
 
 
 https://github.com/openai/openai-cookbook/blob/main/articles/gpt-oss/fine-tune-transfomers.ipynb?utm_source=alphasignal&utm_campaign=2025-07-24&asuniq=23058444
