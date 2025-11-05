@@ -1,0 +1,150 @@
+# HookAnchor Shell Integration with FZF Support
+# This file provides shell functions with interactive fzf selection for multiple matches
+
+# Add ~/bin to PATH if it exists and isn't already there
+if [[ -d "$HOME/bin" && ":$PATH:" != *":$HOME/bin:"* ]]; then
+    export PATH="$HOME/bin:$PATH"
+fi
+
+# HookAnchor shortcut function
+ha() {
+    if [ -x "$HOME/bin/ha" ]; then
+        "$HOME/bin/ha" "$@"
+    elif [ -x "/Applications/HookAnchor.app/Contents/MacOS/ha" ]; then
+        "/Applications/HookAnchor.app/Contents/MacOS/ha" "$@"
+    else
+        echo "HookAnchor not found. Please run the installer." >&2
+        return 1
+    fi
+}
+
+# Quick popup launcher
+hook() {
+    ha -m "$*"
+}
+
+# Helper function for ff/fp/fd - with optional fzf selection
+_ha_get_unique() {
+    local search_term="$1"
+    local format="$2"  # "folder" or "path"
+    local output_type="$3"  # "folder" or "file" (for error messages)
+
+    # Use new -m API with --exact flag and appropriate --format
+    local result
+    result=$(ha -m "$search_term" --exact --format="$format" 2>/dev/null)
+    local exit_code=$?
+
+    case $exit_code in
+        0)
+            # Unique match found - return the result
+            echo "$result"
+            return 0
+            ;;
+        1)
+            # Multiple matches (ambiguous)
+            # If fzf is available, use it for interactive selection
+            if command -v fzf >/dev/null 2>&1; then
+                local commands=$(ha -m "$search_term" --exact --format=name 2>/dev/null)
+                local selected_cmd=$(echo "$commands" | fzf --height 40% --reverse --query="$search_term" --prompt="Select $output_type: ")
+
+                if [ -n "$selected_cmd" ]; then
+                    # Get the folder/path for the selected command
+                    result=$(ha -m "$selected_cmd" --exact --format="$format" 2>/dev/null)
+                    if [ $? -eq 0 ]; then
+                        echo "$result"
+                        return 0
+                    fi
+                fi
+                return 1
+            else
+                # Fallback to showing ambiguous message
+                local commands=$(ha -m "$search_term" --exact --format=name 2>/dev/null | tr '\n' ', ' | sed 's/, $//')
+                echo "Ambiguous $output_type: $commands" >&2
+                echo "(Install fzf for interactive selection)" >&2
+                return 1
+            fi
+            ;;
+        2)
+            # No matches
+            echo "No match found for '$search_term'" >&2
+            return 1
+            ;;
+        *)
+            echo "Error executing ha command" >&2
+            return 1
+            ;;
+    esac
+}
+
+# ff - fuzzy find folder (cd to unique match or fzf select)
+ff() {
+    if [ $# -eq 0 ]; then
+        # No arguments - if fzf available, browse all folders
+        if command -v fzf >/dev/null 2>&1; then
+            local all_folders=$(ha -m "" --format=name 2>/dev/null)
+            local selected_cmd=$(echo "$all_folders" | fzf --height 40% --reverse --prompt="Browse folders: ")
+
+            if [ -n "$selected_cmd" ]; then
+                local folder=$(ha -m "$selected_cmd" --exact --format=folder 2>/dev/null)
+                if [ $? -eq 0 ] && [ -n "$folder" ]; then
+                    cd "$folder"
+                    return 0
+                fi
+            fi
+            return 1
+        else
+            echo "Usage: ff <search_term>" >&2
+            echo "Example: ff myproject" >&2
+            echo "(Install fzf to browse all folders)" >&2
+            return 1
+        fi
+    fi
+
+    local folder
+    folder=$(_ha_get_unique "$*" "folder" "folder")
+
+    if [ $? -eq 0 ] && [ -n "$folder" ]; then
+        cd "$folder"
+    fi
+}
+
+# fp - print file path (unique match or fzf select)
+fp() {
+    if [ $# -eq 0 ]; then
+        echo "Usage: fp <search_term>" >&2
+        echo "Example: cat \$(fp myfile)" >&2
+        return 1
+    fi
+
+    _ha_get_unique "$*" "path" "file"
+}
+
+# fd - print folder path (unique match or fzf select)
+fd() {
+    if [ $# -eq 0 ]; then
+        echo "Usage: fd <search_term>" >&2
+        echo "Example: ls \$(fd myproject)" >&2
+        return 1
+    fi
+
+    _ha_get_unique "$*" "folder" "folder"
+}
+
+# Tab completion (only if compdef is available)
+if command -v compdef >/dev/null 2>&1; then
+    _ff_completion() {
+        local -a commands
+        commands=($(ha -m '' --format=name 2>/dev/null | head -100))
+        _describe 'commands' commands
+    }
+
+    _fp_fd_completion() {
+        local -a commands
+        commands=($(ha -m '' --format=name 2>/dev/null | head -100))
+        _describe 'commands' commands
+    }
+
+    compdef _ff_completion ff
+    compdef _fp_fd_completion fp
+    compdef _fp_fd_completion fd
+fi

@@ -7,7 +7,7 @@
 # APPLICATION SETTINGS
 # =================================================================
 popup_settings:
-  verbose_logging:        false        # Controls if detailed logging messages added to the log
+  verbose_logging:        true         # Controls if detailed logging messages added to the log
   merge_similar:          true         # Merging similar commands in popup
   max_rows:               25           # Max number of rows in the list of matching commands
   max_columns:            4            # Max columns in list of matching commands
@@ -18,7 +18,7 @@ popup_settings:
   countdown_seconds:      5            # Seconds for grabber countdown (default: 5)
   anchor_timeout_seconds: 3600         # Seconds to remember last executed anchor
   run_in_background:      true         # Keep app running in background for instant popup
-  global_hotkey:          "Opt-`"      # Global hotkey to show popup (requires accessibility permissions)
+  global_hotkey:          "Option+Space"  # Global hotkey to show popup (e.g., "Option+Space", "Command+Shift+Space", "Option+`")
   popup_server_retries:   3            # Number of times to retry showing the popup before rebuilding
   max_window_size:        "1700x1100"  # Maximum size for dialogs and popups in "widthxheight" format
   default_window_size:    "600x120"    # Default popup window size in "widthxheight" format
@@ -351,7 +351,7 @@ actions:
   kb_open_user_guide:
     description: "Open User Guide (HTML documentation)"
     action_type: cmd
-    key: "Cmd+Shift+H"
+    key: "Cmd+/"
     arg: "open /Applications/HookAnchor.app/Contents/Resources/USER_GUIDE.html"
     close_popup: false
   

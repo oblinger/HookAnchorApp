@@ -50,8 +50,6 @@ pub fn run_command_line_mode(args: Vec<String>) {
         "-x" | "--execute" => run_execute_top_match(&args),
         "-c" | "--command" => run_test_command(&args),  // Renamed: test command with action and arg
         "-a" | "--action" => run_action_directly(&args),  // New: execute action directly
-        "-f" | "--folders" => run_folder_command(&args),
-        "-F" | "--named-folders" => run_folder_with_commands(&args),
         "--hook" => handle_hook_option(&args),
         "--user-info" => print_user_info(),
         "--test-grabber" => run_test_grabber(),
@@ -181,29 +179,152 @@ fn handle_hook_url(url: &str) {
     utils::detailed_log("URL_HANDLER", "Command executed");
 }
 
+// Helper: Resolve alias to target command
+fn resolve_alias_to_target<'a>(cmd: &'a crate::core::commands::Command, all_commands: &'a [crate::core::commands::Command]) -> &'a crate::core::commands::Command {
+    if cmd.action == "alias" {
+        // Find the target command
+        let target_lower = cmd.arg.to_lowercase();
+        if let Some(target_cmd) = all_commands.iter().find(|c|
+            c.command.to_lowercase() == target_lower ||
+            // Handle patch! prefix format
+            (c.command.contains('!') && c.command.split('!').nth(1).map(|s| s.trim().to_lowercase()) == Some(target_lower.clone()))
+        ) {
+            return target_cmd;
+        }
+    }
+    // Return original if not an alias or target not found
+    cmd
+}
+
+// Helper: Extract folder path from a command
+fn get_command_folder(cmd: &crate::core::commands::Command) -> Option<String> {
+    // For folder/anchor commands, the arg is the folder path
+    if cmd.action == "folder" || cmd.action == "anchor" {
+        if !cmd.arg.is_empty() {
+            return Some(cmd.arg.clone());
+        }
+    }
+    // For file-based commands (markdown, etc.), extract directory from file path in arg
+    if cmd.action == "markdown" || cmd.action == "file" {
+        if !cmd.arg.is_empty() {
+            if let Some(parent) = std::path::Path::new(&cmd.arg).parent() {
+                return Some(parent.to_string_lossy().to_string());
+            }
+        }
+    }
+    None
+}
+
+// Helper: Extract full file path from a command
+fn get_command_path(cmd: &crate::core::commands::Command) -> Option<String> {
+    // For file/markdown commands, the arg is the full path
+    if (cmd.action == "markdown" || cmd.action == "file" || cmd.action == "folder" || cmd.action == "anchor") && !cmd.arg.is_empty() {
+        return Some(cmd.arg.clone());
+    }
+    None
+}
+
 fn run_match_command(args: &[String]) {
     if args.len() < 3 {
-        print(&format!("Usage: {} -m, --match <query> [debug]", args[0]));
+        print(&format!("Usage: {} -m, --match <query> [--exact] [--format=name|folder|path|json]", args[0]));
         std::process::exit(1);
     }
-    
+
     let query = &args[2];
-    let debug = args.len() > 3 && args[3] == "debug";
-    
+
+    // Parse flags
+    let mut exact_mode = false;
+    let mut format = "name"; // default format
+    let mut debug = false;
+
+    for arg in args.iter().skip(3) {
+        if arg == "--exact" {
+            exact_mode = true;
+        } else if arg.starts_with("--format=") {
+            format = arg.strip_prefix("--format=").unwrap_or("name");
+        } else if arg == "debug" {
+            debug = true;
+        }
+    }
+
     let (sys_data, _) = crate::core::data::get_sys_data();
-    let filtered = if debug {
-        filter_commands(&sys_data.commands, query, 10, debug)  // Keep debug mode using original function
+
+    // Always use the shared display logic (same as popup)
+    let (mut filtered, is_prefix_menu) = if debug {
+        // Legacy debug mode only
+        (filter_commands(&sys_data.commands, query, 10, debug), false)
     } else {
-        // Use new display logic that handles prefix menu filtering correctly
-        let (display_commands, _is_prefix_menu, _prefix_menu_info, _prefix_menu_count) =
+        // Use shared popup matching logic - handles aliases, prefix menus, scoring
+        let (display_commands, is_prefix_menu, _prefix_menu_info, _prefix_menu_count) =
             crate::core::get_new_display_commands(query, &sys_data.commands, &sys_data.patches);
-        display_commands
+        (display_commands, is_prefix_menu)
     };
 
-    // Print first 50 matches to see prefix menu results
-    for cmd in filtered.iter().take(50) {
-        print(&format!("{}", cmd.command));
+    // Detect if first result is an exact match or prefix menu match
+    let is_exact_match = !filtered.is_empty() && (
+        crate::core::display::exact_match(&filtered[0].command, query) ||
+        is_prefix_menu  // Prefix menu from alias resolution counts as exact match
+    );
+
+    // Apply exact mode filtering if requested
+    if exact_mode {
+        if is_exact_match {
+            // Keep only the first result (the exact/prefix menu match)
+            filtered.truncate(1);
+        } else {
+            // No exact match found - filter all results for exact matches
+            filtered.retain(|cmd| crate::core::display::exact_match(&cmd.command, query));
+        }
     }
+
+    // Determine exit code based on number of matches
+    let exit_code = match filtered.len() {
+        0 => 2, // No matches
+        1 => 0, // Unique match
+        _ => 1, // Multiple matches (ambiguous)
+    };
+
+    // Output based on format
+    match format {
+        "name" => {
+            // Print first 50 command names
+            for cmd in filtered.iter().take(50) {
+                print(&format!("{}", cmd.command));
+            }
+        }
+        "folder" => {
+            // Print folder paths (resolve aliases, skip commands without folders)
+            for cmd in filtered.iter().take(50) {
+                let resolved = resolve_alias_to_target(cmd, &sys_data.commands);
+                if let Some(folder) = get_command_folder(resolved) {
+                    print(&folder);
+                }
+            }
+        }
+        "path" => {
+            // Print full file paths (resolve aliases, skip commands without file paths)
+            for cmd in filtered.iter().take(50) {
+                let resolved = resolve_alias_to_target(cmd, &sys_data.commands);
+                if let Some(path) = get_command_path(resolved) {
+                    print(&path);
+                }
+            }
+        }
+        "json" => {
+            // Print JSON objects (one per line)
+            for cmd in filtered.iter().take(50) {
+                if let Ok(json) = serde_json::to_string(cmd) {
+                    print(&json);
+                }
+            }
+        }
+        _ => {
+            print(&format!("Error: Unknown format '{}'", format));
+            std::process::exit(1);
+        }
+    }
+
+    std::process::exit(exit_code);
 }
 
 fn run_exec_command(args: &[String]) {
@@ -590,45 +711,7 @@ fn get_folder_matches(query: &str, include_command_names: bool) -> Vec<(String, 
     }
 }
 
-fn run_folder_command(args: &[String]) {
-    if args.len() < 3 {
-        print(&format!("Usage: {} -f, --folders <query>", args[0]));
-        std::process::exit(1);
-    }
-
-    let query = &args[2];
-    let matches = get_folder_matches(query, false);
-
-    if matches.is_empty() {
-        print(&format!("No commands found matching: {}", query));
-        std::process::exit(1);
-    }
-
-    // Output just folder paths (command names are empty for -f)
-    for (_, path) in matches {
-        print(&format!("{}", path));
-    }
-}
-
-fn run_folder_with_commands(args: &[String]) {
-    if args.len() < 3 {
-        print(&format!("Usage: {} -F, --named-folders <query>", args[0]));
-        std::process::exit(1);
-    }
-
-    let query = &args[2];
-    let matches = get_folder_matches(query, true);
-
-    if matches.is_empty() {
-        print(&format!("No commands found matching: {}", query));
-        std::process::exit(1);
-    }
-
-    // Output in "command -> path" format
-    for (command_name, path) in matches {
-        print(&format!("{} -> {}", command_name, path));
-    }
-}
+// Removed: -f and -F flags - use -m --format=folder instead
 
 fn print_user_info() {
     print("=== User Environment Information ===");

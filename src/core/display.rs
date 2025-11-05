@@ -228,6 +228,31 @@ pub fn command_matches_query(command: &str, query: &str) -> bool {
     command_matches_query_with_debug(command, query, false) >= 0
 }
 
+/// Check if two strings match exactly (case-insensitive, whitespace-normalized)
+///
+/// This performs exact matching after normalizing both strings:
+/// - Converts to lowercase
+/// - Removes all whitespace
+///
+/// Use this for exact command lookups and alias resolution.
+///
+/// # Arguments
+/// * `str1` - First string to compare
+/// * `str2` - Second string to compare
+///
+/// # Returns
+/// * `bool` - true if strings match exactly after normalization
+///
+/// # Examples
+/// * `exact_match("Hook Anchor", "hook anchor")` → true
+/// * `exact_match("HookAnchor", "hook anchor")` → true
+/// * `exact_match("Hook", "Hook Anchor")` → false
+pub fn exact_match(str1: &str, str2: &str) -> bool {
+    let normalized1: String = str1.to_lowercase().chars().filter(|c| !c.is_whitespace()).collect();
+    let normalized2: String = str2.to_lowercase().chars().filter(|c| !c.is_whitespace()).collect();
+    normalized1 == normalized2
+}
+
 /// Check if a prefix has fully matched to the END of a command name
 ///
 /// This is stricter than command_matches_query - it requires that the match

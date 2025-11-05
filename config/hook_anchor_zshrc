@@ -1,157 +1,102 @@
-#!/bin/zsh
-# HookAnchor shell functions and completions
-# This file contains zsh functions that integrate with HookAnchor (ha command)
+# HookAnchor Shell Integration (Simple Version)
+# This file provides shell functions for HookAnchor integration
+#
+# SWAP VERSIONS: To use the fzf version instead:
+#   1. Rename this file to hook_anchor_zshrc_simple
+#   2. Rename hook_anchor_zshrc_fzf to hook_anchor_zshrc
+#   3. Rebuild distribution: just build-dist
 
-# Common function to handle ha lookups with optional fzf selection
-# Arguments:
-#   $1: search term
-#   $2: ha command flag (-f for folder, -x for execute/file)
-#   $3: action (cd, echo_dir, echo_file)
-_ha_lookup() {
-    local search_term="$1"
-    local ha_flag="$2"
-    local action="$3"
+# Add ~/bin to PATH if it exists and isn't already there
+if [[ -d "$HOME/bin" && ":$PATH:" != *":$HOME/bin:"* ]]; then
+    export PATH="$HOME/bin:$PATH"
+fi
 
-    local lookup_result
-    lookup_result=$(ha "$ha_flag" "$search_term" 2>/dev/null)
-
-    if [ $? -eq 0 ] && [ -n "$lookup_result" ]; then
-        local num_matches=$(echo "$lookup_result" | wc -l)
-
-        if [ "$num_matches" -eq 1 ]; then
-            # Single match - perform action directly
-            case "$action" in
-                cd)
-                    local target_path=$(echo "$lookup_result" | sed 's/.* -> //')
-                    cd "$target_path"
-                    ;;
-                echo_dir)
-                    # For directory, extract path from folder lookup
-                    echo "$lookup_result"
-                    ;;
-                echo_file)
-                    # For file, the result is the full path
-                    echo "$lookup_result"
-                    ;;
-            esac
-        else
-            # Multiple matches - use fzf for selection
-            local selected
-            if [ "$ha_flag" = "-F" ]; then
-                # Folder format with arrow
-                selected=$(echo "$lookup_result" | fzf --height 40% --reverse --preview 'ls -la {+2}' --delimiter ' -> ' --with-nth 1 --query="$search_term" -i)
-                if [ -n "$selected" ]; then
-                    case "$action" in
-                        cd)
-                            local dir=$(echo "$selected" | sed 's/.* -> //')
-                            cd "$dir"
-                            ;;
-                        echo_dir)
-                            echo "$selected" | sed 's/.* -> //'
-                            ;;
-                    esac
-                fi
-            else
-                # Direct file path format
-                selected=$(echo "$lookup_result" | fzf --height 40% --reverse --query="$search_term" -i)
-                if [ -n "$selected" ]; then
-                    echo "$selected"
-                fi
-            fi
-        fi
+# HookAnchor shortcut function
+ha() {
+    if [ -x "$HOME/bin/ha" ]; then
+        "$HOME/bin/ha" "$@"
+    elif [ -x "/Applications/HookAnchor.app/Contents/MacOS/ha" ]; then
+        "/Applications/HookAnchor.app/Contents/MacOS/ha" "$@"
     else
-        echo "No match found for '$search_term'" >&2
+        echo "HookAnchor not found. Please run the installer." >&2
         return 1
     fi
 }
 
-# ff function - fuzzy find and cd to directories
+# Quick popup launcher
+hook() {
+    ha -m "$*"
+}
+
+# Helper function for ff/fp/fd - uses new -m API with --exact and --format flags
+_ha_get_unique() {
+    local search_term="$1"
+    local format="$2"  # "folder" or "path"
+    local output_type="$3"  # "folder" or "file" (for error messages)
+
+    # Use new -m API with --exact flag and appropriate --format
+    local result
+    result=$(ha -m "$search_term" --exact --format="$format" 2>/dev/null)
+    local exit_code=$?
+
+    case $exit_code in
+        0)
+            # Unique match found - return the result
+            echo "$result"
+            return 0
+            ;;
+        1)
+            # Multiple matches (ambiguous) - get command names for error message
+            local commands=$(ha -m "$search_term" --exact --format=name 2>/dev/null | tr '\n' ', ' | sed 's/, $//')
+            echo "Ambiguous $output_type: $commands" >&2
+            return 1
+            ;;
+        2)
+            # No matches
+            echo "No match found for '$search_term'" >&2
+            return 1
+            ;;
+        *)
+            echo "Error executing ha command" >&2
+            return 1
+            ;;
+    esac
+}
+
+# ff - fuzzy find folder (cd to unique match or show ambiguous)
 ff() {
     if [ $# -eq 0 ]; then
-        # No arguments - use fzf to browse all folders with command names
-        local selected
-        selected=$(ha -F '' 2>/dev/null | fzf --height 40% --reverse --preview 'ls -la {+2}' --delimiter ' -> ' --with-nth 1 -i)
-        if [ -n "$selected" ]; then
-            local dir=$(echo "$selected" | sed 's/.* -> //')
-            cd "$dir"
-        fi
-    else
-        # Use common lookup function
-        _ha_lookup "$*" "-F" "cd"
+        echo "Usage: ff <search_term>" >&2
+        echo "Example: ff myproject" >&2
+        return 1
+    fi
+
+    local folder
+    folder=$(_ha_get_unique "$*" "folder" "folder")
+
+    if [ $? -eq 0 ] && [ -n "$folder" ]; then
+        cd "$folder"
     fi
 }
 
-# fp function - print full file path for command
+# fp - print file path (unique match or show ambiguous)
 fp() {
     if [ $# -eq 0 ]; then
-        echo "Usage: fp <command>" >&2
-        echo "Example: cat \$(fp mycommand)" >&2
+        echo "Usage: fp <search_term>" >&2
+        echo "Example: cat \$(fp myfile)" >&2
         return 1
     fi
 
-    # First find matching command names (take first match if query is specific enough)
-    local search_term="$*"
-    local matches=$(ha -m "$search_term" 2>/dev/null)
-
-    if [ -z "$matches" ]; then
-        echo "No match found for '$search_term'" >&2
-        return 1
-    fi
-
-    # Just take the first match for now (same behavior as ff with single match)
-    local selected_cmd=$(echo "$matches" | head -1)
-
-    # Now extract the file path from commands.txt for this command
-    # Need to escape special characters in the command name for grep
-    local escaped_cmd=$(echo "$selected_cmd" | sed 's/[[\.*^$()+?{|]/\\&/g')
-    local cmd_line=$(grep "! *${escaped_cmd}:" ~/.config/hookanchor/commands.txt 2>/dev/null | head -1)
-
-    if [ -n "$cmd_line" ]; then
-        # Extract path after semicolon (format: category! Name:action params; path)
-        local file_path=$(echo "$cmd_line" | sed 's/^[^;]*; *//')
-        if [ -n "$file_path" ] && [ "$file_path" != "$cmd_line" ]; then
-            echo "$file_path"
-        else
-            # No path in command, maybe it's a folder-based command
-            # Try to get the folder for this command instead
-            ha -f "$selected_cmd" 2>/dev/null
-        fi
-    else
-        # Command not found in commands.txt, try folder lookup
-        ha -f "$selected_cmd" 2>/dev/null
-    fi
+    _ha_get_unique "$*" "path" "file"
 }
 
-# fd function - print directory path for command
+# fd - print folder path (unique match or show ambiguous)
 fd() {
     if [ $# -eq 0 ]; then
-        echo "Usage: fd <command>" >&2
+        echo "Usage: fd <search_term>" >&2
         echo "Example: ls \$(fd myproject)" >&2
         return 1
     fi
 
-    # Use ha -f to get the directory path
-    _ha_lookup "$*" "-f" "echo_dir"
+    _ha_get_unique "$*" "folder" "folder"
 }
-
-# Tab completion for ff command (only if compdef is available)
-if command -v compdef >/dev/null 2>&1; then
-    _ff_completion() {
-        local -a dirs
-        # Get all matching commands and extract folder basenames for completion
-        dirs=($(ha -m '' 2>/dev/null | while read cmd; do ha -f "$cmd" 2>/dev/null; done | sed 's|.*/||' | sort -u))
-        _describe 'directories' dirs
-    }
-
-    # Tab completion for fp and fd commands (reuse ff completion)
-    _fp_fd_completion() {
-        local -a commands
-        # Get all matching commands for completion
-        commands=($(ha -m '' 2>/dev/null))
-        _describe 'commands' commands
-    }
-
-    compdef _ff_completion ff
-    compdef _fp_fd_completion fp
-    compdef _fp_fd_completion fd
-fi
