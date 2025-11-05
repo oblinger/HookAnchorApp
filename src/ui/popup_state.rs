@@ -270,6 +270,16 @@ impl PopupState {
                 // Get folder files using the utility function
                 let folder_files = crate::core::get_folder_files(resolved_anchor, &self.config);
 
+                // Filter out files that are already in the command list (avoid duplicates)
+                let existing_file_paths: std::collections::HashSet<_> = commands.iter()
+                    .filter(|cmd| cmd.action == "file")
+                    .map(|cmd| cmd.arg.as_str())
+                    .collect();
+
+                let folder_files: Vec<_> = folder_files.into_iter()
+                    .filter(|file| !existing_file_paths.contains(file.arg.as_str()))
+                    .collect();
+
                 if !folder_files.is_empty() {
                     // Find the position of the "============" separator
                     let separator_pos = commands.iter().position(|cmd|
