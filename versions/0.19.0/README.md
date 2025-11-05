@@ -1,22 +1,34 @@
-# HookAnchor - Universal Command Launcher
+# HookAnchor - Keyboard Launcher for Knowledge Management
 
-## Installation
+## Quick Installation
 
-1. **Drag to Applications**: Drag `HookAnchor.app` to your `/Applications` folder
-2. **First Launch**: Right-click and select "Open" (don't double-click) to bypass Gatekeeper
-3. **Set up Caps Lock**: Use Karabiner-Elements to map Caps Lock to launch HookAnchor
-4. **Grant Permissions**: Allow accessibility permissions when prompted
+1. **Drag to Applications**: Drag `HookAnchor.app` to `/Applications`
+
+2. **First Launch - Bypass macOS Security**:
+   - Double-click HookAnchor.app (will be blocked)
+   - Open **System Settings** → **Privacy & Security**
+   - Scroll to **Security** section
+   - Click **"Open Anyway"** next to HookAnchor message
+   - Try opening HookAnchor again, click **"Open"** in dialog
+
+   _(This is only needed once for unsigned apps)_
+
+3. **Grant Permissions**: Allow accessibility when prompted
+
+4. **Start Using**: Press **Option+Space** (⌥Space) to open HookAnchor from anywhere!
 
 ## Features
 
-- **Instant Launch**: Press Caps Lock to open the command palette
-- **URL Support**: Handle `hook://` URLs from any application
-- **Smart Search**: Fuzzy matching for commands and files
-- **Extensible**: Add custom commands via config.yaml
+- **Built-in Hotkey**: Option+Space works out of the box (configurable)
+- **Fuses Local + Online Knowledge**: Access files, URLs, and commands
+- **Auto-Discovery**: Scans your system for executables and markdown files
+- **Smart Search**: Fuzzy matching for instant access
 
 ## Configuration
 
-Configuration is stored in `~/.config/hookanchor/config.yaml`
+Config files: `~/.config/hookanchor/`
+- `config.yaml` - Change hotkey, customize behavior
+- `commands.txt` - Your command list (auto-managed)
 
 ## Uninstall
 

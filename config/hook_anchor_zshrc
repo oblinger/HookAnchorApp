@@ -134,22 +134,24 @@ fd() {
     _ha_lookup "$*" "-f" "echo_dir"
 }
 
-# Tab completion for ff command
-_ff_completion() {
-    local -a dirs
-    # Get all matching commands and extract folder basenames for completion
-    dirs=($(ha -m '' 2>/dev/null | while read cmd; do ha -f "$cmd" 2>/dev/null; done | sed 's|.*/||' | sort -u))
-    _describe 'directories' dirs
-}
+# Tab completion for ff command (only if compdef is available)
+if command -v compdef >/dev/null 2>&1; then
+    _ff_completion() {
+        local -a dirs
+        # Get all matching commands and extract folder basenames for completion
+        dirs=($(ha -m '' 2>/dev/null | while read cmd; do ha -f "$cmd" 2>/dev/null; done | sed 's|.*/||' | sort -u))
+        _describe 'directories' dirs
+    }
 
-# Tab completion for fp and fd commands (reuse ff completion)
-_fp_fd_completion() {
-    local -a commands
-    # Get all matching commands for completion
-    commands=($(ha -m '' 2>/dev/null))
-    _describe 'commands' commands
-}
+    # Tab completion for fp and fd commands (reuse ff completion)
+    _fp_fd_completion() {
+        local -a commands
+        # Get all matching commands for completion
+        commands=($(ha -m '' 2>/dev/null))
+        _describe 'commands' commands
+    }
 
-compdef _ff_completion ff
-compdef _fp_fd_completion fp
-compdef _fp_fd_completion fd
+    compdef _ff_completion ff
+    compdef _fp_fd_completion fp
+    compdef _fp_fd_completion fd
+fi
