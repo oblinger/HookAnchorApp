@@ -1160,7 +1160,23 @@ fn run_rescan_command() {
         crate::utils::log("ALIAS_TRACK: HA alias NOT found after scan_modified_files");
     }
 
-    print("\n🔄 Step 5: Running inference and saving...");
+    print("\n🧹 Step 5: Cleaning up invalid aliases...");
+
+    // Delete aliases that point to non-existent commands
+    match crate::systems::delete_invalid_aliases(&mut commands, true) {
+        Ok(removed_count) => {
+            if removed_count > 0 {
+                print(&format!("   ✅ Removed {} invalid alias(es)", removed_count));
+            } else {
+                print("   ✅ All aliases are valid");
+            }
+        }
+        Err(e) => {
+            print(&format!("   ⚠️  Error validating aliases: {}", e));
+        }
+    }
+
+    print("\n🔄 Step 6: Running inference and saving...");
 
     // Save final state through sys_data (runs inference + saves to cache + commands.txt)
     let command_count = commands.len();

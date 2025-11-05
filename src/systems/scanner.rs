@@ -472,6 +472,81 @@ pub fn scan_modified_files(commands: &mut Vec<Command>, verbose: bool) -> Result
     Ok(file_changes)
 }
 
+/// Delete aliases that point to non-existent commands
+/// This is a cleanup stage that runs after all commands are loaded
+/// Returns number of invalid aliases removed
+pub fn delete_invalid_aliases(commands: &mut Vec<Command>, verbose: bool) -> Result<usize, Box<dyn std::error::Error>> {
+    if verbose {
+        crate::utils::print("\n🔍 Checking for invalid aliases...");
+    }
+
+    // Build a set of all valid command names (case-insensitive)
+    let valid_commands: HashSet<String> = commands
+        .iter()
+        .filter(|cmd| cmd.action != "alias") // Don't include aliases themselves
+        .map(|cmd| cmd.command.to_lowercase())
+        .collect();
+
+    // Find all aliases that point to non-existent commands
+    let mut to_remove = Vec::new();
+
+    for (idx, cmd) in commands.iter().enumerate() {
+        if cmd.action == "alias" {
+            let target_lower = cmd.arg.to_lowercase();
+
+            // Check if target exists
+            if !valid_commands.contains(&target_lower) {
+                // Also check if target might be a patch!command format
+                let target_exists = commands.iter().any(|c| {
+                    if c.action == "alias" {
+                        return false; // Don't alias to aliases
+                    }
+                    // Check exact match
+                    if c.command.to_lowercase() == target_lower {
+                        return true;
+                    }
+                    // Check if command has a patch, try matching without patch
+                    if let Some(exclaim_pos) = c.command.find('!') {
+                        let cmd_without_patch = c.command[exclaim_pos + 1..].trim();
+                        if cmd_without_patch.to_lowercase() == target_lower {
+                            return true;
+                        }
+                    }
+                    false
+                });
+
+                if !target_exists {
+                    to_remove.push(idx);
+                    if verbose {
+                        crate::utils::print(&format!("   ❌ Invalid alias: '{}' → '{}' (target not found)",
+                            cmd.command, cmd.arg));
+                    }
+                    crate::utils::log(&format!("DELETE_INVALID_ALIAS: Removing alias '{}' → '{}' (target does not exist)",
+                        cmd.command, cmd.arg));
+                }
+            }
+        }
+    }
+
+    // Remove invalid aliases (in reverse order to maintain indices)
+    let removed_count = to_remove.len();
+    for &idx in to_remove.iter().rev() {
+        commands.remove(idx);
+    }
+
+    if verbose {
+        if removed_count > 0 {
+            crate::utils::print(&format!("   ✅ Removed {} invalid alias(es)", removed_count));
+        } else {
+            crate::utils::print("   ✅ All aliases are valid");
+        }
+    }
+
+    crate::utils::log(&format!("DELETE_INVALID_ALIAS: Removed {} invalid aliases", removed_count));
+
+    Ok(removed_count)
+}
+
 /// Scans filesystem for NEW files not yet in the command list
 /// Used for the --rescan command line option
 /// This function discovers new files and adds them to the command list

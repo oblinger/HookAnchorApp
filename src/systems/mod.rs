@@ -34,6 +34,7 @@ pub use scanner::{
     scan_new_files,         // Scan filesystem for NEW files not yet in commands
     scan_modified_files,    // Scan for MODIFIED files and update history
     load_manual_edits,      // Load user's manual edits from commands.txt
+    delete_invalid_aliases, // Remove aliases that point to non-existent commands
     SCANNER_GENERATED_ACTIONS  // Constants for generated action types
 };
 
