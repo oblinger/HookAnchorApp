@@ -15,9 +15,36 @@
 
 ## 2025-11-03  Fireworks AI
 
+
+XXX, 
+
+From Jason in 2021:  I'm working to get that laptop Vishal, should I use your home address for the mailing address?
+
+From Vishal:  [https://www.bestbuy.ca/en-ca/product/msi-gs66-stealth-15-6-gaming-](https://www.bestbuy.ca/en-ca/product/msi-gs66-stealth-15-6-gaming-laptop-black-intel-core-i7-10870h-1tb-ssd-32gb-ram-rtx-3080-en/15303280)...[-black-intel-core-i7-10870h-1tb-ssd-32gb-ram-rtx-3080-en/15303280](https://www.bestbuy.ca/en-ca/product/msi-gs66-stealth-15-6-gaming-laptop-black-intel-core-i7-10870h-1tb-ssd-32gb-ram-rtx-3080-en/15303280)...This is the laptop which we can get
+
+From Me to Sarthi:
+[@Sarthi](https://sportsvisioworkspace.slack.com/team/U04HEFR3URM) are you ok, taking receipt of the laptop just to keep it in the USA.  We might have greg set it up at some point.
+
+From Sarthi: Is this another ...? Cause I am using a SportsVisio laptop as my own system died
+
+From Michael:  I ask because we're having trouble training tensorflow for the camera on AWS and our local machines because...comes from google, they must have GPU configurations for TF.  Especially for Martin, who doesn't have a GPU laptop.
+
 XXXX,
 
-My husband has been thinking about chat-based construction of agentic workflows.  Companies like mine can gain notable value from Agentic workflows, but we often don't have the Dev resources to allocate.  Dan thinks LLMs themselves could be used to drive full construction entirely via chat.
+My husband has been thinking about chat-based construction of agentic workflows.  I know your company is more of an AI-infra player, but he thinks such a product might allow you guys to address new markets, plus he is a big fan of what you have built so far.
+
+If you are up for it, he would love to grab a coffee and have a chat.
+
+Let me know,
+Qingling
+
+
+
+with you about it if you have the time and interest for a coffee.
+
+
+
+Companies like mine can gain notable value from Agentic workflows, but we often don't have the Dev resources to allocate.  Dan thinks LLMs themselves could be used to drive full construction entirely via chat.
 
 He would love to get your thoughts on this direction, especially since he thinks it is a natural extension of Fireworks existing agent offering.  He would love to chat with you about it if you have the time and interest for a coffee.
 
