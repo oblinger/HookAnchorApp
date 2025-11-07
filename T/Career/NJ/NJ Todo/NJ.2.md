@@ -1,6 +1,40 @@
 [[NJ]] [[NJ plan]] 
 - [[TG]], [[SEEK]] 
 
+
+## [[Seek]] 
+- [[LIM]]: Bay Area AI Outbound
+- Inbound - being responsive - tailored resume
+- [[Lrn]]:  
+- [[CIAO]]: 
+
+Aurelia
+
+- use an LLM
+- Learder AI - top of funnel
+- Eng Mgr (Startup/BigCo)
+- Startup Doer
+- Time Mgt what is my plan
+
+
+## Todo
+- [[STAR]] - Scaled delivery
+- References - 
+
+
+Ascii Grid - 
+- 
+
+
+
+
+
+
+
+
+
+
+
 ## [[MIT]]
 - [[SEEK Plan]]:	MWF-1h 
 - CAIO: TG, Summary, Read?

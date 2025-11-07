@@ -6,8 +6,8 @@
 - [x] Release Video
 - [x] 2025-11-03 21:48:37 ❌ ERROR: Recursive aliases: alias 'JJ PP' points to non-existent command 'PP'
 - [ ] ReadMe should get both shortcuts working (Karabiner&ke)
-- [ ] Personal Use license2
-- [ ] does the installer add line to ~/.zshrc ?
+- [x] Personal Use license2
+- [x] does the installer add line to ~/.zshrc ?
 
 - [ ] ChildTemplate anchor var tied to "+" key.   " * " does grab
 - [ ] once all items in a prefix menu are filtered, the whole prefix menu (and it files menu) should be removed

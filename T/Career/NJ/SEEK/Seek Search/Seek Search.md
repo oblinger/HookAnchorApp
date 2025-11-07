@@ -2,6 +2,7 @@
 - Use "SEEK" 
 - [[AI Job Search]] 
 - [[LI]] Linked In Searches
+- [[LIM]] Linked In Merge
 - [[Seek LinkedIn Based]]
 - [[Seek Search Terms]] 
 

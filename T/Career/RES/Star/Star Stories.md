@@ -249,6 +249,16 @@ OTHER IDEAS:
 	- OWNED IT:  Initiated it, Funded it, hired the teams to develop it, and was responsible for its visions and approved details of its implementation.
 ### BL & TL
 
+- **Scaled AI Leadership.** Directed $200M+ of AI R&D and 300+ researchers under DARPA, integrating research across NLP, ML, and deep learning while shaping early successes such as IBM Watson’s Jeopardy system.
+    
+- **Architect of National AI Standards.** Founded the NIST-sponsored Text Analysis Conference (TAC) within TREC, establishing enduring benchmarks for text understanding and NLP evaluation that guided industry and academic collaboration.
+
+- **Architect of National AI Standards.** Founded the Text Analysis Conference (TAC), an enduring annual NIST-sponsored evaluation framework for text understanding,
+- 
+-  and NLP evaluation that guided industry and academic collaboration.
+    
+- **Strategic Research-to-Product Bridge.** Unified government, academic, and commercial partners to convert frontier AI research into deployable systems—demonstrating the ability to translate innovation into measurable business and societal impact.
+
 ## PAY BY GROUP YEARS
 
 ## JOTTR YEARS

@@ -1,6 +1,4 @@
 
-
-
 .[[Lrn]]. [[LRN Todo|todo]]
   [[Lrn Mgt]], [[LRN Read]], [[LRN Todo]], [Lrn Obsidian](spot://lrnobsidian),
   , [Lrn Note](spot://lrnnote),
@@ -11,7 +9,10 @@
 
 https://github.com/openai/openai-cookbook/blob/main/articles/gpt-oss/fine-tune-transfomers.ipynb?utm_source=alphasignal&utm_campaign=2025-07-24&asuniq=23058444
 
-
+## TODO
+[[Lrn]]:	ML proj, Spaced Rep, 
+[[Lrn]]: SV make/miss -> ShooterID
+[[Lrn]]: AI Safety Idea Sketch
 
 ## Rocks - Evergreen @ top  [[Lrn Big]] 
 - ^ \ _ S  SPACED REPETITION. (Add shift for review)

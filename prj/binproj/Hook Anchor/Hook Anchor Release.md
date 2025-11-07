@@ -183,7 +183,48 @@ Thanks!
 
 ### As posted
 
+**[Early Access] HookAnchor: Keyboard Launcher That Adapts to Your Work**
+
+Hi everyone! I've built a keyboard launcher for Mac that solves a problem I kept hitting: **At any given time, only a tiny fraction of my tens of thousands of documents are relevant - and I was wasting time wading through everything else to reach them.**
+
+**Two core problems HookAnchor solves:**
+
+**1. Content scattered across tools** - My work lives everywhere: Notion pages, Obsidian notes, Google Docs, local folders, Slack channels. HookAnchor provides unified deep-linking across all of it - one search box, instant access to any resource whether it's local or online.
+
+**2. Keeping names current as work shifts** - That tiny slice of active content changes gradually over time. Traditional launchers force you to wade through thousands of stale entries or remember exact filenames. HookAnchor lets you maintain shorthand names that match what you're thinking *right now* - it takes just seconds to keep them current as your focus shifts.
+
+**How it works:**
+- Auto-discovers your markdown files and executables to build initial names
+- Type an abbreviation ("mtg" for today's meeting notes)
+- Either it works, or hit "+" after opening the right document and it remembers
+- When your work shifts next month, update the name in seconds - the namespace evolves with you
+
+**Looking for 5 early testers who:**
+- Use macOS (11.0+, Intel or Apple Silicon)
+- Work across multiple tools (local files + cloud services)
+- Manage large numbers of documents but only need quick access to a small active set
+- Are willing to share feedback
+
+**See it in action:**
+- 📹 Demo: https://youtu.be/VYdF44f6mmM
+- 📄 Details: https://oblinger.github.io/gitproj/HookAnchor/
+
+Reply or DM if interested! Keeping this to 5 testers for close collaboration.
+
+
+### As posted v3
+
+HookAnchor is a keyboard launcher that solves the problems of placing and later finding content.
+
+Unlike traditional launchers (Spotlight, Alfred, Raycast):
+- It deeply links content within both online and local tools to provide unified access and representation regardless of tool or location where it resides.
+- It uses names in your head, not in your filesystem for effortless and instant retrieval of actively accessed content.
+- It structures new content to be effectively retrieved even years later
+
+
   
+### As posted v2
+
   Hi everyone! I've built a keyboard launcher for Mac that solves a problem I kept hitting: **I have tens of thousands of documents, but only a tiny fraction matters right now.**
 
 **The Problem**:
@@ -197,13 +238,7 @@ Traditional launchers (Spotlight, Alfred, Raycast) force you to remember exact f
   
 
 1. **Unified deep-linking to all your content wherever it lives** - One search box for local files AND cloud resources. Jump directly to Notion pages, Obsidian notes, Google Docs, Slack channels, project folders, or scripts. No more switching between apps to find things.
-
-  
-
 2. **Auto-discovery** - Scans your markdown files, executables, and documents to build an initial namespace to get you started.
-
-  
-
 3. **Names adjust as you use them** - Type what you're thinking ("mtg" for upcoming report), and either it works, or after you load that report once, hit the "+" key and it remembers for next time. Next month, when your focus shifts, that same abbreviation might naturally point elsewhere.  The namespace evolves _with_ your work.
 
   

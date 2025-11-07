@@ -2,6 +2,19 @@
 OLIVER ASK
 JAMES GAMES
 
+
+
+Coded at AF for first 3 years
+Sales were amazing
+Bootstrapped from zero; 
+Excellet at organic
+Outbound didn't work
+Grant approach  to buy us
+ML stuff / SW stuff
+- 15 concurrent work streams
+
+
+
 .**TODO**.
  - DATA - 100 PlayOn/HQ Games, eval humans, Origin data, 
  - Roster - get and use

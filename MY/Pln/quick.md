@@ -1,3 +1,4 @@
+- book Delta Epsilon travel
 - exapnsive testing of manager app
 - GLP-1
 - QL intro

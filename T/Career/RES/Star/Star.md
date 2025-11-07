@@ -1,7 +1,7 @@
 . [[S.T.A.R.]], [[RES]], [[Star Stories]], [[Star AI]]. 
 Anchor Stories: A time when you:  (a) created value,  (b) solved a messy problem,  (c) were asked to lead
 
-
+had my fun, made my millions, but this AGI revolution calls me back to more strategic roles
 
 # __
 
@@ -57,6 +57,23 @@ Built and led 5 organizations from scratch, with the largest encompassing 40+ Ph
 - **Aeolus**: 60+ Engineering team, 40+ PhDs, hired in 9 months
 - **Analytics Fire**: 45+ Engineering team, very low turnover over 9 years
 - **Sports Visio**: 20+ Engineering team, replaced entire CV team
+
+
+## = PRODUCT DELIVERY
+
+### PRODUCT DELIVERY:   >$3B at AF   (largest delivery)
+Largest scale deployments
+S: Sunpower wanted to create a residential business from scratch.
+T:	Deliver omnibus solution
+A:	Built-in QA, what is not getting delivered, quarter-by-quarter deliverables.
+R:	The largest driver of new business across all business units for a decacorn.
+
+### PRODUCT DELIVERY: Solar Planner; CV BB stats (Most Advanced Delivery)
+### PRODUCT DELIVERY: (execution) SportVisio BB - BB Stats & highlights
+
+
+## = LEADERSHIP & VISION
+
 
 ## = TURN AROUND
 Proven track record of executing successful organizational and technical turnarounds under extreme pressure, from rescuing "unshippable" products and replacing entire teams to rebuilding core algorithms 70 days before major demos. Consistently transformed failing initiatives into funded successes - turning $3M in burned capital into shipping products and Series A funding, building 60+ person organizations from scratch in months, and threading the needle between fixing vs rebuilding critical systems when facing immovable deadlines.
@@ -159,19 +176,6 @@ T:	Keep eng, drive excellence
 A:	Aeolus - Choose many interim tech leads on a week-by-week basis, merge/split teams by need.
 A:	Greek Mgr
 R:	Delivered into CES, raised $16M
-
-
-## = PRODUCT DELIVERY
-
-### PRODUCT DELIVERY:   >$3B at AF   (largest delivery)
-Largest scale deployments
-S: Sunpower wanted to create a residential business from scratch.
-T:	Deliver omnibus solution
-A:	Built-in QA, what is not getting delivered, quarter-by-quarter deliverables.
-R:	The largest driver of new business across all business units for a decacorn.
-
-### PRODUCT DELIVERY: Solar Planner; CV BB stats (Most Advanced Delivery)
-### PRODUCT DELIVERY: (execution) SportVisio BB - BB Stats & highlights
 
 ## LEADERSHIP ???
 
