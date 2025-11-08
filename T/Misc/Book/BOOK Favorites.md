@@ -1,6 +1,12 @@
 
 
 
+## Also Read
+
+  1. Liu Cixin's Three-Body Problem - Keeps your hard SF love but shifts cultural perspective
+  2. Peter Watts' Blindsight - Major hard SF blind spot for you
+
+
 ## Directions
 
 ### Other Genres

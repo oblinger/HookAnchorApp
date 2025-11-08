@@ -5,10 +5,11 @@
 - [x] [[Website]] : Hook Anchor Web Page
 - [x] Release Video
 - [x] 2025-11-03 21:48:37 ❌ ERROR: Recursive aliases: alias 'JJ PP' points to non-existent command 'PP'
-- [ ] ReadMe should get both shortcuts working (Karabiner&ke)
+- [x] ReadMe should get both shortcuts working (Karabiner&ke)
 - [x] Personal Use license2
 - [x] does the installer add line to ~/.zshrc ?
 
+- [ ] Command Type Filtering
 - [ ] ChildTemplate anchor var tied to "+" key.   " * " does grab
 - [ ] once all items in a prefix menu are filtered, the whole prefix menu (and it files menu) should be removed
 - [ ] dry code
@@ -26,7 +27,7 @@
 - [x] fixup the hook_anchor_zshrc for dist
 - [x] Update Docs
 - [x] Make Docs into HTML
-- [ ] Make Docs viewable by keystroke
+- [x] Make Docs viewable by keystroke
 - [x] Remove any code associated with anchor actions
 - [x] Press space to accept an anchor
 - [x] remove "anchor" from code

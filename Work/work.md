@@ -1,23 +1,11 @@
 
-OLIVER ASK
-JAMES GAMES
-
-
-
-Coded at AF for first 3 years
-Sales were amazing
-Bootstrapped from zero; 
-Excellet at organic
-Outbound didn't work
-Grant approach  to buy us
-ML stuff / SW stuff
-- 15 concurrent work streams
 
 
 
 .**TODO**.
+ - exapnsive testing of manager app
  - DATA - 100 PlayOn/HQ Games, eval humans, Origin data, 
- - Roster - get and use
+ -  [PlayOn](hook://playon): Roster - get and use
  - [Cloud Roadmap](https://docs.google.com/document/d/1g135euS74c7FfBO6GDMRGyvi_0jXHBm4Pd4bqU9Pa94/edit?tab=t.0): plan for moving stuff to cloud - 
  - [Media convert](https://www.notion.so/sportsvisio/SV-Hybrid-Media-Convert-Prototype-27d719d6f2bd805084dfeb5b166debcb?source=copy_link):
  - Darien
@@ -28,7 +16,6 @@ ML stuff / SW stuff
 	-  [AWS Costs](https://drive.google.com/drive/folders/1Mnu6bwVw9bqxGq40uM_fBZ6x_75O3c6H)  (talk w/ Matty?) 
     - Pursues beta testing in app
 	- !summary single metric for BB 
-  [PlayOn](hook://playon): 
  SOON [[hack]]
     Beta tester stuff
     [[@Google]] GPU  answers

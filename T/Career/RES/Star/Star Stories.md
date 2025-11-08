@@ -1,5 +1,5 @@
 
-# [[Star AI]], [[Star]], 
+# [[Star]], [[Star AI]], 
 
 
 # TODO

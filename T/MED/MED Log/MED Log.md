@@ -4,6 +4,16 @@
 
 # LOG
 
+## 2025-11-07  Zepbound
+
+
+  Main Contact Numbers:
+  - 1-877-637-1397 (1-877-637-1EZP) - Zepbound information
+  - 1-866-923-1953 - Lilly savings card activation assistance
+  - Commercial Insurance - no medicare / no medicaid
+  - If do not qualify it will be $650 monthly
+  - Website: https://zepbound.lilly.com/coverage-savings
+
 ## 2025-11-01  Doctor provide prescription - Cigna
 - Wegovy 0.25mg/0.5ml Inj ( 4 Pens)
 
@@ -17,7 +27,7 @@ Todo:
 - !! Check Cigna Zepbound
 - $499 or less; Wegovy Card:  https://www.wegovy.com/coverage-and-savings/save-on-wegovy.html
 - Zepbound: (preferred for weight loss GPL-1 GIP)
-- Individual family plan:  866-494-2111
+- Cigna Individual family plan:  866-494-2111
 - 
 
 xxx
@@ -55,6 +65,20 @@ xxx
 
 ## 2025-10-14  Quick Health checks
 https://victormong.medium.com/crucial-health-checks-that-show-how-old-your-body-really-is-in-less-than-5-minutes-39c49a8d82b9
+
+
+## 2025-11-07  Zorve (psoriasis
+
+You can reach us at (415)-353-1544 at your convenience.
+
+
+
+Thank you! Please see your ZORYVE Direct Savings Card Info below:  
+  
+BIN: 610020  
+PCN: PDMI  
+GROUP: 99995215  
+ID: 1211993773
 
 
 ## 2025-09-30  Derm person
