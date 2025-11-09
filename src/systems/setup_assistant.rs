@@ -790,4 +790,100 @@ impl SetupAssistant {
 
         Ok(())
     }
+
+    /// Update config.yaml with latest version, backing up existing file
+    pub fn update_config_yaml_with_backup(&self) -> Result<(), Box<dyn std::error::Error>> {
+        let config_path = self.config_dir.join("config.yaml");
+
+        // Backup existing config.yaml if it exists
+        if config_path.exists() {
+            let backup_path = self.config_dir.join("config.yaml.backup");
+
+            // If backup already exists, overwrite it
+            if backup_path.exists() {
+                fs::remove_file(&backup_path)?;
+            }
+
+            fs::rename(&config_path, &backup_path)?;
+            crate::utils::log(&format!("✓ Backed up config.yaml to config.yaml.backup"));
+        }
+
+        // Find and copy distribution config
+        // Try dist_config.yaml first, then default_config.yaml
+        if let Ok(dist_config_path) = self.find_distribution_file("dist_config.yaml") {
+            fs::copy(&dist_config_path, &config_path)?;
+            crate::utils::log("✓ Installed latest dist_config.yaml as config.yaml");
+            return Ok(());
+        }
+
+        let dist_config_path = self.find_distribution_file("default_config.yaml")?;
+        fs::copy(&dist_config_path, &config_path)?;
+        crate::utils::log("✓ Installed latest default_config.yaml as config.yaml");
+
+        Ok(())
+    }
+
+    /// Update config.js with backup (same as config.yaml update)
+    pub fn update_config_js_with_backup(&self) -> Result<(), Box<dyn std::error::Error>> {
+        let config_path = self.config_dir.join("config.js");
+
+        // Backup existing config.js if it exists
+        if config_path.exists() {
+            let backup_path = self.config_dir.join("config.js.backup");
+
+            // If backup already exists, overwrite it
+            if backup_path.exists() {
+                fs::remove_file(&backup_path)?;
+            }
+
+            fs::rename(&config_path, &backup_path)?;
+            crate::utils::log(&format!("✓ Backed up config.js to config.js.backup"));
+        }
+
+        // Find and copy distribution config.js
+        // Try dist_config.js first, then default_config.js
+        if let Ok(dist_config_path) = self.find_distribution_file("dist_config.js") {
+            fs::copy(&dist_config_path, &config_path)?;
+            crate::utils::log("✓ Installed latest dist_config.js as config.js");
+            return Ok(());
+        }
+
+        let dist_config_path = self.find_distribution_file("default_config.js")?;
+        fs::copy(&dist_config_path, &config_path)?;
+        crate::utils::log("✓ Installed latest default_config.js as config.js");
+
+        Ok(())
+    }
+
+    /// Add HookAnchor to login items using osascript
+    pub fn add_login_item(&self) -> Result<(), Box<dyn std::error::Error>> {
+        // Get the path to HookAnchor.app
+        let app_path = "/Applications/HookAnchor.app";
+
+        // Check if app exists
+        if !Path::new(app_path).exists() {
+            return Err("HookAnchor.app not found in /Applications".into());
+        }
+
+        // Use osascript to add login item
+        let script = format!(
+            r#"tell application "System Events"
+                make login item at end with properties {{path:"{}", hidden:false}}
+            end tell"#,
+            app_path
+        );
+
+        let output = Command::new("osascript")
+            .arg("-e")
+            .arg(&script)
+            .output()?;
+
+        if !output.status.success() {
+            let error = String::from_utf8_lossy(&output.stderr);
+            return Err(format!("Failed to add login item: {}", error).into());
+        }
+
+        crate::utils::log("✓ Added HookAnchor to login items");
+        Ok(())
+    }
 }

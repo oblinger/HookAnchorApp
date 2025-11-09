@@ -225,6 +225,14 @@ pub fn initialize() -> Result<(), String> {
     crate::utils::verify_build(true);
 
     // ==========================================================================
+    // STEP 2.5: Verify config version compatibility
+    // ==========================================================================
+    // Check that config.yaml version is compatible with this build
+    // If config is too old, show error dialog and terminate
+    // NOTE: This check happens for ALL machines (not just dev machines)
+    crate::utils::verify_config_version_or_exit();
+
+    // ==========================================================================
     // STEP 3: Load commands from cache
     // ==========================================================================
     let commands = match crate::core::commands::load_commands_from_cache() {

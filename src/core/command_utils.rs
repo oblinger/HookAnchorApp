@@ -14,10 +14,11 @@ use std::fs;
 /// # Arguments
 /// * `anchor` - The anchor command whose folder to scan
 /// * `config` - Application configuration (for path resolution)
+/// * `extension_filter` - Optional comma-separated list of extensions to filter by (e.g., "pdf,doc,txt")
 ///
 /// # Returns
 /// Vector of Command objects representing files, or empty vec if folder doesn't exist
-pub fn get_folder_files(anchor: &Command, config: &Config) -> Vec<Command> {
+pub fn get_folder_files(anchor: &Command, config: &Config, extension_filter: Option<&str>) -> Vec<Command> {
     // Get the folder path from the anchor
     let folder_path = match anchor.get_absolute_folder_path(config) {
         Some(path) => path,
@@ -28,6 +29,13 @@ pub fn get_folder_files(anchor: &Command, config: &Config) -> Vec<Command> {
     if !folder_path.exists() || !folder_path.is_dir() {
         return Vec::new();
     }
+
+    // Parse extension filter into a set for fast lookups
+    let allowed_extensions: Option<std::collections::HashSet<String>> = extension_filter.map(|filter| {
+        filter.split(',')
+            .map(|ext| ext.trim().to_lowercase())
+            .collect()
+    });
 
     // Read directory entries (non-recursive)
     let entries = match fs::read_dir(&folder_path) {
@@ -42,6 +50,18 @@ pub fn get_folder_files(anchor: &Command, config: &Config) -> Vec<Command> {
             let path = entry.path();
             // Only include files, not directories
             if path.is_file() {
+                // Check extension filter if provided
+                if let Some(ref extensions) = allowed_extensions {
+                    if let Some(ext) = path.extension() {
+                        let ext_str = ext.to_string_lossy().to_lowercase();
+                        if !extensions.contains(&ext_str) {
+                            continue; // Skip files that don't match extension filter
+                        }
+                    } else {
+                        continue; // Skip files with no extension
+                    }
+                }
+
                 if let Some(file_name) = path.file_name() {
                     let name = file_name.to_string_lossy().to_string();
                     let full_path = path.to_string_lossy().to_string();

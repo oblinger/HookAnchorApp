@@ -1035,6 +1035,8 @@ fn scan_files_merge_based(
             // File still exists
 
             // If user-edited, preserve the existing command completely
+            // NOTE: File was already removed from discovered_files at line 1034,
+            // so this file won't be re-added in Phase 3
             if cmd.flags.contains(FLAG_USER_EDITED) {
                 stats.unchanged += 1;
                 crate::utils::detailed_log("SCANNER", &format!(
@@ -1093,11 +1095,35 @@ fn scan_files_merge_based(
     // IMPORTANT: Process anchor files FIRST so they're in folder_map for child files
     crate::utils::detailed_log("SCANNER", "Phase 3a: Adding new anchor files first...");
 
+    // Build set of file paths already referenced by existing commands
+    // This prevents creating duplicates like "@Reed Shaffner markdown" when "@Reed Shaffner" already exists
+    let mut handled_files: std::collections::HashSet<String> = std::collections::HashSet::new();
+    for cmd in &commands {
+        if let Some(abs_path) = cmd.get_absolute_file_path(config) {
+            let path_str = abs_path.to_string_lossy().to_string();
+            crate::utils::detailed_log("SCANNER", &format!(
+                "Marking as handled: '{}' -> {}",
+                cmd.command, path_str
+            ));
+            handled_files.insert(path_str);
+        }
+    }
+    crate::utils::log(&format!("SCANNER: Built handled_files set with {} entries", handled_files.len()));
+
     // Separate anchors and non-anchors
     let mut anchor_files = Vec::new();
     let mut regular_files = Vec::new();
 
     for (file_path, cmd) in discovered_files {
+        // Skip files already referenced by existing commands
+        if handled_files.contains(&file_path) {
+            crate::utils::log(&format!(
+                "SCANNER: Skipping '{}' ({}) - file already referenced by existing command",
+                cmd.command, file_path
+            ));
+            continue;
+        }
+
         let path = Path::new(&file_path);
         if crate::utils::is_anchor_file(path) {
             anchor_files.push((file_path, cmd));

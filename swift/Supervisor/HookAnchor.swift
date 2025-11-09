@@ -34,6 +34,26 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var recentURLEvents: [Date] = []
     var lastURLEventLog: Date = Date.distantPast
     
+    // Get the path to the ha binary (HookAnchorCommand)
+    // Tries bundled binary first, falls back to development path
+    func getHaBinaryPath() -> String? {
+        // Try bundled binary first (for distribution)
+        if let bundlePath = Bundle.main.resourcePath {
+            let bundledHaPath = "\(bundlePath)/../MacOS/ha"
+            if FileManager.default.fileExists(atPath: bundledHaPath) {
+                return bundledHaPath
+            }
+        }
+
+        // Fall back to development path
+        let devPath = "/Users/oblinger/ob/proj/HookAnchor/target/release/HookAnchorCommand"
+        if FileManager.default.fileExists(atPath: devPath) {
+            return devPath
+        }
+
+        return nil
+    }
+
     // Unified logging to anchor.log
     func log(_ message: String) {
         // Format timestamp to match Rust format: "2025-08-07 21:48:38"
@@ -221,6 +241,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         log("Starting up...")
         log("URL event handler already registered")
 
+        // Perform health check and restart servers if needed
+        performHealthCheckAndRestart()
+
         // Ensure command server is running before we do anything else
         startCommandServerIfNeeded()
 
@@ -274,28 +297,50 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         
         log(" Starting with popup at \(popupPath)")
-        
+
         // Launch Rust popup but DON'T show window immediately
         // We'll wait briefly to see if we were launched by a URL
         launchRustPopup(showOnStart: false)
-        
+
         // No continuous monitoring needed - we'll check when showing
-        
+
         log(" Setup complete, waiting for events...")
-        
+
+        // Read config to determine if we should show popup on startup
+        let homeDir = FileManager.default.homeDirectoryForCurrentUser.path
+        let configPath = "\(homeDir)/.config/hookanchor/config.yaml"
+        var showPopupOnStartup = false // Default to false
+
+        if let configData = try? String(contentsOfFile: configPath, encoding: .utf8) {
+            let lines = configData.components(separatedBy: .newlines)
+            for line in lines {
+                if line.contains("show_popup_on_startup:") {
+                    let value = line.replacingOccurrences(of: "show_popup_on_startup:", with: "")
+                        .trimmingCharacters(in: .whitespaces)
+                        .lowercased()
+                    showPopupOnStartup = (value == "true")
+                    self.log("Config: show_popup_on_startup = \(showPopupOnStartup)")
+                    break
+                }
+            }
+        }
+
         // Wait a moment to see if a URL event arrives (cold launch URL handling)
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
             guard let self = self else { return }
-            
+
             // Check if we have a pending URL
             if let url = self.pendingURL {
                 self.log("Processing pending URL from launch: \(url)")
                 self.processURL(url)
                 self.pendingURL = nil
-            } else {
-                // No URL received, show the window (normal launch)
-                self.log("No URL received at launch, showing window")
+            } else if showPopupOnStartup {
+                // No URL received, and config says to show popup on startup
+                self.log("No URL received at launch, showing window (show_popup_on_startup=true)")
                 self.showRustWindow()
+            } else {
+                // No URL and config says NOT to show popup on startup
+                self.log("No URL received at launch, staying hidden (show_popup_on_startup=false)")
             }
         }
     }
@@ -362,13 +407,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             let command = String(urlString.dropFirst(7)) // Remove "hook://"
             
             log("Processing hook URL with command: '\(command)'")
-            
+
             // Pass the command to the ha CLI for execution
             // Using -x to execute the top match for the command
-            let haPath = "/Users/oblinger/ob/proj/HookAnchor/target/release/HookAnchorCommand"
-            
-            // Check if ha binary exists
-            if FileManager.default.fileExists(atPath: haPath) {
+            if let haPath = getHaBinaryPath() {
                 // Execute ha with the -x option to execute the command
                 let task = Process()
                 task.executableURL = URL(fileURLWithPath: haPath)
@@ -389,7 +431,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                     // Don't show window on error - just log it
                 }
             } else {
-                log("ha CLI not found at \(haPath), falling back to show window")
+                log("ha CLI not found, falling back to show window")
                 // Fallback: show the window if ha isn't available
                 showRustWindow()
             }
@@ -636,7 +678,52 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             }
         }
     }
-    
+
+    func performHealthCheckAndRestart() {
+        log("⚕️ Performing health check on servers...")
+
+        guard let haPath = getHaBinaryPath() else {
+            log("❌ Health check failed: ha binary not found")
+            return
+        }
+
+        // Run `ha --restart` to ensure both servers are fresh and running
+        let restartTask = Process()
+        restartTask.executableURL = URL(fileURLWithPath: haPath)
+        restartTask.arguments = ["--restart"]
+
+        // Capture output for logging
+        let outputPipe = Pipe()
+        let errorPipe = Pipe()
+        restartTask.standardOutput = outputPipe
+        restartTask.standardError = errorPipe
+
+        do {
+            try restartTask.run()
+            restartTask.waitUntilExit()
+
+            // Read and log output
+            let outputData = outputPipe.fileHandleForReading.readDataToEndOfFile()
+            let errorData = errorPipe.fileHandleForReading.readDataToEndOfFile()
+
+            if let output = String(data: outputData, encoding: .utf8), !output.isEmpty {
+                log("Health check output: \(output.trimmingCharacters(in: .whitespacesAndNewlines))")
+            }
+
+            if let error = String(data: errorData, encoding: .utf8), !error.isEmpty {
+                log("Health check stderr: \(error.trimmingCharacters(in: .whitespacesAndNewlines))")
+            }
+
+            if restartTask.terminationStatus == 0 {
+                log("✅ Health check complete: servers restarted successfully")
+            } else {
+                log("⚠️  Health check: restart command returned status \(restartTask.terminationStatus)")
+            }
+        } catch {
+            log("❌ Health check failed: \(error)")
+        }
+    }
+
     func ensurePopupRunning() {
         // First check if our known process is still running
         if let process = rustPopupProcess, process.isRunning {
@@ -689,12 +776,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 // Server not running, start it
                 log("Command server not running, starting it...")
 
-                let haPath = "/Users/oblinger/ob/proj/HookAnchor/target/release/HookAnchorCommand"
-                if FileManager.default.fileExists(atPath: haPath) {
+                if let haPath = getHaBinaryPath() {
                     let startTask = Process()
                     startTask.executableURL = URL(fileURLWithPath: haPath)
                     startTask.arguments = ["--start-server"]
-                    
+
                     do {
                         try startTask.run()
                         log("Started command server")

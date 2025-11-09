@@ -7,10 +7,26 @@ Replaces personal paths and values with generic defaults.
 import sys
 import os
 import re
+from pathlib import Path
+
+def get_version_from_cargo():
+    """Extract version from Cargo.toml"""
+    cargo_path = Path(__file__).parent.parent.parent / "Cargo.toml"
+    if cargo_path.exists():
+        with open(cargo_path, 'r') as f:
+            for line in f:
+                if line.startswith('version = '):
+                    # Extract version like '0.19.8' from 'version = "0.19.8"'
+                    version = line.split('=')[1].strip().strip('"')
+                    return version
+    return "0.0.0"
 
 def sanitize_js_config(personal_js_path, output_path):
     """Generate default config.js from personal config by sanitizing personal values."""
-    
+
+    # Get version from Cargo.toml
+    version = get_version_from_cargo()
+
     with open(personal_js_path, 'r') as f:
         js_content = f.read()
     
@@ -44,26 +60,14 @@ def sanitize_js_config(personal_js_path, output_path):
     for pattern, replacement in replacements:
         js_content = re.sub(pattern, replacement, js_content)
     
-    # Add header comment
-    js_header = """// HookAnchor Default JavaScript Configuration
-// 
-// This file contains JavaScript functions used by HookAnchor actions.
-// It is automatically generated from the developer's personal config during build.
-// Personal paths and values have been replaced with generic defaults.
-// 
-// Copy this to ~/.config/hookanchor/config.js and customize as needed.
-// 
-// All JavaScript functions have access to these built-in functions:
-// - shell(command): Execute shell command asynchronously
-// - shell_sync(command): Execute shell command synchronously  
-// - log(message): Log message to HookAnchor logs
-//
+    # Strip any existing version comment from the top
+    lines = js_content.split('\n')
+    if lines and lines[0].strip().startswith('// Version:'):
+        # Remove old version line
+        js_content = '\n'.join(lines[1:])
 
-"""
-    
-    # Ensure the result starts with the header (if not already present)
-    if not js_content.startswith("// HookAnchor Default JavaScript Configuration"):
-        js_content = js_header + js_content
+    # Add version comment at the very top
+    js_content = f"// Version: {version}\n{js_content}"
     
     with open(output_path, 'w') as f:
         f.write(js_content)

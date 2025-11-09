@@ -267,8 +267,21 @@ impl PopupState {
         // Add folder files if we're in prefix menu mode with show_files enabled
         if self.show_files && self.is_in_prefix_menu {
             if let Some((_, resolved_anchor)) = &self.prefix_menu_info {
-                // Get folder files using the utility function
-                let folder_files = crate::core::get_folder_files(resolved_anchor, &self.config);
+                // Get display file extensions (defaults to doc_file_extensions)
+                let extension_filter = self.config.popup_settings.get_display_file_extensions();
+                crate::utils::log(&format!("FOLDER_FILES: show_files={}, is_prefix_menu={}, extension_filter={:?}",
+                    self.show_files, self.is_in_prefix_menu, extension_filter));
+                crate::utils::log(&format!("FOLDER_FILES: resolved_anchor: command='{}', action='{}', arg='{}'",
+                    resolved_anchor.command, resolved_anchor.action, resolved_anchor.arg));
+
+                // Get folder files using the utility function with extension filter
+                let folder_files = crate::core::get_folder_files(
+                    resolved_anchor,
+                    &self.config,
+                    extension_filter.as_deref()
+                );
+
+                crate::utils::log(&format!("FOLDER_FILES: Found {} folder files", folder_files.len()));
 
                 // Filter out files that are already in the command list (avoid duplicates)
                 let existing_file_paths: std::collections::HashSet<_> = commands.iter()

@@ -13,6 +13,8 @@ use serde_yaml;
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(default)]
 pub struct Config {
+    /// Configuration file version (added by build script for distributions)
+    pub config_version: Option<String>,
     /// Popup window settings (includes scanner settings now)
     pub popup_settings: PopupSettings,
     /// Launcher behavior settings
@@ -60,10 +62,15 @@ pub struct PopupSettings {
     pub max_log_file_size: Option<u64>,
     /// Keep app running in background for instant popup (default: false)
     pub run_in_background: Option<bool>,
+    /// Show popup window when app launches on startup (default: false)
+    /// When false, app runs silently in background until triggered by hotkey
+    pub show_popup_on_startup: Option<bool>,
     /// File scanning roots - directories to scan for markdown files and applications
     pub file_roots: Option<Vec<String>>,
     /// Comma-separated file extensions for which to create DOC commands during scanning
     pub doc_file_extensions: Option<String>,
+    /// Comma-separated file extensions to display in prefix menu file lists (defaults to doc_file_extensions if not set)
+    pub display_file_extensions: Option<String>,
     /// Directory patterns to skip during scanning (glob patterns)
     pub skip_directory_patterns: Option<Vec<String>>,
     /// When renaming a command, also rename the associated document file if the names match (default: false)
@@ -217,8 +224,10 @@ impl Default for PopupSettings {
             default_window_size: Some("600x400".to_string()),
             max_log_file_size: Some(1_000_000), // 1MB default
             run_in_background: Some(false), // Default to false for safety
+            show_popup_on_startup: Some(false), // Default to false - run silently in background
             file_roots: None,
             doc_file_extensions: Some("pdf,doc,docx,xls,xlsx,ppt,pptx,txt,rtf,pages,numbers,key".to_string()),
+            display_file_extensions: None,  // Defaults to doc_file_extensions
             skip_directory_patterns: Some(vec![
                 "node_modules".to_string(),
                 "target".to_string(),
@@ -244,6 +253,7 @@ impl Default for PopupSettings {
 impl Default for Config {
     fn default() -> Self {
         Config {
+            config_version: None,  // Not set in dev configs, only in distributions
             popup_settings: PopupSettings::default(),
             launcher_settings: Some(LauncherSettings::default()),
             grabber_rules: None,
@@ -383,6 +393,8 @@ fn parse_config_contents(contents: &str) -> Result<Config, Box<dyn std::error::E
         .and_then(|v| serde_yaml::from_value(v.clone()).ok());
 
     Ok(Config {
+        config_version: yaml.get("config_version")
+            .and_then(|v| serde_yaml::from_value(v.clone()).ok()),
         popup_settings,
         launcher_settings,
         grabber_rules,
@@ -396,6 +408,7 @@ fn parse_config_contents(contents: &str) -> Result<Config, Box<dyn std::error::E
 /// Creates a default configuration
 pub(crate) fn create_default_config() -> Config {
     Config {
+        config_version: None,
         popup_settings: PopupSettings::default(),
         launcher_settings: Some(LauncherSettings::default()),
         grabber_rules: Some(vec![]),
@@ -420,6 +433,12 @@ fn parse_window_size(size_str: &str) -> Option<(u32, u32)> {
 
 
 impl PopupSettings {
+    /// Get display file extensions, defaulting to doc_file_extensions if not set
+    pub fn get_display_file_extensions(&self) -> Option<String> {
+        self.display_file_extensions.clone()
+            .or_else(|| self.doc_file_extensions.clone())
+    }
+
     /// Get maximum window width from max_window_size
     pub fn get_max_window_width(&self) -> u32 {
         if let Some(ref size_str) = self.max_window_size {

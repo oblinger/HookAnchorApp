@@ -1464,6 +1464,16 @@ fn run_restart_server() {
         Ok(_) => print("  ✅ Existing popup_server killed"),
         Err(e) => print(&format!("  ⚠️  Failed to kill popup_server: {}", e)),
     }
+
+    // Clean up stale popup socket file
+    let popup_socket_path = std::path::Path::new("/tmp/hookanchor_popup.sock");
+    if popup_socket_path.exists() {
+        if let Err(e) = std::fs::remove_file(popup_socket_path) {
+            print(&format!("  ⚠️  Failed to remove popup socket file: {}", e));
+        } else {
+            print("  ✅ Cleaned up popup socket file");
+        }
+    }
     
     // Start popup_server (no Terminal tab needed - runs in background)
     print("  Starting popup_server...");

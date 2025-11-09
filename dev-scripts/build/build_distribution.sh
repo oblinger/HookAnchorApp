@@ -107,7 +107,7 @@ echo -e "${BLUE}🔗 Creating universal binaries...${NC}"
 mkdir -p "$TEMP_BUILD_DIR/universal"
 
 # Create universal binary for each component
-for BINARY in HookAnchorCommand HookAnchorPopup HookAnchorPopupServer HookAnchorInstaller; do
+for BINARY in HookAnchorCommand HookAnchorPopup HookAnchorPopupServer HookAnchorInstaller HookAnchorDialog HookAnchorHistoryViewer; do
     echo "   Creating universal binary for $BINARY..."
     lipo -create -output "$TEMP_BUILD_DIR/universal/$BINARY" \
         "target/aarch64-apple-darwin/release/$BINARY" \
@@ -140,6 +140,8 @@ cp "$TEMP_BUILD_DIR/universal/HookAnchorPopupServer" "$MACOS_DIR/HookAnchor Popu
 cp "$TEMP_BUILD_DIR/universal/HookAnchorCommand" "$MACOS_DIR/HookAnchor Command"
 cp "$TEMP_BUILD_DIR/universal/HookAnchorPopup" "$MACOS_DIR/HookAnchor Popup"
 cp "$TEMP_BUILD_DIR/universal/HookAnchorInstaller" "$MACOS_DIR/HookAnchor Installer"
+cp "$TEMP_BUILD_DIR/universal/HookAnchorDialog" "$MACOS_DIR/HookAnchor Dialog"
+cp "$TEMP_BUILD_DIR/universal/HookAnchorHistoryViewer" "$MACOS_DIR/HookAnchor History Viewer"
 
 # Create symlinks with original names for compatibility
 echo "   Creating compatibility symlinks..."
@@ -153,11 +155,15 @@ ln -sf "HookAnchor Popup Server" hookanchor_popup_server
 ln -sf "HookAnchor Command" hookanchor_cmd
 ln -sf "HookAnchor Popup" hookanchor_popup
 ln -sf "HookAnchor Installer" hookanchor_installer
+ln -sf "HookAnchor Dialog" hookanchor_dialog
+ln -sf "HookAnchor History Viewer" hookanchor_history_viewer
 # Create CamelCase symlinks for direct binary access
 ln -sf "HookAnchor Popup Server" HookAnchorPopupServer
 ln -sf "HookAnchor Command" HookAnchorCommand
 ln -sf "HookAnchor Popup" HookAnchorPopup
 ln -sf "HookAnchor Installer" HookAnchorInstaller
+ln -sf "HookAnchor Dialog" HookAnchorDialog
+ln -sf "HookAnchor History Viewer" HookAnchorHistoryViewer
 cd - > /dev/null
 
 # 6. Create embedded URLHandler.app

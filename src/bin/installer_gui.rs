@@ -78,9 +78,15 @@ impl InstallerGui {
             },
             InstallComponent {
                 name: "Configuration Files".to_string(),
-                description: "All config files: config.yaml, config.js, shell integration, commands.txt, uninstaller, and distribution templates".to_string(),
+                description: "All config files: config.yaml, config.js, shell integration, commands.txt, uninstaller, and distribution templates (skips config.yaml if exists)".to_string(),
                 status: InstallStatus::Selected,  // Default to selected
                 required: true,
+            },
+            InstallComponent {
+                name: "Force overwrite config files".to_string(),
+                description: "Replace existing config.yaml and config.js with latest versions (backs up old ones to .backup)".to_string(),
+                status: InstallStatus::NotInstalled,  // Default to UNCHECKED
+                required: false,
             },
             InstallComponent {
                 name: "Shell Integration Status".to_string(),
@@ -93,6 +99,12 @@ impl InstallerGui {
                 description: "Required for grabber to capture URLs from Obsidian, Notion, etc.".to_string(),
                 status: InstallStatus::Selected,  // Default to selected
                 required: true,
+            },
+            InstallComponent {
+                name: "Launch at Login".to_string(),
+                description: "Automatically start HookAnchor when you log in (recommended)".to_string(),
+                status: InstallStatus::Selected,  // Default to selected
+                required: false,
             },
         ];
     }
@@ -238,16 +250,27 @@ impl InstallerGui {
                         }
                     },
                     3 => {
+                        // Update config.yaml AND config.js - force overwrite with backup
+                        setup_assistant.update_config_yaml_with_backup()
+                            .and_then(|_| setup_assistant.update_config_js_with_backup())
+                            .map_err(|e| e.to_string())
+                    },
+                    4 => {
                         // Shell Integration Status - this is just a status display, no action needed
                         Ok(())
                     },
-                    4 => {
+                    5 => {
                         // Accessibility Permissions - trigger the permission check
                         match SetupAssistant::ensure_accessibility_permissions() {
                             Ok(true) => Ok(()),
                             Ok(false) => Err("User needs to grant accessibility permissions manually".to_string()),
                             Err(e) => Err(e.to_string()),
                         }
+                    },
+                    6 => {
+                        // Launch at Login - add HookAnchor to login items
+                        setup_assistant.add_login_item()
+                            .map_err(|e| e.to_string())
                     },
                     _ => Err("Unknown component".to_string()),
                 };
@@ -340,7 +363,7 @@ impl InstallerGui {
         };
 
         // Get shell integration status and command before borrowing components
-        let shell_integration_data = if index == 3 {
+        let shell_integration_data = if index == 4 {
             Some((self.check_shell_integration_status(), self.get_shell_integration_line()))
         } else {
             None
@@ -490,6 +513,33 @@ impl InstallerGui {
 
         ui.add_space(8.0);
     }
+
+    fn launch_hookanchor_app(&self) {
+        // Launch HookAnchor.app to ensure servers start and app is ready to use
+        use std::process::Command;
+
+        let app_path = "/Applications/HookAnchor.app";
+
+        // Check if app exists
+        if !std::path::Path::new(app_path).exists() {
+            hookanchor::utils::log("⚠️  Cannot launch HookAnchor.app - not found at /Applications");
+            return;
+        }
+
+        // Launch the app using 'open' command
+        match Command::new("open")
+            .arg("-a")
+            .arg(app_path)
+            .spawn()
+        {
+            Ok(_) => {
+                hookanchor::utils::log("✅ Launched HookAnchor.app");
+            }
+            Err(e) => {
+                hookanchor::utils::log(&format!("⚠️  Failed to launch HookAnchor.app: {}", e));
+            }
+        }
+    }
 }
 
 impl eframe::App for InstallerGui {
@@ -532,6 +582,15 @@ impl eframe::App for InstallerGui {
                         std::process::exit(0);
                     }
                 }
+
+                // Add Close button on the right side of the row
+                ui.with_layout(egui::Layout::right_to_left(egui::Align::Center), |ui| {
+                    if ui.button("Close").clicked() {
+                        // Launch HookAnchor.app before exiting
+                        self.launch_hookanchor_app();
+                        std::process::exit(0);
+                    }
+                });
             });
 
             ui.add_space(20.0);
@@ -566,19 +625,6 @@ impl eframe::App for InstallerGui {
                         }
                     }
                 });
-
-            // Close button always at the bottom
-            ui.add_space(20.0);
-            ui.separator();
-            ui.add_space(10.0);
-            ui.horizontal(|ui| {
-                // Center the close button
-                ui.with_layout(egui::Layout::right_to_left(egui::Align::Center), |ui| {
-                    if ui.button("Close").clicked() {
-                        std::process::exit(0);
-                    }
-                });
-            });
         });
 
         // Request repaint if installation is in progress
@@ -591,7 +637,7 @@ impl eframe::App for InstallerGui {
 fn main() -> Result<(), eframe::Error> {
     let options = eframe::NativeOptions {
         viewport: egui::ViewportBuilder::default()
-            .with_inner_size([500.0, 640.0])
+            .with_inner_size([500.0, 680.0])
             .with_title("HookAnchor Installer")
             .with_resizable(true),
         ..Default::default()

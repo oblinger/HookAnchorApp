@@ -5320,6 +5320,12 @@ pub fn run_gui_with_prompt(initial_prompt: &str, initial_action: Option<&str>, _
             // Configure for minimal CPU usage
             let mut style = (*cc.egui_ctx.style()).clone();
             style.animation_time = 0.0; // Disable animations
+
+            // Disable hover visuals completely - we control selection explicitly with blue highlight
+            // Copy inactive state to all interaction states to prevent any hover effects
+            style.visuals.widgets.hovered = style.visuals.widgets.inactive.clone();
+            style.visuals.widgets.open = style.visuals.widgets.inactive.clone();
+
             cc.egui_ctx.set_style(style);
             
             

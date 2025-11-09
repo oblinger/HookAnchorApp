@@ -16,7 +16,7 @@ def load_personal_config(config_path):
 
 def transform_config(config_text):
     """Transform personal config to default config."""
-    
+
     # Replace personal paths with generic defaults
     replacements = [
         # Specific paths first (longer matches before shorter)
@@ -24,25 +24,42 @@ def transform_config(config_text):
         ('/Users/oblinger/ob/kmr/Notes', '~/Notes'),
         ('~/ob/kmr/Notes', '~/Notes'),
         ('~/ob/kmr/MY/Meta', '~/Personal'),
-        
+
         # General vault paths
         ('~/ob/kmr', '~/Documents/Notes'),
         ('/Users/oblinger/ob/kmr', '~/Documents/Notes'),
-        
+
         # Work and project paths
         ('~/ob/prj', '~/Projects'),
         ('/Users/oblinger/ob/prj', '~/Projects'),
         ('~/ob/proj', '~/Projects'),
         ('/Users/oblinger/ob/proj', '~/Projects'),
-        
+
         # Vault name
         ('obsidian_vault_name:    "kmr"', 'obsidian_vault_name:    "MyVault"'),
         ('obsidian_vault_name: "kmr"', 'obsidian_vault_name: "MyVault"'),
     ]
-    
+
     result = config_text
     for old, new in replacements:
         result = result.replace(old, new)
+
+    # Strip out API keys and sensitive data using regex
+    import re
+
+    # Remove Notion API keys (starts with "ntn_" or "secret_")
+    result = re.sub(
+        r'api_key:\s*["\']?(ntn_[a-zA-Z0-9]+|secret_[a-zA-Z0-9]+)["\']?',
+        'api_key: ""      # Or paste key directly (starts with secret_ or ntn_)',
+        result
+    )
+
+    # Remove any other API keys or tokens (common patterns)
+    result = re.sub(
+        r'(api_key|api_token|access_token|secret_key|auth_token):\s*["\']?[a-zA-Z0-9_-]{20,}["\']?',
+        r'\1: ""      # Add your API key here',
+        result
+    )
     
     # Add header comment for new users
     header = """# HookAnchor Default Configuration
@@ -62,6 +79,18 @@ def transform_config(config_text):
     
     return result
 
+def get_version_from_cargo():
+    """Extract version from Cargo.toml"""
+    cargo_path = Path(__file__).parent.parent.parent / "Cargo.toml"
+    if cargo_path.exists():
+        with open(cargo_path, 'r') as f:
+            for line in f:
+                if line.startswith('version = '):
+                    # Extract version like '0.19.1' from 'version = "0.19.1"'
+                    version = line.split('=')[1].strip().strip('"')
+                    return version
+    return "0.0.0"
+
 def main():
     # Get paths
     if len(sys.argv) > 2:
@@ -76,23 +105,30 @@ def main():
         # No arguments, use defaults
         personal_config_path = os.path.expanduser("~/.config/hookanchor/config.yaml")
         output_path = "default_config.yaml"
-    
+
     # Check if personal config exists
     if not os.path.exists(personal_config_path):
         print(f"Error: Personal config not found at {personal_config_path}")
         sys.exit(1)
-    
+
+    # Get version from Cargo.toml
+    version = get_version_from_cargo()
+    print(f"Config version: {version}")
+
     # Load and transform
     print(f"Loading personal config from {personal_config_path}")
     config_text = load_personal_config(personal_config_path)
-    
+
     print("Transforming to default config...")
     default_config = transform_config(config_text)
-    
+
+    # Add config_version at the very top
+    config_with_version = f"config_version: \"{version}\"\n\n{default_config}"
+
     # Write output
     print(f"Writing default config to {output_path}")
     with open(output_path, 'w') as f:
-        f.write(default_config)
+        f.write(config_with_version)
     
     print("✓ Default config generated successfully")
     
@@ -102,6 +138,8 @@ def main():
     print("  ~/ob/prj → ~/Projects")
     print("  Personal orphans → ~/Documents/Orphans")
     print("  Vault 'kmr' → 'MyVault'")
+    print("\nSecurity:")
+    print("  ✓ API keys and tokens removed")
     
     # Check if we have actions section
     if 'actions:' in default_config:

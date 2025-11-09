@@ -84,6 +84,15 @@ impl CommandServer {
     
     /// Start the server in a background thread
     pub fn start(&mut self) -> Result<(), Box<dyn std::error::Error>> {
+        // Clean up any stale socket file from previous crashed instances
+        if std::path::Path::new(&self.socket_path).exists() {
+            if let Err(e) = std::fs::remove_file(&self.socket_path) {
+                crate::utils::log_error(&format!("Failed to remove stale command server socket: {}", e));
+            } else {
+                crate::utils::log("Cleaned up stale command server socket file");
+            }
+        }
+
         let listener = UnixListener::bind(&self.socket_path)?;
         
         // Log version and build info at server startup

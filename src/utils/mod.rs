@@ -66,7 +66,9 @@ pub use error::{
 
 // Build verification
 pub use build_verification::{
-    verify_and_log as verify_build
+    verify_and_log as verify_build,
+    verify_config_version_or_exit,
+    check_config_js_version
 };
 
 // OLD DIALOG SYSTEM - TO BE REMOVED

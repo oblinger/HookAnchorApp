@@ -18,6 +18,7 @@ popup_settings:
   countdown_seconds:      5            # Seconds for grabber countdown (default: 5)
   anchor_timeout_seconds: 3600         # Seconds to remember last executed anchor
   run_in_background:      true         # Keep app running in background for instant popup
+  show_popup_on_startup:  false        # Show popup window when app launches (false = run silently in background)
   global_hotkey:          "Option+Space"  # Global hotkey to show popup (e.g., "Option+Space", "Command+Shift+Space", "Option+`")
   popup_server_retries:   3            # Number of times to retry showing the popup before rebuilding
   max_window_size:        "1700x1100"  # Maximum size for dialogs and popups in "widthxheight" format
@@ -25,8 +26,10 @@ popup_settings:
   max_log_file_size:      10000000     # Maximum log file size in bytes (10MB) before clearing
   file_roots:             ["~/ob/kmr", "/Applications"] # List of file scanning roots (markdown files and apps)
   doc_file_extensions:    "pdf,doc,docx,xls,xlsx,ppt,pptx,txt,rtf,pages,numbers,csv,html,htm" # File extensions to auto-create DOC commands for
-  skip_directory_patterns:    # Directory patterns to skip during scanning (glob patterns)
-    - "/Yore/"            # Exclude any path containing /Yore/ folder (historical files)
+  display_file_extensions: "pdf,doc,docx,xls,xlsx,ppt,pptx,txt,rtf,pages,numbers,csv,html,htm,md" # File extensions to display in prefix menu file lists
+
+  skip_directory_patterns:             # Directory patterns to skip during scanning (glob patterns)
+    - "/Yore/"                         # Exclude any path containing /Yore/ folder (historical files)
   listed_actions: >
     alias,app,console,doc,folder,markdown,text,
     1pass,contact,notion,obs_url,slack,

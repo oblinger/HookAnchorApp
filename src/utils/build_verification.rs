@@ -3,6 +3,8 @@
 //! Ensures that running binaries were built with the Just build system and that
 //! the source code matches what's currently running. This prevents accidentally
 //! running stale binaries or binaries built outside the official build process.
+//!
+//! Also checks config version compatibility.
 
 use chrono;
 
@@ -337,4 +339,185 @@ pub fn verify_and_log(terminate_on_failure: bool) -> bool {
     crate::utils::log(""); // Blank line for separation
 
     result.passed
+}
+
+/// Minimum required config version
+/// Config files older than this version are incompatible with this build
+const MIN_CONFIG_VERSION: &str = "0.19.0";
+
+/// Parse version string to comparable tuple (major, minor, patch)
+fn parse_version(version: &str) -> Option<(u32, u32, u32)> {
+    let parts: Vec<&str> = version.split('.').collect();
+    if parts.len() != 3 {
+        return None;
+    }
+
+    let major = parts[0].parse().ok()?;
+    let minor = parts[1].parse().ok()?;
+    let patch = parts[2].parse().ok()?;
+
+    Some((major, minor, patch))
+}
+
+/// Compare two version strings
+/// Returns true if version1 >= version2
+fn version_gte(version1: &str, version2: &str) -> bool {
+    let v1 = match parse_version(version1) {
+        Some(v) => v,
+        None => return false,
+    };
+
+    let v2 = match parse_version(version2) {
+        Some(v) => v,
+        None => return false,
+    };
+
+    v1 >= v2
+}
+
+/// Check config version compatibility
+///
+/// Returns:
+/// - Ok(()) if config version is compatible or missing (dev machine)
+/// - Err(message) if config version is too old
+pub fn check_config_version() -> Result<(), String> {
+    // Get config
+    let config = crate::core::data::get_config();
+
+    // If no config_version field, silently succeed (dev machine or old config)
+    let config_version = match &config.config_version {
+        Some(v) => v.trim(),
+        None => {
+            crate::utils::log("Config version: not specified (assuming dev machine)");
+            return Ok(());
+        }
+    };
+
+    crate::utils::log(&format!("Config version: {}", config_version));
+    crate::utils::log(&format!("Minimum required: {}", MIN_CONFIG_VERSION));
+
+    // Check if config version is recent enough
+    if !version_gte(config_version, MIN_CONFIG_VERSION) {
+        let config_dir = dirs::home_dir()
+            .map(|h| h.join(".config/hookanchor"))
+            .and_then(|p| p.to_str().map(String::from))
+            .unwrap_or_else(|| "~/.config/hookanchor".to_string());
+
+        let error_msg = format!(
+            "Config version {} in {}/config.yaml is too old.\n\
+             Minimum required: {}\n\n\
+             Please copy configuration from {}/dist_config.yaml\n\
+             or run the installer and check 'Update config.yaml'.",
+            config_version,
+            config_dir,
+            MIN_CONFIG_VERSION,
+            config_dir
+        );
+
+        return Err(error_msg);
+    }
+
+    crate::utils::log("Config version check: PASSED");
+    Ok(())
+}
+
+/// Check config.js version (similar to config.yaml check)
+pub fn check_config_js_version() -> Result<(), String> {
+    let config_dir = dirs::home_dir()
+        .map(|h| h.join(".config/hookanchor"))
+        .ok_or("Cannot determine home directory")?;
+
+    let config_js_path = config_dir.join("config.js");
+
+    // If config.js doesn't exist, skip check (not required)
+    if !config_js_path.exists() {
+        crate::utils::log("config.js: not found (optional)");
+        return Ok(());
+    }
+
+    // Read first 500 bytes to find version comment
+    let content = std::fs::read_to_string(&config_js_path)
+        .map_err(|e| format!("Failed to read config.js: {}", e))?;
+
+    // Look for version comment in first few lines: // Version: 0.19.8
+    let version_regex = regex::Regex::new(r"//\s*[Vv]ersion:\s*([0-9]+\.[0-9]+\.[0-9]+)")
+        .map_err(|e| format!("Regex error: {}", e))?;
+
+    let config_js_version = if let Some(captures) = version_regex.captures(&content) {
+        captures.get(1).map(|m| m.as_str()).unwrap_or("")
+    } else {
+        // No version found - assume dev machine
+        crate::utils::log("config.js version: not specified (assuming dev machine)");
+        return Ok(());
+    };
+
+    crate::utils::log(&format!("config.js version: {}", config_js_version));
+    crate::utils::log(&format!("Minimum required: {}", MIN_CONFIG_VERSION));
+
+    // Check if config.js version is recent enough
+    if !version_gte(config_js_version, MIN_CONFIG_VERSION) {
+        let error_msg = format!(
+            "config.js version {} in {}/config.js is too old.\n\
+             Minimum required: {}\n\n\
+             Please run the installer and check 'Force overwrite config files'.",
+            config_js_version,
+            config_dir.display(),
+            MIN_CONFIG_VERSION
+        );
+
+        return Err(error_msg);
+    }
+
+    crate::utils::log("config.js version check: PASSED");
+    Ok(())
+}
+
+/// Show config version error dialog and terminate
+fn show_config_error_dialog_and_exit(error: &str) -> ! {
+    // Show native dialog
+    #[cfg(target_os = "macos")]
+    {
+        use std::process::Command;
+        let _ = Command::new("osascript")
+            .arg("-e")
+            .arg(format!(
+                r#"display dialog "{}" buttons {{"OK"}} default button "OK" with icon stop with title "Config Version Too Old""#,
+                error.replace('\n', "\\n").replace('"', "\\\"")
+            ))
+            .output();
+    }
+
+    // Log error
+    crate::utils::log_error(&format!("❌ CONFIG VERSION CHECK FAILED\n\n{}", error));
+
+    // Terminate
+    std::process::exit(1);
+}
+
+/// Check config version and show error if too old
+///
+/// This should be called at startup after config is loaded.
+/// If config version is too old, shows error dialog and terminates.
+pub fn verify_config_version_or_exit() {
+    // Check config.yaml version
+    match check_config_version() {
+        Ok(()) => {
+            // Config version is OK
+        }
+        Err(error) => {
+            // Config version is too old - show error and exit
+            show_config_error_dialog_and_exit(&error);
+        }
+    }
+
+    // Check config.js version
+    match check_config_js_version() {
+        Ok(()) => {
+            // Config.js version is OK (or not present)
+        }
+        Err(error) => {
+            // Config.js version is too old - show error and exit
+            show_config_error_dialog_and_exit(&error);
+        }
+    }
 }

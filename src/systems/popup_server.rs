@@ -62,7 +62,16 @@ impl PopupControl {
         
         thread::spawn(move || {
             crate::utils::detailed_log("POPUP_SERVER", &format!("Starting control socket at: {}", POPUP_SOCKET));
-            
+
+            // Clean up any stale socket file from previous crashed instances
+            if std::path::Path::new(POPUP_SOCKET).exists() {
+                if let Err(e) = std::fs::remove_file(POPUP_SOCKET) {
+                    crate::utils::log_error(&format!("Failed to remove stale popup socket: {}", e));
+                } else {
+                    crate::utils::detailed_log("POPUP_SERVER", "Cleaned up stale socket file");
+                }
+            }
+
             match UnixListener::bind(POPUP_SOCKET) {
                 Ok(listener) => {
                     crate::utils::detailed_log("POPUP_SERVER", "Control socket listening");
