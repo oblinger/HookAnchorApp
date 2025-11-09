@@ -877,6 +877,7 @@ impl PopupActionHandler {
             "uninstall_app" => "Uninstall application",
             "template_create" => "Create template",
             "activate_tmux" => "Activate TMUX session for selected command",
+            "tmux" => "Activate TMUX session for selected command",
             "navigate_up_hierarchy" => "Navigate up to parent patch",
             "navigate_down_hierarchy" => "Navigate into selected anchor prefix menu",
             "toggle_show_files" => "Toggle showing files in prefix menus",
@@ -918,7 +919,7 @@ impl PopupActionHandler {
                 context.popup.show_contact();
                 KeyHandlerResult::Handled
             },
-            "activate_tmux" => {
+            "activate_tmux" | "tmux" => {
                 context.popup.activate_tmux();
                 KeyHandlerResult::Handled
             },

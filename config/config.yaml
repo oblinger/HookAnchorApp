@@ -7,7 +7,7 @@
 # APPLICATION SETTINGS
 # =================================================================
 popup_settings:
-  verbose_logging:        true         # Controls if detailed logging messages added to the log
+  verbose_logging:        false        # Controls if detailed logging messages added to the log
   merge_similar:          true         # Merging similar commands in popup
   max_rows:               25           # Max number of rows in the list of matching commands
   max_columns:            4            # Max columns in list of matching commands
@@ -31,7 +31,7 @@ popup_settings:
   skip_directory_patterns:             # Directory patterns to skip during scanning (glob patterns)
     - "/Yore/"                         # Exclude any path containing /Yore/ folder (historical files)
   listed_actions: >
-    alias,app,console,doc,folder,markdown,text,
+    alias,app,console,doc,folder,markdown,text,tmux,
     1pass,contact,notion,obs_url,slack,
     url,brave,chrome,firefox,safari,work
   
@@ -297,7 +297,7 @@ actions:
     description: "Activate TMUX session for selected folder/anchor"
     action_type: popup
     key: "Cmd+T"
-    popup_action: activate_tmux
+    popup_action: tmux
     close_popup: true
 
   kb_show_history_viewer:
@@ -314,10 +314,10 @@ actions:
     function: action_activate_tmux
 
   # Direct TMUX activation - Same as Cmd+T keyboard shortcut
-  activate_tmux:
+  tmux:
     description: "Activate TMUX session for selected folder/anchor"
     action_type: popup
-    popup_action: activate_tmux
+    popup_action: tmux
 
   # Test JavaScript error reporting
   test_js_error:

@@ -1,7 +1,7 @@
 {
   "window_position": [
     980.0,
-    -258.0
+    39.0
   ],
   "history_viewer_state": {
     "position": [
@@ -19,14 +19,14 @@
     "sidebar_width": 102.0,
     "show_current_commands": false
   },
-  "build_time": 1762560973,
+  "build_time": 1762715845,
   "last_scan_time": null,
   "last_scan_checksum": null,
-  "last_executed_command": "Idea",
-  "server_pid": 15527,
+  "last_executed_command": "hack",
+  "server_pid": 27461,
   "notion_last_scan": null,
-  "anchor_name": "Hook Anchor",
-  "anchor_timestamp": 1762650297,
+  "anchor_name": "AI Safety markdown",
+  "anchor_timestamp": 1762724820,
   "anchor_folder": null,
   "show_files": false
 }
