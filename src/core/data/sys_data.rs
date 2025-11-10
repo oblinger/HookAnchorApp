@@ -359,7 +359,7 @@ pub fn initialize() -> Result<(), String> {
     // ==========================================================================
     // STEP 3: Load commands from cache
     // ==========================================================================
-    let commands = match crate::core::commands::load_commands_from_cache() {
+    let commands = match super::storage::load_commands_from_cache() {
         Some(cached_commands) => cached_commands,
         None => Vec::new(), // No cache - start empty, will be populated by rescan
     };
@@ -634,7 +634,7 @@ pub fn load_data(commands_override: Vec<Command>, verbose: bool) -> SysData {
     } else {
         // Load ONLY from cache - commands.txt is only used during manual rebuild
         // If cache doesn't exist, system starts with empty commands
-        match crate::core::commands::load_commands_from_cache() {
+        match super::storage::load_commands_from_cache() {
             Some(cached_commands) => {
                 if verbose {
                     crate::utils::log(&format!("📋 Step 2: Loaded {} commands from cache", cached_commands.len()));

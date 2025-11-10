@@ -16,13 +16,10 @@ pub struct SetupAssistant {
 
 impl SetupAssistant {
     pub fn new() -> Self {
-        let config_dir = dirs::home_dir()
-            .expect("Could not find home directory")
-            .join(".config")
-            .join("hookanchor");
-        
+        let config_dir = crate::core::get_config_dir();
+
         let first_run = !config_dir.join("config.yaml").exists();
-        
+
         Self {
             config_dir,
             first_run,

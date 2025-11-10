@@ -46,6 +46,8 @@ pub use data::{
     get_state, set_state,
     // Data layer maintenance
     clear_commands, reload_commands, backup_commands, restore_commands_from_file,
+    // Config directory path (for non-data files only: logs, sockets, scripts)
+    get_config_dir,
     // History tracking (read-only, for history_viewer binary)
     get_history_entries, HistoryEntry
     // NOTE: History writing is automatic inside set_commands/add_command/delete_command

@@ -1,7 +1,7 @@
 {
   "window_position": [
-    980.0,
-    74.0
+    775.0,
+    -395.0
   ],
   "history_viewer_state": {
     "position": [
@@ -19,14 +19,14 @@
     "sidebar_width": 76.0,
     "show_current_commands": false
   },
-  "build_time": 1762802381,
+  "build_time": 1762805806,
   "last_scan_time": null,
   "last_scan_checksum": null,
-  "last_executed_command": "WEF",
-  "server_pid": 80983,
+  "last_executed_command": "Hook Anchor Cfg File",
+  "server_pid": 91422,
   "notion_last_scan": null,
-  "anchor_name": "Ask",
-  "anchor_timestamp": 1762800675,
+  "anchor_name": "pp",
+  "anchor_timestamp": 1762806686,
   "anchor_folder": null,
   "show_files": false
 }

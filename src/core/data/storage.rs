@@ -9,16 +9,27 @@ use std::env;
 use crate::core::Command;
 use crate::core::commands::COMMANDS_FORMAT_VERSION;
 
-/// Returns the path to the commands.txt file
-pub(in crate::core) fn get_commands_file_path() -> PathBuf {
+/// Returns the HookAnchor config directory path (~/.config/hookanchor/)
+///
+/// This is the ONLY path function that should be used outside the data layer.
+/// Use this for non-data files (logs, sockets, scripts, etc.).
+///
+/// DO NOT use this to access commands.txt or commands_cache.json - those paths
+/// are intentionally hidden and must only be accessed through data layer functions.
+pub fn get_config_dir() -> PathBuf {
     let home = env::var("HOME").unwrap_or_else(|_| ".".to_string());
-    Path::new(&home).join(".config/hookanchor/commands.txt")
+    Path::new(&home).join(".config").join("hookanchor")
+}
+
+/// Returns the path to the commands.txt file
+/// This function is private to the data layer to enforce encapsulation
+pub(in crate::core) fn get_commands_file_path() -> PathBuf {
+    get_config_dir().join("commands.txt")
 }
 
 /// Returns the path to the backups folder
 fn get_backups_folder_path() -> PathBuf {
-    let home = env::var("HOME").unwrap_or_else(|_| ".".to_string());
-    Path::new(&home).join(".config/hookanchor/backups")
+    get_config_dir().join("backups")
 }
 
 /// Creates a backup of the commands file before saving
@@ -191,13 +202,9 @@ pub(in crate::core) fn save_commands_to_file(commands: &[Command]) -> Result<(),
 }
 
 /// Get the path to the commands cache file
+/// This function is private to the data layer to enforce encapsulation
 pub(super) fn get_commands_cache_path() -> PathBuf {
-    let config_dir = dirs::home_dir()
-        .expect("Could not find home directory")
-        .join(".config")
-        .join("hookanchor");
-
-    config_dir.join("commands_cache.json")
+    get_config_dir().join("commands_cache.json")
 }
 
 /// Save commands to cache (JSON format with metadata)

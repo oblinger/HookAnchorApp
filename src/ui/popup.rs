@@ -1028,9 +1028,7 @@ impl AnchorSelector {
                 if result.get("exit") == Some(&"OK".to_string()) {
                     // Execute uninstall using the shell script
                     std::thread::spawn(|| {
-                        let config_dir = dirs::home_dir()
-                            .map(|h| h.join(".config").join("hookanchor"))
-                            .unwrap_or_else(|| std::path::PathBuf::from(".config/hookanchor"));
+                        let config_dir = crate::core::get_config_dir();
                         let uninstall_script = config_dir.join("uninstall.sh");
 
                         if uninstall_script.exists() {
@@ -1529,8 +1527,8 @@ impl AnchorSelector {
         
         // Only set up redirection once
         LOG_REDIRECT_SETUP.get_or_init(|| {
-            if let Some(home_dir) = dirs::home_dir() {
-                let config_dir = home_dir.join(".config").join("hookanchor");
+            if let Some(_home_dir) = dirs::home_dir() {
+                let config_dir = crate::core::get_config_dir();
                 let log_path = config_dir.join("anchor.log");
                 
                 // Open log file in append mode
@@ -4163,9 +4161,7 @@ impl eframe::App for AnchorSelector {
                             // Execute uninstall using the shell script
                             std::thread::spawn(|| {
                                 // Find the uninstall script in the config directory
-                                let config_dir = dirs::home_dir()
-                                    .map(|h| h.join(".config").join("hookanchor"))
-                                    .unwrap_or_else(|| std::path::PathBuf::from(".config/hookanchor"));
+                                let config_dir = crate::core::get_config_dir();
                                 let uninstall_script = config_dir.join("uninstall.sh");
 
                                 if uninstall_script.exists() {

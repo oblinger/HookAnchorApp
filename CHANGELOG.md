@@ -5,6 +5,15 @@ All notable changes to HookAnchor will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.20.1] - 2025-11-10
+
+### Changed
+- Improved data layer architecture for better reliability
+  - Added single source of truth for config directory path (`get_config_dir()`)
+  - Complete encapsulation of commands.txt and cache file paths within data layer
+  - Removed duplicate path construction logic across modules
+  - Enhanced data integrity by making it impossible to bypass singleton for data file access
+
 ## [0.17.0] - 2025-10-27
 
 ### Fixed

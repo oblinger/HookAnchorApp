@@ -107,20 +107,19 @@ actions:
   # TEMPLATE ACTIONS - For creating new commands & files
   # =================================================================
 
-  ww_child:
-    description: "Creates a new ww subfolder with a YYYY prefix"
+  child_year_folder:
+    description: "Creates a new subfolder with a YYYY prefix"
     action_type: template
-    key: "Cmd+W"
     name: "{{date.year}} {{input}}"
     action: "markdown"
-    arg: "~/Work/{{date.year}} {{input}}/{{date.year}} {{input}}.md"
+    arg: "{{last_executed.folder}}/{{date.year}} {{input}}/{{date.year}} {{input}}.md"
     patch: "WW"
     flags: "A"
     edit: true
-    file: "~/Work/{{date.year}} {{input}}/{{date.year}} {{input}}.md"
+    file: "{{last_executed.folder}}/{{date.year}} {{input}}/{{date.year}} {{input}}.md"
     file_rescan: true
     contents: |
-      .[[{{date.year}}-{{date.month}} {{input}}]].
+      .[[{{date.year}} {{input}}]].
       
 
   prj_child:

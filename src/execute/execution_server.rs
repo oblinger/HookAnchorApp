@@ -339,17 +339,12 @@ pub fn execute_locally(action: &crate::execute::Action) -> Result<String, String
 
 /// Get the socket path for the command server
 fn get_socket_path() -> Result<PathBuf, Box<dyn std::error::Error>> {
-    let home = std::env::var("HOME")?;
-    let socket_path = PathBuf::from(home)
-        .join(".config")
-        .join("hookanchor")
-        .join("execution_server.sock");
-    
+    let config_dir = crate::core::get_config_dir();
+    let socket_path = config_dir.join("execution_server.sock");
+
     // Ensure directory exists
-    if let Some(parent) = socket_path.parent() {
-        std::fs::create_dir_all(parent)?;
-    }
-    
+    std::fs::create_dir_all(&config_dir)?;
+
     Ok(socket_path)
 }
 
