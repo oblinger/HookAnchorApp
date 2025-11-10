@@ -32,6 +32,7 @@ popup_settings:
     - "/Yore/"                         # Exclude any path containing /Yore/ folder (historical files)
     - "*backups*"                      # Exclude all backup directories
     - "*_temp_links*"                  # Exclude temporary symlink directories
+    - "outputs"                        # Exclude AI job search output directories
   listed_actions: >
     alias,app,console,doc,folder,markdown,text,tmux,
     1pass,contact,notion,obs_url,slack,
