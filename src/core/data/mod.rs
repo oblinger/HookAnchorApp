@@ -73,8 +73,21 @@ pub use sys_data::{
     add_command,
     delete_command,
     set_state,
+    // Data layer maintenance
+    clear_commands,              // Clear singleton + delete files (for delete-history)
+    reload_commands,             // Reload from disk into singleton (after manual file restore)
+    backup_commands,             // Create timestamped backup, returns path for display
+    restore_commands_from_file,  // Restore from external file path (user provides)
     // History management
     delete_history,
+};
+
+// Re-export storage functions for core/commands.rs backwards compatibility
+// These are internal to core/ and should not be used outside
+pub(in crate::core) use storage::{
+    load_commands_raw,
+    save_commands_to_file,
+    get_commands_file_path,
 };
 
 // Re-export deduplication utilities for consistent duplicate detection

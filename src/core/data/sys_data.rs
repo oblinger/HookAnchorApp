@@ -203,6 +203,130 @@ pub fn mark_commands_modified() {
     crate::utils::detailed_log("COMMANDS_RELOAD", "Commands marked as modified - will reload on next get_sys_data() call");
 }
 
+/// Clear all commands from singleton and delete both commands.txt and cache files
+/// Used during delete-history to start completely fresh
+pub fn clear_commands() -> Result<(), Box<dyn std::error::Error>> {
+    crate::utils::log("CLEAR_COMMANDS: Clearing singleton and deleting files");
+
+    // Update singleton to empty
+    update_commands(Vec::new());
+
+    // Delete commands.txt
+    let commands_path = super::storage::get_commands_file_path();
+    if commands_path.exists() {
+        std::fs::remove_file(&commands_path)?;
+        crate::utils::log(&format!("CLEAR_COMMANDS: Deleted commands.txt at {:?}", commands_path));
+    }
+
+    // Delete cache
+    let cache_path = super::storage::get_commands_cache_path();
+    if cache_path.exists() {
+        std::fs::remove_file(&cache_path)?;
+        crate::utils::log(&format!("CLEAR_COMMANDS: Deleted cache at {:?}", cache_path));
+    }
+
+    Ok(())
+}
+
+/// Reload commands from disk into singleton
+/// Reads commands.txt (via load_commands_raw), updates singleton, does NOT save back to disk
+/// Used after manually restoring commands.txt from backup
+pub fn reload_commands() -> Result<Vec<Command>, Box<dyn std::error::Error>> {
+    crate::utils::log("RELOAD_COMMANDS: Loading commands from commands.txt into singleton");
+
+    // Load from commands.txt
+    let commands = super::storage::load_commands_raw();
+    crate::utils::log(&format!("RELOAD_COMMANDS: Loaded {} commands from commands.txt", commands.len()));
+
+    // Update singleton (but don't save back to disk - we just loaded from there!)
+    update_commands(commands.clone());
+    crate::utils::log("RELOAD_COMMANDS: Updated singleton with loaded commands");
+
+    Ok(commands)
+}
+
+/// Create timestamped backup of all command data
+/// Backs up commands.txt, commands_cache.json, and history.db (if they exist)
+/// Returns the backup directory path for display to the user
+pub fn backup_commands() -> Result<std::path::PathBuf, Box<dyn std::error::Error>> {
+    use chrono::Local;
+    use std::path::PathBuf;
+
+    crate::utils::log("BACKUP_COMMANDS: Creating emergency backup");
+
+    // Get paths
+    let commands_path = super::storage::get_commands_file_path();
+    let cache_path = super::storage::get_commands_cache_path();
+    let history_path = super::history::get_history_db_path();
+
+    let config_dir = commands_path.parent()
+        .ok_or("Could not get config directory")?;
+    let backups_dir = config_dir.join("backups");
+
+    // Create backups directory
+    std::fs::create_dir_all(&backups_dir)
+        .map_err(|e| format!("Failed to create backups directory: {}", e))?;
+
+    // Create timestamped backup directory
+    let timestamp = Local::now().format("%Y%m%d_%H%M%S");
+    let backup_dir = backups_dir.join(format!("emergency_restore_{}", timestamp));
+    std::fs::create_dir_all(&backup_dir)
+        .map_err(|e| format!("Failed to create backup directory: {}", e))?;
+
+    // Backup commands.txt (if exists)
+    if commands_path.exists() {
+        std::fs::copy(&commands_path, backup_dir.join("commands.txt"))
+            .map_err(|e| format!("Failed to backup commands.txt: {}", e))?;
+        crate::utils::log(&format!("BACKUP_COMMANDS: Backed up commands.txt"));
+    } else {
+        // Create marker file to show it didn't exist
+        std::fs::write(backup_dir.join("commands.txt.missing"), "commands.txt did not exist at backup time")
+            .map_err(|e| format!("Failed to create backup marker: {}", e))?;
+        crate::utils::log(&format!("BACKUP_COMMANDS: commands.txt did not exist"));
+    }
+
+    // Backup cache (if exists)
+    if cache_path.exists() {
+        let _ = std::fs::copy(&cache_path, backup_dir.join("commands_cache.json"));
+        crate::utils::log(&format!("BACKUP_COMMANDS: Backed up cache"));
+    }
+
+    // Backup history (if exists)
+    if history_path.exists() {
+        let _ = std::fs::copy(&history_path, backup_dir.join("history.db"));
+        crate::utils::log(&format!("BACKUP_COMMANDS: Backed up history.db"));
+    }
+
+    crate::utils::log(&format!("BACKUP_COMMANDS: Backup complete at {:?}", backup_dir));
+    Ok(backup_dir)
+}
+
+/// Restore commands from an external file path
+/// Physically copies the file to commands.txt, then reloads singleton
+/// Returns the number of commands loaded
+pub fn restore_commands_from_file(source_path: &std::path::Path) -> Result<usize, Box<dyn std::error::Error>> {
+    crate::utils::log(&format!("RESTORE_COMMANDS: Restoring from {:?}", source_path));
+
+    // Validate source file exists
+    if !source_path.exists() {
+        return Err(format!("Source file does not exist: {}", source_path.display()).into());
+    }
+
+    // Get destination path
+    let dest_path = super::storage::get_commands_file_path();
+
+    // Copy the file
+    let bytes_copied = std::fs::copy(source_path, &dest_path)?;
+    crate::utils::log(&format!("RESTORE_COMMANDS: Copied {} bytes to commands.txt", bytes_copied));
+
+    // Reload singleton from the restored file
+    let commands = reload_commands()?;
+    let count = commands.len();
+
+    crate::utils::log(&format!("RESTORE_COMMANDS: Restored {} commands", count));
+    Ok(count)
+}
+
 // ============================================================================
 // NEW API - Command State Management
 // ============================================================================

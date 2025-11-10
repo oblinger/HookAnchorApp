@@ -5,6 +5,7 @@
 
 use std::process::Command;
 use std::path::PathBuf;
+use std::fs;
 
 /// Kill all popup_server processes
 ///
@@ -167,5 +168,155 @@ pub fn full_system_restart() -> Result<(), String> {
     restart_popup_server()?;
     crate::utils::log("  ✅ Popup server restarted");
 
+    Ok(())
+}
+
+// =============================================================================
+// UNIFIED SERVER LIFECYCLE API
+// =============================================================================
+
+/// Get the execution server socket path
+///
+/// Returns the path to the Unix domain socket used by the command execution server.
+/// Uses config directory to avoid hardcoded user paths.
+pub fn get_execution_server_socket_path() -> PathBuf {
+    let config_dir = dirs::config_dir()
+        .unwrap_or_else(|| PathBuf::from("/tmp"))
+        .join("hookanchor");
+    config_dir.join("execution_server.sock")
+}
+
+/// Get the popup socket path
+///
+/// Returns the path to the Unix domain socket used by the popup server.
+pub fn get_popup_socket_path() -> PathBuf {
+    PathBuf::from("/tmp/hookanchor_popup.sock")
+}
+
+/// Stop all HookAnchor servers (popup + command)
+///
+/// Returns (popup_killed, command_killed) indicating which servers were stopped.
+/// This is the safe way to stop all servers before file operations that could
+/// cause race conditions.
+pub fn stop_all_servers() -> Result<(bool, bool), String> {
+    crate::utils::log("🛑 Stopping all servers...");
+
+    // Stop popup server
+    let popup_killed = match kill_popup_servers() {
+        Ok(killed) => {
+            if killed {
+                crate::utils::log("  ✓ Popup server stopped");
+            } else {
+                crate::utils::log("  ℹ No popup server running");
+            }
+            killed
+        }
+        Err(e) => {
+            crate::utils::log_error(&format!("  ✗ Failed to stop popup server: {}", e));
+            false
+        }
+    };
+
+    // Stop command server
+    let command_killed = match crate::execute::kill_existing_server() {
+        Ok(()) => {
+            crate::utils::log("  ✓ Command server stopped");
+            true
+        }
+        Err(e) => {
+            crate::utils::log_error(&format!("  ✗ Failed to stop command server: {}", e));
+            false
+        }
+    };
+
+    // Wait for processes to fully terminate
+    std::thread::sleep(std::time::Duration::from_millis(500));
+
+    // Clean up socket files
+    let popup_socket = get_popup_socket_path();
+    if popup_socket.exists() {
+        if let Err(e) = fs::remove_file(&popup_socket) {
+            crate::utils::detailed_log("RESTART", &format!("Failed to remove popup socket: {}", e));
+        }
+    }
+
+    let command_socket = get_execution_server_socket_path();
+    if command_socket.exists() {
+        if let Err(e) = fs::remove_file(&command_socket) {
+            crate::utils::detailed_log("RESTART", &format!("Failed to remove command socket: {}", e));
+        }
+    }
+
+    Ok((popup_killed, command_killed))
+}
+
+/// Start all HookAnchor servers (popup + command)
+///
+/// Returns Ok if both servers started successfully, Err if either failed.
+/// Verifies that both servers are actually running after startup.
+pub fn start_all_servers() -> Result<(), String> {
+    crate::utils::log("🚀 Starting all servers...");
+
+    // Start popup server
+    match start_popup_server() {
+        Ok(path) => {
+            crate::utils::log(&format!("  ✓ Popup server started: {}", path.display()));
+        }
+        Err(e) => {
+            return Err(format!("Failed to start popup server: {}", e));
+        }
+    }
+
+    // Start command server (restart=false means just ensure it's running)
+    match crate::execute::activate_command_server(false) {
+        Ok(()) => {
+            crate::utils::log("  ✓ Command server started");
+        }
+        Err(e) => {
+            return Err(format!("Failed to start command server: {}", e));
+        }
+    }
+
+    // Verify both servers are running by checking socket files exist
+    std::thread::sleep(std::time::Duration::from_millis(500));
+
+    let popup_socket = get_popup_socket_path();
+    let command_socket = get_execution_server_socket_path();
+
+    let mut errors = Vec::new();
+    if !popup_socket.exists() {
+        errors.push("Popup socket not found after startup");
+    }
+    if !command_socket.exists() {
+        errors.push("Command socket not found after startup");
+    }
+
+    if !errors.is_empty() {
+        return Err(format!("Server verification failed: {}", errors.join(", ")));
+    }
+
+    crate::utils::log("✅ All servers started and verified");
+    Ok(())
+}
+
+/// Stop and restart all HookAnchor servers
+///
+/// This is the safest way to restart everything - stops all servers first,
+/// waits for clean shutdown, then starts everything fresh.
+///
+/// Use this when you need to ensure no race conditions during file operations.
+pub fn restart_all_servers() -> Result<(), String> {
+    crate::utils::log("🔄 Restarting all servers...");
+
+    // Stop everything first
+    stop_all_servers()?;
+
+    // Brief additional wait to ensure everything is clean
+    std::thread::sleep(std::time::Duration::from_millis(500));
+
+    // Start everything
+    start_all_servers()?;
+
+    crate::utils::log("✅ All servers restarted successfully");
     Ok(())
 }

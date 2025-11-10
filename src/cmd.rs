@@ -99,7 +99,7 @@ pub fn print_help(program_name: &str) {
     print(&format!("  {} --infer-all              # Show changes and prompt to apply", program_name));
     print(&format!("  {} --rescan                 # Rescan filesystem with verbose output", program_name));
     print(&format!("  {} --rebuild                # Rebuild: restart server and rescan filesystem", program_name));
-    print(&format!("  {} --delete-history [--force] # Delete history database and cache", program_name));
+    print(&format!("  {} --delete-history [--add-commands <path>] [--force] # Delete history and rebuild (optionally from backup)", program_name));
     print(&format!("  {} --test-grabber           # Test grabber functionality", program_name));
     print(&format!("  {} --test-permissions       # Test accessibility permissions", program_name));
     print(&format!("  {} --grab [delay]           # Grab active app after delay", program_name));
@@ -933,11 +933,8 @@ fn run_start_server_daemon() {
         }
     }
     
-    // Clean up any existing socket file
-    let socket_path = std::path::Path::new(&std::env::var("HOME").unwrap_or_else(|_| ".".to_string()))
-        .join(".config")
-        .join("hookanchor")
-        .join("execution_server.sock");
+    // Clean up any existing socket file (using centralized path function)
+    let socket_path = crate::systems::get_execution_server_socket_path();
     let _ = std::fs::remove_file(&socket_path);
     
     // Run the command server (this never returns)
@@ -1438,117 +1435,34 @@ fn run_manual_uninstall() {
 /// Restart both command server and popup server - launch both from Terminal for proper permissions
 fn run_restart_server() {
     print("🔄 Restarting both servers (command + popup)...");
-    
-    // First, hide the popup if it's visible by sending command to socket
+
+    // Hide popup window if visible
     print("  Hiding popup window...");
     use std::os::unix::net::UnixStream;
     use std::io::Write;
-    
+
     if let Ok(mut stream) = UnixStream::connect("/tmp/hookanchor_popup.sock") {
-        if let Err(e) = stream.write_all(b"hide") {
-            print(&format!("  ⚠️  Could not send hide command to popup: {}", e));
-        } else {
-            print("  ✅ Popup window hidden");
-        }
-    } else {
-        print("  ⚠️  Popup server not running (window may already be hidden)");
-    }
-    
-    // Kill any existing popup_server first
-    print("  Killing existing popup_server...");
-    use std::process::Command;
-    match Command::new("pkill")
-        .arg("-f")
-        .arg("popup_server")
-        .output() {
-        Ok(_) => print("  ✅ Existing popup_server killed"),
-        Err(e) => print(&format!("  ⚠️  Failed to kill popup_server: {}", e)),
+        let _ = stream.write_all(b"hide");
+        print("  ✅ Popup window hidden");
     }
 
-    // Clean up stale popup socket file
-    let popup_socket_path = std::path::Path::new("/tmp/hookanchor_popup.sock");
-    if popup_socket_path.exists() {
-        if let Err(e) = std::fs::remove_file(popup_socket_path) {
-            print(&format!("  ⚠️  Failed to remove popup socket file: {}", e));
-        } else {
-            print("  ✅ Cleaned up popup socket file");
-        }
-    }
-    
-    // Start popup_server (no Terminal tab needed - runs in background)
-    print("  Starting popup_server...");
-    match crate::systems::start_popup_server() {
-        Ok(path) => {
-            print(&format!("  ✅ popup_server started: {}", path.display()));
-        }
-        Err(e) => {
-            print(&format!("  ⚠️  Failed to start popup_server: {}", e));
-        }
-    }
-    
-    // Restart the server (kill existing and start new)
-    print("  Restarting server...");
-    
-    // Clear the socket file to ensure clean start
-    let socket_path = std::path::Path::new("/Users/oblinger/.config/hookanchor/execution_server.sock");
-    if socket_path.exists() {
-        if let Err(e) = std::fs::remove_file(socket_path) {
-            print(&format!("  ⚠️  Failed to remove socket file: {}", e));
-        }
-    }
-    
-    match crate::execute::activate_command_server(true) {
+    // Use unified restart API
+    match crate::systems::restart_all_servers() {
         Ok(()) => {
-            print("  ✅ Server restart initiated via Terminal");
-            print("  📱 A new Terminal window should open with the server daemon");
-            print("  📄 Server output will be logged to ~/.config/hookanchor/server.log");
-            
-            // Wait for the server to start - check multiple times
-            print("  ⏳ Waiting for server to start...");
-            let mut server_started = false;
-            let max_attempts = 50; // 50 attempts * 200ms = 10 seconds max
-            let socket_path = std::path::Path::new("/Users/oblinger/.config/hookanchor/execution_server.sock");
-            
-            for attempt in 1..=max_attempts {
-                std::thread::sleep(std::time::Duration::from_millis(200));
-                
-                // First check if socket file exists
-                if socket_path.exists() {
-                    // Give it a moment for the socket to be fully ready
-                    std::thread::sleep(std::time::Duration::from_millis(300));
-                    
-                    // Server socket exists, assume it's ready
-                    server_started = true;
-                    break;
-                }
-                
-                // Show progress every second
-                if attempt % 5 == 0 {
-                    print!(".");
-                    use std::io::Write;
-                    std::io::stdout().flush().unwrap();
-                }
+            print("");
+            print("✅ Both servers restarted successfully!");
+
+            // Show server status
+            let state = crate::core::data::get_state();
+            if let Some(pid) = state.server_pid {
+                print(&format!("  📊 Server running with PID: {}", pid));
             }
-            
-            if server_started {
-                print("\n  ✅ Server started successfully!");
-                
-                // Also verify by checking the PID in state
-                let state = crate::core::data::get_state();
-                if let Some(pid) = state.server_pid {
-                    print(&format!("  📊 Server running with PID: {}", pid));
-                }
-                
-                print("  🎯 Server is ready to accept commands");
-            } else {
-                print("\n  ❌ Server failed to start within 10 seconds");
-                print("  💡 Check the Terminal window for error messages");
-                std::process::exit(1);
-            }
+            print("  🎯 Server is ready to accept commands");
         }
         Err(e) => {
-            print(&format!("  ❌ Failed to start server: {}", e));
-            print("  💡 Try running manually: ha --start-server-daemon");
+            print("");
+            print(&format!("❌ Restart failed: {}", e));
+            print("💡 Try running manually: ha --start-server-daemon");
             std::process::exit(1);
         }
     }
@@ -1635,15 +1549,15 @@ fn run_rebuild_command() {
     }
     
     print("\n🔄 Step 2/3: Restarting command server...");
-    
-    // Clear the socket file to ensure clean start
-    let socket_path = std::path::Path::new("/Users/oblinger/.config/hookanchor/execution_server.sock");
+
+    // Clear the socket file to ensure clean start (using centralized path function)
+    let socket_path = crate::systems::get_execution_server_socket_path();
     if socket_path.exists() {
-        if let Err(e) = std::fs::remove_file(socket_path) {
+        if let Err(e) = std::fs::remove_file(&socket_path) {
             print(&format!("  ⚠️  Failed to remove socket file: {}", e));
         }
     }
-    
+
     // Restart the server
     match crate::execute::activate_command_server(true) {
         Ok(()) => {
@@ -1718,19 +1632,53 @@ fn run_search_command() {
 /// next rescan will rebuild the cache from scratch by scanning all file_roots.
 fn run_delete_history(args: &[String]) {
     use std::io::{self, Write};
+    use std::path::PathBuf;
 
-    // Check for --force flag
+    // Parse arguments
     let force = args.iter().any(|arg| arg == "--force");
 
+    // Find --use-commands <path> argument
+    let mut use_commands_path: Option<PathBuf> = None;
+    let mut iter = args.iter();
+    while let Some(arg) = iter.next() {
+        if arg == "--use-commands" {
+            if let Some(path) = iter.next() {
+                use_commands_path = Some(PathBuf::from(path));
+            } else {
+                crate::utils::print_and_log("Error: --use-commands requires a file path");
+                std::process::exit(1);
+            }
+        }
+    }
+
+    // Validate --use-commands path if provided
+    if let Some(ref path) = use_commands_path {
+        if !path.exists() {
+            crate::utils::print_and_log(&format!("Error: Specified commands file does not exist: {}", path.display()));
+            std::process::exit(1);
+        }
+        if !path.is_file() {
+            crate::utils::print_and_log(&format!("Error: Path is not a file: {}", path.display()));
+            std::process::exit(1);
+        }
+    }
+
+    // Show what will happen
     if !force {
-        print("");
-        print("⚠️  WARNING: This will permanently delete:");
-        print("  • Command history database (~/.config/hookanchor/history.db)");
-        print("  • Command cache file (~/.config/hookanchor/commands_cache.json)");
-        print("");
-        print("This action cannot be undone!");
-        print("");
-        print("Type 'yes' to confirm deletion: ");
+        crate::utils::print_and_log("");
+        crate::utils::print_and_log("⚠️  WARNING: This will:");
+        crate::utils::print_and_log("  1. Create automatic backup of current state");
+        crate::utils::print_and_log("  2. Stop all servers");
+        crate::utils::print_and_log("  3. Delete history database and cache");
+        crate::utils::print_and_log("  4. Clear commands.txt");
+        crate::utils::print_and_log("  5. Scan filesystem to record creation dates");
+        if let Some(ref path) = use_commands_path {
+            crate::utils::print_and_log(&format!("  6. Restore commands from: {}", path.display()));
+        }
+        crate::utils::print_and_log("  7. Merge and rebuild with final filesystem scan");
+        crate::utils::print_and_log("  8. Restart all servers");
+        crate::utils::print_and_log("");
+        crate::utils::print_and_log("Type 'yes' to confirm: ");
 
         // Flush stdout to ensure prompt appears
         io::stdout().flush().unwrap();
@@ -1741,68 +1689,145 @@ fn run_delete_history(args: &[String]) {
         let input = input.trim();
 
         if input != "yes" {
-            print("Deletion cancelled.");
+            crate::utils::print_and_log("Operation cancelled.");
             return;
         }
     }
 
-    // Delete history and cache through data layer
+    crate::utils::print_and_log("");
+    crate::utils::print_and_log("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
+    crate::utils::print_and_log("  HISTORY REBUILD WITH RESTORATION");
+    crate::utils::print_and_log("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
+    crate::utils::print_and_log("");
+
+    // Get config_dir path for later steps
+    let config_dir = dirs::config_dir()
+        .unwrap_or_else(|| PathBuf::from("/tmp"))
+        .join("hookanchor");
+
+    // Step 1: Create automatic backup
+    crate::utils::print_and_log("📦 Step 1/8: Creating automatic backup...");
+    let backup_dir = match crate::core::backup_commands() {
+        Ok(dir) => {
+            crate::utils::print_and_log(&format!("  ✓ Backup created: {}", dir.display()));
+            dir
+        }
+        Err(e) => {
+            crate::utils::print_and_log(&format!("  ✗ Failed to create backup: {}", e));
+            crate::utils::print_and_log("  Operation aborted for safety");
+            std::process::exit(1);
+        }
+    };
+
+    // Step 2: Stop all servers
+    crate::utils::print_and_log("");
+    crate::utils::print_and_log("🛑 Step 2/8: Stopping all servers...");
+    if let Err(e) = crate::systems::stop_all_servers() {
+        crate::utils::print_and_log(&format!("  ✗ Failed to stop servers: {}", e));
+        crate::utils::print_and_log("  Continuing anyway...");
+    } else {
+        crate::utils::print_and_log("  ✓ All servers stopped");
+    }
+
+    // Step 3: Delete history and cache
+    crate::utils::print_and_log("");
+    crate::utils::print_and_log("🗑️  Step 3/8: Deleting history database and cache...");
     match crate::core::data::delete_history() {
         Ok((history_deleted, cache_deleted)) => {
-            print("");
             if history_deleted {
-                print("✓ Deleted history database");
+                crate::utils::print_and_log("  ✓ Deleted history database");
             } else {
-                print("  History database not found (already deleted)");
+                crate::utils::print_and_log("  ℹ History database not found");
             }
             if cache_deleted {
-                print("✓ Deleted command cache");
+                crate::utils::print_and_log("  ✓ Deleted command cache");
             } else {
-                print("  Command cache not found (already deleted)");
-            }
-
-            let deleted_count = [history_deleted, cache_deleted].iter().filter(|&&x| x).count();
-
-            // Report results
-            print("");
-            if deleted_count > 0 {
-                print(&format!("✓ Successfully deleted {} file(s)", deleted_count));
-                print("");
-                print("📝 Rebuilding history from scratch with accurate file creation dates...");
-                print("");
-
-                // CRITICAL ORDER: Scan filesystem FIRST with empty commands, THEN load commands.txt
-                //
-                // Step 1: Pure filesystem scan with EMPTY commands
-                // - Discovers all files and records "created" history entries with birth timestamps
-                // - Files are NOT in commands list yet, so scanner treats them as NEW
-                // - Saves to cache with metadata
-                print("🔍 Step 1: Scanning filesystem to record file creation history...");
-                let (global_data, _) = crate::core::data::get_sys_data();
-                let scanned_commands = crate::systems::scan_new_files(Vec::new(), &global_data, true);
-
-                // Save to cache so next step loads these as existing files
-                if let Err(e) = crate::core::commands::save_commands_to_cache(&scanned_commands) {
-                    print(&format!("   ⚠️  Failed to save initial cache: {}", e));
-                } else {
-                    print(&format!("   ✅ Recorded creation history for {} files", scanned_commands.len()));
-                }
-
-                print("");
-                print("✏️  Step 2: Merging manual edits from commands.txt...");
-                // Step 2: Now run full rescan to merge commands.txt edits
-                // - Cache now has all files with metadata
-                // - commands.txt edits are applied on top
-                // - No duplicate "created" entries because files already exist in cache
-                run_rescan_command();
+                crate::utils::print_and_log("  ℹ Command cache not found");
             }
         }
         Err(e) => {
-            print("");
-            print(&format!("✗ Error: {}", e));
+            crate::utils::print_and_log(&format!("  ✗ Error: {}", e));
+            crate::utils::print_and_log(&format!("  Backup preserved at: {}", backup_dir.display()));
             std::process::exit(1);
         }
     }
+
+    // Step 4: Clear commands via data layer (clears singleton + both files)
+    crate::utils::print_and_log("");
+    crate::utils::print_and_log("🧹 Step 4/8: Clearing commands via data layer...");
+    match crate::core::clear_commands() {
+        Ok(()) => {
+            crate::utils::print_and_log("  ✓ Singleton and files cleared");
+        }
+        Err(e) => {
+            crate::utils::print_and_log(&format!("  ✗ Failed to clear commands: {}", e));
+            crate::utils::print_and_log(&format!("  Backup preserved at: {}", backup_dir.display()));
+            std::process::exit(1);
+        }
+    }
+
+    // Step 5: Initial filesystem scan (records creation dates)
+    crate::utils::print_and_log("");
+    crate::utils::print_and_log("🔍 Step 5/8: Scanning filesystem to record creation dates...");
+    let (global_data, _) = crate::core::data::get_sys_data();
+    let scanned_commands = crate::systems::scan_new_files(Vec::new(), &global_data, true);
+
+    // Save via data layer (updates singleton + both files)
+    if let Err(e) = crate::core::set_commands(scanned_commands.clone()) {
+        crate::utils::print_and_log(&format!("  ⚠️  Failed to save scanned commands: {}", e));
+        crate::utils::print_and_log(&format!("  Backup preserved at: {}", backup_dir.display()));
+        std::process::exit(1);
+    } else {
+        crate::utils::print_and_log(&format!("  ✓ Recorded creation history for {} files", scanned_commands.len()));
+    }
+
+    // Step 6: Restore commands.txt if --use-commands specified
+    if let Some(ref source_path) = use_commands_path {
+        crate::utils::print_and_log("");
+        crate::utils::print_and_log("📂 Step 6/8: Restoring commands from backup...");
+        crate::utils::print_and_log(&format!("  Source: {}", source_path.display()));
+
+        match crate::core::restore_commands_from_file(source_path) {
+            Ok(count) => {
+                crate::utils::print_and_log(&format!("  ✓ Restored {} commands", count));
+            }
+            Err(e) => {
+                crate::utils::print_and_log(&format!("  ✗ Failed to restore: {}", e));
+                crate::utils::print_and_log(&format!("  Backup preserved at: {}", backup_dir.display()));
+                std::process::exit(1);
+            }
+        }
+    } else {
+        crate::utils::print_and_log("");
+        crate::utils::print_and_log("📂 Step 6/8: No historical commands specified (starting fresh)");
+    }
+
+    // Step 7: Final rescan (merges commands.txt and does cleanup scan)
+    crate::utils::print_and_log("");
+    crate::utils::print_and_log("🔨 Step 7/8: Merging and rebuilding with final filesystem scan...");
+    run_rescan_command();
+
+    // Step 8: Restart all servers
+    crate::utils::print_and_log("");
+    crate::utils::print_and_log("🚀 Step 8/8: Restarting all servers...");
+    if let Err(e) = crate::systems::start_all_servers() {
+        crate::utils::print_and_log(&format!("  ✗ Failed to start servers: {}", e));
+        crate::utils::print_and_log("  You may need to restart manually");
+    } else {
+        crate::utils::print_and_log("  ✓ All servers restarted");
+    }
+
+    // Summary
+    crate::utils::print_and_log("");
+    crate::utils::print_and_log("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
+    crate::utils::print_and_log("✅ HISTORY REBUILD COMPLETE");
+    crate::utils::print_and_log("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
+    crate::utils::print_and_log("");
+    if let Some(ref path) = use_commands_path {
+        crate::utils::print_and_log(&format!("  Restored from: {}", path.display()));
+    }
+    crate::utils::print_and_log(&format!("  Backup saved: {}", backup_dir.display()));
+    crate::utils::print_and_log("");
 }
 
 fn print_help_vars() {

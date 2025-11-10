@@ -34,7 +34,7 @@ pub(crate) mod params;
 
 // Logging functions
 pub use logging::{
-    log, print, detailed_log, log_error, log_error_module,
+    log, print, print_and_log, detailed_log, log_error, log_error_module,
     clear_debug_log, check_and_clear_oversized_log, clear_log_file
 };
 

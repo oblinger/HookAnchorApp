@@ -69,7 +69,12 @@ pub use popup_server::{
 // Restart subsystem - system restart and rebuild operations
 pub use restart::{
     full_system_restart,
-    start_popup_server    // Start popup_server in background
+    start_popup_server,         // Start popup_server in background
+    stop_all_servers,           // Stop all servers (popup + command)
+    start_all_servers,          // Start all servers (popup + command)
+    restart_all_servers,        // Stop and restart all servers
+    get_execution_server_socket_path,  // Get execution server socket path
+    get_popup_socket_path,      // Get popup server socket path
 };
 
 // Dialog manager - non-blocking dialog subprocess management

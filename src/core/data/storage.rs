@@ -10,7 +10,7 @@ use crate::core::Command;
 use crate::core::commands::COMMANDS_FORMAT_VERSION;
 
 /// Returns the path to the commands.txt file
-pub(super) fn get_commands_file_path() -> PathBuf {
+pub(in crate::core) fn get_commands_file_path() -> PathBuf {
     let home = env::var("HOME").unwrap_or_else(|_| ".".to_string());
     Path::new(&home).join(".config/hookanchor/commands.txt")
 }
@@ -63,7 +63,7 @@ fn backup_cache_file() -> Result<(), Box<dyn std::error::Error>> {
 
 /// Loads commands from the commands.txt file without any processing
 /// This is the raw loading function used by sys_data::load_data()
-pub(super) fn load_commands_raw() -> Vec<Command> {
+pub(in crate::core) fn load_commands_raw() -> Vec<Command> {
     let path = get_commands_file_path();
 
     if !path.exists() {
@@ -108,7 +108,7 @@ pub(super) fn load_commands_raw() -> Vec<Command> {
 
 /// Saves commands to file with safety checks
 /// NOTE: Deduplication should happen in flush() before calling this
-pub(super) fn save_commands_to_file(commands: &[Command]) -> Result<(), Box<dyn std::error::Error>> {
+pub(in crate::core) fn save_commands_to_file(commands: &[Command]) -> Result<(), Box<dyn std::error::Error>> {
     // Create backup before saving
     backup_commands_file()?;
 
@@ -191,7 +191,7 @@ pub(super) fn save_commands_to_file(commands: &[Command]) -> Result<(), Box<dyn 
 }
 
 /// Get the path to the commands cache file
-fn get_commands_cache_path() -> PathBuf {
+pub(super) fn get_commands_cache_path() -> PathBuf {
     let config_dir = dirs::home_dir()
         .expect("Could not find home directory")
         .join(".config")

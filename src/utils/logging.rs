@@ -138,7 +138,16 @@ pub fn log_error_module(module: &str, message: &str) {
 /// Use this instead of println! directly.
 ///
 /// Note: This does NOT log to file. If you want to both print and log,
-/// call both print() and log() explicitly.
+/// use print_and_log() instead.
 pub fn print(message: &str) {
     println!("{}", message);
+}
+
+/// Print to console AND log to file
+///
+/// This is for CLI commands that need to show output to the user
+/// and also want it recorded in the log file.
+pub fn print_and_log(message: &str) {
+    println!("{}", message);
+    log(message);
 }

@@ -20,7 +20,7 @@ use std::path::PathBuf;
 use crate::core::Command;
 
 /// Get the path to the history database
-fn get_history_db_path() -> PathBuf {
+pub(super) fn get_history_db_path() -> PathBuf {
     let config_dir = dirs::home_dir()
         .expect("Could not find home directory")
         .join(".config")

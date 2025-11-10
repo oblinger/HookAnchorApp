@@ -466,36 +466,8 @@ impl Command {
 }
 
 /// Returns the path to the commands.txt file
-pub(crate) fn get_commands_file_path() -> PathBuf {
-    let home = env::var("HOME").unwrap_or_else(|_| ".".to_string());
-    Path::new(&home).join(".config/hookanchor/commands.txt")
-}
-
-/// Returns the path to the backups folder
-pub(crate) fn get_backups_folder_path() -> PathBuf {
-    let home = env::var("HOME").unwrap_or_else(|_| ".".to_string());
-    Path::new(&home).join(".config/hookanchor/backups")
-}
-
-/// Creates a backup of the commands file before saving
-pub(crate) fn backup_commands_file() -> Result<(), Box<dyn std::error::Error>> {
-    let commands_path = get_commands_file_path();
-    let backups_path = get_backups_folder_path();
-    
-    // Create backups directory if it doesn't exist
-    fs::create_dir_all(&backups_path)?;
-    
-    // Only backup if the commands file exists
-    if commands_path.exists() {
-        let timestamp = chrono::Local::now().format("%Y%m%d_%H%M%S");
-        let backup_name = format!("commands_{}.txt", timestamp);
-        let backup_path = backups_path.join(backup_name);
-        
-        fs::copy(&commands_path, backup_path)?;
-    }
-    
-    Ok(())
-}
+// File path functions moved to storage module
+// Use crate::core::data::storage::get_commands_file_path() instead
 
 /// Loads commands from the commands.txt file
 /// Creates a hashmap from patch names to Patch structs
@@ -1293,61 +1265,11 @@ fn infer_parent_patch_from_name(patch_name: &str, patches: &HashMap<String, Patc
 
 /// Loads commands from the commands.txt file without any processing
 /// This is the raw loading function used by sys_data::load_data()
+/// Load commands from commands.txt (delegates to storage layer)
+/// DEPRECATED: External code should use crate::core::data::storage::load_commands_raw()
+/// This wrapper exists for internal backwards compatibility only
 pub(crate) fn load_commands_raw() -> Vec<Command> {
-    let path = get_commands_file_path();
-    
-    if !path.exists() {
-        crate::utils::log_error(&format!("commands.txt not found at {:?}", path));
-        return vec![];
-    }
-    
-    match fs::read_to_string(&path) {
-        Ok(contents) => {
-            let mut commands = Vec::new();
-            for (line_num, line) in contents.lines().enumerate() {
-                let trimmed = line.trim();
-
-                // Skip empty lines and comments
-                if trimmed.is_empty() || trimmed.starts_with("//") {
-                    continue;
-                }
-
-                match parse_command_line(line) {
-                    Ok(mut command) => {
-                        // MIGRATION: Convert old lowercase 'a' anchor flag to uppercase 'A'
-                        // This can be removed after all commands have been migrated
-                        if command.flags.contains('a') {
-                            command.remove_flag('a');
-                            command.set_flag(FLAG_ANCHOR, "");
-                            crate::utils::detailed_log("FLAG_MIGRATION", &format!(
-                                "Migrated '{}' from lowercase 'a' to uppercase 'A' flag",
-                                command.command
-                            ));
-                        }
-
-                        // Debug: Log the first few commands to see if patches are being preserved
-                        if line_num < 5 {
-                            crate::utils::detailed_log("PARSE_DEBUG", &format!("Parsed line {}: patch='{}', command='{}'",
-                                line_num + 1, command.patch, command.command));
-                        }
-                        // Also log the Patents command specifically
-                        if command.command == "Patents" {
-                            crate::utils::detailed_log("PARSE_DEBUG", &format!("Found Patents command: patch='{}', command='{}', action='{}'",
-                                command.patch, command.command, command.action));
-                        }
-                        commands.push(command);
-                    },
-                    Err(e) => crate::utils::log_error(&format!("Failed to parse line {} in commands.txt: {} - Line: '{}'", 
-                        line_num + 1, e, line)),
-                }
-            }
-            commands
-        }
-        Err(e) => {
-            crate::utils::log_error(&format!("Error reading commands.txt: {}", e));
-            vec![]
-        }
-    }
+    crate::core::data::load_commands_raw()
 }
 
 /// Load commands with all derived data structures (patches, inference, orphan anchors)
@@ -1589,11 +1511,17 @@ fn is_better_command(candidate: &Command, current: &Command) -> bool {
     false
 }
 
+/// Save commands to file (delegates to storage layer for actual file I/O)
+/// DEPRECATED: This function is exported for backwards compatibility but delegates to storage
 pub fn save_commands_to_file(commands: &[Command]) -> Result<(), Box<dyn std::error::Error>> {
-    // Create backup before saving
-    backup_commands_file()?;
-    
-    let path = get_commands_file_path();
+    // Delegate to storage layer which handles the actual file I/O
+    crate::core::data::save_commands_to_file(commands)?;
+    Ok(())
+}
+
+// Old implementation removed - now delegated to storage layer
+fn _old_save_implementation_removed(commands: &[Command]) -> Result<(), Box<dyn std::error::Error>> {
+    let path = crate::core::data::get_commands_file_path();
     
     // Ensure the directory exists
     if let Some(parent) = path.parent() {

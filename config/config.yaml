@@ -32,6 +32,7 @@ popup_settings:
     - "**/Yore/**"                     # Exclude any path containing /Yore/ folder (historical files)
     - "**/*backups*/**"                # Exclude all backup directories and their contents
     - "~/ob/kmr/_temp_links/**"        # Exclude temporary symlink directory tree
+    - "~/ob/kmr/prj/binproj/Hook Anchor/code/config/commands.txt"
     - "~/ob/kmr/T/Career/NJ/AI Job Search/outputs/**"  # Exclude AI job search output directory tree
     - "**/_history/**"                 # Exclude all _history directories
     - "**/capture_*.xlsx"              # Exclude capture Excel files anywhere

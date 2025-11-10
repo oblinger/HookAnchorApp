@@ -139,7 +139,7 @@ pub(crate) fn start_server_via_terminal() -> Result<(), Box<dyn std::error::Erro
 }
 
 /// Kill existing command server if running
-pub(crate) fn kill_existing_server() -> Result<(), Box<dyn std::error::Error>> {
+pub fn kill_existing_server() -> Result<(), Box<dyn std::error::Error>> {
     let state = crate::core::data::get_state();
     if let Some(pid) = state.server_pid {
         if is_process_alive(pid) {

@@ -44,6 +44,8 @@ pub use data::{
     add_command, delete_command,
     // State management
     get_state, set_state,
+    // Data layer maintenance
+    clear_commands, reload_commands, backup_commands, restore_commands_from_file,
     // History tracking (read-only, for history_viewer binary)
     get_history_entries, HistoryEntry
     // NOTE: History writing is automatic inside set_commands/add_command/delete_command

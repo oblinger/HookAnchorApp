@@ -36,6 +36,11 @@ pub use self::execute::{
     run_command_server
 };
 
+// From execution_server_management module - server lifecycle
+pub use self::execution_server_management::{
+    kill_existing_server
+};
+
 // From execution_server module - UI interface
 // Note: execute_locally is currently not used outside this module
 // pub use self::execution_server::execute_locally;
