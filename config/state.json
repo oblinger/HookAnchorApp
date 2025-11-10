@@ -10,7 +10,7 @@
     ],
     "window_size": [
       1000.0,
-      1204.0
+      1232.0
     ],
     "patch_filter": "",
     "name_filter": "",
@@ -23,7 +23,7 @@
   "last_scan_time": null,
   "last_scan_checksum": null,
   "last_executed_command": "Hook Anchor Cfg File",
-  "server_pid": 89192,
+  "server_pid": 89802,
   "notion_last_scan": null,
   "anchor_name": "ww",
   "anchor_timestamp": 1762733602,
