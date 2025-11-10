@@ -31,8 +31,8 @@ popup_settings:
   skip_directory_patterns:             # Directory patterns to skip during scanning (glob patterns)
     - "/Yore/"                         # Exclude any path containing /Yore/ folder (historical files)
     - "*backups*"                      # Exclude all backup directories
-    - "*_temp_links*"                  # Exclude temporary symlink directories
-    - "outputs"                        # Exclude AI job search output directories
+    - "~/ob/kmr/_temp_links"           # Exclude temporary symlink directory
+    - "~/ob/kmr/T/Career/NJ/AI Job Search/outputs"  # Exclude AI job search output files
   listed_actions: >
     alias,app,console,doc,folder,markdown,text,tmux,
     1pass,contact,notion,obs_url,slack,
