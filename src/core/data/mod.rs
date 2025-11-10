@@ -81,6 +81,7 @@ pub use sys_data::{
 pub use storage::{
     is_duplicate_command,
     command_dedup_key,
+    build_command_map,
 };
 
 // Re-export history read function (via trampoline in sys_data)

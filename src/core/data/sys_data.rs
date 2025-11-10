@@ -332,18 +332,11 @@ pub fn set_commands(mut commands: Vec<Command>) -> Result<(), Box<dyn std::error
     let cached_commands = get_commands();
     crate::utils::log(&format!("⏱️ SET_COMMANDS: Get cached commands: {:?}", get_cached_start.elapsed()));
 
-    // Create lookup maps for efficient comparison
+    // Create lookup maps for efficient comparison using dedup keys
+    // This ensures we compare commands the same way the system deduplicates them
     let map_start = std::time::Instant::now();
-    use std::collections::HashMap;
-    let mut cached_map: HashMap<String, &Command> = HashMap::new();
-    for cmd in &cached_commands {
-        cached_map.insert(cmd.command.clone(), cmd);
-    }
-
-    let mut new_map: HashMap<String, &Command> = HashMap::new();
-    for cmd in &commands {
-        new_map.insert(cmd.command.clone(), cmd);
-    }
+    let cached_map = super::storage::build_command_map(&cached_commands);
+    let new_map = super::storage::build_command_map(&commands);
     crate::utils::log(&format!("⏱️ SET_COMMANDS: Create lookup maps: {:?}", map_start.elapsed()));
 
     // Track changes for logging
@@ -354,7 +347,8 @@ pub fn set_commands(mut commands: Vec<Command>) -> Result<(), Box<dyn std::error
     // Record all new and modified commands to history
     let history_record_start = std::time::Instant::now();
     for new_cmd in &commands {
-        if let Some(cached_cmd) = cached_map.get(&new_cmd.command) {
+        let new_key = super::storage::command_dedup_key(new_cmd);
+        if let Some(cached_cmd) = cached_map.get(&new_key) {
             // Command exists - check if it was modified
             if new_cmd.action != cached_cmd.action ||
                new_cmd.arg != cached_cmd.arg ||
@@ -387,7 +381,8 @@ pub fn set_commands(mut commands: Vec<Command>) -> Result<(), Box<dyn std::error
 
     // Find deleted commands and record them with special action
     for cached_cmd in &cached_commands {
-        if !new_map.contains_key(&cached_cmd.command) {
+        let cached_key = super::storage::command_dedup_key(cached_cmd);
+        if !new_map.contains_key(&cached_key) {
             // Command was deleted - create deletion entry
             let mut deleted_cmd = cached_cmd.clone();
             deleted_cmd.action = "$DELETED$".to_string();

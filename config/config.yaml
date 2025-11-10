@@ -30,6 +30,7 @@ popup_settings:
 
   skip_directory_patterns:             # Directory patterns to skip during scanning (glob patterns)
     - "/Yore/"                         # Exclude any path containing /Yore/ folder (historical files)
+    - "*backups*"                      # Exclude all backup directories
   listed_actions: >
     alias,app,console,doc,folder,markdown,text,tmux,
     1pass,contact,notion,obs_url,slack,
@@ -98,16 +99,106 @@ actions:
   # TEMPLATE ACTIONS - For creating new commands & files
   # =================================================================
 
+  ww_child:
+    description: "Creates a new ww subfolder with a YYYY prefix"
+    action_type: template
+    key: "Cmd+W"
+    name: "{{date.year}} {{input}}"
+    action: "markdown"
+    arg: "~/Work/{{date.year}} {{input}}/{{date.year}} {{input}}.md"
+    patch: "WW"
+    flags: "A"
+    edit: true
+    file: "~/Work/{{date.year}} {{input}}/{{date.year}} {{input}}.md"
+    file_rescan: true
+    contents: |
+      .[[{{date.year}}-{{date.month}} {{input}}]].
+      
+
+  prj_child:
+    description: "Creates a new Prj project with a YYYY prefix"
+    action_type: template
+    key: "Cmd+P"
+    name: "{{date.year}} {{input}}"
+    action: "markdown"
+    arg: "~/ob/kmr/prj/{{date.year}} {{input}}/{{date.year}} {{input}}.md"
+    patch: "Prj"
+    flags: "A"
+    edit: true
+    file: "~/ob/kmr/prj/{{date.year}} {{input}}/{{date.year}} {{input}}.md"
+    file_rescan: true
+    contents: |
+      .[[{{date.year}}-{{date.month}} {{input}}]].
+      
+
+  at_child:
+    description: "Creates a new contact's @ entry"
+    action_type: template
+    key: "Cmd+Shift+A"
+    name: "@{{input}}"
+    action: "markdown"
+    arg: "~/ob/kmr/At/@{{input}}.md"
+    patch: "At"
+    flags: "A"
+    edit: true
+    file_rescan: true
+    contents: |
+      =[[At]]  
+
+    
+  corp_child:
+    description: "Creates a new org @ entry"
+    action_type: template
+    key: "Cmd+O"
+    name: "@{{input}}"
+    action: "markdown"
+    arg: "~/ob/kmr/At/Org/@{{input}}.md"
+    patch: "Org"
+    flags: "A"
+    edit: true
+    file: "~/ob/kmr/At/Org/@{{input}}.md"
+    file_rescan: true
+    contents: |
+      =[[Org]]   
+
+    
+  doc_child:
+    description: "Creates a new DOC documentation file"
+    action_type: template
+    key: "Cmd+D"
+    name: "Doc{{input}}"
+    action: "doc"
+    arg: "~/ob/kmr/T/DOC/Doc{{input}}.md"
+    patch: "DOC"
+    flags: ""
+    edit: true
+    file_rescan: true
+    file: "~/ob/kmr/T/DOC/Doc{{input}}.md"
+    contents: |
+      #org   
+      
+
+
+  # =================================================================
+  # TEMPLATE ACTIONS - For creating new commands & files
+  # =================================================================
+
+  kb_create_child:
+    description: "Create child command using anchor's template"
+    action_type: popup
+    key: "+"
+    popup_action: create_child
+    close_popup: false
+
   grab:
     description: "Capture window/app after 3 second countdown"
     action_type: template
-    key: "+"
+    key: "*"
     grab: 5
     name: "{{input}}"
     action: "{{grabbed.action}}"
     arg: "{{grabbed.arg}}"
     edit: true
-    
 
   edit_selection:
     description: "Edit currently selected command"
@@ -120,7 +211,6 @@ actions:
     flags: "{{selected.flags}}"
     edit: true
     use_existing: true
-    
 
   edit_input:
     description: "Edit command from current input"
@@ -175,22 +265,6 @@ actions:
     validate_last_executed_folder: true
        
 
-  ww:
-    description: "Creates a new ww subfolder with a YYYY prefix"
-    action_type: template
-    key: "Cmd+W"
-    name: "{{date.year}} {{input}}"
-    action: "markdown"
-    arg: "~/Work/{{date.year}} {{input}}/{{date.year}} {{input}}.md"
-    patch: "WW"
-    flags: "A"
-    edit: true
-    file: "~/Work/{{date.year}} {{input}}/{{date.year}} {{input}}.md"
-    file_rescan: true
-    contents: |
-      .[[{{date.year}}-{{date.month}} {{input}}]].
-      
-
   year:
     description: "Creates an anchor and subfolder with a YYYY-MM-DD prefix"
     action_type: template
@@ -206,107 +280,11 @@ actions:
     contents: ""
              
 
-  prj:
-    description: "Creates a new Prj project with a YYYY prefix"
-    action_type: template
-    key: "Cmd+P"
-    name: "{{date.year}} {{input}}"
-    action: "markdown"
-    arg: "~/ob/kmr/prj/{{date.year}} {{input}}/{{date.year}} {{input}}.md"
-    patch: "Prj"
-    flags: "A"
-    edit: true
-    file: "~/ob/kmr/prj/{{date.year}} {{input}}/{{date.year}} {{input}}.md"
-    file_rescan: true
-    contents: |
-      .[[{{date.year}}-{{date.month}} {{input}}]].
-      
-
-  at:
-    description: "Creates a new contact's @ entry"
-    action_type: template
-    key: "Cmd+Shift+A"
-    name: "@{{input}}"
-    action: "markdown"
-    arg: "~/ob/kmr/At/@{{input}}.md"
-    patch: "At"
-    flags: "A"
-    edit: true
-    file_rescan: true
-    contents: |
-      =[[At]]   
-    
-
-  org:
-    description: "Creates a new org @ entry"
-    action_type: template
-    key: "Cmd+O"
-    name: "@{{input}}"
-    action: "markdown"
-    arg: "~/ob/kmr/At/Org/@{{input}}.md"
-    patch: "Org"
-    flags: "A"
-    edit: true
-    file: "~/ob/kmr/At/Org/@{{input}}.md"
-    file_rescan: true
-    contents: |
-      =[[Org]]   
-    
-  doc_page:
-    description: "Creates a new DOC documentation file"
-    action_type: template
-    key: "Cmd+D"
-    name: "Doc{{input}}"
-    action: "doc"
-    arg: "~/ob/kmr/T/DOC/Doc{{input}}.md"
-    patch: "DOC"
-    flags: ""
-    edit: true
-    file_rescan: true
-    file: "~/ob/kmr/T/DOC/Doc{{input}}.md"
-    contents: |
-      #org   
-      
-
 
   # =================================================================
   # POPUP KEYBOARD ACTIONS - Keyboard shortcuts for popup control
   # =================================================================
    
-  kb_force_rebuild:
-    description: "Force rebuild: restart server + rescan"
-    action_type: popup
-    key: "Cmd+B"
-    popup_action: force_rebuild
-    close_popup: false
-
-  clear_log:
-    description: "Clear anchor.log file for debugging"
-    action_type: clear_log
-    key: "Cmd+E"
-    name: "Clear Log"
-
-  kb_toggle_show_files:
-    description: "Toggle showing files in prefix menus"
-    action_type: popup
-    key: "Cmd+F"
-    popup_action: toggle_show_files
-    close_popup: false
-
-  kb_activate_tmux:
-    description: "Activate TMUX session for selected folder/anchor"
-    action_type: popup
-    key: "Cmd+T"
-    popup_action: tmux
-    close_popup: true
-
-  kb_create_child:
-    description: "Create child command using anchor's template"
-    action_type: popup
-    key: "*"
-    popup_action: create_child
-    close_popup: false
-
   kb_show_history_viewer:
     description: "Show history viewer"
     action_type: popup
@@ -314,35 +292,26 @@ actions:
     popup_action: show_history_viewer
     close_popup: true
 
-  # JavaScript TMUX activation - Alternative js version for testing
-  activate_tmux_js:
-    description: "Activate TMUX session for selected anchor (JavaScript version)"
-    action_type: js
-    function: action_activate_tmux
-
-  # Direct TMUX activation - Same as Cmd+T keyboard shortcut
-  tmux:
-    description: "Activate TMUX session for selected folder/anchor"
+  kb_navigate_up_hierarchy:
+    description: "Navigate up to parent patch in hierarchy"
     action_type: popup
-    popup_action: tmux
+    key: "\\"
+    popup_action: navigate_up_hierarchy
+    close_popup: false
 
-  # Test JavaScript error reporting
-  test_js_error:
-    description: "Test JavaScript error reporting"
-    action_type: test_error
-
-  # Test available JavaScript builtins
-  test_builtins:
-    description: "Test available JavaScript builtins"
-    action_type: test_builtins
- 
-  show_contact:
-    description: "Show contact for selected command (strips @ prefix)"
+  kb_navigate_up_hierarchy_bracket:
+    description: "Navigate up to parent patch in hierarchy (left bracket)"
     action_type: popup
-    key: "Cmd+Shift+2"
-    popup_action: show_contact
-    search: "{{command}}"
-    close_popup: true
+    key: "["
+    popup_action: navigate_up_hierarchy
+    close_popup: false
+
+  kb_navigate_down_hierarchy:
+    description: "Navigate down into selected anchor submenu"
+    action_type: popup
+    key: "]"
+    popup_action: navigate_down_hierarchy
+    close_popup: false
 
   kb_show_folder:
     description: "Launch first folder matching search"
@@ -387,6 +356,7 @@ actions:
     dx: 0
     dy: 1
     close_popup: false
+
   kb_navigate_up:
     description: "Move selection up"
     action_type: popup
@@ -413,27 +383,57 @@ actions:
     dx: 1
     dy: 0
     close_popup: false
-       
-  kb_navigate_up_hierarchy:
-    description: "Navigate up to parent patch in hierarchy"
+
+  kb_force_rebuild:
+    description: "Force rebuild: restart server + rescan"
     action_type: popup
-    key: "\\"
-    popup_action: navigate_up_hierarchy
+    key: "Cmd+B"
+    popup_action: force_rebuild
     close_popup: false
 
-  kb_navigate_up_hierarchy_bracket:
-    description: "Navigate up to parent patch in hierarchy (left bracket)"
+  clear_log:
+    description: "Clear anchor.log file for debugging"
+    action_type: clear_log
+    key: "Cmd+E"
+    name: "Clear Log"
+
+  kb_toggle_show_files:
+    description: "Toggle showing files in prefix menus"
     action_type: popup
-    key: "["
-    popup_action: navigate_up_hierarchy
+    key: "Cmd+F"
+    popup_action: toggle_show_files
     close_popup: false
 
-  kb_navigate_down_hierarchy:
-    description: "Navigate down into selected anchor submenu"
+  tmux:
+    description: "Activate TMUX session for selected folder/anchor"
     action_type: popup
-    key: "]"
-    popup_action: navigate_down_hierarchy
-    close_popup: false
+    key: "Cmd+T"
+    popup_action: tmux
+    close_popup: true
+
+  # JavaScript TMUX activation - Alternative js version for testing
+  activate_tmux_js:
+    description: "Activate TMUX session for selected anchor (JavaScript version)"
+    action_type: js
+    function: action_activate_tmux
+
+  # Test JavaScript error reporting
+  test_js_error:
+    description: "Test JavaScript error reporting"
+    action_type: test_error
+
+  # Test available JavaScript builtins
+  test_builtins:
+    description: "Test available JavaScript builtins"
+    action_type: test_builtins
+ 
+  show_contact:
+    description: "Show contact for selected command (strips @ prefix)"
+    action_type: popup
+    key: "Cmd+Shift+2"
+    popup_action: show_contact
+    search: "{{command}}"
+    close_popup: true
 
     
 

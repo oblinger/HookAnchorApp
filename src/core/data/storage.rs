@@ -297,6 +297,18 @@ pub fn command_dedup_key(cmd: &Command) -> String {
     format!("{}:{}:{}", cmd.command, cmd.action, cmd.arg)
 }
 
+/// Builds a HashMap for efficient command lookup using dedup keys
+/// This ensures consistent comparison logic across the codebase
+///
+/// Returns a HashMap where:
+/// - Key: deduplication key (command:action:arg)
+/// - Value: reference to the Command
+pub fn build_command_map<'a>(commands: &'a [Command]) -> std::collections::HashMap<String, &'a Command> {
+    commands.iter()
+        .map(|cmd| (command_dedup_key(cmd), cmd))
+        .collect()
+}
+
 /// Deduplicates commands by keeping the best version of each command
 /// Commands are considered duplicates if they have the same name, action, AND arg
 /// This allows multiple commands with the same name pointing to different files

@@ -895,6 +895,11 @@ fn discover_files_recursive(
                 if name_str.starts_with('.') {
                     continue;
                 }
+
+                // Skip directories based on config patterns
+                if path.is_dir() && should_skip_directory(name_str, config) {
+                    continue;
+                }
             }
         }
 
@@ -1806,7 +1811,7 @@ fn should_skip_directory(dir_name: &str, config: &Config) -> bool {
         Some(patterns) => patterns,
         None => return false,
     };
-    
+
     // Check each pattern
     for pattern in skip_patterns {
         // Simple glob pattern matching
@@ -1814,11 +1819,12 @@ fn should_skip_directory(dir_name: &str, config: &Config) -> bool {
             // Convert glob pattern to simple regex-like matching
             let pattern_lower = pattern.to_lowercase();
             let dir_lower = dir_name.to_lowercase();
-            
+
             // Handle patterns like "*trash*"
             if pattern_lower.starts_with('*') && pattern_lower.ends_with('*') {
                 let inner = &pattern_lower[1..pattern_lower.len()-1];
                 if dir_lower.contains(inner) {
+                    crate::utils::detailed_log("SKIP_DIR", &format!("Skipping directory '{}' matching pattern '{}'", dir_name, pattern));
                     return true;
                 }
             }
