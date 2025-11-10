@@ -300,6 +300,13 @@ actions:
     popup_action: tmux
     close_popup: true
 
+  kb_create_child:
+    description: "Create child command using anchor's template"
+    action_type: popup
+    key: "*"
+    popup_action: create_child
+    close_popup: false
+
   kb_show_history_viewer:
     description: "Show history viewer"
     action_type: popup

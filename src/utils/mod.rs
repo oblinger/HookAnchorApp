@@ -26,6 +26,7 @@ pub(crate) mod build_verification;
 // OLD DIALOG SYSTEM - TO BE REMOVED
 // pub(crate) mod dialog_old;
 pub(crate) mod dialog2;
+pub(crate) mod params;
 
 // ============================================================================
 // PUBLIC API - All external access goes through these re-exports
@@ -85,4 +86,10 @@ pub use dialog2::{
     info,                       // Non-blocking info dialog
     dialog as dialog2,
     blocking_dialog
+};
+
+// Parameter parsing utilities
+pub use params::{
+    parse_kv_pairs, format_kv_pairs,
+    PARAM_TEMPLATE, PARAM_PRIORITY, PARAM_FLAGS, PARAM_ARG
 };

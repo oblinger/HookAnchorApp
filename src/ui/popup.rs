@@ -578,7 +578,11 @@ impl PopupInterface for AnchorSelector {
     fn activate_tmux(&mut self) {
         self.activate_tmux();
     }
-    
+
+    fn create_child(&mut self) {
+        self.create_child();
+    }
+
     fn perform_exit_scanner_check(&mut self) {
         self.perform_exit_scanner_check();
     }
@@ -3536,6 +3540,88 @@ impl AnchorSelector {
             }
 
         }
+    }
+
+    /// Create a child command using the active anchor's template parameter
+    fn create_child(&mut self) {
+        use crate::utils;
+
+        // Get the input text (will become the child name)
+        let child_name = self.popup_state.search_text.clone();
+        if child_name.trim().is_empty() {
+            utils::log("CREATE_CHILD: No input text for child name");
+            return;
+        }
+
+        // Get the active anchor from state
+        let state = crate::core::data::get_state();
+        let anchor_name = match &state.anchor_name {
+            Some(name) => name.clone(),
+            None => {
+                utils::log("CREATE_CHILD: No active anchor set");
+                crate::utils::error("No active anchor set. Execute an anchor command first.");
+                return;
+            }
+        };
+
+        utils::log(&format!("CREATE_CHILD: Child name='{}', Anchor='{}'", child_name, anchor_name));
+
+        // Look up the anchor command to get its template parameter
+        let all_commands = self.popup_state.get_commands();
+        let anchor_cmd = all_commands.iter().find(|cmd| cmd.command == anchor_name);
+
+        let anchor_cmd = match anchor_cmd {
+            Some(cmd) => cmd,
+            None => {
+                utils::log(&format!("CREATE_CHILD: Anchor command '{}' not found", anchor_name));
+                crate::utils::error(&format!("Anchor command '{}' not found", anchor_name));
+                return;
+            }
+        };
+
+        // Get the template parameter from other_params
+        let template_name = match &anchor_cmd.other_params {
+            Some(params) => {
+                match params.get(crate::utils::PARAM_TEMPLATE) {
+                    Some(t) => {
+                        utils::log(&format!("CREATE_CHILD: Found template parameter: '{}'", t));
+                        t.clone()
+                    }
+                    None => {
+                        // No template specified, error out
+                        utils::log(&format!("CREATE_CHILD: Anchor '{}' has no template parameter", anchor_name));
+                        crate::utils::error(&format!(
+                            "Anchor '{}' has no template parameter.\n\nAdd a template parameter to the anchor command using the command editor:\nParameters: template:=sub_markdown\n\nOr specify which template to use for creating children.",
+                            anchor_name
+                        ));
+                        return;
+                    }
+                }
+            }
+            None => {
+                // No parameters at all, error out
+                utils::log(&format!("CREATE_CHILD: Anchor '{}' has no parameters", anchor_name));
+                crate::utils::error(&format!(
+                    "Anchor '{}' has no parameters.\n\nAdd a template parameter to the anchor command using the command editor:\nParameters: template:=sub_markdown\n\nOr specify which template to use for creating children.",
+                    anchor_name
+                ));
+                return;
+            }
+        };
+
+        utils::log(&format!("CREATE_CHILD: Using template '{}' to create child '{}'", template_name, child_name));
+
+        // Temporarily replace search text with child name so template expansion uses it
+        let original_search = self.popup_state.search_text.clone();
+        self.popup_state.search_text = child_name.clone();
+        self.popup_state.update_search(child_name.clone());
+
+        // Use the same code path as keyboard-triggered templates
+        self.handle_template_create_named_impl(&template_name);
+
+        // Restore original search text
+        self.popup_state.search_text = original_search.clone();
+        self.popup_state.update_search(original_search);
     }
 }
 

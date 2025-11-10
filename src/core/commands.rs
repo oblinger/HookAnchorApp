@@ -1381,87 +1381,9 @@ pub fn load_commands_for_inference() -> (crate::core::data::config::Config, Vec<
 // =============================================================================
 // KEY-VALUE PARSER HELPERS (for new format with F:=, A:=, etc.)
 // =============================================================================
-
-/// Parse key-value pairs from a string using := separator
-/// Handles backslash escaping for literal := in values
-/// Returns HashMap of key->value pairs
-///
-/// LEGACY: This will be removed after migration period
-fn parse_kv_pairs(input: &str) -> HashMap<String, String> {
-    let mut result = HashMap::new();
-    let mut current_key = String::new();
-    let mut current_value = String::new();
-    let mut chars = input.chars().peekable();
-    let mut in_value = false;
-
-    while let Some(ch) = chars.next() {
-        if !in_value {
-            // Looking for key
-            if ch == ':' && chars.peek() == Some(&'=') {
-                chars.next(); // consume '='
-                in_value = true;
-            } else if !ch.is_whitespace() {
-                current_key.push(ch);
-            }
-        } else {
-            // Looking for value
-            if ch == '\\' && chars.peek() == Some(&':') {
-                // Escaped := - add literal : to value
-                current_value.push(':');
-                chars.next(); // consume ':'
-                if chars.peek() == Some(&'=') {
-                    current_value.push('=');
-                    chars.next(); // consume '='
-                }
-            } else if ch == ':' && chars.peek() == Some(&'=') {
-                // Unescaped := means start of next key
-                // Scan backwards in current_value to find last space
-                // Everything before last space is the actual value
-                // Everything after last space is the next key
-
-                let value_str = current_value.as_str();
-                if let Some(last_space_pos) = value_str.rfind(' ') {
-                    // Split at last space
-                    let actual_value = &value_str[..last_space_pos];
-                    let next_key = &value_str[last_space_pos + 1..];
-
-                    // Save current pair with corrected value
-                    if !current_key.is_empty() {
-                        result.insert(current_key.trim().to_string(), actual_value.trim().to_string());
-                    }
-
-                    // Set up for next key-value pair
-                    current_key = next_key.to_string();
-                    current_value.clear();
-                    chars.next(); // consume '='
-                    // Stay in value mode (in_value remains true)
-                } else {
-                    // No space found - malformed input, treat whole thing as value
-                    crate::utils::detailed_log("PARSE_KV", &format!(
-                        "Warning: No space before next key in KV pairs. Key='{}', Value='{}'",
-                        current_key, current_value
-                    ));
-                    if !current_key.is_empty() {
-                        result.insert(current_key.trim().to_string(), current_value.trim().to_string());
-                    }
-                    current_key.clear();
-                    current_value.clear();
-                    chars.next(); // consume '='
-                    in_value = false;
-                }
-            } else {
-                current_value.push(ch);
-            }
-        }
-    }
-
-    // Save last pair
-    if !current_key.is_empty() && in_value {
-        result.insert(current_key.trim().to_string(), current_value.trim().to_string());
-    }
-
-    result
-}
+//
+// NOTE: parse_kv_pairs() has been moved to crate::utils::parse_kv_pairs()
+// Use that function instead of duplicating the logic here.
 
 /// Parse command line in new KV format: PATCH! NAME:ACTION; F:=flags A:=arg [KEY:=VALUE ...]
 fn parse_command_line_v2(line: &str) -> Result<Command, String> {
@@ -1490,7 +1412,7 @@ fn parse_command_line_v2(line: &str) -> Result<Command, String> {
     let kv_part = &kv_part[1..]; // Skip the ';'
 
     // Step 3: Parse KV pairs
-    let kv_map = parse_kv_pairs(kv_part);
+    let kv_map = crate::utils::parse_kv_pairs(kv_part);
 
     // Step 4: Extract standard fields and other params
     // Sanitize flags: remove commas, spaces, and any other invalid characters

@@ -7,28 +7,29 @@ use crate::core::template_creation::{Template, TemplateContext};
 
 pub struct CommandEditor {
     pub visible: bool,
-    
+
     // Editable fields
     pub command: String,
     pub action: String,
     pub argument: String,
     pub patch: String,
     pub flags: String,
+    pub parameters: String,  // KEY:=VALUE pairs like "template:=mytemplate priority:=high"
     pub priority: bool,
     pub is_anchor: bool,
-    
+
     // Track the original command for reference
     pub original_command: Option<Command>,
     pub original_command_name: String,
-    
+
     // Track focus state
     focus_requested: bool,
-    
+
     // Commands list for checking existence
     commands: Vec<Command>,
-    
+
     // Track delete button visibility to detect changes
-    
+
     // Store template for post-save processing
     pub(crate) pending_template: Option<Template>,
     pub(crate) template_context: Option<TemplateContext>,
@@ -43,6 +44,7 @@ impl CommandEditor {
             argument: String::new(),
             patch: String::new(),
             flags: String::new(),
+            parameters: String::new(),
             priority: false,
             is_anchor: false,
             original_command: None,
@@ -95,6 +97,13 @@ impl CommandEditor {
             temp_cmd.remove_flag(FLAG_ANCHOR);
             self.flags = temp_cmd.flags.clone();
 
+            // Load parameters from other_params HashMap
+            self.parameters = if let Some(ref params) = cmd.other_params {
+                crate::utils::format_kv_pairs(params)
+            } else {
+                String::new()
+            };
+
             self.priority = false;
             self.original_command_name = cmd.command.clone();
             self.original_command = Some(cmd.clone());
@@ -106,6 +115,7 @@ impl CommandEditor {
             self.argument = String::new();
             self.patch = String::new();
             self.flags = String::new();
+            self.parameters = String::new();
             self.priority = false;
             self.is_anchor = false;
             self.original_command_name = String::new();
@@ -135,6 +145,13 @@ impl CommandEditor {
         temp_cmd.remove_flag(FLAG_ANCHOR);
         self.flags = temp_cmd.flags.clone();
 
+        // Load parameters from other_params HashMap
+        self.parameters = if let Some(ref params) = template_command.other_params {
+            crate::utils::format_kv_pairs(params)
+        } else {
+            String::new()
+        };
+
         self.priority = false;
 
         // IMPORTANT: Mark as new command by leaving original_command_name empty
@@ -159,6 +176,13 @@ impl CommandEditor {
         let mut temp_cmd = command.clone();
         temp_cmd.remove_flag(FLAG_ANCHOR);
         self.flags = temp_cmd.flags.clone();
+
+        // Load parameters from other_params HashMap
+        self.parameters = if let Some(ref params) = command.other_params {
+            crate::utils::format_kv_pairs(params)
+        } else {
+            String::new()
+        };
 
         self.priority = false; // Default to false
 
@@ -198,7 +222,7 @@ impl CommandEditor {
         egui::Window::new("Command Editor")
             .resizable(false)
             .collapsible(false)
-            .fixed_size([window_width, 260.0])
+            .fixed_size([window_width, 290.0])  // Increased height for Parameters row
             .anchor(egui::Align2::CENTER_CENTER, [0.0, 0.0])
             .show(ctx, |ui| {
                 
@@ -296,6 +320,15 @@ impl CommandEditor {
                             }
                             ui.end_row();
 
+                            // Parameters row
+                            ui.label("Parameters:");
+                            let params_response = ui.add_sized([500.0, 20.0], egui::TextEdit::singleline(&mut self.parameters)
+                                .hint_text("template:=mytemplate priority:=high"));
+                            if params_response.lost_focus() && ctx.input(|i| i.key_pressed(egui::Key::Enter)) {
+                                enter_pressed = true;
+                            }
+                            ui.end_row();
+
                             // Anchor row
                             ui.label("Anchor:");
                             ui.checkbox(&mut self.is_anchor, "");
@@ -320,6 +353,18 @@ impl CommandEditor {
                                 ui.add_space(20.0);
                                 
                                 if ui.button("Save").clicked() {
+                                    // Parse parameters from the text field
+                                    let parsed_params = if !self.parameters.trim().is_empty() {
+                                        let params_map = crate::utils::parse_kv_pairs(&self.parameters);
+                                        if params_map.is_empty() {
+                                            None
+                                        } else {
+                                            Some(params_map)
+                                        }
+                                    } else {
+                                        None
+                                    };
+
                                     // Create the new command
                                     let mut new_command = Command {
                                         patch: self.patch.clone(),
@@ -327,9 +372,9 @@ impl CommandEditor {
                                         action: self.action.clone(),
                                         arg: self.argument.clone(),
                                         flags: self.flags.clone(),
-        other_params: None,
-        last_update: 0,
-        file_size: None,
+                                        other_params: parsed_params,
+                                        last_update: 0,
+                                        file_size: None,
                                     };
 
                                     // Apply anchor flag based on toggle state
@@ -358,6 +403,18 @@ impl CommandEditor {
         
         // Handle Enter key press from any text field or global context
         if enter_pressed && result == CommandEditorResult::None {
+            // Parse parameters from the text field
+            let parsed_params = if !self.parameters.trim().is_empty() {
+                let params_map = crate::utils::parse_kv_pairs(&self.parameters);
+                if params_map.is_empty() {
+                    None
+                } else {
+                    Some(params_map)
+                }
+            } else {
+                None
+            };
+
             // Create the new command
             let mut new_command = Command {
                 patch: self.patch.clone(),
@@ -365,9 +422,9 @@ impl CommandEditor {
                 action: self.action.clone(),
                 arg: self.argument.clone(),
                 flags: self.flags.clone(),
-        other_params: None,
-        last_update: 0,
-        file_size: None,
+                other_params: parsed_params,
+                last_update: 0,
+                file_size: None,
             };
 
             // Apply anchor flag based on toggle state
@@ -391,6 +448,18 @@ impl CommandEditor {
     }
     
     pub fn prepare_save_command(&self) -> (Option<String>, Command) {
+        // Parse parameters from the text field
+        let parsed_params = if !self.parameters.trim().is_empty() {
+            let params_map = crate::utils::parse_kv_pairs(&self.parameters);
+            if params_map.is_empty() {
+                None
+            } else {
+                Some(params_map)
+            }
+        } else {
+            None
+        };
+
         // Return the command to delete (if any) and the new command to add
         let mut new_command = Command {
             patch: self.patch.clone(),
@@ -398,9 +467,9 @@ impl CommandEditor {
             action: self.action.clone(),
             arg: self.argument.clone(),
             flags: self.flags.clone(),
-        other_params: None,
-        last_update: 0,
-        file_size: None,
+            other_params: parsed_params,
+            last_update: 0,
+            file_size: None,
         };
 
         // Apply anchor flag based on checkbox state
