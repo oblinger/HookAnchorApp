@@ -28,11 +28,13 @@ popup_settings:
   doc_file_extensions:    "pdf,doc,docx,xls,xlsx,ppt,pptx,txt,rtf,pages,numbers,csv,html,htm" # File extensions to auto-create DOC commands for
   display_file_extensions: "pdf,doc,docx,xls,xlsx,ppt,pptx,txt,rtf,pages,numbers,csv,html,htm,md" # File extensions to display in prefix menu file lists
 
-  skip_directory_patterns:             # Directory patterns to skip during scanning (glob patterns)
+  skip_patterns:                       # Patterns to skip during scanning (works for both files and directories)
     - "/Yore/"                         # Exclude any path containing /Yore/ folder (historical files)
-    - "*backups*"                      # Exclude all backup directories
-    - "~/ob/kmr/_temp_links"           # Exclude temporary symlink directory
-    - "~/ob/kmr/T/Career/NJ/AI Job Search/outputs"  # Exclude AI job search output files
+    - "*backups*"                      # Exclude all backup directories (matches directory names)
+    - "~/ob/kmr/_temp_links"           # Exclude temporary symlink directory tree
+    - "~/ob/kmr/T/Career/NJ/AI Job Search/outputs"  # Exclude AI job search output directory tree
+    - "capture_*.xlsx"                 # Exclude capture Excel files (file pattern example)
+    - "~$*.xlsx"                       # Exclude Excel temporary files
   listed_actions: >
     alias,app,console,doc,folder,markdown,text,tmux,
     1pass,contact,notion,obs_url,slack,

@@ -896,8 +896,8 @@ fn discover_files_recursive(
                     continue;
                 }
 
-                // Skip directories based on config patterns
-                if path.is_dir() && should_skip_directory(&path, config) {
+                // Skip paths based on config patterns (works for both directories and files)
+                if should_skip_path(&path, config) {
                     continue;
                 }
             }
@@ -1289,8 +1289,8 @@ fn scan_directory_pass(dir: &Path, vault_root: &Path, commands: &mut Vec<Command
                         continue;
                     }
 
-                    // Skip directories based on config patterns
-                    if path.is_dir() && should_skip_directory(&path, config) {
+                    // Skip paths based on config patterns (works for both directories and files)
+                    if should_skip_path(&path, config) {
                         continue;
                     }
                 } else {
@@ -1489,8 +1489,8 @@ fn scan_directory_with_root_protected(dir: &Path, vault_root: &Path, commands: &
                     if name_str.starts_with('.') {
                         continue;
                     }
-                    // Skip directories based on config patterns
-                    if path.is_dir() && should_skip_directory(&path, config) {
+                    // Skip paths based on config patterns (works for both directories and files)
+                    if should_skip_path(&path, config) {
                         continue;
                     }
                 }
@@ -1804,21 +1804,26 @@ fn process_doc_file(path: &Path, existing_commands: &HashSet<String>, folder_map
 }
 
 
-/// Check if a directory should be skipped based on config patterns
-fn should_skip_directory(dir_path: &Path, config: &Config) -> bool {
-    // Get skip patterns from config
-    let skip_patterns = match &config.popup_settings.skip_directory_patterns {
+/// Check if a path (file or directory) should be skipped based on config patterns
+/// If a directory matches, the entire subtree should be skipped
+/// If a file matches, just that file should be skipped
+fn should_skip_path(path: &Path, config: &Config) -> bool {
+    // Get skip patterns from config (try new field first, fall back to old field for compatibility)
+    let skip_patterns = match &config.popup_settings.skip_patterns {
         Some(patterns) => patterns,
-        None => return false,
+        None => match &config.popup_settings.skip_directory_patterns {
+            Some(patterns) => patterns,
+            None => return false,
+        }
     };
 
-    // Get directory name for name-only matching
-    let dir_name = dir_path.file_name()
+    // Get file/directory name for name-only matching
+    let name = path.file_name()
         .and_then(|n| n.to_str())
         .unwrap_or("");
 
     // Get full path as string for full-path matching
-    let full_path = dir_path.to_string_lossy().to_string();
+    let full_path = path.to_string_lossy().to_string();
 
     // Check each pattern
     for pattern in skip_patterns {
@@ -1833,36 +1838,47 @@ fn should_skip_directory(dir_path: &Path, config: &Config) -> bool {
                 return true;
             }
         } else if pattern.contains('*') {
-            // Glob pattern matching (against directory name only)
+            // Glob pattern matching (can match against name or full path)
             let pattern_lower = pattern.to_lowercase();
-            let dir_lower = dir_name.to_lowercase();
+            let name_lower = name.to_lowercase();
+            let path_lower = full_path.to_lowercase();
 
-            // Handle patterns like "*trash*"
+            // Handle patterns like "*trash*" - matches name
             if pattern_lower.starts_with('*') && pattern_lower.ends_with('*') {
                 let inner = &pattern_lower[1..pattern_lower.len()-1];
-                if dir_lower.contains(inner) {
-                    crate::utils::detailed_log("SKIP_DIR", &format!("Skipping directory '{}' matching pattern '{}'", dir_name, pattern));
+                if name_lower.contains(inner) {
+                    crate::utils::detailed_log("SKIP_PATH", &format!("Skipping '{}' matching pattern '{}'", full_path, pattern));
                     return true;
                 }
             }
-            // Handle patterns like "*.Trash*"
-            else if pattern_lower.contains("*.") {
-                // For now, treat as contains match after removing asterisks
-                let cleaned = pattern_lower.replace('*', "");
-                if dir_lower.contains(&cleaned) {
+            // Handle patterns like "*.xlsx" - matches filename
+            else if pattern_lower.starts_with("*.") {
+                let ext_pattern = &pattern_lower[1..]; // Remove leading *
+                if name_lower.ends_with(ext_pattern) {
+                    crate::utils::detailed_log("SKIP_PATH", &format!("Skipping '{}' matching pattern '{}'", full_path, pattern));
                     return true;
                 }
             }
-            // Handle other patterns
+            // Handle patterns like "capture_*" - matches filename prefix
+            else if pattern_lower.ends_with('*') {
+                let prefix = &pattern_lower[..pattern_lower.len()-1];
+                if name_lower.starts_with(prefix) {
+                    crate::utils::detailed_log("SKIP_PATH", &format!("Skipping '{}' matching pattern '{}'", full_path, pattern));
+                    return true;
+                }
+            }
+            // Handle other patterns with * - treat as contains in name
             else {
                 let cleaned = pattern_lower.replace('*', "");
-                if dir_lower.contains(&cleaned) {
+                if name_lower.contains(&cleaned) || path_lower.contains(&cleaned) {
+                    crate::utils::detailed_log("SKIP_PATH", &format!("Skipping '{}' matching pattern '{}'", full_path, pattern));
                     return true;
                 }
             }
         } else {
-            // Exact directory name match (case-insensitive)
-            if dir_name.eq_ignore_ascii_case(pattern) {
+            // Exact name match (case-insensitive)
+            if name.eq_ignore_ascii_case(pattern) {
+                crate::utils::detailed_log("SKIP_PATH", &format!("Skipping '{}' matching exact name '{}'", full_path, pattern));
                 return true;
             }
         }

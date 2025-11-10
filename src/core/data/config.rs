@@ -71,7 +71,11 @@ pub struct PopupSettings {
     pub doc_file_extensions: Option<String>,
     /// Comma-separated file extensions to display in prefix menu file lists (defaults to doc_file_extensions if not set)
     pub display_file_extensions: Option<String>,
-    /// Directory patterns to skip during scanning (glob patterns)
+    /// Patterns to skip during scanning - works for both files and directories (glob patterns)
+    /// If a directory matches, the entire subtree is skipped
+    /// If a file matches, just that file is skipped
+    pub skip_patterns: Option<Vec<String>>,
+    /// DEPRECATED: Use skip_patterns instead (maintained for backward compatibility)
     pub skip_directory_patterns: Option<Vec<String>>,
     /// When renaming a command, also rename the associated document file if the names match (default: false)
     pub rename_doc: Option<bool>,
@@ -228,7 +232,7 @@ impl Default for PopupSettings {
             file_roots: None,
             doc_file_extensions: Some("pdf,doc,docx,xls,xlsx,ppt,pptx,txt,rtf,pages,numbers,key".to_string()),
             display_file_extensions: None,  // Defaults to doc_file_extensions
-            skip_directory_patterns: Some(vec![
+            skip_patterns: Some(vec![
                 "node_modules".to_string(),
                 "target".to_string(),
                 "__pycache__".to_string(),
@@ -239,6 +243,7 @@ impl Default for PopupSettings {
                 "*.Trash*".to_string(),
                 "*[Rr]ecycle*".to_string(),
             ]),
+            skip_directory_patterns: None,  // Deprecated, use skip_patterns instead
             rename_doc: Some(false),
             rename_folder: Some(false),
             rename_patch: Some(false),
