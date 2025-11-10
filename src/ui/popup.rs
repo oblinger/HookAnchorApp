@@ -400,10 +400,12 @@ impl AnchorSelector {
     fn perform_exit_scanner_check(&mut self) {
         if self.scanner_check_pending {
             self.scanner_check_pending = false;
-            let updated_commands = crate::systems::scan_check(self.popup_state.get_commands().to_vec());
-            if updated_commands.len() != self.popup_state.get_commands().len() {
-                // Commands have changed, update the popup state for next time
-                self.popup_state.set_commands(updated_commands);
+            let current_commands = crate::core::data::get_commands();
+            let updated_commands = crate::systems::scan_check(current_commands.clone());
+            if updated_commands.len() != current_commands.len() {
+                // Commands have changed, save them back to singleton
+                // No need to update popup_state - it fetches fresh from singleton
+                let _ = crate::core::data::set_commands(updated_commands);
             }
         }
     }
@@ -740,7 +742,7 @@ impl AnchorSelector {
 
         // Save last anchor for commands that resolve to anchors
         let all_commands = self.commands();
-        let resolved_command = input.resolve_alias(all_commands);
+        let resolved_command = input.resolve_alias(&all_commands);
         detailed_log("LAST_ANCHOR", &format!("Input: '{}' (action: {}), Resolved to: '{}' (action: {})",
             input.command, input.action, resolved_command.command, resolved_command.action));
 
@@ -1425,11 +1427,12 @@ impl AnchorSelector {
                                     match crate::core::add_command(new_command) {
                                         Ok(_) => {
                                             // Command already saved by add_command (via sys_data::add_command)
-                                            // which updates singleton directly
+                                            // Commands will be fetched fresh from singleton by update_search()
+
                                             // Clear search and update display
                                             self.popup_state.search_text.clear();
                                             self.popup_state.update_search(String::new());
-                                            
+
                                             // Trigger rescan if requested
                                             if template.file_rescan {
                                                 self.trigger_rescan();
@@ -1706,21 +1709,19 @@ impl AnchorSelector {
         }
 
         // Get data from singleton (now initialized)
-        let commands = crate::core::data::get_commands();
         let config = crate::core::data::get_config();
-
-        crate::utils::log(&format!("⏱️ DEFERRED_LOADING: Loaded {} commands", commands.len()));
 
         // Note: Config errors are handled during initialize() - we just use whatever is loaded
         let config_error: Option<String> = None;
-        
+
         // Initialize key registry with the loaded config
         self.key_registry = Some(create_default_key_registry(&config));
-        
-        
+
+
         // Create new popup state with loaded data but preserve app_state
+        // Commands will be loaded from singleton when needed (not cached in PopupState)
         let app_state = self.popup_state.app_state.clone();
-        self.popup_state = PopupState::new(commands, config, app_state);
+        self.popup_state = PopupState::new(config, app_state);
         
         // Apply any buffered input - but avoid recompute during deferred loading
         if !self.pre_init_input_buffer.is_empty() {
@@ -1747,14 +1748,20 @@ impl AnchorSelector {
     // Helper Properties for Backward Compatibility
     // =============================================================================
     
-    /// Backward compatibility: access to commands
-    fn commands(&self) -> &Vec<Command> {
-        &self.popup_state.commands
+    /// Backward compatibility: access to commands (fetches from singleton)
+    fn commands(&self) -> Vec<Command> {
+        crate::core::data::get_commands()
     }
-    
-    /// Backward compatibility: mutable access to commands
-    fn commands_mut(&mut self) -> &mut Vec<Command> {
-        &mut self.popup_state.commands
+
+    /// Backward compatibility: get commands for modification
+    /// Returns a Vec that can be modified and then saved back via set_commands
+    fn commands_mut_get(&mut self) -> Vec<Command> {
+        crate::core::data::get_commands()
+    }
+
+    /// Backward compatibility: save modified commands back
+    fn commands_mut_save(&mut self, commands: Vec<Command>) -> Result<(), Box<dyn std::error::Error>> {
+        crate::core::data::set_commands(commands)
     }
 
     // =============================================================================
@@ -1830,21 +1837,24 @@ impl AnchorSelector {
     /// If old_command_name is Some, this is an edit/rename - delete the old one first
     /// This ensures patch inference only runs once after both delete+add are done
     fn save_command_atomic(&mut self, new_command: Command, old_command_name: Option<&str>) -> Result<(), Box<dyn std::error::Error>> {
-        // Delete original command from UI if this is an edit/rename
+        // Get current commands from singleton
+        let mut commands = crate::core::data::get_commands();
+
+        // Delete original command if this is an edit/rename
         if let Some(old_name) = old_command_name {
             if !old_name.is_empty() {
                 crate::utils::log(&format!("SAVE: Deleting original command '{}' from UI", old_name));
-                self.commands_mut().retain(|c| c.command != old_name);
+                commands.retain(|c| c.command != old_name);
             }
         }
 
-        // Add the new command to UI
+        // Add the new command
         crate::utils::log(&format!("SAVE: Adding command '{}' to UI (action: {}, patch: {})",
             new_command.command, new_command.action, new_command.patch));
-        self.commands_mut().push(new_command);
+        commands.push(new_command);
 
         // Save all commands to disk - patch inference runs once here
-        crate::core::data::set_commands(self.commands().to_vec())?;
+        crate::core::data::set_commands(commands)?;
         crate::utils::log("SAVE: Saved all commands to disk");
 
         Ok(())
@@ -1866,7 +1876,10 @@ impl AnchorSelector {
 
         let config = crate::core::data::get_config();
 
-        // Execute the rename with dry_run = false on UI commands
+        // Get current commands for modification
+        let mut commands = crate::core::data::get_commands();
+
+        // Execute the rename with dry_run = false
         use crate::core::rename_associated_data;
         let (sys_data, _) = crate::core::get_sys_data();
         let mut patches = sys_data.patches;
@@ -1877,7 +1890,7 @@ impl AnchorSelector {
             new_name,
             current_arg,
             action,
-            self.commands_mut(),
+            &mut commands,
             &mut patches,
             &config,
             false, // dry_run = false
@@ -1905,7 +1918,7 @@ impl AnchorSelector {
                                         match rename_folder(
                                             parent.to_str().unwrap_or(""),
                                             new_name,
-                                            self.commands_mut(),
+                                            &mut commands,
                                             false, // dry_run = false
                                         ) {
                                             Ok(_) => {
@@ -1933,11 +1946,11 @@ impl AnchorSelector {
             }
         }
 
-        // Delete original command from UI (not from global state) if needed
+        // Delete original command if needed
         if let Some(cmd_name) = original_command_to_delete {
             if !cmd_name.is_empty() {
-                crate::utils::log(&format!("RENAME: Deleting original command '{}' from UI", cmd_name));
-                self.commands_mut().retain(|c| &c.command != cmd_name);
+                crate::utils::log(&format!("RENAME: Deleting original command '{}'", cmd_name));
+                commands.retain(|c| &c.command != cmd_name);
             }
         }
 
@@ -1953,13 +1966,13 @@ impl AnchorSelector {
         file_size: None,
         };
 
-        // Add the new command to UI (not to global state)
-        crate::utils::log(&format!("RENAME: Adding new command '{}' to UI", new_command.command));
-        self.commands_mut().push(new_command);
+        // Add the new command
+        crate::utils::log(&format!("RENAME: Adding new command '{}'", new_command.command));
+        commands.push(new_command);
 
         // Save all commands back to sys_data because rename_associated_data modified
         // patches and prefixes on many commands (not just the renamed command)
-        crate::core::data::set_commands(self.commands().to_vec())?;
+        crate::core::data::set_commands(commands)?;
         crate::utils::log("RENAME: Saved all command changes (patches/prefixes) to sys_data");
 
         // Update the filtered list if we're currently filtering
@@ -2153,7 +2166,7 @@ impl AnchorSelector {
             cmd.command.eq_ignore_ascii_case(&current_input)
         ) {
             // If it's an alias, resolve it
-            let resolved = matching_cmd.resolve_alias(all_commands);
+            let resolved = matching_cmd.resolve_alias(&all_commands);
             let expanded_name = &resolved.command;
 
             crate::utils::log(&format!("🔄 Expanding '{}' -> '{}'", current_input, expanded_name));
@@ -2173,7 +2186,7 @@ impl AnchorSelector {
             if first_match.command.to_lowercase().starts_with(&current_input.to_lowercase())
                 && first_match.command.len() > current_input.len() {
 
-                let resolved = first_match.resolve_alias(all_commands);
+                let resolved = first_match.resolve_alias(&all_commands);
                 let expanded_name = &resolved.command;
 
                 crate::utils::log(&format!("🔄 Expanding prefix '{}' -> '{}'", current_input, expanded_name));
@@ -2477,10 +2490,11 @@ impl AnchorSelector {
                                                         match crate::core::add_command(new_command) {
                                                             Ok(_) => {
                                                                 // Command already saved by add_command (via sys_data::add_command)
-                                                                // Mark commands as modified to trigger automatic reload
+                                                                // Commands will be fetched fresh from singleton by update_search()
+
                                                                 self.popup_state.search_text.clear();
                                                                 self.popup_state.update_search(String::new());
-                                                                
+
                                                                 // Trigger rescan if requested
                                                                 let file_rescan = action.params.get("file_rescan")
                                                                     .and_then(|v| v.as_bool())
@@ -2584,7 +2598,8 @@ impl AnchorSelector {
                                                         match crate::core::add_command(new_command) {
                                                             Ok(_) => {
                                                                 // Command already saved by add_command (via sys_data::add_command)
-                                                                // Mark commands as modified to trigger automatic reload
+                                                                // Commands will be fetched fresh from singleton by update_search()
+
                                                                 self.popup_state.search_text.clear();
                                                                 self.popup_state.update_search(String::new());
 
@@ -2810,7 +2825,7 @@ impl AnchorSelector {
         }
         
         // Get all commands for alias resolution
-        let all_commands = self.popup_state.get_commands();
+        let all_commands = crate::core::data::get_commands();
         
         // Log first few commands for debugging
         for (i, cmd) in display_commands.iter().take(3).enumerate() {
@@ -2889,7 +2904,7 @@ impl AnchorSelector {
         utils::detailed_log("SHOW_CONTACT", &format!("Processing command: {}", selected_command.command));
         
         // Resolve aliases to get the actual command
-        let all_commands = self.popup_state.get_commands();
+        let all_commands = crate::core::data::get_commands();
         let resolved_cmd = self.resolve_aliases_recursively(selected_command, &all_commands);
         
         // Strip @ prefix from the resolved command name if present
@@ -2946,7 +2961,7 @@ impl AnchorSelector {
                     }
                     
                     // Get the selected command and resolve aliases
-                    let all_commands = self.popup_state.get_commands();
+                    let all_commands = crate::core::data::get_commands();
                     let selected_command = &display_commands[selected_index];
                     let resolved_cmd = self.resolve_aliases_recursively(selected_command, &all_commands);
                     
@@ -2991,7 +3006,7 @@ impl AnchorSelector {
         }
         
         // Get the selected command and resolve aliases
-        let all_commands = self.popup_state.get_commands();
+        let all_commands = crate::core::data::get_commands();
         let selected_command = &display_commands[selected_index];
         
         // DEBUG: Log the selected command details
@@ -3567,7 +3582,7 @@ impl AnchorSelector {
         utils::log(&format!("CREATE_CHILD: Child name='{}', Anchor='{}'", child_name, anchor_name));
 
         // Look up the anchor command to get its template parameter
-        let all_commands = self.popup_state.get_commands();
+        let all_commands = crate::core::data::get_commands();
         let anchor_cmd = all_commands.iter().find(|cmd| cmd.command == anchor_name);
 
         let anchor_cmd = match anchor_cmd {
@@ -4111,9 +4126,7 @@ impl eframe::App for AnchorSelector {
         );
         
         // Update command editor dialog BEFORE the main UI so it renders as a top-level window
-        let commands = self.commands().clone();
         let config = self.config().clone();
-        self.command_editor.update_commands(&commands);
         // Debug log before calling command editor update
         if let Ok(mut file) = std::fs::OpenOptions::new().create(true).append(true).open("/tmp/hookanchor_debug.log") {
             use std::io::Write;
@@ -4241,12 +4254,13 @@ impl eframe::App for AnchorSelector {
                             use crate::core::rename_associated_data;
                             let (sys_data, _) = crate::core::get_sys_data();
                             let mut patches = sys_data.patches;
+                            let mut commands = crate::core::data::get_commands();
                             match rename_associated_data(
                                 effective_old_name,
                                 &new_command.command,
                                 &new_command.arg,
                                 &new_command.action,
-                                self.commands_mut(),
+                                &mut commands,
                                 &mut patches,
                                 &config,
                                 true, // dry_run = true
@@ -4282,7 +4296,7 @@ impl eframe::App for AnchorSelector {
                                                                     match rename_folder(
                                                                         parent.to_str().unwrap_or(""),
                                                                         &new_command.command,
-                                                                        self.commands_mut(),
+                                                                        &mut commands,
                                                                         true, // dry_run = true
                                                                     ) {
                                                                         Ok(folder_actions) => {
@@ -4396,8 +4410,7 @@ impl eframe::App for AnchorSelector {
                     Ok(_) => {
                         crate::utils::log(&format!("SAVE: Successfully saved command atomically"));
 
-                        // Mark commands as modified to trigger automatic reload
-                        crate::utils::log(&format!("SAVE_DEBUG: Marked commands as modified to trigger reload"));
+                        // Commands will be fetched fresh from singleton by update_search()
 
                         // Process template files if there was a pending template
                         if let (Some(template), Some(context)) = (
@@ -4470,7 +4483,7 @@ impl eframe::App for AnchorSelector {
                     crate::utils::log_error(&format!("Command '{}' not found for deletion", command_name));
                 } else {
                     // Command already saved by delete_command (via sys_data::delete_command)
-                    // Mark commands as modified to trigger automatic reload
+                    // Commands will be fetched fresh from singleton by update_search()
 
                     // Update the filtered list if we're currently filtering
                     if !self.popup_state.search_text.trim().is_empty() {

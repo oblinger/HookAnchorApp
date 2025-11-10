@@ -25,9 +25,6 @@ pub struct CommandEditor {
     // Track focus state
     focus_requested: bool,
 
-    // Commands list for checking existence
-    commands: Vec<Command>,
-
     // Track delete button visibility to detect changes
 
     // Store template for post-save processing
@@ -50,7 +47,6 @@ impl CommandEditor {
             original_command: None,
             original_command_name: String::new(),
             focus_requested: false,
-            commands: Vec::new(),
             pending_template: None,
             template_context: None,
         }
@@ -64,11 +60,7 @@ impl CommandEditor {
         self.pending_template = None;
         self.template_context = None;
     }
-    
-    pub fn update_commands(&mut self, commands: &[Command]) {
-        self.commands = commands.to_vec();
-    }
-    
+
     /// Set the pending template for post-save processing
     pub fn set_pending_template(&mut self, template: Template, context: TemplateContext) {
         self.pending_template = Some(template);
@@ -239,8 +231,10 @@ impl CommandEditor {
                             
                             // Delete button should be enabled only when editing an existing command
                             // (i.e., original_command_name is not empty and still exists in the system)
-                            let can_delete = !self.original_command_name.is_empty() && 
-                                self.commands.iter().any(|cmd| cmd.command == self.original_command_name);
+                            // Fetch fresh commands from singleton for accurate existence check
+                            let current_commands = crate::core::data::get_commands();
+                            let can_delete = !self.original_command_name.is_empty() &&
+                                current_commands.iter().any(|cmd| cmd.command == self.original_command_name);
                             
                             // Always use the same horizontal layout to prevent focus issues
                             ui.horizontal(|ui| {

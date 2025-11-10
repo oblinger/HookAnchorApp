@@ -10,8 +10,6 @@ use crate::ui::layout::{DisplayLayout, Selection, Direction};
 
 /// Core popup state separated from UI concerns
 pub struct PopupState {
-    /// All available commands
-    pub commands: Vec<Command>,
     /// Current search text
     pub search_text: String,
     /// Commands that match current search (before adding files)
@@ -43,14 +41,13 @@ pub struct PopupState {
 
 impl PopupState {
     /// Create new popup state
-    pub fn new(commands: Vec<Command>, config: Config, app_state: AppState) -> Self {
+    pub fn new(config: Config, app_state: AppState) -> Self {
         let filtered_commands = Vec::new();
         let display_commands = Vec::new();
         let display_layout = DisplayLayout::new(Vec::new(), &config);
         let selection = Selection::new();
 
         PopupState {
-            commands,
             search_text: String::new(),
             filtered_commands,
             display_commands,
@@ -68,7 +65,7 @@ impl PopupState {
     }
     
     /// Create minimal popup state for early UI display
-    /// Uses default config and empty commands to show UI immediately
+    /// Uses default config to show UI immediately
     pub fn new_minimal() -> Self {
         let config = Config::default();
         let app_state = AppState::default();
@@ -78,7 +75,6 @@ impl PopupState {
         let selection = Selection::new();
 
         PopupState {
-            commands: Vec::new(),
             search_text: String::new(),
             filtered_commands,
             display_commands,
@@ -193,19 +189,6 @@ impl PopupState {
         } else {
             false
         }
-    }
-    
-    /// Get a reference to all commands
-    pub fn get_commands(&self) -> &[Command] {
-        &self.commands
-    }
-    
-    /// Update the command list (used for deferred scanner updates)
-    pub fn set_commands(&mut self, commands: Vec<Command>) {
-        self.commands = commands;
-        self.recompute_filtered_commands();
-        self.update_display_layout();
-        self.selection.reset(&self.display_layout);
     }
     
     /// Get display layout dimensions
