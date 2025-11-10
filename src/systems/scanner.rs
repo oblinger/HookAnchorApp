@@ -1805,9 +1805,12 @@ fn process_doc_file(path: &Path, existing_commands: &HashSet<String>, folder_map
 
 
 /// Check if a path (file or directory) should be skipped based on config patterns
+/// Uses standard glob pattern matching
 /// If a directory matches, the entire subtree should be skipped
 /// If a file matches, just that file should be skipped
 fn should_skip_path(path: &Path, config: &Config) -> bool {
+    use globset::{Glob, GlobBuilder};
+
     // Get skip patterns from config (try new field first, fall back to old field for compatibility)
     let skip_patterns = match &config.popup_settings.skip_patterns {
         Some(patterns) => patterns,
@@ -1817,70 +1820,27 @@ fn should_skip_path(path: &Path, config: &Config) -> bool {
         }
     };
 
-    // Get file/directory name for name-only matching
-    let name = path.file_name()
-        .and_then(|n| n.to_str())
-        .unwrap_or("");
-
-    // Get full path as string for full-path matching
+    // Get full path as string for glob matching
     let full_path = path.to_string_lossy().to_string();
 
-    // Check each pattern
+    // Check each pattern using standard glob matching
     for pattern in skip_patterns {
         // Expand ~ in pattern
         let expanded_pattern = expand_home(pattern);
 
-        // Check if pattern looks like a full path (starts with / or ~)
-        if pattern.starts_with('/') || pattern.starts_with('~') {
-            // Full path matching
-            if full_path == expanded_pattern || full_path.starts_with(&format!("{}/", expanded_pattern)) {
-                crate::utils::detailed_log("SKIP_DIR", &format!("Skipping directory '{}' matching full path pattern '{}'", full_path, pattern));
-                return true;
-            }
-        } else if pattern.contains('*') {
-            // Glob pattern matching (can match against name or full path)
-            let pattern_lower = pattern.to_lowercase();
-            let name_lower = name.to_lowercase();
-            let path_lower = full_path.to_lowercase();
+        // Build glob matcher (case-insensitive)
+        let glob = match GlobBuilder::new(&expanded_pattern)
+            .case_insensitive(true)
+            .build()
+        {
+            Ok(g) => g.compile_matcher(),
+            Err(_) => continue, // Skip invalid patterns
+        };
 
-            // Handle patterns like "*trash*" - matches name
-            if pattern_lower.starts_with('*') && pattern_lower.ends_with('*') {
-                let inner = &pattern_lower[1..pattern_lower.len()-1];
-                if name_lower.contains(inner) {
-                    crate::utils::detailed_log("SKIP_PATH", &format!("Skipping '{}' matching pattern '{}'", full_path, pattern));
-                    return true;
-                }
-            }
-            // Handle patterns like "*.xlsx" - matches filename
-            else if pattern_lower.starts_with("*.") {
-                let ext_pattern = &pattern_lower[1..]; // Remove leading *
-                if name_lower.ends_with(ext_pattern) {
-                    crate::utils::detailed_log("SKIP_PATH", &format!("Skipping '{}' matching pattern '{}'", full_path, pattern));
-                    return true;
-                }
-            }
-            // Handle patterns like "capture_*" - matches filename prefix
-            else if pattern_lower.ends_with('*') {
-                let prefix = &pattern_lower[..pattern_lower.len()-1];
-                if name_lower.starts_with(prefix) {
-                    crate::utils::detailed_log("SKIP_PATH", &format!("Skipping '{}' matching pattern '{}'", full_path, pattern));
-                    return true;
-                }
-            }
-            // Handle other patterns with * - treat as contains in name
-            else {
-                let cleaned = pattern_lower.replace('*', "");
-                if name_lower.contains(&cleaned) || path_lower.contains(&cleaned) {
-                    crate::utils::detailed_log("SKIP_PATH", &format!("Skipping '{}' matching pattern '{}'", full_path, pattern));
-                    return true;
-                }
-            }
-        } else {
-            // Exact name match (case-insensitive)
-            if name.eq_ignore_ascii_case(pattern) {
-                crate::utils::detailed_log("SKIP_PATH", &format!("Skipping '{}' matching exact name '{}'", full_path, pattern));
-                return true;
-            }
+        // Check if the full path matches the glob pattern
+        if glob.is_match(&full_path) {
+            crate::utils::detailed_log("SKIP_PATH", &format!("Skipping '{}' matching pattern '{}'", full_path, pattern));
+            return true;
         }
     }
 

@@ -88,6 +88,7 @@ image = "0.24"
 reqwest = { version = "0.11", features = ["json", "blocking"] }
 tokio = { version = "1", features = ["full"] }
 rusqlite = { version = "0.32", features = ["bundled"] }
+globset = "0.4"
 
 [target.'cfg(target_os = "macos")'.dependencies]
 core-graphics = "0.23"
