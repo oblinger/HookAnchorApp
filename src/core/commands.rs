@@ -415,8 +415,22 @@ impl Command {
         match self.resolve_alias_with_depth(commands, 0, MAX_ALIAS_DEPTH, &mut std::collections::HashSet::new()) {
             Ok(resolved) => resolved,
             Err(error_msg) => {
-                // Log the error and return the original command
-                crate::utils::log_error(&error_msg);
+                // Log the error only once per unique error message to avoid spam
+                use std::sync::OnceLock;
+                use std::collections::HashSet;
+                use std::sync::Mutex;
+
+                static LOGGED_ERRORS: OnceLock<Mutex<HashSet<String>>> = OnceLock::new();
+                let logged_errors = LOGGED_ERRORS.get_or_init(|| Mutex::new(HashSet::new()));
+
+                if let Ok(mut errors) = logged_errors.lock() {
+                    if errors.insert(error_msg.clone()) {
+                        // First time seeing this error, log it
+                        crate::utils::log_error(&error_msg);
+                    }
+                }
+
+                // Return the original command
                 self.clone()
             }
         }
@@ -449,8 +463,13 @@ impl Command {
         visited.insert(self.command.clone());
         
         // Find the target command that this alias points to
+        // Try exact match first (fast), then case-insensitive if that fails
         let target_command = commands.iter()
             .find(|cmd| cmd.command == self.arg)
+            .or_else(|| {
+                let arg_lower = self.arg.to_lowercase();
+                commands.iter().find(|cmd| cmd.command.to_lowercase() == arg_lower)
+            })
             .ok_or_else(|| {
                 format!("Recursive aliases: alias '{}' points to non-existent command '{}'", self.command, self.arg)
             })?;
