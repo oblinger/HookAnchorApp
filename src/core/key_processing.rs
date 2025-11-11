@@ -1,8 +1,9 @@
 //! Key processing and registry system
-//! 
+//!
 //! This module provides unified key processing using the Keystroke system
 //! and a registry-based dispatch pattern for clean separation of concerns.
 
+use crate::prelude::*;
 
 /// Modifier state for key events
 #[derive(Debug, Clone, PartialEq, Eq, Hash)]
@@ -64,21 +65,21 @@ impl Keystroke {
             egui::Event::Key { key, pressed, modifiers, .. } => {
                 // Always log bracket key events
                 if *key == egui::Key::OpenBracket || *key == egui::Key::CloseBracket {
-                    crate::utils::detailed_log("BRACKET_MATCH", &format!("Testing key={:?} pressed={} modifiers={:?} against keystroke={:?}", 
+                    detailed_log("BRACKET_MATCH", &format!("Testing key={:?} pressed={} modifiers={:?} against keystroke={:?}", 
                         key, pressed, modifiers, self));
                 }
                 
-                crate::utils::detailed_log("KEY_PROCESSING", &format!("Key event: {:?} pressed={} modifiers={:?}", key, pressed, modifiers));
+                detailed_log("KEY_PROCESSING", &format!("Key event: {:?} pressed={} modifiers={:?}", key, pressed, modifiers));
                 if !pressed {
                     if *key == egui::Key::OpenBracket || *key == egui::Key::CloseBracket {
-                        crate::utils::detailed_log("BRACKET_MATCH", &format!("Key not pressed, returning false"));
+                        detailed_log("BRACKET_MATCH", &format!("Key not pressed, returning false"));
                     }
                     return false;
                 }
                 
                 // Log detailed matching for bracket keys
                 if *key == egui::Key::OpenBracket || *key == egui::Key::CloseBracket {
-                    crate::utils::detailed_log("BRACKET_MATCH", &format!("key={:?} vs self.key={:?}, modifiers={:?} vs self.modifiers={:?}",
+                    detailed_log("BRACKET_MATCH", &format!("key={:?} vs self.key={:?}, modifiers={:?} vs self.modifiers={:?}",
                         key, self.key, Modifiers::from_egui(modifiers), self.modifiers));
                 }
 
@@ -562,7 +563,7 @@ impl KeyRegistry {
             }).collect();
 
             if !key_events.is_empty() {
-                crate::utils::log(&format!("🔑 KEY_REGISTRY: {}", key_events.join(", ")));
+                detailed_log("KEY_REGISTRY", &format!("{}", key_events.join(", ")));
             }
         }
         // Log EVERY incoming event
@@ -570,19 +571,19 @@ impl KeyRegistry {
             match event {
                 egui::Event::Key { key, pressed, modifiers, .. } => {
                     if *pressed {
-                        crate::utils::detailed_log("KEY_PRESS", &format!("Key pressed: {:?} (modifiers={:?})", key, modifiers));
+                        detailed_log("KEY_PRESS", &format!("Key pressed: {:?} (modifiers={:?})", key, modifiers));
                     }
-                    crate::utils::detailed_log("KEYSTROKE", &format!(
+                    detailed_log("KEYSTROKE", &format!(
                         "Key event: key={:?}, pressed={}, modifiers={:?}", 
                         key, pressed, modifiers
                     ));
                 },
                 egui::Event::Text(text) => {
-                    crate::utils::detailed_log("KEYSTROKE", &format!("Text event: '{}'", text));
+                    detailed_log("KEYSTROKE", &format!("Text event: '{}'", text));
                 },
                 _ => {
                     // Log other events too for completeness
-                    crate::utils::detailed_log("KEYSTROKE", &format!("Other event: {:?}", event));
+                    detailed_log("KEYSTROKE", &format!("Other event: {:?}", event));
                 }
             }
         }
@@ -605,7 +606,7 @@ impl KeyRegistry {
                         break;
                     }
                     KeyHandlerResult::Error(e) => {
-                        crate::utils::log_error(&format!("Text handler error: {}", e));
+                        log_error(&format!("Text handler error: {}", e));
                         handled = true;
                         break;
                     }
@@ -624,21 +625,21 @@ impl KeyRegistry {
             match event {
                 egui::Event::Key { key, pressed, modifiers, .. } => {
                     if *pressed {
-                        crate::utils::detailed_log("KEY_PRESS", &format!("Key={:?}, Modifiers={{shift:{}, ctrl:{}, alt:{}, cmd:{}}}", 
+                        detailed_log("KEY_PRESS", &format!("Key={:?}, Modifiers={{shift:{}, ctrl:{}, alt:{}, cmd:{}}}", 
                             key, modifiers.shift, modifiers.ctrl, modifiers.alt, modifiers.command));
                         
                         // Special logging for > key (Period with Shift)
                         if *key == egui::Key::Period && modifiers.shift {
-                            crate::utils::log(">>> GREATER-THAN KEY DETECTED! Period + Shift pressed");
+                            log(">>> GREATER-THAN KEY DETECTED! Period + Shift pressed");
                         }
                         // Special logging for Cmd+D key
                         if *key == egui::Key::D && modifiers.command {
-                            crate::utils::detailed_log("KEY", &format!("📝 CMD+D KEY DETECTED! Cmd+D pressed for DOC template"));
+                            detailed_log("KEY", &format!("📝 CMD+D KEY DETECTED! Cmd+D pressed for DOC template"));
                         }
                     }
                 }
                 egui::Event::Text(text) => {
-                    crate::utils::detailed_log("KEY_TEXT", &format!("Text input: '{}'", text));
+                    detailed_log("KEY_TEXT", &format!("Text input: '{}'", text));
                 }
                 _ => {}
             }
@@ -646,9 +647,9 @@ impl KeyRegistry {
             // Debug: log how many handlers we're checking
             if let egui::Event::Key { key, pressed, .. } = event {
                 if *pressed && *key == egui::Key::Escape {
-                    crate::utils::detailed_log("SYSTEM", &format!("Checking {} handlers for Escape key", self.handlers.len()));
+                    detailed_log("SYSTEM", &format!("Checking {} handlers for Escape key", self.handlers.len()));
                     for (ks, h) in &self.handlers {
-                        crate::utils::detailed_log("KEY_HANDLER", &format!("Handler: {:?} -> {}", ks, h.description()));
+                        detailed_log("KEY_HANDLER", &format!("Handler: {:?} -> {}", ks, h.description()));
                     }
                 }
             }
@@ -659,16 +660,16 @@ impl KeyRegistry {
                 if let egui::Event::Key { key, pressed, .. } = event {
                     if *pressed {
                         if *key == egui::Key::Semicolon {
-                            crate::utils::detailed_log("REGISTRY_CHECK", &format!("🔸 SEMICOLON: Checking handler '{}' (keystroke: {:?})", 
+                            detailed_log("REGISTRY_CHECK", &format!("🔸 SEMICOLON: Checking handler '{}' (keystroke: {:?})", 
                                 handler.description(), keystroke));
                         } else if *key == egui::Key::OpenBracket {
-                            crate::utils::detailed_log("REGISTRY_CHECK", &format!("🔶 LEFT BRACKET: Checking handler '{}' (keystroke: {:?})", 
+                            detailed_log("REGISTRY_CHECK", &format!("🔶 LEFT BRACKET: Checking handler '{}' (keystroke: {:?})", 
                                 handler.description(), keystroke));
                         } else if *key == egui::Key::CloseBracket {
-                            crate::utils::detailed_log("REGISTRY_CHECK", &format!("🔷 RIGHT BRACKET: Checking handler '{}' (keystroke: {:?})", 
+                            detailed_log("REGISTRY_CHECK", &format!("🔷 RIGHT BRACKET: Checking handler '{}' (keystroke: {:?})", 
                                 handler.description(), keystroke));
                         } else if *key == egui::Key::Equals {
-                            crate::utils::detailed_log("REGISTRY_CHECK", &format!("🟰 EQUALS: Checking handler '{}' (keystroke: {:?})", 
+                            detailed_log("REGISTRY_CHECK", &format!("🟰 EQUALS: Checking handler '{}' (keystroke: {:?})", 
                                 handler.description(), keystroke));
                         }
                     }
@@ -680,66 +681,66 @@ impl KeyRegistry {
                 if let egui::Event::Key { key, pressed, .. } = event {
                     if *pressed {
                         if *key == egui::Key::Semicolon && matches {
-                            crate::utils::detailed_log("REGISTRY_MATCH", &format!("🔸 SEMICOLON: ✅ MATCHED handler '{}' (keystroke: {:?})", 
+                            detailed_log("REGISTRY_MATCH", &format!("🔸 SEMICOLON: ✅ MATCHED handler '{}' (keystroke: {:?})", 
                                 handler.description(), keystroke));
                         } else if *key == egui::Key::Semicolon {
-                            crate::utils::detailed_log("REGISTRY_MATCH", &format!("🔸 SEMICOLON: ❌ NO MATCH for handler '{}' (keystroke: {:?})", 
+                            detailed_log("REGISTRY_MATCH", &format!("🔸 SEMICOLON: ❌ NO MATCH for handler '{}' (keystroke: {:?})", 
                                 handler.description(), keystroke));
                         } else if *key == egui::Key::OpenBracket && matches {
-                            crate::utils::detailed_log("REGISTRY_MATCH", &format!("🔶 LEFT BRACKET: ✅ MATCHED handler '{}' (keystroke: {:?})", 
+                            detailed_log("REGISTRY_MATCH", &format!("🔶 LEFT BRACKET: ✅ MATCHED handler '{}' (keystroke: {:?})", 
                                 handler.description(), keystroke));
                         } else if *key == egui::Key::OpenBracket {
-                            crate::utils::detailed_log("REGISTRY_MATCH", &format!("🔶 LEFT BRACKET: ❌ NO MATCH for handler '{}' (keystroke: {:?})", 
+                            detailed_log("REGISTRY_MATCH", &format!("🔶 LEFT BRACKET: ❌ NO MATCH for handler '{}' (keystroke: {:?})", 
                                 handler.description(), keystroke));
                         } else if *key == egui::Key::CloseBracket && matches {
-                            crate::utils::detailed_log("REGISTRY_MATCH", &format!("🔷 RIGHT BRACKET: ✅ MATCHED handler '{}' (keystroke: {:?})", 
+                            detailed_log("REGISTRY_MATCH", &format!("🔷 RIGHT BRACKET: ✅ MATCHED handler '{}' (keystroke: {:?})", 
                                 handler.description(), keystroke));
                         } else if *key == egui::Key::CloseBracket {
-                            crate::utils::detailed_log("REGISTRY_MATCH", &format!("🔷 RIGHT BRACKET: ❌ NO MATCH for handler '{}' (keystroke: {:?})", 
+                            detailed_log("REGISTRY_MATCH", &format!("🔷 RIGHT BRACKET: ❌ NO MATCH for handler '{}' (keystroke: {:?})", 
                                 handler.description(), keystroke));
                         } else if *key == egui::Key::Equals && matches {
-                            crate::utils::detailed_log("REGISTRY_MATCH", &format!("🟰 EQUALS: ✅ MATCHED handler '{}' (keystroke: {:?})", 
+                            detailed_log("REGISTRY_MATCH", &format!("🟰 EQUALS: ✅ MATCHED handler '{}' (keystroke: {:?})", 
                                 handler.description(), keystroke));
                         } else if *key == egui::Key::Equals {
-                            crate::utils::detailed_log("REGISTRY_MATCH", &format!("🟰 EQUALS: ❌ NO MATCH for handler '{}' (keystroke: {:?})", 
+                            detailed_log("REGISTRY_MATCH", &format!("🟰 EQUALS: ❌ NO MATCH for handler '{}' (keystroke: {:?})", 
                                 handler.description(), keystroke));
                         }
                     }
                 }
                 
                 if matches {
-                    crate::utils::detailed_log("KEY_HANDLER", &format!("KEY_HANDLER: Handler matched: {}", handler.description()));
+                    detailed_log("KEY_HANDLER", &format!("KEY_HANDLER: Handler matched: {}", handler.description()));
                     
                     // Special logging for Enter key
                     if let egui::Event::Key { key, modifiers, .. } = event {
                         if *key == egui::Key::Enter {
-                            crate::utils::detailed_log("KEY", &format!("🔵 ENTER KEY: Handler '{}' matched for Enter key!", handler.description()));
+                            detailed_log("KEY", &format!("🔵 ENTER KEY: Handler '{}' matched for Enter key!", handler.description()));
                         }
                         // Also log Backtick key
                         if *key == egui::Key::Backtick {
-                            crate::utils::detailed_log("KEY", &format!("⚡ BACKTICK KEY: Handler '{}' matched for Backtick key!", handler.description()));
+                            detailed_log("KEY", &format!("⚡ BACKTICK KEY: Handler '{}' matched for Backtick key!", handler.description()));
                         }
                         // Log > key (Period with Shift)
                         if *key == egui::Key::Period && modifiers.shift {
-                            crate::utils::detailed_log("KEY", &format!(">>> ALIAS KEY: Handler '{}' matched for > key!", handler.description()));
+                            detailed_log("KEY", &format!(">>> ALIAS KEY: Handler '{}' matched for > key!", handler.description()));
                         }
                         // Log Cmd+D key
                         if *key == egui::Key::D && modifiers.command {
-                            crate::utils::detailed_log("KEY", &format!("📝 DOC KEY: Handler '{}' matched for Cmd+D key!", handler.description()));
+                            detailed_log("KEY", &format!("📝 DOC KEY: Handler '{}' matched for Cmd+D key!", handler.description()));
                         }
                         // Log bracket keys
                         if *key == egui::Key::OpenBracket {
-                            crate::utils::detailed_log("KEY", &format!("🔶 LEFT BRACKET KEY: Handler '{}' MATCHED for [ key!", handler.description()));
+                            detailed_log("KEY", &format!("🔶 LEFT BRACKET KEY: Handler '{}' MATCHED for [ key!", handler.description()));
                         }
                         if *key == egui::Key::CloseBracket {
-                            crate::utils::detailed_log("KEY", &format!("🔷 RIGHT BRACKET KEY: Handler '{}' MATCHED for ] key!", handler.description()));
+                            detailed_log("KEY", &format!("🔷 RIGHT BRACKET KEY: Handler '{}' MATCHED for ] key!", handler.description()));
                         }
                         // Log equals and semicolon for comparison
                         if *key == egui::Key::Equals {
-                            crate::utils::detailed_log("KEY", &format!("🟰 EQUALS KEY: Handler '{}' MATCHED for = key!", handler.description()));
+                            detailed_log("KEY", &format!("🟰 EQUALS KEY: Handler '{}' MATCHED for = key!", handler.description()));
                         }
                         if *key == egui::Key::Semicolon {
-                            crate::utils::detailed_log("KEY", &format!("🔸 SEMICOLON KEY: Handler '{}' MATCHED for ; key!", handler.description()));
+                            detailed_log("KEY", &format!("🔸 SEMICOLON KEY: Handler '{}' MATCHED for ; key!", handler.description()));
                         }
                     }
                     
@@ -751,16 +752,16 @@ impl KeyRegistry {
                     
                     match handler.execute(&mut context) {
                         KeyHandlerResult::Handled => {
-                            crate::utils::detailed_log("KEY_HANDLER", &format!("KEY_HANDLER: Handler HANDLED: {}", handler.description()));
+                            detailed_log("KEY_HANDLER", &format!("KEY_HANDLER: Handler HANDLED: {}", handler.description()));
                             
                             // Special logging for Enter key
                             if let egui::Event::Key { key, .. } = event {
                                 if *key == egui::Key::Enter {
-                                    crate::utils::detailed_log("KEY", &format!("🔵 ENTER KEY: ✅ Handler successfully executed for Enter key!"));
+                                    detailed_log("KEY", &format!("🔵 ENTER KEY: ✅ Handler successfully executed for Enter key!"));
                                 }
                                 // Also log Backtick key
                                 if *key == egui::Key::Backtick {
-                                    crate::utils::detailed_log("KEY", &format!("⚡ BACKTICK KEY: ✅ Handler successfully executed for Backtick key!"));
+                                    detailed_log("KEY", &format!("⚡ BACKTICK KEY: ✅ Handler successfully executed for Backtick key!"));
                                 }
                             }
                             
@@ -768,19 +769,19 @@ impl KeyRegistry {
                             break; // Exit inner loop for this event
                         }
                         KeyHandlerResult::Error(e) => {
-                            crate::utils::detailed_log("KEY", &format!("KEY_HANDLER ERROR: {} - {}", handler.description(), e));
+                            detailed_log("KEY", &format!("KEY_HANDLER ERROR: {} - {}", handler.description(), e));
                             handled = true;
                             break; // Exit inner loop for this event
                         }
                         KeyHandlerResult::NotHandled => {
-                            crate::utils::detailed_log("KEY_HANDLER", &format!("Handler NOT_HANDLED: {}", handler.description()));
+                            detailed_log("KEY_HANDLER", &format!("Handler NOT_HANDLED: {}", handler.description()));
                             continue; // Try next handler
                         }
                     }
                 }
             }
             if handled {
-                crate::utils::detailed_log("KEY_PROCESSING", "🛑 Event handled, stopping processing");
+                detailed_log("KEY_PROCESSING", "🛑 Event handled, stopping processing");
                 break; // Exit outer loop if any handler succeeded
             }
         }
@@ -985,7 +986,7 @@ impl PopupActionHandler {
             },
             _ => {
                 // Unknown action - log warning and skip
-                crate::utils::log(&format!("⚠️ Unknown popup action: {}", self.action_name));
+                log(&format!("⚠️ Unknown popup action: {}", self.action_name));
                 KeyHandlerResult::NotHandled
             }
         };
@@ -1024,9 +1025,9 @@ impl TemplateHandler {
 
 impl KeyHandler for TemplateHandler {
     fn execute(&self, context: &mut KeyHandlerContext) -> KeyHandlerResult {
-        crate::utils::detailed_log("TEMPLATE", &format!(">>> TEMPLATE_HANDLER: Executing template '{}'", self.template_name));
+        detailed_log("TEMPLATE", &format!(">>> TEMPLATE_HANDLER: Executing template '{}'", self.template_name));
         context.popup.handle_template_create_named(&self.template_name);
-        crate::utils::detailed_log("TEMPLATE", &format!(">>> TEMPLATE_HANDLER: Template '{}' execution completed", self.template_name));
+        detailed_log("TEMPLATE", &format!(">>> TEMPLATE_HANDLER: Template '{}' execution completed", self.template_name));
         KeyHandlerResult::Handled
     }
     
@@ -1090,7 +1091,7 @@ impl JavaScriptHandler {
 
 impl KeyHandler for JavaScriptHandler {
     fn execute(&self, _context: &mut KeyHandlerContext) -> KeyHandlerResult {
-        crate::utils::log(&format!("🔧 JavaScript handler executing function: {}", self.function_name));
+        log(&format!("🔧 JavaScript handler executing function: {}", self.function_name));
 
         // Create an action with all the stored parameters from the config
         let mut action_params = self.action_params.clone();
@@ -1102,11 +1103,11 @@ impl KeyHandler for JavaScriptHandler {
         // Execute the JavaScript function via the command server
         match crate::execute::execute_on_server(&action, None) {
             Ok(result) => {
-                crate::utils::log(&format!("✅ JavaScript function '{}' executed successfully: {}", self.function_name, result));
+                log(&format!("✅ JavaScript function '{}' executed successfully: {}", self.function_name, result));
                 KeyHandlerResult::Handled
             },
             Err(e) => {
-                crate::utils::log_error(&format!("❌ Failed to execute JavaScript function '{}': {}", self.function_name, e));
+                log_error(&format!("❌ Failed to execute JavaScript function '{}': {}", self.function_name, e));
                 KeyHandlerResult::NotHandled
             }
         }
@@ -1119,27 +1120,27 @@ impl KeyHandler for JavaScriptHandler {
 
 /// Factory function to create a fully configured key registry
 pub fn create_default_key_registry(config: &super::Config) -> KeyRegistry {
-    crate::utils::detailed_log("KEY_REGISTRY", &format!("KEY_REGISTRY: Creating default key registry"));
-    crate::utils::detailed_log("KEY_REGISTRY", &format!("KEY_REGISTRY: Config has {} actions", config.actions.as_ref().map(|a| a.len()).unwrap_or(0)));
+    detailed_log("KEY_REGISTRY", &format!("KEY_REGISTRY: Creating default key registry"));
+    detailed_log("KEY_REGISTRY", &format!("KEY_REGISTRY: Config has {} actions", config.actions.as_ref().map(|a| a.len()).unwrap_or(0)));
     let mut registry = KeyRegistry::new();
     let mut registered_count = 0;
     
     
     // Register handlers for unified actions with keys
-    crate::utils::log(&format!("Config has actions field: {}", config.actions.is_some()));
+    log(&format!("Config has actions field: {}", config.actions.is_some()));
     if let Some(ref actions) = config.actions {
-        crate::utils::detailed_log("SYSTEM", &format!("Checking {} unified actions for keyboard shortcuts", actions.len()));
+        detailed_log("SYSTEM", &format!("Checking {} unified actions for keyboard shortcuts", actions.len()));
         let mut actions_with_keys = 0;
         for (action_name, action) in actions {
             // Check if this action has a key field
             if let Some(key_str) = action.key() {
-                crate::utils::detailed_log("KEY_REGISTRY", &format!("Action '{}' has key '{}'", action_name, key_str));
+                detailed_log("KEY_REGISTRY", &format!("Action '{}' has key '{}'", action_name, key_str));
                 // Parse the key string into a keystroke
                 match Keystroke::from_key_string(key_str) {
                     Ok(keystroke) => {
                         actions_with_keys += 1;
                         // Only log in detailed mode
-                        crate::utils::detailed_log("KEY_REGISTRY", &format!("  Action '{}': key={} -> keystroke={:?}", 
+                        detailed_log("KEY_REGISTRY", &format!("  Action '{}': key={} -> keystroke={:?}", 
                             action_name, key_str, keystroke));
                         
                         // Register handlers based on action type
@@ -1147,7 +1148,7 @@ pub fn create_default_key_registry(config: &super::Config) -> KeyRegistry {
                             let handler = Box::new(TemplateHandler::new(action_name.clone()));
                             registry.register_keystroke(keystroke.clone(), handler);
                             registered_count += 1;
-                            crate::utils::detailed_log("KEY_REGISTRY", &format!("Registered template '{}' to key '{}'", action_name, key_str));
+                            detailed_log("KEY_REGISTRY", &format!("Registered template '{}' to key '{}'", action_name, key_str));
                         } else if action.action_type() == "js" {
                             // Create a JavaScript handler for js actions
                             let function_name = action.params.get("function")
@@ -1157,22 +1158,22 @@ pub fn create_default_key_registry(config: &super::Config) -> KeyRegistry {
                             let handler = Box::new(JavaScriptHandler::new(function_name.clone(), action.params.clone()));
                             registry.register_keystroke(keystroke.clone(), handler);
                             registered_count += 1;
-                            crate::utils::log(&format!("✅ Registered JavaScript action '{}' (function: {}) to key '{}'", action_name, function_name, key_str));
+                            log(&format!("✅ Registered JavaScript action '{}' (function: {}) to key '{}'", action_name, function_name, key_str));
                             // Special logging for doc template
                             if action_name == "doc" {
-                                crate::utils::detailed_log("SYSTEM", &format!("📝 DOC REGISTRATION: Template 'doc' registered to '{}' key", key_str));
-                                crate::utils::log(&format!("📝 DOC REGISTRATION: Keystroke details: {:?}", keystroke));
+                                detailed_log("SYSTEM", &format!("📝 DOC REGISTRATION: Template 'doc' registered to '{}' key", key_str));
+                                log(&format!("📝 DOC REGISTRATION: Keystroke details: {:?}", keystroke));
                             }
                             // Special logging for > key
                             if key_str == ">" {
-                                crate::utils::detailed_log("SYSTEM", &format!(">>> ALIAS REGISTRATION: Template '{}' registered to '>' key", action_name));
-                                crate::utils::detailed_log("SYSTEM", &format!(">>> ALIAS REGISTRATION: Keystroke details: {:?}", keystroke));
+                                detailed_log("SYSTEM", &format!(">>> ALIAS REGISTRATION: Template '{}' registered to '>' key", action_name));
+                                detailed_log("SYSTEM", &format!(">>> ALIAS REGISTRATION: Keystroke details: {:?}", keystroke));
                             }
                         } else if action.action_type() == "popup" {
                         // Handle popup actions (navigation, exit, etc.)
                         if let Some(popup_action) = action.params.get("popup_action")
                             .and_then(|v| v.as_str()) {
-                            crate::utils::detailed_log("KEY_REGISTRY", &format!("Processing popup action '{}' with key '{}'", popup_action, key_str));
+                            detailed_log("KEY_REGISTRY", &format!("Processing popup action '{}' with key '{}'", popup_action, key_str));
                             let handler: Box<dyn KeyHandler> = match popup_action {
                                 "navigate" => {
                                     // Check dx and dy parameters to determine direction
@@ -1195,7 +1196,7 @@ pub fn create_default_key_registry(config: &super::Config) -> KeyRegistry {
                                         continue; // No direction specified
                                     };
                                     
-                                    crate::utils::detailed_log("KEY_REGISTRY", &format!("Registering navigation handler: {} (dx={}, dy={})", 
+                                    detailed_log("KEY_REGISTRY", &format!("Registering navigation handler: {} (dx={}, dy={})", 
                                         dir_name, dx, dy));
                                     
                                     if dy < 0 {
@@ -1220,7 +1221,7 @@ pub fn create_default_key_registry(config: &super::Config) -> KeyRegistry {
                             };
                             registry.register_keystroke(keystroke, handler);
                             registered_count += 1;
-                            crate::utils::detailed_log("KEY_REGISTRATION", &format!("Registered popup action '{}' to key '{}'", popup_action, key_str));
+                            detailed_log("KEY_REGISTRATION", &format!("Registered popup action '{}' to key '{}'", popup_action, key_str));
                         }
                     } else {
                         // All other action types are JavaScript actions
@@ -1229,18 +1230,18 @@ pub fn create_default_key_registry(config: &super::Config) -> KeyRegistry {
                         let handler = Box::new(JavaScriptHandler::new(function_name.clone(), action.params.clone()));
                         registry.register_keystroke(keystroke.clone(), handler);
                         registered_count += 1;
-                        crate::utils::log(&format!("✅ Registered JavaScript action '{}' (function: {}) to key '{}'", action_name, function_name, key_str));
+                        log(&format!("✅ Registered JavaScript action '{}' (function: {}) to key '{}'", action_name, function_name, key_str));
                     }
                     }
                     Err(e) => {
-                        crate::utils::detailed_log("KEY", &format!("❌ KEY_REGISTRY ERROR: Failed to parse key '{}' for action '{}': {}", 
+                        detailed_log("KEY", &format!("❌ KEY_REGISTRY ERROR: Failed to parse key '{}' for action '{}': {}", 
                             key_str, action_name, e));
                     }
                 }
             }
         }
         if actions_with_keys > 0 {
-            crate::utils::log(&format!("Registered {} actions with keys", actions_with_keys));
+            log(&format!("Registered {} actions with keys", actions_with_keys));
         }
     }
     
@@ -1248,8 +1249,8 @@ pub fn create_default_key_registry(config: &super::Config) -> KeyRegistry {
     // Register text handlers
     registry.register_text_handler(Box::new(UninstallTextHandler));
     
-    crate::utils::detailed_log("KEY_REGISTRY", &format!("Total handlers registered: {}", registered_count));
-    crate::utils::detailed_log("KEY_REGISTRY", &format!("Registry has {} keystroke handlers", registry.handlers.len()));
+    detailed_log("KEY_REGISTRY", &format!("Total handlers registered: {}", registered_count));
+    detailed_log("KEY_REGISTRY", &format!("Registry has {} keystroke handlers", registry.handlers.len()));
     
     registry
 }

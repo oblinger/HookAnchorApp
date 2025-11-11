@@ -1,7 +1,8 @@
 //! Popup interface module for the Anchor Selector
-//! 
+//!
 //! This module contains the AnchorSelector struct and all popup-specific UI logic.
 
+use crate::prelude::*;
 use eframe::egui::{self, IconData};
 use std::sync::OnceLock;
 use std::collections::HashMap;
@@ -242,7 +243,7 @@ impl AnchorSelector {
     fn update_window_size(&mut self, ctx: &egui::Context) {
         let new_mode = self.determine_window_size_mode();
         // TODO: Finish window sizing debugging
-        // crate::utils::log(&format!("🪟 WINDOW_SIZING: Mode detected={:?}, dialog.visible={}, command_editor.visible={}",
+        // log(&format!("🪟 WINDOW_SIZING: Mode detected={:?}, dialog.visible={}, command_editor.visible={}",
         //     new_mode, self.dialog.visible, self.command_editor.visible));
         
         // Calculate the required size for the new mode
@@ -261,9 +262,9 @@ impl AnchorSelector {
             WindowSizeMode::Editor => self.calculate_editor_size(),
             WindowSizeMode::Dialog => {
                 // TEST: Force main window to 1000x1000 to verify this code path is working
-                crate::utils::log("🪟 WINDOW_SIZING: Dialog mode - calculating size for dialog");
+                log("🪟 WINDOW_SIZING: Dialog mode - calculating size for dialog");
                 let size = egui::vec2(1000.0, 1000.0);
-                crate::utils::log(&format!("🪟 WINDOW_SIZING: Dialog mode calculated size: {}x{}", size.x, size.y));
+                log(&format!("🪟 WINDOW_SIZING: Dialog mode calculated size: {}x{}", size.x, size.y));
                 size
             }
         };
@@ -286,21 +287,21 @@ impl AnchorSelector {
         };
         
         // TODO: Finish window sizing debugging
-        // crate::utils::log(&format!("🪟 WINDOW_SIZING: Should resize? {}, current_mode={:?}, new_mode={:?}, required_size={}x{}",
+        // log(&format!("🪟 WINDOW_SIZING: Should resize? {}, current_mode={:?}, new_mode={:?}, required_size={}x{}",
         //     should_resize, self.window_size_mode, new_mode, required_size.x, required_size.y));
             
         if should_resize {
             // Get current position BEFORE resizing to maintain top-left anchor
             let current_pos = ctx.input(|i| i.viewport().outer_rect.map(|r| r.min)).unwrap_or(egui::pos2(100.0, 100.0));
             
-            crate::utils::log(&format!("🪟 WINDOW_SIZING: SENDING RESIZE COMMAND! position={:?}, mode={:?}, target_size={}x{}", 
+            log(&format!("🪟 WINDOW_SIZING: SENDING RESIZE COMMAND! position={:?}, mode={:?}, target_size={}x{}", 
                 current_pos, new_mode, required_size.x, required_size.y));
             
             ctx.send_viewport_cmd(egui::ViewportCommand::InnerSize(required_size));
             
             // CRITICAL: Re-anchor position after resize to prevent drift
             // This ensures the top-left corner stays in the same place
-            crate::utils::log(&format!("[POSITION] Re-anchoring position after resize to {:?} (reason: prevent drift)", current_pos));
+            log(&format!("[POSITION] Re-anchoring position after resize to {:?} (reason: prevent drift)", current_pos));
             ctx.send_viewport_cmd(egui::ViewportCommand::OuterPosition(current_pos));
             
             // Update the mode and cache the size
@@ -311,7 +312,7 @@ impl AnchorSelector {
                 WindowSizeMode::Dialog => self.last_dialog_size = Some(required_size),
             }
             
-            crate::utils::detailed_log("WINDOW_SIZE", &format!(
+            detailed_log("WINDOW_SIZE", &format!(
                 "Window resized to {:?} mode: {}x{}", 
                 new_mode, required_size.x, required_size.y
             ));
@@ -328,7 +329,7 @@ impl AnchorSelector {
         static mut HIDING: bool = false;
         unsafe {
             if HIDING {
-                crate::utils::detailed_log("EXIT_OR_HIDE", "Already hiding, returning early");
+                detailed_log("EXIT_OR_HIDE", "Already hiding, returning early");
                 return; // Already hiding, don't call again
             }
             HIDING = true;
@@ -336,15 +337,15 @@ impl AnchorSelector {
         
         // Check if we're in direct mode (set by launcher via environment variable)
         let direct_mode = std::env::var("HOOKANCHOR_DIRECT_MODE").is_ok();
-        crate::utils::detailed_log("EXIT_OR_HIDE", &format!("Direct mode: {}", direct_mode));
+        detailed_log("EXIT_OR_HIDE", &format!("Direct mode: {}", direct_mode));
         
         if !direct_mode {
             // Server mode - hide window using AppleScript
-            crate::utils::detailed_log("EXIT_OR_HIDE", "Server mode - hiding window");
+            detailed_log("EXIT_OR_HIDE", "Server mode - hiding window");
             
             // Save current position before hiding
             if let Some(current_pos) = ctx.input(|i| i.viewport().outer_rect.map(|r| r.min)) {
-                crate::utils::log(&format!("[EXIT_OR_HIDE] Saving position before hide: {:?}", current_pos));
+                log(&format!("[EXIT_OR_HIDE] Saving position before hide: {:?}", current_pos));
                 save_window_position_with_reason(current_pos, "hiding window");
                 self.last_saved_position = Some(current_pos);
             }
@@ -357,16 +358,16 @@ impl AnchorSelector {
             // This ensures that text insertion and other operations work correctly
             // COMMENTED OUT: Testing if focus restoration is needed when hiding
             // If the window is being hidden anyway, we may not need to explicitly restore focus
-            // crate::utils::detailed_log("EXIT_OR_HIDE", "Restoring focus to previous application");
+            // detailed_log("EXIT_OR_HIDE", "Restoring focus to previous application");
             // if let Err(e) = self.regain_focus() {
-            //     crate::utils::log_error(&format!("Failed to restore focus before hiding: {}", e));
+            //     log_error(&format!("Failed to restore focus before hiding: {}", e));
             // }
 
             // Hide the window using egui's viewport command
-            crate::utils::detailed_log("EXIT_OR_HIDE", "Sending ViewportCommand::Visible(false)");
+            detailed_log("EXIT_OR_HIDE", "Sending ViewportCommand::Visible(false)");
             ctx.send_viewport_cmd(egui::ViewportCommand::Visible(false));
             
-            crate::utils::detailed_log("EXIT_OR_HIDE", &format!("Setting is_hidden=true (was {})", self.is_hidden));
+            detailed_log("EXIT_OR_HIDE", &format!("Setting is_hidden=true (was {})", self.is_hidden));
             self.is_hidden = true;
             
             // Reset interaction time to prevent timeout loop
@@ -379,19 +380,19 @@ impl AnchorSelector {
                     i.viewport().outer_rect
                 )
             });
-            crate::utils::detailed_log("EXIT_OR_HIDE", &viewport_info);
-            crate::utils::detailed_log("EXIT_OR_HIDE", "Window hidden via viewport commands");
+            detailed_log("EXIT_OR_HIDE", &viewport_info);
+            detailed_log("EXIT_OR_HIDE", "Window hidden via viewport commands");
             // Reset the flag after a delay to allow for future hide operations
             std::thread::spawn(|| {
                 std::thread::sleep(std::time::Duration::from_millis(100));
                 unsafe { 
                     HIDING = false;
-                    crate::utils::detailed_log("EXIT_OR_HIDE", "HIDING flag reset to false");
+                    detailed_log("EXIT_OR_HIDE", "HIDING flag reset to false");
                 }
             });
         } else {
             // Direct mode - exit the application
-            crate::utils::log("EXIT: Exiting application (direct mode)");
+            log("EXIT: Exiting application (direct mode)");
             std::process::exit(0);
         }
     }
@@ -422,13 +423,13 @@ impl AnchorSelector {
         // 🔑 DEBUG: Log EVERY key event that comes in, regardless of handling
         ctx.input(|input| {
             if !input.events.is_empty() {
-                crate::utils::detailed_log("KEY_DEBUG", &format!("🔑 ALL EVENTS: {} total events detected", input.events.len()));
+                detailed_log("KEY_DEBUG", &format!("🔑 ALL EVENTS: {} total events detected", input.events.len()));
                 for (i, event) in input.events.iter().enumerate() {
-                    crate::utils::detailed_log("KEY_DEBUG", &format!("🔑 EVENT[{}]: {:?}", i, event));
+                    detailed_log("KEY_DEBUG", &format!("🔑 EVENT[{}]: {:?}", i, event));
 
                     // Special handling for key events
                     if let egui::Event::Key { key, pressed, modifiers, .. } = event {
-                        crate::utils::detailed_log("KEY_DEBUG", &format!("🔑 KEY_EVENT: key={:?}, pressed={}, modifiers={{ctrl:{}, alt:{}, shift:{}, cmd:{}}}",
+                        detailed_log("KEY_DEBUG", &format!("🔑 KEY_EVENT: key={:?}, pressed={}, modifiers={{ctrl:{}, alt:{}, shift:{}, cmd:{}}}",
                             key, pressed, modifiers.ctrl, modifiers.alt, modifiers.shift, modifiers.command));
                     }
                 }
@@ -437,7 +438,7 @@ impl AnchorSelector {
             // Also log current key states
             if !input.keys_down.is_empty() {
                 let keys: Vec<String> = input.keys_down.iter().map(|k| format!("{:?}", k)).collect();
-                crate::utils::detailed_log("KEY_DEBUG", &format!("🔑 KEYS_DOWN: [{}]", keys.join(", ")));
+                detailed_log("KEY_DEBUG", &format!("🔑 KEYS_DOWN: [{}]", keys.join(", ")));
             }
         });
 
@@ -462,9 +463,9 @@ impl AnchorSelector {
             // TODO: Remove DEBUG - Commented out mouse/pointer event logging to reduce noise
             // Only log key events, not mouse/pointer events
             // if !input.events.is_empty() {
-            //     crate::utils::log(&format!("🔍 RAW_INPUT: Captured {} total events", input.events.len()));
+            //     log(&format!("🔍 RAW_INPUT: Captured {} total events", input.events.len()));
             //     for event in &input.events {
-            //         crate::utils::log(&format!("🔍 RAW_EVENT: {:?}", event));
+            //         log(&format!("🔍 RAW_EVENT: {:?}", event));
             //     }
             // }
         });
@@ -477,7 +478,7 @@ impl AnchorSelector {
     fn handle_popup_keys_with_events(&mut self, ctx: &egui::Context, events_to_process: Vec<egui::Event>) -> bool {
         // If still loading, only handle escape key
         if self.loading_state != LoadingState::Loaded {
-            crate::utils::detailed_log("KEY_REGISTRY", &format!("Cannot process keys, loading_state = {:?}", self.loading_state));
+            detailed_log("KEY_REGISTRY", &format!("Cannot process keys, loading_state = {:?}", self.loading_state));
             return false; // No keys processed during loading
         }
         
@@ -490,16 +491,16 @@ impl AnchorSelector {
             for event in &events_to_process {
                 if let egui::Event::Key { key, pressed, modifiers, .. } = event {
                     if *pressed {
-                        crate::utils::detailed_log("KEY_DEBUG", &format!("Processing key event: {:?} + {:?}", key, modifiers));
+                        detailed_log("KEY_DEBUG", &format!("Processing key event: {:?} + {:?}", key, modifiers));
                     }
                 }
             }
             
             // TODO: Remove DEBUG - Log exactly what events are being sent to key registry
             if !events_to_process.is_empty() {
-                crate::utils::detailed_log("KEY_REGISTRY", &format!("🔑 SENDING {} events to registry.process_events()", events_to_process.len()));
+                detailed_log("KEY_REGISTRY", &format!("🔑 SENDING {} events to registry.process_events()", events_to_process.len()));
                 for (i, event) in events_to_process.iter().enumerate() {
-                    crate::utils::detailed_log("KEY_REGISTRY", &format!("🔑 REGISTRY_INPUT[{}]: {:?}", i, event));
+                    detailed_log("KEY_REGISTRY", &format!("🔑 REGISTRY_INPUT[{}]: {:?}", i, event));
                 }
             }
 
@@ -507,7 +508,7 @@ impl AnchorSelector {
 
             // TODO: Remove DEBUG - Log what the registry returned
             if !events_to_process.is_empty() {
-                crate::utils::detailed_log("KEY_REGISTRY", &format!("🔑 REGISTRY RETURNED: handled={}", handled));
+                detailed_log("KEY_REGISTRY", &format!("🔑 REGISTRY RETURNED: handled={}", handled));
             }
             
             // Put the registry back
@@ -515,7 +516,7 @@ impl AnchorSelector {
             
             // Log handling results
             if !events_to_process.is_empty() {
-                crate::utils::detailed_log("KEY_DEBUG", &format!("Processed {} events, handled={}", events_to_process.len(), handled));
+                detailed_log("KEY_DEBUG", &format!("Processed {} events, handled={}", events_to_process.len(), handled));
             }
             
             if handled {
@@ -537,14 +538,14 @@ impl AnchorSelector {
                     })
                     .collect();
                 if !key_events.is_empty() {
-                    crate::utils::detailed_log("KEY_DEBUG", &format!("UNHANDLED KEY EVENTS: {}", key_events.join(", ")));
+                    detailed_log("KEY_DEBUG", &format!("UNHANDLED KEY EVENTS: {}", key_events.join(", ")));
                 }
             }
             
             handled // Return whether any keys were actually handled
         } else {
             // Fallback: registry not initialized yet
-            crate::utils::log_error("KEY_REGISTRY: Registry not initialized, cannot process keys");
+            log_error("KEY_REGISTRY: Registry not initialized, cannot process keys");
             false
         }
     }}
@@ -645,10 +646,10 @@ impl PopupInterface for AnchorSelector {
         // Update app_state and save to disk
         self.popup_state.app_state.show_files = self.popup_state.show_files;
         if let Err(e) = crate::core::data::set_state(&self.popup_state.app_state) {
-            crate::utils::log_error(&format!("Failed to save show_files state: {}", e));
+            log_error(&format!("Failed to save show_files state: {}", e));
         }
 
-        crate::utils::log(&format!("Show files toggled to: {}", self.popup_state.show_files));
+        log(&format!("Show files toggled to: {}", self.popup_state.show_files));
 
         // Force display update by recomputing display commands and layout
         self.popup_state.update_display_commands();
@@ -691,7 +692,7 @@ impl PopupInterface for AnchorSelector {
     fn close_dialog(&mut self) {
         // Dialog closes automatically via update() when user clicks button
         // This trait method exists for API compatibility but isn't used
-        crate::utils::log("DIALOG: close_dialog() called but dialogs close automatically");
+        log("DIALOG: close_dialog() called but dialogs close automatically");
     }
 
     fn get_search_text(&self) -> &str {
@@ -711,12 +712,12 @@ impl PopupInterface for AnchorSelector {
     }
 
     fn set_input(&mut self, text: String) {
-        crate::utils::log(&format!("SET_INPUT_DEBUG: Called with text: '{}' (length: {})", text, text.len()));
+        log(&format!("SET_INPUT_DEBUG: Called with text: '{}' (length: {})", text, text.len()));
         self.popup_state.update_search(text.clone());
         // Request focus and cursor positioning at the end
         self.request_focus = true;
         self.request_cursor_at_end = true;
-        crate::utils::log(&format!("SET_INPUT_DEBUG: Set request_focus=true, request_cursor_at_end=true for text: '{}'", text));
+        log(&format!("SET_INPUT_DEBUG: Set request_focus=true, request_cursor_at_end=true for text: '{}'", text));
     }
 }
 
@@ -884,8 +885,8 @@ impl AnchorSelector {
     /// Handle add alias command - opens command editor with alias action and last executed command as argument
     fn handle_add_alias_impl(&mut self) {
         let state = crate::core::data::get_state();
-        crate::utils::detailed_log("ADD_ALIAS", &format!("=== ADD ALIAS TRIGGERED ==="));
-        crate::utils::detailed_log("ADD_ALIAS", &format!("Last executed command from state: {:?}", state.last_executed_command));
+        detailed_log("ADD_ALIAS", &format!("=== ADD ALIAS TRIGGERED ==="));
+        detailed_log("ADD_ALIAS", &format!("Last executed command from state: {:?}", state.last_executed_command));
         if let Some(last_command) = state.last_executed_command {
             let search_text = self.popup_state.search_text.clone();
             
@@ -914,7 +915,7 @@ impl AnchorSelector {
     /// Note: This requires an egui context, so it can't be called from here
     /// Instead, we'll set a flag that the update loop will process
     fn execute_popup_action(&mut self, popup_action: &str) {
-        crate::utils::log(&format!("Executing popup action: {}", popup_action));
+        log(&format!("Executing popup action: {}", popup_action));
         match popup_action {
             "open_editor" => self.open_command_editor(),
             "edit_active_command" => self.edit_active_command(),
@@ -926,13 +927,13 @@ impl AnchorSelector {
             "activate_tmux" => self.activate_tmux(),
             "show_history_viewer" => self.show_history_viewer(),
             "toggle_show_files" => self.toggle_show_files(),
-            _ => crate::utils::log_error(&format!("Unknown popup action: {}", popup_action)),
+            _ => log_error(&format!("Unknown popup action: {}", popup_action)),
         }
     }
 
     /// Execute a JavaScript action by function name (for --action flag)
     fn execute_js_action(&mut self, function_name: &str) {
-        crate::utils::log_error(&format!(
+        log_error(&format!(
             "DEPRECATED: execute_js_action called with '{}' - this should not happen! \
             JavaScript functions should be executed via the launcher system, not this legacy path.",
             function_name
@@ -1200,7 +1201,7 @@ impl AnchorSelector {
                 .spawn()
             {
                 Ok(_) => {
-                    crate::utils::log(&format!("Launched history viewer with filter: '{}'", anchor_filter));
+                    log(&format!("Launched history viewer with filter: '{}'", anchor_filter));
                 }
                 Err(e) => {
                     crate::utils::error(&format!("Could not launch history viewer: {}", e));
@@ -1234,7 +1235,7 @@ impl AnchorSelector {
                 // Replace the prefix: "FB ZZZ" -> "fireball ZZZ"
                 let remaining = &input[original_name.len()..];
                 let transformed_input = format!("{}{}", resolved_name, remaining);
-                crate::utils::detailed_log("TEMPLATE_CONTEXT", &format!("Transformed input from '{}' to '{}'", input, transformed_input));
+                detailed_log("TEMPLATE_CONTEXT", &format!("Transformed input from '{}' to '{}'", input, transformed_input));
                 input = transformed_input;
             }
         }
@@ -1263,8 +1264,8 @@ impl AnchorSelector {
     }
 
     fn handle_template_create_named_impl(&mut self, template_name: &str) {
-        crate::utils::detailed_log("TEMPLATE", &format!("TEMPLATE: === ENTER handle_template_create_named_impl('{}') ===", template_name));
-        crate::utils::log(&format!("TEMPLATE: Processing template '{}' with search text '{}'", template_name, self.popup_state.search_text));
+        detailed_log("TEMPLATE", &format!("TEMPLATE: === ENTER handle_template_create_named_impl('{}') ===", template_name));
+        log(&format!("TEMPLATE: Processing template '{}' with search text '{}'", template_name, self.popup_state.search_text));
         
         // Special validation for edit_selection template - only prevent editing invalid commands
         if template_name == "edit_selection" {
@@ -1272,15 +1273,15 @@ impl AnchorSelector {
             if !self.filtered_commands().is_empty() {
                 let display_commands = &self.popup_state.display_commands;
                 let selected_idx = self.selected_index();
-                crate::utils::detailed_log("TEMPLATE", &format!("TEMPLATE: edit_selection - selected_index={}, display_commands.len()={}", selected_idx, display_commands.len()));
+                detailed_log("TEMPLATE", &format!("TEMPLATE: edit_selection - selected_index={}, display_commands.len()={}", selected_idx, display_commands.len()));
                 
                 if selected_idx < display_commands.len() {
                     let selected_cmd = &display_commands[selected_idx];
-                    crate::utils::detailed_log("TEMPLATE", &format!("TEMPLATE: Selected command for editing: '{}'", selected_cmd.command));
+                    detailed_log("TEMPLATE", &format!("TEMPLATE: Selected command for editing: '{}'", selected_cmd.command));
                     
                     // Don't edit separator commands or merged commands
                     if PopupState::is_separator_command(selected_cmd) || selected_cmd.get_flag(FLAG_MERGED).is_some() {
-                        crate::utils::detailed_log("TEMPLATE", "TEMPLATE: Cannot edit separator or merged command");
+                        detailed_log("TEMPLATE", "TEMPLATE: Cannot edit separator or merged command");
                         crate::utils::error("Cannot edit separator or merged commands.");
                         return;
                     }
@@ -1289,43 +1290,43 @@ impl AnchorSelector {
         }
         
         // Create template context using helper function
-        crate::utils::detailed_log("TEMPLATE", &format!("TEMPLATE: Creating context using helper function"));
+        detailed_log("TEMPLATE", &format!("TEMPLATE: Creating context using helper function"));
         let context = self.create_template_context();
         
-        crate::utils::detailed_log("TEMPLATE", &format!("TEMPLATE: DEBUG 2 - TemplateContext created, about to get config"));
+        detailed_log("TEMPLATE", &format!("TEMPLATE: DEBUG 2 - TemplateContext created, about to get config"));
         // Get the specified template/action
         let config = crate::core::data::get_config();
         
-        crate::utils::detailed_log("TEMPLATE", &format!("TEMPLATE: DEBUG 3 - Config retrieved successfully"));
+        detailed_log("TEMPLATE", &format!("TEMPLATE: DEBUG 3 - Config retrieved successfully"));
         // First try to find in unified actions
-        crate::utils::detailed_log("TEMPLATE", &format!("TEMPLATE: Looking for action '{}'", template_name));
+        detailed_log("TEMPLATE", &format!("TEMPLATE: Looking for action '{}'", template_name));
         let found_action = if let Some(ref actions) = config.actions {
-            crate::utils::detailed_log("TEMPLATE", &format!("TEMPLATE: DEBUG 4 - config.actions is Some, Found {} actions in config", actions.len()));
+            detailed_log("TEMPLATE", &format!("TEMPLATE: DEBUG 4 - config.actions is Some, Found {} actions in config", actions.len()));
             // Debug: log all action names
             let action_names: Vec<String> = actions.keys().cloned().collect();
-            crate::utils::detailed_log("TEMPLATE", &format!("TEMPLATE: Available actions: {:?}", action_names));
+            detailed_log("TEMPLATE", &format!("TEMPLATE: Available actions: {:?}", action_names));
             if let Some(action) = actions.get(template_name) {
-                crate::utils::detailed_log("TEMPLATE", &format!("TEMPLATE: DEBUG 5 - Found action '{}', type='{}'", template_name, action.action_type()));
+                detailed_log("TEMPLATE", &format!("TEMPLATE: DEBUG 5 - Found action '{}', type='{}'", template_name, action.action_type()));
                 if action.action_type() == "template" {
-                    crate::utils::detailed_log("TEMPLATE", &format!("TEMPLATE: DEBUG 6 - Action type is 'template'"));
+                    detailed_log("TEMPLATE", &format!("TEMPLATE: DEBUG 6 - Action type is 'template'"));
                     // Extract grab parameter if present
-                    crate::utils::detailed_log("TEMPLATE", &format!("TEMPLATE: DEBUG 7 - About to extract grab parameter"));
+                    detailed_log("TEMPLATE", &format!("TEMPLATE: DEBUG 7 - About to extract grab parameter"));
                     let grab_seconds = action.params.get("grab")
                         .and_then(|v| v.as_u64())
                         .map(|v| v as u32);
                     
-                    crate::utils::detailed_log("TEMPLATE", &format!("TEMPLATE: DEBUG 8 - grab_seconds = {:?}", grab_seconds));
+                    detailed_log("TEMPLATE", &format!("TEMPLATE: DEBUG 8 - grab_seconds = {:?}", grab_seconds));
                     if let Some(grab_secs) = grab_seconds {
-                        crate::utils::detailed_log("TEMPLATE", &format!("TEMPLATE: DEBUG 9 - grab_secs = {}", grab_secs));
+                        detailed_log("TEMPLATE", &format!("TEMPLATE: DEBUG 9 - grab_secs = {}", grab_secs));
                         // Store template info for after grab completes
-                        crate::utils::detailed_log("GRAB", &format!("GRAB: Setting pending_template to '{}' with context", template_name));
+                        detailed_log("GRAB", &format!("GRAB: Setting pending_template to '{}' with context", template_name));
                         self.pending_template = Some((template_name.to_string(), context));
-                        crate::utils::detailed_log("GRAB", &format!("GRAB: pending_template is now Some"));
+                        detailed_log("GRAB", &format!("GRAB: pending_template is now Some"));
                         
                         // Start countdown
                         self.grabber_countdown = Some(grab_secs as u8);
                         self.countdown_last_update = Some(std::time::Instant::now());
-                        crate::utils::detailed_log("GRAB", &format!("GRAB: Started countdown for template '{}' with {} seconds", template_name, grab_secs));
+                        detailed_log("GRAB", &format!("GRAB: Started countdown for template '{}' with {} seconds", template_name, grab_secs));
                         return; // Early return for grab templates
                     }
                     
@@ -1335,12 +1336,12 @@ impl AnchorSelector {
                 } else {
                     let error_msg = format!("ERROR: Action '{}' exists but is not a template (type='{}').\nTo use this key binding, rename your template action to avoid name collision.", 
                         template_name, action.action_type());
-                    crate::utils::detailed_log("TEMPLATE", &format!("TEMPLATE: {}", error_msg));
+                    detailed_log("TEMPLATE", &format!("TEMPLATE: {}", error_msg));
                     crate::utils::error(&error_msg);
                     false
                 }
             } else {
-                crate::utils::detailed_log("TEMPLATE", &format!("TEMPLATE: Action '{}' not found in actions", template_name));
+                detailed_log("TEMPLATE", &format!("TEMPLATE: Action '{}' not found in actions", template_name));
                 // Don't show error here - it might be in old templates
                 false
             }
@@ -1362,17 +1363,17 @@ impl AnchorSelector {
                     full_error.push_str("\n(No templates configured)");
                 }
             }
-            crate::utils::log_error(&full_error);
+            log_error(&full_error);
             crate::utils::error(&full_error);
         } else {
             // Process the unified action as a template
-            crate::utils::detailed_log("SYSTEM", &format!("Processing unified action template: {}", template_name));
+            detailed_log("SYSTEM", &format!("Processing unified action template: {}", template_name));
 
             // Convert unified action to template and process it
             if let Some(ref actions) = config.actions {
                 if let Some(action) = actions.get(template_name) {
                     if let Some(template) = action.to_template() {
-                        crate::utils::detailed_log("TEMPLATE", &format!("TEMPLATE: Converted action to template, edit={}", template.edit));
+                        detailed_log("TEMPLATE", &format!("TEMPLATE: Converted action to template, edit={}", template.edit));
 
                         // Check for existing command if use_existing is true
                         // For edit_selection template, use the actual selected command (not a name search)
@@ -1414,7 +1415,7 @@ impl AnchorSelector {
                             match crate::core::template_creation::process_template(&template, &context, &config) {
                                 Ok(new_command) => {
                                     if template.edit {
-                                        crate::utils::detailed_log("TEMPLATE", &format!("TEMPLATE: Opening command editor for sub_anchor template"));
+                                        detailed_log("TEMPLATE", &format!("TEMPLATE: Opening command editor for sub_anchor template"));
                                         // Open command editor with the prefilled command
                                         self.command_editor.create_new_command(&new_command, &self.popup_state.search_text);
                                         // Store template for post-save file creation
@@ -1457,7 +1458,7 @@ impl AnchorSelector {
     }
     
     fn handle_navigate_up_hierarchy_impl(&mut self) {
-        crate::utils::detailed_log("HIERARCHY", "Navigating up hierarchy");
+        detailed_log("HIERARCHY", "Navigating up hierarchy");
         
         // Check if we're currently in a submenu
         if let Some((_original_command, resolved_command)) = self.popup_state.get_prefix_menu_command_info() {
@@ -1475,41 +1476,41 @@ impl AnchorSelector {
                     
                     // Don't go up if we're already at orphans patch or empty patch
                     if parent_patch.is_empty() || parent_patch.to_lowercase() == "orphans" {
-                        crate::utils::detailed_log("HIERARCHY", &format!("Already at root level (patch: '{}')", parent_patch));
+                        detailed_log("HIERARCHY", &format!("Already at root level (patch: '{}')", parent_patch));
                         return;
                     }
                     
                     // Set the search text to the parent patch name to navigate up
-                    crate::utils::detailed_log("HIERARCHY", &format!("Navigating up from patch '{}' to parent patch: '{}'", current_patch.name, parent_patch));
+                    detailed_log("HIERARCHY", &format!("Navigating up from patch '{}' to parent patch: '{}'", current_patch.name, parent_patch));
                     self.popup_state.update_search(parent_patch.clone());
                 } else {
-                    crate::utils::detailed_log("HIERARCHY", &format!("No primary anchor found for patch: {}", current_patch.name));
+                    detailed_log("HIERARCHY", &format!("No primary anchor found for patch: {}", current_patch.name));
                 }
             } else {
-                crate::utils::detailed_log("HIERARCHY", &format!("No patch found for current submenu: {}", anchor_name));
+                detailed_log("HIERARCHY", &format!("No patch found for current submenu: {}", anchor_name));
             }
         } else {
-            crate::utils::detailed_log("HIERARCHY", "Not in submenu, cannot navigate up");
+            detailed_log("HIERARCHY", "Not in submenu, cannot navigate up");
         }
     }
     
     fn handle_navigate_down_hierarchy_impl(&mut self) {
-        crate::utils::detailed_log("HIERARCHY", "Navigating down hierarchy");
+        detailed_log("HIERARCHY", "Navigating down hierarchy");
         
         // Get the currently selected command
         if let Some(selected_command) = self.popup_state.get_selected_command() {
             // Check if the selected command is an anchor
             if selected_command.is_anchor() {
                 let anchor_name = &selected_command.command;
-                crate::utils::detailed_log("HIERARCHY", &format!("Navigating into anchor: {}", anchor_name));
+                detailed_log("HIERARCHY", &format!("Navigating into anchor: {}", anchor_name));
                 
                 // Set the search text to the anchor name to enter its submenu
                 self.popup_state.update_search(anchor_name.clone());
             } else {
-                crate::utils::detailed_log("HIERARCHY", &format!("Selected command '{}' is not an anchor (action='{}')", selected_command.command, selected_command.action));
+                detailed_log("HIERARCHY", &format!("Selected command '{}' is not an anchor (action='{}')", selected_command.command, selected_command.action));
             }
         } else {
-            crate::utils::detailed_log("HIERARCHY", "No command selected");
+            detailed_log("HIERARCHY", "No command selected");
         }
     }
     
@@ -1690,7 +1691,7 @@ impl AnchorSelector {
             return; // Already loading or loaded
         }
 
-        crate::utils::log("⏱️ DEFERRED_LOADING: Starting data load...");
+        log("⏱️ DEFERRED_LOADING: Starting data load...");
         self.loading_state = LoadingState::Loading;
         let start_time = std::time::Instant::now();
 
@@ -1698,10 +1699,10 @@ impl AnchorSelector {
         let init_start = std::time::Instant::now();
         match crate::core::initialize() {
             Ok(()) => {
-                crate::utils::log(&format!("⏱️ DEFERRED_LOADING: Data loaded in {:?}", init_start.elapsed()));
+                log(&format!("⏱️ DEFERRED_LOADING: Data loaded in {:?}", init_start.elapsed()));
             }
             Err(init_error) => {
-                crate::utils::log_error(&format!("Failed to initialize sys_data: {}", init_error));
+                log_error(&format!("Failed to initialize sys_data: {}", init_error));
                 // Continue with default config
             }
         }
@@ -1737,7 +1738,7 @@ impl AnchorSelector {
         }
         
         self.loading_state = LoadingState::Loaded;
-        crate::utils::log(&format!("⏱️ DEFERRED_LOADING: Total time: {:?}", start_time.elapsed()));
+        log(&format!("⏱️ DEFERRED_LOADING: Total time: {:?}", start_time.elapsed()));
         
     }
     
@@ -1772,14 +1773,14 @@ impl AnchorSelector {
         context: HashMap<String, String>,
         callback: Box<dyn FnOnce(&HashMap<String, String>) -> Result<(), Box<dyn std::error::Error>>>,
     ) {
-        crate::utils::log(&format!("ACTION: Queueing action with {} context keys", context.len()));
+        log(&format!("ACTION: Queueing action with {} context keys", context.len()));
         self.pending_action = Some(PendingAction { context, callback });
     }
 
     /// Complete the pending action by merging user input and executing the callback
     pub fn complete_action(&mut self, user_input: HashMap<String, String>) {
         if let Some(action) = self.pending_action.take() {
-            crate::utils::log(&format!("ACTION: Completing action with {} user inputs", user_input.len()));
+            log(&format!("ACTION: Completing action with {} user inputs", user_input.len()));
             
             // Merge action context with user input
             let mut final_context = action.context;
@@ -1793,11 +1794,11 @@ impl AnchorSelector {
                     // User confirmed rename - execute it with access to self
                     match self.execute_rename_with_ui_update(&final_context) {
                         Ok(()) => {
-                            crate::utils::log("ACTION: Rename action executed successfully");
+                            log("ACTION: Rename action executed successfully");
                         }
                         Err(e) => {
                             let error_msg = format!("Rename action failed: {}", e);
-                            crate::utils::log_error(&error_msg);
+                            log_error(&error_msg);
                             crate::utils::error(&error_msg);
                         }
                     }
@@ -1807,11 +1808,11 @@ impl AnchorSelector {
                 // Execute the regular callback with merged context
                 match (action.callback)(&final_context) {
                     Ok(()) => {
-                        crate::utils::log("ACTION: Action executed successfully");
+                        log("ACTION: Action executed successfully");
                     }
                     Err(e) => {
                         let error_msg = format!("Action failed: {}", e);
-                        crate::utils::log_error(&error_msg);
+                        log_error(&error_msg);
                         crate::utils::error(&error_msg);
                     }
                 }
@@ -1822,7 +1823,7 @@ impl AnchorSelector {
     /// Cancel the pending action without executing it
     pub fn cancel_action(&mut self) {
         if self.pending_action.is_some() {
-            crate::utils::log("ACTION: Cancelling pending action");
+            log("ACTION: Cancelling pending action");
             self.pending_action = None;
         }
     }
@@ -1841,19 +1842,19 @@ impl AnchorSelector {
         // Delete original command if this is an edit/rename
         if let Some(old_name) = old_command_name {
             if !old_name.is_empty() {
-                crate::utils::log(&format!("SAVE: Deleting original command '{}' from UI", old_name));
+                log(&format!("SAVE: Deleting original command '{}' from UI", old_name));
                 commands.retain(|c| c.command != old_name);
             }
         }
 
         // Add the new command
-        crate::utils::log(&format!("SAVE: Adding command '{}' to UI (action: {}, patch: {})",
+        log(&format!("SAVE: Adding command '{}' to UI (action: {}, patch: {})",
             new_command.command, new_command.action, new_command.patch));
         commands.push(new_command);
 
         // Save all commands to disk - patch inference runs once here
         crate::core::data::set_commands(commands)?;
-        crate::utils::log("SAVE: Saved all commands to disk");
+        log("SAVE: Saved all commands to disk");
 
         Ok(())
     }
@@ -1882,7 +1883,7 @@ impl AnchorSelector {
         let (sys_data, _) = crate::core::get_sys_data();
         let mut patches = sys_data.patches;
 
-        crate::utils::log(&format!("RENAME: About to execute rename_associated_data: '{}' -> '{}'", old_name, new_name));
+        log(&format!("RENAME: About to execute rename_associated_data: '{}' -> '{}'", old_name, new_name));
         let (mut updated_arg, _actions) = rename_associated_data(
             old_name,
             new_name,
@@ -1893,7 +1894,7 @@ impl AnchorSelector {
             &config,
             false, // dry_run = false
         )?;
-        crate::utils::log(&format!("RENAME: rename_associated_data completed, updated_arg: {}", updated_arg));
+        log(&format!("RENAME: rename_associated_data completed, updated_arg: {}", updated_arg));
 
         // Check if this is an anchor file rename where filename matches folder name
         // Check if the command has the anchor flag ('A')
@@ -1912,7 +1913,7 @@ impl AnchorSelector {
                                     if folder_name_str == old_name {
                                         // Folder name matches - rename the folder too
                                         use crate::core::command_ops::rename_folder;
-                                        crate::utils::log(&format!("RENAME_FOLDER: Executing folder rename: '{}' -> '{}'", folder_name_str, new_name));
+                                        log(&format!("RENAME_FOLDER: Executing folder rename: '{}' -> '{}'", folder_name_str, new_name));
                                         match rename_folder(
                                             parent.to_str().unwrap_or(""),
                                             new_name,
@@ -1920,7 +1921,7 @@ impl AnchorSelector {
                                             false, // dry_run = false
                                         ) {
                                             Ok(_) => {
-                                                crate::utils::log("RENAME_FOLDER: Folder rename completed successfully");
+                                                log("RENAME_FOLDER: Folder rename completed successfully");
 
                                                 // Update the arg path to reflect the new folder name
                                                 let new_folder_path = parent.parent()
@@ -1929,7 +1930,7 @@ impl AnchorSelector {
                                                 let new_file_name = format!("{}.md", new_name);
                                                 let new_full_path = new_folder_path.join(&new_file_name);
                                                 updated_arg = new_full_path.to_string_lossy().to_string();
-                                                crate::utils::log(&format!("RENAME_FOLDER: Updated arg to: {}", updated_arg));
+                                                log(&format!("RENAME_FOLDER: Updated arg to: {}", updated_arg));
                                             }
                                             Err(e) => {
                                                 return Err(format!("Failed to rename folder: {}", e).into());
@@ -1947,7 +1948,7 @@ impl AnchorSelector {
         // Delete original command if needed
         if let Some(cmd_name) = original_command_to_delete {
             if !cmd_name.is_empty() {
-                crate::utils::log(&format!("RENAME: Deleting original command '{}'", cmd_name));
+                log(&format!("RENAME: Deleting original command '{}'", cmd_name));
                 commands.retain(|c| &c.command != cmd_name);
             }
         }
@@ -1965,13 +1966,13 @@ impl AnchorSelector {
         };
 
         // Add the new command
-        crate::utils::log(&format!("RENAME: Adding new command '{}'", new_command.command));
+        log(&format!("RENAME: Adding new command '{}'", new_command.command));
         commands.push(new_command);
 
         // Save all commands back to sys_data because rename_associated_data modified
         // patches and prefixes on many commands (not just the renamed command)
         crate::core::data::set_commands(commands)?;
-        crate::utils::log("RENAME: Saved all command changes (patches/prefixes) to sys_data");
+        log("RENAME: Saved all command changes (patches/prefixes) to sys_data");
 
         // Update the filtered list if we're currently filtering
         if !self.popup_state.search_text.trim().is_empty() {
@@ -1984,10 +1985,10 @@ impl AnchorSelector {
 
         // Update input field with the renamed command name for symmetric feedback
         // This ensures that after the rename dialog, the input field shows the command that was just renamed
-        crate::utils::log(&format!("RENAME_FEEDBACK: Setting input field to renamed command: '{}'", new_name));
+        log(&format!("RENAME_FEEDBACK: Setting input field to renamed command: '{}'", new_name));
         self.set_input(new_name.to_string());
 
-        crate::utils::log(&format!("RENAME: Successfully renamed '{}' to '{}' with side effects and UI update", old_name, new_name));
+        log(&format!("RENAME: Successfully renamed '{}' to '{}' with side effects and UI update", old_name, new_name));
         Ok(())
     }
 
@@ -2031,7 +2032,7 @@ impl AnchorSelector {
                 .collect::<Vec<_>>()
                 .join(" | ");
 
-            crate::utils::log(&format!("SET_SELECTED_INDEX: index={} -> position=({}, {}) | CALLER: {}",
+            log(&format!("SET_SELECTED_INDEX: index={} -> position=({}, {}) | CALLER: {}",
                 index, row, col, caller));
         }
     }
@@ -2070,7 +2071,7 @@ impl AnchorSelector {
             match crate::systems::poll_dialog(&mut state.handle) {
                 Some(Ok(mut result)) => {
                     // Dialog finished successfully
-                    crate::utils::log(&format!("EXTERNAL_DIALOG: Got result: {:?}", result));
+                    log(&format!("EXTERNAL_DIALOG: Got result: {:?}", result));
 
                     // Merge context with result
                     result.extend(state.context);
@@ -2078,7 +2079,7 @@ impl AnchorSelector {
                     // Execute callback
                     match (state.callback)(&result) {
                         Ok(()) => {
-                            crate::utils::log("EXTERNAL_DIALOG: Callback executed successfully");
+                            log("EXTERNAL_DIALOG: Callback executed successfully");
 
                             // Check if this is a rename operation that needs special handling
                             if result.get("operation") == Some(&"rename".to_string()) {
@@ -2088,11 +2089,11 @@ impl AnchorSelector {
                                     // User confirmed rename - execute it with access to self
                                     match self.execute_rename_with_ui_update(&result) {
                                         Ok(()) => {
-                                            crate::utils::log("EXTERNAL_DIALOG: Rename action executed successfully");
+                                            log("EXTERNAL_DIALOG: Rename action executed successfully");
                                         }
                                         Err(e) => {
                                             let error_msg = format!("Rename action failed: {}", e);
-                                            crate::utils::log_error(&error_msg);
+                                            log_error(&error_msg);
                                             crate::utils::error(&error_msg);
                                         }
                                     }
@@ -2105,7 +2106,7 @@ impl AnchorSelector {
                         }
                         Err(e) => {
                             let error_msg = format!("External dialog callback failed: {}", e);
-                            crate::utils::log_error(&error_msg);
+                            log_error(&error_msg);
                             crate::utils::error(&error_msg);
                             // Close command editor even on error
                             self.close_command_editor();
@@ -2116,7 +2117,7 @@ impl AnchorSelector {
                 }
                 Some(Err(error)) => {
                     // Dialog failed
-                    crate::utils::log_error(&format!("EXTERNAL_DIALOG: {}", error));
+                    log_error(&format!("EXTERNAL_DIALOG: {}", error));
                     crate::utils::error(&format!("Dialog error: {}", error));
                     // Drop state on error
                 }
@@ -2167,7 +2168,7 @@ impl AnchorSelector {
             let resolved = matching_cmd.resolve_alias(&all_commands);
             let expanded_name = &resolved.command;
 
-            crate::utils::log(&format!("🔄 Expanding '{}' -> '{}'", current_input, expanded_name));
+            log(&format!("🔄 Expanding '{}' -> '{}'", current_input, expanded_name));
 
             // Update the search text with the expanded/resolved name
             self.popup_state.update_search(expanded_name.clone());
@@ -2187,7 +2188,7 @@ impl AnchorSelector {
                 let resolved = first_match.resolve_alias(&all_commands);
                 let expanded_name = &resolved.command;
 
-                crate::utils::log(&format!("🔄 Expanding prefix '{}' -> '{}'", current_input, expanded_name));
+                log(&format!("🔄 Expanding prefix '{}' -> '{}'", current_input, expanded_name));
 
                 self.popup_state.update_search(expanded_name.clone());
                 self.request_cursor_at_end = true;
@@ -2225,7 +2226,7 @@ impl AnchorSelector {
         let countdown_seconds = config.popup_settings.countdown_seconds.unwrap_or(5);
         let flip_focus = config.launcher_settings.as_ref().and_then(|ls| ls.flip_focus).unwrap_or(false);
         
-        crate::utils::detailed_log("GRAB", &format!("Starting grabber countdown from {} (flip_focus={})", 
+        detailed_log("GRAB", &format!("Starting grabber countdown from {} (flip_focus={})", 
             countdown_seconds, flip_focus));
             
         self.grabber_countdown = Some(countdown_seconds);
@@ -2237,10 +2238,10 @@ impl AnchorSelector {
     /// Update countdown and handle grabber logic
     fn update_grabber_countdown(&mut self, ctx: &egui::Context) {
         if let Some(count) = self.grabber_countdown {
-            crate::utils::detailed_log("GRAB", &format!("update_grabber_countdown: count={}", count));
+            detailed_log("GRAB", &format!("update_grabber_countdown: count={}", count));
             if let Some(last_update) = self.countdown_last_update {
                 let elapsed = last_update.elapsed();
-                crate::utils::detailed_log("GRAB", &format!("Elapsed: {}ms", elapsed.as_millis()));
+                detailed_log("GRAB", &format!("Elapsed: {}ms", elapsed.as_millis()));
                 if elapsed.as_secs() >= 1 {
                     if count > 1 {
                         // Continue countdown
@@ -2261,7 +2262,7 @@ impl AnchorSelector {
                         }
                     } else {
                         // Countdown finished, execute grab
-                        crate::utils::log("GRAB: Countdown reached 0, calling execute_grab");
+                        log("GRAB: Countdown reached 0, calling execute_grab");
                         self.execute_grab(ctx);
                         self.grabber_countdown = None;
                         self.countdown_last_update = None;
@@ -2317,13 +2318,13 @@ impl AnchorSelector {
             .arg("-e")
             .arg(force_finder_script)
             .output() {
-            crate::utils::log_error(&format!("Failed to flip focus away: {}", e));
+            log_error(&format!("Failed to flip focus away: {}", e));
         }
     }
     
     /// Execute the grab operation - simplified synchronous version
     fn execute_grab(&mut self, _ctx: &egui::Context) {
-        crate::utils::log("GRAB: execute_grab() called");
+        log("GRAB: execute_grab() called");
         let config = crate::core::data::get_config();
         
         // Check if we should flip focus
@@ -2341,7 +2342,7 @@ impl AnchorSelector {
         }
         
         // Now capture from the focused application
-        crate::utils::detailed_log("GRAB", &format!("GRAB: Calling crate::systems::grabber::grab, pending_template={:?}", 
+        detailed_log("GRAB", &format!("GRAB: Calling crate::systems::grabber::grab, pending_template={:?}", 
             self.pending_template.as_ref().map(|(name, _)| name)));
         // Execute grab on command server instead of locally
         let mut grab_action_params = std::collections::HashMap::new();
@@ -2351,7 +2352,7 @@ impl AnchorSelector {
 
         match crate::execute::execute_on_server(&grab_action, None) {
             Ok(grab_output) => {
-                crate::utils::log(&format!("GRAB: Command server returned: '{}'", grab_output));
+                log(&format!("GRAB: Command server returned: '{}'", grab_output));
 
                 // Check if server returned NoRuleMatched error
                 if grab_output.starts_with("No grabber rule matched for:") {
@@ -2368,7 +2369,7 @@ impl AnchorSelector {
                         .map(|s| s.trim().to_string())
                         .unwrap_or_else(|| "unknown.bundle".to_string());
 
-                    crate::utils::log(&format!("🔴 GRAB NoRuleMatched for app: {}", app_name));
+                    log(&format!("🔴 GRAB NoRuleMatched for app: {}", app_name));
 
                     // Clear any pending template
                     self.pending_template.take();
@@ -2434,11 +2435,11 @@ impl AnchorSelector {
 
                 match grab_result {
                     crate::systems::grabber::GrabResult::RuleMatched(rule_name, mut command) => {
-                        crate::utils::log(&format!("🟢 GRAB: RuleMatched - rule='{}', command.action='{}', command.arg='{}'", rule_name, command.action, command.arg));
+                        log(&format!("🟢 GRAB: RuleMatched - rule='{}', command.action='{}', command.arg='{}'", rule_name, command.action, command.arg));
                         
                         // Check if we have a pending template
                         if let Some((template_name, mut context)) = self.pending_template.take() {
-                            crate::utils::detailed_log("GRAB", &format!("GRAB: Found pending template '{}' - will process it", template_name));
+                            detailed_log("GRAB", &format!("GRAB: Found pending template '{}' - will process it", template_name));
                             
                             // Add grabbed variables to template context
                             context.add_variable("grabbed_action".to_string(), command.action.clone());
@@ -2459,31 +2460,31 @@ impl AnchorSelector {
                             // Try to find template in unified actions first
                             let _template_found = if let Some(ref actions) = config.actions {
                                 if let Some(action) = actions.get(&template_name) {
-                                    crate::utils::detailed_log("GRAB", &format!("GRAB: Found action '{}' in unified actions", template_name));
+                                    detailed_log("GRAB", &format!("GRAB: Found action '{}' in unified actions", template_name));
                                     if action.action_type() == "template" {
-                                        crate::utils::detailed_log("GRAB", &format!("GRAB: Action type is 'template'"));
+                                        detailed_log("GRAB", &format!("GRAB: Action type is 'template'"));
                                         // Convert action to Template for processing
                                         if let Some(template) = action.to_template() {
-                                            crate::utils::detailed_log("GRAB", &format!("GRAB: Successfully converted action to template"));
-                                            crate::utils::detailed_log("GRAB", &format!("GRAB: Calling process_template"));
+                                            detailed_log("GRAB", &format!("GRAB: Successfully converted action to template"));
+                                            detailed_log("GRAB", &format!("GRAB: Calling process_template"));
                                             match crate::core::template_creation::process_template(&template, &context, &config) {
                                                 Ok(new_command) => {
-                                                    crate::utils::detailed_log("GRAB", &format!("GRAB: process_template succeeded, command='{}'\n", new_command.command));
+                                                    detailed_log("GRAB", &format!("GRAB: process_template succeeded, command='{}'\n", new_command.command));
                                                     // Check edit flag from action params
                                                     let should_edit = action.params.get("edit")
                                                         .and_then(|v| v.as_bool())
                                                         .unwrap_or(false);
                                                     
-                                                    crate::utils::detailed_log("GRAB", &format!("GRAB: Template created command '{}', should_edit={}", 
+                                                    detailed_log("GRAB", &format!("GRAB: Template created command '{}', should_edit={}", 
                                                         new_command.command, should_edit));
                                                     
                                                     if should_edit {
-                                                        crate::utils::detailed_log("GRAB", &format!("GRAB: Opening command editor for template (should_edit=true)"));
-                                                        crate::utils::log(&format!("GRAB: command_editor.visible before={}", self.command_editor.visible));
+                                                        detailed_log("GRAB", &format!("GRAB: Opening command editor for template (should_edit=true)"));
+                                                        log(&format!("GRAB: command_editor.visible before={}", self.command_editor.visible));
                                                         self.command_editor.create_new_command(&new_command, &self.popup_state.search_text);
-                                                        crate::utils::log(&format!("GRAB: command_editor.visible after={}", self.command_editor.visible));
+                                                        log(&format!("GRAB: command_editor.visible after={}", self.command_editor.visible));
                                                     } else {
-                                                        crate::utils::detailed_log("GRAB", &format!("GRAB: Not opening editor (should_edit=false)"));
+                                                        detailed_log("GRAB", &format!("GRAB: Not opening editor (should_edit=false)"));
                                                         // Add command directly
                                                         match crate::core::add_command(new_command) {
                                                             Ok(_) => {
@@ -2508,31 +2509,31 @@ impl AnchorSelector {
                                                     }
                                                 }
                                                 Err(e) => {
-                                                    crate::utils::detailed_log("GRAB", &format!("GRAB: process_template failed: {}", e));
+                                                    detailed_log("GRAB", &format!("GRAB: process_template failed: {}", e));
                                                     crate::utils::error(&format!("Failed to create command from template: {}", e));
                                                 }
                                             }
                                             true
                                         } else {
-                                            crate::utils::detailed_log("GRAB", &format!("GRAB: Failed to convert action '{}' to template", template_name));
+                                            detailed_log("GRAB", &format!("GRAB: Failed to convert action '{}' to template", template_name));
                                             crate::utils::error(&format!("Failed to convert grab action '{}' to template format. Check your template configuration.", template_name));
                                             false
                                         }
                                     } else {
-                                        crate::utils::detailed_log("GRAB", &format!("GRAB: Action '{}' is not a template type (type={})", template_name, action.action_type()));
+                                        detailed_log("GRAB", &format!("GRAB: Action '{}' is not a template type (type={})", template_name, action.action_type()));
                                         false
                                     }
                                 } else {
-                                    crate::utils::detailed_log("GRAB", &format!("GRAB: Action '{}' not found in unified actions", template_name));
+                                    detailed_log("GRAB", &format!("GRAB: Action '{}' not found in unified actions", template_name));
                                     false
                                 }
                             } else {
-                                crate::utils::log("GRAB: No unified actions configured");
+                                log("GRAB: No unified actions configured");
                                 false
                             };
                             
                         } else {
-                            crate::utils::detailed_log("GRAB", &format!("GRAB: No pending template - using normal grab behavior"));
+                            detailed_log("GRAB", &format!("GRAB: No pending template - using normal grab behavior"));
                             // Normal grab behavior (no template)
                             // Use the current search text as the command name, or default if empty
                             let command_name = if self.popup_state.search_text.trim().is_empty() {
@@ -2549,7 +2550,7 @@ impl AnchorSelector {
                         }
                     }
                     crate::systems::grabber::GrabResult::NoRuleMatched(grab_context) => {
-                        crate::utils::log(&format!("🔴 GRAB NoRuleMatched for app: {}", grab_context.app_name));
+                        log(&format!("🔴 GRAB NoRuleMatched for app: {}", grab_context.app_name));
                         // TEMPORARILY DISABLED: pending template fallback creates "app" action
                         // We want to test the template info dialog instead
                         /*
@@ -2569,29 +2570,29 @@ impl AnchorSelector {
                             let _template_found = if let Some(ref actions) = config.actions {
                                 if let Some(action) = actions.get(&template_name) {
                                     if action.action_type() == "template" {
-                                        crate::utils::detailed_log("GRAB", &format!("GRAB: Action type is 'template'"));
+                                        detailed_log("GRAB", &format!("GRAB: Action type is 'template'"));
                                         // Convert action to Template for processing
                                         if let Some(template) = action.to_template() {
-                                            crate::utils::detailed_log("GRAB", &format!("GRAB: Successfully converted action to template"));
-                                            crate::utils::detailed_log("GRAB", &format!("GRAB: Calling process_template"));
+                                            detailed_log("GRAB", &format!("GRAB: Successfully converted action to template"));
+                                            detailed_log("GRAB", &format!("GRAB: Calling process_template"));
                                             match crate::core::template_creation::process_template(&template, &context, &config) {
                                                 Ok(new_command) => {
-                                                    crate::utils::detailed_log("GRAB", &format!("GRAB: process_template succeeded, command='{}'\n", new_command.command));
+                                                    detailed_log("GRAB", &format!("GRAB: process_template succeeded, command='{}'\n", new_command.command));
                                                     // Check edit flag from action params
                                                     let should_edit = action.params.get("edit")
                                                         .and_then(|v| v.as_bool())
                                                         .unwrap_or(false);
 
-                                                    crate::utils::detailed_log("GRAB", &format!("GRAB: Template created command '{}', should_edit={}",
+                                                    detailed_log("GRAB", &format!("GRAB: Template created command '{}', should_edit={}",
                                                         new_command.command, should_edit));
 
                                                     if should_edit {
-                                                        crate::utils::detailed_log("GRAB", &format!("GRAB: Opening command editor for template (should_edit=true)"));
-                                                        crate::utils::log(&format!("GRAB: command_editor.visible before={}", self.command_editor.visible));
+                                                        detailed_log("GRAB", &format!("GRAB: Opening command editor for template (should_edit=true)"));
+                                                        log(&format!("GRAB: command_editor.visible before={}", self.command_editor.visible));
                                                         self.command_editor.create_new_command(&new_command, &self.popup_state.search_text);
-                                                        crate::utils::log(&format!("GRAB: command_editor.visible after={}", self.command_editor.visible));
+                                                        log(&format!("GRAB: command_editor.visible after={}", self.command_editor.visible));
                                                     } else {
-                                                        crate::utils::detailed_log("GRAB", &format!("GRAB: Not opening editor (should_edit=false)"));
+                                                        detailed_log("GRAB", &format!("GRAB: Not opening editor (should_edit=false)"));
                                                         // Add command directly
                                                         match crate::core::add_command(new_command) {
                                                             Ok(_) => {
@@ -2616,26 +2617,26 @@ impl AnchorSelector {
                                                     }
                                                 }
                                                 Err(e) => {
-                                                    crate::utils::detailed_log("GRAB", &format!("GRAB: process_template failed: {}", e));
+                                                    detailed_log("GRAB", &format!("GRAB: process_template failed: {}", e));
                                                     crate::utils::error(&format!("Failed to create command from template: {}", e));
                                                 }
                                             }
                                             true
                                         } else {
-                                            crate::utils::detailed_log("GRAB", &format!("GRAB: Failed to convert action '{}' to template", template_name));
+                                            detailed_log("GRAB", &format!("GRAB: Failed to convert action '{}' to template", template_name));
                                             crate::utils::error(&format!("Failed to convert grab action '{}' to template format. Check your template configuration.", template_name));
                                             false
                                         }
                                     } else {
-                                        crate::utils::detailed_log("GRAB", &format!("GRAB: Action '{}' is not a template type (type={})", template_name, action.action_type()));
+                                        detailed_log("GRAB", &format!("GRAB: Action '{}' is not a template type (type={})", template_name, action.action_type()));
                                         false
                                     }
                                 } else {
-                                    crate::utils::detailed_log("GRAB", &format!("GRAB: Action '{}' not found in unified actions", template_name));
+                                    detailed_log("GRAB", &format!("GRAB: Action '{}' not found in unified actions", template_name));
                                     false
                                 }
                             } else {
-                                crate::utils::log("GRAB: No unified actions configured");
+                                log("GRAB: No unified actions configured");
                                 false
                             };
 
@@ -2655,7 +2656,7 @@ impl AnchorSelector {
                 }
             }
             Err(err) => {
-                crate::utils::log_error(&format!("GRAB: Failed to execute grab on command server: {}", err));
+                log_error(&format!("GRAB: Failed to execute grab on command server: {}", err));
                 crate::utils::queue_user_error(&format!("Grab operation failed: {}", err));
             }
         }
@@ -2682,7 +2683,7 @@ impl AnchorSelector {
                 .arg("-e")
                 .arg(restore_script)
                 .output() {
-                crate::utils::log_error(&format!("Failed to restore HookAnchor: {}", e));
+                log_error(&format!("Failed to restore HookAnchor: {}", e));
             }
         } else {
         }
@@ -2699,7 +2700,7 @@ impl AnchorSelector {
             std::thread::sleep(std::time::Duration::from_millis(200));
             
             if let Err(e) = self.regain_focus() {
-                crate::utils::log_error(&format!("Failed to regain focus: {}", e));
+                log_error(&format!("Failed to regain focus: {}", e));
             }
         } else {
         }
@@ -2737,14 +2738,14 @@ impl AnchorSelector {
         // Use centralized restart function
         match crate::systems::full_system_restart() {
             Ok(()) => {
-                crate::utils::log("
+                log("
 🎉 Rebuild completed successfully!");
                 // Exit this instance - the new popup has been started
                 std::process::exit(0);
             }
             Err(e) => {
-                crate::utils::log_error(&format!("Rebuild failed: {}", e));
-                crate::utils::log("
+                log_error(&format!("Rebuild failed: {}", e));
+                log("
 ⚠️  Rebuild encountered errors - see log for details");
             }
         }
@@ -2753,7 +2754,7 @@ impl AnchorSelector {
     
     /// Trigger filesystem rescan
     fn trigger_rescan(&mut self) {
-        crate::utils::log("Triggering filesystem rescan...");
+        log("Triggering filesystem rescan...");
         // Use the ha binary for CLI operations, not popup_server
         let ha_binary = std::env::current_exe()
             .ok()
@@ -2764,13 +2765,13 @@ impl AnchorSelector {
             .status() {
             Ok(status) => {
                 if status.success() {
-                    crate::utils::detailed_log("RESCAN", "Filesystem rescan completed successfully");
+                    detailed_log("RESCAN", "Filesystem rescan completed successfully");
                 } else {
-                    crate::utils::log_error("Filesystem rescan failed");
+                    log_error("Filesystem rescan failed");
                 }
             }
             Err(e) => {
-                crate::utils::log_error(&format!("Failed to start rescan: {}", e));
+                log_error(&format!("Failed to start rescan: {}", e));
             }
         }
     }
@@ -3651,15 +3652,15 @@ fn save_window_position_with_reason(pos: egui::Pos2, reason: &str) {
         format!("[POSITION-SAVE] Saving position ({}, {}) from {:?} - reason: {}",
                 pos.x, pos.y, old_pos, reason)
     };
-    crate::utils::log(&msg);
+    log(&msg);
 
     state.window_position = Some((pos.x, pos.y));
     match crate::core::data::set_state(&state) {
         Ok(_) => {
-            crate::utils::detailed_log("WINDOW_POS", &format!("Successfully saved position"));
+            detailed_log("WINDOW_POS", &format!("Successfully saved position"));
         }
         Err(e) => {
-            crate::utils::log(&format!("[POSITION-SAVE] ERROR: Failed to save position: {}", e));
+            log(&format!("[POSITION-SAVE] ERROR: Failed to save position: {}", e));
         }
     }
 }
@@ -3670,45 +3671,45 @@ fn load_window_position() -> Option<egui::Pos2> {
     
     if let Some(pos) = result {
         if pos.y > 600.0 {
-            crate::utils::log(&format!("[POSITION-LOAD] WARNING: Loading low position ({}, {}) - POSITION TOO LOW!", pos.x, pos.y));
+            log(&format!("[POSITION-LOAD] WARNING: Loading low position ({}, {}) - POSITION TOO LOW!", pos.x, pos.y));
         } else {
-            crate::utils::log(&format!("[POSITION-LOAD] Loading saved position ({}, {})", pos.x, pos.y));
+            log(&format!("[POSITION-LOAD] Loading saved position ({}, {})", pos.x, pos.y));
         }
     } else {
-        crate::utils::log("[POSITION-LOAD] No saved position available");
+        log("[POSITION-LOAD] No saved position available");
     }
     
     result
 }
 
 fn get_previous_window_location(ctx: &egui::Context, window_size: egui::Vec2) -> egui::Pos2 {
-    crate::utils::detailed_log("WINDOW_POS", &format!("get_previous_window_location called with window_size: {:?}", window_size));
+    detailed_log("WINDOW_POS", &format!("get_previous_window_location called with window_size: {:?}", window_size));
     
     // First try to load the previous position
     if let Some(previous_pos) = load_window_position() {
-        crate::utils::detailed_log("WINDOW_POS", &format!("Loaded previous position: {:?}", previous_pos));
+        detailed_log("WINDOW_POS", &format!("Loaded previous position: {:?}", previous_pos));
         // Check if this position is visible on any current display
         if is_position_visible(previous_pos, window_size) {
-            crate::utils::detailed_log("WINDOW_POS", "Position is visible, returning it");
+            detailed_log("WINDOW_POS", "Position is visible, returning it");
             return previous_pos;
         } else {
-            crate::utils::detailed_log("WINDOW_POS", "Position NOT visible, will center instead");
+            detailed_log("WINDOW_POS", "Position NOT visible, will center instead");
         }
     } else {
-        crate::utils::detailed_log("WINDOW_POS", "No previous position found in state");
+        detailed_log("WINDOW_POS", "No previous position found in state");
     }
     
     // If no previous position or not visible, center on main display
     let centered = center_on_main_display(ctx, window_size);
-    crate::utils::detailed_log("WINDOW_POS", &format!("Centering on main display at: {:?}", centered));
+    detailed_log("WINDOW_POS", &format!("Centering on main display at: {:?}", centered));
     centered
 }
 
 fn is_position_visible(pos: egui::Pos2, window_size: egui::Vec2) -> bool {
-    crate::utils::detailed_log("WINDOW_POS", &format!("is_position_visible checking pos: {:?}, window_size: {:?}", pos, window_size));
+    detailed_log("WINDOW_POS", &format!("is_position_visible checking pos: {:?}, window_size: {:?}", pos, window_size));
 
     let window_rect = egui::Rect::from_min_size(pos, window_size);
-    crate::utils::detailed_log("WINDOW_POS", &format!("Window rect: {:?}", window_rect));
+    detailed_log("WINDOW_POS", &format!("Window rect: {:?}", window_rect));
 
     // Get actual screen dimensions instead of hardcoded values
     let (screen_width, screen_height) = get_actual_screen_dimensions();
@@ -3716,7 +3717,7 @@ fn is_position_visible(pos: egui::Pos2, window_size: egui::Vec2) -> bool {
         egui::pos2(0.0, 0.0),
         egui::vec2(screen_width, screen_height)
     );
-    crate::utils::detailed_log("WINDOW_POS", &format!("Main display rect: {:?} (actual screen: {}x{})", main_display_rect, screen_width, screen_height));
+    detailed_log("WINDOW_POS", &format!("Main display rect: {:?} (actual screen: {}x{})", main_display_rect, screen_width, screen_height));
 
     // Check if at least part of the window is visible
     // Allow for window to be partially off-screen but require some overlap
@@ -3724,7 +3725,7 @@ fn is_position_visible(pos: egui::Pos2, window_size: egui::Vec2) -> bool {
 
     let intersection = main_display_rect.intersect(window_rect);
     let is_visible = intersection.width() * intersection.height() >= min_visible_area * min_visible_area;
-    crate::utils::detailed_log("WINDOW_POS", &format!("Position visible check: {} (intersection: {:?})", is_visible, intersection));
+    detailed_log("WINDOW_POS", &format!("Position visible check: {} (intersection: {:?})", is_visible, intersection));
     is_visible
 }
 
@@ -3735,13 +3736,13 @@ fn get_actual_screen_dimensions() -> (f32, f32) {
         let display = CGDisplay::main();
         let width = display.pixels_wide() as f32;
         let height = display.pixels_high() as f32;
-        crate::utils::detailed_log("SYSTEM", &format!("🔵 SCREEN: Got actual screen dimensions from CoreGraphics: {}x{}", width, height));
+        detailed_log("SYSTEM", &format!("🔵 SCREEN: Got actual screen dimensions from CoreGraphics: {}x{}", width, height));
         (width, height)
     }
     
     #[cfg(not(target_os = "macos"))]
     {
-        crate::utils::detailed_log("SYSTEM", &format!("🔵 SCREEN: Using default screen dimensions (not macOS)"));
+        detailed_log("SYSTEM", &format!("🔵 SCREEN: Using default screen dimensions (not macOS)"));
         (1920.0, 1080.0)
     }
 }
@@ -3799,13 +3800,13 @@ impl eframe::App for AnchorSelector {
         // 🔑 UPSTREAM OS EVENT LOGGING - Log ALL events from operating system first
         ctx.input(|input| {
             if !input.events.is_empty() {
-                crate::utils::detailed_log("OS_EVENTS", &format!("🔑 OS delivered {} events to application", input.events.len()));
+                detailed_log("OS_EVENTS", &format!("🔑 OS delivered {} events to application", input.events.len()));
                 for (i, event) in input.events.iter().enumerate() {
-                    crate::utils::detailed_log("OS_EVENTS", &format!("🔑 OS_EVENT[{}]: {:?}", i, event));
+                    detailed_log("OS_EVENTS", &format!("🔑 OS_EVENT[{}]: {:?}", i, event));
 
                     // Special detailed logging for key events
                     if let egui::Event::Key { key, pressed, modifiers, .. } = event {
-                        crate::utils::detailed_log("OS_EVENTS", &format!("🔑 OS_KEY: key={:?}, pressed={}, ctrl={}, alt={}, shift={}, cmd={}",
+                        detailed_log("OS_EVENTS", &format!("🔑 OS_KEY: key={:?}, pressed={}, ctrl={}, alt={}, shift={}, cmd={}",
                             key, pressed, modifiers.ctrl, modifiers.alt, modifiers.shift, modifiers.command));
                     }
                 }
@@ -3814,7 +3815,7 @@ impl eframe::App for AnchorSelector {
 
         // ⏱️ Log when window first becomes visible after being hidden
         if was_hidden_last_frame && !self.is_hidden {
-            crate::utils::log(&format!("⏱️ [VISIBILITY_TIMING] First frame after becoming visible - frame_count={}, focus_set={}",
+            log(&format!("⏱️ [VISIBILITY_TIMING] First frame after becoming visible - frame_count={}, focus_set={}",
                 self.frame_count, self.focus_set));
         }
 
@@ -3844,7 +3845,7 @@ impl eframe::App for AnchorSelector {
                     self.should_exit
                 )
             });
-            crate::utils::detailed_log("POPUP_UPDATE", &viewport_info);
+            detailed_log("POPUP_UPDATE", &viewport_info);
         }
         
         // Write to debug file to see if update() is being called at all
@@ -3865,7 +3866,7 @@ impl eframe::App for AnchorSelector {
             if let Some(pos) = mouse_pos {
                 self.popup_state.mouse_lock_pos = Some((pos.x, pos.y));
                 self.popup_state.mouse_unlocked = false;
-                crate::utils::detailed_log("MOUSE_LOCK", &format!("🖱️ Mouse locked at ({:.1}, {:.1})", pos.x, pos.y));
+                detailed_log("MOUSE_LOCK", &format!("🖱️ Mouse locked at ({:.1}, {:.1})", pos.x, pos.y));
             }
         }
 
@@ -3879,14 +3880,14 @@ impl eframe::App for AnchorSelector {
 
                 if distance > 20.0 {
                     self.popup_state.mouse_unlocked = true;
-                    crate::utils::detailed_log("MOUSE_UNLOCK", &format!("🖱️ Mouse unlocked - moved {:.1} pixels from locked position", distance));
+                    detailed_log("MOUSE_UNLOCK", &format!("🖱️ Mouse unlocked - moved {:.1} pixels from locked position", distance));
                 }
             }
         }
 
         // Start deferred loading on second frame (after UI is shown)
         if self.frame_count == 2 && self.loading_state == LoadingState::NotLoaded {
-            crate::utils::detailed_log("POPUP", &format!("POPUP: Starting deferred loading on frame 2"));
+            detailed_log("POPUP", &format!("POPUP: Starting deferred loading on frame 2"));
             self.start_deferred_loading();
             ctx.request_repaint(); // Ensure we update when loading completes
         }
@@ -3917,7 +3918,7 @@ impl eframe::App for AnchorSelector {
         
         // If loading just completed and we have pending search, trigger it now
         if self.loading_state == LoadingState::Loaded && self.search_pending_after_load {
-            crate::utils::detailed_log("POPUP", &format!("POPUP: Triggering pending search after load"));
+            detailed_log("POPUP", &format!("POPUP: Triggering pending search after load"));
             let current_search = self.popup_state.search_text.clone();
             if !current_search.trim().is_empty() {
                 self.popup_state.update_search(current_search);
@@ -3934,7 +3935,7 @@ impl eframe::App for AnchorSelector {
             let config = crate::core::get_config();
             if let Some(ref actions) = config.actions {
                 if let Some(action) = actions.get(&action_name) {
-                    crate::utils::log(&format!("Executing config action '{}' (type: {})", action_name, action.action_type()));
+                    log(&format!("Executing config action '{}' (type: {})", action_name, action.action_type()));
 
                     // Execute based on action type
                     match action.action_type() {
@@ -3947,7 +3948,7 @@ impl eframe::App for AnchorSelector {
                             if let Some(popup_action) = action.get_string("action") {
                                 self.execute_popup_action(&popup_action);
                             } else {
-                                crate::utils::log_error(&format!("Popup action '{}' missing 'action' field", action_name));
+                                log_error(&format!("Popup action '{}' missing 'action' field", action_name));
                             }
                         },
                         "js" => {
@@ -3955,18 +3956,18 @@ impl eframe::App for AnchorSelector {
                             if let Some(function_name) = action.get_string("function") {
                                 self.execute_js_action(&function_name);
                             } else {
-                                crate::utils::log_error(&format!("JavaScript action '{}' missing 'function' field", action_name));
+                                log_error(&format!("JavaScript action '{}' missing 'function' field", action_name));
                             }
                         },
                         _ => {
-                            crate::utils::log_error(&format!("Unsupported action type '{}' for --action flag", action.action_type()));
+                            log_error(&format!("Unsupported action type '{}' for --action flag", action.action_type()));
                         }
                     }
                 } else {
-                    crate::utils::log_error(&format!("Action '{}' not found in config", action_name));
+                    log_error(&format!("Action '{}' not found in config", action_name));
                 }
             } else {
-                crate::utils::log_error("No actions defined in config");
+                log_error("No actions defined in config");
             }
         }
 
@@ -3982,7 +3983,7 @@ impl eframe::App for AnchorSelector {
                 let height = config.popup_settings.get_default_window_height() as f32;
                 let window_size = egui::vec2(width, height);
                 let position = center_on_main_display(ctx, window_size);
-                crate::utils::log(&format!("[POSITION] Setting position on first frames to {:?} (reason: initial positioning)", position));
+                log(&format!("[POSITION] Setting position on first frames to {:?} (reason: initial positioning)", position));
                 ctx.send_viewport_cmd(egui::ViewportCommand::OuterPosition(position));
                 self.position_set = true;
             }
@@ -4005,7 +4006,7 @@ impl eframe::App for AnchorSelector {
             if let Some(timeout_seconds) = config.popup_settings.idle_timeout_seconds {
                 let idle_duration = self.last_interaction_time.elapsed();
                 if idle_duration.as_secs() >= timeout_seconds {
-                    crate::utils::log(&format!("IDLE_TIMEOUT: Hiding popup after {} seconds of inactivity", timeout_seconds));
+                    log(&format!("IDLE_TIMEOUT: Hiding popup after {} seconds of inactivity", timeout_seconds));
                     self.exit_or_hide(ctx);
                     // Reset interaction time to prevent immediate re-triggering
                     self.last_interaction_time = std::time::Instant::now();
@@ -4023,7 +4024,7 @@ impl eframe::App for AnchorSelector {
         if self.is_hidden {
             // Log periodically when hidden to verify update loop is running
             if self.frame_count % 120 == 0 { // Every ~2 seconds at 500ms refresh
-                crate::utils::log(&format!("[UPDATE_LOOP] Still running while hidden - Frame {}, is_hidden={}", 
+                log(&format!("[UPDATE_LOOP] Still running while hidden - Frame {}, is_hidden={}", 
                     self.frame_count, self.is_hidden));
             }
             // Request slower repaints when hidden to check for commands
@@ -4045,7 +4046,7 @@ impl eframe::App for AnchorSelector {
         // if self.frame_count <= 20 {
         //     let has_focus = ctx.input(|i| i.focused);
         //     if self.frame_count % 5 == 0 { // Log every 5th frame for first 20 frames
-        //         crate::utils::detailed_log("FOCUS", &format!("Frame {}: Window focused={}, input focus_set={}", 
+        //         detailed_log("FOCUS", &format!("Frame {}: Window focused={}, input focus_set={}", 
         //             self.frame_count, has_focus, self.focus_set));
         //     }
         // }
@@ -4059,7 +4060,7 @@ impl eframe::App for AnchorSelector {
             let height = config.popup_settings.get_default_window_height() as f32;
             let window_size = egui::vec2(width, height);
             let pos = get_previous_window_location(ctx, window_size);
-            crate::utils::log(&format!("[POSITION] Setting initial position to {:?} (reason: first-time window setup)", pos));
+            log(&format!("[POSITION] Setting initial position to {:?} (reason: first-time window setup)", pos));
             ctx.send_viewport_cmd(egui::ViewportCommand::OuterPosition(pos));
             self.position_set = true;
         }
@@ -4075,7 +4076,7 @@ impl eframe::App for AnchorSelector {
         
         // Update grabber countdown
         if self.grabber_countdown.is_some() {
-            crate::utils::detailed_log("GRAB", "Calling update_grabber_countdown from main update");
+            detailed_log("GRAB", "Calling update_grabber_countdown from main update");
         }
         self.update_grabber_countdown(ctx);
         
@@ -4222,7 +4223,7 @@ impl eframe::App for AnchorSelector {
                 
                 // Check if this is a rename that might have side effects
                 let orig_name = &original_command_name;
-                crate::utils::log(&format!("RENAME_CHECK: orig_name='{}', new_name='{}', empty={}, command_to_delete={:?}", orig_name, new_command.command, orig_name.is_empty(), command_to_delete));
+                log(&format!("RENAME_CHECK: orig_name='{}', new_name='{}', empty={}, command_to_delete={:?}", orig_name, new_command.command, orig_name.is_empty(), command_to_delete));
                 
                 // Also check if there's a command_to_delete - this indicates editing an existing command
                 let effective_old_name = if !orig_name.is_empty() {
@@ -4235,7 +4236,7 @@ impl eframe::App for AnchorSelector {
                 
                 if !effective_old_name.is_empty() {
                     if effective_old_name != &new_command.command {
-                        crate::utils::log(&format!("RENAME_DETECTED: '{}' -> '{}'", effective_old_name, new_command.command));
+                        log(&format!("RENAME_DETECTED: '{}' -> '{}'", effective_old_name, new_command.command));
                         // Command name changed - check for rename side effects
                         let config = crate::core::data::get_config();
                         
@@ -4262,11 +4263,11 @@ impl eframe::App for AnchorSelector {
                                 true, // dry_run = true
                             ) {
                                 Ok((updated_arg, mut actions)) => {
-                                    crate::utils::log(&format!("RENAME_DRY_RUN: Found {} actions: {:?}", actions.len(), actions));
+                                    log(&format!("RENAME_DRY_RUN: Found {} actions: {:?}", actions.len(), actions));
 
                                     // Check if this is an anchor file rename where filename matches folder name
                                     // Check if the command has the anchor flag ('A')
-                                    crate::utils::log(&format!("FOLDER_CHECK: Checking for folder rename. action={}, arg={}, old_name={}, is_anchor={}",
+                                    log(&format!("FOLDER_CHECK: Checking for folder rename. action={}, arg={}, old_name={}, is_anchor={}",
                                         new_command.action, new_command.arg, effective_old_name, new_command.is_anchor()));
 
                                     if new_command.is_anchor() {
@@ -4276,15 +4277,15 @@ impl eframe::App for AnchorSelector {
                                         // Check if the file stem (without extension) matches the old command name
                                         if let Some(file_stem) = arg_path.file_stem() {
                                             if let Some(file_stem_str) = file_stem.to_str() {
-                                                crate::utils::log(&format!("FOLDER_CHECK: file_stem='{}', comparing to old_name='{}', match={}",
+                                                log(&format!("FOLDER_CHECK: file_stem='{}', comparing to old_name='{}', match={}",
                                                     file_stem_str, effective_old_name, file_stem_str == effective_old_name));
                                                 if file_stem_str == effective_old_name {
                                                     // This is an anchor file - check if folder name also matches
                                                     if let Some(parent) = arg_path.parent() {
-                                                        crate::utils::log(&format!("FOLDER_CHECK: parent path exists: {}", parent.display()));
+                                                        log(&format!("FOLDER_CHECK: parent path exists: {}", parent.display()));
                                                         if let Some(folder_name) = parent.file_name() {
                                                             if let Some(folder_name_str) = folder_name.to_str() {
-                                                                crate::utils::log(&format!("FOLDER_CHECK: folder_name='{}', comparing to old_name='{}', match={}",
+                                                                log(&format!("FOLDER_CHECK: folder_name='{}', comparing to old_name='{}', match={}",
                                                                     folder_name_str, effective_old_name, folder_name_str == effective_old_name));
                                                                 if folder_name_str == effective_old_name {
                                                                     // Folder name matches - rename the folder too
@@ -4296,11 +4297,11 @@ impl eframe::App for AnchorSelector {
                                                                         true, // dry_run = true
                                                                     ) {
                                                                         Ok(folder_actions) => {
-                                                                            crate::utils::log(&format!("RENAME_FOLDER_DRY_RUN: Found {} folder actions", folder_actions.len()));
+                                                                            log(&format!("RENAME_FOLDER_DRY_RUN: Found {} folder actions", folder_actions.len()));
                                                                             actions.extend(folder_actions);
                                                                         }
                                                                         Err(e) => {
-                                                                            crate::utils::log(&format!("RENAME_FOLDER_DRY_RUN: Error: {}", e));
+                                                                            log(&format!("RENAME_FOLDER_DRY_RUN: Error: {}", e));
                                                                         }
                                                                     }
                                                                 }
@@ -4339,7 +4340,7 @@ impl eframe::App for AnchorSelector {
                                         // Use window position from beginning of update() - this is the main popup's top-left corner
                                         // which doesn't move (size may change but position stays fixed)
                                         if let Some((x, y, w)) = window_position {
-                                            crate::utils::log(&format!("RENAME_DIALOG_POS: Using popup position: x={}, y={}, w={}", x, y, w));
+                                            log(&format!("RENAME_DIALOG_POS: Using popup position: x={}, y={}, w={}", x, y, w));
                                         }
 
                                         // Show confirmation dialog with actions (actions already have bullets)
@@ -4359,11 +4360,11 @@ impl eframe::App for AnchorSelector {
                                             let exit_button = final_context.get("exit").unwrap_or(&empty_string);
                                             if exit_button == "OK" {
                                                 // User confirmed - actual execution happens in poll_external_dialog
-                                                crate::utils::log("EXTERNAL_DIALOG: User confirmed rename");
+                                                log("EXTERNAL_DIALOG: User confirmed rename");
                                                 Ok(())
                                             } else {
                                                 // Cancel - do nothing
-                                                crate::utils::log("EXTERNAL_DIALOG: User cancelled rename");
+                                                log("EXTERNAL_DIALOG: User cancelled rename");
                                                 Ok(())
                                             }
                                         }), window_position);
@@ -4371,7 +4372,7 @@ impl eframe::App for AnchorSelector {
                                         return; // Exit early to wait for user confirmation
                                     } else {
                                         // No side effects found by dry-run - proceed with direct rename
-                                        crate::utils::log(&format!("RENAME_DRY_RUN: No side effects found, proceeding with normal save for '{}' -> '{}'", effective_old_name, new_command.command));
+                                        log(&format!("RENAME_DRY_RUN: No side effects found, proceeding with normal save for '{}' -> '{}'", effective_old_name, new_command.command));
                                         // Update arg if it was changed by rename logic
                                         new_command.arg = updated_arg;
                                     }
@@ -4397,14 +4398,14 @@ impl eframe::App for AnchorSelector {
                     crate::utils::fatal_error2("Test fatal error - command named FATALERROR");
                 } else {
                     // Use atomic save to prevent patch inference from running twice
-                    crate::utils::log(&format!("SAVE: Using atomic save for command: '{}' (action: {}, arg: {})",
+                    log(&format!("SAVE: Using atomic save for command: '{}' (action: {}, arg: {})",
                         new_command.command, new_command.action, new_command.arg));
                     self.save_command_atomic(new_command, command_to_delete.as_deref())
                 };
 
                 match test_result {
                     Ok(_) => {
-                        crate::utils::log(&format!("SAVE: Successfully saved command atomically"));
+                        log(&format!("SAVE: Successfully saved command atomically"));
 
                         // Commands will be fetched fresh from singleton by update_search()
 
@@ -4413,7 +4414,7 @@ impl eframe::App for AnchorSelector {
                             self.command_editor.pending_template.as_ref(),
                             self.command_editor.template_context.as_ref()
                         ) {
-                            crate::utils::detailed_log("TEMPLATE", &format!("TEMPLATE: Processing template files after save"));
+                            detailed_log("TEMPLATE", &format!("TEMPLATE: Processing template files after save"));
                             if let Err(e) = crate::core::template_creation::process_template_files(
                                 template,
                                 context,
@@ -4421,7 +4422,7 @@ impl eframe::App for AnchorSelector {
                             ) {
                                 crate::utils::error(&format!("Failed to create template files: {}", e));
                             } else {
-                                crate::utils::detailed_log("TEMPLATE", &format!("TEMPLATE: Successfully created template files"));
+                                detailed_log("TEMPLATE", &format!("TEMPLATE: Successfully created template files"));
                                 // Trigger rescan if requested
                                 if template.file_rescan {
                                     self.trigger_rescan();
@@ -4437,7 +4438,7 @@ impl eframe::App for AnchorSelector {
                         }
                     }
                     Err(e) => {
-                        crate::utils::log_error(&format!("SAVE_DEBUG: Failed to add command: {}", e));
+                        log_error(&format!("SAVE_DEBUG: Failed to add command: {}", e));
 
                         // Show error using external dialog system
                         let dialog_spec = vec![
@@ -4464,7 +4465,7 @@ impl eframe::App for AnchorSelector {
                 
                 // Update input field with the renamed command name for symmetric feedback
                 // This ensures that after closing the editor, the input field shows the command that was just saved/renamed
-                crate::utils::log(&format!("RENAME_FEEDBACK: Setting input field to renamed command: '{}'", saved_command.command));
+                log(&format!("RENAME_FEEDBACK: Setting input field to renamed command: '{}'", saved_command.command));
                 self.set_input(saved_command.command.clone());
                 
                 self.close_command_editor();
@@ -4476,7 +4477,7 @@ impl eframe::App for AnchorSelector {
 
                 let deleted = delete_command(&command_name);
                 if deleted.is_err() {
-                    crate::utils::log_error(&format!("Command '{}' not found for deletion", command_name));
+                    log_error(&format!("Command '{}' not found for deletion", command_name));
                 } else {
                     // Command already saved by delete_command (via sys_data::delete_command)
                     // Commands will be fetched fresh from singleton by update_search()
@@ -4561,7 +4562,7 @@ impl eframe::App for AnchorSelector {
                 let enter_pressed = ctx.input(|i| {
                     let pressed = i.key_pressed(egui::Key::Enter);
                     if pressed {
-                        crate::utils::detailed_log("KEY_DEBUG", "🔑 ALTERNATE_PATH: Enter key pressed (direct check)");
+                        detailed_log("KEY_DEBUG", "🔑 ALTERNATE_PATH: Enter key pressed (direct check)");
                     }
                     pressed
                 });
@@ -4573,7 +4574,7 @@ impl eframe::App for AnchorSelector {
 
                 // Handle space key last anchor acceptance
                 if space_pressed {
-                    crate::utils::log("🔑 SPACE KEY: Space key detected");
+                    log("🔑 SPACE KEY: Space key detected");
                     let current_input = if self.loading_state == LoadingState::Loaded {
                         &self.popup_state.search_text
                     } else {
@@ -4582,32 +4583,32 @@ impl eframe::App for AnchorSelector {
 
                     // Check conditions: empty input + anchor name exists
                     let anchor_name = &self.popup_state.app_state.anchor_name;
-                    crate::utils::log(&format!("🔑 SPACE KEY: current_input='{}' (empty={}), anchor_name={:?}",
+                    log(&format!("🔑 SPACE KEY: current_input='{}' (empty={}), anchor_name={:?}",
                         current_input, current_input.is_empty(), anchor_name));
 
                     if current_input.is_empty() && anchor_name.is_some() {
                         if let Some(anchor_text) = anchor_name {
-                            crate::utils::log(&format!("🔑 SPACE KEY: Accepting anchor name '{}' + space", anchor_text));
+                            log(&format!("🔑 SPACE KEY: Accepting anchor name '{}' + space", anchor_text));
 
                             // Consume the space key FIRST to prevent TextEdit from processing it
                             ctx.input_mut(|i| i.consume_key(egui::Modifiers::NONE, egui::Key::Space));
-                            crate::utils::log("🔑 SPACE KEY: Consumed space key before TextEdit");
+                            log("🔑 SPACE KEY: Consumed space key before TextEdit");
 
                             // Set input to anchor text + space (we control both)
                             let new_text = format!("{} ", anchor_text);
                             if self.loading_state == LoadingState::Loaded {
                                 self.popup_state.update_search(new_text.clone());
-                                crate::utils::log(&format!("🔑 SPACE KEY: Set search_text to '{}' (len={})",
+                                log(&format!("🔑 SPACE KEY: Set search_text to '{}' (len={})",
                                     self.popup_state.search_text, self.popup_state.search_text.len()));
                             } else {
                                 self.pre_init_input_buffer = new_text.clone();
-                                crate::utils::log(&format!("🔑 SPACE KEY: Set pre_init_buffer to '{}' (len={})",
+                                log(&format!("🔑 SPACE KEY: Set pre_init_buffer to '{}' (len={})",
                                     self.pre_init_input_buffer, self.pre_init_input_buffer.len()));
                             }
 
                             // Request cursor be positioned at the end of the text
                             self.request_cursor_at_end = true;
-                            crate::utils::log("🔑 SPACE KEY: Requested cursor at end of input");
+                            log("🔑 SPACE KEY: Requested cursor at end of input");
                         }
                     }
                 }
@@ -4628,7 +4629,7 @@ impl eframe::App for AnchorSelector {
                     // This allows the key registry to handle navigation
                     if current_input.is_empty() {
                         ctx.input_mut(|i| i.consume_key(egui::Modifiers::NONE, egui::Key::ArrowLeft));
-                        crate::utils::detailed_log("KEY_DEBUG", "🔑 LEFT ARROW: Consumed before TextEdit (empty input)");
+                        detailed_log("KEY_DEBUG", "🔑 LEFT ARROW: Consumed before TextEdit (empty input)");
                     }
                 }
 
@@ -4648,7 +4649,7 @@ impl eframe::App for AnchorSelector {
                     // This allows the key registry to handle navigation
                     if current_input.is_empty() {
                         ctx.input_mut(|i| i.consume_key(egui::Modifiers::NONE, egui::Key::OpenBracket));
-                        crate::utils::detailed_log("KEY_DEBUG", "🔑 LEFT BRACKET: Consumed before TextEdit (empty input)");
+                        detailed_log("KEY_DEBUG", "🔑 LEFT BRACKET: Consumed before TextEdit (empty input)");
                     }
                 }
 
@@ -4696,12 +4697,12 @@ impl eframe::App for AnchorSelector {
                             &self.pre_init_input_buffer
                         };
 
-                        crate::utils::log(&format!("CURSOR_DEBUG: text_len={}, actual_text='{}' (len={})",
+                        log(&format!("CURSOR_DEBUG: text_len={}, actual_text='{}' (len={})",
                             text_len, actual_text, actual_text.len()));
 
                         // If TextEdit added a space at the beginning despite our consumption, remove it
                         if actual_text.starts_with(' ') && actual_text.len() > text_len {
-                            crate::utils::log("CURSOR_DEBUG: Detected unwanted leading space, removing it");
+                            log("CURSOR_DEBUG: Detected unwanted leading space, removing it");
                             let fixed_text = actual_text.trim_start().to_string();
                             if self.loading_state == LoadingState::Loaded {
                                 self.popup_state.search_text = fixed_text;
@@ -4715,9 +4716,9 @@ impl eframe::App for AnchorSelector {
                             let end_pos = egui::text::CCursor::new(text_len);
                             state.cursor.set_char_range(Some(egui::text::CCursorRange::two(end_pos, end_pos)));
                             state.store(ui.ctx(), text_edit_response.id);
-                            crate::utils::log(&format!("CURSOR_DEBUG: Manually set cursor to position {}", text_len));
+                            log(&format!("CURSOR_DEBUG: Manually set cursor to position {}", text_len));
                         } else {
-                            crate::utils::log(&format!("CURSOR_DEBUG: Could not load TextEdit state to set cursor"));
+                            log(&format!("CURSOR_DEBUG: Could not load TextEdit state to set cursor"));
                         }
 
                         self.request_cursor_at_end = false;
@@ -4727,12 +4728,12 @@ impl eframe::App for AnchorSelector {
                     if let Some(state) = egui::TextEdit::load_state(ui.ctx(), text_edit_response.id) {
                         // TODO: Finish cursor debugging
                         // if let Some(cursor_range) = state.cursor.char_range() {
-                        //     crate::utils::log(&format!("CURSOR_DEBUG: Final cursor range: {:?} (text length: {})", cursor_range, text_len));
+                        //     log(&format!("CURSOR_DEBUG: Final cursor range: {:?} (text length: {})", cursor_range, text_len));
                         // } else {
-                        //     crate::utils::log(&format!("CURSOR_DEBUG: No cursor range available (text length: {})", text_len));
+                        //     log(&format!("CURSOR_DEBUG: No cursor range available (text length: {})", text_len));
                         // }
                     } else {
-                        crate::utils::log(&format!("CURSOR_DEBUG: No TextEdit state available (text length: {})", text_len));
+                        log(&format!("CURSOR_DEBUG: No TextEdit state available (text length: {})", text_len));
                     }
 
                     text_edit_response
@@ -4746,19 +4747,19 @@ impl eframe::App for AnchorSelector {
 
                     if expanded {
                         // Input was expanded - don't execute, just update filter
-                        crate::utils::detailed_log("KEY_DEBUG", "🔑 Enter key expanded input text");
+                        detailed_log("KEY_DEBUG", "🔑 Enter key expanded input text");
                         ctx.input_mut(|i| i.consume_key(egui::Modifiers::NONE, egui::Key::Enter));
                     } else if !self.filtered_commands().is_empty() {
                         // No expansion - execute selected command
                         self.execute_selected_command();
                         // TODO: Consider refactoring this to use centralized key handling
                         // Clear the Enter key from input to prevent double processing
-                        crate::utils::detailed_log("KEY_DEBUG", "🔑 ALTERNATE_PATH: Consuming Enter key to prevent double processing");
+                        detailed_log("KEY_DEBUG", "🔑 ALTERNATE_PATH: Consuming Enter key to prevent double processing");
                         ctx.input_mut(|i| i.consume_key(egui::Modifiers::NONE, egui::Key::Enter));
                     }
                 } else if response.changed() {
                     // TODO: Consider refactoring this to use centralized key handling
-                    crate::utils::detailed_log("KEY_DEBUG", "🔑 ALTERNATE_PATH: TextEdit changed (text input events consumed by widget)");
+                    detailed_log("KEY_DEBUG", "🔑 ALTERNATE_PATH: TextEdit changed (text input events consumed by widget)");
                     // Always update search when text field is changed
                     if self.loading_state == LoadingState::Loaded {
                         // Normal operation
@@ -4797,15 +4798,15 @@ impl eframe::App for AnchorSelector {
                             String::new()
                         };
 
-                        crate::utils::log(&format!("⏱️ [FOCUS_TIMING] Focus successfully set on frame {} - INPUT READY FOR USER{}",
+                        log(&format!("⏱️ [FOCUS_TIMING] Focus successfully set on frame {} - INPUT READY FOR USER{}",
                             self.frame_count, total_time_msg));
-                        crate::utils::detailed_log("FOCUS", &format!("Focus successfully set on frame {}", self.frame_count));
+                        detailed_log("FOCUS", &format!("Focus successfully set on frame {}", self.frame_count));
 
                         // Clear the timer
                         self.show_command_start = None;
                     } else if self.frame_count % 5 == 0 && self.frame_count <= 15 {
                         // Log focus attempts every 5 frames for debugging
-                        crate::utils::detailed_log("FOCUS", &format!("Focus attempt on frame {} - window focused: {}", 
+                        detailed_log("FOCUS", &format!("Focus attempt on frame {} - window focused: {}", 
                             self.frame_count, ctx.input(|i| i.focused)));
                     }
                 }
@@ -4965,22 +4966,22 @@ impl eframe::App for AnchorSelector {
                         let size_diff_height = (current_size.y - constrained_height).abs();
                         
                         if size_diff_width > 10.0 || size_diff_height > 10.0 {
-                            crate::utils::log(&format!("🪟 CONTENT_RESIZE: Sending content-based resize command! {}x{} (dialog not visible)", 
+                            log(&format!("🪟 CONTENT_RESIZE: Sending content-based resize command! {}x{} (dialog not visible)", 
                                 constrained_width, constrained_height));
                             ctx.send_viewport_cmd(egui::ViewportCommand::InnerSize(egui::vec2(constrained_width, constrained_height)));
                         }
                     } else {
-                        crate::utils::log("🪟 SKIPPING_CONTENT_RESIZE: Dialog is visible, allowing dialog sizing to control window");
+                        log("🪟 SKIPPING_CONTENT_RESIZE: Dialog is visible, allowing dialog sizing to control window");
                     }
 
                     // Use the layout and display_commands that were already calculated above for window sizing
                     // This ensures window sizing and rendering use the exact same layout
-                    crate::utils::detailed_log("RENDER", &format!("Using layout: {:?} (calculated from {} commands)",
+                    detailed_log("RENDER", &format!("Using layout: {:?} (calculated from {} commands)",
                         &actual_layout.arrangement, display_commands.len()));
                     match &actual_layout.arrangement {
                         LayoutArrangement::MultiColumn { rows, cols } => {
                             // Multi-column display
-                            crate::utils::detailed_log("RENDER", &format!("Using MultiColumn branch (rows={}, cols={})", rows, cols));
+                            detailed_log("RENDER", &format!("Using MultiColumn branch (rows={}, cols={})", rows, cols));
                             let rows_per_col = *rows;
                             let cols_to_use = *cols;
 
@@ -5132,7 +5133,7 @@ impl eframe::App for AnchorSelector {
         // Save window position immediately when it changes
         if let Some(current_pos) = ctx.input(|i| i.viewport().outer_rect.map(|r| r.min)) {
             if self.last_saved_position.is_none() {
-                crate::utils::detailed_log("WINDOW_POS", &format!("First position detection: {:?}", current_pos));
+                detailed_log("WINDOW_POS", &format!("First position detection: {:?}", current_pos));
                 // Only save if this position was explicitly set by user, not auto-positioned
                 if !self.was_auto_positioned {
                     save_window_position_with_reason(current_pos, "window closed by user");
@@ -5141,7 +5142,7 @@ impl eframe::App for AnchorSelector {
             } else if let Some(last_pos) = self.last_saved_position {
                 let moved = (current_pos.x - last_pos.x).abs() > 10.0 || (current_pos.y - last_pos.y).abs() > 10.0;
                 if moved {
-                    crate::utils::detailed_log("WINDOW_POS", &format!("Window moved from {:?} to {:?} (user moved)", last_pos, current_pos));
+                    detailed_log("WINDOW_POS", &format!("Window moved from {:?} to {:?} (user moved)", last_pos, current_pos));
                     // Only save significant moves that are likely user-initiated
                     save_window_position_with_reason(current_pos, "user dragged window");
                     self.last_saved_position = Some(current_pos);
@@ -5149,7 +5150,7 @@ impl eframe::App for AnchorSelector {
                 }
             }
         } else {
-            crate::utils::detailed_log("WINDOW_POS", "Could not get current position from viewport");
+            detailed_log("WINDOW_POS", "Could not get current position from viewport");
         }
         
     }
@@ -5185,10 +5186,10 @@ impl eframe::App for PopupWithControl {
             match command {
                 crate::systems::popup_server::PopupCommand::Show => {
                     let show_start = std::time::Instant::now();
-                    crate::utils::log("===== SHOW COMMAND RECEIVED =====");
-                    crate::utils::log(&format!("⏱️ [SHOW_TIMING] Command received at {:?}", show_start));
-                    crate::utils::log(&format!("[SHOW] Current frame: {}", self.popup.frame_count));
-                    crate::utils::log(&format!("[SHOW] is_hidden={}, should_exit={}",
+                    log("===== SHOW COMMAND RECEIVED =====");
+                    log(&format!("⏱️ [SHOW_TIMING] Command received at {:?}", show_start));
+                    detailed_log("SHOW", &format!(" Current frame: {}", self.popup.frame_count));
+                    detailed_log("SHOW", &format!(" is_hidden={}, should_exit={}",
                         self.popup.is_hidden, self.popup.should_exit));
 
                     // Store the show start time for measuring total time to focus
@@ -5202,32 +5203,32 @@ impl eframe::App for PopupWithControl {
                             i.viewport().outer_rect
                         )
                     });
-                    crate::utils::log(&format!("[SHOW] Before: {}", viewport_info));
+                    detailed_log("SHOW", &format!(" Before: {}", viewport_info));
                     
                     // Restore saved position BEFORE making window visible to avoid flashing at (0,0)
                     if let Some(saved_pos) = load_window_position() {
-                        crate::utils::log(&format!("[SHOW] Pre-setting saved position: {:?}", saved_pos));
+                        detailed_log("SHOW", &format!(" Pre-setting saved position: {:?}", saved_pos));
                         ctx.send_viewport_cmd(egui::ViewportCommand::OuterPosition(saved_pos));
                     }
                     
                     // Make the window visible again if it was hidden
-                    crate::utils::detailed_log("SHOW", "Sending ViewportCommand::Visible(true)");
+                    detailed_log("SHOW", "Sending ViewportCommand::Visible(true)");
                     ctx.send_viewport_cmd(egui::ViewportCommand::Visible(true));
                     
-                    crate::utils::detailed_log("SHOW", "Sending ViewportCommand::Focus");
+                    detailed_log("SHOW", "Sending ViewportCommand::Focus");
                     ctx.send_viewport_cmd(egui::ViewportCommand::Focus);
                     
                     // Also try to bring to front
-                    crate::utils::detailed_log("SHOW", "Sending ViewportCommand::Fullscreen(false) to ensure windowed mode");
+                    detailed_log("SHOW", "Sending ViewportCommand::Fullscreen(false) to ensure windowed mode");
                     ctx.send_viewport_cmd(egui::ViewportCommand::Fullscreen(false));
                     
-                    crate::utils::detailed_log("SHOW", "Sending ViewportCommand::Minimized(false)");
+                    detailed_log("SHOW", "Sending ViewportCommand::Minimized(false)");
                     ctx.send_viewport_cmd(egui::ViewportCommand::Minimized(false));
 
                     // REMOVED: AppleScript activation (was taking 176-368ms!)
                     // The ViewportCommand::Focus above should be sufficient for egui/eframe windows
                     // If focus issues occur, we may need a faster native solution
-                    crate::utils::log("[SHOW] Relying on ViewportCommand::Focus (AppleScript removed for speed)");
+                    log("[SHOW] Relying on ViewportCommand::Focus (AppleScript removed for speed)");
                     
                     // CRITICAL: Position window on screen if it's off-screen
                     let current_pos = ctx.input(|i| i.viewport().outer_rect);
@@ -5235,9 +5236,9 @@ impl eframe::App for PopupWithControl {
                         // Get actual screen dimensions using CoreGraphics on macOS
                         let (screen_width, screen_height) = get_actual_screen_dimensions();
                         
-                        crate::utils::detailed_log("WINDOW_POS", &format!("[SHOW] Actual screen dimensions: {}x{}", 
+                        detailed_log("WINDOW_POS", &format!("[SHOW] Actual screen dimensions: {}x{}", 
                             screen_width, screen_height));
-                        crate::utils::detailed_log("WINDOW_POS", &format!("[SHOW] Current window rect: {:?}", rect));
+                        detailed_log("WINDOW_POS", &format!("[SHOW] Current window rect: {:?}", rect));
                         
                         // Check if window is truly off-screen using actual screen dimensions
                         // Allow some margin (50 pixels) for window decorations
@@ -5247,12 +5248,12 @@ impl eframe::App for PopupWithControl {
                                           rect.min.x > screen_width - margin ||
                                           rect.min.y > screen_height - margin;
                         
-                        crate::utils::detailed_log("WINDOW_POS", &format!("[SHOW] Off-screen check: x={} < {} OR y={} < {} OR x={} > {} OR y={} > {} = {}", 
+                        detailed_log("WINDOW_POS", &format!("[SHOW] Off-screen check: x={} < {} OR y={} < {} OR x={} > {} OR y={} > {} = {}", 
                             rect.min.x, -margin, rect.min.y, -margin, 
                             rect.min.x, screen_width - margin, rect.min.y, screen_height - margin, is_offscreen));
                         
                         if is_offscreen {
-                            crate::utils::log(&format!("[SHOW] Window is off-screen at {:?} (screen: {}x{}), centering on main display", 
+                            detailed_log("SHOW", &format!(" Window is off-screen at {:?} (screen: {}x{}), centering on main display", 
                                 rect.min, screen_width, screen_height));
                             // Center on main display but ensure it's not too close to bottom
                             let window_size = rect.size();
@@ -5264,7 +5265,7 @@ impl eframe::App for PopupWithControl {
                             let center_pos = egui::pos2(center_x.max(0.0), center_y.max(0.0));
                             ctx.send_viewport_cmd(egui::ViewportCommand::OuterPosition(center_pos));
                             self.popup.was_auto_positioned = true; // Mark as auto-positioned
-                            crate::utils::log(&format!("[SHOW] Repositioned window to {:?} (auto-centered)", center_pos));
+                            detailed_log("SHOW", &format!(" Repositioned window to {:?} (auto-centered)", center_pos));
                         } else {
                             // Window is on-screen, restore saved position if different
                             if let Some(mut saved_pos) = load_window_position() {
@@ -5272,30 +5273,30 @@ impl eframe::App for PopupWithControl {
                                 let window_size = rect.size();
                                 let max_y = (screen_height - window_size.y - 100.0).max(0.0);
                                 if saved_pos.y > max_y {
-                                    crate::utils::log(&format!("[SHOW] Adjusting saved position from y={} to y={} (too close to bottom)", saved_pos.y, max_y));
+                                    detailed_log("SHOW", &format!(" Adjusting saved position from y={} to y={} (too close to bottom)", saved_pos.y, max_y));
                                     saved_pos.y = max_y;
                                     self.popup.was_auto_positioned = true; // Mark as auto-positioned since we adjusted it
                                 }
                                 
                                 let pos_diff = (rect.min.x - saved_pos.x).abs() + (rect.min.y - saved_pos.y).abs();
-                                crate::utils::log(&format!("[SHOW] Current position: {:?}, Saved position: {:?}, Diff: {}", rect.min, saved_pos, pos_diff));
+                                detailed_log("SHOW", &format!(" Current position: {:?}, Saved position: {:?}, Diff: {}", rect.min, saved_pos, pos_diff));
                                 if pos_diff > 5.0 {  // Only restore if significantly different
-                                    crate::utils::log(&format!("[SHOW] Restoring saved position {:?} (current: {:?})", saved_pos, rect.min));
+                                    detailed_log("SHOW", &format!(" Restoring saved position {:?} (current: {:?})", saved_pos, rect.min));
                                     ctx.send_viewport_cmd(egui::ViewportCommand::OuterPosition(saved_pos));
                                     // If we didn't adjust the position, it's user-set, not auto-positioned
                                     if !self.popup.was_auto_positioned {
                                         self.popup.was_auto_positioned = false;
                                     }
                                 } else {
-                                    crate::utils::log("[SHOW] Position is close to saved, not restoring");
+                                    log("[SHOW] Position is close to saved, not restoring");
                                 }
                             } else {
-                                crate::utils::log("[SHOW] No saved position available");
+                                log("[SHOW] No saved position available");
                             }
                         }
                     } else {
                         // No position available, center the window
-                        crate::utils::log("[SHOW] No window position available, centering on main display");
+                        log("[SHOW] No window position available, centering on main display");
                         let config = crate::core::data::get_config();
                         let width = config.popup_settings.get_default_window_width() as f32;
                         let height = config.popup_settings.get_default_window_height() as f32;
@@ -5309,7 +5310,7 @@ impl eframe::App for PopupWithControl {
                         let center_y = center_y.min(max_y);
                         let center_pos = egui::pos2(center_x.max(0.0), center_y.max(0.0));
                         ctx.send_viewport_cmd(egui::ViewportCommand::OuterPosition(center_pos));
-                        crate::utils::log(&format!("[SHOW] Positioned new window to {:?}", center_pos));
+                        detailed_log("SHOW", &format!(" Positioned new window to {:?}", center_pos));
                     }
                     
                     // Clear the search input when showing the popup
@@ -5321,26 +5322,26 @@ impl eframe::App for PopupWithControl {
                     self.popup.window_activated = false;  // Reset so window activation will trigger again
                     self.popup.frame_count = 0;  // Reset frame count so early-frame focus logic will run
                     // Mark window as not hidden and reset interaction time
-                    crate::utils::log(&format!("[SHOW] Setting is_hidden=false (was {})", self.popup.is_hidden));
+                    detailed_log("SHOW", &format!(" Setting is_hidden=false (was {})", self.popup.is_hidden));
                     self.popup.is_hidden = false;
-                    crate::utils::log(&format!("[SHOW] Setting should_exit=false (was {})", self.popup.should_exit));
+                    detailed_log("SHOW", &format!(" Setting should_exit=false (was {})", self.popup.should_exit));
                     self.popup.should_exit = false;  // Reset exit flag
                     self.popup.last_interaction_time = std::time::Instant::now();
                     
                     // Force a repaint
-                    crate::utils::log("[SHOW] Requesting repaint");
+                    log("[SHOW] Requesting repaint");
                     ctx.request_repaint();
                     
-                    crate::utils::log(&format!("[SHOW] After: is_hidden={}, should_exit={}",
+                    detailed_log("SHOW", &format!(" After: is_hidden={}, should_exit={}",
                         self.popup.is_hidden, self.popup.should_exit));
-                    crate::utils::log(&format!("⏱️ [SHOW_TIMING] Command processing complete in {:?}", show_start.elapsed()));
-                    crate::utils::log("===== SHOW COMMAND COMPLETE =====");
+                    log(&format!("⏱️ [SHOW_TIMING] Command processing complete in {:?}", show_start.elapsed()));
+                    log("===== SHOW COMMAND COMPLETE =====");
                 }
                 crate::systems::popup_server::PopupCommand::Hide => {
-                    crate::utils::log("===== HIDE COMMAND RECEIVED =====");
+                    log("===== HIDE COMMAND RECEIVED =====");
                     // Call exit_or_hide to properly hide the window
                     self.popup.exit_or_hide(ctx);
-                    crate::utils::log("===== HIDE COMMAND COMPLETE =====");
+                    log("===== HIDE COMMAND COMPLETE =====");
                 }
                 crate::systems::popup_server::PopupCommand::Ping => {
                     // No special handling needed
@@ -5355,8 +5356,8 @@ impl eframe::App for PopupWithControl {
 
 pub fn run_gui_with_prompt(initial_prompt: &str, initial_action: Option<&str>, _app_state: super::ApplicationState) -> Result<(), eframe::Error> {
     // Debug: Log when popup is being opened
-    crate::utils::detailed_log("SYSTEM", &format!("===== POPUP GUI STARTING ====="));
-    crate::utils::detailed_log("POPUP_OPEN", &format!("Opening popup with initial prompt: '{}', action: {:?}", initial_prompt, initial_action));
+    detailed_log("SYSTEM", &format!("===== POPUP GUI STARTING ====="));
+    detailed_log("POPUP_OPEN", &format!("Opening popup with initial prompt: '{}', action: {:?}", initial_prompt, initial_action));
 
     // Capture the prompt and action for the closure
     let prompt = initial_prompt.to_string();
@@ -5369,11 +5370,11 @@ pub fn run_gui_with_prompt(initial_prompt: &str, initial_action: Option<&str>, _
     // Always start visible - we'll hide it later if needed
     let start_visible = true;
     
-    crate::utils::detailed_log("SYSTEM", &format!("[POPUP_INIT] Window size: {}x{}, start_visible: {}", width, height, start_visible));
+    detailed_log("SYSTEM", &format!("[POPUP_INIT] Window size: {}x{}, start_visible: {}", width, height, start_visible));
     
     // Load saved position or use centered position
     let initial_position = if let Some(saved_pos) = load_window_position() {
-        crate::utils::detailed_log("WINDOW_POS", &format!("[STARTUP] Using saved window position: {:?}", saved_pos));
+        detailed_log("WINDOW_POS", &format!("[STARTUP] Using saved window position: {:?}", saved_pos));
         [saved_pos.x, saved_pos.y]
     } else {
         // Center on screen
@@ -5381,7 +5382,7 @@ pub fn run_gui_with_prompt(initial_prompt: &str, initial_action: Option<&str>, _
         let screen_height = 1080.0; // Default fallback
         let x = (screen_width - width) / 2.0;
         let y = (screen_height - height) / 2.0;
-        crate::utils::detailed_log("WINDOW_POS", &format!("[STARTUP] No saved position, centering at: [{}, {}]", x, y));
+        detailed_log("WINDOW_POS", &format!("[STARTUP] No saved position, centering at: [{}, {}]", x, y));
         [x, y]
     };
     
@@ -5395,7 +5396,7 @@ pub fn run_gui_with_prompt(initial_prompt: &str, initial_action: Option<&str>, _
         .with_always_on_top(); // Keep on top so it's visible
         // Skip icon loading for faster startup - can be added later if needed
     
-    crate::utils::detailed_log("WINDOW_POS", &format!("[VIEWPORT] ViewportBuilder configured with position: {:?}", initial_position));
+    detailed_log("WINDOW_POS", &format!("[VIEWPORT] ViewportBuilder configured with position: {:?}", initial_position));
     
     let options = eframe::NativeOptions {
         viewport: viewport_builder,

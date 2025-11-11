@@ -1,8 +1,9 @@
 //! Display layout and navigation logic
-//! 
+//!
 //! This module handles how commands are arranged for display and how navigation
 //! works within that arrangement.
 
+use crate::prelude::*;
 use crate::core::Command;
 use crate::core::Config;
 
@@ -235,7 +236,7 @@ impl Selection {
     
     /// Reset selection to first valid command
     pub fn reset(&mut self, layout: &DisplayLayout) {
-        crate::utils::log(&format!("SELECTION_RESET: Before reset - position={:?}, index={}",
+        crate::utils::detailed_log("SELECTION_RESET", &format!("Before reset - position={:?}, index={}",
             self.visual_position, self.command_index));
 
         self.visual_position = (0, 0);
@@ -251,7 +252,7 @@ impl Selection {
             }
         }
 
-        crate::utils::log(&format!("SELECTION_RESET: After reset - position={:?}, index={}",
+        crate::utils::detailed_log("SELECTION_RESET", &format!("After reset - position={:?}, index={}",
             self.visual_position, self.command_index));
     }
 }

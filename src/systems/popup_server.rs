@@ -1,8 +1,9 @@
 //! Control socket for popup server
-//! 
+//!
 //! This module implements a control socket that allows external commands
 //! to control the popup window visibility.
 
+use crate::prelude::*;
 use std::os::unix::net::{UnixListener, UnixStream};
 use std::sync::{Arc, Mutex};
 use std::thread;
@@ -61,20 +62,20 @@ impl PopupControl {
         let ctx_handle = Arc::clone(&self.ctx_handle);
         
         thread::spawn(move || {
-            crate::utils::detailed_log("POPUP_SERVER", &format!("Starting control socket at: {}", POPUP_SOCKET));
+            detailed_log("POPUP_SERVER", &format!("Starting control socket at: {}", POPUP_SOCKET));
 
             // Clean up any stale socket file from previous crashed instances
             if std::path::Path::new(POPUP_SOCKET).exists() {
                 if let Err(e) = std::fs::remove_file(POPUP_SOCKET) {
-                    crate::utils::log_error(&format!("Failed to remove stale popup socket: {}", e));
+                    log_error(&format!("Failed to remove stale popup socket: {}", e));
                 } else {
-                    crate::utils::detailed_log("POPUP_SERVER", "Cleaned up stale socket file");
+                    detailed_log("POPUP_SERVER", "Cleaned up stale socket file");
                 }
             }
 
             match UnixListener::bind(POPUP_SOCKET) {
                 Ok(listener) => {
-                    crate::utils::detailed_log("POPUP_SERVER", "Control socket listening");
+                    detailed_log("POPUP_SERVER", "Control socket listening");
                     
                     for stream in listener.incoming() {
                         match stream {
@@ -82,13 +83,13 @@ impl PopupControl {
                                 handle_client(&mut stream, &pending_command, &ctx_handle);
                             }
                             Err(e) => {
-                                crate::utils::log_error(&format!("Failed to accept connection: {}", e));
+                                log_error(&format!("Failed to accept connection: {}", e));
                             }
                         }
                     }
                 }
                 Err(e) => {
-                    crate::utils::log_error(&format!("Failed to bind control socket: {}", e));
+                    log_error(&format!("Failed to bind control socket: {}", e));
                 }
             }
         });
@@ -107,15 +108,15 @@ impl PopupControl {
             if let Some(command) = pending.take() {
                 match &command {
                     PopupCommand::Show => {
-                        crate::utils::log("⏱️ POPUP_SERVER: Processing 'show' in update loop");
+                        log("⏱️ POPUP_SERVER: Processing 'show' in update loop");
                         // Show the window and focus it
                         ctx.send_viewport_cmd(egui::ViewportCommand::Visible(true));
                         ctx.send_viewport_cmd(egui::ViewportCommand::Focus);
                         ctx.request_repaint();
-                        crate::utils::log("⏱️ POPUP_SERVER: Viewport commands sent");
+                        log("⏱️ POPUP_SERVER: Viewport commands sent");
                     }
                     PopupCommand::Hide => {
-                        crate::utils::detailed_log("POPUP_SERVER", "Processing hide command");
+                        detailed_log("POPUP_SERVER", "Processing hide command");
                         
                         // Hide the window using viewport command
                         ctx.send_viewport_cmd(egui::ViewportCommand::Visible(false));
@@ -123,7 +124,7 @@ impl PopupControl {
                     }
                     PopupCommand::Ping => {
                         // Just a connectivity check
-                        crate::utils::detailed_log("POPUP_SERVER", "Ping received");
+                        detailed_log("POPUP_SERVER", "Ping received");
                     }
                 }
                 Some(command)
@@ -145,11 +146,11 @@ fn handle_client(stream: &mut UnixStream, pending_command: &Arc<Mutex<Option<Pop
             let message = String::from_utf8_lossy(&buffer[..size]);
             let command_str = message.trim();
             
-            crate::utils::detailed_log("POPUP_SERVER", &format!("Received command: {}", command_str));
+            detailed_log("POPUP_SERVER", &format!("Received command: {}", command_str));
             
             let (command, mut response) = match command_str {
                 "show" => {
-                    crate::utils::log("⏱️ POPUP_SERVER: Received 'show' command");
+                    detailed_log("POPUP_SERVER", "Received 'show' command");
                     (Some(PopupCommand::Show), String::from("Processing show command..."))
                 }
                 "hide" => {
@@ -163,7 +164,7 @@ fn handle_client(stream: &mut UnixStream, pending_command: &Arc<Mutex<Option<Pop
                 }
                 "delete" => {
                     // Exit the process
-                    crate::utils::detailed_log("POPUP_SERVER", "Delete command received, exiting");
+                    detailed_log("POPUP_SERVER", "Delete command received, exiting");
                     let _ = stream.write_all(b"OK: Exiting");
                     std::process::exit(0);
                 }
@@ -180,7 +181,7 @@ fn handle_client(stream: &mut UnixStream, pending_command: &Arc<Mutex<Option<Pop
                     if let Ok(ctx_lock) = ctx_handle.lock() {
                         if let Some(ref ctx) = *ctx_lock {
                             ctx.request_repaint();
-                            crate::utils::detailed_log("POPUP_SERVER", "Requested repaint for show command");
+                            detailed_log("POPUP_SERVER", "Requested repaint for show command");
                         }
                     }
                 }
@@ -202,7 +203,7 @@ fn handle_client(stream: &mut UnixStream, pending_command: &Arc<Mutex<Option<Pop
             let _ = stream.write_all(response.as_bytes());
         }
         Err(e) => {
-            crate::utils::log_error(&format!("Failed to read from client: {}", e));
+            log_error(&format!("Failed to read from client: {}", e));
         }
     }
 }
