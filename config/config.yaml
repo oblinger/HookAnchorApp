@@ -113,7 +113,6 @@ actions:
     name: "{{date.year}} {{input}}"
     action: "markdown"
     arg: "{{last_executed.folder}}/{{date.year}} {{input}}/{{date.year}} {{input}}.md"
-    patch: "WW"
     flags: "A"
     edit: true
     file: "{{last_executed.folder}}/{{date.year}} {{input}}/{{date.year}} {{input}}.md"
@@ -138,7 +137,7 @@ actions:
       .[[{{date.year}}-{{date.month}} {{input}}]].
       
 
-  at_child:
+  child_at_entry:
     description: "Creates a new contact's @ entry"
     action_type: template
     key: "Cmd+Shift+A"
@@ -153,7 +152,7 @@ actions:
       =[[At]]  
 
     
-  corp_child:
+  child_corp_entry:
     description: "Creates a new org @ entry"
     action_type: template
     key: "Cmd+O"
@@ -169,7 +168,7 @@ actions:
       =[[Org]]   
 
     
-  doc_child:
+  child_doc_entry:
     description: "Creates a new DOC documentation file"
     action_type: template
     key: "Cmd+D"

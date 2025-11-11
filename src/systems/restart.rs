@@ -56,7 +56,7 @@ pub fn start_popup_server() -> Result<PathBuf, String> {
         .spawn()
         .map_err(|e| format!("Failed to start popup_server: {}", e))?;
 
-    crate::utils::log(&format!("Spawned popup_server: {}", popup_server_path.display()));
+    crate::utils::print_and_log(&format!("Spawned popup_server: {}", popup_server_path.display()));
     Ok(popup_server_path)
 }
 
@@ -138,24 +138,24 @@ pub fn run_rescan() -> Result<bool, String> {
 /// This is what Command+B does - a complete rebuild of everything.
 pub fn full_system_restart() -> Result<(), String> {
     // Step 1: Restart command server
-    crate::utils::log("🔄 Step 1/3: Restarting command server...");
+    crate::utils::print_and_log("🔄 Step 1/3: Restarting command server...");
     if let Err(e) = restart_command_server() {
         crate::utils::log_error(&format!("Command server restart failed: {}", e));
         return Err(format!("Command server restart failed: {}", e));
     }
-    crate::utils::log("  ✅ Command server restarted");
+    crate::utils::print_and_log("  ✅ Command server restarted");
 
     // Step 2: Rescan filesystem
-    crate::utils::log("\n📁 Step 2/3: Rescanning filesystem...");
+    crate::utils::print_and_log("\n📁 Step 2/3: Rescanning filesystem...");
     // Brief wait for server to be ready
     std::thread::sleep(std::time::Duration::from_millis(1000));
 
     match run_rescan() {
         Ok(true) => {
-            crate::utils::log("  ✅ Filesystem rescan completed");
+            crate::utils::print_and_log("  ✅ Filesystem rescan completed");
         }
         Ok(false) => {
-            crate::utils::log("  ⚠️  Rescan command returned non-zero status");
+            crate::utils::print_and_log("  ⚠️  Rescan command returned non-zero status");
         }
         Err(e) => {
             crate::utils::log_error(&format!("Rescan failed: {}", e));
@@ -164,9 +164,9 @@ pub fn full_system_restart() -> Result<(), String> {
     }
 
     // Step 3: Restart popup server
-    crate::utils::log("\n🔄 Step 3/3: Restarting popup server...");
+    crate::utils::print_and_log("\n🔄 Step 3/3: Restarting popup server...");
     restart_popup_server()?;
-    crate::utils::log("  ✅ Popup server restarted");
+    crate::utils::print_and_log("  ✅ Popup server restarted");
 
     Ok(())
 }
@@ -199,15 +199,15 @@ pub fn get_popup_socket_path() -> PathBuf {
 /// This is the safe way to stop all servers before file operations that could
 /// cause race conditions.
 pub fn stop_all_servers() -> Result<(bool, bool), String> {
-    crate::utils::log("🛑 Stopping all servers...");
+    crate::utils::print_and_log("🛑 Stopping all servers...");
 
     // Stop popup server
     let popup_killed = match kill_popup_servers() {
         Ok(killed) => {
             if killed {
-                crate::utils::log("  ✓ Popup server stopped");
+                crate::utils::print_and_log("  ✓ Popup server stopped");
             } else {
-                crate::utils::log("  ℹ No popup server running");
+                crate::utils::print_and_log("  ℹ No popup server running");
             }
             killed
         }
@@ -220,7 +220,7 @@ pub fn stop_all_servers() -> Result<(bool, bool), String> {
     // Stop command server
     let command_killed = match crate::execute::kill_existing_server() {
         Ok(()) => {
-            crate::utils::log("  ✓ Command server stopped");
+            crate::utils::print_and_log("  ✓ Command server stopped");
             true
         }
         Err(e) => {
@@ -255,12 +255,12 @@ pub fn stop_all_servers() -> Result<(bool, bool), String> {
 /// Returns Ok if both servers started successfully, Err if either failed.
 /// Verifies that both servers are actually running after startup.
 pub fn start_all_servers() -> Result<(), String> {
-    crate::utils::log("🚀 Starting all servers...");
+    crate::utils::print_and_log("🚀 Starting all servers...");
 
     // Start popup server
     match start_popup_server() {
         Ok(path) => {
-            crate::utils::log(&format!("  ✓ Popup server started: {}", path.display()));
+            crate::utils::print_and_log(&format!("  ✓ Popup server started: {}", path.display()));
         }
         Err(e) => {
             return Err(format!("Failed to start popup server: {}", e));
@@ -270,7 +270,7 @@ pub fn start_all_servers() -> Result<(), String> {
     // Start command server (restart=false means just ensure it's running)
     match crate::execute::activate_command_server(false) {
         Ok(()) => {
-            crate::utils::log("  ✓ Command server started");
+            crate::utils::print_and_log("  ✓ Command server started");
         }
         Err(e) => {
             return Err(format!("Failed to start command server: {}", e));
@@ -295,7 +295,7 @@ pub fn start_all_servers() -> Result<(), String> {
         return Err(format!("Server verification failed: {}", errors.join(", ")));
     }
 
-    crate::utils::log("✅ All servers started and verified");
+    crate::utils::print_and_log("✅ All servers started and verified");
     Ok(())
 }
 
@@ -306,7 +306,7 @@ pub fn start_all_servers() -> Result<(), String> {
 ///
 /// Use this when you need to ensure no race conditions during file operations.
 pub fn restart_all_servers() -> Result<(), String> {
-    crate::utils::log("🔄 Restarting all servers...");
+    crate::utils::print_and_log("🔄 Restarting all servers...");
 
     // Stop everything first
     stop_all_servers()?;
@@ -317,6 +317,6 @@ pub fn restart_all_servers() -> Result<(), String> {
     // Start everything
     start_all_servers()?;
 
-    crate::utils::log("✅ All servers restarted successfully");
+    crate::utils::print_and_log("✅ All servers restarted successfully");
     Ok(())
 }

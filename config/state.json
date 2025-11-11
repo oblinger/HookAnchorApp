@@ -1,7 +1,7 @@
 {
   "window_position": [
-    775.0,
-    -395.0
+    980.0,
+    440.0
   ],
   "history_viewer_state": {
     "position": [
@@ -19,14 +19,14 @@
     "sidebar_width": 76.0,
     "show_current_commands": false
   },
-  "build_time": 1762805806,
+  "build_time": 1762830057,
   "last_scan_time": null,
   "last_scan_checksum": null,
-  "last_executed_command": "Hook Anchor Cfg File",
-  "server_pid": 91422,
+  "last_executed_command": "CNN Page",
+  "server_pid": 30068,
   "notion_last_scan": null,
-  "anchor_name": "pp",
-  "anchor_timestamp": 1762806686,
+  "anchor_name": "ww",
+  "anchor_timestamp": 1762818855,
   "anchor_folder": null,
   "show_files": false
 }

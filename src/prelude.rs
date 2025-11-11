@@ -3,9 +3,10 @@
 //! Add `use crate::prelude::*;` to any file to get access to commonly used functions.
 //!
 //! ## Logging Functions
-//! - `log(message)` - Log message to anchor.log
+//! - `log(message)` - Log message to anchor.log only
 //! - `log_error(message)` - Log error message
 //! - `detailed_log(tag, message)` - Detailed logging with tag
+//! - `print_and_log(message)` - Print to console AND log to file (for CLI commands)
 //!
 //! ## Dialog Functions (use directly from crate::utils)
 //! - `crate::utils::error(message)` - Show error dialog (non-blocking)
@@ -25,4 +26,5 @@ pub use crate::utils::{
     log,
     log_error,
     detailed_log,
+    print_and_log,
 };
