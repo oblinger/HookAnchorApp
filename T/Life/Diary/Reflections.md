@@ -1,6 +1,17 @@
 
 
 
+## 2025-11-09  THE NICK TALK
+
+- Talking with nick as he got his new job feels like a pivotal moment for me.  
+- For the last 10 years, I have been flailing.  Dallying and dreaming but not 
+	- Not with enough commitment in any direction to go anywhere, and 
+	- without enough realism in my choices to actually achieve anything
+
+In talking there are three targets right now
+- CIAO or AI leadership job (MOST LIKELY / HIGHEST PROBABILITY PATH)
+- AI Eng related job -- still mgt, but focused as a 'doer'  (LARGE DEMAND, BUT NO)
+
 ## 2025-11-03  Narrowing ...
 
 - Each 1/2 of focused work is precious, I need to get a good handful of these each day, then use well.

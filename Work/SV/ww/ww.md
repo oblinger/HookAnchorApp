@@ -21,19 +21,7 @@
   , [Arch](spot://arch),
   , [[2023 Headless Record Flow]], [[2023 Minutes Stat Calculations and Annotations]]
   , [[2023 SV Learning]],
-  DELS: ,[[2023 Headless Record Flow]], [[2023 Minutes Stat Calculations and Annotations]], [[2023 SV Learning]],
-  , [[2025 GPU Choice]],
-  , ,
-  , ,
-  DELS: ,[[2023 Headless Record Flow]], [[2023 Minutes Stat Calculations and Annotations]], [[2023 SV Learning]],, , , ,[[2025 GPU Choice]],
-  , ,
-  DELS: ,[[2023 Headless Record Flow]], [[2023 Minutes Stat Calculations and Annotations]], [[2023 SV Learning]],, , , ,[[2025 GPU Choice]],,
-  , [ww Obsidian](spot://wwobsidian),
-  DELS: ,[[2023 Headless Record Flow]], [[2023 Minutes Stat Calculations and Annotations]], [[2023 SV Learning]],, , , ,[[2025 GPU Choice]],,, , , , ,[ww Obsidian](spot://wwobsidian),
-  , ,
-  DELS: ,[[2023 Headless Record Flow]], [[2023 Minutes Stat Calculations and Annotations]], [[2023 SV Learning]],, , , ,[[2025 GPU Choice]],,, , , , ,[ww Obsidian](spot://wwobsidian),, ,
-  , [ww Note](spot://wwnote), 
-  DELS: [[2024-08 Backend Architect]],[[2023 Headless Record Flow]], [[2023 Minutes Stat Calculations and Annotations]], [[2023 SV Learning]],[[2023 Learning]], [[2023 Record Flow]], [[2023 Stat Calculations and Annotations]], [[2024-08 Backend Architect]],[[2025 GPU Choice]],[ww Note](spot://wwnote),[[2024-08 Backend Architect]], [[2023 Learning]], [[2023 Record Flow]], [[2023 Stat Calculations and Annotations]], [[2024-08 Backend Architect]],[ww Obsidian](spot://wwobsidian),[ww Note](spot://wwnote), [ww Note](spot://wwnote),[[2024-08 Backend Architect]], [[2023 Learning]], [[2023 Record Flow]], [[2023 Stat Calculations and Annotations]], [[2024-08 Backend Architect]], [[2024-08 Backend Architect]], [[2023 Learning]], [[2023 Record Flow]], [[2023 Stat Calculations and Annotations]], [[2024-08 Backend Architect]],[ww Note](spot://wwnote), [ww Note](spot://wwnote), [ww Note](spot://wwnote), [ww Note](spot://wwnote),
+
 
 
 

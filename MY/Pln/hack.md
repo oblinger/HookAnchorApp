@@ -1,4 +1,5 @@
-
+Types: fileExt, Person, Proj(work, personal, hack)
+CROSSCUTTING:  Log, WP, Chat(Email, call), Idea, 
 
 - [ ] [[Hook Anchor Release]] 
 - [x] fix key processing
@@ -9,6 +10,8 @@
 - [x] Personal Use license2
 - [x] does the installer add line to ~/.zshrc ?
 
+- [x] Fix print_and_log
+- [ ] remove long access to all lo
 - [ ] Command Type Filtering
 - [ ] ChildTemplate anchor var tied to "+" key.   " * " does grab
 - [ ] once all items in a prefix menu are filtered, the whole prefix menu (and it files menu) should be removed
@@ -20,6 +23,7 @@
 - [ ] Make dev mode run on each render (mod 10?)   make boot check only run when dev_mode is set.
 - [ ] click on folder will go into folder
 - [ ] Delete key should prompt to delete file and maybe folder.
+- [ ] Should we remove the "delete invalid alias" code???
 - [ ] remove the 'js' and 'js_function' action types since they are not needed.
 - [x] start selection w/ mouse should not happen til real move
 - [x] when matching a name.  prefix matches should match first, then first char matches then infix matches

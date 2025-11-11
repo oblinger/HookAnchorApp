@@ -62,17 +62,9 @@
 
 
 
-
-
-
-
-
-
 show AI running
 show fireball & magic hour
 table showing improvements
 
 https://docs.google.com/presentation/d/18-EgPTzjksHM8LPWDcRwrUl2pCflegCELsh3l2eQ8OE/edit?slide=id.g39bdd97e068_0_350#slide=id.g39bdd97e068_0_350
 
-
-<br>\\\\\\\|About a year ago we shifted away from our two-week engineering sprint (which to be honest, felt like one continuous multi-year sprint), to a three-week sprint followed by a one-week cooldown period.\\\\\\\|<br>\\\\\\\|The purpose of the cooldown is to shift focus away from new feature work and instead prioritize bugs, performance and scaling issues, product enhancements, quality of life improvements, and other infrastructure work.\\\\\\\|<br>\\\\\\\|The move has had a profound impact on the business.\\\\\\\|<br>\\\\\\\|It ensures that we never go more than a few weeks without addressing all of the most pressing platform issues and bugs. In turn, that means far fewer fires during sprints, giving the engineers more undisrupted time to ship new features.\\\\\\\|<br>\\\\\\\|The second and third order effects are just as notable. With less bugs plaguing our users, less support tickets are submitted, thus quicker response times and higher overall customer satisfaction. Internally, the overall vibe and operating cadence of the company feels far less chaotic and reactive than before too.\\\\\\\|<br>\\\\\\\|We have been doing cooldowns for almost a year now. While the first few were intense and felt like we were digging out of an insurmountable backlog of issues, each subsequent cooldown feels a bit more attainable and a lot less dire.\\\\\\\|<br>\\\\\\\|We shipped over 160 tickets worth of improvements during our last cooldown in September 🤯.\\\\\\\|<br>\\\\\\\|Anecdotally the platform feels so much more polished (and faster) than it did just a few months ago. The thesis is that this should correlate with retention and reduce churn (which is reflected in our numbers).\\\\\\\|<br>\\\\\\\||

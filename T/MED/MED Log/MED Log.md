@@ -80,6 +80,11 @@ PCN: PDMI
 GROUP: 99995215  
 ID: 1211993773
 
+## 2025-11-09  Replace Abbot Labs Lingo Glucose sensor
+
+lingosupport-us@hellolingo.com
+888-764-7684
+
 
 ## 2025-09-30  Derm person
 

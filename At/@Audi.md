@@ -7,6 +7,18 @@
 
 
 
+# LOG
+
+## 2025-11-09  New Tires
+![[Screenshot 2025-11-09 at 1.09.09 PM.png]]
+
+
+## 2025-11-09  
+
+
+
+## 2023
+
 Royal Automotive Review:
 
 aaaa
@@ -25,5 +37,3 @@ DAS was great, but I get the sense that there are several very highly rated germ
 
 These guys are organized around extracting your money.  I bought a late model A4 and paid $10K for four years of protection and service.  It was a poor choice on my part, and not worth it.  Still these guys are typical dealers in that regard.
 
-
-~p
