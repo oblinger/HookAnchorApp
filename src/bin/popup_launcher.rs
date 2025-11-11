@@ -3,7 +3,7 @@
 //! This lightweight binary manages the popup server lifecycle and sends commands to it.
 //! Designed for minimal startup time when triggered by keyboard shortcuts.
 
-use hookanchor::utils::{print, log_error};
+use hookanchor::utils::{print, print_and_log, log_error};
 use std::os::unix::net::UnixStream;
 use std::os::unix::process::CommandExt;
 use std::io::{Write, Read};
@@ -56,7 +56,7 @@ fn send_command(command: &str) -> Result<String, String> {
 
 /// Start the popup server
 fn start_popup_server() -> Result<(), String> {
-    print("Starting popup_server...");
+    print_and_log("Starting popup_server...");
 
     // Use centralized start function (no Terminal tab needed)
     hookanchor::systems::start_popup_server()?;
@@ -64,7 +64,7 @@ fn start_popup_server() -> Result<(), String> {
     // Wait for server to be ready (max 2 seconds)
     for _ in 0..20 {
         if send_command("ping").is_ok() {
-            print("✅ Popup server is ready");
+            print_and_log("✅ Popup server is ready");
             return Ok(());
         }
         thread::sleep(Duration::from_millis(100));
@@ -146,19 +146,19 @@ fn main() {
         if command == "status" {
             // Check if server is running even though we're in direct mode
             if send_command("ping").is_ok() {
-                print("Config: run_in_background = false");
-                print("Mode: Direct mode");
-                print("WARNING: Popup server IS running (leftover from server mode?)");
-                print("         Consider running 'popup delete' to stop the server");
+                print_and_log("Config: run_in_background = false");
+                print_and_log("Mode: Direct mode");
+                print_and_log("WARNING: Popup server IS running (leftover from server mode?)");
+                print_and_log("         Consider running 'popup delete' to stop the server");
                 // Also get the server's status
                 if let Ok(response) = send_command("status") {
-                    print(&format!("Server reports: {}", response));
+                    print_and_log(&format!("Server reports: {}", response));
                 }
             } else {
-                print("Config: run_in_background = false");
-                print("Mode: Direct mode");
-                print("Popup server: Not running");
-                print("(This is normal for direct mode)");
+                print_and_log("Config: run_in_background = false");
+                print_and_log("Mode: Direct mode");
+                print_and_log("Popup server: Not running");
+                print_and_log("(This is normal for direct mode)");
             }
             exit(0);
         }
@@ -229,11 +229,11 @@ fn main() {
             // For status command, add mode information
             if command == "status" {
                 let config_says_background = check_run_in_background();
-                print(&format!("Config: run_in_background = {}", config_says_background));
-                print(&format!("Mode: {}", if config_says_background { "Server mode" } else { "Direct mode" }));
+                print_and_log(&format!("Config: run_in_background = {}", config_says_background));
+                print_and_log(&format!("Mode: {}", if config_says_background { "Server mode" } else { "Direct mode" }));
                 if !config_says_background {
-                    print("WARNING: Server is running but config says direct mode!");
-                    print("         Consider running 'popup delete' to stop the server");
+                    print_and_log("WARNING: Server is running but config says direct mode!");
+                    print_and_log("         Consider running 'popup delete' to stop the server");
                 }
             }
             print(&response);
@@ -267,13 +267,13 @@ fn main() {
                 "status" => {
                     // Check config setting
                     let config_says_background = check_run_in_background();
-                    print(&format!("Config: run_in_background = {}", config_says_background));
-                    print(&format!("Mode: {}", if config_says_background { "Server mode" } else { "Direct mode" }));
-                    print("Popup server: Not running");
+                    print_and_log(&format!("Config: run_in_background = {}", config_says_background));
+                    print_and_log(&format!("Mode: {}", if config_says_background { "Server mode" } else { "Direct mode" }));
+                    print_and_log("Popup server: Not running");
 
                     // In direct mode, that's expected
                     if !config_says_background {
-                        print("(This is normal for direct mode)");
+                        print_and_log("(This is normal for direct mode)");
                     }
                     exit(0);
                 }
