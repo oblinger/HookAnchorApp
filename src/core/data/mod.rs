@@ -73,6 +73,7 @@ pub use sys_data::{
     add_command,
     delete_command,
     set_state,
+    set_active_anchor,
     // Data layer maintenance
     clear_commands,              // Clear singleton + delete files (for delete-history)
     reload_commands,             // Reload from disk into singleton (after manual file restore)

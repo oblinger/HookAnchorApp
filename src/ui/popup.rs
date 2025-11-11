@@ -582,6 +582,50 @@ impl PopupInterface for AnchorSelector {
         self.activate_tmux();
     }
 
+    fn activate_anchor(&mut self) {
+        // Get the current input text to check if it's an anchor name
+        let input_text = self.popup_state.search_text.clone();
+
+        if input_text.is_empty() {
+            // If input is empty, just consume the comma key and do nothing
+            return;
+        }
+
+        // Get all commands
+        let commands = crate::core::data::get_commands();
+
+        // Find a command that matches the input text (case-insensitive)
+        if let Some(cmd) = commands.iter().find(|c| c.command.to_lowercase() == input_text.to_lowercase()) {
+            // Resolve any aliases to get the final target command
+            let resolved_cmd = cmd.resolve_alias(&commands);
+
+            // Check if the resolved command is an anchor
+            let is_anchor = resolved_cmd.action == "anchor" || resolved_cmd.flags.contains('A');
+
+            if is_anchor {
+                // Found an anchor (either directly or via alias) - set it as active and clear the input
+                match crate::core::data::set_active_anchor(resolved_cmd.command.clone(), None) {
+                    Ok(()) => {
+                        log(&format!("✅ Activated anchor: '{}'", resolved_cmd.command));
+                        // Clear the search text after successful activation
+                        self.popup_state.search_text.clear();
+                        self.popup_state.update_search(String::new());
+                    },
+                    Err(e) => {
+                        log_error(&format!("Failed to activate anchor '{}': {}", resolved_cmd.command, e));
+                    }
+                }
+            } else {
+                // Command exists but resolves to something that's not an anchor
+                detailed_log("ANCHOR_ACTIVATE", &format!("'{}' resolves to '{}' which is not an anchor, input left unchanged", input_text, resolved_cmd.command));
+            }
+        } else {
+            // No matching command found - just consume the comma key, leave input text as-is
+            // User can edit and try again
+            detailed_log("ANCHOR_ACTIVATE", &format!("'{}' is not a valid command name, input left unchanged", input_text));
+        }
+    }
+
     fn create_child(&mut self) {
         self.create_child();
     }
@@ -2168,13 +2212,19 @@ impl AnchorSelector {
             let resolved = matching_cmd.resolve_alias(&all_commands);
             let expanded_name = &resolved.command;
 
-            log(&format!("🔄 Expanding '{}' -> '{}'", current_input, expanded_name));
+            // Only expand if the name actually changed
+            if expanded_name != &current_input {
+                log(&format!("🔄 Expanding '{}' -> '{}'", current_input, expanded_name));
 
-            // Update the search text with the expanded/resolved name
-            self.popup_state.update_search(expanded_name.clone());
-            self.request_cursor_at_end = true;
+                // Update the search text with the expanded/resolved name
+                self.popup_state.update_search(expanded_name.clone());
+                self.request_cursor_at_end = true;
 
-            return true;
+                return true;
+            } else {
+                // Name didn't change - no expansion needed
+                return false;
+            }
         }
 
         // If no exact match, try prefix match with the first filtered result
@@ -3817,6 +3867,13 @@ impl eframe::App for AnchorSelector {
         if was_hidden_last_frame && !self.is_hidden {
             log(&format!("⏱️ [VISIBILITY_TIMING] First frame after becoming visible - frame_count={}, focus_set={}",
                 self.frame_count, self.focus_set));
+
+            // 🔍 Verify we're running the latest binary (dev machines only)
+            // This catches cases where code was rebuilt but server wasn't restarted
+            // Only check if fully loaded to avoid accessing uninitialized SysData
+            if self.loading_state == LoadingState::Loaded {
+                crate::utils::verify_build(true);
+            }
         }
 
         // Check if we have a pending rebuild to perform

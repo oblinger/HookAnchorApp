@@ -198,8 +198,8 @@ fn resolve_alias_to_target<'a>(cmd: &'a crate::core::commands::Command, all_comm
 
 // Helper: Extract folder path from a command
 fn get_command_folder(cmd: &crate::core::commands::Command) -> Option<String> {
-    // For folder/anchor commands, the arg is the folder path
-    if cmd.action == "folder" || cmd.action == "anchor" {
+    // For folder/tmux commands, the arg is the folder path
+    if cmd.action == "folder" || cmd.action == "tmux" {
         if !cmd.arg.is_empty() {
             return Some(cmd.arg.clone());
         }
@@ -218,7 +218,7 @@ fn get_command_folder(cmd: &crate::core::commands::Command) -> Option<String> {
 // Helper: Extract full file path from a command
 fn get_command_path(cmd: &crate::core::commands::Command) -> Option<String> {
     // For file/markdown commands, the arg is the full path
-    if (cmd.action == "markdown" || cmd.action == "file" || cmd.action == "folder" || cmd.action == "anchor") && !cmd.arg.is_empty() {
+    if (cmd.action == "markdown" || cmd.action == "file" || cmd.action == "folder" || cmd.action == "tmux") && !cmd.arg.is_empty() {
         return Some(cmd.arg.clone());
     }
     None

@@ -727,6 +727,39 @@ pub fn set_state(state: &super::state::AppState) -> Result<(), Box<dyn std::erro
     super::state::save_state(state)
 }
 
+
+/// Set the active anchor - single source of truth for anchor activation
+///
+/// This function is the centralized way to set the active anchor. All code that
+/// needs to activate an anchor should call this function.
+///
+/// # Arguments
+/// * `anchor_name` - The name of the anchor command
+/// * `anchor_folder` - Optional folder path associated with the anchor
+///
+/// # Returns
+/// * `Ok(())` if the anchor was successfully set
+/// * `Err` if saving state failed
+pub fn set_active_anchor(anchor_name: String, anchor_folder: Option<String>) -> Result<(), Box<dyn std::error::Error>> {
+    crate::utils::detailed_log("ANCHOR_SET", &format!("Setting active anchor: '{}' with folder: {:?}", anchor_name, anchor_folder));
+
+    let mut state = get_state();
+    state.anchor_name = Some(anchor_name.clone());
+    state.anchor_timestamp = Some(chrono::Local::now().timestamp());
+    state.anchor_folder = anchor_folder;
+
+    match set_state(&state) {
+        Ok(()) => {
+            crate::utils::detailed_log("ANCHOR_SET", &format!("✅ Successfully set active anchor: '{}'", anchor_name));
+            Ok(())
+        },
+        Err(e) => {
+            crate::utils::log_error(&format!("Failed to set active anchor: {}", e));
+            Err(e)
+        }
+    }
+}
+
 // =============================================================================
 // HISTORY MANAGEMENT
 // =============================================================================

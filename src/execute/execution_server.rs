@@ -179,7 +179,11 @@ fn handle_client(
     _base_working_dir: PathBuf,
 ) -> Result<(), Box<dyn std::error::Error>> {
     detailed_log("CMD_SERVER", "Handling new client connection");
-    
+
+    // 🔍 Verify we're running the latest binary (dev machines only)
+    // This catches cases where code was rebuilt but server wasn't restarted
+    crate::utils::verify_build(true);
+
     // Read the JSON action from the client
     let mut reader = BufReader::new(&stream);
     let mut request_line = String::new();

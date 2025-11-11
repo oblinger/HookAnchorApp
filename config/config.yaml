@@ -7,7 +7,7 @@
 # APPLICATION SETTINGS
 # =================================================================
 popup_settings:
-  verbose_logging:        false        # Controls if detailed logging messages added to the log
+  verbose_logging:        true         # Controls if detailed logging messages added to the log
   merge_similar:          true         # Merging similar commands in popup
   max_rows:               25           # Max number of rows in the list of matching commands
   max_columns:            4            # Max columns in list of matching commands
@@ -298,6 +298,13 @@ actions:
     popup_action: show_history_viewer
     close_popup: true
 
+  kb_activate_anchor:
+    description: "Activate anchor from input text"
+    action_type: popup
+    key: ","
+    popup_action: activate_anchor
+    close_popup: false
+
   kb_navigate_up_hierarchy:
     description: "Navigate up to parent patch in hierarchy"
     action_type: popup
@@ -410,7 +417,7 @@ actions:
     popup_action: toggle_show_files
     close_popup: false
 
-  tmux:
+  kb_tmux:
     description: "Activate TMUX session for selected folder/anchor"
     action_type: popup
     key: "Cmd+T"
@@ -544,7 +551,12 @@ actions:
   rescan:
     description: "Force rescan of markdown files"
     action_type: rescan
-  
+
+  tmux:
+    description: "Activate TMUX session for selected anchor"
+    action_type: js
+    function: action_activate_tmux
+
   # Alias action (special case - references other commands)
   alias:
     action_type: alias
@@ -580,7 +592,7 @@ grabber_rules:
 - name: Finder Anchor
   matcher: 'bundleId === ''com.apple.finder'' && props.selection && props.recommendedAction === ''anchor'' ? props.selection
     : null'
-  action: anchor
+  action: tmux
   group: Files
 - name: Finder Markdown
   matcher: 'bundleId === ''com.apple.finder'' && props.selection && props.recommendedAction === ''markdown'' ? props.selection

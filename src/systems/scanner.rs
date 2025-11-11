@@ -480,50 +480,25 @@ pub fn delete_invalid_aliases(commands: &mut Vec<Command>, verbose: bool) -> Res
         crate::utils::print("\n🔍 Checking for invalid aliases...");
     }
 
-    // Build a set of all valid command names (case-insensitive)
-    let valid_commands: HashSet<String> = commands
-        .iter()
-        .filter(|cmd| cmd.action != "alias") // Don't include aliases themselves
-        .map(|cmd| cmd.command.to_lowercase())
-        .collect();
-
     // Find all aliases that point to non-existent commands
+    // Use resolve_alias() to validate - if it returns itself unchanged, the alias is invalid
     let mut to_remove = Vec::new();
 
     for (idx, cmd) in commands.iter().enumerate() {
         if cmd.action == "alias" {
-            let target_lower = cmd.arg.to_lowercase();
+            // Try to resolve the alias using the centralized resolution logic
+            let resolved = cmd.resolve_alias(commands);
 
-            // Check if target exists
-            if !valid_commands.contains(&target_lower) {
-                // Also check if target might be a patch!command format
-                let target_exists = commands.iter().any(|c| {
-                    if c.action == "alias" {
-                        return false; // Don't alias to aliases
-                    }
-                    // Check exact match
-                    if c.command.to_lowercase() == target_lower {
-                        return true;
-                    }
-                    // Check if command has a patch, try matching without patch
-                    if let Some(exclaim_pos) = c.command.find('!') {
-                        let cmd_without_patch = c.command[exclaim_pos + 1..].trim();
-                        if cmd_without_patch.to_lowercase() == target_lower {
-                            return true;
-                        }
-                    }
-                    false
-                });
-
-                if !target_exists {
-                    to_remove.push(idx);
-                    if verbose {
-                        crate::utils::print(&format!("   ❌ Invalid alias: '{}' → '{}' (target not found)",
-                            cmd.command, cmd.arg));
-                    }
-                    crate::utils::log(&format!("DELETE_INVALID_ALIAS: Removing alias '{}' → '{}' (target does not exist)",
+            // If resolve_alias returns a command with the same name as the alias itself,
+            // it means resolution failed (alias points to non-existent target)
+            if resolved.command == cmd.command && resolved.action == "alias" {
+                to_remove.push(idx);
+                if verbose {
+                    crate::utils::print(&format!("   ❌ Invalid alias: '{}' → '{}' (target not found)",
                         cmd.command, cmd.arg));
                 }
+                crate::utils::log(&format!("DELETE_INVALID_ALIAS: Removing alias '{}' → '{}' (target does not exist)",
+                    cmd.command, cmd.arg));
             }
         }
     }

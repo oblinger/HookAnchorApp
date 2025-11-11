@@ -63,24 +63,9 @@ impl Keystroke {
     pub fn matches_event(&self, event: &egui::Event) -> bool {
         match event {
             egui::Event::Key { key, pressed, modifiers, .. } => {
-                // Always log bracket key events
-                if *key == egui::Key::OpenBracket || *key == egui::Key::CloseBracket {
-                    detailed_log("BRACKET_MATCH", &format!("Testing key={:?} pressed={} modifiers={:?} against keystroke={:?}", 
-                        key, pressed, modifiers, self));
-                }
-                
                 detailed_log("KEY_PROCESSING", &format!("Key event: {:?} pressed={} modifiers={:?}", key, pressed, modifiers));
                 if !pressed {
-                    if *key == egui::Key::OpenBracket || *key == egui::Key::CloseBracket {
-                        detailed_log("BRACKET_MATCH", &format!("Key not pressed, returning false"));
-                    }
                     return false;
-                }
-                
-                // Log detailed matching for bracket keys
-                if *key == egui::Key::OpenBracket || *key == egui::Key::CloseBracket {
-                    detailed_log("BRACKET_MATCH", &format!("key={:?} vs self.key={:?}, modifiers={:?} vs self.modifiers={:?}",
-                        key, self.key, Modifiers::from_egui(modifiers), self.modifiers));
                 }
 
                 // For logical punctuation keys (?, +, |, :), ignore shift in modifier matching
@@ -434,6 +419,9 @@ pub trait PopupInterface {
     /// Activate TMUX - open folder, tmux session, and Obsidian (formerly activate_anchor)
     fn activate_tmux(&mut self);
 
+    /// Activate anchor from input text - sets active anchor without opening tmux
+    fn activate_anchor(&mut self);
+
     /// Create child command using anchor's template parameter
     fn create_child(&mut self);
 
@@ -625,17 +613,8 @@ impl KeyRegistry {
             match event {
                 egui::Event::Key { key, pressed, modifiers, .. } => {
                     if *pressed {
-                        detailed_log("KEY_PRESS", &format!("Key={:?}, Modifiers={{shift:{}, ctrl:{}, alt:{}, cmd:{}}}", 
+                        detailed_log("KEY_PRESS", &format!("Key={:?}, Modifiers={{shift:{}, ctrl:{}, alt:{}, cmd:{}}}",
                             key, modifiers.shift, modifiers.ctrl, modifiers.alt, modifiers.command));
-                        
-                        // Special logging for > key (Period with Shift)
-                        if *key == egui::Key::Period && modifiers.shift {
-                            log(">>> GREATER-THAN KEY DETECTED! Period + Shift pressed");
-                        }
-                        // Special logging for Cmd+D key
-                        if *key == egui::Key::D && modifiers.command {
-                            detailed_log("KEY", &format!("📝 CMD+D KEY DETECTED! Cmd+D pressed for DOC template"));
-                        }
                     }
                 }
                 egui::Event::Text(text) => {
@@ -656,94 +635,21 @@ impl KeyRegistry {
             
             // Try all matching handlers until one succeeds
             for (keystroke, handler) in &self.handlers {
-                // Debug logging for specific keys - checking against registry
-                if let egui::Event::Key { key, pressed, .. } = event {
-                    if *pressed {
-                        if *key == egui::Key::Semicolon {
-                            detailed_log("REGISTRY_CHECK", &format!("🔸 SEMICOLON: Checking handler '{}' (keystroke: {:?})", 
-                                handler.description(), keystroke));
-                        } else if *key == egui::Key::OpenBracket {
-                            detailed_log("REGISTRY_CHECK", &format!("🔶 LEFT BRACKET: Checking handler '{}' (keystroke: {:?})", 
-                                handler.description(), keystroke));
-                        } else if *key == egui::Key::CloseBracket {
-                            detailed_log("REGISTRY_CHECK", &format!("🔷 RIGHT BRACKET: Checking handler '{}' (keystroke: {:?})", 
-                                handler.description(), keystroke));
-                        } else if *key == egui::Key::Equals {
-                            detailed_log("REGISTRY_CHECK", &format!("🟰 EQUALS: Checking handler '{}' (keystroke: {:?})", 
-                                handler.description(), keystroke));
-                        }
-                    }
-                }
-                
                 let matches = keystroke.matches_event(event);
-                
-                // Log the matching result for specific keys
-                if let egui::Event::Key { key, pressed, .. } = event {
+
+                // General logging for ALL key matches/mismatches
+                if let egui::Event::Key { key, pressed, modifiers, .. } = event {
                     if *pressed {
-                        if *key == egui::Key::Semicolon && matches {
-                            detailed_log("REGISTRY_MATCH", &format!("🔸 SEMICOLON: ✅ MATCHED handler '{}' (keystroke: {:?})", 
-                                handler.description(), keystroke));
-                        } else if *key == egui::Key::Semicolon {
-                            detailed_log("REGISTRY_MATCH", &format!("🔸 SEMICOLON: ❌ NO MATCH for handler '{}' (keystroke: {:?})", 
-                                handler.description(), keystroke));
-                        } else if *key == egui::Key::OpenBracket && matches {
-                            detailed_log("REGISTRY_MATCH", &format!("🔶 LEFT BRACKET: ✅ MATCHED handler '{}' (keystroke: {:?})", 
-                                handler.description(), keystroke));
-                        } else if *key == egui::Key::OpenBracket {
-                            detailed_log("REGISTRY_MATCH", &format!("🔶 LEFT BRACKET: ❌ NO MATCH for handler '{}' (keystroke: {:?})", 
-                                handler.description(), keystroke));
-                        } else if *key == egui::Key::CloseBracket && matches {
-                            detailed_log("REGISTRY_MATCH", &format!("🔷 RIGHT BRACKET: ✅ MATCHED handler '{}' (keystroke: {:?})", 
-                                handler.description(), keystroke));
-                        } else if *key == egui::Key::CloseBracket {
-                            detailed_log("REGISTRY_MATCH", &format!("🔷 RIGHT BRACKET: ❌ NO MATCH for handler '{}' (keystroke: {:?})", 
-                                handler.description(), keystroke));
-                        } else if *key == egui::Key::Equals && matches {
-                            detailed_log("REGISTRY_MATCH", &format!("🟰 EQUALS: ✅ MATCHED handler '{}' (keystroke: {:?})", 
-                                handler.description(), keystroke));
-                        } else if *key == egui::Key::Equals {
-                            detailed_log("REGISTRY_MATCH", &format!("🟰 EQUALS: ❌ NO MATCH for handler '{}' (keystroke: {:?})", 
-                                handler.description(), keystroke));
+                        if matches {
+                            detailed_log("KEY_MATCH", &format!("✅ Key {:?} (mods: {:?}) MATCHED handler '{}' (keystroke: {:?})",
+                                key, modifiers, handler.description(), keystroke));
                         }
                     }
                 }
-                
+
                 if matches {
                     detailed_log("KEY_HANDLER", &format!("KEY_HANDLER: Handler matched: {}", handler.description()));
-                    
-                    // Special logging for Enter key
-                    if let egui::Event::Key { key, modifiers, .. } = event {
-                        if *key == egui::Key::Enter {
-                            detailed_log("KEY", &format!("🔵 ENTER KEY: Handler '{}' matched for Enter key!", handler.description()));
-                        }
-                        // Also log Backtick key
-                        if *key == egui::Key::Backtick {
-                            detailed_log("KEY", &format!("⚡ BACKTICK KEY: Handler '{}' matched for Backtick key!", handler.description()));
-                        }
-                        // Log > key (Period with Shift)
-                        if *key == egui::Key::Period && modifiers.shift {
-                            detailed_log("KEY", &format!(">>> ALIAS KEY: Handler '{}' matched for > key!", handler.description()));
-                        }
-                        // Log Cmd+D key
-                        if *key == egui::Key::D && modifiers.command {
-                            detailed_log("KEY", &format!("📝 DOC KEY: Handler '{}' matched for Cmd+D key!", handler.description()));
-                        }
-                        // Log bracket keys
-                        if *key == egui::Key::OpenBracket {
-                            detailed_log("KEY", &format!("🔶 LEFT BRACKET KEY: Handler '{}' MATCHED for [ key!", handler.description()));
-                        }
-                        if *key == egui::Key::CloseBracket {
-                            detailed_log("KEY", &format!("🔷 RIGHT BRACKET KEY: Handler '{}' MATCHED for ] key!", handler.description()));
-                        }
-                        // Log equals and semicolon for comparison
-                        if *key == egui::Key::Equals {
-                            detailed_log("KEY", &format!("🟰 EQUALS KEY: Handler '{}' MATCHED for = key!", handler.description()));
-                        }
-                        if *key == egui::Key::Semicolon {
-                            detailed_log("KEY", &format!("🔸 SEMICOLON KEY: Handler '{}' MATCHED for ; key!", handler.description()));
-                        }
-                    }
-                    
+
                     let mut context = KeyHandlerContext {
                         event,
                         popup,
@@ -752,19 +658,7 @@ impl KeyRegistry {
                     
                     match handler.execute(&mut context) {
                         KeyHandlerResult::Handled => {
-                            detailed_log("KEY_HANDLER", &format!("KEY_HANDLER: Handler HANDLED: {}", handler.description()));
-                            
-                            // Special logging for Enter key
-                            if let egui::Event::Key { key, .. } = event {
-                                if *key == egui::Key::Enter {
-                                    detailed_log("KEY", &format!("🔵 ENTER KEY: ✅ Handler successfully executed for Enter key!"));
-                                }
-                                // Also log Backtick key
-                                if *key == egui::Key::Backtick {
-                                    detailed_log("KEY", &format!("⚡ BACKTICK KEY: ✅ Handler successfully executed for Backtick key!"));
-                                }
-                            }
-                            
+                            detailed_log("KEY_HANDLER", &format!("✅ Handler HANDLED: {}", handler.description()));
                             handled = true;
                             break; // Exit inner loop for this event
                         }
@@ -882,6 +776,7 @@ impl PopupActionHandler {
             "template_create" => "Create template",
             "activate_tmux" => "Activate TMUX session for selected command",
             "tmux" => "Activate TMUX session for selected command",
+            "activate_anchor" => "Activate anchor from input text",
             "create_child" => "Create child command using anchor's template",
             "navigate_up_hierarchy" => "Navigate up to parent patch",
             "navigate_down_hierarchy" => "Navigate into selected anchor prefix menu",
@@ -926,6 +821,10 @@ impl PopupActionHandler {
             },
             "activate_tmux" | "tmux" => {
                 context.popup.activate_tmux();
+                KeyHandlerResult::Handled
+            },
+            "activate_anchor" => {
+                context.popup.activate_anchor();
                 KeyHandlerResult::Handled
             },
             "create_child" => {
