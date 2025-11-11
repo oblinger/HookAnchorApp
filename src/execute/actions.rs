@@ -226,7 +226,8 @@ pub(super) fn execute_locally(
     let action_arg = arg.unwrap_or_else(|| action.get_string("arg").unwrap_or(""));
     let action_flags = action.get_string("flags").unwrap_or("");
     
-    // Log main action line
+    // Log main action line with separator for easy visibility
+    crate::utils::log("════════════════════════════════════════════════════════════════════════════════");
     let main_log = format!("ACTION:{}  TYPE:{}  FLAGS:{}  ARG:{}", action_name, action_type, action_flags, action_arg);
     crate::utils::log(&main_log);
     
