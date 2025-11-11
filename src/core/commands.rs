@@ -1040,16 +1040,16 @@ pub fn run_patch_inference(
                 if apply_changes {
                     // Debug: Log when we're about to assign a patch
                     if inferred_patch.is_empty() {
-                        crate::utils::log(&format!("  ⚠️ WARNING: About to assign EMPTY patch to command '{}' (was: '{}')", 
+                        crate::utils::log(&format!("  ⚠️ WARNING: About to assign EMPTY patch to command '{}' (was: '{}')",
                             command.command, old_patch_display));
                     }
                     command.patch = inferred_patch.clone();
-                    crate::utils::log(&format!("  ✅ Inferred patch for '{}': {} -> {}", 
+                    crate::utils::detailed_log("PATCH_INFERENCE", &format!("Inferred patch for '{}': {} -> {}",
                         command.command, old_patch_display, inferred_patch));
                 }
 
                 if print_to_stdout {
-                    crate::utils::log(&format!("{}: {} -> {}", command.command, old_patch_display, inferred_patch));
+                    crate::utils::detailed_log("PATCH_INFERENCE", &format!("{}: {} -> {}", command.command, old_patch_display, inferred_patch));
                 }
 
                 patches_assigned += 1;
