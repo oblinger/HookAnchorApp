@@ -1055,22 +1055,38 @@ fn scan_files_merge_based(
                 // Update command with new data
                 let old_action = cmd.action.clone();
                 let old_size = cmd.file_size;
-                cmd.action = new_cmd.action;
-                cmd.arg = new_cmd.arg;
-                cmd.flags = new_cmd.flags; // Update flags to reflect anchor status
+                let old_arg = cmd.arg.clone();
+                let old_flags = cmd.flags.clone();
+
+                cmd.action = new_cmd.action.clone();
+                cmd.arg = new_cmd.arg.clone();
+                cmd.flags = new_cmd.flags.clone(); // Update flags to reflect anchor status
                 cmd.file_size = new_cmd.file_size;
                 cmd.last_update = new_cmd.last_update;
 
                 stats.updated += 1;
-                if verbose {
-                    crate::utils::print(&format!("   Updated: '{}' - action:{:?}→{:?}, size:{:?}→{:?}",
+
+                // Only log if action or size actually changed (meaningful changes)
+                let action_changed = old_action != cmd.action;
+                let size_changed = old_size != cmd.file_size;
+
+                if action_changed || size_changed {
+                    if verbose {
+                        crate::utils::print(&format!("   Updated: '{}' - action:{:?}→{:?}, size:{:?}→{:?}",
+                            cmd.command, old_action, cmd.action, old_size, cmd.file_size
+                        ));
+                    }
+                    crate::utils::log(&format!(
+                        "Updated: '{}' - action:{:?}→{:?}, size:{:?}→{:?}",
                         cmd.command, old_action, cmd.action, old_size, cmd.file_size
                     ));
+                } else {
+                    // Only arg or flags changed - use detailed_log
+                    crate::utils::detailed_log("SCANNER", &format!(
+                        "Updated: '{}' - arg:{:?}→{:?}, flags:{:?}→{:?}",
+                        cmd.command, old_arg, cmd.arg, old_flags, cmd.flags
+                    ));
                 }
-                crate::utils::log(&format!(
-                    "Updated: '{}' - action:{:?}→{:?}, size:{:?}→{:?}",
-                    cmd.command, old_action, cmd.action, old_size, cmd.file_size
-                ));
             } else {
                 // No change
                 stats.unchanged += 1;
