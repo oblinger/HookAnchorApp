@@ -1,32 +1,32 @@
 {
-  "anchor_folder": null,
-  "anchor_name": "ww",
-  "anchor_timestamp": 1762818855,
-  "build_time": 1762832769,
+  "window_position": [
+    980.0,
+    440.0
+  ],
   "history_viewer_state": {
-    "min_edit_size": 500,
-    "name_filter": "",
-    "patch_filter": "",
     "position": [
       -1900.0,
       54.0
     ],
-    "selected_action_types": [],
-    "show_current_commands": false,
-    "sidebar_width": 76.0,
     "window_size": [
       1156.0,
       1288.0
-    ]
+    ],
+    "patch_filter": "",
+    "name_filter": "",
+    "min_edit_size": 500,
+    "selected_action_types": [],
+    "sidebar_width": 76.0,
+    "show_current_commands": false
   },
-  "last_executed_command": "CNN Page",
-  "last_scan_checksum": null,
+  "build_time": 1762833899,
   "last_scan_time": null,
+  "last_scan_checksum": null,
+  "last_executed_command": "CNN Page",
+  "server_pid": 60291,
   "notion_last_scan": null,
-  "server_pid": 50732,
-  "show_files": false,
-  "window_position": [
-    980.0,
-    440.0
-  ]
+  "anchor_name": "ww",
+  "anchor_timestamp": 1762818855,
+  "anchor_folder": null,
+  "show_files": false
 }

@@ -262,9 +262,9 @@ impl AnchorSelector {
             WindowSizeMode::Editor => self.calculate_editor_size(),
             WindowSizeMode::Dialog => {
                 // TEST: Force main window to 1000x1000 to verify this code path is working
-                log("🪟 WINDOW_SIZING: Dialog mode - calculating size for dialog");
+                detailed_log("WINDOW_SIZING", "Dialog mode - calculating size for dialog");
                 let size = egui::vec2(1000.0, 1000.0);
-                log(&format!("🪟 WINDOW_SIZING: Dialog mode calculated size: {}x{}", size.x, size.y));
+                detailed_log("WINDOW_SIZING", &format!("Dialog mode calculated size: {}x{}", size.x, size.y));
                 size
             }
         };
@@ -293,15 +293,15 @@ impl AnchorSelector {
         if should_resize {
             // Get current position BEFORE resizing to maintain top-left anchor
             let current_pos = ctx.input(|i| i.viewport().outer_rect.map(|r| r.min)).unwrap_or(egui::pos2(100.0, 100.0));
-            
-            log(&format!("🪟 WINDOW_SIZING: SENDING RESIZE COMMAND! position={:?}, mode={:?}, target_size={}x{}", 
+
+            detailed_log("WINDOW_SIZING", &format!("SENDING RESIZE COMMAND! position={:?}, mode={:?}, target_size={}x{}",
                 current_pos, new_mode, required_size.x, required_size.y));
-            
+
             ctx.send_viewport_cmd(egui::ViewportCommand::InnerSize(required_size));
-            
+
             // CRITICAL: Re-anchor position after resize to prevent drift
             // This ensures the top-left corner stays in the same place
-            log(&format!("[POSITION] Re-anchoring position after resize to {:?} (reason: prevent drift)", current_pos));
+            detailed_log("POSITION", &format!("Re-anchoring position after resize to {:?} (reason: prevent drift)", current_pos));
             ctx.send_viewport_cmd(egui::ViewportCommand::OuterPosition(current_pos));
             
             // Update the mode and cache the size
@@ -3671,12 +3671,12 @@ fn load_window_position() -> Option<egui::Pos2> {
     
     if let Some(pos) = result {
         if pos.y > 600.0 {
-            log(&format!("[POSITION-LOAD] WARNING: Loading low position ({}, {}) - POSITION TOO LOW!", pos.x, pos.y));
+            detailed_log("POSITION-LOAD", &format!("WARNING: Loading low position ({}, {}) - POSITION TOO LOW!", pos.x, pos.y));
         } else {
-            log(&format!("[POSITION-LOAD] Loading saved position ({}, {})", pos.x, pos.y));
+            detailed_log("POSITION-LOAD", &format!("Loading saved position ({}, {})", pos.x, pos.y));
         }
     } else {
-        log("[POSITION-LOAD] No saved position available");
+        detailed_log("POSITION-LOAD", "No saved position available");
     }
     
     result
@@ -4798,7 +4798,7 @@ impl eframe::App for AnchorSelector {
                             String::new()
                         };
 
-                        log(&format!("⏱️ [FOCUS_TIMING] Focus successfully set on frame {} - INPUT READY FOR USER{}",
+                        detailed_log("FOCUS_TIMING", &format!("Focus successfully set on frame {} - INPUT READY FOR USER{}",
                             self.frame_count, total_time_msg));
                         detailed_log("FOCUS", &format!("Focus successfully set on frame {}", self.frame_count));
 
@@ -4966,12 +4966,12 @@ impl eframe::App for AnchorSelector {
                         let size_diff_height = (current_size.y - constrained_height).abs();
                         
                         if size_diff_width > 10.0 || size_diff_height > 10.0 {
-                            log(&format!("🪟 CONTENT_RESIZE: Sending content-based resize command! {}x{} (dialog not visible)", 
+                            detailed_log("CONTENT_RESIZE", &format!("Sending content-based resize command! {}x{} (dialog not visible)",
                                 constrained_width, constrained_height));
                             ctx.send_viewport_cmd(egui::ViewportCommand::InnerSize(egui::vec2(constrained_width, constrained_height)));
                         }
                     } else {
-                        log("🪟 SKIPPING_CONTENT_RESIZE: Dialog is visible, allowing dialog sizing to control window");
+                        detailed_log("CONTENT_RESIZE", "Dialog is visible, allowing dialog sizing to control window");
                     }
 
                     // Use the layout and display_commands that were already calculated above for window sizing
@@ -5186,8 +5186,8 @@ impl eframe::App for PopupWithControl {
             match command {
                 crate::systems::popup_server::PopupCommand::Show => {
                     let show_start = std::time::Instant::now();
-                    log("===== SHOW COMMAND RECEIVED =====");
-                    log(&format!("⏱️ [SHOW_TIMING] Command received at {:?}", show_start));
+                    detailed_log("SHOW", "===== SHOW COMMAND RECEIVED =====");
+                    detailed_log("SHOW_TIMING", &format!("Command received at {:?}", show_start));
                     detailed_log("SHOW", &format!(" Current frame: {}", self.popup.frame_count));
                     detailed_log("SHOW", &format!(" is_hidden={}, should_exit={}",
                         self.popup.is_hidden, self.popup.should_exit));
@@ -5228,7 +5228,7 @@ impl eframe::App for PopupWithControl {
                     // REMOVED: AppleScript activation (was taking 176-368ms!)
                     // The ViewportCommand::Focus above should be sufficient for egui/eframe windows
                     // If focus issues occur, we may need a faster native solution
-                    log("[SHOW] Relying on ViewportCommand::Focus (AppleScript removed for speed)");
+                    detailed_log("SHOW", "Relying on ViewportCommand::Focus (AppleScript removed for speed)");
                     
                     // CRITICAL: Position window on screen if it's off-screen
                     let current_pos = ctx.input(|i| i.viewport().outer_rect);
@@ -5288,15 +5288,15 @@ impl eframe::App for PopupWithControl {
                                         self.popup.was_auto_positioned = false;
                                     }
                                 } else {
-                                    log("[SHOW] Position is close to saved, not restoring");
+                                    detailed_log("SHOW", "Position is close to saved, not restoring");
                                 }
                             } else {
-                                log("[SHOW] No saved position available");
+                                detailed_log("SHOW", "No saved position available");
                             }
                         }
                     } else {
                         // No position available, center the window
-                        log("[SHOW] No window position available, centering on main display");
+                        detailed_log("SHOW", "No window position available, centering on main display");
                         let config = crate::core::data::get_config();
                         let width = config.popup_settings.get_default_window_width() as f32;
                         let height = config.popup_settings.get_default_window_height() as f32;
@@ -5329,19 +5329,19 @@ impl eframe::App for PopupWithControl {
                     self.popup.last_interaction_time = std::time::Instant::now();
                     
                     // Force a repaint
-                    log("[SHOW] Requesting repaint");
+                    detailed_log("SHOW", "Requesting repaint");
                     ctx.request_repaint();
-                    
+
                     detailed_log("SHOW", &format!(" After: is_hidden={}, should_exit={}",
                         self.popup.is_hidden, self.popup.should_exit));
-                    log(&format!("⏱️ [SHOW_TIMING] Command processing complete in {:?}", show_start.elapsed()));
-                    log("===== SHOW COMMAND COMPLETE =====");
+                    detailed_log("SHOW_TIMING", &format!("Command processing complete in {:?}", show_start.elapsed()));
+                    detailed_log("SHOW", "===== SHOW COMMAND COMPLETE =====");
                 }
                 crate::systems::popup_server::PopupCommand::Hide => {
-                    log("===== HIDE COMMAND RECEIVED =====");
+                    detailed_log("HIDE", "===== HIDE COMMAND RECEIVED =====");
                     // Call exit_or_hide to properly hide the window
                     self.popup.exit_or_hide(ctx);
-                    log("===== HIDE COMMAND COMPLETE =====");
+                    detailed_log("HIDE", "===== HIDE COMMAND COMPLETE =====");
                 }
                 crate::systems::popup_server::PopupCommand::Ping => {
                     // No special handling needed
