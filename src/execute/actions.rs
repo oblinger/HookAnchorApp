@@ -147,6 +147,19 @@ pub fn make_action(action_type: &str, arg: &str) -> Action {
 }
 
 
+/// Get the arg_type for a given action name from config
+///
+/// Returns the arg_type field from the action config, which indicates what type of
+/// data the action's arg contains (e.g., "file", "folder", "url", or None for other types)
+pub fn get_action_arg_type(action_name: &str) -> Option<String> {
+    let config = crate::core::data::get_config();
+    config.actions?
+        .get(action_name)?
+        .get_string("arg_type")
+        .map(|s| s.to_string())
+}
+
+
 /// Context for action execution with JavaScript variable expansion
 pub struct ActionContext {
     /// Input text from user

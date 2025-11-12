@@ -17,7 +17,7 @@ mod execution_server_management;
 // PUBLIC API - All external access goes through these re-exports
 // ============================================================================
 
-// From actions module  
+// From actions module
 pub use self::actions::{
     Action,
     ActionContext,
@@ -26,6 +26,7 @@ pub use self::actions::{
     get_default_patch_for_action,
     make_action,
     get_action_for_arg,
+    get_action_arg_type,
 };
 
 // From execute module - main execution interface

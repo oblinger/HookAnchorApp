@@ -390,22 +390,29 @@ pub fn get_patches() -> HashMap<String, Patch> {
 
 /// Internal function: Flush commands to disk with validation and repair
 /// This ALWAYS validates/repairs patches and saves to both cache and commands.txt
-fn flush(commands: &mut Vec<Command>) -> Result<(), Box<dyn std::error::Error>> {
+fn flush(commands: &mut Vec<Command>, skip_validation: bool) -> Result<(), Box<dyn std::error::Error>> {
     let flush_start = std::time::Instant::now();
     let initial_count = commands.len();
     crate::utils::log(&format!("⏱️ FLUSH: Starting with {} commands", initial_count));
 
     // Step 1: Validate and repair patches (ensures data integrity)
-    let step1_start = std::time::Instant::now();
-    let resolution = crate::core::validate_and_repair_patches(commands, true);
-    let patches = resolution.patches;
-    crate::utils::log(&format!("⏱️ FLUSH: Step 1 (validate/repair): {:?}", step1_start.elapsed()));
+    // Can be skipped for small, non-structural changes (e.g., single command edits from UI)
+    let after_validation_count = if skip_validation {
+        crate::utils::log("⏩ FLUSH: Step 1 (validate/repair): SKIPPED (no structural changes)");
+        initial_count
+    } else {
+        let step1_start = std::time::Instant::now();
+        let resolution = crate::core::validate_and_repair_patches(commands, true);
+        let patches = resolution.patches;
+        crate::utils::log(&format!("⏱️ FLUSH: Step 1 (validate/repair): {:?}", step1_start.elapsed()));
 
-    let after_validation_count = commands.len();
-    if after_validation_count != initial_count {
-        crate::utils::log(&format!("FLUSH: Validation added/removed {} commands (now {})",
-            after_validation_count as i32 - initial_count as i32, after_validation_count));
-    }
+        let after_validation_count = commands.len();
+        if after_validation_count != initial_count {
+            crate::utils::log(&format!("FLUSH: Validation added/removed {} commands (now {})",
+                after_validation_count as i32 - initial_count as i32, after_validation_count));
+        }
+        after_validation_count
+    };
 
     // Step 2: Deduplicate commands (keeps best version of each unique command name)
     let step2_start = std::time::Instant::now();
@@ -463,10 +470,11 @@ pub fn set_commands(mut commands: Vec<Command>) -> Result<(), Box<dyn std::error
     let new_map = super::storage::build_command_map(&commands);
     crate::utils::log(&format!("⏱️ SET_COMMANDS: Create lookup maps: {:?}", map_start.elapsed()));
 
-    // Track changes for logging
+    // Track changes for logging and validation decisions
     let mut created_count = 0;
     let mut modified_count = 0;
     let mut deleted_count = 0;
+    let mut structural_changes = false; // True if anchors, patches, or flags changed
 
     // Record all new and modified commands to history
     let history_record_start = std::time::Instant::now();
@@ -489,6 +497,13 @@ pub fn set_commands(mut commands: Vec<Command>) -> Result<(), Box<dyn std::error
                     cached_cmd.patch,
                     new_cmd.patch
                 ));
+
+                // Check if this is a structural change that requires validation
+                if new_cmd.is_anchor() || cached_cmd.is_anchor() ||
+                   new_cmd.patch != cached_cmd.patch ||
+                   new_cmd.flags != cached_cmd.flags {
+                    structural_changes = true;
+                }
             }
         } else {
             // Command is new - append to history
@@ -500,6 +515,11 @@ pub fn set_commands(mut commands: Vec<Command>) -> Result<(), Box<dyn std::error
                 new_cmd.action,
                 new_cmd.patch
             ));
+
+            // Check if new command is an anchor or has a patch (structural)
+            if new_cmd.is_anchor() || !new_cmd.patch.is_empty() {
+                structural_changes = true;
+            }
         }
     }
 
@@ -518,6 +538,11 @@ pub fn set_commands(mut commands: Vec<Command>) -> Result<(), Box<dyn std::error
                 cached_cmd.action,
                 cached_cmd.patch
             ));
+
+            // Deleting an anchor is a structural change
+            if cached_cmd.is_anchor() {
+                structural_changes = true;
+            }
         }
     }
 
@@ -531,10 +556,36 @@ pub fn set_commands(mut commands: Vec<Command>) -> Result<(), Box<dyn std::error
         ));
     }
 
+    // Decide whether we can skip validation
+    // Skip validation if:
+    // 1. Small number of changes (≤3 commands)
+    // 2. No structural changes (anchors, patches, or flags)
+    let total_changes = created_count + modified_count + deleted_count;
+    let skip_validation = total_changes <= 3 && !structural_changes;
+
+    if skip_validation {
+        crate::utils::log(&format!(
+            "⚡ SET_COMMANDS: Skipping validation ({} changes, no structural changes) - performance optimization",
+            total_changes
+        ));
+    } else if structural_changes {
+        crate::utils::log("🔧 SET_COMMANDS: Running validation (structural changes detected)");
+    } else {
+        crate::utils::log(&format!(
+            "🔧 SET_COMMANDS: Running validation ({} changes)",
+            total_changes
+        ));
+    }
+
     // Flush to disk with inference
     let flush_start = std::time::Instant::now();
-    let result = flush(&mut commands);
-    crate::utils::log(&format!("⏱️ SET_COMMANDS: Flush (includes inference): {:?}", flush_start.elapsed()));
+    let result = flush(&mut commands, skip_validation);
+    let flush_time = flush_start.elapsed();
+    if skip_validation {
+        crate::utils::log(&format!("⏱️ SET_COMMANDS: Flush (validation skipped): {:?}", flush_time));
+    } else {
+        crate::utils::log(&format!("⏱️ SET_COMMANDS: Flush (includes validation): {:?}", flush_time));
+    }
     crate::utils::log(&format!("⏱️ SET_COMMANDS: TOTAL TIME: {:?}", set_commands_start.elapsed()));
 
     result

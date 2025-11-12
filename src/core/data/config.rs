@@ -17,6 +17,8 @@ pub struct Config {
     pub config_version: Option<String>,
     /// Popup window settings (includes scanner settings now)
     pub popup_settings: PopupSettings,
+    /// Template settings for child command creation
+    pub template_settings: Option<TemplateSettings>,
     /// Launcher behavior settings
     pub launcher_settings: Option<LauncherSettings>,
     /// Grabber rules for capturing application context
@@ -95,6 +97,16 @@ pub struct PopupSettings {
     /// - hostname string: enable developer mode only on that specific machine
     /// When enabled, build verification is active. When disabled, build verification is skipped.
     pub developer_mode: Option<String>,
+}
+
+/// Template settings for child command creation
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(default)]
+pub struct TemplateSettings {
+    /// Template to use when active anchor exists but no template found in hierarchy (default: "sub_markdown")
+    pub default_anchor_template: Option<String>,
+    /// Template to use when no active anchor is set (default: "sub_markdown")
+    pub default_no_anchor_template: Option<String>,
 }
 
 /// History tracking settings
@@ -255,11 +267,21 @@ impl Default for PopupSettings {
     }
 }
 
+impl Default for TemplateSettings {
+    fn default() -> Self {
+        TemplateSettings {
+            default_anchor_template: Some("sub_markdown".to_string()),
+            default_no_anchor_template: Some("sub_markdown".to_string()),
+        }
+    }
+}
+
 impl Default for Config {
     fn default() -> Self {
         Config {
             config_version: None,  // Not set in dev configs, only in distributions
             popup_settings: PopupSettings::default(),
+            template_settings: Some(TemplateSettings::default()),
             launcher_settings: Some(LauncherSettings::default()),
             grabber_rules: None,
             grabber_suffix_map: None,
@@ -397,10 +419,14 @@ fn parse_config_contents(contents: &str) -> Result<Config, Box<dyn std::error::E
     let history_viewer = yaml.get("history_viewer")
         .and_then(|v| serde_yaml::from_value(v.clone()).ok());
 
+    let template_settings = yaml.get("template_settings")
+        .and_then(|v| serde_yaml::from_value(v.clone()).ok());
+
     Ok(Config {
         config_version: yaml.get("config_version")
             .and_then(|v| serde_yaml::from_value(v.clone()).ok()),
         popup_settings,
+        template_settings,
         launcher_settings,
         grabber_rules,
         grabber_suffix_map: yaml.get("grabber_suffix_map")
@@ -415,6 +441,7 @@ pub(crate) fn create_default_config() -> Config {
     Config {
         config_version: None,
         popup_settings: PopupSettings::default(),
+        template_settings: Some(TemplateSettings::default()),
         launcher_settings: Some(LauncherSettings::default()),
         grabber_rules: Some(vec![]),
         grabber_suffix_map: None,

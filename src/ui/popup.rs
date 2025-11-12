@@ -3606,7 +3606,7 @@ impl AnchorSelector {
         }
     }
 
-    /// Create a child command using the active anchor's template parameter
+    /// Create a child command using template from active anchor's patch hierarchy
     fn create_child(&mut self) {
         use crate::utils;
 
@@ -3619,61 +3619,73 @@ impl AnchorSelector {
 
         // Get the active anchor from state
         let state = crate::core::data::get_state();
-        let anchor_name = match &state.anchor_name {
-            Some(name) => name.clone(),
-            None => {
-                utils::log("CREATE_CHILD: No active anchor set");
-                crate::utils::error("No active anchor set. Execute an anchor command first.");
-                return;
-            }
-        };
+        let config = crate::core::data::get_config();
 
-        utils::log(&format!("CREATE_CHILD: Child name='{}', Anchor='{}'", child_name, anchor_name));
+        let template_name = match &state.anchor_name {
+            Some(anchor_name) => {
+                utils::log(&format!("CREATE_CHILD: Using active anchor '{}'", anchor_name));
 
-        // Look up the anchor command to get its template parameter
-        let all_commands = crate::core::data::get_commands();
-        let anchor_cmd = all_commands.iter().find(|cmd| cmd.command == anchor_name);
+                // Find the anchor command to get its patch
+                let all_commands = crate::core::data::get_commands();
+                let anchor_cmd = all_commands.iter().find(|cmd| cmd.command == *anchor_name);
 
-        let anchor_cmd = match anchor_cmd {
-            Some(cmd) => cmd,
-            None => {
-                utils::log(&format!("CREATE_CHILD: Anchor command '{}' not found", anchor_name));
-                crate::utils::error(&format!("Anchor command '{}' not found", anchor_name));
-                return;
-            }
-        };
+                match anchor_cmd {
+                    Some(cmd) => {
+                        if cmd.patch.is_empty() {
+                            utils::log(&format!("CREATE_CHILD: Anchor '{}' has no patch", anchor_name));
+                            // Use default_anchor_template
+                            config.template_settings
+                                .as_ref()
+                                .and_then(|ts| ts.default_anchor_template.clone())
+                                .unwrap_or_else(|| "sub_markdown".to_string())
+                        } else {
+                            // Build patches hashmap for hierarchy walking
+                            let patches = crate::core::commands::create_patches_hashmap(&all_commands);
 
-        // Get the template parameter from other_params
-        let template_name = match &anchor_cmd.other_params {
-            Some(params) => {
-                match params.get(crate::utils::PARAM_TEMPLATE) {
-                    Some(t) => {
-                        utils::log(&format!("CREATE_CHILD: Found template parameter: '{}'", t));
-                        t.clone()
+                            // Walk up the hierarchy looking for a template parameter
+                            let mut found_template = None;
+                            for patch in crate::core::commands::walk_patch_hierarchy(&cmd.patch, &patches, 100) {
+                                if let Some(anchor) = patch.primary_anchor() {
+                                    if let Some(params) = &anchor.other_params {
+                                        if let Some(template) = params.get(crate::utils::PARAM_TEMPLATE) {
+                                            utils::log(&format!("CREATE_CHILD: Found template '{}' on anchor '{}' in hierarchy",
+                                                template, anchor.command));
+                                            found_template = Some(template.clone());
+                                            break;
+                                        }
+                                    }
+                                }
+                            }
+
+                            found_template.unwrap_or_else(|| {
+                                // No template found in hierarchy - use default_anchor_template
+                                utils::log("CREATE_CHILD: No template in hierarchy, using default_anchor_template");
+                                config.template_settings
+                                    .as_ref()
+                                    .and_then(|ts| ts.default_anchor_template.clone())
+                                    .unwrap_or_else(|| "sub_markdown".to_string())
+                            })
+                        }
                     }
                     None => {
-                        // No template specified, error out
-                        utils::log(&format!("CREATE_CHILD: Anchor '{}' has no template parameter", anchor_name));
-                        crate::utils::error(&format!(
-                            "Anchor '{}' has no template parameter.\n\nAdd a template parameter to the anchor command using the command editor:\nParameters: template:=sub_markdown\n\nOr specify which template to use for creating children.",
-                            anchor_name
-                        ));
+                        utils::log(&format!("CREATE_CHILD: Anchor '{}' not found", anchor_name));
+                        crate::utils::error(&format!("Anchor command '{}' not found.", anchor_name));
                         return;
                     }
                 }
             }
             None => {
-                // No parameters at all, error out
-                utils::log(&format!("CREATE_CHILD: Anchor '{}' has no parameters", anchor_name));
-                crate::utils::error(&format!(
-                    "Anchor '{}' has no parameters.\n\nAdd a template parameter to the anchor command using the command editor:\nParameters: template:=sub_markdown\n\nOr specify which template to use for creating children.",
-                    anchor_name
-                ));
-                return;
+                // No active anchor - use default_no_anchor_template
+                utils::log("CREATE_CHILD: No active anchor, using default_no_anchor_template");
+                config.template_settings
+                    .as_ref()
+                    .and_then(|ts| ts.default_no_anchor_template.clone())
+                    .unwrap_or_else(|| "sub_markdown".to_string())
             }
         };
 
-        utils::log(&format!("CREATE_CHILD: Using template '{}' to create child '{}'", template_name, child_name));
+        utils::log(&format!("CREATE_CHILD: Using template '{}' to create child '{}'",
+            template_name, child_name));
 
         // Temporarily replace search text with child name so template expansion uses it
         let original_search = self.popup_state.search_text.clone();

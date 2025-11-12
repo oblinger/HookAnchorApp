@@ -198,28 +198,42 @@ fn resolve_alias_to_target<'a>(cmd: &'a crate::core::commands::Command, all_comm
 
 // Helper: Extract folder path from a command
 fn get_command_folder(cmd: &crate::core::commands::Command) -> Option<String> {
-    // For folder/tmux commands, the arg is the folder path
-    if cmd.action == "folder" || cmd.action == "tmux" {
-        if !cmd.arg.is_empty() {
-            return Some(cmd.arg.clone());
-        }
-    }
-    // For file-based commands (markdown, etc.), extract directory from file path in arg
-    if cmd.action == "markdown" || cmd.action == "file" {
-        if !cmd.arg.is_empty() {
-            if let Some(parent) = std::path::Path::new(&cmd.arg).parent() {
-                return Some(parent.to_string_lossy().to_string());
+    // Get arg_type from action config instead of hardcoding action names
+    let arg_type = crate::execute::get_action_arg_type(&cmd.action);
+
+    match arg_type.as_deref() {
+        Some("folder") => {
+            // For folder actions, the arg is the folder path
+            if !cmd.arg.is_empty() {
+                return Some(cmd.arg.clone());
             }
         }
+        Some("file") => {
+            // For file actions, extract directory from file path in arg
+            if !cmd.arg.is_empty() {
+                if let Some(parent) = std::path::Path::new(&cmd.arg).parent() {
+                    return Some(parent.to_string_lossy().to_string());
+                }
+            }
+        }
+        _ => {}
     }
     None
 }
 
 // Helper: Extract full file path from a command
 fn get_command_path(cmd: &crate::core::commands::Command) -> Option<String> {
-    // For file/markdown commands, the arg is the full path
-    if (cmd.action == "markdown" || cmd.action == "file" || cmd.action == "folder" || cmd.action == "tmux") && !cmd.arg.is_empty() {
-        return Some(cmd.arg.clone());
+    // Get arg_type from action config instead of hardcoding action names
+    let arg_type = crate::execute::get_action_arg_type(&cmd.action);
+
+    // For file/folder actions, the arg is the full path
+    match arg_type.as_deref() {
+        Some("file") | Some("folder") => {
+            if !cmd.arg.is_empty() {
+                return Some(cmd.arg.clone());
+            }
+        }
+        _ => {}
     }
     None
 }

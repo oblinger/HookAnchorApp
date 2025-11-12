@@ -159,6 +159,66 @@ impl Patch {
     }
 }
 
+/// Iterator for walking up the patch hierarchy from child to root
+/// Uses max depth limit instead of cycle detection for simplicity
+pub struct PatchHierarchyIterator<'a> {
+    patches: &'a HashMap<String, Patch>,
+    current_patch_name: Option<String>,
+    depth: usize,
+    max_depth: usize,
+}
+
+impl<'a> PatchHierarchyIterator<'a> {
+    pub fn new(start_patch: &str, patches: &'a HashMap<String, Patch>, max_depth: usize) -> Self {
+        PatchHierarchyIterator {
+            patches,
+            current_patch_name: Some(start_patch.to_string()),
+            depth: 0,
+            max_depth,
+        }
+    }
+}
+
+impl<'a> Iterator for PatchHierarchyIterator<'a> {
+    type Item = &'a Patch;
+
+    fn next(&mut self) -> Option<Self::Item> {
+        // Check depth limit
+        if self.depth >= self.max_depth {
+            return None;
+        }
+
+        // Get current patch name
+        let patch_name = self.current_patch_name.as_ref()?;
+
+        // Stop at "orphans"
+        if patch_name.to_lowercase() == "orphans" {
+            return None;
+        }
+
+        // Look up the patch
+        let patch_key = patch_name.to_lowercase();
+        let patch = self.patches.get(&patch_key)?;
+
+        // Prepare next iteration - move to parent
+        self.current_patch_name = patch.parent_patch_name();
+        self.depth += 1;
+
+        Some(patch)
+    }
+}
+
+/// Helper function to create a patch hierarchy iterator
+/// Walks from start_patch up to root, yielding each patch along the way
+/// max_depth prevents infinite loops (recommended: 100)
+pub fn walk_patch_hierarchy<'a>(
+    start_patch: &str,
+    patches: &'a HashMap<String, Patch>,
+    max_depth: usize,
+) -> PatchHierarchyIterator<'a> {
+    PatchHierarchyIterator::new(start_patch, patches, max_depth)
+}
+
 
 /// Normalize a path by removing trailing slashes (except for root "/")
 fn normalize_path(path: PathBuf) -> PathBuf {

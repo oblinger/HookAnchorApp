@@ -7,7 +7,7 @@
 # APPLICATION SETTINGS
 # =================================================================
 popup_settings:
-  verbose_logging:        true         # Controls if detailed logging messages added to the log
+  verbose_logging:        false        # Controls if detailed logging messages added to the log
   merge_similar:          true         # Merging similar commands in popup
   max_rows:               25           # Max number of rows in the list of matching commands
   max_columns:            4            # Max columns in list of matching commands
@@ -65,7 +65,14 @@ popup_settings:
       incremental:        false        # Only scan changed pages since last scan (default: false)
       root:               ""           # Leave empty to scan all accessible pages, or specify page/workspace ID
       api_key: "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"      # Or paste key directly (starts with secret_)
-      
+
+
+# =================================================================
+# TEMPLATE SETTINGS
+# =================================================================
+template_settings:
+  default_anchor_template:     "sub_markdown"  # Template to use when active anchor exists but no template found in hierarchy
+  default_no_anchor_template:  "sub_markdown"  # Template to use when no active anchor is set
 
 launcher_settings:
   js_timeout_ms:          5000         # Max milliseconds allows for a js command execution
@@ -457,33 +464,38 @@ actions:
   # Commands reference these by name in their action field.
   
   # Browser actions
-  chrome: 
+  chrome:
     description: "Open URL in Google Chrome"
     action_type: open_url
+    arg_type: url
     browser: "Google Chrome"
     url: "{{arg}}"
 
-  safari: 
+  safari:
     description: "Open URL in Safari"
     action_type: "open_url"
+    arg_type: url
     browser: "Safari"
     url: "{{arg}}"
-    
+
   brave:
     description: "Open URL in Brave Browser"
     action_type: open_url
+    arg_type: url
     browser: "Brave Browser"
     url: "{{arg}}"
-    
+
   firefox:
     description: "Open URL in Firefox"
     action_type: open_url
+    arg_type: url
     browser: "Firefox"
     url: "{{arg}}"
-    
+
   work:
     description: "Open URL in work browser (Chrome Beta)"
     action_type: open_url
+    arg_type: url
     browser: "Google Chrome Beta"
     url: "{{arg}}"
     
@@ -491,11 +503,13 @@ actions:
   notion:
     description: "Open Notion page"
     action_type: notion
+    arg_type: url
     arg: "{{arg}}"
 
   obs_url:
     description: "Open Obsidian URL"
     action_type: app
+    arg_type: url
     app: "Obsidian"
     arg: "{{arg}}"
 
@@ -512,11 +526,13 @@ actions:
   url:
     description: "Open URL in default browser"
     action_type: open_url
+    arg_type: url
     url: "{{arg}}"
 
   doc:
     description: "Open document with default application"
     action_type: doc
+    arg_type: file
 
   console:
     description: "Execute command in terminal window"
@@ -526,36 +542,39 @@ actions:
   folder:
     description: "Open folder - handles relative and absolute paths"
     action_type: folder
-    
+    arg_type: folder
+
   cmd:
     description: "Execute command - handles windowed (W flag) execution"
     action_type: cmd
-    
+
   markdown:
     description: "Open markdown file in Obsidian or default editor"
     action_type: markdown
+    arg_type: file
 
   text:
     description: "Type text file contents into active application"
     action_type: text
+    arg_type: file
     # delay: 1.0  # Optional: seconds to wait before typing (default: 1.0)
-    
+
   1pass:
     description: "Search and fill from 1Password"
     action_type: 1pass
-    
+
   slack:
     description: "Navigate to Slack channel"
     action_type: slack
-    
+
   rescan:
     description: "Force rescan of markdown files"
     action_type: rescan
 
   tmux:
     description: "Activate TMUX session for selected anchor"
-    action_type: js
-    function: action_activate_tmux
+    action_type: activate_tmux
+    arg_type: folder
 
   # Alias action (special case - references other commands)
   alias:

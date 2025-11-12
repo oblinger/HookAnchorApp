@@ -1,7 +1,7 @@
 {
   "window_position": [
     980.0,
-    -294.0
+    104.0
   ],
   "history_viewer_state": {
     "position": [
@@ -19,14 +19,14 @@
     "sidebar_width": 76.0,
     "show_current_commands": false
   },
-  "build_time": 1762899813,
+  "build_time": 1762931498,
   "last_scan_time": null,
   "last_scan_checksum": null,
-  "last_executed_command": "Ask",
-  "server_pid": 51548,
+  "last_executed_command": "JOBI",
+  "server_pid": 1034,
   "notion_last_scan": null,
-  "anchor_name": "Ask",
-  "anchor_timestamp": 1762899983,
+  "anchor_name": "JOBI",
+  "anchor_timestamp": 1762930331,
   "anchor_folder": null,
   "show_files": false
 }
