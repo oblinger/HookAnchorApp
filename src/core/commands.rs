@@ -393,6 +393,15 @@ impl Command {
         !self.patch.is_empty() && self.patch != "orphans"
     }
 
+    /// Get the parent command for this command by walking up the patch hierarchy
+    /// Returns None if this command has no patch, or the patch has no parent
+    pub fn get_parent_command<'a>(&self, patches: &'a HashMap<String, Patch>) -> Option<&'a Command> {
+        let patch = get_patch(&self.patch, patches)?;
+        let parent_patch_name = patch.parent_patch_name()?;
+        let parent_patch = get_patch(&parent_patch_name, patches)?;
+        parent_patch.primary_anchor()
+    }
+
     /// Updates the full_line field to reflect current command state in new format
     /// NOTE: With full_line removed from struct, this is now a no-op
     pub fn update_full_line(&mut self) {
@@ -1224,27 +1233,14 @@ pub(crate) fn normalize_patch_case(commands: &mut [Command], patches: &HashMap<S
 
 /// Get the patch path from a command to the root
 /// Returns a vector of patch names from the given command up to the root (excluding orphans)
-/// If a cycle is detected, returns the path up to the point where the cycle would occur
+/// Uses the walk_patch_hierarchy iterator with max depth of 100 to prevent infinite loops
 pub fn get_patch_path(command_name: &str, patches: &HashMap<String, Patch>) -> Vec<String> {
     let mut path = Vec::new();
-    let mut current_patch = command_name.to_lowercase();
-    let mut visited = std::collections::HashSet::new();
-    
-    loop {
-        if visited.contains(&current_patch) {
-            // Cycle detected - return path up to cycle point
-            break;
-        }
-        
-        let patch = match patches.get(&current_patch) {
-            Some(p) => p,
-            None => break, // Patch not found
-        };
-        
-        visited.insert(current_patch.clone());
-        
+
+    // Walk up the hierarchy using the iterator
+    for patch in walk_patch_hierarchy(command_name, patches, 100) {
         // Don't include "orphans" in the path as it's the root
-        if current_patch.to_lowercase() != "orphans" {
+        if patch.name.to_lowercase() != "orphans" {
             // Use the original case from the patch's primary anchor command
             if let Some(primary_cmd) = patch.primary_anchor() {
                 path.push(primary_cmd.command.clone());
@@ -1253,19 +1249,8 @@ pub fn get_patch_path(command_name: &str, patches: &HashMap<String, Patch>) -> V
                 path.push(patch.name.clone());
             }
         }
-        
-        if let Some(linked_cmd) = patch.primary_anchor() {
-            if !linked_cmd.patch.is_empty() {
-                current_patch = linked_cmd.patch.to_lowercase();
-            } else {
-                // Reached root (command with no patch)
-                break;
-            }
-        } else {
-            break;
-        }
     }
-    
+
     // Reverse the path so it goes from root to command (FOO -> BAR -> BAZ -> CMD)
     path.reverse();
     path

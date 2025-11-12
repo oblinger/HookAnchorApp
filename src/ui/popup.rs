@@ -1503,35 +1503,18 @@ impl AnchorSelector {
     
     fn handle_navigate_up_hierarchy_impl(&mut self) {
         detailed_log("HIERARCHY", "Navigating up hierarchy");
-        
+
         // Check if we're currently in a submenu
         if let Some((_original_command, resolved_command)) = self.popup_state.get_prefix_menu_command_info() {
-            // We're in a submenu - get the current patch from the anchor name
-            let anchor_name = &resolved_command.command;
-            let current_patch_key = anchor_name.to_lowercase();
-            
             let (sys_data, _) = crate::core::data::get_sys_data();
-            
-            // Get the current patch structure
-            if let Some(current_patch) = sys_data.patches.get(&current_patch_key) {
-                // Get the primary anchor command for this patch
-                if let Some(anchor_command) = current_patch.primary_anchor() {
-                    let parent_patch = &anchor_command.patch;
-                    
-                    // Don't go up if we're already at orphans patch or empty patch
-                    if parent_patch.is_empty() || parent_patch.to_lowercase() == "orphans" {
-                        detailed_log("HIERARCHY", &format!("Already at root level (patch: '{}')", parent_patch));
-                        return;
-                    }
-                    
-                    // Set the search text to the parent patch name to navigate up
-                    detailed_log("HIERARCHY", &format!("Navigating up from patch '{}' to parent patch: '{}'", current_patch.name, parent_patch));
-                    self.popup_state.update_search(parent_patch.clone());
-                } else {
-                    detailed_log("HIERARCHY", &format!("No primary anchor found for patch: {}", current_patch.name));
-                }
+
+            // Use get_parent_command() to walk up the hierarchy
+            if let Some(parent_command) = resolved_command.get_parent_command(&sys_data.patches) {
+                detailed_log("HIERARCHY", &format!("Navigating up from '{}' to parent: '{}'",
+                    resolved_command.command, parent_command.command));
+                self.popup_state.update_search(parent_command.command.clone());
             } else {
-                detailed_log("HIERARCHY", &format!("No patch found for current submenu: {}", anchor_name));
+                detailed_log("HIERARCHY", &format!("Already at root level (command: '{}')", resolved_command.command));
             }
         } else {
             detailed_log("HIERARCHY", "Not in submenu, cannot navigate up");
