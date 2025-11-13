@@ -373,7 +373,7 @@
 
 
 
-  DELS: [[RNNs]], [[DL Optim]], [[RR/DL/DLF/DL Strategy]], [[DL algs]], [[DL SYStems]], [[DL topics]], [[RR/ML/DL/GPT]], [[VAEs]], 
+  DELS: [[RNNs]], [[DL Optim]], [[RR/DL/DLF/DL Strategy]], [[DL algs]], [[DL Systems By Company]], [[DL topics]], [[RR/ML/DL/GPT]], [[VAEs]], 
 
 - [[LoRA]] 
 :: [[KAN - Kolmogorov-Arnold Neworks]]

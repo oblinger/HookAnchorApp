@@ -1,10 +1,8 @@
 .[[RR SYSTEMS]].
-  [[DL Systems]],
+  [[DL Systems By Company]],
   [[Pandoc]], [[Sora]],
   [[Dino V2]], [[Foundational Models]],
-  ,
-  , [[Mantis]], 
-  DELS: [[Mantis]],
+  [[Mantis]], 
 
 
 :: [[GenAI]],   [[Sora]],   [[Stable Diffusion]]

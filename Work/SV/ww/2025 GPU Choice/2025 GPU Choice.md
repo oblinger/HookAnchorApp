@@ -28,12 +28,8 @@
 # Log
 
 
-## 2025-10-31  GCP Pricing
+## 2025-10-31  GCP Pricing (See [[@google]]) 
 
-- [GCP Spot GPU](https://cloud.google.com/spot-vms/pricing?e=48754805&hl=en#gpu-pricing)  H200 ~ $3.724/h
-
-
-- [GCP OnDmd GPU](https://cloud.google.com/compute/all-pricing?e=48754805&hl=en#accelerator-optimized-machine-type-family)  A3-high x8 ~ $88/h
 
 
 ## 2025-10-28  AWS Spot Instances

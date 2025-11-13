@@ -1,3 +1,4 @@
+- only rename command
 Types: fileExt, Person, Proj(work, personal, hack)
 CROSSCUTTING:  Log, WP, Chat(Email, call), Idea, 
 

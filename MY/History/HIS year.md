@@ -836,7 +836,7 @@
 [[Daily\|Thu Mar 21  2024]]  	[[Daily#2024-Q1]]  
 [[Journaling\|Thu Mar 21  2024]]  	[[Journaling#[5 Journaling Questions](https://medium.com/@benjaminhardy/5]]  
 [[Journaling\|Thu Mar 21  2024]]  	[[Journaling#NEXT]]  
-[[DL SYStems\|Thu Mar 21  2024]]  	[[DL SYStems#LLaVA - Large Language and Visual Assistant]]  
+[[DL Systems By Company\|Thu Mar 21  2024]]  	[[DL Systems By Company#LLaVA - Large Language and Visual Assistant]]  
 [[@Jason Syversen\|Thu Mar 21  2024]]  	[[@Jason Syversen#Feedback]]  
 [[@Parthsarthi Rawat\|Thu Mar 21  2024]]  	[[@Parthsarthi Rawat#LOG]]  
 [[ToBuy\|Thu Mar 21  2024]]  	[[ToBuy#2024-03-16  Tent]]  

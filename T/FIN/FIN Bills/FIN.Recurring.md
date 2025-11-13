@@ -35,6 +35,7 @@ Tangle (on Sapphire card)
 - +$4/mo		NY Times
 - +$2/mo	 	Dan (family?) Google
 
+- $180/yr		[[@Exponent]] (Job search) 2026-11-11
 - +$55/yr		Vorwerk Thermomix Recipes (2023-12-11.  Web -> {ChefHat} -> Account )
 - ?$29/yr		Blue Mountain (goes up Aug-09-2024)
 - +$39/yr  	Consumer Reports Digital   2023-08-23

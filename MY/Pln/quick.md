@@ -1,6 +1,7 @@
 - vittorio!!!   alain!!!
 - GLP-1
 - QL intro
+- [[@Alain Biem]] 
 
 - Friday
 - Am I paying for Algo monster?

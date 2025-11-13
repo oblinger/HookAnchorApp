@@ -3,7 +3,7 @@
 
 
 .**TODO**.
- - exapnsive testing of manager app
+ - expansive testing of the manager app
  - DATA - 100 PlayOn/HQ Games, eval humans, Origin data, 
  -  [PlayOn](hook://playon): Roster - get and use
  - [Cloud Roadmap](https://docs.google.com/document/d/1g135euS74c7FfBO6GDMRGyvi_0jXHBm4Pd4bqU9Pa94/edit?tab=t.0): plan for moving stuff to cloud - 
@@ -59,6 +59,56 @@
 
 
 # __
+
+
+
+DETECT
+- State of the ball (Dribble, Held, Pass)
+	- Train a model
+	- Use CV algs on ball tracks
+	- Correlate with player tracks to assess who is where
+	- Train a still-image or action model for player actions
+
+RISKS
+- Don't have reliable start/stop times.
+- Feature - Finding game start using the Timing on bottom screen
+- Court corners - 
+- alignment of video time, w/ annotator clock time
+- Bandwidth - Optimistically available in Feb for real work on PlayHQ
+- Rebounds and assists depend upon ball possession, need invest time on this.
+- Speedups are still needed.  
+	- Long game times (no dead time detect)
+- No court corners
+- Availability of GPUs
+- Ball possession
+- Accuracy
+	- Accuracy of all the things we think are working (but are probably not)
+	- ShotAttempt
+	- AirBalls
+- Valid Usage
+	- The customer is getting charged for multiple submissions of the same game.
+		
+- Game Validity
+	- 2/3 of games in from James are invalid
+	- Assuming games are refereed and folks have jerseys etc.
+- Ops Risks
+	- Feedback, bug volume
+	- Managing Kube Cluster: loose money, fail to execute game, mis-understand execution
+	- Disaster Recover Plan 
+
+- Roster 
+- Color
+
+V2 STRATEGY
+- Provide a signal when a game is likely to be of low quality.
+- 2/3 point line determination
+- Ability to terminate processing mid-flight
+
+PHQ
+- Need ball possession - rebounds/assists
+- Need good timing of the actual shot (with 10 sec misalign)
+- Shots should be accurate
+
 
 
 
