@@ -3,6 +3,7 @@ use crate::core::{load_commands_for_inference, filter_commands, run_patch_infere
 use crate::utils;
 use crate::utils::logging::print;
 use crate::execute::{execute_on_server, make_action, command_to_action};
+use crate::prelude::*;
 
 /// Main entry point for command-line mode
 pub fn run_command_line_mode(args: Vec<String>) {
@@ -143,14 +144,14 @@ fn handle_hook_url(url: &str) {
     let decoded_query = urlencoding::decode(query).unwrap_or_else(|_| query.into());
     
     if decoded_query.is_empty() {
-        utils::detailed_log("URL_HANDLER", "Empty query in hook URL");
+        detailed_log("URL_HANDLER", "Empty query in hook URL");
         return;
     }
     
     // Visual separator for URL handler execution
-    utils::detailed_log("", "=================================================================");
-    utils::detailed_log("USER INPUT", &format!("URL: '{}'", decoded_query));
-    utils::detailed_log("URL_HANDLER", &format!("Processing hook URL: {} -> query: '{}'", url, decoded_query));
+    detailed_log("", "=================================================================");
+    detailed_log("USER INPUT", &format!("URL: '{}'", decoded_query));
+    detailed_log("URL_HANDLER", &format!("Processing hook URL: {} -> query: '{}'", url, decoded_query));
     
     // Client environment logging is now handled automatically in execute_command based on action type
     
@@ -160,23 +161,23 @@ fn handle_hook_url(url: &str) {
     let filtered = display_commands.into_iter().take(1).collect::<Vec<_>>();
     
     if filtered.is_empty() {
-        utils::detailed_log("URL_HANDLER", &format!("No commands found for query: '{}'", decoded_query));
+        detailed_log("URL_HANDLER", &format!("No commands found for query: '{}'", decoded_query));
         return;
     }
     
     let top_command_obj = &filtered[0];
-    utils::detailed_log("URL_HANDLER", &format!("Executing command: {}", top_command_obj.command));
+    detailed_log("URL_HANDLER", &format!("Executing command: {}", top_command_obj.command));
     
     // For URL handling, execute directly via launcher (like -a action test) to avoid GUI context
     // This prevents the popup from showing when handling URLs
-    utils::detailed_log("URL_HANDLER", &format!("Launching via launcher: {} {}", top_command_obj.action, top_command_obj.arg));
+    detailed_log("URL_HANDLER", &format!("Launching via launcher: {} {}", top_command_obj.action, top_command_obj.arg));
     
     // Convert command to action and execute
     let action = command_to_action(&top_command_obj);
     let mut variables = HashMap::new();
     variables.insert("arg".to_string(), top_command_obj.arg.clone());
     let _ = execute_on_server(&action, Some(variables));
-    utils::detailed_log("URL_HANDLER", "Command executed");
+    detailed_log("URL_HANDLER", "Command executed");
 }
 
 // Helper: Resolve alias to target command
@@ -350,8 +351,8 @@ fn run_exec_command(args: &[String]) {
     let command = &args[2];
     
     // Visual separator for run function execution
-    utils::detailed_log("", "=================================================================");
-    utils::detailed_log("USER INPUT", &format!("RUN_FN: '{}'", command));
+    detailed_log("", "=================================================================");
+    detailed_log("USER INPUT", &format!("RUN_FN: '{}'", command));
     
     print(&format!("Executing command function: {}", command));
     
@@ -385,8 +386,8 @@ fn run_execute_top_match(args: &[String]) {
     let query = &args[2];
     
     // Visual separator for command execution
-    utils::detailed_log("", "=================================================================");
-    utils::detailed_log("USER INPUT", &format!("CLI: '{}'", query));
+    detailed_log("", "=================================================================");
+    detailed_log("USER INPUT", &format!("CLI: '{}'", query));
     
     // Client environment logging is now handled automatically in execute_command based on action type
     
@@ -418,12 +419,12 @@ fn run_execute_top_match(args: &[String]) {
     print(&format!("Executing top match: {}", top_command_obj.command));
 
     // Save the last executed command for add_alias functionality
-    crate::utils::detailed_log("STATE_SAVE", &format!("CLI: Attempting to save last executed command: '{}'", original_name));
+    detailed_log("STATE_SAVE", &format!("CLI: Attempting to save last executed command: '{}'", original_name));
     let mut state = crate::core::data::get_state();
     state.last_executed_command = Some(original_name.clone());
     match crate::core::data::set_state(&state) {
-        Ok(_) => crate::utils::detailed_log("STATE_SAVE", "CLI: Successfully saved last executed command"),
-        Err(e) => crate::utils::detailed_log("STATE_SAVE", &format!("CLI: Failed to save last executed command: {}", e)),
+        Ok(_) => detailed_log("STATE_SAVE", "CLI: Successfully saved last executed command"),
+        Err(e) => detailed_log("STATE_SAVE", &format!("CLI: Failed to save last executed command: {}", e)),
     }
 
     
@@ -432,8 +433,19 @@ fn run_execute_top_match(args: &[String]) {
     let action = command_to_action(&top_command_obj);
     let mut variables = std::collections::HashMap::new();
     variables.insert("arg".to_string(), top_command_obj.arg.clone());
-    let _ = execute_on_server(&action, Some(variables));
-    print("Command completed");
+
+    // Execute and check for errors
+    match execute_on_server(&action, Some(variables)) {
+        Ok(_) => {
+            print("Command completed");
+        }
+        Err(e) => {
+            print_and_log(&format!("❌ Command execution failed: {}", e));
+            print_and_log("💡 The command server may not be running.");
+            print_and_log("   Try running: ha --restart");
+            std::process::exit(1);
+        }
+    }
 }
 
 fn run_test_command(args: &[String]) {
@@ -500,8 +512,8 @@ fn run_test_command(args: &[String]) {
     }
     
     // Visual separator for action testing
-    utils::detailed_log("", "=================================================================");
-    utils::detailed_log("USER INPUT", &format!("ACTION: '{}' ARG: '{}' INPUT: '{}'", action_name, arg_value, input_value));
+    detailed_log("", "=================================================================");
+    detailed_log("USER INPUT", &format!("ACTION: '{}' ARG: '{}' INPUT: '{}'", action_name, arg_value, input_value));
     
     // Try to execute as a unified action first
     let config = crate::core::data::get_config();
@@ -909,7 +921,7 @@ fn run_grab_command(args: &[String]) {
             }
         }
         Err(e) => {
-            utils::log_error(&format!("Error capturing active app: {}", e));
+            log_error(&format!("Error capturing active app: {}", e));
             std::process::exit(1);
         }
     }
@@ -917,7 +929,7 @@ fn run_grab_command(args: &[String]) {
 
 /// Force restart the command server
 fn run_start_server() {
-    utils::detailed_log("SYSTEM", &format!("Restarting command server..."));
+    detailed_log("SYSTEM", &format!("Restarting command server..."));
     
     // Restart the server (kill existing and start new)
     match crate::execute::activate_command_server(true) {
@@ -926,7 +938,7 @@ fn run_start_server() {
             print("The server will start with full shell environment in a few seconds");
         }
         Err(e) => {
-            utils::log_error(&format!("Failed to restart server: {}", e));
+            log_error(&format!("Failed to restart server: {}", e));
             print(&format!("Failed to restart server: {}", e));
             std::process::exit(1);
         }
@@ -938,12 +950,12 @@ fn run_start_server_daemon() {
     // Config will be initialized automatically by get_config() when needed
     // No need to initialize it explicitly here
     
-    utils::detailed_log("SYSTEM", &format!("Starting command server daemon..."));
+    detailed_log("SYSTEM", &format!("Starting command server daemon..."));
     
     // Change to home directory
     if let Ok(home) = std::env::var("HOME") {
         if let Err(e) = std::env::set_current_dir(&home) {
-            utils::log_error(&format!("Could not change to home directory: {}", e));
+            log_error(&format!("Could not change to home directory: {}", e));
         }
     }
     
@@ -957,7 +969,7 @@ fn run_start_server_daemon() {
             // Should never reach here
         }
         Err(e) => {
-            utils::log_error(&format!("Failed to start persistent server: {}", e));
+            log_error(&format!("Failed to start persistent server: {}", e));
             std::process::exit(1);
         }
     }
@@ -1140,7 +1152,7 @@ fn run_infer_all_patches(_args: &[String]) {
                     print(&format!("Updated {} commands and saved to file.", applied_count));
                 }
                 Err(e) => {
-                    utils::log_error(&format!("Updated {} commands but failed to save: {}", applied_count, e));
+                    log_error(&format!("Updated {} commands but failed to save: {}", applied_count, e));
                 }
             }
         } else {
@@ -1204,9 +1216,9 @@ fn run_rescan_command() {
     // Track HA alias after loading manual edits
     let ha_after_load = commands.iter().find(|c| c.command == "HA" && c.action == "alias");
     if let Some(ha) = ha_after_load {
-        crate::utils::log(&format!("ALIAS_TRACK: HA alias found after load_manual_edits - patch:'{}' flags:'{}' arg:'{}'", ha.patch, ha.flags, ha.arg));
+        log(&format!("ALIAS_TRACK: HA alias found after load_manual_edits - patch:'{}' flags:'{}' arg:'{}'", ha.patch, ha.flags, ha.arg));
     } else {
-        crate::utils::log("ALIAS_TRACK: HA alias NOT found after load_manual_edits");
+        log("ALIAS_TRACK: HA alias NOT found after load_manual_edits");
     }
 
     print("\n🔍 Step 3: Scanning filesystem (discovering new files, removing stale entries)...");
@@ -1229,9 +1241,9 @@ fn run_rescan_command() {
     // Track HA alias after filesystem scan
     let ha_after_scan = commands.iter().find(|c| c.command == "HA" && c.action == "alias");
     if let Some(ha) = ha_after_scan {
-        crate::utils::log(&format!("ALIAS_TRACK: HA alias found after scan_new_files - patch:'{}' flags:'{}' arg:'{}'", ha.patch, ha.flags, ha.arg));
+        log(&format!("ALIAS_TRACK: HA alias found after scan_new_files - patch:'{}' flags:'{}' arg:'{}'", ha.patch, ha.flags, ha.arg));
     } else {
-        crate::utils::log("ALIAS_TRACK: HA alias NOT found after scan_new_files");
+        log("ALIAS_TRACK: HA alias NOT found after scan_new_files");
     }
 
     print("\n📝 Step 4: Detecting file modifications...");
@@ -1249,9 +1261,9 @@ fn run_rescan_command() {
     // Track HA alias after modification scan
     let ha_after_mod = commands.iter().find(|c| c.command == "HA" && c.action == "alias");
     if let Some(ha) = ha_after_mod {
-        crate::utils::log(&format!("ALIAS_TRACK: HA alias found after scan_modified_files - patch:'{}' flags:'{}' arg:'{}'", ha.patch, ha.flags, ha.arg));
+        log(&format!("ALIAS_TRACK: HA alias found after scan_modified_files - patch:'{}' flags:'{}' arg:'{}'", ha.patch, ha.flags, ha.arg));
     } else {
-        crate::utils::log("ALIAS_TRACK: HA alias NOT found after scan_modified_files");
+        log("ALIAS_TRACK: HA alias NOT found after scan_modified_files");
     }
 
     print("\n🧹 Step 5: Cleaning up invalid aliases...");
@@ -1289,9 +1301,9 @@ fn run_rescan_command() {
     // Track HA alias after set_commands (final state)
     let ha_after_save = commands.iter().find(|c| c.command == "HA" && c.action == "alias");
     if let Some(ha) = ha_after_save {
-        crate::utils::log(&format!("ALIAS_TRACK: HA alias found after set_commands - patch:'{}' flags:'{}' arg:'{}'", ha.patch, ha.flags, ha.arg));
+        log(&format!("ALIAS_TRACK: HA alias found after set_commands - patch:'{}' flags:'{}' arg:'{}'", ha.patch, ha.flags, ha.arg));
     } else {
-        crate::utils::log("ALIAS_TRACK: HA alias NOT found after set_commands - IT WAS LOST!");
+        log("ALIAS_TRACK: HA alias NOT found after set_commands - IT WAS LOST!");
     }
 
     print("\n📊 Step 8: Final Summary:");
@@ -1492,8 +1504,8 @@ fn run_execute_launcher_command(args: &[String]) {
     let launcher_command = &args[2];
     
     // Visual separator for launcher command execution
-    utils::detailed_log("", "=================================================================");
-    utils::detailed_log("LAUNCHER_CMD", &format!("Executing in GUI session: '{}'", launcher_command));
+    detailed_log("", "=================================================================");
+    detailed_log("LAUNCHER_CMD", &format!("Executing in GUI session: '{}'", launcher_command));
     
     // Execute the launcher command via server (consistent with all execution)
     // Parse the launcher command to create a Command object
@@ -1509,7 +1521,7 @@ fn run_execute_launcher_command(args: &[String]) {
     let mut variables = HashMap::new();
     variables.insert("arg".to_string(), arg.clone());
     let _ = execute_on_server(&action_obj, Some(variables));
-    utils::detailed_log("LAUNCHER_CMD", "Command completed");
+    detailed_log("LAUNCHER_CMD", "Command completed");
 }
 
 /// Run rebuild command: restart server and rescan filesystem
@@ -1522,11 +1534,11 @@ fn run_rebuild_command() {
     let build_id = build_timestamp.format("%Y%m%d_%H%M%S").to_string();
     
     // Log the rebuild header with timestamp and build ID
-    crate::utils::log(&"=".repeat(80));
-    crate::utils::detailed_log("SYSTEM", &format!("REBUILD SESSION: {}", build_id));
-    crate::utils::log(&format!("TIMESTAMP: {}", build_timestamp.format("%Y-%m-%d %H:%M:%S%.3f")));
-    crate::utils::log(&"=".repeat(80));
-    crate::utils::detailed_log("REBUILD", &format!("Starting rebuild session {}", build_id));
+    log(&"=".repeat(80));
+    detailed_log("SYSTEM", &format!("REBUILD SESSION: {}", build_id));
+    log(&format!("TIMESTAMP: {}", build_timestamp.format("%Y-%m-%d %H:%M:%S%.3f")));
+    log(&"=".repeat(80));
+    detailed_log("REBUILD", &format!("Starting rebuild session {}", build_id));
     
     print("🏗️  HookAnchor Rebuild - Full Reset");
     print("===================================");
@@ -1596,29 +1608,29 @@ fn run_rebuild_command() {
 fn run_search_command() {
     use std::process::Command;
 
-    utils::detailed_log("SEARCH_CMD", "Search command requested - launching history viewer");
+    detailed_log("SEARCH_CMD", "Search command requested - launching history viewer");
 
     // Find history viewer binary
     let exe_dir = utils::get_binary_dir();
     let viewer_path = exe_dir.join("HookAnchorHistoryViewer");
 
     if !viewer_path.exists() {
-        utils::log_error(&format!("History viewer not found at: {:?}", viewer_path));
+        log_error(&format!("History viewer not found at: {:?}", viewer_path));
         print(&format!("History viewer not found at: {:?}", viewer_path));
         std::process::exit(1);
     }
 
-    utils::detailed_log("SEARCH_CMD", &format!("Launching history viewer: {:?}", viewer_path));
+    detailed_log("SEARCH_CMD", &format!("Launching history viewer: {:?}", viewer_path));
 
     // Launch history viewer as a background process
     match Command::new(&viewer_path)
         .spawn() {
         Ok(_) => {
-            utils::detailed_log("SEARCH_CMD", "History viewer launched successfully");
+            detailed_log("SEARCH_CMD", "History viewer launched successfully");
             print("History viewer launched");
         }
         Err(e) => {
-            utils::log_error(&format!("Failed to launch history viewer: {}", e));
+            log_error(&format!("Failed to launch history viewer: {}", e));
             print(&format!("Failed to launch history viewer: {}", e));
             std::process::exit(1);
         }
@@ -1659,7 +1671,7 @@ fn run_delete_history(args: &[String]) {
             if let Some(path) = iter.next() {
                 use_commands_path = Some(PathBuf::from(path));
             } else {
-                crate::utils::print_and_log("Error: --use-commands requires a file path");
+                print_and_log("Error: --use-commands requires a file path");
                 std::process::exit(1);
             }
         }
@@ -1668,31 +1680,31 @@ fn run_delete_history(args: &[String]) {
     // Validate --use-commands path if provided
     if let Some(ref path) = use_commands_path {
         if !path.exists() {
-            crate::utils::print_and_log(&format!("Error: Specified commands file does not exist: {}", path.display()));
+            print_and_log(&format!("Error: Specified commands file does not exist: {}", path.display()));
             std::process::exit(1);
         }
         if !path.is_file() {
-            crate::utils::print_and_log(&format!("Error: Path is not a file: {}", path.display()));
+            print_and_log(&format!("Error: Path is not a file: {}", path.display()));
             std::process::exit(1);
         }
     }
 
     // Show what will happen
     if !force {
-        crate::utils::print_and_log("");
-        crate::utils::print_and_log("⚠️  WARNING: This will:");
-        crate::utils::print_and_log("  1. Create automatic backup of current state");
-        crate::utils::print_and_log("  2. Stop all servers");
-        crate::utils::print_and_log("  3. Delete history database and cache");
-        crate::utils::print_and_log("  4. Clear commands.txt");
-        crate::utils::print_and_log("  5. Scan filesystem to record creation dates");
+        print_and_log("");
+        print_and_log("⚠️  WARNING: This will:");
+        print_and_log("  1. Create automatic backup of current state");
+        print_and_log("  2. Stop all servers");
+        print_and_log("  3. Delete history database and cache");
+        print_and_log("  4. Clear commands.txt");
+        print_and_log("  5. Scan filesystem to record creation dates");
         if let Some(ref path) = use_commands_path {
-            crate::utils::print_and_log(&format!("  6. Restore commands from: {}", path.display()));
+            print_and_log(&format!("  6. Restore commands from: {}", path.display()));
         }
-        crate::utils::print_and_log("  7. Merge and rebuild with final filesystem scan");
-        crate::utils::print_and_log("  8. Restart all servers");
-        crate::utils::print_and_log("");
-        crate::utils::print_and_log("Type 'yes' to confirm: ");
+        print_and_log("  7. Merge and rebuild with final filesystem scan");
+        print_and_log("  8. Restart all servers");
+        print_and_log("");
+        print_and_log("Type 'yes' to confirm: ");
 
         // Flush stdout to ensure prompt appears
         io::stdout().flush().unwrap();
@@ -1703,16 +1715,16 @@ fn run_delete_history(args: &[String]) {
         let input = input.trim();
 
         if input != "yes" {
-            crate::utils::print_and_log("Operation cancelled.");
+            print_and_log("Operation cancelled.");
             return;
         }
     }
 
-    crate::utils::print_and_log("");
-    crate::utils::print_and_log("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
-    crate::utils::print_and_log("  HISTORY REBUILD WITH RESTORATION");
-    crate::utils::print_and_log("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
-    crate::utils::print_and_log("");
+    print_and_log("");
+    print_and_log("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
+    print_and_log("  HISTORY REBUILD WITH RESTORATION");
+    print_and_log("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
+    print_and_log("");
 
     // Get config_dir path for later steps
     let config_dir = dirs::config_dir()
@@ -1720,128 +1732,128 @@ fn run_delete_history(args: &[String]) {
         .join("hookanchor");
 
     // Step 1: Create automatic backup
-    crate::utils::print_and_log("📦 Step 1/8: Creating automatic backup...");
+    print_and_log("📦 Step 1/8: Creating automatic backup...");
     let backup_dir = match crate::core::backup_commands() {
         Ok(dir) => {
-            crate::utils::print_and_log(&format!("  ✓ Backup created: {}", dir.display()));
+            print_and_log(&format!("  ✓ Backup created: {}", dir.display()));
             dir
         }
         Err(e) => {
-            crate::utils::print_and_log(&format!("  ✗ Failed to create backup: {}", e));
-            crate::utils::print_and_log("  Operation aborted for safety");
+            print_and_log(&format!("  ✗ Failed to create backup: {}", e));
+            print_and_log("  Operation aborted for safety");
             std::process::exit(1);
         }
     };
 
     // Step 2: Stop all servers
-    crate::utils::print_and_log("");
-    crate::utils::print_and_log("🛑 Step 2/8: Stopping all servers...");
+    print_and_log("");
+    print_and_log("🛑 Step 2/8: Stopping all servers...");
     if let Err(e) = crate::systems::stop_all_servers() {
-        crate::utils::print_and_log(&format!("  ✗ Failed to stop servers: {}", e));
-        crate::utils::print_and_log("  Continuing anyway...");
+        print_and_log(&format!("  ✗ Failed to stop servers: {}", e));
+        print_and_log("  Continuing anyway...");
     } else {
-        crate::utils::print_and_log("  ✓ All servers stopped");
+        print_and_log("  ✓ All servers stopped");
     }
 
     // Step 3: Delete history and cache
-    crate::utils::print_and_log("");
-    crate::utils::print_and_log("🗑️  Step 3/8: Deleting history database and cache...");
+    print_and_log("");
+    print_and_log("🗑️  Step 3/8: Deleting history database and cache...");
     match crate::core::data::delete_history() {
         Ok((history_deleted, cache_deleted)) => {
             if history_deleted {
-                crate::utils::print_and_log("  ✓ Deleted history database");
+                print_and_log("  ✓ Deleted history database");
             } else {
-                crate::utils::print_and_log("  ℹ History database not found");
+                print_and_log("  ℹ History database not found");
             }
             if cache_deleted {
-                crate::utils::print_and_log("  ✓ Deleted command cache");
+                print_and_log("  ✓ Deleted command cache");
             } else {
-                crate::utils::print_and_log("  ℹ Command cache not found");
+                print_and_log("  ℹ Command cache not found");
             }
         }
         Err(e) => {
-            crate::utils::print_and_log(&format!("  ✗ Error: {}", e));
-            crate::utils::print_and_log(&format!("  Backup preserved at: {}", backup_dir.display()));
+            print_and_log(&format!("  ✗ Error: {}", e));
+            print_and_log(&format!("  Backup preserved at: {}", backup_dir.display()));
             std::process::exit(1);
         }
     }
 
     // Step 4: Clear commands via data layer (clears singleton + both files)
-    crate::utils::print_and_log("");
-    crate::utils::print_and_log("🧹 Step 4/8: Clearing commands via data layer...");
+    print_and_log("");
+    print_and_log("🧹 Step 4/8: Clearing commands via data layer...");
     match crate::core::clear_commands() {
         Ok(()) => {
-            crate::utils::print_and_log("  ✓ Singleton and files cleared");
+            print_and_log("  ✓ Singleton and files cleared");
         }
         Err(e) => {
-            crate::utils::print_and_log(&format!("  ✗ Failed to clear commands: {}", e));
-            crate::utils::print_and_log(&format!("  Backup preserved at: {}", backup_dir.display()));
+            print_and_log(&format!("  ✗ Failed to clear commands: {}", e));
+            print_and_log(&format!("  Backup preserved at: {}", backup_dir.display()));
             std::process::exit(1);
         }
     }
 
     // Step 5: Initial filesystem scan (records creation dates)
-    crate::utils::print_and_log("");
-    crate::utils::print_and_log("🔍 Step 5/8: Scanning filesystem to record creation dates...");
+    print_and_log("");
+    print_and_log("🔍 Step 5/8: Scanning filesystem to record creation dates...");
     let (global_data, _) = crate::core::data::get_sys_data();
     let scanned_commands = crate::systems::scan_new_files(Vec::new(), &global_data, true);
 
     // Save via data layer (updates singleton + both files)
     if let Err(e) = crate::core::set_commands(scanned_commands.clone()) {
-        crate::utils::print_and_log(&format!("  ⚠️  Failed to save scanned commands: {}", e));
-        crate::utils::print_and_log(&format!("  Backup preserved at: {}", backup_dir.display()));
+        print_and_log(&format!("  ⚠️  Failed to save scanned commands: {}", e));
+        print_and_log(&format!("  Backup preserved at: {}", backup_dir.display()));
         std::process::exit(1);
     } else {
-        crate::utils::print_and_log(&format!("  ✓ Recorded creation history for {} files", scanned_commands.len()));
+        print_and_log(&format!("  ✓ Recorded creation history for {} files", scanned_commands.len()));
     }
 
     // Step 6: Restore commands.txt if --use-commands specified
     if let Some(ref source_path) = use_commands_path {
-        crate::utils::print_and_log("");
-        crate::utils::print_and_log("📂 Step 6/8: Restoring commands from backup...");
-        crate::utils::print_and_log(&format!("  Source: {}", source_path.display()));
+        print_and_log("");
+        print_and_log("📂 Step 6/8: Restoring commands from backup...");
+        print_and_log(&format!("  Source: {}", source_path.display()));
 
         match crate::core::restore_commands_from_file(source_path) {
             Ok(count) => {
-                crate::utils::print_and_log(&format!("  ✓ Restored {} commands", count));
+                print_and_log(&format!("  ✓ Restored {} commands", count));
             }
             Err(e) => {
-                crate::utils::print_and_log(&format!("  ✗ Failed to restore: {}", e));
-                crate::utils::print_and_log(&format!("  Backup preserved at: {}", backup_dir.display()));
+                print_and_log(&format!("  ✗ Failed to restore: {}", e));
+                print_and_log(&format!("  Backup preserved at: {}", backup_dir.display()));
                 std::process::exit(1);
             }
         }
     } else {
-        crate::utils::print_and_log("");
-        crate::utils::print_and_log("📂 Step 6/8: No historical commands specified (starting fresh)");
+        print_and_log("");
+        print_and_log("📂 Step 6/8: No historical commands specified (starting fresh)");
     }
 
     // Step 7: Final rescan (merges commands.txt and does cleanup scan)
-    crate::utils::print_and_log("");
-    crate::utils::print_and_log("🔨 Step 7/8: Merging and rebuilding with final filesystem scan...");
+    print_and_log("");
+    print_and_log("🔨 Step 7/8: Merging and rebuilding with final filesystem scan...");
     run_rescan_command();
 
     // Step 8: Restart all servers
-    crate::utils::print_and_log("");
-    crate::utils::print_and_log("🚀 Step 8/8: Restarting all servers...");
+    print_and_log("");
+    print_and_log("🚀 Step 8/8: Restarting all servers...");
     if let Err(e) = crate::systems::start_all_servers() {
-        crate::utils::print_and_log(&format!("  ✗ Failed to start servers: {}", e));
-        crate::utils::print_and_log("  You may need to restart manually");
+        print_and_log(&format!("  ✗ Failed to start servers: {}", e));
+        print_and_log("  You may need to restart manually");
     } else {
-        crate::utils::print_and_log("  ✓ All servers restarted");
+        print_and_log("  ✓ All servers restarted");
     }
 
     // Summary
-    crate::utils::print_and_log("");
-    crate::utils::print_and_log("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
-    crate::utils::print_and_log("✅ HISTORY REBUILD COMPLETE");
-    crate::utils::print_and_log("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
-    crate::utils::print_and_log("");
+    print_and_log("");
+    print_and_log("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
+    print_and_log("✅ HISTORY REBUILD COMPLETE");
+    print_and_log("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
+    print_and_log("");
     if let Some(ref path) = use_commands_path {
-        crate::utils::print_and_log(&format!("  Restored from: {}", path.display()));
+        print_and_log(&format!("  Restored from: {}", path.display()));
     }
-    crate::utils::print_and_log(&format!("  Backup saved: {}", backup_dir.display()));
-    crate::utils::print_and_log("");
+    print_and_log(&format!("  Backup saved: {}", backup_dir.display()));
+    print_and_log("");
 }
 
 fn print_help_vars() {
@@ -2277,7 +2289,7 @@ fn load_commands_from_file(path: &str) -> Vec<Command> {
                         commands.push(command);
                     },
                     Err(e) => {
-                        crate::utils::log_error(&format!("Failed to parse line {} in {}: {} - Line: '{}'",
+                        log_error(&format!("Failed to parse line {} in {}: {} - Line: '{}'",
                             line_num + 1, path, e, line));
                     }
                 }

@@ -775,8 +775,6 @@ impl AnchorSelector {
 
     /// Execute a command or action
     fn execute(&mut self, input: &crate::core::Command) {
-        use crate::utils::detailed_log;
-
         let search_text = self.popup_state.raw_search_text();
         detailed_log("POPUP_EXECUTE", &format!("🎯 POPUP execute() called with: '{}', search_text: '{}'", input.command, search_text));
 
@@ -863,8 +861,6 @@ impl AnchorSelector {
     
     /// Execute an action in the popup context (for UI-requiring actions)
     fn execute_in_popup(&mut self, action: &crate::execute::Action) {
-        use crate::utils::{detailed_log, log_error};
-        
         detailed_log("POPUP_LOCAL", &format!("Executing {} locally", action.action_type()));
         
         // For template actions, we need special UI handling
@@ -2819,20 +2815,20 @@ impl AnchorSelector {
         while current_cmd.action == "alias" {
             // Prevent infinite loops
             if visited.contains(&current_cmd.command) {
-                utils::detailed_log("SHOW_FOLDER", &format!("Circular alias detected for '{}', stopping resolution", current_cmd.command));
+                detailed_log("SHOW_FOLDER", &format!("Circular alias detected for '{}', stopping resolution", current_cmd.command));
                 break;
             }
             visited.insert(current_cmd.command.clone());
             
-            utils::detailed_log("SHOW_FOLDER", &format!("Resolving alias '{}' to target '{}'", current_cmd.command, current_cmd.arg));
+            detailed_log("SHOW_FOLDER", &format!("Resolving alias '{}' to target '{}'", current_cmd.command, current_cmd.arg));
             
             // Find the target command
             if let Some(target) = all_commands.iter().find(|c| c.command == current_cmd.arg) {
-                utils::detailed_log("SHOW_FOLDER", &format!("Alias resolved to: '{}' (action: {}, arg: {})", 
+                detailed_log("SHOW_FOLDER", &format!("Alias resolved to: '{}' (action: {}, arg: {})", 
                     target.command, target.action, target.arg));
                 current_cmd = target;
             } else {
-                utils::detailed_log("SHOW_FOLDER", &format!("Failed to resolve alias '{}' - target '{}' not found", current_cmd.command, current_cmd.arg));
+                detailed_log("SHOW_FOLDER", &format!("Failed to resolve alias '{}' - target '{}' not found", current_cmd.command, current_cmd.arg));
                 break;
             }
         }
@@ -2845,14 +2841,14 @@ impl AnchorSelector {
         use crate::utils;
         
         let search_text = &self.popup_state.search_text;
-        utils::detailed_log("SHOW_FOLDER", &format!("Triggered with search text: '{}'", search_text));
+        detailed_log("SHOW_FOLDER", &format!("Triggered with search text: '{}'", search_text));
         
         // Get the current filtered commands from popup state
         let display_commands = self.popup_state.filtered_commands.clone();
-        utils::detailed_log("SHOW_FOLDER", &format!("Found {} filtered commands", display_commands.len()));
+        detailed_log("SHOW_FOLDER", &format!("Found {} filtered commands", display_commands.len()));
         
         if display_commands.is_empty() {
-            utils::detailed_log("SHOW_FOLDER", "No filtered commands to show folder for");
+            detailed_log("SHOW_FOLDER", "No filtered commands to show folder for");
             return;
         }
         
@@ -2861,26 +2857,26 @@ impl AnchorSelector {
         
         // Log first few commands for debugging
         for (i, cmd) in display_commands.iter().take(3).enumerate() {
-            utils::detailed_log("SHOW_FOLDER", &format!("  Command {}: '{}' (action: {}, arg: {})", 
+            detailed_log("SHOW_FOLDER", &format!("  Command {}: '{}' (action: {}, arg: {})", 
                 i, cmd.command, cmd.action, cmd.arg));
         }
         
         // Use the currently selected command and extract its folder
         let selected_idx = self.selected_index();
         if selected_idx >= display_commands.len() {
-            utils::detailed_log("SHOW_FOLDER", &format!("Selected index {} is out of bounds ({})", selected_idx, display_commands.len()));
+            detailed_log("SHOW_FOLDER", &format!("Selected index {} is out of bounds ({})", selected_idx, display_commands.len()));
             return;
         }
         
         let cmd = &display_commands[selected_idx];
-        utils::detailed_log("SHOW_FOLDER", &format!("Using selected command at index {}: '{}'", selected_idx, cmd.command));
+        detailed_log("SHOW_FOLDER", &format!("Using selected command at index {}: '{}'", selected_idx, cmd.command));
         
         if PopupState::is_separator_command(cmd) {
-            utils::detailed_log("SHOW_FOLDER", &format!("Selected command is a separator: '{}'", cmd.command));
+            detailed_log("SHOW_FOLDER", &format!("Selected command is a separator: '{}'", cmd.command));
             return;
         }
             
-        utils::detailed_log("SHOW_FOLDER", &format!("Processing command: '{}' (action: {})", cmd.command, cmd.action));
+        detailed_log("SHOW_FOLDER", &format!("Processing command: '{}' (action: {})", cmd.command, cmd.action));
         
         // Recursively resolve aliases
         let resolved_cmd = self.resolve_aliases_recursively(cmd, &all_commands);
@@ -2888,30 +2884,30 @@ impl AnchorSelector {
         // Extract folder path using the command's built-in method
         let folder_path = if let Some(abs_path) = resolved_cmd.get_absolute_folder_path(&self.popup_state.config) {
             let path_str = abs_path.to_string_lossy().to_string();
-            utils::detailed_log("SHOW_FOLDER", &format!("Found {} action, extracted folder: {}", resolved_cmd.action, path_str));
+            detailed_log("SHOW_FOLDER", &format!("Found {} action, extracted folder: {}", resolved_cmd.action, path_str));
             Some(path_str)
         } else if resolved_cmd.action == "alias" {
             // This shouldn't happen since we recursively resolved aliases above
-            utils::detailed_log("SHOW_FOLDER", &format!("Unresolved alias found: '{}'", resolved_cmd.command));
+            detailed_log("SHOW_FOLDER", &format!("Unresolved alias found: '{}'", resolved_cmd.command));
             None
         } else {
-            utils::detailed_log("SHOW_FOLDER", &format!("Command '{}' has non-folder action: {}", resolved_cmd.command, resolved_cmd.action));
+            detailed_log("SHOW_FOLDER", &format!("Command '{}' has non-folder action: {}", resolved_cmd.command, resolved_cmd.action));
             None
         };
         
         if let Some(path) = folder_path {
-            utils::log(&format!("SHOW_FOLDER: Attempting to launch folder: '{}'", path));
+            log(&format!("SHOW_FOLDER: Attempting to launch folder: '{}'", path));
             
             // Launch the folder (popup stays open)
             let folder_action = crate::execute::make_action("folder", &path);
-            utils::log(&format!("SHOW_FOLDER: Created action with type='folder', arg='{}'", path));
+            log(&format!("SHOW_FOLDER: Created action with type='folder', arg='{}'", path));
             // Execute the action
             let mut variables = std::collections::HashMap::new();
             variables.insert("arg".to_string(), path.clone());
             let _ = crate::execute::execute_on_server(&folder_action, Some(variables));
-            utils::log(&format!("SHOW_FOLDER: Sent folder command to server"));
+            log(&format!("SHOW_FOLDER: Sent folder command to server"));
         } else {
-            utils::detailed_log("SHOW_FOLDER", &format!("No folder found for selected command: '{}'", cmd.command));
+            detailed_log("SHOW_FOLDER", &format!("No folder found for selected command: '{}'", cmd.command));
         }
     }
     
@@ -2926,14 +2922,14 @@ impl AnchorSelector {
         let display_commands = self.popup_state.filtered_commands.clone();
         
         if display_commands.is_empty() || selected_index >= display_commands.len() {
-            utils::detailed_log("SHOW_CONTACT", "No commands available or invalid selection");
+            detailed_log("SHOW_CONTACT", "No commands available or invalid selection");
             return;
         }
         
         // Get the selected command
         let selected_command = &display_commands[selected_index];
         
-        utils::detailed_log("SHOW_CONTACT", &format!("Processing command: {}", selected_command.command));
+        detailed_log("SHOW_CONTACT", &format!("Processing command: {}", selected_command.command));
         
         // Resolve aliases to get the actual command
         let all_commands = crate::core::data::get_commands();
@@ -2946,7 +2942,7 @@ impl AnchorSelector {
             resolved_cmd.command.clone()
         };
         
-        utils::detailed_log("SHOW_CONTACT", &format!("Contact name after stripping @: {}", contact_name));
+        detailed_log("SHOW_CONTACT", &format!("Contact name after stripping @: {}", contact_name));
         
         // Execute the contact action through the command server
         // Create a command object to send to the server
@@ -2961,7 +2957,7 @@ impl AnchorSelector {
         file_size: None,
         };
         
-        utils::detailed_log("SHOW_CONTACT", &format!("SHOW_CONTACT: Opening contact: {}", contact_name));
+        detailed_log("SHOW_CONTACT", &format!("SHOW_CONTACT: Opening contact: {}", contact_name));
         
         // Execute via server
         let contact_action = crate::execute::command_to_action(&contact_cmd);
@@ -2981,14 +2977,14 @@ impl AnchorSelector {
         if let Some(settings) = &self.popup_state.config.launcher_settings {
             if let Some(use_js) = &settings.use_javascript_tmux_activation {
                 if use_js == "true" {
-                    utils::detailed_log("TMUX", &format!("🚀 TMUX: Using JavaScript TMUX implementation"));
+                    detailed_log("TMUX", &format!("🚀 TMUX: Using JavaScript TMUX implementation"));
                     
                     // Get selected command index
                     let selected_index = self.selected_index();
                     let display_commands = self.popup_state.filtered_commands.clone();
                     
                     if display_commands.is_empty() || selected_index >= display_commands.len() {
-                        utils::detailed_log("TMUX", &format!("❌ TMUX: No commands available for JavaScript"));
+                        detailed_log("TMUX", &format!("❌ TMUX: No commands available for JavaScript"));
                         return;
                     }
                     
@@ -2997,7 +2993,7 @@ impl AnchorSelector {
                     let selected_command = &display_commands[selected_index];
                     let resolved_cmd = self.resolve_aliases_recursively(selected_command, &all_commands);
                     
-                    utils::detailed_log("TMUX", &format!("📋 TMUX: Selected: '{}', Resolved: '{}'", 
+                    detailed_log("TMUX", &format!("📋 TMUX: Selected: '{}', Resolved: '{}'", 
                         selected_command.command, resolved_cmd.command));
                     
                     // Create command to execute JavaScript action
@@ -3013,7 +3009,7 @@ impl AnchorSelector {
         file_size: None,
                     };
                     
-                    utils::detailed_log("TMUX", &format!("🎯 TMUX: Executing JavaScript action with arg: {}", js_cmd.arg));
+                    detailed_log("TMUX", &format!("🎯 TMUX: Executing JavaScript action with arg: {}", js_cmd.arg));
                     let js_action = crate::execute::command_to_action(&js_cmd);
                     let mut variables = std::collections::HashMap::new();
                     variables.insert("arg".to_string(), js_cmd.arg.clone());
@@ -3024,7 +3020,7 @@ impl AnchorSelector {
         }
         
         // Original Rust implementation for TMUX session activation
-        utils::detailed_log("TMUX", &format!("🦀 TMUX: Using Rust implementation for TMUX session activation"));
+        detailed_log("TMUX", &format!("🦀 TMUX: Using Rust implementation for TMUX session activation"));
         
         // Get selected command index
         let selected_index = self.selected_index();
@@ -3033,7 +3029,7 @@ impl AnchorSelector {
         let display_commands = self.popup_state.filtered_commands.clone();
         
         if display_commands.is_empty() || selected_index >= display_commands.len() {
-            utils::detailed_log("TMUX", &format!("TMUX: No commands available or invalid selection"));
+            detailed_log("TMUX", &format!("TMUX: No commands available or invalid selection"));
             return;
         }
         
@@ -3042,39 +3038,39 @@ impl AnchorSelector {
         let selected_command = &display_commands[selected_index];
         
         // DEBUG: Log the selected command details
-        utils::detailed_log("TMUX", &format!("TMUX: Selected command: '{}'", selected_command.command));
-        utils::detailed_log("TMUX", &format!("TMUX: Selected action: '{}'", selected_command.action));
-        utils::detailed_log("TMUX", &format!("TMUX: Selected arg: '{}'", selected_command.arg));
-        utils::detailed_log("TMUX", &format!("TMUX: Selected patch: '{}'", selected_command.patch));
-        utils::detailed_log("TMUX", &format!("TMUX: Selected flags: '{}'", selected_command.flags));
+        detailed_log("TMUX", &format!("TMUX: Selected command: '{}'", selected_command.command));
+        detailed_log("TMUX", &format!("TMUX: Selected action: '{}'", selected_command.action));
+        detailed_log("TMUX", &format!("TMUX: Selected arg: '{}'", selected_command.arg));
+        detailed_log("TMUX", &format!("TMUX: Selected patch: '{}'", selected_command.patch));
+        detailed_log("TMUX", &format!("TMUX: Selected flags: '{}'", selected_command.flags));
         
         let resolved_cmd = self.resolve_aliases_recursively(selected_command, &all_commands);
         
         // DEBUG: Log resolved command if different
         if resolved_cmd.command != selected_command.command {
-            utils::detailed_log("TMUX", &format!("TMUX: Resolved to: '{}'", resolved_cmd.command));
-            utils::detailed_log("TMUX", &format!("TMUX: Resolved action: '{}'", resolved_cmd.action));
-            utils::detailed_log("TMUX", &format!("TMUX: Resolved arg: '{}'", resolved_cmd.arg));
+            detailed_log("TMUX", &format!("TMUX: Resolved to: '{}'", resolved_cmd.command));
+            detailed_log("TMUX", &format!("TMUX: Resolved action: '{}'", resolved_cmd.action));
+            detailed_log("TMUX", &format!("TMUX: Resolved arg: '{}'", resolved_cmd.arg));
         }
         
         // Extract folder path
-        utils::detailed_log("TMUX", &format!("TMUX: Attempting to extract folder path..."));
+        detailed_log("TMUX", &format!("TMUX: Attempting to extract folder path..."));
         let folder_path = if let Some(abs_path) = resolved_cmd.get_absolute_folder_path(&self.popup_state.config) {
             abs_path.to_string_lossy().to_string()
         } else {
-            utils::detailed_log("TMUX", &format!("TMUX: ERROR - Could not extract folder path from command: '{}'", resolved_cmd.command));
-            utils::detailed_log("TMUX", &format!("TMUX: Command details - action: '{}', arg: '{}'", resolved_cmd.action, resolved_cmd.arg));
+            detailed_log("TMUX", &format!("TMUX: ERROR - Could not extract folder path from command: '{}'", resolved_cmd.command));
+            detailed_log("TMUX", &format!("TMUX: Command details - action: '{}', arg: '{}'", resolved_cmd.action, resolved_cmd.arg));
             return;
         };
         
-        utils::detailed_log("TMUX", &format!("TMUX: Successfully extracted folder path: '{}'", folder_path));
+        detailed_log("TMUX", &format!("TMUX: Successfully extracted folder path: '{}'", folder_path));
         
         // Direct Rust implementation of TMUX activation (temporary - will be replaced with JavaScript)
         // This is based on the working Python anchor script logic
         
         // 1. Open folder in Finder
         //if let Err(e) = Command::new("open").arg(&folder_path).spawn() {
-        //    utils::detailed_log("TMUX", &format!("TMUX: Failed to open folder: {}", e));
+        //    detailed_log("TMUX", &format!("TMUX: Failed to open folder: {}", e));
         //}
         
         // 2. Open in Obsidian if it's in the vault
@@ -3087,17 +3083,17 @@ impl AnchorSelector {
         //    if let Some(vault_name) = self.popup_state.config.launcher_settings.as_ref()
         //        .and_then(|ls| ls.obsidian_vault_name.as_ref()) {
         //        // TODO: Open in Obsidian
-        //        utils::detailed_log("TMUX", &format!("TMUX: Would open in Obsidian vault: {}", vault_name));
+        //        detailed_log("TMUX", &format!("TMUX: Would open in Obsidian vault: {}", vault_name));
         //    }
         //}
         
         // 3. Check for .tmuxp.yaml and activate TMUX session
         let tmuxp_path = Path::new(&folder_path).join(".tmuxp.yaml");
         if tmuxp_path.exists() {
-            utils::detailed_log("TMUX", &format!("TMUX: Found .tmuxp.yaml at {:?}", tmuxp_path));
+            detailed_log("TMUX", &format!("TMUX: Found .tmuxp.yaml at {:?}", tmuxp_path));
             
             // Parse the .tmuxp.yaml file to get the actual session name
-            utils::detailed_log("TMUX_RUST", &format!("Line 2354: Parsing .tmuxp.yaml to get session_name"));
+            detailed_log("TMUX_RUST", &format!("Line 2354: Parsing .tmuxp.yaml to get session_name"));
             let session_name = match std::fs::read_to_string(&tmuxp_path) {
                 Ok(yaml_content) => {
                     let mut found_session_name = None;
@@ -3107,7 +3103,7 @@ impl AnchorSelector {
                             let parts: Vec<&str> = line.splitn(2, ':').collect();
                             if parts.len() == 2 {
                                 let name = parts[1].trim().trim_matches('"').trim_matches('\'');
-                                utils::detailed_log("TMUX_RUST", &format!("Line 2360: Found session_name in YAML: '{}'", name));
+                                detailed_log("TMUX_RUST", &format!("Line 2360: Found session_name in YAML: '{}'", name));
                                 found_session_name = Some(name.to_string());
                                 break;
                             }
@@ -3115,12 +3111,12 @@ impl AnchorSelector {
                     }
                     
                     if let Some(name) = found_session_name {
-                        utils::detailed_log("TMUX", &format!("TMUX: Using session name from .tmuxp.yaml: '{}'", name));
+                        detailed_log("TMUX", &format!("TMUX: Using session name from .tmuxp.yaml: '{}'", name));
                         name
                     } else {
                         // No session_name found in YAML - this is an error
-                        utils::detailed_log("TMUX", &format!("TMUX: ERROR - No session_name found in .tmuxp.yaml"));
-                        utils::detailed_log("TMUX_RUST", "Line 2373: ERROR - .tmuxp.yaml missing session_name field");
+                        detailed_log("TMUX", &format!("TMUX: ERROR - No session_name found in .tmuxp.yaml"));
+                        detailed_log("TMUX_RUST", "Line 2373: ERROR - .tmuxp.yaml missing session_name field");
                         crate::utils::error(&format!(
                             "The .tmuxp.yaml file at:\n{}\n\nis missing a 'session_name' field.\n\nPlease add:\nsession_name: <name>\n\nto the file.",
                             tmuxp_path.display()
@@ -3129,8 +3125,8 @@ impl AnchorSelector {
                     }
                 }
                 Err(e) => {
-                    utils::detailed_log("TMUX", &format!("TMUX: ERROR - Failed to read .tmuxp.yaml: {}", e));
-                    utils::detailed_log("TMUX_RUST", &format!("Line 2382: Failed to read .tmuxp.yaml: {}", e));
+                    detailed_log("TMUX", &format!("TMUX: ERROR - Failed to read .tmuxp.yaml: {}", e));
+                    detailed_log("TMUX_RUST", &format!("Line 2382: Failed to read .tmuxp.yaml: {}", e));
                     crate::utils::error(&format!(
                         "Failed to read .tmuxp.yaml file:\n{}\n\nError: {}",
                         tmuxp_path.display(),
@@ -3140,7 +3136,7 @@ impl AnchorSelector {
                 }
             };
             
-            utils::detailed_log("TMUX", &format!("TMUX: Session name from YAML: '{}'", session_name));
+            detailed_log("TMUX", &format!("TMUX: Session name from YAML: '{}'", session_name));
             
             // Check if session exists
             let check_session = Command::new("/opt/homebrew/bin/tmux")
@@ -3150,16 +3146,16 @@ impl AnchorSelector {
             let session_exists = check_session.map(|o| o.status.success()).unwrap_or(false);
             
             if !session_exists {
-                utils::detailed_log("TMUX", &format!("TMUX: Creating new tmux session '{}'", session_name));
-                utils::detailed_log("TMUX_RUST", &format!("Line 2384: Session '{}' does not exist, creating with tmuxp", session_name));
+                detailed_log("TMUX", &format!("TMUX: Creating new tmux session '{}'", session_name));
+                detailed_log("TMUX_RUST", &format!("Line 2384: Session '{}' does not exist, creating with tmuxp", session_name));
                 
                 // First, let's see what sessions exist before we create
-                utils::detailed_log("TMUX_RUST", "Line 2386: Checking existing sessions before creation");
+                detailed_log("TMUX_RUST", "Line 2386: Checking existing sessions before creation");
                 if let Ok(existing) = Command::new("/opt/homebrew/bin/tmux")
                     .args(&["list-sessions", "-F", "#{session_name}"])
                     .output() {
                     let sessions = String::from_utf8_lossy(&existing.stdout);
-                    utils::detailed_log("TMUX_RUST", &format!("Line 2390: Existing sessions: {}", sessions.trim()));
+                    detailed_log("TMUX_RUST", &format!("Line 2390: Existing sessions: {}", sessions.trim()));
                 }
                 
                 // Create session with tmuxp
@@ -3167,8 +3163,8 @@ impl AnchorSelector {
                 // we don't use -s flag which seems to cause issues
                 // Add /opt/homebrew/bin to PATH so tmuxp can find tmux
                 let tmuxp_cmd = format!("/opt/homebrew/bin/tmuxp load '{}' -d", tmuxp_path.to_str().unwrap_or(""));
-                utils::detailed_log("TMUX_RUST", &format!("Line 2397: Running command: {}", tmuxp_cmd));
-                utils::detailed_log("TMUX_RUST", &format!("Line 2398: Current dir: {}", folder_path));
+                detailed_log("TMUX_RUST", &format!("Line 2397: Running command: {}", tmuxp_cmd));
+                detailed_log("TMUX_RUST", &format!("Line 2398: Current dir: {}", folder_path));
                 
                 match Command::new("/opt/homebrew/bin/tmuxp")
                     .args(&["load", tmuxp_path.to_str().unwrap_or(""), "-d"])
@@ -3180,99 +3176,99 @@ impl AnchorSelector {
                         let stdout = String::from_utf8_lossy(&output.stdout);
                         let stderr = String::from_utf8_lossy(&output.stderr);
                         
-                        utils::detailed_log("TMUX_RUST", &format!("Line 2408: tmuxp exit code: {:?}", output.status.code()));
-                        utils::detailed_log("TMUX_RUST", &format!("Line 2409: tmuxp stdout: '{}'", stdout));
-                        utils::detailed_log("TMUX_RUST", &format!("Line 2410: tmuxp stderr: '{}'", stderr));
+                        detailed_log("TMUX_RUST", &format!("Line 2408: tmuxp exit code: {:?}", output.status.code()));
+                        detailed_log("TMUX_RUST", &format!("Line 2409: tmuxp stdout: '{}'", stdout));
+                        detailed_log("TMUX_RUST", &format!("Line 2410: tmuxp stderr: '{}'", stderr));
                         
                         if !output.status.success() {
-                            utils::detailed_log("TMUX", &format!("TMUX: tmuxp failed with exit code {:?}", output.status.code()));
-                            utils::detailed_log("TMUX", &format!("TMUX: tmuxp stderr: {}", stderr));
-                            utils::detailed_log("TMUX", &format!("TMUX: tmuxp stdout: {}", stdout));
-                            utils::detailed_log("TMUX_RUST", "Line 2415: tmuxp FAILED, returning");
+                            detailed_log("TMUX", &format!("TMUX: tmuxp failed with exit code {:?}", output.status.code()));
+                            detailed_log("TMUX", &format!("TMUX: tmuxp stderr: {}", stderr));
+                            detailed_log("TMUX", &format!("TMUX: tmuxp stdout: {}", stdout));
+                            detailed_log("TMUX_RUST", "Line 2415: tmuxp FAILED, returning");
                             return;
                         }
                         
                         // Log output even on success to debug issues
-                        utils::detailed_log("TMUX", &format!("TMUX: tmuxp completed with exit code 0"));
+                        detailed_log("TMUX", &format!("TMUX: tmuxp completed with exit code 0"));
                         if !stdout.is_empty() {
-                            utils::detailed_log("TMUX", &format!("TMUX: tmuxp stdout: {}", stdout));
+                            detailed_log("TMUX", &format!("TMUX: tmuxp stdout: {}", stdout));
                         }
                         if !stderr.is_empty() {
-                            utils::detailed_log("TMUX", &format!("TMUX: tmuxp stderr: {}", stderr));
+                            detailed_log("TMUX", &format!("TMUX: tmuxp stderr: {}", stderr));
                         }
                         
                         // Check what sessions exist after tmuxp
-                        utils::detailed_log("TMUX_RUST", "Line 2428: Checking sessions after tmuxp");
+                        detailed_log("TMUX_RUST", "Line 2428: Checking sessions after tmuxp");
                         if let Ok(after) = Command::new("/opt/homebrew/bin/tmux")
                             .args(&["list-sessions", "-F", "#{session_name}"])
                             .output() {
                             let sessions = String::from_utf8_lossy(&after.stdout);
-                            utils::detailed_log("TMUX_RUST", &format!("Line 2432: Sessions after tmuxp: {}", sessions.trim()));
+                            detailed_log("TMUX_RUST", &format!("Line 2432: Sessions after tmuxp: {}", sessions.trim()));
                         }
                         
                         // Verify the session was actually created
                         std::thread::sleep(std::time::Duration::from_millis(200));
-                        utils::detailed_log("TMUX_RUST", &format!("Line 2436: Verifying session '{}' exists", session_name));
+                        detailed_log("TMUX_RUST", &format!("Line 2436: Verifying session '{}' exists", session_name));
                         let verify = Command::new("/opt/homebrew/bin/tmux")
                             .args(&["has-session", "-t", &session_name])
                             .output();
                         
                         if let Ok(v) = verify {
                             let verify_stderr = String::from_utf8_lossy(&v.stderr);
-                            utils::detailed_log("TMUX_RUST", &format!("Line 2442: Verify exit code: {}", v.status.code().unwrap_or(-1)));
-                            utils::detailed_log("TMUX_RUST", &format!("Line 2443: Verify stderr: '{}'", verify_stderr));
+                            detailed_log("TMUX_RUST", &format!("Line 2442: Verify exit code: {}", v.status.code().unwrap_or(-1)));
+                            detailed_log("TMUX_RUST", &format!("Line 2443: Verify stderr: '{}'", verify_stderr));
                             
                             if v.status.success() {
-                                utils::detailed_log("TMUX", &format!("TMUX: Verified session '{}' exists", session_name));
+                                detailed_log("TMUX", &format!("TMUX: Verified session '{}' exists", session_name));
                                 
                                 // Run claude --continue in the new session
                                 // Add a small delay to ensure the window is created
                                 std::thread::sleep(std::time::Duration::from_millis(500));
-                                utils::detailed_log("TMUX", &format!("TMUX: Running claude --continue in new tmuxp session '{}'", session_name));
+                                detailed_log("TMUX", &format!("TMUX: Running claude --continue in new tmuxp session '{}'", session_name));
                                 match Command::new("/opt/homebrew/bin/tmux")
                                     .args(&["send-keys", "-t", &session_name, "claude --continue", "C-m"])
                                     .output() {
                                     Ok(output) => {
                                         if output.status.success() {
-                                            utils::detailed_log("TMUX", &format!("TMUX: Successfully sent claude --continue to tmuxp session '{}'", session_name));
+                                            detailed_log("TMUX", &format!("TMUX: Successfully sent claude --continue to tmuxp session '{}'", session_name));
                                         } else {
-                                            utils::detailed_log("TMUX", &format!("TMUX: Failed to send claude --continue to tmuxp session: {}", String::from_utf8_lossy(&output.stderr)));
+                                            detailed_log("TMUX", &format!("TMUX: Failed to send claude --continue to tmuxp session: {}", String::from_utf8_lossy(&output.stderr)));
                                         }
                                     }
                                     Err(e) => {
-                                        utils::detailed_log("TMUX", &format!("TMUX: Error sending claude --continue to tmuxp session: {}", e));
+                                        detailed_log("TMUX", &format!("TMUX: Error sending claude --continue to tmuxp session: {}", e));
                                     }
                                 }
                             } else {
                                 // tmuxp said it succeeded but session wasn't created - this is an error
-                                utils::detailed_log("TMUX", &format!("TMUX: ERROR - Session '{}' was NOT created despite tmuxp reporting success", session_name));
-                                utils::detailed_log("TMUX", &format!("TMUX: tmux has-session stderr: {}", verify_stderr));
-                                utils::detailed_log("TMUX_RUST", &format!("Line 2479: CRITICAL ERROR - tmuxp succeeded but session '{}' doesn't exist", session_name));
+                                detailed_log("TMUX", &format!("TMUX: ERROR - Session '{}' was NOT created despite tmuxp reporting success", session_name));
+                                detailed_log("TMUX", &format!("TMUX: tmux has-session stderr: {}", verify_stderr));
+                                detailed_log("TMUX_RUST", &format!("Line 2479: CRITICAL ERROR - tmuxp succeeded but session '{}' doesn't exist", session_name));
                                 
                                 // Let's check what's in the .tmuxp.yaml file
-                                utils::detailed_log("TMUX_RUST", &format!("Line 2481: Reading .tmuxp.yaml to check session_name"));
+                                detailed_log("TMUX_RUST", &format!("Line 2481: Reading .tmuxp.yaml to check session_name"));
                                 if let Ok(yaml_content) = std::fs::read_to_string(&tmuxp_path) {
                                     // Look for session_name in the YAML
                                     for line in yaml_content.lines() {
                                         if line.contains("session_name") {
-                                            utils::detailed_log("TMUX_RUST", &format!("Line 2485: Found in .tmuxp.yaml: {}", line.trim()));
+                                            detailed_log("TMUX_RUST", &format!("Line 2485: Found in .tmuxp.yaml: {}", line.trim()));
                                             break;
                                         }
                                     }
                                 }
                                 
                                 // Try a fallback: check if tmuxp created a session with a different name
-                                utils::detailed_log("TMUX_RUST", "Line 2490: Checking if tmuxp created session with different name");
+                                detailed_log("TMUX_RUST", "Line 2490: Checking if tmuxp created session with different name");
                                 if let Ok(after_create) = Command::new("/opt/homebrew/bin/tmux")
                                     .args(&["list-sessions", "-F", "#{session_name}"])
                                     .output() {
                                     let all_sessions = String::from_utf8_lossy(&after_create.stdout);
-                                    utils::detailed_log("TMUX_RUST", &format!("Line 2494: All sessions after tmuxp: {}", all_sessions.trim()));
+                                    detailed_log("TMUX_RUST", &format!("Line 2494: All sessions after tmuxp: {}", all_sessions.trim()));
                                     
                                     // Try to find a session that might match our expected session name
                                     for session in all_sessions.lines() {
                                         if session.contains(&session_name) || session_name.contains(session) {
-                                            utils::detailed_log("TMUX_RUST", &format!("Line 2498: Found possible match: '{}'", session));
+                                            detailed_log("TMUX_RUST", &format!("Line 2498: Found possible match: '{}'", session));
                                         }
                                     }
                                 }
@@ -3292,19 +3288,19 @@ impl AnchorSelector {
                         }
                     }
                     Err(e) => {
-                        utils::detailed_log("TMUX", &format!("TMUX: Failed to run tmuxp: {}", e));
+                        detailed_log("TMUX", &format!("TMUX: Failed to run tmuxp: {}", e));
                         return;
                     }
                 }
                 // Give tmux a moment to stabilize
                 std::thread::sleep(std::time::Duration::from_millis(100));
             } else {
-                utils::detailed_log("TMUX", &format!("TMUX: Session '{}' already exists", session_name));
+                detailed_log("TMUX", &format!("TMUX: Session '{}' already exists", session_name));
             }
             
             // Now we need to switch to the session in an existing TMUX client
             // First check if there's a TMUX client running anywhere
-            utils::detailed_log("TMUX", &format!("TMUX: Checking for existing TMUX clients"));
+            detailed_log("TMUX", &format!("TMUX: Checking for existing TMUX clients"));
             
             // Check if any tmux clients are attached
             let list_clients = Command::new("/opt/homebrew/bin/tmux")
@@ -3316,14 +3312,14 @@ impl AnchorSelector {
                     let stdout = String::from_utf8_lossy(&output.stdout);
                     let has = output.status.success() && !stdout.trim().is_empty();
                     if has {
-                        utils::detailed_log("TMUX", &format!("TMUX: Found TMUX clients: {}", stdout.trim()));
+                        detailed_log("TMUX", &format!("TMUX: Found TMUX clients: {}", stdout.trim()));
                     } else {
-                        utils::detailed_log("TMUX", &format!("TMUX: No TMUX clients found"));
+                        detailed_log("TMUX", &format!("TMUX: No TMUX clients found"));
                     }
                     has
                 }
                 Err(e) => {
-                    utils::detailed_log("TMUX", &format!("TMUX: Failed to list clients: {}", e));
+                    detailed_log("TMUX", &format!("TMUX: Failed to list clients: {}", e));
                     false
                 }
             };
@@ -3336,13 +3332,13 @@ impl AnchorSelector {
                     tmux attach-session -t '{}'",
                     session_name, session_name
                 );
-                utils::detailed_log("TMUX", &format!("TMUX: {}", error_msg));
+                detailed_log("TMUX", &format!("TMUX: {}", error_msg));
                 crate::utils::error(&error_msg);
                 return;
             }
             
             // There are TMUX clients, so we can switch
-            utils::detailed_log("TMUX", &format!("TMUX: Switching to session '{}' in existing client", session_name));
+            detailed_log("TMUX", &format!("TMUX: Switching to session '{}' in existing client", session_name));
             
             // Use switch-client which will switch in any attached client
             match Command::new("/opt/homebrew/bin/tmux")
@@ -3350,10 +3346,10 @@ impl AnchorSelector {
                 .output() {
                 Ok(output) => {
                     if output.status.success() {
-                        utils::detailed_log("TMUX", &format!("TMUX: Successfully switched to session '{}'", session_name));
+                        detailed_log("TMUX", &format!("TMUX: Successfully switched to session '{}'", session_name));
                     } else {
                         let stderr = String::from_utf8_lossy(&output.stderr);
-                        utils::detailed_log("TMUX", &format!("TMUX: Failed to switch: {}", stderr));
+                        detailed_log("TMUX", &format!("TMUX: Failed to switch: {}", stderr));
                         crate::utils::error(&format!(
                             "Failed to switch to TMUX session '{}': {}",
                             session_name, stderr
@@ -3361,7 +3357,7 @@ impl AnchorSelector {
                     }
                 }
                 Err(e) => {
-                    utils::detailed_log("TMUX", &format!("TMUX: Failed to run switch-client: {}", e));
+                    detailed_log("TMUX", &format!("TMUX: Failed to run switch-client: {}", e));
                     crate::utils::error(&format!(
                         "Failed to switch to TMUX session '{}': {}",
                         session_name, e
@@ -3370,7 +3366,7 @@ impl AnchorSelector {
             }
                 
         } else {
-            utils::detailed_log("TMUX", &format!("TMUX: No .tmuxp.yaml found - creating basic TMUX session"));
+            detailed_log("TMUX", &format!("TMUX: No .tmuxp.yaml found - creating basic TMUX session"));
             
             // Extract folder name for session name
             let folder_name = Path::new(&folder_path)
@@ -3386,7 +3382,7 @@ impl AnchorSelector {
                 .replace('[', "_")
                 .replace(']', "_");
             
-            utils::detailed_log("TMUX", &format!("TMUX: Creating basic session '{}' in folder '{}'", session_name, folder_path));
+            detailed_log("TMUX", &format!("TMUX: Creating basic session '{}' in folder '{}'", session_name, folder_path));
             
             // Check if session already exists
             let check_session = Command::new("/opt/homebrew/bin/tmux")
@@ -3397,7 +3393,7 @@ impl AnchorSelector {
             
             if !session_exists {
                 // Create new basic tmux session (shell will be started, claude command sent after)
-                utils::detailed_log("TMUX", &format!("TMUX: Running: tmux new-session -d -s '{}' -c '{}'", 
+                detailed_log("TMUX", &format!("TMUX: Running: tmux new-session -d -s '{}' -c '{}'", 
                     session_name, folder_path));
                 
                 // First, let's list all existing sessions before creation
@@ -3405,7 +3401,7 @@ impl AnchorSelector {
                     .args(&["list-sessions"])
                     .output() {
                     let sessions_before = String::from_utf8_lossy(&list_before.stdout);
-                    utils::detailed_log("TMUX", &format!("TMUX: Sessions BEFORE creation:\n{}", 
+                    detailed_log("TMUX", &format!("TMUX: Sessions BEFORE creation:\n{}", 
                         if sessions_before.trim().is_empty() { "(no sessions)" } else { sessions_before.trim() }));
                 }
                 
@@ -3418,12 +3414,12 @@ impl AnchorSelector {
                         // Log the output regardless of success/failure
                         let stdout = String::from_utf8_lossy(&output.stdout);
                         let stderr = String::from_utf8_lossy(&output.stderr);
-                        utils::detailed_log("TMUX", &format!("TMUX: new-session exit code: {:?}", output.status.code()));
+                        detailed_log("TMUX", &format!("TMUX: new-session exit code: {:?}", output.status.code()));
                         if !stdout.is_empty() {
-                            utils::detailed_log("TMUX", &format!("TMUX: new-session stdout: {}", stdout));
+                            detailed_log("TMUX", &format!("TMUX: new-session stdout: {}", stdout));
                         }
                         if !stderr.is_empty() {
-                            utils::detailed_log("TMUX", &format!("TMUX: new-session stderr: {}", stderr));
+                            detailed_log("TMUX", &format!("TMUX: new-session stderr: {}", stderr));
                         }
                         
                         // List sessions after attempted creation
@@ -3431,23 +3427,23 @@ impl AnchorSelector {
                             .args(&["list-sessions"])
                             .output() {
                             let sessions_after = String::from_utf8_lossy(&list_after.stdout);
-                            utils::detailed_log("TMUX", &format!("TMUX: Sessions AFTER creation:\n{}", 
+                            detailed_log("TMUX", &format!("TMUX: Sessions AFTER creation:\n{}", 
                                 if sessions_after.trim().is_empty() { "(no sessions)" } else { sessions_after.trim() }));
                         }
                         
                         if output.status.success() {
-                            utils::detailed_log("TMUX", &format!("TMUX: Basic session '{}' creation reported success", session_name));
+                            detailed_log("TMUX", &format!("TMUX: Basic session '{}' creation reported success", session_name));
                             
                             // Check if session immediately exists without delay
                             if let Ok(immediate_check) = Command::new("/opt/homebrew/bin/tmux")
                                 .args(&["has-session", "-t", &session_name])
                                 .output() {
                                 if immediate_check.status.success() {
-                                    utils::detailed_log("TMUX", &format!("TMUX: ✅ Session '{}' exists immediately after creation", session_name));
+                                    detailed_log("TMUX", &format!("TMUX: ✅ Session '{}' exists immediately after creation", session_name));
                                 } else {
-                                    utils::detailed_log("TMUX", &format!("TMUX: ❌ Session '{}' NOT found immediately after creation", session_name));
+                                    detailed_log("TMUX", &format!("TMUX: ❌ Session '{}' NOT found immediately after creation", session_name));
                                     let stderr = String::from_utf8_lossy(&immediate_check.stderr);
-                                    utils::detailed_log("TMUX", &format!("TMUX: Immediate check stderr: {}", stderr));
+                                    detailed_log("TMUX", &format!("TMUX: Immediate check stderr: {}", stderr));
                                 }
                             }
                             
@@ -3455,50 +3451,50 @@ impl AnchorSelector {
                             std::thread::sleep(std::time::Duration::from_millis(500));
                             
                             // Verify it was created - with more detailed logging
-                            utils::detailed_log("TMUX", &format!("TMUX: Verifying session '{}' exists...", session_name));
+                            detailed_log("TMUX", &format!("TMUX: Verifying session '{}' exists...", session_name));
                             match Command::new("/opt/homebrew/bin/tmux")
                                 .args(&["has-session", "-t", &session_name])
                                 .output() {
                                 Ok(verify) => {
                                     let verify_stdout = String::from_utf8_lossy(&verify.stdout);
                                     let verify_stderr = String::from_utf8_lossy(&verify.stderr);
-                                    utils::detailed_log("TMUX", &format!("TMUX: has-session exit code: {:?}", verify.status.code()));
+                                    detailed_log("TMUX", &format!("TMUX: has-session exit code: {:?}", verify.status.code()));
                                     if !verify_stdout.is_empty() {
-                                        utils::detailed_log("TMUX", &format!("TMUX: has-session stdout: {}", verify_stdout));
+                                        detailed_log("TMUX", &format!("TMUX: has-session stdout: {}", verify_stdout));
                                     }
                                     if !verify_stderr.is_empty() {
-                                        utils::detailed_log("TMUX", &format!("TMUX: has-session stderr: {}", verify_stderr));
+                                        detailed_log("TMUX", &format!("TMUX: has-session stderr: {}", verify_stderr));
                                     }
                                     
                                     if verify.status.success() {
-                                        utils::detailed_log("TMUX", &format!("TMUX: ✅ Session '{}' verified!", session_name));
+                                        detailed_log("TMUX", &format!("TMUX: ✅ Session '{}' verified!", session_name));
                                         
                                         // Now send the claude --continue command to the session
-                                        utils::detailed_log("TMUX", &format!("TMUX: Sending 'claude --continue' to session '{}'", session_name));
+                                        detailed_log("TMUX", &format!("TMUX: Sending 'claude --continue' to session '{}'", session_name));
                                         match Command::new("/opt/homebrew/bin/tmux")
                                             .args(&["send-keys", "-t", &session_name, "claude --continue", "C-m"])
                                             .output() {
                                             Ok(send_output) => {
                                                 if send_output.status.success() {
-                                                    utils::detailed_log("TMUX", &format!("TMUX: ✅ Successfully sent claude command to session '{}'", session_name));
+                                                    detailed_log("TMUX", &format!("TMUX: ✅ Successfully sent claude command to session '{}'", session_name));
                                                 } else {
                                                     let send_stderr = String::from_utf8_lossy(&send_output.stderr);
-                                                    utils::detailed_log("TMUX", &format!("TMUX: ❌ Failed to send claude command: {}", send_stderr));
+                                                    detailed_log("TMUX", &format!("TMUX: ❌ Failed to send claude command: {}", send_stderr));
                                                 }
                                             }
                                             Err(e) => {
-                                                utils::detailed_log("TMUX", &format!("TMUX: Error sending claude command: {}", e));
+                                                detailed_log("TMUX", &format!("TMUX: Error sending claude command: {}", e));
                                             }
                                         }
                                     } else {
                                         // Session doesn't exist despite tmux new-session reporting success
-                                        utils::detailed_log("TMUX", &format!("TMUX: ❌ Session '{}' NOT found after creation!", session_name));
+                                        detailed_log("TMUX", &format!("TMUX: ❌ Session '{}' NOT found after creation!", session_name));
                                         
                                         // Check if stderr contains a specific error
                                         if verify_stderr.contains("duplicate session") {
-                                            utils::detailed_log("TMUX", &format!("TMUX: ERROR - Duplicate session name detected"));
+                                            detailed_log("TMUX", &format!("TMUX: ERROR - Duplicate session name detected"));
                                         } else if verify_stderr.contains("server not found") {
-                                            utils::detailed_log("TMUX", &format!("TMUX: ERROR - No TMUX server running"));
+                                            detailed_log("TMUX", &format!("TMUX: ERROR - No TMUX server running"));
                                         }
                                         
                                         // Try to get more info about what's wrong
@@ -3507,34 +3503,34 @@ impl AnchorSelector {
                                             .output() {
                                             let info_out = String::from_utf8_lossy(&info.stderr);
                                             if !info_out.is_empty() {
-                                                utils::detailed_log("TMUX", &format!("TMUX: tmux info stderr: {}", info_out));
+                                                detailed_log("TMUX", &format!("TMUX: tmux info stderr: {}", info_out));
                                             }
                                         }
                                     }
                                 }
                                 Err(e) => {
-                                    utils::detailed_log("TMUX", &format!("TMUX: Error running has-session: {}", e));
+                                    detailed_log("TMUX", &format!("TMUX: Error running has-session: {}", e));
                                 }
                             }
                         } else {
                             let stderr = String::from_utf8_lossy(&output.stderr);
-                            utils::detailed_log("TMUX", &format!("TMUX: Failed to create session: {}", stderr));
+                            detailed_log("TMUX", &format!("TMUX: Failed to create session: {}", stderr));
                             crate::utils::error(&format!("Failed to create TMUX session: {}", stderr));
                             return;
                         }
                     }
                     Err(e) => {
-                        utils::detailed_log("TMUX", &format!("TMUX: Error executing tmux command: {}", e));
+                        detailed_log("TMUX", &format!("TMUX: Error executing tmux command: {}", e));
                         crate::utils::error(&format!("Failed to execute tmux: {}", e));
                         return;
                     }
                 }
             } else {
-                utils::detailed_log("TMUX", &format!("TMUX: Session '{}' already exists", session_name));
+                detailed_log("TMUX", &format!("TMUX: Session '{}' already exists", session_name));
             }
             
             // Now switch to the session
-            utils::detailed_log("TMUX", &format!("TMUX: Checking for existing TMUX clients"));
+            detailed_log("TMUX", &format!("TMUX: Checking for existing TMUX clients"));
             
             let list_clients = Command::new("/opt/homebrew/bin/tmux")
                 .args(&["list-clients"])
@@ -3545,35 +3541,35 @@ impl AnchorSelector {
                     let stdout = String::from_utf8_lossy(&output.stdout);
                     let has = output.status.success() && !stdout.trim().is_empty();
                     if has {
-                        utils::detailed_log("TMUX", &format!("TMUX: Found TMUX clients: {}", stdout.trim()));
+                        detailed_log("TMUX", &format!("TMUX: Found TMUX clients: {}", stdout.trim()));
                     } else {
-                        utils::detailed_log("TMUX", &format!("TMUX: No TMUX clients found"));
+                        detailed_log("TMUX", &format!("TMUX: No TMUX clients found"));
                     }
                     has
                 }
                 Err(e) => {
-                    utils::detailed_log("TMUX", &format!("TMUX: Failed to list clients: {}", e));
+                    detailed_log("TMUX", &format!("TMUX: Failed to list clients: {}", e));
                     false
                 }
             };
             
             if has_clients {
                 // Switch to the session
-                utils::detailed_log("TMUX", &format!("TMUX: Switching to session '{}'", session_name));
+                detailed_log("TMUX", &format!("TMUX: Switching to session '{}'", session_name));
                 
                 match Command::new("/opt/homebrew/bin/tmux")
                     .args(&["switch-client", "-t", &session_name])
                     .output() {
                     Ok(output) => {
                         if output.status.success() {
-                            utils::detailed_log("TMUX", &format!("TMUX: Successfully switched to session '{}'", session_name));
+                            detailed_log("TMUX", &format!("TMUX: Successfully switched to session '{}'", session_name));
                         } else {
                             let stderr = String::from_utf8_lossy(&output.stderr);
-                            utils::detailed_log("TMUX", &format!("TMUX: Failed to switch: {}", stderr));
+                            detailed_log("TMUX", &format!("TMUX: Failed to switch: {}", stderr));
                         }
                     }
                     Err(e) => {
-                        utils::detailed_log("TMUX", &format!("TMUX: Error switching: {}", e));
+                        detailed_log("TMUX", &format!("TMUX: Error switching: {}", e));
                     }
                 }
             } else {
@@ -3582,7 +3578,7 @@ impl AnchorSelector {
                     "TMUX session '{}' created.\nOpen a terminal and run:\ntmux attach-session -t '{}'",
                     session_name, session_name
                 );
-                utils::detailed_log("TMUX", &format!("TMUX: {}", msg));
+                detailed_log("TMUX", &format!("TMUX: {}", msg));
                 crate::utils::error(&msg);
             }
 
@@ -3596,7 +3592,7 @@ impl AnchorSelector {
         // Get the input text (will become the child name)
         let child_name = self.popup_state.search_text.clone();
         if child_name.trim().is_empty() {
-            utils::log("CREATE_CHILD: No input text for child name");
+            log("CREATE_CHILD: No input text for child name");
             return;
         }
 
@@ -3606,7 +3602,7 @@ impl AnchorSelector {
 
         let template_name = match &state.anchor_name {
             Some(anchor_name) => {
-                utils::log(&format!("CREATE_CHILD: Using active anchor '{}'", anchor_name));
+                log(&format!("CREATE_CHILD: Using active anchor '{}'", anchor_name));
 
                 // Find the anchor command to get its patch
                 let all_commands = crate::core::data::get_commands();
@@ -3615,7 +3611,7 @@ impl AnchorSelector {
                 match anchor_cmd {
                     Some(cmd) => {
                         if cmd.patch.is_empty() {
-                            utils::log(&format!("CREATE_CHILD: Anchor '{}' has no patch", anchor_name));
+                            log(&format!("CREATE_CHILD: Anchor '{}' has no patch", anchor_name));
                             // Use default_anchor_template
                             config.template_settings
                                 .as_ref()
@@ -3631,7 +3627,7 @@ impl AnchorSelector {
                                 if let Some(anchor) = patch.primary_anchor() {
                                     if let Some(params) = &anchor.other_params {
                                         if let Some(template) = params.get(crate::utils::PARAM_TEMPLATE) {
-                                            utils::log(&format!("CREATE_CHILD: Found template '{}' on anchor '{}' in hierarchy",
+                                            log(&format!("CREATE_CHILD: Found template '{}' on anchor '{}' in hierarchy",
                                                 template, anchor.command));
                                             found_template = Some(template.clone());
                                             break;
@@ -3642,7 +3638,7 @@ impl AnchorSelector {
 
                             found_template.unwrap_or_else(|| {
                                 // No template found in hierarchy - use default_anchor_template
-                                utils::log("CREATE_CHILD: No template in hierarchy, using default_anchor_template");
+                                log("CREATE_CHILD: No template in hierarchy, using default_anchor_template");
                                 config.template_settings
                                     .as_ref()
                                     .and_then(|ts| ts.default_anchor_template.clone())
@@ -3651,7 +3647,7 @@ impl AnchorSelector {
                         }
                     }
                     None => {
-                        utils::log(&format!("CREATE_CHILD: Anchor '{}' not found", anchor_name));
+                        log(&format!("CREATE_CHILD: Anchor '{}' not found", anchor_name));
                         crate::utils::error(&format!("Anchor command '{}' not found.", anchor_name));
                         return;
                     }
@@ -3659,7 +3655,7 @@ impl AnchorSelector {
             }
             None => {
                 // No active anchor - use default_no_anchor_template
-                utils::log("CREATE_CHILD: No active anchor, using default_no_anchor_template");
+                log("CREATE_CHILD: No active anchor, using default_no_anchor_template");
                 config.template_settings
                     .as_ref()
                     .and_then(|ts| ts.default_no_anchor_template.clone())
@@ -3667,7 +3663,7 @@ impl AnchorSelector {
             }
         };
 
-        utils::log(&format!("CREATE_CHILD: Using template '{}' to create child '{}'",
+        log(&format!("CREATE_CHILD: Using template '{}' to create child '{}'",
             template_name, child_name));
 
         // Temporarily replace search text with child name so template expansion uses it
