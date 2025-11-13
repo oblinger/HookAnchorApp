@@ -65,6 +65,7 @@ use regex::Regex;
 use std::os::unix::process::ExitStatusExt;
 use crate::core::Config;
 use crate::utils::expand_tilde;
+use crate::prelude::*;
 
 /// Creates a JavaScript runtime with all business logic built-ins configured
 fn create_business_logic_runtime() -> Result<Context, Box<dyn std::error::Error>> {
@@ -197,7 +198,7 @@ pub fn execute_with_context(script: &str, context: &str) -> Result<String, Box<d
                 };
 
                 // Also log the detailed error for debugging with context
-                crate::utils::log_error(&format!("JS_ERROR_DETAIL [{}]: {}", context, error_details));
+                log_error(&format!("JS_ERROR_DETAIL [{}]: {}", context, error_details));
 
                 Err(error_details.into())
             }
@@ -214,7 +215,7 @@ fn setup_logging(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Error>> {
     // log(msg) - Write message to HookAnchor log
     // log(msg) - Write message to log file only
     ctx.globals().set("log", Function::new(ctx.clone(), |msg: String| {
-        crate::utils::log(&msg);
+        log(&msg);
     }))?;
 
     // print(msg) - Print to console AND log to file (with '|' prefix)
@@ -224,17 +225,17 @@ fn setup_logging(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Error>> {
 
     // detailedLog(category, msg) - Write categorized debug message (only when verbose logging enabled)
     ctx.globals().set("detailedLog", Function::new(ctx.clone(), |category: String, msg: String| {
-        crate::utils::detailed_log(&category, &msg);
+        detailed_log(&category, &msg);
     })?)?;
     
     // debug(message) - Debug logging (only in verbose mode)
     ctx.globals().set("debug", Function::new(ctx.clone(), |msg: String| {
-        crate::utils::detailed_log("JS", &format!("[DEBUG] {}", msg));
+        detailed_log("JS", &format!("[DEBUG] {}", msg));
     })?)?;
     
     // error(message) - Error logging
     ctx.globals().set("error", Function::new(ctx.clone(), |msg: String| {
-        crate::utils::log_error(&format!("[JS] {}", msg));
+        log_error(&format!("[JS] {}", msg));
     })?)?;
     
     Ok(())
@@ -446,7 +447,7 @@ fn setup_launcher_builtins(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Erro
     ctx.globals().set("error", Function::new(ctx.clone(), |message: String| {
         // Queue the error for display in the UI
         crate::utils::error::queue_user_error(&message);
-        crate::utils::log(&format!("JS_ERROR: {}", message));
+        log(&format!("JS_ERROR: {}", message));
         // Return empty string since this is a void function
         String::new()
     })?)?;
@@ -454,50 +455,50 @@ fn setup_launcher_builtins(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Erro
     // shell(command) -> executes shell command without waiting (detached)
     ctx.globals().set("shell", Function::new(ctx.clone(), |command: String| {
         // ALWAYS log shell commands for debugging
-        crate::utils::detailed_log("SYSTEM", &format!("🐚 JS_SHELL: Executing async command: {}", command));
+        detailed_log("SYSTEM", &format!("🐚 JS_SHELL: Executing async command: {}", command));
         
         // Detailed logging for debugging (only when verbose_logging is enabled)
-        crate::utils::detailed_log("JS_SHELL", "===========================================");
-        crate::utils::detailed_log("JS_SHELL", "SHELL FUNCTION CALLED (ASYNC/NON-BLOCKING)");
-        crate::utils::detailed_log("JS_SHELL", &format!("Command: '{}'", command));
-        crate::utils::detailed_log("JS_SHELL", &format!("Command length: {} chars", command.len()));
-        crate::utils::detailed_log("JS_SHELL", &format!("Current directory: {:?}", std::env::current_dir()));
-        crate::utils::detailed_log("JS_SHELL", "About to call shell_simple with blocking=false");
+        detailed_log("JS_SHELL", "===========================================");
+        detailed_log("JS_SHELL", "SHELL FUNCTION CALLED (ASYNC/NON-BLOCKING)");
+        detailed_log("JS_SHELL", &format!("Command: '{}'", command));
+        detailed_log("JS_SHELL", &format!("Command length: {} chars", command.len()));
+        detailed_log("JS_SHELL", &format!("Current directory: {:?}", std::env::current_dir()));
+        detailed_log("JS_SHELL", "About to call shell_simple with blocking=false");
         
         // Execute directly since we're already on the server
         match crate::utils::shell_simple(&command, false) {
             Ok(output) => {
-                crate::utils::detailed_log("JS_SHELL", "shell_simple returned Ok");
-                crate::utils::detailed_log("JS_SHELL", &format!("Exit status: {:?}", output.status));
-                crate::utils::detailed_log("JS_SHELL", &format!("Exit code: {:?}", output.status.code()));
+                detailed_log("JS_SHELL", "shell_simple returned Ok");
+                detailed_log("JS_SHELL", &format!("Exit status: {:?}", output.status));
+                detailed_log("JS_SHELL", &format!("Exit code: {:?}", output.status.code()));
                 
                 let stdout = String::from_utf8_lossy(&output.stdout);
                 let stderr = String::from_utf8_lossy(&output.stderr);
                 
                 if !stdout.is_empty() {
-                    crate::utils::detailed_log("JS_SHELL", &format!("STDOUT ({}b): {}", stdout.len(), stdout.trim()));
+                    detailed_log("JS_SHELL", &format!("STDOUT ({}b): {}", stdout.len(), stdout.trim()));
                 } else {
-                    crate::utils::detailed_log("JS_SHELL", "STDOUT: (empty)");
+                    detailed_log("JS_SHELL", "STDOUT: (empty)");
                 }
                 
                 if !stderr.is_empty() {
-                    crate::utils::detailed_log("JS_SHELL", &format!("STDERR ({}b): {}", stderr.len(), stderr.trim()));
+                    detailed_log("JS_SHELL", &format!("STDERR ({}b): {}", stderr.len(), stderr.trim()));
                 } else {
-                    crate::utils::detailed_log("JS_SHELL", "STDERR: (empty)");
+                    detailed_log("JS_SHELL", "STDERR: (empty)");
                 }
                 
                 let msg = format!("Command started: {}", command);
-                crate::utils::detailed_log("SYSTEM", &format!("✅ JS_SHELL: {}", msg));
-                crate::utils::detailed_log("JS_SHELL", "===========================================");
+                detailed_log("SYSTEM", &format!("✅ JS_SHELL: {}", msg));
+                detailed_log("JS_SHELL", "===========================================");
                 msg
             },
             Err(e) => {
-                crate::utils::detailed_log("JS_SHELL", &format!("shell_simple returned Err: {}", e));
-                crate::utils::detailed_log("JS_SHELL", &format!("Error kind: {:?}", e.kind()));
-                crate::utils::detailed_log("JS_SHELL", "===========================================");
+                detailed_log("JS_SHELL", &format!("shell_simple returned Err: {}", e));
+                detailed_log("JS_SHELL", &format!("Error kind: {:?}", e.kind()));
+                detailed_log("JS_SHELL", "===========================================");
                 
                 let error_msg = format!("Failed to start command '{}': {}", command, e);
-                crate::utils::log(&format!("❌ JS_SHELL: {}", error_msg));
+                log(&format!("❌ JS_SHELL: {}", error_msg));
                 error_msg
             }
         }
@@ -507,7 +508,7 @@ fn setup_launcher_builtins(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Erro
     // shellSync(command) - Execute shell command and wait (blocking, returns output)
     ctx.globals().set("shellSync", Function::new(ctx.clone(), |command: String| {
         // ALWAYS log shell commands for debugging
-        crate::utils::detailed_log("SYSTEM", &format!("🐚 JS_SHELL_SYNC: Executing sync command: {}", command));
+        detailed_log("SYSTEM", &format!("🐚 JS_SHELL_SYNC: Executing sync command: {}", command));
         
         // Execute directly since we're already on the server
         match crate::utils::shell_simple(&command, true) {
@@ -516,12 +517,12 @@ fn setup_launcher_builtins(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Erro
                 let stderr = String::from_utf8_lossy(&output.stderr);
                 let exit_code = output.status.code().unwrap_or(-1);
                 
-                crate::utils::detailed_log("SYSTEM", &format!("✅ JS_SHELL_SYNC: Command completed with exit code: {}", exit_code));
+                detailed_log("SYSTEM", &format!("✅ JS_SHELL_SYNC: Command completed with exit code: {}", exit_code));
                 if !stdout.is_empty() {
-                    crate::utils::log(&format!("📤 JS_SHELL_SYNC STDOUT: {}", stdout.trim()));
+                    log(&format!("📤 JS_SHELL_SYNC STDOUT: {}", stdout.trim()));
                 }
                 if !stderr.is_empty() {
-                    crate::utils::log(&format!("⚠️ JS_SHELL_SYNC STDERR: {}", stderr.trim()));
+                    log(&format!("⚠️ JS_SHELL_SYNC STDERR: {}", stderr.trim()));
                 }
                 
                 if !stderr.is_empty() {
@@ -532,7 +533,7 @@ fn setup_launcher_builtins(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Erro
             },
             Err(e) => {
                 let error_msg = format!("Command failed '{}': {}", command, e);
-                crate::utils::log(&format!("❌ JS_SHELL_SYNC: {}", error_msg));
+                log(&format!("❌ JS_SHELL_SYNC: {}", error_msg));
                 error_msg
             }
         }
@@ -541,7 +542,7 @@ fn setup_launcher_builtins(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Erro
     // shellWithExitCode(command) -> executes shell command and returns detailed result
     ctx.globals().set("shellWithExitCode", Function::new(ctx.clone(), |command: String| {
         // ALWAYS log shell commands for debugging
-        crate::utils::detailed_log("SYSTEM", &format!("🐚 JS_SHELL_EXIT_CODE: Executing command: {}", command));
+        detailed_log("SYSTEM", &format!("🐚 JS_SHELL_EXIT_CODE: Executing command: {}", command));
         
         // Execute directly since we're already on the server
         use std::process::Command;
@@ -551,7 +552,7 @@ fn setup_launcher_builtins(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Erro
             .arg(&command)
             .output()
             .unwrap_or_else(|e| {
-                crate::utils::log(&format!("❌ JS_SHELL_EXIT_CODE: Failed to execute command: {}", e));
+                log(&format!("❌ JS_SHELL_EXIT_CODE: Failed to execute command: {}", e));
                 // Return a fake output with error
                 std::process::Output {
                     status: std::process::ExitStatus::from_raw(1),
@@ -565,16 +566,16 @@ fn setup_launcher_builtins(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Erro
         let stderr = String::from_utf8_lossy(&output.stderr);
         
         // Log the results
-        crate::utils::log(&format!("📊 JS_SHELL_EXIT_CODE: Exit code: {}", exit_code));
+        log(&format!("📊 JS_SHELL_EXIT_CODE: Exit code: {}", exit_code));
         if !stdout.is_empty() && stdout.len() < 500 {
-            crate::utils::log(&format!("📤 JS_SHELL_EXIT_CODE STDOUT: {}", stdout.trim()));
+            log(&format!("📤 JS_SHELL_EXIT_CODE STDOUT: {}", stdout.trim()));
         } else if !stdout.is_empty() {
-            crate::utils::log(&format!("📤 JS_SHELL_EXIT_CODE STDOUT: {} bytes", stdout.len()));
+            log(&format!("📤 JS_SHELL_EXIT_CODE STDOUT: {} bytes", stdout.len()));
         }
         if !stderr.is_empty() && stderr.len() < 500 {
-            crate::utils::log(&format!("⚠️ JS_SHELL_EXIT_CODE STDERR: {}", stderr.trim()));
+            log(&format!("⚠️ JS_SHELL_EXIT_CODE STDERR: {}", stderr.trim()));
         } else if !stderr.is_empty() {
-            crate::utils::log(&format!("⚠️ JS_SHELL_EXIT_CODE STDERR: {} bytes", stderr.len()));
+            log(&format!("⚠️ JS_SHELL_EXIT_CODE STDERR: {} bytes", stderr.len()));
         }
         
         // Properly escape JSON strings
@@ -584,7 +585,7 @@ fn setup_launcher_builtins(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Erro
         let result = format!(r#"{{"stdout":"{}","stderr":"{}","exitCode":{}}}"#, 
             escaped_stdout, escaped_stderr, exit_code);
         
-        crate::utils::log(&format!("📦 JS_SHELL_EXIT_CODE: Returning JSON result ({} bytes)", result.len()));
+        log(&format!("📦 JS_SHELL_EXIT_CODE: Returning JSON result ({} bytes)", result.len()));
         result
     })?)?;
     
@@ -755,7 +756,7 @@ fn setup_launcher_builtins(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Erro
     // save_anchor(name, folder?) -> saves anchor name and optional folder for next popup
     // saveAnchor(name, folder?) - Save anchor name for next popup open
     ctx.globals().set("saveAnchor", Function::new(ctx.clone(), |name: String, folder: Opt<String>| {
-        crate::utils::detailed_log("ANCHOR_SAVE", &format!("🔄 JavaScript save_anchor called: '{}' with folder: {:?}", name, folder.0));
+        detailed_log("ANCHOR_SAVE", &format!("🔄 JavaScript save_anchor called: '{}' with folder: {:?}", name, folder.0));
 
         match crate::core::data::set_active_anchor(name.clone(), folder.0) {
             Ok(()) => format!("Anchor saved: {}", name),
@@ -814,11 +815,11 @@ fn setup_config_access(ctx: &Ctx<'_>, config: &Config) -> Result<(), Box<dyn std
 /// Load JavaScript functions from config.js file
 fn load_config_js_functions(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Error>> {
     let config_js_path = expand_tilde("~/.config/hookanchor/config.js");
-    crate::utils::detailed_log("JS", &format!("Looking for config.js at: {}", config_js_path));
+    detailed_log("JS", &format!("Looking for config.js at: {}", config_js_path));
     if Path::new(&config_js_path).exists() {
         match fs::read_to_string(&config_js_path) {
             Ok(config_js_content) => {
-                crate::utils::detailed_log("JS", &format!("Loading config.js, {} bytes", config_js_content.len()));
+                detailed_log("JS", &format!("Loading config.js, {} bytes", config_js_content.len()));
                 // Create a wrapper that loads the module and exposes functions globally
                 let wrapper = format!(r#"
                     (function() {{
@@ -893,15 +894,15 @@ fn load_config_js_functions(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Err
                 // Execute the wrapper to define all functions
                 match ctx.eval::<(), _>(wrapper.as_str()) {
                     Ok(_) => {
-                        crate::utils::detailed_log("JS", "Successfully loaded functions from config.js");
+                        detailed_log("JS", "Successfully loaded functions from config.js");
                     }
                     Err(e) => {
-                        crate::utils::log_error(&format!("Failed to load functions from config.js: {}", e));
+                        log_error(&format!("Failed to load functions from config.js: {}", e));
                     }
                 }
             }
             Err(e) => {
-                crate::utils::detailed_log("JS", &format!("config.js not found or not readable: {}", e));
+                detailed_log("JS", &format!("config.js not found or not readable: {}", e));
             }
         }
     }

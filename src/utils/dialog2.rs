@@ -14,6 +14,7 @@
 //! - `blocking_dialog()`: Shows dialog and blocks until user responds
 
 use std::collections::HashMap;
+use crate::prelude::*;
 
 /// Show fatal error dialog and exit immediately (non-blocking)
 ///
@@ -26,7 +27,7 @@ use std::collections::HashMap;
 /// // App exits here
 /// ```
 pub fn fatal_error(message: &str) -> ! {
-    crate::utils::log_error(&format!("FATAL: {}", message));
+    log_error(&format!("FATAL: {}", message));
 
     let _ = crate::systems::spawn_dialog(
         vec![
@@ -52,7 +53,7 @@ pub fn fatal_error(message: &str) -> ! {
 /// // Execution continues immediately
 /// ```
 pub fn warning(message: &str) {
-    crate::utils::log(&format!("WARNING: {}", message));
+    log(&format!("WARNING: {}", message));
 
     let _ = crate::systems::spawn_dialog(
         vec![
@@ -79,7 +80,7 @@ pub fn warning(message: &str) {
 /// // Operation stopped, but app continues
 /// ```
 pub fn error(message: &str) {
-    crate::utils::log_error(message);
+    log_error(message);
 
     let _ = crate::systems::spawn_dialog(
         vec![
@@ -103,7 +104,7 @@ pub fn error(message: &str) {
 /// crate::utils::info("Operation completed successfully");
 /// ```
 pub fn info(message: &str) {
-    crate::utils::log(&format!("INFO: {}", message));
+    log(&format!("INFO: {}", message));
 
     let _ = crate::systems::spawn_dialog(
         vec![
@@ -186,7 +187,7 @@ pub fn blocking_dialog(spec: Vec<String>) -> HashMap<String, String> {
     let dialog_path = exe_dir.join("HookAnchorDialog");
 
     if !dialog_path.exists() {
-        crate::utils::log_error(&format!("Dialog binary not found: {:?}", dialog_path));
+        log_error(&format!("Dialog binary not found: {:?}", dialog_path));
         let mut result = HashMap::new();
         result.insert("exit".to_string(), "OK".to_string());
         return result;
@@ -213,7 +214,7 @@ pub fn blocking_dialog(spec: Vec<String>) -> HashMap<String, String> {
             result
         }
         Err(e) => {
-            crate::utils::log_error(&format!("Failed to run dialog: {}", e));
+            log_error(&format!("Failed to run dialog: {}", e));
             let mut result = HashMap::new();
             result.insert("exit".to_string(), "OK".to_string());
             result

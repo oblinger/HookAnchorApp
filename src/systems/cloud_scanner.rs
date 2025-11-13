@@ -1,5 +1,6 @@
 use chrono::{DateTime, Utc};
 use serde::{Deserialize, Serialize};
+use crate::prelude::*;
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct CloudScanConfig {
@@ -53,10 +54,10 @@ impl NotionScanner {
         let last_scan = self.get_last_scan_time();
         
         if let Some(last_time) = last_scan {
-            crate::utils::log(&format!("[NOTION] Incremental scan since {} (limit: {} pages)...", 
+            log(&format!("[NOTION] Incremental scan since {} (limit: {} pages)...", 
                 last_time.format("%Y-%m-%d %H:%M:%S"), page_limit));
         } else {
-            crate::utils::log(&format!("[NOTION] Full scan (limit: {} pages)...", page_limit));
+            log(&format!("[NOTION] Full scan (limit: {} pages)...", page_limit));
         }
         
         let mut all_pages = Vec::new();
@@ -92,7 +93,7 @@ impl NotionScanner {
                 body["start_cursor"] = serde_json::json!(cursor);
             }
 
-            crate::utils::log("[NOTION] Sending request to Notion API...");
+            log("[NOTION] Sending request to Notion API...");
             let response = self
                 .client
                 .post("https://api.notion.com/v1/search")
@@ -100,7 +101,7 @@ impl NotionScanner {
                 .send()
                 .map_err(|e| {
                     let error_msg = format!("Failed to send request: {}", e);
-                    crate::utils::log_error(&format!("[NOTION] {}", error_msg));
+                    log_error(&format!("[NOTION] {}", error_msg));
                     error_msg
                 })?;
 
@@ -108,16 +109,16 @@ impl NotionScanner {
                 let status = response.status();
                 let text = response.text().unwrap_or_default();
                 let error_msg = format!("Notion API error {}: {}", status, text);
-                crate::utils::log_error(&format!("[NOTION] {}", error_msg));
+                log_error(&format!("[NOTION] {}", error_msg));
                 return Err(error_msg);
             }
 
-            crate::utils::log("[NOTION] Response received, parsing JSON...");
+            log("[NOTION] Response received, parsing JSON...");
             let data: serde_json::Value = response
                 .json()
                 .map_err(|e| {
                     let error_msg = format!("Failed to parse response: {}", e);
-                    crate::utils::log_error(&format!("[NOTION] {}", error_msg));
+                    log_error(&format!("[NOTION] {}", error_msg));
                     error_msg
                 })?;
 
@@ -126,12 +127,12 @@ impl NotionScanner {
 
             if let Some(results) = data["results"].as_array() {
                 let page_count = results.len();
-                crate::utils::log(&format!("[NOTION] Processing {} pages (iteration {}/{}, total: {})", 
+                log(&format!("[NOTION] Processing {} pages (iteration {}/{}, total: {})", 
                     page_count, iterations, max_iterations, all_pages.len()));
                 
                 for page in results {
                     if all_pages.len() >= page_limit {
-                        crate::utils::log(&format!("[NOTION] Reached page limit of {}. Stopping.", page_limit));
+                        log(&format!("[NOTION] Reached page limit of {}. Stopping.", page_limit));
                         has_more = false;
                         break;
                     }
@@ -142,7 +143,7 @@ impl NotionScanner {
             }
             
             if has_more && iterations >= max_iterations {
-                crate::utils::log(&format!("[NOTION] Reached max iterations limit. Stopping scan with {} pages collected.", all_pages.len()));
+                log(&format!("[NOTION] Reached max iterations limit. Stopping scan with {} pages collected.", all_pages.len()));
                 break;
             }
         }
@@ -238,18 +239,18 @@ impl NotionScanner {
     }
 
     pub fn log_pages(&self, pages: &[NotionPage]) {
-        crate::utils::log(&format!("[NOTION] Found {} pages:", pages.len()));
+        log(&format!("[NOTION] Found {} pages:", pages.len()));
         for page in pages {
             let modified = page.last_modified.format("%Y-%m-%d");
             // Log each page URL at normal level so it's visible
-            crate::utils::log(&format!(
+            log(&format!(
                 "[NOTION] {} - {}",
                 page.title,
                 page.url
             ));
             // Also log detailed info for debug mode
             let full_path = format!("{}/{}", page.parent_path, page.title);
-            crate::utils::detailed_log("NOTION", &format!(
+            detailed_log("NOTION", &format!(
                 "Page details: {} (ID: {}, Modified: {}, Path: {})",
                 page.title,
                 &page.id[0..8],
@@ -277,7 +278,7 @@ pub fn scan_cloud_services() -> CloudScanResult {
     let contents = match std::fs::read_to_string(&config_path) {
         Ok(c) => c,
         Err(e) => {
-            crate::utils::log_error(&format!("[CLOUD] Error reading config: {}", e));
+            log_error(&format!("[CLOUD] Error reading config: {}", e));
             return CloudScanResult { notion_pages, is_incremental };
         }
     };
@@ -285,7 +286,7 @@ pub fn scan_cloud_services() -> CloudScanResult {
     let config: serde_yaml::Value = match serde_yaml::from_str(&contents) {
         Ok(c) => c,
         Err(e) => {
-            crate::utils::log_error(&format!("[CLOUD] Error parsing config YAML: {}", e));
+            log_error(&format!("[CLOUD] Error parsing config YAML: {}", e));
             return CloudScanResult { notion_pages, is_incremental };
         }
     };
@@ -299,7 +300,7 @@ pub fn scan_cloud_services() -> CloudScanResult {
 
             if limit <= 0 {
                 if service_type == "notion" {
-                    crate::utils::log("[NOTION] Scanning disabled (limit = 0)");
+                    log("[NOTION] Scanning disabled (limit = 0)");
                 }
                 continue;
             }
@@ -318,7 +319,7 @@ pub fn scan_cloud_services() -> CloudScanResult {
                         };
 
                         if expanded_key.starts_with("ntn_") || expanded_key.starts_with("secret_") {
-                            crate::utils::log(&format!("[NOTION] Scanning with API key (limit: {} pages, incremental: {})...", limit, incremental));
+                            log(&format!("[NOTION] Scanning with API key (limit: {} pages, incremental: {})...", limit, incremental));
                             let scanner = NotionScanner::new(expanded_key);
                             
                             // Check if we have previous scan data AND incremental is enabled
@@ -335,16 +336,16 @@ pub fn scan_cloud_services() -> CloudScanResult {
                                     notion_pages = pages;
                                 },
                                 Err(e) => {
-                                    crate::utils::log_error(&format!("[NOTION] Error scanning: {}", e));
+                                    log_error(&format!("[NOTION] Error scanning: {}", e));
                                 }
                             }
                         } else {
-                            crate::utils::log_error("[NOTION] Invalid API key format");
+                            log_error("[NOTION] Invalid API key format");
                         }
                     }
                 }
                 "google_drive" => {
-                    crate::utils::detailed_log("SYSTEM", &format!("[GDRIVE] Google Drive scanning not yet implemented"));
+                    detailed_log("SYSTEM", &format!("[GDRIVE] Google Drive scanning not yet implemented"));
                 }
                 _ => {}
             }

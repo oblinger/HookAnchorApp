@@ -12,6 +12,7 @@ use std::collections::HashMap;
 use std::sync::{Arc, Mutex, OnceLock};
 use super::config::Config;
 use crate::core::{Command, Patch};
+use crate::prelude::*;
 
 /// System application data structure containing all loaded data
 /// Note: commands field is Arc<Vec<Command>> - use &*sys_data.commands to get &[Command]
@@ -47,7 +48,7 @@ pub fn initialize_minimal() -> Result<(), String> {
         patches: std::collections::HashMap::new(),
     });
 
-    crate::utils::log("SYS_DATA: Minimal initialization complete (empty commands)");
+    log("SYS_DATA: Minimal initialization complete (empty commands)");
     Ok(())
 }
 
@@ -73,25 +74,25 @@ pub fn initialize_config() -> Result<(), String> {
 
     // If the essential config files created by the installer are missing, run first-time setup
     if !config_yaml_exists || !commands_txt_exists || !config_js_exists {
-        crate::utils::log(&format!(
+        log(&format!(
             "CONFIG_INIT: Missing config files - running first-time setup (yaml:{}, txt:{}, js:{})",
             config_yaml_exists, commands_txt_exists, config_js_exists
         ));
 
-        crate::utils::log("\n🚀 First-time setup detected - initializing HookAnchor configuration...");
-        crate::utils::log("   Missing files will be created:");
+        log("\n🚀 First-time setup detected - initializing HookAnchor configuration...");
+        log("   Missing files will be created:");
         if !config_yaml_exists {
-            crate::utils::log("   • config.yaml (application configuration)");
+            log("   • config.yaml (application configuration)");
         }
         if !commands_txt_exists {
-            crate::utils::log("   • commands.txt (command definitions)");
+            log("   • commands.txt (command definitions)");
         }
         if !config_js_exists {
-            crate::utils::log("   • config.js (JavaScript functions)");
+            log("   • config.js (JavaScript functions)");
         }
 
         // Launch GUI installer for automatic installation
-        crate::utils::log("   Launching GUI installer...");
+        log("   Launching GUI installer...");
 
         // Find the installer_gui binary in the same directory as the current executable
         let current_exe = std::env::current_exe().unwrap_or_else(|_| std::path::PathBuf::from("ha"));
@@ -105,18 +106,18 @@ pub fn initialize_config() -> Result<(), String> {
             match std::process::Command::new(&installer_path)
                 .spawn() {
                 Ok(_) => {
-                    crate::utils::log("   GUI installer launched successfully");
-                    crate::utils::log("   Please complete the setup and restart HookAnchor");
+                    log("   GUI installer launched successfully");
+                    log("   Please complete the setup and restart HookAnchor");
                     std::process::exit(0); // Exit to let user complete setup
                 },
                 Err(e) => {
-                    crate::utils::log_error(&format!("\n⚠️  Failed to launch GUI installer: {}", e));
-                    crate::utils::log_error("   You can run setup manually with: ha --install");
+                    log_error(&format!("\n⚠️  Failed to launch GUI installer: {}", e));
+                    log_error("   You can run setup manually with: ha --install");
                 }
             }
         } else {
-            crate::utils::log_error(&format!("\n⚠️  GUI installer not found at: {}", installer_path.display()));
-            crate::utils::log_error("   You can run setup manually with: ha --install");
+            log_error(&format!("\n⚠️  GUI installer not found at: {}", installer_path.display()));
+            log_error("   You can run setup manually with: ha --install");
         }
     }
 
@@ -125,7 +126,7 @@ pub fn initialize_config() -> Result<(), String> {
         super::config::ConfigResult::Success(config) => {
             CONFIG.set(config).map_err(|_| "Config already initialized".to_string())?;
             let elapsed = start.elapsed();
-            crate::utils::log(&format!("CONFIG_INIT: Config initialized at startup in {:?} ({} microseconds)", elapsed, elapsed.as_micros()));
+            log(&format!("CONFIG_INIT: Config initialized at startup in {:?} ({} microseconds)", elapsed, elapsed.as_micros()));
             Ok(())
         }
         super::config::ConfigResult::Error(err) => {
@@ -190,7 +191,7 @@ pub fn update_commands(new_commands: Vec<Command>) {
         // Update patches to stay in sync
         data.patches = crate::core::commands::create_patches_hashmap(&new_commands);
 
-        crate::utils::log("SYS_DATA: Commands updated, old Arc invalidated");
+        log("SYS_DATA: Commands updated, old Arc invalidated");
     }
 }
 
@@ -200,13 +201,13 @@ pub fn update_commands(new_commands: Vec<Command>) {
 pub fn mark_commands_modified() {
     let flag = COMMANDS_MODIFIED.get_or_init(|| std::sync::atomic::AtomicBool::new(false));
     flag.store(true, std::sync::atomic::Ordering::Relaxed);
-    crate::utils::detailed_log("COMMANDS_RELOAD", "Commands marked as modified - will reload on next get_sys_data() call");
+    detailed_log("COMMANDS_RELOAD", "Commands marked as modified - will reload on next get_sys_data() call");
 }
 
 /// Clear all commands from singleton and delete both commands.txt and cache files
 /// Used during delete-history to start completely fresh
 pub fn clear_commands() -> Result<(), Box<dyn std::error::Error>> {
-    crate::utils::log("CLEAR_COMMANDS: Clearing singleton and deleting files");
+    log("CLEAR_COMMANDS: Clearing singleton and deleting files");
 
     // Update singleton to empty
     update_commands(Vec::new());
@@ -215,14 +216,14 @@ pub fn clear_commands() -> Result<(), Box<dyn std::error::Error>> {
     let commands_path = super::storage::get_commands_file_path();
     if commands_path.exists() {
         std::fs::remove_file(&commands_path)?;
-        crate::utils::log(&format!("CLEAR_COMMANDS: Deleted commands.txt at {:?}", commands_path));
+        log(&format!("CLEAR_COMMANDS: Deleted commands.txt at {:?}", commands_path));
     }
 
     // Delete cache
     let cache_path = super::storage::get_commands_cache_path();
     if cache_path.exists() {
         std::fs::remove_file(&cache_path)?;
-        crate::utils::log(&format!("CLEAR_COMMANDS: Deleted cache at {:?}", cache_path));
+        log(&format!("CLEAR_COMMANDS: Deleted cache at {:?}", cache_path));
     }
 
     Ok(())
@@ -232,15 +233,15 @@ pub fn clear_commands() -> Result<(), Box<dyn std::error::Error>> {
 /// Reads commands.txt (via load_commands_raw), updates singleton, does NOT save back to disk
 /// Used after manually restoring commands.txt from backup
 pub fn reload_commands() -> Result<Vec<Command>, Box<dyn std::error::Error>> {
-    crate::utils::log("RELOAD_COMMANDS: Loading commands from commands.txt into singleton");
+    log("RELOAD_COMMANDS: Loading commands from commands.txt into singleton");
 
     // Load from commands.txt
     let commands = super::storage::load_commands_raw();
-    crate::utils::log(&format!("RELOAD_COMMANDS: Loaded {} commands from commands.txt", commands.len()));
+    log(&format!("RELOAD_COMMANDS: Loaded {} commands from commands.txt", commands.len()));
 
     // Update singleton (but don't save back to disk - we just loaded from there!)
     update_commands(commands.clone());
-    crate::utils::log("RELOAD_COMMANDS: Updated singleton with loaded commands");
+    log("RELOAD_COMMANDS: Updated singleton with loaded commands");
 
     Ok(commands)
 }
@@ -252,7 +253,7 @@ pub fn backup_commands() -> Result<std::path::PathBuf, Box<dyn std::error::Error
     use chrono::Local;
     use std::path::PathBuf;
 
-    crate::utils::log("BACKUP_COMMANDS: Creating emergency backup");
+    log("BACKUP_COMMANDS: Creating emergency backup");
 
     // Get paths
     let commands_path = super::storage::get_commands_file_path();
@@ -277,27 +278,27 @@ pub fn backup_commands() -> Result<std::path::PathBuf, Box<dyn std::error::Error
     if commands_path.exists() {
         std::fs::copy(&commands_path, backup_dir.join("commands.txt"))
             .map_err(|e| format!("Failed to backup commands.txt: {}", e))?;
-        crate::utils::log(&format!("BACKUP_COMMANDS: Backed up commands.txt"));
+        log(&format!("BACKUP_COMMANDS: Backed up commands.txt"));
     } else {
         // Create marker file to show it didn't exist
         std::fs::write(backup_dir.join("commands.txt.missing"), "commands.txt did not exist at backup time")
             .map_err(|e| format!("Failed to create backup marker: {}", e))?;
-        crate::utils::log(&format!("BACKUP_COMMANDS: commands.txt did not exist"));
+        log(&format!("BACKUP_COMMANDS: commands.txt did not exist"));
     }
 
     // Backup cache (if exists)
     if cache_path.exists() {
         let _ = std::fs::copy(&cache_path, backup_dir.join("commands_cache.json"));
-        crate::utils::log(&format!("BACKUP_COMMANDS: Backed up cache"));
+        log(&format!("BACKUP_COMMANDS: Backed up cache"));
     }
 
     // Backup history (if exists)
     if history_path.exists() {
         let _ = std::fs::copy(&history_path, backup_dir.join("history.db"));
-        crate::utils::log(&format!("BACKUP_COMMANDS: Backed up history.db"));
+        log(&format!("BACKUP_COMMANDS: Backed up history.db"));
     }
 
-    crate::utils::log(&format!("BACKUP_COMMANDS: Backup complete at {:?}", backup_dir));
+    log(&format!("BACKUP_COMMANDS: Backup complete at {:?}", backup_dir));
     Ok(backup_dir)
 }
 
@@ -305,7 +306,7 @@ pub fn backup_commands() -> Result<std::path::PathBuf, Box<dyn std::error::Error
 /// Physically copies the file to commands.txt, then reloads singleton
 /// Returns the number of commands loaded
 pub fn restore_commands_from_file(source_path: &std::path::Path) -> Result<usize, Box<dyn std::error::Error>> {
-    crate::utils::log(&format!("RESTORE_COMMANDS: Restoring from {:?}", source_path));
+    log(&format!("RESTORE_COMMANDS: Restoring from {:?}", source_path));
 
     // Validate source file exists
     if !source_path.exists() {
@@ -317,13 +318,13 @@ pub fn restore_commands_from_file(source_path: &std::path::Path) -> Result<usize
 
     // Copy the file
     let bytes_copied = std::fs::copy(source_path, &dest_path)?;
-    crate::utils::log(&format!("RESTORE_COMMANDS: Copied {} bytes to commands.txt", bytes_copied));
+    log(&format!("RESTORE_COMMANDS: Copied {} bytes to commands.txt", bytes_copied));
 
     // Reload singleton from the restored file
     let commands = reload_commands()?;
     let count = commands.len();
 
-    crate::utils::log(&format!("RESTORE_COMMANDS: Restored {} commands", count));
+    log(&format!("RESTORE_COMMANDS: Restored {} commands", count));
     Ok(count)
 }
 
@@ -393,22 +394,22 @@ pub fn get_patches() -> HashMap<String, Patch> {
 fn flush(commands: &mut Vec<Command>, skip_validation: bool) -> Result<(), Box<dyn std::error::Error>> {
     let flush_start = std::time::Instant::now();
     let initial_count = commands.len();
-    crate::utils::log(&format!("⏱️ FLUSH: Starting with {} commands", initial_count));
+    log(&format!("⏱️ FLUSH: Starting with {} commands", initial_count));
 
     // Step 1: Validate and repair patches (ensures data integrity)
     // Can be skipped for small, non-structural changes (e.g., single command edits from UI)
     let after_validation_count = if skip_validation {
-        crate::utils::log("⏩ FLUSH: Step 1 (validate/repair): SKIPPED (no structural changes)");
+        log("⏩ FLUSH: Step 1 (validate/repair): SKIPPED (no structural changes)");
         initial_count
     } else {
         let step1_start = std::time::Instant::now();
         let resolution = crate::core::validate_and_repair_patches(commands, true);
         let patches = resolution.patches;
-        crate::utils::log(&format!("⏱️ FLUSH: Step 1 (validate/repair): {:?}", step1_start.elapsed()));
+        log(&format!("⏱️ FLUSH: Step 1 (validate/repair): {:?}", step1_start.elapsed()));
 
         let after_validation_count = commands.len();
         if after_validation_count != initial_count {
-            crate::utils::log(&format!("FLUSH: Validation added/removed {} commands (now {})",
+            log(&format!("FLUSH: Validation added/removed {} commands (now {})",
                 after_validation_count as i32 - initial_count as i32, after_validation_count));
         }
         after_validation_count
@@ -417,11 +418,11 @@ fn flush(commands: &mut Vec<Command>, skip_validation: bool) -> Result<(), Box<d
     // Step 2: Deduplicate commands (keeps best version of each unique command name)
     let step2_start = std::time::Instant::now();
     *commands = super::storage::deduplicate_commands(commands.clone());
-    crate::utils::log(&format!("⏱️ FLUSH: Step 2 (deduplicate): {:?}", step2_start.elapsed()));
+    log(&format!("⏱️ FLUSH: Step 2 (deduplicate): {:?}", step2_start.elapsed()));
 
     let after_dedup_count = commands.len();
     if after_dedup_count != after_validation_count {
-        crate::utils::log(&format!("FLUSH: Deduplication removed {} duplicate commands (now {})",
+        log(&format!("FLUSH: Deduplication removed {} duplicate commands (now {})",
             after_validation_count - after_dedup_count, after_dedup_count));
     }
 
@@ -429,14 +430,14 @@ fn flush(commands: &mut Vec<Command>, skip_validation: bool) -> Result<(), Box<d
     let step3_start = std::time::Instant::now();
     super::storage::save_commands_to_file(commands)?;
     super::storage::save_commands_to_cache(commands)?;
-    crate::utils::log(&format!("⏱️ FLUSH: Step 3 (save to disk): {:?}", step3_start.elapsed()));
+    log(&format!("⏱️ FLUSH: Step 3 (save to disk): {:?}", step3_start.elapsed()));
 
     // Step 4: Update singleton with new commands (creates new Arc, invalidates old snapshots)
     let step4_start = std::time::Instant::now();
     update_commands(commands.clone());
-    crate::utils::log(&format!("⏱️ FLUSH: Step 4 (update singleton): {:?}", step4_start.elapsed()));
+    log(&format!("⏱️ FLUSH: Step 4 (update singleton): {:?}", step4_start.elapsed()));
 
-    crate::utils::log(&format!("⏱️ FLUSH: TOTAL TIME: {:?}", flush_start.elapsed()));
+    log(&format!("⏱️ FLUSH: TOTAL TIME: {:?}", flush_start.elapsed()));
     Ok(())
 }
 
@@ -446,12 +447,12 @@ fn flush(commands: &mut Vec<Command>, skip_validation: bool) -> Result<(), Box<d
 /// Always saves (flushes) to disk regardless of whether inference made changes
 pub fn set_commands(mut commands: Vec<Command>) -> Result<(), Box<dyn std::error::Error>> {
     let set_commands_start = std::time::Instant::now();
-    crate::utils::log(&format!("⏱️ SET_COMMANDS: Starting with {} commands", commands.len()));
+    log(&format!("⏱️ SET_COMMANDS: Starting with {} commands", commands.len()));
 
     // Initialize history database
     let history_init_start = std::time::Instant::now();
     let conn = super::history::initialize_history_db()?;
-    crate::utils::log(&format!("⏱️ SET_COMMANDS: History DB init: {:?}", history_init_start.elapsed()));
+    log(&format!("⏱️ SET_COMMANDS: History DB init: {:?}", history_init_start.elapsed()));
 
     // Get current timestamp
     let timestamp = std::time::SystemTime::now()
@@ -461,14 +462,14 @@ pub fn set_commands(mut commands: Vec<Command>) -> Result<(), Box<dyn std::error
     // Get cached commands for comparison
     let get_cached_start = std::time::Instant::now();
     let cached_commands = get_commands();
-    crate::utils::log(&format!("⏱️ SET_COMMANDS: Get cached commands: {:?}", get_cached_start.elapsed()));
+    log(&format!("⏱️ SET_COMMANDS: Get cached commands: {:?}", get_cached_start.elapsed()));
 
     // Create lookup maps for efficient comparison using dedup keys
     // This ensures we compare commands the same way the system deduplicates them
     let map_start = std::time::Instant::now();
     let cached_map = super::storage::build_command_map(&cached_commands);
     let new_map = super::storage::build_command_map(&commands);
-    crate::utils::log(&format!("⏱️ SET_COMMANDS: Create lookup maps: {:?}", map_start.elapsed()));
+    log(&format!("⏱️ SET_COMMANDS: Create lookup maps: {:?}", map_start.elapsed()));
 
     // Track changes for logging and validation decisions
     let mut created_count = 0;
@@ -489,7 +490,7 @@ pub fn set_commands(mut commands: Vec<Command>) -> Result<(), Box<dyn std::error
                 // Command was modified - append to history
                 super::history::append_command(&conn, new_cmd, timestamp)?;
                 modified_count += 1;
-                crate::utils::detailed_log("HISTORY", &format!(
+                detailed_log("HISTORY", &format!(
                     "Modified: '{}' (action: {} -> {}, patch: {} -> {})",
                     new_cmd.command,
                     cached_cmd.action,
@@ -509,7 +510,7 @@ pub fn set_commands(mut commands: Vec<Command>) -> Result<(), Box<dyn std::error
             // Command is new - append to history
             super::history::append_command(&conn, new_cmd, timestamp)?;
             created_count += 1;
-            crate::utils::detailed_log("HISTORY", &format!(
+            detailed_log("HISTORY", &format!(
                 "Created: '{}' (action: {}, patch: {})",
                 new_cmd.command,
                 new_cmd.action,
@@ -532,7 +533,7 @@ pub fn set_commands(mut commands: Vec<Command>) -> Result<(), Box<dyn std::error
             deleted_cmd.action = "$DELETED$".to_string();
             super::history::append_command(&conn, &deleted_cmd, timestamp)?;
             deleted_count += 1;
-            crate::utils::detailed_log("HISTORY", &format!(
+            detailed_log("HISTORY", &format!(
                 "Deleted: '{}' (was action: {}, patch: {})",
                 cached_cmd.command,
                 cached_cmd.action,
@@ -546,11 +547,11 @@ pub fn set_commands(mut commands: Vec<Command>) -> Result<(), Box<dyn std::error
         }
     }
 
-    crate::utils::log(&format!("⏱️ SET_COMMANDS: Record history: {:?}", history_record_start.elapsed()));
+    log(&format!("⏱️ SET_COMMANDS: Record history: {:?}", history_record_start.elapsed()));
 
     // Log summary of changes
     if created_count > 0 || modified_count > 0 || deleted_count > 0 {
-        crate::utils::log(&format!(
+        log(&format!(
             "SET_COMMANDS: Recorded to history - Created: {}, Modified: {}, Deleted: {}",
             created_count, modified_count, deleted_count
         ));
@@ -564,14 +565,14 @@ pub fn set_commands(mut commands: Vec<Command>) -> Result<(), Box<dyn std::error
     let skip_validation = total_changes <= 3 && !structural_changes;
 
     if skip_validation {
-        crate::utils::log(&format!(
+        log(&format!(
             "⚡ SET_COMMANDS: Skipping validation ({} changes, no structural changes) - performance optimization",
             total_changes
         ));
     } else if structural_changes {
-        crate::utils::log("🔧 SET_COMMANDS: Running validation (structural changes detected)");
+        log("🔧 SET_COMMANDS: Running validation (structural changes detected)");
     } else {
-        crate::utils::log(&format!(
+        log(&format!(
             "🔧 SET_COMMANDS: Running validation ({} changes)",
             total_changes
         ));
@@ -582,11 +583,11 @@ pub fn set_commands(mut commands: Vec<Command>) -> Result<(), Box<dyn std::error
     let result = flush(&mut commands, skip_validation);
     let flush_time = flush_start.elapsed();
     if skip_validation {
-        crate::utils::log(&format!("⏱️ SET_COMMANDS: Flush (validation skipped): {:?}", flush_time));
+        log(&format!("⏱️ SET_COMMANDS: Flush (validation skipped): {:?}", flush_time));
     } else {
-        crate::utils::log(&format!("⏱️ SET_COMMANDS: Flush (includes validation): {:?}", flush_time));
+        log(&format!("⏱️ SET_COMMANDS: Flush (includes validation): {:?}", flush_time));
     }
-    crate::utils::log(&format!("⏱️ SET_COMMANDS: TOTAL TIME: {:?}", set_commands_start.elapsed()));
+    log(&format!("⏱️ SET_COMMANDS: TOTAL TIME: {:?}", set_commands_start.elapsed()));
 
     result
 }
@@ -660,23 +661,23 @@ pub fn load_data(commands_override: Vec<Command>, verbose: bool) -> SysData {
         if let Some(ref data) = *sys_data {
             // Cached data available, no disk reads needed
             if verbose {
-                crate::utils::log("⚡ Using cached data - no disk reads needed");
+                log("⚡ Using cached data - no disk reads needed");
             }
             return data.clone();
         }
         if verbose {
-            crate::utils::log("📂 Loading data from disk...");
+            log("📂 Loading data from disk...");
         }
     } else {
-        crate::utils::detailed_log("LOAD_DATA", &format!("Using provided commands override ({} commands)", commands_override.len()));
+        detailed_log("LOAD_DATA", &format!("Using provided commands override ({} commands)", commands_override.len()));
         if verbose {
-            crate::utils::log(&format!("🔧 Using provided commands override ({} commands)", commands_override.len()));
+            log(&format!("🔧 Using provided commands override ({} commands)", commands_override.len()));
         }
     }
 
     // Step 1: Get the pre-initialized config
     if verbose {
-        crate::utils::log("🔧 Step 1: Using pre-initialized configuration...");
+        log("🔧 Step 1: Using pre-initialized configuration...");
     }
     let config = get_config();
     
@@ -688,14 +689,14 @@ pub fn load_data(commands_override: Vec<Command>, verbose: bool) -> SysData {
         match super::storage::load_commands_from_cache() {
             Some(cached_commands) => {
                 if verbose {
-                    crate::utils::log(&format!("📋 Step 2: Loaded {} commands from cache", cached_commands.len()));
+                    log(&format!("📋 Step 2: Loaded {} commands from cache", cached_commands.len()));
                 }
                 cached_commands
             }
             None => {
                 if verbose {
-                    crate::utils::log("📋 Step 2: No cache found - starting with empty commands");
-                    crate::utils::log("            Run --rescan to rebuild from filesystem");
+                    log("📋 Step 2: No cache found - starting with empty commands");
+                    log("            Run --rescan to rebuild from filesystem");
                 }
                 Vec::new()
             }
@@ -706,7 +707,7 @@ pub fn load_data(commands_override: Vec<Command>, verbose: bool) -> SysData {
 
     // Step 3: Validate and repair patches (ensures data integrity)
     if verbose {
-        crate::utils::log("🧩 Step 3: Validating and repairing patches...");
+        log("🧩 Step 3: Validating and repairing patches...");
     }
     let resolution = crate::core::validate_and_repair_patches(&mut commands, verbose);
     let patches = resolution.patches;
@@ -716,27 +717,27 @@ pub fn load_data(commands_override: Vec<Command>, verbose: bool) -> SysData {
     // When using override, caller is responsible for saving (don't overwrite commands.txt during temp processing)
     if !use_override {
         if verbose {
-            crate::utils::log("💾 Step 4: Saving to disk...");
+            log("💾 Step 4: Saving to disk...");
         }
         // Always save - ensures deduplication, formatting, consistency
         if let Err(e) = super::storage::save_commands_to_file(&commands) {
-            crate::utils::log_error(&format!("Failed to save commands: {}", e));
+            log_error(&format!("Failed to save commands: {}", e));
         } else if let Err(e) = super::storage::save_commands_to_cache(&commands) {
-            crate::utils::log_error(&format!("Failed to save cache: {}", e));
+            log_error(&format!("Failed to save cache: {}", e));
         } else {
             if verbose {
                 if changes_made {
-                    crate::utils::log(&format!("   ✅ Saved {} commands with {} inference changes", commands.len(),
+                    log(&format!("   ✅ Saved {} commands with {} inference changes", commands.len(),
                         if changes_made { "patch" } else { "no" }));
                 } else {
-                    crate::utils::log(&format!("   ✅ Saved {} commands (no inference changes needed)", commands.len()));
+                    log(&format!("   ✅ Saved {} commands (no inference changes needed)", commands.len()));
                 }
             }
             // Don't clear cache here - we're already updating it
             // clear_sys_data() would cause deadlock since we're holding the mutex
         }
     } else if verbose {
-        crate::utils::log("💾 Step 4: Skipping save (using commands override for temporary processing)");
+        log("💾 Step 4: Skipping save (using commands override for temporary processing)");
     }
     
     // Store in sys data for future calls (only if not using commands override)
@@ -751,14 +752,14 @@ pub fn load_data(commands_override: Vec<Command>, verbose: bool) -> SysData {
     }
 
     if verbose {
-        crate::utils::log("\n✅ Data loading complete!");
-        crate::utils::log(&format!("   Total commands: {}", sys_data_struct.commands.len()));
-        crate::utils::log(&format!("   Total patches: {}", sys_data_struct.patches.len()));
+        log("\n✅ Data loading complete!");
+        log(&format!("   Total commands: {}", sys_data_struct.commands.len()));
+        log(&format!("   Total patches: {}", sys_data_struct.patches.len()));
         let commands_with_patches = sys_data_struct.commands.iter()
             .filter(|c| !c.patch.is_empty())
             .count();
-        crate::utils::log(&format!("   Commands with patches: {}", commands_with_patches));
-        crate::utils::log(&format!("   Commands without patches: {}", sys_data_struct.commands.len() - commands_with_patches));
+        log(&format!("   Commands with patches: {}", commands_with_patches));
+        log(&format!("   Commands without patches: {}", sys_data_struct.commands.len() - commands_with_patches));
     }
 
     sys_data_struct
@@ -792,7 +793,7 @@ pub fn set_state(state: &super::state::AppState) -> Result<(), Box<dyn std::erro
 /// * `Ok(())` if the anchor was successfully set
 /// * `Err` if saving state failed
 pub fn set_active_anchor(anchor_name: String, anchor_folder: Option<String>) -> Result<(), Box<dyn std::error::Error>> {
-    crate::utils::detailed_log("ANCHOR_SET", &format!("Setting active anchor: '{}' with folder: {:?}", anchor_name, anchor_folder));
+    detailed_log("ANCHOR_SET", &format!("Setting active anchor: '{}' with folder: {:?}", anchor_name, anchor_folder));
 
     let mut state = get_state();
     state.anchor_name = Some(anchor_name.clone());
@@ -801,11 +802,11 @@ pub fn set_active_anchor(anchor_name: String, anchor_folder: Option<String>) -> 
 
     match set_state(&state) {
         Ok(()) => {
-            crate::utils::detailed_log("ANCHOR_SET", &format!("✅ Successfully set active anchor: '{}'", anchor_name));
+            detailed_log("ANCHOR_SET", &format!("✅ Successfully set active anchor: '{}'", anchor_name));
             Ok(())
         },
         Err(e) => {
-            crate::utils::log_error(&format!("Failed to set active anchor: {}", e));
+            log_error(&format!("Failed to set active anchor: {}", e));
             Err(e)
         }
     }

@@ -6,6 +6,7 @@
 use std::fs;
 use std::path::{Path, PathBuf};
 use std::process::Command;
+use crate::prelude::*;
 
 const KARABINER_CLI_PATH: &str = "/Library/Application Support/org.pqrs/Karabiner-Elements/bin/karabiner_cli";
 
@@ -637,7 +638,7 @@ impl SetupAssistant {
 
     /// Test if the current application has accessibility permissions
     pub fn test_accessibility_permissions() -> Result<bool, Box<dyn std::error::Error>> {
-        crate::utils::log("Testing accessibility permissions...");
+        log("Testing accessibility permissions...");
 
         // Simple test script that tries to send a keystroke to System Events
         let test_script = r#"
@@ -661,9 +662,9 @@ impl SetupAssistant {
         let result = String::from_utf8_lossy(&output.stdout).trim().to_string();
         let stderr = String::from_utf8_lossy(&output.stderr);
 
-        crate::utils::log(&format!("Accessibility test result: '{}'", result));
+        log(&format!("Accessibility test result: '{}'", result));
         if !stderr.is_empty() {
-            crate::utils::log(&format!("Accessibility test stderr: '{}'", stderr));
+            log(&format!("Accessibility test stderr: '{}'", stderr));
         }
 
         // Check for permission-related errors
@@ -676,7 +677,7 @@ impl SetupAssistant {
 
     /// Open macOS System Preferences to Accessibility settings
     pub fn open_accessibility_settings() -> Result<(), Box<dyn std::error::Error>> {
-        crate::utils::log("Opening System Preferences → Security & Privacy → Accessibility");
+        log("Opening System Preferences → Security & Privacy → Accessibility");
 
         // Try the modern System Settings first (macOS 13+)
         let modern_result = Command::new("open")
@@ -712,11 +713,11 @@ impl SetupAssistant {
     pub fn ensure_accessibility_permissions() -> Result<bool, Box<dyn std::error::Error>> {
         match Self::test_accessibility_permissions()? {
             true => {
-                crate::utils::log("✅ Accessibility permissions are granted");
+                log("✅ Accessibility permissions are granted");
                 Ok(true)
             }
             false => {
-                crate::utils::log("❌ Accessibility permissions are missing");
+                log("❌ Accessibility permissions are missing");
 
                 crate::utils::print("\n🔒 ACCESSIBILITY PERMISSIONS REQUIRED");
                 crate::utils::print("═══════════════════════════════════════");
@@ -755,7 +756,7 @@ impl SetupAssistant {
     /// Install/update the latest distribution files to user config folder
     /// This ensures users always have the latest templates and config examples
     pub fn install_latest_dist_files(&self) -> Result<(), Box<dyn std::error::Error>> {
-        crate::utils::log("Installing latest distribution files to user config...");
+        log("Installing latest distribution files to user config...");
 
         // List of dist files to copy (latest versions from distribution)
         let dist_files = [
@@ -773,15 +774,15 @@ impl SetupAssistant {
                     if self.file_differs_from_default(&target_path, &source_path)? {
                         // User has a different version - create backup
                         self.create_backup(&target_path)?;
-                        crate::utils::log(&format!("Backed up existing {} due to changes", target_name));
+                        log(&format!("Backed up existing {} due to changes", target_name));
                     }
                 }
 
                 // Always copy the latest version
                 fs::copy(&source_path, &target_path)?;
-                crate::utils::log(&format!("✓ Installed latest {}", target_name));
+                log(&format!("✓ Installed latest {}", target_name));
             } else {
-                crate::utils::log(&format!("Warning: Distribution file {} not found", source_name));
+                log(&format!("Warning: Distribution file {} not found", source_name));
             }
         }
 
@@ -802,20 +803,20 @@ impl SetupAssistant {
             }
 
             fs::rename(&config_path, &backup_path)?;
-            crate::utils::log(&format!("✓ Backed up config.yaml to config.yaml.backup"));
+            log(&format!("✓ Backed up config.yaml to config.yaml.backup"));
         }
 
         // Find and copy distribution config
         // Try dist_config.yaml first, then default_config.yaml
         if let Ok(dist_config_path) = self.find_distribution_file("dist_config.yaml") {
             fs::copy(&dist_config_path, &config_path)?;
-            crate::utils::log("✓ Installed latest dist_config.yaml as config.yaml");
+            log("✓ Installed latest dist_config.yaml as config.yaml");
             return Ok(());
         }
 
         let dist_config_path = self.find_distribution_file("default_config.yaml")?;
         fs::copy(&dist_config_path, &config_path)?;
-        crate::utils::log("✓ Installed latest default_config.yaml as config.yaml");
+        log("✓ Installed latest default_config.yaml as config.yaml");
 
         Ok(())
     }
@@ -834,20 +835,20 @@ impl SetupAssistant {
             }
 
             fs::rename(&config_path, &backup_path)?;
-            crate::utils::log(&format!("✓ Backed up config.js to config.js.backup"));
+            log(&format!("✓ Backed up config.js to config.js.backup"));
         }
 
         // Find and copy distribution config.js
         // Try dist_config.js first, then default_config.js
         if let Ok(dist_config_path) = self.find_distribution_file("dist_config.js") {
             fs::copy(&dist_config_path, &config_path)?;
-            crate::utils::log("✓ Installed latest dist_config.js as config.js");
+            log("✓ Installed latest dist_config.js as config.js");
             return Ok(());
         }
 
         let dist_config_path = self.find_distribution_file("default_config.js")?;
         fs::copy(&dist_config_path, &config_path)?;
-        crate::utils::log("✓ Installed latest default_config.js as config.js");
+        log("✓ Installed latest default_config.js as config.js");
 
         Ok(())
     }
@@ -880,7 +881,7 @@ impl SetupAssistant {
             return Err(format!("Failed to add login item: {}", error).into());
         }
 
-        crate::utils::log("✓ Added HookAnchor to login items");
+        log("✓ Added HookAnchor to login items");
         Ok(())
     }
 }

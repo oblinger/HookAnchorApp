@@ -4,6 +4,7 @@ use crate::core::commands::{FLAG_USER_EDITED, FLAG_ANCHOR, FLAG_MERGED};
 use crate::core::delete_command;
 use crate::core::Config;
 use crate::core::template_creation::{Template, TemplateContext};
+use crate::prelude::*;
 
 pub struct CommandEditor {
     pub visible: bool,
@@ -378,7 +379,7 @@ impl CommandEditor {
                                     if new_command.action == "alias" && new_command.command == new_command.arg {
                                         // Show error immediately without trying to save
                                         // This prevents the system from getting into a bad state
-                                        crate::utils::log_error(&format!("ERROR: Cannot create self-referential alias: '{}' cannot alias to itself", new_command.command));
+                                        log_error(&format!("ERROR: Cannot create self-referential alias: '{}' cannot alias to itself", new_command.command));
                                         // Don't set result, keep editor open
                                     } else {
                                         result = CommandEditorResult::Save(new_command, self.original_command_name.clone());
@@ -426,7 +427,7 @@ impl CommandEditor {
 
             // Early validation for self-referential aliases to prevent crashes
             if new_command.action == "alias" && new_command.command == new_command.arg {
-                crate::utils::log_error(&format!("ERROR: Cannot create self-referential alias: '{}' cannot alias to itself", new_command.command));
+                log_error(&format!("ERROR: Cannot create self-referential alias: '{}' cannot alias to itself", new_command.command));
                 // Don't set result, keep editor open
             } else {
                 result = CommandEditorResult::Save(new_command, self.original_command_name.clone());

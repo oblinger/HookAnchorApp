@@ -14,7 +14,7 @@ use std::sync::{Arc, Mutex};
 use std::path::PathBuf;
 use serde::{Serialize, Deserialize};
 use chrono::TimeZone;
-use crate::utils::detailed_log;
+use crate::prelude::*;
 
 /// Helper function to output to both console and debug log
 fn log_and_print(prefix: &str, message: &str) {
@@ -22,7 +22,7 @@ fn log_and_print(prefix: &str, message: &str) {
     // Print to stdout so we can see what the server is doing
     crate::utils::print(&formatted);
     // Also log to file for persistence - use regular log() for command execution
-    crate::utils::log(&formatted);
+    log(&formatted);
 }
 
 /// Response structure for command execution
@@ -87,9 +87,9 @@ impl CommandServer {
         // Clean up any stale socket file from previous crashed instances
         if std::path::Path::new(&self.socket_path).exists() {
             if let Err(e) = std::fs::remove_file(&self.socket_path) {
-                crate::utils::log_error(&format!("Failed to remove stale command server socket: {}", e));
+                log_error(&format!("Failed to remove stale command server socket: {}", e));
             } else {
-                crate::utils::log("Cleaned up stale command server socket file");
+                log("Cleaned up stale command server socket file");
             }
         }
 
@@ -258,7 +258,7 @@ fn handle_client(
                 Err(e) => {
                     // Log error to file and console
                     log_and_print("CMD_SERVER_ERROR", &format!("{}", e));
-                    crate::utils::log_error(&format!("Action failed: {}", e));
+                    log_error(&format!("Action failed: {}", e));
                 }
             }
         });
@@ -358,8 +358,6 @@ fn get_socket_path() -> Result<PathBuf, Box<dyn std::error::Error>> {
 /// This is the main public entry point for executing actions via the server
 /// Returns CommandResponse with either ACK (non-blocking) or execution results (G flag/GUI)
 pub(crate) fn send_for_execution(action: &crate::execute::Action) -> Result<CommandResponse, Box<dyn std::error::Error>> {
-    use crate::utils::detailed_log;
-    
     // Serialize action to JSON
     let action_json = serde_json::to_string(action)?;
     detailed_log("EXEC_SERVER", &format!("Sending action for execution: {}", action_json));
@@ -426,8 +424,6 @@ impl CommandClient {
 /// Start a persistent command server and return its PID
 /// This function starts a server that runs indefinitely until killed
 pub(crate) fn start_persistent_server() -> Result<u32, Box<dyn std::error::Error>> {
-    use crate::utils::detailed_log;
-    
     detailed_log("CMD_SERVER", "Starting persistent command server");
     
     // Create a new server instance

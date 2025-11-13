@@ -18,6 +18,7 @@
 use rusqlite::{Connection, Result as SqlResult, params};
 use std::path::PathBuf;
 use crate::core::Command;
+use crate::prelude::*;
 
 /// Get the path to the history database
 pub(super) fn get_history_db_path() -> PathBuf {
@@ -70,7 +71,7 @@ pub(super) fn initialize_history_db() -> SqlResult<Connection> {
     ).unwrap_or(false);
 
     if has_change_type {
-        crate::utils::log("HISTORY_MIGRATION: Removing change_type column from history database");
+        log("HISTORY_MIGRATION: Removing change_type column from history database");
 
         // Create new table without change_type
         conn.execute(
@@ -102,7 +103,7 @@ pub(super) fn initialize_history_db() -> SqlResult<Connection> {
         conn.execute("DROP TABLE command_history", [])?;
         conn.execute("ALTER TABLE command_history_new RENAME TO command_history", [])?;
 
-        crate::utils::log("HISTORY_MIGRATION: Migration complete");
+        log("HISTORY_MIGRATION: Migration complete");
     }
 
     // Create indexes for fast querying
@@ -199,7 +200,7 @@ pub(super) fn append_command(conn: &Connection, cmd: &Command, timestamp: i64) -
         String::new()
     };
 
-    crate::utils::detailed_log("HISTORY", &format!(
+    detailed_log("HISTORY", &format!(
         "[{}] action={} cmd='{}' patch='{}'{}",
         date_str, cmd.action, cmd.command, cmd.patch, size_str
     ));
@@ -272,7 +273,7 @@ pub(super) fn delete_history_db() -> Result<bool, String> {
     if db_path.exists() {
         std::fs::remove_file(&db_path)
             .map_err(|e| format!("Failed to delete history database: {}", e))?;
-        crate::utils::log(&format!("Deleted history database: {}", db_path.display()));
+        log(&format!("Deleted history database: {}", db_path.display()));
         Ok(true)
     } else {
         Ok(false)

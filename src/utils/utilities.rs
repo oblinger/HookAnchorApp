@@ -7,6 +7,7 @@ use std::process::Command;
 use std::path::PathBuf;
 use std::collections::HashMap;
 use std::sync::{Mutex, OnceLock};
+use crate::prelude::*;
 
 /// Cached login shell environment variables
 static LOGIN_ENV_CACHE: OnceLock<Mutex<Option<HashMap<String, String>>>> = OnceLock::new();
@@ -93,14 +94,14 @@ pub fn launch_app_with_arg(app: &str, arg: Option<&str>) -> Result<std::process:
     
     // Log the exact command being executed
     let command_str = format!("open -a \"{}\" {}", app, arg.unwrap_or(""));
-    crate::utils::detailed_log("LAUNCH_APP", &format!("LAUNCH_APP: Executing command: {}", command_str));
+    detailed_log("LAUNCH_APP", &format!("LAUNCH_APP: Executing command: {}", command_str));
     
     // Use spawn + detach for non-blocking execution to prevent UI lockups
     match cmd.spawn() {
         Ok(child) => {
             // Register the process for monitoring
             let _process_id = super::subprocess::register_process(child, command_str.clone());
-            crate::utils::detailed_log("LAUNCH_APP", &format!("LAUNCH_APP: Process spawned successfully for: {}", app));
+            detailed_log("LAUNCH_APP", &format!("LAUNCH_APP: Process spawned successfully for: {}", app));
             
             // For non-blocking execution, we don't wait for the result
             // The application will open independently without blocking the UI
@@ -110,7 +111,7 @@ pub fn launch_app_with_arg(app: &str, arg: Option<&str>) -> Result<std::process:
             ))
         },
         Err(e) => {
-            crate::utils::log_error(&format!("LAUNCH_APP: Failed to spawn process for '{}': {}", app, e));
+            log_error(&format!("LAUNCH_APP: Failed to spawn process for '{}': {}", app, e));
             Err(e)
         }
     }

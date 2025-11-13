@@ -65,6 +65,7 @@
 
 use eframe::egui;
 use std::collections::HashMap;
+use crate::prelude::*;
 
 #[derive(Debug, Clone)]
 enum DialogElement {
@@ -101,7 +102,7 @@ impl Dialog {
     }
 
     pub fn show(&mut self, spec_strings: Vec<String>) {
-        crate::utils::detailed_log("DIALOG", "Dialog opened");
+        detailed_log("DIALOG", "Dialog opened");
         self.visible = true;
         self.rows.clear();
         self.input_values.clear();
@@ -407,7 +408,7 @@ impl Dialog {
             result.insert("exit".to_string(), button_pressed.unwrap_or_default());
             
             self.result = Some(result);
-            crate::utils::detailed_log("DIALOG", "Dialog closed");
+            detailed_log("DIALOG", "Dialog closed");
             self.visible = false;
             return true;
         }

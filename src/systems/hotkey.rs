@@ -5,6 +5,7 @@
 
 use std::sync::Arc;
 use std::sync::atomic::{AtomicBool, Ordering};
+use crate::prelude::*;
 
 /// Represents a global hotkey registration
 pub struct GlobalHotkey {
@@ -31,12 +32,12 @@ impl GlobalHotkey {
 
         // Check if we have accessibility permissions
         let has_permissions = check_accessibility_permission();
-        crate::utils::log(&format!("Accessibility permissions check: {}", has_permissions));
+        log(&format!("Accessibility permissions check: {}", has_permissions));
 
         if !has_permissions {
-            crate::utils::log_error("Missing accessibility permissions!");
-            crate::utils::log_error("Please grant HookAnchor accessibility permissions in:");
-            crate::utils::log_error("System Settings > Privacy & Security > Accessibility");
+            log_error("Missing accessibility permissions!");
+            log_error("Please grant HookAnchor accessibility permissions in:");
+            log_error("System Settings > Privacy & Security > Accessibility");
             request_accessibility_permission();
             return Err("Accessibility permissions required. Please grant permissions in System Settings > Privacy & Security > Accessibility".to_string());
         }
@@ -44,7 +45,7 @@ impl GlobalHotkey {
         // Store the hotkey string
         self.hotkey_string = hotkey_str.to_string();
 
-        crate::utils::log(&format!("Setting up CGEventTap for hotkey: {} (modifiers: {:?}, keycode: {})", hotkey_str, modifiers, keycode));
+        log(&format!("Setting up CGEventTap for hotkey: {} (modifiers: {:?}, keycode: {})", hotkey_str, modifiers, keycode));
 
         // Use a simpler approach with a static callback
         unsafe {
@@ -54,36 +55,36 @@ impl GlobalHotkey {
         }
 
         // Create the event tap using C bindings
-        crate::utils::log("Creating CGEventTap...");
+        log("Creating CGEventTap...");
         let tap = create_event_tap()?;
         if tap.is_null() {
             let error = "Failed to create event tap. Make sure accessibility permissions are granted.";
-            crate::utils::log_error(error);
+            log_error(error);
             return Err(error.to_string());
         }
-        crate::utils::log("✅ CGEventTap created successfully");
+        log("✅ CGEventTap created successfully");
 
         // Create run loop source and add to current run loop
-        crate::utils::log("Creating run loop source...");
+        log("Creating run loop source...");
         let source = create_runloop_source(tap)?;
         if source.is_null() {
             let error = "Failed to create run loop source.";
-            crate::utils::log_error(error);
+            log_error(error);
             return Err(error.to_string());
         }
-        crate::utils::log("✅ Run loop source created successfully");
+        log("✅ Run loop source created successfully");
 
-        crate::utils::log("Adding source to run loop...");
+        log("Adding source to run loop...");
         add_source_to_runloop(source);
-        crate::utils::log("✅ Source added to run loop");
+        log("✅ Source added to run loop");
 
-        crate::utils::log("Enabling event tap...");
+        log("Enabling event tap...");
         enable_event_tap(tap);
-        crate::utils::log("✅ Event tap enabled");
+        log("✅ Event tap enabled");
 
         self.is_registered.store(true, Ordering::Relaxed);
 
-        crate::utils::log(&format!("✅ Successfully registered global hotkey: {}", hotkey_str));
+        log(&format!("✅ Successfully registered global hotkey: {}", hotkey_str));
         Ok(())
     }
 
@@ -91,7 +92,7 @@ impl GlobalHotkey {
     #[cfg(not(target_os = "macos"))]
     pub fn register(&mut self, hotkey_str: &str) -> Result<(), String> {
         self.hotkey_string = hotkey_str.to_string();
-        crate::utils::log(&format!("Global hotkey registration not supported on this platform: {}", hotkey_str));
+        log(&format!("Global hotkey registration not supported on this platform: {}", hotkey_str));
         self.is_registered.store(true, Ordering::Relaxed);
         Ok(())
     }
@@ -108,7 +109,7 @@ impl GlobalHotkey {
         }
 
         self.is_registered.store(false, Ordering::Relaxed);
-        crate::utils::log(&format!("Unregistered global hotkey: {}", self.hotkey_string));
+        log(&format!("Unregistered global hotkey: {}", self.hotkey_string));
     }
 
     /// Check if hotkey is registered
@@ -141,7 +142,7 @@ extern "C" fn event_tap_callback(
 ) -> *mut std::ffi::c_void {
     unsafe {
         // Log every event we receive for debugging
-        crate::utils::detailed_log("HOTKEY", &format!("Event received: type={}, event={:p}", event_type, event));
+        detailed_log("HOTKEY", &format!("Event received: type={}, event={:p}", event_type, event));
 
         // Check if this is a key down event
         if event_type != 10 { // kCGEventKeyDown = 10
@@ -152,7 +153,7 @@ extern "C" fn event_tap_callback(
         let flags = CGEventGetFlags(event);
         let keycode = CGEventGetIntegerValueField(event, 9); // kCGKeyboardEventKeycode = 9
 
-        crate::utils::detailed_log("HOTKEY", &format!("Key event: flags={:#x}, keycode={}, target_flags={:#x}, target_keycode={}",
+        detailed_log("HOTKEY", &format!("Key event: flags={:#x}, keycode={}, target_flags={:#x}, target_keycode={}",
             flags, keycode, GLOBAL_MODIFIERS, GLOBAL_KEYCODE));
 
         // Check if this matches our hotkey
@@ -160,15 +161,15 @@ extern "C" fn event_tap_callback(
         let keycode_match = keycode == GLOBAL_KEYCODE as i64;
 
         if flags_match && keycode_match {
-            crate::utils::log(&format!("🔥 Hotkey triggered! flags: {:#x}, keycode: {}", flags, keycode));
+            log(&format!("🔥 Hotkey triggered! flags: {:#x}, keycode: {}", flags, keycode));
 
             // Call our callback
             if let Some(ref callback) = GLOBAL_CALLBACK {
-                crate::utils::detailed_log("HOTKEY", "Calling popup callback...");
+                detailed_log("HOTKEY", "Calling popup callback...");
                 callback();
-                crate::utils::detailed_log("HOTKEY", "Callback completed");
+                detailed_log("HOTKEY", "Callback completed");
             } else {
-                crate::utils::log_error("No callback registered for hotkey");
+                log_error("No callback registered for hotkey");
             }
 
             // Consume the event
@@ -340,7 +341,7 @@ pub fn request_accessibility_permission() {
             .arg("x-apple.systempreferences:com.apple.preference.security?Privacy_Accessibility")
             .spawn();
 
-        crate::utils::log("Opening System Preferences > Privacy & Security > Accessibility");
-        crate::utils::log("Please add HookAnchor to the list of allowed apps and try again");
+        log("Opening System Preferences > Privacy & Security > Accessibility");
+        log("Please add HookAnchor to the list of allowed apps and try again");
     }
 }

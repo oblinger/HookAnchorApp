@@ -8,6 +8,7 @@ use std::path::{Path, PathBuf};
 use std::env;
 use serde::{Deserialize, Serialize};
 use chrono::Local;
+use crate::prelude::*;
 
 /// History viewer state - all persistent state for the history viewer window
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -115,7 +116,7 @@ pub(super) fn load_state() -> AppState {
     if let Ok(contents) = fs::read_to_string(&state_path) {
         match serde_json::from_str::<AppState>(&contents) {
             Ok(state) => {
-                crate::utils::detailed_log("STATE_IO", &format!(
+                detailed_log("STATE_IO", &format!(
                     "Loaded state from disk (build_time={:?}, last_cmd={:?}, server_pid={:?}, anchor={:?}, anchor_folder={:?})",
                     state.build_time,
                     state.last_executed_command,
@@ -126,12 +127,12 @@ pub(super) fn load_state() -> AppState {
                 state
             },
             Err(_) => {
-                crate::utils::detailed_log("STATE_IO", "Failed to parse state.json, using default");
+                detailed_log("STATE_IO", "Failed to parse state.json, using default");
                 AppState::default()
             }
         }
     } else {
-        crate::utils::detailed_log("STATE_IO", "state.json not found, using default");
+        detailed_log("STATE_IO", "state.json not found, using default");
         AppState::default()
     }
 }
@@ -149,7 +150,7 @@ pub(super) fn save_state(state: &AppState) -> Result<(), Box<dyn std::error::Err
     let json_content = serde_json::to_string_pretty(state)?;
     fs::write(&state_path, json_content)?;
 
-    crate::utils::detailed_log("STATE_IO", &format!(
+    detailed_log("STATE_IO", &format!(
         "Saved state to disk (build_time={:?}, last_cmd={:?}, server_pid={:?}, anchor={:?}, anchor_folder={:?})",
         state.build_time,
         state.last_executed_command,

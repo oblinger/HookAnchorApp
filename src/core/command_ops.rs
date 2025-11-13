@@ -5,6 +5,7 @@
 
 use std::collections::HashMap;
 use crate::core::{Command, Config, Patch};
+use crate::prelude::*;
 
 // ============================================================================
 // Simple Command Operations
@@ -121,7 +122,7 @@ pub fn rename_associated_data(
                                 actions.push(format!("• DOC -- Rename file: {} → {}", file_name, new_file));
                                 
                                 if !dry_run {
-                                    crate::utils::log(&format!("RENAME: Renaming document {} -> {}", 
+                                    log(&format!("RENAME: Renaming document {} -> {}", 
                                         path.display(), new_path.display()));
                                     fs::rename(path, &new_path)?;
                                     updated_arg = new_path.to_string_lossy().to_string();
@@ -163,7 +164,7 @@ pub fn rename_associated_data(
                             
                             // Perform rename if not dry run
                             if !dry_run {
-                                crate::utils::log(&format!("RENAME: Renaming folder {} -> {}", 
+                                log(&format!("RENAME: Renaming folder {} -> {}", 
                                     parent.display(), new_folder_path.display()));
                                 fs::rename(parent, &new_folder_path)?;
                                 
@@ -241,7 +242,7 @@ pub fn rename_associated_data(
                 
                 // Perform update if not dry run
                 if !dry_run {
-                    crate::utils::log(&format!("RENAME: Renaming patch '{}' -> '{}'", old_name, new_name));
+                    log(&format!("RENAME: Renaming patch '{}' -> '{}'", old_name, new_name));
                     
                     // Update the patch in the patches map
                     if let Some(mut patch) = patches.remove(&old_name_lower) {
@@ -259,7 +260,7 @@ pub fn rename_associated_data(
                             cmd.update_full_line();
                         }
                     }
-                    crate::utils::log(&format!("RENAME: Updated {} commands with new patch name", 
+                    log(&format!("RENAME: Updated {} commands with new patch name", 
                         affected_commands.len()));
                 }
             }
@@ -352,12 +353,12 @@ pub fn rename_associated_data(
                             let old_cmd_name = cmd.command.clone();
                             cmd.command = format!("{}{}", new_name, remainder_chars);
                             cmd.update_full_line();
-                            crate::utils::log(&format!("RENAME: Updated prefix '{}' -> '{}'", 
+                            log(&format!("RENAME: Updated prefix '{}' -> '{}'", 
                                 old_cmd_name, cmd.command));
                         }
                     }
                 }
-                crate::utils::log(&format!("RENAME: Updated {} commands with new prefix", 
+                log(&format!("RENAME: Updated {} commands with new prefix", 
                     affected_commands.len()));
             }
         }
@@ -430,7 +431,7 @@ pub fn rename_folder(
 
     // Execute if not dry run
     if !dry_run {
-        crate::utils::log(&format!("RENAME_FOLDER: Renaming {} -> {}",
+        log(&format!("RENAME_FOLDER: Renaming {} -> {}",
             old_path.display(), new_folder_path.display()));
 
         // Rename the folder
@@ -444,12 +445,12 @@ pub fn rename_folder(
                 cmd.arg = cmd.arg.replacen(&old_path_str, &new_path_str, 1);
                 cmd.update_full_line();
 
-                crate::utils::log(&format!("RENAME_FOLDER: Updated command '{}' arg: {} -> {}",
+                log(&format!("RENAME_FOLDER: Updated command '{}' arg: {} -> {}",
                     cmd.command, old_cmd_arg, cmd.arg));
             }
         }
 
-        crate::utils::log(&format!("RENAME_FOLDER: Updated {} command ARGs",
+        log(&format!("RENAME_FOLDER: Updated {} command ARGs",
             affected_commands.len()));
     }
 

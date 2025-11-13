@@ -7,6 +7,7 @@
 //! Also checks config version compatibility.
 
 use chrono;
+use crate::prelude::*;
 
 /// Build metadata embedded at compile time by build.rs
 pub struct BuildMetadata {
@@ -175,43 +176,43 @@ pub fn is_developer_mode() -> bool {
 pub fn log_build_info() {
     let metadata = BuildMetadata::get();
 
-    crate::utils::log("═══════════════════════════════════════════════════════");
-    crate::utils::log("BUILD INFORMATION");
-    crate::utils::log("═══════════════════════════════════════════════════════");
+    log("═══════════════════════════════════════════════════════");
+    log("BUILD INFORMATION");
+    log("═══════════════════════════════════════════════════════");
 
     // Build timestamp
-    crate::utils::log(&format!("  Built: {}", metadata.build_timestamp_str));
+    log(&format!("  Built: {}", metadata.build_timestamp_str));
 
     // Age of binary
     if metadata.build_timestamp > 0 {
         let age_seconds = chrono::Utc::now().timestamp() - metadata.build_timestamp;
         if age_seconds < 60 {
-            crate::utils::log(&format!("  Age: {} seconds (very recent!)", age_seconds));
+            log(&format!("  Age: {} seconds (very recent!)", age_seconds));
         } else if age_seconds < 3600 {
-            crate::utils::log(&format!("  Age: {} minutes", age_seconds / 60));
+            log(&format!("  Age: {} minutes", age_seconds / 60));
         } else if age_seconds < 86400 {
-            crate::utils::log(&format!("  Age: {:.1} hours", age_seconds as f64 / 3600.0));
+            log(&format!("  Age: {:.1} hours", age_seconds as f64 / 3600.0));
         } else {
-            crate::utils::log(&format!("  Age: {:.1} days", age_seconds as f64 / 86400.0));
+            log(&format!("  Age: {:.1} days", age_seconds as f64 / 86400.0));
         }
     }
 
     // Build method
     if metadata.built_with_just {
-        crate::utils::log("  Build method: Just (verified ✓)");
+        log("  Build method: Just (verified ✓)");
     } else {
-        crate::utils::log("  Build method: cargo (unverified ⚠️)");
+        log("  Build method: cargo (unverified ⚠️)");
     }
 
     // Git information
     if let Some(commit) = metadata.git_commit {
-        crate::utils::log(&format!("  Git commit: {}", &commit[..8.min(commit.len())]));
+        log(&format!("  Git commit: {}", &commit[..8.min(commit.len())]));
     }
     if let Some(branch) = metadata.git_branch {
-        crate::utils::log(&format!("  Git branch: {}", branch));
+        log(&format!("  Git branch: {}", branch));
     }
 
-    crate::utils::log("═══════════════════════════════════════════════════════");
+    log("═══════════════════════════════════════════════════════");
 }
 
 /// Show error dialog and terminate the application
@@ -274,7 +275,7 @@ fn show_error_dialog_and_exit(errors: &[String], warnings: &[String]) -> ! {
     log_message.push_str("SOLUTION:\n");
     log_message.push_str("  Rebuild with: cd ~/ob/proj/HookAnchor && just build\n");
 
-    crate::utils::log_error(&log_message);
+    log_error(&log_message);
 
     // Terminate
     std::process::exit(1);
@@ -299,35 +300,35 @@ pub fn verify_and_log(terminate_on_failure: bool) -> bool {
 
     // Check if we're in developer mode
     if !is_developer_mode() {
-        crate::utils::log("Developer mode: DISABLED (skipping build verification)");
-        crate::utils::log(""); // Blank line for separation
+        log("Developer mode: DISABLED (skipping build verification)");
+        log(""); // Blank line for separation
         return true;  // Skip verification, return success
     }
 
-    crate::utils::log("Developer mode: ENABLED (performing build verification)");
+    log("Developer mode: ENABLED (performing build verification)");
 
     // Simple log message indicating we're checking
-    crate::utils::log("Checking build validity...");
+    log("Checking build validity...");
 
     // Run verification
     let result = verify_build();
 
     // Log warnings
     for warning in &result.warnings {
-        crate::utils::log(warning);
+        log(warning);
     }
 
     // Log errors (both to file and stdout so they're visible)
     for error in &result.errors {
-        crate::utils::log_error(error);
+        log_error(error);
         crate::utils::print(error);  // Also print to stdout
     }
 
     // Summary
     if result.passed {
-        crate::utils::log("Build validity check: SUCCESS");
+        log("Build validity check: SUCCESS");
     } else {
-        crate::utils::log_error("Build validity check: FAILED");
+        log_error("Build validity check: FAILED");
         crate::utils::print("Build validity check: FAILED");  // Also print to stdout
 
         // If terminate_on_failure is true, show dialog and exit
@@ -336,7 +337,7 @@ pub fn verify_and_log(terminate_on_failure: bool) -> bool {
         }
     }
 
-    crate::utils::log(""); // Blank line for separation
+    log(""); // Blank line for separation
 
     result.passed
 }
@@ -388,13 +389,13 @@ pub fn check_config_version() -> Result<(), String> {
     let config_version = match &config.config_version {
         Some(v) => v.trim(),
         None => {
-            crate::utils::log("Config version: not specified (assuming dev machine)");
+            log("Config version: not specified (assuming dev machine)");
             return Ok(());
         }
     };
 
-    crate::utils::log(&format!("Config version: {}", config_version));
-    crate::utils::log(&format!("Minimum required: {}", MIN_CONFIG_VERSION));
+    log(&format!("Config version: {}", config_version));
+    log(&format!("Minimum required: {}", MIN_CONFIG_VERSION));
 
     // Check if config version is recent enough
     if !version_gte(config_version, MIN_CONFIG_VERSION) {
@@ -417,7 +418,7 @@ pub fn check_config_version() -> Result<(), String> {
         return Err(error_msg);
     }
 
-    crate::utils::log("Config version check: PASSED");
+    log("Config version check: PASSED");
     Ok(())
 }
 
@@ -431,7 +432,7 @@ pub fn check_config_js_version() -> Result<(), String> {
 
     // If config.js doesn't exist, skip check (not required)
     if !config_js_path.exists() {
-        crate::utils::log("config.js: not found (optional)");
+        log("config.js: not found (optional)");
         return Ok(());
     }
 
@@ -447,12 +448,12 @@ pub fn check_config_js_version() -> Result<(), String> {
         captures.get(1).map(|m| m.as_str()).unwrap_or("")
     } else {
         // No version found - assume dev machine
-        crate::utils::log("config.js version: not specified (assuming dev machine)");
+        log("config.js version: not specified (assuming dev machine)");
         return Ok(());
     };
 
-    crate::utils::log(&format!("config.js version: {}", config_js_version));
-    crate::utils::log(&format!("Minimum required: {}", MIN_CONFIG_VERSION));
+    log(&format!("config.js version: {}", config_js_version));
+    log(&format!("Minimum required: {}", MIN_CONFIG_VERSION));
 
     // Check if config.js version is recent enough
     if !version_gte(config_js_version, MIN_CONFIG_VERSION) {
@@ -468,7 +469,7 @@ pub fn check_config_js_version() -> Result<(), String> {
         return Err(error_msg);
     }
 
-    crate::utils::log("config.js version check: PASSED");
+    log("config.js version check: PASSED");
     Ok(())
 }
 
@@ -488,7 +489,7 @@ fn show_config_error_dialog_and_exit(error: &str) -> ! {
     }
 
     // Log error
-    crate::utils::log_error(&format!("❌ CONFIG VERSION CHECK FAILED\n\n{}", error));
+    log_error(&format!("❌ CONFIG VERSION CHECK FAILED\n\n{}", error));
 
     // Terminate
     std::process::exit(1);

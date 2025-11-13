@@ -46,6 +46,7 @@
 
 use super::{Command, Patch};
 use std::collections::HashMap;
+use crate::prelude::*;
 
 
 /// Case-insensitive alphabetical comparison for command sorting
@@ -335,7 +336,7 @@ pub fn build_prefix_menu(
             if prefix_fully_matches_anchor(prefix, &cmd.command) || prefix_fully_matches_anchor(prefix, &cmd_trimmed) {
                 let resolved = cmd.resolve_alias(all_commands);
                 if resolved.is_anchor() {
-                    crate::utils::detailed_log("BUILD_PREFIX_MENU", &format!("Found matching anchor for prefix '{}': {} -> {}",
+                    detailed_log("BUILD_PREFIX_MENU", &format!("Found matching anchor for prefix '{}': {} -> {}",
                         prefix, cmd.command, resolved.command));
                     matching_anchors.push((cmd.clone(), resolved));
                 }
@@ -356,7 +357,7 @@ pub fn build_prefix_menu(
                 ""
             };
 
-            crate::utils::detailed_log("BUILD_PREFIX_MENU", &format!("Selected longest anchor='{}' for input='{}', filter='{}'",
+            detailed_log("BUILD_PREFIX_MENU", &format!("Selected longest anchor='{}' for input='{}', filter='{}'",
                 resolved_command.command, input, remaining_chars));
 
             let prefix_menu_commands = build_prefix_menu_commands(&resolved_command, all_commands, patches, remaining_chars);
@@ -409,7 +410,7 @@ fn build_prefix_menu_commands(
 
         // Log tracker info specifically (detailed log only)
         if cmd.command.to_lowercase().contains("tracker info") && !filter_text.is_empty() {
-            crate::utils::detailed_log("PREFIX_MENU", &format!("Checking 'tracker info' - cmd_trimmed='{}', anchor_name='{}', filter_text='{}'",
+            detailed_log("PREFIX_MENU", &format!("Checking 'tracker info' - cmd_trimmed='{}', anchor_name='{}', filter_text='{}'",
                 cmd_trimmed, anchor_name, filter_text));
         }
 
@@ -536,7 +537,7 @@ fn build_prefix_menu_commands(
     // Log final result for tracker
     if anchor_name.to_lowercase() == "tracker" && !filter_text.is_empty() {
         let command_names: Vec<&str> = prefix_menu_commands.iter().map(|c| c.command.as_str()).collect();
-        crate::utils::log(&format!("PREFIX_MENU_RESULT: anchor='{}', filter='{}', commands={:?}",
+        log(&format!("PREFIX_MENU_RESULT: anchor='{}', filter='{}', commands={:?}",
             anchor_name, filter_text, command_names));
     }
 
@@ -591,9 +592,9 @@ pub fn get_new_display_commands(
         // Step 3: Remove prefix menu commands from prefix_commands to avoid duplicates
         // Check both literal matches and resolved alias matches
         prefix_commands.retain(|cmd| {
-            // crate::utils::detailed_log("DISPLAY_FILTER", &format!("Checking command for dedup: {} (action: {})", cmd.command, cmd.action));
+            // detailed_log("DISPLAY_FILTER", &format!("Checking command for dedup: {} (action: {})", cmd.command, cmd.action));
             let cmd_resolved = cmd.resolve_alias(all_commands);
-            // crate::utils::detailed_log("DISPLAY_FILTER", &format!("Resolved to: {} (action: {})", cmd_resolved.command, cmd_resolved.action));
+            // detailed_log("DISPLAY_FILTER", &format!("Resolved to: {} (action: {})", cmd_resolved.command, cmd_resolved.action));
             
             !prefix_menu_commands.iter().any(|prefix_menu_cmd| {
                 // Check literal match

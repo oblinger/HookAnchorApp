@@ -11,6 +11,7 @@ use crate::core::Config;
 use crate::execute::{get_action, get_default_patch_for_action};
 use rquickjs::{Runtime, Context, Value};
 use regex::Regex;
+use crate::prelude::*;
 
 /// Information captured about the active application
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -44,29 +45,29 @@ pub struct GrabberRule {
 /// Apply suffix mapping to a grabbed argument based on config patterns
 /// Returns (original_arg, detected_suffix) - arg is NOT modified, only suffix is detected
 fn apply_suffix_mapping(arg: &str, config: &Config) -> (String, Option<String>) {
-    crate::utils::detailed_log("GRABBER", &format!("Applying suffix mapping to: '{}'", arg));
+    detailed_log("GRABBER", &format!("Applying suffix mapping to: '{}'", arg));
 
     if let Some(suffix_map) = config.grabber_suffix_map.as_ref() {
-        crate::utils::detailed_log("GRABBER", &format!("Found {} suffix patterns to check", suffix_map.len()));
+        detailed_log("GRABBER", &format!("Found {} suffix patterns to check", suffix_map.len()));
         for (suffix, pattern) in suffix_map.iter() {
-            crate::utils::detailed_log("GRABBER", &format!("Testing pattern '{}' for suffix '{}'", pattern, suffix));
+            detailed_log("GRABBER", &format!("Testing pattern '{}' for suffix '{}'", pattern, suffix));
             if let Ok(regex) = Regex::new(pattern) {
                 if regex.is_match(arg) {
-                    crate::utils::detailed_log("GRABBER", &format!("Suffix match: '{}' -> detected suffix '{}' (arg unchanged)", pattern, suffix));
+                    detailed_log("GRABBER", &format!("Suffix match: '{}' -> detected suffix '{}' (arg unchanged)", pattern, suffix));
                     return (arg.to_string(), Some(suffix.clone()));
                 } else {
-                    crate::utils::detailed_log("GRABBER", &format!("Pattern '{}' did not match", pattern));
+                    detailed_log("GRABBER", &format!("Pattern '{}' did not match", pattern));
                 }
             } else {
-                crate::utils::detailed_log("GRABBER", &format!("Invalid regex pattern for suffix '{}': {}", suffix, pattern));
+                detailed_log("GRABBER", &format!("Invalid regex pattern for suffix '{}': {}", suffix, pattern));
             }
         }
     } else {
-        crate::utils::detailed_log("GRABBER", "No grabber_suffix_map found in config");
+        detailed_log("GRABBER", "No grabber_suffix_map found in config");
     }
 
     // No suffix matched, return original
-    crate::utils::detailed_log("GRABBER", "No suffix patterns matched, returning original arg");
+    detailed_log("GRABBER", "No suffix patterns matched, returning original arg");
     (arg.to_string(), None)
 }
 
@@ -210,8 +211,8 @@ fn get_browser_info(bundle_id: &str) -> Option<String> {
 
 /// Get Obsidian active file URL by triggering copy URL shortcut
 fn get_obsidian_url() -> Option<String> {
-    crate::utils::detailed_log("GRAB", "Getting Obsidian URL via command palette (Cmd+P)");
-    crate::utils::detailed_log("GRAB", "🔥 NEW CODE VERSION - Improved error handling active");
+    detailed_log("GRAB", "Getting Obsidian URL via command palette (Cmd+P)");
+    detailed_log("GRAB", "🔥 NEW CODE VERSION - Improved error handling active");
 
     // First, save the current clipboard content
     let original_clipboard = ProcessCommand::new("osascript")
@@ -294,21 +295,21 @@ fn get_obsidian_url() -> Option<String> {
 
         if output.status.success() {
             if result.starts_with("obsidian://") {
-                crate::utils::detailed_log("GRAB", &format!("Successfully got Obsidian URL: {}", result));
+                detailed_log("GRAB", &format!("Successfully got Obsidian URL: {}", result));
                 return Some(result);
             } else if result.starts_with("ERROR:") {
-                crate::utils::detailed_log("GRAB", &format!("AppleScript error: {}", result));
+                detailed_log("GRAB", &format!("AppleScript error: {}", result));
             } else if result.is_empty() {
-                crate::utils::detailed_log("GRAB", "No Obsidian URL found in clipboard (command may have failed)");
+                detailed_log("GRAB", "No Obsidian URL found in clipboard (command may have failed)");
             } else {
-                crate::utils::detailed_log("GRAB", &format!("Unexpected clipboard content: {}", result));
+                detailed_log("GRAB", &format!("Unexpected clipboard content: {}", result));
             }
         } else {
             let error = String::from_utf8_lossy(&output.stderr);
-            crate::utils::detailed_log("GRAB", &format!("AppleScript execution failed: {}", error));
+            detailed_log("GRAB", &format!("AppleScript execution failed: {}", error));
         }
     } else {
-        crate::utils::detailed_log("GRAB", "Failed to execute AppleScript");
+        detailed_log("GRAB", "Failed to execute AppleScript");
     }
 
     None
@@ -316,10 +317,10 @@ fn get_obsidian_url() -> Option<String> {
 
 /// Get Notion page URL by triggering copy link shortcut
 fn get_notion_url() -> Option<String> {
-    crate::utils::detailed_log("GRABBER_NOTION", "=== NOTION URL CAPTURE START ===");
+    detailed_log("GRABBER_NOTION", "=== NOTION URL CAPTURE START ===");
     
     // First, try to read the clipboard in case user already copied the URL
-    crate::utils::detailed_log("GRABBER_NOTION", "Step 1: Checking if clipboard already contains Notion URL");
+    detailed_log("GRABBER_NOTION", "Step 1: Checking if clipboard already contains Notion URL");
     
     let check_clipboard_script = r#"
         try
@@ -341,17 +342,17 @@ fn get_notion_url() -> Option<String> {
     {
         let stdout = String::from_utf8_lossy(&output.stdout).trim().to_string();
         if stdout.starts_with("https://www.notion.so/") {
-            crate::utils::detailed_log("GRABBER_NOTION", &format!("✅ Found Notion URL in clipboard: {}", stdout));
-            crate::utils::detailed_log("GRABBER_NOTION", "=== NOTION URL CAPTURE END (SUCCESS - from clipboard) ===");
+            detailed_log("GRABBER_NOTION", &format!("✅ Found Notion URL in clipboard: {}", stdout));
+            detailed_log("GRABBER_NOTION", "=== NOTION URL CAPTURE END (SUCCESS - from clipboard) ===");
             return Some(stdout);
         } else {
-            crate::utils::detailed_log("GRABBER_NOTION", "No Notion URL in clipboard, trying keystroke method");
+            detailed_log("GRABBER_NOTION", "No Notion URL in clipboard, trying keystroke method");
         }
     }
     
     // Try to trigger Notion's copy link shortcut (Cmd+L)
     // This requires Terminal/popup_server to have Accessibility permissions
-    crate::utils::detailed_log("GRABBER_NOTION", "Step 2: Attempting to trigger Cmd+L in Notion");
+    detailed_log("GRABBER_NOTION", "Step 2: Attempting to trigger Cmd+L in Notion");
 
     let trigger_copy_script = r#"
         -- Save current clipboard
@@ -396,7 +397,7 @@ fn get_notion_url() -> Option<String> {
         end try
     "#;
     
-    crate::utils::detailed_log("GRABBER_NOTION", "Executing AppleScript to send Cmd+L");
+    detailed_log("GRABBER_NOTION", "Executing AppleScript to send Cmd+L");
     
     if let Ok(output) = ProcessCommand::new("osascript")
         .arg("-e")
@@ -406,42 +407,42 @@ fn get_notion_url() -> Option<String> {
         let stdout = String::from_utf8_lossy(&output.stdout).trim().to_string();
         let stderr = String::from_utf8_lossy(&output.stderr).trim().to_string();
         
-        crate::utils::detailed_log("GRABBER_NOTION", &format!("AppleScript stdout: '{}'", stdout));
-        crate::utils::detailed_log("GRABBER_NOTION", &format!("AppleScript stderr: '{}'", stderr));
-        crate::utils::detailed_log("GRABBER_NOTION", &format!("AppleScript exit status: {}", output.status.success()));
+        detailed_log("GRABBER_NOTION", &format!("AppleScript stdout: '{}'", stdout));
+        detailed_log("GRABBER_NOTION", &format!("AppleScript stderr: '{}'", stderr));
+        detailed_log("GRABBER_NOTION", &format!("AppleScript exit status: {}", output.status.success()));
         
         if !stderr.is_empty() {
-            crate::utils::detailed_log("GRABBER_NOTION", &format!("AppleScript error output: {}", stderr));
+            detailed_log("GRABBER_NOTION", &format!("AppleScript error output: {}", stderr));
             if stderr.contains("not allowed to send keystrokes") {
-                crate::utils::detailed_log("GRABBER_NOTION", "❌ PERMISSION ERROR: osascript not allowed to send keystrokes");
-                crate::utils::detailed_log("GRABBER_NOTION", "This is a known macOS limitation when running from popup_server");
-                crate::utils::detailed_log("GRABBER_NOTION", "");
-                crate::utils::detailed_log("GRABBER_NOTION", "WORKAROUND: User should manually copy Notion URL first:");
-                crate::utils::detailed_log("GRABBER_NOTION", "1. Click in Notion to focus the page");
-                crate::utils::detailed_log("GRABBER_NOTION", "2. Press Cmd+L to copy the page URL");
-                crate::utils::detailed_log("GRABBER_NOTION", "3. Then trigger the grabber");
-                crate::utils::detailed_log("GRABBER_NOTION", "");
-                crate::utils::detailed_log("GRABBER_NOTION", "=== NOTION URL CAPTURE END (FAILED - permissions) ===");
+                detailed_log("GRABBER_NOTION", "❌ PERMISSION ERROR: osascript not allowed to send keystrokes");
+                detailed_log("GRABBER_NOTION", "This is a known macOS limitation when running from popup_server");
+                detailed_log("GRABBER_NOTION", "");
+                detailed_log("GRABBER_NOTION", "WORKAROUND: User should manually copy Notion URL first:");
+                detailed_log("GRABBER_NOTION", "1. Click in Notion to focus the page");
+                detailed_log("GRABBER_NOTION", "2. Press Cmd+L to copy the page URL");
+                detailed_log("GRABBER_NOTION", "3. Then trigger the grabber");
+                detailed_log("GRABBER_NOTION", "");
+                detailed_log("GRABBER_NOTION", "=== NOTION URL CAPTURE END (FAILED - permissions) ===");
                 
                 // Show user-friendly message
-                crate::utils::detailed_log("GRABBER", "⚠️ Cannot send keystrokes from popup_server");
-                crate::utils::detailed_log("GRABBER", "Please copy Notion URL manually first (Cmd+L), then grab");
+                detailed_log("GRABBER", "⚠️ Cannot send keystrokes from popup_server");
+                detailed_log("GRABBER", "Please copy Notion URL manually first (Cmd+L), then grab");
             }
         }
         
         if output.status.success() {
-            crate::utils::detailed_log("GRABBER_NOTION", &format!("AppleScript returned: '{}'", stdout));
+            detailed_log("GRABBER_NOTION", &format!("AppleScript returned: '{}'", stdout));
             
             if stdout.starts_with("https://www.notion.so/") {
-                crate::utils::detailed_log("GRABBER_NOTION", &format!("✅ SUCCESS: Got Notion URL: {}", stdout));
-                crate::utils::detailed_log("GRABBER_NOTION", "=== NOTION URL CAPTURE END (SUCCESS) ===");
+                detailed_log("GRABBER_NOTION", &format!("✅ SUCCESS: Got Notion URL: {}", stdout));
+                detailed_log("GRABBER_NOTION", "=== NOTION URL CAPTURE END (SUCCESS) ===");
                 return Some(stdout);
             } else if stdout == "EMPTY" {
-                crate::utils::detailed_log("GRABBER_NOTION", "❌ FAILED: Clipboard empty after Cmd+L");
-                crate::utils::detailed_log("GRABBER_NOTION", "Possible causes: permissions issue or not on a Notion page");
+                detailed_log("GRABBER_NOTION", "❌ FAILED: Clipboard empty after Cmd+L");
+                detailed_log("GRABBER_NOTION", "Possible causes: permissions issue or not on a Notion page");
             } else if stdout.starts_with("NOT_NOTION:") {
                 let content = &stdout[11..];
-                crate::utils::detailed_log("GRABBER", &format!("Cmd+L copied non-Notion content: '{}'", 
+                detailed_log("GRABBER", &format!("Cmd+L copied non-Notion content: '{}'", 
                     if content.len() > 50 { 
                         format!("{}...", &content[..50]) 
                     } else { 
@@ -449,18 +450,18 @@ fn get_notion_url() -> Option<String> {
                     }
                 ));
             } else if stdout.starts_with("ERROR:") {
-                crate::utils::detailed_log("GRABBER", &format!("AppleScript error: {}", &stdout[6..]));
+                detailed_log("GRABBER", &format!("AppleScript error: {}", &stdout[6..]));
             }
         } else {
-            crate::utils::detailed_log("GRABBER", "osascript command failed");
+            detailed_log("GRABBER", "osascript command failed");
         }
     } else {
-        crate::utils::detailed_log("GRABBER", "Failed to execute osascript");
+        detailed_log("GRABBER", "Failed to execute osascript");
     }
     
-    crate::utils::detailed_log("GRABBER_NOTION", "Step 3: Fallback - user needs to copy URL manually");
-    crate::utils::detailed_log("GRABBER", "📋 Please copy Notion URL first (Cmd+L), then grab again");
-    crate::utils::detailed_log("GRABBER_NOTION", "=== NOTION URL CAPTURE END (FAILED - manual copy needed) ===");
+    detailed_log("GRABBER_NOTION", "Step 3: Fallback - user needs to copy URL manually");
+    detailed_log("GRABBER", "📋 Please copy Notion URL first (Cmd+L), then grab again");
+    detailed_log("GRABBER_NOTION", "=== NOTION URL CAPTURE END (FAILED - manual copy needed) ===");
     None
 }
 
@@ -530,26 +531,26 @@ fn get_finder_info() -> Option<serde_json::Value> {
     {
         if output.status.success() {
             let result = String::from_utf8_lossy(&output.stdout).trim().to_string();
-            crate::utils::detailed_log("GRABBER", &format!("Selection script result: '{}'", result));
+            detailed_log("GRABBER", &format!("Selection script result: '{}'", result));
             
             if !result.is_empty() && result != "--NO-SELECTION--" && !result.starts_with("--ERROR:") {
                 let parts: Vec<&str> = result.split('|').collect();
                 if parts.len() >= 2 {
-                    crate::utils::detailed_log("GRABBER", &format!("Found selection: '{}', isDirectory: '{}'", parts[0], parts[1]));
+                    detailed_log("GRABBER", &format!("Found selection: '{}', isDirectory: '{}'", parts[0], parts[1]));
                     finder_info["selection"] = serde_json::Value::String(parts[0].to_string());
                     finder_info["selectionIsDirectory"] = serde_json::Value::Bool(parts[1] == "true");
                 } else {
-                    crate::utils::detailed_log("GRABBER", &format!("Invalid selection result format: '{}'", result));
+                    detailed_log("GRABBER", &format!("Invalid selection result format: '{}'", result));
                 }
             } else {
-                crate::utils::detailed_log("GRABBER", &format!("No selection detected: '{}'", result));
+                detailed_log("GRABBER", &format!("No selection detected: '{}'", result));
             }
         } else {
             let stderr = String::from_utf8_lossy(&output.stderr);
-            crate::utils::detailed_log("GRABBER", &format!("Selection script failed: {}", stderr));
+            detailed_log("GRABBER", &format!("Selection script failed: {}", stderr));
         }
     } else {
-        crate::utils::detailed_log("GRABBER", "Failed to run selection script");
+        detailed_log("GRABBER", "Failed to run selection script");
     }
     
     // Return finder_info if we have any data
@@ -587,16 +588,16 @@ fn enrich_context(mut context: AppContext) -> AppContext {
     }
     
     // Add Finder path and selection info if applicable
-    crate::utils::detailed_log("GRABBER", &format!("Bundle ID: '{}', checking for Finder...", context.bundle_id));
+    detailed_log("GRABBER", &format!("Bundle ID: '{}', checking for Finder...", context.bundle_id));
     if context.bundle_id == "com.apple.finder" || context.bundle_id == "com.apple.Finder" {
-        crate::utils::detailed_log("GRABBER", "Enriching Finder context...");
+        detailed_log("GRABBER", "Enriching Finder context...");
         if let Some(finder_info) = get_finder_info() {
-            crate::utils::detailed_log("GRABBER", &format!("Got Finder info: {:?}", finder_info));
+            detailed_log("GRABBER", &format!("Got Finder info: {:?}", finder_info));
             // Merge the finder info into properties
             if let Some(obj) = finder_info.as_object() {
                 for (key, value) in obj {
                     context.properties[key] = value.clone();
-                    crate::utils::detailed_log("GRABBER", &format!("Added props.{}: {:?}", key, value));
+                    detailed_log("GRABBER", &format!("Added props.{}: {:?}", key, value));
                 }
                 
                 // Add recommended action based on the selected path
@@ -605,44 +606,44 @@ fn enrich_context(mut context: AppContext) -> AppContext {
                         let path = std::path::Path::new(path_str);
                         let recommended_action = get_action(path);
                         context.properties["recommendedAction"] = serde_json::Value::String(recommended_action.to_string());
-                        crate::utils::detailed_log("GRABBER", &format!("Added recommended action: {}", recommended_action));
+                        detailed_log("GRABBER", &format!("Added recommended action: {}", recommended_action));
                     }
                 }
             }
         } else {
-            crate::utils::detailed_log("GRABBER", "Failed to get Finder info");
+            detailed_log("GRABBER", "Failed to get Finder info");
         }
     }
     
     // Add Obsidian URL if applicable
     if context.bundle_id == "md.obsidian" {
-        crate::utils::detailed_log("GRABBER", "Enriching Obsidian context...");
+        detailed_log("GRABBER", "Enriching Obsidian context...");
         if let Some(url) = get_obsidian_url() {
-            crate::utils::detailed_log("GRABBER", &format!("Got Obsidian URL: {}", url));
+            detailed_log("GRABBER", &format!("Got Obsidian URL: {}", url));
             context.properties["url"] = serde_json::Value::String(url);
         } else {
-            crate::utils::detailed_log("GRABBER", "Failed to get Obsidian URL");
+            detailed_log("GRABBER", "Failed to get Obsidian URL");
         }
     }
     
     // Add Notion URL if applicable
     if context.bundle_id == "notion.id" {
-        crate::utils::detailed_log("GRABBER", "Bundle ID is notion.id - attempting to enrich with URL");
-        crate::utils::detailed_log("GRABBER", "Calling get_notion_url()...");
+        detailed_log("GRABBER", "Bundle ID is notion.id - attempting to enrich with URL");
+        detailed_log("GRABBER", "Calling get_notion_url()...");
         
         if let Some(url) = get_notion_url() {
-            crate::utils::detailed_log("GRABBER", &format!("✅ Got Notion URL: {}", url));
-            crate::utils::detailed_log("GRABBER", "Adding URL to context.properties");
+            detailed_log("GRABBER", &format!("✅ Got Notion URL: {}", url));
+            detailed_log("GRABBER", "Adding URL to context.properties");
             context.properties["url"] = serde_json::Value::String(url.clone());
-            crate::utils::detailed_log("GRABBER", &format!("Properties after adding URL: {:?}", context.properties));
+            detailed_log("GRABBER", &format!("Properties after adding URL: {:?}", context.properties));
         } else {
-            crate::utils::log("⚠️ WARNING: get_notion_url() returned None - URL capture failed!");
-            crate::utils::detailed_log("GRABBER", "❌ Failed to get Notion URL - properties['url'] will be empty");
-            crate::utils::detailed_log("GRABBER", &format!("Properties without URL: {:?}", context.properties));
+            log("⚠️ WARNING: get_notion_url() returned None - URL capture failed!");
+            detailed_log("GRABBER", "❌ Failed to get Notion URL - properties['url'] will be empty");
+            detailed_log("GRABBER", &format!("Properties without URL: {:?}", context.properties));
 
             // Add empty URL to properties so matcher can still match with empty string
             context.properties["url"] = serde_json::Value::String(String::new());
-            crate::utils::detailed_log("GRABBER", "Added empty string to properties['url'] so rule can still match");
+            detailed_log("GRABBER", "Added empty string to properties['url'] so rule can still match");
         }
     }
     
@@ -663,11 +664,11 @@ fn match_grabber_rules(
     config: &Config,
 ) -> Option<(String, Command)> {
     if rules.is_empty() {
-        crate::utils::detailed_log("GRABBER", "No grabber rules configured");
+        detailed_log("GRABBER", "No grabber rules configured");
         return None;
     }
     
-    crate::utils::detailed_log("GRABBER", &format!("Attempting {} grabber rules", rules.len()));
+    detailed_log("GRABBER", &format!("Attempting {} grabber rules", rules.len()));
     
     // Load patches data for patch inference
     let (sys_data, _) = crate::core::data::get_sys_data();
@@ -698,39 +699,39 @@ fn match_grabber_rules(
         
         // Try each rule
         for rule in rules.iter() {
-            crate::utils::detailed_log("GRABBER", &format!("Evaluating rule '{}': {}", rule.name, rule.matcher));
+            detailed_log("GRABBER", &format!("Evaluating rule '{}': {}", rule.name, rule.matcher));
             
             match ctx.eval::<Value, _>(rule.matcher.as_bytes()) {
                 Ok(value) => {
                     // Check what type of value was returned
                     if value.is_null() || value.is_undefined() {
                         // Rule didn't match, continue to next rule
-                        crate::utils::detailed_log("GRABBER", &format!("  Rule '{}' returned null/undefined - no match", rule.name));
+                        detailed_log("GRABBER", &format!("  Rule '{}' returned null/undefined - no match", rule.name));
                     } else if let Some(str_ref) = value.as_string() {
                         // String return - use current behavior
                         if let Ok(arg) = str_ref.to_string() {
-                            crate::utils::detailed_log("GRABBER_MATCH", &format!("====== RULE MATCH: '{}' ======", rule.name));
-                            crate::utils::detailed_log("GRABBER_MATCH", &format!("Matched argument: '{}'", arg));
-                            crate::utils::detailed_log("GRABBER_MATCH", &format!("Argument length: {}", arg.len()));
-                            crate::utils::detailed_log("GRABBER_MATCH", &format!("Rule action: '{}'", rule.action));
-                            crate::utils::detailed_log("GRABBER_MATCH", &format!("Rule patch: '{:?}'", rule.patch));
+                            detailed_log("GRABBER_MATCH", &format!("====== RULE MATCH: '{}' ======", rule.name));
+                            detailed_log("GRABBER_MATCH", &format!("Matched argument: '{}'", arg));
+                            detailed_log("GRABBER_MATCH", &format!("Argument length: {}", arg.len()));
+                            detailed_log("GRABBER_MATCH", &format!("Rule action: '{}'", rule.action));
+                            detailed_log("GRABBER_MATCH", &format!("Rule patch: '{:?}'", rule.patch));
 
                             // CRITICAL WARNING for empty Notion URLs
                             if rule.name == "Notion Page" && arg.is_empty() {
-                                crate::utils::log("⚠️ WARNING: Notion Page matched but URL is EMPTY!");
-                                crate::utils::log("⚠️ This means get_notion_url() failed to capture the URL.");
-                                crate::utils::log("⚠️ Check the logs above for GRABBER_NOTION details.");
-                                crate::utils::log("⚠️ Common causes:");
-                                crate::utils::log("⚠️   1. Accessibility permissions not granted");
-                                crate::utils::log("⚠️   2. Not on a Notion page (on home/settings instead)");
-                                crate::utils::log("⚠️   3. Cmd+L shortcut not working in current Notion version");
-                                crate::utils::log("⚠️ WORKAROUND: Copy URL manually with Cmd+L before grabbing");
+                                log("⚠️ WARNING: Notion Page matched but URL is EMPTY!");
+                                log("⚠️ This means get_notion_url() failed to capture the URL.");
+                                log("⚠️ Check the logs above for GRABBER_NOTION details.");
+                                log("⚠️ Common causes:");
+                                log("⚠️   1. Accessibility permissions not granted");
+                                log("⚠️   2. Not on a Notion page (on home/settings instead)");
+                                log("⚠️   3. Cmd+L shortcut not working in current Notion version");
+                                log("⚠️ WORKAROUND: Copy URL manually with Cmd+L before grabbing");
                             }
 
                             // Apply suffix mapping to the argument
                             let (_, detected_suffix) = apply_suffix_mapping(&arg, config);
                             if let Some(ref suffix) = detected_suffix {
-                                crate::utils::detailed_log("GRABBER_MATCH", &format!("Detected suffix '{}' for arg '{}'", suffix, arg));
+                                detailed_log("GRABBER_MATCH", &format!("Detected suffix '{}' for arg '{}'", suffix, arg));
                             }
 
                             // Rule matched and returned a string argument
@@ -745,19 +746,19 @@ fn match_grabber_rules(
                                 file_size: None,
                             };
                             
-                            crate::utils::detailed_log("GRABBER_MATCH", &format!("Created command: action='{}', arg='{}'", command.action, command.arg));
+                            detailed_log("GRABBER_MATCH", &format!("Created command: action='{}', arg='{}'", command.action, command.arg));
                             
                             // Apply patch inference if no explicit patch was set
                             if command.patch.is_empty() {
                                 // First try to get default patch for action type
                                 if let Some(default_patch) = crate::execute::get_default_patch_for_action(&command.action) {
-                                    crate::utils::detailed_log("GRABBER", &format!("Using default patch '{}' for action '{}'", default_patch, command.action));
+                                    detailed_log("GRABBER", &format!("Using default patch '{}' for action '{}'", default_patch, command.action));
                                     command.patch = default_patch.to_string();
                                 } else if let Some(inferred_patch) = crate::core::inference::infer_patch_unified(&command, patches, &folder_map) {
-                                    crate::utils::detailed_log("GRABBER", &format!("Inferred patch '{}' for grabbed command", inferred_patch));
+                                    detailed_log("GRABBER", &format!("Inferred patch '{}' for grabbed command", inferred_patch));
                                     command.patch = inferred_patch;
                                 } else {
-                                    crate::utils::detailed_log("GRABBER", "No patch could be inferred for grabbed command");
+                                    detailed_log("GRABBER", "No patch could be inferred for grabbed command");
                                 }
                             }
                             
@@ -765,7 +766,7 @@ fn match_grabber_rules(
                         }
                     } else if let Some(obj) = value.as_object() {
                         // Object return - extract command fields
-                        crate::utils::detailed_log("GRABBER", &format!("Matched rule '{}' with object", rule.name));
+                        detailed_log("GRABBER", &format!("Matched rule '{}' with object", rule.name));
                         
                         // Extract action, arg, and group from the object
                         let action = obj.get::<_, String>("action").ok()
@@ -777,12 +778,12 @@ fn match_grabber_rules(
                             .unwrap_or_default();
                         
                         if let Some(action) = action {
-                            crate::utils::detailed_log("GRABBER", &format!("  action: '{}', arg: '{}', patch: '{}'", action, arg, group));
+                            detailed_log("GRABBER", &format!("  action: '{}', arg: '{}', patch: '{}'", action, arg, group));
 
                             // Apply suffix mapping to the argument
                             let (_, detected_suffix) = apply_suffix_mapping(&arg, config);
                             if let Some(ref suffix) = detected_suffix {
-                                crate::utils::detailed_log("GRABBER_MATCH", &format!("Detected suffix '{}' for arg '{}'", suffix, arg));
+                                detailed_log("GRABBER_MATCH", &format!("Detected suffix '{}' for arg '{}'", suffix, arg));
                             }
 
                             let mut command = Command {
@@ -800,46 +801,46 @@ fn match_grabber_rules(
                             if command.patch.is_empty() {
                                 // First try to get default patch for action type
                                 if let Some(default_patch) = get_default_patch_for_action(&command.action) {
-                                    crate::utils::detailed_log("GRABBER", &format!("Using default patch '{}' for action '{}'", default_patch, command.action));
+                                    detailed_log("GRABBER", &format!("Using default patch '{}' for action '{}'", default_patch, command.action));
                                     command.patch = default_patch.to_string();
                                 } else if let Some(inferred_patch) = crate::core::inference::infer_patch_unified(&command, patches, &folder_map) {
-                                    crate::utils::detailed_log("GRABBER", &format!("Inferred patch '{}' for grabbed command", inferred_patch));
+                                    detailed_log("GRABBER", &format!("Inferred patch '{}' for grabbed command", inferred_patch));
                                     command.patch = inferred_patch;
                                 } else {
-                                    crate::utils::detailed_log("GRABBER", "No patch could be inferred for grabbed command");
+                                    detailed_log("GRABBER", "No patch could be inferred for grabbed command");
                                 }
                             }
                             
                             return Some((rule.name.clone(), command));
                         } else {
-                            crate::utils::detailed_log("GRABBER", "  Error: object missing 'action' field");
+                            detailed_log("GRABBER", "  Error: object missing 'action' field");
                         }
                     }
                     // Other return types (bool, number) are treated as no match
                 }
                 Err(e) => {
                     // Log JavaScript errors for debugging
-                    crate::utils::detailed_log("GRABBER", &format!("Rule '{}' error: {:?}", rule.name, e));
+                    detailed_log("GRABBER", &format!("Rule '{}' error: {:?}", rule.name, e));
                 }
             }
         }
         
-        crate::utils::detailed_log("GRABBER", "No rules matched");
+        detailed_log("GRABBER", "No rules matched");
         None
     })
 }
 
 /// Output the captured application context (always shown)
 fn output_grabber_context_summary(context: &AppContext) {
-    crate::utils::detailed_log("GRABBER", "=== CAPTURED APPLICATION CONTEXT ===");
-    crate::utils::detailed_log("GRABBER", &format!("App: '{}'", context.app_name));
-    crate::utils::detailed_log("GRABBER", &format!("Bundle ID: '{}'", context.bundle_id));
-    crate::utils::detailed_log("GRABBER", &format!("App Path: '{}'", context.app_path));
-    crate::utils::detailed_log("GRABBER", &format!("Title: '{}'", context.window_title));
+    detailed_log("GRABBER", "=== CAPTURED APPLICATION CONTEXT ===");
+    detailed_log("GRABBER", &format!("App: '{}'", context.app_name));
+    detailed_log("GRABBER", &format!("Bundle ID: '{}'", context.bundle_id));
+    detailed_log("GRABBER", &format!("App Path: '{}'", context.app_path));
+    detailed_log("GRABBER", &format!("Title: '{}'", context.window_title));
     if let Some(props_obj) = context.properties.as_object() {
         if !props_obj.is_empty() {
             for (key, value) in props_obj {
-                crate::utils::detailed_log("GRABBER", &format!("props.{}: '{}'", key, value.as_str().unwrap_or("(complex value)")));
+                detailed_log("GRABBER", &format!("props.{}: '{}'", key, value.as_str().unwrap_or("(complex value)")));
             }
         }
     }
@@ -904,12 +905,12 @@ pub enum GrabResult {
 
 /// Main function for capturing and matching context (used by UI)
 pub fn grab(config: &Config) -> Result<GrabResult, String> {
-    crate::utils::detailed_log("GRAB", "grabber::grab() starting - capturing active app");
+    detailed_log("GRAB", "grabber::grab() starting - capturing active app");
     
     // Capture the active application context
     let capture_start = std::time::Instant::now();
     let context = capture_active_app()?;
-    crate::utils::detailed_log("GRAB", &format!("capture_active_app() completed in {}ms", capture_start.elapsed().as_millis()));
+    detailed_log("GRAB", &format!("capture_active_app() completed in {}ms", capture_start.elapsed().as_millis()));
     let context = enrich_context(context);
     
     // Always output the context summary first, regardless of rules
@@ -917,23 +918,23 @@ pub fn grab(config: &Config) -> Result<GrabResult, String> {
     
     // Always log the template dialog content so users can see it in logs
     let template_text = generate_rule_template_text(&context);
-    crate::utils::detailed_log("GRABBER", "");
-    crate::utils::detailed_log("GRABBER", "=== TEMPLATE INFORMATION (ALWAYS LOGGED) ===");
+    detailed_log("GRABBER", "");
+    detailed_log("GRABBER", "=== TEMPLATE INFORMATION (ALWAYS LOGGED) ===");
     for line in template_text.lines() {
-        crate::utils::detailed_log("GRABBER", line);
+        detailed_log("GRABBER", line);
     }
-    crate::utils::detailed_log("GRABBER", "");
+    detailed_log("GRABBER", "");
     
     // Try to match against rules if they exist
     if let Some(rules_vec) = config.grabber_rules.as_ref() {
         if let Some((rule_name, command)) = match_grabber_rules(&context, rules_vec, config) {
-            crate::utils::detailed_log("GRABBER", &format!("Opening command editor with matched rule: '{}'", rule_name));
+            detailed_log("GRABBER", &format!("Opening command editor with matched rule: '{}'", rule_name));
             return Ok(GrabResult::RuleMatched(rule_name, command));
         } else {
-            crate::utils::detailed_log("GRABBER", "No rules matched - using app fallback");
+            detailed_log("GRABBER", "No rules matched - using app fallback");
         }
     } else {
-        crate::utils::detailed_log("GRABBER", "No grabber rules configured - using app fallback");
+        detailed_log("GRABBER", "No grabber rules configured - using app fallback");
     }
 
     // TEMPORARILY DISABLED: fallback app command creation
@@ -957,7 +958,7 @@ pub fn grab(config: &Config) -> Result<GrabResult, String> {
             command.patch = default_patch.to_string();
         }
 
-        crate::utils::detailed_log("GRABBER", &format!("Created fallback app command with path: '{}'", context.app_path));
+        detailed_log("GRABBER", &format!("Created fallback app command with path: '{}'", context.app_path));
         return Ok(GrabResult::RuleMatched("App Fallback".to_string(), command));
     }
     */

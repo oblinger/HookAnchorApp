@@ -10,6 +10,7 @@ use std::collections::HashMap;
 // sync imports removed - moved to sys_data module
 use serde::{Deserialize, Serialize};
 use crate::core::data::config::Config;
+use crate::prelude::*;
 
 // =============================================================================
 // FORMAT VERSION
@@ -495,7 +496,7 @@ impl Command {
                 if let Ok(mut errors) = logged_errors.lock() {
                     if errors.insert(error_msg.clone()) {
                         // First time seeing this error, log it
-                        crate::utils::log_error(&error_msg);
+                        log_error(&error_msg);
                     }
                 }
 
@@ -657,7 +658,7 @@ fn infer_patch_from_file_path_with_exclusion(file_path: &str, patches: &HashMap<
         if let Some(file_stem) = path.file_stem() {
             if let Some(parent) = path.parent() {
                 if let Some(parent_name) = parent.file_name() {
-                    crate::utils::detailed_log("ANCHOR_INFERENCE", &format!(
+                    detailed_log("ANCHOR_INFERENCE", &format!(
                         "File {} is an anchor (stem '{}' matches folder '{}'). Looking for parent patch.",
                         file_path, file_stem.to_string_lossy(), parent_name.to_string_lossy()
                     ));
@@ -667,13 +668,13 @@ fn infer_patch_from_file_path_with_exclusion(file_path: &str, patches: &HashMap<
         // For anchors, walk up the hierarchy to find parent patch
         if let Some(parent) = path.parent() {
             if let Some(result) = infer_patch_from_hierarchy(parent, patches) {
-                crate::utils::detailed_log("ANCHOR_INFERENCE", &format!(
+                detailed_log("ANCHOR_INFERENCE", &format!(
                     "Found parent patch '{}' for anchor '{}'",
                     result, exclude_command
                 ));
                 return Some(result);
             }
-            crate::utils::detailed_log("ANCHOR_INFERENCE", &format!(
+            detailed_log("ANCHOR_INFERENCE", &format!(
                 "No parent patch found for anchor '{}', will check other methods",
                 exclude_command
             ));
@@ -937,7 +938,7 @@ fn build_folder_to_patch_map(commands: &[Command]) -> HashMap<PathBuf, String> {
                     // Map this folder to the anchor's command name (which becomes the patch for its contents)
                     folder_map.insert(canonical_folder, cmd.command.clone());
 
-                    crate::utils::detailed_log("PATCH_MAP", &format!(
+                    detailed_log("PATCH_MAP", &format!(
                         "Folder '{}' -> patch '{}' (using proper accessor)",
                         folder_path.display(), cmd.command
                     ));
@@ -966,7 +967,7 @@ fn infer_patch_simple(file_path: &str, folder_map: &HashMap<PathBuf, String>) ->
             if let Some(parent) = path.parent() {
                 if let Some(parent_name) = parent.file_name() {
                     // This is an anchor file - walk up to find its parent's patch
-                    crate::utils::log(&format!("  📁 Found anchor file: {} in folder {}", 
+                    log(&format!("  📁 Found anchor file: {} in folder {}", 
                         file_stem.to_string_lossy(), parent_name.to_string_lossy()));
                 }
             }
@@ -980,7 +981,7 @@ fn infer_patch_simple(file_path: &str, folder_map: &HashMap<PathBuf, String>) ->
                     if let Ok(canonical) = current.canonicalize() {
                         if let Some(patch) = folder_map.get(&canonical) {
                             let file_display = path.file_stem().map(|s| s.to_string_lossy()).unwrap_or_default();
-                            crate::utils::log(&format!("  📍 Anchor '{}' -> parent folder '{}' -> patch '{}'",
+                            log(&format!("  📍 Anchor '{}' -> parent folder '{}' -> patch '{}'",
                                 file_display, current.display(), patch));
                             return Some(patch.clone());
                         }
@@ -1004,7 +1005,7 @@ fn infer_patch_simple(file_path: &str, folder_map: &HashMap<PathBuf, String>) ->
         if let Ok(canonical) = current.canonicalize() {
             // Check if this directory has a patch mapping
             if let Some(patch) = folder_map.get(&canonical) {
-                crate::utils::log(&format!(
+                log(&format!(
                     "  📂 File '{}' -> folder '{}' -> patch '{}'",
                     file_path, current.display(), patch
                 ));
@@ -1039,16 +1040,16 @@ pub fn run_patch_inference(
     let mut patches_assigned = 0;
     let mut new_patches_to_add = Vec::new();
     
-    crate::utils::log(&format!("=== PATCH INFERENCE ==="));
-    crate::utils::log(&format!("Processing {} commands", commands.len()));
+    log(&format!("=== PATCH INFERENCE ==="));
+    log(&format!("Processing {} commands", commands.len()));
     
     // Build the folder → patch mapping from anchors
     let folder_map = build_folder_to_patch_map(commands);
-    crate::utils::log(&format!("Built folder map with {} entries", folder_map.len()));
+    log(&format!("Built folder map with {} entries", folder_map.len()));
 
     // Log the folder map entries (detailed logging to avoid spam)
     for (folder, patch) in &folder_map {
-        crate::utils::detailed_log("PATCH", &format!("Folder: {} -> Patch: {}", folder.display(), patch));
+        detailed_log("PATCH", &format!("Folder: {} -> Patch: {}", folder.display(), patch));
     }
 
     for command in commands.iter_mut() {
@@ -1060,7 +1061,7 @@ pub fn run_patch_inference(
         // Skip system-generated virtual anchor commands (empty action) - they should always keep their "orphans" patch
         // Real file-based anchors in orphans SHOULD be processed for inference
         if command.patch == "orphans" && command.is_anchor() && command.action.is_empty() && !command.flags.contains(FLAG_USER_EDITED) {
-            crate::utils::detailed_log("PATCH_INFERENCE", &format!(
+            detailed_log("PATCH_INFERENCE", &format!(
                 "Command '{}' -> SKIPPED (virtual anchor in orphans)",
                 command.command
             ));
@@ -1074,20 +1075,20 @@ pub fn run_patch_inference(
             || !command.has_patch();
 
         if should_process {
-            crate::utils::detailed_log("PATCH_INFERENCE_DETAIL", &format!(
+            detailed_log("PATCH_INFERENCE_DETAIL", &format!(
                 "Processing command '{}' (path_based={}, arg='{}', has_patch={})",
                 command.command, command.is_path_based(), command.arg, command.has_patch()
             ));
 
             // LEGACY PATCH INFERENCE - replaced with unified algorithm
             // let inferred_patch = if command.is_path_based() && !command.arg.is_empty() {
-            //     crate::utils::detailed_log("PATCH_INFERENCE_DETAIL", &format!(
+            //     detailed_log("PATCH_INFERENCE_DETAIL", &format!(
             //         "  Using infer_patch_simple with arg '{}'",
             //         command.arg
             //     ));
             //     infer_patch_simple(&command.arg, &folder_map)
             // } else {
-            //     crate::utils::detailed_log("PATCH_INFERENCE_DETAIL",
+            //     detailed_log("PATCH_INFERENCE_DETAIL",
             //         "  Using infer_patch (legacy inference)");
             //     // Fall back to old inference for non-path commands
             //     infer_patch(command, patches)
@@ -1104,7 +1105,7 @@ pub fn run_patch_inference(
                 
                 // CRITICAL: Check for self-reference (cycle prevention)
                 if command.is_anchor() && inferred_patch.to_lowercase() == command.command.to_lowercase() {
-                    crate::utils::log(&format!("  ❌ CYCLE PREVENTED: Anchor '{}' cannot have itself as patch '{}'", 
+                    log(&format!("  ❌ CYCLE PREVENTED: Anchor '{}' cannot have itself as patch '{}'", 
                         command.command, inferred_patch));
                     continue;
                 }
@@ -1113,7 +1114,7 @@ pub fn run_patch_inference(
                 if !command.patch.is_empty() {
                     if is_patch_degradation(&command.patch, &inferred_patch) {
                         // Skip this change - would degrade patch quality
-                        crate::utils::detailed_log("PATCH_INFERENCE", &format!(
+                        detailed_log("PATCH_INFERENCE", &format!(
                             "Command '{}' -> REJECTED degradation from '{}' to '{}'",
                             command.command, command.patch, inferred_patch
                         ));
@@ -1128,16 +1129,16 @@ pub fn run_patch_inference(
                 if apply_changes {
                     // Debug: Log when we're about to assign a patch
                     if inferred_patch.is_empty() {
-                        crate::utils::log(&format!("  ⚠️ WARNING: About to assign EMPTY patch to command '{}' (was: '{}')",
+                        log(&format!("  ⚠️ WARNING: About to assign EMPTY patch to command '{}' (was: '{}')",
                             command.command, old_patch_display));
                     }
                     command.patch = inferred_patch.clone();
-                    crate::utils::detailed_log("PATCH_INFERENCE", &format!("Inferred patch for '{}': {} -> {}",
+                    detailed_log("PATCH_INFERENCE", &format!("Inferred patch for '{}': {} -> {}",
                         command.command, old_patch_display, inferred_patch));
                 }
 
                 if print_to_stdout {
-                    crate::utils::detailed_log("PATCH_INFERENCE", &format!("{}: {} -> {}", command.command, old_patch_display, inferred_patch));
+                    detailed_log("PATCH_INFERENCE", &format!("{}: {} -> {}", command.command, old_patch_display, inferred_patch));
                 }
 
                 patches_assigned += 1;
@@ -1152,14 +1153,14 @@ pub fn run_patch_inference(
     }
     
     // Log final state of anchors for debugging
-    crate::utils::log(&format!("\n=== FINAL ANCHOR STATES ==="));
+    log(&format!("\n=== FINAL ANCHOR STATES ==="));
     for cmd in commands.iter().filter(|c| c.is_anchor()) {
         if cmd.command.to_lowercase() == "lrn" || cmd.arg.contains("Lrn") {
-            crate::utils::log(&format!("  Anchor '{}': patch='{}', arg='{}'", 
+            log(&format!("  Anchor '{}': patch='{}', arg='{}'", 
                 cmd.command, cmd.patch, cmd.arg));
         }
     }
-    crate::utils::log(&format!("=== END INFERENCE ===\n"));
+    log(&format!("=== END INFERENCE ===\n"));
     
     (patches_assigned, new_patches_to_add)
 }
@@ -1217,7 +1218,7 @@ pub(crate) fn normalize_patch_case(commands: &mut [Command], patches: &HashMap<S
                     // Don't shorten longer patch names to shorter anchor names
                     // This prevents "2023 SV Patents" from being normalized to "2023"
                     if command.patch != proper_case && command.patch.to_lowercase() == proper_case.to_lowercase() {
-                        crate::utils::detailed_log("AUTO_NORMALIZE", &format!("Normalized patch case for '{}': '{}' -> '{}'", 
+                        detailed_log("AUTO_NORMALIZE", &format!("Normalized patch case for '{}': '{}' -> '{}'", 
                             command.command, command.patch, proper_case));
                         command.patch = proper_case;
                         command.update_full_line();
@@ -1265,7 +1266,7 @@ fn create_virtual_anchor_for_patch(patch_name: &str, _config: &Config, patches: 
     // Infer parent patch by finding longest matching prefix
     let parent_patch = infer_parent_patch_from_name(patch_name, patches);
 
-    crate::utils::detailed_log("VIRTUAL_ANCHOR", &format!(
+    detailed_log("VIRTUAL_ANCHOR", &format!(
         "Creating virtual anchor for '{}' with parent '{}'",
         patch_name, parent_patch
     ));
@@ -1301,7 +1302,7 @@ fn infer_parent_patch_from_name(patch_name: &str, patches: &HashMap<String, Patc
 
         // Also try with original separators
         if patches.contains_key(&prefix_lower) {
-            crate::utils::detailed_log("PARENT_INFERENCE", &format!(
+            detailed_log("PARENT_INFERENCE", &format!(
                 "Found parent '{}' for patch '{}'", prefix, patch_name
             ));
             return prefix;
@@ -1311,7 +1312,7 @@ fn infer_parent_patch_from_name(patch_name: &str, patches: &HashMap<String, Patc
         let prefix_dash = parts[..len].join("-");
         let prefix_dash_lower = prefix_dash.to_lowercase();
         if patches.contains_key(&prefix_dash_lower) {
-            crate::utils::detailed_log("PARENT_INFERENCE", &format!(
+            detailed_log("PARENT_INFERENCE", &format!(
                 "Found parent '{}' for patch '{}'", prefix_dash, patch_name
             ));
             return prefix_dash;
@@ -1319,7 +1320,7 @@ fn infer_parent_patch_from_name(patch_name: &str, patches: &HashMap<String, Patc
     }
 
     // No parent found - use orphans
-    crate::utils::detailed_log("PARENT_INFERENCE", &format!(
+    detailed_log("PARENT_INFERENCE", &format!(
         "No parent found for patch '{}' - using orphans", patch_name
     ));
     "orphans".to_string()
@@ -1490,7 +1491,7 @@ pub fn parse_command_line(line: &str) -> Result<Command, String> {
         
         // Debug: Log when we parse a command with an empty patch where we might expect one
         if group.is_empty() && line.contains('!') {
-            crate::utils::detailed_log("EMPTY_PATCH_BUG", &format!("WARNING: Parsed command with empty patch despite '!' in line: '{}'", line));
+            detailed_log("EMPTY_PATCH_BUG", &format!("WARNING: Parsed command with empty patch despite '!' in line: '{}'", line));
         }
         
         return Ok(Command {
@@ -1527,11 +1528,11 @@ fn deduplicate_commands(commands: Vec<Command>) -> Vec<Command> {
             Some(existing) => {
                 // Keep the better command based on priority
                 if is_better_command(&command, existing) {
-                    crate::utils::detailed_log("AUTO_DEDUP", &format!("Replacing '{}' (patch:'{}' flags:'{}') with better version (patch:'{}' flags:'{}')",
+                    detailed_log("AUTO_DEDUP", &format!("Replacing '{}' (patch:'{}' flags:'{}') with better version (patch:'{}' flags:'{}')",
                         command.command, existing.patch, existing.flags, command.patch, command.flags));
                     best_commands.insert(key, command);
                 } else {
-                    crate::utils::detailed_log("AUTO_DEDUP", &format!("Keeping existing '{}' (patch:'{}' flags:'{}') over (patch:'{}' flags:'{}')",
+                    detailed_log("AUTO_DEDUP", &format!("Keeping existing '{}' (patch:'{}' flags:'{}') over (patch:'{}' flags:'{}')",
                         command.command, existing.patch, existing.flags, command.patch, command.flags));
                 }
             }
@@ -1544,7 +1545,7 @@ fn deduplicate_commands(commands: Vec<Command>) -> Vec<Command> {
     let deduplicated_commands = best_commands.into_values().collect::<Vec<_>>();
     let removed_count = original_count - deduplicated_commands.len();
     if removed_count > 0 {
-        crate::utils::detailed_log("AUTO_DEDUP", &format!("Removed {} duplicate commands ({} -> {})", removed_count, original_count, deduplicated_commands.len()));
+        detailed_log("AUTO_DEDUP", &format!("Removed {} duplicate commands ({} -> {})", removed_count, original_count, deduplicated_commands.len()));
     }
     deduplicated_commands
 }
@@ -1624,7 +1625,7 @@ fn _old_save_implementation_removed(commands: &[Command]) -> Result<(), Box<dyn 
             // Only log as potential bug for actions that typically need patches
             let actions_that_need_patches = ["markdown", "doc", "cmd"];
             if actions_that_need_patches.contains(&cmd.action.as_str()) {
-                crate::utils::detailed_log("EMPTY_PATCH_BUG", &format!("Command with EMPTY patch during save: '{}' (action: {}, arg: {})", 
+                detailed_log("EMPTY_PATCH_BUG", &format!("Command with EMPTY patch during save: '{}' (action: {}, arg: {})", 
                     cmd.command, cmd.action, cmd.arg));
             }
         }
@@ -1638,15 +1639,15 @@ fn _old_save_implementation_removed(commands: &[Command]) -> Result<(), Box<dyn 
     // Updated for DOC commands: DOC scanning can legitimately add thousands of commands
     if updated_commands.len() > 10000 {
         let error_msg = format!("CORRUPTION DETECTED: Attempting to save {} commands (> 10000 limit). This indicates command inflation. Save operation CANCELLED.", updated_commands.len());
-        crate::utils::log_error(&error_msg);
-        crate::utils::detailed_log("CORRUPTION", &error_msg);
+        log_error(&error_msg);
+        detailed_log("CORRUPTION", &error_msg);
         return Err("Command count exceeds safety limit".into());
     }
     
     if empty_patch_count > 200 {
         let error_msg = format!("CORRUPTION DETECTED: Attempting to save {} commands with empty patches (> 200 limit). This indicates patch stripping. Save operation CANCELLED.", empty_patch_count);
-        crate::utils::log_error(&error_msg);
-        crate::utils::detailed_log("CORRUPTION", &error_msg);
+        log_error(&error_msg);
+        detailed_log("CORRUPTION", &error_msg);
         return Err("Empty patch count exceeds safety limit".into());
     }
     
@@ -1667,11 +1668,11 @@ fn _old_save_implementation_removed(commands: &[Command]) -> Result<(), Box<dyn 
     // Write with better error handling that includes the file path
     if let Err(e) = fs::write(&path, &contents) {
         let error_msg = format!("Cannot write to file '{}': {}", path.display(), e);
-        crate::utils::log_error(&error_msg);
+        log_error(&error_msg);
         return Err(error_msg.into());
     }
     
-    crate::utils::detailed_log("AUTO_SAVE", &format!("Saved {} commands to {}", commands.len(), path.display()));
+    detailed_log("AUTO_SAVE", &format!("Saved {} commands to {}", commands.len(), path.display()));
     Ok(())
 }
 
@@ -1698,7 +1699,7 @@ pub(crate) fn filter_commands_with_patch_support(commands: &[Command], search_te
             if cmd.patch.eq_ignore_ascii_case(search_text) {
                 // Perfect patch match - include this command even if name doesn't match
                 if debug && search_text.eq_ignore_ascii_case("ww") {
-                    crate::utils::detailed_log("COMMANDS", &format!("Found exact patch match: {} -> {}", cmd.patch, cmd.command));
+                    detailed_log("COMMANDS", &format!("Found exact patch match: {} -> {}", cmd.patch, cmd.command));
                 }
                 0
             } else if cmd.patch.contains('!') {
@@ -1779,7 +1780,7 @@ pub(crate) fn filter_commands_with_patch_support(commands: &[Command], search_te
         .map(|(score, cmd)| {
             // Debug logging for AT search results
             if search_text.eq_ignore_ascii_case("AT") && score <= 0 {
-                crate::utils::detailed_log("AT_RESULTS", &format!("Result with score {}: cmd={}, patch={}", score, cmd.command, cmd.patch));
+                detailed_log("AT_RESULTS", &format!("Result with score {}: cmd={}, patch={}", score, cmd.command, cmd.patch));
             }
             cmd.clone()
         })
@@ -1787,7 +1788,7 @@ pub(crate) fn filter_commands_with_patch_support(commands: &[Command], search_te
     
     // Log if At command is missing from results
     if search_text.eq_ignore_ascii_case("AT") && !results.iter().any(|c| c.command.eq_ignore_ascii_case("At")) {
-        crate::utils::detailed_log("AT_MISSING", "At command not in final results!");
+        detailed_log("AT_MISSING", "At command not in final results!");
     }
     
     results
@@ -1837,7 +1838,7 @@ pub fn filter_commands(commands: &[Command], search_text: &str, max_results: usi
         if match_result >= 0 {
             // Debug logging for AT command specifically
             if search_text.eq_ignore_ascii_case("AT") && cmd.command.eq_ignore_ascii_case("At") {
-                crate::utils::detailed_log("AT_MATCH", &format!("Adding At command with score {}: cmd='{}', patch='{}', action='{}'", match_result, cmd.command, cmd.patch, cmd.action));
+                detailed_log("AT_MATCH", &format!("Adding At command with score {}: cmd='{}', patch='{}', action='{}'", match_result, cmd.command, cmd.patch, cmd.action));
             }
             matched_commands.push((match_result, cmd));
         }

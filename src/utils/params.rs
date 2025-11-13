@@ -1,4 +1,5 @@
 use std::collections::HashMap;
+use crate::prelude::*;
 
 /// Parse key-value pairs from a string using := separator
 /// Handles backslash escaping for literal := in values
@@ -56,7 +57,7 @@ pub fn parse_kv_pairs(input: &str) -> HashMap<String, String> {
                     // Stay in value mode (in_value remains true)
                 } else {
                     // No space found - malformed input, treat whole thing as value
-                    crate::utils::detailed_log("PARSE_KV", &format!(
+                    detailed_log("PARSE_KV", &format!(
                         "Warning: No space before next key in KV pairs. Key='{}', Value='{}'",
                         current_key, current_value
                     ));

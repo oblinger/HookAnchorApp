@@ -13,6 +13,7 @@
 
 use std::collections::HashMap;
 use crate::core::{Patch, get_patch, get_patch_path};
+use crate::prelude::*;
 
 /// State for the anchor tree navigator widget
 pub struct AnchorTreeNavigator {
@@ -185,21 +186,21 @@ impl AnchorTreeNavigator {
                     // Orphans root shows:
                     // 1. All patches whose parent is "orphans"
                     // 2. All patches with NO parent (top-level root patches)
-                    crate::utils::detailed_log("TREE_DEBUG_SIDEBAR", &format!("Looking for children of orphans (total patches: {})", patches.len()));
+                    detailed_log("TREE_DEBUG_SIDEBAR", &format!("Looking for children of orphans (total patches: {})", patches.len()));
                     let mut root_patches = Vec::new();
                     for (_, patch) in patches {
                         if let Some(parent) = patch.parent_patch_name() {
-                            crate::utils::detailed_log("TREE_DEBUG_SIDEBAR", &format!("  Patch '{}' has parent '{}'", patch.name, parent));
+                            detailed_log("TREE_DEBUG_SIDEBAR", &format!("  Patch '{}' has parent '{}'", patch.name, parent));
                             if parent.to_lowercase() == "orphans" {
                                 root_patches.push(patch.name.clone());
                             }
                         } else {
                             // No parent - this is a root patch, goes under orphans
-                            crate::utils::detailed_log("TREE_DEBUG_SIDEBAR", &format!("  Patch '{}' has NO parent - adding to orphans", patch.name));
+                            detailed_log("TREE_DEBUG_SIDEBAR", &format!("  Patch '{}' has NO parent - adding to orphans", patch.name));
                             root_patches.push(patch.name.clone());
                         }
                     }
-                    crate::utils::detailed_log("TREE_DEBUG_SIDEBAR", &format!("Found {} root patches under orphans", root_patches.len()));
+                    detailed_log("TREE_DEBUG_SIDEBAR", &format!("Found {} root patches under orphans", root_patches.len()));
                     root_patches.sort_by(|a, b| a.to_lowercase().cmp(&b.to_lowercase()));
                     root_patches
                 } else if let Some(patch) = get_patch(breadcrumb, patches) {
@@ -284,20 +285,20 @@ impl AnchorTreeNavigator {
             // 1. All patches whose parent is "orphans"
             // 2. All patches with NO parent (top-level root patches)
             let mut root_patches = Vec::new();
-            crate::utils::log(&format!("TREE_DEBUG: Looking for children of orphans (total patches: {})", patches.len()));
+            log(&format!("TREE_DEBUG: Looking for children of orphans (total patches: {})", patches.len()));
             for (_, patch) in patches {
                 if let Some(parent) = patch.parent_patch_name() {
-                    crate::utils::log(&format!("TREE_DEBUG:   Patch '{}' has parent '{}'", patch.name, parent));
+                    log(&format!("TREE_DEBUG:   Patch '{}' has parent '{}'", patch.name, parent));
                     if parent.to_lowercase() == "orphans" {
                         root_patches.push(patch.name.clone());
                     }
                 } else {
                     // No parent - this is a root patch, goes under orphans
-                    crate::utils::log(&format!("TREE_DEBUG:   Patch '{}' has NO parent - adding to orphans", patch.name));
+                    log(&format!("TREE_DEBUG:   Patch '{}' has NO parent - adding to orphans", patch.name));
                     root_patches.push(patch.name.clone());
                 }
             }
-            crate::utils::log(&format!("TREE_DEBUG: Found {} root patches under orphans", root_patches.len()));
+            log(&format!("TREE_DEBUG: Found {} root patches under orphans", root_patches.len()));
             root_patches.sort_by(|a, b| a.to_lowercase().cmp(&b.to_lowercase()));
             root_patches
         } else if let Some(patch) = get_patch(node_name, patches) {

@@ -9,7 +9,7 @@ use serde::{Deserialize, Serialize};
 use serde_json::Value as JsonValue;
 use crate::core::Command;
 use crate::core::key_processing::Keystroke;
-use crate::utils::detailed_log;
+use crate::prelude::*;
 
 /// A unified action that can be invoked via keyboard, command, or other actions
 /// This is now simply a HashMap with accessor methods for common fields
@@ -240,9 +240,9 @@ pub(super) fn execute_locally(
     let action_flags = action.get_string("flags").unwrap_or("");
     
     // Log main action line with separator for easy visibility
-    crate::utils::log("════════════════════════════════════════════════════════════════════════════════");
+    log("════════════════════════════════════════════════════════════════════════════════");
     let main_log = format!("ACTION:{}  TYPE:{}  FLAGS:{}  ARG:{}", action_name, action_type, action_flags, action_arg);
-    crate::utils::log(&main_log);
+    log(&main_log);
     
     // Log detailed action info (only to detailed log)
     let mut details = format!("ACTION DETAILS  FLAGS:{}", action_flags);
@@ -259,7 +259,7 @@ pub(super) fn execute_locally(
             details.push_str(&format!(", {}:{}", key, value_str));
         }
     }
-    crate::utils::detailed_log("ACTION", &details);
+    detailed_log("ACTION", &details);
     
     // Merge all parameters into a single HashMap
     let mut params = HashMap::new();
@@ -295,7 +295,7 @@ pub(super) fn execute_locally(
         // Virtual anchors - non-executable
         "noop" | "" if params.get("arg").map(|s| s.is_empty()).unwrap_or(true) => {
             // Virtual anchor with blank action and blank arg - do nothing
-            crate::utils::detailed_log("EXECUTE", "Virtual anchor - not executing");
+            detailed_log("EXECUTE", "Virtual anchor - not executing");
             Ok("Virtual anchor (not executable)".to_string())
         }
 
@@ -401,31 +401,31 @@ fn execute_open_url_action(
     
     let browser = params.get("browser");
     
-    crate::utils::log(&format!("OPEN_URL_ACTION: url='{}', browser={:?}", url, browser));
+    log(&format!("OPEN_URL_ACTION: url='{}', browser={:?}", url, browser));
     detailed_log("ACTION", &format!("Opening URL: {} in browser: {:?}", url, browser));
     
     // Use the launcher system to open URL
     let result = if let Some(browser_name) = browser {
-        crate::utils::log(&format!("OPEN_URL_ACTION: Using browser: {}", browser_name));
+        log(&format!("OPEN_URL_ACTION: Using browser: {}", browser_name));
         detailed_log("ACTION", &format!("Calling open_with_app('{}', '{}')", browser_name, url));
         crate::utils::open_with_app(browser_name, url)
     } else {
-        crate::utils::log("OPEN_URL_ACTION: Using default browser");
+        log("OPEN_URL_ACTION: Using default browser");
         crate::utils::open_url(url)
     };
     
     // Handle NON_BLOCKING_SUCCESS as success
     match result {
         Ok(_) => {
-            crate::utils::log(&format!("OPEN_URL_ACTION: Success - opened {}", url));
+            log(&format!("OPEN_URL_ACTION: Success - opened {}", url));
             Ok(format!("Opened URL: {}", url))
         },
         Err(e) if e.to_string().contains("NON_BLOCKING_SUCCESS") => {
-            crate::utils::log(&format!("OPEN_URL_ACTION: NON_BLOCKING_SUCCESS - opened {}", url));
+            log(&format!("OPEN_URL_ACTION: NON_BLOCKING_SUCCESS - opened {}", url));
             Ok(format!("Opened URL: {}", url))
         }
         Err(e) => {
-            crate::utils::log_error(&format!("OPEN_URL_ACTION: Failed - {}", e));
+            log_error(&format!("OPEN_URL_ACTION: Failed - {}", e));
             Err(e.into())
         }
     }
@@ -443,23 +443,23 @@ fn execute_open_app_action(
     // Additional arguments if specified separately
     let args = params.get("args");
     
-    crate::utils::log(&format!("OPEN_APP: Attempting to launch app: '{}' with args: {:?}", app, args));
-    crate::utils::detailed_log("OPEN_APP", &format!("Full params: {:?}", params));
+    log(&format!("OPEN_APP: Attempting to launch app: '{}' with args: {:?}", app, args));
+    detailed_log("OPEN_APP", &format!("Full params: {:?}", params));
     
     let result = crate::utils::launch_app_with_arg(app, args.as_ref().map(|s| s.as_str()));
     
     // Handle NON_BLOCKING_SUCCESS as success
     match result {
         Ok(_) => {
-            crate::utils::detailed_log("OPEN_APP", &format!("OPEN_APP: Successfully launched: {}", app));
+            detailed_log("OPEN_APP", &format!("OPEN_APP: Successfully launched: {}", app));
             Ok(format!("Launched app: {}", app))
         },
         Err(e) if e.to_string().contains("NON_BLOCKING_SUCCESS") => {
-            crate::utils::log(&format!("OPEN_APP: Non-blocking launch successful: {}", app));
+            log(&format!("OPEN_APP: Non-blocking launch successful: {}", app));
             Ok(format!("Launched app: {}", app))
         }
         Err(e) => {
-            crate::utils::log_error(&format!("OPEN_APP: Failed to launch '{}': {}", app, e));
+            log_error(&format!("OPEN_APP: Failed to launch '{}': {}", app, e));
             Err(e.into())
         }
     }
@@ -566,7 +566,7 @@ fn execute_js_function_action(
     }
     if !extra_params.is_empty() {
         let param_msg = format!("   {}", extra_params.join(", "));
-        crate::utils::log(&param_msg);
+        log(&param_msg);
     }
     
     // Get parameters that will be passed to the JavaScript function

@@ -15,14 +15,8 @@
 //! - `crate::utils::fatal_error2(message)` - Show fatal error and terminate
 //! - `crate::utils::blocking_dialog(specs)` - Show blocking dialog (CLI only)
 
-pub use crate::utils::{
-    // OLD DIALOG SYSTEM - TO BE REMOVED
-    // Dialog functions (commented out - no longer exported)
-    // fatal_error,
-    // warning,
-    // dialog,
-
-    // Logging functions
+// Import logging functions directly from the logging module (not re-exported from utils)
+pub use crate::utils::logging::{
     log,
     log_error,
     detailed_log,

@@ -8,6 +8,7 @@ use std::path::{Path, PathBuf};
 use std::env;
 use crate::core::Command;
 use crate::core::commands::COMMANDS_FORMAT_VERSION;
+use crate::prelude::*;
 
 /// Returns the HookAnchor config directory path (~/.config/hookanchor/)
 ///
@@ -78,7 +79,7 @@ pub(in crate::core) fn load_commands_raw() -> Vec<Command> {
     let path = get_commands_file_path();
 
     if !path.exists() {
-        crate::utils::log_error(&format!("commands.txt not found at {:?}", path));
+        log_error(&format!("commands.txt not found at {:?}", path));
         return vec![];
     }
 
@@ -94,24 +95,24 @@ pub(in crate::core) fn load_commands_raw() -> Vec<Command> {
                     Ok(command) => {
                         // Debug: Log the first few commands to see if patches are being preserved
                         if line_num < 5 {
-                            crate::utils::detailed_log("PARSE_DEBUG", &format!("Parsed line {}: patch='{}', command='{}'",
+                            detailed_log("PARSE_DEBUG", &format!("Parsed line {}: patch='{}', command='{}'",
                                 line_num + 1, command.patch, command.command));
                         }
                         // Also log the Patents command specifically
                         if command.command == "Patents" {
-                            crate::utils::detailed_log("PARSE_DEBUG", &format!("Found Patents command: patch='{}', command='{}', action='{}'",
+                            detailed_log("PARSE_DEBUG", &format!("Found Patents command: patch='{}', command='{}', action='{}'",
                                 command.patch, command.command, command.action));
                         }
                         commands.push(command);
                     },
-                    Err(e) => crate::utils::log_error(&format!("Failed to parse line {} in commands.txt: {} - Line: '{}'",
+                    Err(e) => log_error(&format!("Failed to parse line {} in commands.txt: {} - Line: '{}'",
                         line_num + 1, e, line)),
                 }
             }
             commands
         }
         Err(e) => {
-            crate::utils::log_error(&format!("Error reading commands.txt: {}", e));
+            log_error(&format!("Error reading commands.txt: {}", e));
             vec![]
         }
     }
@@ -155,7 +156,7 @@ pub(in crate::core) fn save_commands_to_file(commands: &[Command]) -> Result<(),
             // Only log as potential bug for actions that typically need patches
             let actions_that_need_patches = ["markdown", "doc", "cmd"];
             if actions_that_need_patches.contains(&cmd.action.as_str()) {
-                crate::utils::detailed_log("EMPTY_PATCH_BUG", &format!("Command with EMPTY patch during save: '{}' (action: {}, arg: {})",
+                detailed_log("EMPTY_PATCH_BUG", &format!("Command with EMPTY patch during save: '{}' (action: {}, arg: {})",
                     cmd.command, cmd.action, cmd.arg));
             }
         }
@@ -164,15 +165,15 @@ pub(in crate::core) fn save_commands_to_file(commands: &[Command]) -> Result<(),
     // SAFETY CHECKS: Prevent saving corrupted data
     if updated_commands.len() > 10000 {
         let error_msg = format!("CORRUPTION DETECTED: Attempting to save {} commands (> 10000 limit). This indicates command inflation. Save operation CANCELLED.", updated_commands.len());
-        crate::utils::log_error(&error_msg);
-        crate::utils::detailed_log("CORRUPTION", &error_msg);
+        log_error(&error_msg);
+        detailed_log("CORRUPTION", &error_msg);
         return Err("Command count exceeds safety limit".into());
     }
 
     if empty_patch_count > 200 {
         let error_msg = format!("CORRUPTION DETECTED: Attempting to save {} commands with empty patches (> 200 limit). This indicates patch stripping. Save operation CANCELLED.", empty_patch_count);
-        crate::utils::log_error(&error_msg);
-        crate::utils::detailed_log("CORRUPTION", &error_msg);
+        log_error(&error_msg);
+        detailed_log("CORRUPTION", &error_msg);
         return Err("Empty patch count exceeds safety limit".into());
     }
 
@@ -193,11 +194,11 @@ pub(in crate::core) fn save_commands_to_file(commands: &[Command]) -> Result<(),
     // Write with better error handling that includes the file path
     if let Err(e) = fs::write(&path, &contents) {
         let error_msg = format!("Cannot write to file '{}': {}", path.display(), e);
-        crate::utils::log_error(&error_msg);
+        log_error(&error_msg);
         return Err(error_msg.into());
     }
 
-    crate::utils::detailed_log("AUTO_SAVE", &format!("Saved {} commands to {}", commands.len(), path.display()));
+    detailed_log("AUTO_SAVE", &format!("Saved {} commands to {}", commands.len(), path.display()));
     Ok(())
 }
 
@@ -224,7 +225,7 @@ pub(super) fn save_commands_to_cache(commands: &[Command]) -> Result<(), Box<dyn
 
     fs::write(&path, json)?;
 
-    crate::utils::detailed_log("CACHE_SAVE", &format!("Saved {} commands to cache", commands.len()));
+    detailed_log("CACHE_SAVE", &format!("Saved {} commands to cache", commands.len()));
     Ok(())
 }
 
@@ -234,7 +235,7 @@ pub(super) fn load_commands_from_cache() -> Option<Vec<Command>> {
     let path = get_commands_cache_path();
 
     if !path.exists() {
-        crate::utils::detailed_log("CACHE_LOAD", "Cache file does not exist");
+        detailed_log("CACHE_LOAD", "Cache file does not exist");
         return None;
     }
 
@@ -249,17 +250,17 @@ pub(super) fn load_commands_from_cache() -> Option<Vec<Command>> {
                             .filter(|c| c.is_alphabetic())
                             .collect();
                     }
-                    crate::utils::detailed_log("CACHE_LOAD", &format!("Loaded {} commands from cache", commands.len()));
+                    detailed_log("CACHE_LOAD", &format!("Loaded {} commands from cache", commands.len()));
                     Some(commands)
                 }
                 Err(e) => {
-                    crate::utils::log_error(&format!("Failed to parse commands cache: {}", e));
+                    log_error(&format!("Failed to parse commands cache: {}", e));
                     None
                 }
             }
         }
         Err(e) => {
-            crate::utils::log_error(&format!("Failed to read commands cache: {}", e));
+            log_error(&format!("Failed to read commands cache: {}", e));
             None
         }
     }
@@ -282,7 +283,7 @@ pub(super) fn delete_cache() -> Result<bool, String> {
     if cache_path.exists() {
         std::fs::remove_file(&cache_path)
             .map_err(|e| format!("Failed to delete command cache: {}", e))?;
-        crate::utils::log(&format!("Deleted command cache: {}", cache_path.display()));
+        log(&format!("Deleted command cache: {}", cache_path.display()));
         Ok(true)
     } else {
         Ok(false)
@@ -340,14 +341,14 @@ pub(super) fn deduplicate_commands(commands: Vec<Command>) -> Vec<Command> {
         if let Some(existing) = best_commands.get(&key) {
             // Decide which command to keep
             if should_replace_command(existing, &command) {
-                crate::utils::detailed_log("DEDUPE", &format!(
+                detailed_log("DEDUPE", &format!(
                     "Replacing '{}' (action:'{}' patch:'{}' flags:'{}' arg:'{}') with better version (patch:'{}' flags:'{}' arg:'{}')",
                     existing.command, existing.action, existing.patch, existing.flags, existing.arg,
                     command.patch, command.flags, command.arg
                 ));
                 best_commands.insert(key, command);
             } else {
-                crate::utils::detailed_log("DEDUPE", &format!(
+                detailed_log("DEDUPE", &format!(
                     "Keeping existing '{}' (action:'{}' patch:'{}' flags:'{}' arg:'{}') over duplicate (patch:'{}' flags:'{}' arg:'{}')",
                     existing.command, existing.action, existing.patch, existing.flags, existing.arg,
                     command.patch, command.flags, command.arg
@@ -379,7 +380,7 @@ pub(super) fn deduplicate_commands(commands: Vec<Command>) -> Vec<Command> {
                    !cmd.flags.contains('U') { // Not user-edited
                     let key = command_dedup_key(cmd);
                     to_remove.push(key.clone());
-                    crate::utils::detailed_log("DEDUPE", &format!(
+                    detailed_log("DEDUPE", &format!(
                         "Removing virtual orphan anchor '{}' (patch:'{}') because real anchor exists",
                         cmd.command, cmd.patch
                     ));
@@ -397,7 +398,7 @@ pub(super) fn deduplicate_commands(commands: Vec<Command>) -> Vec<Command> {
     let deduped_count = original_count - result.len();
 
     if deduped_count > 0 {
-        crate::utils::detailed_log("DEDUPE", &format!("Removed {} duplicate commands (same name + action + arg + virtual orphans)", deduped_count));
+        detailed_log("DEDUPE", &format!("Removed {} duplicate commands (same name + action + arg + virtual orphans)", deduped_count));
     }
 
     result

@@ -19,7 +19,7 @@ use std::process::Command;
 /// fatal_error(&format!("Cannot load config: {}", path));
 /// ```
 pub fn fatal_error(message: &str) -> ! {
-    crate::utils::log_error(&format!("FATAL: {}", message));
+    log_error(&format!("FATAL: {}", message));
 
     launch_dialog_blocking(&[
         "=Fatal Error",
@@ -40,7 +40,7 @@ pub fn fatal_error(message: &str) -> ! {
 /// warning(&format!("Using default value for invalid setting: {}", value));
 /// ```
 pub fn warning(message: &str) {
-    crate::utils::log(&format!("WARNING: {}", message));
+    log(&format!("WARNING: {}", message));
 
     launch_dialog_blocking(&[
         "=Warning",
@@ -77,7 +77,7 @@ fn launch_dialog_blocking(specs: &[&str]) -> HashMap<String, String> {
     let dialog_path = exe_dir.join("HookAnchorDialog");
 
     if !dialog_path.exists() {
-        crate::utils::log_error(&format!("Dialog binary not found: {:?}", dialog_path));
+        log_error(&format!("Dialog binary not found: {:?}", dialog_path));
 
         // Return default result
         let mut result = HashMap::new();
@@ -109,7 +109,7 @@ fn launch_dialog_blocking(specs: &[&str]) -> HashMap<String, String> {
             result
         }
         Err(e) => {
-            crate::utils::log_error(&format!("Failed to run dialog: {}", e));
+            log_error(&format!("Failed to run dialog: {}", e));
 
             // Return default result
             let mut result = HashMap::new();

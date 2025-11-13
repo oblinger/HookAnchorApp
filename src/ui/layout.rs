@@ -72,7 +72,7 @@ impl DisplayLayout {
         let max_rows = config.popup_settings.max_rows;
         let max_cols = config.popup_settings.max_columns;
 
-        crate::utils::detailed_log("LAYOUT", &format!("calculate_arrangement: commands.len()={}, max_rows={}, max_cols={}",
+        detailed_log("LAYOUT", &format!("calculate_arrangement: commands.len()={}, max_rows={}, max_cols={}",
             commands.len(), max_rows, max_cols));
 
         // ALWAYS use MultiColumn, even for small lists (cols=1)
@@ -80,7 +80,7 @@ impl DisplayLayout {
         let cols_to_use = cols_needed.min(max_cols).max(1); // At least 1 column
         let rows_per_col = (commands.len() + cols_to_use - 1) / cols_to_use;
 
-        crate::utils::detailed_log("LAYOUT", &format!("→ Using MultiColumn (rows={}, cols={})", rows_per_col, cols_to_use));
+        detailed_log("LAYOUT", &format!("→ Using MultiColumn (rows={}, cols={})", rows_per_col, cols_to_use));
 
         LayoutArrangement::MultiColumn {
             rows: rows_per_col,
@@ -236,7 +236,7 @@ impl Selection {
     
     /// Reset selection to first valid command
     pub fn reset(&mut self, layout: &DisplayLayout) {
-        crate::utils::detailed_log("SELECTION_RESET", &format!("Before reset - position={:?}, index={}",
+        detailed_log("SELECTION_RESET", &format!("Before reset - position={:?}, index={}",
             self.visual_position, self.command_index));
 
         self.visual_position = (0, 0);
@@ -252,7 +252,7 @@ impl Selection {
             }
         }
 
-        crate::utils::detailed_log("SELECTION_RESET", &format!("After reset - position={:?}, index={}",
+        detailed_log("SELECTION_RESET", &format!("After reset - position={:?}, index={}",
             self.visual_position, self.command_index));
     }
 }

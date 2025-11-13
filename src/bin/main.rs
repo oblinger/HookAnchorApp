@@ -4,6 +4,7 @@
 //! GUI mode (popup) or CLI mode (command-line processing).
 
 use std::env;
+use hookanchor::prelude::*;
 use hookanchor::core::ApplicationState;
 
 /// Main application entry point
@@ -65,14 +66,14 @@ fn main() -> Result<(), eframe::Error> {
                 // Sys data initialized successfully (config + cache loaded)
             }
             Err(init_error) => {
-                hookanchor::utils::log_error(&format!("Failed to initialize sys_data: {}", init_error));
+                log_error(&format!("Failed to initialize sys_data: {}", init_error));
                 // Continue with default config
             }
         }
 
         // CLI mode needs server - ensure it's running
         if let Err(e) = hookanchor::execute::activate_command_server(false) {
-            hookanchor::utils::log_error(&format!("Failed to activate command server: {}", e));
+            log_error(&format!("Failed to activate command server: {}", e));
             // Continue - commands will show error dialogs when server is needed
         }
 
@@ -128,7 +129,7 @@ fn main() -> Result<(), eframe::Error> {
                             std::process::exit(0);
                         }
                         Err(e) => {
-                            hookanchor::utils::log_error(&format!("Failed to launch installer: {}", e));
+                            log_error(&format!("Failed to launch installer: {}", e));
                             // Continue with normal app - fallback behavior
                         }
                     }

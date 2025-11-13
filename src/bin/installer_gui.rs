@@ -7,6 +7,7 @@ use eframe::egui;
 use std::sync::mpsc;
 use std::thread;
 use hookanchor::systems::SetupAssistant;
+use hookanchor::prelude::*;
 
 /// Installation status for each component
 #[derive(Debug, Clone, PartialEq)]
@@ -522,7 +523,7 @@ impl InstallerGui {
 
         // Check if app exists
         if !std::path::Path::new(app_path).exists() {
-            hookanchor::utils::log("⚠️  Cannot launch HookAnchor.app - not found at /Applications");
+            log("⚠️  Cannot launch HookAnchor.app - not found at /Applications");
             return;
         }
 
@@ -533,10 +534,10 @@ impl InstallerGui {
             .spawn()
         {
             Ok(_) => {
-                hookanchor::utils::log("✅ Launched HookAnchor.app");
+                log("✅ Launched HookAnchor.app");
             }
             Err(e) => {
-                hookanchor::utils::log(&format!("⚠️  Failed to launch HookAnchor.app: {}", e));
+                log(&format!("⚠️  Failed to launch HookAnchor.app: {}", e));
             }
         }
     }

@@ -7,7 +7,7 @@ use std::collections::HashMap;
 use serde_json::Value as JsonValue;
 use super::Action;
 use crate::core::Command;
-use crate::utils::detailed_log;
+use crate::prelude::*;
 
 /// Execute an action on the server with template expansion using provided variables
 /// This function performs template expansion before sending to the command server
@@ -194,7 +194,7 @@ pub fn run_command_server() -> Result<(), Box<dyn std::error::Error>> {
     let mut state = crate::core::data::get_state();
     state.server_pid = Some(server_pid);
     if let Err(e) = crate::core::data::set_state(&state) {
-        crate::utils::log_error(&format!("Could not save server PID: {}", e));
+        log_error(&format!("Could not save server PID: {}", e));
     }
     
     detailed_log("SERVER_RUN", &format!("Command server daemon running with PID: {}", server_pid));

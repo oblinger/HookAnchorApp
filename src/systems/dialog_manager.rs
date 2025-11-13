@@ -5,6 +5,7 @@
 
 use std::collections::HashMap;
 use std::process::{Child, Command, Stdio};
+use crate::prelude::*;
 
 /// Handle to an active dialog subprocess
 pub struct DialogHandle {
@@ -30,7 +31,7 @@ pub fn spawn_dialog(
     let dialog_path = exe_dir.join("HookAnchorDialog");
 
     if !dialog_path.exists() {
-        crate::utils::log_error(&format!("Dialog binary not found: {:?}", dialog_path));
+        log_error(&format!("Dialog binary not found: {:?}", dialog_path));
         return None;
     }
 
@@ -46,7 +47,7 @@ pub fn spawn_dialog(
         // Position dialog 25px down and 25px right from popup's top-left corner
         let dialog_x = popup_x + 25.0;
         let dialog_y = popup_y + 25.0;
-        crate::utils::log(&format!(
+        log(&format!(
             "DIALOG_POS: offset 25px from popup: popup_x={}, popup_y={}, dialog_x={}, dialog_y={}",
             popup_x, popup_y, dialog_x, dialog_y
         ));
@@ -65,7 +66,7 @@ pub fn spawn_dialog(
                 NEXT_DIALOG_ID += 1;
                 id
             };
-            crate::utils::log(&format!(
+            log(&format!(
                 "DIALOG_MANAGER: Spawned dialog #{} (pid: {:?})",
                 dialog_id,
                 child.id()
@@ -76,7 +77,7 @@ pub fn spawn_dialog(
             })
         }
         Err(e) => {
-            crate::utils::log_error(&format!("Failed to spawn dialog subprocess: {}", e));
+            log_error(&format!("Failed to spawn dialog subprocess: {}", e));
             None
         }
     }
@@ -92,7 +93,7 @@ pub fn poll_dialog(handle: &mut DialogHandle) -> Option<Result<HashMap<String, S
     // Non-blocking check if subprocess finished
     match handle.child.try_wait() {
         Ok(Some(status)) => {
-            crate::utils::log(&format!(
+            log(&format!(
                 "DIALOG_MANAGER: Dialog finished with status: {}",
                 status
             ));
@@ -103,13 +104,13 @@ pub fn poll_dialog(handle: &mut DialogHandle) -> Option<Result<HashMap<String, S
                 let mut json_str = String::new();
                 match stdout.read_to_string(&mut json_str) {
                     Ok(_) => {
-                        crate::utils::log(&format!(
+                        log(&format!(
                             "DIALOG_MANAGER: Read {} bytes from stdout",
                             json_str.len()
                         ));
                         match serde_json::from_str::<HashMap<String, String>>(&json_str) {
                             Ok(result) => {
-                                crate::utils::log(&format!(
+                                log(&format!(
                                     "DIALOG_MANAGER: Parsed result: {:?}",
                                     result
                                 ));
@@ -117,20 +118,20 @@ pub fn poll_dialog(handle: &mut DialogHandle) -> Option<Result<HashMap<String, S
                             }
                             Err(e) => {
                                 let error = format!("Failed to parse dialog JSON: {}", e);
-                                crate::utils::log_error(&error);
+                                log_error(&error);
                                 Some(Err(error))
                             }
                         }
                     }
                     Err(e) => {
                         let error = format!("Failed to read dialog stdout: {}", e);
-                        crate::utils::log_error(&error);
+                        log_error(&error);
                         Some(Err(error))
                     }
                 }
             } else {
                 let error = "Dialog stdout not available (not piped?)".to_string();
-                crate::utils::log_error(&error);
+                log_error(&error);
                 Some(Err(error))
             }
         }
@@ -140,7 +141,7 @@ pub fn poll_dialog(handle: &mut DialogHandle) -> Option<Result<HashMap<String, S
         }
         Err(e) => {
             let error = format!("Error checking dialog subprocess: {}", e);
-            crate::utils::log_error(&error);
+            log_error(&error);
             Some(Err(error))
         }
     }

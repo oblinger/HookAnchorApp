@@ -11,6 +11,7 @@
 use std::env;
 use std::process::{Command, exit};
 use std::path::PathBuf;
+use hookanchor::prelude::*;
 
 fn main() {
     // Initialize binary path for consistent spawning
@@ -18,7 +19,7 @@ fn main() {
 
     // Initialize sys_data (config + cache) - this must happen before any other operations
     if let Err(init_error) = hookanchor::core::initialize() {
-        hookanchor::utils::log_error(&format!("Failed to initialize sys_data: {}", init_error));
+        log_error(&format!("Failed to initialize sys_data: {}", init_error));
         // Continue with default config
     }
     
@@ -94,8 +95,8 @@ fn launch_popup_with_args(args: &[String]) {
             exit(0);
         }
         Err(e) => {
-            hookanchor::utils::log_error(&format!("Failed to launch popup: {}", e));
-            hookanchor::utils::log_error(&format!("Expected popup at: {}", popup_path.display()));
+            log_error(&format!("Failed to launch popup: {}", e));
+            log_error(&format!("Expected popup at: {}", popup_path.display()));
             exit(1);
         }
     }
@@ -114,20 +115,20 @@ fn handle_hook_url(url: &str) {
     let decoded_query = match urlencoding::decode(query) {
         Ok(decoded) => decoded,
         Err(_) => {
-            utils::detailed_log("DISPATCHER", &format!("Failed to decode URL: {}", url));
+            detailed_log("DISPATCHER", &format!("Failed to decode URL: {}", url));
             return;
         }
     };
     
     if decoded_query.is_empty() {
-        utils::detailed_log("DISPATCHER", "Empty query in hook URL");
+        detailed_log("DISPATCHER", "Empty query in hook URL");
         return;
     }
     
     // Visual separator for URL handler execution
-    utils::detailed_log("", "=================================================================");
-    utils::detailed_log("USER INPUT", &format!("URL: '{}'", decoded_query));
-    utils::detailed_log("DISPATCHER", &format!("Processing hook URL: {} -> query: '{}'", url, decoded_query));
+    detailed_log("", "=================================================================");
+    detailed_log("USER INPUT", &format!("URL: '{}'", decoded_query));
+    detailed_log("DISPATCHER", &format!("Processing hook URL: {} -> query: '{}'", url, decoded_query));
     
     // Find the top matching command using the same logic as CLI and GUI
     let (sys_data, _) = get_sys_data();
@@ -135,20 +136,20 @@ fn handle_hook_url(url: &str) {
     let filtered = display_commands.into_iter().take(1).collect::<Vec<_>>();
     
     if filtered.is_empty() {
-        utils::detailed_log("DISPATCHER", &format!("No commands found for query: '{}'", decoded_query));
+        detailed_log("DISPATCHER", &format!("No commands found for query: '{}'", decoded_query));
         return;
     }
     
     let top_command_obj = &filtered[0];
-    utils::detailed_log("DISPATCHER", &format!("Executing command: {}", top_command_obj.command));
+    detailed_log("DISPATCHER", &format!("Executing command: {}", top_command_obj.command));
     
     // Execute via server to avoid GUI context and ensure consistent execution
-    utils::detailed_log("DISPATCHER", &format!("Launching via server: {} ({})", top_command_obj.command, top_command_obj.action));
+    detailed_log("DISPATCHER", &format!("Launching via server: {} ({})", top_command_obj.command, top_command_obj.action));
     
     // Execute command - handles all retries internally
     let action = execute::command_to_action(&top_command_obj);
     let mut variables = std::collections::HashMap::new();
     variables.insert("arg".to_string(), decoded_query.to_string());
     let _ = execute::execute_on_server(&action, Some(variables));
-    utils::detailed_log("DISPATCHER", "Command sent to server");
+    detailed_log("DISPATCHER", "Command sent to server");
 }

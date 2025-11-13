@@ -6,6 +6,7 @@
 use eframe::egui;
 use hookanchor::core::{get_history_entries, HistoryEntry};
 use std::env;
+use hookanchor::prelude::*;
 
 /// Main history viewer application
 struct HistoryViewer {
@@ -103,11 +104,11 @@ impl HistoryViewer {
                 descendants.insert(patch_name.to_string());
             }
             descendants.insert("orphans".to_string());
-            hookanchor::utils::log(&format!("ANCHOR_FILTER: orphans (universal root) includes ALL {} patches", descendants.len()));
+            log(&format!("ANCHOR_FILTER: orphans (universal root) includes ALL {} patches", descendants.len()));
             return descendants;
         }
 
-        hookanchor::utils::log(&format!("ANCHOR_FILTER: Looking for descendants of '{}'", anchor_name));
+        log(&format!("ANCHOR_FILTER: Looking for descendants of '{}'", anchor_name));
 
         // For each patch, check if the anchor is in its parent chain
         for (patch_name, _patch) in &sys_data.patches {
@@ -116,7 +117,7 @@ impl HistoryViewer {
             // Check if anchor is anywhere in the path (case-insensitive)
             if patch_path.iter().any(|p| p.eq_ignore_ascii_case(anchor_name)) ||
                patch_name.eq_ignore_ascii_case(anchor_name) {
-                hookanchor::utils::log(&format!("ANCHOR_FILTER: Found descendant: {} (path: {:?})", patch_name, patch_path));
+                log(&format!("ANCHOR_FILTER: Found descendant: {} (path: {:?})", patch_name, patch_path));
                 descendants.insert(patch_name.to_string());
             }
         }
@@ -124,7 +125,7 @@ impl HistoryViewer {
         // Also include the anchor itself
         descendants.insert(anchor_lower);
 
-        hookanchor::utils::log(&format!("ANCHOR_FILTER: Total {} descendants found", descendants.len()));
+        log(&format!("ANCHOR_FILTER: Total {} descendants found", descendants.len()));
 
         descendants
     }
@@ -139,7 +140,7 @@ impl HistoryViewer {
         if !entry.patch.is_empty() {
             let patch_lower = entry.patch.to_lowercase();
             if anchor_patches.contains(&patch_lower) {
-                hookanchor::utils::detailed_log("ANCHOR_MATCH", &format!("MATCH via patch: {} (patch: {})", entry.command, entry.patch));
+                detailed_log("ANCHOR_MATCH", &format!("MATCH via patch: {} (patch: {})", entry.command, entry.patch));
                 return true;
             }
         }
@@ -154,7 +155,7 @@ impl HistoryViewer {
         if cmd_lower.starts_with(&anchor_lower) {
             // Exact match - allow it
             if cmd_lower.len() == anchor_lower.len() {
-                hookanchor::utils::detailed_log("ANCHOR_MATCH", &format!("MATCH via exact command: {}", entry.command));
+                detailed_log("ANCHOR_MATCH", &format!("MATCH via exact command: {}", entry.command));
                 return true;
             }
 
@@ -166,7 +167,7 @@ impl HistoryViewer {
 
             if let Some(next_char) = entry.command.chars().nth(anchor_name.len()) {
                 if separators.contains(next_char) {
-                    hookanchor::utils::detailed_log("ANCHOR_MATCH", &format!("MATCH via command prefix+separator: {} (next char: '{}')", entry.command, next_char));
+                    detailed_log("ANCHOR_MATCH", &format!("MATCH via command prefix+separator: {} (next char: '{}')", entry.command, next_char));
                     return true;
                 }
             }
@@ -180,7 +181,7 @@ impl HistoryViewer {
             if path_lower.starts_with(&anchor_lower) {
                 // Exact match
                 if path_lower.len() == anchor_lower.len() {
-                    hookanchor::utils::detailed_log("ANCHOR_MATCH", &format!("MATCH via exact file path: {} (path: {})", entry.command, file_path));
+                    detailed_log("ANCHOR_MATCH", &format!("MATCH via exact file path: {} (path: {})", entry.command, file_path));
                     return true;
                 }
 
@@ -192,7 +193,7 @@ impl HistoryViewer {
                 if let Some(next_char) = file_path.chars().nth(anchor_name.len()) {
                     // Allow word separators OR path separator '/'
                     if separators.contains(next_char) || next_char == '/' {
-                        hookanchor::utils::detailed_log("ANCHOR_MATCH", &format!("MATCH via file path prefix+separator: {} (path: {}, next char: '{}')", entry.command, file_path, next_char));
+                        detailed_log("ANCHOR_MATCH", &format!("MATCH via file path prefix+separator: {} (path: {}, next char: '{}')", entry.command, file_path, next_char));
                         return true;
                     }
                 }
@@ -232,7 +233,7 @@ impl HistoryViewer {
 
         // Save to file
         if let Err(e) = hookanchor::core::set_state(&state) {
-            hookanchor::utils::log_error(&format!("Failed to save history viewer state: {}", e));
+            log_error(&format!("Failed to save history viewer state: {}", e));
         }
     }
 
@@ -256,12 +257,12 @@ impl HistoryViewer {
         let patches_cache = sys_data.patches;
 
         // Debug: Log patch count
-        hookanchor::utils::log(&format!("HISTORY_VIEWER_INIT: Loaded {} patches from singleton", patches_cache.len()));
-        hookanchor::utils::log(&format!("HISTORY_VIEWER_INIT: Loaded {} commands from singleton", sys_data.commands.len()));
+        log(&format!("HISTORY_VIEWER_INIT: Loaded {} patches from singleton", patches_cache.len()));
+        log(&format!("HISTORY_VIEWER_INIT: Loaded {} commands from singleton", sys_data.commands.len()));
 
         // Debug: Count anchor commands
         let anchor_count = sys_data.commands.iter().filter(|c| c.is_anchor()).count();
-        hookanchor::utils::log(&format!("HISTORY_VIEWER_INIT: Found {} anchor commands", anchor_count));
+        log(&format!("HISTORY_VIEWER_INIT: Found {} anchor commands", anchor_count));
 
         // Get tree sidebar settings from config
         let config = hookanchor::core::get_config();
@@ -389,7 +390,7 @@ impl HistoryViewer {
                 }
             }).collect();
 
-            hookanchor::utils::detailed_log("VIEWER", &format!(
+            detailed_log("VIEWER", &format!(
                 "Loaded {} current commands from sys_data",
                 self.history_entries.len()
             ));
@@ -408,7 +409,7 @@ impl HistoryViewer {
                     self.history_entries = entries;
 
                     // Log what we loaded
-                    hookanchor::utils::detailed_log("VIEWER", &format!(
+                    detailed_log("VIEWER", &format!(
                         "Loaded {} total entries from database",
                         self.history_entries.len()
                     ));
@@ -423,7 +424,7 @@ impl HistoryViewer {
                     let mut action_list: Vec<_> = action_counts.iter().collect();
                     action_list.sort_by_key(|(action, _)| *action);
                     for (action, count) in action_list {
-                        hookanchor::utils::detailed_log("VIEWER", &format!(
+                        detailed_log("VIEWER", &format!(
                             "  {} entries with action '{}'",
                             count, action
                         ));
@@ -452,7 +453,7 @@ impl HistoryViewer {
             .filter(|&n| n > 0);
 
         // Log active filters
-        hookanchor::utils::detailed_log("VIEWER", &format!(
+        detailed_log("VIEWER", &format!(
             "Applying filters - name_filter='{}', min_edit_size={:?}, selected_action_types={:?}, anchor_filter={:?}",
             self.name_filter, min_edit_size, self.selected_action_types, self.resolved_anchor_name
         ));
@@ -501,7 +502,7 @@ impl HistoryViewer {
         }
 
         // Log filtering results
-        hookanchor::utils::detailed_log("VIEWER", &format!(
+        detailed_log("VIEWER", &format!(
             "After filtering: {} entries passed out of {} total",
             self.filtered_entries.len(), self.history_entries.len()
         ));
@@ -515,7 +516,7 @@ impl HistoryViewer {
         let mut filtered_action_list: Vec<_> = filtered_action_counts.iter().collect();
         filtered_action_list.sort_by_key(|(action, _)| *action);
         for (action, count) in filtered_action_list {
-            hookanchor::utils::detailed_log("VIEWER", &format!(
+            detailed_log("VIEWER", &format!(
                 "  {} filtered entries with action '{}'",
                 count, action
             ));
@@ -536,10 +537,10 @@ impl HistoryViewer {
 
         match result {
             Ok(_) => {
-                hookanchor::utils::log(&format!("HISTORY_VIEWER: Executed command '{}'", entry.command));
+                log(&format!("HISTORY_VIEWER: Executed command '{}'", entry.command));
             }
             Err(e) => {
-                hookanchor::utils::log_error(&format!("HISTORY_VIEWER: Failed to execute command '{}': {}", entry.command, e));
+                log_error(&format!("HISTORY_VIEWER: Failed to execute command '{}': {}", entry.command, e));
             }
         }
     }
@@ -567,10 +568,10 @@ impl HistoryViewer {
 
                 match result {
                     Ok(_) => {
-                        hookanchor::utils::log(&format!("HISTORY_VIEWER: Opened editor for command '{}'", entry.command));
+                        log(&format!("HISTORY_VIEWER: Opened editor for command '{}'", entry.command));
                     }
                     Err(e) => {
-                        hookanchor::utils::log_error(&format!("HISTORY_VIEWER: Failed to open editor for '{}': {}", entry.command, e));
+                        log_error(&format!("HISTORY_VIEWER: Failed to open editor for '{}': {}", entry.command, e));
                     }
                 }
             }
@@ -733,10 +734,10 @@ impl eframe::App for HistoryViewer {
 
                                 match result {
                                     Ok(_) => {
-                                        hookanchor::utils::log(&format!("HISTORY_VIEWER: Opened folder '{}'", folder_path.display()));
+                                        log(&format!("HISTORY_VIEWER: Opened folder '{}'", folder_path.display()));
                                     }
                                     Err(e) => {
-                                        hookanchor::utils::log_error(&format!("HISTORY_VIEWER: Failed to open folder '{}': {}", folder_path.display(), e));
+                                        log_error(&format!("HISTORY_VIEWER: Failed to open folder '{}': {}", folder_path.display(), e));
                                     }
                                 }
                             }
@@ -1168,7 +1169,7 @@ impl eframe::App for HistoryViewer {
 fn main() -> Result<(), eframe::Error> {
     // Initialize sys_data (config + cache) before creating the viewer
     if let Err(e) = hookanchor::core::initialize() {
-        hookanchor::utils::log_error(&format!("Failed to initialize sys_data: {}", e));
+        log_error(&format!("Failed to initialize sys_data: {}", e));
         // Continue with default config
     }
 

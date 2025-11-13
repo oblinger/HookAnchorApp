@@ -3,7 +3,8 @@
 //! This lightweight binary manages the popup server lifecycle and sends commands to it.
 //! Designed for minimal startup time when triggered by keyboard shortcuts.
 
-use hookanchor::utils::{print, print_and_log, log_error};
+use hookanchor::prelude::*;
+use hookanchor::utils::print;
 use std::os::unix::net::UnixStream;
 use std::os::unix::process::CommandExt;
 use std::io::{Write, Read};

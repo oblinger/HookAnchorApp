@@ -7,6 +7,7 @@ use crate::core::Command;
 use crate::core::Config;
 use crate::core::AppState;
 use crate::ui::layout::{DisplayLayout, Selection, Direction};
+use crate::prelude::*;
 
 /// Core popup state separated from UI concerns
 pub struct PopupState {
@@ -105,7 +106,7 @@ impl PopupState {
         self.mouse_unlocked = false;
 
         if was_reloaded {
-            crate::utils::detailed_log("POPUP_REFRESH", "Commands were reloaded - display fully refreshed");
+            detailed_log("POPUP_REFRESH", "Commands were reloaded - display fully refreshed");
         }
     }
 
@@ -119,10 +120,10 @@ impl PopupState {
                 let anchor_timeout = self.config.popup_settings.anchor_timeout_seconds.unwrap_or(180) as i64;
 
                 if seconds_since_anchor < anchor_timeout {
-                    // crate::utils::detailed_log("ANCHOR_INPUT", &format!("Using anchor name '{}' ({}s ago)", anchor_name, seconds_since_anchor));
+                    // detailed_log("ANCHOR_INPUT", &format!("Using anchor name '{}' ({}s ago)", anchor_name, seconds_since_anchor));
                     return anchor_name.clone();
                 } else {
-                    // crate::utils::detailed_log("ANCHOR_INPUT", &format!("Anchor name '{}' expired ({}s ago, timeout: {}s)", anchor_name, seconds_since_anchor, anchor_timeout));
+                    // detailed_log("ANCHOR_INPUT", &format!("Anchor name '{}' expired ({}s ago, timeout: {}s)", anchor_name, seconds_since_anchor, anchor_timeout));
                 }
             }
         }
@@ -154,7 +155,7 @@ impl PopupState {
         if was_reloaded {
             self.update_display_layout();
             self.selection.reset(&self.display_layout);
-            crate::utils::detailed_log("POPUP_REFRESH", "Commands were reloaded - display refreshed");
+            detailed_log("POPUP_REFRESH", "Commands were reloaded - display refreshed");
         }
         was_reloaded
     }
@@ -220,7 +221,7 @@ impl PopupState {
 
         let (sys_data, was_reloaded) = crate::core::data::get_sys_data();
         if was_reloaded {
-            crate::utils::detailed_log("POPUP_REFRESH", "Commands were reloaded - rebuilding search results");
+            detailed_log("POPUP_REFRESH", "Commands were reloaded - rebuilding search results");
         }
         let (display_commands, is_prefix_menu, prefix_menu_info, prefix_menu_count) =
             get_new_display_commands(&self.search_text(), &sys_data.commands, &sys_data.patches);
@@ -252,9 +253,9 @@ impl PopupState {
             if let Some((_, resolved_anchor)) = &self.prefix_menu_info {
                 // Get display file extensions (defaults to doc_file_extensions)
                 let extension_filter = self.config.popup_settings.get_display_file_extensions();
-                crate::utils::log(&format!("FOLDER_FILES: show_files={}, is_prefix_menu={}, extension_filter={:?}",
+                log(&format!("FOLDER_FILES: show_files={}, is_prefix_menu={}, extension_filter={:?}",
                     self.show_files, self.is_in_prefix_menu, extension_filter));
-                crate::utils::log(&format!("FOLDER_FILES: resolved_anchor: command='{}', action='{}', arg='{}'",
+                log(&format!("FOLDER_FILES: resolved_anchor: command='{}', action='{}', arg='{}'",
                     resolved_anchor.command, resolved_anchor.action, resolved_anchor.arg));
 
                 // Get folder files using the utility function with extension filter
@@ -264,7 +265,7 @@ impl PopupState {
                     extension_filter.as_deref()
                 );
 
-                crate::utils::log(&format!("FOLDER_FILES: Found {} folder files", folder_files.len()));
+                log(&format!("FOLDER_FILES: Found {} folder files", folder_files.len()));
 
                 // Filter out files that are already in the command list (avoid duplicates)
                 let existing_file_paths: std::collections::HashSet<_> = commands.iter()
@@ -328,10 +329,10 @@ impl PopupState {
             let anchor_timeout = self.config.popup_settings.anchor_timeout_seconds.unwrap_or(180) as i64;
 
             if seconds_since_anchor < anchor_timeout {
-                // crate::utils::detailed_log("ANCHOR_DISPLAY", &format!("📱 Displaying anchor name: '{}'", anchor_name));
+                // detailed_log("ANCHOR_DISPLAY", &format!("📱 Displaying anchor name: '{}'", anchor_name));
                 return anchor_name.clone();
             } else {
-                // crate::utils::detailed_log("ANCHOR_DISPLAY", &format!("👻 Anchor name '{}' expired ({}s ago, timeout: {}s)", anchor_name, seconds_since_anchor, anchor_timeout));
+                // detailed_log("ANCHOR_DISPLAY", &format!("👻 Anchor name '{}' expired ({}s ago, timeout: {}s)", anchor_name, seconds_since_anchor, anchor_timeout));
             }
         }
 
@@ -344,12 +345,12 @@ impl PopupState {
 
             if seconds_since_build < 600 { // 10 minutes
                 let hint_text = format!("{} {}s", base_text, seconds_since_build);
-                // crate::utils::detailed_log("GHOST_DISPLAY", &format!("💡 Displaying build time hint: '{}'", hint_text));
+                // detailed_log("GHOST_DISPLAY", &format!("💡 Displaying build time hint: '{}'", hint_text));
                 return hint_text;
             }
         }
 
-        // crate::utils::detailed_log("GHOST_DISPLAY", &format!("📝 Displaying default hint: '{}'", base_text));
+        // detailed_log("GHOST_DISPLAY", &format!("📝 Displaying default hint: '{}'", base_text));
         base_text.to_string()
     }
     

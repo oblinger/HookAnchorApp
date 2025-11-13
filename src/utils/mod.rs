@@ -32,9 +32,9 @@ pub(crate) mod params;
 // PUBLIC API - All external access goes through these re-exports
 // ============================================================================
 
-// Logging functions
+// Logging functions - NOTE: log(), detailed_log(), log_error(), print_and_log() are ONLY exported through prelude
 pub use logging::{
-    log, print, print_and_log, detailed_log, log_error, log_error_module,
+    print, log_error_module,
     clear_debug_log, check_and_clear_oversized_log, clear_log_file
 };
 

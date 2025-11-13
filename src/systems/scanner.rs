@@ -57,9 +57,9 @@ use std::hash::{Hash, Hasher};
 use crate::core::Command;
 use crate::core::Config;
 use crate::core::commands::{FLAG_USER_EDITED, FLAG_ANCHOR};
-use crate::utils::detailed_log;
 use crate::execute::get_action;
 use chrono::Local;
+use crate::prelude::*;
 
 /// Action types that are automatically generated and removed by the scanner
 /// These commands will be removed during rescanning unless they have the 'U' (user-edited) flag
@@ -107,7 +107,7 @@ pub fn merge_commands(commands: &mut Vec<Command>, new: Command, suffix: &str) {
 
             // Rule 1: User-edited with matching arg → Discard new
             if existing.flags.contains(FLAG_USER_EDITED) && !existing.arg.is_empty() && existing.arg == new.arg {
-                crate::utils::detailed_log("MERGE", &format!(
+                detailed_log("MERGE", &format!(
                     "Rule 1: Discard '{}' - user-edited existing with same arg '{}'",
                     new.command, existing.arg
                 ));
@@ -122,7 +122,7 @@ pub fn merge_commands(commands: &mut Vec<Command>, new: Command, suffix: &str) {
                 merged.file_size = new.file_size;
                 merged.last_update = new.last_update;
                 // Preserve existing patch and flags (especially if user-edited)
-                crate::utils::detailed_log("MERGE", &format!(
+                detailed_log("MERGE", &format!(
                     "Rule 2: Merge into existing '{}' - virtual anchor gets action '{}' and arg '{}'",
                     merged.command, merged.action, merged.arg
                 ));
@@ -133,7 +133,7 @@ pub fn merge_commands(commands: &mut Vec<Command>, new: Command, suffix: &str) {
             // Rule 3: Real command with action → Keep distinct (add with suffix)
             let mut distinct_cmd = new;
             distinct_cmd.command = format!("{}{}", distinct_cmd.command, suffix);
-            crate::utils::detailed_log("MERGE", &format!(
+            detailed_log("MERGE", &format!(
                 "Rule 3: Keep distinct '{}' - existing has action '{}', new has action '{}'",
                 distinct_cmd.command, existing.action, distinct_cmd.action
             ));
@@ -141,7 +141,7 @@ pub fn merge_commands(commands: &mut Vec<Command>, new: Command, suffix: &str) {
         }
         None => {
             // Rule 4: No collision → Add new command as-is
-            crate::utils::detailed_log("MERGE", &format!(
+            detailed_log("MERGE", &format!(
                 "Rule 4: Add new command '{}' (no collision)",
                 new.command
             ));
@@ -276,14 +276,14 @@ pub fn scan_check(commands: Vec<Command>) -> Vec<Command> {
 
     // Save updated state
     if let Err(e) = crate::core::data::set_state(&state) {
-        crate::utils::log_error(&format!("Failed to save scan state: {}", e));
+        log_error(&format!("Failed to save scan state: {}", e));
     }
     
     // Save commands only if checksum changed
     if checksum_changed {
         // Use sys_data::set_commands - runs patch inference and saves
         if let Err(e) = crate::core::set_commands(scanned_commands.clone()) {
-            crate::utils::log_error(&format!("Failed to save updated commands: {}", e));
+            log_error(&format!("Failed to save updated commands: {}", e));
         }
     }
 
@@ -309,7 +309,7 @@ pub fn load_manual_edits(commands: &mut Vec<Command>, verbose: bool) -> Result<u
 
     // Load commands.txt
     let txt_commands = crate::core::commands::load_commands_raw();
-    crate::utils::log(&format!("LOAD_MANUAL_EDITS: Loaded {} commands from commands.txt", txt_commands.len()));
+    log(&format!("LOAD_MANUAL_EDITS: Loaded {} commands from commands.txt", txt_commands.len()));
 
     let mut edits_applied = 0;
     let mut commands_added = 0;
@@ -324,7 +324,7 @@ pub fn load_manual_edits(commands: &mut Vec<Command>, verbose: bool) -> Result<u
         // IMPORTANT: Only apply this to scanner-generated actions, not manual commands (alias, launcher, etc.)
         let is_scanner_generated = SCANNER_GENERATED_ACTIONS.contains(&txt_cmd.action.as_str());
         if is_scanner_generated && !txt_cmd.flags.contains(FLAG_USER_EDITED) {
-            crate::utils::detailed_log("MANUAL_EDITS", &format!("Skipping scanner-generated command '{}' from commands.txt (no U flag)", txt_cmd.command));
+            detailed_log("MANUAL_EDITS", &format!("Skipping scanner-generated command '{}' from commands.txt (no U flag)", txt_cmd.command));
             continue;
         }
 
@@ -343,7 +343,7 @@ pub fn load_manual_edits(commands: &mut Vec<Command>, verbose: bool) -> Result<u
                     if verbose {
                         crate::utils::print(&format!("   ✏️  Updated manual edit: '{}'", txt_cmd.command));
                     }
-                    crate::utils::log(&format!("LOAD_MANUAL_EDITS: Updating command '{}' (action: {}) - arg or flags changed", txt_cmd.command, txt_cmd.action));
+                    log(&format!("LOAD_MANUAL_EDITS: Updating command '{}' (action: {}) - arg or flags changed", txt_cmd.command, txt_cmd.action));
 
                     let old_cmd = existing.clone();
 
@@ -363,7 +363,7 @@ pub fn load_manual_edits(commands: &mut Vec<Command>, verbose: bool) -> Result<u
                 if verbose {
                     crate::utils::print(&format!("   ➕ Added manual command: '{}'", txt_cmd.command));
                 }
-                crate::utils::log(&format!("LOAD_MANUAL_EDITS: Adding new command '{}' (action: {}) from manual edit", txt_cmd.command, txt_cmd.action));
+                log(&format!("LOAD_MANUAL_EDITS: Adding new command '{}' (action: {}) from manual edit", txt_cmd.command, txt_cmd.action));
                 commands.push(txt_cmd.clone());
                 edits_applied += 1;
                 commands_added += 1;
@@ -382,10 +382,10 @@ pub fn load_manual_edits(commands: &mut Vec<Command>, verbose: bool) -> Result<u
 
     // Only log if actual changes were made
     if commands_added > 0 || commands_updated > 0 {
-        crate::utils::log(&format!("LOAD_MANUAL_EDITS: Applied {} edits ({} added, {} updated)",
+        log(&format!("LOAD_MANUAL_EDITS: Applied {} edits ({} added, {} updated)",
             edits_applied, commands_added, commands_updated));
     } else {
-        crate::utils::detailed_log("MANUAL_EDITS", "No changes needed - cache and commands.txt are in sync");
+        detailed_log("MANUAL_EDITS", "No changes needed - cache and commands.txt are in sync");
     }
 
     Ok(edits_applied)
@@ -437,7 +437,7 @@ pub fn scan_modified_files(commands: &mut Vec<Command>, verbose: bool) -> Result
                         cmd.command, old_size, current_size));
                 }
 
-                crate::utils::log(&format!("SCAN_MODIFIED: File size changed for '{}' ({} -> {})",
+                log(&format!("SCAN_MODIFIED: File size changed for '{}' ({} -> {})",
                     cmd.command, old_size, current_size));
 
                 // Create updated command with new file size
@@ -467,7 +467,7 @@ pub fn scan_modified_files(commands: &mut Vec<Command>, verbose: bool) -> Result
         }
     }
 
-    crate::utils::log(&format!("SCAN_MODIFIED: Detected {} file changes", file_changes));
+    log(&format!("SCAN_MODIFIED: Detected {} file changes", file_changes));
 
     Ok(file_changes)
 }
@@ -497,7 +497,7 @@ pub fn delete_invalid_aliases(commands: &mut Vec<Command>, verbose: bool) -> Res
                     crate::utils::print(&format!("   ❌ Invalid alias: '{}' → '{}' (target not found)",
                         cmd.command, cmd.arg));
                 }
-                crate::utils::log(&format!("DELETE_INVALID_ALIAS: Removing alias '{}' → '{}' (target does not exist)",
+                log(&format!("DELETE_INVALID_ALIAS: Removing alias '{}' → '{}' (target does not exist)",
                     cmd.command, cmd.arg));
             }
         }
@@ -517,7 +517,7 @@ pub fn delete_invalid_aliases(commands: &mut Vec<Command>, verbose: bool) -> Res
         }
     }
 
-    crate::utils::log(&format!("DELETE_INVALID_ALIAS: Removed {} invalid aliases", removed_count));
+    log(&format!("DELETE_INVALID_ALIAS: Removed {} invalid aliases", removed_count));
 
     Ok(removed_count)
 }
@@ -598,7 +598,7 @@ pub fn scan_new_files(commands: Vec<Command>, sys_data: &crate::core::data::SysD
     // History will be recorded automatically when set_commands is called
 
     // Then scan cloud services (Notion, Google Drive)
-    crate::utils::log("☁️  Scanning cloud services...");
+    log("☁️  Scanning cloud services...");
     let scan_result = super::cloud_scanner::scan_cloud_services();
     
     // Only process Notion commands if we actually got pages (meaning scan was enabled)
@@ -610,12 +610,12 @@ pub fn scan_new_files(commands: Vec<Command>, sys_data: &crate::core::data::SysD
             if verbose {
                 crate::utils::print("   Incremental Notion scan - preserving existing commands");
             }
-            crate::utils::log("[NOTION] Incremental scan - existing commands preserved");
+            log("[NOTION] Incremental scan - existing commands preserved");
         }
     } else {
         // No Notion pages means scanning was disabled or failed
         if verbose {
-            crate::utils::detailed_log("SCANNER", "Notion scanning disabled or returned no pages");
+            detailed_log("SCANNER", "Notion scanning disabled or returned no pages");
         }
     }
     
@@ -669,7 +669,7 @@ pub fn scan_new_files(commands: Vec<Command>, sys_data: &crate::core::data::SysD
             }
             // Update the URL if it changed
             if existing_cmd.arg != page.url {
-                crate::utils::detailed_log("SCANNER", &format!("Updating Notion anchor URL for '{}': {} -> {}", 
+                detailed_log("SCANNER", &format!("Updating Notion anchor URL for '{}': {} -> {}", 
                     command_name, existing_cmd.arg, page.url));
                 existing_cmd.arg = page.url;
                 notion_updated += 1;
@@ -694,7 +694,7 @@ pub fn scan_new_files(commands: Vec<Command>, sys_data: &crate::core::data::SysD
             notion_added += 1;
         } else {
             // Command exists but it's not an anchor/notion command, skip
-            crate::utils::detailed_log("SCANNER", &format!("Skipping Notion page '{}' - non-anchor command exists", command_name));
+            detailed_log("SCANNER", &format!("Skipping Notion page '{}' - non-anchor command exists", command_name));
         }
     }
     
@@ -782,7 +782,7 @@ fn update_or_create_command(
 
             // Check if user-edited - preserve if so
             if existing.flags.contains(FLAG_USER_EDITED) {
-                crate::utils::detailed_log("UPDATE_CMD", &format!(
+                detailed_log("UPDATE_CMD", &format!(
                     "Unchanged: '{}' - user-edited, preserving",
                     existing.command
                 ));
@@ -791,14 +791,14 @@ fn update_or_create_command(
 
             // Check for changes
             if has_changed(existing, &new_cmd) {
-                crate::utils::log(&format!(
+                log(&format!(
                     "Updated: '{}' - file modified",
                     new_cmd.command
                 ));
                 commands[idx] = new_cmd;
                 return true;
             } else {
-                crate::utils::detailed_log("UPDATE_CMD", &format!(
+                detailed_log("UPDATE_CMD", &format!(
                     "Unchanged: '{}' - no changes detected",
                     existing.command
                 ));
@@ -807,7 +807,7 @@ fn update_or_create_command(
         }
         None => {
             // New command
-            crate::utils::log(&format!(
+            log(&format!(
                 "Created: '{}' - new file discovered at {}",
                 new_cmd.command, file_path
             ));
@@ -829,15 +829,15 @@ fn discover_files(file_roots: &[String], config: &Config) -> std::collections::H
         let root_path = Path::new(&expanded_root);
 
         if !root_path.exists() || !root_path.is_dir() {
-            crate::utils::detailed_log("SCANNER", &format!("Skipping non-existent root: {}", expanded_root));
+            detailed_log("SCANNER", &format!("Skipping non-existent root: {}", expanded_root));
             continue;
         }
 
-        crate::utils::detailed_log("SCANNER", &format!("Discovering files in: {}", expanded_root));
+        detailed_log("SCANNER", &format!("Discovering files in: {}", expanded_root));
         discover_files_recursive(root_path, root_path, &mut discovered, config);
     }
 
-    crate::utils::detailed_log("SCANNER", &format!("Discovered {} files total", discovered.len()));
+    detailed_log("SCANNER", &format!("Discovered {} files total", discovered.len()));
     discovered
 }
 
@@ -851,7 +851,7 @@ fn discover_files_recursive(
     let entries = match fs::read_dir(dir) {
         Ok(entries) => entries,
         Err(e) => {
-            crate::utils::detailed_log("SCANNER", &format!("Cannot read directory {}: {}", dir.display(), e));
+            detailed_log("SCANNER", &format!("Cannot read directory {}: {}", dir.display(), e));
             return;
         }
     };
@@ -971,16 +971,16 @@ fn scan_files_merge_based(
     let mut stats = ScanStats::default();
 
     // Phase 1: Discover all files in scan roots
-    crate::utils::detailed_log("SCANNER", "Phase 1: Discovering files in scan roots...");
+    detailed_log("SCANNER", "Phase 1: Discovering files in scan roots...");
     let mut discovered_files = discover_files(file_roots, config);
 
     // Phase 2: Process existing commands
-    crate::utils::detailed_log("SCANNER", "Phase 2: Processing existing commands...");
+    detailed_log("SCANNER", "Phase 2: Processing existing commands...");
     commands.retain_mut(|cmd| {
         // Skip non-scanner-generated actions (alias, url, 1pass, work, chrome, etc.)
         if !SCANNER_GENERATED_ACTIONS.contains(&cmd.action.as_str()) {
             stats.unchanged += 1;
-            crate::utils::detailed_log("SCANNER", &format!(
+            detailed_log("SCANNER", &format!(
                 "Unchanged: '{}' (non-scanner action: {})", cmd.command, cmd.action
             ));
             return true; // Keep
@@ -992,7 +992,7 @@ fn scan_files_merge_based(
             None => {
                 // Command doesn't have a valid path - keep it unchanged
                 stats.unchanged += 1;
-                crate::utils::detailed_log("SCANNER", &format!(
+                detailed_log("SCANNER", &format!(
                     "Unchanged: '{}' (no valid file path)", cmd.command
                 ));
                 return true;
@@ -1003,7 +1003,7 @@ fn scan_files_merge_based(
         if !is_within_scan_roots(&file_path, file_roots) {
             // Outside scan scope - don't touch
             stats.unchanged += 1;
-            crate::utils::detailed_log("SCANNER", &format!(
+            detailed_log("SCANNER", &format!(
                 "Unchanged: '{}' (outside scan roots)", cmd.command
             ));
             return true;
@@ -1019,7 +1019,7 @@ fn scan_files_merge_based(
             // so this file won't be re-added in Phase 3
             if cmd.flags.contains(FLAG_USER_EDITED) {
                 stats.unchanged += 1;
-                crate::utils::detailed_log("SCANNER", &format!(
+                detailed_log("SCANNER", &format!(
                     "Unchanged: '{}' (user-edited, U flag)", cmd.command
                 ));
                 return true;
@@ -1051,13 +1051,13 @@ fn scan_files_merge_based(
                             cmd.command, old_action, cmd.action, old_size, cmd.file_size
                         ));
                     }
-                    crate::utils::log(&format!(
+                    log(&format!(
                         "Updated: '{}' - action:{:?}→{:?}, size:{:?}→{:?}",
                         cmd.command, old_action, cmd.action, old_size, cmd.file_size
                     ));
                 } else {
                     // Only arg or flags changed - use detailed_log
-                    crate::utils::detailed_log("SCANNER", &format!(
+                    detailed_log("SCANNER", &format!(
                         "Updated: '{}' - arg:{:?}→{:?}, flags:{:?}→{:?}",
                         cmd.command, old_arg, cmd.arg, old_flags, cmd.flags
                     ));
@@ -1065,7 +1065,7 @@ fn scan_files_merge_based(
             } else {
                 // No change
                 stats.unchanged += 1;
-                crate::utils::detailed_log("SCANNER", &format!(
+                detailed_log("SCANNER", &format!(
                     "Unchanged: '{}' (no file changes detected)", cmd.command
                 ));
             }
@@ -1079,7 +1079,7 @@ fn scan_files_merge_based(
                     cmd.command, file_path_str
                 ));
             }
-            crate::utils::log(&format!(
+            log(&format!(
                 "Deleted: '{}' - file no longer exists at {}",
                 cmd.command, file_path_str
             ));
@@ -1089,7 +1089,7 @@ fn scan_files_merge_based(
 
     // Phase 3: Add remaining discovered files (new files not in existing commands)
     // IMPORTANT: Process anchor files FIRST so they're in folder_map for child files
-    crate::utils::detailed_log("SCANNER", "Phase 3a: Adding new anchor files first...");
+    detailed_log("SCANNER", "Phase 3a: Adding new anchor files first...");
 
     // Build set of file paths already referenced by existing commands
     // This prevents creating duplicates like "@Reed Shaffner markdown" when "@Reed Shaffner" already exists
@@ -1097,14 +1097,14 @@ fn scan_files_merge_based(
     for cmd in &commands {
         if let Some(abs_path) = cmd.get_absolute_file_path(config) {
             let path_str = abs_path.to_string_lossy().to_string();
-            crate::utils::detailed_log("SCANNER", &format!(
+            detailed_log("SCANNER", &format!(
                 "Marking as handled: '{}' -> {}",
                 cmd.command, path_str
             ));
             handled_files.insert(path_str);
         }
     }
-    crate::utils::log(&format!("SCANNER: Built handled_files set with {} entries", handled_files.len()));
+    log(&format!("SCANNER: Built handled_files set with {} entries", handled_files.len()));
 
     // Separate anchors and non-anchors
     let mut anchor_files = Vec::new();
@@ -1113,7 +1113,7 @@ fn scan_files_merge_based(
     for (file_path, cmd) in discovered_files {
         // Skip files already referenced by existing commands
         if handled_files.contains(&file_path) {
-            crate::utils::log(&format!(
+            log(&format!(
                 "SCANNER: Skipping '{}' ({}) - file already referenced by existing command",
                 cmd.command, file_path
             ));
@@ -1147,12 +1147,12 @@ fn scan_files_merge_based(
             crate::utils::print(&format!("   Created '{}' action='{}' flags='{}' args='{}'",
                 cmd_name, action, flags, arg));
         }
-        crate::utils::log(&format!("Created '{}' action='{}' flags='{}' args='{}'",
+        log(&format!("Created '{}' action='{}' flags='{}' args='{}'",
             cmd_name, action, flags, arg));
     }
 
     // Now add regular files (using merge_commands to handle collisions)
-    crate::utils::detailed_log("SCANNER", "Phase 3b: Adding new regular files...");
+    detailed_log("SCANNER", "Phase 3b: Adding new regular files...");
     for (file_path, cmd) in regular_files {
         let cmd_name = cmd.command.clone();
         let action = cmd.action.clone();
@@ -1171,7 +1171,7 @@ fn scan_files_merge_based(
             crate::utils::print(&format!("   Created '{}' action='{}' flags='{}' args='{}'",
                 cmd_name, action, flags, arg));
         }
-        crate::utils::log(&format!("Created '{}' action='{}' flags='{}' args='{}'",
+        log(&format!("Created '{}' action='{}' flags='{}' args='{}'",
             cmd_name, action, flags, arg));
     }
 
@@ -1180,9 +1180,9 @@ fn scan_files_merge_based(
     // - New anchor files (so their children can find them in folder_map)
     // - Existing anchors that had wrong patches
     // - Regular files whose parent anchors have now been added/fixed
-    crate::utils::detailed_log("SCANNER", "Running inference on all commands after scan...");
+    detailed_log("SCANNER", "Running inference on all commands after scan...");
     if let Err(e) = crate::core::set_commands(commands.clone()) {
-        crate::utils::log_error(&format!("Failed to run inference: {}", e));
+        log_error(&format!("Failed to run inference: {}", e));
     }
 
     // Reload commands with updated patches
@@ -1190,7 +1190,7 @@ fn scan_files_merge_based(
     commands = (*sys_data.commands).clone();
 
     // Log summary
-    crate::utils::log(&format!(
+    log(&format!(
         "Scan complete: +{} created, ~{} updated, -{} deleted, ={} unchanged",
         stats.created, stats.updated, stats.deleted, stats.unchanged
     ));
@@ -1222,7 +1222,7 @@ fn infer_patch_from_folder_map(file_path: &Path, folder_map: &std::collections::
     while let Some(dir) = current {
         if let Ok(canonical) = dir.canonicalize() {
             if let Some(patch) = folder_map.get(&canonical) {
-                crate::utils::detailed_log("PATCH_INFER", &format!("Inferred patch '{}' for '{}' from folder '{}'",
+                detailed_log("PATCH_INFER", &format!("Inferred patch '{}' for '{}' from folder '{}'",
                     patch, file_path.display(), canonical.display()));
                 return patch.clone();
             }
@@ -1231,7 +1231,7 @@ fn infer_patch_from_folder_map(file_path: &Path, folder_map: &std::collections::
     }
 
     // No parent folder found in map - assign to orphans
-    crate::utils::detailed_log("PATCH_INFER", &format!("No folder match for '{}' - assigning to orphans", file_path.display()));
+    detailed_log("PATCH_INFER", &format!("No folder match for '{}' - assigning to orphans", file_path.display()));
     "orphans".to_string()
 }
 
@@ -1286,7 +1286,7 @@ fn scan_directory_pass(dir: &Path, vault_root: &Path, commands: &mut Vec<Command
                     }
                 } else {
                     // Log files with non-UTF8 names
-                    crate::utils::detailed_log("SCANNER", &format!("Skipping non-UTF8 filename: {:?}", path));
+                    detailed_log("SCANNER", &format!("Skipping non-UTF8 filename: {:?}", path));
                     continue;
                 }
             }
@@ -1312,16 +1312,16 @@ fn scan_directory_pass(dir: &Path, vault_root: &Path, commands: &mut Vec<Command
                             if !anchor_only {
                                 // This is an app bundle - create an APP command
                                 if let Some(command) = process_app_bundle(&path, existing_commands, folder_map) {
-                                    crate::utils::detailed_log("SCANNER", &format!("Found app bundle: {} -> command: {}",
+                                    detailed_log("SCANNER", &format!("Found app bundle: {} -> command: {}",
                                         path.display(), command.command));
 
                                     // Check if this app is already handled
                                     if handled_files.contains(&command.arg) {
-                                        crate::utils::detailed_log("SCANNER", &format!("Skipping '{}' - app already handled: {}",
+                                        detailed_log("SCANNER", &format!("Skipping '{}' - app already handled: {}",
                                             command.command, path.display()));
                                     } else {
-                                        crate::utils::detailed_log("SCANNER", &format!("Found app: {}", command.command));
-                                        crate::utils::detailed_log("SCANNER", &format!("Creating new APP command '{}' -> {} {}",
+                                        detailed_log("SCANNER", &format!("Found app: {}", command.command));
+                                        detailed_log("SCANNER", &format!("Creating new APP command '{}' -> {} {}",
                                             command.command, command.action, command.arg));
 
                                         existing_commands.insert(command.command.to_lowercase());
@@ -1342,7 +1342,7 @@ fn scan_directory_pass(dir: &Path, vault_root: &Path, commands: &mut Vec<Command
                 // Process files (markdown files and DOC files)
                 let mut file_processed = false;
 
-                crate::utils::detailed_log("SCANNER", &format!("Processing file: {}", path.display()));
+                detailed_log("SCANNER", &format!("Processing file: {}", path.display()));
 
                 // Try to process as markdown file first
                 if let Some(command) = process_markdown_with_root(&path, vault_root, commands, existing_commands, handled_files, folder_map) {
@@ -1356,16 +1356,16 @@ fn scan_directory_pass(dir: &Path, vault_root: &Path, commands: &mut Vec<Command
                     }
 
                     // Always log found markdown files for debugging
-                    crate::utils::log(&format!("📄 Found markdown: {} -> cmd: '{}' action: '{}'",
+                    log(&format!("📄 Found markdown: {} -> cmd: '{}' action: '{}'",
                         path.display(), command.command, command.action));
 
                     // Check if this file is already handled by an existing command (O(1) lookup)
                     if handled_files.contains(&command.arg) {
-                        crate::utils::log(&format!("  ⏭️  Skipping '{}' - file already handled: {}",
+                        log(&format!("  ⏭️  Skipping '{}' - file already handled: {}",
                             command.command, path.display()));
                     } else {
                         // Log that we're creating a new command
-                        crate::utils::log(&format!("  ✅ Creating new {} command '{}' -> {}",
+                        log(&format!("  ✅ Creating new {} command '{}' -> {}",
                             command.action, command.command, command.arg));
 
                         // Add to existing commands set to prevent future collisions (lowercase)
@@ -1374,7 +1374,7 @@ fn scan_directory_pass(dir: &Path, vault_root: &Path, commands: &mut Vec<Command
                         handled_files.insert(command.arg.clone());
 
                         // Debug: Log command details
-                        crate::utils::log(&format!("   📋 Command details: cmd='{}' action='{}' flags='{}' is_anchor={}",
+                        log(&format!("   📋 Command details: cmd='{}' action='{}' flags='{}' is_anchor={}",
                             command.command, command.action, command.flags, command.is_anchor()));
 
                         // If this is an anchor markdown in a subdirectory matching its name, map that subdirectory
@@ -1383,18 +1383,18 @@ fn scan_directory_pass(dir: &Path, vault_root: &Path, commands: &mut Vec<Command
                         if command.is_anchor() {
                             if let Some(parent) = path.parent() {
                                 if let Some(parent_dir_name) = parent.file_name().and_then(|n| n.to_str()) {
-                                    crate::utils::log(&format!("   🔍 Checking folder_map: anchor='{}' parent_dir='{}'",
+                                    log(&format!("   🔍 Checking folder_map: anchor='{}' parent_dir='{}'",
                                         command.command, parent_dir_name));
                                     // Only add to folder_map if the parent directory name matches the anchor name
                                     // This prevents files like @BTOD.md from mapping their entire parent directory
                                     if parent_dir_name == command.command {
                                         if let Ok(canonical_parent) = parent.canonicalize() {
                                             folder_map.insert(canonical_parent.clone(), command.command.clone());
-                                            crate::utils::log(&format!("   🏷️  Added anchor to folder_map: '{}' -> '{}'",
+                                            log(&format!("   🏷️  Added anchor to folder_map: '{}' -> '{}'",
                                                 canonical_parent.display(), command.command));
                                         }
                                     } else {
-                                        crate::utils::log(&format!("   ⏭️  Skipping folder_map for '{}' - parent dir '{}' doesn't match anchor name",
+                                        log(&format!("   ⏭️  Skipping folder_map for '{}' - parent dir '{}' doesn't match anchor name",
                                             command.command, parent_dir_name));
                                     }
                                 }
@@ -1408,20 +1408,20 @@ fn scan_directory_pass(dir: &Path, vault_root: &Path, commands: &mut Vec<Command
 
                 // If not a markdown file and not anchor_only pass, try to process as DOC file
                 if !file_processed && !anchor_only {
-                    crate::utils::detailed_log("SCANNER", &format!("File not processed as markdown, trying DOC: {}", path.display()));
+                    detailed_log("SCANNER", &format!("File not processed as markdown, trying DOC: {}", path.display()));
                     if let Some(command) = process_doc_file(&path, existing_commands, folder_map, config) {
                         // Always log found DOC files for debugging
                         // DOC command created successfully
-                        crate::utils::log(&format!("📄 Found doc: {} -> cmd: '{}' action: '{}'",
+                        log(&format!("📄 Found doc: {} -> cmd: '{}' action: '{}'",
                             path.display(), command.command, command.action));
 
                         // Check if this file is already handled by an existing command (O(1) lookup)
                         if handled_files.contains(&command.arg) {
-                            crate::utils::log(&format!("  ⏭️  Skipping '{}' - file already handled: {}",
+                            log(&format!("  ⏭️  Skipping '{}' - file already handled: {}",
                                 command.command, path.display()));
                         } else {
                             // Log that we're creating a new command
-                            crate::utils::log(&format!("  ✅ Creating new {} command '{}' -> {}",
+                            log(&format!("  ✅ Creating new {} command '{}' -> {}",
                                 command.action, command.command, command.arg));
 
                             // Add to existing commands set to prevent future collisions (lowercase)
@@ -1507,7 +1507,7 @@ fn scan_directory_with_root_protected(dir: &Path, vault_root: &Path, commands: &
                             if !is_pass1 {
                                 if let Some(command) = process_app_bundle(&path, existing_commands, folder_map) {
                                     if !handled_files.contains(&command.arg) {
-                                        crate::utils::detailed_log("SCANNER", &format!("Found app: {}", command.command));
+                                        detailed_log("SCANNER", &format!("Found app: {}", command.command));
                                         existing_commands.insert(command.command.to_lowercase());
                                         handled_files.insert(command.arg.clone());
                                         commands.push(command);
@@ -1539,9 +1539,9 @@ fn scan_directory_with_root_protected(dir: &Path, vault_root: &Path, commands: &
                 if let Some(command) = process_markdown_with_root(&path, vault_root, commands, existing_commands, handled_files, folder_map) {
                     if !handled_files.contains(&command.arg) {
                         if is_pass1 {
-                            crate::utils::detailed_log("SCANNER", &format!("PASS1: Found anchor: {} -> cmd: '{}' patch: '{}'", path.display(), command.command, command.patch));
+                            detailed_log("SCANNER", &format!("PASS1: Found anchor: {} -> cmd: '{}' patch: '{}'", path.display(), command.command, command.patch));
                         } else {
-                            crate::utils::detailed_log("SCANNER", &format!("PASS2: Found markdown: {} -> cmd: '{}' patch: '{}'", path.display(), command.command, command.patch));
+                            detailed_log("SCANNER", &format!("PASS2: Found markdown: {} -> cmd: '{}' patch: '{}'", path.display(), command.command, command.patch));
                         }
 
                         existing_commands.insert(command.command.to_lowercase());
@@ -1555,7 +1555,7 @@ fn scan_directory_with_root_protected(dir: &Path, vault_root: &Path, commands: &
                                     if parent_dir_name.eq_ignore_ascii_case(&command.command) {
                                         if let Ok(canonical_parent) = parent.canonicalize() {
                                             folder_map.insert(canonical_parent.clone(), command.command.clone());
-                                            crate::utils::detailed_log("SCANNER", &format!("Added to folder_map: '{}' -> '{}'", canonical_parent.display(), command.command));
+                                            detailed_log("SCANNER", &format!("Added to folder_map: '{}' -> '{}'", canonical_parent.display(), command.command));
                                         }
                                     }
                                 }
@@ -1568,7 +1568,7 @@ fn scan_directory_with_root_protected(dir: &Path, vault_root: &Path, commands: &
                     // Try DOC file (only in Pass 2)
                     if let Some(command) = process_doc_file(&path, existing_commands, folder_map, config) {
                         if !handled_files.contains(&command.arg) {
-                            crate::utils::detailed_log("SCANNER", &format!("PASS2: Found doc: {} -> cmd: '{}'", path.display(), command.command));
+                            detailed_log("SCANNER", &format!("PASS2: Found doc: {} -> cmd: '{}'", path.display(), command.command));
                             existing_commands.insert(command.command.to_lowercase());
                             handled_files.insert(command.arg.clone());
                             commands.push(command);
@@ -1643,7 +1643,7 @@ fn process_markdown_with_root(path: &Path, _vault_root: &Path, commands: &mut Ve
     // Check if this file is already handled by an existing command
     let full_path = path.to_string_lossy().to_string();
     if handled_files.contains(&full_path) {
-        crate::utils::detailed_log("SCANNER", &format!("Skipping {} - already handled by existing command", full_path));
+        detailed_log("SCANNER", &format!("Skipping {} - already handled by existing command", full_path));
         return None;
     }
 
@@ -1651,7 +1651,7 @@ fn process_markdown_with_root(path: &Path, _vault_root: &Path, commands: &mut Ve
     let file_name = match path.file_stem()?.to_str() {
         Some(name) => name,
         None => {
-            crate::utils::detailed_log("SCANNER", &format!("Skipping file with invalid UTF-8 name: {}", path.display()));
+            detailed_log("SCANNER", &format!("Skipping file with invalid UTF-8 name: {}", path.display()));
             return None;
         }
     };
@@ -1677,13 +1677,13 @@ fn process_markdown_with_root(path: &Path, _vault_root: &Path, commands: &mut Ve
             for cmd in commands.iter_mut() {
                 if cmd.command.eq_ignore_ascii_case(&preferred_name) && cmd.flags.contains(FLAG_USER_EDITED) {
                     cmd.set_flag(FLAG_ANCHOR, "");
-                    crate::utils::log(&format!("🏷️  Added anchor flag to user command '{}' (patch: {})", cmd.command, cmd.patch));
+                    log(&format!("🏷️  Added anchor flag to user command '{}' (patch: {})", cmd.command, cmd.patch));
                     return None; // Don't create duplicate - user's command is now the anchor
                 }
             }
             // If we get here, collision wasn't with user command
             // Anchor files always use their natural name, even with collisions
-            crate::utils::log(&format!("🎯 Creating anchor '{}' despite collision (non-user command)", preferred_name));
+            log(&format!("🎯 Creating anchor '{}' despite collision (non-user command)", preferred_name));
             preferred_name
         } else {
             // Non-anchor with collision, add suffix
@@ -1736,11 +1736,11 @@ fn process_doc_file(path: &Path, existing_commands: &HashSet<String>, folder_map
     // Get the whitelist of DOC file extensions from config
     let doc_extensions = match &config.popup_settings.doc_file_extensions {
         Some(exts) => {
-            crate::utils::detailed_log("SCANNER", &format!("DOC extensions whitelist: {}", exts));
+            detailed_log("SCANNER", &format!("DOC extensions whitelist: {}", exts));
             exts
         },
         None => {
-            crate::utils::detailed_log("SCANNER", "No DOC extensions configured in config");
+            detailed_log("SCANNER", "No DOC extensions configured in config");
             return None; // No DOC extensions configured
         }
     };
@@ -1751,7 +1751,7 @@ fn process_doc_file(path: &Path, existing_commands: &HashSet<String>, folder_map
         .map(|ext| ext.trim().to_lowercase())
         .any(|ext| ext == extension_lower);
     
-    crate::utils::detailed_log("SCANNER", &format!("File '{}' extension '{}' in whitelist: {}", path.display(), extension_lower, is_doc_extension));
+    detailed_log("SCANNER", &format!("File '{}' extension '{}' in whitelist: {}", path.display(), extension_lower, is_doc_extension));
     
     if !is_doc_extension {
         return None;
@@ -1761,7 +1761,7 @@ fn process_doc_file(path: &Path, existing_commands: &HashSet<String>, folder_map
     let file_name = match path.file_stem()?.to_str() {
         Some(name) => name,
         None => {
-            crate::utils::detailed_log("SCANNER", &format!("Skipping file with invalid UTF-8 name: {}", path.display()));
+            detailed_log("SCANNER", &format!("Skipping file with invalid UTF-8 name: {}", path.display()));
             return None;
         }
     };
@@ -1830,7 +1830,7 @@ fn should_skip_path(path: &Path, config: &Config) -> bool {
 
         // Check if the full path matches the glob pattern
         if glob.is_match(&full_path) {
-            crate::utils::detailed_log("SKIP_PATH", &format!("Skipping '{}' matching pattern '{}'", full_path, pattern));
+            detailed_log("SKIP_PATH", &format!("Skipping '{}' matching pattern '{}'", full_path, pattern));
             return true;
         }
     }

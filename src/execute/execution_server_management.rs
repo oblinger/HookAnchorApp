@@ -6,6 +6,7 @@
 //! - Automatic server restart when needed
 
 use std::sync::atomic::{AtomicBool, Ordering};
+use crate::prelude::*;
 
 /// Global flag to track if server availability has been checked this session
 static SERVER_CHECKED: AtomicBool = AtomicBool::new(false);
@@ -27,17 +28,17 @@ pub(crate) fn start_server_if_needed() -> Result<(), Box<dyn std::error::Error>>
     
     // Log file size check is done when popup opens, not here
     
-    crate::utils::detailed_log("SERVER_MGR", "Checking if command server is needed");
+    detailed_log("SERVER_MGR", "Checking if command server is needed");
 
     // Check PID from state.json
     let state = crate::core::data::get_state();
     if let Some(pid) = state.server_pid {
         if is_process_alive(pid) {
-            crate::utils::detailed_log("SERVER_MGR", &format!("Server running with PID: {}", pid));
+            detailed_log("SERVER_MGR", &format!("Server running with PID: {}", pid));
             SERVER_CHECKED.store(true, Ordering::Relaxed);
             return Ok(());
         } else {
-            crate::utils::detailed_log("SERVER_MGR", &format!("Server PID {} no longer running", pid));
+            detailed_log("SERVER_MGR", &format!("Server PID {} no longer running", pid));
             // Clear stale PID
             let mut state = crate::core::data::get_state();
             state.server_pid = None;
@@ -46,18 +47,18 @@ pub(crate) fn start_server_if_needed() -> Result<(), Box<dyn std::error::Error>>
     }
     
     // Start new server via Terminal for proper environment
-    crate::utils::detailed_log("SERVER_MGR", "Starting new command server via Terminal");
+    detailed_log("SERVER_MGR", "Starting new command server via Terminal");
     start_server_via_terminal()?;
     
     // Wait for startup and verify PID is saved
-    crate::utils::detailed_log("SERVER_MGR", "Waiting for server startup");
+    detailed_log("SERVER_MGR", "Waiting for server startup");
     let start_time = std::time::Instant::now();
     let max_wait = std::time::Duration::from_secs(5);
     
     // Poll for server to be ready
     loop {
         if start_time.elapsed() > max_wait {
-            crate::utils::detailed_log("SERVER_MGR", "Server startup timeout - failed to start in 5 seconds");
+            detailed_log("SERVER_MGR", "Server startup timeout - failed to start in 5 seconds");
             return Err("Server startup timeout".into());
         }
         
@@ -65,7 +66,7 @@ pub(crate) fn start_server_if_needed() -> Result<(), Box<dyn std::error::Error>>
         let new_state = crate::core::data::get_state();
         if let Some(pid) = new_state.server_pid {
             if is_process_alive(pid) {
-                crate::utils::detailed_log("SERVER_MGR", &format!("Server started successfully with PID: {}", pid));
+                detailed_log("SERVER_MGR", &format!("Server started successfully with PID: {}", pid));
                 SERVER_CHECKED.store(true, Ordering::Relaxed);
                 return Ok(());
             }
@@ -86,10 +87,10 @@ pub(crate) fn start_server_via_terminal() -> Result<(), Box<dyn std::error::Erro
             if let Ok(created) = metadata.created() {
                 let elapsed = created.elapsed().unwrap_or(std::time::Duration::from_secs(0));
                 if elapsed > std::time::Duration::from_secs(30) {
-                    crate::utils::detailed_log("SERVER_MGR", "Removing stale server startup lock");
+                    detailed_log("SERVER_MGR", "Removing stale server startup lock");
                     let _ = std::fs::remove_file(lock_path);
                 } else {
-                    crate::utils::detailed_log("SERVER_MGR", "Server startup already in progress, skipping");
+                    detailed_log("SERVER_MGR", "Server startup already in progress, skipping");
                     return Ok(());
                 }
             }
@@ -115,8 +116,8 @@ pub(crate) fn start_server_via_terminal() -> Result<(), Box<dyn std::error::Erro
         escaped_path
     );
     
-    crate::utils::detailed_log("SERVER_MGR", "Starting server via Terminal with AppleScript");
-    crate::utils::detailed_log("SERVER_MGR", &format!("AppleScript command: {}", script));
+    detailed_log("SERVER_MGR", "Starting server via Terminal with AppleScript");
+    detailed_log("SERVER_MGR", &format!("AppleScript command: {}", script));
     
     let output = std::process::Command::new("osascript")
         .args(["-e", &script])
@@ -127,7 +128,7 @@ pub(crate) fn start_server_via_terminal() -> Result<(), Box<dyn std::error::Erro
         return Err(format!("AppleScript failed: {}", stderr).into());
     }
     
-    crate::utils::detailed_log("SERVER_MGR", "Terminal server start initiated successfully");
+    detailed_log("SERVER_MGR", "Terminal server start initiated successfully");
     
     // Remove lock file after a delay
     std::thread::spawn(move || {
@@ -143,7 +144,7 @@ pub fn kill_existing_server() -> Result<(), Box<dyn std::error::Error>> {
     let state = crate::core::data::get_state();
     if let Some(pid) = state.server_pid {
         if is_process_alive(pid) {
-            crate::utils::detailed_log("SERVER_MGR", &format!("Killing existing server PID: {}", pid));
+            detailed_log("SERVER_MGR", &format!("Killing existing server PID: {}", pid));
             
             unsafe {
                 // Send SIGTERM first (graceful shutdown)
