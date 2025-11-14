@@ -4268,7 +4268,11 @@ impl eframe::App for AnchorSelector {
             CommandEditorResult::Save(_new_command, original_command_name) => {
                 // Get the save data from command editor
                 let (command_to_delete, mut new_command) = self.command_editor.prepare_save_command();
-                
+
+                // TILDE EXPANSION: Expand tilde in arg field after user confirms save
+                // This allows user to see and edit tilde while editing, but saves expanded path
+                new_command.arg = crate::utils::expand_tilde(&new_command.arg);
+
                 // Check if this is a rename that might have side effects
                 let orig_name = &original_command_name;
                 log(&format!("RENAME_CHECK: orig_name='{}', new_name='{}', empty={}, command_to_delete={:?}", orig_name, new_command.command, orig_name.is_empty(), command_to_delete));
@@ -5466,9 +5470,21 @@ pub fn run_gui_with_prompt(initial_prompt: &str, initial_action: Option<&str>, _
             style.animation_time = 0.0; // Disable animations
 
             // Disable hover visuals completely - we control selection explicitly with blue highlight
-            // Copy inactive state to all interaction states to prevent any hover effects
+            // Copy inactive state to all interaction states to prevent any hover/click effects
             style.visuals.widgets.hovered = style.visuals.widgets.inactive.clone();
+            style.visuals.widgets.active = style.visuals.widgets.inactive.clone();
             style.visuals.widgets.open = style.visuals.widgets.inactive.clone();
+
+            // Also disable the background fill for all widget states to prevent gray highlighting
+            style.visuals.widgets.inactive.weak_bg_fill = egui::Color32::TRANSPARENT;
+            style.visuals.widgets.hovered.weak_bg_fill = egui::Color32::TRANSPARENT;
+            style.visuals.widgets.active.weak_bg_fill = egui::Color32::TRANSPARENT;
+            style.visuals.widgets.open.weak_bg_fill = egui::Color32::TRANSPARENT;
+
+            style.visuals.widgets.inactive.bg_fill = egui::Color32::TRANSPARENT;
+            style.visuals.widgets.hovered.bg_fill = egui::Color32::TRANSPARENT;
+            style.visuals.widgets.active.bg_fill = egui::Color32::TRANSPARENT;
+            style.visuals.widgets.open.bg_fill = egui::Color32::TRANSPARENT;
 
             cc.egui_ctx.set_style(style);
             

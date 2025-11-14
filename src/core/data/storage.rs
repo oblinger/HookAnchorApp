@@ -93,6 +93,12 @@ pub(in crate::core) fn load_commands_raw() -> Vec<Command> {
 
                 match crate::core::commands::parse_command_line(line) {
                     Ok(command) => {
+                        // NOTE: No tilde expansion needed here - commands.txt should already have
+                        // fully expanded paths. Tildes are expanded:
+                        // 1. When config is loaded (file_roots, etc.)
+                        // 2. When user edits commands (in prepare_save_command)
+                        // 3. When scanner creates commands (uses already-expanded config paths)
+
                         // Debug: Log the first few commands to see if patches are being preserved
                         if line_num < 5 {
                             detailed_log("PARSE_DEBUG", &format!("Parsed line {}: patch='{}', command='{}'",

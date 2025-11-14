@@ -30,6 +30,8 @@ pub struct Config {
     pub actions: Option<HashMap<String, crate::execute::Action>>,
     /// History viewer settings (top-level)
     pub history_viewer: Option<HistoryViewerSettings>,
+    /// Scanner settings (anchor tree sync, etc.)
+    pub scanner_settings: Option<ScannerSettings>,
 }
 
 /// Popup settings section of the configuration file
@@ -190,10 +192,26 @@ impl Default for HistoryViewerKeyBindings {
     }
 }
 
+/// Scanner settings section of the configuration file
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(default)]
+pub struct ScannerSettings {
+    /// Root directory for anchor tree folder synchronization (default: "~/ob/anchors")
+    pub anchor_tree_root: Option<String>,
+}
+
+impl Default for ScannerSettings {
+    fn default() -> Self {
+        ScannerSettings {
+            anchor_tree_root: Some("~/ob/anchors".to_string()),
+        }
+    }
+}
+
 /// Launcher settings section of the configuration file
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct LauncherSettings {
- 
+
     pub js_timeout_ms: Option<u64>,
     pub obsidian_app_name: Option<String>,
     pub obsidian_vault_name: Option<String>,
@@ -287,6 +305,7 @@ impl Default for Config {
             grabber_suffix_map: None,
             actions: None,
             history_viewer: Some(HistoryViewerSettings::default()),
+            scanner_settings: Some(ScannerSettings::default()),
         }
     }
 }
@@ -396,16 +415,27 @@ fn parse_config_contents(contents: &str) -> Result<Config, Box<dyn std::error::E
     }
     
     // Handle file_roots at top level - migrate to popup_settings
+    // TILDE EXPANSION: Expand all file_roots paths
     if let Some(roots) = yaml.get("file_roots")
         .and_then(|v| serde_yaml::from_value::<Vec<String>>(v.clone()).ok()) {
-        popup_settings.file_roots = Some(roots);
+        let expanded_roots: Vec<String> = roots.iter()
+            .map(|path| crate::utils::expand_tilde(path))
+            .collect();
+        popup_settings.file_roots = Some(expanded_roots);
     }
     
     
     // Extract launcher_settings if it exists
+    // TILDE EXPANSION: Expand obsidian_vault_path
     let launcher_settings = yaml.get("launcher_settings")
-        .and_then(|v| serde_yaml::from_value(v.clone()).ok());
-    
+        .and_then(|v| serde_yaml::from_value::<LauncherSettings>(v.clone()).ok())
+        .map(|mut settings| {
+            if let Some(ref path) = settings.obsidian_vault_path {
+                settings.obsidian_vault_path = Some(crate::utils::expand_tilde(path));
+            }
+            settings
+        });
+
     // Extract grabber_rules if it exists
     let grabber_rules = yaml.get("grabber_rules")
         .and_then(|v| serde_yaml::from_value(v.clone()).ok());
@@ -433,6 +463,15 @@ fn parse_config_contents(contents: &str) -> Result<Config, Box<dyn std::error::E
             .and_then(|v| serde_yaml::from_value(v.clone()).ok()),
         actions,
         history_viewer,
+        scanner_settings: yaml.get("scanner_settings")
+            .and_then(|v| serde_yaml::from_value::<ScannerSettings>(v.clone()).ok())
+            .map(|mut settings| {
+                // TILDE EXPANSION: Expand anchor_tree_root
+                if let Some(ref path) = settings.anchor_tree_root {
+                    settings.anchor_tree_root = Some(crate::utils::expand_tilde(path));
+                }
+                settings
+            }),
     })
 }
 
@@ -447,6 +486,7 @@ pub(crate) fn create_default_config() -> Config {
         grabber_suffix_map: None,
         actions: None,
         history_viewer: Some(HistoryViewerSettings::default()),
+        scanner_settings: Some(ScannerSettings::default()),
     }
 }
 
