@@ -7,7 +7,7 @@
 # APPLICATION SETTINGS
 # =================================================================
 popup_settings:
-  verbose_logging:        false        # Controls if detailed logging messages added to the log
+  verbose_logging:        true        # Controls if detailed logging messages added to the log
   merge_similar:          true         # Merging similar commands in popup
   max_rows:               25           # Max number of rows in the list of matching commands
   max_columns:            4            # Max columns in list of matching commands
@@ -29,6 +29,7 @@ popup_settings:
   display_file_extensions: "pdf,doc,docx,xls,xlsx,ppt,pptx,txt,rtf,pages,numbers,csv,html,htm,md" # File extensions to display in prefix menu file lists
 
   skip_patterns:                       # Standard glob patterns to skip during scanning
+    - "**/.*/**"                       # Exclude all hidden folders (starting with dot)
     - "**/Yore/**"                     # Exclude any path containing /Yore/ folder (historical files)
     - "**/*backups*/**"                # Exclude all backup directories and their contents
     - "~/ob/kmr/_temp_links/**"        # Exclude temporary symlink directory tree
@@ -165,14 +166,14 @@ actions:
     key: "Cmd+O"
     name: "@{{input}}"
     action: "markdown"
-    arg: "~/ob/kmr/At/Org/@{{input}}.md"
-    patch: "Org"
+    arg: "~/ob/kmr/At/Corp/@{{input}}.md"
+    patch: "Corp"
     flags: "A"
     edit: true
-    file: "~/ob/kmr/At/Org/@{{input}}.md"
+    file: "~/ob/kmr/At/Corp/@{{input}}.md"
     file_rescan: true
     contents: |
-      =[[Org]]   
+      =[[Corp]]   
 
     
   child_doc_entry:

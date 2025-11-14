@@ -414,7 +414,12 @@ fn build_prefix_menu_commands(
                 cmd_trimmed, anchor_name, filter_text));
         }
 
-        let matches_prefix = if cmd_lower.starts_with(&anchor_lower) && cmd_lower != anchor_lower {
+        // Check if this command belongs in the prefix menu:
+        // 1. Command name starts with anchor name (e.g., "PJ Directories" for anchor "PJ")
+        // 2. Command has patch matching anchor name (e.g., "PP" with patch "PJ")
+        let has_matching_patch = cmd.patch.to_lowercase() == anchor_lower;
+
+        let name_starts_with_prefix = if cmd_lower.starts_with(&anchor_lower) && cmd_lower != anchor_lower {
             // Check if the character after the anchor name is a separator
             let next_char_pos = anchor_lower.len();
             if next_char_pos < cmd_trimmed.len() {
@@ -429,6 +434,8 @@ fn build_prefix_menu_commands(
         } else {
             false
         };
+
+        let matches_prefix = has_matching_patch || name_starts_with_prefix;
         
         if matches_prefix {
             // Apply additional filtering based on remaining characters

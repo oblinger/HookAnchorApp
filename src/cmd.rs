@@ -1031,8 +1031,7 @@ fn run_infer_single_command(command_name: &str) {
     let commands_arc = sys_data.commands;
     let patches = sys_data.patches;
 
-    // Build folder map for unified inference
-    let folder_map = crate::core::inference::build_folder_to_patch_map(&commands_arc);
+    // NOTE: folder_to_patch map is in SysData, queried via get_patch_for_folder()
 
     // Find the command by name
     let found_command = commands_arc.iter().find(|cmd| cmd.command == command_name);
@@ -1043,7 +1042,7 @@ fn run_infer_single_command(command_name: &str) {
             print(&format!("Current patch: '{}'", command.patch));
 
             // Test patch inference on this specific command
-            match crate::core::inference::infer_patch_unified(command, &patches, &folder_map) {
+            match crate::core::inference::infer_patch_unified(command, &patches) {
                 Some(inferred_patch) => {
                     print(&format!("Inferred patch: '{}'", inferred_patch));
                     

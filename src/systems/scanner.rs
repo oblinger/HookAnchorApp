@@ -977,25 +977,52 @@ fn scan_files_merge_based(
     // Phase 2: Process existing commands
     detailed_log("SCANNER", "Phase 2: Processing existing commands...");
     commands.retain_mut(|cmd| {
+        // DEBUG: Log @Exponent specifically
+        if cmd.command == "@Exponent" {
+            log(&format!("DEBUG @Exponent: action='{}' arg='{}' flags='{}'", cmd.action, cmd.arg, cmd.flags));
+        }
+
         // Skip non-scanner-generated actions (alias, url, 1pass, work, chrome, etc.)
         if !SCANNER_GENERATED_ACTIONS.contains(&cmd.action.as_str()) {
             stats.unchanged += 1;
             detailed_log("SCANNER", &format!(
                 "Unchanged: '{}' (non-scanner action: {})", cmd.command, cmd.action
             ));
+            if cmd.command == "@Exponent" {
+                log(&format!("DEBUG @Exponent: SKIPPED - action '{}' not in SCANNER_GENERATED_ACTIONS", cmd.action));
+            }
             return true; // Keep
+        }
+
+        if cmd.command == "@Exponent" {
+            log(&format!("DEBUG @Exponent: action IS in SCANNER_GENERATED_ACTIONS, checking path..."));
         }
 
         // Get absolute file path for this command
         let file_path = match cmd.get_absolute_file_path(config) {
-            Some(path) => path,
+            Some(path) => {
+                if cmd.command == "@Exponent" {
+                    log(&format!("DEBUG @Exponent: get_absolute_file_path returned Some({})", path.display()));
+                }
+                path
+            },
             None => {
-                // Command doesn't have a valid path - keep it unchanged
-                stats.unchanged += 1;
-                detailed_log("SCANNER", &format!(
-                    "Unchanged: '{}' (no valid file path)", cmd.command
+                // Command doesn't have a valid path
+                // For scanner-generated actions, this means the file or directory is gone - delete it
+                stats.deleted += 1;
+                if verbose {
+                    crate::utils::print(&format!("   Deleted: '{}' - file path cannot be resolved (directory gone)",
+                        cmd.command
+                    ));
+                }
+                log(&format!(
+                    "Deleted: '{}' - file path cannot be resolved (arg: {})",
+                    cmd.command, cmd.arg
                 ));
-                return true;
+                if cmd.command == "@Exponent" {
+                    log(&format!("DEBUG @Exponent: get_absolute_file_path returned None - DELETING"));
+                }
+                return false; // Remove from list
             }
         };
 
@@ -1006,12 +1033,25 @@ fn scan_files_merge_based(
             detailed_log("SCANNER", &format!(
                 "Unchanged: '{}' (outside scan roots)", cmd.command
             ));
+            if cmd.command == "@Exponent" {
+                log(&format!("DEBUG @Exponent: OUTSIDE scan roots - keeping unchanged"));
+            }
             return true;
+        }
+
+        if cmd.command == "@Exponent" {
+            log(&format!("DEBUG @Exponent: INSIDE scan roots, checking if file exists..."));
         }
 
         // File is within scan roots - check if it still exists
         let file_path_str = file_path.to_string_lossy().to_string();
+        if cmd.command == "@Exponent" {
+            log(&format!("DEBUG @Exponent: Looking for file_path_str='{}' in discovered_files", file_path_str));
+        }
         if let Some(new_cmd) = discovered_files.remove(&file_path_str) {
+            if cmd.command == "@Exponent" {
+                log(&format!("DEBUG @Exponent: File EXISTS in discovered_files"));
+            }
             // File still exists
 
             // If user-edited, preserve the existing command completely
@@ -1072,6 +1112,9 @@ fn scan_files_merge_based(
 
             return true; // Keep command
         } else {
+            if cmd.command == "@Exponent" {
+                log(&format!("DEBUG @Exponent: File NOT in discovered_files - should DELETE"));
+            }
             // File no longer exists - delete command even if user-edited
             stats.deleted += 1;
             if verbose {
@@ -2188,4 +2231,216 @@ mod tests {
         assert_eq!(commands[0].command, "PRJ");
         assert_eq!(commands[1].command, "prj markdown");
     }
+}
+
+// =============================================================================
+// ANCHOR TREE FOLDER SYNCHRONIZATION
+// =============================================================================
+
+/// Update the anchor tree folder structure to match the patch hierarchy
+///
+/// Scans the patches HashMap and creates a folder hierarchy that mirrors
+/// the anchor tree structure. Each anchor gets a folder at the path
+/// determined by walking up the patch hierarchy.
+///
+/// # Arguments
+/// - `patches`: The patches HashMap from sys_data
+/// - `config`: Application config containing anchor_tree_root setting
+///
+/// # Returns
+/// Ok((folders_created, folders_removed)) or Err on failure
+///
+/// # Example
+/// For patches: @Amazon (orphan), AMA (patch: @Amazon), EC2 (patch: AMA)
+/// Creates: ~/ob/anchors/@Amazon/AMA/EC2/
+pub fn update_anchor_tree_folders(
+    patches: &std::collections::HashMap<String, crate::core::commands::Patch>,
+    config: &crate::core::Config,
+) -> Result<(usize, usize), String> {
+    use std::path::PathBuf;
+    use std::collections::HashSet;
+
+    // Get anchor tree root from config
+    let root_str = config.scanner_settings
+        .as_ref()
+        .and_then(|s| s.anchor_tree_root.as_ref())
+        .map(|s| s.as_str())
+        .unwrap_or("~/ob/anchors");
+
+    // Expand ~ to home directory
+    let root = if root_str.starts_with("~/") {
+        if let Some(home) = dirs::home_dir() {
+            home.join(&root_str[2..])
+        } else {
+            return Err("Could not determine home directory".to_string());
+        }
+    } else {
+        PathBuf::from(root_str)
+    };
+
+    // Ensure root exists
+    if !root.exists() {
+        std::fs::create_dir_all(&root)
+            .map_err(|e| format!("Failed to create anchor tree root: {}", e))?;
+        detailed_log("ANCHOR_SYNC", &format!("Created anchor tree root: {}", root.display()));
+    }
+
+    // Phase 1: Build set of required folders
+    let required = get_required_folders(patches, &root)?;
+
+    // Phase 2: Discover existing folders
+    let existing = get_existing_folders(&root)?;
+
+    // Phase 3: Remove orphaned folders
+    let removed = remove_orphan_folders(&existing, &required)?;
+
+    // Phase 4: Create missing folders
+    let created = create_missing_folders(&required, &existing)?;
+
+    if created > 0 || removed > 0 {
+        detailed_log("ANCHOR_SYNC", &format!(
+            "Anchor tree sync complete: {} created, {} removed",
+            created, removed
+        ));
+    }
+
+    Ok((created, removed))
+}
+
+/// Build set of all required folder paths from patch hierarchy
+fn get_required_folders(
+    patches: &std::collections::HashMap<String, crate::core::commands::Patch>,
+    root: &std::path::Path,
+) -> Result<std::collections::HashSet<std::path::PathBuf>, String> {
+    use std::collections::HashSet;
+    use std::path::PathBuf;
+    use crate::core::commands::walk_patch_hierarchy;
+
+    let mut folders = HashSet::new();
+
+    for (patch_name, patch) in patches {
+        // Skip orphans patch - it's just a container, not a real anchor
+        if patch_name.to_lowercase() == "orphans" {
+            continue;
+        }
+
+        // Build full path to this patch by walking hierarchy
+        let hierarchy: Vec<_> = walk_patch_hierarchy(patch_name, patches, 100).collect();
+
+        // Build folder path from root to this patch (skip "orphans" in path)
+        let mut folder_path = root.to_path_buf();
+        for ancestor in hierarchy.iter().rev() {
+            if ancestor.name.to_lowercase() != "orphans" {
+                folder_path.push(&ancestor.name);
+            }
+        }
+
+        // The hierarchy already represents the full path to this anchor
+        // (it includes patch_name as the last element), so folder_path is complete
+        folders.insert(folder_path);
+    }
+
+    Ok(folders)
+}
+
+/// Recursively scan anchor tree root to find all existing folders
+fn get_existing_folders(
+    root: &std::path::Path,
+) -> Result<std::collections::HashSet<std::path::PathBuf>, String> {
+    use std::collections::HashSet;
+    use std::fs;
+
+    let mut folders = HashSet::new();
+
+    if !root.exists() {
+        return Ok(folders);
+    }
+
+    fn scan_dir(
+        dir: &std::path::Path,
+        folders: &mut HashSet<std::path::PathBuf>,
+    ) -> Result<(), String> {
+        let entries = std::fs::read_dir(dir)
+            .map_err(|e| format!("Failed to read directory {}: {}", dir.display(), e))?;
+
+        for entry in entries {
+            let entry = entry.map_err(|e| format!("Failed to read entry: {}", e))?;
+            let path = entry.path();
+
+            if path.is_dir() {
+                folders.insert(path.clone());
+                scan_dir(&path, folders)?;
+            }
+        }
+
+        Ok(())
+    }
+
+    scan_dir(root, &mut folders)?;
+    Ok(folders)
+}
+
+/// Remove folders that exist but are not required (orphaned folders)
+fn remove_orphan_folders(
+    existing: &std::collections::HashSet<std::path::PathBuf>,
+    required: &std::collections::HashSet<std::path::PathBuf>,
+) -> Result<usize, String> {
+    use std::fs;
+
+    // Compute orphaned folders: existing - required
+    let mut orphans: Vec<_> = existing.difference(required).collect();
+
+    // Sort by depth (deepest first) to avoid removing parent before child
+    orphans.sort_by(|a, b| {
+        let a_depth = a.components().count();
+        let b_depth = b.components().count();
+        b_depth.cmp(&a_depth)  // Reverse order (deepest first)
+    });
+
+    let mut removed_count = 0;
+
+    for folder in orphans {
+        match fs::remove_dir(folder) {
+            Ok(_) => {
+                detailed_log("ANCHOR_SYNC", &format!("Removed orphan folder: {}", folder.display()));
+                removed_count += 1;
+            }
+            Err(e) => {
+                // Log but don't fail - folder might have user files
+                detailed_log("ANCHOR_SYNC", &format!(
+                    "Could not remove folder {} (may contain files): {}",
+                    folder.display(), e
+                ));
+            }
+        }
+    }
+
+    Ok(removed_count)
+}
+
+/// Create folders that are required but don't exist yet
+fn create_missing_folders(
+    required: &std::collections::HashSet<std::path::PathBuf>,
+    existing: &std::collections::HashSet<std::path::PathBuf>,
+) -> Result<usize, String> {
+    use std::fs;
+
+    // Compute missing folders: required - existing
+    let missing: Vec<_> = required.difference(existing).collect();
+
+    let mut created_count = 0;
+
+    for folder in missing {
+        match fs::create_dir_all(folder) {
+            Ok(_) => {
+                detailed_log("ANCHOR_SYNC", &format!("Created folder: {}", folder.display()));
+                created_count += 1;
+            }
+            Err(e) => {
+                return Err(format!("Failed to create folder {}: {}", folder.display(), e));
+            }
+        }
+    }
+
+    Ok(created_count)
 }

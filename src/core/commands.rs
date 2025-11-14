@@ -921,118 +921,11 @@ fn is_patch_degradation(current_patch: &str, inferred_patch: &str) -> bool {
     false
 }
 
-/// Build a hashmap of absolute folder paths to patch names from anchor commands
-/// This creates the folder hierarchy that patch inference will use
-fn build_folder_to_patch_map(commands: &[Command]) -> HashMap<PathBuf, String> {
-    use std::path::PathBuf;
-    let mut folder_map = HashMap::new();
-    let config = crate::core::data::get_config();
+// NOTE: build_folder_to_patch_map() moved to SysData layer
+// The folder_to_patch map is now maintained in SysData and queried via get_patch_for_folder()
 
-    // First pass: Add all anchor commands to the map
-    for cmd in commands {
-        if cmd.is_anchor() && !cmd.arg.is_empty() {
-            // Get the file path to check if this is a true anchor file
-            if let Some(file_path) = cmd.get_absolute_file_path(&config) {
-                // Only map folders for anchors that have a matching subdirectory
-                // (e.g., /@Avid Boustani/@Avid Boustani.md)
-                // NOT for standalone anchor files (e.g., /At/@Reed Shaffner.md)
-                if crate::utils::is_anchor_file(&file_path) {
-                    // This is a true anchor file with a matching subdirectory
-                    // Use the proper accessor that handles both file and folder anchors correctly
-                    if let Some(folder_path) = cmd.get_absolute_folder_path(&config) {
-                        // Canonicalize to handle symlinks and relative paths
-                        if let Ok(canonical_folder) = folder_path.canonicalize() {
-                            // Map this folder to the anchor's command name (which becomes the patch for its contents)
-                            folder_map.insert(canonical_folder, cmd.command.clone());
-
-                            detailed_log("PATCH_MAP", &format!(
-                                "Folder '{}' -> patch '{}' (true anchor file with subdirectory)",
-                                folder_path.display(), cmd.command
-                            ));
-                        }
-                    }
-                } else {
-                    // This is a standalone anchor file without a matching subdirectory
-                    // Do NOT map its parent directory - it doesn't define a patch for siblings
-                    detailed_log("PATCH_MAP", &format!(
-                        "Skipping folder mapping for standalone anchor '{}' (no subdirectory)",
-                        cmd.command
-                    ));
-                }
-            }
-        }
-    }
-    
-    folder_map
-}
-
-/// Simple patch inference: walk up the folder hierarchy until we find a mapped folder
-fn infer_patch_simple(file_path: &str, folder_map: &HashMap<PathBuf, String>) -> Option<String> {
-    use std::path::Path;
-    
-    // Skip if not a file path
-    if file_path.is_empty() || file_path.starts_with("http") || !file_path.contains('/') {
-        return None;
-    }
-    
-    let path = Path::new(file_path);
-    
-    // Check if this is an anchor file itself (file name without extension matches parent folder)
-    if crate::utils::is_anchor_file(path) {
-        if let Some(file_stem) = path.file_stem() {
-            if let Some(parent) = path.parent() {
-                if let Some(parent_name) = parent.file_name() {
-                    // This is an anchor file - walk up to find its parent's patch
-                    log(&format!("  📁 Found anchor file: {} in folder {}", 
-                        file_stem.to_string_lossy(), parent_name.to_string_lossy()));
-                }
-            }
-        }
-        
-        if let Some(parent) = path.parent() {
-            // Start from the parent's parent to avoid self-reference
-            if let Some(grandparent) = parent.parent() {
-                let mut current = grandparent;
-                loop {
-                    if let Ok(canonical) = current.canonicalize() {
-                        if let Some(patch) = folder_map.get(&canonical) {
-                            let file_display = path.file_stem().map(|s| s.to_string_lossy()).unwrap_or_default();
-                            log(&format!("  📍 Anchor '{}' -> parent folder '{}' -> patch '{}'",
-                                file_display, current.display(), patch));
-                            return Some(patch.clone());
-                        }
-                    }
-                    current = current.parent()?;
-                }
-            }
-        }
-    }
-    
-    // Start with the file's parent directory
-    let mut current = if path.is_file() || path.extension().is_some() {
-        path.parent()?
-    } else {
-        path
-    };
-    
-    // Walk up the directory tree
-    loop {
-        // Try to canonicalize the current directory
-        if let Ok(canonical) = current.canonicalize() {
-            // Check if this directory has a patch mapping
-            if let Some(patch) = folder_map.get(&canonical) {
-                log(&format!(
-                    "  📂 File '{}' -> folder '{}' -> patch '{}'",
-                    file_path, current.display(), patch
-                ));
-                return Some(patch.clone());
-            }
-        }
-        
-        // Move up to parent directory
-        current = current.parent()?;
-    }
-}
+// NOTE: infer_patch_simple() removed - use crate::core::inference::infer_patch_simple() instead
+// The function now queries SysData's folder_to_patch map instead of taking it as a parameter
 
 /// Run patch inference on commands with configurable behavior
 /// 
@@ -1058,15 +951,8 @@ pub fn run_patch_inference(
     
     log(&format!("=== PATCH INFERENCE ==="));
     log(&format!("Processing {} commands", commands.len()));
-    
-    // Build the folder → patch mapping from anchors
-    let folder_map = build_folder_to_patch_map(commands);
-    log(&format!("Built folder map with {} entries", folder_map.len()));
 
-    // Log the folder map entries (detailed logging to avoid spam)
-    for (folder, patch) in &folder_map {
-        detailed_log("PATCH", &format!("Folder: {} -> Patch: {}", folder.display(), patch));
-    }
+    // Note: folder → patch mapping is now maintained in SysData and queried via get_patch_for_folder()
 
     for command in commands.iter_mut() {
         // Skip the orphans root command - it should never have a patch
@@ -1110,8 +996,8 @@ pub fn run_patch_inference(
             //     infer_patch(command, patches)
             // };
 
-            // Use unified patch inference algorithm
-            let inferred_patch = crate::core::inference::infer_patch_unified(command, patches, &folder_map);
+            // Use unified patch inference algorithm (queries SysData's folder_to_patch map)
+            let inferred_patch = crate::core::inference::infer_patch_unified(command, patches);
             
             if let Some(inferred_patch) = inferred_patch {
                 // Skip if patch wouldn't change - always skip when values are the same

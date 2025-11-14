@@ -1,7 +1,7 @@
 {
   "window_position": [
     980.0,
-    104.0
+    440.0
   ],
   "history_viewer_state": {
     "position": [
@@ -10,23 +10,23 @@
     ],
     "window_size": [
       1156.0,
-      1288.0
+      1316.0
     ],
     "patch_filter": "",
     "name_filter": "",
-    "min_edit_size": 500,
+    "min_edit_size": 5,
     "selected_action_types": [],
-    "sidebar_width": 76.0,
+    "sidebar_width": 74.0,
     "show_current_commands": false
   },
-  "build_time": 1762967581,
+  "build_time": 1763147300,
   "last_scan_time": null,
   "last_scan_checksum": null,
-  "last_executed_command": "JOBI",
-  "server_pid": 26290,
+  "last_executed_command": "Hook Anchor",
+  "server_pid": 46328,
   "notion_last_scan": null,
-  "anchor_name": "JOBI",
-  "anchor_timestamp": 1762930331,
+  "anchor_name": "Hook Anchor",
+  "anchor_timestamp": 1763140792,
   "anchor_folder": null,
   "show_files": false
 }
