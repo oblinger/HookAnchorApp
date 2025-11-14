@@ -65,6 +65,7 @@ pub use sys_data::{
     get_commands_arc,  // Fast Arc-based access for hot paths
     get_config,
     get_patches,
+    get_patch_for_folder,  // Query folder->patch mapping
     get_sys_data,
     get_state,
     get_history_entries,

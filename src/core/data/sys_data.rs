@@ -21,6 +21,7 @@ pub struct SysData {
     pub config: Config,
     pub commands: Arc<Vec<Command>>,  // Arc for efficient read-only access (cloning is cheap)
     pub patches: HashMap<String, Patch>,
+    folder_to_patch: HashMap<std::path::PathBuf, String>,  // Maps folder paths to patch names
 }
 
 // Global application data - loaded once and reused
@@ -46,6 +47,7 @@ pub fn initialize_minimal() -> Result<(), String> {
         config: get_config(),
         commands: Arc::new(Vec::new()),
         patches: std::collections::HashMap::new(),
+        folder_to_patch: std::collections::HashMap::new(),
     });
 
     log("SYS_DATA: Minimal initialization complete (empty commands)");
@@ -190,6 +192,11 @@ pub fn update_commands(new_commands: Vec<Command>) {
 
         // Update patches to stay in sync
         data.patches = crate::core::commands::create_patches_hashmap(&new_commands);
+
+        // Sync anchor tree folders to match patch hierarchy
+        if let Err(e) = crate::systems::scanner::update_anchor_tree_folders(&data.patches, &data.config) {
+            crate::prelude::log_error(&format!("Failed to sync anchor tree folders: {}", e));
+        }
 
         log("SYS_DATA: Commands updated, old Arc invalidated");
     }
@@ -373,10 +380,14 @@ pub fn initialize() -> Result<(), String> {
     // ==========================================================================
     let sys = SYS_DATA.get_or_init(|| Mutex::new(None));
     let mut sys_data = sys.lock().unwrap();
+    // Build folder_to_patch map from anchor commands
+    let folder_to_patch = build_folder_to_patch_map(&commands, &get_config());
+
     *sys_data = Some(SysData {
         config: get_config(),
         commands: Arc::new(commands),  // Wrap in Arc for efficient access
         patches,
+        folder_to_patch,
     });
 
     Ok(())
@@ -632,11 +643,15 @@ fn load_data_no_cache(commands_override: Vec<Command>, _verbose: bool) -> SysDat
     
     // Create basic patches hashmap
     let patches = crate::core::commands::create_patches_hashmap(&commands);
-    
+
+    // Build folder_to_patch map from anchor commands
+    let folder_to_patch = build_folder_to_patch_map(&commands, &config);
+
     SysData {
         config,
         commands: Arc::new(commands),
         patches,
+        folder_to_patch,
     }
 }
 
@@ -740,11 +755,15 @@ pub fn load_data(commands_override: Vec<Command>, verbose: bool) -> SysData {
         log("💾 Step 4: Skipping save (using commands override for temporary processing)");
     }
     
+    // Build folder_to_patch map from anchor commands
+    let folder_to_patch = build_folder_to_patch_map(&commands, &config);
+
     // Store in sys data for future calls (only if not using commands override)
     let sys_data_struct = SysData {
         config,
         commands: Arc::new(commands),  // Wrap in Arc for efficient access
         patches,
+        folder_to_patch,
     };
     
     if !use_override {
@@ -834,4 +853,69 @@ pub fn delete_history() -> Result<(bool, bool), String> {
     let history_deleted = super::history::delete_history_db()?;
     let cache_deleted = super::storage::delete_cache()?;
     Ok((history_deleted, cache_deleted))
+}
+
+// ============================================================================
+// FOLDER TO PATCH MAPPING
+// ============================================================================
+
+/// Build a hashmap of absolute folder paths to patch names from anchor commands
+/// This creates the folder hierarchy that patch inference will use
+///
+/// Only creates mappings for anchor files with matching subdirectories
+/// (e.g., /@Avid Boustani/@Avid Boustani.md) and NOT for standalone anchor files
+/// (e.g., /At/@Reed Shaffner.md) which would incorrectly map their parent directory
+fn build_folder_to_patch_map(commands: &[Command], config: &Config) -> HashMap<std::path::PathBuf, String> {
+    use std::path::PathBuf;
+    let mut folder_map = HashMap::new();
+
+    // First pass: Add all anchor commands to the map
+    for cmd in commands {
+        if cmd.is_anchor() && !cmd.arg.is_empty() {
+            // Get the file path to check if this is a true anchor file
+            if let Some(file_path) = cmd.get_absolute_file_path(config) {
+                // Only map folders for anchors that have a matching subdirectory
+                // (e.g., /@Avid Boustani/@Avid Boustani.md)
+                // NOT for standalone anchor files (e.g., /At/@Reed Shaffner.md)
+                if crate::utils::is_anchor_file(&file_path) {
+                    // This is a true anchor file with a matching subdirectory
+                    // Use the proper accessor that handles both file and folder anchors correctly
+                    if let Some(folder_path) = cmd.get_absolute_folder_path(config) {
+                        // Canonicalize to handle symlinks and relative paths
+                        if let Ok(canonical_folder) = folder_path.canonicalize() {
+                            // Map this folder to the anchor's command name (which becomes the patch for its contents)
+                            folder_map.insert(canonical_folder, cmd.command.clone());
+
+                            detailed_log("PATCH_MAP", &format!(
+                                "Folder '{}' -> patch '{}' (true anchor file with subdirectory)",
+                                folder_path.display(), cmd.command
+                            ));
+                        }
+                    }
+                } else {
+                    // This is a standalone anchor file without a matching subdirectory
+                    // Do NOT map its parent directory - it doesn't define a patch for siblings
+                    detailed_log("PATCH_MAP", &format!(
+                        "Skipping folder mapping for standalone anchor '{}' (no subdirectory)",
+                        cmd.command
+                    ));
+                }
+            }
+        }
+    }
+
+    folder_map
+}
+
+/// Query the patch name for a given folder path
+/// Returns None if the folder is not mapped to any patch
+pub fn get_patch_for_folder(folder_path: &std::path::Path) -> Option<String> {
+    let (sys_data, _) = get_sys_data();
+
+    // Try to canonicalize the path to match how it's stored in the map
+    if let Ok(canonical) = folder_path.canonicalize() {
+        sys_data.folder_to_patch.get(&canonical).cloned()
+    } else {
+        None
+    }
 }
