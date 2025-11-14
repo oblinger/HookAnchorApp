@@ -436,16 +436,32 @@ pub fn build_folder_to_patch_map(commands: &[Command]) -> HashMap<PathBuf, Strin
     // First pass: Add all anchor commands to the map
     for cmd in commands {
         if cmd.is_anchor() && !cmd.arg.is_empty() {
-            // Use the proper accessor that handles both file and folder anchors correctly
-            if let Some(folder_path) = cmd.get_absolute_folder_path(&config) {
-                // Canonicalize to handle symlinks and relative paths
-                if let Ok(canonical_folder) = folder_path.canonicalize() {
-                    // Map this folder to the anchor's command name (which becomes the patch for its contents)
-                    folder_map.insert(canonical_folder, cmd.command.clone());
+            // Get the file path to check if this is a true anchor file
+            if let Some(file_path) = cmd.get_absolute_file_path(&config) {
+                // Only map folders for anchors that have a matching subdirectory
+                // (e.g., /@Avid Boustani/@Avid Boustani.md)
+                // NOT for standalone anchor files (e.g., /At/@Reed Shaffner.md)
+                if crate::utils::is_anchor_file(&file_path) {
+                    // This is a true anchor file with a matching subdirectory
+                    // Use the proper accessor that handles both file and folder anchors correctly
+                    if let Some(folder_path) = cmd.get_absolute_folder_path(&config) {
+                        // Canonicalize to handle symlinks and relative paths
+                        if let Ok(canonical_folder) = folder_path.canonicalize() {
+                            // Map this folder to the anchor's command name (which becomes the patch for its contents)
+                            folder_map.insert(canonical_folder, cmd.command.clone());
 
+                            detailed_log("PATCH_MAP", &format!(
+                                "Folder '{}' -> patch '{}' (true anchor file with subdirectory)",
+                                folder_path.display(), cmd.command
+                            ));
+                        }
+                    }
+                } else {
+                    // This is a standalone anchor file without a matching subdirectory
+                    // Do NOT map its parent directory - it doesn't define a patch for siblings
                     detailed_log("PATCH_MAP", &format!(
-                        "Folder '{}' -> patch '{}' (using proper accessor)",
-                        folder_path.display(), cmd.command
+                        "Skipping folder mapping for standalone anchor '{}' (no subdirectory)",
+                        cmd.command
                     ));
                 }
             }
@@ -1026,12 +1042,65 @@ pub fn validate_and_repair_patches(
         }
     }
 
-    let changes_made = orphaned_anchors_fixed > 0 || cycles_fixed > 0 || patches_assigned > 0 || virtual_anchors_created > 0 || normalized_patches > 0;
+    // Phase 7: Remove virtual anchors with no children
+    if verbose {
+        log("🧹 Phase 7: Cleaning up orphaned virtual anchors...");
+    }
+    let mut virtual_anchors_removed = 0;
+
+    // Build set of patches that have at least one child command
+    let mut patches_with_children = std::collections::HashSet::new();
+    for cmd in commands.iter() {
+        if !cmd.patch.is_empty() {
+            patches_with_children.insert(cmd.patch.to_lowercase());
+        }
+    }
+
+    // Remove virtual anchors (empty action, anchor flag, no U flag) that have no children
+    commands.retain(|cmd| {
+        // Check if this is a virtual anchor:
+        // - Has anchor flag
+        // - Empty action (virtual anchor marker)
+        // - No U flag (system-generated, not user-created)
+        let is_virtual_anchor = cmd.is_anchor()
+            && cmd.action.is_empty()
+            && !cmd.flags.contains('U');
+
+        if is_virtual_anchor {
+            let cmd_lower = cmd.command.to_lowercase();
+            // Keep the virtual anchor only if it has children
+            let has_children = patches_with_children.contains(&cmd_lower);
+
+            if !has_children {
+                if verbose {
+                    log(&format!("   Removing orphaned virtual anchor: '{}'", cmd.command));
+                }
+                virtual_anchors_removed += 1;
+
+                // Also remove from patches hashmap
+                patches.remove(&cmd_lower);
+
+                return false; // Remove this command
+            }
+        }
+
+        true // Keep this command
+    });
+
+    if verbose {
+        if virtual_anchors_removed > 0 {
+            log(&format!("   Removed {} orphaned virtual anchors", virtual_anchors_removed));
+        } else {
+            log("   No orphaned virtual anchors to clean up");
+        }
+    }
+
+    let changes_made = orphaned_anchors_fixed > 0 || cycles_fixed > 0 || patches_assigned > 0 || virtual_anchors_created > 0 || normalized_patches > 0 || virtual_anchors_removed > 0;
 
     if verbose {
         if changes_made {
             log(&format!("   ✅ Patch resolution complete with {} changes",
-                orphaned_anchors_fixed + cycles_fixed + patches_assigned + virtual_anchors_created + normalized_patches));
+                orphaned_anchors_fixed + cycles_fixed + patches_assigned + virtual_anchors_created + normalized_patches + virtual_anchors_removed));
         } else {
             log("   ⏭️  No changes needed");
         }

@@ -931,16 +931,32 @@ fn build_folder_to_patch_map(commands: &[Command]) -> HashMap<PathBuf, String> {
     // First pass: Add all anchor commands to the map
     for cmd in commands {
         if cmd.is_anchor() && !cmd.arg.is_empty() {
-            // Use the proper accessor that handles both file and folder anchors correctly
-            if let Some(folder_path) = cmd.get_absolute_folder_path(&config) {
-                // Canonicalize to handle symlinks and relative paths
-                if let Ok(canonical_folder) = folder_path.canonicalize() {
-                    // Map this folder to the anchor's command name (which becomes the patch for its contents)
-                    folder_map.insert(canonical_folder, cmd.command.clone());
+            // Get the file path to check if this is a true anchor file
+            if let Some(file_path) = cmd.get_absolute_file_path(&config) {
+                // Only map folders for anchors that have a matching subdirectory
+                // (e.g., /@Avid Boustani/@Avid Boustani.md)
+                // NOT for standalone anchor files (e.g., /At/@Reed Shaffner.md)
+                if crate::utils::is_anchor_file(&file_path) {
+                    // This is a true anchor file with a matching subdirectory
+                    // Use the proper accessor that handles both file and folder anchors correctly
+                    if let Some(folder_path) = cmd.get_absolute_folder_path(&config) {
+                        // Canonicalize to handle symlinks and relative paths
+                        if let Ok(canonical_folder) = folder_path.canonicalize() {
+                            // Map this folder to the anchor's command name (which becomes the patch for its contents)
+                            folder_map.insert(canonical_folder, cmd.command.clone());
 
+                            detailed_log("PATCH_MAP", &format!(
+                                "Folder '{}' -> patch '{}' (true anchor file with subdirectory)",
+                                folder_path.display(), cmd.command
+                            ));
+                        }
+                    }
+                } else {
+                    // This is a standalone anchor file without a matching subdirectory
+                    // Do NOT map its parent directory - it doesn't define a patch for siblings
                     detailed_log("PATCH_MAP", &format!(
-                        "Folder '{}' -> patch '{}' (using proper accessor)",
-                        folder_path.display(), cmd.command
+                        "Skipping folder mapping for standalone anchor '{}' (no subdirectory)",
+                        cmd.command
                     ));
                 }
             }
