@@ -7,7 +7,7 @@
  - DATA - 100 PlayOn/HQ Games, eval humans, Origin data, 
  -  [PlayOn](hook://playon): Roster - get and use
  - [Cloud Roadmap](https://docs.google.com/document/d/1g135euS74c7FfBO6GDMRGyvi_0jXHBm4Pd4bqU9Pa94/edit?tab=t.0): plan for moving stuff to cloud - 
- - [Media convert](https://www.notion.so/sportsvisio/SV-Hybrid-Media-Convert-Prototype-27d719d6f2bd805084dfeb5b166debcb?source=copy_link):
+ - [Media convert](https://www.notion.so/sportsvisio/SV-Hybrid-Media-Convert-Prototype-27d719d6f2bd805084dfeb5b166debcb?source=copy_link):  SW Spot instances
  - Darien
  - OCT 19th - own meeting
  - [[PHQ]] 
@@ -60,7 +60,7 @@
 
 # __
 
-
+Codes:  D2332, D2391 (2), D2392 (3)
 
 DETECT
 - State of the ball (Dribble, Held, Pass)

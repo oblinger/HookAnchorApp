@@ -1,6 +1,7 @@
+- market place listing on Amazon
 - vittorio!!!   alain!!!
 - GLP-1
-- QL intro
+- ready for Nancy
 - [[@Alain Biem]] 
 
 - Friday

@@ -1,3 +1,0 @@
-- [ ] Write/send Ketav email
-- [ ] Prep:  List of Job Gaps, 
-- [ ] Sketch progression and value of 2-3 job types
