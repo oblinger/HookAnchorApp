@@ -1,3 +1,5 @@
+- message about baseball
+- jason QA.
 - market place listing on Amazon
 - vittorio!!!   alain!!!
 - GLP-1

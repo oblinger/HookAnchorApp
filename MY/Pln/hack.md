@@ -1,6 +1,7 @@
+- add build checking on swift
+- startup still fails on dev machine
 - only rename command
-Types: fileExt, Person, Proj(work, personal, hack)
-CROSSCUTTING:  Log, WP, Chat(Email, call), Idea, 
+
 
 - [ ] [[Hook Anchor Release]] 
 - [x] fix key processing
@@ -12,6 +13,8 @@ CROSSCUTTING:  Log, WP, Chat(Email, call), Idea,
 - [x] does the installer add line to ~/.zshrc ?
 
 - [x] Fix print_and_log
+- [ ] TYPES:  Types: fileExt, Person, Proj(work, personal, hack)
+     CROSSCUTTING:  Log, WP, Chat(Email, call), Idea, 
 - [ ] remove long access to all lo
 - [ ] Command Type Filtering
 - [ ] ChildTemplate anchor var tied to "+" key.   " * " does grab
