@@ -1499,10 +1499,14 @@ impl AnchorSelector {
     
     fn handle_navigate_up_hierarchy_impl(&mut self) {
         detailed_log("HIERARCHY", "Navigating up hierarchy");
+        detailed_log("HIERARCHY", &format!("Current search text: '{}'", self.popup_state.search_text));
+        detailed_log("HIERARCHY", &format!("is_in_prefix_menu: {}", self.popup_state.is_in_prefix_menu));
 
         // Check if we're currently in a submenu
         if let Some((_original_command, resolved_command)) = self.popup_state.get_prefix_menu_command_info() {
             let (sys_data, _) = crate::core::data::get_sys_data();
+
+            detailed_log("HIERARCHY", &format!("In prefix menu, resolved_command: '{}'", resolved_command.command));
 
             // Use get_parent_command() to walk up the hierarchy
             if let Some(parent_command) = resolved_command.get_parent_command(&sys_data.patches) {
@@ -1513,24 +1517,32 @@ impl AnchorSelector {
                 detailed_log("HIERARCHY", &format!("Already at root level (command: '{}')", resolved_command.command));
             }
         } else {
-            detailed_log("HIERARCHY", "Not in submenu, cannot navigate up");
+            detailed_log("HIERARCHY", &format!("Not in submenu, cannot navigate up (is_in_prefix_menu={}, prefix_menu_info={})",
+                self.popup_state.is_in_prefix_menu,
+                if self.popup_state.prefix_menu_info.is_some() { "Some" } else { "None" }));
         }
     }
     
     fn handle_navigate_down_hierarchy_impl(&mut self) {
         detailed_log("HIERARCHY", "Navigating down hierarchy");
-        
+
         // Get the currently selected command
         if let Some(selected_command) = self.popup_state.get_selected_command() {
-            // Check if the selected command is an anchor
-            if selected_command.is_anchor() {
-                let anchor_name = &selected_command.command;
-                detailed_log("HIERARCHY", &format!("Navigating into anchor: {}", anchor_name));
-                
+            // Resolve aliases to get the actual command
+            let commands = crate::core::data::get_commands_arc();
+            let resolved_command = selected_command.resolve_alias(&commands);
+
+            // Check if the resolved command is an anchor
+            if resolved_command.is_anchor() {
+                let anchor_name = &resolved_command.command;
+                detailed_log("HIERARCHY", &format!("Navigating into anchor: {} (resolved from '{}')",
+                    anchor_name, selected_command.command));
+
                 // Set the search text to the anchor name to enter its submenu
                 self.popup_state.update_search(anchor_name.clone());
             } else {
-                detailed_log("HIERARCHY", &format!("Selected command '{}' is not an anchor (action='{}')", selected_command.command, selected_command.action));
+                detailed_log("HIERARCHY", &format!("Selected command '{}' is not an anchor (action='{}', resolved='{}')",
+                    selected_command.command, selected_command.action, resolved_command.command));
             }
         } else {
             detailed_log("HIERARCHY", "No command selected");
@@ -1814,13 +1826,25 @@ impl AnchorSelector {
                 let empty_string = String::new();
                 let exit_button = final_context.get("exit").unwrap_or(&empty_string);
                 if exit_button == "OK" {
-                    // User confirmed rename - execute it with access to self
+                    // User confirmed full rename with all side effects - execute it with access to self
                     match self.execute_rename_with_ui_update(&final_context) {
                         Ok(()) => {
                             log("ACTION: Rename action executed successfully");
                         }
                         Err(e) => {
                             let error_msg = format!("Rename action failed: {}", e);
+                            log_error(&error_msg);
+                            crate::utils::error(&error_msg);
+                        }
+                    }
+                } else if exit_button == "Only Change CMD" {
+                    // User wants to rename command only, without file/folder/prefix changes
+                    match self.execute_command_only_rename(&final_context) {
+                        Ok(()) => {
+                            log("ACTION: Command-only rename executed successfully");
+                        }
+                        Err(e) => {
+                            let error_msg = format!("Command-only rename failed: {}", e);
                             log_error(&error_msg);
                             crate::utils::error(&error_msg);
                         }
@@ -2015,8 +2039,67 @@ impl AnchorSelector {
         Ok(())
     }
 
-    
-    
+    /// Execute a command-only rename - changes ONLY the command name, no file/folder/prefix changes
+    fn execute_command_only_rename(&mut self, context: &HashMap<String, String>) -> Result<(), Box<dyn std::error::Error>> {
+        let old_name = context.get("old_name").ok_or("Missing old_name")?;
+        let new_name = context.get("new_name").ok_or("Missing new_name")?;
+        let original_command_to_delete = context.get("original_command_to_delete");
+
+        // Get the new command details from context
+        let new_command_action = context.get("new_command_action").ok_or("Missing new_command_action")?;
+        let new_command_arg = context.get("new_command_arg").ok_or("Missing new_command_arg")?;
+        let new_command_patch = context.get("new_command_patch").ok_or("Missing new_command_patch")?;
+        let new_command_flags = context.get("new_command_flags").ok_or("Missing new_command_flags")?;
+
+        log(&format!("CMD_ONLY_RENAME: Renaming command '{}' -> '{}' without side effects", old_name, new_name));
+
+        // Get current commands for modification
+        let mut commands = crate::core::data::get_commands();
+
+        // Delete original command if needed
+        if let Some(cmd_name) = original_command_to_delete {
+            if !cmd_name.is_empty() {
+                log(&format!("CMD_ONLY_RENAME: Deleting original command '{}'", cmd_name));
+                commands.retain(|c| &c.command != cmd_name);
+            }
+        }
+
+        // Create the new command with ORIGINAL arg (no rename_associated_data modifications)
+        let new_command = crate::core::Command {
+            command: new_name.clone(),
+            action: new_command_action.clone(),
+            arg: new_command_arg.clone(), // Use original arg, not renamed
+            patch: new_command_patch.clone(),
+            flags: new_command_flags.clone(),
+            other_params: None,
+            last_update: 0,
+            file_size: None,
+        };
+
+        // Add the new command
+        log(&format!("CMD_ONLY_RENAME: Adding new command '{}'", new_command.command));
+        commands.push(new_command);
+
+        // Save commands
+        crate::core::data::set_commands(commands)?;
+        log("CMD_ONLY_RENAME: Saved command changes to sys_data");
+
+        // Update the filtered list if we're currently filtering
+        if !self.popup_state.search_text.trim().is_empty() {
+            // Refresh the search with updated commands
+            let current_search = self.popup_state.search_text.clone();
+            self.popup_state.update_search(current_search);
+        }
+
+        // Update input field with the renamed command name
+        log(&format!("CMD_ONLY_RENAME: Setting input field to renamed command: '{}'", new_name));
+        self.set_input(new_name.to_string());
+
+        log(&format!("CMD_ONLY_RENAME: Successfully renamed command '{}' to '{}' (command only, no side effects)", old_name, new_name));
+        Ok(())
+    }
+
+
     /// Backward compatibility: access to filtered commands
     fn filtered_commands(&self) -> &Vec<Command> {
         &self.popup_state.filtered_commands
@@ -2109,13 +2192,25 @@ impl AnchorSelector {
                                 let empty_string = String::new();
                                 let exit_button = result.get("exit").unwrap_or(&empty_string);
                                 if exit_button == "OK" {
-                                    // User confirmed rename - execute it with access to self
+                                    // User confirmed full rename with all side effects - execute it with access to self
                                     match self.execute_rename_with_ui_update(&result) {
                                         Ok(()) => {
                                             log("EXTERNAL_DIALOG: Rename action executed successfully");
                                         }
                                         Err(e) => {
                                             let error_msg = format!("Rename action failed: {}", e);
+                                            log_error(&error_msg);
+                                            crate::utils::error(&error_msg);
+                                        }
+                                    }
+                                } else if exit_button == "Only Change CMD" {
+                                    // User wants to rename command only, without file/folder/prefix changes
+                                    match self.execute_command_only_rename(&result) {
+                                        Ok(()) => {
+                                            log("EXTERNAL_DIALOG: Command-only rename executed successfully");
+                                        }
+                                        Err(e) => {
+                                            let error_msg = format!("Command-only rename failed: {}", e);
                                             log_error(&error_msg);
                                             crate::utils::error(&error_msg);
                                         }
@@ -4402,6 +4497,7 @@ impl eframe::App for AnchorSelector {
                                             format!("'Renaming \"{}\" to \"{}\"", effective_old_name, new_command.command),
                                             format!("^The following changes will be made:\n\n{}", action_list),
                                             "!OK".to_string(),
+                                            "!Only Change CMD".to_string(),
                                             "!Cancel".to_string(),
                                         ];
 

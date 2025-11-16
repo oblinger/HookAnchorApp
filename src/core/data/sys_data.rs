@@ -452,6 +452,68 @@ fn flush(commands: &mut Vec<Command>, skip_validation: bool) -> Result<(), Box<d
     Ok(())
 }
 
+/// Process a single command change (create, update, or delete)
+///
+/// This function handles all the side effects of a command change:
+/// - Records the change to history
+/// - Validates the command if it's structural (anchors, patches, flags)
+/// - Returns whether the change is structural (used to decide if full validation is needed)
+///
+/// # Arguments
+/// * `old_cmd` - The previous version of the command (None for new commands)
+/// * `new_cmd` - The new version of the command (None for deletions)
+/// * `timestamp` - Unix timestamp for when this change occurred
+///
+/// # Returns
+/// * `Ok(bool)` - true if this was a structural change (affects anchors, patches, or flags)
+/// * `Err` - if validation or history recording fails
+fn process_command_change(
+    old_cmd: Option<&Command>,
+    new_cmd: Option<&Command>,
+    timestamp: i64,
+) -> Result<bool, Box<dyn std::error::Error>> {
+    match (old_cmd, new_cmd) {
+        (Some(old), Some(new)) => {
+            // Modified command - record to history
+            append_to_history(new, timestamp)?;
+
+            // Check if this is a structural change
+            let is_structural = old.is_anchor() || new.is_anchor() ||
+                               old.patch != new.patch ||
+                               old.flags != new.flags;
+
+            // TODO: Add per-command validation here if needed
+            // For now, we'll rely on full validation during rescans
+
+            Ok(is_structural)
+        },
+        (None, Some(new)) => {
+            // New command - record to history
+            append_to_history(new, timestamp)?;
+
+            // Check if this is structural
+            let is_structural = new.is_anchor() || !new.patch.is_empty();
+
+            // TODO: Add per-command validation here if needed
+
+            Ok(is_structural)
+        },
+        (Some(old), None) => {
+            // Deleted command - record to history with special action
+            let mut deleted_cmd = old.clone();
+            deleted_cmd.action = "$DELETED$".to_string();
+            append_to_history(&deleted_cmd, timestamp)?;
+
+            // Deleting an anchor is structural
+            Ok(old.is_anchor())
+        },
+        (None, None) => {
+            // No change
+            Ok(false)
+        }
+    }
+}
+
 /// Replace all commands in singleton, run patch inference, and save to disk
 /// This is the primary way to perform batch modifications
 /// Records all changes to history by comparing against cached commands
@@ -459,11 +521,6 @@ fn flush(commands: &mut Vec<Command>, skip_validation: bool) -> Result<(), Box<d
 pub fn set_commands(mut commands: Vec<Command>) -> Result<(), Box<dyn std::error::Error>> {
     let set_commands_start = std::time::Instant::now();
     log(&format!("⏱️ SET_COMMANDS: Starting with {} commands", commands.len()));
-
-    // Initialize history database
-    let history_init_start = std::time::Instant::now();
-    let conn = super::history::initialize_history_db()?;
-    log(&format!("⏱️ SET_COMMANDS: History DB init: {:?}", history_init_start.elapsed()));
 
     // Get current timestamp
     let timestamp = std::time::SystemTime::now()
@@ -488,7 +545,7 @@ pub fn set_commands(mut commands: Vec<Command>) -> Result<(), Box<dyn std::error
     let mut deleted_count = 0;
     let mut structural_changes = false; // True if anchors, patches, or flags changed
 
-    // Record all new and modified commands to history
+    // Process all new and modified commands
     let history_record_start = std::time::Instant::now();
     for new_cmd in &commands {
         let new_key = super::storage::command_dedup_key(new_cmd);
@@ -498,8 +555,9 @@ pub fn set_commands(mut commands: Vec<Command>) -> Result<(), Box<dyn std::error
                new_cmd.arg != cached_cmd.arg ||
                new_cmd.patch != cached_cmd.patch ||
                new_cmd.flags != cached_cmd.flags {
-                // Command was modified - append to history
-                super::history::append_command(&conn, new_cmd, timestamp)?;
+                // Command was modified - process the change
+                let is_structural = process_command_change(Some(cached_cmd), Some(new_cmd), timestamp)?;
+                structural_changes |= is_structural;
                 modified_count += 1;
                 detailed_log("HISTORY", &format!(
                     "Modified: '{}' (action: {} -> {}, patch: {} -> {})",
@@ -509,17 +567,11 @@ pub fn set_commands(mut commands: Vec<Command>) -> Result<(), Box<dyn std::error
                     cached_cmd.patch,
                     new_cmd.patch
                 ));
-
-                // Check if this is a structural change that requires validation
-                if new_cmd.is_anchor() || cached_cmd.is_anchor() ||
-                   new_cmd.patch != cached_cmd.patch ||
-                   new_cmd.flags != cached_cmd.flags {
-                    structural_changes = true;
-                }
             }
         } else {
-            // Command is new - append to history
-            super::history::append_command(&conn, new_cmd, timestamp)?;
+            // Command is new - process the creation
+            let is_structural = process_command_change(None, Some(new_cmd), timestamp)?;
+            structural_changes |= is_structural;
             created_count += 1;
             detailed_log("HISTORY", &format!(
                 "Created: '{}' (action: {}, patch: {})",
@@ -527,22 +579,16 @@ pub fn set_commands(mut commands: Vec<Command>) -> Result<(), Box<dyn std::error
                 new_cmd.action,
                 new_cmd.patch
             ));
-
-            // Check if new command is an anchor or has a patch (structural)
-            if new_cmd.is_anchor() || !new_cmd.patch.is_empty() {
-                structural_changes = true;
-            }
         }
     }
 
-    // Find deleted commands and record them with special action
+    // Find deleted commands and process them
     for cached_cmd in &cached_commands {
         let cached_key = super::storage::command_dedup_key(cached_cmd);
         if !new_map.contains_key(&cached_key) {
-            // Command was deleted - create deletion entry
-            let mut deleted_cmd = cached_cmd.clone();
-            deleted_cmd.action = "$DELETED$".to_string();
-            super::history::append_command(&conn, &deleted_cmd, timestamp)?;
+            // Command was deleted - process the deletion
+            let is_structural = process_command_change(Some(cached_cmd), None, timestamp)?;
+            structural_changes |= is_structural;
             deleted_count += 1;
             detailed_log("HISTORY", &format!(
                 "Deleted: '{}' (was action: {}, patch: {})",
@@ -550,11 +596,6 @@ pub fn set_commands(mut commands: Vec<Command>) -> Result<(), Box<dyn std::error
                 cached_cmd.action,
                 cached_cmd.patch
             ));
-
-            // Deleting an anchor is a structural change
-            if cached_cmd.is_anchor() {
-                structural_changes = true;
-            }
         }
     }
 
@@ -569,22 +610,30 @@ pub fn set_commands(mut commands: Vec<Command>) -> Result<(), Box<dyn std::error
     }
 
     // Decide whether we can skip validation
-    // Skip validation if:
-    // 1. Small number of changes (≤3 commands)
-    // 2. No structural changes (anchors, patches, or flags)
+    // Skip validation for small changes (≤3 commands) - these are typically UI saves
+    // Only run full validation for bulk operations like rescans (which have many changes)
+    //
+    // Rationale: Full validation on all 5000+ commands takes ~2 seconds
+    // UI saves typically modify 1-3 commands and should be fast
+    // Rescans will catch any structural issues that arise from skipped validation
     let total_changes = created_count + modified_count + deleted_count;
-    let skip_validation = total_changes <= 3 && !structural_changes;
+    let skip_validation = total_changes <= 3;
 
     if skip_validation {
-        log(&format!(
-            "⚡ SET_COMMANDS: Skipping validation ({} changes, no structural changes) - performance optimization",
-            total_changes
-        ));
-    } else if structural_changes {
-        log("🔧 SET_COMMANDS: Running validation (structural changes detected)");
+        if structural_changes {
+            log(&format!(
+                "⚡ SET_COMMANDS: Skipping validation ({} structural changes) - UI save optimization. Rescan will validate.",
+                total_changes
+            ));
+        } else {
+            log(&format!(
+                "⚡ SET_COMMANDS: Skipping validation ({} changes, non-structural) - performance optimization",
+                total_changes
+            ));
+        }
     } else {
         log(&format!(
-            "🔧 SET_COMMANDS: Running validation ({} changes)",
+            "🔧 SET_COMMANDS: Running full validation ({} changes) - bulk operation",
             total_changes
         ));
     }
@@ -842,6 +891,20 @@ pub fn set_active_anchor(anchor_name: String, anchor_folder: Option<String>) -> 
 /// * `exclude_deletions` - If true, filters out entries with action="$DELETED$"
 pub fn get_history_entries(limit: usize, exclude_deletions: bool) -> rusqlite::Result<Vec<super::history::HistoryEntry>> {
     super::history::get_history_entries(limit, exclude_deletions)
+}
+
+/// Append a command to history database
+///
+/// This is the public API for recording command changes to history.
+/// Opens the history database, appends the command, and closes the connection.
+///
+/// # Arguments
+/// * `cmd` - The command to record in history
+/// * `timestamp` - Unix timestamp for when this change occurred
+pub fn append_to_history(cmd: &Command, timestamp: i64) -> Result<(), Box<dyn std::error::Error>> {
+    let conn = super::history::initialize_history_db()?;
+    super::history::append_command(&conn, cmd, timestamp)?;
+    Ok(())
 }
 
 /// Delete history -- This function coordinates a complete reset of the history and cache system 

@@ -578,80 +578,93 @@ pub fn get_new_display_commands(
         // Return empty list when input is blank
         return (Vec::new(), false, None, 0);
     }
-    
+
     let input = input.trim();
-    
-    // Step 1: Try to build a prefix menu
-    if let Some((prefix_menu_commands, original_command, resolved_command)) = build_prefix_menu(input, all_commands, patches) {
 
-        // We have a prefix menu!
-        
-        // Step 2: Get all commands that match the input using sophisticated matching
-        let config = crate::core::data::get_config();
-        let mut prefix_commands = crate::core::commands::filter_commands_with_patch_support(
-            all_commands, 
-            input, 
-            1000, // High limit to get all matches
-            &config.popup_settings.word_separators, 
-            false
-        );
-        
-        // Step 3: Remove prefix menu commands from prefix_commands to avoid duplicates
-        // Check both literal matches and resolved alias matches
-        prefix_commands.retain(|cmd| {
-            // detailed_log("DISPLAY_FILTER", &format!("Checking command for dedup: {} (action: {})", cmd.command, cmd.action));
-            let cmd_resolved = cmd.resolve_alias(all_commands);
-            // detailed_log("DISPLAY_FILTER", &format!("Resolved to: {} (action: {})", cmd_resolved.command, cmd_resolved.action));
-            
-            !prefix_menu_commands.iter().any(|prefix_menu_cmd| {
-                // Check literal match
-                let literal_match = prefix_menu_cmd.command == cmd.command && prefix_menu_cmd.action == cmd.action;
+    // Step 1: Try to build a prefix menu - first with full input, then progressively shorter prefixes
+    // This allows "PJPP" to match anchor "PJ" with filter "PP"
+    for len in (1..=input.len()).rev() {
+        let anchor_candidate = &input[..len];
+        let filter_text = &input[len..];
 
-                // Check if the resolved alias of cmd matches any prefix menu command
-                let resolved_matches_prefix_menu = prefix_menu_cmd.command == cmd_resolved.command && prefix_menu_cmd.action == cmd_resolved.action;
-                
-                literal_match || resolved_matches_prefix_menu
-            })
-        });
+        if let Some((mut prefix_menu_commands, original_command, resolved_command)) = build_prefix_menu(anchor_candidate, all_commands, patches) {
+            // We have a prefix menu!
+            detailed_log("DISPLAY", &format!("Found anchor '{}' with filter '{}'", anchor_candidate, filter_text));
 
-        // Sort non-prefix-menu commands by relevance: exact → prefix → substring → alphabetical
-        sort_commands_by_relevance(&mut prefix_commands, input);
+            // If there's filter text, apply it to the prefix menu commands
+            if !filter_text.is_empty() {
+                let filter_lower = filter_text.to_lowercase();
+                prefix_menu_commands.retain(|cmd| {
+                    cmd.command.to_lowercase().contains(&filter_lower)
+                });
+                detailed_log("DISPLAY", &format!("After filtering: {} commands remain", prefix_menu_commands.len()));
+            }
 
-        // Step 4: Combine prefix menu + separator + remaining prefix commands
-        let mut final_commands = prefix_menu_commands.clone();
-        
-        
-        if !prefix_commands.is_empty() {
-            // Add separator between prefix menu and other commands (even if prefix menu is empty)
-            final_commands.push(Command {
-                patch: String::new(),
-                command: "============".to_string(),
-                action: "separator".to_string(),
-                arg: String::new(),
-                flags: String::new(),
-        other_params: None,
-                last_update: 0,
-                file_size: None,
+            // Step 2: Get all commands that match the FULL input using sophisticated matching
+            let config = crate::core::data::get_config();
+            let mut prefix_commands = crate::core::commands::filter_commands_with_patch_support(
+                all_commands,
+                input,  // Use full input for broader matches
+                1000, // High limit to get all matches
+                &config.popup_settings.word_separators,
+                false
+            );
+
+            // Step 3: Remove prefix menu commands from prefix_commands to avoid duplicates
+            // Check both literal matches and resolved alias matches
+            prefix_commands.retain(|cmd| {
+                let cmd_resolved = cmd.resolve_alias(all_commands);
+
+                !prefix_menu_commands.iter().any(|prefix_menu_cmd| {
+                    // Check literal match
+                    let literal_match = prefix_menu_cmd.command == cmd.command && prefix_menu_cmd.action == cmd.action;
+
+                    // Check if the resolved alias of cmd matches any prefix menu command
+                    let resolved_matches_prefix_menu = prefix_menu_cmd.command == cmd_resolved.command && prefix_menu_cmd.action == cmd_resolved.action;
+
+                    literal_match || resolved_matches_prefix_menu
+                })
             });
+
+            // Sort non-prefix-menu commands by relevance: exact → prefix → substring → alphabetical
+            sort_commands_by_relevance(&mut prefix_commands, input);
+
+            // Step 4: Combine prefix menu + separator + remaining prefix commands
+            let mut final_commands = prefix_menu_commands.clone();
+
+
+            if !prefix_commands.is_empty() {
+                // Add separator between prefix menu and other commands (even if prefix menu is empty)
+                final_commands.push(Command {
+                    patch: String::new(),
+                    command: "============".to_string(),
+                    action: "separator".to_string(),
+                    arg: String::new(),
+                    flags: String::new(),
+            other_params: None,
+                    last_update: 0,
+                    file_size: None,
+                });
+            }
+
+            final_commands.extend(prefix_commands);
+
+            return (final_commands, true, Some((original_command, resolved_command)), prefix_menu_commands.len());
         }
-        
-        final_commands.extend(prefix_commands);
-        
-        return (final_commands, true, Some((original_command, resolved_command)), prefix_menu_commands.len());
-    } else {
-        // No prefix menu - use sophisticated matching instead of simple contains()
-        let config = crate::core::data::get_config();
-        let mut matching_commands = crate::core::commands::filter_commands_with_patch_support(
-            all_commands,
-            input,
-            1000, // High limit to get all matches
-            &config.popup_settings.word_separators,
-            false
-        );
-
-        // Sort all commands by relevance: exact → prefix → substring → alphabetical
-        sort_commands_by_relevance(&mut matching_commands, input);
-
-        return (matching_commands, false, None, 0);
     }
+
+    // No prefix menu found at any length - use sophisticated matching
+    let config = crate::core::data::get_config();
+    let mut matching_commands = crate::core::commands::filter_commands_with_patch_support(
+        all_commands,
+        input,
+        1000, // High limit to get all matches
+        &config.popup_settings.word_separators,
+        false
+    );
+
+    // Sort all commands by relevance: exact → prefix → substring → alphabetical
+    sort_commands_by_relevance(&mut matching_commands, input);
+
+    return (matching_commands, false, None, 0);
 }
