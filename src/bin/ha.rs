@@ -115,10 +115,10 @@ fn handle_hook_url(url: &str) {
     use hookanchor::utils;
     use hookanchor::core::get_sys_data;
     use hookanchor::execute;
-    
+
     // Extract the query from hook://query
     let query = url.strip_prefix("hook://").unwrap_or("");
-    
+
     // URL decode the query
     let decoded_query = match urlencoding::decode(query) {
         Ok(decoded) => decoded,
@@ -127,38 +127,130 @@ fn handle_hook_url(url: &str) {
             return;
         }
     };
-    
+
     if decoded_query.is_empty() {
         detailed_log("DISPATCHER", "Empty query in hook URL");
         return;
     }
-    
+
     // Visual separator for URL handler execution
     detailed_log("", "=================================================================");
     detailed_log("USER INPUT", &format!("URL: '{}'", decoded_query));
     detailed_log("DISPATCHER", &format!("Processing hook URL: {} -> query: '{}'", url, decoded_query));
-    
+
+    // Check for special prefixes: p/ (popup), a/ (action), x/ (explicit execute)
+    if decoded_query.starts_with("p/") {
+        handle_popup_url_ha(&decoded_query);
+        return;
+    }
+
+    if decoded_query.starts_with("a/") {
+        handle_action_url_ha(&decoded_query);
+        return;
+    }
+
+    if decoded_query.starts_with("x/") {
+        // Explicit execute - strip prefix and process as normal search
+        let search_query = decoded_query.strip_prefix("x/").unwrap_or("");
+        handle_execute_url_ha(search_query);
+        return;
+    }
+
+    // Default: search-and-execute (backward compatible)
+    handle_execute_url_ha(&decoded_query);
+}
+
+/// Handle popup mode URLs: hook://p/ or hook://p/TEXT or hook://p/TEXT/ACTION
+fn handle_popup_url_ha(query: &str) {
+    // Extract parts: p/SEARCH_TEXT or p/SEARCH_TEXT/ACTION
+    let without_prefix = query.strip_prefix("p/").unwrap_or("");
+    let parts: Vec<&str> = without_prefix.splitn(2, '/').collect();
+
+    let search_text = parts.get(0).unwrap_or(&"").to_string();
+    let action_name = parts.get(1).map(|s| s.to_string());
+
+    detailed_log("DISPATCHER", &format!("Popup mode - input='{}' action='{:?}'", search_text, action_name));
+
+    // Launch popup via launch_popup_with_args
+    let mut args = vec!["--popup".to_string()];
+    if !search_text.is_empty() {
+        args.push(search_text);
+    }
+    if let Some(action) = action_name {
+        args.push(action);
+    }
+
+    launch_popup_with_args(&args);
+}
+
+/// Handle action mode URLs: hook://a/ACTION_NAME/ARG or hook://a/ACTION_NAME/ARG?param=val
+fn handle_action_url_ha(query: &str) {
+    use hookanchor::execute;
+
+    // Extract: a/ACTION_NAME/ARG?param1=value1&param2=value2
+    let without_prefix = query.strip_prefix("a/").unwrap_or("");
+    let (path_part, params_str) = without_prefix.split_once('?')
+        .unwrap_or((without_prefix, ""));
+
+    let parts: Vec<&str> = path_part.splitn(2, '/').collect();
+    let action_name = parts.get(0).unwrap_or(&"").to_string();
+    let arg_value = parts.get(1).unwrap_or(&"").to_string();
+
+    detailed_log("DISPATCHER", &format!("Action mode - action='{}' arg='{}' params='{}'", action_name, arg_value, params_str));
+
+    // Get action from config
+    let config = hookanchor::core::get_config();
+    if let Some(actions) = &config.actions {
+        if let Some(action) = actions.get(&action_name) {
+            // Parse query parameters
+            let mut variables = std::collections::HashMap::new();
+            if !arg_value.is_empty() {
+                variables.insert("arg".to_string(), arg_value.clone());
+                variables.insert("input".to_string(), arg_value.clone()); // Also set as input for compatibility
+            }
+
+            for param_pair in params_str.split('&').filter(|s| !s.is_empty()) {
+                if let Some((key, value)) = param_pair.split_once('=') {
+                    variables.insert(key.to_string(), value.to_string());
+                }
+            }
+
+            detailed_log("DISPATCHER", &format!("Executing action '{}' with {} variables", action_name, variables.len()));
+            let _ = execute::execute_on_server(action, if variables.is_empty() { None } else { Some(variables) });
+            detailed_log("DISPATCHER", "Action executed");
+            return;
+        }
+    }
+
+    detailed_log("DISPATCHER", &format!("Action '{}' not found in config", action_name));
+}
+
+/// Handle execute mode URLs: search and execute top match
+fn handle_execute_url_ha(search_query: &str) {
+    use hookanchor::execute;
+    use hookanchor::core::get_sys_data;
+
     // Find the top matching command using the same logic as CLI and GUI
     let (sys_data, _) = get_sys_data();
     let config = hookanchor::core::get_config();
-    let (display_commands, _, _, _) = hookanchor::core::get_new_display_commands(&decoded_query, &sys_data.commands, &sys_data.patches, &config);
+    let (display_commands, _, _, _) = hookanchor::core::get_new_display_commands(search_query, &sys_data.commands, &sys_data.patches, &config);
     let filtered = display_commands.into_iter().take(1).collect::<Vec<_>>();
-    
+
     if filtered.is_empty() {
-        detailed_log("DISPATCHER", &format!("No commands found for query: '{}'", decoded_query));
+        detailed_log("DISPATCHER", &format!("No commands found for query: '{}'", search_query));
         return;
     }
-    
+
     let top_command_obj = &filtered[0];
     detailed_log("DISPATCHER", &format!("Executing command: {}", top_command_obj.command));
-    
+
     // Execute via server to avoid GUI context and ensure consistent execution
     detailed_log("DISPATCHER", &format!("Launching via server: {} ({})", top_command_obj.command, top_command_obj.action));
-    
+
     // Execute command - handles all retries internally
     let action = execute::command_to_action(&top_command_obj);
     let mut variables = std::collections::HashMap::new();
-    variables.insert("arg".to_string(), decoded_query.to_string());
+    variables.insert("arg".to_string(), top_command_obj.arg.clone());
     let _ = execute::execute_on_server(&action, Some(variables));
     detailed_log("DISPATCHER", "Command sent to server");
 }

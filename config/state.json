@@ -1,7 +1,7 @@
 {
   "window_position": [
     980.0,
-    184.0
+    -499.0
   ],
   "history_viewer_state": {
     "position": [
@@ -19,14 +19,14 @@
     "sidebar_width": 74.0,
     "show_current_commands": false
   },
-  "build_time": 1763355429,
+  "build_time": 1763402601,
   "last_scan_time": null,
   "last_scan_checksum": null,
-  "last_executed_command": "hack",
-  "server_pid": 43575,
+  "last_executed_command": "Hook Anchor",
+  "server_pid": 38018,
   "notion_last_scan": null,
-  "anchor_name": "JOBI",
-  "anchor_timestamp": 1763336256,
+  "anchor_name": "Hook Anchor",
+  "anchor_timestamp": 1763402454,
   "anchor_folder": null,
   "show_files": false
 }
