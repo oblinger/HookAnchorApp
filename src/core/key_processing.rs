@@ -1048,26 +1048,6 @@ pub fn create_default_key_registry(config: &super::Config) -> KeyRegistry {
                             registry.register_keystroke(keystroke.clone(), handler);
                             registered_count += 1;
                             detailed_log("KEY_REGISTRY", &format!("Registered template '{}' to key '{}'", action_name, key_str));
-                        } else if action.action_type() == "js" {
-                            // Create a JavaScript handler for js actions
-                            let function_name = action.params.get("function")
-                                .and_then(|v| v.as_str())
-                                .unwrap_or(&format!("action_{}", action.action_type()))
-                                .to_string();
-                            let handler = Box::new(JavaScriptHandler::new(function_name.clone(), action.params.clone()));
-                            registry.register_keystroke(keystroke.clone(), handler);
-                            registered_count += 1;
-                            log(&format!("✅ Registered JavaScript action '{}' (function: {}) to key '{}'", action_name, function_name, key_str));
-                            // Special logging for doc template
-                            if action_name == "doc" {
-                                detailed_log("SYSTEM", &format!("📝 DOC REGISTRATION: Template 'doc' registered to '{}' key", key_str));
-                                log(&format!("📝 DOC REGISTRATION: Keystroke details: {:?}", keystroke));
-                            }
-                            // Special logging for > key
-                            if key_str == ">" {
-                                detailed_log("SYSTEM", &format!(">>> ALIAS REGISTRATION: Template '{}' registered to '>' key", action_name));
-                                detailed_log("SYSTEM", &format!(">>> ALIAS REGISTRATION: Keystroke details: {:?}", keystroke));
-                            }
                         } else if action.action_type() == "popup" {
                         // Handle popup actions (navigation, exit, etc.)
                         if let Some(popup_action) = action.params.get("popup_action")

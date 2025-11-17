@@ -309,20 +309,11 @@ pub(super) fn execute_locally(
         "shell" => execute_shell_action(&params),
         "obsidian" => execute_obsidian_action(&params),
         "alias" => execute_alias_action(&params),
-        
+
         // Everything else is JavaScript with action_ prefix
         _ => {
-            // Check if there's a specific function name in params (for legacy js or js_function type)
-            let function_name = if action.action_type() == "js_function" || action.action_type() == "js" {
-                // Legacy format: use the function name from params
-                action.params.get("function")
-                    .and_then(|v| v.as_str())
-                    .unwrap_or(&format!("action_{}", action.action_type()))
-                    .to_string()
-            } else {
-                // Modern format: action_type "foo" calls JavaScript function "action_foo()"
-                format!("action_{}", action.action_type())
-            };
+            // Modern format: action_type "foo" calls JavaScript function "action_foo()"
+            let function_name = format!("action_{}", action.action_type());
             execute_js_function_action(&function_name, &params)
         }
     }
