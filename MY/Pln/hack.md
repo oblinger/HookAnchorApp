@@ -1,9 +1,23 @@
-- add build checking on swift
-- startup still fails on dev machine
-- only rename command
 
 
 - [ ] [[Hook Anchor Release]] 
+- [ ] startup still fails on dev machine
+- [ ] hook://anchor_popup   URL ability to trigger popup on given input
+- [ ] Add Categories (TYPES):  Types: fileExt, Person, Proj(work, personal, hack)
+     CROSSCUTTING:  Log, WP, Chat(Email, call), Idea, 
+		Command Type Filtering
+- [ ] dry code
+- [x] ChildTemplate anchor var tied to "+" key.   " * " does grab
+- [x] X (NO) once all items in a prefix menu are filtered, the whole prefix menu (and it files menu) should be removed
+- [x] right "]" need to update input box with space and carot at end of input
+- [ ] ???   New template actions list
+- [ ] Make dev mode run on each render (mod 10?)   make boot check only run when dev_mode is set.
+- [ ] click on folder will go into folder
+- [ ] Delete key should prompt to delete file and maybe folder.
+- [x] Should we remove the "delete invalid alias" code???
+- [x] slow save (maybe dont rescan all?)
+- [x] only rename command
+- [x] This means typing "PJPP" should now show the PP command
 - [x] fix key processing
 - [x] [[Website]] : Hook Anchor Web Page
 - [x] Release Video
@@ -11,24 +25,9 @@
 - [x] ReadMe should get both shortcuts working (Karabiner&ke)
 - [x] Personal Use license2
 - [x] does the installer add line to ~/.zshrc ?
-
 - [x] Fix print_and_log
-- [ ] TYPES:  Types: fileExt, Person, Proj(work, personal, hack)
-     CROSSCUTTING:  Log, WP, Chat(Email, call), Idea, 
-- [ ] remove long access to all lo
-- [ ] Command Type Filtering
-- [ ] ChildTemplate anchor var tied to "+" key.   " * " does grab
-- [ ] once all items in a prefix menu are filtered, the whole prefix menu (and it files menu) should be removed
-- [ ] dry code
-- [ ] hook://anchor_popup   URL ability to trigger popup on given input
-- [ ] right "]" need to update input box with space and carot at end of input
-- [ ] Add categories
-- [ ] New template actions list
-- [ ] Make dev mode run on each render (mod 10?)   make boot check only run when dev_mode is set.
-- [ ] click on folder will go into folder
-- [ ] Delete key should prompt to delete file and maybe folder.
-- [ ] Should we remove the "delete invalid alias" code???
-- [ ] remove the 'js' and 'js_function' action types since they are not needed.
+- [x] remove the 'js' and 'js_function' action types since they are not needed.
+- [x] remove long access to all lo
 - [x] start selection w/ mouse should not happen til real move
 - [x] when matching a name.  prefix matches should match first, then first char matches then infix matches
 - [x] delete second name w/ duplicate names failed silently.

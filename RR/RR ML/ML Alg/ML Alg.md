@@ -2,6 +2,7 @@
   , [[POMDP]],
   , [[Contrastive Learning]],
   , [[Auto Regressive Model]], 
+  [[Recommendation Alg]] 
 
 ## TIME SERIES
 - [[ARIMA Algorithm]] - AutoRegressive Integrated Moving Average
