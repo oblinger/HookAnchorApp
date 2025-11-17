@@ -1,7 +1,7 @@
 {
   "window_position": [
     980.0,
-    -258.0
+    -1306.0
   ],
   "history_viewer_state": {
     "position": [
@@ -19,11 +19,11 @@
     "sidebar_width": 74.0,
     "show_current_commands": false
   },
-  "build_time": 1763403034,
+  "build_time": 1763404469,
   "last_scan_time": null,
   "last_scan_checksum": null,
   "last_executed_command": "Hook Anchor",
-  "server_pid": null,
+  "server_pid": 45345,
   "notion_last_scan": null,
   "anchor_name": "Hook Anchor",
   "anchor_timestamp": 1763402454,

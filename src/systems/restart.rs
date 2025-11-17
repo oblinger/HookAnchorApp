@@ -305,7 +305,7 @@ pub fn start_all_servers() -> Result<(), String> {
 ///
 /// Use this when you need to ensure no race conditions during file operations.
 pub fn restart_all_servers() -> Result<(), String> {
-    print_and_log("🔄 Restarting all servers...");
+    print_and_log("🔄 Restarting all servers (including supervisor)...");
 
     // Stop everything first
     stop_all_servers()?;
@@ -313,9 +313,59 @@ pub fn restart_all_servers() -> Result<(), String> {
     // Brief additional wait to ensure everything is clean
     std::thread::sleep(std::time::Duration::from_millis(500));
 
-    // Start everything
+    // Restart the HookAnchor supervisor (Swift GUI app)
+    restart_supervisor()?;
+
+    // Start Rust servers
     start_all_servers()?;
 
     print_and_log("✅ All servers restarted successfully");
     Ok(())
+}
+
+/// Restart the HookAnchor supervisor (Swift GUI application)
+fn restart_supervisor() -> Result<(), String> {
+    use std::process::Command;
+
+    print_and_log("🔄 Restarting HookAnchor supervisor...");
+
+    // Kill existing supervisor process
+    let kill_result = Command::new("killall")
+        .arg("HookAnchor")
+        .output();
+
+    match kill_result {
+        Ok(output) if output.status.success() => {
+            print_and_log("  ✓ Old supervisor stopped");
+        }
+        Ok(_) => {
+            // killall returns non-zero if process not found - that's fine
+            print_and_log("  ℹ No supervisor was running");
+        }
+        Err(e) => {
+            log_error(&format!("  ⚠ Failed to kill supervisor: {}", e));
+            // Don't fail - maybe it wasn't running
+        }
+    }
+
+    // Brief wait for process to fully terminate
+    std::thread::sleep(std::time::Duration::from_millis(300));
+
+    // Start new supervisor
+    let start_result = Command::new("open")
+        .arg("-a")
+        .arg("HookAnchor")
+        .spawn();
+
+    match start_result {
+        Ok(_) => {
+            // Give it a moment to start
+            std::thread::sleep(std::time::Duration::from_millis(500));
+            print_and_log("  ✓ Supervisor restarted");
+            Ok(())
+        }
+        Err(e) => {
+            Err(format!("Failed to start supervisor: {}", e))
+        }
+    }
 }
