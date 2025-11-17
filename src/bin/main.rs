@@ -6,6 +6,7 @@
 use std::env;
 use hookanchor::prelude::*;
 use hookanchor::core::ApplicationState;
+use hookanchor::prelude::{log, log_error};
 
 /// Main application entry point
 /// 
@@ -20,7 +21,12 @@ fn main() -> Result<(), eframe::Error> {
     // Initialize minimal sys_data (config + empty commands) for GUI mode
     // This prevents panics when UI tries to access data before it's loaded
     // Full data loading happens in deferred_loading after window is shown
-    let _ = hookanchor::core::initialize_minimal();
+    let init_result = hookanchor::core::initialize_minimal();
+    if let Err(e) = &init_result {
+        log_error(&format!("STARTUP ERROR: Failed to initialize minimal config: {}", e));
+    } else {
+        log("STARTUP: Minimal initialization complete");
+    }
 
     let args: Vec<String> = env::args().collect();
 
@@ -66,20 +72,23 @@ fn main() -> Result<(), eframe::Error> {
     // If arguments are provided (other than --popup/--input/--action), run in command-line mode (no GUI)
     // Unless --popup flag is present, which forces GUI mode
     if has_other_args && !force_popup {
+        log("STARTUP: Entering CLI mode");
+        log(&format!("STARTUP: CLI args: {:?}", args));
+
         // CLI mode - initialize sys_data immediately (needed for commands to work)
         match hookanchor::core::initialize() {
             Ok(()) => {
-                // Sys data initialized successfully (config + cache loaded)
+                log("STARTUP: CLI mode - sys_data initialized successfully");
             }
             Err(init_error) => {
-                log_error(&format!("Failed to initialize sys_data: {}", init_error));
+                log_error(&format!("STARTUP ERROR: Failed to initialize sys_data: {}", init_error));
                 // Continue with default config
             }
         }
 
         // CLI mode needs server - ensure it's running
         if let Err(e) = hookanchor::execute::activate_command_server(false) {
-            log_error(&format!("Failed to activate command server: {}", e));
+            log_error(&format!("STARTUP ERROR: Failed to activate command server: {}", e));
             // Continue - commands will show error dialogs when server is needed
         }
 
@@ -93,6 +102,7 @@ fn main() -> Result<(), eframe::Error> {
         // GUI mode - check if we're handling a URL immediately (no delay needed)
         // Check if any URL was passed via environment
         if let Ok(url) = env::var("HOOK_URL_HANDLER") {
+            log(&format!("STARTUP: URL handler mode (env var) - processing: {}", url));
             // URL handler mode - initialize sys_data immediately
             let _ = hookanchor::core::initialize();
             hookanchor::cmd::run_command_line_mode(vec!["ha".to_string(), url]);
@@ -103,9 +113,11 @@ fn main() -> Result<(), eframe::Error> {
         // This is a temporary solution until we implement proper Apple Event handling
         let url_marker = "/tmp/hookanchor_url_launch";
         if std::path::Path::new(url_marker).exists() {
+            log("STARTUP: Found URL marker file");
             if let Ok(url_content) = std::fs::read_to_string(url_marker) {
                 let url = url_content.trim();
                 if !url.is_empty() && url.starts_with("hook://") {
+                    log(&format!("STARTUP: URL handler mode (marker file) - processing: {}", url));
                     let _ = std::fs::remove_file(url_marker);
                     // URL handler mode - initialize sys_data immediately
                     let _ = hookanchor::core::initialize();
@@ -144,8 +156,17 @@ fn main() -> Result<(), eframe::Error> {
         }
 
         // No URL detected and no installer needed - proceed with normal GUI mode
+        log("STARTUP: Entering GUI mode (popup)");
         let initial_input = input_text.as_deref().unwrap_or("");
         let initial_action = action_name.as_deref();
+
+        if !initial_input.is_empty() {
+            log(&format!("STARTUP: GUI mode with input: '{}'", initial_input));
+        }
+        if let Some(action) = initial_action {
+            log(&format!("STARTUP: GUI mode with action: '{}'", action));
+        }
+
         let result = hookanchor::ui::run_gui_with_prompt(initial_input, initial_action, ApplicationState::minimal());
 
         result
