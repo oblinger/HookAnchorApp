@@ -1,32 +1,32 @@
 {
-  "window_position": [
-    980.0,
-    184.0
-  ],
+  "anchor_folder": null,
+  "anchor_name": "JOBI",
+  "anchor_timestamp": 1763336256,
+  "build_time": 1763340256,
   "history_viewer_state": {
+    "min_edit_size": 5,
+    "name_filter": "",
+    "patch_filter": "",
     "position": [
       -1900.0,
       54.0
     ],
+    "selected_action_types": [],
+    "show_current_commands": false,
+    "sidebar_width": 74.0,
     "window_size": [
       1156.0,
       1316.0
-    ],
-    "patch_filter": "",
-    "name_filter": "",
-    "min_edit_size": 5,
-    "selected_action_types": [],
-    "sidebar_width": 74.0,
-    "show_current_commands": false
+    ]
   },
-  "build_time": 1763339454,
-  "last_scan_time": null,
-  "last_scan_checksum": null,
   "last_executed_command": "G Slides",
-  "server_pid": 95834,
+  "last_scan_checksum": null,
+  "last_scan_time": null,
   "notion_last_scan": null,
-  "anchor_name": "JOBI",
-  "anchor_timestamp": 1763336256,
-  "anchor_folder": null,
-  "show_files": false
+  "server_pid": 95834,
+  "show_files": false,
+  "window_position": [
+    980.0,
+    184.0
+  ]
 }

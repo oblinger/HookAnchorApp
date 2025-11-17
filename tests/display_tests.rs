@@ -235,11 +235,12 @@ fn part1_filter_text_extraction() {
 
 #[test]
 fn part2_match_word_boundaries() {
-    // Input "PJD" should match "PJ Directories"
+    // Input "PJT" should match "PJ Tasks"
+    // P+J from "PJ", T from "Tasks"
     let scaffold = pj_menu_scaffold();
 
     let (result, _, _, _) = get_new_display_commands(
-        "PJD",
+        "PJT",
         &scaffold.commands,
         &scaffold.patches,
         &scaffold.config
@@ -268,11 +269,12 @@ fn part2_multi_char_from_same_word() {
 
 #[test]
 fn part2_can_skip_words() {
-    // Input "PD" matches "PJ Directories" (skipped middle of first word)
+    // Input "PT" matches "PJ Tasks" (skipped middle of first word)
+    // P from "PJ", T from "Tasks", skipped J
     let scaffold = pj_menu_scaffold();
 
     let (result, _, _, _) = get_new_display_commands(
-        "PD",
+        "PT",
         &scaffold.commands,
         &scaffold.patches,
         &scaffold.config
@@ -283,11 +285,11 @@ fn part2_can_skip_words() {
 
 #[test]
 fn part2_skip_entire_first_word() {
-    // Input "Dir" matches "PJ Directories" (skipped "PJ" entirely)
+    // Input "Tasks" matches "PJ Tasks" (skipped "PJ" entirely)
     let scaffold = pj_menu_scaffold();
 
     let (result, _, _, _) = get_new_display_commands(
-        "Dir",
+        "Tasks",
         &scaffold.commands,
         &scaffold.patches,
         &scaffold.config
@@ -298,10 +300,11 @@ fn part2_skip_entire_first_word() {
 
 #[test]
 fn part2_case_insensitive() {
+    // Input "pjt" (lowercase) should match "PJ Tasks" (uppercase)
     let scaffold = pj_menu_scaffold();
 
     let (result, _, _, _) = get_new_display_commands(
-        "pjd",
+        "pjt",
         &scaffold.commands,
         &scaffold.patches,
         &scaffold.config
