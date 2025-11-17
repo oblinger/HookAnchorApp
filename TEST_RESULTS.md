@@ -1,6 +1,14 @@
 # Display Tests - Results Summary
 
-**Total: 35 tests | 35 PASSED ✅ | 0 FAILED ❌**
+**Total: 43 tests | 43 PASSED ✅ | 0 FAILED ❌**
+
+## Test Organization: Prefix Menu vs Global Matching
+
+Tests are systematically organized in **pairs** to verify behavior in both contexts:
+- **PREFIX tests** - Test rules inside prefix menus (when anchor is detected)
+- **GLOBAL tests** - Test same rules outside prefix menus (global matching)
+
+This ensures sorting and matching rules are consistently applied everywhere.
 
 ## Part 1: PREFIX MENU IDENTIFICATION (6/6 passed) ✅
 
@@ -13,17 +21,24 @@
 
 **Analysis:** ✅ **PART 1 COMPLETE!** All anchor detection tests passing.
 
-## Part 2: COMMAND MATCHING (7/7 passed) ✅
+## Part 2: COMMAND MATCHING (11/11 passed) ✅
 
+**Prefix Menu Tests (7):**
 - ✅ `part2_match_word_boundaries` - PASSED
 - ✅ `part2_multi_char_from_same_word` - PASSED
 - ✅ `part2_can_skip_words` - PASSED
 - ✅ `part2_skip_entire_first_word` - PASSED
 - ✅ `part2_case_insensitive` - PASSED
 - ✅ `part2_no_mid_word_matching` - PASSED
-- ✅ `part2_multi_word_matching` - PASSED (assumed based on previous results)
+- ✅ `part2_multi_word_matching` - PASSED
 
-**Analysis:** ✅ **PART 2 COMPLETE!** All word-boundary matching rules working correctly.
+**Global Matching Tests (4):**
+- ✅ `part2_match_word_boundaries_global` - PASSED
+- ✅ `part2_can_skip_words_global` - PASSED
+- ✅ `part2_skip_entire_first_word_global` - PASSED
+- ✅ `part2_case_insensitive_global` - PASSED
+
+**Analysis:** ✅ **PART 2 COMPLETE!** All word-boundary matching rules working correctly in both prefix and global contexts.
 
 ## Part 3: PREFIX MENU CONSTRUCTION (6/6 passed) ✅
 
@@ -36,15 +51,22 @@
 
 **Analysis:** ✅ **PART 3 COMPLETE!** All prefix menu construction tests passing.
 
-## Part 4: SORTING & ORDERING (5/5 passed) ✅
+## Part 4: SORTING & ORDERING (9/9 passed) ✅
 
+**Prefix Menu Tests (5):**
 - ✅ `part4_exact_matches_first` - PASSED
 - ✅ `part4_no_words_skipped_before_words_skipped` - PASSED
 - ✅ `part4_alphabetical_within_tier` - PASSED
 - ✅ `part4_sort_by_filter_in_prefix_menu` - PASSED
-- ✅ `part4_multi_char_matching_no_skip_priority` - PASSED (NEW: multi-char from same word ranks before word-skip)
+- ✅ `part4_multi_char_matching_no_skip_priority` - PASSED
 
-**Analysis:** ✅ **PART 4 COMPLETE!** All sorting logic working correctly including proper 3-tier prioritization.
+**Global Matching Tests (4):**
+- ✅ `part4_exact_matches_first_global` - PASSED
+- ✅ `part4_no_words_skipped_before_words_skipped_global` - PASSED
+- ✅ `part4_alphabetical_within_tier_global` - PASSED
+- ✅ `part4_multi_char_matching_no_skip_priority_global` - PASSED
+
+**Analysis:** ✅ **PART 4 COMPLETE!** All sorting logic working correctly in both contexts including proper 3-tier prioritization.
 
 ## Part 5: FINAL MENU ASSEMBLY (4/4 passed) ✅
 
@@ -79,14 +101,14 @@
 
 ### 🎉 ALL TESTS PASSING (100%)!
 
-**Overall: 35/35 tests passing (100%)**
+**Overall: 43/43 tests passing (100%)**
 
-All 5 parts of the specification are now fully implemented and tested:
+All 5 parts of the specification are now fully implemented and tested with systematic coverage:
 
 1. ✅ **Part 1: PREFIX MENU IDENTIFICATION** - 6/6 tests passing
-2. ✅ **Part 2: COMMAND MATCHING** - 7/7 tests passing
+2. ✅ **Part 2: COMMAND MATCHING** - 11/11 tests passing (7 prefix + 4 global)
 3. ✅ **Part 3: PREFIX MENU CONSTRUCTION** - 6/6 tests passing
-4. ✅ **Part 4: SORTING & ORDERING** - 5/5 tests passing
+4. ✅ **Part 4: SORTING & ORDERING** - 9/9 tests passing (5 prefix + 4 global)
 5. ✅ **Part 5: FINAL MENU ASSEMBLY** - 4/4 tests passing
 
 ### 🟢 What Was Fixed:
@@ -107,17 +129,23 @@ All 5 parts of the specification are now fully implemented and tested:
 2. **No-skip detection** - Added matches_all_words() to determine if a match skipped words
 3. **Patch-based filtering** - Extended two-phase matching to patch-based membership
 4. **Real-world fix** - "Two Tower Learning" now ranks before "The Writing Is On The Wall" for "TWOT"
+5. **Systematic test pairs** - Added 8 global tests to pair with prefix menu tests
+   - 4 global matching tests (Part 2)
+   - 4 global sorting tests (Part 4)
+   - Ensures rules work consistently in both contexts
 
 ### 📊 Pass Rate by Category:
 
 - Part 1 (Anchor ID): **100%** (6/6) ✅
-- Part 2 (Matching): **100%** (7/7) ✅
+- Part 2 (Matching): **100%** (11/11) ✅ - 7 prefix + 4 global
 - Part 3 (Construction): **100%** (6/6) ✅
-- Part 4 (Sorting): **100%** (5/5) ✅
+- Part 4 (Sorting): **100%** (9/9) ✅ - 5 prefix + 4 global
 - Part 5 (Assembly): **100%** (4/4) ✅
 - Edge Cases: **100%** (7/7) ✅
 
-**Overall: 100% (35/35) tests passing**
+**Overall: 100% (43/43) tests passing**
+
+**Test Coverage:** Matching and sorting rules are now systematically tested in **both** prefix menu and global contexts.
 
 ---
 

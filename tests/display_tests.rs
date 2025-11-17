@@ -333,6 +333,86 @@ fn part2_no_mid_word_matching() {
     assert_not_contains(&result, "Project");
 }
 
+// Global matching equivalents - test same rules outside prefix menus
+#[test]
+fn part2_match_word_boundaries_global() {
+    // Global matching: "PJT" should match "PJ Tasks" without anchor context
+    // P+J from "PJ", T from "Tasks"
+    let scaffold = scaffold(r#"
+        PJ Tasks:folder; A:=/pj_tasks
+        PJ Notes:folder; A:=/pj_notes
+        Projects:folder; A:=/projects
+    "#);
+
+    let (result, is_prefix, _, _) = get_new_display_commands(
+        "PJT",
+        &scaffold.commands,
+        &scaffold.patches,
+        &scaffold.config
+    );
+
+    assert_prefix_menu(is_prefix, false); // No anchor, so no prefix menu
+    assert_contains(&result, "PJ Tasks");
+}
+
+#[test]
+fn part2_can_skip_words_global() {
+    // Global matching: "PT" should match "PJ Tasks" (skipped J)
+    let scaffold = scaffold(r#"
+        PJ Tasks:folder; A:=/pj_tasks
+        Projects:folder; A:=/projects
+    "#);
+
+    let (result, is_prefix, _, _) = get_new_display_commands(
+        "PT",
+        &scaffold.commands,
+        &scaffold.patches,
+        &scaffold.config
+    );
+
+    assert_prefix_menu(is_prefix, false);
+    assert_contains(&result, "PJ Tasks");
+}
+
+#[test]
+fn part2_skip_entire_first_word_global() {
+    // Global matching: "Tasks" should match "PJ Tasks" (skipped "PJ" entirely)
+    let scaffold = scaffold(r#"
+        PJ Tasks:folder; A:=/pj_tasks
+        Tasks Only:folder; A:=/tasks_only
+    "#);
+
+    let (result, is_prefix, _, _) = get_new_display_commands(
+        "Tasks",
+        &scaffold.commands,
+        &scaffold.patches,
+        &scaffold.config
+    );
+
+    assert_prefix_menu(is_prefix, false);
+    assert_contains(&result, "PJ Tasks");
+    assert_contains(&result, "Tasks Only");
+}
+
+#[test]
+fn part2_case_insensitive_global() {
+    // Global matching: "pjt" (lowercase) should match "PJ Tasks" (uppercase)
+    let scaffold = scaffold(r#"
+        PJ Tasks:folder; A:=/pj_tasks
+        Project:folder; A:=/project
+    "#);
+
+    let (result, is_prefix, _, _) = get_new_display_commands(
+        "pjt",
+        &scaffold.commands,
+        &scaffold.patches,
+        &scaffold.config
+    );
+
+    assert_prefix_menu(is_prefix, false);
+    assert_contains(&result, "PJ Tasks");
+}
+
 // ============================================================================
 // PART 3: PREFIX MENU CONSTRUCTION
 // ============================================================================
@@ -545,6 +625,104 @@ fn part4_multi_char_matching_no_skip_priority() {
         &scaffold.patches,
         &scaffold.config
     );
+
+    // "Two Tower Learning" should appear before "The Writing Is On The Wall"
+    // because it matches without skipping any words
+    assert_order(&result, "Two Tower Learning", "The Writing Is On The Wall");
+}
+
+// Global sorting equivalents - test same rules outside prefix menus
+#[test]
+fn part4_exact_matches_first_global() {
+    // Global: Exact match should appear before partial matches
+    let scaffold = scaffold(r#"
+        Code:folder; A:=/code
+        Code Projects:folder; A:=/code_projects
+        Code Review:folder; A:=/code_review
+        Old Code Files:folder; A:=/old_code
+    "#);
+
+    let (result, is_prefix, _, _) = get_new_display_commands(
+        "Code",
+        &scaffold.commands,
+        &scaffold.patches,
+        &scaffold.config
+    );
+
+    assert_prefix_menu(is_prefix, false);
+
+    // "Code" is exact match, should appear before "Code Projects", "Code Review", etc.
+    let code_idx = find_index(&result, "Code");
+    let code_proj_idx = find_index(&result, "Code Projects");
+
+    assert!(code_idx.is_some(), "Code should be in results");
+    if let (Some(code), Some(proj)) = (code_idx, code_proj_idx) {
+        assert!(code < proj, "Exact match 'Code' should come before 'Code Projects'");
+    }
+}
+
+#[test]
+fn part4_no_words_skipped_before_words_skipped_global() {
+    // Global: Commands matching all words appear before commands that skip words
+    let scaffold = scaffold(r#"
+        Code:folder; A:=/code
+        Code Projects:folder; A:=/code_projects
+        Old Code Files:folder; A:=/old_code
+    "#);
+
+    let (result, is_prefix, _, _) = get_new_display_commands(
+        "Co",
+        &scaffold.commands,
+        &scaffold.patches,
+        &scaffold.config
+    );
+
+    assert_prefix_menu(is_prefix, false);
+
+    // "Code" (no words skipped) before "Old Code Files" (skips "Old")
+    assert_order(&result, "Code", "Old Code Files");
+}
+
+#[test]
+fn part4_alphabetical_within_tier_global() {
+    // Global: Within same priority tier, sort alphabetically
+    let scaffold = scaffold(r#"
+        Item Zebra:folder; A:=/zebra
+        Item Apple:folder; A:=/apple
+        Item Banana:folder; A:=/banana
+    "#);
+
+    let (result, is_prefix, _, _) = get_new_display_commands(
+        "Item",
+        &scaffold.commands,
+        &scaffold.patches,
+        &scaffold.config
+    );
+
+    assert_prefix_menu(is_prefix, false);
+
+    // All match "Item" with same relevance, should be alphabetical
+    assert_order(&result, "Item Apple", "Item Banana");
+    assert_order(&result, "Item Banana", "Item Zebra");
+}
+
+#[test]
+fn part4_multi_char_matching_no_skip_priority_global() {
+    // Global: Multi-char matching from same word (no skip) ranks higher than word skips
+    let scaffold = scaffold(r#"
+        Two Tower Learning:folder; A:=/two_tower
+        The Writing Is On The Wall:folder; A:=/writing_wall
+        Test Other Words Too:folder; A:=/test
+    "#);
+
+    let (result, is_prefix, _, _) = get_new_display_commands(
+        "TWOT",
+        &scaffold.commands,
+        &scaffold.patches,
+        &scaffold.config
+    );
+
+    assert_prefix_menu(is_prefix, false);
 
     // "Two Tower Learning" should appear before "The Writing Is On The Wall"
     // because it matches without skipping any words
