@@ -157,7 +157,8 @@ fn handle_hook_url(url: &str) {
     
     // Use the same logic as -x command
     let (sys_data, _) = crate::core::data::get_sys_data();
-    let (display_commands, _, _, _) = crate::core::get_new_display_commands(&decoded_query, &sys_data.commands, &sys_data.patches);
+    let config = crate::core::data::get_config();
+    let (display_commands, _, _, _) = crate::core::get_new_display_commands(&decoded_query, &sys_data.commands, &sys_data.patches, &config);
     let filtered = display_commands.into_iter().take(1).collect::<Vec<_>>();
     
     if filtered.is_empty() {
@@ -263,6 +264,7 @@ fn run_match_command(args: &[String]) {
     }
 
     let (sys_data, _) = crate::core::data::get_sys_data();
+    let config = crate::core::data::get_config();
 
     // Always use the shared display logic (same as popup)
     let (mut filtered, is_prefix_menu) = if debug {
@@ -271,7 +273,7 @@ fn run_match_command(args: &[String]) {
     } else {
         // Use shared popup matching logic - handles aliases, prefix menus, scoring
         let (display_commands, is_prefix_menu, _prefix_menu_info, _prefix_menu_count) =
-            crate::core::get_new_display_commands(query, &sys_data.commands, &sys_data.patches);
+            crate::core::get_new_display_commands(query, &sys_data.commands, &sys_data.patches, &config);
         (display_commands, is_prefix_menu)
     };
 
@@ -392,6 +394,7 @@ fn run_execute_top_match(args: &[String]) {
     // Client environment logging is now handled automatically in execute_command based on action type
     
     let (sys_data, _) = crate::core::data::get_sys_data();
+    let config = crate::core::data::get_config();
 
     // First, find if there's an exact match (including aliases)
     let exact_match = sys_data.commands.iter()
@@ -399,7 +402,7 @@ fn run_execute_top_match(args: &[String]) {
         .cloned();
 
     // Get display commands which may resolve aliases
-    let (display_commands, _, _, _) = crate::core::get_new_display_commands(query, &sys_data.commands, &sys_data.patches);
+    let (display_commands, _, _, _) = crate::core::get_new_display_commands(query, &sys_data.commands, &sys_data.patches, &config);
     let filtered = display_commands.into_iter().take(1).collect::<Vec<_>>();
 
     if filtered.is_empty() {
@@ -665,9 +668,10 @@ fn extract_folder_path(command: &crate::core::Command) -> Option<String> {
 /// For exact matches, returns single result; for fuzzy matches, returns multiple
 fn get_folder_matches(query: &str, include_command_names: bool) -> Vec<(String, String)> {
     let (sys_data, _) = crate::core::data::get_sys_data();
+    let config = crate::core::data::get_config();
 
     // Use the same display logic as the popup to get matching commands
-    let (display_commands, _, _, _) = crate::core::get_new_display_commands(query, &sys_data.commands, &sys_data.patches);
+    let (display_commands, _, _, _) = crate::core::get_new_display_commands(query, &sys_data.commands, &sys_data.patches, &config);
 
     if display_commands.is_empty() {
         return Vec::new();

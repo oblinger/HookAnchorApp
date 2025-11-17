@@ -70,8 +70,9 @@ pub use commands::{
     // Patch management
     get_patch_for_command, get_patch, get_patch_path,
     run_patch_inference,
+    create_patches_hashmap, // Exported for testing
 
-    // NOTE: load_commands, load_commands_with_data, create_patches_hashmap are now
+    // NOTE: load_commands, load_commands_with_data are now
     // pub(crate) only. External code MUST use sys_data::get_commands() or get_sys_data()
 };
 

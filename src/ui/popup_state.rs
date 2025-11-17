@@ -224,7 +224,7 @@ impl PopupState {
             detailed_log("POPUP_REFRESH", "Commands were reloaded - rebuilding search results");
         }
         let (display_commands, is_prefix_menu, prefix_menu_info, prefix_menu_count) =
-            get_new_display_commands(&self.search_text(), &sys_data.commands, &sys_data.patches);
+            get_new_display_commands(&self.search_text(), &sys_data.commands, &sys_data.patches, &self.config);
 
         // Apply max limit
         let total_limit = self.config.popup_settings.max_rows * self.config.popup_settings.max_columns;

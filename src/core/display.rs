@@ -5,7 +5,7 @@
 //! The display system uses a two-phase approach that first determines if there's a prefix menu,
 //! then constructs the appropriate display with sophisticated matching.
 //!
-//! ### Phase 1: Prefix Menu Detection (`build_prefix_menu`)
+//! ### Phase 1: COMMAND SELECTION: Prefix Menu Detection (`build_prefix_menu`)
 //! 1. **Backward Scanning**: Starting with the full input string (e.g., "FBO"), scan backwards
 //!    character by character: "FBO" → "FB" → "F"
 //! 2. **Command Matching**: For each substring, look for exact command matches (case-insensitive)
@@ -43,8 +43,138 @@
 //! - **Proper Filtering**: Correctly filters prefix menu commands by remaining input
 //! - **No Duplicates**: Clean separation between prefix menu and non-prefix menu sections
 //! - **Unified Code Path**: Same logic for both CLI and GUI
-
-use super::{Command, Patch};
+//!
+//! # MENU CONSTRUCTION SPECIFICATION
+//!
+//! This section defines how the menu system works. These rules specify the intended behavior
+//! and serve as the specification for the test suite in `tests/display_tests.rs`.
+//!
+//! ## PART 1: PREFIX MENU IDENTIFICATION
+//!
+//! **Backward Scanning for Anchors**
+//! - Scan backwards from full input string, trying progressively shorter prefixes
+//! - Input "PJPP" tries: "PJPP" → "PJP" → "PJ" → "P"
+//! - Stop at first prefix that matches an anchor command (case-insensitive)
+//! - If match found: use it as prefix menu anchor, remaining chars become filter
+//! - If no match found: no prefix menu (proceed to global matching)
+//!
+//! **Anchor Matching Rules**
+//! - Commands with action="alias" resolve to their target before checking if anchor
+//! - Only commands with anchor flag ('a' or 'A') qualify as anchors
+//! - Date prefixes (digits, dashes, underscores) are skipped when matching
+//! - If multiple anchors match at same length, choose shortest resolved name
+//!
+//! **Example:** Input "PJPP" → matches "PJ" anchor → filter = "PP"
+//!
+//!
+//! ## PART 2: COMMAND MATCHING
+//!
+//! **Matching Process** - Applied to ALL commands in the system:
+//!
+//! - Characters from input string match against beginnings of words in command name
+//! - Characters must match in order (left-to-right)
+//! - Can match multiple consecutive characters from same word
+//! - Can jump to next word after matching at least one character
+//! - Matching always starts at word boundaries (not mid-word)
+//! - Matching is case-insensitive
+//! - Word boundaries determined by separators (typically " ._-!")
+//!
+//! **Examples:**
+//! - Input "PJD" matches "PJ Directories" (P,J from "PJ", D from "Directories")
+//! - Input "ProDir" matches "Project Directories" (Pro from "Project", Dir from "Directories")
+//! - Input "PD" matches "PJ Directories" (P from "PJ", D from "Directories", skipped between)
+//! - Input "Dir" matches "PJ Directories" (skipped "PJ", matched "Dir" from "Directories")
+//!
+//! **Result Prioritization** - Matching commands are placed in three tiers:
+//!
+//! 1. **Exact Matches** (top) - Command name equals input (ignoring whitespace, case-insensitive)
+//! 2. **No Words Skipped** (middle) - Matched at least one character from every word in command
+//! 3. **Words Skipped** (bottom) - Skipped one or more words in the command name
+//!
+//!
+//! ## PART 3: PREFIX MENU CONSTRUCTION
+//!
+//! When a prefix menu anchor is identified (Part 1), build its command list from:
+//!
+//! **A. Patch-Based Members**
+//! - Commands with `patch` field = anchor name (case-insensitive)
+//! - Example: Command "PP" with patch="PJ" belongs in "PJ" menu
+//!
+//! **B. Name-Based Members**
+//! - Commands whose name starts with `anchor_name + separator`
+//! - Separator must be one of word_separators (typically " ._-!")
+//! - Example: "PJ Directories" belongs in "PJ" menu
+//!
+//! **C. Include Folder Members** (if configured)
+//! - When anchor has 'I' flag or patch has include_folders configured
+//! - Commands physically located in specified folders
+//! - Must have names starting with `anchor_name + space`
+//!
+//! **D. Commands from Broader Matching**
+//! - Commands from Part 2 (both matching types) that also qualify via A, B, or C
+//! - These go INTO the prefix menu, NOT the global section
+//! - Prevents duplication between prefix menu and global menu
+//!
+//! **Special Rules:**
+//! - Anchor command itself always included in its own menu
+//! - Separator commands (action="separator") excluded everywhere
+//! - Each (command_name, action) pair appears at most once
+//!
+//!
+//! ## PART 4: SORTING & ORDERING
+//!
+//! **Priority Tiers** (from Part 2, applied to all command lists):
+//!
+//! 1. **Exact Matches** - command name equals input (ignoring whitespace, case-insensitive)
+//! 2. **No Words Skipped** - matched at least one character from every word
+//! 3. **Words Skipped** - skipped one or more words during matching
+//! 4. **Alphabetical** - within each tier, sort alphabetically (case-insensitive)
+//!    - Alpha characters before numeric characters
+//!    - Shorter names win ties when lowercase names identical
+//!
+//! **What to Sort Against:**
+//! - **Prefix menu commands**: Sort by filter text (if exists) or anchor name (if no filter)
+//!   - Example: Input "PJPP" → sort by "PP"
+//!   - Example: Input "PJ" → sort by "PJ"
+//!
+//! - **Global menu commands**: Sort by full input string
+//!   - Example: Input "PJPP" → sort by "PJPP"
+//!
+//!
+//! ## PART 5: FINAL MENU ASSEMBLY
+//!
+//! **With Prefix Menu:**
+//! 1. Prefix menu commands (sorted per Part 4)
+//! 2. Separator "============" (only if global matches exist)
+//! 3. Global matches (sorted per Part 4)
+//!    - Global matches = commands from Part 2 NOT already in prefix menu
+//!    - Deduplicated against prefix menu (checks literal and alias-resolved matches)
+//!
+//! **Without Prefix Menu:**
+//! 1. All matching commands from Part 2 (sorted per Part 4)
+//! 2. No separator
+//!
+//! **Empty Input:**
+//! - Returns empty result immediately (no processing)
+//!
+//!
+//! ## KNOWN ISSUES & OPEN QUESTIONS
+//!
+//! **Issue 1: Current Implementation May Not Match Specification**
+//! - The matching logic described in Part 2 represents the INTENDED behavior
+//! - Current code may use simpler matching (basic contains/prefix checks)
+//! - Tests will reveal discrepancies between intended and actual behavior
+//!
+//! **Issue 2: Double Filtering**
+//! - After prefix menu is built, additional simple "contains" filter may be applied
+//! - This could be causing bugs (e.g., "PJPP" returning empty when "PP" should appear)
+//! - Status: Needs investigation
+//!
+//! **Issue 3: Include Folder Filtering**
+//! - Include folder commands may use simpler filtering than regular prefix menu
+//! - Should they use the same word-boundary matching with three-tier prioritization?
+//! - Status: Design decision needed
+use super::{Command, Patch, Config};
 use std::collections::HashMap;
 use crate::prelude::*;
 
@@ -304,13 +434,15 @@ fn prefix_fully_matches_anchor(prefix: &str, command: &str) -> bool {
 /// * `input` - The input string from the search box
 /// * `all_commands` - All available commands in the system
 /// * `patches` - All available patches for include logic
+/// * `config` - Configuration containing word separators and other settings
 ///
 /// # Returns
 /// * `Option<(Vec<Command>, Command, Command)>` - (prefix_menu_commands, original_command, resolved_command) or None if no prefix menu found
 pub fn build_prefix_menu(
     input: &str,
     all_commands: &[Command],
-    patches: &HashMap<String, Patch>
+    patches: &HashMap<String, Patch>,
+    config: &Config
 ) -> Option<(Vec<Command>, Command, Command)> {
 
     if input.trim().is_empty() {
@@ -360,7 +492,7 @@ pub fn build_prefix_menu(
             detailed_log("BUILD_PREFIX_MENU", &format!("Selected longest anchor='{}' for input='{}', filter='{}'",
                 resolved_command.command, input, remaining_chars));
 
-            let prefix_menu_commands = build_prefix_menu_commands(&resolved_command, all_commands, patches, remaining_chars);
+            let prefix_menu_commands = build_prefix_menu_commands(&resolved_command, all_commands, patches, remaining_chars, config);
             return Some((prefix_menu_commands, original_command.clone(), resolved_command.clone()));
         }
     }
@@ -375,6 +507,7 @@ pub fn build_prefix_menu(
 /// * `all_commands` - All available commands in the system
 /// * `patches` - All available patches for include logic
 /// * `filter_text` - Characters after the anchor match to filter prefix menu commands
+/// * `config` - Configuration containing word separators and other settings
 ///
 /// # Returns
 /// * `Vec<Command>` - The commands that should be displayed in the prefix menu, sorted alphabetically
@@ -382,11 +515,11 @@ fn build_prefix_menu_commands(
     anchor_command: &Command,
     all_commands: &[Command],
     patches: &HashMap<String, Patch>,
-    filter_text: &str
+    filter_text: &str,
+    config: &Config
 ) -> Vec<Command> {
     let mut prefix_menu_commands = Vec::new();
     let anchor_name = &anchor_command.command;
-    let config = crate::core::data::get_config();
     let separators = &config.popup_settings.word_separators;
 
     // Add the anchor command itself only if it matches the filter
@@ -446,8 +579,16 @@ fn build_prefix_menu_commands(
                     prefix_menu_commands.push(cmd.clone());
                 }
             } else {
-                // Get the part of the command after the anchor name (using trimmed command)
-                if anchor_name.len() < cmd_trimmed.len() {
+                // For patch-based membership (no name prefix), match full command name against filter
+                if has_matching_patch && !name_starts_with_prefix {
+                    if command_matches_query_with_debug(&cmd.command, filter_text, false) >= 0 {
+                        if !prefix_menu_commands.iter().any(|existing| existing.command == cmd.command && existing.action == cmd.action) {
+                            prefix_menu_commands.push(cmd.clone());
+                        }
+                    }
+                } else if anchor_name.len() < cmd_trimmed.len() {
+                    // Get the part of the command after the anchor name (using trimmed command)
+                    // This handles name-based membership where command starts with anchor name
                     // Find the start of remaining text after anchor name and separators
                     let mut remaining_start = anchor_name.len();
 
@@ -491,8 +632,7 @@ fn build_prefix_menu_commands(
     // Execute include logic: if the patch has include commands or anchor commands with 'I' flag,
     // add all commands from those folders that match the prefix
     if let Some(patch) = patches.get(&patch_key) {
-        let config = crate::core::data::get_config();
-        let include_folders = patch.get_all_include_folders(&config);
+        let include_folders = patch.get_all_include_folders(config);
 
         if !include_folders.is_empty() {
             // Build the prefix to match against (anchor name + space)
@@ -564,6 +704,7 @@ fn build_prefix_menu_commands(
 /// * `input` - The input string from the search box
 /// * `all_commands` - All available commands in the system
 /// * `patches` - All available patches
+/// * `config` - Configuration containing word separators and other settings
 ///
 /// # Returns
 /// * `(Vec<Command>, bool, Option<(Command, Command)>, usize)` -
@@ -571,7 +712,8 @@ fn build_prefix_menu_commands(
 pub fn get_new_display_commands(
     input: &str,
     all_commands: &[Command],
-    patches: &HashMap<String, Patch>
+    patches: &HashMap<String, Patch>,
+    config: &Config
 ) -> (Vec<Command>, bool, Option<(Command, Command)>, usize) {
 
     if input.trim().is_empty() {
@@ -587,7 +729,7 @@ pub fn get_new_display_commands(
         let anchor_candidate = &input[..len];
         let filter_text = &input[len..];
 
-        if let Some((mut prefix_menu_commands, original_command, resolved_command)) = build_prefix_menu(anchor_candidate, all_commands, patches) {
+        if let Some((mut prefix_menu_commands, original_command, resolved_command)) = build_prefix_menu(anchor_candidate, all_commands, patches, config) {
             // We have a prefix menu!
             detailed_log("DISPLAY", &format!("Found anchor '{}' with filter '{}'", anchor_candidate, filter_text));
 
@@ -601,7 +743,6 @@ pub fn get_new_display_commands(
             }
 
             // Step 2: Get all commands that match the FULL input using sophisticated matching
-            let config = crate::core::data::get_config();
             let mut prefix_commands = crate::core::commands::filter_commands_with_patch_support(
                 all_commands,
                 input,  // Use full input for broader matches
@@ -654,7 +795,6 @@ pub fn get_new_display_commands(
     }
 
     // No prefix menu found at any length - use sophisticated matching
-    let config = crate::core::data::get_config();
     let mut matching_commands = crate::core::commands::filter_commands_with_patch_support(
         all_commands,
         input,

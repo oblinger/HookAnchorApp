@@ -562,7 +562,7 @@ impl Command {
 /// Creates a hashmap from patch names to Patch structs
 /// Creates a patch entry for every anchor command, indexed by the command's lowercase name
 /// INTERNAL ONLY - External code should use get_sys_data() to get patches
-pub(crate) fn create_patches_hashmap(commands: &[Command]) -> HashMap<String, Patch> {
+pub fn create_patches_hashmap(commands: &[Command]) -> HashMap<String, Patch> {
     let mut patches = HashMap::new();
     let config = crate::core::data::get_config();
     let preferred_anchor_type = config.popup_settings.preferred_anchor.as_deref().unwrap_or("markdown");

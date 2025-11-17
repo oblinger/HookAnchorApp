@@ -1,7 +1,7 @@
 {
   "window_position": [
     980.0,
-    440.0
+    376.0
   ],
   "history_viewer_state": {
     "position": [
@@ -19,14 +19,14 @@
     "sidebar_width": 74.0,
     "show_current_commands": false
   },
-  "build_time": 1763147300,
+  "build_time": 1763338408,
   "last_scan_time": null,
   "last_scan_checksum": null,
-  "last_executed_command": "Hook Anchor",
-  "server_pid": 46328,
+  "last_executed_command": "Google Sheets App",
+  "server_pid": 89256,
   "notion_last_scan": null,
-  "anchor_name": "Hook Anchor",
-  "anchor_timestamp": 1763140792,
+  "anchor_name": "JOBI",
+  "anchor_timestamp": 1763336256,
   "anchor_folder": null,
   "show_files": false
 }
