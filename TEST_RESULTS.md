@@ -1,6 +1,6 @@
 # Display Tests - Results Summary
 
-**Total: 34 tests | 34 PASSED ✅ | 0 FAILED ❌**
+**Total: 35 tests | 35 PASSED ✅ | 0 FAILED ❌**
 
 ## Part 1: PREFIX MENU IDENTIFICATION (6/6 passed) ✅
 
@@ -36,14 +36,15 @@
 
 **Analysis:** ✅ **PART 3 COMPLETE!** All prefix menu construction tests passing.
 
-## Part 4: SORTING & ORDERING (4/4 passed) ✅
+## Part 4: SORTING & ORDERING (5/5 passed) ✅
 
 - ✅ `part4_exact_matches_first` - PASSED
 - ✅ `part4_no_words_skipped_before_words_skipped` - PASSED
 - ✅ `part4_alphabetical_within_tier` - PASSED
 - ✅ `part4_sort_by_filter_in_prefix_menu` - PASSED
+- ✅ `part4_multi_char_matching_no_skip_priority` - PASSED (NEW: multi-char from same word ranks before word-skip)
 
-**Analysis:** ✅ **PART 4 COMPLETE!** All sorting logic working correctly.
+**Analysis:** ✅ **PART 4 COMPLETE!** All sorting logic working correctly including proper 3-tier prioritization.
 
 ## Part 5: FINAL MENU ASSEMBLY (4/4 passed) ✅
 
@@ -78,14 +79,14 @@
 
 ### 🎉 ALL TESTS PASSING (100%)!
 
-**Overall: 34/34 tests passing (100%)**
+**Overall: 35/35 tests passing (100%)**
 
 All 5 parts of the specification are now fully implemented and tested:
 
 1. ✅ **Part 1: PREFIX MENU IDENTIFICATION** - 6/6 tests passing
 2. ✅ **Part 2: COMMAND MATCHING** - 7/7 tests passing
 3. ✅ **Part 3: PREFIX MENU CONSTRUCTION** - 6/6 tests passing
-4. ✅ **Part 4: SORTING & ORDERING** - 4/4 tests passing
+4. ✅ **Part 4: SORTING & ORDERING** - 5/5 tests passing
 5. ✅ **Part 5: FINAL MENU ASSEMBLY** - 4/4 tests passing
 
 ### 🟢 What Was Fixed:
@@ -96,21 +97,27 @@ All 5 parts of the specification are now fully implemented and tested:
 3. **Patch-based membership** - Commands properly included in prefix menus
 4. **All sorting** - Exact matches, word-skipping prioritization, alphabetical ordering
 
-#### Session 2 (This Session):
+#### Session 2:
 1. **Test expectation fixes** - Changed from looking for "PJ! PP" to "PP" (command names don't include patch prefix)
 2. **Test scaffold fixes** - Added missing F:=A flag to anchor in edge case test
 3. **Test logic fixes** - Corrected bug test to verify anchor doesn't appear when it doesn't match filter
+
+#### Session 3 (This Session):
+1. **Sorting priority logic** - Implemented proper 3-tier prioritization (exact → no-skip → word-skip)
+2. **No-skip detection** - Added matches_all_words() to determine if a match skipped words
+3. **Patch-based filtering** - Extended two-phase matching to patch-based membership
+4. **Real-world fix** - "Two Tower Learning" now ranks before "The Writing Is On The Wall" for "TWOT"
 
 ### 📊 Pass Rate by Category:
 
 - Part 1 (Anchor ID): **100%** (6/6) ✅
 - Part 2 (Matching): **100%** (7/7) ✅
 - Part 3 (Construction): **100%** (6/6) ✅
-- Part 4 (Sorting): **100%** (4/4) ✅
+- Part 4 (Sorting): **100%** (5/5) ✅
 - Part 5 (Assembly): **100%** (4/4) ✅
 - Edge Cases: **100%** (7/7) ✅
 
-**Overall: 100% (34/34) tests passing**
+**Overall: 100% (35/35) tests passing**
 
 ---
 
