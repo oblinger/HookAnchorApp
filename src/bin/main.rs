@@ -42,6 +42,16 @@ fn main() -> Result<(), eframe::Error> {
             "--popup" => {
                 force_popup = true;
                 i += 1;
+                // If next arg exists and doesn't start with --, treat it as input text
+                if i < args.len() && !args[i].starts_with("--") {
+                    input_text = Some(args[i].clone());
+                    i += 1;
+                    // If another arg exists and doesn't start with --, treat it as action name
+                    if i < args.len() && !args[i].starts_with("--") {
+                        action_name = Some(args[i].clone());
+                        i += 1;
+                    }
+                }
             }
             "--input" if i + 1 < args.len() => {
                 input_text = Some(args[i + 1].clone());
@@ -52,7 +62,11 @@ fn main() -> Result<(), eframe::Error> {
                 i += 2;
             }
             _ => {
-                has_other_args = true;
+                // Only mark as "other args" if we haven't seen --popup
+                // (popup mode consumes its own args above)
+                if !force_popup {
+                    has_other_args = true;
+                }
                 i += 1;
             }
         }

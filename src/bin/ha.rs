@@ -61,16 +61,19 @@ fn main() {
 /// Launch the GUI popup application with optional arguments
 ///
 /// Supports:
-/// - `--input <text>`: Preload text into the input box
-/// - `--action <name>`: Execute action with the given input
+/// - `ha --popup` - open popup with empty input
+/// - `ha --popup "text"` - open popup with text pre-filled
+/// - `ha --popup "text" "action"` - open popup with text and trigger action
+/// - `ha --popup --input "text" --action "action"` - explicit flag syntax (backward compatible)
 fn launch_popup_with_args(args: &[String]) {
     let exe_dir = hookanchor::utils::get_binary_dir();
     let popup_path = exe_dir.join("popup");
 
     // Build command with arguments
     let mut cmd = Command::new(&popup_path);
+    cmd.arg("--popup"); // Always pass --popup to the popup_server
 
-    // Parse and pass through --input and --action arguments
+    // Parse and pass through arguments
     let mut i = 1; // Skip "--popup" which is args[0]
     while i < args.len() {
         match args[i].as_str() {
@@ -81,6 +84,11 @@ fn launch_popup_with_args(args: &[String]) {
             "--action" if i + 1 < args.len() => {
                 cmd.arg("--action").arg(&args[i + 1]);
                 i += 2;
+            }
+            _ if !args[i].starts_with("--") => {
+                // Non-flag argument - treat as input text
+                cmd.arg(&args[i]);
+                i += 1;
             }
             _ => {
                 i += 1;

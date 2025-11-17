@@ -78,6 +78,27 @@ fn main() {
     // Get command from args
     let args: Vec<String> = env::args().collect();
 
+    // Special case: if first arg is --popup, just forward all args to popup_server directly
+    if args.len() > 1 && args[1] == "--popup" {
+        // Forward everything to popup_server
+        let exe_path = env::current_exe().unwrap_or_else(|e| {
+            print(&format!("Failed to get current exe path: {}", e));
+            std::path::PathBuf::from("popup")
+        });
+
+        let exe_dir = exe_path.parent().unwrap_or_else(|| std::path::Path::new("."));
+        let popup_server_path = exe_dir.join("popup_server");
+
+        // Replace current process with popup_server, passing all args except the first (program name)
+        let err = Command::new(&popup_server_path)
+            .args(&args[1..])  // Forward all args starting from --popup
+            .exec();  // Replace process
+
+        // exec() never returns on success, so this is an error
+        print(&format!("Failed to launch popup_server: {}", err));
+        std::process::exit(1);
+    }
+
     // Parse optional --input and --action flags, and extract non-flag command
     let mut input_text = None;
     let mut action_name = None;
