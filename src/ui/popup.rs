@@ -1538,8 +1538,8 @@ impl AnchorSelector {
                 detailed_log("HIERARCHY", &format!("Navigating into anchor: {} (resolved from '{}')",
                     anchor_name, selected_command.command));
 
-                // Set the search text to the anchor name to enter its submenu
-                self.popup_state.update_search(anchor_name.clone());
+                // Set the search text to the anchor name with a trailing space and position cursor at end
+                self.set_input(format!("{} ", anchor_name));
             } else {
                 detailed_log("HIERARCHY", &format!("Selected command '{}' is not an anchor (action='{}', resolved='{}')",
                     selected_command.command, selected_command.action, resolved_command.command));
