@@ -252,8 +252,68 @@ fn compare_commands_case_insensitive(a: &Command, b: &Command) -> std::cmp::Orde
 /// # Arguments
 /// * `commands` - Mutable reference to vector of commands to sort
 /// * `input` - The input string to compare against (filter text, anchor name, or full input)
+/// Determine if a match between query and command skipped any words
+/// Returns true if at least one character from every word was matched
+/// Returns false if one or more words were entirely skipped
+fn matches_all_words(command: &str, query: &str) -> bool {
+    if query.is_empty() {
+        return true;
+    }
+
+    let command_lower = command.to_lowercase();
+    let query_lower = query.to_lowercase();
+    let separators = " ._-";
+
+    // Split command into words
+    let words: Vec<&str> = command_lower
+        .split(|c: char| separators.contains(c))
+        .filter(|w| !w.is_empty())
+        .collect();
+
+    if words.is_empty() {
+        return false;
+    }
+
+    let query_chars: Vec<char> = query_lower.chars().collect();
+    let mut query_idx = 0;
+
+    // For each word, check if at least one character was matched
+    for word in &words {
+        let word_chars: Vec<char> = word.chars().collect();
+        let mut matched_in_word = false;
+
+        // Try to match characters from this word
+        for word_char in &word_chars {
+            if query_idx < query_chars.len() && *word_char == query_chars[query_idx] {
+                matched_in_word = true;
+                query_idx += 1;
+
+                // Continue matching subsequent chars from same word if they match
+                for &next_word_char in word_chars[word_chars.iter().position(|&c| c == *word_char).unwrap() + 1..].iter() {
+                    if query_idx < query_chars.len() && next_word_char == query_chars[query_idx] {
+                        query_idx += 1;
+                    } else {
+                        break;
+                    }
+                }
+                break;
+            }
+        }
+
+        if !matched_in_word && query_idx < query_chars.len() {
+            // We still have query chars to match but didn't match any in this word
+            // This word was skipped
+            return false;
+        }
+    }
+
+    // Return true if we matched all query characters
+    query_idx == query_chars.len()
+}
+
 fn sort_commands_by_relevance(commands: &mut Vec<Command>, input: &str) {
     commands.sort_by(|a, b| {
+        // Tier 1: Exact matches
         let a_exact = a.command.eq_ignore_ascii_case(input);
         let b_exact = b.command.eq_ignore_ascii_case(input);
 
@@ -263,15 +323,17 @@ fn sort_commands_by_relevance(commands: &mut Vec<Command>, input: &str) {
             return std::cmp::Ordering::Greater;
         }
 
-        let a_prefix = a.command.to_lowercase().starts_with(&input.to_lowercase());
-        let b_prefix = b.command.to_lowercase().starts_with(&input.to_lowercase());
+        // Tier 2: No words skipped (matched at least one char from every word)
+        let a_no_skip = matches_all_words(&a.command, input);
+        let b_no_skip = matches_all_words(&b.command, input);
 
-        if a_prefix && !b_prefix {
+        if a_no_skip && !b_no_skip {
             return std::cmp::Ordering::Less;
-        } else if !a_prefix && b_prefix {
+        } else if !a_no_skip && b_no_skip {
             return std::cmp::Ordering::Greater;
         }
 
+        // Tier 3: Words skipped (or same tier)
         // Both are same type of match - sort case-insensitively
         compare_commands_case_insensitive(a, b)
     });
@@ -579,9 +641,16 @@ fn build_prefix_menu_commands(
                     prefix_menu_commands.push(cmd.clone());
                 }
             } else {
-                // For patch-based membership (no name prefix), match full command name against filter
+                // For patch-based membership (no name prefix), use two-phase matching
                 if has_matching_patch && !name_starts_with_prefix {
-                    if command_matches_query_with_debug(&cmd.command, filter_text, false) >= 0 {
+                    // Phase 1: Check if command matches filter using sophisticated matching
+                    let phase1_match = command_matches_query_with_debug(&cmd.command, filter_text, false) >= 0;
+
+                    // Phase 2: Check if command matches full input (anchor + filter) using sophisticated matching
+                    let full_input = format!("{}{}", anchor_name, filter_text);
+                    let phase2_match = command_matches_query_with_debug(&cmd.command, &full_input, false) >= 0;
+
+                    if phase1_match || phase2_match {
                         if !prefix_menu_commands.iter().any(|existing| existing.command == cmd.command && existing.action == cmd.action) {
                             prefix_menu_commands.push(cmd.clone());
                         }

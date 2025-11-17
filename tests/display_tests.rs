@@ -524,6 +524,33 @@ fn part4_sort_by_filter_in_prefix_menu() {
     }
 }
 
+#[test]
+fn part4_multi_char_matching_no_skip_priority() {
+    // Test that multi-character matching from same word (no skip)
+    // ranks higher than matching with word skips
+    // Real-world case: "TWOT" should match "Two Tower" before "The Writing On The"
+    let scaffold = scaffold(r#"
+        T:anchor; F:=A A:=/t
+
+        // No words skipped: T+W from "Two", O+T from "Tower"
+        T! Two Tower Learning:folder; A:=/two_tower
+
+        // Words skipped: T from "The", W from "Writing", O from "On", T from "The" (skips "Is")
+        T! The Writing Is On The Wall:folder; A:=/writing_wall
+    "#);
+
+    let (result, _, _, _) = get_new_display_commands(
+        "TWOT",
+        &scaffold.commands,
+        &scaffold.patches,
+        &scaffold.config
+    );
+
+    // "Two Tower Learning" should appear before "The Writing Is On The Wall"
+    // because it matches without skipping any words
+    assert_order(&result, "Two Tower Learning", "The Writing Is On The Wall");
+}
+
 // ============================================================================
 // PART 5: FINAL MENU ASSEMBLY
 // ============================================================================
