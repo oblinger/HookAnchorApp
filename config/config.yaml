@@ -592,7 +592,7 @@ actions:
 
 grabber_rules:
 - {"name": "Chrome URL", "action": "chrome", "group": "Web",
-  "matcher": "bundleId === ''com.google.Chrome'' && props.url ? props.url : null"}
+  "matcher": "bundleId === 'com.google.Chrome' && props.url ? props.url : null"}
 - name: Safari URL
   matcher: 'bundleId === ''com.apple.Safari'' && props.url ? props.url : null'
   action: safari
