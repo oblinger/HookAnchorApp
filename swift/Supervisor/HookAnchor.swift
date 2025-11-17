@@ -405,16 +405,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Extract the command from hook://command format
         if urlString.hasPrefix("hook://") {
             let command = String(urlString.dropFirst(7)) // Remove "hook://"
-            
+
             log("Processing hook URL with command: '\(command)'")
 
-            // Pass the command to the ha CLI for execution
-            // Using -x to execute the top match for the command
+            // Pass the full URL to the ha CLI for URL handling
+            // Using --hook to route through URL handler for prefix support (p/, a/, x/)
             if let haPath = getHaBinaryPath() {
-                // Execute ha with the -x option to execute the command
+                // Execute ha with the --hook option to handle the full URL
                 let task = Process()
                 task.executableURL = URL(fileURLWithPath: haPath)
-                task.arguments = ["-x", command]
+                task.arguments = ["--hook", urlString]
                 
                 // Don't wait for output or termination - fire and forget
                 task.standardOutput = nil
@@ -424,10 +424,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 // Run in background - we don't need to wait for completion
                 do {
                     try task.run()
-                    log("Dispatched command '\(command)' to ha CLI (async)")
+                    log("Dispatched URL '\(urlString)' to ha --hook (async)")
                     // Don't wait for the process to complete - return immediately
                 } catch {
-                    log("Failed to dispatch command to ha CLI: \(error)")
+                    log("Failed to dispatch URL to ha CLI: \(error)")
                     // Don't show window on error - just log it
                 }
             } else {
