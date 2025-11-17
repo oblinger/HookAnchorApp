@@ -24,14 +24,19 @@ fn main() -> Result<(), eframe::Error> {
 
     let args: Vec<String> = env::args().collect();
 
-    // Parse optional --input and --action flags (these are for GUI mode)
+    // Parse optional --popup, --input and --action flags (these are for GUI mode)
     let mut input_text: Option<String> = None;
     let mut action_name: Option<String> = None;
+    let mut force_popup = false;
     let mut has_other_args = false;
 
     let mut i = 1;
     while i < args.len() {
         match args[i].as_str() {
+            "--popup" => {
+                force_popup = true;
+                i += 1;
+            }
             "--input" if i + 1 < args.len() => {
                 input_text = Some(args[i + 1].clone());
                 i += 2;
@@ -58,8 +63,9 @@ fn main() -> Result<(), eframe::Error> {
     // URL handling must be implemented in the GUI application using Apple Event handlers.
 
 
-    // If arguments are provided (other than --input/--action), run in command-line mode (no GUI)
-    if has_other_args {
+    // If arguments are provided (other than --popup/--input/--action), run in command-line mode (no GUI)
+    // Unless --popup flag is present, which forces GUI mode
+    if has_other_args && !force_popup {
         // CLI mode - initialize sys_data immediately (needed for commands to work)
         match hookanchor::core::initialize() {
             Ok(()) => {

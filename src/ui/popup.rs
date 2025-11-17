@@ -1679,7 +1679,7 @@ impl AnchorSelector {
             popup_state.set_search_text_during_init(initial_prompt.to_string());
         }
 
-        let result = Self {
+        let mut result = Self {
             popup_state,
             last_saved_position: None,
             cached_window_position: None,
