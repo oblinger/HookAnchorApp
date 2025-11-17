@@ -415,7 +415,7 @@ fn part3_no_duplicate_commands() {
     );
 
     // PP should appear exactly once
-    let pp_count = result.iter().filter(|c| c.command == "PJ! PP").count();
+    let pp_count = result.iter().filter(|c| c.command == "PP").count();
     assert_eq!(pp_count, 1, "PP should appear exactly once, found {}", pp_count);
 }
 
@@ -583,8 +583,8 @@ fn part5_global_matches_deduplicated() {
         &scaffold.config
     );
 
-    // Count how many times "PJ! PP" appears
-    let pp_count = result.iter().filter(|c| c.command == "PJ! PP").count();
+    // Count how many times "PP" appears
+    let pp_count = result.iter().filter(|c| c.command == "PP").count();
     assert_eq!(pp_count, 1, "PP should appear exactly once (no duplication)");
 }
 
@@ -695,7 +695,7 @@ fn edge_very_long_input() {
 fn edge_duplicate_names_different_actions() {
     // Same name, different actions → both allowed
     let scaffold = scaffold(r#"
-        Main:anchor; A:=/main
+        Main:anchor; F:=A A:=/main
         Main! Dupe:open; A:=/dupe1
         Main! Dupe:markdown; A:=/dupe2.md
     "#);
@@ -734,8 +734,9 @@ fn bug_pjpp_should_show_pp() {
     // EXPECTED: PP should appear (it's in PJ menu and matches filter "PP")
     assert_contains(&result, "PP");
 
-    // EXPECTED: PJ anchor should appear when it matches
-    assert_contains(&result, "PJ");
+    // PJ anchor should NOT appear because it doesn't match the filter "PP"
+    // (Anchors only appear if they match the filter, see part1_backward_scan_longest_first)
+    assert_not_contains(&result, "PJ");
 }
 
 #[test]

@@ -2,7 +2,7 @@
   "anchor_folder": null,
   "anchor_name": "JOBI",
   "anchor_timestamp": 1763336256,
-  "build_time": 1763340256,
+  "build_time": 1763347006,
   "history_viewer_state": {
     "min_edit_size": 5,
     "name_filter": "",
@@ -19,7 +19,7 @@
       1316.0
     ]
   },
-  "last_executed_command": "G Slides",
+  "last_executed_command": "Mgt Gdrive",
   "last_scan_checksum": null,
   "last_scan_time": null,
   "notion_last_scan": null,
