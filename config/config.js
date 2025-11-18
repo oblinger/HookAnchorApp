@@ -233,26 +233,42 @@ module.exports = {
   },
 
 
-  // Type text file contents into active application
+  // Insert action - just calls action_text with direct flag set
+  action_insert: function(ctx) {
+    // Set the direct flag to indicate we want to use arg as text, not as a file path
+    ctx.params = ctx.params || {};
+    ctx.params.direct = true;
+    return this.action_text(ctx);
+  },
+
+  // Type text - either from file (default) or directly from arg (if direct flag set)
   action_text: function(ctx) {
     const { log, readFile, shell, shellSync } = ctx.builtins;
-    const filePath = ctx.arg;
-    
+
+    // Check if we're in direct mode (arg is the text itself, not a file path)
+    const isDirect = ctx.params?.direct || false;
+
     // Get delay parameter from action config, default to 1.0 seconds
     const delay = ctx.params?.delay || 1.0;
-    
-    log("TEXT", `Reading file: '${filePath}'`);
-    log("TEXT", `Using delay of ${delay} seconds before typing`);
 
-    // Read the file contents
+    // Get the content - either directly from arg or by reading the file
     let content;
-    try {
-      content = readFile(filePath);
-      log("TEXT", `Successfully read ${content.length} characters from file`);
-    } catch (error) {
-      log("TEXT", `Error reading file: ${error}`);
-      throw new Error(`Failed to read text file: ${error}`);
+    if (isDirect) {
+      content = ctx.arg;
+      log("TEXT", `Using text directly: '${content.substring(0, 50)}${content.length > 50 ? '...' : ''}'`);
+    } else {
+      const filePath = ctx.arg;
+      log("TEXT", `Reading file: '${filePath}'`);
+      try {
+        content = readFile(filePath);
+        log("TEXT", `Successfully read ${content.length} characters from file`);
+      } catch (error) {
+        log("TEXT", `Error reading file: ${error}`);
+        throw new Error(`Failed to read text file: ${error}`);
+      }
     }
+
+    log("TEXT", `Using delay of ${delay} seconds before typing`);
 
     // Give focus back to the previous application (the one that was active before popup)
     log("TEXT", `Switching focus to previous application`);

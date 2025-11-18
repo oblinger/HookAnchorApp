@@ -354,14 +354,17 @@ impl AnchorSelector {
             self.popup_state.search_text.clear();
             self.popup_state.update_search(String::new());
 
-            // IMPORTANT: Restore focus to the previous application before hiding
-            // This ensures that text insertion and other operations work correctly
-            // COMMENTED OUT: Testing if focus restoration is needed when hiding
-            // If the window is being hidden anyway, we may not need to explicitly restore focus
-            // detailed_log("EXIT_OR_HIDE", "Restoring focus to previous application");
-            // if let Err(e) = self.regain_focus() {
-            //     log_error(&format!("Failed to restore focus before hiding: {}", e));
-            // }
+            // IMPORTANT: Hide the popup_server application before hiding window
+            // This ensures popup_server is not left as the active application in the menu bar
+            detailed_log("EXIT_OR_HIDE", "Hiding popup_server application");
+            let hide_cmd = std::process::Command::new("osascript")
+                .arg("-e")
+                .arg("tell application \"System Events\" to set visible of process \"popup_server\" to false")
+                .output();
+            if let Err(e) = hide_cmd {
+                log_error(&format!("Failed to hide popup_server application: {}", e));
+            }
+            std::thread::sleep(std::time::Duration::from_millis(100));
 
             // Hide the window using egui's viewport command
             detailed_log("EXIT_OR_HIDE", "Sending ViewportCommand::Visible(false)");
