@@ -252,7 +252,7 @@ fn handle_execute_url(search_query: &str) {
     // Use the same logic as -x command
     let (sys_data, _) = crate::core::data::get_sys_data();
     let config = crate::core::data::get_config();
-    let (display_commands, _, _, _) = crate::core::get_new_display_commands(search_query, &sys_data.commands, &sys_data.patches, &config);
+    let (display_commands, _, _, _, _) = crate::core::get_new_display_commands(search_query, &sys_data.commands, &sys_data.patches, &config);
     let filtered = display_commands.into_iter().take(1).collect::<Vec<_>>();
 
     if filtered.is_empty() {
@@ -366,7 +366,7 @@ fn run_match_command(args: &[String]) {
         (filter_commands(&sys_data.commands, query, 10, debug), false)
     } else {
         // Use shared popup matching logic - handles aliases, prefix menus, scoring
-        let (display_commands, is_prefix_menu, _prefix_menu_info, _prefix_menu_count) =
+        let (display_commands, is_prefix_menu, _prefix_menu_info, _prefix_menu_count, _default_selection) =
             crate::core::get_new_display_commands(query, &sys_data.commands, &sys_data.patches, &config);
         (display_commands, is_prefix_menu)
     };
@@ -496,7 +496,7 @@ fn run_execute_top_match(args: &[String]) {
         .cloned();
 
     // Get display commands which may resolve aliases
-    let (display_commands, _, _, _) = crate::core::get_new_display_commands(query, &sys_data.commands, &sys_data.patches, &config);
+    let (display_commands, _, _, _, _) = crate::core::get_new_display_commands(query, &sys_data.commands, &sys_data.patches, &config);
     let filtered = display_commands.into_iter().take(1).collect::<Vec<_>>();
 
     if filtered.is_empty() {
@@ -765,7 +765,7 @@ fn get_folder_matches(query: &str, include_command_names: bool) -> Vec<(String, 
     let config = crate::core::data::get_config();
 
     // Use the same display logic as the popup to get matching commands
-    let (display_commands, _, _, _) = crate::core::get_new_display_commands(query, &sys_data.commands, &sys_data.patches, &config);
+    let (display_commands, _, _, _, _) = crate::core::get_new_display_commands(query, &sys_data.commands, &sys_data.patches, &config);
 
     if display_commands.is_empty() {
         return Vec::new();
@@ -2061,7 +2061,7 @@ fn print_help_config() {
     print("actions:");
     print("  action_name:                          # Custom action name");
     print("    description:          \"...\"         # What this action does");
-    print("    action_type:          template      # Type: template, js, or command");
+    print("    action_type:          template      # Type: template, popup, or custom (calls action_<type>())");
     print("    key:                  \"+\"           # Optional keyboard binding");
     print("    name:                 \"{{input}}\"   # Template for command name");
     print("    action:               \"markdown\"    # Command action type");

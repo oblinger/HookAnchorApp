@@ -62,9 +62,14 @@
 //! - Commands with action="alias" resolve to their target before checking if anchor
 //! - Only commands with anchor flag ('a' or 'A') qualify as anchors
 //! - Date prefixes (digits, dashes, underscores) are skipped when matching
-//! - If multiple anchors match at same length, choose shortest resolved name
+//! - **If multiple anchors match, choose shortest ORIGINAL command name** (e.g., "HA" over "HA2")
+//!   - This ensures the most specific match, even if "HA" is an alias to a longer name
+//! - **Anchor matching is EXACT**: Input must match anchor consecutively (no character skipping)
+//! - Only separator differences allowed (spaces, dots, underscores, hyphens are ignored)
 //!
+//! **Example:** Input "ha" → matches both "HA" and "HA2", chooses "HA" (shorter original name)
 //! **Example:** Input "PJPP" → matches "PJ" anchor → filter = "PP"
+//! **Example:** Input "stat" → matches "Status" anchor, but NOT "SV Tasks" (would skip 'V')
 //!
 //!
 //! ## PART 2: COMMAND MATCHING
@@ -131,6 +136,10 @@
 //! 4. **Alphabetical** - within each tier, sort alphabetically (case-insensitive)
 //!    - Alpha characters before numeric characters
 //!    - Shorter names win ties when lowercase names identical
+//!
+//! **Important**: Commands that do not skip any words (Tier 2) are sorted entirely before
+//! commands that skip one or more words (Tier 3). This ensures that more complete matches
+//! appear higher in the results.
 //!
 //! **What to Sort Against:**
 //! - **Prefix menu commands**: Sort by filter text (if exists) or anchor name (if no filter)
@@ -486,6 +495,32 @@ fn prefix_fully_matches_anchor(prefix: &str, command: &str) -> bool {
     prefix_normalized.len() >= command_normalized.len()
 }
 
+/// Exact prefix matching for anchors - requires consecutive character match.
+/// Only allows ignoring separators (spaces, dots, underscores, hyphens).
+///
+/// This is stricter than `prefix_fully_matches_anchor()` which uses fuzzy matching.
+/// Used specifically for anchor detection to avoid false positives.
+///
+/// # Examples
+/// * `anchor_matches_prefix_exactly("sv", "SV Tasks", " ._-")` → true
+/// * `anchor_matches_prefix_exactly("svt", "SV Tasks", " ._-")` → true
+/// * `anchor_matches_prefix_exactly("stat", "SV Tasks", " ._-")` → false (would skip 'V')
+/// * `anchor_matches_prefix_exactly("stat", "Status", " ._-")` → true
+fn anchor_matches_prefix_exactly(command: &str, prefix: &str, separators: &str) -> bool {
+    // Normalize: lowercase and remove separators
+    let cmd_normalized: String = command.to_lowercase()
+        .chars()
+        .filter(|c| !separators.contains(*c))
+        .collect();
+    let prefix_normalized: String = prefix.to_lowercase()
+        .chars()
+        .filter(|c| !separators.contains(*c))
+        .collect();
+
+    // Exact prefix match (no character skipping)
+    cmd_normalized.starts_with(&prefix_normalized)
+}
+
 
 /// Build prefix menu by scanning backwards from input string to find first anchor
 ///
@@ -523,11 +558,13 @@ pub fn build_prefix_menu(
         let mut matching_anchors: Vec<(Command, Command)> = Vec::new(); // (original, resolved)
 
         for cmd in all_commands {
-            // Try matching with sophisticated matching (handles spaces, word boundaries, etc.)
+            // Try matching with exact matching (no character skipping)
             let cmd_trimmed = skip_leading_date_chars(&cmd.command);
+            let separators = " ._-";
 
-            // Check if prefix fully matches to END of command (not just partial match)
-            if prefix_fully_matches_anchor(prefix, &cmd.command) || prefix_fully_matches_anchor(prefix, &cmd_trimmed) {
+            // Check if prefix exactly matches anchor (consecutive characters only, ignoring separators)
+            if anchor_matches_prefix_exactly(&cmd.command, prefix, separators) ||
+               anchor_matches_prefix_exactly(&cmd_trimmed, prefix, separators) {
                 let resolved = cmd.resolve_alias(all_commands);
                 if resolved.is_anchor() {
                     detailed_log("BUILD_PREFIX_MENU", &format!("Found matching anchor for prefix '{}': {} -> {}",
@@ -538,10 +575,13 @@ pub fn build_prefix_menu(
         }
 
         // If we found any matching anchors, choose the one with the shortest command name
-        // This ensures we match the most input characters with the most specific anchor
+        // This ensures we pick the most specific/exact match (e.g., "HA" over "HA2")
         if !matching_anchors.is_empty() {
-            // Sort by resolved command name length (shortest first)
-            matching_anchors.sort_by(|a, b| a.1.command.len().cmp(&b.1.command.len()));
+            // Sort by ORIGINAL command name length (shortest first), not resolved
+            // This ensures that when user types "ha", we match "HA" (2 chars) over "HA2" (3 chars)
+            // even if "HA" is an alias that resolves to something longer like "Hook Anchor"
+            matching_anchors.sort_by(|a, b| a.0.command.len().cmp(&b.0.command.len()));
+
             let (original_command, resolved_command) = &matching_anchors[0];
 
             // Calculate remaining chars for filtering
@@ -551,8 +591,8 @@ pub fn build_prefix_menu(
                 ""
             };
 
-            detailed_log("BUILD_PREFIX_MENU", &format!("Selected longest anchor='{}' for input='{}', filter='{}'",
-                resolved_command.command, input, remaining_chars));
+            detailed_log("BUILD_PREFIX_MENU", &format!("Selected shortest matching anchor='{}' (orig='{}') for input='{}', filter='{}'",
+                resolved_command.command, original_command.command, input, remaining_chars));
 
             let prefix_menu_commands = build_prefix_menu_commands(&resolved_command, all_commands, patches, remaining_chars, config);
             return Some((prefix_menu_commands, original_command.clone(), resolved_command.clone()));
@@ -753,12 +793,39 @@ fn build_prefix_menu_commands(
     // Log final result for tracker
     if anchor_name.to_lowercase() == "tracker" && !filter_text.is_empty() {
         let command_names: Vec<&str> = prefix_menu_commands.iter().map(|c| c.command.as_str()).collect();
-        log(&format!("PREFIX_MENU_RESULT: anchor='{}', filter='{}', commands={:?}",
+        detailed_log("PREFIX_MENU", &format!("anchor='{}', filter='{}', commands={:?}",
             anchor_name, filter_text, command_names));
     }
 
 
     prefix_menu_commands
+}
+
+/// Find the index of an exact match in the command list (case-insensitive, ignoring separators)
+/// Returns None if no exact match found or if match is a separator
+fn find_exact_match_index(commands: &[Command], input: &str, separators: &str) -> Option<usize> {
+    let input_normalized: String = input.to_lowercase()
+        .chars()
+        .filter(|c| !separators.contains(*c))
+        .collect();
+
+    for (index, cmd) in commands.iter().enumerate() {
+        // Skip separators
+        if cmd.action == "separator" {
+            continue;
+        }
+
+        let cmd_normalized: String = cmd.command.to_lowercase()
+            .chars()
+            .filter(|c| !separators.contains(*c))
+            .collect();
+
+        if cmd_normalized == input_normalized {
+            return Some(index);
+        }
+    }
+
+    None
 }
 
 /// New display commands function using build_prefix_menu approach
@@ -776,18 +843,26 @@ fn build_prefix_menu_commands(
 /// * `config` - Configuration containing word separators and other settings
 ///
 /// # Returns
-/// * `(Vec<Command>, bool, Option<(Command, Command)>, usize)` -
-///   (display_commands, is_prefix_menu, prefix_menu_info, prefix_menu_count)
+/// * `(Vec<Command>, bool, Option<(Command, Command)>, usize, Option<usize>)` -
+///   (display_commands, is_prefix_menu, prefix_menu_info, prefix_menu_count, default_selection_index)
+///
+/// ## Special Case: Exact Match Selection
+/// When there is a prefix menu AND an exact match exists in the results (case-insensitive,
+/// ignoring separators), the default_selection_index will point to that exact match instead
+/// of defaulting to index 0. This provides better UX when user types a complete command name.
+///
+/// **Example:** Input "philz" matches "Phone" anchor but also has exact match "Philz" in results
+/// → default_selection_index points to "Philz" instead of first item in prefix menu
 pub fn get_new_display_commands(
     input: &str,
     all_commands: &[Command],
     patches: &HashMap<String, Patch>,
     config: &Config
-) -> (Vec<Command>, bool, Option<(Command, Command)>, usize) {
+) -> (Vec<Command>, bool, Option<(Command, Command)>, usize, Option<usize>) {
 
     if input.trim().is_empty() {
         // Return empty list when input is blank
-        return (Vec::new(), false, None, 0);
+        return (Vec::new(), false, None, 0, None);
     }
 
     let input = input.trim();
@@ -859,7 +934,11 @@ pub fn get_new_display_commands(
 
             final_commands.extend(prefix_commands);
 
-            return (final_commands, true, Some((original_command, resolved_command)), prefix_menu_commands.len());
+            // Special case: Check for exact match in the final command list
+            // If user typed exact command name (case-insensitive, ignoring separators), select that instead of first item
+            let default_selection = find_exact_match_index(&final_commands, input, &config.popup_settings.word_separators);
+
+            return (final_commands, true, Some((original_command, resolved_command)), prefix_menu_commands.len(), default_selection);
         }
     }
 
@@ -875,5 +954,6 @@ pub fn get_new_display_commands(
     // Sort all commands by relevance: exact → prefix → substring → alphabetical
     sort_commands_by_relevance(&mut matching_commands, input);
 
-    return (matching_commands, false, None, 0);
+    // No special selection needed for non-prefix-menu case (already sorted with exact matches first)
+    return (matching_commands, false, None, 0, None);
 }

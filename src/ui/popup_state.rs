@@ -32,6 +32,8 @@ pub struct PopupState {
     pub prefix_menu_info: Option<(Command, Command)>,
     /// Number of commands in the prefix menu (before separator)
     pub prefix_menu_count: usize,
+    /// Default selection index (for exact match special case)
+    pub default_selection_index: Option<usize>,
     /// Whether to show files from anchor folder in prefix menu
     pub show_files: bool,
     /// Initial mouse position when popup opened (for motion threshold detection)
@@ -60,6 +62,7 @@ impl PopupState {
             is_in_prefix_menu: false,
             prefix_menu_info: None,
             prefix_menu_count: 0,
+            default_selection_index: None,
             mouse_lock_pos: None,
             mouse_unlocked: false,
         }
@@ -87,6 +90,7 @@ impl PopupState {
             is_in_prefix_menu: false,
             prefix_menu_info: None,
             prefix_menu_count: 0,
+            default_selection_index: None,
             mouse_lock_pos: None,
             mouse_unlocked: false,
         }
@@ -99,7 +103,13 @@ impl PopupState {
         let was_reloaded = self.recompute_filtered_commands();
         self.update_display_commands();  // Compute complete list (filtered + files)
         self.update_display_layout();    // Build layout from complete list
-        self.selection.reset(&self.display_layout);
+
+        // Use default selection if provided (exact match special case), otherwise reset to 0
+        if let Some(index) = self.default_selection_index {
+            self.selection = Selection::from_index(index, &self.display_layout);
+        } else {
+            self.selection.reset(&self.display_layout);
+        }
 
         // Reset mouse lock when search changes
         self.mouse_lock_pos = None;
@@ -154,7 +164,14 @@ impl PopupState {
         let was_reloaded = self.recompute_filtered_commands();
         if was_reloaded {
             self.update_display_layout();
-            self.selection.reset(&self.display_layout);
+
+            // Use default selection if provided (exact match special case), otherwise reset to 0
+            if let Some(index) = self.default_selection_index {
+                self.selection = Selection::from_index(index, &self.display_layout);
+            } else {
+                self.selection.reset(&self.display_layout);
+            }
+
             detailed_log("POPUP_REFRESH", "Commands were reloaded - display refreshed");
         }
         was_reloaded
@@ -223,7 +240,7 @@ impl PopupState {
         if was_reloaded {
             detailed_log("POPUP_REFRESH", "Commands were reloaded - rebuilding search results");
         }
-        let (display_commands, is_prefix_menu, prefix_menu_info, prefix_menu_count) =
+        let (display_commands, is_prefix_menu, prefix_menu_info, prefix_menu_count, default_selection_index) =
             get_new_display_commands(&self.search_text(), &sys_data.commands, &sys_data.patches, &self.config);
 
         // Apply max limit
@@ -237,7 +254,8 @@ impl PopupState {
         self.is_in_prefix_menu = is_prefix_menu;
         self.prefix_menu_info = prefix_menu_info;
         self.prefix_menu_count = prefix_menu_count;
-        
+        self.default_selection_index = default_selection_index;
+
         // Return whether we reloaded
         was_reloaded
     }
@@ -253,9 +271,9 @@ impl PopupState {
             if let Some((_, resolved_anchor)) = &self.prefix_menu_info {
                 // Get display file extensions (defaults to doc_file_extensions)
                 let extension_filter = self.config.popup_settings.get_display_file_extensions();
-                log(&format!("FOLDER_FILES: show_files={}, is_prefix_menu={}, extension_filter={:?}",
+                detailed_log("FOLDER_FILES", &format!("show_files={}, is_prefix_menu={}, extension_filter={:?}",
                     self.show_files, self.is_in_prefix_menu, extension_filter));
-                log(&format!("FOLDER_FILES: resolved_anchor: command='{}', action='{}', arg='{}'",
+                detailed_log("FOLDER_FILES", &format!("resolved_anchor: command='{}', action='{}', arg='{}'",
                     resolved_anchor.command, resolved_anchor.action, resolved_anchor.arg));
 
                 // Get folder files using the utility function with extension filter
@@ -265,7 +283,7 @@ impl PopupState {
                     extension_filter.as_deref()
                 );
 
-                log(&format!("FOLDER_FILES: Found {} folder files", folder_files.len()));
+                detailed_log("FOLDER_FILES", &format!("Found {} folder files", folder_files.len()));
 
                 // Filter out files that are already in the command list (avoid duplicates)
                 let existing_file_paths: std::collections::HashSet<_> = commands.iter()
@@ -284,6 +302,8 @@ impl PopupState {
                     );
 
                     if let Some(pos) = separator_pos {
+                        let num_folder_files = folder_files.len();
+
                         // Create dash separator with alternating dashes and spaces for visibility
                         let dash_separator = Command {
                             patch: String::new(),
@@ -302,6 +322,15 @@ impl PopupState {
                         // Insert file entries after dash separator
                         for (i, file_cmd) in folder_files.into_iter().enumerate() {
                             commands.insert(pos + 1 + i, file_cmd);
+                        }
+
+                        // Adjust default_selection_index to account for inserted files
+                        // Files are inserted before the separator, so if selection was after separator,
+                        // we need to shift it down by (num_folder_files + 1) for the dash separator
+                        if let Some(idx) = self.default_selection_index {
+                            if idx >= pos {
+                                self.default_selection_index = Some(idx + num_folder_files + 1);
+                            }
                         }
                     }
                 }

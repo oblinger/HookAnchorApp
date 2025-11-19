@@ -470,11 +470,13 @@ impl CommandEditor {
         // Apply anchor flag based on checkbox state
         new_command.set_anchor(self.is_anchor);
 
-        // ALWAYS add 'U' flag when a command is edited in the command editor
+        // Add 'U' flag ONLY when editing an existing command (not creating new)
         // This indicates user-edited and prevents removal during rescan
-        // Use proper flag accessor to ensure correct comma separation
-        if !new_command.flags.contains(FLAG_USER_EDITED) {
-            new_command.set_flag(FLAG_USER_EDITED, "");
+        // New commands from templates/grabber should not get U flag so scanner can manage them
+        if !self.original_command_name.is_empty() {
+            if !new_command.flags.contains(FLAG_USER_EDITED) {
+                new_command.set_flag(FLAG_USER_EDITED, "");
+            }
         }
 
         let command_to_delete = if !self.original_command_name.is_empty() {
