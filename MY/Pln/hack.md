@@ -1,3 +1,4 @@
+- fix all unit tests & trigger from just;  have several just toplevels
 
 
 - [ ] [[Hook Anchor Release]] 

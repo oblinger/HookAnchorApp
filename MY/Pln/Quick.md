@@ -1,18 +1,11 @@
-- message about baseball
-- jason QA.
-- market place listing on Amazon
-- vittorio!!!   alain!!!
+- ping Ram again about game length
+- Magic our target date to go live
+- talk w/ Carla about tracking ALL users issues
+
 - GLP-1
 - ready for Nancy
-- [[@Alain Biem]] 
-
-- Friday
-- Am I paying for Algo monster?
-- lego glue
-- think about it as ratio of control
-- remove num managed for SV
-- slack message about roster.
-- linked in post to look good
 
 - [[med]] 
 - credit cards loaded correctly
+
+when  I type RR CV it shows no commands listed. But noticed that the CV command has a patch of RR which means the CV command should be in the prefix menu for RR but it's not and then I type CV. It's also not shown there that's a bug.

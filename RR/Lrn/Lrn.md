@@ -1,5 +1,5 @@
 
-.[[Lrn]]. [[LRN Todo|todo]]
+.[[Lrn]]. [[LRN Todo|todo]] [[Flashcards]] 
   [[Lrn Mgt]], [[LRN Read]], [[LRN Todo]], [Lrn Obsidian](spot://lrnobsidian),
   , [Lrn Note](spot://lrnnote),
   , [Lrn Mgt Obsidian](spot://lrnmgtobsidian), [LRN Read Obsidian](spot://lrnreadobsidian)
@@ -10,6 +10,7 @@
 https://github.com/openai/openai-cookbook/blob/main/articles/gpt-oss/fine-tune-transfomers.ipynb?utm_source=alphasignal&utm_campaign=2025-07-24&asuniq=23058444
 
 ## TODO
+[[Lrn]]:	[[Exponent ML Eng Course]] 
 [[Lrn]]:	ML proj, Spaced Rep, 
 [[Lrn]]: SV make/miss -> ShooterID
 [[Lrn]]: AI Safety Idea Sketch

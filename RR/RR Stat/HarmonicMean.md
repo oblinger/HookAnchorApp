@@ -1,1 +1,0 @@
-F_1 score = 2 / (1/precision + 1/recall) = "Harmonic Mean"

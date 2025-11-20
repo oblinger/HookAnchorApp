@@ -37,10 +37,12 @@ The popup window provides real-time command search and selection:
 - Enter executes the highlighted command
 - Escape closes the popup
 
-**Prefix Menus:** When typing matches an anchor prefix, a special menu appears showing:
+**Prefix Menus:** When typing exactly matches an anchor name (ignoring separators like spaces, dots, underscores), a special menu appears showing:
 - All commands with that prefix
-- All commands from the same patch group 
+- All commands from the same patch group
 - This prefix menu is shown at the front of the list of commands separated by an equals sign (=) from regular matches
+- Note: Matching is strict - input must match consecutively without skipping characters
+- When multiple anchors match (e.g., "ha" matches both "HA" and "HA2"), the shortest command name is chosen (e.g., "HA")
 
 **Dragging:** You can drag the popup by clicking below the input box. 
 

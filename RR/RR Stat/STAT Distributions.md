@@ -1,2 +1,0 @@
-
-- [[Beroulli Distribution]] 

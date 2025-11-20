@@ -2,6 +2,28 @@
 prefix menu should disappear once all items and files have been filtered out
 files should be filtered along with commands in prefix menu
 
+
+# Notes for page
+
+HOOK - Own your names!
+ANCHOR - Anchor your shit down!
+STREAM - Standardize by type!
+
+
+While you have access to tens of thousands of docs, only a sliver of a percent are actively accessed over time, and that active set shifts slowly month to month.
+
+Instead of wasting time and mental energy wading through these each time you access anything, you can spend just a few seconds per day ensuring your active hundred or thousand docs or folders have short, direct names.
+
+
+Global taxonomies are impossible to maintain.  Organizing your docs by named anchors that logically span all of your content, regardless of app or location, on or offline, eases the burden of memorizing where each document is.  Limiting the number of anchors created per month ensures you can document, correctly link, and remember each anchor for years without effort.
+
+
+Building repeated patterns and templates for common kinds of information simplifies capture and, more importantly, helps you know how to find them weeks or years later.  Expressing distinct kinds of knowledge as a templated stream allows targeted searching by name over a vastly reduced number of pages.  (e.g., a person I met 3-6 months ago, one of my work projects last year, a book I read 3 years ago are very narrow searches, but only if these are expressed as separated streams)
+
+
+
+
+
 # PROJECT PAGE
 
 Context:  I have written, used, and suffered with at least five personal knowledge systems over the decades.  In the last 5 years, I have landed on three principles that I think are essential for best-in-class knowledge management.  I describe them here, and they are the center of a Mac App I have written that helps implement these principles.  Still, the principles are more general, as I had been following them for years w/o the aid of this app.

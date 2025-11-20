@@ -3,6 +3,7 @@
 
 
 .**TODO**.
+- PHQ access. SV games->escore->sv merge->metrics out
  - expansive testing of the manager app
  - DATA - 100 PlayOn/HQ Games, eval humans, Origin data, 
  -  [PlayOn](hook://playon): Roster - get and use
@@ -16,7 +17,7 @@
 	-  [AWS Costs](https://drive.google.com/drive/folders/1Mnu6bwVw9bqxGq40uM_fBZ6x_75O3c6H)  (talk w/ Matty?) 
     - Pursues beta testing in app
 	- !summary single metric for BB 
- SOON [[hack]]
+ SOON [[hack]] [[ping]]
     Beta tester stuff
     [[@Google]] GPU  answers
     rerun softbank; send email 
