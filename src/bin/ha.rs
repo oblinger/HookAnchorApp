@@ -233,7 +233,7 @@ fn handle_execute_url_ha(search_query: &str) {
     // Find the top matching command using the same logic as CLI and GUI
     let (sys_data, _) = get_sys_data();
     let config = hookanchor::core::get_config();
-    let (display_commands, _, _, _, _) = hookanchor::core::get_new_display_commands(search_query, &sys_data.commands, &sys_data.patches, &config);
+    let (display_commands, _, _, _, _, _) = hookanchor::core::get_new_display_commands(search_query, &sys_data.commands, &sys_data.patches, &config);
     let filtered = display_commands.into_iter().take(1).collect::<Vec<_>>();
 
     if filtered.is_empty() {

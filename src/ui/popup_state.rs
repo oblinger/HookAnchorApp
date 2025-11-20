@@ -34,6 +34,8 @@ pub struct PopupState {
     pub prefix_menu_count: usize,
     /// Default selection index (for exact match special case)
     pub default_selection_index: Option<usize>,
+    /// Filter text (the part after the anchor in prefix menu mode)
+    pub filter_text: String,
     /// Whether to show files from anchor folder in prefix menu
     pub show_files: bool,
     /// Initial mouse position when popup opened (for motion threshold detection)
@@ -63,6 +65,7 @@ impl PopupState {
             prefix_menu_info: None,
             prefix_menu_count: 0,
             default_selection_index: None,
+            filter_text: String::new(),
             mouse_lock_pos: None,
             mouse_unlocked: false,
         }
@@ -91,6 +94,7 @@ impl PopupState {
             prefix_menu_info: None,
             prefix_menu_count: 0,
             default_selection_index: None,
+            filter_text: String::new(),
             mouse_lock_pos: None,
             mouse_unlocked: false,
         }
@@ -240,7 +244,7 @@ impl PopupState {
         if was_reloaded {
             detailed_log("POPUP_REFRESH", "Commands were reloaded - rebuilding search results");
         }
-        let (display_commands, is_prefix_menu, prefix_menu_info, prefix_menu_count, default_selection_index) =
+        let (display_commands, is_prefix_menu, prefix_menu_info, prefix_menu_count, default_selection_index, filter_text) =
             get_new_display_commands(&self.search_text(), &sys_data.commands, &sys_data.patches, &self.config);
 
         // Apply max limit
@@ -255,6 +259,7 @@ impl PopupState {
         self.prefix_menu_info = prefix_menu_info;
         self.prefix_menu_count = prefix_menu_count;
         self.default_selection_index = default_selection_index;
+        self.filter_text = filter_text;
 
         // Return whether we reloaded
         was_reloaded
@@ -283,17 +288,27 @@ impl PopupState {
                     extension_filter.as_deref()
                 );
 
-                detailed_log("FOLDER_FILES", &format!("Found {} folder files", folder_files.len()));
+                detailed_log("FOLDER_FILES", &format!("Found {} folder files before filtering", folder_files.len()));
 
                 // Filter out files that are already in the command list (avoid duplicates)
+                // Check against ALL commands in the prefix menu, not just action="file"
+                // This prevents showing the same file twice (once as command, once as folder file)
                 let existing_file_paths: std::collections::HashSet<_> = commands.iter()
-                    .filter(|cmd| cmd.action == "file")
                     .map(|cmd| cmd.arg.as_str())
                     .collect();
 
-                let folder_files: Vec<_> = folder_files.into_iter()
+                let mut folder_files: Vec<_> = folder_files.into_iter()
                     .filter(|file| !existing_file_paths.contains(file.arg.as_str()))
                     .collect();
+
+                // Apply filter text to folder files using sophisticated matching (not simple .contains())
+                if !self.filter_text.is_empty() {
+                    use crate::core::display::command_matches_query;
+                    folder_files.retain(|file| {
+                        command_matches_query(&file.command, &self.filter_text)
+                    });
+                    detailed_log("FOLDER_FILES", &format!("Filtered folder files by '{}': {} remain", self.filter_text, folder_files.len()));
+                }
 
                 if !folder_files.is_empty() {
                     // Find the position of the "============" separator

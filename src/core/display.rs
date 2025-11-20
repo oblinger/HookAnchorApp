@@ -38,11 +38,12 @@
 //!    - Example: "Fireball! Old Example" → skip "! " → match "Old" with "O"
 //!
 //! ### Key Features
-//! - **Sophisticated Matching**: Uses word boundaries and proper separators, not simple contains
+//! - **Sophisticated Matching**: Uses word boundaries and proper separators, NOT simple .contains()
 //! - **Separator-Aware**: Handles "!" and other separators in command prefixes
-//! - **Proper Filtering**: Correctly filters prefix menu commands by remaining input
-//! - **No Duplicates**: Clean separation between prefix menu and non-prefix menu sections
-//! - **Unified Code Path**: Same logic for both CLI and GUI
+//! - **Proper Filtering**: All filtering (prefix menu, folder files) uses `command_matches_query()`
+//! - **No Duplicates**: Folder files are deduplicated against ALL prefix menu commands
+//! - **Filter Text for Files**: Folder files are filtered by remaining input after anchor match
+//! - **Unified Code Path**: Same matching logic for both CLI and GUI
 //!
 //! # MENU CONSTRUCTION SPECIFICATION
 //!
@@ -858,18 +859,19 @@ pub fn get_new_display_commands(
     all_commands: &[Command],
     patches: &HashMap<String, Patch>,
     config: &Config
-) -> (Vec<Command>, bool, Option<(Command, Command)>, usize, Option<usize>) {
+) -> (Vec<Command>, bool, Option<(Command, Command)>, usize, Option<usize>, String) {
 
     if input.trim().is_empty() {
         // Return empty list when input is blank
-        return (Vec::new(), false, None, 0, None);
+        return (Vec::new(), false, None, 0, None, String::new());
     }
 
     let input = input.trim();
 
-    // Step 1: Try to build a prefix menu - first with full input, then progressively shorter prefixes
+    // Step 1: Try to build a prefix menu - first with longest prefix (excluding full input), then progressively shorter
     // This allows "PJPP" to match anchor "PJ" with filter "PP"
-    for len in (1..=input.len()).rev() {
+    // But we stop ONE short of full length to ensure at least 1 char of filter text remains for folder file filtering
+    for len in (1..input.len()).rev() {
         let anchor_candidate = &input[..len];
         let filter_text = &input[len..];
 
@@ -877,13 +879,12 @@ pub fn get_new_display_commands(
             // We have a prefix menu!
             detailed_log("DISPLAY", &format!("Found anchor '{}' with filter '{}'", anchor_candidate, filter_text));
 
-            // If there's filter text, apply it to the prefix menu commands
+            // If there's filter text, apply it to the prefix menu commands using sophisticated matching
             if !filter_text.is_empty() {
-                let filter_lower = filter_text.to_lowercase();
                 prefix_menu_commands.retain(|cmd| {
-                    cmd.command.to_lowercase().contains(&filter_lower)
+                    command_matches_query(&cmd.command, filter_text)
                 });
-                detailed_log("DISPLAY", &format!("After filtering: {} commands remain", prefix_menu_commands.len()));
+                detailed_log("DISPLAY", &format!("After filtering by '{}': {} commands remain", filter_text, prefix_menu_commands.len()));
             }
 
             // Step 2: Get all commands that match the FULL input using sophisticated matching
@@ -938,7 +939,7 @@ pub fn get_new_display_commands(
             // If user typed exact command name (case-insensitive, ignoring separators), select that instead of first item
             let default_selection = find_exact_match_index(&final_commands, input, &config.popup_settings.word_separators);
 
-            return (final_commands, true, Some((original_command, resolved_command)), prefix_menu_commands.len(), default_selection);
+            return (final_commands, true, Some((original_command, resolved_command)), prefix_menu_commands.len(), default_selection, filter_text.to_string());
         }
     }
 
@@ -955,5 +956,6 @@ pub fn get_new_display_commands(
     sort_commands_by_relevance(&mut matching_commands, input);
 
     // No special selection needed for non-prefix-menu case (already sorted with exact matches first)
-    return (matching_commands, false, None, 0, None);
+    // No filter text in non-prefix-menu mode (empty string)
+    return (matching_commands, false, None, 0, None, String::new());
 }
