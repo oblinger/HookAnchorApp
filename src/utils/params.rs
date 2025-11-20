@@ -133,7 +133,8 @@ mod tests {
         let input = "url:=https\\://example.com port:=8080";
         let result = parse_kv_pairs(input);
 
-        assert_eq!(result.get("url"), Some(&"https:=example.com".to_string()));
+        // \: in the input becomes : in the output (escape is processed)
+        assert_eq!(result.get("url"), Some(&"https://example.com".to_string()));
         assert_eq!(result.get("port"), Some(&"8080".to_string()));
     }
 

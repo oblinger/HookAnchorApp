@@ -93,9 +93,26 @@ setup-url-handler:
 
 # === TESTING COMMANDS ===
 
-# Run all tests
+# Run all tests (comprehensive)
 test:
     cargo test
+
+# Run unit tests only (fast, inline tests in src/)
+test-unit:
+    @echo "🧪 Running unit tests..."
+    cargo test --lib
+
+# Run functional/integration tests (tests/ directory)
+test-fn:
+    @echo "🧪 Running functional tests..."
+    cargo test --test '*'
+
+# Run pre-commit test suite (fast, critical tests)
+test-commit:
+    @echo "🧪 Running pre-commit tests..."
+    cargo test --lib
+    cargo test --test test_display_sync
+    cargo test --test test_alias_functionality
 
 # Test basic actions
 test-actions:

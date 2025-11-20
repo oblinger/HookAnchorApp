@@ -2071,9 +2071,9 @@ mod tests {
         last_update: 0,
         file_size: None,
         };
-        
+
         let formatted = cmd.to_new_format();
-        assert_eq!(formatted, "test : action; argument");
+        assert_eq!(formatted, "test:action; A:=argument");
     }
 
     #[test]
@@ -2088,9 +2088,9 @@ mod tests {
         last_update: 0,
         file_size: None,
         };
-        
+
         let formatted = cmd.to_new_format();
-        assert_eq!(formatted, "test : action flag1 flag2; argument");
+        assert_eq!(formatted, "test:action; F:=flag1 flag2 A:=argument");
     }
 
     #[test]
@@ -2105,18 +2105,19 @@ mod tests {
         last_update: 0,
         file_size: None,
         };
-        
+
         let formatted = cmd.to_new_format();
-        assert_eq!(formatted, "Patch! test command : action --flag; argument here");
+        assert_eq!(formatted, "Patch! test command:action; F:=--flag A:=argument here");
     }
 
     #[test]
     fn test_roundtrip_parsing() {
-        let original = "Application! Test Command : chrome --incognito; https://example.com";
+        // Use new format for testing roundtrip
+        let original = "Application! Test Command:chrome; F:=--incognito A:=https://example.com";
         let parsed = parse_command_line(original).unwrap();
         let reformatted = parsed.to_new_format();
         let reparsed = parse_command_line(&reformatted).unwrap();
-        
+
         assert_eq!(parsed.patch, reparsed.patch);
         assert_eq!(parsed.command, reparsed.command);
         assert_eq!(parsed.action, reparsed.action);

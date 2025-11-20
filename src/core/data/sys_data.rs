@@ -354,6 +354,8 @@ pub fn initialize() -> Result<(), String> {
     // the binary matches the source code in the filesystem.
     // If verification fails, this will show a dialog and terminate the app.
     // NOTE: This must come AFTER config initialization because logging needs config.
+    // Skip build verification during unit tests (tests use `cargo test` not `just build`)
+    #[cfg(not(test))]
     crate::utils::verify_build(true);
 
     // ==========================================================================

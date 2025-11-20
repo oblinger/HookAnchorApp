@@ -958,14 +958,21 @@ fn walk_directory(dir: &str, files: &mut Vec<String>) {
 mod tests {
     use super::*;
 
+    fn init_test_environment() {
+        // Initialize sys_data for tests that need it
+        let _ = crate::core::initialize();
+    }
+
     #[test]
     fn test_basic_js_execution() {
+        init_test_environment();
         let result = execute("2 + 2").unwrap();
         assert_eq!(result, "4");
     }
 
     #[test]
     fn test_logging_functions() {
+        init_test_environment();
         let script = r#"
             log("Hello from JS");
             debug("Debug message");
@@ -978,6 +985,7 @@ mod tests {
 
     #[test]
     fn test_path_utilities() {
+        init_test_environment();
         let script = r#"
             const home = expandHome("~");
             const joined = joinPath(home, "documents");
