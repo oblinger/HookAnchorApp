@@ -372,10 +372,9 @@ fn run_match_command(args: &[String]) {
     };
 
     // Detect if first result is an exact match or prefix menu match
-    let is_exact_match = !filtered.is_empty() && (
-        crate::core::display::exact_match(&filtered[0].command, query) ||
-        is_prefix_menu  // Prefix menu from alias resolution counts as exact match
-    );
+    // For prefix menus, require the first result to actually match the query
+    let is_exact_match = !filtered.is_empty() &&
+        crate::core::display::exact_match(&filtered[0].command, query);
 
     // Apply exact mode filtering if requested
     if exact_mode {
