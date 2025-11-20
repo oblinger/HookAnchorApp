@@ -6,7 +6,60 @@
 use std::process::Command;
 use std::path::PathBuf;
 use std::fs;
+use std::os::unix::net::UnixStream;
+use std::io::{Write, Read};
 use crate::prelude::*;
+
+// =============================================================================
+// SUPERVISOR CONTROL API
+// =============================================================================
+
+/// Send a command to the supervisor via its control socket
+///
+/// This is the primary way to control server lifecycle. The supervisor owns
+/// all server processes and ensures only one of each server type is running.
+///
+/// # Arguments
+/// * `action` - One of: "start", "stop", "restart"
+///
+/// # Returns
+/// * Ok(response) - Success with supervisor's response message
+/// * Err(message) - Failure with error description
+///
+/// # Example
+/// ```no_run
+/// supervisor_command("restart")?;
+/// ```
+pub fn supervisor_command(action: &str) -> Result<String, String> {
+    let socket_path = crate::core::get_config_dir().join("supervisor.sock");
+
+    detailed_log("SUPERVISOR_CMD", &format!("Sending command: {}", action));
+
+    // Connect to supervisor socket
+    let mut stream = UnixStream::connect(&socket_path)
+        .map_err(|e| format!("Failed to connect to supervisor: {}. Is supervisor running?", e))?;
+
+    // Send command
+    stream.write_all(action.as_bytes())
+        .map_err(|e| format!("Failed to send command to supervisor: {}", e))?;
+
+    // Read response
+    let mut response = String::new();
+    stream.read_to_string(&mut response)
+        .map_err(|e| format!("Failed to read supervisor response: {}", e))?;
+
+    detailed_log("SUPERVISOR_CMD", &format!("Response: {}", response));
+
+    // Check if response indicates success
+    if response.starts_with("OK") {
+        Ok(response)
+    } else if response.starts_with("ERROR") {
+        Err(response)
+    } else {
+        // Unknown response format, but treat as success if we got a response
+        Ok(response)
+    }
+}
 
 /// Kill all popup_server processes
 ///
@@ -188,8 +241,9 @@ pub fn get_execution_server_socket_path() -> PathBuf {
 /// Get the popup socket path
 ///
 /// Returns the path to the Unix domain socket used by the popup server.
+/// Now uses secure location in user's config directory with restrictive permissions.
 pub fn get_popup_socket_path() -> PathBuf {
-    PathBuf::from("/tmp/hookanchor_popup.sock")
+    crate::core::get_config_dir().join("popup.sock")
 }
 
 /// Stop all HookAnchor servers (popup + command)
@@ -307,19 +361,149 @@ pub fn start_all_servers() -> Result<(), String> {
 pub fn restart_all_servers() -> Result<(), String> {
     print_and_log("🔄 Restarting all servers (including supervisor)...");
 
-    // Stop everything first
+    // CRITICAL: Stop supervisor FIRST, before stopping servers
+    // The supervisor monitors popup_server and auto-restarts it when it dies.
+    // If we kill popup_server while supervisor is running, supervisor will
+    // immediately restart it, then we'll start another one = duplicates!
+    print_and_log("🛑 Step 1/3: Stopping supervisor...");
+    stop_supervisor()?;
+
+    // Now stop servers (supervisor won't restart them)
+    print_and_log("🛑 Step 2/3: Stopping servers...");
     stop_all_servers()?;
 
-    // Brief additional wait to ensure everything is clean
+    // Verify everything is actually stopped
+    std::thread::sleep(std::time::Duration::from_millis(500));
+    verify_all_stopped()?;
+
+    // Start supervisor fresh (NEW binary)
+    print_and_log("🚀 Step 3/3: Starting fresh supervisor and servers...");
+    start_supervisor()?;
+
+    // Brief wait for supervisor to initialize
     std::thread::sleep(std::time::Duration::from_millis(500));
 
-    // Restart the HookAnchor supervisor (Swift GUI app)
-    restart_supervisor()?;
-
-    // Start Rust servers
+    // Start Rust servers (popup and command) - NEW binaries
     start_all_servers()?;
 
-    print_and_log("✅ All servers restarted successfully");
+    print_and_log("✅ All servers restarted successfully with fresh binaries");
+    Ok(())
+}
+
+/// Ensure supervisor is running (start if not running, but don't restart if running)
+fn ensure_supervisor_running() -> Result<(), String> {
+    use std::process::Command;
+
+    // Check if already running
+    let check_result = Command::new("pgrep")
+        .arg("-f")
+        .arg("HookAnchor")
+        .output();
+
+    match check_result {
+        Ok(output) if output.status.success() && !output.stdout.is_empty() => {
+            // Already running - don't restart
+            print_and_log("  ✓ Supervisor already running");
+            return Ok(());
+        }
+        _ => {
+            // Not running - start it
+            print_and_log("  ⚠ Supervisor not running, starting...");
+        }
+    }
+
+    // Start supervisor
+    let start_result = Command::new("open")
+        .arg("-a")
+        .arg("HookAnchor")
+        .spawn();
+
+    match start_result {
+        Ok(_) => {
+            // Give it a moment to start
+            std::thread::sleep(std::time::Duration::from_millis(500));
+            print_and_log("  ✓ Supervisor started");
+            Ok(())
+        }
+        Err(e) => {
+            let error_msg = format!("Failed to start supervisor: {}", e);
+            log_error(&error_msg);
+            Err(error_msg)
+        }
+    }
+}
+
+/// Stop the supervisor (without restarting servers)
+fn stop_supervisor() -> Result<(), String> {
+    use std::process::Command;
+
+    let kill_result = Command::new("killall")
+        .arg("HookAnchor")
+        .output();
+
+    match kill_result {
+        Ok(output) if output.status.success() => {
+            print_and_log("  ✓ Supervisor stopped");
+            std::thread::sleep(std::time::Duration::from_millis(300));
+            Ok(())
+        }
+        Ok(_) => {
+            // killall returns non-zero if process not found - that's fine
+            print_and_log("  ℹ No supervisor was running");
+            Ok(())
+        }
+        Err(e) => {
+            Err(format!("Failed to stop supervisor: {}", e))
+        }
+    }
+}
+
+/// Start the supervisor (fresh launch)
+fn start_supervisor() -> Result<(), String> {
+    use std::process::Command;
+
+    let start_result = Command::new("open")
+        .arg("-a")
+        .arg("HookAnchor")
+        .spawn();
+
+    match start_result {
+        Ok(_) => {
+            std::thread::sleep(std::time::Duration::from_millis(500));
+            print_and_log("  ✓ Supervisor started");
+            Ok(())
+        }
+        Err(e) => {
+            Err(format!("Failed to start supervisor: {}", e))
+        }
+    }
+}
+
+/// Verify that all servers are actually stopped
+/// Returns error if any servers are still running after stop attempt
+fn verify_all_stopped() -> Result<(), String> {
+    use std::process::Command;
+
+    // Check for popup_server
+    let popup_check = Command::new("pgrep")
+        .arg("-f")
+        .arg("popup_server")
+        .output();
+
+    if let Ok(output) = popup_check {
+        if output.status.success() && !output.stdout.is_empty() {
+            let pids = String::from_utf8_lossy(&output.stdout);
+            return Err(format!("popup_server still running after stop (PIDs: {})", pids.trim()));
+        }
+    }
+
+    // Check command server by looking for socket
+    let command_socket = get_execution_server_socket_path();
+    if command_socket.exists() {
+        return Err(format!("Command server socket still exists: {}", command_socket.display()));
+    }
+
+    print_and_log("  ✓ Verified: All servers stopped");
     Ok(())
 }
 

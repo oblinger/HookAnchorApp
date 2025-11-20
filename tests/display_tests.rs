@@ -631,6 +631,31 @@ fn part4_multi_char_matching_no_skip_priority() {
     assert_order(&result, "Two Tower Learning", "The Writing Is On The Wall");
 }
 
+#[test]
+fn part4_prefix_match_before_multi_word_match() {
+    // Test that exact prefix matches rank before multi-word fuzzy matches
+    // "svpla" with "SV" anchor → "pla" should match "Plan" (exact prefix)
+    // before "SportsVisio_PlayHQ_RFP_Resp..." (multi-word match)
+    let scaffold = scaffold(r#"
+        sv:anchor; F:=A A:=/sv
+        sv! Plan:folder; A:=/plan
+        sv! SportsVisio_PlayHQ_RFP_Resp:folder; A:=/playhq
+    "#);
+
+    let (result, is_prefix, _, _) = get_new_display_commands(
+        "svpla",
+        &scaffold.commands,
+        &scaffold.patches,
+        &scaffold.config
+    );
+
+    // "Plan" should appear before "SportsVisio_PlayHQ_RFP_Resp"
+    // because "pla" is an exact prefix match to "Plan", matching all characters
+    // without skipping any words, while "SportsVisio_PlayHQ_RFP_Resp" requires
+    // matching across multiple words
+    assert_order(&result, "Plan", "SportsVisio_PlayHQ_RFP_Resp");
+}
+
 // Global sorting equivalents - test same rules outside prefix menus
 #[test]
 fn part4_exact_matches_first_global() {

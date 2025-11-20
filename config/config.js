@@ -784,10 +784,23 @@ module.exports = {
     const folder_name = folder_path.split('/').pop() || 'session';
     const session_name = folder_name
       .replace(/ /g, '_')
+      .replace(/@/g, '_')
       .replace(/:/g, '_')
       .replace(/\./g, '_')
       .replace(/\[/g, '_')
-      .replace(/\]/g, '_');
+      .replace(/\]/g, '_')
+      .replace(/\(/g, '_')
+      .replace(/\)/g, '_')
+      .replace(/\$/g, '_')
+      .replace(/#/g, '_')
+      .replace(/&/g, '_')
+      .replace(/\*/g, '_')
+      .replace(/!/g, '_')
+      .replace(/\?/g, '_')
+      .replace(/\//g, '_')
+      .replace(/\\/g, '_')
+      .replace(/'/g, '_')
+      .replace(/"/g, '_');
 
     log("ACTIVATE_TMUX_JS", `Folder name: '${folder_name}', Session name: '${session_name}'`);
 
@@ -1004,19 +1017,13 @@ module.exports = {
 
   // Clear the anchor.log file for debugging
   action_clear_log: function(ctx) {
-    const { log, shellSync } = ctx.builtins;
+    const { shellSync } = ctx.builtins;
 
-    log("CLEAR_LOG: Clearing anchor.log file for debugging");
+    // Clear the log file by truncating it to empty
+    shellSync("truncate -s 0 ~/.config/hookanchor/anchor.log");
 
-    try {
-      // Clear the log file
-      const result = shellSync("echo '' > ~/.config/hookanchor/anchor.log");
-      log("CLEAR_LOG: Successfully cleared anchor.log");
-      return "Log cleared";
-    } catch (err) {
-      log(`CLEAR_LOG: Failed to clear log: ${err}`);
-      return "Failed to clear log";
-    }
+    // Return empty string to avoid any success logging
+    return "";
   },
 
   // Test function that deliberately throws an error

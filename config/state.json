@@ -1,32 +1,26 @@
 {
   "window_position": [
     980.0,
-    -1306.0
+    300.0
   ],
   "history_viewer_state": {
-    "position": [
-      -1900.0,
-      54.0
-    ],
-    "window_size": [
-      1156.0,
-      1316.0
-    ],
+    "position": null,
+    "window_size": null,
     "patch_filter": "",
     "name_filter": "",
-    "min_edit_size": 5,
+    "min_edit_size": 500,
     "selected_action_types": [],
-    "sidebar_width": 74.0,
+    "sidebar_width": null,
     "show_current_commands": false
   },
-  "build_time": 1763404469,
+  "build_time": 1763667876,
   "last_scan_time": null,
   "last_scan_checksum": null,
-  "last_executed_command": "Hook Anchor",
-  "server_pid": 45345,
+  "last_executed_command": "@Avid Boustani",
+  "server_pid": 58639,
   "notion_last_scan": null,
-  "anchor_name": "Hook Anchor",
-  "anchor_timestamp": 1763402454,
+  "anchor_name": "@Avid Boustani",
+  "anchor_timestamp": 1763666756,
   "anchor_folder": null,
-  "show_files": false
+  "show_files": true
 }

@@ -130,17 +130,40 @@ function activateTmux(anchorPath, anchorName) {
     }
     
     log(`Found tmux config: ${tmuxConfig}`);
-    
+
+    // Sanitize the session name for tmux compatibility
+    // tmux session names can only contain: alphanumeric, underscore, hyphen, dot
+    // Replace all other special characters with underscore
+    const sessionName = anchorName
+        .replace(/\s/g, '_')
+        .replace(/@/g, '_')
+        .replace(/:/g, '_')
+        .replace(/\./g, '_')
+        .replace(/\[/g, '_')
+        .replace(/\]/g, '_')
+        .replace(/\(/g, '_')
+        .replace(/\)/g, '_')
+        .replace(/\$/g, '_')
+        .replace(/#/g, '_')
+        .replace(/&/g, '_')
+        .replace(/\*/g, '_')
+        .replace(/!/g, '_')
+        .replace(/\?/g, '_')
+        .replace(/\//g, '_')
+        .replace(/\\/g, '_')
+        .replace(/'/g, '_')
+        .replace(/"/g, '_');
+
     // Just try to attach to the session (tmux will create if not exists)
-    log(`Attaching to tmux session: ${anchorName}`);
-    
+    log(`Attaching to tmux session: ${sessionName}`);
+
     // Activate terminal application first
     activateApp("iTerm2");
-    
+
     // Attach to session - tmux will handle creation if needed
-    shell(`tmux attach-session -t "${anchorName}" || tmux new-session -s "${anchorName}"`);
-    
-    log(`Successfully attached to tmux session: ${anchorName}`);
+    shell(`tmux attach-session -t "${sessionName}" || tmux new-session -s "${sessionName}"`);
+
+    log(`Successfully attached to tmux session: ${sessionName}`);
     
     return true;
 }

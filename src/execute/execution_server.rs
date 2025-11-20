@@ -12,6 +12,7 @@ use std::io::{Read, Write, BufRead, BufReader};
 use std::thread;
 use std::sync::{Arc, Mutex};
 use std::path::PathBuf;
+use std::os::unix::fs::PermissionsExt;
 use serde::{Serialize, Deserialize};
 use chrono::TimeZone;
 use crate::prelude::*;
@@ -94,7 +95,18 @@ impl CommandServer {
         }
 
         let listener = UnixListener::bind(&self.socket_path)?;
-        
+
+        // Set restrictive permissions (0600 - owner read/write only)
+        if let Ok(metadata) = std::fs::metadata(&self.socket_path) {
+            let mut perms = metadata.permissions();
+            perms.set_mode(0o600);
+            if let Err(e) = std::fs::set_permissions(&self.socket_path, perms) {
+                log_error(&format!("Failed to set command server socket permissions: {}", e));
+            } else {
+                detailed_log("CMD_SERVER", "Socket permissions set to 0600 (secure)");
+            }
+        }
+
         // Log version and build info at server startup
         let version = env!("CARGO_PKG_VERSION");
         let state = crate::core::data::get_state();

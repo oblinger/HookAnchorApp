@@ -28,39 +28,26 @@ hook() {
     ha -m "$*"
 }
 
-# Helper function for ff/fp/fd - uses new -m API with --exact and --format flags
+# Helper function for ff/fp/fd - uses fuzzy matching and takes first result
 _ha_get_unique() {
     local search_term="$1"
     local format="$2"  # "folder" or "path"
     local output_type="$3"  # "folder" or "file" (for error messages)
 
-    # Use new -m API with --exact flag and appropriate --format
+    # Use -m API with fuzzy matching (no --exact flag), take first result
     local result
-    result=$(ha -m "$search_term" --exact --format="$format" 2>/dev/null)
+    result=$(ha -m "$search_term" --format="$format" 2>/dev/null | head -1)
     local exit_code=$?
 
-    case $exit_code in
-        0)
-            # Unique match found - return the result
-            echo "$result"
-            return 0
-            ;;
-        1)
-            # Multiple matches (ambiguous) - get command names for error message
-            local commands=$(ha -m "$search_term" --exact --format=name 2>/dev/null | tr '\n' ', ' | sed 's/, $//')
-            echo "Ambiguous $output_type: $commands" >&2
-            return 1
-            ;;
-        2)
-            # No matches
-            echo "No match found for '$search_term'" >&2
-            return 1
-            ;;
-        *)
-            echo "Error executing ha command" >&2
-            return 1
-            ;;
-    esac
+    if [ -n "$result" ]; then
+        # Got a result - return it
+        echo "$result"
+        return 0
+    else
+        # No matches
+        echo "No match found for '$search_term'" >&2
+        return 1
+    fi
 }
 
 # ff - fuzzy find folder (cd to unique match or show ambiguous)

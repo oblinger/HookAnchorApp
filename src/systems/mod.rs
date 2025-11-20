@@ -68,6 +68,7 @@ pub use popup_server::{
 
 // Restart subsystem - system restart and rebuild operations
 pub use restart::{
+    supervisor_command,         // Send command to supervisor (start/stop/restart)
     full_system_restart,
     start_popup_server,         // Start popup_server in background
     stop_all_servers,           // Stop all servers (popup + command)

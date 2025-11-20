@@ -241,11 +241,22 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         log("Starting up...")
         log("URL event handler already registered")
 
-        // Perform health check and restart servers if needed
-        performHealthCheckAndRestart()
+        // DO NOT call performHealthCheckAndRestart() here!
+        // That function runs `ha --restart`, which creates circular dependency:
+        //   1. User runs `ha --restart`
+        //   2. Which starts supervisor
+        //   3. Supervisor calls performHealthCheckAndRestart()
+        //   4. Which runs `ha --restart` AGAIN
+        //   5. Result: duplicate popup_server processes
+        //
+        // Instead, let `ha --restart` handle everything.
+        // The supervisor just ensures command server is available.
 
         // Ensure command server is running before we do anything else
         startCommandServerIfNeeded()
+
+        // Set up supervisor control socket for lifecycle management
+        setupSupervisorSocket()
 
         // Set up application menu (enables keyboard shortcuts via System Settings)
         setupApplicationMenu()
@@ -527,7 +538,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         log(String(format: "⏱️ [SHOW] ensurePopupRunning: %.2fms", ensureDuration))
 
         // Send "show" command to popup_server via Unix socket
-        let socketPath = "/tmp/hookanchor_popup.sock"
+        let socketPath = getPopupSocketPath()
 
         let beforeSocket = Date()
         DispatchQueue.global(qos: .userInitiated).async {
@@ -724,41 +735,57 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
 
-    func ensurePopupRunning() {
+    func ensurePopupRunning(skipProcessCheck: Bool = false) {
+        log("🔍 ensurePopupRunning: Checking if popup is running...")
+
         // First check if our known process is still running
         if let process = rustPopupProcess, process.isRunning {
-            // Process is still running
+            log("  ✓ Popup process already running (tracked)")
             return
         }
 
         // FAST CHECK: If the socket file exists, the server is running (avoid expensive pgrep)
-        let socketPath = "/tmp/hookanchor_popup.sock"
+        let socketPath = getPopupSocketPath()
+        log("  📁 Checking socket: \(socketPath)")
         if FileManager.default.fileExists(atPath: socketPath) {
-            // Socket exists, server is running
+            log("  ✓ Socket exists, popup is running")
             return
         }
 
         // Socket doesn't exist - do the expensive process check only as last resort
-        let checkTask = Process()
-        checkTask.executableURL = URL(fileURLWithPath: "/bin/sh")
-        checkTask.arguments = ["-c", "pgrep -f 'popup_server' > /dev/null 2>&1"]
+        // Skip this check if we just stopped the process (avoid finding zombie processes)
+        if !skipProcessCheck {
+            log("  ⚙️  Socket not found, checking with pgrep...")
+            let checkTask = Process()
+            checkTask.executableURL = URL(fileURLWithPath: "/bin/sh")
+            checkTask.arguments = ["-c", "pgrep -f 'popup_server' > /dev/null 2>&1"]
 
-        do {
-            try checkTask.run()
-            checkTask.waitUntilExit()
+            do {
+                try checkTask.run()
+                checkTask.waitUntilExit()
 
-            if checkTask.terminationStatus == 0 {
-                // A popup_server is running but socket doesn't exist yet (race condition)
-                // Wait a moment for socket to be created
-                Thread.sleep(forTimeInterval: 0.01)
-                return
+                let status = checkTask.terminationStatus
+                log("  ⚙️  pgrep returned status: \(status)")
+
+                if status == 0 {
+                    log("  ⚠️  pgrep found popup_server but socket missing (race condition)")
+                    // A popup_server is running but socket doesn't exist yet (race condition)
+                    // Wait a moment for socket to be created
+                    Thread.sleep(forTimeInterval: 0.01)
+                    return
+                } else {
+                    log("  ℹ️  pgrep found no popup_server processes")
+                }
+            } catch {
+                log("  ⚠️  pgrep check failed: \(error)")
+                // Ignore errors, proceed to launch
             }
-        } catch {
-            // Ignore errors, proceed to launch
+        } else {
+            log("  ⏭️  Skipping pgrep check (just stopped process)")
         }
 
         // No popup_server found anywhere, restart it (but don't show window)
-        log(" Popup process died, restarting...")
+        log("  🚀 No popup found, launching...")
         launchRustPopup(showOnStart: false)
     }
     
@@ -796,6 +823,228 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         } catch {
             log("Error checking command server status: \(error)")
         }
+    }
+
+    // MARK: - Socket Path Helpers
+
+    /// Get the secure popup socket path in user's config directory
+    func getPopupSocketPath() -> String {
+        let configDir = FileManager.default.homeDirectoryForCurrentUser
+            .appendingPathComponent(".config")
+            .appendingPathComponent("hookanchor")
+        return configDir.appendingPathComponent("popup.sock").path
+    }
+
+    // MARK: - Supervisor Control Socket
+
+    /// Set up the supervisor control socket for lifecycle management
+    /// Creates a secure Unix socket at ~/.config/hookanchor/supervisor.sock
+    /// with permissions 0600 (owner read/write only)
+    func setupSupervisorSocket() {
+        DispatchQueue.global(qos: .userInitiated).async {
+            let configDir = FileManager.default.homeDirectoryForCurrentUser
+                .appendingPathComponent(".config")
+                .appendingPathComponent("hookanchor")
+
+            // Ensure config directory exists
+            try? FileManager.default.createDirectory(at: configDir, withIntermediateDirectories: true)
+
+            let socketPath = configDir.appendingPathComponent("supervisor.sock").path
+
+            // Remove any existing socket
+            try? FileManager.default.removeItem(atPath: socketPath)
+
+            self.log("Setting up supervisor socket at: \(socketPath)")
+
+            // Create Unix domain socket
+            let sock = socket(AF_UNIX, SOCK_STREAM, 0)
+            guard sock >= 0 else {
+                self.log("❌ Failed to create supervisor socket")
+                return
+            }
+
+            var addr = sockaddr_un()
+            addr.sun_family = sa_family_t(AF_UNIX)
+
+            // Copy socket path to sun_path
+            withUnsafeMutablePointer(to: &addr.sun_path.0) { ptr in
+                socketPath.withCString { cString in
+                    strcpy(ptr, cString)
+                }
+            }
+
+            // Bind the socket
+            let bindResult = withUnsafePointer(to: &addr) { ptr in
+                ptr.withMemoryRebound(to: sockaddr.self, capacity: 1) { sockaddrPtr in
+                    Darwin.bind(sock, sockaddrPtr, socklen_t(MemoryLayout<sockaddr_un>.size))
+                }
+            }
+
+            guard bindResult == 0 else {
+                self.log("❌ Failed to bind supervisor socket: \(String(cString: strerror(errno)))")
+                close(sock)
+                return
+            }
+
+            // Set restrictive permissions (0600 - owner read/write only)
+            chmod(socketPath, 0o600)
+
+            // Listen for connections
+            guard listen(sock, 5) == 0 else {
+                self.log("❌ Failed to listen on supervisor socket")
+                close(sock)
+                return
+            }
+
+            self.log("✅ Supervisor socket listening (secure mode 0600)")
+
+            // Accept connections in a loop
+            while true {
+                var clientAddr = sockaddr_un()
+                var clientAddrLen = socklen_t(MemoryLayout<sockaddr_un>.size)
+
+                let clientSock = withUnsafeMutablePointer(to: &clientAddr) { ptr in
+                    ptr.withMemoryRebound(to: sockaddr.self, capacity: 1) { sockaddrPtr in
+                        accept(sock, sockaddrPtr, &clientAddrLen)
+                    }
+                }
+
+                guard clientSock >= 0 else {
+                    continue
+                }
+
+                // Handle client in separate thread
+                DispatchQueue.global(qos: .userInitiated).async {
+                    self.handleSupervisorCommand(clientSocket: clientSock)
+                }
+            }
+        }
+    }
+
+    /// Handle a supervisor command received via socket
+    func handleSupervisorCommand(clientSocket: Int32) {
+        defer { close(clientSocket) }
+
+        // Read command from socket
+        var buffer = [UInt8](repeating: 0, count: 1024)
+        let bytesRead = read(clientSocket, &buffer, buffer.count)
+
+        guard bytesRead > 0 else {
+            return
+        }
+
+        let command = String(bytes: buffer[..<bytesRead], encoding: .utf8)?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+
+        self.log("📡 Received supervisor command: \(command)")
+
+        let response: String
+
+        switch command {
+        case "start":
+            response = handleStartCommand()
+        case "stop":
+            response = handleStopCommand()
+        case "restart":
+            response = handleRestartCommand()
+        default:
+            response = "ERROR: Unknown command '\(command)'. Valid commands: start, stop, restart"
+        }
+
+        // Send response back to client
+        response.withCString { cString in
+            write(clientSocket, cString, strlen(cString))
+        }
+    }
+
+    /// Handle 'start' command - ensure servers are running (idempotent)
+    /// - Parameter skipProcessCheck: Skip pgrep check (use when we just stopped processes)
+    func handleStartCommand(skipProcessCheck: Bool = false) -> String {
+        log("🚀 START command: Ensuring servers are running...")
+
+        // Start popup server if not running
+        ensurePopupRunning(skipProcessCheck: skipProcessCheck)
+
+        // Start command server if not running
+        startCommandServerIfNeeded()
+
+        // Give servers a moment to initialize
+        Thread.sleep(forTimeInterval: 0.5)
+
+        log("✅ START complete: Servers ensured running")
+        return "OK: Servers started"
+    }
+
+    /// Handle 'stop' command - stop all servers (idempotent)
+    func handleStopCommand() -> String {
+        log("🛑 STOP command: Stopping all servers...")
+
+        var stoppedCount = 0
+
+        // Stop popup server
+        if let process = rustPopupProcess, process.isRunning {
+            process.terminate()
+            process.waitUntilExit()
+            rustPopupProcess = nil
+            rustPopupPID = 0
+            log("  ✓ Stopped popup server")
+            stoppedCount += 1
+        } else {
+            // Try killing via process name as fallback
+            let killPopup = Process()
+            killPopup.executableURL = URL(fileURLWithPath: "/usr/bin/killall")
+            killPopup.arguments = ["popup_server"]
+            try? killPopup.run()
+            killPopup.waitUntilExit()
+            if killPopup.terminationStatus == 0 {
+                log("  ✓ Stopped popup server (via killall)")
+                stoppedCount += 1
+            }
+        }
+
+        // Clean up stale socket files after stopping servers
+        let socketPath = getPopupSocketPath()
+        if FileManager.default.fileExists(atPath: socketPath) {
+            try? FileManager.default.removeItem(atPath: socketPath)
+            log("  🧹 Cleaned up popup socket")
+        }
+
+        // Stop command server
+        if let haPath = getHaBinaryPath() {
+            let stopCmd = Process()
+            stopCmd.executableURL = URL(fileURLWithPath: haPath)
+            stopCmd.arguments = ["--stop-server"]
+
+            do {
+                try stopCmd.run()
+                stopCmd.waitUntilExit()
+                if stopCmd.terminationStatus == 0 {
+                    log("  ✓ Stopped command server")
+                    stoppedCount += 1
+                }
+            } catch {
+                log("  ⚠ Failed to stop command server: \(error)")
+            }
+        }
+
+        log("✅ STOP complete: Stopped \(stoppedCount) server(s)")
+        return "OK: Stopped \(stoppedCount) server(s)"
+    }
+
+    /// Handle 'restart' command - stop then start servers
+    func handleRestartCommand() -> String {
+        log("🔄 RESTART command: Restarting all servers...")
+
+        // Stop first
+        let _ = handleStopCommand()
+
+        // Wait briefly for processes to fully terminate (shorter delay is fine now)
+        Thread.sleep(forTimeInterval: 0.5)
+
+        // Start fresh - skip process check since we just stopped (avoid finding zombie processes)
+        let _ = handleStartCommand(skipProcessCheck: true)
+
+        log("✅ RESTART complete: All servers restarted with fresh binaries")
+        return "OK: Servers restarted"
     }
 }
 

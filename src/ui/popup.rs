@@ -3463,12 +3463,27 @@ impl AnchorSelector {
                 .unwrap_or("session");
             
             // Sanitize the session name for tmux compatibility
+            // tmux session names can only contain: alphanumeric, underscore, hyphen, dot
+            // Replace all other special characters with underscore
             let session_name = folder_name
                 .replace(' ', "_")
+                .replace('@', "_")
                 .replace(':', "_")
                 .replace('.', "_")
                 .replace('[', "_")
-                .replace(']', "_");
+                .replace(']', "_")
+                .replace('(', "_")
+                .replace(')', "_")
+                .replace('$', "_")
+                .replace('#', "_")
+                .replace('&', "_")
+                .replace('*', "_")
+                .replace('!', "_")
+                .replace('?', "_")
+                .replace('/', "_")
+                .replace('\\', "_")
+                .replace('\'', "_")
+                .replace('"', "_");
             
             detailed_log("TMUX", &format!("TMUX: Creating basic session '{}' in folder '{}'", session_name, folder_path));
             
@@ -4087,16 +4102,11 @@ impl eframe::App for AnchorSelector {
                                 log_error(&format!("Popup action '{}' missing 'action' field", action_name));
                             }
                         },
-                        "js" => {
-                            // JavaScript actions
-                            if let Some(function_name) = action.get_string("function") {
-                                self.execute_js_action(&function_name);
-                            } else {
-                                log_error(&format!("JavaScript action '{}' missing 'function' field", action_name));
-                            }
-                        },
                         _ => {
-                            log_error(&format!("Unsupported action type '{}' for --action flag", action.action_type()));
+                            // All other action types are JavaScript functions
+                            // Call action_<type>() - e.g., action_type "clear_log" calls "action_clear_log()"
+                            let function_name = format!("action_{}", action.action_type());
+                            self.execute_js_action(&function_name);
                         }
                     }
                 } else {

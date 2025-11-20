@@ -130,7 +130,7 @@ pub enum MarkdownActionStrategy {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use crate::core::data::config::{LauncherSettings, PopupSettings};
+    use crate::core::{LauncherSettings, PopupSettings};
     
     fn create_test_config(vault_path: &str, vault_name: &str) -> Config {
         Config {
@@ -142,28 +142,9 @@ mod tests {
             popup_settings: PopupSettings {
                 max_rows: 10,
                 max_columns: 1,
-                verbose_logging: None,
-                listed_actions: None,
-                merge_similar: false,
-                word_separators: " ._-".to_string(),
-                scan_interval_seconds: None,
-                idle_timeout_seconds: None,
-                countdown_seconds: Some(5),
-                max_window_size: None,
-                default_window_size: None,
-                max_log_file_size: None,
-                run_in_background: None,
-                file_roots: None,
-                doc_file_extensions: None,
-                skip_directory_patterns: None,
-                rename_doc: None,
-                rename_folder: None,
-                rename_patch: None,
-                rename_prefix: None,
-                preferred_anchor: None,
+                ..Default::default()
             },
-            grabber_rules: None,
-            actions: None,
+            ..Default::default()
         }
     }
     

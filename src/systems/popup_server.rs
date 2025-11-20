@@ -9,9 +9,12 @@ use std::sync::{Arc, Mutex};
 use std::thread;
 use std::io::{Read, Write};
 use eframe::egui;
+use std::os::unix::fs::PermissionsExt;
 
-/// Socket path for popup control
-const POPUP_SOCKET: &str = "/tmp/hookanchor_popup.sock";
+/// Get the secure popup socket path in user's config directory
+fn get_popup_socket_path() -> std::path::PathBuf {
+    crate::core::get_config_dir().join("popup.sock")
+}
 
 /// Check if the current process owns the popup control socket
 /// Returns true if this instance is the primary popup server
@@ -55,28 +58,37 @@ impl PopupControl {
     
     /// Start the control socket listener
     pub fn start_listener(&self) {
-        // Clean up any existing socket
-        let _ = std::fs::remove_file(POPUP_SOCKET);
-        
         let pending_command = Arc::clone(&self.pending_command);
         let ctx_handle = Arc::clone(&self.ctx_handle);
-        
+
         thread::spawn(move || {
-            detailed_log("POPUP_SERVER", &format!("Starting control socket at: {}", POPUP_SOCKET));
+            let socket_path = get_popup_socket_path();
+            detailed_log("POPUP_SERVER", &format!("Starting control socket at: {}", socket_path.display()));
 
             // Clean up any stale socket file from previous crashed instances
-            if std::path::Path::new(POPUP_SOCKET).exists() {
-                if let Err(e) = std::fs::remove_file(POPUP_SOCKET) {
+            if socket_path.exists() {
+                if let Err(e) = std::fs::remove_file(&socket_path) {
                     log_error(&format!("Failed to remove stale popup socket: {}", e));
                 } else {
                     detailed_log("POPUP_SERVER", "Cleaned up stale socket file");
                 }
             }
 
-            match UnixListener::bind(POPUP_SOCKET) {
+            match UnixListener::bind(&socket_path) {
                 Ok(listener) => {
+                    // Set restrictive permissions (0600 - owner read/write only)
+                    if let Ok(metadata) = std::fs::metadata(&socket_path) {
+                        let mut perms = metadata.permissions();
+                        perms.set_mode(0o600);
+                        if let Err(e) = std::fs::set_permissions(&socket_path, perms) {
+                            log_error(&format!("Failed to set socket permissions: {}", e));
+                        } else {
+                            detailed_log("POPUP_SERVER", "Socket permissions set to 0600 (secure)");
+                        }
+                    }
+
                     detailed_log("POPUP_SERVER", "Control socket listening");
-                    
+
                     for stream in listener.incoming() {
                         match stream {
                             Ok(mut stream) => {

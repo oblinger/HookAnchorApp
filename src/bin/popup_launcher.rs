@@ -13,8 +13,10 @@ use std::time::Duration;
 use std::thread;
 use std::env;
 
-/// Socket path for popup server control
-const POPUP_SOCKET: &str = "/tmp/hookanchor_popup.sock";
+/// Get secure popup socket path
+fn get_popup_socket() -> std::path::PathBuf {
+    hookanchor::systems::get_popup_socket_path()
+}
 
 /// Check if run_in_background is enabled in config
 /// Optimized for speed - does minimal file reading
@@ -34,7 +36,8 @@ fn check_run_in_background() -> bool {
 
 /// Send a command to the popup server
 fn send_command(command: &str) -> Result<String, String> {
-    match UnixStream::connect(POPUP_SOCKET) {
+    let socket_path = get_popup_socket();
+    match UnixStream::connect(&socket_path) {
         Ok(mut stream) => {
             // Set timeout for operations
             stream.set_read_timeout(Some(Duration::from_secs(2)))

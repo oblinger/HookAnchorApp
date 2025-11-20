@@ -994,8 +994,16 @@ impl KeyHandler for JavaScriptHandler {
 
         // Create an action with all the stored parameters from the config
         let mut action_params = self.action_params.clone();
-        // Ensure action_type and function are set (may already be in action_params)
-        action_params.insert("action_type".to_string(), serde_json::Value::String("js".to_string()));
+
+        // Extract action_type from function name (e.g., "action_clear_log" -> "clear_log")
+        let action_type = if self.function_name.starts_with("action_") {
+            self.function_name.strip_prefix("action_").unwrap_or(&self.function_name)
+        } else {
+            &self.function_name
+        };
+
+        // Set action_type and function parameters
+        action_params.insert("action_type".to_string(), serde_json::Value::String(action_type.to_string()));
         action_params.insert("function".to_string(), serde_json::Value::String(self.function_name.clone()));
         let action = crate::execute::Action { params: action_params };
 

@@ -63,6 +63,7 @@ pub fn run_command_line_mode(args: Vec<String>) {
         "--start-server" => run_start_server(),
         "--start-server-daemon" => run_start_server_daemon(),
         "--restart" => run_restart_server(),
+        "--supervisor" => run_supervisor_command(&args),
         "--process-health" => run_process_health(),
         "--process-status" => run_process_status(),
         "--install" => run_install(&args),
@@ -1554,7 +1555,7 @@ fn run_manual_uninstall() {
     }
 }
 
-/// Restart both command server and popup server - launch both from Terminal for proper permissions
+/// Restart both command server and popup server via supervisor
 fn run_restart_server() {
     print("🔄 Restarting both servers (command + popup)...");
 
@@ -1563,16 +1564,18 @@ fn run_restart_server() {
     use std::os::unix::net::UnixStream;
     use std::io::Write;
 
-    if let Ok(mut stream) = UnixStream::connect("/tmp/hookanchor_popup.sock") {
+    let popup_socket = crate::systems::get_popup_socket_path();
+    if let Ok(mut stream) = UnixStream::connect(&popup_socket) {
         let _ = stream.write_all(b"hide");
         print("  ✅ Popup window hidden");
     }
 
-    // Use unified restart API
-    match crate::systems::restart_all_servers() {
-        Ok(()) => {
+    // Use supervisor to restart all servers (single source of truth)
+    match crate::systems::supervisor_command("restart") {
+        Ok(response) => {
             print("");
             print("✅ Both servers restarted successfully!");
+            print(&format!("  {}", response));
 
             // Show server status
             let state = crate::core::data::get_state();
@@ -1584,7 +1587,40 @@ fn run_restart_server() {
         Err(e) => {
             print("");
             print(&format!("❌ Restart failed: {}", e));
-            print("💡 Try running manually: ha --start-server-daemon");
+            print("💡 Make sure supervisor is running, or try: ha --supervisor restart");
+            std::process::exit(1);
+        }
+    }
+}
+
+/// Send a command to the supervisor
+fn run_supervisor_command(args: &[String]) {
+    if args.len() < 3 {
+        print("Usage: ha --supervisor <action>");
+        print("Actions:");
+        print("  start   - Ensure servers are running (idempotent)");
+        print("  stop    - Stop all servers (idempotent)");
+        print("  restart - Restart all servers");
+        std::process::exit(1);
+    }
+
+    let action = &args[2];
+
+    // Validate action
+    if !["start", "stop", "restart"].contains(&action.as_str()) {
+        print(&format!("Unknown supervisor action: {}", action));
+        print("Valid actions: start, stop, restart");
+        std::process::exit(1);
+    }
+
+    print(&format!("📡 Sending '{}' command to supervisor...", action));
+
+    match crate::systems::supervisor_command(action) {
+        Ok(response) => {
+            print(&format!("✅ {}", response));
+        }
+        Err(e) => {
+            print(&format!("❌ Supervisor command failed: {}", e));
             std::process::exit(1);
         }
     }
@@ -1841,10 +1877,10 @@ fn run_delete_history(args: &[String]) {
         }
     };
 
-    // Step 2: Stop all servers
+    // Step 2: Stop all servers via supervisor
     print_and_log("");
     print_and_log("🛑 Step 2/8: Stopping all servers...");
-    if let Err(e) = crate::systems::stop_all_servers() {
+    if let Err(e) = crate::systems::supervisor_command("stop") {
         print_and_log(&format!("  ✗ Failed to stop servers: {}", e));
         print_and_log("  Continuing anyway...");
     } else {
@@ -1929,14 +1965,14 @@ fn run_delete_history(args: &[String]) {
     print_and_log("🔨 Step 7/8: Merging and rebuilding with final filesystem scan...");
     run_rescan_command();
 
-    // Step 8: Restart all servers
+    // Step 8: Start all servers via supervisor
     print_and_log("");
-    print_and_log("🚀 Step 8/8: Restarting all servers...");
-    if let Err(e) = crate::systems::start_all_servers() {
+    print_and_log("🚀 Step 8/8: Starting all servers...");
+    if let Err(e) = crate::systems::supervisor_command("start") {
         print_and_log(&format!("  ✗ Failed to start servers: {}", e));
-        print_and_log("  You may need to restart manually");
+        print_and_log("  You may need to restart manually with: ha --supervisor start");
     } else {
-        print_and_log("  ✓ All servers restarted");
+        print_and_log("  ✓ All servers started");
     }
 
     // Summary

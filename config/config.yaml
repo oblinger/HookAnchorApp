@@ -7,7 +7,7 @@
 # APPLICATION SETTINGS
 # =================================================================
 popup_settings:
-  verbose_logging:        true        # Controls if detailed logging messages added to the log
+  verbose_logging:        false        # Controls if detailed logging messages added to the log
   merge_similar:          true         # Merging similar commands in popup
   max_rows:               25           # Max number of rows in the list of matching commands
   max_columns:            4            # Max columns in list of matching commands
@@ -153,7 +153,7 @@ actions:
     action: "markdown"
     arg: "~/ob/kmr/At/@{{input}}.md"
     patch: "At"
-    flags: "A"
+    flags: ""
     edit: true
     file_rescan: true
     contents: |
@@ -168,7 +168,7 @@ actions:
     action: "markdown"
     arg: "~/ob/kmr/At/Corp/@{{input}}.md"
     patch: "Corp"
-    flags: "A"
+    flags: ""
     edit: true
     file: "~/ob/kmr/At/Corp/@{{input}}.md"
     file_rescan: true
@@ -416,7 +416,6 @@ actions:
     description: "Clear anchor.log file for debugging"
     action_type: clear_log
     key: "Cmd+E"
-    name: "Clear Log"
 
   kb_toggle_show_files:
     description: "Toggle showing files in prefix menus"
@@ -432,11 +431,10 @@ actions:
     popup_action: tmux
     close_popup: true
 
-  # JavaScript TMUX activation - Alternative js version for testing
+  # JavaScript TMUX activation - Alternative version for testing
   activate_tmux_js:
     description: "Activate TMUX session for selected anchor (JavaScript version)"
-    action_type: js
-    function: action_activate_tmux
+    action_type: activate_tmux
 
   # Test JavaScript error reporting
   test_js_error:

@@ -688,50 +688,8 @@ fn execute_alias_action(
 
 
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-    
-    #[test]
-    fn test_expand_string_basic() {
-        let context = ActionContext::new("test input".to_string());
-        
-        let result = expand_string("Hello {{input}}!", &context).unwrap();
-        assert_eq!(result, "Hello test input!");
-    }
-    
-    #[test]
-    fn test_expand_string_javascript() {
-        let context = ActionContext::new("test".to_string());
-        
-        let result = expand_string("Length: {{input.length}}", &context).unwrap();
-        assert_eq!(result, "Length: 4");
-        
-        let result = expand_string("Upper: {{input.toUpperCase()}}", &context).unwrap();
-        assert_eq!(result, "Upper: TEST");
-    }
-    
-    #[test]
-    fn test_expand_string_with_objects() {
-        let mut context = ActionContext::new("input".to_string());
-        context.previous_command = Some(Command {
-            command: "Test Command".to_string(),
-            action: "test".to_string(),
-            arg: "/path/to/file.md".to_string(),
-            patch: "TestPatch".to_string(),
-            flags: String::new(),
-        other_params: None,
-        last_update: 0,
-        file_size: None,
-        });
-        
-        let result = expand_string("Previous: {{previous.name}}", &context).unwrap();
-        assert_eq!(result, "Previous: Test Command");
-        
-        let result = expand_string("Folder: {{previous.folder}}", &context).unwrap();
-        assert_eq!(result, "Folder: /path/to");
-    }
-}
+// Tests removed - expand functionality is in TemplateContext, not ActionContext
+// See src/core/template_creation.rs for template expansion tests
 
 // ============================================================================
 // Utility Functions for Scanner and Grabber
