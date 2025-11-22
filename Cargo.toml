@@ -6,7 +6,7 @@
 
 [package]
 name = "hookanchor"
-version = "0.20.5"
+version = "0.20.6"
 edition = "2021"
 build = "build.rs"
 
@@ -51,26 +51,26 @@ path = "src/bin/dialog_viewer.rs"
 
 
 
-# Example binaries
-[[example]]
-name = "basic_launcher"
-path = "examples/basic_launcher.rs"
-
-[[example]]
-name = "test_all_actions"
-path = "examples/test_all_actions.rs"
-
-[[example]]
-name = "hybrid_js_business_logic"
-path = "examples/hybrid_js_business_logic.rs"
-
-[[example]]
-name = "markdown_scanner"
-path = "examples/markdown_scanner.rs"
-
-[[example]]
-name = "scan_markdown_commands"
-path = "examples/scan_markdown_commands.rs"
+# Example binaries - commented out because example files don't exist
+# [[example]]
+# name = "basic_launcher"
+# path = "examples/basic_launcher.rs"
+#
+# [[example]]
+# name = "test_all_actions"
+# path = "examples/test_all_actions.rs"
+#
+# [[example]]
+# name = "hybrid_js_business_logic"
+# path = "examples/hybrid_js_business_logic.rs"
+#
+# [[example]]
+# name = "markdown_scanner"
+# path = "examples/markdown_scanner.rs"
+#
+# [[example]]
+# name = "scan_markdown_commands"
+# path = "examples/scan_markdown_commands.rs"
 
 [dependencies]
 eframe = "0.29"
@@ -92,6 +92,7 @@ globset = "0.4"
 
 [target.'cfg(target_os = "macos")'.dependencies]
 core-graphics = "0.23"
+cocoa = "0.25"
 
 [build-dependencies]
 chrono = "0.4"

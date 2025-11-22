@@ -868,10 +868,10 @@ pub fn get_new_display_commands(
 
     let input = input.trim();
 
-    // Step 1: Try to build a prefix menu - first with longest prefix (excluding full input), then progressively shorter
+    // Step 1: Try to build a prefix menu - first with longest prefix (including full input), then progressively shorter
     // This allows "PJPP" to match anchor "PJ" with filter "PP"
-    // But we stop ONE short of full length to ensure at least 1 char of filter text remains for folder file filtering
-    for len in (1..input.len()).rev() {
+    // And also allows "Main" to match anchor "Main" with empty filter
+    for len in (1..=input.len()).rev() {
         let anchor_candidate = &input[..len];
         let filter_text = &input[len..];
 

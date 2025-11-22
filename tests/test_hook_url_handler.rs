@@ -1,4 +1,3 @@
-use hookanchor::load_commands;
 use std::process::Command as ProcessCommand;
 
 #[test]
@@ -17,32 +16,8 @@ fn test_hook_url_direct_execution() {
     assert!(stderr.is_empty() || !stderr.contains("Error"), "Hook URL handler produced errors: {}", stderr);
 }
 
-#[test]
-fn test_hook_url_with_existing_command() {
-    // Load commands to find one that exists
-    let commands = load_commands();
-    
-    if commands.is_empty() {
-        // Skip test if no commands are available
-        return;
-    }
-    
-    // Use the first command for testing
-    let test_command = &commands[0];
-    let query = &test_command.command;
-    
-    // Create hook URL
-    let hook_url = format!("hook://{}", query);
-    
-    // Test the hook URL handler
-    let output = ProcessCommand::new("./target/release/ha")
-        .arg(&hook_url)
-        .output()
-        .expect("Failed to execute command");
-    
-    // Should complete without errors
-    assert!(output.status.success(), "Hook URL execution failed for '{}': {}", hook_url, String::from_utf8_lossy(&output.stderr));
-}
+// Note: Removed test_hook_url_with_existing_command - required load_commands() which was removed
+// The integration_tests module below provides similar coverage
 
 #[test]
 fn test_hook_url_with_url_encoded_query() {

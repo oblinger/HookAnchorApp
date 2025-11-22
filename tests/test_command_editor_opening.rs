@@ -1,9 +1,9 @@
-use hookanchor::Command;
+use hookanchor::core::Command;
 
 #[test]
 fn test_exact_match_logic() {
     println!("Testing command editor opening logic...");
-    
+
     // Create some test commands
     let commands = vec![
         Command {
@@ -12,7 +12,9 @@ fn test_exact_match_logic() {
             action: "app".to_string(),
             arg: "TestApp".to_string(),
             flags: String::new(),
-            full_line: "Test Command : app TestApp".to_string(),
+            other_params: None,
+            last_update: 0,
+            file_size: None,
         },
         Command {
             patch: String::new(),
@@ -20,7 +22,9 @@ fn test_exact_match_logic() {
             action: "url".to_string(),
             arg: "https://example.com".to_string(),
             flags: String::new(),
-            full_line: "Another Command : url https://example.com".to_string(),
+            other_params: None,
+            last_update: 0,
+            file_size: None,
         },
     ];
     

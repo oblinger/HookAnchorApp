@@ -1,4 +1,4 @@
-use hookanchor::{Command};
+use hookanchor::core::Command;
 
 #[test]
 fn test_merged_command_execution_logic() {
@@ -9,7 +9,9 @@ fn test_merged_command_execution_logic() {
         action: "obs".to_string(),
         arg: "FIN Accounts".to_string(),
         flags: String::new(),
-        full_line: "FIN! FIN Accounts Obsidian: obs FIN Accounts".to_string(),
+        other_params: None,
+            last_update: 0,
+            file_size: None,
     };
     
     println!("Testing merged command execution:");

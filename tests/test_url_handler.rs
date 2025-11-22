@@ -2,7 +2,7 @@
 
 #[cfg(test)]
 mod tests {
-    use hookanchor::Command;
+    use hookanchor::core::Command;
 
     /// Test URL decoding functionality
     #[test]
@@ -77,7 +77,9 @@ mod tests {
                 action: "anchor".to_string(),
                 arg: "/Users/test/spot.md".to_string(),
                 flags: String::new(),
-                full_line: "spot : anchor; /Users/test/spot.md".to_string(),
+                other_params: None,
+            last_update: 0,
+            file_size: None,
             },
             Command {
                 patch: String::new(),
@@ -85,7 +87,9 @@ mod tests {
                 action: "app".to_string(),
                 arg: "TestApp".to_string(),
                 flags: String::new(),
-                full_line: "test command : app; TestApp".to_string(),
+                other_params: None,
+            last_update: 0,
+            file_size: None,
             },
         ];
         

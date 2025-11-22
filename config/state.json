@@ -1,26 +1,26 @@
 {
-  "window_position": [
-    980.0,
-    300.0
-  ],
-  "history_viewer_state": {
-    "position": null,
-    "window_size": null,
-    "patch_filter": "",
-    "name_filter": "",
-    "min_edit_size": 500,
-    "selected_action_types": [],
-    "sidebar_width": null,
-    "show_current_commands": false
-  },
-  "build_time": 1763667876,
-  "last_scan_time": null,
-  "last_scan_checksum": null,
-  "last_executed_command": "@Avid Boustani",
-  "server_pid": 58639,
-  "notion_last_scan": null,
-  "anchor_name": "@Avid Boustani",
-  "anchor_timestamp": 1763666756,
   "anchor_folder": null,
-  "show_files": true
+  "anchor_name": "Amazon",
+  "anchor_timestamp": 1763784582,
+  "build_time": 1763796685,
+  "history_viewer_state": {
+    "min_edit_size": 500,
+    "name_filter": "",
+    "patch_filter": "",
+    "position": null,
+    "selected_action_types": [],
+    "show_current_commands": false,
+    "sidebar_width": null,
+    "window_size": null
+  },
+  "last_executed_command": "Git hub 1Pass",
+  "last_scan_checksum": null,
+  "last_scan_time": null,
+  "notion_last_scan": null,
+  "server_pid": 44224,
+  "show_files": true,
+  "window_position": [
+    936.0,
+    99.0
+  ]
 }

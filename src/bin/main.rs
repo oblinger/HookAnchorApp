@@ -9,9 +9,25 @@ use hookanchor::core::ApplicationState;
 use hookanchor::prelude::{log, log_error};
 
 /// Main application entry point
-/// 
+///
 /// Determines whether to run in GUI mode (no arguments) or CLI mode (with arguments)
 fn main() -> Result<(), eframe::Error> {
+    // CRITICAL: Hide popup_server from Cmd+Tab/Dock IMMEDIATELY at process start
+    // This must happen before any GUI initialization
+    #[cfg(target_os = "macos")]
+    {
+        use cocoa::appkit::{NSApplication, NSApplicationActivationPolicy};
+        use cocoa::base::nil;
+
+        unsafe {
+            let app = NSApplication::sharedApplication(nil);
+            // NSApplicationActivationPolicyAccessory = app doesn't appear in Dock/Cmd+Tab
+            // but can still show windows when needed
+            let result = app.setActivationPolicy_(NSApplicationActivationPolicy::NSApplicationActivationPolicyAccessory);
+            eprintln!("🔧 Set activation policy to Accessory - result: {}", result);
+        }
+    }
+
     // Initialize global binary path for consistent process spawning
     hookanchor::utils::init_binary_path();
 

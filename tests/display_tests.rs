@@ -113,7 +113,7 @@ fn part1_backward_scan_longest_first() {
     // Should match ABC (longest match), filter text = "D"
     let scaffold = progressive_scaffold();
 
-    let (result, is_prefix, _, _) = get_new_display_commands(
+    let (result, is_prefix, _, _, _, _) = get_new_display_commands(
         "ABCD",
         &scaffold.commands,
         &scaffold.patches,
@@ -133,7 +133,7 @@ fn part1_backward_scan_stops_at_first_anchor() {
     // Should stop at AB (first anchor found), filter text = "X"
     let scaffold = progressive_scaffold();
 
-    let (result, is_prefix, _, _) = get_new_display_commands(
+    let (result, is_prefix, _, _, _, _) = get_new_display_commands(
         "ABX",
         &scaffold.commands,
         &scaffold.patches,
@@ -152,7 +152,7 @@ fn part1_case_insensitive_matching() {
     let scaffold = progressive_scaffold();
 
     // Lowercase "abc" should match uppercase "ABC" anchor
-    let (result, is_prefix, _, _) = get_new_display_commands(
+    let (result, is_prefix, _, _, _, _) = get_new_display_commands(
         "abc",
         &scaffold.commands,
         &scaffold.patches,
@@ -168,7 +168,7 @@ fn part1_alias_resolution() {
     // "T" is alias to "Target" which is anchor
     let scaffold = alias_scaffold();
 
-    let (result, is_prefix, _, _) = get_new_display_commands(
+    let (result, is_prefix, _, _, _, _) = get_new_display_commands(
         "T",
         &scaffold.commands,
         &scaffold.patches,
@@ -186,7 +186,7 @@ fn part1_alias_resolution() {
 //     // Commands with date prefixes should still match anchor
 //     let scaffold = date_prefix_scaffold();
 //
-//     let (result, is_prefix, _, _) = get_new_display_commands(
+//     let (result, is_prefix, _, _, _, _) = get_new_display_commands(
 //         "Project",
 //         &scaffold.commands,
 //         &scaffold.patches,
@@ -202,7 +202,7 @@ fn part1_no_anchor_found() {
     // "ZZZZZ" matches no anchor → no prefix menu
     let scaffold = progressive_scaffold();
 
-    let (result, is_prefix, _, _) = get_new_display_commands(
+    let (result, is_prefix, _, _, _, _) = get_new_display_commands(
         "ZZZZZ",
         &scaffold.commands,
         &scaffold.patches,
@@ -217,7 +217,7 @@ fn part1_filter_text_extraction() {
     // Input "PJPP" → anchor "PJ", filter "PP"
     let scaffold = pj_menu_scaffold();
 
-    let (result, is_prefix, _, _) = get_new_display_commands(
+    let (result, is_prefix, _, _, _, _) = get_new_display_commands(
         "PJPP",
         &scaffold.commands,
         &scaffold.patches,
@@ -239,7 +239,7 @@ fn part2_match_word_boundaries() {
     // P+J from "PJ", T from "Tasks"
     let scaffold = pj_menu_scaffold();
 
-    let (result, _, _, _) = get_new_display_commands(
+    let (result, _, _, _, _, _) = get_new_display_commands(
         "PJT",
         &scaffold.commands,
         &scaffold.patches,
@@ -257,7 +257,7 @@ fn part2_multi_char_from_same_word() {
         Project Directories:folder; A:=/proj_dir
     "#);
 
-    let (result, _, _, _) = get_new_display_commands(
+    let (result, _, _, _, _, _) = get_new_display_commands(
         "ProDir",
         &scaffold.commands,
         &scaffold.patches,
@@ -273,7 +273,7 @@ fn part2_can_skip_words() {
     // P from "PJ", T from "Tasks", skipped J
     let scaffold = pj_menu_scaffold();
 
-    let (result, _, _, _) = get_new_display_commands(
+    let (result, _, _, _, _, _) = get_new_display_commands(
         "PT",
         &scaffold.commands,
         &scaffold.patches,
@@ -288,7 +288,7 @@ fn part2_skip_entire_first_word() {
     // Input "Tasks" matches "PJ Tasks" (skipped "PJ" entirely)
     let scaffold = pj_menu_scaffold();
 
-    let (result, _, _, _) = get_new_display_commands(
+    let (result, _, _, _, _, _) = get_new_display_commands(
         "Tasks",
         &scaffold.commands,
         &scaffold.patches,
@@ -303,7 +303,7 @@ fn part2_case_insensitive() {
     // Input "pjt" (lowercase) should match "PJ Tasks" (uppercase)
     let scaffold = pj_menu_scaffold();
 
-    let (result, _, _, _) = get_new_display_commands(
+    let (result, _, _, _, _, _) = get_new_display_commands(
         "pjt",
         &scaffold.commands,
         &scaffold.patches,
@@ -321,7 +321,7 @@ fn part2_no_mid_word_matching() {
         Subject:folder; A:=/subject
     "#);
 
-    let (result, _, _, _) = get_new_display_commands(
+    let (result, _, _, _, _, _) = get_new_display_commands(
         "ject",
         &scaffold.commands,
         &scaffold.patches,
@@ -344,7 +344,7 @@ fn part2_match_word_boundaries_global() {
         Projects:folder; A:=/projects
     "#);
 
-    let (result, is_prefix, _, _) = get_new_display_commands(
+    let (result, is_prefix, _, _, _, _) = get_new_display_commands(
         "PJT",
         &scaffold.commands,
         &scaffold.patches,
@@ -363,7 +363,7 @@ fn part2_can_skip_words_global() {
         Projects:folder; A:=/projects
     "#);
 
-    let (result, is_prefix, _, _) = get_new_display_commands(
+    let (result, is_prefix, _, _, _, _) = get_new_display_commands(
         "PT",
         &scaffold.commands,
         &scaffold.patches,
@@ -382,7 +382,7 @@ fn part2_skip_entire_first_word_global() {
         Tasks Only:folder; A:=/tasks_only
     "#);
 
-    let (result, is_prefix, _, _) = get_new_display_commands(
+    let (result, is_prefix, _, _, _, _) = get_new_display_commands(
         "Tasks",
         &scaffold.commands,
         &scaffold.patches,
@@ -402,7 +402,7 @@ fn part2_case_insensitive_global() {
         Project:folder; A:=/project
     "#);
 
-    let (result, is_prefix, _, _) = get_new_display_commands(
+    let (result, is_prefix, _, _, _, _) = get_new_display_commands(
         "pjt",
         &scaffold.commands,
         &scaffold.patches,
@@ -422,7 +422,7 @@ fn part3_patch_based_membership() {
     // Commands with patch="PJ" belong in PJ menu
     let scaffold = pj_menu_scaffold();
 
-    let (result, is_prefix, _, _) = get_new_display_commands(
+    let (result, is_prefix, _, _, _, _) = get_new_display_commands(
         "PJ",
         &scaffold.commands,
         &scaffold.patches,
@@ -439,7 +439,7 @@ fn part3_name_based_membership() {
     // Commands starting with "PJ " belong in PJ menu
     let scaffold = pj_menu_scaffold();
 
-    let (result, is_prefix, _, _) = get_new_display_commands(
+    let (result, is_prefix, _, _, _, _) = get_new_display_commands(
         "PJ",
         &scaffold.commands,
         &scaffold.patches,
@@ -456,7 +456,7 @@ fn part3_separator_required_after_anchor() {
     // "Projects" starts with "P" but not "PJ ", should NOT be in PJ menu
     let scaffold = pj_menu_scaffold();
 
-    let (result, _, _, _) = get_new_display_commands(
+    let (result, _, _, _, _, _) = get_new_display_commands(
         "PJ",
         &scaffold.commands,
         &scaffold.patches,
@@ -472,7 +472,7 @@ fn part3_anchor_self_included() {
     // Anchor command itself appears in its own menu
     let scaffold = pj_menu_scaffold();
 
-    let (result, _, _, _) = get_new_display_commands(
+    let (result, _, _, _, _, _) = get_new_display_commands(
         "PJ",
         &scaffold.commands,
         &scaffold.patches,
@@ -487,7 +487,7 @@ fn part3_no_duplicate_commands() {
     // Each (command, action) pair appears only once
     let scaffold = pj_menu_scaffold();
 
-    let (result, _, _, _) = get_new_display_commands(
+    let (result, _, _, _, _, _) = get_new_display_commands(
         "PJ",
         &scaffold.commands,
         &scaffold.patches,
@@ -508,7 +508,7 @@ fn part3_separator_commands_excluded() {
         Main! Item:folder; A:=/item
     "#);
 
-    let (result, _, _, _) = get_new_display_commands(
+    let (result, _, _, _, _, _) = get_new_display_commands(
         "Main",
         &scaffold.commands,
         &scaffold.patches,
@@ -527,7 +527,7 @@ fn part4_exact_matches_first() {
     // Exact match should appear before partial matches
     let scaffold = matching_priority_scaffold();
 
-    let (result, _, _, _) = get_new_display_commands(
+    let (result, _, _, _, _, _) = get_new_display_commands(
         "MainCode",
         &scaffold.commands,
         &scaffold.patches,
@@ -550,7 +550,7 @@ fn part4_no_words_skipped_before_words_skipped() {
     // Commands matching all words appear before commands that skip words
     let scaffold = matching_priority_scaffold();
 
-    let (result, _, _, _) = get_new_display_commands(
+    let (result, _, _, _, _, _) = get_new_display_commands(
         "MainCo",
         &scaffold.commands,
         &scaffold.patches,
@@ -571,7 +571,7 @@ fn part4_alphabetical_within_tier() {
         Main! Banana:folder; A:=/banana
     "#);
 
-    let (result, _, _, _) = get_new_display_commands(
+    let (result, _, _, _, _, _) = get_new_display_commands(
         "Main",
         &scaffold.commands,
         &scaffold.patches,
@@ -588,7 +588,7 @@ fn part4_sort_by_filter_in_prefix_menu() {
     // Prefix menu sorts by filter text, not full input
     let scaffold = pj_menu_scaffold();
 
-    let (result, _, _, _) = get_new_display_commands(
+    let (result, _, _, _, _, _) = get_new_display_commands(
         "PJPP",
         &scaffold.commands,
         &scaffold.patches,
@@ -619,7 +619,7 @@ fn part4_multi_char_matching_no_skip_priority() {
         T! The Writing Is On The Wall:folder; A:=/writing_wall
     "#);
 
-    let (result, _, _, _) = get_new_display_commands(
+    let (result, _, _, _, _, _) = get_new_display_commands(
         "TWOT",
         &scaffold.commands,
         &scaffold.patches,
@@ -642,7 +642,7 @@ fn part4_prefix_match_before_multi_word_match() {
         sv! SportsVisio_PlayHQ_RFP_Resp:folder; A:=/playhq
     "#);
 
-    let (result, is_prefix, _, _) = get_new_display_commands(
+    let (result, is_prefix, _, _, _, _) = get_new_display_commands(
         "svpla",
         &scaffold.commands,
         &scaffold.patches,
@@ -667,7 +667,7 @@ fn part4_exact_matches_first_global() {
         Old Code Files:folder; A:=/old_code
     "#);
 
-    let (result, is_prefix, _, _) = get_new_display_commands(
+    let (result, is_prefix, _, _, _, _) = get_new_display_commands(
         "Code",
         &scaffold.commands,
         &scaffold.patches,
@@ -695,7 +695,7 @@ fn part4_no_words_skipped_before_words_skipped_global() {
         Old Code Files:folder; A:=/old_code
     "#);
 
-    let (result, is_prefix, _, _) = get_new_display_commands(
+    let (result, is_prefix, _, _, _, _) = get_new_display_commands(
         "Co",
         &scaffold.commands,
         &scaffold.patches,
@@ -717,7 +717,7 @@ fn part4_alphabetical_within_tier_global() {
         Item Banana:folder; A:=/banana
     "#);
 
-    let (result, is_prefix, _, _) = get_new_display_commands(
+    let (result, is_prefix, _, _, _, _) = get_new_display_commands(
         "Item",
         &scaffold.commands,
         &scaffold.patches,
@@ -740,7 +740,7 @@ fn part4_multi_char_matching_no_skip_priority_global() {
         Test Other Words Too:folder; A:=/test
     "#);
 
-    let (result, is_prefix, _, _) = get_new_display_commands(
+    let (result, is_prefix, _, _, _, _) = get_new_display_commands(
         "TWOT",
         &scaffold.commands,
         &scaffold.patches,
@@ -763,7 +763,7 @@ fn part5_prefix_menu_then_separator_then_global() {
     // With prefix menu: prefix commands, separator, global matches
     let scaffold = pj_menu_scaffold();
 
-    let (result, is_prefix, _, count) = get_new_display_commands(
+    let (result, is_prefix, _, count, _, _) = get_new_display_commands(
         "PJ",
         &scaffold.commands,
         &scaffold.patches,
@@ -790,7 +790,7 @@ fn part5_no_separator_without_global() {
         PJ! Item:folder; A:=/item
     "#);
 
-    let (result, _, _, _) = get_new_display_commands(
+    let (result, _, _, _, _, _) = get_new_display_commands(
         "PJ",
         &scaffold.commands,
         &scaffold.patches,
@@ -806,7 +806,7 @@ fn part5_global_matches_deduplicated() {
     // Commands in prefix menu should not appear in global section
     let scaffold = pj_menu_scaffold();
 
-    let (result, _, _, prefix_count) = get_new_display_commands(
+    let (result, _, _, prefix_count, _, _) = get_new_display_commands(
         "PJ",
         &scaffold.commands,
         &scaffold.patches,
@@ -827,7 +827,7 @@ fn part5_no_prefix_menu_global_only() {
         Testing:folder; A:=/testing
     "#);
 
-    let (result, is_prefix, _, _) = get_new_display_commands(
+    let (result, is_prefix, _, _, _, _) = get_new_display_commands(
         "Test",
         &scaffold.commands,
         &scaffold.patches,
@@ -849,7 +849,7 @@ fn part5_no_prefix_menu_global_only() {
 fn edge_empty_input() {
     let scaffold = pj_menu_scaffold();
 
-    let (result, is_prefix, breadcrumb, count) = get_new_display_commands(
+    let (result, is_prefix, breadcrumb, count, _, _) = get_new_display_commands(
         "",
         &scaffold.commands,
         &scaffold.patches,
@@ -866,7 +866,7 @@ fn edge_empty_input() {
 fn edge_whitespace_only_input() {
     let scaffold = pj_menu_scaffold();
 
-    let (result, _, _, _) = get_new_display_commands(
+    let (result, _, _, _, _, _) = get_new_display_commands(
         "   ",
         &scaffold.commands,
         &scaffold.patches,
@@ -880,7 +880,7 @@ fn edge_whitespace_only_input() {
 fn edge_no_matching_commands() {
     let scaffold = pj_menu_scaffold();
 
-    let (result, _, _, _) = get_new_display_commands(
+    let (result, _, _, _, _, _) = get_new_display_commands(
         "ZZZZZ",
         &scaffold.commands,
         &scaffold.patches,
@@ -894,7 +894,7 @@ fn edge_no_matching_commands() {
 fn edge_single_character_input() {
     let scaffold = progressive_scaffold();
 
-    let (result, is_prefix, _, _) = get_new_display_commands(
+    let (result, is_prefix, _, _, _, _) = get_new_display_commands(
         "A",
         &scaffold.commands,
         &scaffold.patches,
@@ -910,7 +910,7 @@ fn edge_very_long_input() {
     let scaffold = pj_menu_scaffold();
 
     let long_input = "PJPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP";
-    let (result, is_prefix, _, _) = get_new_display_commands(
+    let (result, is_prefix, _, _, _, _) = get_new_display_commands(
         long_input,
         &scaffold.commands,
         &scaffold.patches,
@@ -930,7 +930,7 @@ fn edge_duplicate_names_different_actions() {
         Main! Dupe:markdown; A:=/dupe2.md
     "#);
 
-    let (result, _, _, _) = get_new_display_commands(
+    let (result, _, _, _, _, _) = get_new_display_commands(
         "Main",
         &scaffold.commands,
         &scaffold.patches,
@@ -952,7 +952,7 @@ fn bug_pjpp_should_show_pp() {
     // This test documents the EXPECTED behavior
     let scaffold = pj_menu_scaffold();
 
-    let (result, is_prefix, _, _) = get_new_display_commands(
+    let (result, is_prefix, _, _, _, _) = get_new_display_commands(
         "PJPP",
         &scaffold.commands,
         &scaffold.patches,
@@ -975,7 +975,7 @@ fn bug_double_filtering_investigation() {
     // After prefix menu is built, is additional filter applied?
     let scaffold = pj_menu_scaffold();
 
-    let (result, is_prefix, _, _) = get_new_display_commands(
+    let (result, is_prefix, _, _, _, _) = get_new_display_commands(
         "PJCV",
         &scaffold.commands,
         &scaffold.patches,

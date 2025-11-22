@@ -66,12 +66,17 @@ fn test_finder_file_selection_grabber() {
     
     // The output should be "doc /tmp/hookanchor_test/test_file.txt" or "doc /private/tmp/hookanchor_test/test_file.txt"
     // On macOS, /tmp is a symlink to /private/tmp
-    let expected_output1 = format!("doc {}", test_file);
-    let expected_output2 = format!("doc {}", test_file.replace("/tmp/", "/private/tmp/"));
+    // Note: Output may include " RULE:Finder Selected File" suffix
+    let expected_prefix1 = format!("doc {}", test_file);
+    let expected_prefix2 = format!("doc {}", test_file.replace("/tmp/", "/private/tmp/"));
+    let stdout_trimmed = stdout.trim();
+
+    // Check if output starts with expected path (with or without RULE suffix)
+    let matches = stdout_trimmed.starts_with(&expected_prefix1) || stdout_trimmed.starts_with(&expected_prefix2);
     assert!(
-        stdout.trim() == expected_output1 || stdout.trim() == expected_output2,
-        "Grabber should output 'doc {}' or 'doc {}' but got '{}'", 
-        test_file, test_file.replace("/tmp/", "/private/tmp/"), stdout.trim()
+        matches,
+        "Grabber should output starting with 'doc {}' or 'doc {}' but got '{}'",
+        test_file, test_file.replace("/tmp/", "/private/tmp/"), stdout_trimmed
     );
     
     // Clean up
@@ -136,15 +141,21 @@ fn test_finder_folder_selection_grabber() {
     
     // The output should be "folder /tmp/hookanchor_test_folder" or "folder /private/tmp/hookanchor_test_folder"
     // It might have a trailing slash
-    let expected_output1 = format!("folder {}", test_dir);
-    let expected_output2 = format!("folder {}/", test_dir);
-    let expected_output3 = format!("folder {}", test_dir.replace("/tmp/", "/private/tmp/"));
-    let expected_output4 = format!("folder {}/", test_dir.replace("/tmp/", "/private/tmp/"));
-    
+    // Note: Output may include " RULE:Finder Selected Folder" suffix
+    let expected_prefix1 = format!("folder {}", test_dir);
+    let expected_prefix2 = format!("folder {}/", test_dir);
+    let expected_prefix3 = format!("folder {}", test_dir.replace("/tmp/", "/private/tmp/"));
+    let expected_prefix4 = format!("folder {}/", test_dir.replace("/tmp/", "/private/tmp/"));
+    let stdout_trimmed = stdout.trim();
+
+    let matches = stdout_trimmed.starts_with(&expected_prefix1) ||
+                  stdout_trimmed.starts_with(&expected_prefix2) ||
+                  stdout_trimmed.starts_with(&expected_prefix3) ||
+                  stdout_trimmed.starts_with(&expected_prefix4);
+
     assert!(
-        stdout.trim() == expected_output1 || stdout.trim() == expected_output2 || 
-        stdout.trim() == expected_output3 || stdout.trim() == expected_output4,
-        "Grabber should output folder path but got '{}'", stdout.trim()
+        matches,
+        "Grabber should output starting with folder path but got '{}'", stdout_trimmed
     );
     
     // Clean up
@@ -207,12 +218,16 @@ fn test_finder_no_selection_grabber() {
     assert!(grab_output.status.success(), "Grabber should succeed");
     
     // When no selection, it should grab the current folder
-    let expected_output1 = format!("folder {}/", test_dir);
-    let expected_output2 = format!("folder {}/", test_dir.replace("/tmp/", "/private/tmp/"));
+    // Note: Output may include " RULE:Finder No Selection" suffix
+    let expected_prefix1 = format!("folder {}/", test_dir);
+    let expected_prefix2 = format!("folder {}/", test_dir.replace("/tmp/", "/private/tmp/"));
+    let stdout_trimmed = stdout.trim();
+
+    let matches = stdout_trimmed.starts_with(&expected_prefix1) || stdout_trimmed.starts_with(&expected_prefix2);
     assert!(
-        stdout.trim() == expected_output1 || stdout.trim() == expected_output2,
-        "Grabber should output '{}' or '{}' when no selection, but got '{}'", 
-        expected_output1, expected_output2, stdout.trim()
+        matches,
+        "Grabber should output starting with '{}' or '{}' when no selection, but got '{}'",
+        expected_prefix1, expected_prefix2, stdout_trimmed
     );
     
     // Clean up

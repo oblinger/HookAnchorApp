@@ -5510,31 +5510,8 @@ pub fn run_gui_with_prompt(initial_prompt: &str, initial_action: Option<&str>, _
     detailed_log("SYSTEM", &format!("===== POPUP GUI STARTING ====="));
     detailed_log("POPUP_OPEN", &format!("Opening popup with initial prompt: '{}', action: {:?}", initial_prompt, initial_action));
 
-    // IMPORTANT: Hide popup_server from Cmd+Tab after window is created
-    // We'll do this in a background thread after a brief delay to ensure the process
-    // is registered with System Events
-    std::thread::spawn(|| {
-        // Wait for window to be created and process to register with System Events
-        std::thread::sleep(std::time::Duration::from_millis(500));
-
-        detailed_log("STARTUP", "Hiding popup_server process from Cmd+Tab");
-        let hide_result = std::process::Command::new("osascript")
-            .arg("-e")
-            .arg("tell application \"System Events\" to set visible of process \"popup_server\" to false")
-            .output();
-        match hide_result {
-            Ok(output) if output.status.success() => {
-                detailed_log("STARTUP", "Successfully hidden popup_server from Cmd+Tab");
-            }
-            Ok(output) => {
-                detailed_log("STARTUP", &format!("Hide command returned non-zero status: {}",
-                    String::from_utf8_lossy(&output.stderr)));
-            }
-            Err(e) => {
-                log_error(&format!("Failed to hide popup_server: {}", e));
-            }
-        }
-    });
+    // NOTE: Activation policy is set at process start in main.rs to ensure
+    // popup_server is hidden from Cmd+Tab/Dock from the very beginning
 
     // Capture the prompt and action for the closure
     let prompt = initial_prompt.to_string();
@@ -5582,7 +5559,20 @@ pub fn run_gui_with_prompt(initial_prompt: &str, initial_action: Option<&str>, _
         vsync: true, // Re-enable vsync - disabling it causes unlimited FPS
         ..Default::default()
     };
-    
+
+    // Set activation policy again right before running - in case winit changed it
+    #[cfg(target_os = "macos")]
+    {
+        use cocoa::appkit::{NSApplication, NSApplicationActivationPolicy};
+        use cocoa::base::nil;
+
+        unsafe {
+            let app = NSApplication::sharedApplication(nil);
+            app.setActivationPolicy_(NSApplicationActivationPolicy::NSApplicationActivationPolicyAccessory);
+            detailed_log("STARTUP", "Re-applied Accessory activation policy before eframe::run_native");
+        }
+    }
+
     eframe::run_native(
         "Anchor Selector",
         options,

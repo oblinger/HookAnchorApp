@@ -29,8 +29,8 @@ fn test_hook_url_does_not_open_popup() {
     }
     
     let log_path = std::env::var("HOME")
-        .map(|home| format!("{}/.anchor.log", home))
-        .unwrap_or_else(|_| ".anchor.log".to_string());
+        .map(|home| format!("{}/.config/hookanchor/anchor.log", home))
+        .unwrap_or_else(|_| ".config/hookanchor/anchor.log".to_string());
     
     // Read current log size to know where to start monitoring
     let initial_log_size = fs::metadata(&log_path)
@@ -100,14 +100,16 @@ fn test_hook_url_does_not_open_popup() {
     println!("=========================\n");
     
     // Check for expected patterns
+    // With supervisor refactoring, look for SUPERVISOR logs instead of old patterns
     let has_url_handler = recent_entries.iter()
-        .any(|line| line.contains("URL_HANDLER") && line.contains("test_integration"));
-    
+        .any(|line| (line.contains("URL_HANDLER") || line.contains("SUPERVISOR: URL_EVENT_START") || line.contains("SUPERVISOR: Processing hook URL"))
+            && line.contains("test_integration"));
+
     let has_popup_open = recent_entries.iter()
         .any(|line| line.contains("POPUP_OPEN"));
-    
+
     let has_startup = recent_entries.iter()
-        .any(|line| line.contains("STARTUP"));
+        .any(|line| line.contains("STARTUP") || line.contains("SUPERVISOR: URL_EVENT_START") || line.contains("SUPERVISOR: Processing"));
     
     // Results
     println!("Test Results:");
@@ -145,17 +147,19 @@ fn test_app_bundle_configuration() {
     let plist_content = fs::read_to_string(info_plist_path)
         .expect("Failed to read Info.plist");
     
-    // Check that CFBundleExecutable is set to 'applet' not 'popup'
-    assert!(plist_content.contains("<string>applet</string>"), 
-        "CFBundleExecutable should be 'applet' for proper URL handling");
-    
+    // Check that CFBundleExecutable is set correctly (supervisor refactoring changed from 'applet' to 'HookAnchor')
+    assert!(plist_content.contains("<string>HookAnchor</string>") || plist_content.contains("<string>applet</string>"),
+        "CFBundleExecutable should be 'HookAnchor' (or legacy 'applet') for proper URL handling");
+
     // Check that hook URL scheme is registered
-    assert!(plist_content.contains("<string>hook</string>"), 
+    assert!(plist_content.contains("<string>hook</string>"),
         "hook URL scheme should be registered");
-    
-    // Check that required files exist
-    assert!(Path::new("/Applications/HookAnchor.app/Contents/MacOS/applet").exists(),
-        "applet executable should exist");
+
+    // Check that required files exist (supervisor binary or legacy applet)
+    let has_supervisor = Path::new("/Applications/HookAnchor.app/Contents/MacOS/HookAnchor").exists();
+    let has_applet = Path::new("/Applications/HookAnchor.app/Contents/MacOS/applet").exists();
+    assert!(has_supervisor || has_applet,
+        "Supervisor executable (HookAnchor) or legacy applet should exist");
     
     assert!(Path::new("/Applications/HookAnchor.app/Contents/MacOS/ha").exists(),
         "ha binary should exist for AppleScript to call");

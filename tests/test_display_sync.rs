@@ -1,4 +1,4 @@
-use hookanchor::{Command, filter_commands};
+use hookanchor::core::{Command, filter_commands};
 
 /// Helper to create a test command
 fn make_cmd(name: &str, action: &str) -> Command {
@@ -8,7 +8,9 @@ fn make_cmd(name: &str, action: &str) -> Command {
         action: action.to_string(),
         arg: String::new(),
         flags: String::new(),
-        full_line: format!("{} : {}", name, action),
+        other_params: None,
+        last_update: 0,
+        file_size: None,
     }
 }
 

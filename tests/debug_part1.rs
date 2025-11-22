@@ -29,7 +29,7 @@ fn debug_abcd_should_match_abc() {
     }
 
     println!("\n=== TEST: Input 'ABCD' ===");
-    let (result, is_prefix, breadcrumb, count) = get_new_display_commands(
+    let (result, is_prefix, breadcrumb, count, _, _) = get_new_display_commands(
         "ABCD",
         &scaffold.commands,
         &scaffold.patches,
@@ -77,7 +77,7 @@ fn debug_alias_t_should_resolve_to_target() {
     }
 
     println!("\n=== TEST: Input 'T' ===");
-    let (result, is_prefix, breadcrumb, count) = get_new_display_commands(
+    let (result, is_prefix, breadcrumb, count, _, _) = get_new_display_commands(
         "T",
         &scaffold.commands,
         &scaffold.patches,
@@ -119,7 +119,7 @@ fn debug_pjpp_bug() {
     }
 
     println!("\n=== TEST: Input 'PJPP' ===");
-    let (result, is_prefix, breadcrumb, count) = get_new_display_commands(
+    let (result, is_prefix, breadcrumb, count, _, _) = get_new_display_commands(
         "PJPP",
         &scaffold.commands,
         &scaffold.patches,

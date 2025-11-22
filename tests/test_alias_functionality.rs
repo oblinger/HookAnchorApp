@@ -1,4 +1,4 @@
-use hookanchor::{Command, load_commands};
+use hookanchor::core::Command;
 
 #[test]
 fn test_alias_replacement_logic() {
@@ -12,7 +12,9 @@ fn test_alias_replacement_logic() {
             action: "alias".to_string(),
             arg: "url https://github.com".to_string(),
             flags: String::new(),
-            full_line: "gh : alias url https://github.com".to_string(),
+            other_params: None,
+            last_update: 0,
+            file_size: None,
         },
         Command {
             patch: String::new(),
@@ -20,7 +22,9 @@ fn test_alias_replacement_logic() {
             action: "alias".to_string(),
             arg: "folder /Users/testuser".to_string(),
             flags: String::new(),
-            full_line: "home : alias folder /Users/testuser".to_string(),
+            other_params: None,
+            last_update: 0,
+            file_size: None,
         },
         Command {
             patch: String::new(),
@@ -28,7 +32,9 @@ fn test_alias_replacement_logic() {
             action: "url".to_string(),
             arg: "https://github.com".to_string(),
             flags: String::new(),
-            full_line: "github : url https://github.com".to_string(),
+            other_params: None,
+            last_update: 0,
+            file_size: None,
         },
     ];
     
@@ -55,27 +61,4 @@ fn test_alias_replacement_logic() {
     assert!(non_alias.is_none(), "Should not find 'github' as alias (it's a url action)");
     
     println!("✅ Alias replacement logic tests passed");
-}
-
-#[test]
-fn test_real_commands_have_aliases() {
-    println!("Testing that real commands file contains alias entries...");
-    
-    let commands = load_commands();
-    let alias_commands: Vec<_> = commands.iter()
-        .filter(|cmd| cmd.action == "alias")
-        .collect();
-    
-    if alias_commands.is_empty() {
-        println!("⚠️  No alias commands found in commands.txt");
-        println!("   Alias functionality will work but no aliases are currently defined");
-    } else {
-        println!("✅ Found {} alias commands:", alias_commands.len());
-        for alias_cmd in alias_commands.iter().take(5) { // Show first 5
-            println!("   {} -> {}", alias_cmd.command, alias_cmd.arg);
-        }
-        if alias_commands.len() > 5 {
-            println!("   ... and {} more", alias_commands.len() - 5);
-        }
-    }
 }
