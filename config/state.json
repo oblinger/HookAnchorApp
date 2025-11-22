@@ -1,7 +1,7 @@
 {
   "window_position": [
-    936.0,
-    -348.0
+    980.0,
+    25.0
   ],
   "history_viewer_state": {
     "position": null,
@@ -13,14 +13,14 @@
     "sidebar_width": null,
     "show_current_commands": false
   },
-  "build_time": 1763797887,
+  "build_time": 1763838941,
   "last_scan_time": null,
   "last_scan_checksum": null,
-  "last_executed_command": "hack",
-  "server_pid": 57763,
+  "last_executed_command": "Ask",
+  "server_pid": 56944,
   "notion_last_scan": null,
-  "anchor_name": "hack",
-  "anchor_timestamp": 1763797759,
+  "anchor_name": "Ask",
+  "anchor_timestamp": 1763836863,
   "anchor_folder": null,
   "show_files": true
 }
