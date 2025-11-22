@@ -95,6 +95,14 @@ find "$PUBLIC_REPO/docs" -name "*.md" -type f -exec sed -i '' \
 echo -e "${GREEN}✓ Documentation sanitized${NC}"
 echo ""
 
+# 2.6. Copy CHANGELOG
+echo -e "${YELLOW}📄 Step 2.6: Copying CHANGELOG...${NC}"
+
+cp "$PROJECT_ROOT/CHANGELOG.md" "$PUBLIC_REPO/CHANGELOG.md"
+
+echo -e "${GREEN}✓ CHANGELOG copied${NC}"
+echo ""
+
 # 3. Create/update config README
 echo -e "${YELLOW}📝 Step 3: Creating config README...${NC}"
 
@@ -229,6 +237,7 @@ echo ""
 echo "Synced content:"
 echo "  - Documentation: $(ls -1 $PUBLIC_REPO/docs/*.md | wc -l | tr -d ' ') markdown files"
 echo "  - Configs: default_config.yaml, default_config.js"
+echo "  - CHANGELOG.md"
 echo "  - Version: $VERSION"
 echo ""
 echo "Public repository: https://github.com/oblinger/HookAnchor"

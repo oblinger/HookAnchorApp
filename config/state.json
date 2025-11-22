@@ -1,7 +1,7 @@
 {
   "window_position": [
     980.0,
-    25.0
+    317.0
   ],
   "history_viewer_state": {
     "position": null,
@@ -16,11 +16,11 @@
   "build_time": 1763838941,
   "last_scan_time": null,
   "last_scan_checksum": null,
-  "last_executed_command": "Ask",
+  "last_executed_command": "Website",
   "server_pid": 56944,
   "notion_last_scan": null,
-  "anchor_name": "Ask",
-  "anchor_timestamp": 1763836863,
+  "anchor_name": "Website",
+  "anchor_timestamp": 1763843310,
   "anchor_folder": null,
   "show_files": true
 }
