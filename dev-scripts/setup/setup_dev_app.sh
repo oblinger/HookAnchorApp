@@ -156,7 +156,7 @@ elif [ -f "$PROJECT_DIR/resources/icon.icns" ]; then
 fi
 
 # Create symlinks to HTML documentation (in Obsidian vault)
-DOCS_SOURCE_DIR="/Users/oblinger/ob/kmr/prj/binproj/Hook Anchor/docs/User Docs"
+DOCS_SOURCE_DIR="/Users/oblinger/ob/kmr/prj/binproj/Hook Anchor/website-docs"
 if [ -d "$DOCS_SOURCE_DIR" ]; then
     for html_file in "$DOCS_SOURCE_DIR"/*.html; do
         if [ -f "$html_file" ]; then

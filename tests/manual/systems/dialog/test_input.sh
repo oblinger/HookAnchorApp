@@ -15,7 +15,7 @@ echo ""
 echo "Press Enter to launch dialog..."
 read
 
-RESULT=$(~/ob/proj/HookAnchor/target/release/HookAnchorDialog \
+RESULT=$(~/ob/proj/HookAnchor/HookAnchorApp/target/release/HookAnchorDialog \
     --spec "=User Input Test" \
     --spec "#Please enter your information" \
     --spec "'Enter your name:" \

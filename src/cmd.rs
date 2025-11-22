@@ -1683,7 +1683,7 @@ fn run_rebuild_command() {
     let build_output = std::process::Command::new("cargo")
         .arg("build")
         .arg("--release")
-        .current_dir("/Users/oblinger/ob/proj/HookAnchor")
+        .current_dir("/Users/oblinger/ob/proj/HookAnchor/HookAnchorApp")
         .output();
     
     match build_output {

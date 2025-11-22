@@ -16,7 +16,7 @@ echo ""
 echo "Press Enter to launch dialog..."
 read
 
-~/ob/proj/HookAnchor/target/release/HookAnchorDialog --fatal "This is a test fatal error. The application would terminate after you click Exit."
+~/ob/proj/HookAnchor/HookAnchorApp/target/release/HookAnchorDialog --fatal "This is a test fatal error. The application would terminate after you click Exit."
 
 echo ""
 echo "If you see this message, the fatal error did NOT terminate the process!"

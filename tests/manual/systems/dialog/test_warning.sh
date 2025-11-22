@@ -16,7 +16,7 @@ echo ""
 echo "Press Enter to launch dialog..."
 read
 
-~/ob/proj/HookAnchor/target/release/HookAnchorDialog --warning "This is a test warning. Using default value instead of invalid configuration."
+~/ob/proj/HookAnchor/HookAnchorApp/target/release/HookAnchorDialog --warning "This is a test warning. Using default value instead of invalid configuration."
 
 echo ""
 echo "✓ Dialog closed successfully!"

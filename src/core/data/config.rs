@@ -355,9 +355,12 @@ pub fn load_config_with_error() -> ConfigResult {
             let _ = writeln!(file, "CONFIG_TIMING: Config file read in {:?} ({} microseconds)", read_elapsed, read_elapsed.as_micros());
         }
         
+        // Expand environment variables in config
+        let expanded_contents = expand_env_vars(&contents);
+
         // Parse config with migrations and defaults
         let parse_start = std::time::Instant::now();
-        match parse_config_contents(&contents) {
+        match parse_config_contents(&expanded_contents) {
             Ok(config) => {
                 // Normalize template keys for efficient matching
                 
@@ -396,6 +399,26 @@ pub fn load_config_with_error() -> ConfigResult {
     }
 }
 
+/// Expands environment variables in config content
+/// Replaces ${VAR_NAME} with the value of environment variable VAR_NAME
+/// If the variable is not set, leaves the placeholder unchanged
+fn expand_env_vars(contents: &str) -> String {
+    use regex::Regex;
+
+    // Match ${VAR_NAME} pattern
+    let re = Regex::new(r"\$\{([A-Z_][A-Z0-9_]*)\}").unwrap();
+
+    re.replace_all(contents, |caps: &regex::Captures| {
+        let var_name = &caps[1];
+        match env::var(var_name) {
+            Ok(value) => value,
+            Err(_) => {
+                // Variable not set - leave placeholder unchanged
+                caps[0].to_string()
+            }
+        }
+    }).to_string()
+}
 
 /// Parses configuration from YAML string, handling migrations and providing defaults
 fn parse_config_contents(contents: &str) -> Result<Config, Box<dyn std::error::Error>> {

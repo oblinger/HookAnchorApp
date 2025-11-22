@@ -32,7 +32,7 @@ echo ""
 echo "=== GRABBER TEST START $(date) ===" >> ~/.config/hookanchor/anchor.log
 
 # Run the grabber
-RUST_LOG=debug ~/ob/proj/HookAnchor/target/release/ha -a grab
+RUST_LOG=debug ~/ob/proj/HookAnchor/HookAnchorApp/target/release/ha -a grab
 
 echo ""
 echo "4. Checking the logs for Obsidian-specific activity..."

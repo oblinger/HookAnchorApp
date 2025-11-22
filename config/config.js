@@ -985,7 +985,7 @@ module.exports = {
       // Use the CLI grab command to perform the grab operation
       log("GRAB: action_grab: Calling shellSync...");
 
-      const grab_output = shellSync("~/ob/proj/HookAnchor/target/release/ha --grab");
+      const grab_output = shellSync("~/ob/proj/HookAnchor/HookAnchorApp/target/release/ha --grab");
 
       log(`GRAB: action_grab: Raw grab output: '${grab_output}'`);
 

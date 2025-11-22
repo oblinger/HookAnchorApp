@@ -15,7 +15,7 @@ echo ""
 echo "Press Enter to launch dialog..."
 read
 
-RESULT=$(~/ob/proj/HookAnchor/target/release/HookAnchorDialog \
+RESULT=$(~/ob/proj/HookAnchor/HookAnchorApp/target/release/HookAnchorDialog \
     --spec "=Confirm Delete" \
     --spec "#Are you sure?" \
     --spec "'This action cannot be undone" \

@@ -33,6 +33,8 @@ OLD/
 
 # Personal configuration files (too specific to user's system)
 config/commands.txt
+config/config.yaml
+config/config.js
 
 # Runtime files (logs, databases, caches, state)
 config/*.log
@@ -41,5 +43,8 @@ config/*_cache.json
 config/state.json
 config/backups/
 
+# Internal/development documentation (not for public distribution)
+/Users/oblinger/ob/kmr/prj/binproj/Hook Anchor/docs/Dev Notes/
+
 # Generated documentation (HTML from markdown)
-docs/User Docs/*.html
+/Users/oblinger/ob/kmr/prj/binproj/Hook Anchor/website-docs/*.html

@@ -257,3 +257,14 @@ bootstrap: setup setup-url-handler setup-git
 release: build-universal build-dist
     @echo "🎉 Release package ready!"
     @echo "Distribution: dist/HookAnchor-$(just version).dmg"
+
+# === PUBLIC REPOSITORY SYNC ===
+
+# Commit and push private repo, then sync to public repo
+push MESSAGE:
+    @echo "📝 Committing to private repo..."
+    git add -A
+    git commit -m "{{MESSAGE}}"
+    git push
+    @echo "📤 Syncing to public repository..."
+    ./dev-scripts/sync_public_repo.sh

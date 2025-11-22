@@ -74,7 +74,7 @@ pub fn verify_build() -> VerificationResult {
         errors.push("   ❌ DO NOT USE: cargo build --release".to_string());
         errors.push("   ✅ ALWAYS USE:  just build".to_string());
         errors.push("".to_string());
-        errors.push("   Rebuild now with: cd ~/ob/proj/HookAnchor && just build".to_string());
+        errors.push("   Rebuild now with: cd ~/ob/proj/HookAnchor/HookAnchorApp && just build".to_string());
         errors.push("".to_string());
         errors.push("❌ ❌ ❌ ❌ ❌ ❌ ❌ ❌ ❌ ❌ ❌".to_string());
         errors.push("".to_string());
@@ -224,7 +224,7 @@ fn show_error_dialog_and_exit(errors: &[String], warnings: &[String]) -> ! {
     // Build clean, focused error message
     let mut message = String::from("BUILD VERIFICATION FAILED\n\n");
     message.push_str("Use:\n");
-    message.push_str("  cd ~/ob/proj/HookAnchor && just build\n\n\n");
+    message.push_str("  cd ~/ob/proj/HookAnchor/HookAnchorApp && just build\n\n\n");
     message.push_str("Build details:\n");
     message.push_str(&format!("  Binary timestamp: {}\n", metadata.build_timestamp_str));
     message.push_str(&format!("  Current time: {}\n", chrono::Utc::now().format("%Y-%m-%d %H:%M:%S UTC")));
@@ -273,7 +273,7 @@ fn show_error_dialog_and_exit(errors: &[String], warnings: &[String]) -> ! {
     }
 
     log_message.push_str("SOLUTION:\n");
-    log_message.push_str("  Rebuild with: cd ~/ob/proj/HookAnchor && just build\n");
+    log_message.push_str("  Rebuild with: cd ~/ob/proj/HookAnchor/HookAnchorApp && just build\n");
 
     log_error(&log_message);
 

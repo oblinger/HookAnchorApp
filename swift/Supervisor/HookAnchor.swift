@@ -46,7 +46,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
 
         // Fall back to development path
-        let devPath = "/Users/oblinger/ob/proj/HookAnchor/target/release/HookAnchorCommand"
+        let devPath = "/Users/oblinger/ob/proj/HookAnchor/HookAnchorApp/target/release/HookAnchorCommand"
         if FileManager.default.fileExists(atPath: devPath) {
             return devPath
         }
