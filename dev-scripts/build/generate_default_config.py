@@ -60,7 +60,24 @@ def transform_config(config_text):
         r'\1: ""      # Add your API key here',
         result
     )
-    
+
+    # Remove hostname references
+    result = re.sub(
+        r'Daniels-MacBook-Pro\.local',
+        'your-hostname.local',
+        result
+    )
+    result = re.sub(
+        r'Daniels-MacBook-Pro',
+        'your-hostname',
+        result
+    )
+    result = re.sub(
+        r'developer_mode:\s*["\']?[^"\n]+\.local["\']?',
+        'developer_mode: ""      # Set to your hostname for dev-only features',
+        result
+    )
+
     # Add header comment for new users
     header = """# HookAnchor Default Configuration
 # 
