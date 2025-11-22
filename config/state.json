@@ -1,7 +1,7 @@
 {
   "window_position": [
     980.0,
-    317.0
+    53.0
   ],
   "history_viewer_state": {
     "position": null,
@@ -13,14 +13,14 @@
     "sidebar_width": null,
     "show_current_commands": false
   },
-  "build_time": 1763838941,
+  "build_time": 1763846035,
   "last_scan_time": null,
   "last_scan_checksum": null,
-  "last_executed_command": "Website",
-  "server_pid": 56944,
+  "last_executed_command": "Hook Anchor Page Folder",
+  "server_pid": 82674,
   "notion_last_scan": null,
-  "anchor_name": "Website",
-  "anchor_timestamp": 1763843310,
+  "anchor_name": "Hook Anchor Video",
+  "anchor_timestamp": 1763845922,
   "anchor_folder": null,
   "show_files": true
 }
