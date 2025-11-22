@@ -79,6 +79,22 @@ rsync -av --delete \
 echo -e "${GREEN}✓ Documentation synced${NC}"
 echo ""
 
+# 2.5. Sanitize documentation files
+echo -e "${YELLOW}🔒 Step 2.5: Sanitizing documentation files...${NC}"
+
+# Replace personal paths in all markdown files
+find "$PUBLIC_REPO/docs" -name "*.md" -type f -exec sed -i '' \
+    -e 's|/Users/oblinger/ob/kmr|~/Documents/Notes|g' \
+    -e 's|~/ob/kmr|~/Documents/Notes|g' \
+    -e 's|~/ob/prj|~/Projects|g' \
+    -e 's|/Users/oblinger/ob/prj|~/Projects|g' \
+    -e 's|~/ob/proj|~/Projects|g' \
+    -e 's|/Users/oblinger/ob/proj|~/Projects|g' \
+    {} \;
+
+echo -e "${GREEN}✓ Documentation sanitized${NC}"
+echo ""
+
 # 3. Create/update config README
 echo -e "${YELLOW}📝 Step 3: Creating config README...${NC}"
 
