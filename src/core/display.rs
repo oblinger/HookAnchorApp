@@ -115,6 +115,12 @@
 //! - When anchor has 'I' flag or patch has include_folders configured
 //! - Commands physically located in specified folders
 //! - Must have names starting with `anchor_name + space`
+//! - **Filtering**: When filter text exists (e.g., "shopsh" → anchor="shop", filter="sh"):
+//!   - Extract the part of command name AFTER anchor prefix and separators
+//!   - Example: "Shop Shutdown Shell" → extract "Shutdown Shell"
+//!   - Apply fuzzy matching (Part 2 rules) to the extracted part using filter text
+//!   - Example: "Shutdown Shell" matches filter "sh" (word "Shutdown" starts with "sh")
+//!   - This ensures file-based commands filter consistently with other prefix menu commands
 //!
 //! **D. Commands from Broader Matching**
 //! - Commands from Part 2 (both matching types) that also qualify via A, B, or C
@@ -168,22 +174,23 @@
 //! - Returns empty result immediately (no processing)
 //!
 //!
-//! ## KNOWN ISSUES & OPEN QUESTIONS
+//! ## SPECIAL CASES
 //!
-//! **Issue 1: Current Implementation May Not Match Specification**
-//! - The matching logic described in Part 2 represents the INTENDED behavior
-//! - Current code may use simpler matching (basic contains/prefix checks)
-//! - Tests will reveal discrepancies between intended and actual behavior
+//! **Empty Prefix Menu Hiding**
+//! - When filter text eliminates all prefix menu commands, the prefix menu is hidden entirely
+//! - Example: Input "shopxyz" matches "shop" anchor with filter "xyz"
+//!   - No Shop commands match "xyz" → prefix menu becomes empty
+//!   - System hides prefix menu, separator, and breadcrumb
+//!   - Returns only global matches (if any) as if no prefix menu was detected
+//!   - Result: `is_prefix_menu = false`, `filter_text = ""`
+//! - This provides smooth UX as user types: prefix menu appears, then disappears when no matches remain
+//! - User sees seamless transition from prefix menu → empty → global matches
 //!
-//! **Issue 2: Double Filtering**
-//! - After prefix menu is built, additional simple "contains" filter may be applied
-//! - This could be causing bugs (e.g., "PJPP" returning empty when "PP" should appear)
-//! - Status: Needs investigation
-//!
-//! **Issue 3: Include Folder Filtering**
-//! - Include folder commands may use simpler filtering than regular prefix menu
-//! - Should they use the same word-boundary matching with three-tier prioritization?
-//! - Status: Design decision needed
+//! **Exact Match Selection**
+//! - When prefix menu exists AND an exact match appears in results (case-insensitive, ignoring separators):
+//!   - `default_selection_index` points to exact match instead of first item
+//!   - Example: Input "philz" matches "Phone" anchor but also has exact "Philz" command
+//!   - Selection jumps to "Philz" for better UX when user types complete command name
 use super::{Command, Patch, Config};
 use std::collections::HashMap;
 use crate::prelude::*;
@@ -535,13 +542,13 @@ fn anchor_matches_prefix_exactly(command: &str, prefix: &str, separators: &str) 
 /// * `config` - Configuration containing word separators and other settings
 ///
 /// # Returns
-/// * `Option<(Vec<Command>, Command, Command)>` - (prefix_menu_commands, original_command, resolved_command) or None if no prefix menu found
+/// * `Option<(Vec<Command>, Command, Command, String)>` - (prefix_menu_commands, original_command, resolved_command, filter_text) or None if no prefix menu found
 pub fn build_prefix_menu(
     input: &str,
     all_commands: &[Command],
     patches: &HashMap<String, Patch>,
     config: &Config
-) -> Option<(Vec<Command>, Command, Command)> {
+) -> Option<(Vec<Command>, Command, Command, String)> {
 
     if input.trim().is_empty() {
         return None;
@@ -596,10 +603,10 @@ pub fn build_prefix_menu(
                 resolved_command.command, original_command.command, input, remaining_chars));
 
             let prefix_menu_commands = build_prefix_menu_commands(&resolved_command, all_commands, patches, remaining_chars, config);
-            return Some((prefix_menu_commands, original_command.clone(), resolved_command.clone()));
+            return Some((prefix_menu_commands, original_command.clone(), resolved_command.clone(), remaining_chars.to_string()));
         }
     }
-    
+
     None
 }
 
@@ -770,9 +777,27 @@ fn build_prefix_menu_commands(
                             if filter_text.is_empty() {
                                 prefix_menu_commands.push(cmd.clone());
                             } else {
-                                // Check if command name starts with the filter text
-                                if cmd_lower.starts_with(&filter_text.to_lowercase()) {
-                                    prefix_menu_commands.push(cmd.clone());
+                                // Extract the part AFTER the anchor prefix to match against filter
+                                // (same logic as name-based members at lines 699-735)
+                                let mut remaining_start = anchor_name.len();
+
+                                // Skip over separator characters after the anchor name
+                                while remaining_start < cmd.command.len() {
+                                    let ch = cmd.command.chars().nth(remaining_start).unwrap_or(' ');
+                                    if separators.contains(ch) {
+                                        remaining_start += ch.len_utf8();
+                                    } else {
+                                        break;
+                                    }
+                                }
+
+                                if remaining_start < cmd.command.len() {
+                                    let remaining_part = &cmd.command[remaining_start..];
+
+                                    // Use sophisticated fuzzy matching on the remaining part
+                                    if command_matches_query(remaining_part, filter_text) {
+                                        prefix_menu_commands.push(cmd.clone());
+                                    }
                                 }
                             }
                         }
@@ -868,79 +893,76 @@ pub fn get_new_display_commands(
 
     let input = input.trim();
 
-    // Step 1: Try to build a prefix menu - first with longest prefix (including full input), then progressively shorter
-    // This allows "PJPP" to match anchor "PJ" with filter "PP"
-    // And also allows "Main" to match anchor "Main" with empty filter
-    for len in (1..=input.len()).rev() {
-        let anchor_candidate = &input[..len];
-        let filter_text = &input[len..];
+    // Step 1: Try to build a prefix menu using the full input
+    // build_prefix_menu will scan backwards internally to find the best anchor match
+    // and return the filter text that should be used
+    if let Some((prefix_menu_commands, original_command, resolved_command, filter_text)) = build_prefix_menu(input, all_commands, patches, config) {
+        // We have a prefix menu!
+        detailed_log("DISPLAY", &format!("Found anchor with filter '{}'", filter_text));
 
-        if let Some((mut prefix_menu_commands, original_command, resolved_command)) = build_prefix_menu(anchor_candidate, all_commands, patches, config) {
-            // We have a prefix menu!
-            detailed_log("DISPLAY", &format!("Found anchor '{}' with filter '{}'", anchor_candidate, filter_text));
+        // Note: prefix_menu_commands are already filtered by build_prefix_menu_commands
+        // No need to filter again here
 
-            // If there's filter text, apply it to the prefix menu commands using sophisticated matching
-            if !filter_text.is_empty() {
-                prefix_menu_commands.retain(|cmd| {
-                    command_matches_query(&cmd.command, filter_text)
-                });
-                detailed_log("DISPLAY", &format!("After filtering by '{}': {} commands remain", filter_text, prefix_menu_commands.len()));
-            }
+        // Step 2: Get all commands that match the FULL input using sophisticated matching
+        let mut prefix_commands = crate::core::commands::filter_commands_with_patch_support(
+            all_commands,
+            input,  // Use full input for broader matches
+            1000, // High limit to get all matches
+            &config.popup_settings.word_separators,
+            false
+        );
 
-            // Step 2: Get all commands that match the FULL input using sophisticated matching
-            let mut prefix_commands = crate::core::commands::filter_commands_with_patch_support(
-                all_commands,
-                input,  // Use full input for broader matches
-                1000, // High limit to get all matches
-                &config.popup_settings.word_separators,
-                false
-            );
+        // Step 3: Remove prefix menu commands from prefix_commands to avoid duplicates
+        // Check both literal matches and resolved alias matches
+        prefix_commands.retain(|cmd| {
+            let cmd_resolved = cmd.resolve_alias(all_commands);
 
-            // Step 3: Remove prefix menu commands from prefix_commands to avoid duplicates
-            // Check both literal matches and resolved alias matches
-            prefix_commands.retain(|cmd| {
-                let cmd_resolved = cmd.resolve_alias(all_commands);
+            !prefix_menu_commands.iter().any(|prefix_menu_cmd| {
+                // Check literal match
+                let literal_match = prefix_menu_cmd.command == cmd.command && prefix_menu_cmd.action == cmd.action;
 
-                !prefix_menu_commands.iter().any(|prefix_menu_cmd| {
-                    // Check literal match
-                    let literal_match = prefix_menu_cmd.command == cmd.command && prefix_menu_cmd.action == cmd.action;
+                // Check if the resolved alias of cmd matches any prefix menu command
+                let resolved_matches_prefix_menu = prefix_menu_cmd.command == cmd_resolved.command && prefix_menu_cmd.action == cmd_resolved.action;
 
-                    // Check if the resolved alias of cmd matches any prefix menu command
-                    let resolved_matches_prefix_menu = prefix_menu_cmd.command == cmd_resolved.command && prefix_menu_cmd.action == cmd_resolved.action;
+                literal_match || resolved_matches_prefix_menu
+            })
+        });
 
-                    literal_match || resolved_matches_prefix_menu
-                })
-            });
+        // Sort non-prefix-menu commands by relevance: exact → prefix → substring → alphabetical
+        sort_commands_by_relevance(&mut prefix_commands, input);
 
-            // Sort non-prefix-menu commands by relevance: exact → prefix → substring → alphabetical
-            sort_commands_by_relevance(&mut prefix_commands, input);
-
-            // Step 4: Combine prefix menu + separator + remaining prefix commands
-            let mut final_commands = prefix_menu_commands.clone();
-
-
-            if !prefix_commands.is_empty() {
-                // Add separator between prefix menu and other commands (even if prefix menu is empty)
-                final_commands.push(Command {
-                    patch: String::new(),
-                    command: "============".to_string(),
-                    action: "separator".to_string(),
-                    arg: String::new(),
-                    flags: String::new(),
-            other_params: None,
-                    last_update: 0,
-                    file_size: None,
-                });
-            }
-
-            final_commands.extend(prefix_commands);
-
-            // Special case: Check for exact match in the final command list
-            // If user typed exact command name (case-insensitive, ignoring separators), select that instead of first item
-            let default_selection = find_exact_match_index(&final_commands, input, &config.popup_settings.word_separators);
-
-            return (final_commands, true, Some((original_command, resolved_command)), prefix_menu_commands.len(), default_selection, filter_text.to_string());
+        // Special case: If prefix menu is empty after filtering, don't show prefix menu at all
+        // Just return the global matches as if there was no prefix menu
+        if prefix_menu_commands.is_empty() {
+            detailed_log("DISPLAY", "Prefix menu empty after filtering - hiding prefix menu and showing only global matches");
+            // No exact match special handling needed here since we're treating this as no-prefix-menu case
+            return (prefix_commands, false, None, 0, None, String::new());
         }
+
+        // Step 4: Combine prefix menu + separator + remaining prefix commands
+        let mut final_commands = prefix_menu_commands.clone();
+
+        if !prefix_commands.is_empty() {
+            // Add separator between prefix menu and other commands
+            final_commands.push(Command {
+                patch: String::new(),
+                command: "============".to_string(),
+                action: "separator".to_string(),
+                arg: String::new(),
+                flags: String::new(),
+                other_params: None,
+                last_update: 0,
+                file_size: None,
+            });
+        }
+
+        final_commands.extend(prefix_commands);
+
+        // Special case: Check for exact match in the final command list
+        // If user typed exact command name (case-insensitive, ignoring separators), select that instead of first item
+        let default_selection = find_exact_match_index(&final_commands, input, &config.popup_settings.word_separators);
+
+        return (final_commands, true, Some((original_command, resolved_command)), prefix_menu_commands.len(), default_selection, filter_text);
     }
 
     // No prefix menu found at any length - use sophisticated matching

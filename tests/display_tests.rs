@@ -13,7 +13,7 @@
 mod test_helpers;
 
 use test_helpers::*;
-use hookanchor::core::get_new_display_commands;
+use hookanchor::core::{get_new_display_commands, Command};
 
 // ============================================================================
 // TEST SCAFFOLDS
@@ -986,4 +986,207 @@ fn bug_double_filtering_investigation() {
 
     // CVT should match filter "CV"
     assert_contains(&result, "CVT Gdrive");
+}
+
+// ============================================================================
+// FILE-BASED COMMAND FILTERING (Include Folders)
+// ============================================================================
+
+#[test]
+fn include_folder_filtering_with_filter_text() {
+    use std::fs;
+    use std::path::PathBuf;
+
+    // Create temporary test directory structure
+    let test_dir = PathBuf::from("/tmp/hookanchor_test_shop");
+    let _ = fs::remove_dir_all(&test_dir); // Clean up any previous test
+    fs::create_dir_all(&test_dir).expect("Failed to create test directory");
+
+    // Create test files in the directory
+    fs::write(test_dir.join("Shop Shutdown Shell.md"), "# Shutdown Shell").unwrap();
+    fs::write(test_dir.join("Shop Text Shutdown.md"), "# Text Shutdown").unwrap();
+    fs::write(test_dir.join("Shop Obsidian.md"), "# Shop Obsidian").unwrap();
+    fs::write(test_dir.join("Shop Note.md"), "# Shop Note").unwrap();
+    fs::write(test_dir.join("Shop Phone Call.md"), "# Phone Call").unwrap();
+
+    // Create scaffold with include folder
+    let scaffold = scaffold(&format!(r#"
+        // Shop anchor with Include flag pointing to test directory
+        Shop:anchor; F:=IA A:=/tmp/hookanchor_test_shop
+
+        // These files will be auto-discovered from the include folder
+        Shop Shutdown Shell:markdown; A:=/tmp/hookanchor_test_shop/Shop Shutdown Shell.md
+        Shop Text Shutdown:markdown; A:=/tmp/hookanchor_test_shop/Shop Text Shutdown.md
+        Shop Obsidian:markdown; A:=/tmp/hookanchor_test_shop/Shop Obsidian.md
+        Shop Note:markdown; A:=/tmp/hookanchor_test_shop/Shop Note.md
+        Shop Phone Call:markdown; A:=/tmp/hookanchor_test_shop/Shop Phone Call.md
+
+        // Other non-Shop commands that might match globally
+        Shutdown Shell:shell; A:=shutdown -h now
+        Text Shutdown:shell; A:=sudo shutdown -h now
+    "#));
+
+    // Test 1: Typing "shop" should show ALL shop commands (no filter)
+    let (result, is_prefix, _, _, _, filter_text) = get_new_display_commands(
+        "shop",
+        &scaffold.commands,
+        &scaffold.patches,
+        &scaffold.config
+    );
+
+    assert_prefix_menu(is_prefix, true);
+    assert_eq!(filter_text, "", "Filter text should be empty for exact anchor match");
+    assert_contains(&result, "Shop");
+    assert_contains(&result, "Shop Shutdown Shell");
+    assert_contains(&result, "Shop Text Shutdown");
+    assert_contains(&result, "Shop Obsidian");
+    assert_contains(&result, "Shop Note");
+    assert_contains(&result, "Shop Phone Call");
+
+    // Test 2: Typing "shopsh" should filter to commands with "sh"
+    // - Matches "Shop" anchor with "sh" filter text
+    // - Both "Shop Shutdown Shell" AND "Shop Text Shutdown" match because both contain "Shutdown" (starts with "sh")
+    let (result, is_prefix, _, _, _, filter_text) = get_new_display_commands(
+        "shopsh",
+        &scaffold.commands,
+        &scaffold.patches,
+        &scaffold.config
+    );
+
+    assert_prefix_menu(is_prefix, true);
+    assert_eq!(filter_text, "sh", "Filter text should be 'sh' after 'shop' anchor");
+
+    // Should contain both commands that have words starting with "sh"
+    assert_contains(&result, "Shop Shutdown Shell");
+    assert_contains(&result, "Shop Text Shutdown"); // Contains "Shutdown" which matches "sh"
+
+    // Should NOT contain commands that don't have any word matching "sh"
+    assert_not_contains(&result, "Shop Obsidian");
+    assert_not_contains(&result, "Shop Note");
+    assert_not_contains(&result, "Shop Phone Call");
+
+    // Test 3: Typing "shopte" should filter to "Shop Text Shutdown"
+    // - Matches "Shop" anchor with "te" filter text
+    // - "Shop Text Shutdown" matches "te" (Text starts with "te")
+    let (result, is_prefix, _, _, _, filter_text) = get_new_display_commands(
+        "shopte",
+        &scaffold.commands,
+        &scaffold.patches,
+        &scaffold.config
+    );
+
+    assert_prefix_menu(is_prefix, true);
+    assert_eq!(filter_text, "te", "Filter text should be 'te' after 'shop' anchor");
+    assert_contains(&result, "Shop Text Shutdown");
+    assert_not_contains(&result, "Shop Shutdown Shell");
+    assert_not_contains(&result, "Shop Obsidian");
+    assert_not_contains(&result, "Shop Note");
+
+    // Test 3b: Typing "shopxyz" filters out all Shop commands
+    // - Since prefix menu becomes empty, it should be hidden entirely
+    // - Only global matches (Shutdown Shell, Text Shutdown) should appear if they match "shopxyz"
+    let (result, is_prefix, _, _, _, filter_text) = get_new_display_commands(
+        "shopxyz",
+        &scaffold.commands,
+        &scaffold.patches,
+        &scaffold.config
+    );
+
+    // Prefix menu should be hidden when empty
+    assert_prefix_menu(is_prefix, false);
+    assert_eq!(filter_text, "", "Filter text should be empty when prefix menu is hidden");
+
+    // No Shop commands should appear (all filtered out)
+    assert_not_contains(&result, "Shop");
+    assert_not_contains(&result, "Shop Shutdown Shell");
+    assert_not_contains(&result, "Shop Text Shutdown");
+    assert_not_contains(&result, "Shop Obsidian");
+
+    // No separator should appear
+    let has_separator = result.iter().any(|cmd| cmd.action == "separator");
+    assert!(!has_separator, "Separator should not appear when prefix menu is empty");
+
+    // Test 4: Typing "shopph" should filter to "Shop Phone Call"
+    let (result, is_prefix, _, _, _, filter_text) = get_new_display_commands(
+        "shopph",
+        &scaffold.commands,
+        &scaffold.patches,
+        &scaffold.config
+    );
+
+    assert_prefix_menu(is_prefix, true);
+    assert_eq!(filter_text, "ph", "Filter text should be 'ph' after 'shop' anchor");
+    assert_contains(&result, "Shop Phone Call");
+    assert_not_contains(&result, "Shop Shutdown Shell");
+    assert_not_contains(&result, "Shop Text Shutdown");
+
+    // Test 5: Typing "shopshu" should filter using "shu"
+    // - Should match "Shop Shutdown Shell" (Shutdown starts with "Shu")
+    let (result, is_prefix, _, _, _, filter_text) = get_new_display_commands(
+        "shopshu",
+        &scaffold.commands,
+        &scaffold.patches,
+        &scaffold.config
+    );
+
+    assert_prefix_menu(is_prefix, true);
+    assert_eq!(filter_text, "shu", "Filter text should be 'shu' after 'shop' anchor");
+    assert_contains(&result, "Shop Shutdown Shell");
+    // Note: "Shop Text Shutdown" also contains "Shutdown" so it may match "shu" too
+    assert_not_contains(&result, "Shop Phone Call");
+
+    // Clean up test directory
+    let _ = fs::remove_dir_all(&test_dir);
+}
+
+#[test]
+fn include_folder_no_false_positives() {
+    use std::fs;
+    use std::path::PathBuf;
+
+    // Create temporary test directory
+    let test_dir = PathBuf::from("/tmp/hookanchor_test_book");
+    let _ = fs::remove_dir_all(&test_dir);
+    fs::create_dir_all(&test_dir).expect("Failed to create test directory");
+
+    // Create test files
+    fs::write(test_dir.join("Book To Read.md"), "# To Read").unwrap();
+    fs::write(test_dir.join("Book Already Read.md"), "# Already Read").unwrap();
+    fs::write(test_dir.join("Book Wishlist.md"), "# Wishlist").unwrap();
+
+    let scaffold = scaffold(&format!(r#"
+        Book:anchor; F:=IA A:=/tmp/hookanchor_test_book
+
+        Book To Read:markdown; A:=/tmp/hookanchor_test_book/Book To Read.md
+        Book Already Read:markdown; A:=/tmp/hookanchor_test_book/Book Already Read.md
+        Book Wishlist:markdown; A:=/tmp/hookanchor_test_book/Book Wishlist.md
+
+        // Distractor - should not appear in Book menu even with filter
+        Cookbook:markdown; A:=/other/cookbook.md
+    "#));
+
+    // Test: "bookw" should only show "Book Wishlist", NOT "Cookbook"
+    let (result, is_prefix, _, _, _, filter_text) = get_new_display_commands(
+        "bookw",
+        &scaffold.commands,
+        &scaffold.patches,
+        &scaffold.config
+    );
+
+    assert_prefix_menu(is_prefix, true);
+    assert_eq!(filter_text, "w", "Filter text should be 'w'");
+    assert_contains(&result, "Book Wishlist");
+    assert_not_contains(&result, "Book To Read");
+    assert_not_contains(&result, "Book Already Read");
+
+    // Cookbook should NOT appear in prefix menu (doesn't start with "Book ")
+    // even though "Cookbook" contains "book"
+    let prefix_section: Vec<&Command> = result.iter()
+        .take_while(|cmd| cmd.action != "separator")
+        .collect();
+    assert!(!prefix_section.iter().any(|cmd| cmd.command == "Cookbook"),
+        "Cookbook should not appear in Book prefix menu");
+
+    // Clean up
+    let _ = fs::remove_dir_all(&test_dir);
 }
