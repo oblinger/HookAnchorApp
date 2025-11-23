@@ -6,5 +6,8 @@
 - %SystemClipboard% 
 
 
+## SCRIPTS
 
+### CAPS-A "ADD Item to List"
+Dictionary of target location in macro itself.
 
