@@ -1,7 +1,7 @@
 {
   "window_position": [
     980.0,
-    53.0
+    -471.0
   ],
   "history_viewer_state": {
     "position": null,
@@ -16,11 +16,11 @@
   "build_time": 1763846035,
   "last_scan_time": null,
   "last_scan_checksum": null,
-  "last_executed_command": "Hook Anchor Page Folder",
+  "last_executed_command": "SEEK",
   "server_pid": 82674,
   "notion_last_scan": null,
-  "anchor_name": "Hook Anchor Video",
-  "anchor_timestamp": 1763845922,
+  "anchor_name": "SEEK",
+  "anchor_timestamp": 1763856303,
   "anchor_folder": null,
   "show_files": true
 }
