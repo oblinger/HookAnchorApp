@@ -1,4 +1,7 @@
 
+[[MCP-OpenSource-Auth]] 
+[[MCP-Bridge]] 
+[[MCP-Broker]] 
 
 # WHY
 - Want to stay central 

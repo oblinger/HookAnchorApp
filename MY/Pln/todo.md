@@ -1,6 +1,7 @@
 
-- [[Med]]: GLP1
+- [[Med]]: 
 - Jameson bottle
+- [ApoB](https://mitohealth.com/blog/rethinking-heart-health-peter-attias-approach-to-longevity-apob) 
 
 - Filepe
 - Quarterly budget
