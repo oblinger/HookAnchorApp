@@ -7,8 +7,8 @@
 # APPLICATION SETTINGS
 # =================================================================
 popup_settings:
-  verbose_logging:        true         # Controls if detailed logging messages added to the log
-  merge_similar:          false        # Merging similar commands in popup (disabled - needs work)
+  verbose_logging:        false        # Controls if detailed logging messages added to the log
+  merge_similar:          true         # Merging similar commands in popup
   max_rows:               25           # Max number of rows in the list of matching commands
   max_columns:            4            # Max columns in list of matching commands
   max_characters:         30           # Maximum characters for command names before truncation
@@ -124,7 +124,7 @@ actions:
     flags: "A"
     edit: true
     file: "{{last_executed.folder}}/{{date.year}} {{input}}/{{date.year}} {{input}}.md"
-    file_rescan: false
+    file_rescan: true
     contents: |
       .[[{{date.year}} {{input}}]].
       
@@ -140,7 +140,7 @@ actions:
     flags: "A"
     edit: true
     file: "~/ob/kmr/prj/{{date.year}} {{input}}/{{date.year}} {{input}}.md"
-    file_rescan: false
+    file_rescan: true
     contents: |
       .[[{{date.year}}-{{date.month}} {{input}}]].
       
@@ -155,7 +155,7 @@ actions:
     patch: "At"
     flags: ""
     edit: true
-    file_rescan: false
+    file_rescan: true
     contents: |
       =[[At]]  
 
@@ -171,7 +171,7 @@ actions:
     flags: ""
     edit: true
     file: "~/ob/kmr/At/Corp/@{{input}}.md"
-    file_rescan: false
+    file_rescan: true
     contents: |
       =[[Corp]]   
 
@@ -186,7 +186,7 @@ actions:
     patch: "DOC"
     flags: ""
     edit: true
-    file_rescan: false
+    file_rescan: true
     file: "~/ob/kmr/T/DOC/Doc{{input}}.md"
     contents: |
       #org   
