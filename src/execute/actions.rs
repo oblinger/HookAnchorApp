@@ -309,6 +309,7 @@ pub(super) fn execute_locally(
         "shell" => execute_shell_action(&params),
         "obsidian" => execute_obsidian_action(&params),
         "alias" => execute_alias_action(&params),
+        "grab" => execute_grab_action(&params),
 
         // Everything else is JavaScript with action_ prefix
         _ => {
@@ -559,7 +560,7 @@ fn execute_js_function_action(
         let param_msg = format!("   {}", extra_params.join(", "));
         log(&param_msg);
     }
-    
+
     // Get parameters that will be passed to the JavaScript function
     let arg = params.get("arg").unwrap_or(&String::new()).clone();
     let input = params.get("input").unwrap_or(&String::new()).clone();
@@ -567,8 +568,23 @@ fn execute_js_function_action(
     let user_input = params.get("user_input").unwrap_or(&String::new()).clone();
     let last_anchor_input = params.get("last_anchor_input").unwrap_or(&String::new()).clone();
 
+    // Build a JSON object with all params for the JavaScript function
+    // This allows JS to access any param via ctx.param_name
+    let mut params_json = String::from("{");
+    let mut first = true;
+    for (key, value) in params {
+        if !first {
+            params_json.push_str(", ");
+        }
+        first = false;
+        let escaped_value = value.replace('\\', "\\\\").replace('"', "\\\"").replace('\n', "\\n");
+        params_json.push_str(&format!("\"{}\": \"{}\"", key, escaped_value));
+    }
+    params_json.push('}');
+
     // Simply call the function that's already loaded in the JavaScript runtime
     // The function is registered as a global and expects the arguments directly
+    // We pass additional params as a JSON object that gets merged into the context
     let js_code = format!(r#"
         // Check if function exists
         if (typeof {func} === 'undefined') {{
@@ -577,18 +593,20 @@ fn execute_js_function_action(
 
         // Call the function with simple arguments including last_anchor_input
         // The wrapper in js_runtime.rs will create the context object
-        {func}('{arg}', '{input}', null, null, null, '{command_name}', '{user_input}', '{last_anchor_input}');
+        // We also pass extra params as the 9th argument
+        {func}('{arg}', '{input}', null, null, null, '{command_name}', '{user_input}', '{last_anchor_input}', {params_json});
     "#,
         func = function_name,
         arg = arg.replace("\\", "\\\\").replace("'", "\\'").replace("\n", "\\n").replace("\"", "\\\""),
         input = input.replace("\\", "\\\\").replace("'", "\\'").replace("\n", "\\n").replace("\"", "\\\""),
         command_name = command_name.replace("\\", "\\\\").replace("'", "\\'").replace("\n", "\\n").replace("\"", "\\\""),
         user_input = user_input.replace("\\", "\\\\").replace("'", "\\'").replace("\n", "\\n").replace("\"", "\\\""),
-        last_anchor_input = last_anchor_input.replace("\\", "\\\\").replace("'", "\\'").replace("\n", "\\n").replace("\"", "\\\"")
+        last_anchor_input = last_anchor_input.replace("\\", "\\\\").replace("'", "\\'").replace("\n", "\\n").replace("\"", "\\\""),
+        params_json = params_json
     );
-    
+
     detailed_log("ACTION", &format!("Calling JavaScript: {}", js_code));
-    
+
     match crate::js::execute_with_context(&js_code, &format!("JS_FUNCTION({})", function_name)) {
         Ok(result) => {
             detailed_log("ACTION", &format!("JavaScript execution succeeded: {}", result));
@@ -686,6 +704,31 @@ fn execute_alias_action(
     Ok(format!("Executed alias to: {}", target))
 }
 
+fn execute_grab_action(
+    _params: &HashMap<String, String>,
+) -> Result<String, Box<dyn std::error::Error>> {
+    detailed_log("ACTION", "Executing grab action");
+
+    let config = crate::core::data::get_config();
+
+    match crate::systems::grab(&config) {
+        Ok(result) => {
+            match result {
+                crate::systems::GrabResult::RuleMatched(rule_name, command) => {
+                    Ok(format!("Grabbed via '{}': {}", rule_name, command.command))
+                }
+                crate::systems::GrabResult::NoRuleMatched(context) => {
+                    // Return the template info for display
+                    let template_text = crate::systems::generate_rule_template_text(&context);
+                    Ok(format!("INFO: Grabber Rule Template for {}:\n{}", context.app_name, template_text))
+                }
+            }
+        }
+        Err(e) => {
+            Err(format!("Grab failed: {}", e).into())
+        }
+    }
+}
 
 
 // Tests removed - expand functionality is in TemplateContext, not ActionContext

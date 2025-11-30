@@ -917,8 +917,9 @@ fn edge_very_long_input() {
         &scaffold.config
     );
 
-    // Should still match "PJ" anchor
-    assert_prefix_menu(is_prefix, true);
+    // When filter doesn't match any items, prefix menu is hidden
+    // The anchor "PJ" matches, but filter "PPPP..." matches nothing in the menu
+    assert_prefix_menu(is_prefix, false);
 }
 
 #[test]
@@ -1189,4 +1190,114 @@ fn include_folder_no_false_positives() {
 
     // Clean up
     let _ = fs::remove_dir_all(&test_dir);
+}
+
+#[test]
+fn edge_anchor_filtered_from_own_menu() {
+    // Bug: When an anchor appears in its own prefix menu (name-based membership),
+    // filtering should skip the anchor prefix before matching filter text.
+    // Example: "2023 Bugs Flow" anchor with input "bugb"
+    // - "bug" matches anchor → creates prefix menu
+    // - Filter "b" should match against "s Flow" (after "Bug"), not full name
+    // - Since "s Flow" doesn't contain 'b', anchor should be filtered out
+    let scaffold = scaffold(r#"
+        Bug Board:anchor; F:=A A:=/bugs
+        Bug Board Item1:folder; A:=/bugs/item1
+        Bug Board Item2:folder; A:=/bugs/item2
+        Bug Board Beta:folder; A:=/bugs/beta
+    "#);
+
+    // Input "bugb" should:
+    // 1. Match "Bug Board" anchor (bug → Bug Board)
+    // 2. Filter "b" should match "Beta" (skip "Bug Board " prefix)
+    // 3. Filter "b" should NOT match anchor itself because "oard" has no 'b'
+    let (result, is_prefix, _, prefix_count, _, _) = get_new_display_commands(
+        "bugb",
+        &scaffold.commands,
+        &scaffold.patches,
+        &scaffold.config
+    );
+
+    // The prefix menu should be shown with "Bug Board Beta" (has 'b' in "Beta")
+    assert_prefix_menu(is_prefix, true);
+    assert_eq!(prefix_count, 1, "Prefix menu should have exactly 1 item");
+
+    // Check that the prefix menu (first item before separator) is correct
+    assert_eq!(result[0].command, "Bug Board Beta", "First item should be Bug Board Beta");
+
+    // Verify the anchor "Bug Board" is NOT in the prefix menu section
+    // (it may appear in global matches section after the separator, which is fine)
+    for i in 0..prefix_count {
+        assert!(result[i].command != "Bug Board",
+            "Bug Board anchor should not be in prefix menu (position {})", i);
+    }
+
+    // Verify "Bug Board Item1" is NOT in the prefix menu section
+    for i in 0..prefix_count {
+        assert!(result[i].command != "Bug Board Item1",
+            "Bug Board Item1 should not be in prefix menu (position {})", i);
+    }
+}
+
+#[test]
+fn name_based_members_in_prefix_menu() {
+    // Bug: Commands with names starting with "anchor_name + separator" should be in prefix menu
+    // This tests the core name-based membership from Part 3 Section B of the spec:
+    // "Commands whose name starts with anchor_name + separator belong in prefix menu"
+    //
+    // Example from screenshot: ASF anchor with commands like "ASF Code", "ASF Components"
+    // These should appear IN the prefix menu, not in global matches below separator
+    let scaffold = scaffold(r#"
+        ASF:markdown; F:=UA A:=/path/to/asf.md
+
+        // Name-based members - name starts with "ASF " (anchor + separator)
+        ASF Code:folder; A:=/path/asf/code
+        ASF Components:folder; A:=/path/asf/components
+        ASF Design:markdown; A:=/path/asf/design.md
+        ASF Model Envisionment:markdown; A:=/path/asf/model.md
+
+        // Patch-based member - has patch="ASF" (patch specified with ! prefix)
+        ASF! Related Item:markdown; A:=/path/other/item.md
+
+        // Distractor - fuzzy matches "ASF" but should NOT be in prefix menu
+        Annual Short Form:doc; A:=/path/annual_short_form.pdf
+    "#);
+
+    let (result, is_prefix, _, prefix_count, _, _) = get_new_display_commands(
+        "asf",
+        &scaffold.commands,
+        &scaffold.patches,
+        &scaffold.config
+    );
+
+    // Should have a prefix menu
+    assert_prefix_menu(is_prefix, true);
+
+    // Name-based members MUST be in prefix menu (before separator)
+    let prefix_section: Vec<&Command> = result.iter()
+        .take(prefix_count)
+        .collect();
+
+    // Verify all ASF-prefixed commands are in prefix menu
+    assert!(prefix_section.iter().any(|cmd| cmd.command == "ASF"),
+        "ASF anchor should be in prefix menu");
+    assert!(prefix_section.iter().any(|cmd| cmd.command == "ASF Code"),
+        "ASF Code should be in prefix menu (name starts with 'ASF ')");
+    assert!(prefix_section.iter().any(|cmd| cmd.command == "ASF Components"),
+        "ASF Components should be in prefix menu (name starts with 'ASF ')");
+    assert!(prefix_section.iter().any(|cmd| cmd.command == "ASF Design"),
+        "ASF Design should be in prefix menu (name starts with 'ASF ')");
+    assert!(prefix_section.iter().any(|cmd| cmd.command == "ASF Model Envisionment"),
+        "ASF Model Envisionment should be in prefix menu (name starts with 'ASF ')");
+
+    // Patch-based member should also be in prefix menu
+    assert!(prefix_section.iter().any(|cmd| cmd.command == "Related Item"),
+        "Related Item should be in prefix menu (has patch='ASF')");
+
+    // Distractor should NOT be in prefix menu
+    assert!(!prefix_section.iter().any(|cmd| cmd.command == "Annual Short Form"),
+        "Annual Short Form should NOT be in prefix menu (doesn't start with 'ASF ')");
+
+    // The distractor might appear in global matches (after separator) - that's fine
+    // But it must not be in the prefix section
 }

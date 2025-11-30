@@ -82,11 +82,15 @@ pub fn warning(message: &str) {
 pub fn error(message: &str) {
     log_error(message);
 
+    // Use smart textbox (^) for multi-line content - it auto-sizes or scrolls as needed
+    // Use label (') for single-line content
+    let content_prefix = if message.contains('\n') { '^' } else { '\'' };
+
     let _ = crate::systems::spawn_dialog(
         vec![
             "=Error".to_string(),
             "#❌ Error".to_string(),
-            format!("'{}", message),
+            format!("{}{}", content_prefix, message),
             "!OK".to_string(),
         ],
         None,
@@ -106,11 +110,15 @@ pub fn error(message: &str) {
 pub fn info(message: &str) {
     log(&format!("INFO: {}", message));
 
+    // Use smart textbox (^) for multi-line content - it auto-sizes or scrolls as needed
+    // Use label (') for single-line content
+    let content_prefix = if message.contains('\n') { '^' } else { '\'' };
+
     let _ = crate::systems::spawn_dialog(
         vec![
             "=Information".to_string(),
             "#Info".to_string(),
-            format!("'{}", message),
+            format!("{}{}", content_prefix, message),
             "!OK".to_string(),
         ],
         None,

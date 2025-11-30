@@ -1555,11 +1555,14 @@ fn run_manual_uninstall() {
     }
 }
 
-/// Restart both command server and popup server via supervisor
+/// Restart both command server and popup server - BRUTALLY
+///
+/// This kills EVERYTHING (including supervisor) and starts fresh.
+/// This is necessary because the supervisor might be running old code.
 fn run_restart_server() {
-    print("🔄 Restarting both servers (command + popup)...");
+    print("🔄 Restarting ALL HookAnchor processes...");
 
-    // Hide popup window if visible
+    // Hide popup window if visible (best effort)
     print("  Hiding popup window...");
     use std::os::unix::net::UnixStream;
     use std::io::Write;
@@ -1570,27 +1573,63 @@ fn run_restart_server() {
         print("  ✅ Popup window hidden");
     }
 
-    // Use supervisor to restart all servers (single source of truth)
-    match crate::systems::supervisor_command("restart") {
-        Ok(response) => {
-            print("");
-            print("✅ Both servers restarted successfully!");
-            print(&format!("  {}", response));
-
-            // Show server status
-            let state = crate::core::data::get_state();
-            if let Some(pid) = state.server_pid {
-                print(&format!("  📊 Server running with PID: {}", pid));
-            }
-            print("  🎯 Server is ready to accept commands");
+    // BRUTAL KILL: Kill ALL HookAnchor processes including supervisor
+    print("  🔪 Killing all HookAnchor processes...");
+    match crate::systems::restart::kill_popup_servers() {
+        Ok(_) => {
+            print("  ✅ All processes killed and verified dead");
         }
         Err(e) => {
-            print("");
-            print(&format!("❌ Restart failed: {}", e));
-            print("💡 Make sure supervisor is running, or try: ha --supervisor restart");
+            print(&format!("  ❌ Kill failed: {}", e));
             std::process::exit(1);
         }
     }
+
+    // Clean up all sockets and lock files
+    let config_dir = crate::core::get_config_dir();
+    let _ = std::fs::remove_file(config_dir.join("popup.sock"));
+    let _ = std::fs::remove_file(config_dir.join("supervisor.sock"));
+    let _ = std::fs::remove_file(config_dir.join("execution_server.sock"));
+    // Critical: clean up server startup lock file to prevent orphaned locks blocking restart
+    let _ = std::fs::remove_file("/tmp/hookanchor_server_starting.lock");
+    print("  ✅ Sockets cleaned up");
+
+    // Start fresh supervisor (which will start fresh popup)
+    print("  🚀 Starting fresh supervisor...");
+    match std::process::Command::new("open")
+        .arg("-a")
+        .arg("HookAnchor")
+        .spawn()
+    {
+        Ok(_) => {
+            // Give supervisor time to start popup
+            std::thread::sleep(std::time::Duration::from_millis(1500));
+            print("  ✅ Supervisor and popup started");
+        }
+        Err(e) => {
+            print(&format!("  ❌ Failed to start supervisor: {}", e));
+            std::process::exit(1);
+        }
+    }
+
+    // Verify popup is running
+    let popup_check = std::process::Command::new("pgrep")
+        .arg("-f")
+        .arg("popup_server")
+        .output();
+
+    match popup_check {
+        Ok(output) if output.status.success() && !output.stdout.is_empty() => {
+            let pids = String::from_utf8_lossy(&output.stdout);
+            print(&format!("  ✅ Popup server running (PID: {})", pids.trim().lines().next().unwrap_or("?")));
+        }
+        _ => {
+            print("  ⚠️  Popup server may not have started yet");
+        }
+    }
+
+    print("");
+    print("✅ All servers restarted with fresh binaries!");
 }
 
 /// Send a command to the supervisor

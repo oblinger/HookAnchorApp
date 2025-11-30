@@ -764,6 +764,47 @@ fn setup_launcher_builtins(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Erro
         }
     })?)?;
 
+    // updateCommand(oldName, name, action, arg, patch, flags) -> updates an existing command by name
+    ctx.globals().set("updateCommand", Function::new(ctx.clone(), |old_name: String, name: String, action: String, arg: String, patch: String, flags: String| {
+        log(&format!("UPDATE_COMMAND: Updating '{}' -> name='{}', action='{}', arg='{}', patch='{}', flags='{}'",
+            old_name, name, action, arg, patch, flags));
+
+        // Get current commands
+        let mut commands = crate::core::data::get_commands();
+
+        // Find and update the command
+        let mut found = false;
+        for cmd in commands.iter_mut() {
+            if cmd.command == old_name {
+                cmd.command = name.clone();
+                cmd.action = action.clone();
+                cmd.arg = arg.clone();
+                cmd.patch = patch.clone();
+                cmd.flags = flags.clone();
+                cmd.update_full_line();
+                found = true;
+                break;
+            }
+        }
+
+        if !found {
+            log(&format!("UPDATE_COMMAND: Command '{}' not found", old_name));
+            return format!("Error: Command '{}' not found", old_name);
+        }
+
+        // Save to disk
+        match crate::core::data::set_commands(commands) {
+            Ok(_) => {
+                log(&format!("UPDATE_COMMAND: Successfully updated command '{}'", name));
+                format!("Command updated: {}", name)
+            },
+            Err(e) => {
+                log(&format!("UPDATE_COMMAND: Failed to save: {}", e));
+                format!("Error saving command: {}", e)
+            }
+        }
+    })?)?;
+
     Ok(())
 }
 
@@ -830,18 +871,22 @@ fn load_config_js_functions(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Err
                         {}
                         
                         // Create a context object with all builtins
-                        const createContext = function(arg, input, previous, grabbed, date, command_name, user_input, last_anchor_input) {{
-                            return {{
+                        const createContext = function(arg, input, previous, grabbed, date, command_name, user_input, last_anchor_input, extra_params) {{
+                            {}
+
+                            const ctx = {{
                                 arg: arg || '',
                                 input: input || '',
                                 command_name: command_name || '',
                                 user_input: user_input || '',
                                 last_anchor_input: last_anchor_input || '',
+                                selected: selected,
                                 previous: previous || {{ name: '', folder: '', patch: '' }},
                                 grabbed: grabbed || {{ action: '', arg: '' }},
                                 date: date || {{ YYYY: '', MM: '', DD: '' }},
                                 builtins: {{
                                     log: log,
+                                    detailedLog: detailedLog,
                                     print: print,
                                     debug: debug,
                                     error: error,
@@ -872,24 +917,35 @@ fn load_config_js_functions(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Err
                                     // spawnDetached removed - use shell("command &") instead
                                     appIsRunning: appIsRunning,
                                     encodeURIComponent: encodeURIComponent,
-                                    saveAnchor: saveAnchor
+                                    saveAnchor: saveAnchor,
+                                    updateCommand: updateCommand
                                 }}
                             }};
+                            // Merge extra_params into ctx if provided (for any other custom params)
+                            if (extra_params && typeof extra_params === 'object') {{
+                                for (const [key, value] of Object.entries(extra_params)) {{
+                                    // Skip _selected_* params as they're already in ctx.selected
+                                    if (!key.startsWith('_selected_')) {{
+                                        ctx[key] = value;
+                                    }}
+                                }}
+                            }}
+                            return ctx;
                         }};
-                        
+
                         // Expose each function globally with a wrapper that creates the context
                         let functionCount = 0;
                         for (const [name, func] of Object.entries(module.exports)) {{
                             if (typeof func === 'function') {{
-                                globalThis[name] = function(arg, input, previous, grabbed, date, command_name, user_input, last_anchor_input) {{
-                                    const ctx = createContext(arg, input, previous, grabbed, date, command_name, user_input, last_anchor_input);
+                                globalThis[name] = function(arg, input, previous, grabbed, date, command_name, user_input, last_anchor_input, extra_params) {{
+                                    const ctx = createContext(arg, input, previous, grabbed, date, command_name, user_input, last_anchor_input, extra_params);
                                     return func(ctx);
                                 }};
                                 functionCount++;
                             }}
                         }}
                     }})();
-                "#, config_js_content);
+                "#, config_js_content, crate::core::template_creation::generate_js_command_object_builder());
                 
                 // Execute the wrapper to define all functions
                 match ctx.eval::<(), _>(wrapper.as_str()) {

@@ -7,8 +7,8 @@
 # APPLICATION SETTINGS
 # =================================================================
 popup_settings:
-  verbose_logging:        false        # Controls if detailed logging messages added to the log
-  merge_similar:          true         # Merging similar commands in popup
+  verbose_logging:        true         # Controls if detailed logging messages added to the log
+  merge_similar:          false        # Merging similar commands in popup (disabled - needs work)
   max_rows:               25           # Max number of rows in the list of matching commands
   max_columns:            4            # Max columns in list of matching commands
   max_characters:         30           # Maximum characters for command names before truncation
@@ -124,7 +124,7 @@ actions:
     flags: "A"
     edit: true
     file: "{{last_executed.folder}}/{{date.year}} {{input}}/{{date.year}} {{input}}.md"
-    file_rescan: true
+    file_rescan: false
     contents: |
       .[[{{date.year}} {{input}}]].
       
@@ -140,7 +140,7 @@ actions:
     flags: "A"
     edit: true
     file: "~/ob/kmr/prj/{{date.year}} {{input}}/{{date.year}} {{input}}.md"
-    file_rescan: true
+    file_rescan: false
     contents: |
       .[[{{date.year}}-{{date.month}} {{input}}]].
       
@@ -155,7 +155,7 @@ actions:
     patch: "At"
     flags: ""
     edit: true
-    file_rescan: true
+    file_rescan: false
     contents: |
       =[[At]]  
 
@@ -171,7 +171,7 @@ actions:
     flags: ""
     edit: true
     file: "~/ob/kmr/At/Corp/@{{input}}.md"
-    file_rescan: true
+    file_rescan: false
     contents: |
       =[[Corp]]   
 
@@ -186,7 +186,7 @@ actions:
     patch: "DOC"
     flags: ""
     edit: true
-    file_rescan: true
+    file_rescan: false
     file: "~/ob/kmr/T/DOC/Doc{{input}}.md"
     contents: |
       #org   
@@ -235,7 +235,14 @@ actions:
     arg: ""
     edit: true
     use_existing: true
-    
+
+  wrap_file:
+    description: "Wrap file into folder with same name and make anchor"
+    action_type: wrap
+    key: "Cmd+W"
+    # ctx.selected is automatically populated from the selected command
+    # No need for template expansion - JS actions access ctx.selected.name, ctx.selected.arg, etc.
+
 
   create_alias:
     description: "Create alias to last executed command"
@@ -405,10 +412,17 @@ actions:
     dy: 0
     close_popup: false
 
-  kb_force_rebuild:
-    description: "Force rebuild: restart server + rescan"
+  kb_force_reload:
+    description: "Reload: restart servers (no rescan)"
     action_type: popup
     key: "Cmd+B"
+    popup_action: force_load
+    close_popup: false
+
+  kb_force_rebuild:
+    description: "Rebuild: restart servers + rescan filesystem"
+    action_type: popup
+    key: "Cmd+Shift+B"
     popup_action: force_rebuild
     close_popup: false
 

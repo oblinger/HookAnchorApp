@@ -756,6 +756,35 @@ impl PopupInterface for AnchorSelector {
         self.request_cursor_at_end = true;
         log(&format!("SET_INPUT_DEBUG: Set request_focus=true, request_cursor_at_end=true for text: '{}'", text));
     }
+
+    fn get_selected_command(&self) -> Option<crate::core::Command> {
+        self.popup_state.get_selected_command().cloned()
+    }
+
+    fn force_reload_commands(&mut self) {
+        log("RELOAD: Triggering full restart via ha --restart");
+        self.set_input("Restarting...".to_string());
+
+        // Spawn ha --restart as a detached process, then exit this popup
+        // The ha --restart will kill us and start a fresh popup
+        match std::process::Command::new("/Users/oblinger/ob/proj/HookAnchor/HookAnchorApp/target/release/ha")
+            .arg("--restart")
+            .stdin(std::process::Stdio::null())
+            .stdout(std::process::Stdio::null())
+            .stderr(std::process::Stdio::null())
+            .spawn()
+        {
+            Ok(_) => {
+                log("RELOAD: ha --restart spawned, exiting popup");
+                // Exit immediately - ha --restart will kill us anyway, but exiting cleanly is better
+                std::process::exit(0);
+            }
+            Err(e) => {
+                log_error(&format!("RELOAD: Failed to spawn ha --restart: {}", e));
+                self.set_input("".to_string());
+            }
+        }
+    }
 }
 
 impl AnchorSelector {
@@ -960,7 +989,51 @@ impl AnchorSelector {
             "activate_tmux" => self.activate_tmux(),
             "show_history_viewer" => self.show_history_viewer(),
             "toggle_show_files" => self.toggle_show_files(),
+            "force_load" | "reload" => self.force_reload_commands(),
+            "force_rebuild" => self.force_rebuild(),
             _ => log_error(&format!("Unknown popup action: {}", popup_action)),
+        }
+    }
+
+    /// Trigger full restart (brutal kill all processes and restart fresh)
+    fn force_reload_commands(&mut self) {
+        log("RELOAD: Triggering full restart via ha --restart");
+        self.set_input("Restarting...".to_string());
+
+        // Spawn ha --restart as a detached process, then exit this popup
+        // The ha --restart will kill us and start a fresh popup
+        match std::process::Command::new("/Users/oblinger/ob/proj/HookAnchor/HookAnchorApp/target/release/ha")
+            .arg("--restart")
+            .stdin(std::process::Stdio::null())
+            .stdout(std::process::Stdio::null())
+            .stderr(std::process::Stdio::null())
+            .spawn()
+        {
+            Ok(_) => {
+                log("RELOAD: ha --restart spawned, exiting popup");
+                // Exit immediately - ha --restart will kill us anyway, but exiting cleanly is better
+                std::process::exit(0);
+            }
+            Err(e) => {
+                log_error(&format!("RELOAD: Failed to spawn ha --restart: {}", e));
+                self.set_input("".to_string());
+            }
+        }
+    }
+
+    /// Force full rebuild (restart server + rescan filesystem)
+    fn force_rebuild(&mut self) {
+        log("REBUILD: Starting full rebuild with rescan");
+        // Show "Rebuilding..." in the input box
+        self.set_input("Rebuilding...".to_string());
+
+        // Use the ha binary to trigger a full rebuild
+        match std::process::Command::new("/Users/oblinger/ob/proj/HookAnchor/HookAnchorApp/target/release/ha")
+            .arg("--rebuild")
+            .spawn()
+        {
+            Ok(_) => log("REBUILD: Rebuild command launched"),
+            Err(e) => log_error(&format!("REBUILD: Failed to launch rebuild: {}", e)),
         }
     }
 

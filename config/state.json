@@ -1,7 +1,7 @@
 {
   "window_position": [
     980.0,
-    -471.0
+    -331.0
   ],
   "history_viewer_state": {
     "position": null,
@@ -13,14 +13,14 @@
     "sidebar_width": null,
     "show_current_commands": false
   },
-  "build_time": 1763846035,
+  "build_time": 1764521980,
   "last_scan_time": null,
   "last_scan_checksum": null,
-  "last_executed_command": "SEEK",
-  "server_pid": 82674,
+  "last_executed_command": "Hook Anchor",
+  "server_pid": 19566,
   "notion_last_scan": null,
-  "anchor_name": "SEEK",
-  "anchor_timestamp": 1763856303,
+  "anchor_name": "Hook Anchor",
+  "anchor_timestamp": 1764524407,
   "anchor_folder": null,
   "show_files": true
 }

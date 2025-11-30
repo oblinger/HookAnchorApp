@@ -184,7 +184,7 @@ module.exports = {
 
   // Open markdown file in Obsidian or default editor
   action_markdown: function(ctx) {
-    const { log, shell, launchApp, expandHome, getConfigString, getConfigString, getConfigString, encodeURIComponent } = ctx.builtins;
+    const { log, shell, launchApp, expandHome, getConfigString, encodeURIComponent } = ctx.builtins;
     const filePath = ctx.arg;
     
     detailedLog("MARKDOWN", `Processing file: '${filePath}'`);
@@ -696,6 +696,123 @@ module.exports = {
     // 5. Otherwise, generate an error
     error(`Illegal anchor argument: '${arg}' - must be a Notion URL, markdown file, folder, or document`);
     detailedLog("ANCHOR", `ERROR - Unrecognized argument type: '${arg}'`);
+  },
+
+  // WRAP: Wrap a file into a folder with the same base name and make it an anchor
+  // Example: /path/to/MyNote.md -> /path/to/MyNote/MyNote.md
+  // Uses ctx.selected object (same as template system): name, path/arg, action, patch, flags, folder
+  action_wrap: function(ctx) {
+    const { log, error, shellWithExitCode, expandHome, dirname, updateCommand } = ctx.builtins;
+
+    // Access selected command via ctx.selected object (unified with template system)
+    const selectedArg = ctx.selected.arg || "";
+    const selectedName = ctx.selected.name || "";
+    const selectedAction = ctx.selected.action || "markdown";
+    const selectedPatch = ctx.selected.patch || "";
+    const selectedFlags = ctx.selected.flags || "";
+
+    log(`WRAP: Starting wrap operation`);
+    log(`WRAP: Selected name: '${selectedName}'`);
+    log(`WRAP: Selected arg: '${selectedArg}'`);
+    log(`WRAP: Selected action: '${selectedAction}'`);
+    log(`WRAP: Selected patch: '${selectedPatch}'`);
+    log(`WRAP: Selected flags: '${selectedFlags}'`);
+
+    if (!selectedArg) {
+      error("WRAP: No file selected. Please select a command with a file path.");
+      return;
+    }
+
+    // Expand the path
+    const filePath = expandHome(selectedArg);
+    log(`WRAP: Expanded file path: '${filePath}'`);
+
+    // Verify the file exists
+    if (!fileExists(filePath)) {
+      error(`WRAP: File does not exist: ${filePath}`);
+      return;
+    }
+
+    // Get the directory and filename
+    const parentDir = dirname(filePath);
+    const fileName = filePath.split('/').pop();
+
+    // Get the base name (without extension)
+    const lastDot = fileName.lastIndexOf('.');
+    const baseName = lastDot > 0 ? fileName.substring(0, lastDot) : fileName;
+
+    // Get the parent folder's name (last component of parentDir)
+    const parentFolderName = parentDir.split('/').pop();
+
+    log(`WRAP: Parent dir: '${parentDir}'`);
+    log(`WRAP: Parent folder name: '${parentFolderName}'`);
+    log(`WRAP: File name: '${fileName}'`);
+    log(`WRAP: Base name: '${baseName}'`);
+
+    // Check if already wrapped (file is an anchor file - basename matches parent folder name)
+    if (baseName.toLowerCase() === parentFolderName.toLowerCase()) {
+      error(`WRAP: Command is already wrapped - '${fileName}' is already in folder '${parentFolderName}/'`);
+      return;
+    }
+
+    // New folder path
+    const newFolderPath = `${parentDir}/${baseName}`;
+
+    // Check if folder already exists
+    if (fileExists(newFolderPath)) {
+      error(`WRAP: Cannot wrap - folder already exists: ${newFolderPath}`);
+      return;
+    }
+
+    // New file path inside the folder
+    const newFilePath = `${newFolderPath}/${fileName}`;
+
+    log(`WRAP: Creating folder: '${newFolderPath}'`);
+    log(`WRAP: Moving file to: '${newFilePath}'`);
+
+    // Create the folder
+    const mkdirResult = shellWithExitCode(`mkdir "${newFolderPath}"`);
+    let mkdirData;
+    try {
+      mkdirData = JSON.parse(mkdirResult);
+    } catch (e) {
+      error(`WRAP: Failed to create folder: ${e}`);
+      return;
+    }
+
+    if (mkdirData.exitCode !== 0) {
+      error(`WRAP: Failed to create folder: ${mkdirData.stderr}`);
+      return;
+    }
+
+    // Move the file into the folder
+    const mvResult = shellWithExitCode(`mv "${filePath}" "${newFilePath}"`);
+    let mvData;
+    try {
+      mvData = JSON.parse(mvResult);
+    } catch (e) {
+      error(`WRAP: Failed to move file: ${e}`);
+      return;
+    }
+
+    if (mvData.exitCode !== 0) {
+      error(`WRAP: Failed to move file: ${mvData.stderr}`);
+      return;
+    }
+
+    log(`WRAP: Successfully wrapped file`);
+
+    // Add 'A' to flags if not already present
+    let newFlags = selectedFlags;
+    if (!newFlags.includes('A')) {
+      newFlags = newFlags + 'A';
+    }
+
+    // Update the command in the database using the builtin
+    const result = updateCommand(selectedName, selectedName, selectedAction, newFilePath, selectedPatch, newFlags);
+    log(`WRAP: Update command result: ${result}`);
+
+    return `Wrapped ${fileName} into ${baseName}/ folder`;
   },
 
   // TEST: Function to test JavaScript error reporting

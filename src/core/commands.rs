@@ -1782,12 +1782,18 @@ pub fn filter_commands(commands: &[Command], search_text: &str, max_results: usi
 
 
 
-/// Merges similar commands based on word removal approach (backward compatibility)
+/// Merges similar commands into a single "{prefix} ..." entry.
+/// Controlled by `config.popup_settings.merge_similar`.
+///
+/// ## Merging Rules
+/// 1. **Word-based**: Commands differing only in last word merge under shared prefix
+/// 2. **Anchor-based**: Anchor commands merge any command starting with anchor name + separator
+/// 3. **Context-aware**: Only merges if search context matches to a word boundary
 pub fn merge_similar_commands(commands: Vec<Command>, config: &Config) -> Vec<Command> {
     merge_similar_commands_with_context(commands, config, "")
 }
 
-/// Merges similar commands with awareness of search context
+/// See `merge_similar_commands` for rules.
 pub fn merge_similar_commands_with_context(commands: Vec<Command>, config: &Config, search_context: &str) -> Vec<Command> {
     if !config.popup_settings.merge_similar {
         return commands;
@@ -1798,31 +1804,47 @@ pub fn merge_similar_commands_with_context(commands: Vec<Command>, config: &Conf
     }
     
     let separators = &config.popup_settings.word_separators;
-    
-    // Step 1: Generate valid candidate strings by removing last word from each command
+
+    // Step 1: Generate valid candidate strings
     let mut valid_candidates = std::collections::HashSet::new();
+
+    // Rule 1: Word-based - remove last word from each command
     for cmd in &commands {
         if let Some(candidate) = remove_last_word(&cmd.command, separators) {
-            // Use position-based validation: merge only if there's a separator after the match position
             if is_valid_merge_candidate_by_position(&candidate, search_context, separators) {
                 valid_candidates.insert(candidate);
             }
         }
     }
-    
-    // Step 2: Patch commands by matching them against candidates
+
+    // Rule 2: Anchor-based - anchor names become merge candidates
+    // Note: Anchors don't need position validation - they're valid if they're in the command list
+    for cmd in &commands {
+        if cmd.is_anchor() {
+            valid_candidates.insert(cmd.command.clone());
+        }
+    }
+
+    // Step 2: Group commands by matching against candidates
     let mut groups: std::collections::HashMap<String, Vec<Command>> = std::collections::HashMap::new();
     let mut unmatched_commands = Vec::new();
-    
+
     for cmd in commands {
         let mut matched = false;
-        
-        // Try direct match against candidates
-        if valid_candidates.contains(&cmd.command) {
-            groups.entry(cmd.command.clone()).or_insert_with(Vec::new).push(cmd.clone());
-            matched = true;
-        } else {
-            // Try removing 1 word and matching against candidates
+
+        // Try prefix match first - prefer merging under shorter anchors (Rule 2)
+        for candidate in &valid_candidates {
+            if cmd.command.len() > candidate.len()
+               && cmd.command.starts_with(candidate.as_str())
+               && cmd.command.chars().nth(candidate.len()).map(|c| separators.contains(c)).unwrap_or(false) {
+                groups.entry(candidate.clone()).or_insert_with(Vec::new).push(cmd.clone());
+                matched = true;
+                break;
+            }
+        }
+
+        if !matched {
+            // Try removing 1 word and matching against candidates (Rule 1)
             if let Some(shortened) = remove_last_word(&cmd.command, separators) {
                 if valid_candidates.contains(&shortened) {
                     groups.entry(shortened).or_insert_with(Vec::new).push(cmd.clone());
@@ -1830,7 +1852,15 @@ pub fn merge_similar_commands_with_context(commands: Vec<Command>, config: &Conf
                 }
             }
         }
-        
+
+        if !matched {
+            // Direct match - command is itself a candidate with no parent
+            if valid_candidates.contains(&cmd.command) {
+                groups.entry(cmd.command.clone()).or_insert_with(Vec::new).push(cmd.clone());
+                matched = true;
+            }
+        }
+
         if !matched {
             unmatched_commands.push(cmd);
         }

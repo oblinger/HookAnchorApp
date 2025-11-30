@@ -555,52 +555,104 @@ pub fn build_prefix_menu(
     }
 
     let input = input.trim();
+    let separators = " ._-";
+    let input_normalized: String = input.to_lowercase()
+        .chars()
+        .filter(|c| !separators.contains(*c))
+        .collect();
+    let input_normalized_len = input_normalized.len();
 
-    
-    // Try all possible prefixes of the input string, starting from longest
-    // This allows "svplan" to match "SV Plan" and "RESD" to match "RES"
-    for prefix_len in (1..=input.len()).rev() {
-        let prefix = &input[..prefix_len];
+    // Phase 1: Check for EXACT match (anchor name == input)
+    // This handles cases like input "asf" matching anchor "ASF" exactly
+    for cmd in all_commands {
+        let cmd_trimmed = skip_leading_date_chars(&cmd.command);
+        let cmd_normalized: String = cmd.command.to_lowercase()
+            .chars()
+            .filter(|c| !separators.contains(*c))
+            .collect();
+        let cmd_trimmed_normalized: String = cmd_trimmed.to_lowercase()
+            .chars()
+            .filter(|c| !separators.contains(*c))
+            .collect();
 
-        // Collect all matching anchors at this prefix length using sophisticated matching
-        let mut matching_anchors: Vec<(Command, Command)> = Vec::new(); // (original, resolved)
+        let is_exact_match = cmd_normalized == input_normalized || cmd_trimmed_normalized == input_normalized;
+
+        if is_exact_match {
+            let resolved = cmd.resolve_alias(all_commands);
+            if resolved.is_anchor() {
+                let prefix_menu_commands = build_prefix_menu_commands(&resolved, all_commands, patches, "", config);
+                return Some((prefix_menu_commands, cmd.clone(), resolved, String::new()));
+            }
+        }
+    }
+
+    // Phase 2: No exact match found - use prefix matching with filter
+    // Try prefix lengths in order: (len-1), len, (len-2), ... to prefer leaving chars for filtering
+    let mut prefix_lengths: Vec<usize> = Vec::new();
+    if input_normalized_len > 1 {
+        prefix_lengths.push(input_normalized_len - 1);
+        prefix_lengths.push(input_normalized_len);
+        for len in (1..input_normalized_len-1).rev() {
+            prefix_lengths.push(len);
+        }
+    } else {
+        prefix_lengths.push(input_normalized_len);
+    }
+
+    for &prefix_len in &prefix_lengths {
+        let input_prefix = &input_normalized[..prefix_len];
+
+        // Collect all matching anchors at this prefix length
+        let mut matching_anchors: Vec<(Command, Command)> = Vec::new();
 
         for cmd in all_commands {
-            // Try matching with exact matching (no character skipping)
             let cmd_trimmed = skip_leading_date_chars(&cmd.command);
-            let separators = " ._-";
+            let cmd_normalized: String = cmd.command.to_lowercase()
+                .chars()
+                .filter(|c| !separators.contains(*c))
+                .collect();
+            let cmd_trimmed_normalized: String = cmd_trimmed.to_lowercase()
+                .chars()
+                .filter(|c| !separators.contains(*c))
+                .collect();
 
-            // Check if prefix exactly matches anchor (consecutive characters only, ignoring separators)
-            if anchor_matches_prefix_exactly(&cmd.command, prefix, separators) ||
-               anchor_matches_prefix_exactly(&cmd_trimmed, prefix, separators) {
+            let matches_original = cmd_normalized.starts_with(input_prefix);
+            let matches_trimmed = cmd_trimmed_normalized.starts_with(input_prefix);
+
+            if matches_original || matches_trimmed {
                 let resolved = cmd.resolve_alias(all_commands);
                 if resolved.is_anchor() {
-                    detailed_log("BUILD_PREFIX_MENU", &format!("Found matching anchor for prefix '{}': {} -> {}",
-                        prefix, cmd.command, resolved.command));
                     matching_anchors.push((cmd.clone(), resolved));
                 }
             }
         }
 
-        // If we found any matching anchors, choose the one with the shortest command name
-        // This ensures we pick the most specific/exact match (e.g., "HA" over "HA2")
         if !matching_anchors.is_empty() {
-            // Sort by ORIGINAL command name length (shortest first), not resolved
-            // This ensures that when user types "ha", we match "HA" (2 chars) over "HA2" (3 chars)
-            // even if "HA" is an alias that resolves to something longer like "Hook Anchor"
+            // Sort by command name length (shortest first)
             matching_anchors.sort_by(|a, b| a.0.command.len().cmp(&b.0.command.len()));
-
             let (original_command, resolved_command) = &matching_anchors[0];
 
             // Calculate remaining chars for filtering
-            let remaining_chars = if prefix_len < input.len() {
-                &input[prefix_len..].trim_start()
+            let remaining_chars = if prefix_len < input_normalized_len {
+                // Find where the prefix ends in the original input
+                let mut consumed_normalized = 0;
+                let mut input_pos = 0;
+                for ch in input.chars() {
+                    if consumed_normalized >= prefix_len {
+                        break;
+                    }
+                    if !separators.contains(ch) {
+                        consumed_normalized += 1;
+                    }
+                    input_pos += ch.len_utf8();
+                }
+                &input[input_pos..].trim_start()
             } else {
                 ""
             };
 
-            detailed_log("BUILD_PREFIX_MENU", &format!("Selected shortest matching anchor='{}' (orig='{}') for input='{}', filter='{}'",
-                resolved_command.command, original_command.command, input, remaining_chars));
+            detailed_log("BUILD_PREFIX_MENU", &format!("Selected anchor='{}' for input='{}', filter='{}'",
+                resolved_command.command, input, remaining_chars));
 
             let prefix_menu_commands = build_prefix_menu_commands(&resolved_command, all_commands, patches, remaining_chars, config);
             return Some((prefix_menu_commands, original_command.clone(), resolved_command.clone(), remaining_chars.to_string()));
@@ -634,9 +686,20 @@ fn build_prefix_menu_commands(
 
     // Add the anchor command itself only if it matches the filter
     // If filter_text is empty, always include the anchor (full match)
-    // If filter_text exists, only include if anchor name matches it
-    if filter_text.is_empty() || command_matches_query_with_debug(&anchor_command.command, filter_text, false) >= 0 {
+    // If filter_text exists, only include if anchor has patch-based membership AND matches filter
+    // (Anchor cannot have name-based membership in its own menu - that's handled by the loop below
+    // which explicitly excludes commands where cmd_lower == anchor_lower)
+    if filter_text.is_empty() {
         prefix_menu_commands.push(anchor_command.clone());
+    } else {
+        // Only include anchor if it has patch-based membership (patch field matches anchor name)
+        // In this case, match filter against full command name since there's no prefix to skip
+        let anchor_lower = anchor_name.to_lowercase();
+        let has_matching_patch = anchor_command.patch.to_lowercase() == anchor_lower;
+
+        if has_matching_patch && command_matches_query_with_debug(&anchor_command.command, filter_text, false) >= 0 {
+            prefix_menu_commands.push(anchor_command.clone());
+        }
     }
 
     // Find all commands that have the anchor name as a prefix
@@ -935,7 +998,6 @@ pub fn get_new_display_commands(
         // Just return the global matches as if there was no prefix menu
         if prefix_menu_commands.is_empty() {
             detailed_log("DISPLAY", "Prefix menu empty after filtering - hiding prefix menu and showing only global matches");
-            // No exact match special handling needed here since we're treating this as no-prefix-menu case
             return (prefix_commands, false, None, 0, None, String::new());
         }
 

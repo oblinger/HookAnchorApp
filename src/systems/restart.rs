@@ -61,33 +61,93 @@ pub fn supervisor_command(action: &str) -> Result<String, String> {
     }
 }
 
-/// Kill all popup_server processes
+/// Kill all popup_server processes - BRUTALLY
+///
+/// This function will:
+/// 1. Find ALL matching processes
+/// 2. Send SIGTERM first
+/// 3. Wait and verify they're dead
+/// 4. If any survive, SIGKILL (-9) them
+/// 5. Verify again and panic if anything survives
 ///
 /// Returns Ok(true) if processes were killed, Ok(false) if none found, Err on failure
 pub fn kill_popup_servers() -> Result<bool, String> {
-    // Kill both old and new popup server binary names
-    // - popup_server (new binary name)
-    // - HookAnchorPopupServer (old binary name)
-    let patterns = vec!["popup_server", "HookAnchorPopupServer"];
+    // ALL patterns we need to kill - be thorough
+    let patterns = vec![
+        "popup_server",
+        "HookAnchorPopupServer",
+        "HookAnchorSupervisor",
+    ];
+
     let mut any_killed = false;
 
-    for pattern in patterns {
-        match Command::new("pkill")
+    // First pass: SIGTERM all matching processes
+    for pattern in &patterns {
+        let _ = Command::new("pkill")
             .arg("-f")
             .arg(pattern)
-            .output() {
-            Ok(output) => {
-                if output.status.success() {
-                    any_killed = true;
-                    detailed_log("RESTART", &format!("Killed processes matching: {}", pattern));
+            .output();
+    }
+
+    // Wait for graceful shutdown
+    std::thread::sleep(std::time::Duration::from_millis(500));
+
+    // Check what's still alive and SIGKILL it
+    for pattern in &patterns {
+        if let Ok(output) = Command::new("pgrep").arg("-f").arg(pattern).output() {
+            if output.status.success() && !output.stdout.is_empty() {
+                let pids = String::from_utf8_lossy(&output.stdout);
+                log(&format!("RESTART: {} still alive after SIGTERM (PIDs: {}), sending SIGKILL", pattern, pids.trim()));
+
+                // SIGKILL each PID individually
+                for pid in pids.trim().lines() {
+                    let pid = pid.trim();
+                    if !pid.is_empty() {
+                        let _ = Command::new("kill").arg("-9").arg(pid).output();
+                        any_killed = true;
+                    }
                 }
-            }
-            Err(e) => {
-                detailed_log("RESTART", &format!("Failed to pkill {}: {}", pattern, e));
             }
         }
     }
 
+    // Wait for SIGKILL to take effect
+    std::thread::sleep(std::time::Duration::from_millis(300));
+
+    // VERIFY everything is dead - if not, we have a serious problem
+    for pattern in &patterns {
+        if let Ok(output) = Command::new("pgrep").arg("-f").arg(pattern).output() {
+            if output.status.success() && !output.stdout.is_empty() {
+                let pids = String::from_utf8_lossy(&output.stdout);
+                // Try one more SIGKILL
+                for pid in pids.trim().lines() {
+                    let pid = pid.trim();
+                    if !pid.is_empty() {
+                        log_error(&format!("RESTART: CRITICAL - {} (PID {}) SURVIVED SIGKILL! Force killing again...", pattern, pid));
+                        let _ = Command::new("kill").arg("-9").arg(pid).output();
+                    }
+                }
+            }
+        }
+    }
+
+    // Final verification after 200ms
+    std::thread::sleep(std::time::Duration::from_millis(200));
+    let mut survivors = Vec::new();
+    for pattern in &patterns {
+        if let Ok(output) = Command::new("pgrep").arg("-f").arg(pattern).output() {
+            if output.status.success() && !output.stdout.is_empty() {
+                let pids = String::from_utf8_lossy(&output.stdout);
+                survivors.push(format!("{}: {}", pattern, pids.trim()));
+            }
+        }
+    }
+
+    if !survivors.is_empty() {
+        return Err(format!("FATAL: Processes survived SIGKILL: {}", survivors.join(", ")));
+    }
+
+    log("RESTART: All HookAnchor processes verified dead");
     Ok(any_killed)
 }
 
@@ -300,6 +360,9 @@ pub fn stop_all_servers() -> Result<(bool, bool), String> {
         }
     }
 
+    // Clean up server startup lock file to prevent orphaned locks blocking restart
+    let _ = fs::remove_file("/tmp/hookanchor_server_starting.lock");
+
     Ok((popup_killed, command_killed))
 }
 
@@ -484,26 +547,48 @@ fn start_supervisor() -> Result<(), String> {
 fn verify_all_stopped() -> Result<(), String> {
     use std::process::Command;
 
-    // Check for popup_server
-    let popup_check = Command::new("pgrep")
-        .arg("-f")
-        .arg("popup_server")
-        .output();
+    // ALL patterns to check - must match kill_popup_servers patterns
+    let patterns = vec![
+        "popup_server",
+        "HookAnchorPopupServer",
+        "HookAnchorSupervisor",
+    ];
 
-    if let Ok(output) = popup_check {
-        if output.status.success() && !output.stdout.is_empty() {
-            let pids = String::from_utf8_lossy(&output.stdout);
-            return Err(format!("popup_server still running after stop (PIDs: {})", pids.trim()));
+    let mut survivors = Vec::new();
+
+    for pattern in &patterns {
+        if let Ok(output) = Command::new("pgrep").arg("-f").arg(pattern).output() {
+            if output.status.success() && !output.stdout.is_empty() {
+                let pids = String::from_utf8_lossy(&output.stdout);
+                survivors.push(format!("{}: PIDs {}", pattern, pids.trim()));
+            }
         }
     }
 
-    // Check command server by looking for socket
-    let command_socket = get_execution_server_socket_path();
-    if command_socket.exists() {
-        return Err(format!("Command server socket still exists: {}", command_socket.display()));
+    if !survivors.is_empty() {
+        return Err(format!("Processes still running after stop: {}", survivors.join(", ")));
     }
 
-    print_and_log("  ✓ Verified: All servers stopped");
+    // Check sockets are cleaned up
+    let popup_socket = get_popup_socket_path();
+    if popup_socket.exists() {
+        let _ = fs::remove_file(&popup_socket);
+    }
+
+    let command_socket = get_execution_server_socket_path();
+    if command_socket.exists() {
+        let _ = fs::remove_file(&command_socket);
+    }
+
+    let supervisor_socket = crate::core::get_config_dir().join("supervisor.sock");
+    if supervisor_socket.exists() {
+        let _ = fs::remove_file(&supervisor_socket);
+    }
+
+    // Clean up server startup lock file
+    let _ = fs::remove_file("/tmp/hookanchor_server_starting.lock");
+
+    print_and_log("  ✓ Verified: All servers stopped and sockets cleaned");
     Ok(())
 }
 

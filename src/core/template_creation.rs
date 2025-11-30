@@ -1,5 +1,5 @@
 //! Template Creation System
-//! 
+//!
 //! Provides a flexible template-based system for creating new commands
 //! with variable expansion and customizable fields.
 
@@ -9,6 +9,42 @@ use serde::{Deserialize, Serialize};
 use crate::core::Command;
 use crate::core::key_processing::Keystroke;
 use crate::prelude::*;
+
+/// Canonical field names for command objects in JavaScript context.
+/// These are used consistently in both template expansion and JS action execution.
+///
+/// The command object (e.g., `selected`, `last_executed`) has these fields:
+/// - `name`: The command name
+/// - `path`: The file path (same as arg for file-based commands)
+/// - `arg`: Alias for path (for backward compatibility)
+/// - `patch`: The patch/category name
+/// - `action`: The action type (e.g., "markdown", "app", "url")
+/// - `flags`: Command flags (e.g., "A" for anchor)
+/// - `folder`: Parent folder of the path (throws error if empty when accessed)
+///
+/// Variable naming convention:
+/// - Internal HashMap keys use underscore prefix: `_selected_name`, `_selected_path`, etc.
+/// - JavaScript objects use direct property access: `selected.name`, `selected.path`, etc.
+
+/// Generates JavaScript code to build a command object from extra_params.
+/// This is used by the JS runtime to create the `selected` object consistently
+/// with the template system's `create_command_object` method.
+///
+/// The generated code expects `extra_params` to contain:
+/// - `_selected_name`, `_selected_path`, `_selected_patch`,
+/// - `_selected_action`, `_selected_flags`, `_selected_folder`
+pub fn generate_js_command_object_builder() -> &'static str {
+    r#"// Build selected object from extra_params (same structure as template system)
+                            const selected = {
+                                name: (extra_params && extra_params._selected_name) || '',
+                                path: (extra_params && extra_params._selected_path) || '',
+                                arg: (extra_params && extra_params._selected_path) || '',  // alias for path
+                                patch: (extra_params && extra_params._selected_patch) || '',
+                                action: (extra_params && extra_params._selected_action) || '',
+                                flags: (extra_params && extra_params._selected_flags) || '',
+                                folder: (extra_params && extra_params._selected_folder) || ''
+                            };"#
+}
 
 /// A template for creating new commands
 #[derive(Debug, Clone, Deserialize, Serialize)]

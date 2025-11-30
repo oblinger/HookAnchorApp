@@ -247,9 +247,16 @@ impl PopupState {
         let (display_commands, is_prefix_menu, prefix_menu_info, prefix_menu_count, default_selection_index, filter_text) =
             get_new_display_commands(&self.search_text(), &sys_data.commands, &sys_data.patches, &self.config);
 
+        // Apply command merging (collapses similar commands into "prefix ..." entries)
+        let merged_commands = crate::core::merge_similar_commands_with_context(
+            display_commands,
+            &self.config,
+            &self.search_text()
+        );
+
         // Apply max limit
         let total_limit = self.config.popup_settings.max_rows * self.config.popup_settings.max_columns;
-        let mut limited_commands = display_commands;
+        let mut limited_commands = merged_commands;
         limited_commands.truncate(total_limit);
 
         self.filtered_commands = limited_commands;

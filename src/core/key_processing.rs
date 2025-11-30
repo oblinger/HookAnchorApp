@@ -475,6 +475,9 @@ pub trait PopupInterface {
     
     /// Close the command editor
     fn close_command_editor(&mut self);
+
+    /// Get the currently selected command (for template expansion in keyboard actions)
+    fn get_selected_command(&self) -> Option<super::Command>;
     
     /// Close the dialog
     fn close_dialog(&mut self);
@@ -493,6 +496,9 @@ pub trait PopupInterface {
 
     /// Set input text and position cursor at the end
     fn set_input(&mut self, text: String);
+
+    /// Force reload commands (restart servers without rescan)
+    fn force_reload_commands(&mut self);
 }
 
 /// Registry for key event handlers
@@ -883,6 +889,11 @@ impl PopupActionHandler {
                 context.popup.toggle_show_files();
                 KeyHandlerResult::Handled
             },
+            "force_load" | "reload" => {
+                context.popup.force_reload_commands();
+                KeyHandlerResult::Handled
+            },
+            // Note: "force_rebuild" is handled earlier in this match (line ~815) with egui context
             _ => {
                 // Unknown action - log warning and skip
                 log(&format!("⚠️ Unknown popup action: {}", self.action_name));
@@ -989,7 +1000,7 @@ impl JavaScriptHandler {
 }
 
 impl KeyHandler for JavaScriptHandler {
-    fn execute(&self, _context: &mut KeyHandlerContext) -> KeyHandlerResult {
+    fn execute(&self, context: &mut KeyHandlerContext) -> KeyHandlerResult {
         log(&format!("🔧 JavaScript handler executing function: {}", self.function_name));
 
         // Create an action with all the stored parameters from the config
@@ -1007,8 +1018,33 @@ impl KeyHandler for JavaScriptHandler {
         action_params.insert("function".to_string(), serde_json::Value::String(self.function_name.clone()));
         let action = crate::execute::Action { params: action_params };
 
+        // Get selected command from popup context and build variables for template expansion
+        let variables = if let Some(selected_cmd) = context.popup.get_selected_command() {
+            let mut vars = std::collections::HashMap::new();
+            vars.insert("_selected_name".to_string(), selected_cmd.command.clone());
+            vars.insert("_selected_path".to_string(), selected_cmd.arg.clone());
+            vars.insert("_selected_patch".to_string(), selected_cmd.patch.clone());
+            vars.insert("_selected_action".to_string(), selected_cmd.action.clone());
+            vars.insert("_selected_flags".to_string(), selected_cmd.flags.clone());
+            // Extract folder from arg if it's a path
+            let folder = if !selected_cmd.arg.is_empty() {
+                std::path::Path::new(&selected_cmd.arg)
+                    .parent()
+                    .map(|p| p.to_string_lossy().to_string())
+                    .unwrap_or_default()
+            } else {
+                String::new()
+            };
+            vars.insert("_selected_folder".to_string(), folder);
+            log(&format!("🔧 JavaScript handler: selected command = '{}', arg = '{}'", selected_cmd.command, selected_cmd.arg));
+            Some(vars)
+        } else {
+            log(&format!("🔧 JavaScript handler: no selected command"));
+            None
+        };
+
         // Execute the JavaScript function via the command server
-        match crate::execute::execute_on_server(&action, None) {
+        match crate::execute::execute_on_server(&action, variables) {
             Ok(result) => {
                 log(&format!("✅ JavaScript function '{}' executed successfully: {}", self.function_name, result));
                 KeyHandlerResult::Handled
