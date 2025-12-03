@@ -8,7 +8,7 @@
 # =================================================================
 popup_settings:
   verbose_logging:        false        # Controls if detailed logging messages added to the log
-  merge_similar:          true         # Merging similar commands in popup
+  merge_similar:          false         # BROKEN - causes menu to not work right, needs fixing
   max_rows:               25           # Max number of rows in the list of matching commands
   max_columns:            4            # Max columns in list of matching commands
   max_characters:         30           # Maximum characters for command names before truncation
@@ -115,6 +115,21 @@ actions:
   # TEMPLATE ACTIONS - For creating new commands & files
   # =================================================================
 
+
+  child_dated_markdown:
+    description: "Creates markdown in in the same folder as current command with a YYYY-MM-DD prefix"
+    action_type: template
+    key: "Cmd+D"
+    name: "{{date.year}}-{{date.month}}-{{date.day}} {{input}}"
+    action: "markdown"
+    arg: "{{last_executed.folder}}/{{date.year}}-{{date.month}}-{{date.day}} {{input}}.md"
+    patch: "{{last_executed.name}}"
+    edit: true
+    file: "{{last_executed.folder}}/{{date.year}}-{{date.month}}-{{date.day}} {{input}}.md"
+    file_rescan: false
+    contents: ""
+             
+
   child_year_folder:
     description: "Creates a new subfolder with a YYYY prefix"
     action_type: template
@@ -124,7 +139,7 @@ actions:
     flags: "A"
     edit: true
     file: "{{last_executed.folder}}/{{date.year}} {{input}}/{{date.year}} {{input}}.md"
-    file_rescan: true
+    file_rescan: false
     contents: |
       .[[{{date.year}} {{input}}]].
       
@@ -140,7 +155,7 @@ actions:
     flags: "A"
     edit: true
     file: "~/ob/kmr/prj/{{date.year}} {{input}}/{{date.year}} {{input}}.md"
-    file_rescan: true
+    file_rescan: false
     contents: |
       .[[{{date.year}}-{{date.month}} {{input}}]].
       
@@ -155,7 +170,7 @@ actions:
     patch: "At"
     flags: ""
     edit: true
-    file_rescan: true
+    file_rescan: false
     contents: |
       =[[At]]  
 
@@ -171,7 +186,7 @@ actions:
     flags: ""
     edit: true
     file: "~/ob/kmr/At/Corp/@{{input}}.md"
-    file_rescan: true
+    file_rescan: false
     contents: |
       =[[Corp]]   
 
@@ -179,14 +194,14 @@ actions:
   child_doc_entry:
     description: "Creates a new DOC documentation file"
     action_type: template
-    key: "Cmd+D"
+    key: "Cmd+Shift+D"
     name: "Doc{{input}}"
     action: "doc"
     arg: "~/ob/kmr/T/DOC/Doc{{input}}.md"
     patch: "DOC"
     flags: ""
     edit: true
-    file_rescan: true
+    file_rescan: false
     file: "~/ob/kmr/T/DOC/Doc{{input}}.md"
     contents: |
       #org   
@@ -285,21 +300,6 @@ actions:
     file: "{{last_executed.folder}}/{{input}}.md"
     validate_last_executed_folder: true
        
-
-  year:
-    description: "Creates an anchor and subfolder with a YYYY-MM-DD prefix"
-    action_type: template
-    key: "Cmd+Y"
-    name: "{{date.year}}-{{date.month}}-{{date.day}} {{input}}"
-    action: "markdown"
-    arg: "{{last_executed.folder}}/{{date.year}}-{{date.month}}-{{date.day}} {{input}}.md"
-    patch: "{{last_executed.patch}}"
-    flags: "A"
-    edit: true
-    file: "{{last_executed.folder}}/{{date.year}}-{{date.month}}-{{date.day}} {{input}}.md"
-    file_rescan: true
-    contents: ""
-             
 
 
   # =================================================================

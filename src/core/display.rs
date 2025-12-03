@@ -140,7 +140,11 @@
 //! 1. **Exact Matches** - command name equals input (ignoring whitespace, case-insensitive)
 //! 2. **No Words Skipped** - matched at least one character from every word
 //! 3. **Words Skipped** - skipped one or more words during matching
-//! 4. **Alphabetical** - within each tier, sort alphabetically (case-insensitive)
+//! 4. **Fewer Words Matched** - within each tier, prefer matches spanning fewer words
+//!    - Given same number of input characters, prefer matching fewer words in the command
+//!    - Example: "pap" → "PAPERS" (1 word) beats "Pantone Peri" (2 words)
+//!    - Example: "fb" → "FB" (1 word) beats "Foo Bar" (2 words)
+//! 5. **Alphabetical** - within each sub-tier, sort alphabetically (case-insensitive)
 //!    - Alpha characters before numeric characters
 //!    - Shorter names win ties when lowercase names identical
 //!
@@ -269,6 +273,61 @@ fn compare_commands_case_insensitive(a: &Command, b: &Command) -> std::cmp::Orde
 /// # Arguments
 /// * `commands` - Mutable reference to vector of commands to sort
 /// * `input` - The input string to compare against (filter text, anchor name, or full input)
+
+/// Count how many words in the command were matched by the query
+/// Returns (words_matched, skipped_any_word)
+/// - words_matched: number of words that had at least one character matched
+/// - skipped_any_word: true if any word was completely skipped during matching
+fn count_words_matched(command: &str, query: &str) -> (usize, bool) {
+    if query.is_empty() {
+        return (0, false);
+    }
+
+    let command_lower = command.to_lowercase();
+    let query_lower = query.to_lowercase();
+    let separators = " ._-";
+
+    // Split command into words
+    let words: Vec<&str> = command_lower
+        .split(|c: char| separators.contains(c))
+        .filter(|w| !w.is_empty())
+        .collect();
+
+    if words.is_empty() {
+        return (0, true);
+    }
+
+    let query_chars: Vec<char> = query_lower.chars().collect();
+    let mut query_idx = 0;
+    let mut words_matched = 0;
+    let mut skipped_any = false;
+
+    // For each word, check if at least one character was matched
+    for word in &words {
+        let word_chars: Vec<char> = word.chars().collect();
+        let mut matched_in_word = false;
+        let mut word_char_idx = 0;
+
+        // Try to match characters from this word
+        while word_char_idx < word_chars.len() && query_idx < query_chars.len() {
+            if word_chars[word_char_idx] == query_chars[query_idx] {
+                matched_in_word = true;
+                query_idx += 1;
+            }
+            word_char_idx += 1;
+        }
+
+        if matched_in_word {
+            words_matched += 1;
+        } else if query_idx < query_chars.len() {
+            // We still have query chars to match but didn't match any in this word
+            skipped_any = true;
+        }
+    }
+
+    (words_matched, skipped_any)
+}
+
 /// Determine if a match between query and command skipped any words
 /// Returns true if at least one character from every word was matched
 /// Returns false if one or more words were entirely skipped
@@ -350,8 +409,19 @@ fn sort_commands_by_relevance(commands: &mut Vec<Command>, input: &str) {
             return std::cmp::Ordering::Greater;
         }
 
-        // Tier 3: Words skipped (or same tier)
-        // Both are same type of match - sort case-insensitively
+        // Tier 3: Fewer words matched is better
+        // Given same number of input characters, prefer matching fewer words
+        // Example: "pap" → "PAPERS" (1 word) beats "Pantone Peri" (2 words)
+        let (a_words, _) = count_words_matched(&a.command, input);
+        let (b_words, _) = count_words_matched(&b.command, input);
+
+        if a_words < b_words {
+            return std::cmp::Ordering::Less;
+        } else if a_words > b_words {
+            return std::cmp::Ordering::Greater;
+        }
+
+        // Tier 4: Same word count - sort case-insensitively alphabetically
         compare_commands_case_insensitive(a, b)
     });
 }

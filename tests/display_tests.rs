@@ -754,6 +754,75 @@ fn part4_multi_char_matching_no_skip_priority_global() {
     assert_order(&result, "Two Tower Learning", "The Writing Is On The Wall");
 }
 
+#[test]
+fn part4_fewer_words_matched_preferred_global() {
+    // Given same number of input characters matched, prefer matching fewer words
+    // "pap" matching "PAPERS" (1 word) should beat "Pantone Peri" (2 words)
+    let scaffold = scaffold(r#"
+        PAPERS:folder; A:=/papers
+        Pantone Peri:folder; A:=/pantone
+        Paper Airplane Project:folder; A:=/paper_airplane
+    "#);
+
+    let (result, is_prefix, _, _, _, _) = get_new_display_commands(
+        "pap",
+        &scaffold.commands,
+        &scaffold.patches,
+        &scaffold.config
+    );
+
+    assert_prefix_menu(is_prefix, false);
+
+    // "PAPERS" should appear before "Pantone Peri"
+    // Both match "pap" but PAPERS matches all 3 chars from 1 word
+    // while "Pantone Peri" matches across 2 words (Pa from Pantone, P from Peri)
+    assert_order(&result, "PAPERS", "Pantone Peri");
+}
+
+#[test]
+fn part4_fewer_words_matched_preferred_two_char() {
+    // Test with 2-char input: "fb" → "FB" (1 word) beats "Foo Bar" (2 words)
+    let scaffold = scaffold(r#"
+        FB:folder; A:=/fb
+        Foo Bar:folder; A:=/foobar
+    "#);
+
+    let (result, is_prefix, _, _, _, _) = get_new_display_commands(
+        "fb",
+        &scaffold.commands,
+        &scaffold.patches,
+        &scaffold.config
+    );
+
+    assert_prefix_menu(is_prefix, false);
+
+    // "FB" should beat "Foo Bar" - same 2 chars but FB is 1 word
+    assert_order(&result, "FB", "Foo Bar");
+}
+
+#[test]
+fn part4_fewer_words_matched_in_prefix_menu() {
+    // Same rule applies within prefix menus
+    let scaffold = scaffold(r#"
+        Main:anchor; F:=A A:=/main
+        Main! PAPERS:folder; A:=/papers
+        Main! Pantone Peri:folder; A:=/pantone
+        Main! Paper Airplane:folder; A:=/paper_airplane
+    "#);
+
+    let (result, is_prefix, _, _, _, _) = get_new_display_commands(
+        "Mainpap",
+        &scaffold.commands,
+        &scaffold.patches,
+        &scaffold.config
+    );
+
+    assert_prefix_menu(is_prefix, true);
+
+    // Within the prefix menu, "PAPERS" should beat "Pantone Peri"
+    assert_order(&result, "PAPERS", "Pantone Peri");
+}
+
 // ============================================================================
 // PART 5: FINAL MENU ASSEMBLY
 // ============================================================================
