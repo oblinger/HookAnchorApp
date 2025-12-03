@@ -1500,11 +1500,23 @@ impl AnchorSelector {
                             } else {
                                 // For other templates, search by name (case-insensitive for backward compatibility)
                                 // IMPORTANT: Get fresh commands from sys_data, not cached popup_state.commands
-                                let expanded_name = context.expand(&template.name);
-                                let fresh_commands = crate::core::data::get_commands();
-                                fresh_commands.iter().find(|cmd|
-                                    cmd.command.eq_ignore_ascii_case(&expanded_name)
-                                ).cloned()
+                                // Get the name from the Command operation in the template
+                                let command_name = template.operations.iter()
+                                    .find_map(|op| {
+                                        if let crate::core::TemplateOperation::Command { name, .. } = op {
+                                            Some(context.expand(name))
+                                        } else {
+                                            None
+                                        }
+                                    });
+                                if let Some(expanded_name) = command_name {
+                                    let fresh_commands = crate::core::data::get_commands();
+                                    fresh_commands.iter().find(|cmd|
+                                        cmd.command.eq_ignore_ascii_case(&expanded_name)
+                                    ).cloned()
+                                } else {
+                                    None
+                                }
                             }
                         } else {
                             None

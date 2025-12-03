@@ -65,71 +65,23 @@ impl Action {
         if self.action_type() != "template" {
             return None;
         }
-        
-        // Extract template fields from params
-        let name = self.params.get("name")
-            .and_then(|v| v.as_str())
-            .unwrap_or("{{input}}")
-            .to_string();
-            
-        let action = self.params.get("action")
-            .and_then(|v| v.as_str())
-            .unwrap_or("app")
-            .to_string();
-            
-        let arg = self.params.get("arg")
-            .and_then(|v| v.as_str())
-            .unwrap_or("")
-            .to_string();
-            
-        let patch = self.params.get("patch")
-            .and_then(|v| v.as_str())
-            .unwrap_or("")
-            .to_string();
-            
-        let flags = self.params.get("flags")
-            .and_then(|v| v.as_str())
-            .unwrap_or("")
-            .to_string();
-            
-        let grab = self.params.get("grab")
-            .and_then(|v| v.as_u64())
-            .map(|v| v as u32);
-            
-        let edit = self.params.get("edit")
-            .and_then(|v| v.as_bool())
-            .unwrap_or(false);
-            
-        let file = self.params.get("file")
-            .and_then(|v| v.as_str())
-            .map(|s| s.to_string());
-            
-        let file_rescan = self.params.get("file_rescan")
-            .and_then(|v| v.as_bool())
-            .unwrap_or(false);
-        
-        let use_existing = self.params.get("use_existing")
-            .and_then(|v| v.as_bool())
-            .unwrap_or(false);
-        
+
+        // Parse operations list (required)
+        let operations = self.params.get("operations")
+            .and_then(|v| {
+                serde_json::from_value::<Vec<crate::core::template_creation::TemplateOperation>>(v.clone()).ok()
+            })?;
+
         Some(crate::core::template_creation::Template {
-            name,
-            action,
-            arg,
-            patch,
-            flags,
+            operations,
             key: self.key().map(|s| s.to_string()),
-            keystroke: None,  // Will be computed if needed
-            grab,
-            edit,
-            use_existing,
-            file,
-            contents: self.params.get("contents")
-                .and_then(|v| v.as_str())
-                .map(|s| s.to_string()),
+            keystroke: None,
+            grab: self.params.get("grab").and_then(|v| v.as_u64()).map(|v| v as u32),
+            edit: self.params.get("edit").and_then(|v| v.as_bool()).unwrap_or(false),
+            use_existing: self.params.get("use_existing").and_then(|v| v.as_bool()).unwrap_or(false),
             description: self.description().map(|s| s.to_string()),
-            validate_previous_folder: false,  // Not used in unified actions
-            file_rescan,
+            validate_previous_folder: self.params.get("validate_last_executed_folder").and_then(|v| v.as_bool()).unwrap_or(false),
+            file_rescan: self.params.get("file_rescan").and_then(|v| v.as_bool()).unwrap_or(false),
         })
     }
 }

@@ -26,6 +26,61 @@ use crate::prelude::*;
 /// - Internal HashMap keys use underscore prefix: `_selected_name`, `_selected_path`, etc.
 /// - JavaScript objects use direct property access: `selected.name`, `selected.path`, etc.
 
+/// Operations that can be performed by a template.
+/// Templates can define a list of operations to execute in order.
+#[derive(Debug, Clone, Deserialize, Serialize)]
+#[serde(tag = "type")]
+pub enum TemplateOperation {
+    /// Create a new command
+    #[serde(rename = "command")]
+    Command {
+        /// The name of the command to create
+        name: String,
+        /// The action type (e.g., "markdown", "app")
+        action: String,
+        /// The argument for the command
+        arg: String,
+        /// The patch/category for the command
+        #[serde(default)]
+        patch: String,
+        /// Command flags (e.g., "A" for anchor)
+        #[serde(default)]
+        flags: String,
+        /// If true, open command editor before creating
+        #[serde(default)]
+        edit: bool,
+        /// If true, use existing command with same name if it exists
+        #[serde(default)]
+        use_existing: bool,
+    },
+    /// Create a new file
+    #[serde(rename = "create")]
+    Create {
+        /// Path to the file to create
+        file: String,
+        /// Contents to write to the file
+        #[serde(default)]
+        contents: String,
+    },
+    /// Append to an existing file
+    #[serde(rename = "append")]
+    Append {
+        /// Path to the file to append to
+        file: String,
+        /// Contents to append
+        contents: String,
+        /// Optional: insert after this line (if not found, add this line first)
+        #[serde(default)]
+        after: Option<String>,
+    },
+    /// Copy contents to clipboard
+    #[serde(rename = "clip")]
+    Clip {
+        /// Contents to put in clipboard
+        contents: String,
+    },
+}
+
 /// Generates JavaScript code to build a command object from extra_params.
 /// This is used by the JS runtime to create the `selected` object consistently
 /// with the template system's `create_command_object` method.
@@ -47,62 +102,40 @@ pub fn generate_js_command_object_builder() -> &'static str {
 }
 
 /// A template for creating new commands
+/// Templates use operations to define what to create (commands, files, clipboard, etc.)
 #[derive(Debug, Clone, Deserialize, Serialize)]
 pub struct Template {
-    /// The name of the command to be created (supports variable expansion)
-    pub name: String,
-    
-    /// The action for the command (supports variable expansion)
-    pub action: String,
-    
-    /// The argument string for the command (supports variable expansion)
-    pub arg: String,
-    
-    /// The patch string for the command (supports variable expansion)
-    #[serde(default)]
-    pub patch: String,
-    
-    /// The flags string for the command (supports variable expansion)
-    #[serde(default)]
-    pub flags: String,
-    
-    /// Optional key that triggers this template (e.g., "Minus", "N", etc.)
+    /// List of operations to perform (create files, commands, clipboard, etc.)
+    pub operations: Vec<TemplateOperation>,
+
+    /// Optional key that triggers this template (e.g., "Cmd+D", "!", etc.)
     #[serde(skip_serializing_if = "Option::is_none")]
     pub key: Option<String>,
-    
+
     /// Keystroke for efficient matching (computed from key field)
     #[serde(skip)]
     pub keystroke: Option<Keystroke>,
-    
+
     /// If true, open command editor before creating
     #[serde(default)]
     pub edit: bool,
-    
+
     /// If true, use existing command with same name if it exists (case-insensitive)
-    /// If false or if no matching command exists, create a new command
     #[serde(default)]
     pub use_existing: bool,
-    
-    /// Optional folder path to create (supports variable expansion)
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub file: Option<String>,
-    
-    /// Optional file contents to create (supports variable expansion)
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub contents: Option<String>,
-    
+
     /// Optional seconds to wait before grabbing window
     #[serde(skip_serializing_if = "Option::is_none")]
     pub grab: Option<u32>,
-    
+
     /// Optional description of what this template does (for help display)
     #[serde(skip_serializing_if = "Option::is_none")]
     pub description: Option<String>,
-    
+
     /// If true, validate that previous_folder exists and is valid
     #[serde(default)]
     pub validate_previous_folder: bool,
-    
+
     /// If true, rescan file system after creating template
     #[serde(default)]
     pub file_rescan: bool,
@@ -702,24 +735,138 @@ pub fn add_datetime_variables(variables: &mut HashMap<String, String>) {
     variables.insert("ss".to_string(), format!("{:02}", now.second()));
 }
 
-/// Create a command from a template
-pub fn create_command_from_template(
-    template: &Template,
-    context: &TemplateContext,
-) -> Command {
-    let mut command = Command {
-        command: context.expand(&template.name),
-        action: context.expand(&template.action),
-        arg: context.expand(&template.arg),
-        patch: context.expand(&template.patch),
-        flags: context.expand(&template.flags),
-        other_params: None,
-        last_update: 0,
-        file_size: None,
+/// Create a file with contents, creating parent directories as needed
+fn create_file_with_contents(file_path: &str, contents: &str) -> Result<(), Box<dyn std::error::Error>> {
+    // Expand tilde
+    let expanded_path = if file_path.starts_with("~/") {
+        if let Ok(home) = std::env::var("HOME") {
+            file_path.replacen("~/", &format!("{}/", home), 1)
+        } else {
+            file_path.to_string()
+        }
+    } else {
+        file_path.to_string()
     };
-    command.update_full_line();
-    command
+
+    let path = std::path::Path::new(&expanded_path);
+
+    // Create parent directory if needed
+    if let Some(parent) = path.parent() {
+        if !parent.exists() {
+            std::fs::create_dir_all(parent)?;
+            detailed_log("TEMPLATE_OPS", &format!("Created directory: {}", parent.display()));
+        }
+    }
+
+    // Write the file
+    std::fs::write(&path, contents)?;
+    detailed_log("TEMPLATE_OPS", &format!("Created file: {} ({} bytes)", path.display(), contents.len()));
+
+    Ok(())
 }
+
+
+/// Append contents to a file, optionally after a specific line
+/// If `after` is specified but not found, adds the `after` line first
+fn append_to_file(file_path: &str, contents: &str, after: Option<&str>) -> Result<(), Box<dyn std::error::Error>> {
+    // Expand tilde
+    let expanded_path = if file_path.starts_with("~/") {
+        if let Ok(home) = std::env::var("HOME") {
+            file_path.replacen("~/", &format!("{}/", home), 1)
+        } else {
+            file_path.to_string()
+        }
+    } else {
+        file_path.to_string()
+    };
+
+    let path = std::path::Path::new(&expanded_path);
+
+    // Read existing contents (or empty if file doesn't exist)
+    let existing = if path.exists() {
+        std::fs::read_to_string(&path)?
+    } else {
+        // Create parent directory if needed
+        if let Some(parent) = path.parent() {
+            if !parent.exists() {
+                std::fs::create_dir_all(parent)?;
+            }
+        }
+        String::new()
+    };
+
+    let new_contents = if let Some(after_str) = after {
+        // Look for the after string
+        if let Some(pos) = existing.find(after_str) {
+            // Find end of the line containing after_str
+            let after_end = existing[pos..].find('\n')
+                .map(|p| pos + p + 1)
+                .unwrap_or(existing.len());
+
+            // Insert contents after that line
+            let mut result = existing[..after_end].to_string();
+            result.push_str(contents);
+            if !contents.ends_with('\n') {
+                result.push('\n');
+            }
+            result.push_str(&existing[after_end..]);
+            result
+        } else {
+            // after_str not found - add it first, then contents
+            let mut result = existing;
+            if !result.is_empty() && !result.ends_with('\n') {
+                result.push('\n');
+            }
+            result.push_str(after_str);
+            result.push('\n');
+            result.push_str(contents);
+            if !contents.ends_with('\n') {
+                result.push('\n');
+            }
+            result
+        }
+    } else {
+        // No after string - just append to end
+        let mut result = existing;
+        if !result.is_empty() && !result.ends_with('\n') {
+            result.push('\n');
+        }
+        result.push_str(contents);
+        if !contents.ends_with('\n') {
+            result.push('\n');
+        }
+        result
+    };
+
+    std::fs::write(&path, new_contents)?;
+    detailed_log("TEMPLATE_OPS", &format!("Appended to file: {}", path.display()));
+
+    Ok(())
+}
+
+
+/// Copy text to the system clipboard using pbcopy
+fn copy_to_clipboard(contents: &str) -> Result<(), Box<dyn std::error::Error>> {
+    use std::process::{Command as ProcessCommand, Stdio};
+    use std::io::Write;
+
+    let mut child = ProcessCommand::new("pbcopy")
+        .stdin(Stdio::piped())
+        .spawn()?;
+
+    if let Some(mut stdin) = child.stdin.take() {
+        stdin.write_all(contents.as_bytes())?;
+    }
+
+    let status = child.wait()?;
+    if !status.success() {
+        return Err("pbcopy failed".into());
+    }
+
+    detailed_log("TEMPLATE_OPS", &format!("Copied to clipboard: {} chars", contents.len()));
+    Ok(())
+}
+
 
 /// Process a template and create the command (but NOT files - use process_template_files for that)
 pub fn process_template(
@@ -764,206 +911,73 @@ pub fn process_template(
         // This will be implemented in Phase 3
         // For now, we'll skip grab functionality
     }
-    
-    // Create the command
-    let mut command = create_command_from_template(template, context);
-    
-    // Check if any errors were queued during template expansion
-    if crate::utils::error::has_errors() {
-        // Return an error - the queued error will be displayed by the UI
-        return Err("Template expansion failed due to errors".into());
+
+    detailed_log("TEMPLATE", &format!("Processing {} operations", template.operations.len()));
+
+    // Find the command operation and create the command from it
+    for op in &template.operations {
+        if let TemplateOperation::Command { name, action, arg, patch, flags, edit: _, use_existing: _ } = op {
+            let mut command = Command {
+                command: context.expand(name),
+                action: context.expand(action),
+                arg: context.expand(arg),
+                patch: context.expand(patch),
+                flags: context.expand(flags),
+                other_params: None,
+                last_update: 0,
+                file_size: None,
+            };
+            command.update_full_line();
+
+            // Check if any errors were queued during template expansion
+            if crate::utils::error::has_errors() {
+                return Err("Template expansion failed due to errors".into());
+            }
+
+            if template.edit {
+                detailed_log("TEMPLATE", "Template has edit flag set - command will be opened in editor");
+            }
+
+            return Ok(command);
+        }
     }
-    
-    // NOTE: File creation is now handled in process_template_files() which should be called
-    // after the user saves in the command editor
-    
-    // Update the full_line
-    command.update_full_line();
-    
-    // Log if template has edit flag (but don't modify the command)
-    if template.edit {
-        detailed_log("TEMPLATE", "Template has edit flag set - command will be opened in editor");
-    }
-    
-    Ok(command)
+
+    // No command operation found
+    Err("Template operations must include a 'command' operation".into())
 }
 
 /// Process template file creation after save (called when user saves in command editor)
 pub fn process_template_files(
     template: &Template,
     context: &TemplateContext,
-    saved_command: &Command,
+    _saved_command: &Command,
 ) -> Result<(), Box<dyn std::error::Error>> {
-    // Create file with contents if specified
-    if let Some(contents_template) = &template.contents {
-        let contents = context.expand(contents_template);
-        
-        // Determine file path based on template.file setting
-        let file_path_str = if let Some(ref file_template) = template.file {
-            // Check for special "true" value to use saved command's arg
-            if file_template == "true" {
-                // Use the saved command's arg as the file path
-                detailed_log("TEMPLATE", "Using saved command arg as file path (file: \"true\")");
-                saved_command.arg.clone()
-            } else {
-                // Use the expanded file template
-                context.expand(file_template)
-            }
-        } else {
-            // No file field specified, use the saved command's arg
-            saved_command.arg.clone()
-        };
-        
-        // Debug logging
-        detailed_log("TEMPLATE", &format!("File path from template: {}", file_path_str));
-        
-        // Expand tilde in the file path
-        let expanded_path = if file_path_str.starts_with("~/") {
-            if let Ok(home) = std::env::var("HOME") {
-                file_path_str.replacen("~/", &format!("{}/", home), 1)
-            } else {
-                file_path_str.clone()
-            }
-        } else {
-            file_path_str.clone()
-        };
-        
-        let file_path = std::path::Path::new(&expanded_path);
-        
-        // Create parent directory if it doesn't exist
-        if let Some(parent) = file_path.parent() {
-            detailed_log("TEMPLATE", &format!("Creating parent dir: {}", parent.display()));
-            create_folder_if_needed(&parent.to_string_lossy())?;
-        }
-        
-        detailed_log("TEMPLATE", &format!("Writing file: {}", file_path.display()));
-        
-        // Check if file exists and might be read-only
-        if file_path.exists() {
-            if let Ok(metadata) = std::fs::metadata(&file_path) {
-                if metadata.permissions().readonly() {
-                    log(&format!("File '{}' is read-only, attempting to make it writable", file_path.display()));
-                    // Try to make the file writable
-                    let mut perms = metadata.permissions();
-                    perms.set_readonly(false);
-                    if let Err(e) = std::fs::set_permissions(&file_path, perms) {
-                        log_error(&format!("Failed to remove read-only flag from '{}': {}", file_path.display(), e));
-                        // Continue anyway - the write might still work on some systems
-                    } else {
-                        detailed_log("SYSTEM", &format!("Successfully removed read-only flag from '{}'", file_path.display()));
-                    }
-                }
-            }
-        }
-        
-        // Write the file
-        match std::fs::write(&file_path, &contents) {
-            Ok(_) => {
-                detailed_log("TEMPLATE", &format!("TEMPLATE: Created file '{}' ({} bytes)", file_path.display(), contents.len()));
-            }
-            Err(e) => {
-                let error_msg = format!("Cannot write to file '{}': {}", file_path.display(), e);
-                log_error(&error_msg);
-                
-                // Check if it's a permission error and provide a more helpful message
-                if e.kind() == std::io::ErrorKind::PermissionDenied {
-                    let help_msg = format!(
-                        "Permission denied writing to '{}'. Try:\n  • Check file permissions with: ls -la {}\n  • Remove read-only flag with: chmod u+w {}",
-                        file_path.display(), file_path.display(), file_path.display()
-                    );
-                    log_error(&help_msg);
-                    return Err(format!("{}\n\n{}", error_msg, help_msg).into());
-                }
-                
-                return Err(error_msg.into());
-            }
-        }
-    }
-    
-    // Create file if specified but contents wasn't provided
-    // The 'file' field should always create a file, not a folder
-    if template.contents.is_none() && template.file.is_some() {
-        let file_path_str = if let Some(ref file_template) = template.file {
-            // Check for special "true" value to use saved command's arg
-            if file_template == "true" {
-                saved_command.arg.clone()
-            } else {
-                context.expand(file_template)
-            }
-        } else {
-            saved_command.arg.clone()
-        };
-        
-        // Expand tilde in the file path
-        let expanded_path = if file_path_str.starts_with("~/") {
-            if let Ok(home) = std::env::var("HOME") {
-                file_path_str.replacen("~/", &format!("{}/", home), 1)
-            } else {
-                file_path_str.clone()
-            }
-        } else {
-            file_path_str.clone()
-        };
-        
-        let file_path = std::path::Path::new(&expanded_path);
-        
-        // Create parent directory if it doesn't exist
-        if let Some(parent) = file_path.parent() {
-            detailed_log("TEMPLATE", &format!("Creating parent dir for file: {}", parent.display()));
-            create_folder_if_needed(&parent.to_string_lossy())?;
-        }
-        
-        // Create an empty file if it doesn't exist
-        if !file_path.exists() {
-            if let Err(e) = std::fs::write(&file_path, "") {
-                let error_msg = format!("Cannot create file '{}': {}", file_path.display(), e);
-                log_error(&error_msg);
-                return Err(error_msg.into());
-            } else {
-                detailed_log("TEMPLATE", &format!("TEMPLATE: Created empty file '{}'", file_path.display()));
-            }
-        }
-    }
-    
-    Ok(())
-}
+    detailed_log("TEMPLATE_OPS", &format!("Processing {} file operations", template.operations.len()));
 
-/// Create a folder if it doesn't exist
-fn create_folder_if_needed(path: &str) -> Result<(), Box<dyn std::error::Error>> {
-    detailed_log("TEMPLATE", &format!("create_folder_if_needed called with: {}", path));
-    
-    let expanded_path = if path.starts_with("~/") {
-        if let Ok(home) = std::env::var("HOME") {
-            let result = path.replacen("~/", &format!("{}/", home), 1);
-            detailed_log("TEMPLATE", &format!("Expanded tilde path to: {}", result));
-            result
-        } else {
-            detailed_log("TEMPLATE", "Could not get HOME environment variable");
-            path.to_string()
-        }
-    } else {
-        detailed_log("TEMPLATE", &format!("Path doesn't start with ~/, using as-is: {}", path));
-        path.to_string()
-    };
-    
-    let path = std::path::Path::new(&expanded_path);
-    detailed_log("TEMPLATE", &format!("Final path for mkdir: {}", path.display()));
-    
-    if !path.exists() {
-        detailed_log("TEMPLATE", "Path doesn't exist, creating directory...");
-        match std::fs::create_dir_all(path) {
-            Ok(_) => detailed_log("TEMPLATE", "Successfully created directory"),
-            Err(e) => {
-                let error_msg = format!("Cannot create directory '{}': {}", path.display(), e);
-                log_error(&error_msg);
-                detailed_log("TEMPLATE", &error_msg);
-                return Err(error_msg.into());
+    // Process create, append, and clip operations (command was already processed)
+    for op in &template.operations {
+        match op {
+            TemplateOperation::Create { file, contents } => {
+                let expanded_file = context.expand(file);
+                let expanded_contents = context.expand(contents);
+                create_file_with_contents(&expanded_file, &expanded_contents)?;
+            }
+            TemplateOperation::Append { file, contents, after } => {
+                let expanded_file = context.expand(file);
+                let expanded_contents = context.expand(contents);
+                let expanded_after = after.as_ref().map(|s| context.expand(s));
+                append_to_file(&expanded_file, &expanded_contents, expanded_after.as_deref())?;
+            }
+            TemplateOperation::Command { .. } => {
+                // Command already processed in process_template
+            }
+            TemplateOperation::Clip { contents } => {
+                let expanded_contents = context.expand(contents);
+                copy_to_clipboard(&expanded_contents)?;
             }
         }
-    } else {
-        detailed_log("TEMPLATE", "Path already exists, skipping creation");
     }
-    
+
     Ok(())
 }
 
@@ -1062,35 +1076,4 @@ mod tests {
         assert_eq!(context.expand("{{date.year2}}").len(), 2);
     }
     
-    #[test]
-    #[ignore] // Requires full config environment (config.js, etc.) - run with --ignored
-    fn test_create_command_from_template() {
-        init_test_environment();
-        let template = Template {
-            name: "{{input}} Note".to_string(),
-            action: "markdown".to_string(),
-            arg: "/notes/{{date.year}}/{{date.month}}/{{input}}.md".to_string(),
-            patch: "Notes".to_string(),
-            flags: String::new(),
-            key: None,
-            edit: false,
-            file: None,
-            contents: None,
-            grab: None,
-            description: None,
-            use_existing: false,
-            validate_previous_folder: false,
-            keystroke: None,
-            file_rescan: false,
-        };
-        
-        let context = TemplateContext::new("Test", None, None);
-        let command = create_command_from_template(&template, &context);
-        
-        assert_eq!(command.command, "Test Note");
-        assert_eq!(command.action, "markdown");
-        assert!(command.arg.contains("/notes/"));
-        assert!(command.arg.ends_with("/Test.md"));
-        assert_eq!(command.patch, "Notes");
-    }
 }

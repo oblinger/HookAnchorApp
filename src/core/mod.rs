@@ -89,8 +89,8 @@ pub use inference::{
 
 // Template creation (used by UI)
 pub use template_creation::{
-    Template, TemplateContext, 
-    create_command_from_template, process_template, process_template_files
+    Template, TemplateContext, TemplateOperation,
+    process_template, process_template_files
 };
 
 // Key processing system (used primarily by UI)
