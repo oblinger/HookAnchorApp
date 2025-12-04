@@ -750,6 +750,12 @@ fn create_file_with_contents(file_path: &str, contents: &str) -> Result<(), Box<
 
     let path = std::path::Path::new(&expanded_path);
 
+    // If file already exists, skip creation (don't overwrite)
+    if path.exists() {
+        detailed_log("TEMPLATE_OPS", &format!("File already exists, skipping: {}", path.display()));
+        return Ok(());
+    }
+
     // Create parent directory if needed
     if let Some(parent) = path.parent() {
         if !parent.exists() {

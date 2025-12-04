@@ -3792,24 +3792,57 @@ impl AnchorSelector {
             Some(anchor_name) => {
                 log(&format!("CREATE_CHILD: Using active anchor '{}'", anchor_name));
 
-                // Find the anchor command to get its patch
+                // Find the anchor command to get its patch (exact match only)
                 let all_commands = crate::core::data::get_commands();
                 let anchor_cmd = all_commands.iter().find(|cmd| cmd.command == *anchor_name);
 
                 match anchor_cmd {
                     Some(cmd) => {
-                        if cmd.patch.is_empty() {
+                        // First check if the anchor command itself has a template
+                        if let Some(params) = &cmd.other_params {
+                            if let Some(template) = params.get(crate::utils::PARAM_TEMPLATE) {
+                                log(&format!("CREATE_CHILD: Found template '{}' on anchor command '{}'",
+                                    template, cmd.command));
+                                template.clone()
+                            } else if cmd.patch.is_empty() {
+                                log(&format!("CREATE_CHILD: Anchor '{}' has no patch", anchor_name));
+                                config.template_settings
+                                    .as_ref()
+                                    .and_then(|ts| ts.default_anchor_template.clone())
+                                    .unwrap_or_else(|| "sub_markdown".to_string())
+                            } else {
+                                // Walk up the hierarchy looking for a template parameter
+                                let patches = crate::core::commands::create_patches_hashmap(&all_commands);
+                                let mut found_template = None;
+                                for patch in crate::core::commands::walk_patch_hierarchy(&cmd.patch, &patches, 100) {
+                                    if let Some(anchor) = patch.primary_anchor() {
+                                        if let Some(params) = &anchor.other_params {
+                                            if let Some(template) = params.get(crate::utils::PARAM_TEMPLATE) {
+                                                log(&format!("CREATE_CHILD: Found template '{}' on anchor '{}' in hierarchy",
+                                                    template, anchor.command));
+                                                found_template = Some(template.clone());
+                                                break;
+                                            }
+                                        }
+                                    }
+                                }
+                                found_template.unwrap_or_else(|| {
+                                    log("CREATE_CHILD: No template in hierarchy, using default_anchor_template");
+                                    config.template_settings
+                                        .as_ref()
+                                        .and_then(|ts| ts.default_anchor_template.clone())
+                                        .unwrap_or_else(|| "sub_markdown".to_string())
+                                })
+                            }
+                        } else if cmd.patch.is_empty() {
                             log(&format!("CREATE_CHILD: Anchor '{}' has no patch", anchor_name));
-                            // Use default_anchor_template
                             config.template_settings
                                 .as_ref()
                                 .and_then(|ts| ts.default_anchor_template.clone())
                                 .unwrap_or_else(|| "sub_markdown".to_string())
                         } else {
-                            // Build patches hashmap for hierarchy walking
-                            let patches = crate::core::commands::create_patches_hashmap(&all_commands);
-
                             // Walk up the hierarchy looking for a template parameter
+                            let patches = crate::core::commands::create_patches_hashmap(&all_commands);
                             let mut found_template = None;
                             for patch in crate::core::commands::walk_patch_hierarchy(&cmd.patch, &patches, 100) {
                                 if let Some(anchor) = patch.primary_anchor() {
@@ -3823,9 +3856,7 @@ impl AnchorSelector {
                                     }
                                 }
                             }
-
                             found_template.unwrap_or_else(|| {
-                                // No template found in hierarchy - use default_anchor_template
                                 log("CREATE_CHILD: No template in hierarchy, using default_anchor_template");
                                 config.template_settings
                                     .as_ref()

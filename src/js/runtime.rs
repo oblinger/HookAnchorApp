@@ -787,16 +787,31 @@ fn setup_launcher_builtins(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Erro
             }
         }
 
-        if !found {
-            log(&format!("UPDATE_COMMAND: Command '{}' not found", old_name));
-            return format!("Error: Command '{}' not found", old_name);
-        }
+        let action_taken = if !found {
+            // Command not found - add it as a new command (upsert behavior)
+            log(&format!("UPDATE_COMMAND: Command '{}' not found, adding as new command", old_name));
+            let mut new_cmd = crate::core::Command {
+                command: name.clone(),
+                action: action.clone(),
+                arg: arg.clone(),
+                patch: patch.clone(),
+                flags: flags.clone(),
+                other_params: None,
+                last_update: 0,
+                file_size: None,
+            };
+            new_cmd.update_full_line();
+            commands.push(new_cmd);
+            "added"
+        } else {
+            "updated"
+        };
 
         // Save to disk
         match crate::core::data::set_commands(commands) {
             Ok(_) => {
-                log(&format!("UPDATE_COMMAND: Successfully updated command '{}'", name));
-                format!("Command updated: {}", name)
+                log(&format!("UPDATE_COMMAND: Successfully {} command '{}'", action_taken, name));
+                format!("Command {}: {}", action_taken, name)
             },
             Err(e) => {
                 log(&format!("UPDATE_COMMAND: Failed to save: {}", e));
