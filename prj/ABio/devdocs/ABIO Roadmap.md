@@ -34,7 +34,23 @@ Top-level operations for working with alienbio. See [[alienbio]] module topic fo
 
 ### .
 
-## M1.2 - Entity Infrastructure
+## M1.2 - DAT Integration
+
+Configure dvc_dat so do/create/load/save resolve properly. See [[DAT]].
+
+### Add dvc_dat as dependency in pyproject.toml
+### Configure Context.data_path to point to data/ folder
+### Configure do() to resolve catalog/ and data/ namespaces via dvc_dat
+### Set up test fixtures accessible via do("fixtures.molecules.simple")
+### Test: do("fixtures.X") resolves to test fixture data
+### Test: create() instantiates from YAML spec defined in source code string
+### Test: create() instantiates from _spec.yaml in fixtures folder
+### Test: load/save round-trip through data/ folder
+### Create tests/unit/test_dat.py for dvc_dat usage patterns
+
+### .
+
+## M1.3 - Entity Infrastructure
 
 Base classes for all alienbio objects. See [[Entity]], [[alienbio]].
 
@@ -43,7 +59,6 @@ Base classes for all alienbio objects. See [[Entity]], [[alienbio]].
 ### Implement parse(string) - reconstruct entity from string
 ### Implement YAML serialization for complex entities
 ### Implement deserialization from string and YAML
-### Integrate dvc_dat for named entity persistence (data/ folder)
 ### Test: print(Entity) produces PREFIX:name format
 ### Test: parse(str(entity)) round-trips correctly
 ### Test: round-trip Entity to YAML and back, assert equality
@@ -51,7 +66,7 @@ Base classes for all alienbio objects. See [[Entity]], [[alienbio]].
 
 ### .
 
-## M1.3 - Core Protocols
+## M1.4 - Core Protocols
 
 ### Define BioMolecule protocol with name, properties
 ### Define BioReaction protocol with reactants, products, rate
@@ -62,7 +77,7 @@ Base classes for all alienbio objects. See [[Entity]], [[alienbio]].
 
 ### .
 
-## M1.4 - Hardcoded Test System
+## M1.5 - Hardcoded Test System
 ### Create 3-4 molecules by hand (A, B, C, D)
 ### Create 2 reactions by hand (A + B → C, C → D)
 ### Define fixed rate functions returning constants
@@ -71,7 +86,7 @@ Base classes for all alienbio objects. See [[Entity]], [[alienbio]].
 
 ### .
 
-## M1.5 - Python Simulator v0
+## M1.6 - Python Simulator v0
 ### Implement step() applying all reactions once
 ### Implement run() looping step() for N iterations
 ### Return timeline of states
@@ -79,7 +94,7 @@ Base classes for all alienbio objects. See [[Entity]], [[alienbio]].
 
 ### .
 
-## M1.6 - Verification
+## M1.7 - Verification
 ### Run simulation on hardcoded system
 ### Assert concentrations change as expected
 ### Plot concentration curves over time
