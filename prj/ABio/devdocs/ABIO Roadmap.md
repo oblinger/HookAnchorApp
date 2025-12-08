@@ -26,33 +26,39 @@ Top-level operations for working with alienbio. See [[alienbio]] module topic fo
 ### Implement do(name) - resolve dotted names to objects
 ### Implement create(spec) - instantiate from prototypes
 ### Implement load(path) / save(obj, path) - entity persistence
-### Implement print format - PREFIX:name display
-### Implement parse(string) - reconstruct from string
 ### Implement ctx() - access runtime context
 ### Test: do("catalog.kegg1") resolves (with stub)
-### Test: print(Entity) produces PREFIX:name format
-### Test: parse(str(entity)) round-trips correctly
+### Test: create(spec) instantiates object from prototype
+### Test: save(obj, path) writes to data/, load(path) retrieves it
 ### Test: ctx() returns Context with ContextVar (not plain global)
 
 ### .
 
-## M1.2 - Core Protocols
+## M1.2 - Entity Infrastructure
+
+Base classes for all alienbio objects. See [[Entity]], [[alienbio]].
+
+### Implement Entity base class with name, description
+### Entity.__str__ accesses Context for PREFIX:name display
+### Implement parse(string) - reconstruct entity from string
+### Implement YAML serialization for complex entities
+### Implement deserialization from string and YAML
+### Integrate dvc_dat for named entity persistence (data/ folder)
+### Test: print(Entity) produces PREFIX:name format
+### Test: parse(str(entity)) round-trips correctly
+### Test: round-trip Entity to YAML and back, assert equality
+### Test: save entity to data/, load by name, assert equality
+
+### .
+
+## M1.3 - Core Protocols
+
 ### Define BioMolecule protocol with name, properties
 ### Define BioReaction protocol with reactants, products, rate
 ### Define State protocol as dict of molecule concentrations
 ### Define Simulator protocol with step() method
-### Test: pyright passes on all protocol definitions
-
-### .
-
-## M1.3 - Entity Infrastructure
-### Implement Entity base with string serialization (repr/str)
-### Implement YAML serialization for complex entities
-### Implement deserialization from string and YAML
-### Integrate dvc_dat for named entity persistence (data/ folder)
 ### All bio classes (BioMolecule, BioReaction, etc.) inherit from Entity
-### Test: round-trip Entity to string and back, assert equality
-### Test: save entity to data/, load by name, assert equality
+### Test: pyright passes on all protocol definitions
 
 ### .
 
