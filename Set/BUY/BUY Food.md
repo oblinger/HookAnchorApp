@@ -2,6 +2,7 @@
 # === DRY GOODS ===
 -  [[@Azure Standard]], 
 ###  [[BUY Tea]]/Coffee  [[@Azure Standard]], 
+### [[BUY Protein]] 
 
 
 ### Canned

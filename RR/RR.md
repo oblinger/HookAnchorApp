@@ -1,7 +1,7 @@
 n:: Research Reference pages
 
 .[[RR]].  [[LRN Todo]] [[RR Log]]  [[Lrn]],
-  AREAS:	[[AI]], [[ML]], [[RR DL]], [[RR CV]], [[LLM]], [[NLP]],   [Coursera Notes](Coursera%20Notes.md) 
+  AREAS:	[[AI]], [[ML]], [[RR DL]], [[RR CV]], [[LLM]], [[NLP]],   [Coursera Notes](Coursera%20Notes.md), [[PAP]], [[PT]], 
   TOPICS:  [[RR People]], [[RR Systems]],  
   [[REF]]:		[[RefMisc]], [[Refs]],
   LOGS:	 	,

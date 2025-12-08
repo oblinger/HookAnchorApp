@@ -1,5 +1,6 @@
 
 .**TODO**.
+  - 100 manual games
   - Brainstorming 
   - PlayOn kick tire test
  WATCHING

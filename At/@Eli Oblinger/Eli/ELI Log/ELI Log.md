@@ -8,6 +8,27 @@
   DELS: [[2023-05 Cool Kids]], [[Eli Sleep Training]],[[2022-00-00 Eli Sleep Training]], [[2024-11-08 Comet]],[[2023-05 Cool Kids]], [[Eli Sleep Training]], [[2023-05 Cool Kids]], [[Eli Sleep Training]], 
 
 
+
+
+## 2025-12-07  Eli's Name
+
+Eli, 
+Your name has a couple of meanings:
+- Eli means "to rise up." and is a name for God.
+- Also, a famous priest and teacher in the Bible was named Eli.
+- Your middle name Haorui is made from two parts:
+	- Hao is about having integrity and honesty
+	- And Rui means wise, intelligent and perceptive. 
+
+We wanted a short, unique name.  And we wanted it to connect to wisdom in some way.
+When we first thought of Eli, we just fell in love with it.  Quickly, it was our number one choice!
+
+Love, 
+Mom and Dad
+
+
+
+## 2025-12-07   Sleep Times
 :: [[2023-05 Cool Kids]]
 
 :: [[Eli Sleep Training]]

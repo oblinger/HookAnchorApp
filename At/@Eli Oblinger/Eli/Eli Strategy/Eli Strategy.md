@@ -1,12 +1,20 @@
 .[[Eli Strategy]].
   [[Eli Strategy Frustration]] 
 
-# TO READ
+
+
+
+
+
+
+
+
+## TO READ
 
 - From Arjuna:  https://www.thefp.com/raisingparents-emilyoster
 - 
 
-# CHEAT SHEET
+## CHEAT SHEET
 
 ## MELT DOWN -> Take to a room
 I am going to pick you and take you to a room
@@ -35,8 +43,8 @@ My notes
 - i know u don’t want to ... AND we must
 - i  don’t either, and we can 
 
-# XXX
-## FRUSTRATION EXPLOSION
+## XXX
+### FRUSTRATION EXPLOSION
 
 
 #### LATER SELF STORY -- Frame Coping advice as stuff that was taught to oneself
@@ -154,3 +162,48 @@ SIT ON EMOTIONAL BENCH *WITH* CHILD
 
 
 ## Make sure he feels "seen" 
+
+
+
+# LOG
+
+==> Fluster Clux
+http://www.cnbc.com/make-it/raising-successful-kids
+
+## 2025-12-04  Dealing with repeated inappropriate behavior
+
+Yelling or Hitting
+
+Never Said "No"
+Now we are saying that, but how to handle not leaving him alone & don't want him acting bad towards 
+
+
+Helping him w/ emotional 
+
+
+
+Shutdown behavior
+
+
+common sense media
+
+
+## 2025-12-04  You are in charge
+
+- of your Values
+- of your Rules 
+- of your Schedule
+- of your Joy in the journey of parenthood
+
+kids will fight it, but under it they want this
+
+what do want to eat for dinner?  just tell them!
+
+
+## 2025-12-04  Competence vs Confidence
+
+Competence builds confidence
+
+They should be doing stuff for themself
+- give them responsibilities
+- volunteering 

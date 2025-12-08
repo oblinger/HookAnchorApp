@@ -1,28 +1,79 @@
 .[[Phone]].
-  , ,
-  , ,
   , [[Phone -old-]],
-  DELS: [[Phone -old-]],
-  , ,
   , [Phone Google Voice](spot://phonegooglevoice),
-  , ,
   , [phone phone](spot://phonephone),
-  , ,
-  DELS: [[Phone -old-]],,[phone phone](spot://phonephone),
-  , ,
-  DELS: [[Phone -old-]],,[phone phone](spot://phonephone),,
-  , [Phone Obsidian](spot://phoneobsidian),
-  DELS: [[Phone -old-]],,[phone phone](spot://phonephone),,,[Phone Obsidian](spot://phoneobsidian),
-  , ,
-  DELS: [[Phone -old-]],,[phone phone](spot://phonephone),,,[Phone Obsidian](spot://phoneobsidian),, ,
   , [Phone Note](spot://phonenote),
   , [Phone -old- Obsidian](spot://phoneoldobsidian), 
-  DELS: [[Phone -old-]],[[Phone -OLD-_new]],[phone phone](spot://phonephone),[Phone Note](spot://phonenote),[[Phone -OLD-_new]],[Phone Obsidian](spot://phoneobsidian),[Phone Note](spot://phonenote), [Phone Note](spot://phonenote),[[Phone -OLD-_new]], [[Phone -OLD-_new]],[Phone Note](spot://phonenote), [Phone Note](spot://phonenote), [Phone Note](spot://phonenote), [Phone Note](spot://phonenote),
-
-
 #set 
 n:: Administrative actions associated with accounts or such (favor using @entry instead)
 
+
+
+## 2025-12-02  Middle Class Tax Refund
+
+Pin: 4268
+BAL: $500
+initial deposit 
+
+CA refund tax team.
+
+California Tax Board - 
+
+
+> So I called the California middle class tax refund team and they could not proceed without me telling them the initial deposit on that account which I don't know. They told
+me that I need to contact.California tax board in order to proceed. Do you have a phone number for me to call?
+
+
+> So I called the California middle class tax refund team and they could not proceed without me telling them the initial deposit on that account which I don't know. They told
+me that I need to contact.California tax board in order to proceed. Do you have a phone number for me to call?
+
+⏺ The California Franchise Tax Board (FTB) phone number is:
+
+  1-800-852-5711
+
+  Hours: Monday - Friday, 8 AM to 5 PM (Pacific Time)
+
+  You can also try their dedicated MCTR line if the main line redirects you:
+  - Check https://www.ftb.ca.gov/help/state-managed-programs/middle-class-tax-refund/help.html for current contact options
+
+  When you call, have ready:
+  - Your Social Security Number
+  - Your 2020 CA tax return info (that's what MCTR eligibility was based on)
+
+
+
+
+⏺ Good news - you likely still have time!
+
+  Your money is NOT lost yet. The California Middle Class Tax Refund debit cards don't expire until April 30, 2026.
+
+  What you need to do:
+
+  1. Find your card and check the "Valid Thru" date on it
+  2. Activate it by calling 1-800-240-0223
+  3. Use the funds before the expiration date
+
+  Ways to access your money:
+
+  - Withdraw cash at in-network ATMs (free)
+  - Transfer directly to your personal bank account
+  - Use it as a debit card for purchases
+
+  Important warnings:
+
+  - After April 2026: Any remaining balance goes back to California's General Fund - you lose it
+  - Reissuance deadline passed: If you never received a card, the deadline to request a new one was May 31, 2024
+
+  You can check your balance and manage your card at https://mctrpayment.com/
+
+  Sources:
+  - https://www.ftb.ca.gov/help/state-managed-programs/middle-class-tax-refund/index.html
+  - https://www.kcra.com/article/use-it-or-lose-it-heres-when-californias-middle-class-tax-refund-debit-cards-expire/42664883
+
+
+
+
+## 2025-12-02  H3 tags
 
 ### 2024-09-12  Boost Mobile fraudulent account
 

@@ -14,3 +14,8 @@
 - [[My Stuff]]
 - [[SYS]] 
 
+
+#### (see [[Buy Clothing]])
+Charles Tyrwhitt
+- Slim, Large
+- Slim, 17/17.5neck, 36sleeve

@@ -1,4 +1,4 @@
-#dl
+See [[DPO]], 
 
 - used in Chat-GPT
 
@@ -30,3 +30,10 @@ RLHF Steps
 	- The model generates outputs, gets scored by the reward model, and updates its parameters to maximize reward
 	- Include a KL-divergence penalty to prevent the model from drifting too far from the original
 
+
+PPO
+-?-
+Proximal Policy Optimization
+
+
+#dl

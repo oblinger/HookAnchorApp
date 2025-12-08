@@ -18,6 +18,7 @@ n:: 'wp...'	Work Product. Single documents outputs
 
 - [[wp2023-01-05 Keyboard Settlement]], 
 
+[[WP2025]] 
 [[WP2023]]  
 [[WP2022]]    [WP2022](WP2022.md),   [WP2021](WP2021.md)   
 
