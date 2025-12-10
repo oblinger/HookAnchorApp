@@ -6,7 +6,7 @@
  WATCHING
  - PHQ access. SV games->escore->sv merge->metrics out
  - expansive testing of the manager app
- - DATA - 100 PlayOn/HQ Games, eval humans, Origin data, 
+ - DATA - Games: 50 PlayOn 20 doubled;  50 PHQ & 20 doubled (corners)
  -  [PlayOn](hook://playon): Roster - get and use
  - [Cloud Roadmap](https://docs.google.com/document/d/1g135euS74c7FfBO6GDMRGyvi_0jXHBm4Pd4bqU9Pa94/edit?tab=t.0): plan for moving stuff to cloud - 
  - [Media convert](https://www.notion.so/sportsvisio/SV-Hybrid-Media-Convert-Prototype-27d719d6f2bd805084dfeb5b166debcb?source=copy_link):  SW Spot instances

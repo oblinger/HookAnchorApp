@@ -2,6 +2,7 @@
 - [[Med]]: 
 - Jameson bottle
 - [ApoB](https://mitohealth.com/blog/rethinking-heart-health-peter-attias-approach-to-longevity-apob) 
+- Get Audio Memo
 
 - Filepe
 - Quarterly budget

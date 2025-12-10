@@ -1,6 +1,4 @@
 - PHQ ask about API
-- tell about vacation
-- val email
 
 - cash estimate to James
 - sammie

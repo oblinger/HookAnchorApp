@@ -12,14 +12,14 @@ STABILIZATION, VISUALIZATION <!--SR:!2025-10-10,2,194-->
 DL considerations
 -?-
 DATA:  Feat Scaling, Output Normalize, Class balancing
-MODEL:  Structure, ActivationFn, LossFn, 
-.............  Dropout, Regularization, Momentum, 
+MODEL:  Structure, ActivationFn, LossFn,
+.............  Dropout, Regularization, Momentum,
 TRAINING:  Learning Rate & Scheduler,  Feature Scaling
 OPTIMIZER:
-SCHEDULER: 
+SCHEDULER:
 TESTING: Train-validation split, Early Stopping
 STABILAIZATION: Gradient clipping
-VISUALIZATION: Monitor loss, Visualize <!--SR:!2025-10-09,1,173-->
+VISUALIZATION: Monitor loss, Visualize <!--SR:!2025-12-10,1,153-->
 
 
 
@@ -36,7 +36,7 @@ Distributed Training <!--SR:!2025-10-09,1,146-->
 DL strategy: Gradient accumulation
 -?-
 A technique that enables training with smaller batch sizes by accumulating gradients over multiple steps before applying them.
-This is particularly useful when memory limitations prevent large batch sizes from being used. <!--SR:!2025-11-02,25,226-->
+This is particularly useful when memory limitations prevent large batch sizes from being used. <!--SR:!2026-02-27,80,246-->
 
 Here’s how it works: 
 Memory Efficiency: By accumulating gradients across several mini-batches, gradient accumulation reduces memory load, allowing models to simulate the effect of a larger batch size. 
@@ -45,24 +45,24 @@ Performance Gains: Accumulating gradients without frequent updates can stabilize
 __
 
 
-### Mixed-Precision Training 
+### Mixed-Precision Training
 DL strategy: Mixed-precision training
 -?-
-Uses lower precision for specific calculations during training, which helps reduce memory consumption and accelerates computation without substantially affecting accuracy. 
+Uses lower precision for specific calculations during training, which helps reduce memory consumption and accelerates computation without substantially affecting accuracy.
 .
-Half-Precision Calculation: Calculations in half-precision (FP16) significantly reduce memory usage and speed up training times, especially effective for large models with high computational demands. 
+Half-Precision Calculation: Calculations in half-precision (FP16) significantly reduce memory usage and speed up training times, especially effective for large models with high computational demands.
 .
-Automatic Mixed Precision (AMP): Frameworks like PyTorch and TensorFlow support AMP, which automatically selects the optimal precision for each operation. <!--SR:!2025-11-02,25,226--> 
+Automatic Mixed Precision (AMP): Frameworks like PyTorch and TensorFlow support AMP, which automatically selects the optimal precision for each operation. <!--SR:!2025-12-22,13,206-->
 
  
 
-### Distributed Training 
+### Distributed Training
 DL Strategy: Distributed Training
 -?-
 For training large transformers, distributed training enables the use of multiple GPUs or TPUs in parallel, reducing the overall training time.
-There are two main strategies: 
-Data Parallelism: Each device receives a portion of the data batch, processes it, and then synchronizes gradients across all devices.  This method is popular for tasks where models do not need to be split across devices. 
-Model Parallelism: When a model is too large to fit on a single device, model parallelism splits the model itself across multiple devices, enabling larger models to be trained. <!--SR:!2025-10-20,12,234--> 
+There are two main strategies:
+Data Parallelism: Each device receives a portion of the data batch, processes it, and then synchronizes gradients across all devices.  This method is popular for tasks where models do not need to be split across devices.
+Model Parallelism: When a model is too large to fit on a single device, model parallelism splits the model itself across multiple devices, enabling larger models to be trained. <!--SR:!2026-01-18,40,254-->
 
 More INFO
 Work Split:

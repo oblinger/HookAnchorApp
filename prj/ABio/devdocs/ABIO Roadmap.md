@@ -36,15 +36,20 @@ Top-level operations for working with alienbio. See [[alienbio]] module topic fo
 
 ## M1.2 - DAT Integration
 
-Configure dvc_dat so do/create/load/save resolve properly. See [[DAT]].
+Configure dvc_dat so do/create/load/save resolve properly. See [[ABIO DAT]].
 
-### Add dvc_dat as dependency in pyproject.toml
+**Development Setup**: During co-development of alienbio and dvc_dat, use symlink:
+- `src/dvc_dat -> ../dvc-dat/dvc_dat` (dvc-dat branch: feat/sv-update-fix)
+- This allows editing dvc_dat in place without publish/reinstall cycles
+- Once stable, add dvc_dat as proper dependency in pyproject.toml
+
+### Symlink dvc_dat from local dvc-dat repo into src/
 ### Configure Context.data_path to point to data/ folder
-### Configure do() to resolve catalog/ and data/ namespaces via dvc_dat
-### Set up test fixtures accessible via do("fixtures.molecules.simple")
+### Configure do() to translate dotted names to dvc_dat slash-based keys
+### Set up .datconfig.json with mount_commands for catalog/ and fixtures/
+### Set up test fixtures accessible via do("fixtures.simple")
 ### Test: do("fixtures.X") resolves to test fixture data
-### Test: create() instantiates from YAML spec defined in source code string
-### Test: create() instantiates from _spec.yaml in fixtures folder
+### Test: create() instantiates from YAML spec in fixtures folder
 ### Test: load/save round-trip through data/ folder
 ### Create tests/unit/test_dat.py for dvc_dat usage patterns
 
