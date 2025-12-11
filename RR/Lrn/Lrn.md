@@ -14,6 +14,7 @@ https://github.com/openai/openai-cookbook/blob/main/articles/gpt-oss/fine-tune-t
 [[Lrn]]:	ML proj, Spaced Rep, 
 [[Lrn]]: SV make/miss -> ShooterID
 [[Lrn]]: AI Safety Idea Sketch
+[[Lrn]]:	[AgenticAI Coursera](https://learn.deeplearning.ai/courses/agentic-ai/lesson/pu5xbv/welcome!) 
 
 ## Rocks - Evergreen @ top  [[Lrn Big]] 
 - ^ \ _ S  SPACED REPETITION. (Add shift for review)

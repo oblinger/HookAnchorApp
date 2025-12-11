@@ -1,4 +1,7 @@
 - PHQ ask about API
+- fix /applications in spotlight
+- fix F1
+- Respond to Derrick
 
 - cash estimate to James
 - sammie
