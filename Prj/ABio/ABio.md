@@ -2,6 +2,7 @@
    TOP:	[[ABIO.]]  [[ABIO Log|Log]], [[AlienBiologyWhitepaper (do not distribute)|Whitepaper]], [[ABIO Results|Results]], [[ABIO Safety]], 
    [[ABIO Sys|SYS]]:	[[ABIO Roadmap|Roadmap]], [[ABIO Files|Files]], [[ABIO Protocols|Protocols]], [[ABIO Topics|Topics]], [[ABIO Notes|Notes]]
    PARTS: [[ABIO infra|infra]], [[ABIO biology|biology]], [[ABIO execution|execution]]
+   EXP:	[[ABIO Exp]], 
 
    EG:		[[ABIO Photosynthesis]],  [[ABIO CellMetabolism5]],
    REF:		[[ABIO References]], [[ABIO Systems]],
