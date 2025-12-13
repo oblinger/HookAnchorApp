@@ -27,6 +27,15 @@ https://github.com/openai/openai-cookbook/blob/main/articles/gpt-oss/fine-tune-t
 - DL Specialization: Sequence Models (not yet started)
 - Coursera: IBM PyTorch
 
+
+## PLAN
+- LEET - Able to slam quick & puzzle coding problems in python.
+- TORCH - Able to code simple PyTorch solutions & talk about tradeoffs on different parts
+- SYS DESIGN - Strong ability to pass the system design interview test
+- BEHAVE - 
+- INTERVIEW - Practice 
+- [[STAR]] - Good stories
+
 LATER
 - Code@work.	LeetCoding.
 
@@ -39,9 +48,25 @@ ADD TO WAR
 - Productization
 
 
+Your brain grows many many neurons more than it needs, and then it prunes them backwards. This really shapes how your mind is gonna work for the rest of your life. The article goes on to talk about the things that you want to be exposing your kid too. I think we do pretty good, but I do think in the category of safe challenges we wanna make sure that we have plenty of richness in this area.  That might sound like I'm aiming to put stress challenge on Eli. But that's not quite how I see it. I think a good challenge is one that he might need to be pushed to do, but then ultimately he's able to do it himself and feel relatively OK while he's doing it. I think it's important that he feels relatively OK while he's doing it, since if he's not, then he's just learning to be afraid rather than learning to accept and embrace challenge. 
+
+Still, I think experience with soccer shows that he can adjust to different challenges when exposed in the right sequence and at the right level. And I think that's the trick for us as parents. It's easy to just shield him from challenges, especially since that's what his natural inclination is anyway. But I think we're robbing him of a lifetime where he can embrace challenge if we do that.
+
+On the other hand, having him repeatedly hit in the face with a challenge that frightened him every time is not gonna improve things. The trick for us is to figure out how to push him hard enough to actually get him to embrace challenges that he wouldn't otherwise embrace. But not so hard that he doesn't find joy in those challenges. Maybe not the first time but at least the fifth time that he's doing them.  We only have three more years....
+
+1. **Protect sleep like it is brain surgery.**  
+    Regular bedtimes, dark rooms, and less late-night screen time support synapse pruning and memory.
+2. **Prioritize face-to-face time over screen time.**  
+    Children’s brains wire around human interaction, not pixels.
+3. **Expose kids to varied but safe challenges.**  
+    New parks, new games, new stories. Variety builds richer brain maps.
+4. **Model emotional regulation.**  
+    A calm adult nervous system teaches a child’s nervous system how to return to baseline.
+5. **Read aloud daily.**  
+    Language exposure in these years lays tracks that support literacy, attention, and later learning.
 
 
-
+[[null]] 
 
 
 
