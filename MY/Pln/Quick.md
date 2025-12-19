@@ -1,3 +1,4 @@
+- call nancy
 - spec for court corners
 - demo 2/3-pointers rebound/assist 
 - PHQ ask about API
