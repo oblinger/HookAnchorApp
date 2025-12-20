@@ -168,6 +168,8 @@ RIGHT DISPLAY
 - See 1pass
 - Google:  Mac Bartender Download
 
+Bartender 6.  wef234@gmail.com
+GAWQE-F9AU3-CJ24S-3PD4R-QY36F-WUAFQ-GNEPM-48NM8-A9KGB-H5L7F-SNKJ7-PHUZV-LEM46-8947M-VF9MH-Q
 
 ## xx Better Touch Tool
 

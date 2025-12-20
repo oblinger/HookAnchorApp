@@ -1,3 +1,4 @@
+- shingles shot
 - call nancy
 - spec for court corners
 - demo 2/3-pointers rebound/assist 
