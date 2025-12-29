@@ -1,0 +1,18 @@
+
+- Use "SEEK" 
+- [[AI Job Search]] 
+- [[LI]] Linked In Searches
+- [[LIM]] Linked In Merge
+- [[Seek LinkedIn Based]]
+- [[Seek Search Terms]] 
+
+
+
+
+
+
+
+
+# LOG
+
+### 2025-09-09  CV companies

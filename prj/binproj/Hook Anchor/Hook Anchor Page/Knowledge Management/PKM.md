@@ -1,0 +1,176 @@
+(merge with hook system)
+
+- [[KM.]],  [[Meta]],  [[Hook System]], [[KM]], 
+
+### _
+- MATRIX YOUR KNOWLEDGE - Organize info into key hierarchies and don't allow existence of one hierarchy to break another.
+	- Divorce 'what' from 'where'.  Avoid using info's global location as a way of specifying its type or intent.  type and intent are always a good organizing axes...  best to allow location to serve another key axis.
+	  (Its ok to use relative location for type or intent, e.g. always using an H1 header 'Todo' to track task types, since that relative path can exist in many places.  but don't put all todos in one global tree)
+	 
+
+# PKM DESIGN
+## SUBSECTIONS
+- [[KM Overview]]
+- [[KM Anchors]] 
+- [[KM Global 2 Local]] 
+
+## ENUMERATED IDEAS
+
+### META GOALS
+#### PKM PURPOSE - To Get, Grok, and Scan knowledge
+#### EFFICIENCY - Sometimes every key & thought counts
+#### FLOW - Cogload and sub-planning kill flow, eliminate them from mental "inner loops"
+#### .
+
+### BIG IDEAS
+#### IDEMPOTENT / STATELESS - Stateless actions have exactly the same effect regardless of starting context
+#### MIND/KM-MELD - 
+#### FIRST LETTER NAMING - Things are indexed by their first letter
+#### UNITARY NAMESPACE - 
+#### LOCAL-GLOBAL NAVIGATION
+- LOCAL-GLOBAL-BUCKETING
+	- UNIFIED-NAMESPACE
+	- BUCKETING
+	- (See OPEN LOOP NAV / MUSCLE-MEMORY)
+	- HUFF-CODED-NEUMONIC-NAMING
+
+#### PROGRESSIVE REFINEMENT
+
+#### .
+
+### ACTIONS
+#### SIMPLE OBSIDIAN CONFIGURATIONS
+- Use "live editing" mode.
+- Enable 'folding'
+
+PLUGINS I USE
+- Action Commands	.
+- Advanced Tables		.
+- Calendar			.
+- Daily Note			X
+- Data View			.
+- Outliner				.
+- Style Settings		Bump H1 larger to 1.25, Color H2 to dark blue,
+- Templater			.
+
+#### COCKPIT CONFIGURATIONS
+
+#### ITEM FLINGING - 
+
+#### MEANINGFUL MODIFIERS - Assign fixed meaning to each modifier key combination
+We use the Karabeiner app to convert tab and capslock into modifiers, and then assign fixed meanings seven modifier combinations.
+
+- TAB			- Global "GO" keys  		-  Global (stateless) goto first-letter named "place"    (e.g. C=apple calendar.  D=obsidian daily page.  M=online gmail.  Q=obsidian Quick note page)
+- SLAM		- Global "DO" key		-  Global (stateless) action   (By pressing Control-Opt-Command)
+- CAPSLOCK	- Global "FAST" keys 		-  Reserved for the most frequently typed 'inner loop' commands.
+
+- CONTROL	- App "CURSOR" control	-  Application "cursor" control commands
+- OPTION		- App "OPTION" keys		-  Application specific user-defined commands
+- COMMAND	- App "MODIFY" cmds	-  Application-specific commands
+
+- LEFT PAIR	- App "SPECIALTY" do	-  Application-specific specialty "do" it 
+- RIGHT PAIR	- not yet assigned
+
+- SHIFT		- "LESSER" version		-  
+
+
+Reasoning
+- KEY IDEA AND BENEFIT:  
+	- Use First Letter Naming to DRAMATICALLY increase the number of commands one can commit to muscle memory and thus use while remaining in flow
+
+- BUT there are only 26 letters so use shift keys.  
+	- SOLUTION: Using the 16-modifier key options to expand to over TWELVE-HUNDRED key combinations just on the basic keyboard!
+
+- BUT committing 1000 bindings to muscle memory is impossible.  
+	- SOLUTION:  Create eight meaningful command groupings so your muscles know which modifiers by the kind of command.
+	     (so  "GO web"  is TAB-W,   "MODIFY bold" is CMD-B,  and "DO resolution" is SLAM-R)
+	      I never confuse  CMD-C (modify clipboard)  with TAB-C (GO to calendar) since the the 'go' or 'modify' intent is fused in my mind to the command itself.
+
+- BUT typing a key with a couple of modifier keys is a game of finger twister.  
+	- SOLUTION:  Map CAPS LOCK and TAB keys to the hardest modifier combinations, this transforms them into your EASIEST modifiers!
+
+- BUT I need my tab and caps lock key!
+	- SOLUTION:  Retain original key semantics in case the key is pressed and released without any other key (e.g. not as a modifier)
+
+- BUT sometimes first letter naming clashes even within a single category
+	- SOLUTION:  Retrain your brain with an easily remembered second meaningful name for a command.
+	  (e.g.  GO-mail uses M.  So GO-messages uses B for "BUBBLE".  On the mac the icon for messages is a comment BUBBLE, 
+	  Each time I go to the BUBBLE that is what I say in my mind.  In no time flat my muscles know how to go to the "BUBBLE" app since that is what comes into my mind.)
+
+- BUT there are only 26 letters, sometimes I have more than 26 commands of a single type.
+	- SOLUTION:  In RARE cases you can have a "LESSER" version command that is access adding the SHIFT key.
+	  (Use this sparingly since it will create a mental speed bump those two commands, and you will mix them up when it is not obvious which is the 'lesser' one)
+	  (When possible it is best if they are related commands.  e.g. SPECIAL-F views folder in obsidian, while SPECIAL-SHIFT-F views folder in apple finder)
+
+- BUT there are still more commands with the same first letter.
+	- SOLUTION 1 SUBMENU:  If these command are all related to each other then you can create sub menu where a second key will specify which one.
+	  				Certain plugins like Templater provide a menu for you, just ensure all commands have meaningful first letters
+	  				Keyboard Maestro will pop up a menu if you multiply bind the same key.  Again ensure first letters are unique and meaningful. (see my 'fling' command)
+	- SOLUTION 2 ANCHORS:  Just stop it!  These are unrelated commands, you are going to jumble your mind-KM-meld and break your brain if you add more.
+	  				Instead these should really be treated as alphanumerically named ANCHORS, you can have many thousands of these without issue.
+	  				If you use Dan's 'ACTION PAGE' plugin then you can anchor thinks like your DOWNLOADS folder or WSJ for Wall Street Journal page in the same namespace.
+
+
+My KM-mind-meld has evolved over decades, take it slow, and edit your mind or your keys when you repeatedly find muscle memory gaps.
+Over time the number of muscle commands will expand, and you will FLY all while remaining in FLOW.
+
+WARNING:  	Once you have melded for a few months you will never go to another computer or PKM that will not allow you to port your meld there.
+			I have ported some version of this melding from window to linux to macos, and across many PKMs.  
+			I am so daine-bramaged without it, I simply cannot move to a new ecosystem without it being mostly functional there.
+
+
+
+
+NOTES:
+- TAB is mapped to CONTROL-COMMAND since it is hard to type
+- CAPS LOCK is mapped to SHIFT-CONTROL-OPTION-COMMAND since that is really hard to type
+- SLAM is called "slam" since you are slamming three fingers down on all option keys all at once.  (very satisfying once you have thought of that combination in that way.)
+- LEFT-PAIR and RIGHT-PAIR is a nicer way to think about CONTROL-OPTION and OPTION-COMMAND, but neither is awesome to type, so they are less used.
+- The SHIFT option does not exist for CAPS and SLAM keys since SHIFT-SLAM is actually CAPS, and SHIFT-CAPS is already shifted.
+
+
+#### .
+
+### PROJECT TEMPLATE
+
+- SHORT NAME - Each project has a short name, NNNN.  This short name needs to be short if this project is to have TODO items associated.
+  This name need not be unique if it is short lived, longer lived ones will usually have a unique name
+- FOLDER - A project is rooted in a single folder PRJ/NNNN  or it can be dated as:   ROCKS/YYYY-MM NNNN
+- FOLDER CMD - A projects folder can be launched via the "NNNN Folder" action command
+- HEAD - Each project will have a head markdown in its root folder:   ... NNNN/NNNN.md
+- TODO - Projects may have a markdown of todo items in its root folder:   ... NNNN/NNNN..md
+- SPECIALTY LAUNCHERS:
+	- GDRIVE - Projects may have a gDrive folder, if so it is accessed via the "NNNN gdrive" command.
+	- WEBPAGE -  Projects may have an associated web page, if so it is accessed via the "NNNN page" command.
+	- 1PASS -  Projects may have an associated login, if so it is accessed via the "NNNN 1pass" command.
+-  
+
+## LOCAL-GLOBAL BUCKETING
+A (*the*?) most important aspect of any PKM is the amount of volume and density of relevant information one can access per minute.  Thus shaving even small percentages off the mental, temporal, and physical ease of navigating to some desired piece of knowledge GREATLY boosts the value of the PKM.  After 3 decades of organizing dozens of PKMs here is what I believe to be a set of best practices for achieving the highest levels of PKM nav efficiency, and how I have implemented them in Obsidian.
+
+### - BUCKETING
+
+
+### GLOBAL 2 LOCAL 
+To keep things separated in our own minds we remember or invent names to 'hook' onto.  So when you have the idea to get some bit of info, you already have some names in your mind, the global 2 local strategy begins from those names
+
+#### UNIFIED GLOBAL NAMESPACE
+- All things that are named thing 
+
+Significant cognitive 
+
+LOCAL FOLDER STRUCTURE
+
+
+OPEN LOOP NAV
+Close your eyes, let someone else navigate your PKM to a random page, now with your fingers on your home row keys let them suggest any one of your hundred+ global pages.  You are have an open loop PKM if you are able to successfully navigate to the correct global page
+, now type your way to 
+
+
+### - PROGRESSIVE REFINEMENT
+
+Idea: Many pages improve overall efficiency by optimizing effort in WRITE the page (at expense of reading the page), A smaller number are the reverse where optimizing READING of the page far out weighs cost of writing it.
+THUS: 
+- We want to allow all points on the READ/WRITE tradeoff efficiencies.
+- We want to allow progressive refinement for the likely cases where we don't know apriori the best tradeoff for the page.
+

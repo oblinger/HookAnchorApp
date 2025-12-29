@@ -1,0 +1,399 @@
+.[[Food]].   [[BUY]] 
+  [[Diet]]:
+  [[Meals]]:	[[Groc]], [[Entrees]],
+  [[Meals Thermomix]]:
+  [[Meals Vegetables]]:
+  [[Groc Lists]]:  [[Groc]],  [[Groc Travel]], 
+  [[ContainerWeights]]:
+  [[Delivery]]:
+  [[desserts]]:
+  [[FastingDiet]]:
+  [[Food Parents]]: 
+  [[Restaurants]]:
+  [[Try Foods]]:
+  [Nutrition Data Page](spot://nutritiondatapage), [Nutrition Facts Page](spot://nutritionfactspage), [Nutrition Value Page](spot://nutritionvaluepage),
+  [[Food Recipe Research]],
+  [[Eat]],
+  [[Bfast]],
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+chili powder; 
+
+spray it; mix it,   425  30min (check @15)
+tbsp lemon pepper, 1/4tsp little garlic, 1/4tsp toasted onion
+curry+tumeric mix
+cumin, chili powder
+taco seasoning, 
+pepper
+
+carrots, cabbage, broccoli in water
+
+zotar spice
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:: [[qwd]]
+
+:: [[desserts]]
+- [[MED Food]], 
+- [[Food Recipe Research]], [[Food Research]],  
+  [[FastingDiet]]
+
+ - SECTIONS:	[[Diet]],  [[Groc]],  [[Delivery]],  [[Eat]],  [[Food Research]],  
+ - TOPICS:  	[[Noom Notes]],  [[ReBuy]],  [[Restaurants]], [[Try Foods]], 
+ - SMASS:		[[ContainerWeights]],  [[Glycemic Index]],  [old-word-shopping-list](groc.docx),  
+ - MEALS:		[[Meals]],  [[Entrees]], [[Meals Vegetables]], 
+ - 				[[Eli Food]],  [[Meals Thermomix]], [[Food Parents]], 
+
+
+
+
+## Foo
+
+#### Kinds ofResturants
+Asian 	Chinese, Japanese/Sushi/Raman, 		Korean, Thai, Viet/Pho, Burmese
+Kind  	USA, Pizza, Burger, Sandwich, Veg
+Euro 	Italian, French, German, Spanish	British, Irish, East Euro, Greek, Turkish
+South	Mexican, Cajun, Caribbean			Southern, Soul, SouthAm(Peruvian)
+World	Mediterranean, Indian, African
+
+
+
+
+
+---
+
+# Food
+
+This is an auto-generated anchor file for patch 'Food'.
+
+Add your content here.
+
+
+---
+
+# Food
+
+This is an auto-generated anchor file for patch 'Food'.
+
+Add your content here.
+
+
+---
+
+# Food
+
+This is an auto-generated anchor file for patch 'Food'.
+
+Add your content here.

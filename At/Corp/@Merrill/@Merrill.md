@@ -1,0 +1,75 @@
+.[[@Merrill]].
+  ,   [[@Avanti Pakrasi]], [[@Gary Bladen]],
+  , ,
+  , ,
+  , ,
+  , [@Merrill Obsidian](spot://@merrillobsidian),
+  DELS: ,[@Merrill Obsidian](spot://@merrillobsidian),
+  , ,
+  , [@Merrill Note](spot://@merrillnote), 
+  DELS: [@Merrill Note](spot://@merrillnote),[@Merrill Obsidian](spot://@merrillobsidian),[@Merrill Note](spot://@merrillnote),[@Merrill Note](spot://@merrillnote),
+
+#pp  
+
+[[@Avanti Pakrasi]]  [[@Gary Bladen]]. 
+
+
+
+# LOG
+
+### 2024-06-11 Wealth planning
+
+
+- Facet & Vanguard
+
+
+Value prop
+- Retirement planning
+- Portfolio structure
+- Ongoing balancing
+- Funding picking
+
+- Fees, Access to tool, access to specialty
+- Fiduciary - 
+- CFP
+
+
+- Alternatives
+
+
+Merrill is a Fiduciary
+
+
+Best interest of client
+
+
+WAYS IN
+ML1 - Investment Advisory Program -
+
+
+
+---
+
+# @Merrill
+
+This is an auto-generated anchor file for patch '@Merrill'.
+
+Add your content here.
+
+
+---
+
+# @Merrill
+
+This is an auto-generated anchor file for patch '@Merrill'.
+
+Add your content here.
+
+
+---
+
+# @Merrill
+
+This is an auto-generated anchor file for patch '@Merrill'.
+
+Add your content here.

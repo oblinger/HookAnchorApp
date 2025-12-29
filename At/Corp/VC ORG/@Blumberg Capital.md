@@ -1,0 +1,5 @@
+[[VC ORG]]    [Blumberg Capital](https://www.crunchbase.com/organization/blumberg-capital)   CB: 1658 217/44 p11+
+  Early stage B2B w. Innovative use of AI
+  ~ Innovative use of AI
+  
+  Blumberg Capital is an early-stage venture capital firm that partners with visionary entrepreneurs to build successful technology companies that empower individuals, businesses and society through the innovative use of AI, big data and other transformative technologies. We are passionate about nurturing B2B technology companies from Seed stage through their growth journey, as active board members and hands-on advisors. We were among the first investors in industry leaders including Addepar, Braze, Credorax, DoubleVerify, Fundbox, HootSuite, Katapult, Nutanix, Trulioo and Yotpo. Find us in San Francisco, Tel Aviv, Miami and New York or at blumbergcapital.com.
