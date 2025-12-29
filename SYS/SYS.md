@@ -1,9 +1,8 @@
 .                 **MY PERSONAL SYSTEMS**
 
-
 .[[SYS]]. > [[MY]] 
   SYSTEMS:	[[SYS Obs]], [[SYS Android]], [[SYS Disks]], [[SYS Network]], [[SYS PKM]], 
-  [[SYS Setup]]			-
+  [[SYS Setup]]		-
 	My KBD:		[[SYS Keyboard Setup]], [[KBD Shortcuts]], [[KBD Obsidian Keys]], [[KBD Global Keys]], [[KBD Notion]], 
 	[[OBS]], 
   [[SYS Dev]] 
@@ -14,34 +13,8 @@
 - [[SYS Notations]]		-
 - [[KBD Shortcuts]]		-
 - [[SYS Task Lists]]		-
-  , [Bard Page](spot://bardpage), , ,
+  , [Bard Page](spot://bardpage), 
   , [[Notifications]],
   , [[Closet]],  [[MAC]],
 - [[Spot]] 
 
-
----
-
-# SYS
-
-This is an auto-generated anchor file for patch 'SYS'.
-
-Add your content here.
-
-
----
-
-# SYS
-
-This is an auto-generated anchor file for patch 'SYS'.
-
-Add your content here.
-
-
----
-
-# SYS
-
-This is an auto-generated anchor file for patch 'SYS'.
-
-Add your content here.
