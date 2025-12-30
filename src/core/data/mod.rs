@@ -98,7 +98,6 @@ pub use storage::get_config_dir;
 
 // Re-export deduplication utilities for consistent duplicate detection
 pub use storage::{
-    is_duplicate_command,
     command_dedup_key,
     build_command_map,
 };

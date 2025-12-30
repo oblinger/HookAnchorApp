@@ -269,15 +269,6 @@ pub(super) fn delete_cache() -> Result<bool, String> {
     }
 }
 
-/// Determines if two commands are duplicates
-/// Commands are duplicates if they have the same name, action, and arg
-/// This allows the same command name to exist multiple times if pointing to different files
-pub fn is_duplicate_command(cmd1: &Command, cmd2: &Command) -> bool {
-    cmd1.command == cmd2.command &&
-    cmd1.action == cmd2.action &&
-    cmd1.arg == cmd2.arg
-}
-
 /// Generates a unique key for deduplication
 /// Commands with the same key are considered duplicates
 pub fn command_dedup_key(cmd: &Command) -> String {

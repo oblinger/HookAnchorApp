@@ -547,59 +547,6 @@ pub fn exact_match(str1: &str, str2: &str) -> bool {
 /// # Returns
 /// * `bool` - true if prefix fully matches to end of command, false otherwise
 ///
-/// # Examples
-/// * `prefix_fully_matches_anchor("facebook", "facebook")` → true
-/// * `prefix_fully_matches_anchor("facebookpage", "facebook")` → true
-/// * `prefix_fully_matches_anchor("face", "facebook")` → false (partial only)
-/// * `prefix_fully_matches_anchor("face", "Hugging Face")` → false (partial only)
-fn prefix_fully_matches_anchor(prefix: &str, command: &str) -> bool {
-    // First check if it matches at all
-    if !command_matches_query(command, prefix) {
-        return false;
-    }
-
-    // Normalize both strings: lowercase + remove separators
-    let separators = " ._-";
-    let prefix_normalized: String = prefix.to_lowercase()
-        .chars()
-        .filter(|c| !separators.contains(*c))
-        .collect();
-    let command_normalized: String = command.to_lowercase()
-        .chars()
-        .filter(|c| !separators.contains(*c))
-        .collect();
-
-    // Check if normalized prefix length >= normalized command length
-    prefix_normalized.len() >= command_normalized.len()
-}
-
-/// Exact prefix matching for anchors - requires consecutive character match.
-/// Only allows ignoring separators (spaces, dots, underscores, hyphens).
-///
-/// This is stricter than `prefix_fully_matches_anchor()` which uses fuzzy matching.
-/// Used specifically for anchor detection to avoid false positives.
-///
-/// # Examples
-/// * `anchor_matches_prefix_exactly("sv", "SV Tasks", " ._-")` → true
-/// * `anchor_matches_prefix_exactly("svt", "SV Tasks", " ._-")` → true
-/// * `anchor_matches_prefix_exactly("stat", "SV Tasks", " ._-")` → false (would skip 'V')
-/// * `anchor_matches_prefix_exactly("stat", "Status", " ._-")` → true
-fn anchor_matches_prefix_exactly(command: &str, prefix: &str, separators: &str) -> bool {
-    // Normalize: lowercase and remove separators
-    let cmd_normalized: String = command.to_lowercase()
-        .chars()
-        .filter(|c| !separators.contains(*c))
-        .collect();
-    let prefix_normalized: String = prefix.to_lowercase()
-        .chars()
-        .filter(|c| !separators.contains(*c))
-        .collect();
-
-    // Exact prefix match (no character skipping)
-    cmd_normalized.starts_with(&prefix_normalized)
-}
-
-
 /// Build prefix menu by scanning backwards from input string to find first anchor
 ///
 /// Scans backwards from the full input string, looking for commands that resolve to anchors.
