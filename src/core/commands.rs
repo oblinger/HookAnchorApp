@@ -618,93 +618,6 @@ pub fn create_patches_hashmap(commands: &[Command]) -> HashMap<String, Patch> {
     patches
 }
 
-/// Infers the appropriate patch value for a command based on various heuristics
-/// 1. First checks if the first word matches any existing patch name (case-insensitive)
-/// 2. Then checks if the command refers to a file in a folder associated with a patch
-/// 3. If it's an anchor file, walks hierarchy looking for containing patch
-/// Returns None if no patch can be inferred
-/// Always analyzes the command regardless of any current patch value
-pub fn infer_patch(command: &Command, patches: &HashMap<String, Patch>) -> Option<String> {
-    crate::core::inference::infer_patch(command, patches)
-}
-
-/// Automatically assigns patch names to commands based on shared prefixes
-/// For commands without a patch, if their name starts with a prefix (up to first space)
-/// that's shared with at least one other command, that prefix becomes the patch name.
-/// The patch name preserves the case of the first occurrence of the prefix.
-pub fn auto_assign_patches(commands: &mut Vec<Command>) {
-    crate::core::inference::auto_assign_patches(commands);
-}
-
-/// Determines if replacing current_patch with inferred_patch would be a degradation
-/// 
-/// This prevents --infer-all from replacing specific, well-organized patches with generic ones.
-/// 
-/// # Arguments
-/// * `current_patch` - The existing patch on the command
-/// * `inferred_patch` - The patch that inference wants to assign
-/// 
-/// # Returns
-/// * `true` if this would be a degradation (should be prevented)
-/// * `false` if this would be an improvement or neutral change
-fn is_patch_degradation(current_patch: &str, inferred_patch: &str) -> bool {
-    // List of generic/low-quality patches that shouldn't replace specific ones
-    let generic_patches = [
-        "old", "Old", "OLD",
-        "misc", "Misc", "MISC", 
-        "other", "Other", "OTHER",
-        "test", "Test", "TEST",
-        "temp", "Temp", "TEMP",
-        "archive", "Archive", "ARCHIVE",
-        "tmp", "Tmp", "TMP"
-    ];
-    
-    // If the inferred patch is generic, don't replace a non-generic current patch
-    if generic_patches.contains(&inferred_patch) && !generic_patches.contains(&current_patch) {
-        return true;
-    }
-    
-    // If current patch contains a year (2000-2030) and inferred doesn't, it's likely a degradation
-    let current_has_year = current_patch.chars()
-        .collect::<Vec<char>>()
-        .windows(4)
-        .any(|window| {
-            let year_str: String = window.iter().collect();
-            if let Ok(year) = year_str.parse::<u32>() {
-                year >= 2000 && year <= 2030
-            } else {
-                false
-            }
-        });
-    
-    let inferred_has_year = inferred_patch.chars()
-        .collect::<Vec<char>>()
-        .windows(4)
-        .any(|window| {
-            let year_str: String = window.iter().collect();
-            if let Ok(year) = year_str.parse::<u32>() {
-                year >= 2000 && year <= 2030
-            } else {
-                false
-            }
-        });
-    
-    if current_has_year && !inferred_has_year {
-        return true;
-    }
-    
-    // If current patch is significantly longer and more specific, prefer it
-    if current_patch.len() > inferred_patch.len() + 5 {
-        // Only consider it degradation if the current patch has multiple words/parts
-        if current_patch.contains(' ') || current_patch.contains('-') || current_patch.contains('_') {
-            return true;
-        }
-    }
-    
-    // Not a degradation
-    false
-}
-
 // NOTE: build_folder_to_patch_map() moved to SysData layer
 // The folder_to_patch map is now maintained in SysData and queried via get_patch_for_folder()
 
@@ -798,7 +711,7 @@ pub fn run_patch_inference(
                 
                 // ANTI-DEGRADATION PROTECTION: Don't replace specific patches with generic ones
                 if !command.patch.is_empty() {
-                    if is_patch_degradation(&command.patch, &inferred_patch) {
+                    if crate::core::inference::is_patch_degradation(&command.patch, &inferred_patch) {
                         // Skip this change - would degrade patch quality
                         detailed_log("PATCH_INFERENCE", &format!(
                             "Command '{}' -> REJECTED degradation from '{}' to '{}'",
@@ -849,28 +762,6 @@ pub fn run_patch_inference(
     log(&format!("=== END INFERENCE ===\n"));
     
     (patches_assigned, new_patches_to_add)
-}
-
-/// Creates a fast lookup map from command names to their patch references
-/// This provides O(1) lookup for finding the patch associated with a command
-pub(crate) fn create_command_to_patch_map(commands: &[Command], patches: &HashMap<String, Patch>) -> HashMap<String, String> {
-    let mut command_to_patch_map = HashMap::new();
-    
-    for command in commands {
-        if !command.patch.is_empty() {
-            if get_patch(&command.patch, patches).is_some() {
-                command_to_patch_map.insert(command.command.clone(), command.patch.clone());
-            }
-        }
-    }
-    
-    command_to_patch_map
-}
-
-/// Case-insensitive patch lookup - the canonical way to check if a patch exists
-/// Returns true if a patch with the given name exists (case-insensitive)
-pub(crate) fn patch_exists(patch_name: &str, patches: &HashMap<String, Patch>) -> bool {
-    get_patch(patch_name, patches).is_some()
 }
 
 /// Gets the patch for a command using fast lookup
@@ -940,91 +831,6 @@ pub fn get_patch_path(command_name: &str, patches: &HashMap<String, Patch>) -> V
     // Reverse the path so it goes from root to command (FOO -> BAR -> BAZ -> CMD)
     path.reverse();
     path
-}
-
-
-
-/// Create a virtual anchor command for a patch that has no anchor
-/// This ensures every patch has at least one anchor command
-/// Infers the parent patch by finding the longest matching prefix in existing patches
-fn create_virtual_anchor_for_patch(patch_name: &str, _config: &Config, patches: &HashMap<String, Patch>) -> Option<Command> {
-    // Infer parent patch by finding longest matching prefix
-    let parent_patch = infer_parent_patch_from_name(patch_name, patches);
-
-    detailed_log("VIRTUAL_ANCHOR", &format!(
-        "Creating virtual anchor for '{}' with parent '{}'",
-        patch_name, parent_patch
-    ));
-
-    // Create the virtual anchor command - no file path needed, just blank arg
-    Some(Command {
-        command: patch_name.to_string(),
-        action: String::new(),  // Virtual anchor - blank action (non-executable)
-        arg: String::new(), // NEW SYSTEM: Blank arg, no markdown file
-        patch: parent_patch,
-        flags: "A".to_string(), // Anchor flag (system-generated)
-        other_params: None,
-        last_update: 0,
-        file_size: None,
-    })
-}
-
-/// Infer parent patch from a patch name by finding the longest matching prefix
-/// Example: "2016-00-00 ppp" -> looks for "2016-00", "2016", etc.
-fn infer_parent_patch_from_name(patch_name: &str, patches: &HashMap<String, Patch>) -> String {
-    let patch_name_lower = patch_name.to_lowercase();
-
-    // Try progressively shorter prefixes, looking for matches in existing patches
-    // Split on common separators: space, dash, underscore
-    let parts: Vec<&str> = patch_name
-        .split(|c: char| c == ' ' || c == '-' || c == '_')
-        .collect();
-
-    // Try from longest to shortest prefix
-    for len in (1..parts.len()).rev() {
-        let prefix = parts[..len].join(" ");
-        let prefix_lower = prefix.to_lowercase();
-
-        // Also try with original separators
-        if patches.contains_key(&prefix_lower) {
-            detailed_log("PARENT_INFERENCE", &format!(
-                "Found parent '{}' for patch '{}'", prefix, patch_name
-            ));
-            return prefix;
-        }
-
-        // Try with dashes instead of spaces
-        let prefix_dash = parts[..len].join("-");
-        let prefix_dash_lower = prefix_dash.to_lowercase();
-        if patches.contains_key(&prefix_dash_lower) {
-            detailed_log("PARENT_INFERENCE", &format!(
-                "Found parent '{}' for patch '{}'", prefix_dash, patch_name
-            ));
-            return prefix_dash;
-        }
-    }
-
-    // No parent found - use orphans
-    detailed_log("PARENT_INFERENCE", &format!(
-        "No parent found for patch '{}' - using orphans", patch_name
-    ));
-    "orphans".to_string()
-}
-
-// GlobalData has been moved to sys_data module as SysData
-
-/// Load commands with all derived data structures (patches, inference, orphan anchors)
-/// INTERNAL ONLY - External code should use get_commands() from sys_data
-pub(in crate::core) fn load_commands() -> Vec<Command> {
-    let (global_data, _) = crate::core::data::get_sys_data();
-    (*global_data.commands).clone()
-}
-
-/// Load commands with config and patches
-/// INTERNAL ONLY - External code should use get_sys_data()
-pub(in crate::core) fn load_commands_with_data() -> (crate::core::data::config::Config, Vec<Command>, HashMap<String, Patch>) {
-    let (global_data, _) = crate::core::data::get_sys_data();
-    (global_data.config, (*global_data.commands).clone(), global_data.patches)
 }
 
 /// Load commands with only patches (no inference or orphan creation) - for inference analysis
@@ -1183,73 +989,6 @@ pub fn parse_command_line(line: &str) -> Result<Command, String> {
     }
     
     Err(format!("Invalid command format: missing ' : ' separator"))
-}
-
-/// Saves commands to file
-/// Deduplicates commands by keeping the best version of each command
-/// Priority: commands with patches > commands without patches
-/// Then by flags: commands with flags > commands without flags
-fn deduplicate_commands(commands: Vec<Command>) -> Vec<Command> {
-    use std::collections::HashMap;
-    
-    let original_count = commands.len();
-    let mut best_commands: HashMap<(String, String, String), Command> = HashMap::new();
-    
-    for command in commands {
-        // Use (command_name, action, arg) as key to identify truly identical commands
-        // This preserves different files with same base name but different paths
-        let key = (command.command.clone(), command.action.clone(), command.arg.clone());
-        
-        match best_commands.get(&key) {
-            Some(existing) => {
-                // Keep the better command based on priority
-                if is_better_command(&command, existing) {
-                    detailed_log("AUTO_DEDUP", &format!("Replacing '{}' (patch:'{}' flags:'{}') with better version (patch:'{}' flags:'{}')",
-                        command.command, existing.patch, existing.flags, command.patch, command.flags));
-                    best_commands.insert(key, command);
-                } else {
-                    detailed_log("AUTO_DEDUP", &format!("Keeping existing '{}' (patch:'{}' flags:'{}') over (patch:'{}' flags:'{}')",
-                        command.command, existing.patch, existing.flags, command.patch, command.flags));
-                }
-            }
-            None => {
-                best_commands.insert(key, command);
-            }
-        }
-    }
-    
-    let deduplicated_commands = best_commands.into_values().collect::<Vec<_>>();
-    let removed_count = original_count - deduplicated_commands.len();
-    if removed_count > 0 {
-        detailed_log("AUTO_DEDUP", &format!("Removed {} duplicate commands ({} -> {})", removed_count, original_count, deduplicated_commands.len()));
-    }
-    deduplicated_commands
-}
-
-/// Determines if candidate is better than current command
-/// Priority: 1. Has patch > no patch, 2. Has flags > no flags, 3. Longer arg > shorter arg
-fn is_better_command(candidate: &Command, current: &Command) -> bool {
-    // Priority 1: Commands with patches are better than commands without patches
-    match (candidate.patch.is_empty(), current.patch.is_empty()) {
-        (false, true) => return true,  // candidate has patch, current doesn't
-        (true, false) => return false, // current has patch, candidate doesn't
-        _ => {} // Both have patches or both don't, continue to next criteria
-    }
-    
-    // Priority 2: Commands with flags are better than commands without flags
-    match (candidate.flags.is_empty(), current.flags.is_empty()) {
-        (false, true) => return true,  // candidate has flags, current doesn't
-        (true, false) => return false, // current has flags, candidate doesn't
-        _ => {} // Both have flags or both don't, continue to next criteria
-    }
-    
-    // Priority 3: Commands with longer args (more complete paths) are better
-    if candidate.arg.len() > current.arg.len() {
-        return true;
-    }
-    
-    // Default: keep current
-    false
 }
 
 /// Filters commands based on search text with fuzzy matching and patch support

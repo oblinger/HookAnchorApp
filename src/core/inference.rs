@@ -231,57 +231,6 @@ pub fn infer_patch_unified(
     best_match
 }
 
-/// Run basic patch inference with degradation prevention and logging
-/// This is a simplified version - the main CLI version is in commands.rs
-pub fn run_basic_patch_inference(
-    commands: &mut [Command],
-    patches: &HashMap<String, Patch>,
-    skip_degradation_check: bool,
-) {
-    let start_time = std::time::Instant::now();
-    let mut inferred_count = 0;
-    let mut skipped_count = 0;
-
-    // NOTE: folder_to_patch map is now in SysData, queried via get_patch_for_folder()
-
-    for command in commands.iter_mut() {
-        // Skip commands that already have patches unless we're forcing re-inference
-        if !command.patch.is_empty() && !skip_degradation_check {
-            continue;
-        }
-
-        let old_patch = command.patch.clone();
-
-        if let Some(inferred_patch) = infer_patch_unified(command, patches) {
-            // Check for degradation if we have an existing patch
-            if !old_patch.is_empty() && !skip_degradation_check {
-                if is_patch_degradation(&old_patch, &inferred_patch) {
-                    detailed_log("PATCH_INFERENCE", &format!(
-                        "Skipping degraded inference for '{}': '{}' -> '{}' (would be degradation)",
-                        command.command, old_patch, inferred_patch
-                    ));
-                    skipped_count += 1;
-                    continue;
-                }
-            }
-            
-            command.patch = inferred_patch.clone();
-            inferred_count += 1;
-            
-            detailed_log("PATCH_INFERENCE", &format!(
-                "Inferred patch for '{}': '{}' -> '{}'",
-                command.command, old_patch, inferred_patch
-            ));
-        }
-    }
-    
-    let duration = start_time.elapsed();
-    log(&format!(
-        "Patch inference completed in {:?}: {} patches inferred, {} skipped (degradation)",
-        duration, inferred_count, skipped_count
-    ));
-}
-
 // ============================================================================
 // FILE PATH-BASED INFERENCE
 // ============================================================================
@@ -330,51 +279,6 @@ fn infer_patch_from_command(command: &Command, patches: &HashMap<String, Patch>)
     ));
 
     result
-}
-
-/// Infer patch from file path, excluding a specific command to prevent self-assignment
-fn infer_patch_from_file_path_with_exclusion(file_path: &str, patches: &HashMap<String, Patch>, exclude_command: &str) -> Option<String> {
-    // Use simple inference (queries SysData's folder_to_patch map)
-    if let Some(patch) = infer_patch_simple(file_path) {
-        // Skip if the inferred patch matches the excluded command
-        if patch.to_lowercase() == exclude_command.to_lowercase() {
-            // Fall through to directory hierarchy search
-        } else if patches.contains_key(&patch.to_lowercase()) {
-            // Valid patch that's not the excluded one
-            return Some(patch);
-        }
-    }
-    
-    // Fallback to walking up the directory hierarchy
-    let path = Path::new(file_path);
-    // FIXED: For folders, start with parent. For files, start with containing directory.
-    // Both cases should check the PARENT, not the item itself.
-    let mut current_dir = path.parent();
-
-    while let Some(dir) = current_dir {
-        if let Some(dir_name) = dir.file_name() {
-            if let Some(dir_str) = dir_name.to_str() {
-                // Look for a patch that matches this directory name
-                for patch_name in patches.keys() {
-                    // Exclude the specified command
-                    if patch_name.to_lowercase() == exclude_command.to_lowercase() {
-                        continue;
-                    }
-
-                    if patch_name.to_lowercase() == dir_str.to_lowercase() {
-                        detailed_log("PATCH_INFERENCE", &format!(
-                            "Found patch '{}' from directory name '{}' for path '{}'",
-                            patch_name, dir_str, file_path
-                        ));
-                        return Some(patch_name.clone());
-                    }
-                }
-            }
-        }
-        current_dir = dir.parent();
-    }
-
-    None
 }
 
 /// Core file path-based patch inference
@@ -466,51 +370,7 @@ pub fn infer_patch_simple_with_anchor_flag(file_path: &str, is_anchor: bool) -> 
 }
 
 // ============================================================================
-// HIERARCHY-BASED INFERENCE
-// ============================================================================
-//
-// This section handles patch inference based on folder hierarchies,
-// particularly for anchor commands that need to find their parent patch
-// without creating self-reference cycles.
-
-/// Infer patch for anchor commands by looking at their folder hierarchy
-fn infer_patch_from_hierarchy_for_anchor(command: &Command, patches: &HashMap<String, Patch>) -> Option<String> {
-    if command.is_anchor() && !command.arg.is_empty() {
-        let path = Path::new(&command.arg);
-        if let Some(parent_dir) = path.parent() {
-            return infer_patch_from_hierarchy(parent_dir.parent()?, patches);
-        }
-    }
-    None
-}
-
-/// Walk up directory hierarchy to find matching patch
-fn infer_patch_from_hierarchy(dir: &Path, patches: &HashMap<String, Patch>) -> Option<String> {
-    let mut current = Some(dir);
-    
-    while let Some(path) = current {
-        if let Some(dir_name) = path.file_name() {
-            if let Some(dir_str) = dir_name.to_str() {
-                // Look for exact match
-                for patch_name in patches.keys() {
-                    if patch_name.to_lowercase() == dir_str.to_lowercase() {
-                        detailed_log("HIERARCHY_INFERENCE", &format!(
-                            "Found hierarchy patch '{}' from directory '{}'", 
-                            patch_name, dir_str
-                        ));
-                        return Some(patch_name.clone());
-                    }
-                }
-            }
-        }
-        current = path.parent();
-    }
-    
-    None
-}
-
-// ============================================================================
-// ALIAS AND PATTERN-BASED INFERENCE  
+// ALIAS AND PATTERN-BASED INFERENCE
 // ============================================================================
 //
 // This section handles inference for alias commands and pattern-based
@@ -629,7 +489,7 @@ pub fn auto_assign_patches(commands: &mut Vec<Command>) {
 // similarity calculations, degradation detection, and other utilities.
 
 /// Check if a patch change would be a degradation (less specific/useful)
-fn is_patch_degradation(current_patch: &str, inferred_patch: &str) -> bool {
+pub(crate) fn is_patch_degradation(current_patch: &str, inferred_patch: &str) -> bool {
     // If current patch is empty, any inference is an improvement
     if current_patch.is_empty() {
         return false;

@@ -1,60 +1,11 @@
 //! User-level command operations
-//! 
+//!
 //! This module contains operations that users directly invoke on the command set,
-//! such as adding, deleting, and renaming commands with their associated data.
+//! such as renaming commands with their associated data.
 
 use std::collections::HashMap;
 use crate::core::{Command, Config, Patch};
 use crate::prelude::*;
-
-// ============================================================================
-// Simple Command Operations
-// ============================================================================
-
-/// Adds a new command to the list and saves
-/// Validate an alias command for cycles before adding it
-fn validate_alias_command(new_command: &Command, _commands: &[Command]) -> Result<(), String> {
-    if new_command.action != "alias" {
-        return Ok(());
-    }
-    
-    // Prevent self-referential alias (A -> A) - this is the most critical check
-    if new_command.command == new_command.arg {
-        return Err(format!("Cannot create self-referential alias: '{}' cannot alias to itself", new_command.command));
-    }
-    
-    // Note: More complex cycle detection would require loading the full command set
-    // and doing graph traversal, but the self-referential check catches the most
-    // dangerous case that causes immediate stack overflow
-    
-    Ok(())
-}
-
-pub fn add_command(new_command: Command, commands: &mut Vec<Command>) -> Result<(), Box<dyn std::error::Error>> {
-    // Validate before making any changes
-    validate_alias_command(&new_command, commands)?;
-
-    // Use sys_data to add (automatically records history + inference + save)
-    crate::core::data::add_command(new_command)?;
-
-    // Reload commands into the provided vec for backward compatibility
-    *commands = crate::core::data::get_commands();
-    Ok(())
-}
-
-/// Deletes a command from the list and saves
-pub fn delete_command(command_to_delete: &str, commands: &mut Vec<Command>) -> Result<(), Box<dyn std::error::Error>> {
-    // Use sys_data to delete (automatically saves + inference)
-    crate::core::data::delete_command(command_to_delete)?;
-
-    // Reload commands into the provided vec for backward compatibility
-    *commands = crate::core::data::get_commands();
-    Ok(())
-}
-
-// ============================================================================
-// Complex Command Operations  
-// ============================================================================
 
 /// Rename associated data when a command name is changed
 /// 
