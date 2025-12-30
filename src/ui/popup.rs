@@ -592,8 +592,8 @@ impl PopupInterface for AnchorSelector {
             // Resolve any aliases to get the final target command
             let resolved_cmd = cmd.resolve_alias(&commands);
 
-            // Check if the resolved command is an anchor
-            let is_anchor = resolved_cmd.action == "anchor" || resolved_cmd.flags.contains('A');
+            // Check if the resolved command is an anchor (via 'A' flag)
+            let is_anchor = resolved_cmd.is_anchor();
 
             if is_anchor {
                 // Found an anchor (either directly or via alias) - set it as active and clear the input

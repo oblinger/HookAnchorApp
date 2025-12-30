@@ -34,6 +34,23 @@ pub(crate) static CONFIG: OnceLock<Config> = OnceLock::new();
 // Global flag to track if commands have been modified and need reload
 static COMMANDS_MODIFIED: OnceLock<std::sync::atomic::AtomicBool> = OnceLock::new();
 
+// Track the modification time of commands.txt when we last loaded it
+// Used to auto-reload when the file changes (e.g., from server process updates)
+static LAST_COMMANDS_MTIME: OnceLock<Mutex<Option<std::time::SystemTime>>> = OnceLock::new();
+
+/// Update the stored mtime of commands.txt to current file mtime
+/// Called after loading commands to prevent immediate re-reload
+fn update_commands_mtime() {
+    let commands_path = super::storage::get_commands_file_path();
+    if let Ok(metadata) = std::fs::metadata(&commands_path) {
+        if let Ok(mtime) = metadata.modified() {
+            let mtime_lock = LAST_COMMANDS_MTIME.get_or_init(|| Mutex::new(None));
+            let mut stored = mtime_lock.lock().unwrap();
+            *stored = Some(mtime);
+        }
+    }
+}
+
 /// Initialize minimal sys_data with empty commands for GUI startup
 /// This prevents panics when UI tries to access data before it's loaded
 pub fn initialize_minimal() -> Result<(), String> {
@@ -140,13 +157,46 @@ pub fn initialize_config() -> Result<(), String> {
 }
 
 /// Gets a reference to the sys data from the singleton
+/// Automatically reloads from disk if commands.txt has been modified since last load
+/// Returns (SysData, was_reloaded) - was_reloaded is true if data was refreshed from disk
 /// Panics if initialize() hasn't been called yet
 pub fn get_sys_data() -> (SysData, bool) {
+    // Check if commands.txt has been modified since we last loaded
+    let commands_path = super::storage::get_commands_file_path();
+    let mut was_reloaded = false;
+
+    if let Ok(metadata) = std::fs::metadata(&commands_path) {
+        if let Ok(current_mtime) = metadata.modified() {
+            let mtime_lock = LAST_COMMANDS_MTIME.get_or_init(|| Mutex::new(None));
+            let stored_mtime = mtime_lock.lock().unwrap().clone();
+
+            if let Some(prev_mtime) = stored_mtime {
+                if current_mtime > prev_mtime {
+                    // Commands file changed since we last loaded - reload from disk
+                    detailed_log("SYS_DATA", "Commands.txt modified - auto-reloading from disk");
+                    drop(stored_mtime); // Release any references
+
+                    // Reload commands from disk
+                    let commands = super::storage::load_commands_raw();
+                    update_commands(commands);
+
+                    // Update stored mtime
+                    let mut mtime = mtime_lock.lock().unwrap();
+                    *mtime = Some(current_mtime);
+
+                    was_reloaded = true;
+                    log(&format!("SYS_DATA: Auto-reloaded {} commands from disk",
+                        get_commands_arc().len()));
+                }
+            }
+        }
+    }
+
     let sys = SYS_DATA.get_or_init(|| Mutex::new(None));
     let sys_data = sys.lock().unwrap();
 
     match *sys_data {
-        Some(ref data) => (data.clone(), false),
+        Some(ref data) => (data.clone(), was_reloaded),
         None => panic!("SysData not initialized! Call initialize() at startup"),
     }
 }
@@ -248,6 +298,10 @@ pub fn reload_commands() -> Result<Vec<Command>, Box<dyn std::error::Error>> {
 
     // Update singleton (but don't save back to disk - we just loaded from there!)
     update_commands(commands.clone());
+
+    // Update the stored mtime so we don't reload again until next change
+    update_commands_mtime();
+
     log("RELOAD_COMMANDS: Updated singleton with loaded commands");
 
     Ok(commands)
@@ -391,6 +445,12 @@ pub fn initialize() -> Result<(), String> {
         patches,
         folder_to_patch,
     });
+
+    // Release lock before updating mtime
+    drop(sys_data);
+
+    // Set initial mtime so get_sys_data() knows when we last loaded
+    update_commands_mtime();
 
     Ok(())
 }

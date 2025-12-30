@@ -83,8 +83,8 @@ impl CommandEditor {
             self.argument = cmd.arg.clone();
             self.patch = cmd.patch.clone();
 
-            // Extract anchor state - use is_anchor() which checks both action type and 'a' flag
-            // Then remove 'a' flag from flags string so it doesn't show in the text field
+            // Extract anchor state - is_anchor() checks the 'A' flag
+            // Then remove 'A' flag from flags string so it doesn't show in the text field
             self.is_anchor = cmd.is_anchor();
             let mut temp_cmd = cmd.clone();
             temp_cmd.remove_flag(FLAG_ANCHOR);
@@ -131,8 +131,8 @@ impl CommandEditor {
         self.argument = template_command.arg.clone();
         self.patch = template_command.patch.clone();
 
-        // Extract anchor state - use is_anchor() which checks both action type and 'a' flag
-        // Then remove 'a' flag from flags string so it doesn't show in the text field
+        // Extract anchor state - is_anchor() checks the 'A' flag
+        // Then remove 'A' flag from flags string so it doesn't show in the text field
         self.is_anchor = template_command.is_anchor();
         let mut temp_cmd = template_command.clone();
         temp_cmd.remove_flag(FLAG_ANCHOR);
@@ -163,8 +163,8 @@ impl CommandEditor {
         self.argument = command.arg.clone();
         self.patch = command.patch.clone();
 
-        // Extract anchor state - use is_anchor() which checks both action type and 'a' flag
-        // Then remove 'a' flag from flags string so it doesn't show in the text field
+        // Extract anchor state - is_anchor() checks the 'A' flag
+        // Then remove 'A' flag from flags string so it doesn't show in the text field
         self.is_anchor = command.is_anchor();
         let mut temp_cmd = command.clone();
         temp_cmd.remove_flag(FLAG_ANCHOR);

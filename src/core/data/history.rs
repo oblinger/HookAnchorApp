@@ -240,6 +240,7 @@ pub fn get_history_entries(limit: usize, exclude_deletions: bool) -> SqlResult<V
             flags: row.get(6)?,
             file_path: row.get(7)?,
             edit_size: row.get(8)?,
+            is_first_occurrence: false, // Will be computed below
         })
     })?;
 
@@ -250,6 +251,28 @@ pub fn get_history_entries(limit: usize, exclude_deletions: bool) -> SqlResult<V
 
     if exclude_deletions {
         result.retain(|entry| !entry.is_deletion());
+    }
+
+    // Compute is_first_occurrence in O(n) by finding minimum timestamp per command
+    // Since results are ordered DESC (newest first), we scan backwards to find firsts
+    let mut min_timestamp_per_command: std::collections::HashMap<String, (i64, usize)> = std::collections::HashMap::new();
+
+    // First pass: find the minimum timestamp for each command
+    for (idx, entry) in result.iter().enumerate() {
+        min_timestamp_per_command
+            .entry(entry.command.clone())
+            .and_modify(|(min_ts, min_idx)| {
+                if entry.timestamp < *min_ts {
+                    *min_ts = entry.timestamp;
+                    *min_idx = idx;
+                }
+            })
+            .or_insert((entry.timestamp, idx));
+    }
+
+    // Second pass: mark the entries that have the minimum timestamp
+    for (_command, (_min_ts, min_idx)) in min_timestamp_per_command {
+        result[min_idx].is_first_occurrence = true;
     }
 
     Ok(result)
@@ -294,11 +317,22 @@ pub struct HistoryEntry {
     pub flags: Option<String>,
     pub file_path: Option<String>,
     pub edit_size: Option<i64>,
+    /// True if this is the first occurrence of this command in history (creation event)
+    pub is_first_occurrence: bool,
 }
 
 impl HistoryEntry {
     /// Check if this entry represents a deletion
     pub fn is_deletion(&self) -> bool {
         self.action == "$DELETED$"
+    }
+
+    /// Check if this entry is an anchor (has 'A' flag)
+    pub fn is_anchor(&self) -> bool {
+        if let Some(ref flags) = self.flags {
+            flags.contains('A')
+        } else {
+            false
+        }
     }
 }

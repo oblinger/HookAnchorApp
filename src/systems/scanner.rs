@@ -63,7 +63,7 @@ use crate::prelude::*;
 
 /// Action types that are automatically generated and removed by the scanner
 /// These commands will be removed during rescanning unless they have the 'U' (user-edited) flag
-/// NOTE: "anchor" is NOT included - we preserve existing anchors during rescan so patch inference can work
+/// NOTE: Anchors are preserved during rescan (identified by 'A' flag) so patch inference can work
 pub const SCANNER_GENERATED_ACTIONS: &[&str] = &["markdown", "folder", "app", "open_app", "doc"];
 
 // =============================================================================
@@ -165,7 +165,7 @@ fn is_notion_anchor(cmd: &Command) -> bool {
 
 // TODO: DEAD CODE - Remove this function
 // Previously used to delete file-based anchors, but scanner now creates markdown files
-// with action:"markdown" + 'A' flag instead of action:"anchor"
+// with action:"markdown" + 'A' flag (anchors are identified by the flag, not by action type)
 // Only remaining use is for Notion anchor deletion which is currently disabled
 /// Delete anchor commands based on whether they are Notion anchors or not
 ///
@@ -1048,6 +1048,31 @@ fn scan_files_merge_based(
         if cmd.command == "@Exponent" {
             log(&format!("DEBUG @Exponent: Looking for file_path_str='{}' in discovered_files", file_path_str));
         }
+
+        // For folder commands, check if directory exists directly (scanner doesn't discover folders)
+        if cmd.action == "folder" {
+            if file_path.exists() && file_path.is_dir() {
+                stats.unchanged += 1;
+                detailed_log("SCANNER", &format!(
+                    "Unchanged: '{}' (folder exists at {})", cmd.command, file_path_str
+                ));
+                return true; // Keep the folder command
+            } else {
+                // Folder no longer exists
+                stats.deleted += 1;
+                if verbose {
+                    crate::utils::print(&format!("   Deleted: '{}' - folder no longer exists at {}",
+                        cmd.command, file_path_str
+                    ));
+                }
+                log(&format!(
+                    "Deleted: '{}' - folder no longer exists at {}",
+                    cmd.command, file_path_str
+                ));
+                return false; // Remove from list
+            }
+        }
+
         if let Some(new_cmd) = discovered_files.remove(&file_path_str) {
             if cmd.command == "@Exponent" {
                 log(&format!("DEBUG @Exponent: File EXISTS in discovered_files"));

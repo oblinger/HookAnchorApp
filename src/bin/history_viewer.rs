@@ -50,6 +50,10 @@ struct HistoryViewer {
     sidebar_min_width: f32,
     /// Show current commands instead of history
     show_current_commands: bool,
+    /// Filter to show only first occurrences (creation events)
+    show_firsts_only: bool,
+    /// Filter to show only anchor commands (commands with 'A' flag)
+    show_anchors_only: bool,
 }
 
 impl HistoryViewer {
@@ -229,6 +233,8 @@ impl HistoryViewer {
             selected_action_types,
             sidebar_width: Some(self.sidebar_width),
             show_current_commands: self.show_current_commands,
+            show_firsts_only: self.show_firsts_only,
+            show_anchors_only: self.show_anchors_only,
         };
 
         // Save to file
@@ -326,6 +332,8 @@ impl HistoryViewer {
             sidebar_width: tree_width,
             sidebar_min_width: config_tree_min_width,
             show_current_commands: viewer_state.show_current_commands,
+            show_firsts_only: viewer_state.show_firsts_only,
+            show_anchors_only: viewer_state.show_anchors_only,
         };
 
         // Load initial history
@@ -363,76 +371,27 @@ impl HistoryViewer {
             self.anchor_descendant_patches = None;
         }
 
-        if self.show_current_commands {
-            // Load current commands from sys_data
-            let (sys_data, _) = hookanchor::core::get_sys_data();
-            let current_time = std::time::SystemTime::now()
-                .duration_since(std::time::UNIX_EPOCH)
-                .unwrap()
-                .as_secs() as i64;
+        // Get limit from config, default to 50000
+        let limit = hookanchor::core::get_config()
+            .history_viewer
+            .as_ref()
+            .and_then(|hv| hv.viewable_history_limit)
+            .unwrap_or(50000);
 
-            // Convert commands to HistoryEntry format
-            self.history_entries = sys_data.commands.iter().map(|cmd| {
-                hookanchor::core::HistoryEntry {
-                    id: 0,
-                    timestamp: current_time,
-                    patch: cmd.patch.clone(),
-                    command: cmd.command.clone(),
-                    action: cmd.action.clone(),
-                    arg: if cmd.arg.is_empty() { None } else { Some(cmd.arg.clone()) },
-                    flags: if cmd.flags.is_empty() { None } else { Some(cmd.flags.clone()) },
-                    file_path: if cmd.arg.starts_with('/') || cmd.arg.starts_with('~') {
-                        Some(cmd.arg.clone())
-                    } else {
-                        None
-                    },
-                    edit_size: cmd.file_size.map(|s| s as i64),
-                }
-            }).collect();
+        // Always load history entries from database
+        // exclude_deletions=true to hide $DELETED$ entries from the viewer
+        match get_history_entries(limit, true) {
+            Ok(entries) => {
+                self.history_entries = entries;
 
-            detailed_log("VIEWER", &format!(
-                "Loaded {} current commands from sys_data",
-                self.history_entries.len()
-            ));
-        } else {
-            // Get limit from config, default to 50000
-            let limit = hookanchor::core::get_config()
-                .history_viewer
-                .as_ref()
-                .and_then(|hv| hv.viewable_history_limit)
-                .unwrap_or(50000);
-
-            // Load history entries using the new API
-            // exclude_deletions=true to hide $DELETED$ entries from the viewer
-            match get_history_entries(limit, true) {
-                Ok(entries) => {
-                    self.history_entries = entries;
-
-                    // Log what we loaded
-                    detailed_log("VIEWER", &format!(
-                        "Loaded {} total entries from database",
-                        self.history_entries.len()
-                    ));
-
-                    // Count by action type
-                    let mut action_counts: std::collections::HashMap<String, usize> = std::collections::HashMap::new();
-                    for entry in &self.history_entries {
-                        *action_counts.entry(entry.action.clone()).or_insert(0) += 1;
-                    }
-
-                    // Log action type breakdown
-                    let mut action_list: Vec<_> = action_counts.iter().collect();
-                    action_list.sort_by_key(|(action, _)| *action);
-                    for (action, count) in action_list {
-                        detailed_log("VIEWER", &format!(
-                            "  {} entries with action '{}'",
-                            count, action
-                        ));
-                    }
-                }
-                Err(e) => {
-                    self.error_message = Some(format!("Query error: {}", e));
-                }
+                // Log what we loaded
+                detailed_log("VIEWER", &format!(
+                    "Loaded {} total entries from database",
+                    self.history_entries.len()
+                ));
+            }
+            Err(e) => {
+                self.error_message = Some(format!("Query error: {}", e));
             }
         }
 
@@ -452,13 +411,36 @@ impl HistoryViewer {
             .ok()
             .filter(|&n| n > 0);
 
+        // Build set of current command names for "Now" filter
+        let current_command_names: std::collections::HashSet<String> = if self.show_current_commands {
+            let (sys_data, _) = hookanchor::core::get_sys_data();
+            sys_data.commands.iter().map(|c| c.command.clone()).collect()
+        } else {
+            std::collections::HashSet::new()
+        };
+
         // Log active filters
         detailed_log("VIEWER", &format!(
-            "Applying filters - name_filter='{}', min_edit_size={:?}, selected_action_types={:?}, anchor_filter={:?}",
-            self.name_filter, min_edit_size, self.selected_action_types, self.resolved_anchor_name
+            "Applying filters - name_filter='{}', min_edit_size={:?}, selected_action_types={:?}, anchor_filter={:?}, show_firsts_only={}, show_anchors_only={}, show_current_commands={}",
+            self.name_filter, min_edit_size, self.selected_action_types, self.resolved_anchor_name, self.show_firsts_only, self.show_anchors_only, self.show_current_commands
         ));
 
         for entry in &self.history_entries {
+            // Apply "Now" filter (show only commands that still exist)
+            if self.show_current_commands && !current_command_names.contains(&entry.command) {
+                continue;
+            }
+
+            // Apply "firsts only" filter (show only first occurrences/creation events)
+            if self.show_firsts_only && !entry.is_first_occurrence {
+                continue;
+            }
+
+            // Apply "anchors only" filter (show only commands with 'A' flag)
+            if self.show_anchors_only && !entry.is_anchor() {
+                continue;
+            }
+
             // Apply anchor filter (if active)
             if let (Some(ref anchor_patches), Some(ref anchor_name)) =
                 (&self.anchor_descendant_patches, &self.resolved_anchor_name) {
@@ -949,9 +931,21 @@ impl eframe::App for HistoryViewer {
 
                     ui.label("≥");
 
-                    // "Now" checkbox to show current commands instead of history
+                    // "Anchor" checkbox to show only anchor commands
+                    if ui.checkbox(&mut self.show_anchors_only, "Anchor").clicked() {
+                        self.apply_filters();
+                        self.save_viewer_state();
+                    }
+
+                    // "1st" checkbox to show only first occurrences (creation events)
+                    if ui.checkbox(&mut self.show_firsts_only, "1st").clicked() {
+                        self.apply_filters();
+                        self.save_viewer_state();
+                    }
+
+                    // "Now" checkbox to filter to commands that still exist
                     if ui.checkbox(&mut self.show_current_commands, "Now").clicked() {
-                        self.reload_history();
+                        self.apply_filters();
                         self.save_viewer_state();
                     }
                 });

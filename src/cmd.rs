@@ -80,57 +80,59 @@ pub fn run_command_line_mode(args: Vec<String>) {
     }
 }
 
-pub fn print_help(program_name: &str) {
+pub fn print_help(_program_name: &str) {
+    // Always use "ha" as the program name for cleaner help output
+    let name = "ha";
     print("HookAnchor - Universal Command Launcher");
     print("");
     print("Help Topics:");
-    print(&format!("  {} -h, --help               # Show this help message", program_name));
-    print(&format!("  {} --help vars              # Template variables ({{{{input}}}}, {{{{date.year}}}}, etc.)", program_name));
-    print(&format!("  {} --help config            # Configuration file structure (YAML)", program_name));
-    print(&format!("  {} --help fns               # JavaScript functions (log, run_command, etc.)", program_name));
+    print(&format!("  {} -h, --help               # Show this help message", name));
+    print(&format!("  {} --help vars              # Template variables ({{{{input}}}}, {{{{date.year}}}}, etc.)", name));
+    print(&format!("  {} --help config            # Configuration file structure (YAML)", name));
+    print(&format!("  {} --help fns               # JavaScript functions (log, run_command, etc.)", name));
     print("");
     print("Usage:");
-    print(&format!("  {} -m, --match <query>      # Search CMDS", program_name));
-    print(&format!("  {} -r, --run_fn <cmd>       # Execute specific CMD", program_name));
-    print(&format!("  {} -x, --execute <query>    # Execute top match", program_name));
-    print(&format!("  {} -f, --folders <query>    # Get folder paths", program_name));
-    print(&format!("  {} -F, --named-folders <q>  # Get CMDS->paths", program_name));
-    print(&format!("  {} -c, --command <act> <arg># Test command with action+arg", program_name));
-    print(&format!("  {} -a, --action <name>      # Execute action directly", program_name));
-    print(&format!("  {} --infer [command]        # Show patch inference changes", program_name));
-    print(&format!("  {} --infer-all              # Show changes and prompt to apply", program_name));
-    print(&format!("  {} --rescan                 # Rescan filesystem with verbose output", program_name));
-    print(&format!("  {} --rebuild                # Rebuild: restart server and rescan filesystem", program_name));
-    print(&format!("  {} --delete-history [--add-commands <path>] [--force] # Delete history and rebuild (optionally from backup)", program_name));
-    print(&format!("  {} --test-grabber           # Test grabber functionality", program_name));
-    print(&format!("  {} --test-permissions       # Test accessibility permissions", program_name));
-    print(&format!("  {} --grab [delay]           # Grab active app after delay", program_name));
-    print(&format!("  {} --start-server           # Force restart command server", program_name));
-    print(&format!("  {} --restart                # Kill and restart command server in new Terminal", program_name));
-    print(&format!("  {} --process-health         # Check for hung processes", program_name));
-    print(&format!("  {} --process-status         # Show detailed process status", program_name));
-    print(&format!("  {} --install                # Run setup assistant (preserves configs)", program_name));
-    print(&format!("  {} --install --force        # Force reinstall (overwrites configs)", program_name));
-    print(&format!("  {} --uninstall              # Uninstall HookAnchor", program_name));
-    print(&format!("  {} --popup                  # Launch popup search interface", program_name));
-    print(&format!("  {} --search                 # Launch history viewer", program_name));
-    print(&format!("  {} --hook <url>             # Handle hook:// URL (for URL handler)", program_name));
-    print(&format!("  {} --load-legacy-and-compare <path> # Load legacy commands and compare", program_name));
+    print(&format!("  {} -m, --match <query>      # Search CMDS", name));
+    print(&format!("  {} -r, --run_fn <cmd>       # Execute specific CMD", name));
+    print(&format!("  {} -x, --execute <query>    # Execute top match", name));
+    print(&format!("  {} -f, --folders <query>    # Get folder paths", name));
+    print(&format!("  {} -F, --named-folders <q>  # Get CMDS->paths", name));
+    print(&format!("  {} -c, --command <act> <arg># Test command with action+arg", name));
+    print(&format!("  {} -a, --action <name>      # Execute action directly", name));
+    print(&format!("  {} --infer [command]        # Show patch inference changes", name));
+    print(&format!("  {} --infer-all              # Show changes and prompt to apply", name));
+    print(&format!("  {} --rescan                 # Rescan filesystem with verbose output", name));
+    print(&format!("  {} --rebuild                # Rebuild: restart server and rescan filesystem", name));
+    print(&format!("  {} --delete-history [--add-commands <path>] [--force] # Delete history and rebuild (optionally from backup)", name));
+    print(&format!("  {} --test-grabber           # Test grabber functionality", name));
+    print(&format!("  {} --test-permissions       # Test accessibility permissions", name));
+    print(&format!("  {} --grab [delay]           # Grab active app after delay", name));
+    print(&format!("  {} --start-server           # Force restart command server", name));
+    print(&format!("  {} --restart                # Kill and restart command server in new Terminal", name));
+    print(&format!("  {} --process-health         # Check for hung processes", name));
+    print(&format!("  {} --process-status         # Show detailed process status", name));
+    print(&format!("  {} --install                # Run setup assistant (preserves configs)", name));
+    print(&format!("  {} --install --force        # Force reinstall (overwrites configs)", name));
+    print(&format!("  {} --uninstall              # Uninstall HookAnchor", name));
+    print(&format!("  {} --popup                  # Launch popup search interface", name));
+    print(&format!("  {} --search                 # Launch history viewer", name));
+    print(&format!("  {} --hook <url>             # Handle hook:// URL (for URL handler)", name));
+    print(&format!("  {} --load-legacy-and-compare <path> # Load legacy commands and compare", name));
     print("  open 'hook://query'         # Handle hook URL via URL handler");
     print("");
     print("Examples:");
-    print(&format!("  {} --popup           # Launch popup search interface", program_name));
-    print(&format!("  {} -m spot   # Find 'spot' CMDS", program_name));
-    print(&format!("  {} -x spot   # Execute top 'spot'", program_name));
-    print(&format!("  {} -f spot   # Get 'spot' folders", program_name));
-    print(&format!("  {} -F spo    # Get 'spo' CMDS->paths", program_name));
-    print(&format!("  {} -r Spot   # Execute 'Spot' CMD", program_name));
+    print(&format!("  {} --popup           # Launch popup search interface", name));
+    print(&format!("  {} -m spot   # Find 'spot' CMDS", name));
+    print(&format!("  {} -x spot   # Execute top 'spot'", name));
+    print(&format!("  {} -f spot   # Get 'spot' folders", name));
+    print(&format!("  {} -F spo    # Get 'spo' CMDS->paths", name));
+    print(&format!("  {} -r Spot   # Execute 'Spot' CMD", name));
 }
 
 
 fn handle_hook_option(args: &[String]) {
     if args.len() < 3 {
-        print(&format!("Usage: {} --hook <url>", args[0]));
+        print("Usage: ha --hook <url>");
         std::process::exit(1);
     }
     
@@ -337,7 +339,7 @@ fn get_command_path(cmd: &crate::core::commands::Command) -> Option<String> {
 
 fn run_match_command(args: &[String]) {
     if args.len() < 3 {
-        print(&format!("Usage: {} -m, --match <query> [--exact] [--format=name|folder|path|json]", args[0]));
+        print("Usage: ha -m, --match <query> [--exact] [--format=name|folder|path|json]");
         std::process::exit(1);
     }
 
@@ -440,7 +442,7 @@ fn run_match_command(args: &[String]) {
 
 fn run_exec_command(args: &[String]) {
     if args.len() < 3 {
-        print(&format!("Usage: {} -r, --run_fn <command>", args[0]));
+        print("Usage: ha -r, --run_fn <command>");
         std::process::exit(1);
     }
     
@@ -475,7 +477,7 @@ fn run_exec_command(args: &[String]) {
 
 fn run_execute_top_match(args: &[String]) {
     if args.len() < 3 {
-        print(&format!("Usage: {} -x, --execute <query>", args[0]));
+        print("Usage: ha -x, --execute <query>");
         std::process::exit(1);
     }
     
@@ -547,11 +549,11 @@ fn run_execute_top_match(args: &[String]) {
 
 fn run_test_command(args: &[String]) {
     if args.len() < 3 {
-        print(&format!("Usage: {} -c, --command <action_name> [--arg <value>] [--input <value>] [--param key=value]...", args[0]));
+        print("Usage: ha -c, --command <action_name> [--arg <value>] [--input <value>] [--param key=value]...");
         print("Examples:");
-        print(&format!("  {} -c open_url --arg https://github.com", args[0]));
-        print(&format!("  {} -c template --input \"My Note\" --param action=markdown", args[0]));
-        print(&format!("  {} -c popup --param popup_action=navigate --param dx=0 --param dy=1", args[0]));
+        print("  ha -c open_url --arg https://github.com");
+        print("  ha -c template --input \"My Note\" --param action=markdown");
+        print("  ha -c popup --param popup_action=navigate --param dx=0 --param dy=1");
         std::process::exit(1);
     }
     
@@ -672,10 +674,10 @@ fn run_test_command(args: &[String]) {
 
 fn run_action_directly(args: &[String]) {
     if args.len() < 3 {
-        print(&format!("Usage: {} -a, --action <action_type> [--key value]...", args[0]));
+        print("Usage: ha -a, --action <action_type> [--key value]...");
         print("Examples:");
-        print(&format!("  {} -a markdown --arg /path/to/file.md", args[0]));
-        print(&format!("  {} -a cmd --arg \"ls -la\" --flags W", args[0]));
+        print("  ha -a markdown --arg /path/to/file.md");
+        print("  ha -a cmd --arg \"ls -la\" --flags W");
         std::process::exit(1);
     }
     
@@ -973,7 +975,7 @@ fn run_grab_command(args: &[String]) {
             Ok(d) => d,
             Err(_) => {
                 print(&format!("Invalid delay value: {}", args[2]));
-                print(&format!("Usage: {} --grab [delay_seconds]", args[0]));
+                print("Usage: ha --grab [delay_seconds]");
                 std::process::exit(1);
             }
         }
@@ -1668,7 +1670,7 @@ fn run_supervisor_command(args: &[String]) {
 /// Execute a launcher command - used by launchctl asuser to run commands in GUI session
 fn run_execute_launcher_command(args: &[String]) {
     if args.len() < 3 {
-        print(&format!("Usage: {} --execute-launcher-command <launcher_command>", args[0]));
+        print("Usage: ha --execute-launcher-command <launcher_command>");
         std::process::exit(1);
     }
     
@@ -2374,7 +2376,7 @@ fn print_comparison(title: &str, result: &ComparisonResult) {
 /// Load legacy commands and compare with current state
 fn run_load_legacy_and_compare(args: &[String]) {
     if args.len() < 3 {
-        print(&format!("Usage: {} --load-legacy-and-compare <path>", args[0]));
+        print("Usage: ha --load-legacy-and-compare <path>");
         print("Example: ha --load-legacy-and-compare ~/.config/hookanchor/commands_20251017_232108.txt");
         std::process::exit(1);
     }

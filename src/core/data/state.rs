@@ -30,6 +30,10 @@ pub struct HistoryViewerState {
     pub sidebar_width: Option<f32>,
     /// Show current commands instead of history
     pub show_current_commands: bool,
+    /// Filter to show only first occurrences (creation events) of commands
+    pub show_firsts_only: bool,
+    /// Filter to show only anchor commands (commands with 'A' flag)
+    pub show_anchors_only: bool,
 }
 
 impl Default for HistoryViewerState {
@@ -43,6 +47,8 @@ impl Default for HistoryViewerState {
             selected_action_types: Vec::new(),
             sidebar_width: None, // Use config default if not set
             show_current_commands: false, // Default to history mode
+            show_firsts_only: true, // Default to showing only first occurrences
+            show_anchors_only: true, // Default to showing only anchors
         }
     }
 }
