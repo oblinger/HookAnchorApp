@@ -9,25 +9,25 @@ fn main() {
     
     println!("Loaded {} commands and {} patches", commands.len(), patches.len());
     
-    // Test cases for patch inference
+    // Test cases for patch inference (anchors use 'A' flag, not action type)
     let test_commands = vec![
         // Test case 1: Meditation command from Misc patch
         Command {
             patch: "Misc".to_string(),
             command: "meditation".to_string(),
-            action: "anchor".to_string(),
+            action: "markdown".to_string(),
             arg: "/Users/oblinger/ob/kmr/T/Misc/Meditation/meditation.md".to_string(),
-            flags: String::new(),
-            full_line: "Misc! meditation : anchor; /Users/oblinger/ob/kmr/T/Misc/Meditation/meditation.md".to_string(),
+            flags: "A".to_string(),  // Anchor flag
+            full_line: "Misc! meditation : markdown; F:=A A:=/Users/oblinger/ob/kmr/T/Misc/Meditation/meditation.md".to_string(),
         },
         // Test case 2: Meditation command from orphans patch
         Command {
             patch: "orphans".to_string(),
             command: "meditation".to_string(),
-            action: "anchor".to_string(),
+            action: "markdown".to_string(),
             arg: "/Users/oblinger/ob/kmr/SYS/Closet/Orphans/meditation/meditation.md".to_string(),
-            flags: "A".to_string(),
-            full_line: "meditation! meditation : anchor A; /Users/oblinger/ob/kmr/SYS/Closet/Orphans/meditation/meditation.md".to_string(),
+            flags: "A".to_string(),  // Anchor flag
+            full_line: "meditation! meditation : markdown; F:=A A:=/Users/oblinger/ob/kmr/SYS/Closet/Orphans/meditation/meditation.md".to_string(),
         },
     ];
     

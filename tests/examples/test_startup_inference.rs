@@ -6,14 +6,14 @@ fn main() {
     
     // Create test commands simulating a startup scenario where Adam Alg has no patch
     let mut commands = vec![
-        // The DL Alg anchor command (creates the "dl alg" patch)
+        // The DL Alg anchor command (creates the "dl alg" patch) - anchors use 'A' flag
         Command {
             patch: "RR DL".to_string(),
             command: "DL Alg".to_string(),
-            action: "anchor".to_string(),
+            action: "markdown".to_string(),
             arg: "/Users/oblinger/ob/kmr/RR/RR DL/DL Alg/DL Alg.md".to_string(),
-            flags: String::new(),
-            full_line: "RR DL! DL Alg : anchor; /Users/oblinger/ob/kmr/RR/RR DL/DL Alg/DL Alg.md".to_string(),
+            flags: "A".to_string(),  // Anchor flag
+            full_line: "RR DL! DL Alg : markdown; F:=A A:=/Users/oblinger/ob/kmr/RR/RR DL/DL Alg/DL Alg.md".to_string(),
         },
         // Some other commands in the DL Alg folder
         Command {

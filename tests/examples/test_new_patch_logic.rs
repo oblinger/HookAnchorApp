@@ -50,18 +50,18 @@ fn main() {
         println!("\nNo patches detected with new logic!");
     }
     
-    // Count anchor commands to understand the candidate pool
+    // Count anchor commands to understand the candidate pool (anchors identified by 'A' flag)
     let anchor_commands: Vec<_> = commands.iter()
-        .filter(|cmd| cmd.action == "anchor")
+        .filter(|cmd| cmd.is_anchor())
         .collect();
-    println!("\nTotal anchor commands: {}", anchor_commands.len());
-    
+    println!("\nTotal anchor commands (with A flag): {}", anchor_commands.len());
+
     // Show some example anchor commands to understand the data
     println!("\nExample anchor commands:");
     for (i, cmd) in anchor_commands.iter().take(10).enumerate() {
         println!("  {}: '{}' -> {}", i + 1, cmd.command, cmd.arg);
     }
-    
+
     if anchor_commands.len() > 10 {
         println!("  ... and {} more", anchor_commands.len() - 10);
     }

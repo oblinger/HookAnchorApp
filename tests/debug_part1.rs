@@ -6,9 +6,9 @@ use hookanchor::core::get_new_display_commands;
 #[test]
 fn debug_abcd_should_match_abc() {
     let scaffold = scaffold(r#"
-        A:anchor; F:=A A:=/path/a
-        AB:anchor; F:=A A:=/path/ab
-        ABC:anchor; F:=A A:=/path/abc
+        A:folder; F:=A A:=/path/a
+        AB:folder; F:=A A:=/path/ab
+        ABC:folder; F:=A A:=/path/abc
 
         A! Item1:folder; A:=/item1
         AB! Item2:folder; A:=/item2
@@ -63,7 +63,7 @@ fn debug_abcd_should_match_abc() {
 #[test]
 fn debug_alias_t_should_resolve_to_target() {
     let scaffold = scaffold(r#"
-        Target:anchor; F:=A A:=/target
+        Target:folder; F:=A A:=/target
         T:alias; A:=Target
 
         Target! File1:folder; A:=/file1
@@ -102,7 +102,7 @@ fn debug_alias_t_should_resolve_to_target() {
 #[test]
 fn debug_pjpp_bug() {
     let scaffold = scaffold(r#"
-        PJ:anchor; F:=UA A:=/Users/oblinger/ob/kmr/prj
+        PJ:folder; F:=UA A:=/Users/oblinger/ob/kmr/prj
         PJ! PP:markdown; F:=UA A:=/Users/oblinger/ob/kmr/prj/pp/PP.md
         PJ! Code:folder; F:=UA A:=/Users/oblinger/ob/proj
     "#);

@@ -74,9 +74,9 @@ mod tests {
             Command {
                 patch: String::new(),
                 command: "spot".to_string(),
-                action: "anchor".to_string(),
+                action: "markdown".to_string(),
                 arg: "/Users/test/spot.md".to_string(),
-                flags: String::new(),
+                flags: "A".to_string(),  // Anchor flag
                 other_params: None,
             last_update: 0,
             file_size: None,
@@ -96,7 +96,7 @@ mod tests {
         // Test exact match
         let matching = commands.iter().find(|cmd| cmd.command == "spot");
         assert!(matching.is_some());
-        assert_eq!(matching.unwrap().action, "anchor");
+        assert_eq!(matching.unwrap().action, "markdown");
         
         // Test partial match (this would be filtered by the actual filter_commands function)
         let matching_partial = commands.iter().find(|cmd| cmd.command.starts_with("test"));

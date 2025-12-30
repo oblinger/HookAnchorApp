@@ -50,17 +50,17 @@ fn main() {
     
     println!("\nAfter scan: {} commands", updated_commands.len());
     
-    // Count by action type
+    // Count by action type (anchors identified by 'A' flag, not action type)
     let app_count = updated_commands.iter().filter(|cmd| cmd.action == "app").count();
     let obs_count = updated_commands.iter().filter(|cmd| cmd.action == "obs").count();
-    let anchor_count = updated_commands.iter().filter(|cmd| cmd.action == "anchor").count();
+    let anchor_count = updated_commands.iter().filter(|cmd| cmd.is_anchor()).count();
     let folder_count = updated_commands.iter().filter(|cmd| cmd.action == "folder").count();
     let u_flag_count = updated_commands.iter().filter(|cmd| cmd.flags.contains('U')).count();
-    
+
     println!("\nCommand breakdown:");
     println!("  app: {}", app_count);
     println!("  obs: {}", obs_count);
-    println!("  anchor: {}", anchor_count);
+    println!("  anchors (A flag): {}", anchor_count);
     println!("  folder: {}", folder_count);
     println!("  with U flag: {}", u_flag_count);
     

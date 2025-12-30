@@ -23,7 +23,7 @@ use hookanchor::core::{get_new_display_commands, Command};
 fn pj_menu_scaffold() -> TestScaffold {
     scaffold(r#"
         // PJ Anchor
-        PJ:anchor; F:=UA A:=/Users/oblinger/ob/kmr/prj
+        PJ:folder; F:=UA A:=/Users/oblinger/ob/kmr/prj
 
         // PJ menu items - using patch field
         PJ! PP:markdown; F:=UA A:=/Users/oblinger/ob/kmr/prj/pp/PP.md
@@ -44,9 +44,9 @@ fn pj_menu_scaffold() -> TestScaffold {
 /// Simple progressive matching scaffold
 fn progressive_scaffold() -> TestScaffold {
     scaffold(r#"
-        A:anchor; F:=A A:=/path/a
-        AB:anchor; F:=A A:=/path/ab
-        ABC:anchor; F:=A A:=/path/abc
+        A:folder; F:=A A:=/path/a
+        AB:folder; F:=A A:=/path/ab
+        ABC:folder; F:=A A:=/path/abc
 
         A! Item1:folder; A:=/item1
         A! Xray:folder; A:=/xray
@@ -62,7 +62,7 @@ fn progressive_scaffold() -> TestScaffold {
 /// Alias resolution scaffold
 fn alias_scaffold() -> TestScaffold {
     scaffold(r#"
-        Target:anchor; F:=A A:=/target
+        Target:folder; F:=A A:=/target
         T:alias; A:=Target
 
         Target! File1:folder; A:=/file1
@@ -75,7 +75,7 @@ fn alias_scaffold() -> TestScaffold {
 /// Date prefix scaffold
 fn date_prefix_scaffold() -> TestScaffold {
     scaffold(r#"
-        Project:anchor; F:=A A:=/project
+        Project:folder; F:=A A:=/project
 
         2024-01-15 Project Notes:markdown; A:=/notes1.md
         2024_02_20_Project Report:markdown; A:=/report.md
@@ -88,7 +88,7 @@ fn date_prefix_scaffold() -> TestScaffold {
 /// Matching priority test scaffold
 fn matching_priority_scaffold() -> TestScaffold {
     scaffold(r#"
-        Main:anchor; F:=A A:=/main
+        Main:folder; F:=A A:=/main
 
         // Exact match candidates
         Main! Code:folder; A:=/code
@@ -503,7 +503,7 @@ fn part3_no_duplicate_commands() {
 fn part3_separator_commands_excluded() {
     // Separator commands never appear
     let scaffold = scaffold(r#"
-        Main:anchor; A:=/main
+        Main:folder; A:=/main
         ============:separator;
         Main! Item:folder; A:=/item
     "#);
@@ -565,7 +565,7 @@ fn part4_no_words_skipped_before_words_skipped() {
 fn part4_alphabetical_within_tier() {
     // Within same priority tier, sort alphabetically
     let scaffold = scaffold(r#"
-        Main:anchor; F:=A A:=/main
+        Main:folder; F:=A A:=/main
         Main! Zebra:folder; A:=/zebra
         Main! Apple:folder; A:=/apple
         Main! Banana:folder; A:=/banana
@@ -610,7 +610,7 @@ fn part4_multi_char_matching_no_skip_priority() {
     // ranks higher than matching with word skips
     // Real-world case: "TWOT" should match "Two Tower" before "The Writing On The"
     let scaffold = scaffold(r#"
-        T:anchor; F:=A A:=/t
+        T:folder; F:=A A:=/t
 
         // No words skipped: T+W from "Two", O+T from "Tower"
         T! Two Tower Learning:folder; A:=/two_tower
@@ -637,7 +637,7 @@ fn part4_prefix_match_before_multi_word_match() {
     // "svpla" with "SV" anchor → "pla" should match "Plan" (exact prefix)
     // before "SportsVisio_PlayHQ_RFP_Resp..." (multi-word match)
     let scaffold = scaffold(r#"
-        sv:anchor; F:=A A:=/sv
+        sv:folder; F:=A A:=/sv
         sv! Plan:folder; A:=/plan
         sv! SportsVisio_PlayHQ_RFP_Resp:folder; A:=/playhq
     "#);
@@ -804,7 +804,7 @@ fn part4_fewer_words_matched_preferred_two_char() {
 fn part4_fewer_words_matched_in_prefix_menu() {
     // Same rule applies within prefix menus
     let scaffold = scaffold(r#"
-        Main:anchor; F:=A A:=/main
+        Main:folder; F:=A A:=/main
         Main! PAPERS:folder; A:=/papers
         Main! Pantone Peri:folder; A:=/pantone
         Main! Paper Airplane:folder; A:=/paper_airplane
@@ -855,7 +855,7 @@ fn part5_prefix_menu_then_separator_then_global() {
 fn part5_no_separator_without_global() {
     // Prefix menu only, no global matches → no separator
     let scaffold = scaffold(r#"
-        PJ:anchor; A:=/pj
+        PJ:folder; A:=/pj
         PJ! Item:folder; A:=/item
     "#);
 
@@ -995,7 +995,7 @@ fn edge_very_long_input() {
 fn edge_duplicate_names_different_actions() {
     // Same name, different actions → both allowed
     let scaffold = scaffold(r#"
-        Main:anchor; F:=A A:=/main
+        Main:folder; F:=A A:=/main
         Main! Dupe:open; A:=/dupe1
         Main! Dupe:markdown; A:=/dupe2.md
     "#);
@@ -1082,7 +1082,7 @@ fn include_folder_filtering_with_filter_text() {
     // Create scaffold with include folder
     let scaffold = scaffold(&format!(r#"
         // Shop anchor with Include flag pointing to test directory
-        Shop:anchor; F:=IA A:=/tmp/hookanchor_test_shop
+        Shop:folder; F:=IA A:=/tmp/hookanchor_test_shop
 
         // These files will be auto-discovered from the include folder
         Shop Shutdown Shell:markdown; A:=/tmp/hookanchor_test_shop/Shop Shutdown Shell.md
@@ -1225,7 +1225,7 @@ fn include_folder_no_false_positives() {
     fs::write(test_dir.join("Book Wishlist.md"), "# Wishlist").unwrap();
 
     let scaffold = scaffold(&format!(r#"
-        Book:anchor; F:=IA A:=/tmp/hookanchor_test_book
+        Book:folder; F:=IA A:=/tmp/hookanchor_test_book
 
         Book To Read:markdown; A:=/tmp/hookanchor_test_book/Book To Read.md
         Book Already Read:markdown; A:=/tmp/hookanchor_test_book/Book Already Read.md
@@ -1270,7 +1270,7 @@ fn edge_anchor_filtered_from_own_menu() {
     // - Filter "b" should match against "s Flow" (after "Bug"), not full name
     // - Since "s Flow" doesn't contain 'b', anchor should be filtered out
     let scaffold = scaffold(r#"
-        Bug Board:anchor; F:=A A:=/bugs
+        Bug Board:folder; F:=A A:=/bugs
         Bug Board Item1:folder; A:=/bugs/item1
         Bug Board Item2:folder; A:=/bugs/item2
         Bug Board Beta:folder; A:=/bugs/beta

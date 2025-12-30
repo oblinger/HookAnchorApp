@@ -8,14 +8,14 @@ fn main() {
     let commands = load_commands_raw();
     
     let obs_count = commands.iter().filter(|cmd| cmd.action == "obs").count();
-    let anchor_count = commands.iter().filter(|cmd| cmd.action == "anchor").count();
+    let anchor_count = commands.iter().filter(|cmd| cmd.is_anchor()).count();  // Anchors are identified by 'A' flag
     let folder_count = commands.iter().filter(|cmd| cmd.action == "folder").count();
     let u_flag_count = commands.iter().filter(|cmd| cmd.flags.contains('U')).count();
-    
+
     println!("Current command counts:");
     println!("  Total commands: {}", commands.len());
     println!("  obs: {}", obs_count);
-    println!("  anchor: {}", anchor_count);
+    println!("  anchors (A flag): {}", anchor_count);
     println!("  folder: {}", folder_count);
     println!("  with U flag: {}", u_flag_count);
     

@@ -94,7 +94,7 @@ fn main() {
     }
     
     println!("\n2. Checking path-based inference:");
-    if sleep_cmd.action == "obs" || sleep_cmd.action == "anchor" || sleep_cmd.action == "folder" {
+    if sleep_cmd.action == "obs" || sleep_cmd.is_anchor() || sleep_cmd.action == "folder" {
         println!("  Command is path-based (action: {})", sleep_cmd.action);
         
         // Show the file path structure

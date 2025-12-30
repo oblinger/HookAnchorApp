@@ -49,25 +49,25 @@ fn main() {
         ("With Misc patch", Command {
             patch: "Misc".to_string(),
             command: "meditation".to_string(),
-            action: "anchor".to_string(),
+            action: "markdown".to_string(),
             arg: "/Users/oblinger/ob/kmr/T/Misc/Meditation/meditation.md".to_string(),
-            flags: String::new(),
+            flags: "A".to_string(),  // Anchor flag
             full_line: String::new(),
         }),
         ("Empty patch with Misc path", Command {
             patch: String::new(),
             command: "meditation".to_string(),
-            action: "anchor".to_string(),
+            action: "markdown".to_string(),
             arg: "/Users/oblinger/ob/kmr/T/Misc/Meditation/meditation.md".to_string(),
-            flags: String::new(),
+            flags: "A".to_string(),  // Anchor flag
             full_line: String::new(),
         }),
         ("Empty patch with orphans path", Command {
             patch: String::new(),
             command: "meditation".to_string(),
-            action: "anchor".to_string(),
+            action: "markdown".to_string(),
             arg: "/Users/oblinger/ob/kmr/SYS/Closet/Orphans/meditation/meditation.md".to_string(),
-            flags: String::new(),
+            flags: "A".to_string(),  // Anchor flag
             full_line: String::new(),
         }),
     ];

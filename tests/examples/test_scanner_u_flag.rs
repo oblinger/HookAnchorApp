@@ -8,9 +8,10 @@ fn main() {
     let commands = load_commands_raw();
     
     // Find commands with U flag that are scanner-generated types
+    // Note: anchors are identified by 'A' flag, not action type
     let u_flag_scanner_commands: Vec<_> = commands.iter()
         .filter(|cmd| {
-            let is_scanner_type = cmd.action == "obs" || cmd.action == "anchor" || cmd.action == "folder";
+            let is_scanner_type = cmd.action == "obs" || cmd.is_anchor() || cmd.action == "folder";
             let has_u_flag = cmd.flags.contains('U');
             is_scanner_type && has_u_flag
         })
@@ -28,11 +29,11 @@ fn main() {
     
     let before_count = test_commands.len();
     let scanner_before = test_commands.iter()
-        .filter(|cmd| cmd.action == "obs" || cmd.action == "anchor" || cmd.action == "folder")
+        .filter(|cmd| cmd.action == "obs" || cmd.is_anchor() || cmd.action == "folder")
         .count();
     let u_flag_scanner_before = test_commands.iter()
         .filter(|cmd| {
-            let is_scanner_type = cmd.action == "obs" || cmd.action == "anchor" || cmd.action == "folder";
+            let is_scanner_type = cmd.action == "obs" || cmd.is_anchor() || cmd.action == "folder";
             let has_u_flag = cmd.flags.contains('U');
             is_scanner_type && has_u_flag
         })
@@ -41,22 +42,22 @@ fn main() {
     println!("Before retain: {} total, {} scanner-type, {} with U flag", 
         before_count, scanner_before, u_flag_scanner_before);
     
-    // Apply the new retain logic
+    // Apply the new retain logic (anchors identified by 'A' flag, not action type)
     test_commands.retain(|cmd| {
-        let is_scanner_generated = cmd.action == "obs" || cmd.action == "anchor" || cmd.action == "folder";
+        let is_scanner_generated = cmd.action == "obs" || cmd.is_anchor() || cmd.action == "folder";
         let is_user_edited = cmd.flags.contains('U');
-        
+
         // Keep command if it's NOT scanner-generated OR if it's user-edited
         !is_scanner_generated || is_user_edited
     });
     
     let after_count = test_commands.len();
     let scanner_after = test_commands.iter()
-        .filter(|cmd| cmd.action == "obs" || cmd.action == "anchor" || cmd.action == "folder")
+        .filter(|cmd| cmd.action == "obs" || cmd.is_anchor() || cmd.action == "folder")
         .count();
     let u_flag_scanner_after = test_commands.iter()
         .filter(|cmd| {
-            let is_scanner_type = cmd.action == "obs" || cmd.action == "anchor" || cmd.action == "folder";
+            let is_scanner_type = cmd.action == "obs" || cmd.is_anchor() || cmd.action == "folder";
             let has_u_flag = cmd.flags.contains('U');
             is_scanner_type && has_u_flag
         })

@@ -30,11 +30,11 @@ fn main() {
     } else {
         println!("❌ MISC patch NOT found");
         
-        // Look for commands that might create a MISC patch
+        // Look for commands that might create a MISC patch (anchors are identified by 'A' flag)
         let misc_candidates: Vec<_> = commands.iter()
-            .filter(|cmd| cmd.action == "anchor" && cmd.command.to_lowercase() == "misc")
+            .filter(|cmd| cmd.is_anchor() && cmd.command.to_lowercase() == "misc")
             .collect();
-        
+
         if misc_candidates.is_empty() {
             println!("  No anchor commands with command name 'MISC' found");
             
@@ -86,7 +86,7 @@ fn main() {
         println!("  '{}' -> inferred: {:?}", cmd.command, inferred);
         
         // Show detailed analysis
-        if cmd.action == "obs" || cmd.action == "anchor" {
+        if cmd.action == "obs" || cmd.is_anchor() {
             println!("    Path: {}", cmd.arg);
             // Show what directory this is in
             if let Some(last_slash) = cmd.arg.rfind('/') {

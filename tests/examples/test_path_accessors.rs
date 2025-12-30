@@ -17,13 +17,13 @@ fn main() {
             flags: String::new(),
             full_line: String::new(),
         },
-        // Anchor command (absolute path)
+        // Anchor command (absolute path) - anchors use 'A' flag, not action type
         Command {
             patch: String::new(),
             command: "Test Anchor".to_string(),
-            action: "anchor".to_string(),
+            action: "markdown".to_string(),
             arg: "~/Documents/Project/anchor.md".to_string(),
-            flags: String::new(),
+            flags: "A".to_string(),  // Anchor flag
             full_line: String::new(),
         },
         // Folder command (relative path)

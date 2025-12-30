@@ -74,7 +74,7 @@ fn main() {
     
     // Check if it's path-based (Method 2)
     println!("\n2. Path-based inference:");
-    if ai_min_cmd.action == "obs" || ai_min_cmd.action == "anchor" || ai_min_cmd.action == "folder" {
+    if ai_min_cmd.action == "obs" || ai_min_cmd.is_anchor() || ai_min_cmd.action == "folder" {
         println!("  Command is path-based (action: {})", ai_min_cmd.action);
         println!("  Path: {}", ai_min_cmd.arg);
     } else {

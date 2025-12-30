@@ -8,9 +8,9 @@ fn main() {
     let commands = load_commands();
     println!("Current command count: {}", commands.len());
     
-    // Count existing obs/anchor commands
+    // Count existing obs/anchor commands (anchors identified by 'A' flag)
     let existing_obs_anchor = commands.iter()
-        .filter(|cmd| cmd.action == "obs" || cmd.action == "anchor")
+        .filter(|cmd| cmd.action == "obs" || cmd.is_anchor())
         .count();
     println!("Existing obs/anchor commands: {}", existing_obs_anchor);
     
@@ -52,9 +52,9 @@ fn main() {
     println!("Scan completed in: {:.2} seconds", scan_duration.as_secs_f64());
     println!("Updated command count: {}", updated_commands.len());
     
-    // Count new obs/anchor commands
+    // Count new obs/anchor commands (anchors identified by 'A' flag)
     let new_obs_anchor = updated_commands.iter()
-        .filter(|cmd| cmd.action == "obs" || cmd.action == "anchor")
+        .filter(|cmd| cmd.action == "obs" || cmd.is_anchor())
         .count();
     let final_contacts = updated_commands.iter()
         .filter(|cmd| cmd.action == "contact")
@@ -86,12 +86,12 @@ fn main() {
         println!("\nNo markdown files found in the specified directories.");
     }
     
-    // Check for anchor files
+    // Check for anchor files (anchors identified by 'A' flag)
     let anchor_commands: Vec<_> = updated_commands.iter()
-        .filter(|cmd| cmd.action == "anchor")
+        .filter(|cmd| cmd.is_anchor())
         .take(5)
         .collect();
-    
+
     if !anchor_commands.is_empty() {
         println!("\nFound {} anchor files:", anchor_commands.len());
         for cmd in anchor_commands {
