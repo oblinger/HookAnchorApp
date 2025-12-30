@@ -354,7 +354,6 @@ impl Command {
         if !self.flags.contains(key) {
             self.flags.push(key);
         }
-        self.update_full_line();
     }
     
     /// Removes a flag by its key character
@@ -368,7 +367,6 @@ impl Command {
         self.flags = self.flags.chars()
             .filter(|&c| c != key)
             .collect();
-        self.update_full_line();
     }
 
     /// Checks if this command is an anchor
@@ -403,12 +401,6 @@ impl Command {
         parent_patch.primary_anchor()
     }
 
-    /// Updates the full_line field to reflect current command state in new format
-    /// NOTE: With full_line removed from struct, this is now a no-op
-    pub fn update_full_line(&mut self) {
-        // No-op: full_line is reconstructed on demand via to_new_format()
-    }
-    
     /// Converts the command to new format string
     pub fn to_new_format(&self) -> String {
         let mut result = String::new();
@@ -634,214 +626,6 @@ pub fn create_patches_hashmap(commands: &[Command]) -> HashMap<String, Patch> {
 /// Always analyzes the command regardless of any current patch value
 pub fn infer_patch(command: &Command, patches: &HashMap<String, Patch>) -> Option<String> {
     crate::core::inference::infer_patch(command, patches)
-}
-
-/// Infers patch from command using its path accessors
-fn infer_patch_from_command(command: &Command, patches: &HashMap<String, Patch>) -> Option<String> {
-    // Use the file path method with self-assignment prevention
-    infer_patch_from_file_path_with_exclusion(&command.arg, patches, &command.command)
-}
-
-/// Infers patch from file path with self-assignment prevention
-fn infer_patch_from_file_path_with_exclusion(file_path: &str, patches: &HashMap<String, Patch>, exclude_command: &str) -> Option<String> {
-    use std::path::Path;
-    
-    // Skip if not a file path (URLs, app names, etc.)
-    if file_path.starts_with("http") || file_path.starts_with("https") || !file_path.contains('/') {
-        return None;
-    }
-    
-    // Check if this is an anchor file FIRST
-    let path = Path::new(file_path);
-    if crate::utils::is_anchor_file(path) {
-        // This IS an anchor file (e.g., RR/Lrn/Lrn.md)
-        if let Some(file_stem) = path.file_stem() {
-            if let Some(parent) = path.parent() {
-                if let Some(parent_name) = parent.file_name() {
-                    detailed_log("ANCHOR_INFERENCE", &format!(
-                        "File {} is an anchor (stem '{}' matches folder '{}'). Looking for parent patch.",
-                        file_path, file_stem.to_string_lossy(), parent_name.to_string_lossy()
-                    ));
-                }
-            }
-        }
-        // For anchors, walk up the hierarchy to find parent patch
-        if let Some(parent) = path.parent() {
-            if let Some(result) = infer_patch_from_hierarchy(parent, patches) {
-                detailed_log("ANCHOR_INFERENCE", &format!(
-                    "Found parent patch '{}' for anchor '{}'",
-                    result, exclude_command
-                ));
-                return Some(result);
-            }
-            detailed_log("ANCHOR_INFERENCE", &format!(
-                "No parent patch found for anchor '{}', will check other methods",
-                exclude_command
-            ));
-        }
-    }
-    
-    // Method 1: Check all path components and return the most specific (deepest) non-self match
-    // For paths like "T/Misc/Sleep.md", prefer "Misc" over "T"
-    // This works for both relative and absolute paths
-    let components: Vec<&str> = file_path.split('/').collect();
-    let mut best_matches: Vec<(usize, String)> = Vec::new(); // (depth, patch_name)
-    
-    for (depth, component) in components.iter().enumerate() {
-        if get_patch(component, patches).is_some() {
-            // Found a patch match - add to list
-            best_matches.push((depth, component.to_string()));
-        }
-    }
-    
-    // Sort by depth (deepest first) and return first non-self match
-    best_matches.sort_by(|a, b| b.0.cmp(&a.0)); // Sort by depth descending
-    
-    for (_, patch_name) in best_matches {
-        if patch_name.to_lowercase() != exclude_command.to_lowercase() {
-            // Return the correct case from the patch's linked command, not the directory name
-            if let Some(patch) = get_patch(&patch_name, patches) {
-                if let Some(linked_cmd) = patch.primary_anchor() {
-                    return Some(linked_cmd.command.clone());
-                }
-            }
-            return Some(patch_name); // Fallback to original if lookup fails
-        }
-    }
-    
-    // If no component matches found, try the directory hierarchy method
-    let path = Path::new(file_path);
-    
-    // Get the directory containing the file
-    let dir = if path.is_file() || file_path.contains('.') {
-        path.parent()?
-    } else {
-        path
-    };
-    
-    // Method 2: Check if any patch's linked command refers to a file in the same directory or parent directory
-    for patch in patches.values() {
-        if let Some(linked_cmd) = patch.primary_anchor() {
-            if linked_cmd.is_path_based() {
-                let linked_path = Path::new(&linked_cmd.arg);
-                let linked_dir = if linked_path.is_file() || linked_cmd.arg.contains('.') {
-                    linked_path.parent()
-                } else {
-                    Some(linked_path)
-                };
-                
-                if let Some(linked_dir) = linked_dir {
-                    // Check if directories match exactly
-                    if dir == linked_dir {
-                        // Prevent self-assignment
-                        if patch.name.to_lowercase() != exclude_command.to_lowercase() {
-                            // Check if this is an anchor file
-                            if crate::utils::is_anchor_file(path) {
-                                // This IS an anchor file (e.g., Lrn/Lrn.md)
-                                // Walk hierarchy to find the containing patch (should be grandparent)
-                                return infer_patch_from_hierarchy(dir, patches);
-                            }
-                            
-                            // Not an anchor file, return this patch
-                            return Some(patch.name.clone());
-                        }
-                    }
-                }
-            }
-        }
-    }
-    
-    None
-}
-
-
-/// Helper function specifically for anchors to find their parent patch
-fn infer_patch_from_hierarchy_for_anchor(command: &Command, patches: &HashMap<String, Patch>) -> Option<String> {
-    if !command.is_path_based() {
-        return None;
-    }
-    
-    let path = Path::new(&command.arg);
-    let dir = if path.is_file() {
-        path.parent()?
-    } else {
-        path
-    };
-    
-    infer_patch_from_hierarchy(dir, patches)
-}
-
-/// Walks directory hierarchy looking for a patch that contains this folder
-fn infer_patch_from_hierarchy(dir: &Path, patches: &HashMap<String, Patch>) -> Option<String> {
-    let mut current_dir = dir.parent();
-    
-    while let Some(parent) = current_dir {
-        // Check if any patch is associated with this parent directory
-        for patch in patches.values() {
-            if let Some(linked_cmd) = patch.primary_anchor() {
-                if linked_cmd.is_path_based() {
-                    let linked_path = Path::new(&linked_cmd.arg);
-                    let linked_dir = if linked_path.is_file() || linked_cmd.arg.contains('.') {
-                        linked_path.parent()
-                    } else {
-                        Some(linked_path)
-                    };
-                    
-                    if let Some(linked_dir) = linked_dir {
-                        if parent == linked_dir {
-                            return Some(patch.name.clone());
-                        }
-                    }
-                }
-            }
-        }
-        
-        current_dir = parent.parent();
-    }
-    
-    None
-}
-
-/// Infers patch for alias commands by looking up the target command's patch
-fn infer_patch_from_alias_target(command: &Command, patches: &HashMap<String, Patch>) -> Option<String> {
-    // Load all commands and resolve the alias chain
-    let all_commands = load_commands_raw();
-    let resolved_command = command.resolve_alias(&all_commands);
-    
-    // If target has a patch, return it
-    if !resolved_command.patch.is_empty() {
-        return Some(resolved_command.patch.clone());
-    }
-    
-    // If target doesn't have a patch, try to infer one for it
-    // (but only if it's not the original command to avoid infinite recursion)
-    if resolved_command.command != command.command {
-        return infer_patch(&resolved_command, patches);
-    }
-    
-    None
-}
-
-/// Infers patch from year prefix in command name (2000-3000 followed by separator)
-fn infer_patch_from_year_prefix(command_name: &str) -> Option<String> {
-    // Check if command starts with 4-digit year between 2000 and 3000
-    if command_name.len() >= 5 {
-        let year_part = &command_name[0..4];
-        
-        // Check if it's a valid 4-digit number
-        if let Ok(year) = year_part.parse::<u32>() {
-            // Check if year is in valid range (2000-3000)
-            if year >= 2000 && year <= 3000 {
-                // Check if followed by a separator character
-                let separator_char = command_name.chars().nth(4).unwrap();
-                if separator_char == '-' || separator_char == '_' || separator_char == '.' || separator_char == ' ' {
-                    return Some(year.to_string());
-                }
-            }
-        }
-    }
-    
-    None
 }
 
 /// Automatically assigns patch names to commands based on shared prefixes
@@ -1120,10 +904,9 @@ pub(crate) fn normalize_patch_case(commands: &mut [Command], patches: &HashMap<S
                     // Don't shorten longer patch names to shorter anchor names
                     // This prevents "2023 SV Patents" from being normalized to "2023"
                     if command.patch != proper_case && command.patch.to_lowercase() == proper_case.to_lowercase() {
-                        detailed_log("AUTO_NORMALIZE", &format!("Normalized patch case for '{}': '{}' -> '{}'", 
+                        detailed_log("AUTO_NORMALIZE", &format!("Normalized patch case for '{}': '{}' -> '{}'",
                             command.command, command.patch, proper_case));
                         command.patch = proper_case;
-                        command.update_full_line();
                         normalized_count += 1;
                     }
                 }
@@ -1230,15 +1013,6 @@ fn infer_parent_patch_from_name(patch_name: &str, patches: &HashMap<String, Patc
 
 // GlobalData has been moved to sys_data module as SysData
 
-/// Loads commands from the commands.txt file without any processing
-/// This is the raw loading function used by sys_data::load_data()
-/// Load commands from commands.txt (delegates to storage layer)
-/// DEPRECATED: External code should use crate::core::data::storage::load_commands_raw()
-/// This wrapper exists for internal backwards compatibility only
-pub(crate) fn load_commands_raw() -> Vec<Command> {
-    crate::core::data::load_commands_raw()
-}
-
 /// Load commands with all derived data structures (patches, inference, orphan anchors)
 /// INTERNAL ONLY - External code should use get_commands() from sys_data
 pub(in crate::core) fn load_commands() -> Vec<Command> {
@@ -1259,7 +1033,7 @@ pub fn load_commands_for_inference() -> (crate::core::data::config::Config, Vec<
     let config = crate::core::data::get_config();
     
     // Step 2: Load commands
-    let commands = load_commands_raw();
+    let commands = crate::core::data::load_commands_raw();
     
     // Step 3: Create patches hashmap from anchors only
     let patches = create_patches_hashmap(&commands);
@@ -1477,110 +1251,6 @@ fn is_better_command(candidate: &Command, current: &Command) -> bool {
     // Default: keep current
     false
 }
-
-/// Save commands to file (delegates to storage layer for actual file I/O)
-/// DEPRECATED: This function is exported for backwards compatibility but delegates to storage
-pub fn save_commands_to_file(commands: &[Command]) -> Result<(), Box<dyn std::error::Error>> {
-    // Delegate to storage layer which handles the actual file I/O
-    crate::core::data::save_commands_to_file(commands)?;
-    Ok(())
-}
-
-// Old implementation removed - now delegated to storage layer
-fn _old_save_implementation_removed(commands: &[Command]) -> Result<(), Box<dyn std::error::Error>> {
-    let path = crate::core::data::get_commands_file_path();
-    
-    // Ensure the directory exists
-    if let Some(parent) = path.parent() {
-        fs::create_dir_all(parent)?;
-    }
-    
-    // Update cmd commands without patches to have "Cmd" patch
-    let mut updated_commands = commands.to_vec();
-    for cmd in &mut updated_commands {
-        if cmd.action == "cmd" && cmd.patch.is_empty() {
-            cmd.patch = "Cmd".to_string();
-        }
-    }
-    
-    // Deduplicate commands by keeping the one with the most complete information
-    // Priority: commands with patches > commands without patches
-    // Then by flags: commands with flags > commands without flags
-    updated_commands = deduplicate_commands(updated_commands);
-    
-    // Sort commands by patch string first, then by command name before writing to file
-    updated_commands.sort_by(|a, b| {
-        match a.patch.cmp(&b.patch) {
-            std::cmp::Ordering::Equal => a.command.cmp(&b.command),
-            other => other
-        }
-    });
-    
-    // Debug: Check what patches look like right before serialization
-    let mut empty_patch_count = 0;
-    let mut empty_patch_commands = Vec::new();
-    for cmd in &updated_commands {
-        if cmd.patch.is_empty() {
-            empty_patch_count += 1;
-            empty_patch_commands.push(cmd.command.clone());
-            
-            // Only log as potential bug for actions that typically need patches
-            let actions_that_need_patches = ["markdown", "doc", "cmd"];
-            if actions_that_need_patches.contains(&cmd.action.as_str()) {
-                detailed_log("EMPTY_PATCH_BUG", &format!("Command with EMPTY patch during save: '{}' (action: {}, arg: {})", 
-                    cmd.command, cmd.action, cmd.arg));
-            }
-        }
-        // Skip logging individual commands
-    }
-    // Commands ready to save
-    
-    // Skip logging empty patch commands
-
-    // SAFETY CHECKS: Prevent saving corrupted data
-    // Updated for DOC commands: DOC scanning can legitimately add thousands of commands
-    if updated_commands.len() > 10000 {
-        let error_msg = format!("CORRUPTION DETECTED: Attempting to save {} commands (> 10000 limit). This indicates command inflation. Save operation CANCELLED.", updated_commands.len());
-        log_error(&error_msg);
-        detailed_log("CORRUPTION", &error_msg);
-        return Err("Command count exceeds safety limit".into());
-    }
-    
-    if empty_patch_count > 200 {
-        let error_msg = format!("CORRUPTION DETECTED: Attempting to save {} commands with empty patches (> 200 limit). This indicates patch stripping. Save operation CANCELLED.", empty_patch_count);
-        log_error(&error_msg);
-        detailed_log("CORRUPTION", &error_msg);
-        return Err("Empty patch count exceeds safety limit".into());
-    }
-    
-    // Build file contents with version header
-    let mut contents = String::new();
-
-    // Add version header as first line
-    contents.push_str(&format!("// HookAnchor Commands Format - version:={}\n", COMMANDS_FORMAT_VERSION));
-
-    // Convert all commands to new format and join with newlines
-    let commands_text = updated_commands.iter()
-        .map(|cmd| cmd.to_new_format())
-        .collect::<Vec<_>>()
-        .join("\n");
-
-    contents.push_str(&commands_text);
-
-    // Write with better error handling that includes the file path
-    if let Err(e) = fs::write(&path, &contents) {
-        let error_msg = format!("Cannot write to file '{}': {}", path.display(), e);
-        log_error(&error_msg);
-        return Err(error_msg.into());
-    }
-    
-    detailed_log("AUTO_SAVE", &format!("Saved {} commands to {}", commands.len(), path.display()));
-    Ok(())
-}
-
-// REMOVED: Legacy cache functions moved to storage.rs
-// Use crate::core::data::storage functions instead
-
 
 /// Filters commands based on search text with fuzzy matching and patch support
 pub(crate) fn filter_commands_with_patch_support(commands: &[Command], search_text: &str, max_results: usize, _word_separators: &str, debug: bool) -> Vec<Command> {

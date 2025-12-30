@@ -34,21 +34,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var recentURLEvents: [Date] = []
     var lastURLEventLog: Date = Date.distantPast
     
-    // Get the path to the ha binary (HookAnchorCommand)
-    // Tries bundled binary first, falls back to development path
+    // Get the path to the ha binary from the app bundle's MacOS directory
     func getHaBinaryPath() -> String? {
-        // Try bundled binary first (for distribution)
+        // Use bundled binary (from app bundle MacOS directory)
         if let bundlePath = Bundle.main.resourcePath {
             let bundledHaPath = "\(bundlePath)/../MacOS/ha"
             if FileManager.default.fileExists(atPath: bundledHaPath) {
                 return bundledHaPath
             }
-        }
-
-        // Fall back to development path
-        let devPath = "/Users/oblinger/ob/proj/HookAnchor/HookAnchorApp/target/release/HookAnchorCommand"
-        if FileManager.default.fileExists(atPath: devPath) {
-            return devPath
         }
 
         return nil

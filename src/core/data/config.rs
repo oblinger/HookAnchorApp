@@ -111,37 +111,6 @@ pub struct TemplateSettings {
     pub default_no_anchor_template: Option<String>,
 }
 
-/// History tracking settings
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(default)]
-pub struct HistorySettings {
-    /// Maximum number of history entries to load in the history viewer (default: 50000)
-    pub viewable_history_limit: Option<usize>,
-    /// Width of the tree navigation sidebar in pixels (default: 250)
-    pub tree_sidebar_width: Option<f32>,
-    /// Minimum width of the tree navigation sidebar in pixels (default: 50)
-    pub tree_sidebar_min_width: Option<f32>,
-    /// Indent per level in the tree in pixels (default: 10)
-    pub tree_indent_pixels: Option<f32>,
-    /// Show indent guide lines in the tree (default: true)
-    pub tree_show_guides: Option<bool>,
-    /// Enable peek-on-hover: when hovering over tree items, temporarily show their history (default: true)
-    pub peek_on_hover: Option<bool>,
-}
-
-impl Default for HistorySettings {
-    fn default() -> Self {
-        HistorySettings {
-            viewable_history_limit: Some(50000),
-            tree_sidebar_width: Some(250.0),
-            tree_sidebar_min_width: Some(50.0),
-            tree_indent_pixels: Some(10.0),
-            tree_show_guides: Some(true),
-            peek_on_hover: Some(true),
-        }
-    }
-}
-
 /// History viewer settings (top-level section)
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(default)]
@@ -575,6 +544,4 @@ impl PopupSettings {
     }
 }
 
-impl Config {
-}
 

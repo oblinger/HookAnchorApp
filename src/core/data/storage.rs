@@ -33,41 +33,25 @@ fn get_backups_folder_path() -> PathBuf {
     get_config_dir().join("backups")
 }
 
-/// Creates a backup of the commands file before saving
-fn backup_commands_file() -> Result<(), Box<dyn std::error::Error>> {
-    let commands_path = get_commands_file_path();
+/// Creates a timestamped backup of a file in the backups folder
+///
+/// # Arguments
+/// * `source_path` - Path to the file to backup
+/// * `prefix` - Prefix for the backup filename (e.g., "commands" or "cache")
+/// * `extension` - File extension (e.g., "txt" or "json")
+fn backup_file(source_path: &Path, prefix: &str, extension: &str) -> Result<(), Box<dyn std::error::Error>> {
     let backups_path = get_backups_folder_path();
 
     // Create backups directory if it doesn't exist
     fs::create_dir_all(&backups_path)?;
 
-    // Only backup if the commands file exists
-    if commands_path.exists() {
+    // Only backup if the source file exists
+    if source_path.exists() {
         let timestamp = chrono::Local::now().format("%Y%m%d_%H%M%S");
-        let backup_name = format!("commands_{}.txt", timestamp);
+        let backup_name = format!("{}_{}.{}", prefix, timestamp, extension);
         let backup_path = backups_path.join(backup_name);
 
-        fs::copy(&commands_path, backup_path)?;
-    }
-
-    Ok(())
-}
-
-/// Creates a backup of the cache file before saving
-fn backup_cache_file() -> Result<(), Box<dyn std::error::Error>> {
-    let cache_path = get_commands_cache_path();
-    let backups_path = get_backups_folder_path();
-
-    // Create backups directory if it doesn't exist
-    fs::create_dir_all(&backups_path)?;
-
-    // Only backup if the cache file exists
-    if cache_path.exists() {
-        let timestamp = chrono::Local::now().format("%Y%m%d_%H%M%S");
-        let backup_name = format!("cache_{}.json", timestamp);
-        let backup_path = backups_path.join(backup_name);
-
-        fs::copy(&cache_path, backup_path)?;
+        fs::copy(source_path, backup_path)?;
     }
 
     Ok(())
@@ -75,7 +59,7 @@ fn backup_cache_file() -> Result<(), Box<dyn std::error::Error>> {
 
 /// Loads commands from the commands.txt file without any processing
 /// This is the raw loading function used by sys_data::load_data()
-pub(in crate::core) fn load_commands_raw() -> Vec<Command> {
+pub(crate) fn load_commands_raw() -> Vec<Command> {
     let path = get_commands_file_path();
 
     if !path.exists() {
@@ -98,17 +82,6 @@ pub(in crate::core) fn load_commands_raw() -> Vec<Command> {
                         // 1. When config is loaded (file_roots, etc.)
                         // 2. When user edits commands (in prepare_save_command)
                         // 3. When scanner creates commands (uses already-expanded config paths)
-
-                        // Debug: Log the first few commands to see if patches are being preserved
-                        if line_num < 5 {
-                            detailed_log("PARSE_DEBUG", &format!("Parsed line {}: patch='{}', command='{}'",
-                                line_num + 1, command.patch, command.command));
-                        }
-                        // Also log the Patents command specifically
-                        if command.command == "Patents" {
-                            detailed_log("PARSE_DEBUG", &format!("Found Patents command: patch='{}', command='{}', action='{}'",
-                                command.patch, command.command, command.action));
-                        }
                         commands.push(command);
                     },
                     Err(e) => log_error(&format!("Failed to parse line {} in commands.txt: {} - Line: '{}'",
@@ -127,10 +100,10 @@ pub(in crate::core) fn load_commands_raw() -> Vec<Command> {
 /// Saves commands to file with safety checks
 /// NOTE: Deduplication should happen in flush() before calling this
 pub(in crate::core) fn save_commands_to_file(commands: &[Command]) -> Result<(), Box<dyn std::error::Error>> {
-    // Create backup before saving
-    backup_commands_file()?;
-
     let path = get_commands_file_path();
+
+    // Create backup before saving
+    backup_file(&path, "commands", "txt")?;
 
     // Ensure the directory exists
     if let Some(parent) = path.parent() {
@@ -216,10 +189,10 @@ pub(super) fn get_commands_cache_path() -> PathBuf {
 
 /// Save commands to cache (JSON format with metadata)
 pub(super) fn save_commands_to_cache(commands: &[Command]) -> Result<(), Box<dyn std::error::Error>> {
-    // Create backup before saving
-    backup_cache_file()?;
-
     let path = get_commands_cache_path();
+
+    // Create backup before saving
+    backup_file(&path, "cache", "json")?;
 
     // Ensure the directory exists
     if let Some(parent) = path.parent() {

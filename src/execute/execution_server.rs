@@ -141,12 +141,9 @@ impl CommandServer {
                 
                 match stream {
                     Ok(stream) => {
-                        let env = inherited_env.clone();
-                        let working_dir = base_working_dir.clone();
-                        
                         // Handle each connection in a separate thread
                         thread::spawn(move || {
-                            if let Err(e) = handle_client(stream, env, working_dir) {
+                            if let Err(e) = handle_client(stream) {
                                 detailed_log("CMD_SERVER", &format!("Error handling client: {}", e));
                             }
                         });
@@ -187,8 +184,6 @@ impl Drop for CommandServer {
 /// Handle a client connection - simplified version
 fn handle_client(
     mut stream: UnixStream,
-    _inherited_env: HashMap<String, String>,
-    _base_working_dir: PathBuf,
 ) -> Result<(), Box<dyn std::error::Error>> {
     detailed_log("CMD_SERVER", "Handling new client connection");
 
@@ -292,66 +287,6 @@ fn handle_client(
     detailed_log("CMD_SERVER", "Response sent to client");
     Ok(())
 }
-
-// ARCHIVED: These execute functions were part of the old execution path before refactoring.
-// They may have become disconnected during the module reorganization.
-// Keeping them commented for reference in case we need to understand the old flow.
-/*
-/// Main entry point for executing actions in the server - routes based on action type
-pub(crate) fn execute(action: &crate::execute::Action) -> Result<String, String> {
-    detailed_log("CMD_SERVER", &format!("Server execute: type={}", action.action_type()));
-    
-    match action.action_type() {
-        // Server-only actions (or actions that should always run in server context)
-        "template" | "popup" => {
-            // These should not reach the server
-            Err(format!("{} actions must be executed in popup", action.action_type()))
-        }
-        _ => {
-            // All other actions execute locally in server
-            execute_locally(action)
-        }
-    }
-}
-/// Execute an action locally within the server process
-pub fn execute_locally(action: &crate::execute::Action) -> Result<String, String> {
-    detailed_log("CMD_SERVER", &format!("Executing action locally: type={}", action.action_type()));
-    
-    match action.action_type() {
-        "template" => {
-            // Templates are popup-only, shouldn't reach here
-            Err("Template actions must be executed in popup".to_string())
-        }
-        "popup" => {
-            // Popup actions are popup-only, shouldn't reach here
-            Err("Popup actions must be executed in popup".to_string())
-        }
-        _ => {
-            // For other actions, convert to command and execute
-            // This is a temporary measure until we fully migrate to Actions
-            let cmd = crate::core::Command {
-                patch: action.get_string("patch").unwrap_or("").to_string(),
-                command: action.get_string("command_name").unwrap_or("").to_string(),
-                action: action.action_type().to_string(),
-                arg: action.get_string("arg").unwrap_or("").to_string(),
-                flags: action.get_string("flags").unwrap_or("").to_string(),
-            };
-            
-            // Get environment from server
-            let env = std::env::vars().collect();
-            let working_dir = std::env::current_dir().unwrap_or_else(|_| PathBuf::from("/"));
-            
-            let response = execute_command_with_env(cmd, env, working_dir);
-            if response.success {
-                Ok(format!("Action executed successfully"))
-            } else {
-                Err(response.error.unwrap_or_else(|| "Unknown error".to_string()))
-            }
-        }
-    }
-}
-*/
-
 
 /// Get the socket path for the command server
 fn get_socket_path() -> Result<PathBuf, Box<dyn std::error::Error>> {

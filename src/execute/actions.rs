@@ -291,8 +291,7 @@ fn execute_template_action(
         last_update: 0,
         file_size: None,
     };
-    command.update_full_line();
-    
+
     // Handle file creation if specified
     if let Some(contents) = params.get("contents") {
         let file_path = params.get("arg").ok_or("Template with contents requires arg (file path)")?;
@@ -621,7 +620,7 @@ fn execute_alias_action(
     detailed_log("ACTION", &format!("Resolving alias to: {}", target));
     
     // Find and execute the target command
-    let commands = crate::core::commands::load_commands_raw();
+    let commands = crate::core::data::load_commands_raw();
     
     // Look for the target command (case-insensitive)
     // First try exact match, then try without patch prefix

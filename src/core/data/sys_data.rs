@@ -31,9 +31,6 @@ static SYS_DATA: OnceLock<Mutex<Option<SysData>>> = OnceLock::new();
 // Private to this module - external code should use get_config() instead
 pub(crate) static CONFIG: OnceLock<Config> = OnceLock::new();
 
-// Global flag to track if commands have been modified and need reload
-static COMMANDS_MODIFIED: OnceLock<std::sync::atomic::AtomicBool> = OnceLock::new();
-
 // Track the modification time of commands.txt when we last loaded it
 // Used to auto-reload when the file changes (e.g., from server process updates)
 static LAST_COMMANDS_MTIME: OnceLock<Mutex<Option<std::time::SystemTime>>> = OnceLock::new();
@@ -250,15 +247,6 @@ pub fn update_commands(new_commands: Vec<Command>) {
 
         log("SYS_DATA: Commands updated, old Arc invalidated");
     }
-}
-
-/// Mark that commands have been modified and need to be reloaded
-/// This is the standard way to indicate that command data has changed
-/// The next call to get_sys_data() will automatically reload
-pub fn mark_commands_modified() {
-    let flag = COMMANDS_MODIFIED.get_or_init(|| std::sync::atomic::AtomicBool::new(false));
-    flag.store(true, std::sync::atomic::Ordering::Relaxed);
-    detailed_log("COMMANDS_RELOAD", "Commands marked as modified - will reload on next get_sys_data() call");
 }
 
 /// Clear all commands from singleton and delete both commands.txt and cache files
@@ -738,32 +726,6 @@ pub fn delete_command(cmd_name: &str) -> Result<(), Box<dyn std::error::Error>> 
     set_commands(commands)?;
 
     Ok(())
-}
-
-/// Load data without caching - used as fallback when cache is locked
-fn load_data_no_cache(commands_override: Vec<Command>, _verbose: bool) -> SysData {
-    // Use the pre-initialized config
-    let config = get_config();
-    
-    // Load commands (from disk or use override)
-    let commands = if !commands_override.is_empty() {
-        commands_override
-    } else {
-        super::storage::load_commands_raw()
-    };
-    
-    // Create basic patches hashmap
-    let patches = crate::core::commands::create_patches_hashmap(&commands);
-
-    // Build folder_to_patch map from anchor commands
-    let folder_to_patch = build_folder_to_patch_map(&commands, &config);
-
-    SysData {
-        config,
-        commands: Arc::new(commands),
-        patches,
-        folder_to_patch,
-    }
 }
 
 /// Comprehensive data loading function that performs all necessary steps in order:

@@ -266,7 +266,6 @@ pub fn run_basic_patch_inference(
             }
             
             command.patch = inferred_patch.clone();
-            command.update_full_line();
             inferred_count += 1;
             
             detailed_log("PATCH_INFERENCE", &format!(
@@ -604,7 +603,6 @@ pub fn auto_assign_patches(commands: &mut Vec<Command>) {
 
         if let Some(patch) = infer_patch_unified(command, &patches) {
             command.patch = patch.clone();
-            command.update_full_line();
             assigned_count += 1;
             
             detailed_log("AUTO_ASSIGN", &format!(

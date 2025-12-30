@@ -60,6 +60,7 @@ use crate::core::commands::{FLAG_USER_EDITED, FLAG_ANCHOR};
 use crate::execute::get_action;
 use chrono::Local;
 use crate::prelude::*;
+use crate::utils::expand_tilde;
 
 /// Action types that are automatically generated and removed by the scanner
 /// These commands will be removed during rescanning unless they have the 'U' (user-edited) flag
@@ -308,7 +309,7 @@ pub fn load_manual_edits(commands: &mut Vec<Command>, verbose: bool) -> Result<u
     }
 
     // Load commands.txt
-    let txt_commands = crate::core::commands::load_commands_raw();
+    let txt_commands = crate::core::data::load_commands_raw();
     log(&format!("LOAD_MANUAL_EDITS: Loaded {} commands from commands.txt", txt_commands.len()));
 
     let mut edits_applied = 0;
@@ -738,7 +739,7 @@ struct ScanStats {
 /// Check if a file path is within any of the configured scan roots
 fn is_within_scan_roots(file_path: &Path, scan_roots: &[String]) -> bool {
     for root in scan_roots {
-        let expanded_root = expand_home(root);
+        let expanded_root = expand_tilde(root);
         if file_path.starts_with(&expanded_root) {
             return true;
         }
@@ -825,7 +826,7 @@ fn discover_files(file_roots: &[String], config: &Config) -> std::collections::H
     let mut discovered = HashMap::new();
 
     for root in file_roots {
-        let expanded_root = expand_home(root);
+        let expanded_root = expand_tilde(root);
         let root_path = Path::new(&expanded_root);
 
         if !root_path.exists() || !root_path.is_dir() {
@@ -1873,10 +1874,7 @@ fn should_skip_path(path: &Path, config: &Config) -> bool {
     // Get skip patterns from config (try new field first, fall back to old field for compatibility)
     let skip_patterns = match &config.popup_settings.skip_patterns {
         Some(patterns) => patterns,
-        None => match &config.popup_settings.skip_directory_patterns {
-            Some(patterns) => patterns,
-            None => return false,
-        }
+        None => return false,
     };
 
     // Get full path as string for glob matching
@@ -1885,7 +1883,7 @@ fn should_skip_path(path: &Path, config: &Config) -> bool {
     // Check each pattern using standard glob matching
     for pattern in skip_patterns {
         // Expand ~ in pattern
-        let expanded_pattern = expand_home(pattern);
+        let expanded_pattern = expand_tilde(pattern);
 
         // Build glob matcher (case-insensitive)
         let glob = match GlobBuilder::new(&expanded_pattern)
@@ -1904,16 +1902,6 @@ fn should_skip_path(path: &Path, config: &Config) -> bool {
     }
 
     false
-}
-
-/// Expands ~ to home directory
-fn expand_home(path: &str) -> String {
-    if path.starts_with("~/") {
-        if let Ok(home) = std::env::var("HOME") {
-            return path.replacen("~", &home, 1);
-        }
-    }
-    path.to_string()
 }
 
 /// Calculates a checksum from the scan results to detect changes

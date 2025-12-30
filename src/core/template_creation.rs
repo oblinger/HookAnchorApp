@@ -250,9 +250,7 @@ impl TemplateContext {
     pub fn new(
         input: &str,
         selected_command: Option<&Command>,
-        _previous_command: Option<&Command>, // Kept for compatibility but unused
     ) -> Self {
-        // Note: _previous_command parameter is kept for API compatibility but not used in template processing
         let mut variables = HashMap::new();
 
         // Basic variables
@@ -933,7 +931,6 @@ pub fn process_template(
                 last_update: 0,
                 file_size: None,
             };
-            command.update_full_line();
 
             // Check if any errors were queued during template expansion
             if crate::utils::error::has_errors() {
@@ -1060,7 +1057,7 @@ mod tests {
     #[ignore] // Requires full config environment (config.js, etc.) - run with --ignored
     fn test_datetime_variables() {
         init_test_environment();
-        let context = TemplateContext::new("", None, None);
+        let context = TemplateContext::new("", None);
         
         // Test object-based date variables
         let year = context.expand("{{date.year}}");

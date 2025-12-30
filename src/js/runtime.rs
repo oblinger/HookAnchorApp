@@ -781,7 +781,6 @@ fn setup_launcher_builtins(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Erro
                 cmd.arg = arg.clone();
                 cmd.patch = patch.clone();
                 cmd.flags = flags.clone();
-                cmd.update_full_line();
                 found = true;
                 break;
             }
@@ -800,7 +799,6 @@ fn setup_launcher_builtins(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Erro
                 last_update: 0,
                 file_size: None,
             };
-            new_cmd.update_full_line();
             commands.push(new_cmd);
             "added"
         } else {

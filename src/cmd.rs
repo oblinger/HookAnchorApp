@@ -2106,7 +2106,7 @@ fn print_help_config() {
     print("  # File Scanning");
     print("  file_roots:             [\"~/path\"]    # Directories to scan");
     print("  doc_file_extensions:    \"pdf,docx\"    # Extensions for DOC commands");
-    print("  skip_directory_patterns:              # Patterns to exclude from scan");
+    print("  skip_patterns:                        # Patterns to exclude from scan");
     print("    - \"/pattern/\"");
     print("");
     print("  # Rename Behavior");

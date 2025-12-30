@@ -84,10 +84,11 @@ pub use sys_data::{
     delete_history,
 };
 
-// Re-export storage functions for core/commands.rs backwards compatibility
-// These are internal to core/ and should not be used outside
+// Re-export storage functions
+// load_commands_raw is pub(crate) for use by scanner and actions
+pub(crate) use storage::load_commands_raw;
+// These are internal to core/
 pub(in crate::core) use storage::{
-    load_commands_raw,
     save_commands_to_file,
     get_commands_file_path,
 };

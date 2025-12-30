@@ -138,63 +138,7 @@ pub fn rename_associated_data(
         }
     }
     
-    // 2. Folder Renaming (for anchor commands)
-    // NOTE: This code is currently unreachable since we no longer have action="anchor"
-    // Anchor status is now determined by the 'A' flag, not the action type
-    // TODO: Update this to check anchor flag when we refactor to pass full command
-    if config.popup_settings.rename_folder.unwrap_or(false) && false { // Disabled: no longer have anchor action
-        let path = Path::new(&updated_arg);
-        
-        // For anchor files, check if folder name matches old command name
-        if let Some(parent) = path.parent() {
-            if let Some(folder_name) = parent.file_name() {
-                if let Some(folder_name_str) = folder_name.to_str() {
-                    if normalize_for_match(folder_name_str) == normalize_for_match(old_name) {
-                        // Build new folder path
-                        let new_folder_path = parent.parent()
-                            .map(|p| p.join(new_name))
-                            .unwrap_or_else(|| PathBuf::from(new_name));
-                        
-                        if !new_folder_path.exists() && parent.exists() {
-                            // Add action descriptions
-                            actions.push(format!("• FOLDER -- Rename folder: {} → {}",
-                                folder_name_str, new_name));
-                            actions.push(format!("• ANCHOR -- Update anchor command: {} → {}",
-                                folder_name_str, new_name));
-                            
-                            // Perform rename if not dry run
-                            if !dry_run {
-                                log(&format!("RENAME: Renaming folder {} -> {}", 
-                                    parent.display(), new_folder_path.display()));
-                                fs::rename(parent, &new_folder_path)?;
-                                
-                                // Update the arg to point to the new location
-                                // Rebuild the file path within the renamed folder
-                                if let Some(file_name) = path.file_name() {
-                                    // Also rename the anchor file itself to match
-                                    let new_anchor_file = format!("{}.md", new_name);
-                                    let new_full_path = new_folder_path.join(&new_anchor_file);
-                                    let old_file_in_new_folder = new_folder_path.join(file_name);
-                                    
-                                    // Rename the anchor file to match the folder
-                                    if old_file_in_new_folder.exists() && !new_full_path.exists() {
-                                        fs::rename(&old_file_in_new_folder, &new_full_path)?;
-                                        updated_arg = new_full_path.to_string_lossy().to_string();
-                                    } else {
-                                        updated_arg = old_file_in_new_folder.to_string_lossy().to_string();
-                                    }
-                                }
-                            }
-                        } else if new_folder_path.exists() && dry_run {
-                            actions.push(format!("• WARNING -- Cannot rename folder (target exists): {}", new_name));
-                        }
-                    }
-                }
-            }
-        }
-    }
-    
-    // 3. Patch Renaming
+    // 2. Patch Renaming
     if config.popup_settings.rename_patch.unwrap_or(false) {
         // Check if there's a patch with the old name
         let old_name_lower = old_name.to_lowercase();
@@ -254,10 +198,8 @@ pub fn rename_associated_data(
                     for cmd in commands.iter_mut() {
                         if cmd.patch.to_lowercase() == old_name_lower {
                             cmd.patch = new_name.to_string();
-                            cmd.update_full_line();
                         } else if cmd.patch.to_lowercase().starts_with(&format!("{}!", old_name_lower)) {
                             cmd.patch = format!("{}!", new_name);
-                            cmd.update_full_line();
                         }
                     }
                     log(&format!("RENAME: Updated {} commands with new patch name", 
@@ -352,7 +294,6 @@ pub fn rename_associated_data(
                             let remainder_chars: String = cmd_chars[old_name_chars.len()..].iter().collect();
                             let old_cmd_name = cmd.command.clone();
                             cmd.command = format!("{}{}", new_name, remainder_chars);
-                            cmd.update_full_line();
                             log(&format!("RENAME: Updated prefix '{}' -> '{}'", 
                                 old_cmd_name, cmd.command));
                         }
@@ -443,7 +384,6 @@ pub fn rename_folder(
             if cmd.arg.starts_with(&old_path_str) {
                 let old_cmd_arg = cmd.arg.clone();
                 cmd.arg = cmd.arg.replacen(&old_path_str, &new_path_str, 1);
-                cmd.update_full_line();
 
                 log(&format!("RENAME_FOLDER: Updated command '{}' arg: {} -> {}",
                     cmd.command, old_cmd_arg, cmd.arg));

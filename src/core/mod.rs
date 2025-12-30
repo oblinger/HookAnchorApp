@@ -61,7 +61,7 @@ pub use commands::{
 
     // CRUD operations (INTERNAL USE ONLY - use sys_data API instead)
     load_commands_for_inference,
-    save_commands_to_file, parse_command_line,
+    parse_command_line,
 
     // Query and filtering
     filter_commands,
