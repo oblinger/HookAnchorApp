@@ -5,7 +5,7 @@
 //! aliases, and folder hierarchies.
 
 use std::collections::HashMap;
-use std::path::{Path, PathBuf};
+use std::path::Path;
 use crate::core::{Command, Patch};
 use super::commands::FLAG_USER_EDITED;
 use crate::prelude::*;

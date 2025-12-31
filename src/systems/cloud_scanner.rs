@@ -44,11 +44,6 @@ impl NotionScanner {
         Self { client }
     }
 
-    pub fn scan_all_pages(&self) -> Result<Vec<NotionPage>, String> {
-        // Default to scanning up to 1000 pages
-        self.scan_pages_with_limit(1000)
-    }
-    
     pub fn scan_pages_with_limit(&self, page_limit: usize) -> Result<Vec<NotionPage>, String> {
         // Check if we have a stored last scan timestamp
         let last_scan = self.get_last_scan_time();

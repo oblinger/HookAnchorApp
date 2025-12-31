@@ -86,8 +86,6 @@ pub struct AnchorSelector {
     pending_template: Option<(String, crate::core::template_creation::TemplateContext)>,
     /// Key registry for unified key processing
     key_registry: Option<KeyRegistry>,
-    /// Configurable exit keystrokes
-    exit_app_key: Option<crate::core::key_processing::Keystroke>,
     /// Flag to request exit/hide on next update
     should_exit: bool,
     /// Track if window is currently hidden
@@ -1726,7 +1724,6 @@ impl AnchorSelector {
             search_pending_after_load: !initial_prompt.is_empty(),
             pending_template: None,
             key_registry: None, // Will be initialized when config is loaded
-            exit_app_key: None, // Will be populated from config
             should_exit: false,
             is_hidden: false,
             pending_rebuild: false,
@@ -1785,7 +1782,6 @@ impl AnchorSelector {
             search_pending_after_load: !initial_prompt.is_empty(),
             pending_template: None,
             key_registry: None, // Will be initialized when config is loaded
-            exit_app_key: None, // Will be populated from config
             should_exit: false,
             is_hidden: false,
             pending_rebuild: false,

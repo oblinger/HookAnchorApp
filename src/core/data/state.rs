@@ -7,7 +7,6 @@ use std::fs;
 use std::path::{Path, PathBuf};
 use std::env;
 use serde::{Deserialize, Serialize};
-use chrono::Local;
 use crate::prelude::*;
 
 /// History viewer state - all persistent state for the history viewer window

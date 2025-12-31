@@ -300,7 +300,6 @@ pub fn reload_commands() -> Result<Vec<Command>, Box<dyn std::error::Error>> {
 /// Returns the backup directory path for display to the user
 pub fn backup_commands() -> Result<std::path::PathBuf, Box<dyn std::error::Error>> {
     use chrono::Local;
-    use std::path::PathBuf;
 
     log("BACKUP_COMMANDS: Creating emergency backup");
 
@@ -828,7 +827,6 @@ pub fn delete_history() -> Result<(bool, bool), String> {
 /// (e.g., /@Avid Boustani/@Avid Boustani.md) and NOT for standalone anchor files
 /// (e.g., /At/@Reed Shaffner.md) which would incorrectly map their parent directory
 fn build_folder_to_patch_map(commands: &[Command], config: &Config) -> HashMap<std::path::PathBuf, String> {
-    use std::path::PathBuf;
     let mut folder_map = HashMap::new();
 
     // First pass: Add all anchor commands to the map

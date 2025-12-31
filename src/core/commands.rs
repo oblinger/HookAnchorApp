@@ -3,7 +3,6 @@
 //! This module handles all command-related operations including loading, saving,
 //! filtering, merging, and manipulation of commands.
 
-use std::fs;
 use std::path::{Path, PathBuf};
 use std::env;
 use std::collections::HashMap;

@@ -453,49 +453,6 @@ pub fn restart_all_servers() -> Result<(), String> {
     Ok(())
 }
 
-/// Ensure supervisor is running (start if not running, but don't restart if running)
-fn ensure_supervisor_running() -> Result<(), String> {
-    use std::process::Command;
-
-    // Check if already running
-    let check_result = Command::new("pgrep")
-        .arg("-f")
-        .arg("HookAnchor")
-        .output();
-
-    match check_result {
-        Ok(output) if output.status.success() && !output.stdout.is_empty() => {
-            // Already running - don't restart
-            print_and_log("  ✓ Supervisor already running");
-            return Ok(());
-        }
-        _ => {
-            // Not running - start it
-            print_and_log("  ⚠ Supervisor not running, starting...");
-        }
-    }
-
-    // Start supervisor
-    let start_result = Command::new("open")
-        .arg("-a")
-        .arg("HookAnchor")
-        .spawn();
-
-    match start_result {
-        Ok(_) => {
-            // Give it a moment to start
-            std::thread::sleep(std::time::Duration::from_millis(500));
-            print_and_log("  ✓ Supervisor started");
-            Ok(())
-        }
-        Err(e) => {
-            let error_msg = format!("Failed to start supervisor: {}", e);
-            log_error(&error_msg);
-            Err(error_msg)
-        }
-    }
-}
-
 /// Stop the supervisor (without restarting servers)
 fn stop_supervisor() -> Result<(), String> {
     use std::process::Command;
@@ -590,51 +547,4 @@ fn verify_all_stopped() -> Result<(), String> {
 
     print_and_log("  ✓ Verified: All servers stopped and sockets cleaned");
     Ok(())
-}
-
-/// Restart the HookAnchor supervisor (Swift GUI application)
-fn restart_supervisor() -> Result<(), String> {
-    use std::process::Command;
-
-    print_and_log("🔄 Restarting HookAnchor supervisor...");
-
-    // Kill existing supervisor process
-    let kill_result = Command::new("killall")
-        .arg("HookAnchor")
-        .output();
-
-    match kill_result {
-        Ok(output) if output.status.success() => {
-            print_and_log("  ✓ Old supervisor stopped");
-        }
-        Ok(_) => {
-            // killall returns non-zero if process not found - that's fine
-            print_and_log("  ℹ No supervisor was running");
-        }
-        Err(e) => {
-            log_error(&format!("  ⚠ Failed to kill supervisor: {}", e));
-            // Don't fail - maybe it wasn't running
-        }
-    }
-
-    // Brief wait for process to fully terminate
-    std::thread::sleep(std::time::Duration::from_millis(300));
-
-    // Start new supervisor
-    let start_result = Command::new("open")
-        .arg("-a")
-        .arg("HookAnchor")
-        .spawn();
-
-    match start_result {
-        Ok(_) => {
-            // Give it a moment to start
-            std::thread::sleep(std::time::Duration::from_millis(500));
-            print_and_log("  ✓ Supervisor restarted");
-            Ok(())
-        }
-        Err(e) => {
-            Err(format!("Failed to start supervisor: {}", e))
-        }
-    }
 }

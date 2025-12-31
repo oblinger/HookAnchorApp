@@ -279,7 +279,6 @@ pub fn rename_folder(
 ) -> Result<Vec<String>, Box<dyn std::error::Error>> {
     use std::fs;
     use std::path::Path;
-    use std::path::PathBuf;
 
     let mut actions = Vec::new();
     let old_path = Path::new(old_folder_path);

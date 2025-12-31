@@ -87,20 +87,12 @@ pub use sys_data::{
 // Re-export storage functions
 // load_commands_raw is pub(crate) for use by scanner and actions
 pub(crate) use storage::load_commands_raw;
-// These are internal to core/
-pub(in crate::core) use storage::{
-    save_commands_to_file,
-    get_commands_file_path,
-};
 
 // Re-export config directory path function (for non-data files only)
 pub use storage::get_config_dir;
 
 // Re-export deduplication utilities for consistent duplicate detection
-pub use storage::{
-    command_dedup_key,
-    build_command_map,
-};
+pub use storage::command_dedup_key;
 
 // Re-export history read function (via trampoline in sys_data)
 // History writing is automatic and happens only inside sys_data
