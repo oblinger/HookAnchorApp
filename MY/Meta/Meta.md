@@ -1,5 +1,5 @@
 .[[Meta]].
-  TOP:	[[Dir]], [[Meta Meta]], [[Meta List]], [[Meta Proj]], [[Meta Set]],
+  TOP:	[[Dir]], [[Meta Meta]], [[Meta List]], [[Meta Proj]], 
   AND:	[[Meta Flow]], [[Meta Group]],
   LOG:	[[Meta Log]], [[Meta Journaling]],
   PLAN:	[[Meta Plan]], [[Meta Coms]],

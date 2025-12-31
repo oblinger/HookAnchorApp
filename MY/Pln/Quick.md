@@ -1,10 +1,8 @@
 - shingles shot
-- call nancy
 - spec for court corners
 - demo 2/3-pointers rebound/assist 
 - PHQ ask about API
 
-- cash estimate to James
 - sammie
 - share API with Reed
 - ping Ram again about game length

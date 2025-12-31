@@ -1,47 +1,40 @@
-- the cmd-W action wraps a md in a folder but does not update the command link
 
 - describe decorators
 
 
 - when deduplication logic deduplicates a command we should MERGE results into a single command
-- remove backward compatibility in template
 
 
 ⏺ I need to add backward compatibility for dat.class. I'll add a validator that maps class to kind.
-
-
     - Implemented Dat.save() method (was raising NotImplementedError)
-
-
     - Added _find_subclass_by_name() method to dynamically load correct Dat subclass based on kind
 
-
-
-
 - [ ] [[Hook Anchor Release]]
-- [ ] ensure 'hook anchor page' anchor will remove others more specific than it from the menu
-- [ ] add a "wrap" command
-- [ ] The help text is listing the full path to the 'ha' binary. please assume it is in path and just list its basename
-- [ ] add build checking on swift
-- [ ] startup still fails on dev machine
-- [ ] TYPES: Types: fileExt, Person, Proj(work, personal, hack)  CROSSCUTTING: Log, WP, Chat(Email, call), Idea,
-- [ ] Command Type Filtering
-- [ ] ChildTemplate anchor var tied to "+" key. " * " does grab
-- [ ] dry code
 - [ ] Add categories
-- [ ] New template actions list
-- [ ] Make dev mode run on each render (mod 10?) make boot check only run when dev_mode is set.
-- [ ] click on folder will go into folder
-- [ ] Delete key should prompt to delete file and maybe folder.
-- [ ] Should we remove the "delete invalid alias" code???
+- [ ] Command Type Filtering
+- [ ] TYPES: Types: fileExt, Person, Proj(work, personal, hack)  CROSSCUTTING: Log, WP, Chat(Email, call), Idea,
 ## SOON
+- [ ] YORE support.
+- [ ] Delete key should prompt to delete file and maybe folder.
 - [ ] consider EVERY fallback in the code, and try to remove them
 - [ ] "[" should go back in history
 - [ ] ANCHOR EDITOR - Extend the command editor to be the anchor editor whenever the action type is anchor
-- [ ] yore support
 - [ ] Maintain map of last edit times, to avoid rescanning when not needed.
+- **L** add build checking on swift
+- **L** click on folder will go into folder
 
 ## DONE
+- [x] remove backward compatibility in template
+- [x] ensure 'hook anchor page' anchor will remove others more specific than it from the menu
+- [x] the cmd-W action wraps a md in a folder but does not update the command link
+- [x] add a "wrap" command
+- [x] ChildTemplate anchor var tied to "+" key. " * " does grab
+- [x] The help text is listing the full path to the 'ha' binary. please assume it is in path and just list its basename
+- [x] dry code
+- [x] startup still fails on dev machine
+- [x] Should we remove the "delete invalid alias" code???
+- **X** New template actions list
+- **X** Make dev mode run on each render (mod 10?) make boot check only run when dev_mode is set.
 - [x] lets copy the change log over at the same time
 - [x] add the 'edit' command type
 - [x] see screen shots in hack

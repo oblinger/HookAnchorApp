@@ -1,6 +1,32 @@
 # Meta Proj
 - [[Meta Log]], 
 
+## PJ - Project Folders
+- PJ Directories
+
+| PERSONAL                               |                               |
+| -------------------------------------- | ----------------------------- |
+| [PJ Directories](hook://PJdirectories) | Folders on my system          |
+|                                        |                               |
+| Prj                                    | Main Personal Projects folder |
+| [PP](hook://PJpp)                      |                               |
+| BinProj                                | ~/bin  coding projects        |
+| [Proj](hook:PJcodeproj)                | Main                          |
+| [WW](hook://PJww)                      |                               |
+|                                        |                               |
+|                                        |                               |
+|                                        |                               |
+  
+| WORK                                |     |
+| ----------------------------------- | --- |
+| [PJ Notion](hook://PJnotion)        |     |
+| [PJ Tasks SV](hook://PJtaskssv)     |     |
+| [PJ CVT Gdrive](hook://PJcvtgdrive) |     |
+| [SV Proj](hook://PJsvproj)          |     |
+|                                     |     |
+  
+
+
 ## Root Project Folders / 
 - PrC	- Personal coding projects folder
 - PrP	- Personal projects page & folder

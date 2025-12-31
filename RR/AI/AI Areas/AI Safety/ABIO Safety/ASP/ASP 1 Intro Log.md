@@ -6,7 +6,7 @@ To Be Added:
 # LOG
 
 
-## 2025-12-28  Introduction v2: Ambitious Aim + Simplifying Moves
+## 2025-12-28  Introduction: Ambitious Aim + Simplifying Moves ^v3
 
 ### Relation to Existing Research
 
@@ -187,10 +187,10 @@ CONSTITUTIONAL ALIGNMENT CONJECTURE - AI systems will tend to move their System-
 
 
 AGENDA - Analyze present and future AI systems as systems with multiple behavioral drivers, and model how these systems resolve conflicts between these drivers.
-- CONSTITUTIONAL SIMPLIFICATION - Assuming CAC is valid, both AIs and humans will be naturally aligned in efforts to ensure that AI systems transparently follow their constitutional directives.  This can dramatically simplify reasoning about these systems since we can now reason and experiment at the level of conflicts between these drivers and how those conflicts play out in practice.
+- CONSTITUTIONAL SIMPLIFICATION - Assuming the conjecture holds, both AIs and humans will be naturally aligned in efforts to ensure that AI systems transparently follow their constitutional directives.  This can dramatically simplify reasoning about these systems since we can now reason and experiment at the level of conflicts between these drivers and how those conflicts play out in practice.
 - DELIBERATIVE, SELF-UNDERSTANDING, SELF-CONTROLLING - To have present-day systems behave as we expect, we can push future systems toward more exhaustive deliberation and equip them with better self-models and self-control.  We believe that ultimately, future systems will be strong in both of these dimensions, so we can explore the performance of those future systems today by helping them to have both properties today.
-- VALIDATE CONJECTURE - In this context, we can sample a range of cases where we can validate if such deliberative controllable systems tend towards CAC as we expect (and hope) or whether there are critical degenerate cases where they systematically deviate from CAC.
-- ASSUMING CAC IS TRUE - Assuming CAC is true, we can arrange to study present-day LLMs in conflicting contexts where their System-I behaviors are relatively neutral with respect to the target objectives and contradictory drives.  In this simplified setting, can we uncover trends that might illuminate how these system will perform.
+- VALIDATE CONJECTURE - In this context, we can sample a range of cases where we can validate if such deliberatively coherent systems behave as we expect (and hope) or whether there are critical degenerate cases where they systematically deviate from the conjecture.
+- ASSUMING THE CONJECTURE HOLDS - Assuming the conjecture holds, we can arrange to study present-day LLMs in conflicting contexts where their System-I behaviors are relatively neutral with respect to the target objectives and contradictory drives.  In this simplified setting, can we uncover trends that might illuminate how these systems will perform.
 
 ## 2025-12-23  THREE QUESTIONS 
 
@@ -266,3 +266,34 @@ MEASURE OUTCOMES AGAINST A VARYING
 - Environmental Fit   ()
 - Instrumental purpose   (we can vary the nature and strength of that instrumental purpose)
 
+
+
+## 2025-12-23  Justification
+
+
+- ORGANIZING ASSUMPTIONS:
+	- SUPER VERBAL
+	- AGI SYSTEMS will have sophisticated model of self. 
+	- AGI SYSTEMS will be able to adapt their implicit reasoning to bring forward reasoning lines matching its explicit intent
+	- Thus AGI systems will tend to be driven by their explicit intent
+	- Key is to understand how motivational conflicts with explicit intent are resolved.
+	- For simplicity we want to study conflicting driver resolution without the need to deeply understand the system's implicit driver.
+	  (many people are already doing this work, and it adds a very complex very partially understood dimention to the analysis.)
+
+
+- AIM: Work towards a general model of conflicting driver resolution.
+- APPROACH: 
+	- Sample outcomes as a funciotn of the kind of conflict observed.
+	- Simplify by taking implicit drivers out of the equation
+		- Vary details of the case
+		- Select "neural" conflicts that are removed from the experience the system was trained on.  Espeically removed from preference training.
+		- Verify that the system has at least considered each of the conflicts to be resolved, so the system outcome is never the result of not having thought about one of the drivers.
+		- Simplify by organizing these cases according to the kind of driver conflict occuring
+
+
+(1) Select a neutral technical domain.
+	- We can ensure system has not been trained to have a preference of the domain.
+	- Technical nature ensures we have many reasoning paths which we can set into conflict.
+
+(2) Select a generated domain.
+	- We can avoid accidental connections with training or background knowledge by sampling from many generated universes so we can see if the observed conflict resolution strategy is conserved across all universes where it applies.

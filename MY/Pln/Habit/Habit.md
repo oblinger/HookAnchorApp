@@ -1,6 +1,15 @@
 .[[Habit]].
   , [[Daily Schedules]], [[HABIT SAVERS]], [Habit Note](spot://habitnote), 
 
+
+
+### - New Year Resolutions
+- MED:  Move each day; Add weights and HITT
+- MED:  Gradually change diet.  Add coach
+- MORNING FOCUS - grow to 3 hrs
+- TASK: Bounded tasks.  > 70% completion
+- FUN: Daily, Special
+
 ## = CURRENT FOCUS
 
 ### - [[HABIT SAVERS]] 

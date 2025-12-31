@@ -1,5 +1,5 @@
 
-# WORKFLOW
+# ANCHOR LIFECYCLE
 ## Creation
 - LONG NAME - is chosen for the new anchor with or without a date prefix and used to create a folder and index note.
 - Use "#F", "#Y", or "#D" to create an anchor folder and note.
@@ -15,8 +15,12 @@
 ## Restructure
 - Move the FOLDER under other anchor folders as needed
 
-## Archive
+## Retire ABBR
 - Rename the ABBR file back to the index file, or add a date prefix to all ABBR files
+
+## Archive 
+- Move file or folder into the appropriate 'YORE" folder
+
 
 ## Search
 - ***??? FILTER ANCHORS*** - How to see all anchor files.  (click the Anchor flag)
