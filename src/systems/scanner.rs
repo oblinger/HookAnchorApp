@@ -755,69 +755,6 @@ fn has_changed(old: &Command, new: &Command) -> bool {
     old.file_size != new.file_size
 }
 
-/// Update or create a command in the command list
-/// Returns true if command was added or updated, false if unchanged
-fn update_or_create_command(
-    new_cmd: Command,
-    commands: &mut Vec<Command>,
-    config: &Config,
-) -> bool {
-    // Get absolute file path for comparison
-    let file_path = match new_cmd.get_absolute_file_path(config) {
-        Some(path) => path.to_string_lossy().to_string(),
-        None => return false, // Skip if we can't get path
-    };
-
-    // Find existing command by file path
-    let existing_idx = commands.iter().position(|cmd| {
-        if let Some(existing_path) = cmd.get_absolute_file_path(config) {
-            existing_path.to_string_lossy() == file_path
-        } else {
-            false
-        }
-    });
-
-    match existing_idx {
-        Some(idx) => {
-            let existing = &commands[idx];
-
-            // Check if user-edited - preserve if so
-            if existing.flags.contains(FLAG_USER_EDITED) {
-                detailed_log("UPDATE_CMD", &format!(
-                    "Unchanged: '{}' - user-edited, preserving",
-                    existing.command
-                ));
-                return false;
-            }
-
-            // Check for changes
-            if has_changed(existing, &new_cmd) {
-                log(&format!(
-                    "Updated: '{}' - file modified",
-                    new_cmd.command
-                ));
-                commands[idx] = new_cmd;
-                return true;
-            } else {
-                detailed_log("UPDATE_CMD", &format!(
-                    "Unchanged: '{}' - no changes detected",
-                    existing.command
-                ));
-                return false;
-            }
-        }
-        None => {
-            // New command
-            log(&format!(
-                "Created: '{}' - new file discovered at {}",
-                new_cmd.command, file_path
-            ));
-            commands.push(new_cmd);
-            return true;
-        }
-    }
-}
-
 /// Phase 1: Discover all files in scan roots and build HashMap
 /// Returns HashMap keyed by absolute file path
 fn discover_files(file_roots: &[String], config: &Config) -> std::collections::HashMap<String, Command> {
