@@ -171,7 +171,7 @@ pub fn get_sys_data() -> (SysData, bool) {
                 if current_mtime > prev_mtime {
                     // Commands file changed since we last loaded - reload from disk
                     detailed_log("SYS_DATA", "Commands.txt modified - auto-reloading from disk");
-                    drop(stored_mtime); // Release any references
+                    let _ = stored_mtime; // Release any references
 
                     // Reload commands from disk
                     let commands = super::storage::load_commands_raw();
@@ -464,7 +464,7 @@ fn flush(commands: &mut Vec<Command>, skip_validation: bool) -> Result<(), Box<d
     } else {
         let step1_start = std::time::Instant::now();
         let resolution = crate::core::validate_and_repair_patches(commands, true);
-        let patches = resolution.patches;
+        let _patches = resolution.patches;
         log(&format!("⏱️ FLUSH: Step 1 (validate/repair): {:?}", step1_start.elapsed()));
 
         let after_validation_count = commands.len();

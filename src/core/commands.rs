@@ -113,7 +113,7 @@ impl Patch {
         let self_name_lower = self.name.to_lowercase();
         let mut children = Vec::new();
 
-        for (patch_name_lower, patch) in patches {
+        for (_patch_name_lower, patch) in patches {
             if let Some(parent_name) = patch.parent_patch_name() {
                 if parent_name.to_lowercase() == self_name_lower {
                     // Use the original case from the patch's name
@@ -640,7 +640,7 @@ pub fn run_patch_inference(
     patches: &HashMap<String, Patch>,
     apply_changes: bool,
     print_to_stdout: bool,
-    overwrite_patch: bool
+    _overwrite_patch: bool
 ) -> (usize, Vec<String>) {
     let mut patches_assigned = 0;
     let mut new_patches_to_add = Vec::new();

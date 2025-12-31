@@ -364,7 +364,7 @@ fn run_match_command(args: &[String]) {
     let config = crate::core::data::get_config();
 
     // Always use the shared display logic (same as popup)
-    let (mut filtered, is_prefix_menu) = if debug {
+    let (mut filtered, _is_prefix_menu) = if debug {
         // Legacy debug mode only
         (filter_commands(&sys_data.commands, query, 10, debug), false)
     } else {
@@ -1798,7 +1798,7 @@ fn run_delete_history(args: &[String]) {
     print_and_log("");
 
     // Get config_dir path for later steps
-    let config_dir = dirs::config_dir()
+    let _config_dir = dirs::config_dir()
         .unwrap_or_else(|| PathBuf::from("/tmp"))
         .join("hookanchor");
 

@@ -344,7 +344,7 @@ pub fn load_manual_edits(commands: &mut Vec<Command>, verbose: bool) -> Result<u
                     }
                     log(&format!("LOAD_MANUAL_EDITS: Updating command '{}' (action: {}) - arg or flags changed", txt_cmd.command, txt_cmd.action));
 
-                    let old_cmd = existing.clone();
+                    let _old_cmd = existing.clone();
 
                     // Preserve file_size and last_update from filesystem scan
                     let mut updated_cmd = txt_cmd.clone();
@@ -440,7 +440,7 @@ pub fn scan_modified_files(commands: &mut Vec<Command>, verbose: bool) -> Result
                     cmd.command, old_size, current_size));
 
                 // Create updated command with new file size
-                let old_cmd = cmd.clone();
+                let _old_cmd = cmd.clone();
                 cmd.file_size = Some(current_size);
                 if let Some(mtime) = current_mtime {
                     cmd.last_update = mtime;
@@ -902,8 +902,6 @@ fn scan_files_merge_based(
     config: &Config,
     verbose: bool
 ) -> (Vec<Command>, ScanStats) {
-    use std::collections::HashMap;
-
     let mut stats = ScanStats::default();
 
     // Phase 1: Discover all files in scan roots
@@ -1133,7 +1131,7 @@ fn scan_files_merge_based(
     }
 
     // Add anchors first (using merge_commands to handle collisions with virtual anchors)
-    for (file_path, cmd) in anchor_files {
+    for (_file_path, cmd) in anchor_files {
         let cmd_name = cmd.command.clone();
         let action = cmd.action.clone();
         let flags = cmd.flags.clone();
@@ -1157,7 +1155,7 @@ fn scan_files_merge_based(
 
     // Now add regular files (using merge_commands to handle collisions)
     detailed_log("SCANNER", "Phase 3b: Adding new regular files...");
-    for (file_path, cmd) in regular_files {
+    for (_file_path, cmd) in regular_files {
         let cmd_name = cmd.command.clone();
         let action = cmd.action.clone();
         let flags = cmd.flags.clone();
@@ -1535,9 +1533,6 @@ pub fn update_anchor_tree_folders(
     patches: &std::collections::HashMap<String, crate::core::commands::Patch>,
     config: &crate::core::Config,
 ) -> Result<(usize, usize), String> {
-    use std::path::PathBuf;
-    use std::collections::HashSet;
-
     // Get anchor tree root from config
     let root_str = config.scanner_settings
         .as_ref()
@@ -1553,7 +1548,7 @@ pub fn update_anchor_tree_folders(
             return Err("Could not determine home directory".to_string());
         }
     } else {
-        PathBuf::from(root_str)
+        std::path::PathBuf::from(root_str)
     };
 
     // Ensure root exists
@@ -1590,13 +1585,11 @@ fn get_required_folders(
     patches: &std::collections::HashMap<String, crate::core::commands::Patch>,
     root: &std::path::Path,
 ) -> Result<std::collections::HashSet<std::path::PathBuf>, String> {
-    use std::collections::HashSet;
-    use std::path::PathBuf;
     use crate::core::commands::walk_patch_hierarchy;
 
-    let mut folders = HashSet::new();
+    let mut folders = std::collections::HashSet::new();
 
-    for (patch_name, patch) in patches {
+    for (patch_name, _patch) in patches {
         // Skip orphans patch - it's just a container, not a real anchor
         if patch_name.to_lowercase() == "orphans" {
             continue;
@@ -1625,10 +1618,7 @@ fn get_required_folders(
 fn get_existing_folders(
     root: &std::path::Path,
 ) -> Result<std::collections::HashSet<std::path::PathBuf>, String> {
-    use std::collections::HashSet;
-    use std::fs;
-
-    let mut folders = HashSet::new();
+    let mut folders = std::collections::HashSet::new();
 
     if !root.exists() {
         return Ok(folders);
@@ -1636,7 +1626,7 @@ fn get_existing_folders(
 
     fn scan_dir(
         dir: &std::path::Path,
-        folders: &mut HashSet<std::path::PathBuf>,
+        folders: &mut std::collections::HashSet<std::path::PathBuf>,
     ) -> Result<(), String> {
         let entries = std::fs::read_dir(dir)
             .map_err(|e| format!("Failed to read directory {}: {}", dir.display(), e))?;

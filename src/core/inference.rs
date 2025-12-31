@@ -618,7 +618,7 @@ pub fn validate_and_repair_patches(
     let mut cycles_detected = Vec::new(); // Track which patches were in cycles
 
     // For each patch, walk up the parent tree and detect cycles
-    for (patch_name, patch) in &patches {
+    for (patch_name, _patch) in &patches {
         let mut visited = std::collections::HashSet::new();
         let mut current_patch = patch_name.clone();
 
@@ -745,7 +745,7 @@ pub fn validate_and_repair_patches(
             log(&format!("   Creating virtual anchor for undefined patch: '{}'", patch_name));
         }
 
-        let config = crate::core::data::get_config();
+        let _config = crate::core::data::get_config();
         let virtual_anchor = Command {
             command: patch_name.clone(),
             action: String::new(),  // Virtual anchor - blank action (non-executable)

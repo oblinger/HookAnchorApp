@@ -1751,7 +1751,7 @@ impl AnchorSelector {
             popup_state.set_search_text_during_init(initial_prompt.to_string());
         }
 
-        let mut result = Self {
+        let result = Self {
             popup_state,
             last_saved_position: None,
             cached_window_position: None,
@@ -2574,7 +2574,6 @@ impl AnchorSelector {
                     // Check if the output includes rule name and flags (format: "action arg RULE:rule_name FLAGS:suffix")
                     let mut rule_name = "Server Grab".to_string();
                     let mut flags = String::new();
-                    let mut url_parts = Vec::new();
                     let mut end_index = parts.len();
 
                     // Find RULE: and FLAGS: markers
@@ -2589,7 +2588,7 @@ impl AnchorSelector {
                     }
 
                     // Take everything before the markers as the URL
-                    url_parts = parts[1..end_index].to_vec();
+                    let url_parts: Vec<&str> = parts[1..end_index].to_vec();
                     let url = url_parts.join(" ");
 
                     crate::systems::grabber::GrabResult::RuleMatched(
@@ -4574,7 +4573,6 @@ impl eframe::App for AnchorSelector {
 
                                         // Close command editor NOW (before showing dialog) so window is stable for positioning
                                         self.close_command_editor();
-                                        command_editor_just_closed = true;
 
                                         // Use window position from beginning of update() - this is the main popup's top-left corner
                                         // which doesn't move (size may change but position stays fixed)
@@ -4694,7 +4692,6 @@ impl eframe::App for AnchorSelector {
                         );
 
                         self.close_command_editor();
-                        command_editor_just_closed = true;
                         return; // Exit early on error
                     }
                 }
@@ -4911,7 +4908,7 @@ impl eframe::App for AnchorSelector {
                         self.pre_init_input_buffer.len()
                     };
 
-                    let mut text_edit = if self.loading_state == LoadingState::Loaded {
+                    let text_edit = if self.loading_state == LoadingState::Loaded {
                         egui::TextEdit::singleline(&mut self.popup_state.search_text)
                             .desired_width(ui.available_width())
                             .hint_text(hint_text)
@@ -4965,7 +4962,7 @@ impl eframe::App for AnchorSelector {
                     }
 
                     // Check actual cursor position after our manual positioning
-                    if let Some(state) = egui::TextEdit::load_state(ui.ctx(), text_edit_response.id) {
+                    if let Some(_state) = egui::TextEdit::load_state(ui.ctx(), text_edit_response.id) {
                         // TODO: Finish cursor debugging
                         // if let Some(cursor_range) = state.cursor.char_range() {
                         //     log(&format!("CURSOR_DEBUG: Final cursor range: {:?} (text length: {})", cursor_range, text_len));

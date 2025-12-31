@@ -921,7 +921,7 @@ pub fn process_template(
     // Find the command operation and create the command from it
     for op in &template.operations {
         if let TemplateOperation::Command { name, action, arg, patch, flags, edit: _, use_existing: _ } = op {
-            let mut command = Command {
+            let command = Command {
                 command: context.expand(name),
                 action: context.expand(action),
                 arg: context.expand(arg),

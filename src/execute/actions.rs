@@ -281,7 +281,7 @@ fn execute_template_action(
     detailed_log("ACTION", "Executing template action");
     
     // Create a Command from the template parameters
-    let mut command = Command {
+    let command = Command {
         command: params.get("name").cloned().unwrap_or_default(),
         action: params.get("action").cloned().unwrap_or_default(),
         arg: params.get("arg").cloned().unwrap_or_default(),
@@ -315,7 +315,7 @@ fn execute_template_action(
     }
     
     // Add the command to commands.txt
-    let (mut sys_data, _) = crate::core::data::get_sys_data();
+    let (_sys_data, _) = crate::core::data::get_sys_data();
     crate::core::add_command(command.clone())?;
     
     Ok(format!("Created command: {}", command.command))

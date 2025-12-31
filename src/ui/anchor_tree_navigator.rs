@@ -24,7 +24,7 @@ pub struct AnchorTreeNavigator {
     expanded_tree_items: std::collections::HashSet<String>,
 
     /// Sidebar width in pixels
-    sidebar_width: f32,
+    _sidebar_width: f32,
 
     /// Indent per tree level in pixels
     indent_pixels: f32,
@@ -50,7 +50,7 @@ impl AnchorTreeNavigator {
         Self {
             current_patch: String::new(),
             expanded_tree_items: std::collections::HashSet::new(),
-            sidebar_width,
+            _sidebar_width: sidebar_width,
             indent_pixels,
             show_guides,
         }
@@ -108,7 +108,7 @@ impl AnchorTreeNavigator {
         ui: &mut egui::Ui,
         patches: &HashMap<String, Patch>,
     ) -> Option<String> {
-        let mut navigate_to: Option<String> = None;
+        let navigate_to: Option<String> = None;
 
         // Get the breadcrumb path for current patch
         let breadcrumb_path = get_patch_path(&self.current_patch, patches);
@@ -309,7 +309,7 @@ impl AnchorTreeNavigator {
 
         let has_children = !children.is_empty();
         let is_expanded = self.expanded_tree_items.contains(&node_name.to_lowercase());
-        let is_in_path = full_path_set.contains(node_name) || node_name.to_lowercase() == "orphans";
+        let _is_in_path = full_path_set.contains(node_name) || node_name.to_lowercase() == "orphans";
         let is_current = node_name == self.current_patch;
 
         // Render the node - use full available width

@@ -215,7 +215,7 @@ fn get_obsidian_url() -> Option<String> {
     detailed_log("GRAB", "🔥 NEW CODE VERSION - Improved error handling active");
 
     // First, save the current clipboard content
-    let original_clipboard = ProcessCommand::new("osascript")
+    let _original_clipboard = ProcessCommand::new("osascript")
         .arg("-e")
         .arg("get the clipboard as string")
         .output()

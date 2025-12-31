@@ -331,7 +331,7 @@ pub(super) fn deduplicate_commands(commands: Vec<Command>) -> Vec<Command> {
 
     // Second pass: Remove virtual orphan anchors when real anchors exist
     let mut to_remove = Vec::new();
-    for (name, cmds) in commands_by_name.iter() {
+    for (_name, cmds) in commands_by_name.iter() {
         // Check if we have both a virtual orphan anchor and a real anchor
         // A "real anchor" is a command with 'A' flag that's not in orphans patch
         // and has some action (virtual anchors have empty action)

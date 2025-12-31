@@ -274,7 +274,7 @@ impl CommandEditor {
                             
                             // Action row (dropdown)
                             ui.label("Action:");
-                            let combo_id = ui.id().with("action_combo");
+                            let _combo_id = ui.id().with("action_combo");
                             egui::ComboBox::from_id_salt("action_combo")
                                 .selected_text(&self.action)
                                 .height(400.0) // Make dropdown tall enough to show all options

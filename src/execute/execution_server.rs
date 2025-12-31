@@ -125,8 +125,8 @@ impl CommandServer {
         let running = Arc::clone(&self.running);
         *running.lock().unwrap() = true;
         
-        let inherited_env = self.inherited_env.clone();
-        let base_working_dir = self.base_working_dir.clone();
+        let _inherited_env = self.inherited_env.clone();
+        let _base_working_dir = self.base_working_dir.clone();
         let running_clone = Arc::clone(&running);
         
         thread::spawn(move || {

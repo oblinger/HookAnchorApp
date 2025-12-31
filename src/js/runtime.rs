@@ -789,7 +789,7 @@ fn setup_launcher_builtins(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Erro
         let action_taken = if !found {
             // Command not found - add it as a new command (upsert behavior)
             log(&format!("UPDATE_COMMAND: Command '{}' not found, adding as new command", old_name));
-            let mut new_cmd = crate::core::Command {
+            let new_cmd = crate::core::Command {
                 command: name.clone(),
                 action: action.clone(),
                 arg: arg.clone(),
