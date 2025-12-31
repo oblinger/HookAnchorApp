@@ -34,16 +34,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var recentURLEvents: [Date] = []
     var lastURLEventLog: Date = Date.distantPast
     
-    // Get the path to the ha binary from the app bundle's MacOS directory
+    // Get the path to the ha binary
+    // Note: We use the known app bundle path because Bundle.main.bundlePath
+    // returns the symlink target directory when the binary is symlinked,
+    // not the app bundle containing the symlink.
     func getHaBinaryPath() -> String? {
-        // Use bundled binary (from app bundle MacOS directory)
-        if let bundlePath = Bundle.main.resourcePath {
-            let bundledHaPath = "\(bundlePath)/../MacOS/ha"
-            if FileManager.default.fileExists(atPath: bundledHaPath) {
-                return bundledHaPath
-            }
+        let haPath = "/Applications/HookAnchor.app/Contents/MacOS/ha"
+        if FileManager.default.fileExists(atPath: haPath) {
+            return haPath
         }
-
+        log("DEBUG: ha not found at \(haPath)")
         return nil
     }
 
@@ -783,38 +783,31 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func startCommandServerIfNeeded() {
-        // Check if command server is already running
-        let checkTask = Process()
-        checkTask.executableURL = URL(fileURLWithPath: "/bin/sh")
-        checkTask.arguments = ["-c", "pgrep -f 'HookAnchorCommand --start-server' > /dev/null 2>&1"]
-        
-        do {
-            try checkTask.run()
-            checkTask.waitUntilExit()
-            
-            if checkTask.terminationStatus != 0 {
-                // Server not running, start it
-                log("Command server not running, starting it...")
+        // Check if command server socket exists (more reliable than pgrep)
+        let homeDir = FileManager.default.homeDirectoryForCurrentUser.path
+        let socketPath = "\(homeDir)/.config/hookanchor/execution_server.sock"
 
-                if let haPath = getHaBinaryPath() {
-                    let startTask = Process()
-                    startTask.executableURL = URL(fileURLWithPath: haPath)
-                    startTask.arguments = ["--start-server"]
+        if FileManager.default.fileExists(atPath: socketPath) {
+            log("Command server socket exists, server already running")
+            return
+        }
 
-                    do {
-                        try startTask.run()
-                        log("Started command server")
-                    } catch {
-                        log("Failed to start command server: \(error)")
-                    }
-                } else {
-                    log("ha binary not found, cannot start command server")
-                }
-            } else {
-                log("Command server already running")
+        // Server not running, start it
+        log("Command server socket not found, starting server...")
+
+        if let haPath = getHaBinaryPath() {
+            let startTask = Process()
+            startTask.executableURL = URL(fileURLWithPath: haPath)
+            startTask.arguments = ["--start-server"]
+
+            do {
+                try startTask.run()
+                log("Started command server via ha --start-server")
+            } catch {
+                log("Failed to start command server: \(error)")
             }
-        } catch {
-            log("Error checking command server status: \(error)")
+        } else {
+            log("ha binary not found, cannot start command server")
         }
     }
 
