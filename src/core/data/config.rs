@@ -167,12 +167,15 @@ impl Default for HistoryViewerKeyBindings {
 pub struct ScannerSettings {
     /// Root directory for anchor tree folder synchronization (default: "~/ob/anchors")
     pub anchor_tree_root: Option<String>,
+    /// Whether to delete aliases that point to non-existent commands during rescan (default: true)
+    pub delete_broken_aliases: Option<bool>,
 }
 
 impl Default for ScannerSettings {
     fn default() -> Self {
         ScannerSettings {
             anchor_tree_root: Some("~/ob/anchors".to_string()),
+            delete_broken_aliases: Some(true),
         }
     }
 }

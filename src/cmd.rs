@@ -1263,20 +1263,30 @@ fn run_rescan_command() {
         log("ALIAS_TRACK: HA alias NOT found after scan_modified_files");
     }
 
-    print("\n🧹 Step 5: Cleaning up invalid aliases...");
+    // Check if delete_broken_aliases is enabled in config (default: true)
+    let delete_broken = config.scanner_settings
+        .as_ref()
+        .and_then(|s| s.delete_broken_aliases)
+        .unwrap_or(true);
 
-    // Delete aliases that point to non-existent commands
-    match crate::systems::delete_invalid_aliases(&mut commands, true) {
-        Ok(removed_count) => {
-            if removed_count > 0 {
-                print(&format!("   ✅ Removed {} invalid alias(es)", removed_count));
-            } else {
-                print("   ✅ All aliases are valid");
+    if delete_broken {
+        print("\n🧹 Step 5: Cleaning up invalid aliases...");
+
+        // Delete aliases that point to non-existent commands
+        match crate::systems::delete_invalid_aliases(&mut commands, true) {
+            Ok(removed_count) => {
+                if removed_count > 0 {
+                    print(&format!("   ✅ Removed {} invalid alias(es)", removed_count));
+                } else {
+                    print("   ✅ All aliases are valid");
+                }
+            }
+            Err(e) => {
+                print(&format!("   ⚠️  Error validating aliases: {}", e));
             }
         }
-        Err(e) => {
-            print(&format!("   ⚠️  Error validating aliases: {}", e));
-        }
+    } else {
+        print("\n⏭️  Step 5: Skipping alias cleanup (delete_broken_aliases: false)");
     }
 
     print("\n🔄 Step 6: Running inference and saving...");
