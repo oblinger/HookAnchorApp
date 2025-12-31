@@ -878,36 +878,36 @@ pub fn process_template(
     context: &TemplateContext,
     _config: &super::Config,
 ) -> Result<Command, Box<dyn std::error::Error>> {
-    // Validate previous folder if required
+    // Validate last_executed folder if required
     if template.validate_previous_folder {
-        let previous_folder = context.variables.get("previous_folder")
+        let last_executed_folder = context.variables.get("_last_executed_folder")
             .ok_or("No previous command available")?;
-            
-        if previous_folder.is_empty() {
+
+        if last_executed_folder.is_empty() {
             let error_msg = "Previous command has no associated folder. Cannot create sub-anchor.";
             crate::utils::error::queue_user_error(error_msg);
             return Err(error_msg.into());
         }
-        
+
         // Expand tilde in path for validation
-        let expanded_folder = if previous_folder.starts_with("~/") {
+        let expanded_folder = if last_executed_folder.starts_with("~/") {
             if let Ok(home) = std::env::var("HOME") {
-                previous_folder.replacen("~/", &format!("{}/", home), 1)
+                last_executed_folder.replacen("~/", &format!("{}/", home), 1)
             } else {
-                previous_folder.clone()
+                last_executed_folder.clone()
             }
         } else {
-            previous_folder.clone()
+            last_executed_folder.clone()
         };
-        
+
         // Check if folder exists
         if !std::path::Path::new(&expanded_folder).exists() {
-            let error_msg = format!("Previous command's folder does not exist: {}", previous_folder);
+            let error_msg = format!("Last executed command's folder does not exist: {}", last_executed_folder);
             crate::utils::error::queue_user_error(&error_msg);
             return Err(error_msg.into());
         }
-        
-        detailed_log("TEMPLATE", &format!("Validated previous folder: {}", previous_folder));
+
+        detailed_log("TEMPLATE", &format!("Validated last_executed folder: {}", last_executed_folder));
     }
     
     // TODO: Implement grab functionality if template.grab is set

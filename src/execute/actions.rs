@@ -666,7 +666,13 @@ fn execute_grab_action(
         Ok(result) => {
             match result {
                 crate::systems::GrabResult::RuleMatched(rule_name, command) => {
-                    Ok(format!("Grabbed via '{}': {}", rule_name, command.command))
+                    // Format: "action arg RULE:rule_name FLAGS:suffix"
+                    // The popup parser expects this specific format
+                    Ok(format!("{} {} RULE:{} FLAGS:{}",
+                        command.action,
+                        command.arg,
+                        rule_name.replace(' ', "_"),  // Replace spaces for parsing
+                        command.flags))
                 }
                 crate::systems::GrabResult::NoRuleMatched(context) => {
                     // Return the template info for display
