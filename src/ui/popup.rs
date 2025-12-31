@@ -357,7 +357,10 @@ impl AnchorSelector {
             
             detailed_log("EXIT_OR_HIDE", &format!("Setting is_hidden=true (was {})", self.is_hidden));
             self.is_hidden = true;
-            
+
+            // Check if we should trigger a background rescan
+            self.maybe_trigger_background_rescan();
+
             // Reset interaction time to prevent timeout loop
             self.last_interaction_time = std::time::Instant::now();
             
@@ -2958,7 +2961,45 @@ impl AnchorSelector {
             }
         }
     }
-    
+
+    /// Check if scan interval has elapsed and trigger background rescan if needed
+    /// This is called when the popup hides, spawning ha --rescan as fire-and-forget
+    fn maybe_trigger_background_rescan(&self) {
+        let state = crate::core::data::get_state();
+        let config = crate::core::data::get_config();
+        let scan_interval = config.popup_settings.scan_interval_seconds.unwrap_or(600) as i64;
+        let current_time = chrono::Local::now().timestamp();
+
+        let should_scan = match state.last_scan_time {
+            Some(last_time) => (current_time - last_time) >= scan_interval,
+            None => true, // Never scanned before
+        };
+
+        if should_scan {
+            // Get the ha binary path (same directory as current exe)
+            let ha_binary = std::env::current_exe()
+                .ok()
+                .and_then(|p| p.parent().map(|dir| dir.join("ha")))
+                .unwrap_or_else(|| "ha".into());
+
+            // Spawn ha --rescan as fire-and-forget (non-blocking)
+            match std::process::Command::new(&ha_binary)
+                .arg("--rescan")
+                .stdin(std::process::Stdio::null())
+                .stdout(std::process::Stdio::null())
+                .stderr(std::process::Stdio::null())
+                .spawn()
+            {
+                Ok(_) => {
+                    log(&format!("PERIODIC_SCAN: Triggered background rescan (interval: {}s elapsed)", scan_interval));
+                }
+                Err(e) => {
+                    log_error(&format!("PERIODIC_SCAN: Failed to spawn background rescan: {}", e));
+                }
+            }
+        }
+    }
+
     /// Recursively resolve aliases to find the final target command
     fn resolve_aliases_recursively<'a>(&self, cmd: &'a Command, all_commands: &'a [Command]) -> &'a Command {
         let mut current_cmd = cmd;
