@@ -1861,17 +1861,6 @@ impl AnchorSelector {
         crate::core::data::get_commands()
     }
 
-    /// Backward compatibility: get commands for modification
-    /// Returns a Vec that can be modified and then saved back via set_commands
-    fn commands_mut_get(&mut self) -> Vec<Command> {
-        crate::core::data::get_commands()
-    }
-
-    /// Backward compatibility: save modified commands back
-    fn commands_mut_save(&mut self, commands: Vec<Command>) -> Result<(), Box<dyn std::error::Error>> {
-        crate::core::data::set_commands(commands)
-    }
-
     // =============================================================================
     // Action System - General UI Action Queue
     // =============================================================================

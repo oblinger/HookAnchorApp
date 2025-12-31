@@ -39,7 +39,6 @@ struct InstallComponent {
 
 /// Main installer GUI application
 struct InstallerGui {
-    setup_assistant: SetupAssistant,
     components: Vec<InstallComponent>,
     installation_in_progress: bool,
     install_receiver: Option<mpsc::Receiver<(usize, Result<(), String>)>>,
@@ -48,10 +47,7 @@ struct InstallerGui {
 
 impl InstallerGui {
     fn new(_cc: &eframe::CreationContext<'_>) -> Self {
-        let setup_assistant = SetupAssistant::new();
-
         let mut installer = Self {
-            setup_assistant,
             components: Vec::new(),
             installation_in_progress: false,
             install_receiver: None,
@@ -563,9 +559,6 @@ impl eframe::App for InstallerGui {
 
             // Installation button
             ui.horizontal(|ui| {
-                let any_selected = self.components.iter()
-                    .any(|comp| comp.status == InstallStatus::Selected);
-
                 // Show different buttons based on installation state
                 if self.installation_in_progress {
                     ui.spinner();

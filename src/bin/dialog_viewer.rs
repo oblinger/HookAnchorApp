@@ -22,7 +22,6 @@
 //! {"exit": "OK", "field1": "value1"}
 //! ```
 
-use hookanchor::prelude::*;
 use eframe::egui;
 use std::collections::HashMap;
 use std::sync::{Arc, Mutex};

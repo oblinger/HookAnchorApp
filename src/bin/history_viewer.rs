@@ -5,7 +5,6 @@
 
 use eframe::egui;
 use hookanchor::core::{get_history_entries, HistoryEntry};
-use std::env;
 use hookanchor::prelude::*;
 
 /// Main history viewer application
