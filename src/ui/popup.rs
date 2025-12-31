@@ -3,13 +3,10 @@
 //! This module contains the AnchorSelector struct and all popup-specific UI logic.
 
 use crate::prelude::*;
-use eframe::egui::{self, IconData};
-use std::sync::OnceLock;
+use eframe::egui;
 use std::collections::HashMap;
 use crate::core::Command;
-use crate::core::{
-    Config, AppState
-};
+use crate::core::Config;
 use crate::core::key_processing::{PopupInterface, KeyRegistry, create_default_key_registry};
 use crate::core::commands::{get_patch_path, FLAG_MERGED};
 
@@ -2965,8 +2962,6 @@ impl AnchorSelector {
     
     /// Recursively resolve aliases to find the final target command
     fn resolve_aliases_recursively<'a>(&self, cmd: &'a Command, all_commands: &'a [Command]) -> &'a Command {
-        use crate::utils;
-        
         let mut current_cmd = cmd;
         let mut visited = std::collections::HashSet::new();
         
@@ -2996,8 +2991,6 @@ impl AnchorSelector {
 
     /// Show folder functionality - launches the first folder matching current search
     fn show_folder_impl(&mut self) {
-        use crate::utils;
-        
         let search_text = &self.popup_state.search_text;
         detailed_log("SHOW_FOLDER", &format!("Triggered with search text: '{}'", search_text));
         
@@ -3071,8 +3064,6 @@ impl AnchorSelector {
     
     /// Show contact for selected command (strips @ prefix if present)
     fn show_contact_impl(&mut self) {
-        use crate::utils;
-        
         // Get selected command index
         let selected_index = self.selected_index();
         
@@ -3127,7 +3118,6 @@ impl AnchorSelector {
     
     /// Activate TMUX session for selected anchor/folder (formerly activate_anchor)
     fn activate_tmux(&mut self) {
-        use crate::utils;
         use std::process::Command;
         use std::path::Path;
         
@@ -3760,8 +3750,6 @@ impl AnchorSelector {
 
     /// Create a child command using template from active anchor's patch hierarchy
     fn create_child(&mut self) {
-        use crate::utils;
-
         // Get the input text (will become the child name)
         let child_name = self.popup_state.search_text.clone();
         if child_name.trim().is_empty() {

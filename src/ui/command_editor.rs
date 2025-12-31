@@ -1,7 +1,6 @@
 use eframe::egui;
 use crate::core::{Command};
-use crate::core::commands::{FLAG_USER_EDITED, FLAG_ANCHOR, FLAG_MERGED};
-use crate::core::delete_command;
+use crate::core::commands::{FLAG_USER_EDITED, FLAG_ANCHOR};
 use crate::core::Config;
 use crate::core::template_creation::{Template, TemplateContext};
 use crate::prelude::*;

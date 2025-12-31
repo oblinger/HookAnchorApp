@@ -10,7 +10,6 @@
 
 use std::env;
 use std::process::{Command, exit};
-use std::path::PathBuf;
 use hookanchor::prelude::*;
 
 fn main() {
@@ -112,10 +111,6 @@ fn launch_popup_with_args(args: &[String]) {
 
 /// Handle hook:// URLs by sending them to the command server
 fn handle_hook_url(url: &str) {
-    use hookanchor::utils;
-    use hookanchor::core::get_sys_data;
-    use hookanchor::execute;
-
     // Extract the query from hook://query
     let query = url.strip_prefix("hook://").unwrap_or("");
 

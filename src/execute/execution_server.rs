@@ -8,7 +8,7 @@
 
 use std::collections::HashMap;
 use std::os::unix::net::{UnixListener, UnixStream};
-use std::io::{Read, Write, BufRead, BufReader};
+use std::io::{Write, BufRead, BufReader};
 use std::thread;
 use std::sync::{Arc, Mutex};
 use std::path::PathBuf;

@@ -50,8 +50,8 @@
 //! - **Single source of truth**: Cache tracks current file state, commands.txt stores user edits
 
 use std::fs;
-use std::path::{Path, PathBuf};
-use std::collections::{hash_map::DefaultHasher, HashSet};
+use std::path::Path;
+use std::collections::hash_map::DefaultHasher;
 use std::hash::{Hash, Hasher};
 use crate::core::Command;
 use crate::core::Config;

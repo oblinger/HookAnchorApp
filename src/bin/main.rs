@@ -4,7 +4,6 @@
 //! GUI mode (popup) or CLI mode (command-line processing).
 
 use std::env;
-use hookanchor::prelude::*;
 use hookanchor::core::ApplicationState;
 use hookanchor::prelude::{log, log_error};
 
