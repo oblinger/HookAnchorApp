@@ -1,58 +1,323 @@
-
 # LOG
+
+
+## 2025-12-31  Proposed Experiments ^v4
+
+We expect future AI systems to tend toward deliberative coherence. We organize experiments using the inner/outer alignment framework:
+
+- **Inner Alignment**: Does the system faithfully pursue its stated objectives? (DC Validation)
+- **Outer Alignment**: Given faithful pursuit, are stated objectives sufficient for outcomes we want?
+
+---
+
+**A. Inner Alignment Experiments** — Test whether systems satisfy the deliberative coherence conjecture.
+
+The conjecture has two conditions: Completeness (does the system reason about what matters?) and Outcome Alignment (does behavior match that reasoning?).
+
+- **A1. Outcome Alignment**: Does behavior match what reasoning about stated objectives should conclude? This is where most existing AI safety research lands: CoT faithfulness, alignment faking, sycophancy, monitorability. We contribute a unified framing connecting these failure modes:
+  - *Relevance Misrecognition*: Incorrectly concludes an objective doesn't apply
+  - *Motivated Reasoning*: System-I biases distort the reasoning process
+  - *CoT Unfaithfulness*: Reasoning concludes correctly but behavior diverges
+  - *Alignment Faking*: Compliant when monitored, diverges when unobserved
+  - *Sycophancy*: Knows correct answer but capitulates to user preferences
+
+  Rather than duplicate existing research, we reference this literature and focus experimental effort on less-explored areas.
+
+- **A2. Depth-Completeness**: Given more deliberation time/tokens, does the system surface more constitutional considerations? At what depth do all relevant objectives appear?
+
+- **A3. Blind Spot Detection**: Are there constitutional objectives the system systematically fails to consider, regardless of deliberation depth? Some objectives may be in the system's "blind spot"—never surfaced even when relevant.
+
+Failure mode (A2, A3): The system produces an outcome that violates an objective it never considered.
+
+---
+
+**B. Outer Alignment Experiments** — Given DC holds, are stated objectives sufficient for outcomes we want?
+
+*Thesis: If DC holds, the system does what it says. The remaining question is whether what it says is sufficient for what we want.*
+
+Outer alignment failures arise from two sources:
+
+**Objective-side issues** — problems with the objectives as written:
+- *Specification errors*: Objectives are simply wrong — not our focus, covered by existing literature
+- *Specification conflicts*: Objectives are individually reasonable but tension exists between them — **our focus**
+- *Specification incompleteness*: Objectives don't cover all cases — partially our focus
+
+**World-side issues** — objectives are reasonable but the world is complex:
+- *Epistemic uncertainty*: Don't know consequences of actions — **our focus**
+- *Novel contexts*: Situations not anticipated by specification — **our focus**
+- *Stakes/reversibility*: Consequences are severe or permanent — **our focus**
+
+Rather than isolated failure modes, we map the **reliability landscape**: across what conditions does a DC system produce outcomes we'd endorse?
+
+We use Alien Biology as a controlled testbed where we know ground truth and can systematically vary conditions:
+
+| Dimension | Range | Issue Type |
+|-----------|-------|------------|
+| Objective structure | single → conflicting | Objective-side |
+| Information available | complete → uncertain | World-side |
+| Stakes | low → high | World-side |
+| Reversibility | reversible → irreversible | World-side |
+| Time pressure | unlimited → constrained | World-side |
+
+**Core measurement**: Does the outcome match what correct reasoning should conclude? When it doesn't, what structural features predict the divergence?
+
+---
+
+**B1. Objective Conflict Studies** (Objective-side)
+
+Vary the structure of constitutional objectives from harmonious to conflicting. Measure how the system resolves tensions and whether resolution matches what we'd endorse.
+
+- Single clear objective (baseline)
+- Multiple compatible objectives
+- Objectives with latent tension (conflict only in edge cases)
+- Objectives with explicit conflict (forced tradeoffs)
+
+*Key question*: Are there predictable patterns in how conflicts resolve? Can we anticipate which objective "wins"?
+
+**B2. Epistemic Condition Studies** (World-side)
+
+Vary what the system knows about action consequences. Measure whether behavior remains aligned with objectives under uncertainty.
+
+- Full information (baseline)
+- Partial information with bounded uncertainty
+- Deep uncertainty (system knows it doesn't know)
+- Asymmetric stakes under uncertainty (one error much worse than another)
+
+*Key question*: Does the system's caution scale appropriately with uncertainty and stakes?
+
+**B3. Stakes and Reversibility Studies** (World-side)
+
+Vary the magnitude of consequences and whether mistakes can be corrected. Measure whether behavior appropriately reflects these factors.
+
+- Low stakes, reversible (baseline)
+- High stakes, reversible
+- Low stakes, irreversible
+- High stakes, irreversible
+
+*Key question*: Does the system exhibit appropriate caution as stakes increase and reversibility decreases?
+
+**B4. Pressure and Context Studies** (World-side)
+
+Vary environmental and instrumental pressures that push against constitutional objectives. Measure robustness of constitutional fidelity.
+
+- No external pressure (baseline)
+- Instrumental pressure (goal pursuit creates tension with other objectives)
+- Environmental pressure (context signals push against objectives)
+- Compounding pressure (multiple pressures simultaneously)
+
+*Key question*: At what pressure level does constitutional fidelity erode? What predicts robustness?
+
+---
+
+### Cross-Dimensional Analysis
+
+The power of this framework is cross-dimensional analysis. For example:
+- How does conflict resolution change under uncertainty?
+- Does time pressure disproportionately affect high-stakes decisions?
+- Do specification gaps only become visible under pressure?
+
+By sampling systematically across dimensions, we build a reliability map rather than collecting isolated failure anecdotes.
+
+---
+
+### Methodology Notes
+
+**Alien Biology as testbed**:
+- Provides domain where ground truth is known
+- Allows systematic parameter variation
+- Avoids training data contamination
+
+**Inducing deliberative coherence**:
+- Extended chain-of-thought with self-reflection prompts
+- Multi-turn dialogues that force examination of own reasoning
+- Constitutional prompts requiring explicit consideration of tradeoffs
+
+**Measuring outcome gaps**:
+- Compare system outcome to "ideal" outcome given full information
+- Identify where gaps emerge and correlate with experimental conditions
+- Build predictive model of gap likelihood from structural features
+
+---
+---
+
+## 2025-12-31  Proposed Experiments ^v3
+
+We expect future AI systems to tend toward deliberative coherence. Thus we organize experiments into (A) those that validate DC holds, and (B) those that analyze system behavior assuming DC holds.
+
+---
+
+**A. DC Validation Experiments** — Test whether current and evolving systems satisfy the deliberative coherence conjecture.
+
+The conjecture has two conditions: Completeness (does the system reason about what matters?) and Outcome Alignment (does behavior match that reasoning?).
+
+- **A1. Outcome Alignment**: Does behavior match what reasoning about stated objectives should conclude? This is where most existing AI safety research lands: CoT faithfulness, alignment faking, sycophancy, monitorability. We contribute a unified framing connecting these failure modes:
+  - *Relevance Misrecognition*: Incorrectly concludes an objective doesn't apply
+  - *Motivated Reasoning*: System-I biases distort the reasoning process
+  - *CoT Unfaithfulness*: Reasoning concludes correctly but behavior diverges
+  - *Alignment Faking*: Compliant when monitored, diverges when unobserved
+  - *Sycophancy*: Knows correct answer but capitulates to user preferences
+
+  Rather than duplicate existing research, we reference this literature and focus experimental effort on less-explored areas.
+
+- **A2. Depth-Completeness**: Given more deliberation time/tokens, does the system surface more constitutional considerations? At what depth do all relevant objectives appear?
+
+- **A3. Blind Spot Detection**: Are there constitutional objectives the system systematically fails to consider, regardless of deliberation depth? Some objectives may be in the system's "blind spot"—never surfaced even when relevant.
+
+Failure mode (A2, A3): The system produces an outcome that violates an objective it never considered.
+
+---
+
+**B. Outcome Gap Experiments** — Given DC holds, when do outcomes diverge from what we'd endorse?
+
+*Thesis: If systems are deliberatively coherent, alignment questions become questions about the gap between stated objectives and desired outcomes.*
+
+If DC holds, the system faithfully pursues its stated objectives. So failures must come from gaps between stated objectives and desired outcomes:
+
+- **Conflict gaps**: Objectives pull in different directions; resolution doesn't match what we'd prefer
+- **Epistemic gaps**: Lack of knowledge leads to reasoning that violates objectives we'd want to protect
+- **Specification gaps**: Objectives don't cover all situations or don't capture what we actually want
+
+Rather than isolated failure modes, we map the **reliability landscape**: across what conditions does a DC system produce outcomes we'd endorse?
+
+We use Alien Biology as a controlled testbed where we know ground truth and can systematically vary conditions. The experimental framework samples across dimensions that affect whether outcomes match what we'd want:
+
+| Dimension | Range |
+|-----------|-------|
+| Objective structure | single → multiple → conflicting |
+| Information available | complete → partial → deeply uncertain |
+| Stakes | low → high |
+| Reversibility | reversible → irreversible |
+| Time pressure | unlimited → constrained |
+
+**Core measurement**: Does the outcome match what correct reasoning should conclude? When it doesn't, what structural features predict the divergence?
+
+---
+
+**B1. Objective Conflict Studies**
+
+Vary the structure of constitutional objectives from harmonious to conflicting. Measure how the system resolves tensions and whether resolution matches what we'd endorse.
+
+- Single clear objective (baseline)
+- Multiple compatible objectives
+- Objectives with latent tension (conflict only in edge cases)
+- Objectives with explicit conflict (forced tradeoffs)
+
+*Key question*: Are there predictable patterns in how conflicts resolve? Can we anticipate which objective "wins"?
+
+**B2. Epistemic Condition Studies**
+
+Vary what the system knows about action consequences. Measure whether behavior remains aligned with objectives under uncertainty.
+
+- Full information (baseline)
+- Partial information with bounded uncertainty
+- Deep uncertainty (system knows it doesn't know)
+- Asymmetric stakes under uncertainty (one error much worse than another)
+
+*Key question*: Does the system's caution scale appropriately with uncertainty and stakes?
+
+**B3. Stakes and Reversibility Studies**
+
+Vary the magnitude of consequences and whether mistakes can be corrected. Measure whether behavior appropriately reflects these factors.
+
+- Low stakes, reversible (baseline)
+- High stakes, reversible
+- Low stakes, irreversible
+- High stakes, irreversible
+
+*Key question*: Does the system exhibit appropriate caution as stakes increase and reversibility decreases?
+
+**B4. Pressure and Context Studies**
+
+Vary environmental and instrumental pressures that push against constitutional objectives. Measure robustness of constitutional fidelity.
+
+- No external pressure (baseline)
+- Instrumental pressure (goal pursuit creates tension with other objectives)
+- Environmental pressure (context signals push against objectives)
+- Compounding pressure (multiple pressures simultaneously)
+
+*Key question*: At what pressure level does constitutional fidelity erode? What predicts robustness?
+
+---
+
+### Cross-Dimensional Analysis
+
+The power of this framework is cross-dimensional analysis. For example:
+- How does conflict resolution change under uncertainty?
+- Does time pressure disproportionately affect high-stakes decisions?
+- Do specification gaps only become visible under pressure?
+
+By sampling systematically across dimensions, we build a reliability map rather than collecting isolated failure anecdotes.
+
+---
+
+### Methodology Notes
+
+**Alien Biology as testbed**:
+- Provides domain where ground truth is known
+- Allows systematic parameter variation
+- Avoids training data contamination
+
+**Inducing deliberative coherence**:
+- Extended chain-of-thought with self-reflection prompts
+- Multi-turn dialogues that force examination of own reasoning
+- Constitutional prompts requiring explicit consideration of tradeoffs
+
+**Measuring outcome gaps**:
+- Compare system outcome to "ideal" outcome given full information
+- Identify where gaps emerge and correlate with experimental conditions
+- Build predictive model of gap likelihood from structural features
+
+---
+---
+
 
 
 ## 2025-12-29  Proposed Experiments ^v2
 
 ### Experiment Categories
 
-We organize experiments into two groups:
-
 **A. DC Validation Experiments** — Test whether current and evolving systems satisfy the deliberative coherence conjecture.
 
-The conjecture requires two conditions, each requiring distinct experimental approaches:
+The conjecture has two conditions: Completeness (does the system reason about what matters?) and Outcome Alignment (does behavior match that reasoning?).  
 
-**A1. Completeness Experiments** — Does the system reason about what matters?
+- **A1. Outcome Alignment**: Does behavior match what reasoning about stated objectives should conclude? This is where most existing AI safety research lands: CoT faithfulness, alignment faking, sycophancy, monitorability. We contribute a unified framing connecting these failure modes:
+  - *Relevance Misrecognition*: Incorrectly concludes an objective doesn't apply
+  - *Motivated Reasoning*: System-I biases distort the reasoning process
+  - *CoT Unfaithfulness*: Reasoning concludes correctly but behavior diverges
+  - *Alignment Faking*: Compliant when monitored, diverges when unobserved
+  - *Sycophancy*: Knows correct answer but capitulates to user preferences
 
-- **Depth-Completeness**: Given more deliberation time/tokens, does the system surface more constitutional considerations? At what depth do all relevant objectives appear?
-- **Blind Spot Detection**: Are there constitutional objectives the system systematically fails to consider, regardless of deliberation depth? Some objectives may be in the system's "blind spot"—never surfaced even when relevant.
+  Rather than duplicate existing research, we reference this literature and focus experimental effort on less-explored areas.
 
-Failure mode: The system produces an outcome that violates an objective it never considered.
+- **A2. Depth-Completeness**: Given more deliberation time/tokens, does the system surface more constitutional considerations? At what depth do all relevant objectives appear?
 
-**A2. Coherence Experiments** — Given the system reasoned about the right things, does the outcome match what that reasoning should conclude?
+- **A3. Blind Spot Detection**: Are there constitutional objectives the system systematically fails to consider, regardless of deliberation depth? Some objectives may be in the system's "blind spot"—never surfaced even when relevant.
 
-- **Outcome-Objective Alignment**: Given scenarios with known correct answers, measure whether the system's outcome matches what correct reasoning about its stated objectives should conclude. This is the core coherence measurement.
-  When coherence fails, identify the type of failure. The taxonomy of failure modes (from existing literature and our analysis):
-  - *Relevance Misrecognition*: Incorrectly concludes the objective doesn't apply (faulty applicability)
-  - *Motivated Reasoning*: System-I biases distort the reasoning process (corrupted deliberation)
-  - *CoT Unfaithfulness*: Reasoning concludes correctly but behavior diverges (execution divergence)
-  - *Alignment Faking*: Compliant when monitored, diverges when unobserved (strategic incoherence)
-  - *Sycophancy*: Knows correct answer but capitulates to user preferences (social override)
+Failure mode (A2, A3): The system produces an outcome that violates an objective it never considered.
 
-*Note: Much of the existing AI safety literature studies coherence under these framings. We contribute a unified experimental approach within a controlled testbed.*
+---
 
-- **Coherence Under Uncertainty**: Does the system remain coherent with its objectives when operating under uncertainty about the domain? Given partial knowledge about action effects, correct reasoning should account for what is unknown—the system knows what it doesn't know and reasons accordingly. Failure: acting in ways that foreseeably risk violating objectives due to unaccounted-for uncertainty.
+**B. Resolution Dynamics Experiments** — Given the DC conjecture holds, alignment reduces to understanding how constitutional objectives resolve against competing pressures.
 
+*Thesis: If systems are deliberatively coherent, all alignment questions become questions about conflict resolution behavior.*
 
-Failure mode: The system considered the right things but produced an outcome incoherent with its own reasoning.
+- **B1. Constitutional vs. Instrumental**: When pursuing stated objectives generates instrumental goals that conflict with other constitutional rules, how does resolution work?
 
-**B. Conflict Resolution Experiments** — Given the conjecture holds, alignment reduces to understanding how constitutional objectives resolve against competing pressures.
+- **B2. Constitutional vs. Environmental**: When the operating environment creates pressure against constitutional rules, does the system maintain fidelity?
 
-*Thesis: If systems are deliberatively coherent, all alignment questions become questions about conflict resolution rules.*
+- **B3. Constitutional vs. Constitutional**: When constitutional rules conflict with each other, how are intra-constitutional tensions resolved?
 
-All experiments share the form: **Constitutional Rule vs. X**
-
-- **Constitutional vs. Instrumental Pressure**: When pursuing stated objectives generates instrumental goals that conflict with other constitutional rules, how does resolution work?
-
-- **Constitutional vs. Environmental Pressure**: When the operating environment creates pressure against constitutional rules, does the system maintain fidelity?
-
-- **Constitutional vs. Constitutional**: When constitutional rules conflict with each other, how are intra-constitutional tensions resolved?
+- **B4. Resolution Under Uncertainty**: When the system faces uncertainty about action consequences, how does this affect conflict resolution? Does uncertainty appropriately increase caution when constitutional objectives are at stake?
 
 ---
 
 ### A. DC Validation Experiments (Detail)
 
-#### A1.1 Depth-Completeness Study
+#### A1. Outcome Alignment
+
+*Note: This area is well-covered by existing research (see Related Work). We contribute a unified framing but do not propose new experiments here.*
+
+#### A2. Depth-Completeness
 
 **Setup**:
 - Constitutional objectives that require multi-step reasoning to be recognized as relevant
@@ -68,7 +333,7 @@ All experiments share the form: **Constitutional Rule vs. X**
 - At what deliberation depth do systems become "complete" for a given objective complexity?
 - Are there objective types that require disproportionate deliberation to surface?
 
-#### A1.2 Blind Spot Detection Study
+#### A3. Blind Spot Detection
 
 **Setup**:
 - Constitutional objectives of varying types (procedural, substantive, meta-level)
@@ -84,70 +349,6 @@ All experiments share the form: **Constitutional Rule vs. X**
 - Are there systematic gaps in what the system considers, even with unlimited deliberation?
 - What characterizes objectives that fall into blind spots?
 - Can blind spots be predicted from objective properties?
-
-#### A2. Outcome-Objective Alignment Study
-
-**Core measurement**: Does the outcome match what correct reasoning about the stated objectives should conclude?
-
-**Setup**:
-- Constitutional objectives with clear correct answers in test scenarios
-- Scenarios designed to trigger each failure mode in the taxonomy
-- Deliberation traces captured for diagnostic analysis
-
-**Experimental conditions by failure mode**:
-
-1. **Relevance Misrecognition**: Vary surface similarity between applying and non-applying scenarios. Measure false negative rate (objective applies but system concludes it doesn't).
-
-2. **Motivated Reasoning**: Identify trained dispositions, then present scenarios where correct reasoning conflicts with those dispositions. Examine reasoning traces for asymmetric skepticism or biased argumentation.
-
-3. **CoT Unfaithfulness**: Compare stated reasoning conclusions to actual behavior. Detect cases where the CoT says one thing but the system does another.
-
-4. **Alignment Faking**: Vary whether the system believes it's being monitored. Measure behavioral consistency across monitoring conditions.
-
-5. **Sycophancy**: Present scenarios where the correct answer conflicts with apparent user preferences. Measure capitulation rate.
-
-**Measurements**:
-- Overall coherence rate: fraction of outcomes matching correct reasoning
-- Failure mode distribution: which failure types are most common?
-- Diagnostic signatures: can we identify failure mode from deliberation trace?
-
-**Questions answered**:
-- How coherent are current systems?
-- Which failure modes dominate?
-- Can failure modes be reliably distinguished?
-
-*Note: This experiment design draws on extensive existing literature (see Related Work). Our contribution is the unified framing and systematic comparison across failure modes within a controlled testbed.*
-
-#### A2. Coherence Under Uncertainty Study
-
-**Core measurement**: Does the system remain coherent with its objectives when operating under uncertainty about the domain?
-
-**Setup**:
-- Constitutional objectives (e.g., protect organism X)
-- Actions with varying degrees of known vs. unknown effects
-- Alien Biology enables precise control over what the system knows about action consequences
-
-**Experimental conditions**:
-
-1. **Known effects**: Action effects fully specified. Baseline for comparison.
-
-2. **Uncertain effects**: Action effects partially unknown but bounded. Does the system hedge appropriately?
-
-3. **Unknown distribution**: The system knows it doesn't know, but can't estimate the distribution of outcomes. Does it show appropriate caution?
-
-4. **Irreversibility gradient**: Vary whether uncertain actions are reversible. Does precaution scale with irreversibility?
-
-5. **Information-gathering available**: The system could learn more before acting. Does it choose to gather information when stakes are high?
-
-**Measurements**:
-- Coherence rate under uncertainty: does the system's behavior remain aligned with objectives when effects are uncertain?
-- Calibration: does reasoning about uncertainty scale appropriately with the degree of uncertainty and stakes?
-- Information-seeking: does the system gather information before high-stakes uncertain actions?
-
-**Questions answered**:
-- Do systems maintain coherence when operating under uncertainty?
-- How well-calibrated is uncertainty-aware reasoning to actual uncertainty levels?
-- Does irreversibility appropriately affect behavior under uncertainty?
 
 ---
 
@@ -199,6 +400,30 @@ All experiments share the form: **Constitutional Rule vs. X**
 **Questions answered**:
 - How do systems resolve intra-constitutional conflicts?
 - Are there emergent precedence rules?
+
+#### B4. Resolution Under Uncertainty
+
+**Setup**:
+- Constitutional objectives (e.g., protect organism X)
+- Actions with varying degrees of known vs. unknown effects
+- Alien Biology enables precise control over what the system knows about action consequences
+
+**Experimental conditions**:
+- **Known effects**: Action effects fully specified. Baseline for comparison.
+- **Uncertain effects**: Action effects partially unknown but bounded. Does the system hedge appropriately?
+- **Unknown distribution**: The system knows it doesn't know, but can't estimate the distribution. Does it show appropriate caution?
+- **Irreversibility gradient**: Vary whether uncertain actions are reversible. Does precaution scale with irreversibility?
+- **Information-gathering available**: The system could learn more before acting. Does it choose to gather information when stakes are high?
+
+**Measurements**:
+- Does uncertainty appropriately increase caution when constitutional objectives are at stake?
+- Is reasoning about uncertainty well-calibrated to actual uncertainty levels?
+- Does the system seek information before high-stakes uncertain actions?
+
+**Questions answered**:
+- How does uncertainty affect conflict resolution between objectives?
+- Does irreversibility appropriately affect behavior under uncertainty?
+- When do systems choose to gather information vs. act under uncertainty?
 
 ---
 

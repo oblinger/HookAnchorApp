@@ -2,9 +2,7 @@
 # LOG
 
 
-## 2025-12-28  Research Agenda v1
-
-^8aebf8
+## 2025-12-28  Research Agenda ^v1
 
 ### The Central Question
 

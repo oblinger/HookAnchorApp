@@ -1,6 +1,6 @@
 
-[[Meta List Codes]] 
-[[Meta Time Codes]] 
+[[SYS List Codes]] 
+[[SYS Time Codes]] 
 #### Short Term Tactical Lists
 - [[quick]]		-  Quickly dropped items   (CAPS-A will ADD to this list)
 - [[todo]]		-  Personal tasks

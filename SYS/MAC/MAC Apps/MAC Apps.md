@@ -270,6 +270,10 @@ Serial: D4GU34F0FY6W23CHAG
 -- Export -- ! all macros --> # a -> file -> export as library
 -- Import 
 
+## xx Mail Backup X
+
+Bought 12-30-2025
+Key: 45A9-8C56-D0CB-40D7-A37A-12F9-A6C8-CE87
 ## xx Microsoft xx Office
 
 ### INSTALLATION

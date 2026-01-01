@@ -1,7 +1,7 @@
 
 .[[OBS]].
   [[Facet]] 
-  [[DoubleKey]] 
+  [[SYS]]:	[[SYS DoubleKey]] 
   [[OBS Setup]] 
   [Plugins Folder](spot://pluginsfolder)
   popup: view

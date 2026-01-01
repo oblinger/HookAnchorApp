@@ -1,5 +1,4 @@
-TAXONOMY:	[[Meta]]  
-VIEWS:		[[SYS Task Lists]],  
+[[Meta]]   <--- Roots are all here
 
 Reference Material - 
 Entities -

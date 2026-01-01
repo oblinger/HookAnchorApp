@@ -12,7 +12,7 @@ BUCKETS:
   [[Meta List]]	- Fixed tracking lists
   [[WRM]]		- What Really Matters.  Quarterly big project buckets
   [[Daily Schedules]]
-  [[Meta Time Codes]]	
+  [[SYS Time Codes]]	
 
 PRODUCTIVITY:
   [[Productivity]] 

@@ -1,10 +1,9 @@
 .[[Meta]].
-  TOP:	[[Dir]], [[Meta Meta]], [[Meta List]], [[Meta Proj]], 
-  AND:	[[Meta Flow]], [[Meta Group]],
-  LOG:	[[Meta Log]], [[Meta Journaling]],
-  PLAN:	[[Meta Plan]], [[Meta Coms]],
-  ...	, [[Meta Meta Conept]], [[Meta Org -old-page-]]
-  , [[Meta KMR]], [[Meta Productivity]], [[Meta Self]], [[Meta Sys]], [[Meta Work]],
-  , [[Meta List Codes]], [[Meta Time Codes]],
-  , [[EV Log]],
-  , [[Journaling]],
+  ROOTS:		[Dir](hook://p/dir), [[Meta KMR]], 
+  [[Meta Meta]]:	[[Meta List]], [[Meta Proj]], [[Meta Log]],
+  PROCESS:	[[Meta Flow]], [[Meta Group]], [[Meta Journaling]],
+  [[Meta Plan]]:	[[Meta Coms]], [[Meta Productivity]],
+  [[SYS]]:			[[SYS Task Lists]], 
+  [[KM]]:				[[Facet]], [[Lifecycle]], 
+  [[Meta Self]]:	
+  [[Meta Work]]:	
