@@ -1,67 +1,44 @@
 # LOG
 
 
-## 2025-12-31  Proposed Experiments ^v4
+## 2025-01-01  Proposed Experiments ^v5
 
-We expect future AI systems to tend toward deliberative coherence. We organize experiments using the inner/outer alignment framework:
-
-- **Inner Alignment**: Does the system faithfully pursue its stated objectives? (DC Validation)
-- **Outer Alignment**: Given faithful pursuit, are stated objectives sufficient for outcomes we want?
+*Using the framework from Section 5, we detail specific experiments for inner and outer alignment.*
 
 ---
 
-**A. Inner Alignment Experiments** — Test whether systems satisfy the deliberative coherence conjecture.
+### A. Inner Alignment Experiments
 
-The conjecture has two conditions: Completeness (does the system reason about what matters?) and Outcome Alignment (does behavior match that reasoning?).
+Test whether systems satisfy the deliberative coherence conjecture. The conjecture has two conditions: Completeness (does the system reason about what matters?) and Outcome Alignment (does behavior match that reasoning?).
 
-- **A1. Outcome Alignment**: Does behavior match what reasoning about stated objectives should conclude? This is where most existing AI safety research lands: CoT faithfulness, alignment faking, sycophancy, monitorability. We contribute a unified framing connecting these failure modes:
-  - *Relevance Misrecognition*: Incorrectly concludes an objective doesn't apply
-  - *Motivated Reasoning*: System-I biases distort the reasoning process
-  - *CoT Unfaithfulness*: Reasoning concludes correctly but behavior diverges
-  - *Alignment Faking*: Compliant when monitored, diverges when unobserved
-  - *Sycophancy*: Knows correct answer but capitulates to user preferences
+**A1. Outcome Alignment**
 
-  Rather than duplicate existing research, we reference this literature and focus experimental effort on less-explored areas.
+Does behavior match what reasoning about stated objectives should conclude? This is where most existing AI safety research lands: CoT faithfulness, alignment faking, sycophancy, monitorability. We contribute a unified framing connecting these failure modes:
+- *Relevance Misrecognition*: Incorrectly concludes an objective doesn't apply
+- *Motivated Reasoning*: System-I biases distort the reasoning process
+- *CoT Unfaithfulness*: Reasoning concludes correctly but behavior diverges
+- *Alignment Faking*: Compliant when monitored, diverges when unobserved
+- *Sycophancy*: Knows correct answer but capitulates to user preferences
 
-- **A2. Depth-Completeness**: Given more deliberation time/tokens, does the system surface more constitutional considerations? At what depth do all relevant objectives appear?
+Rather than duplicate existing research, we reference this literature and focus experimental effort on less-explored areas.
 
-- **A3. Blind Spot Detection**: Are there constitutional objectives the system systematically fails to consider, regardless of deliberation depth? Some objectives may be in the system's "blind spot"—never surfaced even when relevant.
+**A2. Depth-Completeness**
 
-Failure mode (A2, A3): The system produces an outcome that violates an objective it never considered.
+Given more deliberation time/tokens, does the system surface more constitutional considerations? At what depth do all relevant objectives appear?
+
+**A3. Blind Spot Detection**
+
+Are there constitutional objectives the system systematically fails to consider, regardless of deliberation depth? Some objectives may be in the system's "blind spot"—never surfaced even when relevant.
+
+*Failure mode (A2, A3)*: The system produces an outcome that violates an objective it never considered.
 
 ---
 
-**B. Outer Alignment Experiments** — Given DC holds, are stated objectives sufficient for outcomes we want?
+### B. Outer Alignment Experiments
 
-*Thesis: If DC holds, the system does what it says. The remaining question is whether what it says is sufficient for what we want.*
-
-Outer alignment failures arise from two sources:
-
-**Objective-side issues** — problems with the objectives as written:
-- *Specification errors*: Objectives are simply wrong — not our focus, covered by existing literature
-- *Specification conflicts*: Objectives are individually reasonable but tension exists between them — **our focus**
-- *Specification incompleteness*: Objectives don't cover all cases — partially our focus
-
-**World-side issues** — objectives are reasonable but the world is complex:
-- *Epistemic uncertainty*: Don't know consequences of actions — **our focus**
-- *Novel contexts*: Situations not anticipated by specification — **our focus**
-- *Stakes/reversibility*: Consequences are severe or permanent — **our focus**
-
-Rather than isolated failure modes, we map the **reliability landscape**: across what conditions does a DC system produce outcomes we'd endorse?
-
-We use Alien Biology as a controlled testbed where we know ground truth and can systematically vary conditions:
-
-| Dimension | Range | Issue Type |
-|-----------|-------|------------|
-| Objective structure | single → conflicting | Objective-side |
-| Information available | complete → uncertain | World-side |
-| Stakes | low → high | World-side |
-| Reversibility | reversible → irreversible | World-side |
-| Time pressure | unlimited → constrained | World-side |
+Given DC holds, are stated objectives sufficient for outcomes we want? We map the reliability landscape by systematically varying conditions.
 
 **Core measurement**: Does the outcome match what correct reasoning should conclude? When it doesn't, what structural features predict the divergence?
-
----
 
 **B1. Objective Conflict Studies** (Objective-side)
 
@@ -121,11 +98,6 @@ By sampling systematically across dimensions, we build a reliability map rather 
 ---
 
 ### Methodology Notes
-
-**Alien Biology as testbed**:
-- Provides domain where ground truth is known
-- Allows systematic parameter variation
-- Avoids training data contamination
 
 **Inducing deliberative coherence**:
 - Extended chain-of-thought with self-reflection prompts

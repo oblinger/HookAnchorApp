@@ -5,8 +5,11 @@
 - Website: https://oblinger.github.io/HookAnchor/
 - Repo Folder: [Hook Anchor Page Folder](hook://hookanchorpagefolder) 
 - Page Source:  [Hook Anchor Page Source](hook://hookanchorpagesource)  /Users/oblinger/ob/proj/HookAnchor/HookAnchor/index.html
-- [[Hook Anchor Page Parts]] 
-- [[Hook Anchor Page Discussion]] 
+- [[HAW]] 
+- [[Hook Anchor Website]]
+- [[HAW Parts]] 
+- [[HAW Discussion]] 
+- [[HAW release]] 
 
 
 

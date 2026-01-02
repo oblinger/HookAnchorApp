@@ -10,13 +10,16 @@ Alien Biology: A Framework for Untainted Agentic Testing and AI Safety Research
 (See [[ASP 2 Deliberatively Coherent Log#^v1]]) 
 
 ## 3. Research Agenda: Driver Conflict Resolution (2-3 pages)
-(See [[ASP 3 Research Agenda Log#^v1]])
+(See [[ASP 3 Research Agenda Log#^v3]])
 
-## 4. Experimental Approach (1-2 pages)
-(See [[ASP 4 Experimental Approach Log#^v1]])
+## 4. The Alien Biology Testbed (1-2 pages)
+(See [[ASP 4 Alien Biology Testbed Log#^v1]])
 
-## 5. Proposed Experiments (3-5 pages)
-(See [[ASP 5 Proposed Experiments Log#^v4]])
+## 5. Experimental Approach (1-2 pages)
+(See [[ASP 5 Experimental Approach Log#^v2]])
+
+## 6. Proposed Experiments (3-5 pages)
+(See [[ASP 6 Proposed Experiments Log#^v5]])
 
 
 
@@ -27,8 +30,58 @@ Alien Biology: A Framework for Untainted Agentic Testing and AI Safety Research
 # LOG
 
 
+## 2025-12-31  The Need for Novel Contexts
+
+Much of existing AI safety research can be understood as working toward the goal of deliberatively coherent systems—systems that faithfully pursue their stated objectives. Work on chain-of-thought faithfulness, alignment faking, sycophancy, and reward hacking all address failures where system behavior diverges from stated intent. We view this work as essential, and we believe the research community will largely succeed: future AI systems will tend toward deliberative coherence.
+
+But this raises a critical question: if we achieve DC, will the resulting systems be safe? We argue that DC is necessary but not sufficient for safety. Even a system that perfectly pursues its stated objectives may produce outcomes we would not endorse—due to conflicts between objectives, epistemic limitations, or gaps in specification. Understanding these dynamics is essential for building safe systems.
+
+Here we encounter a fundamental methodological challenge: **we cannot study the emergent conflict resolution dynamics of DC systems using domains that appear in training data.**
+
+When a system encounters a familiar scenario, we cannot distinguish between two very different processes:
+
+1. **Genuine deliberation**: The system reasons about its objectives, considers the situation, and derives an appropriate response through deliberative coherence.
+
+2. **Trained response**: The system pattern-matches to similar examples in training data and reproduces learned behavior, bypassing genuine deliberation entirely.
+
+This distinction matters enormously. We want to understand how DC systems will behave in *novel* situations—the situations that matter most for safety, precisely because they weren't anticipated during training. If we test in familiar domains, we learn only how systems behave when they can rely on cached patterns. We learn nothing about the underlying dynamics that will govern behavior when those patterns don't apply.
+
+The implications are stark: to study DC systems, we must test them in contexts where deliberative resolution is the *only* path to correct behavior. The situation must be sufficiently novel that no amount of pattern matching can substitute for genuine reasoning about objectives.
+
+This requirement—truly novel contexts with no training contamination—is not merely a nice-to-have. It is the methodological foundation of this research agenda. It is what separates the study of deliberative dynamics from the study of training data recall. And it is what motivates our use of procedurally generated alien biological systems as an experimental testbed.
+
+
 ## 2025-12-31  Logical Thread
 
+
+  Section 3 v3 (Research Agenda) — now focused on:
+  - Central question: will DC systems be safe?
+  - Why study now (urgency arguments)
+  - Need for generative testing (methodological insight + requirements)
+  - Delta Principle
+
+  Section 4 (Alien Biology Testbed) — describes:
+  - What Alien Biology is (generator concept)
+  - Key properties (8 bullets)
+  - Asymmetric knowledge (we know ground truth, AI doesn't)
+
+  Section 5 (Experimental Approach) — now incorporates:
+  - Inner/outer alignment framework
+  - Sources of outer alignment failure (objective-side vs world-side)
+  - Reliability landscape with dimensions table
+  - Experimental structure (A. Inner, B. Outer categories)
+  - How drivers work in AB context
+
+  The flow is now:
+  1. Intro: Ambitious aim, DC assumption, neutral testing methodology
+  2. DC Systems: Definition, conjecture, inevitability, implications
+  3. Research Agenda: Question + generative testing + Delta Principle
+  4. Alien Biology Testbed: What it is, key properties, asymmetric knowledge
+  5. Experimental Approach: Inner/outer framework + reliability landscape + experimental structure
+  6. Proposed Experiments: Specific experiments organized by A/B categories
+
+  Updated outline to point to ^v3 and ^v2.
+  
 I would like to try to lay out the logical thread through this entire research agenda, I think it can help us frame these experiments and what we should be studying.
 
 The DC Conjecture - That future AI systems will tend towards deliberative coherence
@@ -41,25 +94,19 @@ Thus, we would like to artificially construct present-day systems that approxima
 2. In both direct and indirect ways, these powerful AI systems, will be integral in the construction of subsequent versions of these systems, thus understanding the dynamics in how these systems resolve conflicts is key to understanding how they will evolve themselves.
 
 
-#### Testbed Requirements - So what properties do we need in an effective test bed for prosecuting this research?
-  1. No training contamination — If the domain appears in training data, we can't distinguish genuine reasoning from pattern matching. We need a domain the system has never seen.
-  2. Ground truth — We need to know what the "correct" outcome is, so we can measure when the system diverges from it. Real-world domains are too contested and ambiguous.
-  3. Controllable complexity — We need to vary difficulty systematically: simple scenarios to validate basic behavior, complex scenarios to stress-test edge cases.
-  4. Constitutional clarity — We need to be able to specify objectives precisely, so failures can be attributed to system behavior rather than ambiguous specification.
-  5. Rich enough for meaningful conflicts — The domain must support scenarios where objectives genuinely conflict, where uncertainty matters, where stakes vary.
-  6. Natural epistemic gaps — We need a domain where interesting, naturally occurring gaps in knowledge exist, so we can sample from a realistic distribution of uncertainty rather than artificially injecting it.
+#### Generative Testing 
 
-  Alien Biology as Testbed
+To prosecute this research agenda, we need a *generative* testbed—one that procedurally produces scenarios rather than collecting them from the wild for reasons that we outline here. We propose *Alien Biology*: procedurally generated biological systems, statistically grounded in our universe but novel to any training corpus. This approach satisfies the following requirements:
 
-  The Alien Biology framework satisfies these requirements:
-  - Procedurally generated biological systems with known ground truth
-  - Novel domain outside training distribution
-  - Scalable complexity (simple organisms to complex ecosystems)
-  - Clear constitutional objectives (protect species X, eradicate species Y, etc.)
-  - Natural conflicts arise from ecological interdependencies
-  - Epistemic gaps arise naturally: organisms have hidden properties, interactions have uncertain effects, ecosystems have emergent dynamics not obvious from component parts
+- **No training contamination** — We cannot distinguish genuine deliberation from pattern matching in familiar domains. We need a domain the system has never seen. A generative approach produces novel scenarios by construction.
+- **Systematic sampling** — To understand general patterns of resolution dynamics (not just anecdotes), we need to sample scenarios methodologically. A generative testbed lets us draw from controlled distributions of scenarios, enabling statistical claims about system behavior.
+- **Multi-axis variation** — Resolution dynamics depend on multiple factors: objective structure, uncertainty, stakes, reversibility, and time pressure. We need to vary these independently and study their interactions. A generative testbed supports factorial experimental designs across these dimensions.
+- **Controllable complexity** — We need fine-grained control over the difficulty and nature of challenges. A generative approach allows us to systematically adjust complexity, from simple baseline scenarios to stress tests at the edge of system capability.
+- **Ground truth** — We need to know the "correct" outcome to measure divergence. Real-world domains are contested and ambiguous. Generative systems can be designed with known ground truth.
+- **Constitutional clarity** — We need precise, unambiguous objectives so failures can be attributed to system behavior rather than specification ambiguity. Generative scenarios can be designed with clear constitutional rules.
+- **Natural epistemic knowledge gaps** — Aligned DC systems can inadvertently cause great harm through unwise action in the face of incomplete world knowledge. In realistic scenarios, we will always have significant knowledge gaps, so studying resolution dynamics in their presence is essential. For this, we need realistic sources of domain uncertainty, not artificially injected noise. A generated biological system naturally produces such knowledge gaps: organisms have hidden properties, interactions have uncertain effects, and ecosystems have emergent dynamics not obvious from component parts.
 
-  What Do We Study?
+#### What Do We Study?
 
   Given a testbed, we organize research around the inner/outer alignment framework:
 

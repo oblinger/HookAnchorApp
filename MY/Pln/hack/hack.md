@@ -1,19 +1,12 @@
 
-- describe decorators
 
-
-- when deduplication logic deduplicates a command we should MERGE results into a single command
-
-
-⏺ I need to add backward compatibility for dat.class. I'll add a validator that maps class to kind.
-    - Implemented Dat.save() method (was raising NotImplementedError)
-    - Added _find_subclass_by_name() method to dynamically load correct Dat subclass based on kind
-
-- [ ] [[Hook Anchor Release]]
+- [ ] [[HAW Parts]]  
+- [ ] when deduplication logic deduplicates a command we should MERGE results into a single command
+- [ ] [[HAW release]] 
+## SOON
 - [ ] Add categories
 - [ ] Command Type Filtering
 - [ ] TYPES: Types: fileExt, Person, Proj(work, personal, hack)  CROSSCUTTING: Log, WP, Chat(Email, call), Idea,
-## SOON
 - [ ] YORE support.
 - [ ] Delete key should prompt to delete file and maybe folder.
 - [ ] consider EVERY fallback in the code, and try to remove them
@@ -22,6 +15,11 @@
 - [ ] Maintain map of last edit times, to avoid rescanning when not needed.
 - **L** add build checking on swift
 - **L** click on folder will go into folder
+
+- [ ] describe decorators
+- [ ] I need to add backward compatibility for dat.class. I'll add a validator that maps class to kind.
+    - Implemented Dat.save() method (was raising NotImplementedError)
+    - Added _find_subclass_by_name() method to dynamically load correct Dat subclass based on kind
 
 ## DONE
 - [x] remove backward compatibility in template
