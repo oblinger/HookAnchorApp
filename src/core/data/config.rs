@@ -99,6 +99,10 @@ pub struct PopupSettings {
     /// - hostname string: enable developer mode only on that specific machine
     /// When enabled, build verification is active. When disabled, build verification is skipped.
     pub developer_mode: Option<String>,
+    /// Show terminal window for command server (default: false)
+    /// When false, command server runs headless with output redirected to log file.
+    /// When true, opens a Terminal window for the command server (useful for debugging).
+    pub show_command_server_terminal: Option<bool>,
 }
 
 /// Template settings for child command creation
@@ -253,6 +257,7 @@ impl Default for PopupSettings {
             preferred_anchor: Some("markdown".to_string()),
             max_characters: Some(30),
             developer_mode: None,
+            show_command_server_terminal: Some(false), // Default to headless
         }
     }
 }

@@ -18,12 +18,20 @@ use chrono::TimeZone;
 use crate::prelude::*;
 
 /// Helper function to output to both console and debug log
+/// When running in headless mode (stdout redirected to log file), skips the
+/// redundant log() call to avoid duplicate entries.
 fn log_and_print(prefix: &str, message: &str) {
+    use std::io::IsTerminal;
+
     let formatted = format!("{}: {}", prefix, message);
     // Print to stdout so we can see what the server is doing
     crate::utils::print(&formatted);
-    // Also log to file for persistence - use regular log() for command execution
-    log(&formatted);
+
+    // Only log to file separately if stdout is a TTY (terminal mode)
+    // In headless mode, stdout IS the log file, so logging again would duplicate
+    if std::io::stdout().is_terminal() {
+        log(&formatted);
+    }
 }
 
 /// Response structure for command execution
