@@ -1,10 +1,11 @@
 
 .**TODO**.
+ - **PHQ** access. SV games->escore->sv merge->metrics out
+ - Manual Jobs API; Roster Integration
   - 100 manual games
   - Brainstorming 
   - PlayOn kick tire test
  WATCHING
- - PHQ access. SV games->escore->sv merge->metrics out
  - expansive testing of the manager app
  - DATA - Games: 50 PlayOn 20 doubled;  50 PHQ & 20 doubled (corners)
  -  [PlayOn](hook://playon): Roster - get and use

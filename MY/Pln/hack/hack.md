@@ -1,3 +1,5 @@
+- console output for command server is a flag
+- if cmd name has prefix, then add it?
 
 
 - [ ] [[HAW Parts]]  

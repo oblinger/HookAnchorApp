@@ -1,5 +1,71 @@
 
 
+## 2026-01-03  Response To Nick About Job Focus
+
+- Unexpected pushback about job focus:  
+	- Even two areas of focus is too much;  Dan I dunno, sounds more like a dream than a plan.
+	- I take this seriously since I think my career planning post DARPA is total shit.
+	- That said, my concerns with this direction were different than yours, so let me discuss.
+
+- Baseline Beliefs
+	- I would be happiest and best suited to a research lab setting.
+	- More than all else, I like doing high-level technical work.
+	  Research, Algo, API, Technical Design Leadership, ... Coding.
+	- I love technical thinking about AGI; I was explicit leaving DARPA that Uniform and AGI were my two loves
+		- But I feared an AI-apocalypse and did not have (good) ideas for fixing this.
+		- I did not pursue Alien Biology as it does more to advance AGI than it does to advance safety.
+		- Two months ago, I started seeing how Alien Biology might be helpful for this.
+		- I love working on it...
+	- Seems best of all futures
+		- Researchy in ways I like & am good at
+		- Associated w/ deep thinking about AGI which has been a many decade love
+		- Probably the highest ROI value to the universe thing I can do
+		- I think I might have a starter agenda worth considering.
+	- BUUUUUUT 
+		- These jobs are some amount harder to get then other jobs
+		- They will pay less.  but probably ok, and could even grow to greater.... or not
+
+Possible Plan:
+- Build AI-Safety from Alien Bio (maybe just two weeks)
+- Publish Framework, Research Agenda, Experimental Result Paper
+- Apply at Anthropic, then aggressively try to get meeting & discussions w/ anyone in the 
+
+
+
+  Industry Labs
+  1. Anthropic - Constitutional AI, interpretability, alignment research
+  2. OpenAI - Alignment team, superalignment initiative
+  3. DeepMind - Safety team, scalable alignment, interpretability
+  4. Google AI - Responsible AI, robustness research
+  5. Meta FAIR - Some safety-adjacent work
+
+  Non-Profit Research Orgs
+  6. Redwood Research - Interpretability, adversarial robustness
+  7. ARC (Alignment Research Center) - Eliciting latent knowledge, evals
+  8. MIRI (Machine Intelligence Research Institute) - Agent foundations, decision theory
+  9. Center for AI Safety (CAIS) - Coordination, research grants
+  10. Center for Human-Compatible AI (CHAI) - UC Berkeley, Stuart Russell's group
+  11. Conjecture - Interpretability, alignment (London)
+  12. Apollo Research - Deception detection, evals
+
+  Academic
+  13. UC Berkeley - CHAI, Pieter Abbeel, Jacob Steinhardt
+  14. MIT - Max Tegmark's Future of Life, robustness research
+  15. Oxford - Future of Humanity Institute (closed 2024), now dispersed
+  16. Cambridge - Leverhulme Centre for the Future of Intelligence
+  17. CMU - AI safety courses, robustness
+  18. NYU - Sam Bowman's group (now Anthropic)
+  19. Stanford - HAI, Percy Liang's group
+
+  Government/Policy Adjacent
+  20. NIST - AI Risk Management Framework
+  21. UK AI Safety Institute - Government evaluations
+  22. US AI Safety Institute - Newly formed
+
+  For your specific work (behavioral alignment in complex environments, deliberative coherence), Anthropic, ARC, Redwood, and academic groups like Berkeley/Stanford would be most relevant audiences.
+
+
+
 ## 2025-11-24  Envelope.  Narrow focus
 - Started using Envelope to keep on task
 - Narrowed focus:

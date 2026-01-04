@@ -1,5 +1,5 @@
 
-- [[Diary]]		- Top-level note about mission statement, diary, etc.
+- [[Diary]]		- Organizational Folder/Note about mission statement, diary, etc.
 - [[Reflections]]	-  Weekly Reflections (mostly quick reflections of current professional topics)
 - [[Weekly]]		-  Weekly planning work entries
 - [[DD]]			-  Misc Notes

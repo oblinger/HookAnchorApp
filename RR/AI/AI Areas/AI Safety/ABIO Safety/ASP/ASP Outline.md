@@ -21,6 +21,8 @@ Alien Biology: A Framework for Untainted Agentic Testing and AI Safety Research
 ## 6. Proposed Experiments (3-5 pages)
 (See [[ASP 6 Proposed Experiments Log#^v5]])
 
+## 7. Discussion (1-2 pages)
+(See [[ASP 7 Discussion Log#^v1]])
 
 
 *Dan Oblinger (c) 2025*
@@ -78,7 +80,8 @@ This requirement—truly novel contexts with no training contamination—is not 
   3. Research Agenda: Question + generative testing + Delta Principle
   4. Alien Biology Testbed: What it is, key properties, asymmetric knowledge
   5. Experimental Approach: Inner/outer framework + reliability landscape + experimental structure
-  6. Proposed Experiments: Specific experiments organized by A/B categories
+  6. Proposed Experiments: Overview of experiments (details in companion Experiments paper)
+  7. Discussion: What we could learn, limitations, future directions
 
   Updated outline to point to ^v3 and ^v2.
   
