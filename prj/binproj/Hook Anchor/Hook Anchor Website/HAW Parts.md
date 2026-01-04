@@ -28,12 +28,17 @@ Instead of wasting time and mental energy wading through these each time you acc
 ## Anchor
 
 ~~
-IDEAS:  Logical grouping; on/off-line, all apps; Groups items; Deliberate anchor choice
-
-Anchors organize content ***logically*** across online and off
+Global taxonomies are impossible to maintain. Organizing your docs by named anchors that logically span all of your content, regardless of app or location, on or offline, eases the burden of memorizing where each document is. Limiting the number of anchors created per month ensures you can document, correctly link, and remember each anchor for years without effort.
 
 ~~
-Global taxonomies are impossible to maintain. Organizing your docs by named anchors that logically span all of your content, regardless of app or location, on or offline, eases the burden of memorizing where each document is. Limiting the number of anchors created per month ensures you can document, correctly link, and remember each anchor for years without effort.
+Always organize new content into existing Anchors when it fits, otherwise into a sequence of anchored "project" groupings around current activity when it does not.  
+
+The key is to organize ALL content logically related to the activity over a limited period into a single anchor ***logically*** no matter where or what the content is.
+
+~~
+Anchors organize content ***logically*** across online and off
+
+IDEAS:  Logical grouping; on/off-line, all apps; Groups items; Deliberate anchor choice
 
 ~~ 
 Instead organize locally 
@@ -45,3 +50,16 @@ Instead organize locally
 
 
 Repeated patterns for common kinds of info simplifies capture, and more importantly helps in finding it years later.
+
+
+
+
+
+
+# NARRATIVE FORM
+
+
+
+Personal content organization grows shittier as it grows larger.  Worse, the effort required to keep it comprehensible becomes Herculean.  Hook-Anchor-Stream dodges this bullet by organizing content locally into a sequence of anchor groupings
+
+enabling content access using only locally organized content.

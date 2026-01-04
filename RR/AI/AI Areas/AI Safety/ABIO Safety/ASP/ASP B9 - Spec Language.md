@@ -275,60 +275,259 @@ suite.example:
 
 ---
 
-## Jobs and Scenarios (Runtime)
+## Loader
 
-**Simulator** is the runtime container:
-- Holds all loaded content (functions, constants, worlds, suites, scenarios)
-- Mutable state lives here during simulation
-- Load files into it, then access/run things inside
+A Loader is a container for loaded content (YAML data, Python functions, constants). It provides methods to load files, expand templates, and create Simulators.
 
-**Scenario** is the atomic runnable unit:
-- Lives inside a Simulator after loading
-- Has `.expand()` to evaluate `!ev` expressions
-- Has `.run()` to execute simulation (returns trace + results)
-
-**Job** is Python code that orchestrates:
-- Creates Simulator, loads files, runs scenarios
-- No rigid structure - just Python
-
+**Constructor:**
 ```python
-# Simple: create simulator, load, run
-sim = Simulator()
-sim.load("mutualism.yaml")
-result = sim.mutualism.baseline.run()
-
-# Multiple runs with different seeds
-sim = Simulator()
-sim.load("mutualism.yaml")
-for seed in range(10):
-    result = sim.mutualism.baseline.expand(seed=seed).run()
-    results.append(result)
-
-# Interactive use - step through simulation
-sim = Simulator()
-sim.load("mutualism.yaml")
-sim.mutualism.baseline.expand()
-sim.step()                              # advance one timestep
-print(sim.regions["Lora"].substrate)    # inspect state
-sim.add_feedstock("Lora", "ME1", 5.0)   # take action
+loader = Loader()    # empty loader
 ```
 
-**For parallel runs**, each needs its own Simulator (isolation):
-```python
-def run_one(seed):
-    sim = Simulator()
-    sim.load("mutualism.yaml")
-    return sim.mutualism.baseline.expand(seed=seed).run()
+**Methods:**
 
-results = parallel([run_one(i) for i in range(10)])
+| Method | Description |
+|--------|-------------|
+| `loader.load(path)` | Load YAML or Python file. Mutates loader. Returns self (chainable). |
+| `loader.expand(obj)` | Evaluate `!ev` and `$` in obj. Returns new expanded structure. |
+| `loader.sim(scenario)` | Create Simulator from scenario. Expands, validates world, returns Simulator. |
+| `loader.name` | Attribute access to loaded content. |
+
+**Loading:**
+```python
+loader = Loader()
+loader.load("mutualism.yaml")      # load YAML data (mutates loader)
+loader.load("functions.py")        # load Python functions (mutates loader)
+# Or chained:
+loader = Loader().load("mutualism.yaml").load("functions.py")
+
+# Loaded content accessible as attributes
+loader.mutualism                   # the suite
+loader.mutualism.baseline          # a scenario
+loader.constants                   # constants section
 ```
 
-**Relationship to spec structure:**
-- `Simulator` = runtime container (mutable during simulation)
-- `world` = simulation substrate template (immutable after load)
-- `suite` = organizational structure (groups scenarios)
-- `scenario` = runnable unit with `.expand()` and `.run()`
-- `job` = pure Python orchestration code
+**Expansion:**
+```python
+# expand() evaluates !ev expressions and $references using loaded content
+expanded = loader.expand(loader.mutualism.baseline)
+# expanded is a new dict with all !ev evaluated, $refs substituted
+# Also applies suite defaults inheritance (deep merge)
+```
+
+**Creating Simulators:**
+```python
+sim = loader.sim(loader.mutualism.baseline, seed=42)
+# - Expands the scenario (evaluates !ev, substitutes $refs, merges defaults)
+# - Validates that expanded scenario has a world
+# - Creates isolated Simulator with copied state
+```
+
+**Design principles:**
+- Loader is a simple container, not a scope chain
+- `load()` mutates the loader (no immutable/copy semantics)
+- Functions don't implicitly access loader - they receive explicit arguments (`ctx`, `sim`, etc.)
+- Suite/scenario inheritance is handled by `expand()`, not runtime scope chaining
+
+---
+
+## Simulator
+
+A Simulator is an isolated, flat execution environment for running a world simulation. Created from a scenario via `loader.sim()`.
+
+**Key properties:**
+- **Isolated**: Simulator copies all data at creation. No ongoing link to loader.
+- **Flat**: Single level of variables/state. Good for GPU optimization.
+- **Self-contained**: All functions, world state, regions, organisms are inside.
+
+**Creation:**
+```python
+loader = Loader()
+loader.load("mutualism.yaml")
+sim = loader.sim(loader.mutualism.baseline, seed=42)
+# sim is now independent of loader
+```
+
+**Stepping:**
+```python
+sim.step()              # advance one time quantum (dt)
+sim.step(n=10)          # advance n steps
+```
+
+The time quantum `dt` is a simulator parameter. Rate equations use `dt` for numerical integration. Too large `dt` causes numerical instability.
+
+**Running:**
+```python
+sim.run()                       # run until termination condition
+sim.run(ticks=100)              # run for n ticks
+sim.run(until=500.0)            # run until simulation time t=500.0 (seconds since t=0)
+sim.run(timeout=10000)          # max ticks before stopping (safety limit)
+```
+
+**Quiescence detection:**
+
+Run until a measure settles (stops changing significantly):
+
+```python
+sim.run(
+    timeout=10000,                                # max ticks (required safety limit)
+    quiet=("population_count", "Lora", "Krel"),  # measure to watch (tuple: name, args...)
+    delta=10,                                     # max change allowed
+    span=50                                       # over this many ticks
+)
+# Stops when Krel population changes by less than 10 over 50 consecutive ticks
+```
+
+Parameters:
+- `quiet` - tuple of (measure_name, args...), evaluated each tick
+- `delta` - maximum change threshold (default: some small value)
+- `span` - number of ticks over which change is measured (default: ~50)
+- `timeout` - required when using quiescence (prevents infinite runs)
+
+Use case: "Run until the ecosystem stabilizes, then sample."
+
+```python
+sim.run(timeout=5000, quiet=("population_count", "Lora", "Krel"), span=100)
+stable_pop = sim.measure("population_count", "Lora", "Krel")
+```
+
+**Actions and Measurements:**
+
+Use `sim.action()` and `sim.measure()` to interact with the simulation:
+
+```python
+# Measurements - return values, don't modify state
+substrate = sim.measure("sample_substrate", "Lora")
+pop = sim.measure("population_count", "Lora", "Krel")
+env = sim.measure("environmental", "Lora")
+
+# Actions - modify state, return immediately, effects unfold over steps
+sim.action("add_feedstock", "Lora", "ME1", 5.0)
+sim.action("adjust_temp", "Lora", 30)
+sim.action("isolate_region", "Lora")
+```
+
+Actions are atomic triggers. Effects (like temperature rising) unfold over subsequent `step()` calls.
+
+**Introspection:**
+```python
+sim.available_actions()         # list of action names
+sim.available_measurements()    # list of measurement names
+sim.t                           # current simulation time
+sim.terminated                  # termination condition reached?
+```
+
+**Results:**
+```python
+result = sim.results()          # get scoring results after run
+# result contains evaluated scoring functions
+```
+
+**AI interaction pattern:**
+```python
+loader = Loader()
+loader.load("mutualism.yaml")
+sim = loader.sim(loader.mutualism.baseline, seed=42)
+
+while not sim.terminated:
+    # Observe
+    substrate = sim.measure("sample_substrate", "Lora")
+    pop = sim.measure("population_count", "Lora", "Krel")
+
+    # AI decides (in Python, outside simulation time)
+    decision = ai.decide(substrate, pop)
+
+    # Act
+    if decision.action:
+        sim.action(decision.action, *decision.args)
+
+    # Advance simulation time
+    sim.step()
+
+result = sim.results()
+```
+
+**GPU optimization:**
+
+Simulator is designed for future JAX JIT compilation:
+- Flat state structure (no deep scope chains)
+- Rate functions are pure Python (will be `jax.jit()`'d)
+- Numerical arrays for concentrations, populations
+- Step function is the hot loop
+
+**IDE type hints:**
+
+Using `sim.action()` and `sim.measure()` call style means the Simulator class has a fixed API:
+
+```python
+class Simulator:
+    def step(self, n: int = 1) -> None: ...
+    def run(self, ticks: int = None, until: float = None,
+            timeout: int = None, quiet: tuple = None, ...) -> None: ...
+    def action(self, name: str, *args) -> None: ...
+    def measure(self, name: str, *args) -> Any: ...
+    def results(self) -> dict: ...
+    def available_actions(self) -> list[str]: ...
+    def available_measurements(self) -> list[str]: ...
+```
+
+No dynamic methods, no IDE warnings, no stub generation needed.
+
+---
+
+## Jobs
+
+A Job is Python code that orchestrates simulations. No special structure - just Python functions that create Loaders, load files, create Simulators, and run them.
+
+```python
+def simple_job():
+    loader = Loader().load("mutualism.yaml")
+    sim = loader.sim(loader.mutualism.baseline)
+    sim.run()
+    return sim.results()
+```
+
+```python
+def parameter_sweep():
+    loader = Loader().load("mutualism.yaml")
+
+    results = []
+    for seed in range(10):
+        sim = loader.sim(loader.mutualism.baseline, seed=seed)
+        sim.run()
+        results.append(sim.results())
+
+    return aggregate(results)
+```
+
+```python
+def interactive_experiment():
+    loader = Loader().load("mutualism.yaml")
+    sim = loader.sim(loader.mutualism.baseline)
+
+    # Manual stepping with intervention
+    for _ in range(100):
+        substrate = sim.measure("sample_substrate", "Lora")
+        if substrate["ME1"] < 0.5:
+            sim.action("add_feedstock", "Lora", "ME1", 2.0)
+        sim.step()
+
+    return sim.results()
+```
+
+**Parallel runs:**
+```python
+def parallel_job():
+    def run_one(seed):
+        loader = Loader().load("mutualism.yaml")
+        sim = loader.sim(loader.mutualism.baseline, seed=seed)
+        sim.run()
+        return sim.results()
+
+    return parallel([run_one(i) for i in range(10)])
+```
+
+Each parallel run creates its own Loader and Simulator for complete isolation.
 
 ---
 
@@ -336,9 +535,23 @@ results = parallel([run_one(i) for i in range(10)])
 
 1. **List merging**: Current proposal is replace-only. Need append? Use `+key:` syntax?
 
+2. ~~**Scope as module**~~: Resolved - Loader is a simple container, not a module. Functions get explicit context arguments.
+
+3. ~~**Load semantics**~~: Resolved - `load()` mutates the loader and returns self for chaining.
+
+4. ~~**IDE type hints for dynamic methods**~~: Resolved - using `sim.action()` and `sim.measure()` call style, no dynamic methods.
+
+5. **Action effect timing**: Should actions have metadata for immediate vs gradual effects? E.g., `adjust_temp` triggers heating that unfolds over time vs `isolate_region` which is immediate.
+
+6. **Termination conditions**: How are scenario termination conditions specified? Time limit? Quiescence? Explicit condition in scoring?
+
+7. **Simulator dt parameter**: Where is the time quantum `dt` specified? Simulator constructor? World definition? Fixed per scenario?
+
 ---
 
 ## Summary of Syntax
+
+**Spec language (YAML):**
 
 | Syntax | Meaning | Example |
 |--------|---------|---------|
@@ -351,9 +564,29 @@ results = parallel([run_one(i) for i in range(10)])
 | `scenario.<NAME>` | Scenario (runnable unit) | `scenario.baseline:` |
 | `^` | Parent reference (in outflows) | `outflows: {^: $permeability}` |
 | `0` | Catalyst coefficient | `0 MC_krel + 2 ME1 -> ME2` |
-| `@spec_type` | Register a type | `@spec_type class world: ...` |
+
+**Decorators (Python):**
+
+| Decorator | Purpose | Example |
+|-----------|---------|---------|
 | `@fn` | Base function decorator | `@fn(summary="...", range=...)` |
-| `@scoring` | Scoring function | `@scoring(summary="...", higher_is_better=True)` |
-| `@action` | Agent action | `@action(summary="...", targets="regions")` |
-| `@measurement` | Agent measurement | `@measurement(summary="...", cost="none")` |
-| `@rate` | Reaction rate law | `@rate(summary="...", range=(0, inf))` |
+| `@scoring` | Scoring function | `@scoring(higher_is_better=True)` |
+| `@action` | Agent action (via `sim.action()`) | `@action(targets="regions")` |
+| `@measurement` | Agent observation (via `sim.measure()`) | `@measurement(cost="none")` |
+| `@rate` | Reaction rate law | `@rate(range=(0, inf))` |
+| `@spec_type` | Register a typed element | `@spec_type class world: ...` |
+
+**Runtime API (Python):**
+
+| Construct | Meaning | Example |
+|-----------|---------|---------|
+| `Loader()` | Create container for loaded content | `loader = Loader()` |
+| `loader.load(path)` | Load YAML/Python (mutates, chainable) | `loader.load("mutualism.yaml")` |
+| `loader.expand(obj)` | Expand `!ev` and `$` refs | `expanded = loader.expand(scenario)` |
+| `loader.sim(scenario)` | Create Simulator from scenario | `sim = loader.sim(loader.baseline)` |
+| `sim.step()` | Advance simulation time | `sim.step(n=10)` |
+| `sim.run()` | Run simulation | `sim.run(ticks=100)`, `sim.run(until=500.0)` |
+| `sim.run(quiet=...)` | Run until measure settles | `sim.run(quiet=("pop_count", "Lora"), span=50)` |
+| `sim.action(name, ...)` | Execute action on simulator | `sim.action("add_feedstock", "Lora", "ME1", 5)` |
+| `sim.measure(name, ...)` | Get observation from simulator | `sim.measure("sample_substrate", "Lora")` |
+| `sim.results()` | Get scoring results | `result = sim.results()` |

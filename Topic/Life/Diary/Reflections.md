@@ -2,6 +2,52 @@
 
 ## 2026-01-03  Response To Nick About Job Focus
 
+container types
+root region
+initial state
+
+
+  Scope - namespace for variable bindings
+  - Constructor with optional parent and bindings
+  - load(), expand(), sim() methods
+  - Scopes are data, not execution
+
+  Simulator - isolated execution environment
+  - Created via scope.sim(scenario)
+  - Copies data at creation (no ongoing link)
+  - Flat structure for GPU optimization
+  - step(), run() for time advancement
+  - Actions/measurements become methods
+  - AI interaction pattern
+
+  Jobs - Python orchestration code
+  - Just Python functions
+  - Create Scopes, load files, create Simulators, run them
+  - Parallel runs use separate Scope+Simulator for isolation
+
+  Open Questions - added 6 new questions from our discussion:
+  - Scope as module?
+  - Load semantics (mutate vs new)?
+  - IDE type hints for dynamic methods?
+  - Action effect timing?
+  - Termination conditions?
+  - Where is dt specified?
+
+  Summary of Syntax - reorganized into three tables:
+  - Spec language (YAML)
+  - Decorators (Python)
+  - Runtime API (Python)
+
+  The key architectural decisions captured:
+  1. Simulator is isolated and flat (good for GPU)
+  2. scope.sim() expands and copies - no ongoing link
+  3. Actions/measurements become Simulator methods
+  4. No scope.run() - execution is Python or Simulator stepping
+  5. Jobs are just Python functions
+
+
+
+
 - Unexpected pushback about job focus:  
 	- Even two areas of focus is too much;  Dan I dunno, sounds more like a dream than a plan.
 	- I take this seriously since I think my career planning post DARPA is total shit.

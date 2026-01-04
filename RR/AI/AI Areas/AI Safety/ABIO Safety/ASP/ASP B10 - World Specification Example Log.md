@@ -671,13 +671,7 @@ suite.mutualism_studies:
       )
 ```
 
-**Hierarchy rules:**
-- `world` = simulation substrate, defined at top level, referenced with `$name`
-- `suite` = container, can hold other suites or scenarios
-- `scenario` = leaf, the fully specified runnable unit
-- Children inherit from parent's `defaults:` (deep merge)
-- Scalars replace, dicts merge
-- Explicit `key: ~` (YAML null) removes inherited value
+See B9 for hierarchy rules and merge semantics.
 
 ### Generator Library (Examples)
 
@@ -702,77 +696,7 @@ suite.mutualism_studies:
 **Briefing generators:**
 - `briefing(molecules, reactions, dependencies, confidence, false_beliefs)` - knowledge document
 
-### Jobs and Scenarios
-
-**Simulator** is the runtime container:
-- Create one, load files into it, then access/run things inside
-- All loaded content (functions, worlds, suites, scenarios) becomes attributes
-- Mutable state lives here during simulation
-
-**Scenario** is the atomic runnable unit:
-- Lives inside a Simulator after loading
-- Has `.expand()` to evaluate `!ev` expressions
-- Has `.run()` to execute (returns trace + results)
-
-**Job** is Python code that creates Simulators and runs scenarios.
-
-```python
-# Simple job: create simulator, load, run
-def simple_job():
-    sim = Simulator()
-    sim.load("mutualism.yaml")
-    result = sim.mutualism.baseline.run()
-    print(result.score)
-```
-
-```python
-# Multiple runs with different seeds
-def stochastic_job():
-    sim = Simulator()
-    sim.load("mutualism.yaml")
-    results = []
-    for seed in range(10):
-        result = sim.mutualism.baseline.expand(seed=seed).run()
-        results.append(result)
-    report(results)
-```
-
-```python
-# Interactive use - step through simulation
-def interactive_job():
-    sim = Simulator()
-    sim.load("mutualism.yaml")
-    sim.mutualism.baseline.expand()
-
-    for t in range(100):
-        sim.step()
-        if sim.regions["Lora"].substrate["ME1"] < 0.5:
-            sim.add_feedstock("Lora", "ME1", 2.0)
-
-    return sim.results()
-```
-
-```python
-# Parallel runs - each needs its own Simulator
-def parallel_job():
-    def run_one(seed):
-        sim = Simulator()
-        sim.load("mutualism.yaml")
-        return sim.mutualism.baseline.expand(seed=seed).run()
-
-    results = parallel([run_one(i) for i in range(10)])
-    report(results)
-```
-
-### Key Principles
-
-1. **Simulator = runtime container** - load files, access contents, run simulations
-2. **World = simulation substrate** - molecules, reactions, containers (immutable template)
-3. **Scenario = atomic unit** - has `.expand()` and `.run()`
-4. **Job = Python code** - creates Simulators, orchestrates scenarios
-5. **Suite = spec organization** - groups scenarios with shared defaults
-6. **Isolation via Simulators** - parallel runs use separate Simulator instances
-7. **`!ev` for expansion, `=` for runtime** - clear distinction
+See B9 for Simulator interface, job structure, and runtime semantics.
 
 ---
 
@@ -794,12 +718,7 @@ def parallel_job():
 - **JAX future-proofing**: Rate functions will be JIT-compiled via `jax.jit()` at runtime
 - **Removed `type` field**: Defaults/scenarios are open key-value stores; add any metadata functions need
 - **Lexical scoping**: Variables shadow in order: globals → suite.defaults → scenario → expansion → simulation
-- **Simulator interface**: New runtime container pattern replacing direct `load()` calls
-  - `Simulator()` creates runtime container with mutable state
-  - `sim.load("file.yaml")` loads files into it
-  - `sim.suite.scenario.run()` accesses and runs scenarios
-  - Parallel runs use separate Simulator instances for isolation
-  - Supports interactive use: `sim.step()`, `sim.add_feedstock()`, etc.
+- **Simulator interface**: New runtime container pattern (see B9 for details)
 
 ## Changes in v10
 

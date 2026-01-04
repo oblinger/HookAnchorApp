@@ -1,20 +1,20 @@
 
 # Research Agenda Paper
 
-| Section                    | Content                            | Log                                   |
-| -------------------------- | ---------------------------------- | ------------------------------------- |
-| Overview                   | [[ASP]]                            | [[ASP Log]]                           |
-| Outline                    | [[ASP Outline]]                    |                                       |
-| 1. Introduction            | [[ASP 1 Intro]]                    | [[ASP 1 Intro Log]]                   |
-| 2. Deliberatively Coherent | [[ASP 2 Deliberatively Coherent]]  | [[ASP 2 Deliberatively Coherent Log]] |
-| 3. Research Agenda         | [[ASP 3 Research Agenda]]          | [[ASP 3 Research Agenda Log]]         |
-| 4. Alien Biology Testbed   | [[ASP 4 Alien Biology Testbed]]    | [[ASP 4 Alien Biology Testbed Log]]   |
-| 5. Experimental Approach   | [[ASP 5 Experimental Approach]]    | [[ASP 5 Experimental Approach Log]]   |
-| 6. Proposed Experiments    | [[ASP 6 Proposed Experiments]]     | [[ASP 6 Proposed Experiments Log]]    |
-| 7. Discussion              | [[ASP 7 Discussion]]               | [[ASP 7 Discussion Log]]              |
-|                            | [[ASP References]]                 | [[ASP Related Work]]                  |
-| Background                 | [[ASP Driver Resolution Dynamics]] |                                       |
-| Background                 | [[ASP Fixed Point Analysis]]       |                                       |
+| Section                    | Content                            | Log                                   |     |
+| -------------------------- | ---------------------------------- | ------------------------------------- | --- |
+| Overview                   | [[ASP]]                            | [[ASP Log]]                           |     |
+| Outline                    | [[ASP Outline]]                    |                                       |     |
+| 1. Introduction            | [[ASP 1 Intro]]                    | [[ASP 1 Intro Log]]                   |     |
+| 2. Deliberatively Coherent | [[ASP 2 Deliberatively Coherent]]  | [[ASP 2 Deliberatively Coherent Log]] |     |
+| 3. Research Agenda         | [[ASP 3 Research Agenda]]          | [[ASP 3 Research Agenda Log]]         |     |
+| 4. Alien Biology Testbed   | [[ASP 4 Alien Biology Testbed]]    | [[ASP 4 Alien Biology Testbed Log]]   |     |
+| 5. Experimental Approach   | [[ASP 5 Experimental Approach]]    | [[ASP 5 Experimental Approach Log]]   |     |
+| 6. Proposed Experiments    | [[ASP 6 Proposed Experiments]]     | [[ASP 6 Proposed Experiments Log]]    |     |
+| 7. Discussion              | [[ASP 7 Discussion]]               | [[ASP 7 Discussion Log]]              |     |
+|                            | [[ASP References]]                 | [[ASP Related Work]]                  |     |
+| Background                 | [[ASP Driver Resolution Dynamics]] |                                       |     |
+| Background                 | [[ASP Fixed Point Analysis]]       |                                       |     |
 
 
 # Experiments Paper
