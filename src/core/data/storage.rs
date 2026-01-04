@@ -71,7 +71,9 @@ pub(crate) fn load_commands_raw() -> Vec<Command> {
         Ok(contents) => {
             let mut commands = Vec::new();
             for (line_num, line) in contents.lines().enumerate() {
-                if line.trim().is_empty() {
+                let trimmed = line.trim();
+                // Skip empty lines and comments
+                if trimmed.is_empty() || trimmed.starts_with("//") {
                     continue;
                 }
 
