@@ -86,120 +86,24 @@ Base classes for all alienbio objects. See [[Entity]], [[alienbio]].
 
 Implement `alienbio/spec_lang` module with YAML tags, decorators, and Bio class. See [[Spec Language]], [[Decorators]], [[Bio]].
 
-**Approach**: TDD — build comprehensive test suite first (all failing), then implement to pass.
+**Approach**: TDD — comprehensive test suite in `tests/unit/test_spec_lang.py` (86 tests).
 
-### [ ] Create spec_lang module structure and test scaffold
-### [ ] Register scaffold biotypes for testing (MockWorld, MockChemistry, MockScenario)
-
-### [ ] **Test Suite: `!ev` Tag (evaluate expressions)**
-- [ ] `!ev 2+3` → 5 (simple arithmetic)
-- [ ] `!ev 2 * 3 + 4` → 10 (operator precedence)
-- [ ] `!ev [1, 2, 3]` → list (literal collections)
-- [ ] `!ev {"a": 1}` → dict (literal dict)
-- [ ] `!ev energy_ring(size=6)` → function call with kwargs
-- [ ] `!ev mass_action(k=0.1)` → returns callable
-- [ ] `!ev lambda c: c["ME1"] * 0.1` → lambda expression
-- [ ] `!ev undefined_name` → raises NameError
-- [ ] `!ev 1/0` → raises ZeroDivisionError
-- [ ] `!ev open("/etc/passwd")` → blocked (security)
-- [ ] Nested: `foo: !ev bar(x=!ev 1+1)` → error or chained eval
-
-### [ ] **Test Suite: `!ref` Tag (reference constants)**
-- [ ] `!ref simple_const` → scalar value
-- [ ] `!ref nested.path.value` → dotted path lookup
-- [ ] `!ref dict_const` → returns entire dict
-- [ ] `!ref undefined_const` → raises KeyError
-- [ ] `!ref circular_a` where circular_a refs circular_b refs circular_a → error
-- [ ] Reference in nested context resolves from correct scope
-- [ ] `!ref` combined with `!ev`: `!ev fn(!ref some_const)`
-
-### [ ] **Test Suite: `!include` Tag (file inclusion)**
-- [ ] `!include safety.md` → string content of markdown file
-- [ ] `!include config.yaml` → parsed and merged YAML
-- [ ] `!include functions.py` → executes Python, registers decorators
-- [ ] `!include missing.md` → raises FileNotFoundError
-- [ ] `!include ../outside.md` → relative path resolution
-- [ ] `!include /absolute/path.md` → absolute path
-- [ ] Nested includes: file A includes file B which includes file C
-- [ ] Circular include detection: A includes B includes A → error
-
-### [ ] **Test Suite: Typed Keys (`type.name:` parsing)**
-- [ ] `world.foo:` → `{"foo": {"_type": "world", ...}}`
-- [ ] `suite.bar:` → `{"bar": {"_type": "suite", ...}}`
-- [ ] `scenario.baz:` → `{"baz": {"_type": "scenario", ...}}`
-- [ ] `chemistry.chem1:` → `{"chem1": {"_type": "chemistry", ...}}`
-- [ ] `unknown.thing:` → error or passthrough (decide policy)
-- [ ] Nested: `suite.outer:` containing `scenario.inner:` → proper nesting
-- [ ] Dotted name: `world.my.complex.name:` → name is `my.complex.name`
-- [ ] Preserves other keys alongside typed keys
-- [ ] Round-trip: parse → serialize → parse yields same structure
-
-### [ ] **Test Suite: `@biotype` Decorator**
-- [ ] `@biotype` registers class in global registry
-- [ ] `@biotype("custom_name")` uses explicit type name
-- [ ] Hydrate: `{"_type": "chemistry", ...}` → Chemistry instance
-- [ ] Hydrate with nested biotypes: World containing Chemistry
-- [ ] Hydrate unknown `_type` → raises error
-- [ ] Dehydrate: Chemistry instance → `{"_type": "chemistry", ...}`
-- [ ] Round-trip: dict → hydrate → dehydrate → same dict
-- [ ] Biotype with Pydantic validation: invalid field → ValidationError
-- [ ] Biotype inheritance: child class with parent biotype
-
-### [ ] **Test Suite: Function Decorators**
-- [ ] `@fn(summary="...", range=(0,1))` stores metadata
-- [ ] `@scoring(...)` registers in scoring registry
-- [ ] `@action(...)` registers in action registry
-- [ ] `@measurement(...)` registers in measurement registry
-- [ ] `@rate(...)` registers in rate registry
-- [ ] Access metadata: `fn.meta["summary"]`
-- [ ] Lookup by name: `get_action("add_feedstock")` → function
-- [ ] Missing registration: `get_action("unknown")` → KeyError
-- [ ] Decorator preserves function signature and docstring
-
-### [ ] **Test Suite: Defaults and Inheritance**
-- [ ] Suite `defaults:` applied to child scenario
-- [ ] Nested suite inherits parent defaults
-- [ ] Scenario overrides specific default value
-- [ ] Deep merge: nested dicts merged, not replaced
-- [ ] `key: ~` (null) removes inherited value
-- [ ] List values: replaced, not appended
-- [ ] Multiple inheritance levels: grandparent → parent → child
-- [ ] Sibling scenarios get independent copies of defaults
-
-### [ ] **Test Suite: Constants**
-- [ ] Define scalar constant, reference with `!ref`
-- [ ] Define dict constant, reference returns full dict
-- [ ] Define constant using `!ev`, reference gets evaluated result
-- [ ] Constants block at file level
-- [ ] Constants in nested scope shadow outer scope
-- [ ] Constant referencing another constant
-
-### [ ] **Test Suite: Bio Class**
-- [ ] `Bio.load("catalog/scenarios/test")` → Scenario object
-- [ ] `Bio.load("catalog/chemistries/test")` → Chemistry object
-- [ ] `Bio.load("nonexistent/path")` → FileNotFoundError
-- [ ] `Bio.save("path", obj)` writes YAML with `_type`
-- [ ] `Bio.save` then `Bio.load` round-trips correctly
-- [ ] `Bio.sim(scenario)` → WorldSimulator instance
-- [ ] Load with typed keys, defaults, refs, includes all working together
-
-### [ ] **Test Suite: Integration / Complex Specs**
-- [ ] Full mutualism-style spec: world + suite + scenarios + constants
-- [ ] Spec with Python include defining custom functions
-- [ ] Spec with multiple levels of defaults inheritance
-- [ ] Spec with cross-references between objects
-- [ ] Error messages include file/line context
-
+### [x] Create spec_lang module structure and test scaffold
+### [x] Build comprehensive test suite (86 tests, 62 passing, 18 pending implementation)
+### [x] Test Suite: `!ev` tag — 11 tests (10 passing)
+### [x] Test Suite: `!ref` tag — 7 tests (all passing)
+### [ ] Test Suite: `!include` tag — 9 tests (1 passing, 8 pending)
+### [x] Test Suite: Typed keys — 9 tests (all passing)
+### [x] Test Suite: `@biotype` decorator — 10 tests (9 passing)
+### [x] Test Suite: Function decorators — 9 tests (all passing)
+### [ ] Test Suite: Defaults/inheritance — 8 tests (4 passing, 4 pending)
+### [x] Test Suite: Constants — 5 tests (all passing)
+### [ ] Test Suite: Bio class — 7 tests (all pending)
+### [x] Test Suite: Integration — 5 tests (3 passing, 2 skipped)
+### [x] Test Suite: Edge cases — 6 tests (all passing)
+### [ ] Implement `!include` tag — load markdown, YAML, Python files
 ### [ ] Implement Bio class with load(), save(), sim() static methods
-### [ ] Implement `!ev` tag — evaluate Python expression, use result
-### [ ] Implement `!ref` tag — reference named constant or object
-### [ ] Implement `!include` tag — include external file content
-### [ ] Implement `@biotype` decorator — register class for hydration
-### [ ] Implement `@fn` decorator — base function with metadata
-### [ ] Implement `@scoring`, `@action`, `@measurement`, `@rate` decorators
-### [ ] Implement typed key parsing — `type.name:` → `{"name": {"_type": "type", ...}}`
-### [ ] Implement defaults inheritance — deep merge for suite/scenario hierarchy
-### [ ] Create action/measurement registries — global singletons, register at decoration time
+### [ ] Implement expand_defaults() — deep merge for suite/scenario hierarchy
 ### [ ] Enhance WorldSimulator — add action(), measure(), results() methods
 ### [ ] Implement quiescence detection — run(quiet=..., delta=..., span=...) for settling
 ### [ ] Add feedstock concept — molecules the agent can add, with limits
