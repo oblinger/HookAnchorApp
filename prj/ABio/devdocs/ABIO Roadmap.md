@@ -107,6 +107,25 @@ Base classes for all alienbio objects. See [[Entity]], [[alienbio]].
 
 ### .
 
+## M1.8 - Spec Language Module
+
+Implement `alienbio/spec_lang` module with YAML tags and decorators. See [[Spec Language]], [[Decorators]].
+
+### Create spec_lang module structure
+### Implement `!ev` tag — evaluate Python expression, use result
+### Implement `!ref` tag — reference named constant or object
+### Implement `!include` tag — include external file content
+### Implement `@biotype` decorator — register class for hydration
+### Implement `@fn` decorator — base function with metadata
+### Implement `@scoring`, `@action`, `@measurement`, `@rate` decorators
+### Implement typed key parsing — `type.name:` → `{"name": {"_type": "type", ...}}`
+### Test: `!ev 2+3` evaluates to 5
+### Test: `!ref` resolves constants from namespace
+### Test: `!include` loads file content
+### Test: `@biotype` class hydrates from dict with `_type` field
+
+### .
+
 
 # Milestone 2 - KEGG Data Integration
 
