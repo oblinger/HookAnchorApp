@@ -55,11 +55,15 @@ pub fn fatal_error(message: &str) -> ! {
 pub fn warning(message: &str) {
     log(&format!("WARNING: {}", message));
 
+    // Use smart textbox (^) for multi-line content - it auto-sizes or scrolls as needed
+    // Use label (') for single-line content
+    let content_prefix = if message.contains('\n') { '^' } else { '\'' };
+
     let _ = crate::systems::spawn_dialog(
         vec![
             "=Warning".to_string(),
             "#⚠️  Warning".to_string(),
-            format!("'{}", message),
+            format!("{}{}", content_prefix, message),
             "!OK".to_string(),
         ],
         None,

@@ -27,6 +27,7 @@ pub(crate) mod build_verification;
 // pub(crate) mod dialog_old;
 pub(crate) mod dialog2;
 pub(crate) mod params;
+pub(crate) mod permissions;
 
 // ============================================================================
 // PUBLIC API - All external access goes through these re-exports
@@ -92,4 +93,10 @@ pub use dialog2::{
 pub use params::{
     parse_kv_pairs, format_kv_pairs,
     PARAM_TEMPLATE, PARAM_PRIORITY, PARAM_FLAGS, PARAM_ARG
+};
+
+// Permissions checking
+pub use permissions::{
+    check_all_permissions, get_missing_permissions, format_missing_permissions_message,
+    PermissionInfo
 };

@@ -186,6 +186,30 @@ fn main() -> Result<(), eframe::Error> {
 
         // No URL detected and no installer needed - proceed with normal GUI mode
         log("STARTUP: Entering GUI mode (popup)");
+
+        // Check macOS permissions on startup (unless disabled in config)
+        let skip_permissions = hookanchor::core::get_config()
+            .popup_settings
+            .skip_permissions_check
+            .unwrap_or(false);
+
+        if !skip_permissions {
+            let missing = hookanchor::utils::get_missing_permissions();
+            if !missing.is_empty() {
+                let message = hookanchor::utils::format_missing_permissions_message(&missing);
+                log(&format!("STARTUP: Missing permissions detected:\n{}", message));
+                // Show non-blocking warning dialog - app continues running
+                hookanchor::utils::warning2(&message);
+            }
+        }
+
+        // GUI mode also needs command server for executing commands
+        // This uses the same code path as CLI mode and rebuild
+        if let Err(e) = hookanchor::execute::activate_command_server(false) {
+            log_error(&format!("STARTUP WARNING: Failed to activate command server: {}", e));
+            // Continue - commands will show error dialogs when server is needed
+        }
+
         let initial_input = input_text.as_deref().unwrap_or("");
         let initial_action = action_name.as_deref();
 

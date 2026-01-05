@@ -103,6 +103,11 @@ pub struct PopupSettings {
     /// When false, command server runs headless with output redirected to log file.
     /// When true, opens a Terminal window for the command server (useful for debugging).
     pub show_command_server_terminal: Option<bool>,
+    /// Skip permissions check on startup (default: false)
+    /// When false, checks for required macOS permissions (Accessibility, etc.) on startup
+    /// and shows a dialog listing any missing permissions.
+    /// Set to true to disable this check if you don't need those features.
+    pub skip_permissions_check: Option<bool>,
 }
 
 /// Template settings for child command creation
@@ -258,6 +263,7 @@ impl Default for PopupSettings {
             max_characters: Some(30),
             developer_mode: None,
             show_command_server_terminal: Some(false), // Default to headless
+            skip_permissions_check: Some(false), // Check permissions by default
         }
     }
 }
