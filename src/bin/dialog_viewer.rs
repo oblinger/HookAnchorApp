@@ -109,9 +109,8 @@ impl DialogApp {
                         }
                         DialogElement::TextBox { content } => {
                             let line_count = content.lines().count().max(1);
-                            // Increase line height from 16.0 to 18.0 for better readability
-                            // Add extra padding (20.0 instead of 10.0) for multiline content
-                            let text_height = line_count as f32 * 18.0 + 20.0;
+                            // Must match rendering: line_count * 16.0 + 10.0
+                            let text_height = line_count as f32 * 16.0 + 10.0;
                             total_height += text_height;
                         }
                         _ => {}
@@ -124,8 +123,8 @@ impl DialogApp {
         // Bottom padding
         total_height += 20.0;
 
-        // Add extra buffer for safety - increased to ensure buttons are fully visible
-        total_height += 60.0;
+        // Small safety buffer for window chrome/borders
+        total_height += 10.0;
 
         total_height
     }
