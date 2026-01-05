@@ -3,6 +3,12 @@
 
 # LOG
 
+## 2026-01-05  Visit
+
+- Trigger Finger, Hand joint pain, Over Christmas trip
+- Ozempic - Protein 40g/meal
+- Lipator Lapse - 
+- Ambien - 
 
 ## 2025-09-30  Call
 

@@ -4,10 +4,11 @@
   TOP:	,
   TOPICS:
   [[MED Blood Tests]]:
+  [[MED Doctors]]:  
   [[MED Exercise]]: 
   [[MED General]]:
   [[MED Glucose]]:	
-  [[MED Heart]]:
+  [[MED Heart]]: 
   [[MED History]]:
   [[MED Insurance]]:
   [[MED Measurements]]:
@@ -24,8 +25,6 @@
   , [MED Doctors Obsidian](spot://meddoctorsobsidian)
   , [MED Exercise Obsidian](spot://medexerciseobsidian), [MED Log Obsidian](spot://medlogobsidian)
   , [MED Obsidian](spot://medobsidian),
-  DELS: [[MED Mind]],,[MED Obsidian](spot://medobsidian),
-  , [MED Doctors](spot://meddoctors), [MED Exercise](spot://medexercise), [MED Log](spot://medlog)
   , ,
   , ,
   , ,

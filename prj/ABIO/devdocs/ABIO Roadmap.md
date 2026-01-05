@@ -82,56 +82,64 @@ Base classes for all alienbio objects. See [[Entity]], [[alienbio]].
 
 ### .
 
-## [ ] M1.5 - Spec Language Module
+## [x] M1.5 - Spec Language Module
 
 Implement `alienbio/spec_lang` module with YAML tags, decorators, and Bio class. See [[Spec Language]], [[Decorators]], [[Bio]].
 
-**Approach**: TDD — comprehensive test suite in `tests/unit/test_spec_lang.py` (86 tests).
+**Status**: Complete — 83 tests passing, 3 skipped.
 
 ### [x] Create spec_lang module structure and test scaffold
-### [x] Build comprehensive test suite (86 tests, 62 passing, 18 pending implementation)
-### [x] Test Suite: `!ev` tag — 11 tests (10 passing)
-### [x] Test Suite: `!ref` tag — 7 tests (all passing)
-### [ ] Test Suite: `!include` tag — 9 tests (1 passing, 8 pending)
-### [x] Test Suite: Typed keys — 9 tests (all passing)
-### [x] Test Suite: `@biotype` decorator — 10 tests (9 passing)
-### [x] Test Suite: Function decorators — 9 tests (all passing)
-### [ ] Test Suite: Defaults/inheritance — 8 tests (4 passing, 4 pending)
-### [x] Test Suite: Constants — 5 tests (all passing)
-### [ ] Test Suite: Bio class — 7 tests (all pending)
-### [x] Test Suite: Integration — 5 tests (3 passing, 2 skipped)
-### [x] Test Suite: Edge cases — 6 tests (all passing)
-### [ ] Implement `!include` tag — load markdown, YAML, Python files
-### [ ] Implement Bio class with load(), save(), sim() static methods
-### [ ] Implement expand_defaults() — deep merge for suite/scenario hierarchy
-### [ ] Enhance WorldSimulator — add action(), measure(), results() methods
-### [ ] Implement quiescence detection — run(quiet=..., delta=..., span=...) for settling
-### [ ] Add feedstock concept — molecules the agent can add, with limits
+### [x] Implement `!ev` tag — evaluate Python expressions
+### [x] Implement `!ref` tag — reference constants
+### [x] Implement `!include` tag — load markdown, YAML, Python files
+### [x] Implement typed keys transformation (`type.name:` → `_type` field)
+### [x] Implement `@biotype` decorator and hydrate/dehydrate
+### [x] Implement function decorators (`@fn`, `@scoring`, `@action`, `@measurement`, `@rate`)
+### [x] Implement `expand_defaults()` — deep merge for suite/scenario hierarchy
+### [x] Implement Bio class with load(), save(), sim() static methods
 
 ### .
 
-## [ ] M1.6 - Hardcoded Test System
-### [ ] Create 3-4 molecules by hand (A, B, C, D)
-### [ ] Create 2 reactions by hand (A + B → C, C → D)
-### [ ] Define fixed rate functions returning constants
-### [ ] Instantiate initial state with known concentrations
-### [ ] Test: instantiate system, assert molecule and reaction counts correct
+## [ ] M1.6 - Hardcoded Test Job (DAT)
+
+Build a complete job DAT that defines, runs, and verifies a hardcoded test system.
+
+### [ ] Create job DAT structure in `catalog/jobs/hardcoded_test/`
+### [ ] Define molecules by hand in spec: A, B, C, D
+### [ ] Define reactions by hand: A + B → C, C → D
+### [ ] Define fixed rate functions (constant rates) via `!ev` or inline
+### [ ] Define initial state with known concentrations
+### [ ] Add `run:` section with step count and optional quiescence params
+### [ ] Add `verify:` section with assertions on final concentrations
+### [ ] Add `scoring:` section referencing `@scoring` functions
+### [ ] Test: `Bio.fetch("jobs.hardcoded_test")` loads and hydrates correctly
 
 ### .
 
 ## [ ] M1.7 - Python Simulator v0
-### [ ] Implement step() applying all reactions once
-### [ ] Implement run() looping step() for N iterations
+
+Implement the simulator that the job will use.
+
+### [ ] Implement `step()` applying all reactions once
+### [ ] Implement `run(steps)` looping step() for N iterations
+### [ ] Implement `run(until_quiet=...)` for quiescence detection
 ### [ ] Return timeline of states
+### [ ] Implement `Bio.run(job)` to execute a job DAT
 ### [ ] Test: run 10 steps, assert timeline has 11 states (initial + 10)
+### [ ] Test: verify M1.6 job DAT actually runs via `Bio.run()`
 
 ### .
 
 ## [ ] M1.8 - Verification
-### [ ] Run simulation on hardcoded system
-### [ ] Assert concentrations change as expected
-### [ ] Plot concentration curves over time
-### [ ] Test: after 100 steps, A and B depleted, C and D increased
+
+Run the hardcoded job and verify results.
+
+### [ ] Run M1.6 job: `Bio.run(Bio.fetch("jobs.hardcoded_test"))`
+### [ ] Assert concentrations change as expected (A, B depleted; C, D increased)
+### [ ] Verify `scoring:` functions return expected values
+### [ ] Verify `verify:` assertions pass
+### [ ] Plot concentration curves over time (optional visualization)
+### [ ] Test: job completes with all verifications passing
 
 ### .
 
