@@ -1,4 +1,5 @@
 
+## General Setup
 
 
 APPLE Keyboard Preferences
@@ -31,3 +32,10 @@ KEYBOARD MAESTRO
 
 SPECIAL KEYS
 - Obsidian:  # ^ \_ F8   # ^ \_ F9 (spot --grab obsidian url)
+
+
+## TMUX Setup
+
+Keyboard Maestro bindings
+- Num 1,2  		tmux switch-client -p   and  -n
+- Num ., enter		

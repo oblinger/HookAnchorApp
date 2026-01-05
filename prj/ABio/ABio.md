@@ -1,6 +1,6 @@
 .[[ABio]].  [[@Github]] [ABIO Folder](spot://ABIO~Folder) 
+   [[ABIO Sys|SYS]]:	[[ABIO Roadmap|Roadmap]], [[ABIO Files|Files]], [[ABIO Protocols|Protocols]], [[ABIO Topics|Topics]], [[ABIO Notes|Notes]], 
    TOP:	[[ABIO.]]  [[ABIO Log|Log]], [[AlienBiologyWhitepaper (do not distribute)|Whitepaper]], [[ABIO Results|Results]], [[ABIO Safety]], 
-   [[ABIO Sys|SYS]]:	[[ABIO Roadmap|Roadmap]], [[ABIO Files|Files]], [[ABIO Protocols|Protocols]], [[ABIO Topics|Topics]], [[ABIO Notes|Notes]]
    PARTS: [[ABIO infra|infra]], [[ABIO biology|biology]], [[ABIO execution|execution]]
    EXP:	[[ABIO Exp]], 
 
@@ -11,6 +11,12 @@
    [[ABIO PRD|PRD]]:	[[ABIO PRD Steps]], [[ABIO PRD Components]], [[ABIO Notes]],
    [[ABIO Legacy]]:	[Browser](hook://abiosys), 
    TEST:		[[test-entity]], [[test-molecule]], [[test-reaction]], 
+
+
+
+
+
+xxxx
 
 
 In components, you list membrane flows, but I think that these flows are gonna be more general than just membrane flows. They really can be flows the change the multiplicity of different items and they can adjust notches across that membrane but it can adjust across the structure. I think we should probably just call them flows.

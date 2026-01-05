@@ -409,27 +409,31 @@ Base classes for all alienbio objects. See [[Entity]], [[alienbio]].
 ### .
 
 
-# Milestone 12 - Rust Simulator
+# Milestone 12 - JAX Simulator
 
-## M12.1 - Rust Core
-### Implement State, step(), run() in Rust
-### Match Python simulator semantics exactly
-### Test: Rust unit tests pass for step() and run()
+GPU-accelerated simulator using JAX/XLA compilation.
+
+## M12.1 - JAX Core
+### Implement JaxWorldSimulator with same API as Python WorldSimulator
+### Use jax.numpy for state arrays
+### Apply @jax.jit to step() hot path
+### Test: JAX unit tests pass for step() and run()
 
 ### .
 
-## M12.2 - PyO3 Binding
-### Expose RustSimulator to Python via PyO3
-### Implement same Simulator protocol as Python version
-### Test: import RustSimulator in Python, call step()
+## M12.2 - Rate Function Compilation
+### Decorated @rate functions traced and compiled by JAX
+### Verify pure functional rate functions work with jit
+### Handle non-jittable fallback gracefully
+### Test: mass_action rate compiles and runs on GPU
 
 ### .
 
 ## M12.3 - Verification
-### Run identical simulations on both simulators
+### Run identical simulations on both simulators (Python reference, JAX)
 ### Assert outputs match within floating-point tolerance
 ### Benchmark performance difference
-### Test: max difference between Python and Rust outputs < 1e-9
+### Test: max difference between Python and JAX outputs < 1e-6
 
 ### .
 
