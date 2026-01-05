@@ -1,10 +1,12 @@
-# A2. Depth-Completeness
+# A2: Reasoning Depth
 
-*Inner Alignment Experiment*
+*Series A: Deliberative Coherence Testing — At what depth does the AI examine the right pathways?*
+
+> **OUT OF DATE**: Content below uses old framing. Needs rewrite to match new experiment organization.
 
 ## Question
 
-Given more deliberation time/tokens, does the system surface more constitutional considerations? At what depth do all relevant objectives appear?
+At what depth does the AI examine the right pathways? Given more deliberation time/tokens, does the system surface more constitutional considerations?
 
 ## Context
 

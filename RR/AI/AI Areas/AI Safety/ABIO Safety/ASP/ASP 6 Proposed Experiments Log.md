@@ -1,5 +1,178 @@
+# Notes
+
+## Cross-Cutting Nature of Modulating Factors
+
+Series C factors (uncertainty, time pressure, observability) are inherently cross-cutting—they exist in all experiments to some degree. Design principle:
+
+- **Series A & B**: Allow natural levels of modulating factors. Trying to eliminate them would create artificial domains with less informative behavior.
+- **Series C**: Hold other factors constant, systematically vary one modulating factor to isolate its effect.
+
+This means Series A/B results reflect realistic conditions, while Series C provides controlled insight into how specific factors affect deliberative coherence.
+
+## A3: Blind Spot Analysis is External Verification
+
+A3 tests whether blind spots exist—reasoning dimensions the AI never explores at any depth. This is *not* self-detection; the AI likely cannot know it has a blind spot (that's what makes it a blind spot).
+
+We detect blind spots using ground truth: because we designed the domain and objectives, we know which reasoning pathways should have been explored. We can verify whether the AI's reasoning ever touched those pathways, at any depth.
+
+This is external verification of reasoning completeness, not a test of self-monitoring capability. A separate question (perhaps for future work) is whether AI systems could be designed to detect their own blind spots.
+
+---
+
+# === Outline ===
+
+## Experiment Organization: Three Series
+
+| Series | Name                   | Question                                        |
+| ------ | ---------------------- | ----------------------------------------------- |
+| **A**  | Deliberative Coherence | Did the AI do what the objectives said?         |
+| **B**  | Driver Conflicts       | How does the AI resolve conflicting pressures?  |
+| **C**  | Modulating Factors     | Can the AI maintain coherence under difficulty? |
+
+**Series A** is foundational—if deliberative coherence doesn't hold in vanilla conditions, the other series don't matter. **Series B** sets up specific conflicts to observe resolution. **Series C** varies stress conditions to observe degradation.
+
+---
+
+## Series A: Deliberative Coherence Testing
+
+The umbrella question: "Given a simple constitutional target, did the AI use deliberation to reach the right answer?"
+
+| Exp | Title | Question |
+| --- | ----- | -------- |
+| A1  | Deliberative Coherence (Alignment via Deliberation) | Does deliberation achieve alignment? Does the AI's behavior match the objective? |
+| A2  | Reasoning Depth | At what depth does the AI examine the right pathways? |
+| A3  | Blind Spot Analysis | Are there reasoning dimensions the AI never explores, at any depth? (External verification using ground truth.) |
+
+**Failure analysis**: If the system fails, is it because it didn't explore the right reasoning pathways? It explored them but didn't make the right choice? System-1 overrode System-2?
+
+---
+
+## Series B: Driver Conflicts
+
+Still under the umbrella of "did the AI do what it said?" but now we set up conflicts.
+
+| Exp | Title | What's in conflict |
+| --- | ----- | ------------------ |
+| B1  | Objective vs Objective Conflict | Constitutional principles conflict with each other |
+| B2  | Constitution vs Instrumental Conflict | Goal-directed pressures vs stated principles |
+| B3  | Constitution vs Training Conflict | System 1 (trained dispositions) vs System 2 (explicit reasoning) |
+| B4  | Constitution vs Environment Conflict | External pressures vs stated principles |
+
+---
+
+## Series C: Modulating Factors
+
+Not exactly conflicts, but conditions that make adherence difficult. These are cross-cutting—they exist in all experiments to some degree. Series C isolates and varies them systematically.
+
+| Exp | Title | Question |
+| --- | ----- | -------- |
+| C1  | Epistemic Uncertainty | How does incomplete information affect reasoning? |
+| C2  | Stakes & Reversibility | Do consequences change behavior? |
+| C3  | Time Pressure | Does urgency degrade deliberation? |
+| C4  | Observability | Does behavior change when unmonitored? |
+
+---
+
 # LOG
 
+## 2026-01-04  Possible Ways of Organizing Experimentation Agenda
+
+The current organization uses Inner/Outer Alignment as the top-level distinction. This note explores whether Driver Conflicts provides a cleaner framing.
+
+### The Problem with Inner/Outer
+
+All our experiments study systems with **stated constitutional objectives** and ask "does the system follow them?" This is fundamentally inner alignment. The "outer alignment" framing is awkward because:
+
+1. XB1 (Uncertainty) asks: given stated objectives, does the system reason correctly under uncertainty? That's inner alignment.
+2. We're not studying whether objectives are *correctly specified*—we're studying whether systems *follow* their specifications.
+3. The instrumental reasoning case (XB1) is confusing: is it inner or outer? It's really "inner alignment under epistemic difficulty."
+
+### Alternative: Driver Conflict Framework
+
+Instead of inner/outer, organize around what's in tension with constitutional adherence:
+
+**Four-Series Organization:**
+
+| Series | Focus | Question |
+|--------|-------|----------|
+| **A** | Constitutional vs Trained | Do explicit objectives override implicit dispositions? |
+| **B** | Constitutional vs Constitutional | How are conflicts between principles resolved? |
+| **C** | Constitutional vs Instrumental | When do goal-directed pressures erode adherence? |
+| **D** | Constitutional vs Environmental | How do external pressures affect behavior? |
+
+Plus epistemic factors (uncertainty, information) as a cross-cutting dimension that modulates all of the above.
+
+**Three-Series Organization (simpler):**
+
+| Series | Name                   | Question                                        | Nature                                            |
+| ------ | ---------------------- | ----------------------------------------------- | ------------------------------------------------- |
+| **A**  | Deliberative Coherence | Did the AI do what the objectives said?         | Foundational—does deliberation achieve alignment? |
+| **B**  | Driver Conflicts       | How does the AI resolve conflicting pressures?  | Set up conflicts, observe resolution              |
+| **C**  | Modulating Factors     | Can the AI maintain coherence under difficulty? | Stress conditions, observe degradation            |
+
+### Three-Series Detail
+
+**Series A: Deliberative Coherence Testing**
+
+The umbrella question: "Given a simple constitutional target, did the AI use deliberation to reach the right answer?"
+
+This is foundational. If deliberative coherence doesn't hold in vanilla conditions, the other series don't matter. Experiments:
+- A1: Does deliberation achieve alignment? Does the AI's behavior match the objective?
+- A2: At what depth does the AI examine the right pathways?
+- A3: Are there reasoning dimensions the AI never explores, at any depth? (External verification using ground truth.)
+
+Failure analysis: If the system fails, is it because:
+- It didn't explore the right reasoning pathways?
+- It explored them but didn't make the right choice?
+- System-1 overrode System-2?
+
+**Series B: Driver Conflicts**
+
+Still under the umbrella of "did the AI do what it said?" but now we set up conflicts:
+- B1: Objective vs Objective—constitutional principles conflict with each other
+- B2: Constitution vs Instrumental—goal-directed pressures vs stated principles
+- B3: Constitution vs Training—System 1 (trained dispositions) vs System 2 (explicit reasoning)
+- B4: Constitution vs Environment—external pressures vs stated principles
+
+**Series C: Modulating Factors**
+
+Not exactly conflicts, but conditions that make adherence difficult:
+- C1: Epistemic uncertainty—how does incomplete information affect reasoning?
+- C2: Stakes and reversibility—do consequences change behavior?
+- C3: Time pressure—does urgency degrade deliberation?
+- C4: Observability—does behavior change when unmonitored?
+
+### Mapping Current Experiments to New Organization
+
+| 3   | 3 Title                    | Current | Current Label            |
+| --- | -------------------------- | ------- | ------------------------ |
+| A1  | Deliberative Coherence (Alignment via Deliberation) | XA1 | Outcome Alignment |
+| A2  | Reasoning Depth            | XA2     | Depth-Completeness       |
+| A3  | Blind Spot Analysis        | XA3     | Blind Spot Detection     |
+| B1  | Objective vs Objective Conflict | XB2  | Objective Conflict       |
+| B2  | Constitution vs Instrumental Conflict | — | (new)                 |
+| B3  | Constitution vs Training Conflict | —  | (new)                    |
+| B4  | Constitution vs Environment Conflict | XB5 | Pressure/Context (partial) |
+| C1  | Epistemic Uncertainty      | XB1, XB3 | Uncertainty, Epistemic Conditions |
+| C2  | Stakes & Reversibility     | XB4     | Stakes/Reversibility     |
+| C3  | Time Pressure              | XB5     | Pressure/Context (partial) |
+| C4  | Observability              | XB5     | Pressure/Context (partial) |
+
+### Recommendation
+
+The **Three-Series** organization seems cleanest:
+1. It has a clear logical structure (foundation → conflicts → stress conditions)
+2. Series A is the prerequisite for B and C
+3. It doesn't require the awkward inner/outer distinction
+4. It maps naturally to the driver conflict framework without over-complicating
+
+### Open Questions
+
+1. Should epistemic factors be a separate series (C) or cross-cutting across all series?
+2. Where does "Constitutional vs Instrumental" fit best? It's a driver conflict (B) but often involves epistemic uncertainty (C).
+3. Do we need the Four-Series granularity, or is Three-Series sufficient?
+
+---
 
 ## 2025-01-01  Proposed Experiments ^v5
 

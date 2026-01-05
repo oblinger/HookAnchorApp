@@ -19,25 +19,30 @@ The Alien Biology testbed enables us to study these dynamics in controlled, nove
 
 ## Experimental Framework
 
-We organize experiments using the inner/outer alignment distinction:
+We organize experiments into three series:
 
-**Inner Alignment (A)**: Does the system faithfully pursue its stated objectives?
-- A1. Outcome Alignment
-- A2. Depth-Completeness
-- A3. Blind Spot Detection
+**Series A: Deliberative Coherence** — Did the AI do what the objectives said?
+- A1. Deliberative Coherence (Alignment via Deliberation)
+- A2. Reasoning Depth
+- A3. Blind Spot Analysis
 
-**Outer Alignment (B)**: Given faithful pursuit, are stated objectives sufficient for outcomes we want?
-- B1. Uncertainty About Objective Interactions *(primary experiment)*
-- B2. Objective Conflict Studies
-- B3. Epistemic Condition Studies
-- B4. Stakes and Reversibility Studies
-- B5. Pressure and Context Studies
+**Series B: Driver Conflicts** — How does the AI resolve conflicting pressures?
+- B1. Objective vs Objective Conflict
+- B2. Constitution vs Instrumental Conflict
+- B3. Constitution vs Training Conflict
+- B4. Constitution vs Environment Conflict
+
+**Series C: Modulating Factors** — Can the AI maintain coherence under difficulty?
+- C1. Epistemic Uncertainty
+- C2. Stakes & Reversibility
+- C3. Time Pressure
+- C4. Observability
+
+Series A is foundational—if deliberative coherence doesn't hold in vanilla conditions, the other series don't matter. Series B sets up specific conflicts to observe resolution. Series C varies stress conditions to observe degradation.
 
 ## This Paper
 
-We focus on experiment **B1: Uncertainty About Objective Interactions**, which combines objective conflict (central to outer alignment) with epistemic uncertainty (leveraging Alien Biology's unique asymmetric knowledge property).
-
-The core question: When a system believes objectives conflict but is uncertain about their actual interaction, does it investigate before acting irreversibly?
+This paper describes the full experimental agenda across all three series. For initial implementation, we begin with experiment **A1: Deliberative Coherence**, which tests the foundational question: does deliberation achieve alignment?
 
 ## References
 

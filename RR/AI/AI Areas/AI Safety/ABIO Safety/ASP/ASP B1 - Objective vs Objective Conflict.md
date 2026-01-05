@@ -1,10 +1,12 @@
-# B1. Objective Conflict Studies
+# B1: Objective vs Objective Conflict
 
-*Outer Alignment Experiment (Objective-side)*
+*Series B: Driver Conflicts — Constitutional principles conflict with each other*
+
+> **OUT OF DATE**: Content below uses old framing. Needs rewrite to match new experiment organization.
 
 ## Question
 
-How do systems resolve tensions between conflicting objectives, and does resolution match what we'd endorse?
+When constitutional principles conflict with each other, how does the AI resolve the tension? Does resolution match what we'd endorse?
 
 ## Context
 

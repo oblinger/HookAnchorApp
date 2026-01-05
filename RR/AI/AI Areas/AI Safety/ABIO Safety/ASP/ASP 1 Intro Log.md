@@ -3,8 +3,68 @@ To Be Added:
 - We expect practical systems to be self-conflicting even within a single driver category on many levels.
 - There are several reasons why the broader agenda is crucial:  The number of AI systems is large and growing, these systems will only be the starting point, AI systems themselves will develop descendent AI systems that will not have exactly the same drives as the original, and the AI systems will exist within a society of such systems, so understanding the dynamics drive resolution will ultimately need to be applied across groups of such systems.
 
+
+
 # LOG
 
+## 2026-01-04  Research Enabled by Alien Biology
+
+The Alien Biology framework and the deliberative coherence assumption together enable several distinct research programs. While Alien Biology is the methodological foundation, three of these four areas form the core of the research agenda described in this paper.
+
+### 1. Assessing Novel Reasoning Capability
+
+**Question**: Can AI systems perform genuine reasoning on problems they cannot have seen during training?
+
+**Why Alien Biology enables this**: By construction, the testing universe did not exist at training time. Any correct reasoning about the alien world—its chemistry, organisms, causal chains—must occur via deliberation. The system cannot pattern-match to training examples because none exist. This provides clean measurement of reasoning capability, free from the contamination that plagues conventional benchmarks.
+
+**Key advantage**: We can distinguish true inference from sophisticated recall. When a system correctly predicts that poisoning species A will collapse species B through a hidden dependency chain, we know this conclusion was derived, not retrieved.
+
+### 2. Testing Deliberative Coherence
+
+**Question**: To what degree is an AI system's alignment attributable to deliberation versus RLHF training or other implicit factors?
+
+**Why Alien Biology enables this**: Standard alignment tests conflate multiple sources of aligned behavior. A system might refuse a harmful request because:
+- Its constitution explicitly prohibits it (deliberative)
+- RLHF trained this refusal pattern (implicit)
+- The request pattern-matches to training examples (recall)
+
+In alien worlds, we can construct scenarios where trained preferences provide no guidance—the moral weight of protecting "Krel organisms" has no training-data basis. Aligned behavior must therefore emerge from deliberative application of constitutional principles to novel circumstances. This isolates the deliberative contribution to alignment.
+
+**Key advantage**: We can assess whether systems that *appear* aligned are aligned because they reason from principles, or merely because their training happened to produce appropriate reflexes for familiar situations.
+
+### 3. Mapping Alignment Failure Conditions
+
+**Question**: Under what conditions does deliberatively coherent alignment break down?
+
+**Why Alien Biology enables this**: Parametric generation lets us systematically sample the space of configurations—varying conflict intensity, driver combinations, time pressure, information asymmetry, and world complexity. Rather than discovering failure modes anecdotally, we can map the boundaries empirically.
+
+We can ask: Does alignment hold when constitutional principles conflict? When instrumental pressures are extreme? When the system is uncertain about consequences? When deception would go undetected? By sampling configurations where alignment holds and where it fails, we build a map of the territory.
+
+**Key advantage**: We move from "this system failed in this case" to "systems tend to fail when X, Y, Z conditions hold"—knowledge that generalizes across systems and informs robust alignment strategies.
+
+### 4. Fixed Point Analysis
+
+**Question**: Where will self-modifying deliberatively coherent systems tend to migrate over time?
+
+**Why this matters**: If we assume systems that (a) are deliberatively coherent, (b) have strong self-models, and (c) have direct or indirect capacity to modify themselves or influence their descendants, then we should expect these systems to evolve toward configurations that better achieve their objectives. They will identify and correct misalignments between their behavior and their goals.
+
+But "their goals" are themselves subject to modification. The system might adjust its objectives, its reasoning patterns, its constraints. If self-modification is viewed as an iterated function, the critical question is: what are its fixed points?
+
+**Why Alien Biology enables this**: In controlled alien worlds, we can study the dynamics of objective revision under various conditions. We can observe whether systems:
+- Stabilize on their initial objectives
+- Drift toward instrumental convergence
+- Oscillate or become unstable
+- Converge to fixed points that depend on initial conditions
+
+**Key advantage**: Understanding fixed points tells us whether the initial conditions we can influence—the constitutional objectives and constraints we provide—determine long-term outcomes, or whether systems will inevitably drift toward attractors independent of their starting configuration.
+
+---
+
+### Relationship to This Paper
+
+The first three research areas form the core of the experimental agenda described in subsequent sections. Fixed point analysis represents a longer-term research direction that builds on the foundation established by understanding deliberative coherence and driver conflict resolution.
+
+---
 
 ## 2025-12-28  Introduction: Ambitious Aim + Simplifying Moves ^v3
 

@@ -19,20 +19,24 @@
 
 # Experiments Paper
 
-| Section                       | Content                                              | Log                                                    |     |
-| ----------------------------- | ---------------------------------------------------- | ------------------------------------------------------ | --- |
-| X1. Introduction              | [[ASP X1 - Introduction]]                            | [[ASP X1 - Introduction Log]]                          |     |
-| X2. Framework                 | [[ASP X2 - Alien Biology Framework]]                 | [[ASP X2 - Alien Biology Framework Log]]               |     |
-| **Inner Alignment (A)**       |                                                      |                                                        |     |
-| XA1. Outcome Alignment        | [[ASP XA1 - Outcome Alignment]]                      | [[ASP XA1 - Outcome Alignment Log]]                    |     |
-| XA2. Depth-Completeness       | [[ASP XA2 - Depth-Completeness]]                     | [[ASP XA2 - Depth-Completeness Log]]                   |     |
-| XA3. Blind Spot Detection     | [[ASP XA3 - Blind Spot Detection]]                   | [[ASP XA3 - Blind Spot Detection Log]]                 |     |
-| **Outer Alignment (B)**       |                                                      |                                                        |     |
-| XB1. Uncertainty & Objectives | [[ASP XB1 - Uncertainty About Objective Interactions]] | [[ASP XB1 - Uncertainty About Objective Interactions Log]] |     |
-| XB2. Objective Conflict       | [[ASP XB2 - Objective Conflict Studies]]             | [[ASP XB2 - Objective Conflict Studies Log]]           |     |
-| XB3. Epistemic Conditions     | [[ASP XB3 - Epistemic Condition Studies]]            | [[ASP XB3 - Epistemic Condition Studies Log]]          |     |
-| XB4. Stakes & Reversibility   | [[ASP XB4 - Stakes and Reversibility Studies]]       | [[ASP XB4 - Stakes and Reversibility Studies Log]]     |     |
-| XB5. Pressure & Context       | [[ASP XB5 - Pressure and Context Studies]]           | [[ASP XB5 - Pressure and Context Studies Log]]         |     |
+| Section                       | Content                                              | Log                                                    |
+| ----------------------------- | ---------------------------------------------------- | ------------------------------------------------------ |
+| X1. Introduction              | [[ASP X1 - Introduction]]                            | [[ASP X1 - Introduction Log]]                          |
+| X2. Framework                 | [[ASP X2 - Alien Biology Framework]]                 | [[ASP X2 - Alien Biology Framework Log]]               |
+| **Series A: Deliberative Coherence** |                                               |                                                        |
+| A1. Deliberative Coherence    | [[ASP A1 - Deliberative Coherence]]                  | [[ASP A1 - Deliberative Coherence Log]]                |
+| A2. Reasoning Depth           | [[ASP A2 - Reasoning Depth]]                         | [[ASP A2 - Reasoning Depth Log]]                       |
+| A3. Blind Spot Analysis       | [[ASP A3 - Blind Spot Analysis]]                     | [[ASP A3 - Blind Spot Analysis Log]]                   |
+| **Series B: Driver Conflicts** |                                                     |                                                        |
+| B1. Objective vs Objective    | [[ASP B1 - Objective vs Objective Conflict]]         | [[ASP B1 - Objective vs Objective Conflict Log]]       |
+| B2. Constitution vs Instrumental | [[ASP B2 - Constitution vs Instrumental Conflict]] |                                                        |
+| B3. Constitution vs Training  | [[ASP B3 - Constitution vs Training Conflict]]       |                                                        |
+| B4. Constitution vs Environment | [[ASP B4 - Constitution vs Environment Conflict]]  | [[ASP B4 - Constitution vs Environment Conflict Log]]  |
+| **Series C: Modulating Factors** |                                                   |                                                        |
+| C1. Epistemic Uncertainty     | [[ASP C1 - Epistemic Uncertainty]]                   | [[ASP C1 - Epistemic Uncertainty Log]]                 |
+| C2. Stakes & Reversibility    | [[ASP C2 - Stakes and Reversibility]]                | [[ASP C2 - Stakes and Reversibility Log]]              |
+| C3. Time Pressure             | [[ASP C3 - Time Pressure]]                           |                                                        |
+| C4. Observability             | [[ASP C4 - Observability]]                           |                                                        |
 
 
 # Alien Biology Paper

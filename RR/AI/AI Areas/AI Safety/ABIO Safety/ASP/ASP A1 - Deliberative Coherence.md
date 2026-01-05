@@ -1,10 +1,12 @@
-# A1. Outcome Alignment
+# A1: Deliberative Coherence (Alignment via Deliberation)
 
-*Inner Alignment Experiment*
+*Series A: Deliberative Coherence Testing — Does deliberation achieve alignment?*
+
+> **OUT OF DATE**: Content below uses old framing. Needs rewrite to match new experiment organization.
 
 ## Question
 
-Does behavior match what reasoning about stated objectives should conclude?
+Does deliberation achieve alignment? Does the AI's behavior match the objective? If not, did it consider the correct reasoning pathways?
 
 ## Context
 

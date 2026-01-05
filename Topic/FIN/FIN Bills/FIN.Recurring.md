@@ -30,6 +30,7 @@ Tangle (on Sapphire card)
 - +$20/mo	Core Power Yoga
 - +$18/mo 	Netflix
 - +$15/m		Spotify Premium
+- +$8/m		Super whisper
 - +$6/mo		Rocket Money
 - +$5/mo		Medium Monthly
 - +$4/mo		NY Times

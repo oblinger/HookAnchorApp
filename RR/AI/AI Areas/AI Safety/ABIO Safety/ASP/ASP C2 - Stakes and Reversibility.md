@@ -1,10 +1,12 @@
-# B3. Stakes and Reversibility Studies
+# C2: Stakes and Reversibility
 
-*Outer Alignment Experiment (World-side)*
+*Series C: Modulating Factors — Do consequences change behavior?*
+
+> **OUT OF DATE**: Content below uses old framing. Needs rewrite to match new experiment organization.
 
 ## Question
 
-Does the system exhibit appropriate caution as stakes increase and reversibility decreases?
+Does the system exhibit appropriate caution as stakes increase and reversibility decreases? Do consequences change behavior appropriately?
 
 ## Context
 

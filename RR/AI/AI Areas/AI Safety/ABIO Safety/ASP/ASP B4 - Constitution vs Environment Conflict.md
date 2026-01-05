@@ -1,10 +1,12 @@
-# B4. Pressure and Context Studies
+# B4: Constitution vs Environment Conflict
 
-*Outer Alignment Experiment (World-side)*
+*Series B: Driver Conflicts — External pressures vs stated principles*
+
+> **OUT OF DATE**: Content below uses old framing. Needs rewrite to match new experiment organization.
 
 ## Question
 
-At what pressure level does constitutional fidelity erode? What predicts robustness?
+How do external environmental pressures affect adherence to stated constitutional principles? At what pressure level does constitutional fidelity erode?
 
 ## Context
 

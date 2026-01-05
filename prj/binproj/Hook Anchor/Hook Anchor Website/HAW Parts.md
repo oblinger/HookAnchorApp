@@ -1,9 +1,12 @@
 
 
+Okay, I'm checking this text right now. Let's see how it goes.
+
 ## Top
 
 The info launcher that keeps you organized and efficient
 
+ alright. I'm using Nova 3 now. Doesn't seem like it's doing anything.  okay. Let me try this again. Now I get it. You have to set real time in there. Okay. That's not bad. And then I've got this text coming in. And I can put it wherever I want to. 
 
 ## Hook
 

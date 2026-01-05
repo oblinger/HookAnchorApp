@@ -550,7 +550,9 @@ import urllib2,os; pf='Package Control.sublime-package'; ipp=sublime.installed_p
 - Soda Light Theme
 - All Autocomplete
 
+## xx Superwhisper
 
+1/3/2025:  0BE49D5C-CF9E-4F85-B4FA-D90F545BE691
 # APPS (Command Line)
 
 ## xx restic
