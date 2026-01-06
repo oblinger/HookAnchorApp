@@ -130,25 +130,50 @@ Documentation for spec system and alien naming conventions.
 
 ### .
 
-## [ ] M1.7 - Python Simulator & CLI
+## [x] M1.7 - Python Simulator & CLI
 
 Implement the simulator and `bio` CLI command.
 
-### [ ] Design comprehensive test coverage for simulator
-### [ ] Implement `step()` applying all reactions once
-### [ ] Implement `run(steps)` looping step() for N iterations
-### [ ] Implement `run(until_quiet=...)` for quiescence detection
-### [ ] Return timeline of states
-### [ ] Implement `Bio.run(job)` to execute a job DAT
-### [ ] Create `bio` CLI entry point in pyproject.toml
-### [ ] CLI: registered commands (`fetch`, `expand`, `run`, etc.)
-### [ ] CLI: unrecognized args treated as job specifier → run it
-### [ ] Test: `bio jobs/hardcoded_test` runs job from command line
-### [ ] Test: `bio fetch catalog/scenarios/mutualism` fetches and displays
+**Status**: Complete — Bio singleton with simulator registry, CLI entry point, 339 tests passing.
+
+### [x] Design comprehensive test coverage for simulator (18 tests)
+### [x] Implement `step()` applying all reactions once
+### [x] Implement `run(steps)` looping step() for N iterations
+### [x] Return timeline of states
+### [x] Rename SimpleSimulatorImpl → ReferenceSimulatorImpl
+### [x] Refactor Bio to singleton with instance methods
+### [x] Add simulator registry (register_simulator, create_simulator)
+### [x] Create `bio` CLI entry point in pyproject.toml
+### [x] Test: `bio jobs/hardcoded_test` runs job from command line
 
 ### .
 
-## [ ] M1.8 - Verification
+## [ ] M1.9 - Architecture Cleanup
+
+Improve CLI extensibility and hydration patterns.
+
+### [ ] CLI commands folder pattern
+- Create `commands/` folder for CLI subcommands
+- Main `bio` CLI does argument parsing, dispatches to command modules
+- Each command in separate file: `commands/run.py`, `commands/fetch.py`, etc.
+- Easy to extend without modifying main CLI
+
+### [ ] Entity.hydrate() pattern
+- Add `hydrate(data: dict) -> Self` class method to Entity base class
+- Each biotype class implements its own hydration logic
+- Scenario.hydrate() recursively hydrates chemistry, molecules, reactions
+- Move `_build_chemistry_from_dict` logic into class-based hydration
+- Typed structure (Chemistry, Molecules, Reactions) is simulator-independent
+- Simulators receive fully hydrated typed objects
+
+### [ ] Report command with Excel output
+- `bio report` command creates and opens Excel file
+- Default behavior for report-type specs
+- Timeline data, scores, and verification results in spreadsheet format
+
+### .
+
+## [ ] M1.10 - Verification
 
 Run the hardcoded job from CLI and verify results.
 

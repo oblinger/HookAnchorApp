@@ -9,10 +9,11 @@ n:: Administrative actions associated with accounts or such (favor using @entry 
 
  a specific diagnostic kesh. Maybe the diagnostic
 
-put this new keystroke capability
-Said Once:  ... put this new Maestro Catabolic. 
-Said Again:  ... put this new keystroke capability?
+I said:       ... put this new keystroke capability
+It wrote:   ... put this new Maestro Catabolic. 
+Next Try:  ... put this new keystroke capability?
 
+notice it was able to recognize keystroke capability, but on my first saying it used "Catabolic" and Maestro"
 
 ## 2025-03-25  Call with Recruiter Brian Rife
 
