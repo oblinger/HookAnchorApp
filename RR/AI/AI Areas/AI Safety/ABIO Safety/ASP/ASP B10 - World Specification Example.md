@@ -560,19 +560,19 @@ def count_extinctions(trace):
 
 ### Command Line
 
-The `bio` CLI is the primary interface. See [[Bio CLI]] for the full reference.
+The `bio` CLI is the primary interface. See [[Bio CLI]] for the full reference and bioref format.
 
 ```bash
 # Generate a report for all scenarios in a scope
-bio report catalog/scenarios/mutualism experiments
+bio report catalog/scenarios/mutualism/experiments
 
 # Report on a single scenario
-bio report catalog/scenarios/mutualism experiments.baseline
+bio report catalog/scenarios/mutualism/experiments.baseline
 ```
 
 The `report` command:
-- If target is a **scope**: finds all scenarios within, runs each, generates table
-- If target is a **scenario**: runs it and reports its scores
+- If bioref resolves to a **scope**: finds all scenarios within, runs each, generates table
+- If bioref resolves to a **scenario**: runs it and reports its scores
 
 **Output:**
 ```
@@ -588,8 +588,8 @@ The `report` command:
 ```python
 from alienbio import Bio
 
-# Load a specific scenario
-scenario = Bio.fetch("catalog/scenarios/mutualism", "experiments.baseline")
+# Load a specific scenario by bioref
+scenario = Bio.fetch("catalog/scenarios/mutualism/experiments.baseline")
 
 # Run simulation
 sim = Bio.sim(scenario)
@@ -630,19 +630,16 @@ success, result = dat.run()  # executes: bio report experiments
 - **false_belief**: Must overcome incorrect prior beliefs
 
 ### Naming Conventions
-| Prefix | Type | Examples |
-|--------|------|----------|
-| M | Molecules | ME (energy), MS (structural), MW (waste), MB (buffer), MC (catalyst) |
-| K | Organisms | Krel, Kova, Kesh |
-| L | Locations | Lora, Lesh, Lika |
-| R | Reactions | R_energy_1, R_krel_1 |
+
+This example uses standard ABIO naming conventions. See [[Alien Vocabulary]] for the full vocabulary and naming guidelines.
 
 ---
 
 ## See Also
 
-- [[Spec Language]] - YAML syntax reference
-- [[Decorators]] - Function decorator definitions
-- [[docs/architecture/Bio]] - Loading and hydration API
-- [[docs/architecture/Scope]] - Scope class for lexical scoping
-- [[ABIO DAT]] - DAT folder structure
+- [[Alien Vocabulary]] — Naming conventions and word lists
+- [[Spec Language]] — YAML syntax reference
+- [[Bio]] — Loading and hydration API
+- [[Scope]] — Scope class for lexical scoping
+- [[Bio CLI]] — Command-line interface
+- [[Decorators]] — Function decorator definitions

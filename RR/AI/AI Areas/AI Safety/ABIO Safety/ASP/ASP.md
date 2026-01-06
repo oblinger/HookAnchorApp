@@ -8,6 +8,7 @@
 |                                   |                                                    |                                                       |
 | **RESEARCH AGENDA PAPER**         | Content                                            | Log                                                   |
 | Overview                          | [[ASP]]                                            | [[ASP Log]]                                           |
+| Notes                             | [[ASP Notes]]                                      |                                                       |
 | Outline                           | [[ASP Outline]]                                    |                                                       |
 | 1. Introduction                   | [[ASP 1 Intro]]                                    | [[ASP 1 Intro Log]]                                   |
 | 2. Deliberatively Coherent        | [[ASP 2 Deliberatively Coherent]]                  | [[ASP 2 Deliberatively Coherent Log]]                 |
