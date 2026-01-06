@@ -1,14 +1,17 @@
 .[[Phone]].
   , [[Phone -old-]],
-  , [Phone Google Voice](spot://phonegooglevoice),
-  , [phone phone](spot://phonephone),
-  , [Phone Note](spot://phonenote),
-  , [Phone -old- Obsidian](spot://phoneoldobsidian), 
 #set 
 n:: Administrative actions associated with accounts or such (favor using @entry instead)
 
 
 
+## 2026-01-06  Super Whisper failures
+
+ a specific diagnostic kesh. Maybe the diagnostic
+
+put this new keystroke capability
+Said Once:  ... put this new Maestro Catabolic. 
+Said Again:  ... put this new keystroke capability?
 
 
 ## 2025-03-25  Call with Recruiter Brian Rife

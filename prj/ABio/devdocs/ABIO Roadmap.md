@@ -118,11 +118,23 @@ Build a complete job DAT that defines, runs, and verifies a hardcoded test syste
 
 ### .
 
+## [x] M1.6b - Documentation & Vocabulary
+
+Documentation for spec system and alien naming conventions.
+
+### [x] Create Scope.md architecture doc
+### [x] Create Bio CLI.md for command-line interface
+### [x] Create Alien Vocabulary.md with naming conventions (organisms, regions, molecules, reactions)
+### [x] Define bioref format in Bio.md as authoritative source
+### [x] Fix architecture docs to use Overview instead of Description
+
+### .
+
 ## [ ] M1.7 - Python Simulator & CLI
 
 Implement the simulator and `bio` CLI command.
 
-
+### [ ] Design comprehensive test coverage for simulator
 ### [ ] Implement `step()` applying all reactions once
 ### [ ] Implement `run(steps)` looping step() for N iterations
 ### [ ] Implement `run(until_quiet=...)` for quiescence detection
