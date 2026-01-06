@@ -100,19 +100,21 @@ Implement `alienbio/spec_lang` module with YAML tags, decorators, and Bio class.
 
 ### .
 
-## [ ] M1.6 - Hardcoded Test Job (DAT)
+## [x] M1.6 - Hardcoded Test Job (DAT)
 
 Build a complete job DAT that defines, runs, and verifies a hardcoded test system.
 
-### [ ] Create job DAT structure in `catalog/jobs/hardcoded_test/`
-### [ ] Define molecules by hand in spec: A, B, C, D
-### [ ] Define reactions by hand: A + B → C, C → D
-### [ ] Define fixed rate functions (constant rates) via `!ev` or inline
-### [ ] Define initial state with known concentrations
-### [ ] Add `run:` section with step count and optional quiescence params
-### [ ] Add `verify:` section with assertions on final concentrations
-### [ ] Add `scoring:` section referencing `@scoring` functions
-### [ ] Test: `Bio.fetch("jobs/hardcoded_test")` loads and hydrates correctly
+**Status**: Complete — Job DAT created, Job biotype implemented, 6 tests passing.
+
+### [x] Create job DAT structure in `catalog/jobs/hardcoded_test/`
+### [x] Define molecules by hand in spec: A, B, C, D
+### [x] Define reactions by hand: A + B → C, C → D
+### [x] Define fixed rate functions (constant rates) via `!ev` or inline
+### [x] Define initial state with known concentrations
+### [x] Add `run:` section with step count and optional quiescence params
+### [x] Add `verify:` section with assertions on final concentrations
+### [x] Add `scoring:` section referencing `@scoring` functions
+### [x] Test: `Bio.fetch("jobs/hardcoded_test")` loads and hydrates correctly
 
 ### .
 
