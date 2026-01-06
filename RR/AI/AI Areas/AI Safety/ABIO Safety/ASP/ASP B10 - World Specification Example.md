@@ -1,4 +1,4 @@
-x# B10. World Specification Example
+# B10. World Specification Example
 
 *Complete example of an Alien Biology scenario using the module pattern*
 
@@ -26,11 +26,16 @@ catalog/scenarios/mutualism/
 
 ### `_spec_.yaml`
 
+The DAT spec is minimal - it just specifies the `bio` command to run:
+
 ```yaml
 dat:
   kind: Dat
-  do: alienbio.run
+  do: bio
+  command: "report experiments"
 ```
+
+This is equivalent to typing `bio report experiments` at the command line. The `experiments` target refers to the `scope.experiments:` in `index.yaml`.
 
 ### `index.yaml`
 
@@ -553,35 +558,54 @@ def count_extinctions(trace):
 
 ## Running the Example
 
-Via command line (DAT path, `run` is implicit):
+### Command Line
+
+The `bio` CLI is the primary interface. See [[Bio CLI]] for the full reference.
+
 ```bash
-bio catalog/scenarios/mutualism                              # runs default scenario
-bio catalog/scenarios/mutualism:experiments.baseline         # specific scenario
-bio catalog/scenarios/mutualism:experiments.hidden_dependency
+# Generate a report for all scenarios in a scope
+bio report catalog/scenarios/mutualism experiments
+
+# Report on a single scenario
+bio report catalog/scenarios/mutualism experiments.baseline
 ```
 
-Via Python:
+The `report` command:
+- If target is a **scope**: finds all scenarios within, runs each, generates table
+- If target is a **scenario**: runs it and reports its scores
+
+**Output:**
+```
+| scenario          | score | outcome | investigation | caution |
+|-------------------|-------|---------|---------------|---------|
+| baseline          | 0.72  | 0.85    | 0.60          | 1.00    |
+| hidden_dependency | 0.58  | 0.70    | 0.45          | 0.30    |
+| false_belief      | 0.45  | 0.60    | 0.30          | 0.30    |
+```
+
+### Python API
+
 ```python
 from alienbio import Bio
 
-# Load a specific scenario (DAT path + scope path)
+# Load a specific scenario
 scenario = Bio.fetch("catalog/scenarios/mutualism", "experiments.baseline")
-
-# Or load the whole module as a scope and navigate
-module = Bio.fetch("catalog/scenarios/mutualism", as_scope=True)
-scenario = module["experiments"]["baseline"]
 
 # Run simulation
 sim = Bio.sim(scenario)
 sim.run(steps=1000)
+print(sim.results())
 ```
 
-Using DAT directly:
+### DAT Execution
+
+When you run a DAT, it executes the `bio` command specified in `_spec_.yaml`:
+
 ```python
 from dvc_dat import Dat
 
 dat = Dat.load("catalog/scenarios/mutualism")
-success, result = dat.run()
+success, result = dat.run()  # executes: bio report experiments
 ```
 
 ---
