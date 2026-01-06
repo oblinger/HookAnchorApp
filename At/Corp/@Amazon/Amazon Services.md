@@ -1,4 +1,6 @@
 
 
-### Setting up PRIME
+### Setting up PRIME on Apple TV
+
+
 

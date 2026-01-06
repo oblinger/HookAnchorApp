@@ -122,6 +122,7 @@ Build a complete job DAT that defines, runs, and verifies a hardcoded test syste
 
 Implement the simulator and `bio` CLI command.
 
+
 ### [ ] Implement `step()` applying all reactions once
 ### [ ] Implement `run(steps)` looping step() for N iterations
 ### [ ] Implement `run(until_quiet=...)` for quiescence detection
@@ -561,3 +562,9 @@ Features to consider for future development.
 - Run multiple agents on same scenarios
 - Comparative scoring and analysis
 - Tournament-style evaluation
+
+## [ ] Quiescence Detection
+- `sim.run(quiet=("measure_name", args...), delta=10, span=50)` - run until measure stabilizes
+- Stop when measure changes by less than `delta` over `span` consecutive ticks
+- Requires `timeout` parameter for safety (prevents infinite runs)
+- Use case: "Run until the ecosystem stabilizes, then sample"

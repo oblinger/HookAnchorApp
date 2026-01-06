@@ -64,6 +64,7 @@ $13.99 per month and $9.99 per month what are thsese?
 ### CAP ONE
 - $10/mo		xxx?  GITHUB Copilot - pr
 - $49/mo		!!	Coursera
+- $100/yr		Apple Developer Licence
 - $60/yr		??? Dec, 14th 2024
 - $20/yr		Google Storage renews 2023-05-13
 - $43/yr		Clean Email

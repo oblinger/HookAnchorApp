@@ -976,7 +976,7 @@
 [[Prime\|Sat Mar 18  2023]]  	[[prime#= [[PKM]] =]]  
 [[Pln\|Sat Mar 18  2023]]  	[[Pln#Longer Term]]  
 [[Pln\|Sat Mar 18  2023]]  	[[Pln#Specialty List]]  
-[[FIN.Recurring\|Sat Mar 18  2023]]  	[[FIN.Recurring#CHASE FREEDOM x4654]]  
+[[FIN Recurring\|Sat Mar 18  2023]]  	[[FIN Recurring#CHASE FREEDOM x4654]]  
 [[Now|Sat Mar 18  2023]]  	[[Now#[[Now]] - Short Term Tactical Lists]]  
 [[Now|Sat Mar 18  2023]]  	[[Now#FOLDERS]]  
 [[Pln\|Sat Mar 18  2023]]  	[[Plan#[[Now]] Short Term Tactical Lists]]  

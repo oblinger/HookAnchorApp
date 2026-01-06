@@ -6,7 +6,7 @@
 
 - [[FIN.Budget]]:		
 - [[FIN.Flows]]:
-- [[FIN.Recurring]]:		List of all recurring payments
+- [[FIN Recurring]]:		List of all recurring payments
 - [[FIN Rocket]]:			Used for monthly tracking of transactions  (ALL CARDS)
 - [[FIN Tracking Procedures]]:	Tracking of macro cash flows
 - [[FIN Track Transactions]]:	

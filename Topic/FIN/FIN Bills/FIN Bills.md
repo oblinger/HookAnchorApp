@@ -1,7 +1,7 @@
 .[[FIN Bills]].
   [[FIN Accounts]], , [[PenFed]], [[z old Bills]],
   , ,
-  DELS: [[FIN.Recurring]],[[FIN Recurring]], 
+  DELS: [[FIN Recurring]],[[FIN Recurring]], 
 
 - [[FIN.Tracking]] 
 

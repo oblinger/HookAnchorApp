@@ -2,7 +2,7 @@
   , [FIN.Flows Obsidian](spot://fin.flowsobsidian), 
 
 (See [[FIN.Tracking]])
-- [[FIN Accounts]], [[FIN.Recurring]], 
+- [[FIN Accounts]], [[FIN Recurring]], 
 
 DO & QL INCOME
 	--> Grand Central
