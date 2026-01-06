@@ -148,41 +148,47 @@ Implement the simulator and `bio` CLI command.
 
 ### .
 
-## [ ] M1.9 - Architecture Cleanup
+## [x] M1.9 - Architecture Cleanup
 
 Improve CLI extensibility and hydration patterns.
 
-### [ ] CLI commands folder pattern
+**Status**: Complete — CLI commands folder, Entity.hydrate() pattern, report command.
+
+### [x] CLI commands folder pattern
 - Create `commands/` folder for CLI subcommands
 - Main `bio` CLI does argument parsing, dispatches to command modules
-- Each command in separate file: `commands/run.py`, `commands/fetch.py`, etc.
+- Each command in separate file: `commands/run.py`, `commands/report.py`, etc.
 - Easy to extend without modifying main CLI
+- **Future**: Auto-discover commands by scanning folder; each command file defines `HELP` one-liner that global help aggregates
 
-### [ ] Entity.hydrate() pattern
+### [x] Entity.hydrate() pattern
 - Add `hydrate(data: dict) -> Self` class method to Entity base class
 - Each biotype class implements its own hydration logic
-- Scenario.hydrate() recursively hydrates chemistry, molecules, reactions
+- ChemistryImpl.hydrate() recursively hydrates molecules, reactions
 - Move `_build_chemistry_from_dict` logic into class-based hydration
 - Typed structure (Chemistry, Molecules, Reactions) is simulator-independent
 - Simulators receive fully hydrated typed objects
 
-### [ ] Report command with Excel output
-- `bio report` command creates and opens Excel file
-- Default behavior for report-type specs
-- Timeline data, scores, and verification results in spreadsheet format
+### [x] Report command with CSV output
+- `bio report` command creates and opens CSV report (default command)
+- `bio run` for debug output (prints result dict)
+- Final state, scores, and verification results in report
+- **Future**: Excel output with timeline data, charts
 
 ### .
 
-## [ ] M1.10 - Verification
+## [x] M1.10 - Verification
 
 Run the hardcoded job from CLI and verify results.
 
-### [ ] Run from CLI: `bio jobs/hardcoded_test`
-### [ ] Assert concentrations change as expected (A, B depleted; C, D increased)
-### [ ] Verify `scoring:` functions return expected values
-### [ ] Verify `verify:` assertions pass
-### [ ] CLI output shows pass/fail status and scores
-### [ ] Test: job completes with all verifications passing from CLI
+**Status**: Complete — CLI runs job, shows results, 342 tests passing.
+
+### [x] Run from CLI: `bio src/alienbio/catalog/jobs/hardcoded_test`
+### [x] Assert concentrations change as expected (A, B depleted; C, D increased)
+### [x] Verify `scoring:` functions return expected values
+### [x] Verify `verify:` assertions pass
+### [x] CLI output shows pass/fail status and scores
+### [x] Test: job completes with all verifications passing from CLI
 
 ### .
 
