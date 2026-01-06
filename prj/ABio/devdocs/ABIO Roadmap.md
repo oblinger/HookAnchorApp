@@ -112,34 +112,37 @@ Build a complete job DAT that defines, runs, and verifies a hardcoded test syste
 ### [ ] Add `run:` section with step count and optional quiescence params
 ### [ ] Add `verify:` section with assertions on final concentrations
 ### [ ] Add `scoring:` section referencing `@scoring` functions
-### [ ] Test: `Bio.fetch("jobs.hardcoded_test")` loads and hydrates correctly
+### [ ] Test: `Bio.fetch("jobs/hardcoded_test")` loads and hydrates correctly
 
 ### .
 
-## [ ] M1.7 - Python Simulator v0
+## [ ] M1.7 - Python Simulator & CLI
 
-Implement the simulator that the job will use.
+Implement the simulator and `bio` CLI command.
 
 ### [ ] Implement `step()` applying all reactions once
 ### [ ] Implement `run(steps)` looping step() for N iterations
 ### [ ] Implement `run(until_quiet=...)` for quiescence detection
 ### [ ] Return timeline of states
 ### [ ] Implement `Bio.run(job)` to execute a job DAT
-### [ ] Test: run 10 steps, assert timeline has 11 states (initial + 10)
-### [ ] Test: verify M1.6 job DAT actually runs via `Bio.run()`
+### [ ] Create `bio` CLI entry point in pyproject.toml
+### [ ] CLI: registered commands (`fetch`, `expand`, `run`, etc.)
+### [ ] CLI: unrecognized args treated as job specifier → run it
+### [ ] Test: `bio jobs/hardcoded_test` runs job from command line
+### [ ] Test: `bio fetch catalog/scenarios/mutualism` fetches and displays
 
 ### .
 
 ## [ ] M1.8 - Verification
 
-Run the hardcoded job and verify results.
+Run the hardcoded job from CLI and verify results.
 
-### [ ] Run M1.6 job: `Bio.run(Bio.fetch("jobs.hardcoded_test"))`
+### [ ] Run from CLI: `bio jobs/hardcoded_test`
 ### [ ] Assert concentrations change as expected (A, B depleted; C, D increased)
 ### [ ] Verify `scoring:` functions return expected values
 ### [ ] Verify `verify:` assertions pass
-### [ ] Plot concentration curves over time (optional visualization)
-### [ ] Test: job completes with all verifications passing
+### [ ] CLI output shows pass/fail status and scores
+### [ ] Test: job completes with all verifications passing from CLI
 
 ### .
 
@@ -535,3 +538,24 @@ GPU-accelerated simulator using JAX/XLA compilation.
 ### [ ] Test: all public functions have docstrings, sphinx builds without warnings
 
 ### .
+
+
+# Later
+
+Features to consider for future development.
+
+## [ ] Cloud Storage Integration
+- Add cloud sync for DAT storage (Google Cloud Storage, S3)
+- Implement `Dat.push()` / `Dat.pull()` methods
+- Or integrate with DVC for remote storage
+- Config already has `default_remote` and `remote_prefix` fields
+
+## [ ] Web Dashboard
+- Real-time experiment monitoring
+- Result visualization and comparison
+- Agent performance analytics
+
+## [ ] Multi-agent Experiments
+- Run multiple agents on same scenarios
+- Comparative scoring and analysis
+- Tournament-style evaluation

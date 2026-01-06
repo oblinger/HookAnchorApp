@@ -10,6 +10,16 @@
 - Lipator Lapse - 
 - Ambien - 
 
+- Egg protein, pea protein (gassy) 
+- Fiber
+- Hsa
+- Nurish -- 
+- Aleros dandelion 
+- Ehler danlos syndrome
+- Gabriel Kind (hand)  45 castro
+- seritonin deficiency, orexin check
+- four-20-min-workout pure gym
+
 ## 2025-09-30  Call
 
 - Best chance of getting Ozempic covered by insurance
