@@ -6,7 +6,7 @@
 
    EG:		[[ABIO Photosynthesis]],  [[ABIO CellMetabolism5]],
    REF:		[[ABIO References]], 
-   WP:		[[ABIO Behavior Templates]], [[ABIO Generator]]
+   WP:		[[ABIO Behavior Templates]], [[ABIO Generator]], [[ABIO Scenario Generation]]
    LISTS:	[[ABIO Prompts]], [[ABIO Queries]], [[ABIO Tasks]],
    [[ABIO PRD|PRD]]:	[[ABIO Notes]],
    [[ABIO Legacy]]:	[Browser](hook://abiosys), 
