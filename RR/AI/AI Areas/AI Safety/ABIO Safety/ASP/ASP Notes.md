@@ -326,3 +326,8 @@ This creates a situation parallel to real biological discovery, but with **prova
 This should be explicitly stated in the Alien Biology paper to highlight why alien biology is a valid testbed for studying AI reasoning about genuinely novel domains.
 
 ---
+
+
+## 2026-01-06  Notes on how the evaluator will work
+
+[[ASP Long Prompt Example]] 
