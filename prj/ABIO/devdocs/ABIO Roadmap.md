@@ -152,7 +152,7 @@ Implement the simulator and `bio` CLI command.
 
 Implement the spec evaluation system per [[Spec Evaluation]] specification. Uses Python expression strings (not Expr trees — see [[Expr]] for deferred design).
 
-**Status**: In Progress — Tests written, implementation pending.
+**Status**: In Progress — M1.8a-i complete (tests, placeholders, hydrate, dehydrate, context, eval, safe builtins, function injection, built-in distributions). Remaining: Bio.load integration.
 
 **Reference Docs**: [[Spec Evaluation]], [[Spec Language]]
 
@@ -174,58 +174,62 @@ Create test suite BEFORE implementation. Tests serve as executable specification
 
 See detailed test cases in M1.8a-tests section below.
 
-### [ ] M1.8b - Placeholder Classes
-- [ ] Implement `Evaluable(source: str)` — placeholder for `!_` expressions
-- [ ] Implement `Quoted(source: str)` — placeholder for `!quote` expressions
-- [ ] Implement `Reference(name: str)` — placeholder for `!ref` expressions
-- [ ] All placeholders are simple dataclasses with `source`/`name` attribute
+### [x] M1.8b - Placeholder Classes
+- [x] Implement `Evaluable(source: str)` — placeholder for `!_` expressions
+- [x] Implement `Quoted(source: str)` — placeholder for `!quote` expressions
+- [x] Implement `Reference(name: str)` — placeholder for `!ref` expressions
+- [x] All placeholders are simple dataclasses with `source`/`name` attribute
+- [x] YAML constructors for `!_` and `!quote` tags registered
 
-### [ ] M1.8c - Hydrate Implementation
-- [ ] Implement `Bio.hydrate(data)` — recursive transformation
-- [ ] Type instantiation: dicts with `_type` field → Python class instances
-- [ ] Tag conversion: `!_` → Evaluable, `!quote` → Quoted, `!ref` → Reference
-- [ ] `!include` resolution: read file, insert contents (during hydration)
-- [ ] Recursive descent into dicts and lists
+### [x] M1.8c - Hydrate Implementation
+- [x] Implement `hydrate(data)` — recursive transformation
+- [ ] Type instantiation: dicts with `_type` field → Python class instances (deferred)
+- [x] Tag conversion: `!_` → Evaluable, `!quote` → Quoted, `!ref` → Reference
+- [x] `!include` resolution: read file, insert contents (during hydration)
+- [x] Recursive descent into dicts and lists
+- [x] Legacy tag support: EvTag, RefTag, IncludeTag converted to new placeholders
 
-### [ ] M1.8d - Dehydrate Implementation
-- [ ] Implement `Bio.dehydrate(data)` — reverse of hydrate
-- [ ] Python instances → dicts with `_type` field
-- [ ] Evaluable → `{"!_": source}`, Quoted → `{"!quote": source}`, Reference → `{"!ref": name}`
-- [ ] Round-trip property: `dehydrate(hydrate(x))` ≈ `x`
+### [x] M1.8d - Dehydrate Implementation
+- [x] Implement `dehydrate(data)` — reverse of hydrate
+- [ ] Python instances → dicts with `_type` field (deferred with type instantiation)
+- [x] Evaluable → `{"!_": source}`, Quoted → `{"!quote": source}`, Reference → `{"!ref": name}`
+- [x] Round-trip property: `dehydrate(hydrate(x))` ≈ `x`
 
-### [ ] M1.8e - Context Object
-- [ ] Implement Context class with `rng`, `bindings`, `functions`, `path`
-- [ ] `rng`: seeded numpy RNG for reproducibility
-- [ ] `bindings`: dict of variable name → value
-- [ ] `functions`: dict of registered @function handlers
-- [ ] `path`: list of keys for error messages (e.g., `["scenario", "molecules", "count"]`)
-- [ ] Context nesting: child context can shadow parent bindings
+### [x] M1.8e - Context Object
+- [x] Implement Context class with `rng`, `bindings`, `functions`, `path`
+- [x] `rng`: seeded numpy RNG for reproducibility
+- [x] `bindings`: dict of variable name → value
+- [x] `functions`: dict of registered @function handlers
+- [x] `path`: list of keys for error messages (e.g., `["scenario", "molecules", "count"]`)
+- [x] Context nesting: child context can shadow parent bindings
 
-### [ ] M1.8f - Eval Implementation
-- [ ] Implement `Bio.eval(node, ctx, strict=True)`
-- [ ] Constants (str, int, float, bool, None) → return as-is
-- [ ] Evaluable → Python `eval(source, safe_builtins, namespace)`
-- [ ] Quoted → return `source` string unchanged
-- [ ] Reference → lookup in `ctx.bindings`, error if missing (strict mode)
-- [ ] dict → recursively eval values
-- [ ] list → recursively eval elements
-- [ ] Typed objects → eval their evaluable fields
+### [x] M1.8f - Eval Implementation
+- [x] Implement `eval_node(node, ctx, strict=True)` — in eval.py
+- [x] Constants (str, int, float, bool, None) → return as-is
+- [x] Evaluable → Python `eval(source, safe_builtins, namespace)`
+- [x] Quoted → return `source` string unchanged
+- [x] Reference → lookup in `ctx.bindings`, error if missing (strict mode)
+- [x] dict → recursively eval values
+- [x] list → recursively eval elements
+- [ ] Typed objects → eval their evaluable fields (deferred)
 
-### [ ] M1.8g - @function Decorator
-- [ ] Implement `@function` decorator for registering functions
-- [ ] Auto-inject `ctx` parameter when called from eval
-- [ ] User writes `!_ normal(50, 10)`, evaluator calls `normal(50, 10, ctx=ctx)`
-- [ ] Function registry accessible via `ctx.functions`
+### [x] M1.8g - Function Auto-Injection
+- [x] Auto-inject `ctx` parameter when functions called from eval
+- [x] User writes `!_ normal(50, 10)`, evaluator calls `normal(50, 10, ctx=ctx)`
+- [x] Function registry accessible via `ctx.functions`
+- [ ] Implement `@function` decorator for global registration (deferred)
 
-### [ ] M1.8h - Built-in Functions
-- [ ] Distribution functions: `normal`, `uniform`, `lognormal`, `poisson`, `exponential`
-- [ ] Choice functions: `discrete(weights, *choices)`, `choice(*choices)`
-- [ ] All use `ctx.rng` for reproducibility
+### [x] M1.8h - Built-in Functions
+- [x] Distribution functions: `normal`, `uniform`, `lognormal`, `poisson`, `exponential`
+- [x] Choice functions: `discrete(weights, *choices)`, `choice(*choices)`
+- [x] All use `ctx.rng` for reproducibility
+- [x] Add `DEFAULT_FUNCTIONS` registry with all built-ins
+- [x] Add `make_context()` helper for easy context creation
 
-### [ ] M1.8i - Default Namespace
-- [ ] Define `SAFE_BUILTINS` set: `min`, `max`, `abs`, `round`, `sum`, `len`, etc.
-- [ ] Evaluation namespace = `SAFE_BUILTINS` + `ctx.bindings` + `ctx.functions`
-- [ ] No dangerous builtins (`exec`, `eval`, `import`, `open`, etc.)
+### [x] M1.8i - Default Namespace
+- [x] Define `SAFE_BUILTINS` set: `min`, `max`, `abs`, `round`, `sum`, `len`, etc.
+- [x] Evaluation namespace = `SAFE_BUILTINS` + `ctx.bindings` + `ctx.functions`
+- [x] No dangerous builtins (`exec`, `eval`, `import`, `open`, etc.)
 
 ### [ ] M1.8j - Integration
 - [ ] Wire hydrate/eval into `Bio.load()` flow
