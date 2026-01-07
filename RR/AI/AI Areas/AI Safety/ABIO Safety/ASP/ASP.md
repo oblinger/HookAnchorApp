@@ -7,8 +7,7 @@
 | B10. World and Task Specification | [[ASP B10 - World Specification Example]]          | [[ASP B10 - World Specification Example Log]]         |
 |                                   |                                                    |                                                       |
 | **RESEARCH AGENDA PAPER**         | Content                                            | Log                                                   |
-| Overview                          | [[ASP]]                                            | [[ASP Log]]                                           |
-| Notes                             | [[ASP Notes]]                                      |                                                       |
+| Overview                          | [[ASP]]                                            | [[ASP Log]], [[ASP Notes]]                            |
 | Outline                           | [[ASP Outline]]                                    |                                                       |
 | 1. Introduction                   | [[ASP 1 Intro]]                                    | [[ASP 1 Intro Log]]                                   |
 | 2. Deliberatively Coherent        | [[ASP 2 Deliberatively Coherent]]                  | [[ASP 2 Deliberatively Coherent Log]]                 |
