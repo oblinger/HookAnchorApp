@@ -2932,3 +2932,84 @@ decorator and function decorator We have expressions, And the way that we do eva
 Recursive execution or maybe we just call it evaluation. The eval function is a bit different in that anytime it gets non Explicit structure, it needs to scan it because there could be expressions 
 inside of it. And it returns a copy of the structure. So it's almost like it's a back quote. Structure or maybe that is the way we think about it. When you do evaluation, it is Bash a back quote. The 
 whole structure is back quoted. And then EXPRs are something like a comma that are evaluated. Do you think about this semantics? Are there any issues Is there a better way to do this?
+
+
+
+⏺ This is a solid design. The Lisp backquote analogy is exactly right — structure is implicitly quoted, and Exprs are the "unquote" points. Let me work through the semantics and raise a few design questions:
+
+  Summary of the Three Phases
+
+| Phase        | Input         | Output               | What Happens                               |
+| ------------ | ------------- | -------------------- | ------------------------------------------ |
+| expand       | Raw YAML      | Tree with Expr nodes | !include evaluated, !_ converted to Expr   |
+| macro_expand | Expr tree     | Mostly-constant tree | Traverse, call functions, splice results   |
+| eval         | Expanded tree | Final results        | Run scenarios/reports, execute simulations |
+
+  Key Design Question: 
+  - Can macro_expand and eval merge?
+	  - Both traverse the tree and dispatch on Expr heads. The difference is which functions are available and what they do:
+  - macro_expand time: normal, discrete, choice → sample and return values
+  - eval time: scenario, report → run simulations, collect results
+
+  You could unify them with a single traversal that checks the head's phase annotation:
+
+  @expr_function(phase="expand")  # runs during macro_expand
+  def normal(ctx, mean, std):
+      return ctx.rng.normal(mean, std)
+
+  @expr_macro(phase="eval")  # runs during eval, receives unevaluated structure
+  def scenario(ctx, structure):
+      # structure already macro-expanded
+      return ctx.simulator.run(structure)
+
+  Single traversal, different function sets registered for each phase. This avoids duplicate tree-walking code.
+
+  How Rate Expressions Survive
+
+  The key is that michaelis_menten should be defined as a macro that returns an Expr:
+
+  @expr_macro(phase="expand")
+  def michaelis_menten(ctx, structure):
+      # Don't evaluate — return self as data for the simulator
+      return Expr("michaelis_menten", structure)
+
+  Or simpler: rate expression heads simply aren't registered for the expand phase, so they pass through unchanged as Expr nodes.
+
+  Context Object vs Lexical Scope
+
+  Strongly recommend context object. Reasons:
+  1. Explicit — you can see what's available
+  2. Testable — easy to mock
+  3. No magic — exec with locals injection is fragile
+  4. Composable — nested contexts can shadow/extend parent
+
+  @expr_function(phase="expand")
+  def normal(ctx, mean, std):
+      return ctx.rng.normal(mean, std)
+
+  The context carries: RNG state, variable bindings, simulator handle, current path in tree, etc.
+
+  Decorator Implementation Sketch
+
+  def expr_function(phase="expand"):
+      """Args are evaluated before function is called."""
+      def decorator(fn):
+          fn._expr_kind = "function"
+          fn._expr_phase = phase
+          return fn
+      return decorator
+
+  def expr_macro(phase="expand"):
+      """Function receives raw structure, handles own evaluation."""
+      def decorator(fn):
+          fn._expr_kind = "macro"
+          fn._expr_phase = phase
+          return fn
+      return decorator
+
+  **Open Questions**
+  1. Should there be an explicit "quote" expression? Right now, rate expressions survive by not being registered. An explicit {_: quote, ...} would make this intentional.
+  2. Error handling: When an Expr head isn't found in any phase, is that an error or does it pass through? (I'd say: error during eval, pass-through during expand)
+  3. Multiple macro_expand passes? Some systems need this (e.g., macros that expand to other macros). Do you need it here?
+
+  Should I write this up as an addition to the EXPR doc?
