@@ -4,7 +4,7 @@
 [[Alg2]] 
 
 [[GCP]] 
-
+[Google Voice](hook://GoogleVoicePhone):  (510) 467-0577 associated with wef234@gmail.com account
 
 # INFO
 
@@ -154,26 +154,3 @@ CloudRun
 
 ---
 
-# @Google
-
-This is an auto-generated anchor file for patch '@Google'.
-
-Add your content here.
-
-
----
-
-# @Google
-
-This is an auto-generated anchor file for patch '@Google'.
-
-Add your content here.
-
-
----
-
-# @Google
-
-This is an auto-generated anchor file for patch '@Google'.
-
-Add your content here.
