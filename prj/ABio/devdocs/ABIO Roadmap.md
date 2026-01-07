@@ -152,6 +152,8 @@ Implement the simulator and `bio` CLI command.
 
 Implement the spec evaluation system per [[Spec Evaluation]] specification. Uses Python expression strings (not Expr trees — see [[Expr]] for deferred design).
 
+**Status**: In Progress — Tests written, implementation pending.
+
 **Reference Docs**: [[Spec Evaluation]], [[Spec Language]]
 
 **Design Summary**:
@@ -162,11 +164,13 @@ Implement the spec evaluation system per [[Spec Evaluation]] specification. Uses
 - Hydration = type instantiation + tag→placeholder conversion
 - Context carries `rng`, `bindings`, `functions`, `path`
 
-### [ ] M1.8a - Write Comprehensive Tests First
+### [x] M1.8a - Write Comprehensive Tests First
 
 Create test suite BEFORE implementation. Tests serve as executable specification.
 
-**Test file**: `tests/unit/test_spec_eval.py`
+**Test files**:
+- `tests/unit/test_spec_eval.py` — 125 tests for hydrate/dehydrate/eval (117 skipped)
+- `tests/unit/test_rate_compilation.py` — 45 tests for rate compilation (45 skipped)
 
 See detailed test cases in M1.8a-tests section below.
 
