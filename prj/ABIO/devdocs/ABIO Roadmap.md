@@ -148,6 +148,87 @@ Implement the simulator and `bio` CLI command.
 
 ### .
 
+## [ ] M1.8 - Spec Evaluation Implementation
+
+Implement the Expr evaluation system per [[Spec Evaluation]] specification. This provides the foundation for scenario generation and rate equation evaluation.
+
+**Reference Docs**: [[Expr]], [[Spec Evaluation]]
+
+### [ ] M1.8a - Expr Class
+- [ ] Implement Expr dataclass with `head`, `args`, `kwargs` properties
+- [ ] Implement `Expr.parse(s)` using Python ast module (restricted subset)
+- [ ] Implement `Expr.print()` for Python-style function call format
+- [ ] Implement `__str__`, `__repr__` methods
+- [ ] Test: `Expr.parse(s).print()` round-trips correctly
+- [ ] Test: nested Expr structures serialize/deserialize correctly
+
+### [ ] M1.8b - Hydrate/Dehydrate
+- [ ] Implement `hydrate(data)` - convert YAML/dict with `_` markers to Expr nodes
+- [ ] Handle three input forms: tagged string (`!_`), dict form (`{_: head, ...}`), list form (`[_, head, ...]`)
+- [ ] Implement `dehydrate(data)` - convert Expr nodes back to `_` marker form
+- [ ] Add `Bio.hydrate()` and `Bio.dehydrate()` methods
+- [ ] Test: `dehydrate(hydrate(data))` produces equivalent structure
+- [ ] Test: all three input forms hydrate to same Expr structure
+
+### [ ] M1.8c - Macro Expand and Eval Functions
+- [ ] Implement `macro_expand(node, ctx)` - expand macros only, preserve functions as Expr
+- [ ] Implement `eval(node, ctx, strict=True)` with Lisp-style unified traversal
+- [ ] Implement handler lookup by Expr head
+- [ ] Implement macro dispatch: pass unevaluated args, re-evaluate result
+- [ ] Implement function dispatch: evaluate args first, then call handler
+- [ ] Implement `strict` parameter (error vs pass-through for unknown heads)
+- [ ] Implement recursive traversal for dict and list structures
+- [ ] Add `Bio.macro_expand()` method (for dry-run/debugging)
+- [ ] Add `Bio.eval()` method
+- [ ] Test: macro_expand expands macros but preserves functions as Expr
+- [ ] Test: function args are evaluated before function is called
+- [ ] Test: macro args are NOT evaluated before macro is called
+- [ ] Test: macro result is re-evaluated (handles macro-returning-macro)
+- [ ] Test: strict=False passes through unknown heads as Expr
+
+### [ ] M1.8d - Decorators
+- [ ] Implement `@function` decorator - marks handler as function (eval args first)
+- [ ] Implement `@macro` decorator - marks handler as macro (unevaluated args)
+- [ ] Implement handler registry (register decorated functions by name)
+- [ ] Test: decorated functions are registered and callable via eval
+- [ ] Test: `handler.is_macro` correctly distinguishes macro vs function
+
+### [ ] M1.8e - Context Object
+- [ ] Implement Context class with `rng`, `bindings`, `path` properties
+- [ ] Context.rng is seeded RNG for reproducibility
+- [ ] Context.bindings is dict for `var` lookups
+- [ ] Context.path tracks tree location for error messages
+- [ ] Implement context nesting (child context shadows/extends parent)
+- [ ] Test: seeded RNG produces reproducible results
+- [ ] Test: bindings are accessible via `var` expression
+
+### [ ] M1.8f - Built-in Operations
+- [ ] Implement distribution functions: `normal`, `uniform`, `lognormal`, `poisson`, `exponential`, `discrete`, `choice`
+- [ ] Implement arithmetic: `add`, `mul`, `div`, `sub`, `power`, `neg`, `exp`, `log`, `min`, `max`
+- [ ] Implement comparisons: `gt`, `lt`, `ge`, `le`, `eq`
+- [ ] Implement boolean: `and`, `or`, `not`
+- [ ] Implement `var` for variable lookup, `const` for constants
+- [ ] Implement `if` for conditional evaluation
+- [ ] Test: each distribution samples from correct distribution
+- [ ] Test: arithmetic operations produce correct results
+
+### [ ] M1.8g - Rate Expression Templates
+- [ ] Implement `michaelis_menten(vmax, km)` as macro template
+- [ ] Implement `hill(vmax, k, n)` as macro template
+- [ ] Implement `mass_action(k)` as macro template
+- [ ] Templates return Expr trees (not evaluated values)
+- [ ] Test: template expands to correct Expr structure
+- [ ] Test: expanded template evaluates correctly with runtime bindings
+
+### [ ] M1.8h - Integration
+- [ ] Wire hydrate/dehydrate/eval into existing Bio.load() flow
+- [ ] Rate expressions in reactions survive hydration as Expr nodes
+- [ ] Simulator calls eval(rate, runtime_ctx) when computing rates
+- [ ] Test: job with `!_` rate expressions loads and runs correctly
+- [ ] Test: rate expressions evaluate with correct substrate concentrations
+
+### .
+
 ## [x] M1.9 - Architecture Cleanup
 
 Improve CLI extensibility and hydration patterns.

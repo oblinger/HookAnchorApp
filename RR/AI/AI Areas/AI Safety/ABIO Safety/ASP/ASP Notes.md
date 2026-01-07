@@ -11,7 +11,7 @@ Requirements for the Alien Biology generator to support all experiments (A1-A3, 
 
 ### Distribution Specification Format
 
-See [[ABIO EXPR|EXPR]] for the full expression language specification.
+See [[Expr]] for the full expression language specification.
 
 All parameters can be specified as constants or EXPR expressions:
 - **Constant**: `molecules_per_region: 10`

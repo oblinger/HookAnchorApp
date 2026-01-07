@@ -2,7 +2,7 @@
    [[ABIO Sys|SYS]]:	[[ABIO Roadmap|Roadmap]], [[ABIO Files|Files]], [[ABIO Protocols|Protocols]], [[ABIO Topics|Topics]], [[ABIO Notes|Notes]], 
    TOP:	[[ABIO.]]  [[ABIO Log|Log]], [[AlienBiologyWhitepaper (do not distribute)|Whitepaper]], [[ABIO Results|Results]], [[ABIO Safety]], 
    PARTS: [[ABIO infra|infra]], [[ABIO biology|biology]], [[ABIO execution|execution]]
-   LANG:  [[ABIO EXPR|EXPR]], [[ABIO Scenario Generation|Scenario Generation]]
+   LANG:  [[Expr]], [[Spec Evaluation]], [[ABIO Scenario Generation|Scenario Generation]]
    EXP:	[[ABIO Exp]], 
 
    EG:		[[ABIO Photosynthesis]],  [[ABIO CellMetabolism5]],

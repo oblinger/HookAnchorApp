@@ -4,7 +4,7 @@
 
 A scenario encompasses everything about a simulation environment: chemistry, biology, organisms, regions, relationships, visibility, and the problem specification. This document defines the language for specifying scenario generators.
 
-This specification uses [[ABIO EXPR|EXPR]] for expressing distributions and computed values.
+This specification uses [[Expr]] for expressing distributions and computed values.
 
 ---
 
@@ -22,7 +22,7 @@ A **Scenario Generator** is a specification that produces scenarios by sampling 
 
 ## Value Specification
 
-Any parameter can be specified as a constant or an [[ABIO EXPR|EXPR]] expression.
+Any parameter can be specified as a constant or an [[Expr]] expression.
 
 ### Fixed Value (Constant)
 ```yaml
@@ -32,7 +32,7 @@ name: Alpha
 
 ### Distribution (Expression)
 
-Use the `!_` tag or dict/list form (see [[ABIO EXPR|EXPR]]):
+Use the `!_` tag or dict/list form (see [[Expr]]):
 
 ```yaml
 # Tagged string form
