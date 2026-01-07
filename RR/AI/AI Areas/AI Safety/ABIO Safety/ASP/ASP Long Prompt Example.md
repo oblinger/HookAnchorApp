@@ -3013,3 +3013,52 @@ whole structure is back quoted. And then EXPRs are something like a comma that a
   3. Multiple macro_expand passes? Some systems need this (e.g., macros that expand to other macros). Do you need it here?
 
   Should I write this up as an addition to the EXPR doc?
+
+
+
+> yes. This matches my thinking. Comma, but I wonder if I'm getting too wrapped up. In the simulator is there a natural time when this expression would get compiled. Just
+imagine we were building essentially a version of LISP in Python. And we wanted these things to be expressions. That were closed lexically over their environment And they're
+supposed to be an expression which could get evaluated right there in the case that it was not a macro and it was not part of a macro. It was just you wanted to do a little
+calculation right there instead of just setting a value to be a constant number 23. You might have a formula that computes what the value of this thing is. And so there, you
+would just say, exclamation point underscore and you would put an expression there that gets evaluated. Now this is getting evaluated not even in the simulator. It's just
+getting evaluated at evaluation time. So maybe Macro expansion. Compiles this expression based on its lexical scope. At macro expansion time. Or maybe you just leave it as a
+string until evaluation time. If just this is how it works in normal evaluation. It's just left until be a string, It's not macro expanded. It's just left as a placeholder.
+Until you get to eval. And then it gets evaluated with lexical variable lookup. So that's the way it happens normally. In normal evaluation. And we define its normal
+evaluation in that way. Now in the case of a scenario, there's a bunch of non evaluated forms. And since they're not evaluated, will they stay as a placeholder? Then when you
+create a simulation, there's a very special kind of compilation that occurs. That's really designed to resolve all the variables at simulation instantiation time and get rid
+of those. And treat those as constants. And then the only remaining variables are better be constants available in the evaluator. So maybe we just have two kinds of
+evaluation. Of these expressions. During eval, they are handled by doing the parcel part. Partial parse. That you're talking about here But, actually, I don't need it as a
+partial parts. You're just gonna evaluate it in the context of all the bindings. That's it. What you're gonna do. In the case of the simulator, that's where you're gonna do it
+ the trick. Of doing the partial parts. It's a bit fancy but I wonder if this isn't the best semantics for these What do you think And are we doing overkill in doing it this
+way?
+
+⏺ I think this is the right semantics, and it's not overkill - the two cases genuinely differ:
+
+  Case 1: Normal eval (expression used directly, not preserved by a macro)
+  circle_area: !_ pi * radius * radius
+  At eval time: all bindings available, just do eval(expr_string, bindings). Simple. No tricks.
+
+  Case 2: Rate expressions (preserved by macro, compiled at simulator creation)
+  reaction:
+    rate: !_ Vmax * S / (Km + S)  # preserved as Equation by reaction macro
+  At Bio.sim() time: separate constants (Vmax, Km from spec) from runtime variables (S = molecule concentration). Do AST partial evaluation to bake in constants.
+
+  Why this makes sense:
+  - Normal eval: everything is known, just evaluate
+  - Simulator: constants known at sim creation, but molecule concentrations change every step - genuinely different binding times
+
+  Implementation:
+  class Equation:
+      def __init__(self, source: str):
+          self.source = source
+
+      def eval(self, bindings: dict):
+          """Normal eval - all bindings provided."""
+          return eval(self.source, {"__builtins__": {}}, bindings)
+
+      def compile_for_sim(self, constants: dict, runtime_vars: list[str]):
+          """Simulator compilation - bake in constants, leave runtime vars."""
+          # AST transformation here
+          return CompiledRate(...)
+
+  Two evaluation modes, each matching its use case. Clean semantics.
