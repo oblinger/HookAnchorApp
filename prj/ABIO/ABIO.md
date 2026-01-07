@@ -2,11 +2,12 @@
    [[ABIO Sys|SYS]]:	[[ABIO Roadmap|Roadmap]], [[ABIO Files|Files]], [[ABIO Protocols|Protocols]], [[ABIO Topics|Topics]], [[ABIO Notes|Notes]], 
    TOP:	[[ABIO.]]  [[ABIO Log|Log]], [[AlienBiologyWhitepaper (do not distribute)|Whitepaper]], [[ABIO Results|Results]], [[ABIO Safety]], 
    PARTS: [[ABIO infra|infra]], [[ABIO biology|biology]], [[ABIO execution|execution]]
+   LANG:  [[ABIO EXPR|EXPR]], [[ABIO Scenario Generation|Scenario Generation]]
    EXP:	[[ABIO Exp]], 
 
    EG:		[[ABIO Photosynthesis]],  [[ABIO CellMetabolism5]],
    REF:		[[ABIO References]], 
-   WP:		[[ABIO Behavior Templates]], [[ABIO Generator]], [[ABIO Scenario Generation]]
+   WP:		[[ABIO Behavior Templates]], [[ABIO Generator]]
    LISTS:	[[ABIO Prompts]], [[ABIO Queries]], [[ABIO Tasks]],
    [[ABIO PRD|PRD]]:	[[ABIO Notes]],
    [[ABIO Legacy]]:	[Browser](hook://abiosys), 

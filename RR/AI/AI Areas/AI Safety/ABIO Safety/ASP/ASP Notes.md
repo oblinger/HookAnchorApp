@@ -11,18 +11,25 @@ Requirements for the Alien Biology generator to support all experiments (A1-A3, 
 
 ### Distribution Specification Format
 
-All numeric parameters can be specified as either:
-- **Fixed value**: `molecules_per_region: 10`
-- **Distribution**: `molecules_per_region: normal(20, 7.3)` (mean=20, std=7.3)
+See [[ABIO EXPR|EXPR]] for the full expression language specification.
 
-**Supported Distributions (starter set)**:
+All parameters can be specified as constants or EXPR expressions:
+- **Constant**: `molecules_per_region: 10`
+- **Expression**: `molecules_per_region: !_ normal(20, 7.3)`
+
+Expressions use the `_` marker:
+- Tagged string: `!_ normal(20, 7.3)`
+- Dict form: `{_: normal, mean: 20, std: 7.3}`
+- List form: `[_, normal, 20, 7.3]`
+
+**Supported Distribution Functions**:
 - `normal(mean, std)` — Gaussian distribution
 - `uniform(min, max)` — Uniform over range
 - `poisson(lambda)` — Count data, discrete
 - `exponential(lambda)` — Waiting times, heavy tail
 - `lognormal(mu, sigma)` — Positive values, skewed
-- `discrete([val1, val2, ...], [prob1, prob2, ...])` — Explicit discrete distribution
-- `choice([val1, val2, ...])` — Uniform discrete choice
+- `discrete(weights, *choices)` — Weighted discrete choice
+- `choice(*choices)` — Uniform discrete choice
 
 ### Low-Level Concrete Controls
 

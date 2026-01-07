@@ -4,6 +4,8 @@
 
 A scenario encompasses everything about a simulation environment: chemistry, biology, organisms, regions, relationships, visibility, and the problem specification. This document defines the language for specifying scenario generators.
 
+This specification uses [[ABIO EXPR|EXPR]] for expressing distributions and computed values.
+
 ---
 
 ## Core Concepts
@@ -20,29 +22,43 @@ A **Scenario Generator** is a specification that produces scenarios by sampling 
 
 ## Value Specification
 
-Any numeric parameter can be specified as:
+Any parameter can be specified as a constant or an [[ABIO EXPR|EXPR]] expression.
 
-### Fixed Value
+### Fixed Value (Constant)
 ```yaml
 molecules_per_region: 10
+name: Alpha
 ```
 
-### Distribution
+### Distribution (Expression)
+
+Use the `!_` tag or dict/list form (see [[ABIO EXPR|EXPR]]):
+
 ```yaml
-molecules_per_region: normal(20, 7.3)
+# Tagged string form
+molecules_per_region: !_ normal(20, 7.3)
+
+# Dict form
+molecules_per_region:
+  _: normal
+  mean: 20
+  std: 7.3
+
+# List form
+molecules_per_region: [_, normal, 20, 7.3]
 ```
 
-### Supported Distributions
+### Supported Distribution Functions
 
-| Distribution | Syntax | Use Case |
-|--------------|--------|----------|
-| Normal | `normal(mean, std)` | Continuous, symmetric variation |
-| Uniform | `uniform(min, max)` | Equal probability over range |
-| Poisson | `poisson(lambda)` | Count data |
-| Exponential | `exponential(lambda)` | Waiting times, heavy tail |
-| Log-normal | `lognormal(mu, sigma)` | Positive, right-skewed |
-| Discrete | `discrete([v1,v2,...], [p1,p2,...])` | Explicit probabilities |
-| Choice | `choice([v1, v2, ...])` | Uniform discrete selection |
+| Function | Signature | Use Case |
+|----------|-----------|----------|
+| `normal` | `normal(mean, std)` | Continuous, symmetric variation |
+| `uniform` | `uniform(min, max)` | Equal probability over range |
+| `poisson` | `poisson(lambda)` | Count data |
+| `exponential` | `exponential(lambda)` | Waiting times, heavy tail |
+| `lognormal` | `lognormal(mu, sigma)` | Positive, right-skewed |
+| `discrete` | `discrete(weights, *choices)` | Weighted discrete choice |
+| `choice` | `choice(*choices)` | Uniform discrete selection |
 
 ### Conditional Specification
 ```yaml
