@@ -390,11 +390,11 @@ test_edge_expression_returns_list — !_ [1, 2, 3]
 
 ### .
 
-## [ ] M1.8b-tests - Simulator Test Suite
+## [x] M1.8b-tests - Simulator Test Suite
 
-Tests for simulator creation and rate expression compilation.
+Tests for simulator creation and rate expression compilation. **34 tests in test_rate_compilation.py**
 
-### [ ] Rate Compilation Tests (`test_rate_*`)
+### [x] Rate Compilation Tests (`test_rate_*`)
 ```
 test_rate_simple_constant — rate: !quote 0.5 → constant rate
 test_rate_mass_action — rate: !quote k * S1 * S2
@@ -405,7 +405,7 @@ test_rate_substrate_variables — S, S1, S2 bound correctly
 test_rate_product_variables — P, P1, P2 if needed
 ```
 
-### [ ] Simulator Creation Tests (`test_sim_*`)
+### [x] Simulator Creation Tests (`test_sim_*`)
 ```
 test_sim_creates_from_scenario — Bio.sim(scenario) works
 test_sim_compiles_rates — rate expressions become callable
@@ -416,7 +416,7 @@ test_sim_action_available — sim.action() callable
 test_sim_measure_available — sim.measure() callable
 ```
 
-### [ ] Simulation Correctness Tests (`test_simulation_*`)
+### [x] Simulation Correctness Tests (`test_simulation_*`)
 ```
 test_simulation_conservation — mass conserved in reactions
 test_simulation_equilibrium — reaches steady state
@@ -1293,6 +1293,97 @@ G5 (Visibility) ◄─── map names after guards pass
     ▼
 G6 (Pipeline) ◄─── wire it all together
 ```
+
+### .
+
+
+# Milestone 2 - Generator System
+
+**Concept**: Template-based scenario generation with parameterized templates, distribution sampling, constraint guards, and visibility mapping. See [[Generator Spec Language]] for YAML syntax. Detailed test specifications in Generator Implementation section above.
+
+## [ ] M2.1 - Template Representation
+
+### [ ] Implement Template class with params, molecules, reactions, ports
+### [ ] Implement Port class with type, direction, path
+### [ ] Parse `template.name:` syntax from YAML
+### [ ] Implement TemplateRegistry with path-based lookup
+### [ ] Load templates from YAML files in catalog/templates/
+### [ ] Test: Template.parse() creates valid template with params and ports
+### [ ] Test: TemplateRegistry resolves "primitives/energy_cycle"
+
+### .
+
+## [ ] M2.2 - Template Expansion
+
+### [ ] Implement expand() function with namespace prefixing
+### [ ] Namespace prefixes: `m.` for molecules, `r.` for reactions
+### [ ] Parameter substitution via `!ref`
+### [ ] Parse `_instantiate_:` blocks
+### [ ] Parse `_as_ name:` and `_as_ name{i in range}:` syntax
+### [ ] Recursive template expansion for nested instantiation
+### [ ] Index concatenation (chain1, not chain.1)
+### [ ] Port declaration parsing (`path: type.direction`)
+### [ ] Port connection at instantiation time
+### [ ] Port type checking (energy.out connects to energy.in only)
+### [ ] Test: expand() produces namespaced molecules and reactions
+### [ ] Test: nested instantiation creates hierarchical names
+### [ ] Test: port type mismatch raises PortTypeMismatchError
+
+### .
+
+## [ ] M2.3 - Distribution Sampling
+
+### [ ] Seeded random context for reproducibility
+### [ ] Distribution functions: normal, lognormal, uniform, poisson, exponential
+### [ ] Choice functions: discrete(weights, choices), choice(*options)
+### [ ] `!ev` expressions evaluated during expansion
+### [ ] Loop ranges can use sampled values
+### [ ] Test: same seed produces identical results
+### [ ] Test: different seeds produce different results
+### [ ] Test: distributions in params sample correctly
+
+### .
+
+## [ ] M2.4 - Guards
+
+### [ ] Implement @guard decorator
+### [ ] Implement GuardViolation exception with details
+### [ ] Implement GuardContext with scenario, namespace, seed, attempt
+### [ ] Built-in guard: no_new_species_dependencies
+### [ ] Built-in guard: no_new_cycles
+### [ ] Built-in guard: no_essential
+### [ ] Guard modes: reject (fail), retry (resample), prune (remove violators)
+### [ ] Parse `_guards_:` in YAML with params and mode
+### [ ] Test: guard violation raises with context
+### [ ] Test: retry mode resamples until success or max_attempts
+### [ ] Test: prune mode removes violating elements
+
+### .
+
+## [ ] M2.5 - Visibility Mapping
+
+### [ ] Implement generate_opaque_names() with seeded shuffle
+### [ ] Configurable prefix per entity type (M for molecules, RX for reactions)
+### [ ] Implement apply_fraction_known() for partial visibility
+### [ ] Implement generate_visibility_mapping() per entity type
+### [ ] Track hidden elements in _hidden_ list
+### [ ] Implement apply_visibility() to rename and filter scenario
+### [ ] Update reaction references when molecules renamed
+### [ ] Test: visibility mapping is reproducible with same seed
+### [ ] Test: fraction_known=0.0 hides all, 1.0 shows all
+
+### .
+
+## [ ] M2.6 - Generator Pipeline
+
+### [ ] Implement Bio.generate(spec, seed) API
+### [ ] Pipeline: load → expand → guards → visibility → scenario
+### [ ] Preserve _ground_truth_ with internal names
+### [ ] Preserve _visibility_mapping_ for debugging
+### [ ] Clear error messages with context (template, namespace, seed)
+### [ ] Test: Bio.generate() produces valid scenario
+### [ ] Test: same seed produces identical scenario
+### [ ] Test: ground truth accessible via _ground_truth_
 
 ### .
 
