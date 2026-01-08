@@ -6,6 +6,7 @@
 	My KBD:		[[SYS Keyboard Setup]], [[KBD Shortcuts]], [[KBD Obsidian Keys]], [[KBD Global Keys]], [[KBD Notion]], 
 	Screen:		[[SYS Layout]], 
 	[[OBS]], 
+	[[SYS Hacks]]:	
   [[SYS Dev]] 
   
 [[SYS DoubleKey]] 

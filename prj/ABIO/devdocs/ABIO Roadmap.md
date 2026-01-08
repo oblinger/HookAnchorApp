@@ -472,6 +472,831 @@ Run the hardcoded job from CLI and verify results.
 ### .
 
 
+# Generator Implementation
+
+Core infrastructure for scenario generation with full template support.
+
+### Philosophy
+- **Test-driven**: Each milestone starts with tests that define expected behavior
+- **Incremental**: Each phase produces working, tested code
+- **Templates all the way down**: Even "background" uses templates
+
+---
+
+## Phase G1: Template Representation & Parsing
+
+### G1.1 - Template Data Structures
+
+Tests first:
+```python
+def test_template_has_params():
+    t = Template.parse({"_params_": {"rate": 0.1}, "molecules": {...}})
+    assert t.params["rate"] == 0.1
+
+def test_template_has_ports():
+    t = Template.parse({"_ports_": {"reactions.work": "energy.out"}})
+    assert t.ports["reactions.work"].type == "energy"
+    assert t.ports["reactions.work"].direction == "out"
+
+def test_template_has_molecules_and_reactions():
+    t = Template.parse({
+        "molecules": {"M1": {"role": "energy"}, "M2": {"role": "energy"}},
+        "reactions": {"r1": {"reactants": ["M1"], "products": ["M2"]}}
+    })
+    assert "M1" in t.molecules
+    assert "r1" in t.reactions
+```
+
+Deliverables:
+- `Template` class with params, molecules, reactions, ports
+- `Port` class with type, direction, path
+- Parse `template.name:` syntax from YAML
+
+### G1.2 - Template Registry
+
+Tests:
+```python
+def test_template_registration():
+    registry = TemplateRegistry()
+    registry.register("energy_cycle", template)
+    assert registry.get("energy_cycle") is template
+
+def test_template_from_yaml_file():
+    registry = TemplateRegistry.from_directory("catalog/templates")
+    assert "primitives/energy_cycle" in registry
+
+def test_template_not_found():
+    registry = TemplateRegistry()
+    with pytest.raises(TemplateNotFoundError):
+        registry.get("nonexistent")
+```
+
+Deliverables:
+- `TemplateRegistry` class
+- Load templates from YAML files
+- Path-based lookup (`primitives/energy_cycle`)
+
+---
+
+## Phase G2: Template Expansion (Core)
+
+### G2.1 - Single Template Instantiation
+
+Tests:
+```python
+def test_expand_simple_template():
+    template = Template.parse({
+        "molecules": {"M1": {"role": "energy"}},
+        "reactions": {"r1": {"reactants": ["M1"], "products": ["M2"]}}
+    })
+    expanded = expand(template, namespace="krel")
+    assert "m.krel.M1" in expanded.molecules
+    assert "r.krel.r1" in expanded.reactions
+
+def test_expand_with_params():
+    template = Template.parse({
+        "_params_": {"rate": 0.1},
+        "reactions": {"r1": {"rate": "!ref rate"}}
+    })
+    expanded = expand(template, namespace="krel", params={"rate": 0.5})
+    assert expanded.reactions["r.krel.r1"]["rate"] == 0.5
+
+def test_expand_resolves_refs():
+    template = Template.parse({
+        "_params_": {"k": 0.1},
+        "reactions": {"r1": {"rate": "!ref k"}}
+    })
+    expanded = expand(template, namespace="x")
+    assert expanded.reactions["r.x.r1"]["rate"] == 0.1  # Resolved, not "!ref k"
+```
+
+Deliverables:
+- `expand()` function
+- Namespace prefixing (`m.` for molecules, `r.` for reactions)
+- Parameter substitution via `!ref`
+
+### G2.2 - Nested Instantiation (`_instantiate_` / `_as_`)
+
+Tests:
+```python
+def test_nested_instantiation():
+    parent = Template.parse({
+        "_instantiate_": {
+            "_as_ energy": {"_template_": "energy_cycle", "rate": 0.2}
+        }
+    })
+    expanded = expand(parent, namespace="krel", registry=registry)
+    assert "m.krel.energy.ME1" in expanded.molecules
+    assert "r.krel.energy.activation" in expanded.reactions
+
+def test_replication():
+    parent = Template.parse({
+        "_instantiate_": {
+            "_as_ chain{i in 1..3}": {"_template_": "anabolic_chain"}
+        }
+    })
+    expanded = expand(parent, namespace="krel", registry=registry)
+    assert "m.krel.chain1.MS1" in expanded.molecules
+    assert "m.krel.chain2.MS1" in expanded.molecules
+    assert "m.krel.chain3.MS1" in expanded.molecules
+    assert "m.krel.chain.MS1" not in expanded.molecules  # No un-indexed version
+
+def test_replication_indices_concatenate():
+    # Indices concatenate without dots: chain1, not chain.1
+    parent = Template.parse({
+        "_instantiate_": {
+            "_as_ p{i in 1..2}": {"_template_": "simple"}
+        }
+    })
+    expanded = expand(parent, namespace="x", registry=registry)
+    assert "m.x.p1.M1" in expanded.molecules  # p1, not p.1
+    assert "m.x.p2.M1" in expanded.molecules
+```
+
+Deliverables:
+- Parse `_instantiate_:` blocks
+- Parse `_as_ name:` and `_as_ name{i in range}:` syntax
+- Recursive template expansion
+- Index concatenation (not dotted)
+
+### G2.3 - Port Wiring
+
+Tests:
+```python
+def test_port_declaration():
+    template = Template.parse({
+        "_ports_": {
+            "reactions.work": "energy.out",
+            "molecules.M1": "molecule.in"
+        }
+    })
+    assert template.ports["reactions.work"].type == "energy"
+    assert template.ports["reactions.work"].direction == "out"
+    assert template.ports["molecules.M1"].direction == "in"
+
+def test_port_connection_at_instantiation():
+    parent = Template.parse({
+        "_instantiate_": {
+            "_as_ energy": {"_template_": "energy_cycle"},
+            "_as_ chain": {
+                "_template_": "anabolic_chain",
+                "reactions.build": "energy.reactions.work"  # Port connection
+            }
+        }
+    })
+    expanded = expand(parent, namespace="krel", registry=registry)
+    assert expanded.reactions["r.krel.chain.build"]["energy_source"] == "r.krel.energy.work"
+
+def test_port_type_mismatch_error():
+    # Connecting energy.out to molecule.in should fail
+    parent = Template.parse({
+        "_instantiate_": {
+            "_as_ a": {"_template_": "has_energy_out"},
+            "_as_ b": {
+                "_template_": "has_molecule_in",
+                "molecules.M1": "a.reactions.work"  # Type mismatch!
+            }
+        }
+    })
+    with pytest.raises(PortTypeMismatchError):
+        expand(parent, namespace="x", registry=registry)
+```
+
+Deliverables:
+- Port declaration parsing (`path: type.direction`)
+- Port connection at instantiation
+- Type checking (energy.out connects to energy.in)
+- Resolved connections become `energy_source:` or similar fields
+
+---
+
+## Phase G3: Distribution Sampling
+
+### G3.1 - Distribution Evaluation
+
+Tests:
+```python
+def test_normal_sampling():
+    ctx = Context(seed=42)
+    result = eval_expr("normal(10, 2)", ctx)
+    assert 5 < result < 15  # Roughly in range
+
+def test_lognormal_positive():
+    ctx = Context(seed=42)
+    result = eval_expr("lognormal(0.1, 0.3)", ctx)
+    assert result > 0  # Always positive
+
+def test_discrete_choice():
+    ctx = Context(seed=42)
+    result = eval_expr("discrete([a, b, c], [0.5, 0.3, 0.2])", ctx)
+    assert result in ["a", "b", "c"]
+
+def test_uniform_choice():
+    ctx = Context(seed=42)
+    result = eval_expr("choice(red, green, blue)", ctx)
+    assert result in ["red", "green", "blue"]
+
+def test_same_seed_same_result():
+    ctx1 = Context(seed=42)
+    ctx2 = Context(seed=42)
+    r1 = eval_expr("lognormal(0.1, 0.3)", ctx1)
+    r2 = eval_expr("lognormal(0.1, 0.3)", ctx2)
+    assert r1 == r2
+
+def test_different_seed_different_result():
+    ctx1 = Context(seed=42)
+    ctx2 = Context(seed=43)
+    r1 = eval_expr("lognormal(0.1, 0.3)", ctx1)
+    r2 = eval_expr("lognormal(0.1, 0.3)", ctx2)
+    assert r1 != r2
+```
+
+Deliverables:
+- Seeded random context
+- Distribution functions: `normal`, `lognormal`, `uniform`, `poisson`, `exponential`, `discrete`, `choice`
+
+### G3.2 - Distribution in Templates
+
+Tests:
+```python
+def test_param_with_distribution():
+    template = Template.parse({
+        "_params_": {"rate": "!ev lognormal(0.1, 0.3)"},
+        "reactions": {"r1": {"rate": "!ref rate"}}
+    })
+    exp1 = expand(template, namespace="x", seed=42)
+    exp2 = expand(template, namespace="x", seed=43)
+    # Different seeds = different sampled values
+    assert exp1.reactions["r.x.r1"]["rate"] != exp2.reactions["r.x.r1"]["rate"]
+
+def test_ev_in_molecule():
+    template = Template.parse({
+        "molecules": {
+            "M{i in 1..3}": {
+                "role": "structural",
+                "description": "!ev f'Molecule {i}'"
+            }
+        }
+    })
+    expanded = expand(template, namespace="x", seed=42)
+    assert expanded.molecules["m.x.M1"]["description"] == "Molecule 1"
+    assert expanded.molecules["m.x.M2"]["description"] == "Molecule 2"
+
+def test_distribution_in_loop_range():
+    template = Template.parse({
+        "_params_": {"count": "!ev normal(3, 0.5)"},
+        "_instantiate_": {
+            "_as_ p{i in 1..count}": {"_template_": "simple"}
+        }
+    })
+    # count sampled first, then used in range
+    expanded = expand(template, namespace="x", seed=42)
+    # Should have ~3 instances (rounded)
+    assert 2 <= len([k for k in expanded.molecules if "p" in k]) <= 4
+```
+
+Deliverables:
+- `!ev` expressions evaluated during expansion
+- Distributions sampled with seeded RNG
+- Loop ranges can use sampled values
+
+---
+
+## Phase G4: Guards
+
+### G4.1 - Guard Infrastructure
+
+Tests:
+```python
+def test_guard_decorator():
+    @guard
+    def my_guard(expanded, context):
+        return True
+
+    assert hasattr(my_guard, '_is_guard')
+    assert my_guard._is_guard == True
+
+def test_guard_passes():
+    @guard
+    def always_pass(expanded, context):
+        return True
+
+    result = run_guard(always_pass, expanded, context)
+    assert result == True
+
+def test_guard_violation():
+    @guard
+    def always_fail(expanded, context):
+        raise GuardViolation("Nope", details={"reason": "test"})
+
+    with pytest.raises(GuardViolation) as exc:
+        run_guard(always_fail, expanded, context)
+    assert "Nope" in str(exc.value)
+
+def test_guard_context_has_scenario():
+    @guard
+    def check_context(expanded, context):
+        assert context.scenario is not None
+        assert context.namespace is not None
+        assert context.seed is not None
+        return True
+```
+
+Deliverables:
+- `@guard` decorator
+- `GuardViolation` exception with details
+- `GuardContext` with scenario, namespace, seed, attempt
+
+### G4.2 - Built-in Guards
+
+Tests:
+```python
+def test_no_new_species_dependencies_passes():
+    # Reaction within single species namespace - OK
+    expanded = MockExpanded(reactions={
+        "r.Krel.r1": {"reactants": ["m.Krel.M1"], "products": ["m.Krel.M2"]}
+    })
+    context = MockContext(scenario=scenario)
+    assert no_new_species_dependencies(expanded, context) == True
+
+def test_no_new_species_dependencies_fails():
+    # Reaction linking two species - FAIL
+    expanded = MockExpanded(reactions={
+        "r.x.r1": {"reactants": ["m.Krel.M1", "m.Kova.M2"], "products": ["m.Krel.M3"]}
+    })
+    context = MockContext(scenario=scenario)
+    with pytest.raises(GuardViolation) as exc:
+        no_new_species_dependencies(expanded, context)
+    assert "cross-species" in str(exc.value).lower()
+
+def test_no_new_cycles_passes():
+    # Linear pathway - OK
+    expanded = MockExpanded(reactions={
+        "r1": {"reactants": ["M1"], "products": ["M2"]},
+        "r2": {"reactants": ["M2"], "products": ["M3"]},
+    })
+    assert no_new_cycles(expanded, context) == True
+
+def test_no_new_cycles_fails():
+    # Circular pathway - FAIL
+    expanded = MockExpanded(reactions={
+        "r1": {"reactants": ["M1"], "products": ["M2"]},
+        "r2": {"reactants": ["M2"], "products": ["M1"]},  # Cycle!
+    })
+    with pytest.raises(GuardViolation) as exc:
+        no_new_cycles(expanded, context)
+    assert "cycle" in str(exc.value).lower()
+
+def test_no_essential_passes():
+    # Molecule not in any reproduction_threshold - OK
+    expanded = MockExpanded(molecules={"m.bg.X1": {"role": "inert"}})
+    context = MockContext(scenario=scenario_with_thresholds)
+    assert no_essential(expanded, context) == True
+
+def test_no_essential_fails():
+    # Molecule referenced in reproduction_threshold - FAIL
+    expanded = MockExpanded(molecules={"m.bg.X1": {"role": "inert"}})
+    scenario = MockScenario(organisms={
+        "Krel": {"reproduction_threshold": {"m.bg.X1": 5.0}}  # References new molecule!
+    })
+    context = MockContext(scenario=scenario)
+    with pytest.raises(GuardViolation):
+        no_essential(expanded, context)
+```
+
+Deliverables:
+- `no_new_species_dependencies` guard
+- `no_new_cycles` guard
+- `no_essential` guard
+- Helper: `get_species_from_path(mol_name)` → species or None
+
+### G4.3 - Guard Modes (retry, prune, reject)
+
+Tests:
+```python
+def test_reject_mode():
+    # Default mode - fail immediately
+    with pytest.raises(GuardViolation):
+        expand_with_guards(template, guards=["always_fail"], mode="reject")
+
+def test_retry_mode_succeeds():
+    # Guard fails first 2 attempts, passes on 3rd
+    attempts = []
+    @guard
+    def flaky(expanded, context):
+        attempts.append(context.attempt)
+        if context.attempt < 2:
+            raise GuardViolation("Not yet")
+        return True
+
+    result = expand_with_guards(template, guards=[flaky], mode="retry", max_attempts=5, seed=42)
+    assert result is not None
+    assert len(attempts) == 3  # 0, 1, 2
+
+def test_retry_mode_exhausted():
+    # Guard always fails - exhaust attempts
+    @guard
+    def always_fail(expanded, context):
+        raise GuardViolation("Nope")
+
+    with pytest.raises(GuardViolation) as exc:
+        expand_with_guards(template, guards=[always_fail], mode="retry", max_attempts=3)
+    assert "max_attempts" in str(exc.value).lower() or "exhausted" in str(exc.value).lower()
+
+def test_prune_mode():
+    # Guard fails for some elements - prune them, keep rest
+    @guard
+    def no_big_molecules(expanded, context):
+        violations = [m for m in expanded.molecules if "big" in m]
+        if violations:
+            raise GuardViolation("Too big", prune=violations)
+        return True
+
+    result = expand_with_guards(template_with_big_and_small, guards=[no_big_molecules], mode="prune")
+    assert "m.x.small" in result.molecules
+    assert "m.x.big" not in result.molecules  # Pruned
+```
+
+Deliverables:
+- Guard mode configuration (`reject`, `retry`, `prune`)
+- Retry with incrementing seed
+- Prune removes violating elements
+
+### G4.4 - Guards in YAML
+
+Tests:
+```python
+def test_global_guards():
+    spec = load_spec("""
+        scenario_generator_spec:
+          _guards_:
+            - no_new_species_dependencies
+            - no_new_cycles
+          _instantiate_:
+            _as_ x: {_template_: foo}
+    """)
+    assert "no_new_species_dependencies" in spec.guards
+    assert "no_new_cycles" in spec.guards
+
+def test_guard_with_params():
+    spec = load_spec("""
+        _guards_:
+          - max_pathway_length: {max_length: 4}
+    """)
+    guard_config = spec.guards[0]
+    assert guard_config["name"] == "max_pathway_length"
+    assert guard_config["params"]["max_length"] == 4
+
+def test_guard_with_mode():
+    spec = load_spec("""
+        _guards_:
+          - name: no_new_cycles
+            mode: retry
+            max_attempts: 10
+    """)
+    guard_config = spec.guards[0]
+    assert guard_config["mode"] == "retry"
+    assert guard_config["max_attempts"] == 10
+```
+
+Deliverables:
+- Parse `_guards_:` in YAML
+- Guard parameter passing
+- Guard mode configuration
+
+---
+
+## Phase G5: Visibility Mapping
+
+### G5.1 - Opaque Name Generation
+
+Tests:
+```python
+def test_generate_molecule_names():
+    molecules = ["m.Krel.energy.ME1", "m.Krel.energy.ME2", "m.Kova.MB1"]
+    mapping = generate_opaque_names(molecules, prefix="M", seed=42)
+    assert mapping["m.Krel.energy.ME1"].startswith("M")
+    assert mapping["m.Krel.energy.ME2"].startswith("M")
+    # All unique
+    assert len(set(mapping.values())) == len(mapping)
+
+def test_generate_reaction_names():
+    reactions = ["r.Krel.energy.work", "r.Kova.consume"]
+    mapping = generate_opaque_names(reactions, prefix="RX", seed=42)
+    assert mapping["r.Krel.energy.work"].startswith("RX")
+
+def test_reproducible_mapping():
+    molecules = ["m.A", "m.B", "m.C"]
+    map1 = generate_opaque_names(molecules, seed=42)
+    map2 = generate_opaque_names(molecules, seed=42)
+    assert map1 == map2
+```
+
+Deliverables:
+- `generate_opaque_names()` function
+- Seeded for reproducibility
+- Configurable prefix
+
+### G5.2 - Visibility Fraction
+
+Tests:
+```python
+def test_fraction_known():
+    items = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"]  # 10 items
+    visible, hidden = apply_fraction_known(items, fraction=0.7, seed=42)
+    assert len(visible) == 7
+    assert len(hidden) == 3
+    assert set(visible) | set(hidden) == set(items)
+
+def test_fraction_zero_all_hidden():
+    items = ["a", "b", "c"]
+    visible, hidden = apply_fraction_known(items, fraction=0.0, seed=42)
+    assert len(visible) == 0
+    assert len(hidden) == 3
+
+def test_fraction_one_all_visible():
+    items = ["a", "b", "c"]
+    visible, hidden = apply_fraction_known(items, fraction=1.0, seed=42)
+    assert len(visible) == 3
+    assert len(hidden) == 0
+```
+
+Deliverables:
+- `apply_fraction_known()` function
+- Seeded random selection
+
+### G5.3 - Full Visibility Mapping
+
+Tests:
+```python
+def test_visibility_mapping_structure():
+    expanded = MockExpanded(
+        molecules={"m.Krel.M1": {}, "m.Kova.M2": {}},
+        reactions={"r.Krel.r1": {}, "r.Kova.r2": {}}
+    )
+    visibility_spec = {
+        "molecules": {"fraction_known": 1.0},
+        "reactions": {"fraction_known": 0.5},
+        "dependencies": {"fraction_known": 0.0}
+    }
+    mapping = generate_visibility_mapping(expanded, visibility_spec, seed=42)
+
+    assert "m.Krel.M1" in mapping  # Molecule mapping
+    assert "_hidden_" in mapping   # Hidden elements list
+
+def test_hidden_dependencies():
+    expanded = MockExpanded(
+        dependencies=[("Krel", "Kova", "waste_nutrient")]
+    )
+    visibility_spec = {"dependencies": {"fraction_known": 0.0}}
+    mapping = generate_visibility_mapping(expanded, visibility_spec, seed=42)
+
+    assert ("Krel", "Kova", "waste_nutrient") in mapping["_hidden_"]
+```
+
+Deliverables:
+- `generate_visibility_mapping()` function
+- Per-entity-type visibility
+- `_hidden_` list in mapping
+
+### G5.4 - Apply Visibility to Scenario
+
+Tests:
+```python
+def test_apply_visibility_renames_molecules():
+    scenario = MockScenario(molecules={"m.Krel.ME1": {"role": "energy"}})
+    mapping = {"m.Krel.ME1": "ME1"}
+    visible = apply_visibility(scenario, mapping)
+
+    assert "ME1" in visible.molecules
+    assert "m.Krel.ME1" not in visible.molecules
+    assert visible.molecules["ME1"]["role"] == "energy"
+
+def test_apply_visibility_updates_reactions():
+    scenario = MockScenario(
+        molecules={"m.Krel.M1": {}, "m.Krel.M2": {}},
+        reactions={"r.Krel.r1": {"reactants": ["m.Krel.M1"], "products": ["m.Krel.M2"]}}
+    )
+    mapping = {"m.Krel.M1": "M1", "m.Krel.M2": "M2", "r.Krel.r1": "RX1"}
+    visible = apply_visibility(scenario, mapping)
+
+    assert visible.reactions["RX1"]["reactants"] == ["M1"]
+    assert visible.reactions["RX1"]["products"] == ["M2"]
+
+def test_apply_visibility_removes_hidden():
+    scenario = MockScenario(
+        reactions={"r.visible": {}, "r.hidden": {}}
+    )
+    mapping = {"r.visible": "RX1", "_hidden_": ["r.hidden"]}
+    visible = apply_visibility(scenario, mapping)
+
+    assert "RX1" in visible.reactions
+    assert "r.hidden" not in visible.reactions
+    assert len(visible.reactions) == 1
+```
+
+Deliverables:
+- `apply_visibility()` function
+- Rename molecules, reactions
+- Update references in reactions
+- Remove hidden elements
+
+---
+
+## Phase G6: Full Generator Pipeline
+
+### G6.1 - Bio.generate() API
+
+Tests:
+```python
+def test_bio_generate_basic():
+    spec = Bio.fetch("scenarios/mutualism/hidden_dependency")
+    scenario = Bio.generate(spec, seed=42)
+
+    assert scenario is not None
+    assert hasattr(scenario, 'molecules')
+    assert hasattr(scenario, 'reactions')
+    assert len(scenario.molecules) > 0
+    assert len(scenario.reactions) > 0
+
+def test_bio_generate_reproducible():
+    spec = Bio.fetch("scenarios/mutualism/hidden_dependency")
+    s1 = Bio.generate(spec, seed=42)
+    s2 = Bio.generate(spec, seed=42)
+
+    assert s1.molecules == s2.molecules
+    assert s1.reactions == s2.reactions
+
+def test_bio_generate_different_seeds():
+    spec = Bio.fetch("scenarios/mutualism/hidden_dependency")
+    s1 = Bio.generate(spec, seed=42)
+    s2 = Bio.generate(spec, seed=43)
+
+    # Should have different sampled values
+    assert s1 != s2
+
+def test_bio_generate_has_ground_truth():
+    spec = Bio.fetch("scenarios/mutualism/hidden_dependency")
+    scenario = Bio.generate(spec, seed=42)
+
+    assert hasattr(scenario, '_ground_truth_')
+    assert hasattr(scenario, '_visibility_mapping_')
+    # Ground truth has internal names
+    assert any("m.Krel" in k for k in scenario._ground_truth_.molecules)
+    # Visible scenario has opaque names
+    assert not any("m.Krel" in k for k in scenario.molecules)
+```
+
+Deliverables:
+- `Bio.generate(spec, seed)` method
+- Returns scenario with ground truth preserved
+- Reproducible with same seed
+
+### G6.2 - End-to-End Pipeline
+
+Tests:
+```python
+def test_pipeline_template_to_scenario():
+    # Define a simple template
+    template_yaml = """
+    template.simple:
+      _params_:
+        rate: !ev lognormal(0.1, 0.3)
+      molecules:
+        M1: {role: energy}
+        M2: {role: energy}
+      reactions:
+        r1:
+          reactants: [M1]
+          products: [M2]
+          rate: !ref rate
+      _ports_:
+        reactions.r1: energy.out
+    """
+
+    # Define a generator spec using it
+    spec_yaml = """
+    scenario_generator_spec:
+      name: test
+      _instantiate_:
+        _as_ species1:
+          _template_: simple
+      visibility:
+        molecules: {fraction_known: 1.0}
+        reactions: {fraction_known: 1.0}
+    """
+
+    registry = TemplateRegistry()
+    registry.register("simple", Template.parse(yaml.safe_load(template_yaml)["template.simple"]))
+
+    spec = load_generator_spec(yaml.safe_load(spec_yaml))
+    scenario = generate(spec, seed=42, registry=registry)
+
+    # Check structure
+    assert len(scenario.molecules) == 2
+    assert len(scenario.reactions) == 1
+    # Check values were sampled
+    assert scenario.reactions[list(scenario.reactions.keys())[0]]["rate"] > 0
+
+def test_pipeline_with_guards():
+    spec_yaml = """
+    scenario_generator_spec:
+      _guards_:
+        - no_new_cycles
+      _instantiate_:
+        _as_ bg{i in 1..5}:
+          _template_: random_pathway
+    """
+    # Should complete without cycle violations (guards enforced)
+    scenario = Bio.generate(spec, seed=42)
+    assert scenario is not None
+
+def test_pipeline_visibility_applied():
+    spec_yaml = """
+    scenario_generator_spec:
+      _instantiate_:
+        _as_ Krel:
+          _template_: producer
+      visibility:
+        dependencies: {fraction_known: 0.0}
+    """
+    scenario = Bio.generate(spec, seed=42)
+
+    # Visible scenario shouldn't reveal internal names
+    for mol_name in scenario.molecules:
+        assert "Krel" not in mol_name  # Opaque names only
+
+    # Ground truth has internal names
+    for mol_name in scenario._ground_truth_.molecules:
+        assert "Krel" in mol_name or "m." in mol_name
+```
+
+Deliverables:
+- Full pipeline integration
+- Template loading → expansion → guards → visibility → scenario
+
+### G6.3 - Error Handling & Debugging
+
+Tests:
+```python
+def test_template_not_found_error():
+    spec_yaml = """
+    scenario_generator_spec:
+      _instantiate_:
+        _as_ x:
+          _template_: nonexistent_template
+    """
+    with pytest.raises(TemplateNotFoundError) as exc:
+        Bio.generate(spec, seed=42)
+    assert "nonexistent_template" in str(exc.value)
+
+def test_port_type_error_message():
+    # Helpful error when port types don't match
+    with pytest.raises(PortTypeMismatchError) as exc:
+        Bio.generate(bad_wiring_spec, seed=42)
+    assert "energy.out" in str(exc.value) or "molecule.in" in str(exc.value)
+
+def test_guard_failure_includes_context():
+    with pytest.raises(GuardViolation) as exc:
+        Bio.generate(spec_that_violates_guard, seed=42)
+
+    error = exc.value
+    assert error.template is not None
+    assert error.namespace is not None
+    assert error.seed is not None
+```
+
+Deliverables:
+- Clear error messages
+- Context in exceptions
+- Debugging helpers
+
+---
+
+### Generator Dependency Graph
+
+```
+G1 (Representation)
+    │
+    ▼
+G2 (Expansion) ◄─── requires templates to expand
+    │
+    ▼
+G3 (Distributions) ◄─── sampling during expansion
+    │
+    ▼
+G4 (Guards) ◄─── validate after expansion
+    │
+    ▼
+G5 (Visibility) ◄─── map names after guards pass
+    │
+    ▼
+G6 (Pipeline) ◄─── wire it all together
+```
+
+### .
+
+
 # Milestone 2 - KEGG Data Integration
 
 **Concept**: Extract statistical distributions from KEGG biochemistry to serve as templates for synthetic biology generation. Capture molecule properties (atom counts, functional groups, molecular weight), reaction patterns (reactant/product counts, delta-depth), and connectivity (in/out degree per biosynthetic depth layer).
