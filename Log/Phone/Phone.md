@@ -4,6 +4,50 @@
 n:: Administrative actions associated with accounts or such (favor using @entry instead)
 
 
+  1. Agent Interaction Model: Is it turn-based (agent takes one action, sim advances N steps, repeat) or does the agent have continuous access during simulation?
+  2. Action Budget: Do agents have limited actions? A time budget? Or unlimited actions until termination?
+  3. Measurement vs Action: In B10, measurements like sample_substrate are listed alongside actions like add_feedstock. Should measurements count against the action budget? Are they "free"?
+  4. Simulation Timing: When agent adds feedstock, does the sim pause? Or does the agent operate asynchronously while sim runs?
+  5. LLM Agent Design: For the LLMAgent, what's the format?
+    - Single prompt with briefing + observations → single action?
+    - Or conversational with agent maintaining state across turns?
+    - Which API (Claude, OpenAI, local)?
+  6. Discovery Mechanics: In B10, investigate has cost=3 and probability=0.7. How does this work?
+    - Agent calls investigate → spends 3 time units?
+    - 70% chance of learning the hidden dependency?
+
+
+
+
+## 2026-01-06  To Super Whisper
+
+ I wonder here you have it seems like you're conflating the bio command line command and the CLI class with each other. And the BIO class with each other. I think they're pretty distinct and have distinct functions xr. Probably they should be @rate. In the documentation. My thought is that we should
+have in the documentation A topic. Called AI. Which in my markdown index has to be qualified AI. Since in my vault, I have an unrelated document called bio. But in any case, this is different from this class called bio And my thought is that should also be documented as a standard class is documented.
+AI Just to keep things clean. And then the bio one for command line should actually list the command line commands. Are defined. Which right now there's only one. Which is repr. Which is repr. Which is the report Commands. AI AI
+
+
+
+
+## 2026-01-06  
+Michael,
+We're getting back around to calculating rebounds and assists and turnovers blocks and steals. Jason was telling me that we had notable code from the past with running algorithms for determining many of these things. I'm sure out of the box. Those algorithms won't run today, still, I think his idea of capturing the heuristics in those algorithms is worth doing. He is wanting us to write up the basics of those algorithms so he can look at them and potentially suggest additions or alternatives. Either way I think it's a great starting point for the work that we will do on this.
+
+Since you're the only one still around from those days, I'm hoping that you can do a bit of archaeology work on our code base and find the places where such algorithms exist, give us a reference to them and then also describe in English what what does algorithms were. Let me know if it's gonna take a lot of hours to understand the algorithms, we could probably get some Gemini help in doing that understanding. But I still think you're understanding is gonna be a better one because you're gonna have been the one who is in the discussions at the time that these algorithms were developed. So given the two, I would definitely prefer your analysis rather than it's analysis.
+
+Let me know if this all sounds good, and some estimate for how long you think it'll take you. This is not really a super urgent task. I kind of just wanna have a timeline for it.
+
+--dan
+
+## 2025-09-18  Dad's pills at Airport
+
+650 821 7014   Security checkpoint
+650-821-7014  #0  
+
+sfolostandfound@flysfo.com
+
+I lost a clear ziplock bag with prescription medications in it.
+I was traveling on Breeze Airlines on 9/11
+
 
 ## 2026-01-06  Super Whisper failures
 

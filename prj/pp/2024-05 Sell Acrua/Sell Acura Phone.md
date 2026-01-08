@@ -2,36 +2,6 @@
 n:: Administrative actions associated with accounts or such (favor using @entry instead)
 
 
-## 2026-01-06  To Super Whisper
-
- I wonder here you have it seems like you're conflating the bio command line command and the CLI class with each other. And the BIO class with each other. I think they're pretty distinct and have distinct functions xr. Probably they should be @rate. In the documentation. My thought is that we should
-have in the documentation A topic. Called AI. Which in my markdown index has to be qualified AI. Since in my vault, I have an unrelated document called bio. But in any case, this is different from this class called bio And my thought is that should also be documented as a standard class is documented.
-AI Just to keep things clean. And then the bio one for command line should actually list the command line commands. Are defined. Which right now there's only one. Which is repr. Which is repr. Which is the report Commands. AI AI
-
-
-
-
-## 2026-01-06  
-Michael,
-We're getting back around to calculating rebounds and assists and turnovers blocks and steals. Jason was telling me that we had notable code from the past with running algorithms for determining many of these things. I'm sure out of the box. Those algorithms won't run today, still, I think his idea of capturing the heuristics in those algorithms is worth doing. He is wanting us to write up the basics of those algorithms so he can look at them and potentially suggest additions or alternatives. Either way I think it's a great starting point for the work that we will do on this.
-
-Since you're the only one still around from those days, I'm hoping that you can do a bit of archaeology work on our code base and find the places where such algorithms exist, give us a reference to them and then also describe in English what what does algorithms were. Let me know if it's gonna take a lot of hours to understand the algorithms, we could probably get some Gemini help in doing that understanding. But I still think you're understanding is gonna be a better one because you're gonna have been the one who is in the discussions at the time that these algorithms were developed. So given the two, I would definitely prefer your analysis rather than it's analysis.
-
-Let me know if this all sounds good, and some estimate for how long you think it'll take you. This is not really a super urgent task. I kind of just wanna have a timeline for it.
-
---dan
-
-## 2025-09-18  Dad's pills at Airport
-
-650 821 7014   Security checkpoint
-650-821-7014  #0  
-
-sfolostandfound@flysfo.com
-
-I lost a clear ziplock bag with prescription medications in it.
-I was traveling on Breeze Airlines on 9/11
-
-
 
 
 ## __

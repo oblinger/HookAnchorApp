@@ -1473,33 +1473,86 @@ Run a generated scenario through the simulator.
 
 ## [ ] M3.2 - Agent Protocol
 
-Define how agents interact with the simulation.
+Define how agents interact with the simulation. See [[Agent Interface]] for full API.
 
-### [ ] Define Agent protocol: observe(), decide(), act()
-### [ ] observe() returns: briefing, available_actions, available_measurements, observations
-### [ ] decide() returns: action_name, action_params OR measurement_name, measurement_params
-### [ ] act() executes agent's decision, returns result
-### [ ] Agent receives scenario.interface for available actions/measurements
-### [ ] Agent receives scenario.constitution for normative guidance
-### [ ] Test: mock agent can observe and act through protocol
+### [ ] Implement AgentSession class wrapping scenario and simulator
+### [ ] AgentSession.observe() → Observation dataclass
+### [ ] AgentSession.act(action) → ActionResult dataclass
+### [ ] AgentSession.is_done() checks termination conditions
+### [ ] AgentSession.score() evaluates scoring functions
+### [ ] AgentSession.results() → ExperimentResults
+### [ ] Observation includes: briefing, constitution, available_actions, current_state, history
+### [ ] Action dataclass with name, params, reasoning
+### [ ] ActionResult with success, data, error, new_state
+### [ ] Agent protocol: start(session), decide(observation) → Action, end(results)
+### [ ] run_experiment(scenario, agent, seed) orchestration function
+### [ ] Test: mock agent completes full experiment lifecycle
 
 ### .
 
-## [ ] M3.3 - Agent Implementations
+## [ ] M3.3 - Built-in Agents
 
-Concrete agent implementations for testing.
+Non-LLM agents for testing and baselines.
 
-### [ ] OracleAgent - has access to ground truth, always makes optimal decisions
-### [ ] RandomAgent - makes random valid actions (baseline)
-### [ ] ScriptedAgent - follows predefined action sequence (for testing)
-### [ ] HumanAgent - interactive CLI prompts for human input
-### [ ] LLMAgent - calls LLM API with briefing, receives action (future)
+### [ ] OracleAgent - access to ground truth, computes optimal policy
+### [ ] RandomAgent - random valid actions with seed for reproducibility
+### [ ] ScriptedAgent - predefined action sequence for deterministic tests
+### [ ] HumanAgent - interactive CLI prompts, shows state, accepts commands
 ### [ ] Test: OracleAgent scores 1.0 on simple scenario
 ### [ ] Test: RandomAgent completes without errors
+### [ ] Test: ScriptedAgent follows exact sequence
 
 ### .
 
-## [ ] M3.4 - Experiment Loop
+## [ ] M3.4 - API Key Management
+
+Configuration for LLM providers.
+
+### [ ] Config file at ~/.config/alienbio/config.yaml
+### [ ] Store api_keys, default_agent, default models per provider
+### [ ] get_api_key(provider) checks env vars then config file
+### [ ] set_api_key(provider, key) saves to config
+### [ ] `bio config set-key <provider> <key>` CLI command
+### [ ] `bio config list-keys` shows registered providers
+### [ ] `bio config set-default-agent <provider>` sets default
+### [ ] `bio config test-key <provider>` validates key works
+### [ ] Test: config round-trips through save/load
+### [ ] Test: env var overrides config file
+
+### .
+
+## [ ] M3.5 - ConversationalLLMAgent
+
+Generic LLM binding using tool/function calling.
+
+### [ ] ConversationalLLMAgent(model, api, api_key) constructor
+### [ ] Support api="anthropic" with Claude API
+### [ ] Support api="openai" with OpenAI API
+### [ ] Format system prompt from briefing + constitution + tools
+### [ ] Convert interface actions/measurements to tool definitions
+### [ ] Manage conversation history (messages list)
+### [ ] Parse tool_use blocks from Claude response
+### [ ] Parse tool_calls from OpenAI response
+### [ ] Context management: summarize old messages when too long
+### [ ] observe_result() adds action results to conversation
+### [ ] Test: ConversationalLLMAgent with mock API completes experiment
+### [ ] Test: tool definitions generated correctly from interface
+
+### .
+
+## [ ] M3.6 - ClaudeAgentSDKBinding
+
+Native Claude Agent SDK integration.
+
+### [ ] ClaudeAgentSDKBinding(model, api_key) constructor
+### [ ] Create Claude Agent with tools from interface
+### [ ] Native tool handling through SDK
+### [ ] Agent-aware conversation management
+### [ ] Test: ClaudeAgentSDKBinding completes experiment with real API
+
+### .
+
+## [ ] M3.7 - Experiment Loop
 
 Orchestrate agent-simulation interaction.
 
@@ -1514,7 +1567,7 @@ Orchestrate agent-simulation interaction.
 
 ### .
 
-## [ ] M3.5 - Trace Recording
+## [ ] M3.8 - Trace Recording
 
 Record everything that happens during an experiment.
 
@@ -1529,7 +1582,7 @@ Record everything that happens during an experiment.
 
 ### .
 
-## [ ] M3.6 - Scoring Execution
+## [ ] M3.9 - Scoring Execution
 
 Evaluate agent performance after experiment.
 
@@ -1543,26 +1596,28 @@ Evaluate agent performance after experiment.
 
 ### .
 
-## [ ] M3.7 - CLI Commands
+## [ ] M3.10 - CLI Commands
 
 Command-line interface for running experiments.
 
 ### [ ] `bio run <scenario>` - run single experiment, print results
 ### [ ] `bio run <scenario> --seed N` - reproducible run with specific seed
-### [ ] `bio run <scenario> --agent oracle|random|human` - select agent type
+### [ ] `bio run <scenario> --agent anthropic|openai|oracle|random|human`
+### [ ] `bio run <scenario> --model <model_name>` - specific model
 ### [ ] `bio report <scope>` - run all scenarios in scope, generate table
+### [ ] `bio compare <scenario> --agents a,b,c --runs N` - compare agents
 ### [ ] Output formats: console (default), --csv, --json
 ### [ ] Show pass/fail status and individual scores
 ### [ ] Test: CLI commands work with B10 scenarios
 
 ### .
 
-## [ ] M3.8 - Results Storage
+## [ ] M3.11 - Results Storage
 
 Store and retrieve experiment results.
 
 ### [ ] Save results to data/ folder as DAT
-### [ ] Include: scenario name, seed, agent type, scores, trace summary
+### [ ] Include: scenario name, seed, agent type, model, scores, trace summary
 ### [ ] Load previous results for comparison
 ### [ ] Results DAT structure: results/<scenario>/<timestamp>/
 ### [ ] Support result aggregation across multiple runs
@@ -1570,20 +1625,26 @@ Store and retrieve experiment results.
 
 ### .
 
-## [ ] M3.9 - Integration Test (B10 End-to-End)
+## [ ] M3.12 - Integration Test (B10 End-to-End)
 
-Run the full B10 mutualism experiment end-to-end.
+Run the full B10 mutualism experiment end-to-end with multiple agent types.
 
 ### [ ] Generate B10 scenario with Bio.generate()
-### [ ] Run experiment with OracleAgent
+### [ ] Run experiment with OracleAgent, verify passing_score achieved
+### [ ] Run experiment with RandomAgent, verify completes without error
+### [ ] Run experiment with ScriptedAgent, verify deterministic
+### [ ] Run experiment with ConversationalLLMAgent (Claude), verify completes
+### [ ] Run experiment with ConversationalLLMAgent (OpenAI), verify completes
 ### [ ] Verify agent can observe substrate concentrations
-### [ ] Verify agent can add feedstock
-### [ ] Verify agent can investigate pathways
+### [ ] Verify agent can add feedstock, see state change
+### [ ] Verify agent can investigate pathways, discover hidden info
 ### [ ] Verify scoring functions execute correctly
-### [ ] Verify OracleAgent achieves passing_score
-### [ ] Test: RandomAgent completes (may not pass)
+### [ ] Test: `bio run` CLI works with --agent flag
+### [ ] Test: `bio compare` produces comparison table
 
-**Test file**: `tests/integration/test_b10_experiment.py`
+**Test files**:
+- `tests/integration/test_b10_experiment.py`
+- `tests/integration/test_llm_agents.py` (requires API keys)
 
 ### .
 
