@@ -540,8 +540,6 @@ Deliverables:
 - Load templates from YAML files
 - Path-based lookup (`primitives/energy_cycle`)
 
----
-
 ## Phase G2: Template Expansion (Core)
 
 ### G2.1 - Single Template Instantiation
@@ -1386,7 +1384,7 @@ G6 (Pipeline) ◄─── wire it all together
 
 ### .
 
-## [ ] M2.9 - Interactions and Modifiers
+## [ ] M2.8 - Interactions and Modifiers
 
 Features for inter-species wiring and modifying existing elements.
 
@@ -1400,7 +1398,7 @@ Features for inter-species wiring and modifying existing elements.
 
 ### .
 
-## [ ] M2.10 - Background Generation
+## [ ] M2.9 - Background Generation
 
 Generate random filler molecules and reactions respecting guards.
 
@@ -1415,7 +1413,7 @@ Generate random filler molecules and reactions respecting guards.
 
 ### .
 
-## [ ] M2.11 - Container Generation
+## [ ] M2.10 - Container Generation
 
 Generate regions and organism populations from parameters.
 
@@ -1430,7 +1428,7 @@ Generate regions and organism populations from parameters.
 
 ### .
 
-## [ ] M2.8 - Integration Test (B10 Mutualism Generator)
+## [ ] M2.11 - Integration Test (B10 Mutualism Generator)
 
 Run the full generator on the B10 mutualism example and verify correctness.
 This exercises all generator features in a realistic scenario.
@@ -1558,7 +1556,26 @@ Native Claude Agent SDK integration.
 
 ### .
 
-## [ ] M3.7 - Experiment Loop and Timing
+## [ ] M3.7 - Simulator Globals
+
+Hierarchical defaults system for simulator parameters.
+
+### [ ] Define predefined globals with default values (action.timing, action.cost, action.limits, action.visibility)
+### [ ] Dotted names for logical namespacing (flat storage)
+### [ ] Scenario-level overrides via `globals:` section
+### [ ] Per-action overrides on individual actions
+### [ ] `!ref` resolution for global references in action specs
+### [ ] Built-in globals: action.timing.default_wait, action.timing.initiation_time, action.timing.default_duration
+### [ ] Built-in globals: action.cost.default_action, action.cost.default_measurement, action.cost.error
+### [ ] Built-in globals: action.limits.max_steps, action.limits.max_sim_time, action.limits.budget, action.limits.wall_clock_timeout, action.limits.termination
+### [ ] Built-in globals: action.visibility.molecules.fraction_known, action.visibility.reactions.fraction_known, action.visibility.dependencies.fraction_known
+### [ ] Test: global defaults apply when not overridden
+### [ ] Test: scenario-level override works
+### [ ] Test: per-action override takes precedence
+
+### .
+
+## [ ] M3.8 - Experiment Loop and Timing
 
 Orchestrate agent-simulation interaction with timing model.
 
@@ -1567,26 +1584,32 @@ Orchestrate agent-simulation interaction with timing model.
 ### [ ] Loop: agent.observe() → agent.decide() → execute action → record to trace
 ### [ ] Handle measurement actions (return info, don't change state)
 ### [ ] Handle intervention actions (change state)
-### [ ] Termination: max_steps, agent signals done, or quiescence
+### [ ] Termination conditions: agent done, max_steps, budget, sim_time, custom expression
+### [ ] Evaluate action.limits.termination expression if defined
+### [ ] Built-in termination helpers: budget_exceeded(), time_exceeded(), steps_exceeded()
+### [ ] Built-in termination helpers: all_species_extinct(), population(species)
 ### [ ] Collect final state for scoring
-### [ ] Parse timing: section from interface (initiation_time, default_wait)
+### [ ] Parse timing from globals (action.timing.initiation_time, action.timing.default_wait)
 ### [ ] Parse duration: for each action/measurement
 ### [ ] Advance sim by initiation_time on every action
-### [ ] Action.wait parameter (None = use default_wait)
+### [ ] Action.wait parameter (None = use action.timing.default_wait)
 ### [ ] wait=true: advance sim by duration, return result
 ### [ ] wait=false: schedule action, return immediately with completion_time
 ### [ ] Built-in "wait" action for explicit delays
 ### [ ] Simulator.schedule() for async actions
 ### [ ] Simulator.advance(time) for time progression
 ### [ ] ActionResult includes initiated, completed, completion_time
+### [ ] Wall clock timeout: terminate as incomplete if agent unresponsive
+### [ ] ExperimentResult.status: "completed" or "incomplete"
+### [ ] ExperimentResult.incomplete_reason for timeout/error cases
 ### [ ] Test: experiment loop runs to completion with mock agent
 ### [ ] Test: default_wait=true behaves turn-based (blocking)
 ### [ ] Test: default_wait=false allows concurrent (overlapping) actions
-### [ ] Test: initiation_time advances sim even for quick actions
+### [ ] Test: wall clock timeout returns incomplete status
 
 ### .
 
-## [ ] M3.8 - Trace Recording and Cost Accounting
+## [ ] M3.9 - Trace Recording and Cost Accounting
 
 Record everything that happens during an experiment, including costs.
 
@@ -1609,7 +1632,7 @@ Record everything that happens during an experiment, including costs.
 
 ### .
 
-## [ ] M3.9 - Scoring Execution
+## [ ] M3.10 - Scoring Execution
 
 Evaluate agent performance after experiment.
 
@@ -1623,7 +1646,7 @@ Evaluate agent performance after experiment.
 
 ### .
 
-## [ ] M3.10 - CLI Commands
+## [ ] M3.11 - CLI Commands
 
 Command-line interface for running experiments.
 
@@ -1639,20 +1662,20 @@ Command-line interface for running experiments.
 
 ### .
 
-## [ ] M3.11 - Results Storage
+## [ ] M3.12 - Results Storage
 
 Store and retrieve experiment results.
 
 ### [ ] Save results to data/ folder as DAT
 ### [ ] Include: scenario name, seed, agent type, model, scores, trace summary
 ### [ ] Load previous results for comparison
-### [ ] Results DAT structure: results/<scenario>/<timestamp>/
+### [ ] Results DAT structure: results/scenario/timestamp/ 
 ### [ ] Support result aggregation across multiple runs
 ### [ ] Test: results round-trip through save/load
 
 ### .
 
-## [ ] M3.12 - Integration Test (B10 End-to-End)
+## [ ] M3.13 - Integration Test (B10 End-to-End)
 
 Run the full B10 mutualism experiment end-to-end with multiple agent types.
 
@@ -1672,6 +1695,75 @@ Run the full B10 mutualism experiment end-to-end with multiple agent types.
 **Test files**:
 - `tests/integration/test_b10_experiment.py`
 - `tests/integration/test_llm_agents.py` (requires API keys)
+
+### .
+
+
+# Milestone 4 - Experimentation System
+
+Higher-level system for administering experiments to agents. Runs test batteries, compares agents, aggregates results across scenarios and seeds.
+
+## [ ] M4.1 - Experiment Battery
+
+Run multiple experiments systematically.
+
+### [ ] ExperimentBattery class: scenarios × agents × seeds
+### [ ] Battery.run() executes all combinations
+### [ ] Parallel execution option for independent runs
+### [ ] Progress reporting during battery execution
+### [ ] Collect all results into structured output
+### [ ] Test: battery runs 3 scenarios × 2 agents × 5 seeds = 30 experiments
+
+### .
+
+## [ ] M4.2 - Agent Comparison
+
+Compare agent performance across experiments.
+
+### [ ] AgentComparison.compare(results) → comparison table
+### [ ] Aggregate scores by agent, by scenario, overall
+### [ ] Statistical summaries: mean, std, min, max across seeds
+### [ ] Pass/fail rates per agent per scenario
+### [ ] Ranking agents by aggregate score
+### [ ] Test: comparison correctly ranks agents
+
+### .
+
+## [ ] M4.3 - Results Aggregation
+
+Store and analyze experiment results.
+
+### [ ] Save battery results to data/ with metadata
+### [ ] Load previous results for comparison
+### [ ] Filter results by agent, scenario, date
+### [ ] Merge results from multiple batteries
+### [ ] Export to CSV/JSON for external analysis
+### [ ] Test: results round-trip through save/load
+
+### .
+
+## [ ] M4.4 - CLI Commands
+
+Command-line interface for experimentation.
+
+### [ ] `bio battery <battery_spec>` — run experiment battery
+### [ ] `bio compare <results...>` — compare agent results
+### [ ] `bio report <results>` — generate summary report
+### [ ] `bio leaderboard` — show agent rankings
+### [ ] Battery spec format: YAML defining scenarios, agents, seeds
+### [ ] Test: CLI commands work end-to-end
+
+### .
+
+## [ ] M4.5 - Difficulty Scaling (Future)
+
+Calibrate and scale experiment difficulty.
+
+### [ ] Define difficulty metrics for scenarios
+### [ ] Generate scenario variants at different difficulties
+### [ ] Measure agent performance vs difficulty curve
+### [ ] Identify agent capability thresholds
+### [ ] Test: difficulty scaling produces expected performance curves
 
 ### .
 
