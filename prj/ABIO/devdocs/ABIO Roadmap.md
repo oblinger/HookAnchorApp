@@ -148,17 +148,18 @@ Implement the simulator and `bio` CLI command.
 
 ### .
 
-## [ ] M1.8 - Spec Evaluation Implementation
+## [x] M1.8 - Spec Evaluation Implementation
 
 Implement the spec evaluation system per [[Spec Evaluation]] specification. Uses Python expression strings (not Expr trees — see [[Expr]] for deferred design).
 
-**Status**: In Progress — M1.8a-i complete (tests, placeholders, hydrate, dehydrate, context, eval, safe builtins, function injection, built-in distributions). Remaining: Bio.load integration.
+**Status**: Complete — All subtasks done. Tag semantics updated: `!_` preserves expressions (Quoted), `!ev` evaluates at instantiation (Evaluable).
 
 **Reference Docs**: [[Spec Evaluation]], [[Spec Language]]
 
 **Design Summary**:
-- `!_` tag → evaluate Python expression immediately
-- `!quote` tag → preserve expression unchanged (for later compilation)
+- `!_` tag → preserve expression unchanged (Quoted) — for rate equations, lambdas
+- `!ev` tag → evaluate Python expression at instantiation (Evaluable) — for computed values
+- `!quote` tag → alias for `!_` (preserve expression)
 - `!ref` tag → lookup named value from bindings
 - `!include` tag → read file contents (resolved during hydration)
 - Hydration = type instantiation + tag→placeholder conversion
@@ -175,16 +176,16 @@ Create test suite BEFORE implementation. Tests serve as executable specification
 See detailed test cases in M1.8a-tests section below.
 
 ### [x] M1.8b - Placeholder Classes
-- [x] Implement `Evaluable(source: str)` — placeholder for `!_` expressions
-- [x] Implement `Quoted(source: str)` — placeholder for `!quote` expressions
+- [x] Implement `Evaluable(source: str)` — placeholder for `!ev` expressions
+- [x] Implement `Quoted(source: str)` — placeholder for `!_` and `!quote` expressions
 - [x] Implement `Reference(name: str)` — placeholder for `!ref` expressions
 - [x] All placeholders are simple dataclasses with `source`/`name` attribute
-- [x] YAML constructors for `!_` and `!quote` tags registered
+- [x] YAML constructors for `!_`, `!quote`, and `!ev` tags registered
 
 ### [x] M1.8c - Hydrate Implementation
 - [x] Implement `hydrate(data)` — recursive transformation
 - [ ] Type instantiation: dicts with `_type` field → Python class instances (deferred)
-- [x] Tag conversion: `!_` → Evaluable, `!quote` → Quoted, `!ref` → Reference
+- [x] Tag conversion: `!_` → Quoted, `!ev` → Evaluable, `!ref` → Reference
 - [x] `!include` resolution: read file, insert contents (during hydration)
 - [x] Recursive descent into dicts and lists
 - [x] Legacy tag support: EvTag, RefTag, IncludeTag converted to new placeholders
@@ -192,7 +193,7 @@ See detailed test cases in M1.8a-tests section below.
 ### [x] M1.8d - Dehydrate Implementation
 - [x] Implement `dehydrate(data)` — reverse of hydrate
 - [ ] Python instances → dicts with `_type` field (deferred with type instantiation)
-- [x] Evaluable → `{"!_": source}`, Quoted → `{"!quote": source}`, Reference → `{"!ref": name}`
+- [x] Evaluable → `{"!ev": source}`, Quoted → `{"!_": source}`, Reference → `{"!ref": name}`
 - [x] Round-trip property: `dehydrate(hydrate(x))` ≈ `x`
 
 ### [x] M1.8e - Context Object
@@ -204,18 +205,18 @@ See detailed test cases in M1.8a-tests section below.
 - [x] Context nesting: child context can shadow parent bindings
 
 ### [x] M1.8f - Eval Implementation
-- [x] Implement `eval_node(node, ctx, strict=True)` — in eval.py
+- [x] Implement `eval_node(node, ctx)` — in eval.py
 - [x] Constants (str, int, float, bool, None) → return as-is
-- [x] Evaluable → Python `eval(source, safe_builtins, namespace)`
-- [x] Quoted → return `source` string unchanged
-- [x] Reference → lookup in `ctx.bindings`, error if missing (strict mode)
+- [x] Evaluable (`!ev`) → Python `eval(source, safe_builtins, namespace)`
+- [x] Quoted (`!_`) → return `source` string unchanged
+- [x] Reference (`!ref`) → lookup in `ctx.bindings`, error if missing
 - [x] dict → recursively eval values
 - [x] list → recursively eval elements
 - [ ] Typed objects → eval their evaluable fields (deferred)
 
 ### [x] M1.8g - Function Auto-Injection
 - [x] Auto-inject `ctx` parameter when functions called from eval
-- [x] User writes `!_ normal(50, 10)`, evaluator calls `normal(50, 10, ctx=ctx)`
+- [x] User writes `!ev normal(50, 10)`, evaluator calls `normal(50, 10, ctx=ctx)`
 - [x] Function registry accessible via `ctx.functions`
 - [ ] Implement `@function` decorator for global registration (deferred)
 
@@ -231,11 +232,12 @@ See detailed test cases in M1.8a-tests section below.
 - [x] Evaluation namespace = `SAFE_BUILTINS` + `ctx.bindings` + `ctx.functions`
 - [x] No dangerous builtins (`exec`, `eval`, `import`, `open`, etc.)
 
-### [ ] M1.8j - Integration
-- [ ] Wire hydrate/eval into `Bio.load()` flow
-- [ ] `Bio.load()` returns hydrated but unevaluated spec
-- [ ] `Bio.eval()` called separately (allows multiple instantiations)
-- [ ] Rate expressions (`!quote`) survive through to Scenario object
+### [x] M1.8j - Integration
+- [x] Wire hydrate/eval into `Bio.load()` flow
+- [x] `Bio.load_spec()` returns hydrated but unevaluated spec
+- [x] `Bio.eval_spec()` called separately (allows multiple instantiations)
+- [x] Rate expressions (`!_` / Quoted) survive through to Scenario object
+- [x] `run.py` calls `eval_node()` to evaluate scenario before simulation
 
 ### .
 
