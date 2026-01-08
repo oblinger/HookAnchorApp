@@ -1,7 +1,5 @@
 
 
-Okay, I'm checking this text right now. Let's see how it goes.
-
 ## Top
 
 The info launcher that keeps you organized and efficient
