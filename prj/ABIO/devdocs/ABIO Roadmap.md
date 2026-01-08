@@ -1452,9 +1452,9 @@ This exercises all generator features in a realistic scenario.
 
 ### .
 
-# Milestone 3 - End-to-End Experiment System
+# Milestone 3 - Scenario Execution
 
-**Concept**: Run complete experiments from the command line. `bio run <experiment>` loads a scenario, wires up an agent, executes the experiment loop, and reports results. This is the minimum viable system for running AI safety experiments.
+**Concept**: Run a single scenario with an agent from the command line. `bio run <scenario>` loads the scenario, wires up an agent, executes the experiment loop, and reports results. This is the minimum viable system for running individual AI safety experiments.
 
 ## [ ] M3.1 - Scenario Execution
 
