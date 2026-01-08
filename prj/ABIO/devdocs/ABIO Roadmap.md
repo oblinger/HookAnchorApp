@@ -241,11 +241,11 @@ See detailed test cases in M1.8a-tests section below.
 
 ### .
 
-## [ ] M1.8a-tests - Spec Evaluation Test Suite
+## [x] M1.8a-tests - Spec Evaluation Test Suite
 
-Comprehensive tests for spec evaluation. **Create these BEFORE implementation.**
+Comprehensive tests for spec evaluation. **149 tests implemented.**
 
-### [ ] Hydration Tests (`test_hydrate_*`)
+### [x] Hydration Tests (`test_hydrate_*`)
 ```
 test_hydrate_constant_passthrough — plain values unchanged
 test_hydrate_nested_dicts — recursive into dicts
@@ -262,7 +262,7 @@ test_hydrate_nested_types — types inside types
 test_hydrate_mixed — types, tags, and constants together
 ```
 
-### [ ] Dehydration Tests (`test_dehydrate_*`)
+### [x] Dehydration Tests (`test_dehydrate_*`)
 ```
 test_dehydrate_evaluable — Evaluable → {"!_": source}
 test_dehydrate_quoted — Quoted → {"!quote": source}
@@ -273,7 +273,7 @@ test_dehydrate_roundtrip — dehydrate(hydrate(x)) ≈ x
 test_dehydrate_roundtrip_complex — complex nested structure
 ```
 
-### [ ] Eval Basic Tests (`test_eval_*`)
+### [x] Eval Basic Tests (`test_eval_*`)
 ```
 test_eval_constant_int — 42 → 42
 test_eval_constant_float — 3.14 → 3.14
@@ -285,7 +285,7 @@ test_eval_constant_list — plain list unchanged
 test_eval_nested_constants — nested dicts/lists unchanged
 ```
 
-### [ ] Eval Expression Tests (`test_eval_expr_*`)
+### [x] Eval Expression Tests (`test_eval_expr_*`)
 ```
 test_eval_expr_arithmetic — !_ 2 + 3 → 5
 test_eval_expr_multiply — !_ 6 * 7 → 42
@@ -301,7 +301,7 @@ test_eval_expr_uses_bindings — variables from ctx.bindings
 test_eval_expr_binding_override — child binding shadows parent
 ```
 
-### [ ] Eval Quote Tests (`test_eval_quote_*`)
+### [x] Eval Quote Tests (`test_eval_quote_*`)
 ```
 test_eval_quote_simple — !quote k * S → "k * S"
 test_eval_quote_complex — !quote Vmax * S / (Km + S) → preserved
@@ -310,7 +310,7 @@ test_eval_quote_in_dict — quote inside dict structure
 test_eval_quote_in_list — quote inside list
 ```
 
-### [ ] Eval Reference Tests (`test_eval_ref_*`)
+### [x] Eval Reference Tests (`test_eval_ref_*`)
 ```
 test_eval_ref_simple — !ref foo resolves to ctx.bindings["foo"]
 test_eval_ref_nested_value — ref to dict, get whole dict
@@ -319,7 +319,7 @@ test_eval_ref_missing_nonstrict — returns Reference in non-strict
 test_eval_ref_in_expression — !_ x + !ref offset (if supported)
 ```
 
-### [ ] Function Tests (`test_function_*`)
+### [x] Function Tests (`test_function_*`)
 ```
 test_function_decorator_registers — @function adds to registry
 test_function_ctx_injection — ctx auto-injected as last param
@@ -332,7 +332,7 @@ test_function_in_expression — !_ normal(50, 10) works
 test_function_with_bindings — !_ normal(mu, sigma) with bound vars
 ```
 
-### [ ] Context Tests (`test_context_*`)
+### [x] Context Tests (`test_context_*`)
 ```
 test_context_rng_seeded — same seed → same results
 test_context_rng_different_seeds — different seeds → different results
@@ -345,7 +345,7 @@ test_context_child_shadows_parent — child bindings override
 test_context_child_inherits_parent — child sees parent bindings
 ```
 
-### [ ] Multiple Instantiation Tests (`test_instantiation_*`)
+### [x] Multiple Instantiation Tests (`test_instantiation_*`)
 ```
 test_instantiation_same_seed_same_result — reproducible
 test_instantiation_different_seeds — different random values
@@ -354,7 +354,7 @@ test_instantiation_10_seeds — loop with 10 different seeds
 test_instantiation_quotes_preserved — !quote survives all evals
 ```
 
-### [ ] Lexical Scoping Tests (`test_scope_*`)
+### [x] Lexical Scoping Tests (`test_scope_*`)
 ```
 test_scope_top_level_constants — constants at module level
 test_scope_scenario_inherits_module — scenario sees module constants
@@ -365,7 +365,7 @@ test_scope_null_removes — key: ~ removes inherited value
 test_scope_deep_chain — A extends B extends C extends D
 ```
 
-### [ ] Error Handling Tests (`test_error_*`)
+### [x] Error Handling Tests (`test_error_*`)
 ```
 test_error_undefined_variable — clear error for missing var
 test_error_syntax_in_expression — invalid Python syntax
@@ -376,7 +376,7 @@ test_error_circular_reference — A refs B refs A
 test_error_message_includes_path — error shows location
 ```
 
-### [ ] Edge Cases (`test_edge_*`)
+### [x] Edge Cases (`test_edge_*`)
 ```
 test_edge_empty_dict — {} → {}
 test_edge_empty_list — [] → []
