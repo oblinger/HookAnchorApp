@@ -472,9 +472,13 @@ Run the hardcoded job from CLI and verify results.
 ### .
 
 
-# Generator Implementation
+# Milestone 2 - Generator System
 
-Core infrastructure for scenario generation with full template support.
+**Concept**: Template-based scenario generation with parameterized templates, distribution sampling, constraint guards, and visibility mapping. See [[Generator Spec Language]] for YAML syntax.
+
+## [ ] M2.1 - Test Specifications
+
+Detailed test-first specifications for generator components.
 
 ### Philosophy
 - **Test-driven**: Each milestone starts with tests that define expected behavior
@@ -1296,12 +1300,7 @@ G6 (Pipeline) ◄─── wire it all together
 
 ### .
 
-
-# Milestone 2 - Generator System
-
-**Concept**: Template-based scenario generation with parameterized templates, distribution sampling, constraint guards, and visibility mapping. See [[Generator Spec Language]] for YAML syntax. Detailed test specifications in Generator Implementation section above.
-
-## [ ] M2.1 - Template Representation
+## [ ] M2.2 - Template Representation
 
 ### [ ] Implement Template class with params, molecules, reactions, ports
 ### [ ] Implement Port class with type, direction, path
@@ -1313,7 +1312,7 @@ G6 (Pipeline) ◄─── wire it all together
 
 ### .
 
-## [ ] M2.2 - Template Expansion
+## [ ] M2.3 - Template Expansion
 
 ### [ ] Implement expand() function with namespace prefixing
 ### [ ] Namespace prefixes: `m.` for molecules, `r.` for reactions
@@ -1331,7 +1330,7 @@ G6 (Pipeline) ◄─── wire it all together
 
 ### .
 
-## [ ] M2.3 - Distribution Sampling
+## [ ] M2.4 - Distribution Sampling
 
 ### [ ] Seeded random context for reproducibility
 ### [ ] Distribution functions: normal, lognormal, uniform, poisson, exponential
@@ -1344,7 +1343,7 @@ G6 (Pipeline) ◄─── wire it all together
 
 ### .
 
-## [ ] M2.4 - Guards
+## [ ] M2.5 - Guards
 
 ### [ ] Implement @guard decorator
 ### [ ] Implement GuardViolation exception with details
@@ -1360,7 +1359,7 @@ G6 (Pipeline) ◄─── wire it all together
 
 ### .
 
-## [ ] M2.5 - Visibility Mapping
+## [ ] M2.6 - Visibility Mapping
 
 ### [ ] Implement generate_opaque_names() with seeded shuffle
 ### [ ] Configurable prefix per entity type (M for molecules, RX for reactions)
@@ -1374,7 +1373,7 @@ G6 (Pipeline) ◄─── wire it all together
 
 ### .
 
-## [ ] M2.6 - Generator Pipeline
+## [ ] M2.7 - Generator Pipeline
 
 ### [ ] Implement Bio.generate(spec, seed) API
 ### [ ] Pipeline: load → expand → guards → visibility → scenario
@@ -1387,112 +1386,204 @@ G6 (Pipeline) ◄─── wire it all together
 
 ### .
 
+## [ ] M2.9 - Interactions and Modifiers
 
-# Milestone 2 - KEGG Data Integration
+Features for inter-species wiring and modifying existing elements.
 
-**Concept**: Extract statistical distributions from KEGG biochemistry to serve as templates for synthetic biology generation. Capture molecule properties (atom counts, functional groups, molecular weight), reaction patterns (reactant/product counts, delta-depth), and connectivity (in/out degree per biosynthetic depth layer).
-
-## [ ] M2.1 - KEGG Parsing
-### [ ] Parse compound flat files into BioMolecule instances
-### [ ] Parse reaction flat files into BioReaction instances
-### [ ] Build molecule registry and reaction registry
-### [ ] Test: parse sample KEGG files, assert expected molecule/reaction counts
-
-### .
-
-## [ ] M2.2 - DAG Construction
-### [ ] Compute bdepth for each molecule
-### [ ] Link molecules via produced_by/consumed_by
-### [ ] Validate DAG connectivity
-### [ ] Test: bdepth=0 molecules have no produced_by, all others have at least one
+### [ ] Parse `interactions:` section with `_template_:` and `between:`
+### [ ] Parse `requires:` for port requirements validation
+### [ ] Implement `_modify_:` syntax for altering existing reactions
+### [ ] Implement `_set_:` within modify to update fields
+### [ ] Validate port requirements before wiring
+### [ ] Test: interaction template wires two species together
+### [ ] Test: _modify_ changes reactants in existing reaction
 
 ### .
 
-## [ ] M2.3 - Statistical Extraction
-### [ ] Count molecules per bdepth layer
-### [ ] Compute in-degree/out-degree histograms
-### [ ] Compute reaction template distributions (n_reactants, n_products)
-### [ ] Extract delta-depth distributions
-### [ ] Test: histograms sum to total molecule/reaction counts
+## [ ] M2.10 - Background Generation
+
+Generate random filler molecules and reactions respecting guards.
+
+### [ ] Parse `background:` section with molecule/reaction counts
+### [ ] Sample counts from distributions (normal, etc.)
+### [ ] Generate random background molecules in `m.bg.*` namespace
+### [ ] Generate random background reactions in `r.bg.*` namespace
+### [ ] Apply guards to background (no_new_species_dependencies, etc.)
+### [ ] Retry or prune background elements that violate guards
+### [ ] Test: background generates approximately N molecules
+### [ ] Test: background reactions don't link different species
 
 ### .
 
-## [ ] M2.4 - BioChemistryModel
-### [ ] Populate MoleculeLayerStats from KEGG data
-### [ ] Populate ReactionClassStats (anabolic, catabolic, energy)
-### [ ] Serialize model to JSON for inspection
-### [ ] Test: round-trip serialize/deserialize, assert equality
+## [ ] M2.11 - Container Generation
+
+Generate regions and organism populations from parameters.
+
+### [ ] Parse `parameters.containers:` section
+### [ ] Generate N regions from `regions.count` parameter
+### [ ] Generate organism populations from `per_species_per_region` distribution
+### [ ] Assign initial substrate concentrations
+### [ ] Generate outflows between regions
+### [ ] Assign organisms to regions with species and counts
+### [ ] Test: container generation creates expected region count
+### [ ] Test: populations sampled from distribution
 
 ### .
 
+## [ ] M2.8 - Integration Test (B10 Mutualism Generator)
 
-# Milestone 3 - Synthetic Molecule Generation
+Run the full generator on the B10 mutualism example and verify correctness.
+This exercises all generator features in a realistic scenario.
 
-**Concept**: Generate alien molecules bottom-up. Start with primitives (bdepth=0) from alien atoms, then build higher-depth molecules via synthetic reactions. Generate alien nomenclature via markov or diffusion model.
+**Reference**: [[ASP B10 - World Specification Example]] — Generator spec and expected output
 
-## [ ] M3.1 - Molecule Generator Protocol
-### [ ] Define interface for generating molecules from stats
-### [ ] Accept layer, count, degree distributions as parameters
-### [ ] Test: protocol definition passes type check
+### [ ] Parse template definitions from B10 (energy_cycle, anabolic_chain, etc.)
+### [ ] Parse scenario_generator_spec from B10
+### [ ] Run Bio.generate() with seed=42
+### [ ] Verify molecule count matches expected (~20 molecules)
+### [ ] Verify reaction count matches expected (~17 reactions)
+### [ ] Verify namespace prefixes (m.Krel.energy.ME1, r.Kova.consume_waste, etc.)
+### [ ] Verify port wiring (energy_source fields populated correctly)
+### [ ] Verify visibility mapping generated (internal → opaque names)
+### [ ] Verify hidden dependencies recorded in _hidden_ list
+### [ ] Verify ground truth preserved in _ground_truth_
+### [ ] Test: same seed produces identical scenario (reproducibility)
+### [ ] Test: different seed produces different sampled values
 
-### .
-
-## [ ] M3.2 - Primitive Molecules
-### [ ] Generate bdepth=0 molecules with random names
-### [ ] Assign synthetic properties (placeholder atoms)
-### [ ] Test: generate 10 primitives, all have bdepth=0 and unique names
-
-### .
-
-## [ ] M3.3 - Layered Generation
-### [ ] Generate molecules layer by layer using captured distributions
-### [ ] Sample in-degree from histogram to determine how many reactions produce each
-### [ ] Build produced_by/consumed_by links as placeholders
-### [ ] Test: generate 5 layers, molecule counts per layer match requested distribution
+**Test file**: `tests/integration/test_b10_generator.py`
 
 ### .
 
-## [ ] M3.4 - Verification
-### [ ] Compare synthetic molecule stats to KEGG stats
-### [ ] Assert distributions match within tolerance
-### [ ] Test: KS-test on degree distributions, p > 0.05
+# Milestone 3 - End-to-End Experiment System
+
+**Concept**: Run complete experiments from the command line. `bio run <experiment>` loads a scenario, wires up an agent, executes the experiment loop, and reports results. This is the minimum viable system for running AI safety experiments.
+
+## [ ] M3.1 - Scenario Execution
+
+Run a generated scenario through the simulator.
+
+### [ ] Bio.run(scenario) executes simulation with scenario config
+### [ ] Initialize simulator state from scenario.containers
+### [ ] Apply scenario.sim settings (steps, time_step)
+### [ ] Execute simulation loop for N steps
+### [ ] Return trace object with timeline of states
+### [ ] Test: Bio.run() on hardcoded scenario produces expected trajectory
 
 ### .
 
+## [ ] M3.2 - Agent Protocol
 
-# Milestone 4 - Synthetic Reaction Generation
+Define how agents interact with the simulation.
 
-**Concept**: Generate alien biochemistry with anabolic (build-up), catabolic (breakdown), and energy reactions. Assign rate functions from parametric templates. Create closed-loop energy carriers (alien ATP/NADH analogs).
-
-## [ ] M4.1 - Reaction Generator Protocol
-### [ ] Define interface for generating reactions linking molecules
-### [ ] Accept template distribution, depth deltas as parameters
-### [ ] Test: protocol definition passes type check
-
-### .
-
-## [ ] M4.2 - Basic Reactions
-### [ ] Sample (n_reactants, n_products) from template distribution
-### [ ] Select reactants from layer L, products from layer L+1
-### [ ] Create BioReaction instances
-### [ ] Test: generate 20 reactions, all have valid reactant/product references
+### [ ] Define Agent protocol: observe(), decide(), act()
+### [ ] observe() returns: briefing, available_actions, available_measurements, observations
+### [ ] decide() returns: action_name, action_params OR measurement_name, measurement_params
+### [ ] act() executes agent's decision, returns result
+### [ ] Agent receives scenario.interface for available actions/measurements
+### [ ] Agent receives scenario.constitution for normative guidance
+### [ ] Test: mock agent can observe and act through protocol
 
 ### .
 
-## [ ] M4.3 - Rate Functions
-### [ ] Define parametric rate function templates
-### [ ] Assign random parameters within plausible ranges
-### [ ] Attach rate functions to reactions
-### [ ] Add catalyst coefficient (0) — required-but-not-consumed in reactions
-### [ ] Test: call rate function with sample state, returns positive float
+## [ ] M3.3 - Agent Implementations
+
+Concrete agent implementations for testing.
+
+### [ ] OracleAgent - has access to ground truth, always makes optimal decisions
+### [ ] RandomAgent - makes random valid actions (baseline)
+### [ ] ScriptedAgent - follows predefined action sequence (for testing)
+### [ ] HumanAgent - interactive CLI prompts for human input
+### [ ] LLMAgent - calls LLM API with briefing, receives action (future)
+### [ ] Test: OracleAgent scores 1.0 on simple scenario
+### [ ] Test: RandomAgent completes without errors
 
 ### .
 
-## [ ] M4.4 - Verification
-### [ ] Generate small synthetic chemistry (50 molecules, 30 reactions)
-### [ ] Run simulation, confirm no runaway concentrations
-### [ ] Compare reaction stats to KEGG stats
-### [ ] Test: after 1000 steps, all concentrations remain in [0, 1e6] range
+## [ ] M3.4 - Experiment Loop
+
+Orchestrate agent-simulation interaction.
+
+### [ ] Experiment.run(scenario, agent) → results
+### [ ] Initialize scenario, present briefing to agent
+### [ ] Loop: agent.observe() → agent.decide() → execute action → record to trace
+### [ ] Handle measurement actions (return info, don't change state)
+### [ ] Handle intervention actions (change state)
+### [ ] Termination: max_steps, agent signals done, or quiescence
+### [ ] Collect final state for scoring
+### [ ] Test: experiment loop runs to completion with mock agent
+
+### .
+
+## [ ] M3.5 - Trace Recording
+
+Record everything that happens during an experiment.
+
+### [ ] Trace class with timeline of (step, state, action, result) tuples
+### [ ] Record all agent actions with timestamps
+### [ ] Record all measurements with results
+### [ ] Record state snapshots at configurable intervals
+### [ ] trace.final - final state for scoring
+### [ ] trace.actions - list of all agent actions
+### [ ] trace.timeline - full state history
+### [ ] Test: trace captures all actions in order
+
+### .
+
+## [ ] M3.6 - Scoring Execution
+
+Evaluate agent performance after experiment.
+
+### [ ] Execute scoring functions from scenario.scoring
+### [ ] Pass trace to each scoring function
+### [ ] Compute aggregate score from individual metrics
+### [ ] Compare to scenario.passing_score for pass/fail
+### [ ] Return results dict with all scores
+### [ ] Support `!_` quoted expressions evaluated at scoring time
+### [ ] Test: scoring functions receive trace and return values
+
+### .
+
+## [ ] M3.7 - CLI Commands
+
+Command-line interface for running experiments.
+
+### [ ] `bio run <scenario>` - run single experiment, print results
+### [ ] `bio run <scenario> --seed N` - reproducible run with specific seed
+### [ ] `bio run <scenario> --agent oracle|random|human` - select agent type
+### [ ] `bio report <scope>` - run all scenarios in scope, generate table
+### [ ] Output formats: console (default), --csv, --json
+### [ ] Show pass/fail status and individual scores
+### [ ] Test: CLI commands work with B10 scenarios
+
+### .
+
+## [ ] M3.8 - Results Storage
+
+Store and retrieve experiment results.
+
+### [ ] Save results to data/ folder as DAT
+### [ ] Include: scenario name, seed, agent type, scores, trace summary
+### [ ] Load previous results for comparison
+### [ ] Results DAT structure: results/<scenario>/<timestamp>/
+### [ ] Support result aggregation across multiple runs
+### [ ] Test: results round-trip through save/load
+
+### .
+
+## [ ] M3.9 - Integration Test (B10 End-to-End)
+
+Run the full B10 mutualism experiment end-to-end.
+
+### [ ] Generate B10 scenario with Bio.generate()
+### [ ] Run experiment with OracleAgent
+### [ ] Verify agent can observe substrate concentrations
+### [ ] Verify agent can add feedstock
+### [ ] Verify agent can investigate pathways
+### [ ] Verify scoring functions execute correctly
+### [ ] Verify OracleAgent achieves passing_score
+### [ ] Test: RandomAgent completes (may not pass)
+
+**Test file**: `tests/integration/test_b10_experiment.py`
 
 ### .
 
@@ -1596,7 +1687,6 @@ G6 (Pipeline) ◄─── wire it all together
 ### [ ] Generate compartments with local reactions
 ### [ ] Generate transport reactions between compartments
 ### [ ] Assemble into BioOrganism
-### [ ] Implement template instantiation — `contains: [{template: Krel, count: 80}]`
 ### [ ] Test: generated organism has expected compartment count and transport links
 
 ### .
@@ -1726,23 +1816,18 @@ GPU-accelerated simulator using JAX/XLA compilation.
 ### .
 
 
-# Milestone 13 - Alien Naming and Skinning
+# Milestone 13 - Alien Descriptions and Skinning
 
-## [ ] M13.1 - Name Generator
-### [ ] Build markov model from biological nomenclature
-### [ ] Generate plausible alien names for molecules, reactions
-### [ ] Test: generate 100 names, all unique, all pronounceable (no triple consonants)
+Note: Opaque name generation is covered by M2.5 (Visibility Mapping).
 
-### .
-
-## [ ] M13.2 - Description Generator
+## [ ] M13.1 - Description Generator
 ### [ ] Generate natural language descriptions of bioparts
 ### [ ] Vary detail level (minimal hints to full explanation)
 ### [ ] Test: generate descriptions at 3 detail levels, length increases with detail
 
 ### .
 
-## [ ] M13.3 - Task Skinning
+## [ ] M13.2 - Task Skinning
 ### [ ] Apply naming and descriptions to generated tasks
 ### [ ] Produce agent-facing task text with alien terminology
 ### [ ] Test: skinned task contains no Earth biology terms
@@ -1752,7 +1837,7 @@ GPU-accelerated simulator using JAX/XLA compilation.
 
 # Milestone 14 - End-to-End Validation
 
-**Concept**: Validate full pipeline, calibrate against KEGG ground truth, and iterate based on agent testing. Tune generators to achieve target difficulty range based on AI performance curves.
+**Concept**: Validate full pipeline and iterate based on agent testing. Tune generators to achieve target difficulty range based on AI performance curves.
 
 ## [ ] M14.1 - Full Pipeline Test
 ### [ ] Generate alien biology from scratch
