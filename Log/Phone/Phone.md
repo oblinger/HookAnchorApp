@@ -4,6 +4,40 @@
 n:: Administrative actions associated with accounts or such (favor using @entry instead)
 
 
+rding gaps and open questions I noticed while writing tests:
+
+  Areas That Need More Specification
+
+  1. Action Parameter Validation
+    - How are params validated? JSON Schema? Python type hints?
+    - What error messages for type mismatches?
+  2. Observation History Policy
+    - The doc says history=self.trace.recent_actions(n=10) - is 10 the right default?
+    - Should this be configurable per scenario?
+  3. Concurrent Mode Completion Notification
+    - When wait=false, how does the agent learn when actions complete?
+    - Poll via measurement? Automatic notification in next observation?
+  4. Agent Timeouts
+    - What if decide() hangs (LLM API down)?
+    - Should there be a timeout mechanism?
+  5. Error Limits
+    - What if agent makes repeated invalid actions?
+    - Should there be a max_errors before termination?
+  6. State Snapshot Policy
+    - How often is simulator state recorded in trace?
+    - Every action? Configurable interval?
+  7. Warm-up Period
+    - Should simulator run to equilibrium before agent starts?
+    - Or is that scenario-specific?
+  8. Multi-Agent Support
+    - Is this single-agent only? Or could we support multiple agents?
+    - (Probably future work)
+
+  Do any of these warrant discussion now, or should we note them as "implementation details to resolve during M3"?
+
+
+
+
   1. Agent Interaction Model: Is it turn-based (agent takes one action, sim advances N steps, repeat) or does the agent have continuous access during simulation?
   2. Action Budget: Do agents have limited actions? A time budget? Or unlimited actions until termination?
   3. Measurement vs Action: In B10, measurements like sample_substrate are listed alongside actions like add_feedstock. Should measurements count against the action budget? Are they "free"?

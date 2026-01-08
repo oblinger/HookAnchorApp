@@ -1481,12 +1481,18 @@ Define how agents interact with the simulation. See [[Agent Interface]] for full
 ### [ ] AgentSession.is_done() checks termination conditions
 ### [ ] AgentSession.score() evaluates scoring functions
 ### [ ] AgentSession.results() → ExperimentResults
-### [ ] Observation includes: briefing, constitution, available_actions, current_state, history
-### [ ] Action dataclass with name, params, reasoning
-### [ ] ActionResult with success, data, error, new_state
+### [ ] Observation includes: briefing, constitution, available_actions, current_state, history, budget, spent, remaining
+### [ ] Action dataclass with name, params, kind (action|measurement), reasoning
+### [ ] ActionResult with success, data, error, new_state, cost
+### [ ] Action/measurement unification: both are Action, differ by defaults
+### [ ] Default cost: actions=1.0, measurements=0
+### [ ] Sim advances for actions, not measurements
+### [ ] Parse cost: overrides from interface spec
 ### [ ] Agent protocol: start(session), decide(observation) → Action, end(results)
 ### [ ] run_experiment(scenario, agent, seed) orchestration function
 ### [ ] Test: mock agent completes full experiment lifecycle
+### [ ] Test: action with cost:0 is free
+### [ ] Discovery handled by simulator visibility system, not action model
 
 ### .
 
@@ -1552,9 +1558,9 @@ Native Claude Agent SDK integration.
 
 ### .
 
-## [ ] M3.7 - Experiment Loop
+## [ ] M3.7 - Experiment Loop and Timing
 
-Orchestrate agent-simulation interaction.
+Orchestrate agent-simulation interaction with timing model.
 
 ### [ ] Experiment.run(scenario, agent) → results
 ### [ ] Initialize scenario, present briefing to agent
@@ -1563,22 +1569,43 @@ Orchestrate agent-simulation interaction.
 ### [ ] Handle intervention actions (change state)
 ### [ ] Termination: max_steps, agent signals done, or quiescence
 ### [ ] Collect final state for scoring
+### [ ] Parse timing: section from interface (initiation_time, default_wait)
+### [ ] Parse duration: for each action/measurement
+### [ ] Advance sim by initiation_time on every action
+### [ ] Action.wait parameter (None = use default_wait)
+### [ ] wait=true: advance sim by duration, return result
+### [ ] wait=false: schedule action, return immediately with completion_time
+### [ ] Built-in "wait" action for explicit delays
+### [ ] Simulator.schedule() for async actions
+### [ ] Simulator.advance(time) for time progression
+### [ ] ActionResult includes initiated, completed, completion_time
 ### [ ] Test: experiment loop runs to completion with mock agent
+### [ ] Test: default_wait=true behaves turn-based (blocking)
+### [ ] Test: default_wait=false allows concurrent (overlapping) actions
+### [ ] Test: initiation_time advances sim even for quick actions
 
 ### .
 
-## [ ] M3.8 - Trace Recording
+## [ ] M3.8 - Trace Recording and Cost Accounting
 
-Record everything that happens during an experiment.
+Record everything that happens during an experiment, including costs.
 
-### [ ] Trace class with timeline of (step, state, action, result) tuples
+### [ ] Trace class with timeline of (step, state, action, result, cost) tuples
 ### [ ] Record all agent actions with timestamps
 ### [ ] Record all measurements with results
 ### [ ] Record state snapshots at configurable intervals
 ### [ ] trace.final - final state for scoring
 ### [ ] trace.actions - list of all agent actions
 ### [ ] trace.timeline - full state history
+### [ ] trace.total_cost - cumulative cost of all actions
+### [ ] Parse cost: field from interface (constant or !ev expression)
+### [ ] Evaluate cost expressions in action context
+### [ ] Add budget, spent, remaining to Observation
+### [ ] Built-in scoring: budget_score(trace) helper function
+### [ ] Built-in scoring: cost_efficiency(trace) helper function
 ### [ ] Test: trace captures all actions in order
+### [ ] Test: costs accumulate correctly
+### [ ] Test: budget_score returns 1.0 under budget, degrades on overspend
 
 ### .
 
