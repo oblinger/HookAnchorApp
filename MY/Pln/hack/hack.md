@@ -3,6 +3,27 @@
 - if cmd name has prefix, then add it?
 
 
+
+❯ aI No. I think we should go ahead now. And create a DMG file that is ready for sharing. Let's just go ahead and finish this pathway. So you can walk me through it. I'm
+  gonna start off by going to the account management page as you suggested here.
+
+⏺ Let's do it. Here's the step-by-step:
+
+  Step 1: Create App-Specific Password
+
+  On the Apple ID page (https://appleid.apple.com/account/manage):
+
+  1. Sign in with your Apple ID
+  2. Look for "Sign-In and Security" section
+  3. Click "App-Specific Passwords"
+  4. Click the "+" button to generate a new one
+  5. Name it something like "HookAnchor Notarization"
+  6. Copy the password it generates (format: xxxx-xxxx-xxxx-xxxx)
+
+  Let me know when you have the password copied, and I'll give you the next command to run.
+
+
+
 - [ ] [[HAW Parts]]  
 - [ ] when deduplication logic deduplicates a command we should MERGE results into a single command
 - [ ] [[HAW release]] 
