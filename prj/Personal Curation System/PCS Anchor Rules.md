@@ -1,4 +1,4 @@
-# ANCHOR FOLDER
+# ANCHOR RULES
 
 The most common stream types are streams of anchors.  Each anchor is usually associated with a folder.  Here are the aspects that may be associated with an anchor folder.
 
@@ -17,7 +17,22 @@ The most common stream types are streams of anchors.  Each anchor is usually ass
 
 ## TLC Index
 
-The file [[SYS/Closet/TLC]]   
+- The markdown [[SYS/Closet/Three Letter Codes/TLC]] contains a table of all TLCs.
+- Occasionally, you should scan ~/ob/kmr and ~/ob/proj to look for anchor folders and check if they also have a TLC file, and then update the table to match what is found.  Here are how the fields are computed:
+	- DATE - is the creation date of the TLC.md file itself, and the table should be sorted in reverse order by date.
+	- TLC - This is the wiki link to the acronym file, whatever it is (it is guaranteed to be unique across the vault)
+	- FULL ANCHOR NAME - Is the full name of the anchor, which is the folder name it is contained in
+	- DESC - This is the description of the anchor, it is stored in the fully named anchor markdown with prefix "desc::"
+	  You should copy this in either direction and try to keep the most recent copy of this description.
+	- If I tell you to "Update the TLCs" I am asking you to scan the "`tlcscan.py`" script to find all TLCs and then update the table as needed.
 
 
+## CLAUDE
+- 
 
+## GIT
+- An anchor may have its own git repository at its root, and may be linked to a remote.  
+- By default, we use a private repo on GitHub as the remote.
+
+## TMUX
+- 

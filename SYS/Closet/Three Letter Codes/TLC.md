@@ -3,12 +3,13 @@
 
 
 
-| Date       | TLC      | Name                         | Description                                         |
+| Date       | TLC      | Full Anchor Name             | Description                                         |
 | ---------- | -------- | ---------------------------- | --------------------------------------------------- |
-| 2025-01-08 | [[PCS]]  | [[Personal Curation System]] | Processes used to organize my personal information. |
-| 2025-01-08 | [[TLC]]  | [[Three Letter Codes]]       | List of acronyms used to name important anchors     |
-| 2025-01-08 | [[UCM]]  |                              |                                                     |
+| 2026-01-08 | [[TLC]]  | [[Three Letter Codes]]       | List of acronyms used to name important anchors     |
+| 2026-01-08 | [[PCS]]  | [[Personal Curation System]] | Processes used to organize my personal information. |
+| 2026-01-08 | [[UCM]]  | [[Uniform Code Markdown]]    |                                                     |
+| 2025-11-21 | [[HAW]]  | [[Hook Anchor Website]]      |                                                     |
+| 2025-04-12 | [[KM]]   | [[Knowledge Management]]     |                                                     |
 |            | [[ASP]]  |                              |                                                     |
 |            | [[ABIO]] |                              |                                                     |
-|            |          |                              |                                                     |
   
