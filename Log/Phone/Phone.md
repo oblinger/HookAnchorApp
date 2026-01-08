@@ -3,7 +3,11 @@
 #set 
 n:: Administrative actions associated with accounts or such (favor using @entry instead)
 
+## 2026-01-08  
 
+(I rarely have these issues with other doctor offices.  What can I do in the future to ensure strong execution for prescriptions?  Perhaps I should simply wait in the office until they are done, so we are sure we are on the same page.  Let me know your thoughts.  thanks!)
+
+## 2026-01-08  
 rding gaps and open questions I noticed while writing tests:
 
   Areas That Need More Specification

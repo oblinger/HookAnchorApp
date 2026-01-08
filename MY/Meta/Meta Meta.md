@@ -1,4 +1,4 @@
-[[Meta]]   <--- Roots are all here
+.[[Meta]]   <--- Roots are all here
 
 Reference Material - 
 Entities -
