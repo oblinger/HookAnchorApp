@@ -15,11 +15,11 @@
 
 
 
-| [[ABIO Proj Docs]] | --------------------------                       |
-| ------------------ | ------------------------------------------------ |
-| Planning           | [[ABIO PRD]], [[ABIO Features]], [[ABIO Notes]], |
-| Execution          | [[ABIO Todo]], [[ABIO Roadmap]],                 |
-| User Docs          | [[ABIO Docs]],                                   |
+| [[ABIO Proj Docs]]                | --------------------------                       |     |
+| --------------------------------- | ------------------------------------------------ | --- |
+| [[ABIO Proj Docs\|Planning Docs]] | [[ABIO PRD]], [[ABIO Features]], [[ABIO Notes]], |     |
+| - Execution                       | [[ABIO Todo]], [[ABIO Roadmap]],                 |     |
+| [[ABIO Docs\|User Docs]]          | [[Alienbio User Guide]],                         |     |
 
 
 

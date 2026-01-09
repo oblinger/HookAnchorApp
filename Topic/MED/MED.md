@@ -1,7 +1,7 @@
 
 
 .[[MED]]. 	[[MED Todo]],
-  TOP:	,
+  TOP:	
   TOPICS:
   [[MED Blood Tests]]:
   [[MED Doctors]]:  
@@ -21,34 +21,10 @@
   [[MED Weight]]:
   [[MED Food]],
   [[MED-Vitamins]]:
-  MISC:		[[Jet Lag]], [[Low Back Pain]], [[Medifast]], [[MED Heart Attack]], [[MED Mind]],
-  , [MED Doctors Obsidian](spot://meddoctorsobsidian)
-  , [MED Exercise Obsidian](spot://medexerciseobsidian), [MED Log Obsidian](spot://medlogobsidian)
-  , [MED Obsidian](spot://medobsidian),
-  , ,
-  , ,
-  , ,
-  , [MED Doctors Note](spot://meddoctorsnote), [MED Exercise Note](spot://medexercisenote)
-  , [MED Log Note](spot://medlognote), [MED Note](spot://mednote),
-  , [MED Blood Pressure Obsidian](spot://medbloodpressureobsidian)
-  , [MED Blood Tests Obsidian](spot://medbloodtestsobsidian)
-  , [MED Cholesterol Obsidian](spot://medcholesterolobsidian)
-  , [MED Food Obsidian](spot://medfoodobsidian), [MED General Obsidian](spot://medgeneralobsidian)
-  , [MED Heart Attack Obsidian](spot://medheartattackobsidian)
-  , [MED Heart Obsidian](spot://medheartobsidian), [MED History Obsidian](spot://medhistoryobsidian)
-  , [MED Insurance Obsidian](spot://medinsuranceobsidian)
-  , [MED Measurements Obsidian](spot://medmeasurementsobsidian)
-  , [MED Mind Obsidian](spot://medmindobsidian), [MED Pills Obsidian](spot://medpillsobsidian)
-  , [MED Psoriasis Obsidian](spot://medpsoriasisobsidian), [MED Ref Obsidian](spot://medrefobsidian)
-  , [MED Research Obsidian](spot://medresearchobsidian)
-  , [MED Sleep Obsidian](spot://medsleepobsidian), [MED Todo Obsidian](spot://medtodoobsidian)
-  , [MED Vaccinations Obsidian](spot://medvaccinationsobsidian)
-  , [MED Vision Obsidian](spot://medvisionobsidian), [MED VO2Max Obsidian](spot://medvo2maxobsidian)
-  , [MED Weight Obsidian](spot://medweightobsidian), 
-  DELS: [[MED Mind]],[MED Note](spot://mednote),[MED Obsidian](spot://medobsidian),[[MED Log]], [[MED Doctors]], [[MED Exercise]], [MED Doctors Note](spot://meddoctorsnote), [MED Exercise Note](spot://medexercisenote), [MED Log Note](spot://medlognote), [MED Note](spot://mednote),[MED Note](spot://mednote), [MED Doctors Note](spot://meddoctorsnote), [MED Exercise Note](spot://medexercisenote), [MED Log Note](spot://medlognote),
+  MISC:		[[Jet Lag]], [[Medifast]], [[MED Heart Attack]], [[MED Mind]],
+  .
+- [[Glycemic Index]], [[MED Blood Pressure]], [[MED Cholesterol]], [[MED Research]], [[MED VO2Max]], [[Run]], [[Exercise]], 
 
-- [[Glycemic Index]], [[MED Blood Pressure]], [[MED Cholesterol]], [[MED Research]], [[MED VO2Max]], [[MED=]], [[Run]], [[Exercise]], 
-- [[@Dexafit]]
 
 
 

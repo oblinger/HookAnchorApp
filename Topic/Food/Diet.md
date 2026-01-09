@@ -4,7 +4,65 @@
 
 https://www.truefood.tech/search?csrfmiddlewaretoken=g3KgNJFdRwemS9diT4iXnnvSQKUjdE81NWIp37ikRGH1ZFncgOPOY6ffDDe3N8EJ&search_text=tomatos&store=
 
+## 2026-01-09  GLP-1 Protein Targets
 
+*For 190 lbs (86 kg) on GLP-1 medication*
+
+### Daily Protein Targets
+
+| Level | Grams/day | Per meal (3 meals) | Notes |
+|-------|-----------|-------------------|-------|
+| **Minimum** | 100-105g | ~33-35g | 1.2 g/kg - bare minimum |
+| **Recommended** | 135-140g | ~45-47g | 1.6 g/kg - better retention |
+| **Optimal** | 170g+ | ~57g+ | 2.0 g/kg - best protection |
+
+### Protein Source Comparison (daily amounts)
+
+| Source | Protein/oz | Cal/oz | 100g target | 140g target | 170g target |
+|--------|------------|--------|-------------|-------------|-------------|
+| **Chicken breast** | 8.5g | 47 | 12 oz (27%)* | 16 oz (38%)* | 20 oz (47%)* |
+| **Salmon** | 7g | 59 | 14 oz (41%)* | 20 oz (59%)* | 24 oz (71%)* |
+| **Firm tofu** | 3g | 23 | 33 oz (38%)* | 47 oz (54%)* | 57 oz (66%)* |
+
+*\*Percentages represent percent of total daily calories (assuming 2,000 cal/day target)*
+
+### Per Meal Amounts (3 meals/day)
+
+| Source | 100g target | 140g target | 170g target |
+|--------|-------------|-------------|-------------|
+| **Chicken** | 4 oz (190 cal, 10%)* | 5-6 oz (260 cal, 13%)* | 7 oz (330 cal, 17%)* |
+| **Salmon** | 5 oz (295 cal, 15%)* | 7 oz (415 cal, 21%)* | 8 oz (475 cal, 24%)* |
+| **Firm tofu** | 11 oz (253 cal, 13%)* | 16 oz (368 cal, 18%)* | 19 oz (437 cal, 22%)* |
+
+*\*Percentages represent percent of total daily calories (assuming 2,000 cal/day target)*
+
+*Note: Silken tofu has ~half the protein of firm tofu - not practical as primary protein source.*
+
+**Key:** Combine with resistance training 3-5x/week. Only 10% of GLP-1 users actually hit 1.6 g/kg target.
+
+### Calorie Math for 2 lbs/week Weight Loss
+
+**Parameters:** 190 lbs, lightly active
+
+| Step | Calculation | Result |
+|------|-------------|--------|
+| Maintenance calories | 190 lbs × ~16 cal/lb | ~3,000 cal/day |
+| Deficit for 2 lbs/week | 2 lbs × 3,500 cal/lb ÷ 7 days | 1,000 cal/day deficit |
+| **Daily calorie target** | 3,000 - 1,000 | **2,000 cal/day** |
+
+**Protein as % of calories:**
+- 140g protein × 4 cal/g = 560 cal = **28% of 2,000 cal budget**
+
+**Meat calories vs remaining budget:**
+
+| Protein Source | Meat calories | Remaining for other food |
+|----------------|---------------|--------------------------|
+| Chicken (16 oz) | 750 cal | **1,250 cal** |
+| Salmon (20 oz) | 1,180 cal | **820 cal** |
+
+**Takeaway:** Chicken is more protein-efficient (~75% protein by calories) vs salmon (~48%). Salmon-heavy diet leaves less room for other foods.
+
+## H3
 ### 2024-10-06  Whole Food Plant Based -ish diet.
 
 - 16-8  Intermittent Fasting:  from 10-11a until 6-7pm.  (radishes later)
