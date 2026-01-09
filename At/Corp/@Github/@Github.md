@@ -1,7 +1,4 @@
 .[[@Github]].
-  , ,
-  , ,
-  , ,
   , [@Github Obsidian](spot://@githubobsidian),
   DELS: ,[@Github Obsidian](spot://@githubobsidian),
   , ,

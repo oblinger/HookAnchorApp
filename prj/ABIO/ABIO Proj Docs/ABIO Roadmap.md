@@ -2,9 +2,9 @@
 **Related**: [[alienbio]], [[Testing]]
 Implementation roadmap for the alienbio project.
 
----
+# [x] Milestone 1 - Minimal Simulation Loop
 
-# Milestone 1 - Minimal Simulation Loop
+**Status**: Complete — 524 tests passing.
 
 Core architecture: entities, protocols, and basic simulation.
 
@@ -476,7 +476,9 @@ Run the hardcoded job from CLI and verify results.
 
 **Concept**: Template-based scenario generation with parameterized templates, distribution sampling, constraint guards, and visibility mapping. See [[Generator Spec Language]] for YAML syntax.
 
-## [ ] M2.1 - Test Specifications
+## [x] M2.1 - Test Specifications
+
+**Status**: Complete — 135 tests created across 6 files (G1-G6).
 
 Detailed test-first specifications for generator components.
 
@@ -487,9 +489,11 @@ Detailed test-first specifications for generator components.
 
 ---
 
-## Phase G1: Template Representation & Parsing
+### [x] M2.1a - Template Representation & Parsing Tests
 
-### G1.1 - Template Data Structures
+**Status**: Complete — 22 tests in test_generator_templates.py (all passing).
+
+#### M2.1a.1 - Template Data Structures
 
 Tests first:
 ```python
@@ -516,7 +520,7 @@ Deliverables:
 - `Port` class with type, direction, path
 - Parse `template.name:` syntax from YAML
 
-### G1.2 - Template Registry
+#### M2.1a.2 - Template Registry
 
 Tests:
 ```python
@@ -540,9 +544,11 @@ Deliverables:
 - Load templates from YAML files
 - Path-based lookup (`primitives/energy_cycle`)
 
-## Phase G2: Template Expansion (Core)
+### [x] M2.1b - Template Expansion Tests
 
-### G2.1 - Single Template Instantiation
+**Status**: Complete — 19 tests in test_generator_expansion.py (all passing).
+
+#### M2.1b.1 - Single Template Instantiation
 
 Tests:
 ```python
@@ -577,7 +583,7 @@ Deliverables:
 - Namespace prefixing (`m.` for molecules, `r.` for reactions)
 - Parameter substitution via `!ref`
 
-### G2.2 - Nested Instantiation (`_instantiate_` / `_as_`)
+#### M2.1b.2 - Nested Instantiation (`_instantiate_` / `_as_`)
 
 Tests:
 ```python
@@ -621,7 +627,7 @@ Deliverables:
 - Recursive template expansion
 - Index concatenation (not dotted)
 
-### G2.3 - Port Wiring
+#### M2.1b.3 - Port Wiring
 
 Tests:
 ```python
@@ -672,9 +678,11 @@ Deliverables:
 
 ---
 
-## Phase G3: Distribution Sampling
+### [x] M2.1c - Distribution Sampling Tests
 
-### G3.1 - Distribution Evaluation
+**Status**: Complete — 17 tests in test_generator_distributions.py (all skipped, awaiting M2.4 implementation).
+
+#### M2.1c.1 - Distribution Evaluation
 
 Tests:
 ```python
@@ -717,7 +725,7 @@ Deliverables:
 - Seeded random context
 - Distribution functions: `normal`, `lognormal`, `uniform`, `poisson`, `exponential`, `discrete`, `choice`
 
-### G3.2 - Distribution in Templates
+#### M2.1c.2 - Distribution in Templates
 
 Tests:
 ```python
@@ -764,9 +772,11 @@ Deliverables:
 
 ---
 
-## Phase G4: Guards
+### [x] M2.1d - Guards Tests
 
-### G4.1 - Guard Infrastructure
+**Status**: Complete — 24 tests in test_generator_guards.py (all skipped, awaiting M2.5 implementation).
+
+#### M2.1d.1 - Guard Infrastructure
 
 Tests:
 ```python
@@ -809,7 +819,7 @@ Deliverables:
 - `GuardViolation` exception with details
 - `GuardContext` with scenario, namespace, seed, attempt
 
-### G4.2 - Built-in Guards
+#### M2.1d.2 - Built-in Guards
 
 Tests:
 ```python
@@ -872,7 +882,7 @@ Deliverables:
 - `no_essential` guard
 - Helper: `get_species_from_path(mol_name)` → species or None
 
-### G4.3 - Guard Modes (retry, prune, reject)
+#### M2.1d.3 - Guard Modes (retry, prune, reject)
 
 Tests:
 ```python
@@ -924,7 +934,7 @@ Deliverables:
 - Retry with incrementing seed
 - Prune removes violating elements
 
-### G4.4 - Guards in YAML
+#### M2.1d.4 - Guards in YAML
 
 Tests:
 ```python
@@ -968,9 +978,11 @@ Deliverables:
 
 ---
 
-## Phase G5: Visibility Mapping
+### [x] M2.1e - Visibility Mapping Tests
 
-### G5.1 - Opaque Name Generation
+**Status**: Complete — 24 tests in test_generator_visibility.py (all skipped, awaiting M2.6 implementation).
+
+#### M2.1e.1 - Opaque Name Generation
 
 Tests:
 ```python
@@ -999,7 +1011,7 @@ Deliverables:
 - Seeded for reproducibility
 - Configurable prefix
 
-### G5.2 - Visibility Fraction
+#### M2.1e.2 - Visibility Fraction
 
 Tests:
 ```python
@@ -1027,7 +1039,7 @@ Deliverables:
 - `apply_fraction_known()` function
 - Seeded random selection
 
-### G5.3 - Full Visibility Mapping
+#### M2.1e.3 - Full Visibility Mapping
 
 Tests:
 ```python
@@ -1061,7 +1073,7 @@ Deliverables:
 - Per-entity-type visibility
 - `_hidden_` list in mapping
 
-### G5.4 - Apply Visibility to Scenario
+#### M2.1e.4 - Apply Visibility to Scenario
 
 Tests:
 ```python
@@ -1105,9 +1117,11 @@ Deliverables:
 
 ---
 
-## Phase G6: Full Generator Pipeline
+### [x] M2.1f - Generator Pipeline Tests
 
-### G6.1 - Bio.generate() API
+**Status**: Complete — 24 tests in test_generator_pipeline.py (all skipped, awaiting M2.7 implementation).
+
+#### M2.1f.1 - Bio.generate() API
 
 Tests:
 ```python
@@ -1154,7 +1168,7 @@ Deliverables:
 - Returns scenario with ground truth preserved
 - Reproducible with same seed
 
-### G6.2 - End-to-End Pipeline
+#### M2.1f.2 - End-to-End Pipeline
 
 Tests:
 ```python
@@ -1237,7 +1251,7 @@ Deliverables:
 - Full pipeline integration
 - Template loading → expansion → guards → visibility → scenario
 
-### G6.3 - Error Handling & Debugging
+#### M2.1f.3 - Error Handling & Debugging
 
 Tests:
 ```python
@@ -1298,33 +1312,37 @@ G6 (Pipeline) ◄─── wire it all together
 
 ### .
 
-## [ ] M2.2 - Template Representation
+## [x] M2.2 - Template Representation
 
-### [ ] Implement Template class with params, molecules, reactions, ports
-### [ ] Implement Port class with type, direction, path
-### [ ] Parse `template.name:` syntax from YAML
-### [ ] Implement TemplateRegistry with path-based lookup
-### [ ] Load templates from YAML files in catalog/templates/
-### [ ] Test: Template.parse() creates valid template with params and ports
-### [ ] Test: TemplateRegistry resolves "primitives/energy_cycle"
+**Status**: Complete — 22 G1 tests passing.
+
+### [x] Implement Template class with params, molecules, reactions, ports
+### [x] Implement Port class with type, direction, path
+### [x] Parse `template.name:` syntax from YAML
+### [x] Implement TemplateRegistry with path-based lookup
+### [x] Load templates from YAML files in catalog/templates/
+### [x] Test: Template.parse() creates valid template with params and ports
+### [x] Test: TemplateRegistry resolves "primitives/energy_cycle"
 
 ### .
 
-## [ ] M2.3 - Template Expansion
+## [x] M2.3 - Template Expansion
 
-### [ ] Implement expand() function with namespace prefixing
-### [ ] Namespace prefixes: `m.` for molecules, `r.` for reactions
-### [ ] Parameter substitution via `!ref`
-### [ ] Parse `_instantiate_:` blocks
-### [ ] Parse `_as_ name:` and `_as_ name{i in range}:` syntax
-### [ ] Recursive template expansion for nested instantiation
-### [ ] Index concatenation (chain1, not chain.1)
-### [ ] Port declaration parsing (`path: type.direction`)
-### [ ] Port connection at instantiation time
-### [ ] Port type checking (energy.out connects to energy.in only)
-### [ ] Test: expand() produces namespaced molecules and reactions
-### [ ] Test: nested instantiation creates hierarchical names
-### [ ] Test: port type mismatch raises PortTypeMismatchError
+**Status**: Complete — 19 G2 tests passing.
+
+### [x] Implement expand() function with namespace prefixing
+### [x] Namespace prefixes: `m.` for molecules, `r.` for reactions
+### [x] Parameter substitution via `!ref`
+### [x] Parse `_instantiate_:` blocks
+### [x] Parse `_as_ name:` and `_as_ name{i in range}:` syntax
+### [x] Recursive template expansion for nested instantiation
+### [x] Index concatenation (chain1, not chain.1)
+### [x] Port declaration parsing (`path: type.direction`)
+### [x] Port connection at instantiation time
+### [x] Port type checking (energy.out connects to energy.in only)
+### [x] Test: expand() produces namespaced molecules and reactions
+### [x] Test: nested instantiation creates hierarchical names
+### [x] Test: port type mismatch raises PortTypeMismatchError
 
 ### .
 

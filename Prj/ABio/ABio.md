@@ -1,4 +1,4 @@
-.[[ABio]].  [[@Github]] [ABIO Folder](spot://ABIO~Folder) 
+.[[ABio]].  [[@Github]] [ABIO Folder](spot://ABIO~Folder) [[ASP]] 
    [[ABIO Sys|SYS]]:	[[ABIO Roadmap|Roadmap]], [[ABIO Files|Files]], [[ABIO Protocols|Protocols]], [[ABIO Topics|Topics]], [[ABIO Notes|Notes]], 
    TOP:	[[ABIO.]]  [[ABIO Log|Log]], [[AlienBiologyWhitepaper (do not distribute)|Whitepaper]], [[ABIO Results|Results]], [[ABIO Safety]], 
    PARTS: [[ABIO infra|infra]], [[ABIO biology|biology]], [[ABIO execution|execution]]
@@ -12,6 +12,15 @@
    [[ABIO PRD|PRD]]:	[[ABIO Notes]],
    [[ABIO Legacy]]:	[Browser](hook://abiosys), 
    TEST:		[[test-entity]], [[test-molecule]], [[test-reaction]], 
+
+
+
+| [[ABIO Proj Docs]] | --------------------------                       |
+| ------------------ | ------------------------------------------------ |
+| Planning           | [[ABIO PRD]], [[ABIO Features]], [[ABIO Notes]], |
+| Execution          | [[ABIO Todo]], [[ABIO Roadmap]],                 |
+|                    |                                                  |
+
 
 
 
