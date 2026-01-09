@@ -219,3 +219,68 @@ bio report <experiment>           # Generate summary report
 **Upgrade path**: DAT structure is simple enough to import into MLflow, W&B, or other tools if needed later. Not locked in.
 
 **Reproducibility**: `_spec_.yaml` + code version = can recreate the run. Seeds ensure determinism.
+
+## Implementation Notes
+
+### Scenario Sets
+A "scenario set" is just a scope. Running a scope runs all scenarios within it:
+```bash
+bio run experiments/mutualism     # runs all scenarios in that scope
+```
+No special "set" abstraction needed — scopes already group scenarios.
+
+### Scenario Filters
+Pattern-based selection of scenarios:
+```bash
+bio run experiments --filter "hidden*"           # name pattern
+bio run experiments --filter "difficulty:hard"   # by tag
+bio run experiments --filter "type:mutualism"    # by type
+```
+Implementation: parse filter string, match against scenario metadata during enumeration.
+
+### Agent Registry
+Stored in `~/.config/alienbio/agents.yaml`:
+```yaml
+agents:
+  claude-opus:
+    api: anthropic
+    model: claude-opus-4
+    api_key: sk-ant-...      # encrypted or plaintext, user's choice
+```
+`bio agent add` prompts for key, tests connection, writes file. Never in repo.
+
+### Config Snapshot
+On each run, `_spec_.yaml` captures:
+- Experiment spec (resolved, not template)
+- Agent config (name, model, params — not key)
+- Seed used
+- Timestamp
+- Code version (git commit if available)
+
+This is automatic — no user action needed.
+
+### Result Querying
+Two approaches:
+1. **Scan**: Walk result folders, parse `_spec_.yaml` + `results.yaml`, filter in memory
+2. **Index**: Maintain lightweight index file updated on each run
+
+Start with scan. Add index if performance becomes an issue.
+
+### Built-in Agents
+- `oracle`: Receives ground truth via special channel, computes optimal action
+- `random`: Chooses uniformly from valid actions, uses experiment seed
+- `scripted`: Takes action sequence in config, replays it
+- `human`: Prints state, prompts for action via stdin
+
+### Bio.run() Behavior
+```python
+Bio.run(target)  # target is a bioref string
+```
+- If target resolves to a scenario: run it once, return result
+- If target resolves to a scope: run all scenarios in scope, return results dict
+- If target resolves to an experiment: run the full battery, write results to DAT
+
+### Experiment vs Scope vs Scenario
+- **Scenario**: Single runnable unit (one agent, one seed)
+- **Scope**: Collection of scenarios (run all when targeted)
+- **Experiment**: Battery spec (scenarios × agents × seeds, writes results to DAT)

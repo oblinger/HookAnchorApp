@@ -1,13 +1,29 @@
 .[[ELI Log]].
-  , ,
-  , ,
-  , , ,
-  DELS: , ,
   , [[2022-00-00 Eli Sleep Training]], [[2024-11-08 Comet]], 
   DELS: , ,[[2022-00-00 Eli Sleep Training]], [[2024-11-08 Comet]],
   DELS: [[2023-05 Cool Kids]], [[Eli Sleep Training]],[[2022-00-00 Eli Sleep Training]], [[2024-11-08 Comet]],[[2023-05 Cool Kids]], [[Eli Sleep Training]], [[2023-05 Cool Kids]], [[Eli Sleep Training]], 
 
 
+
+
+## 2026-01-09  Talk w/ Joanne
+
+DRAMATIC 
+- Fear of Embarrassment or Failure / Embarrassment Reaction
+- Fear of anything new
+
+PRIMING - stories we tell
+-  "I am scared." 
+- "Hands over ears."    -   knee-jerk reaction to the IDEA of noise
+
+SHUTDOWN
+- Need to approach new things very very carefully
+
+TALKS ABOUT
+- I am good at XXXX, 
+
+
+pointing out 
 
 
 ## 2025-12-07  Eli's Name
