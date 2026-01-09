@@ -121,3 +121,101 @@
 #### HYPERPARAMETER - Sweep agent hyperparameters
 #### ENSEMBLE - Combine multiple agents, compare to individuals
 #### HUMAN-BASELINE - Compare agent performance to human subjects
+
+## Experimentation Workflow
+
+### Overview
+Experiments use the DAT (Data Asset Tracking) system for both specification and result capture. Experiment templates live in source code (version controlled), each run instantiates a new DAT folder capturing inputs and outputs, and aggregation happens by scanning result DATs.
+
+### Experiment Specifications
+Experiment specs are YAML or Python files in the source tree (e.g., `catalog/experiments/`). They define:
+- Scenarios to run (by name or pattern)
+- Agents to test
+- Seed ranges or count
+- Any parameter overrides
+
+These are loadable via DAT dot notation: `dat.experiments.mutualism_battery`
+
+Example spec:
+```yaml
+experiment.mutualism_battery:
+  scenarios: [mutualism/hidden_dependency, mutualism/competition]
+  agents: [claude-opus, gpt-4, oracle, random]
+  seeds: 10
+  output_path: results/mutualism/{date}_{seq}
+```
+
+### Run Lifecycle
+
+1. **Invoke**: `bio run experiments/mutualism_battery` or `Bio.run("experiments/mutualism_battery")`
+
+2. **Instantiate DAT**: System creates a new DAT folder at the output path (e.g., `data/results/mutualism/2026-01-09_001/`). The `{date}` and `{seq}` tokens ensure unique paths.
+
+3. **Capture spec**: The instantiated parameters are written to `_spec_.yaml` in the DAT folder. This is the exact configuration used, not the template.
+
+4. **Execute**: For each (scenario, agent, seed) combination:
+   - Generate scenario with seed
+   - Run agent through experiment loop
+   - Record result (scores, pass/fail, trace summary)
+
+5. **Write outputs**: Results written to DAT folder:
+   - `results.yaml` or `results.json` — structured results
+   - `summary.csv` — tabular summary
+   - `traces/` — optional full traces per run
+   - Any reports or visualizations
+
+6. **Complete**: DAT folder is self-contained record of the run.
+
+### Result Storage Structure
+```
+data/results/mutualism/2026-01-09_001/
+├── _spec_.yaml          # Instantiated experiment parameters
+├── results.yaml         # Structured results (scores, pass/fail, metadata)
+├── summary.csv          # Tabular summary for quick viewing
+└── traces/              # Optional detailed traces
+    ├── scenario1_agent1_seed1.json
+    └── ...
+```
+
+### Querying and Aggregation
+
+**Simple approach**: Scan result DATs, parse `_spec_.yaml` and `results.yaml`, filter/aggregate in memory. Works well for hundreds to low thousands of runs.
+
+**Aggregation DAT**: For larger scale, push result summaries into an aggregation DAT as runs complete. This collects lightweight result records in one place for faster rollups. Adds minimal state but speeds queries.
+
+```python
+# Query results
+results = Bio.results.query(scenario="mutualism*", agent="claude-opus")
+results.mean("score")
+results.pass_rate()
+results.to_dataframe()
+
+# Compare agents
+Bio.results.compare(["claude-opus", "gpt-4"], scenarios="mutualism*")
+```
+
+### Visualization
+Visualization is separate from storage. Options:
+- Generate matplotlib/seaborn charts, save to DAT folder
+- Export CSV/Parquet, use external tools (Excel, Jupyter, Tableau)
+- Future: integrate with dedicated viz tooling
+
+### CLI Commands
+```bash
+bio run <experiment>              # Run experiment, create result DAT
+bio run <experiment> --dry-run    # Validate without executing
+bio results <pattern>             # Query/display results
+bio report <experiment>           # Generate summary report
+```
+
+### Key Design Points
+
+**Source-controlled specs**: Experiment definitions are versioned with code. Any commit defines exactly what experiments were available.
+
+**Self-contained runs**: Each DAT folder has everything needed to understand what ran and what happened. No external database required.
+
+**Local-first**: Works offline, no services to run. Results are files you can inspect, copy, or version.
+
+**Upgrade path**: DAT structure is simple enough to import into MLflow, W&B, or other tools if needed later. Not locked in.
+
+**Reproducibility**: `_spec_.yaml` + code version = can recreate the run. Seeds ensure determinism.

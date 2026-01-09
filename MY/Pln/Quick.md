@@ -1,3 +1,4 @@
+- ask super whisper about rebate
 - ASK RAM:  play on usage ramp in Jan Feb
 - trigger finger
 - shingles shot
