@@ -471,6 +471,26 @@ Run the hardcoded job from CLI and verify results.
 
 ### .
 
+## [ ] M1.11 - Documentation Sync
+
+Bring documentation into consistency with source code. Full audit completed 2026-01-10.
+
+**Reference**: [[ABIO Todo#Source/Documentation Inconsistencies]]
+
+### [ ] Resolve open questions with user
+See [[ABIO Todo#Open Questions]] — 12 design decisions needed (Bio API style, two Context classes, pipeline clarification, etc.)
+
+### [ ] Update class documentation
+See [[ABIO Todo#Documentation Todos]] — Bio, Entity, IO, Molecule, Reaction, Chemistry class docs need method/signature updates.
+
+### [ ] Document new modules
+See [[ABIO Todo#Additional Module Reviews (2026-01-10)]] — Loader, Context, Atom, Flow, WorldState, WorldSimulator, Generator system, Run module.
+
+### [ ] Clarify naming patterns
+See [[ABIO Todo#Implementation Class Naming Pattern]] — Document Protocol vs `*Impl` pattern used throughout codebase.
+
+### .
+
 
 # Milestone 2 - Generator System
 

@@ -1,7 +1,7 @@
 
 
 
-| [[ABIO Proj Docs]] | --------------------------                       |
+| [[ABIO Planning]] | --------------------------                       |
 | ------------------ | ------------------------------------------------ |
 | Planning           | [[ABIO PRD]], [[ABIO Features]], [[ABIO Notes]], |
 | Execution          | [[ABIO Todo]], [[ABIO Roadmap]],                 |
