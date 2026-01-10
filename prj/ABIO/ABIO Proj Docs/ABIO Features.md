@@ -283,3 +283,107 @@ Bio.run(target)  # target is a bioref string
 - **Scenario**: Single runnable unit (one agent, one seed)
 - **Scope**: Collection of scenarios (run all when targeted)
 - **Experiment**: Battery spec (scenarios × agents × seeds, writes results to DAT)
+
+### Bio Workflow Implementation
+
+The core Bio workflow uses four operations: `build`, `run`, `store`, `fetch`. This section describes the implementation approach.
+
+#### Operations
+
+| Operation | Implementation |
+|-----------|----------------|
+| `Bio.build(path, seed)` | Lookup recipe + template instantiation → DAT |
+| `dat.run(...)` | Execute per manifest, write outputs to DAT |
+| `Bio.store(path, dat)` | Persist DAT to data repository |
+| `Bio.fetch(path)` | Retrieve existing DAT from data repository |
+
+#### Lookup: Skipping DAT's `do.load`
+
+Bio YAML files require special parsing for tags like `!ev`, `!ref`, `!include`. Rather than hooking into DAT's `do.load`, Bio implements its own lookup:
+
+```python
+# Internal implementation
+def _lookup(self, path: str) -> dict:
+    """Load recipe from source using bio YAML parser."""
+    # Resolve dotted path: "generators.b10" → "catalog/generators/b10/spec.yaml"
+    file_path = self._resolve_source_path(path)
+
+    # Parse with bio YAML loader (handles !ev, !ref, !include)
+    with open(file_path) as f:
+        return bio_yaml_load(f)
+```
+
+This approach:
+- Keeps Bio self-contained, no DAT dependency for source loading
+- Uses the same dotted path notation as DAT for consistency
+- Applies bio-specific YAML parsing transparently
+
+Future option: If DAT adds loader hooks, we can register bio's YAML loader:
+```python
+dat.register_loader(".yaml", bio_yaml_load, domain="alienbio")
+```
+
+#### Build: Lookup + Instantiate → DAT
+
+`Bio.build` combines lookup and template instantiation, producing a DAT:
+
+```python
+def build(self, path: str, seed: int = 0, **params) -> DAT:
+    """Build a DAT from a generator recipe."""
+    # 1. Lookup recipe from source
+    recipe = self._lookup(path)
+
+    # 2. Template instantiation (expand templates, apply params, resolve refs)
+    scenario = self._instantiate(recipe, seed=seed, params=params)
+
+    # 3. Create DAT with manifest
+    dat = DAT.create()
+    dat.write("scenario.yaml", scenario.visible)
+    dat.write("_ground_truth_.yaml", scenario.ground_truth)
+    dat.write("_visibility_.yaml", scenario.visibility_mapping)
+    dat.write("_manifest_.yaml", {
+        "seed": seed,
+        "source": path,
+        "operations": ["simulate", "analyze", "score"]
+    })
+
+    return dat
+```
+
+#### DAT Contents After Build
+
+```
+<dat_folder>/
+├── _manifest_.yaml       # Seed, source path, valid operations
+├── scenario.yaml         # Visible scenario (opaque names)
+├── _ground_truth_.yaml   # Full scenario (internal names)
+├── _visibility_.yaml     # Internal → opaque name mapping
+└── _spec_.yaml           # Resolved params, config snapshot
+```
+
+#### Run: Execute Per Manifest
+
+`dat.run()` reads the manifest to determine valid operations:
+
+```python
+def run(self, **kwargs):
+    """Execute operations and write outputs to this DAT."""
+    manifest = self.read("_manifest_.yaml")
+
+    if "simulate" in manifest["operations"] and kwargs.get("steps"):
+        result = simulate(self.scenario, steps=kwargs["steps"])
+        self.write("timeline.yaml", result.timeline)
+
+    if "analyze" in manifest["operations"] and kwargs.get("analyze"):
+        report = analyze(self.scenario, self.timeline)
+        self.write("analysis.yaml", report)
+
+    # Outputs accumulate in the DAT folder
+```
+
+#### Integration with Existing Code
+
+The current `Bio.generate()` becomes internal plumbing for `build`:
+- `Bio.generate()` → renamed to `Bio._instantiate()` or kept as alias
+- `Bio.build()` wraps lookup + instantiate + DAT creation
+- Generator pipeline (M2.7) provides the instantiation logic
