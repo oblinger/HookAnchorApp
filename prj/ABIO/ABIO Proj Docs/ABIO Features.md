@@ -387,3 +387,29 @@ The current `Bio.generate()` becomes internal plumbing for `build`:
 - `Bio.generate()` → renamed to `Bio._instantiate()` or kept as alias
 - `Bio.build()` wraps lookup + instantiate + DAT creation
 - Generator pipeline (M2.7) provides the instantiation logic
+
+---
+
+## Open Questions
+
+Questions to resolve as implementation proceeds:
+
+### Storage and Persistence
+- **Auto-store on run?** Does `bio run` automatically persist results, or is storage explicit?
+- **Where do built scenarios go?** Default data path for `bio build` output?
+- **Result aggregation**: Scan result folders vs maintain an index?
+
+### DAT Integration
+- **Reuse DAT's `do` function?** It has useful directory creation logic, but Bio needs custom YAML parsing
+- **Loader hooks**: If DAT adds `register_loader()`, should Bio use it?
+- **DAT.get/set**: Expose to users or hide behind Bio API?
+
+### Naming Conventions
+- **Recipe names**: Must have at least one dot, no slashes? (e.g., `scenarios.baseline`)
+- **Scenario data paths**: Must have slashes? (e.g., `data/scenarios/baseline_42/`)
+- **Experiment output paths**: Template tokens like `{date}`, `{seq}`?
+
+### API Surface
+- **Bio.run() return type**: Result object vs tuple vs dict?
+- **Bio.build() return type**: DAT object vs path vs wrapper?
+- **Batch results**: How to access individual run results from battery?
