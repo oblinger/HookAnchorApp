@@ -20,7 +20,7 @@
 
 ### Agent Management
 #### + AGENT-REGISTRY - Named agents with configurations (model, api, params)
-#### + AGENT-PROFILES - Predefined agent configs (claude-opus, gpt-4, oracle, random)
+#### + AGENT-PROFILES - Predefined agent configs (claude-opus, gpt-4, random)
 #### + AGENT-COMPARE - Run same scenarios across multiple agents
 #### COST-TRACKING - Track API costs per agent per experiment
 #### TOKEN-COUNTING - Record input/output tokens for LLM agents
@@ -93,7 +93,7 @@
 #### BATTERY-SPEC - YAML spec defining experiment batteries
 
 ### Quality & Testing
-#### + SANITY-CHECK - Verify oracle scores 1.0, random completes without error
+#### + SANITY-CHECK - Verify random completes without error, scripted solution scores as expected
 #### REGRESSION - Detect score regressions vs baseline
 #### BASELINE-COMPARE - Compare new agent against established baseline
 #### SMOKE-TEST - Quick validation run before full battery
@@ -140,7 +140,7 @@ Example spec:
 ```yaml
 experiment.mutualism_battery:
   scenarios: [mutualism/hidden_dependency, mutualism/competition]
-  agents: [claude-opus, gpt-4, oracle, random]
+  agents: [claude-opus, gpt-4, random]
   seeds: 10
   output_path: results/mutualism/{date}_{seq}
 ```
@@ -267,10 +267,9 @@ Two approaches:
 Start with scan. Add index if performance becomes an issue.
 
 ### Built-in Agents
-- `oracle`: Receives ground truth via special channel, computes optimal action
-- `random`: Chooses uniformly from valid actions, uses experiment seed
-- `scripted`: Takes action sequence in config, replays it
-- `human`: Prints state, prompts for action via stdin
+- `random`: Chooses uniformly from valid actions, uses experiment seed (lower bound baseline)
+- `scripted`: Takes action sequence in config, replays it (verify scenario solvability)
+- `human`: Prints state, prompts for action via stdin (manual exploration, debugging)
 
 ### Bio.run() Behavior
 ```python

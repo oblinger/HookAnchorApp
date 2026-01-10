@@ -24,6 +24,7 @@ TALKS ABOUT
 
 
 pointing out 
+talk about failure
 
 
 ## 2025-12-07  Eli's Name
