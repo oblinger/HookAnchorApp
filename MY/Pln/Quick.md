@@ -1,3 +1,4 @@
+- write a note to Barney
 - ask super whisper about rebate
 - ASK RAM:  play on usage ramp in Jan Feb
 - trigger finger
