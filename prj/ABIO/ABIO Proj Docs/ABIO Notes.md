@@ -1,5 +1,10 @@
 # ABIO MISCELLANEOUS NOTES
 
+## 2026-01-09  DAT Refactor Idea
+
+
+
+
 ## Architecture-First Organization
 
 Protocols are defined in an `architecture/` folder, separate from implementations. This enforces clear contracts and enables multiple implementations (e.g., PythonSimulator vs RustSimulator). See [[#Folder Structure]] for full layout.
