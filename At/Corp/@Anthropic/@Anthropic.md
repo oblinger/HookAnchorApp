@@ -10,6 +10,7 @@
 
 - [[Claude]]  
 - [[Claude code usage examples]]. 
+- [[2025-01-26 Fellows Application]] 
 
 # INFO
 ## People
@@ -34,6 +35,21 @@ Potential Anthropic mentors include:
 # Log
 
 ### 2025-04-30  Job Application
+
+⏺ The deadline is January 12, 2026.
+
+  The program runs in two cohorts (May and July 2026). Fellows get:
+  - $3,850/week stipend
+  - ~$15k/month compute
+  - 4 months of mentorship from Anthropic researchers
+  - Workspaces in London and Berkeley (or remote in US/UK/Canada)
+
+  Over 40% of fellows from the first cohort joined Anthropic full-time.
+
+  Sources:
+  - https://alignment.anthropic.com/2025/anthropic-fellows-program-2026/
+  - https://www.anthropic.com/careers/jobs/5023394008
+  - https://constellation.fillout.com/anthropicfellows
 
 
 WHY ANTHROPIC
