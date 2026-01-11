@@ -127,6 +127,41 @@ GitHub Actions workflow:
 - Ensures tests pass and types check before merge
 
 
+## 2026-01-10 M2 Test Coverage Audit
+
+### Summary
+Created `tests/unit/test_bio_m2.py` with 26 tests covering M2 features. Results: 8 passing, 18 skipped (marking unimplemented features).
+
+### Gaps Discovered
+
+1. **MoleculeImpl not registered as @biotype** — `Bio.store()` calls `dehydrate()` which requires typed objects to be registered with the `@biotype` decorator. Need to add `@biotype` to `MoleculeImpl` class.
+
+2. **Bio.cd() not implemented** — Tests marked as skipped. Need to implement current DAT tracking on Bio instance.
+
+3. **index.yaml convention not implemented** — `fetch(dat_folder)` currently looks for `spec.yaml`, not `index.yaml`. Decide on convention.
+
+4. **Dotted name lookup not implemented** — `fetch('catalog.scenarios.test')` should route to lookup searching configured roots. Currently not implemented.
+
+5. **Python module lookup not implemented** — `fetch('alienbio.bio.Chemistry')` should return Python class. Not yet implemented.
+
+6. **Dotted path dereferencing not implemented** — `fetch('path/to/dat.nested.key')` should load index.yaml then dereference. Not yet implemented.
+
+7. **hydrate=False option** — `fetch(..., hydrate=False)` should return Scope without type construction. Not yet implemented.
+
+8. **raw=True option for store** — `Bio.store(path, obj, raw=True)` should write plain dict without dehydration. Not yet implemented.
+
+### Test Categories
+
+- **Bio.cd()** — 5 tests (all skipped)
+- **Bio.fetch() routing** — 5 tests (2 passing, 3 skipped)
+- **Bio.fetch() hydration** — 2 tests (1 passing, 1 skipped)
+- **Bio.fetch() DAT pattern** — 2 tests (all skipped)
+- **Bio.run() routing** — 3 tests (2 passing, 1 skipped)
+- **Bio.store()** — 5 tests (all skipped)
+- **Bio.build() edge cases** — 3 tests (2 passing, 1 skipped)
+- **Integration** — 2 tests (all skipped)
+
+
 
 
 
