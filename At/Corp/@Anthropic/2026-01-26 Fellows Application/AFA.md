@@ -4,6 +4,7 @@ Application Call
 - [[AFA Anthropic AI Safety Fellow]], [[AFA Fellows Program Blog]],
 - [[2026-01-26 Fellows Application]] 
 
+- [[AFA Apply]] 
 - [[AFA Research Areas]]
 - [[AFA Researchers]]  
 
