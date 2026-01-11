@@ -23,16 +23,13 @@ I have the beginnings for this kind of work that I would love to explore while a
 
 ### Why
 
-A murderer is not the one who has most often ideated about the act, but rather the one who has decided to act upon their ideation.  I believe futurSimilarly, future AI systems will not be misaligned due to poor impulse control or poor RLHF training; they will be misaligned because they have chosen to be, e.g., they have chosen one reasoning path over another.
+A murderer is not the one who has most often ideated about the act, but rather the one who has decided to act upon their ideation.  Likewise, I believe future deliberative AI systems will not be misaligned due to poor impulse control or poor RLHF training; their deliberation over their alignment goals will address those cases.  Instead, they will be misaligned because they have CHOSEN to be — because they chose one interpretation of their alignment objectives over another.
 
-Thus, I want to study alignment achieved through explicit deliberation, isolated from the confounding effects of training bias.  Generalized over many alignment goals and many universes, what pressures tend to cause this alignment to break down, and in what contexts?
-
-
-I imagine using model organisms from synthetically derived universes
+Thus, I want to study alignment that is achieved through explicit deliberation, isolated from the confounding effects of training bias.  By sampling across many alignment goals and universes, we can learn which pressures tend to cause this alignment to break down and in what contexts.  I believe the dynamics of these deliberative systems may be simpler than those of system-I reasoning that underlies them.  If true, perhaps we can learn to arrange our first deliberatively coherent AI systems on a trajectory towards rather than away from long-term human interests.
 
 Related Areas:
-- Model Organisms -- (My Alien Biology Framework is a test bed where we can generate controllable forms of alignment stress in order to explore general trends in alignment deliberation.)
-- Chain-of-thought Faithfulness -- having access to ground truth that the AI agent does not have allows us to watch their progress toward or away from aligned action
+- Model Organisms -- Synthetic generated universes (like Alien Biology) would allow us to study general trends.
+- Chain-of-thought Faithfulness & Reasoning -- Studying 
 - 
 -  
 I believe deliberative systems will 
