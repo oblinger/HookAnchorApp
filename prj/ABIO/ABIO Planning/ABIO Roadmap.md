@@ -478,7 +478,7 @@ Bring documentation into consistency with source code. Full audit completed 2026
 **Reference**: [[ABIO Todo#Source/Documentation Inconsistencies]]
 
 ### [ ] Resolve open questions with user
-See [[ABIO Todo#Open Questions]] — 12 design decisions needed (Bio API style, two Context classes, pipeline clarification, etc.)
+See [[ABIO Open Questions]] — 12 design decisions documented (Bio API style, two Context classes, factory patterns, etc.)
 
 ### [ ] Update class documentation
 See [[ABIO Todo#Documentation Todos]] — Bio, Entity, IO, Molecule, Reaction, Chemistry class docs need method/signature updates.
