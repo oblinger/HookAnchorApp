@@ -8,6 +8,22 @@
 
 Andrew:
 
+I am not sure if you remember the better part of a day that we spent in 2009 talking about unsupervised methods for learning deep representations.  You were interested, but also frustrated that my ideas seemed too big/vague to make progress on. I responded by driving one of the ideas down into a very narrow approach for inducing deep and-or trees.  You liked it and asked if you could share it with a student for exploration, and ended the day telling me that I should come be a post-doc after DARPA.  Well, perhaps I should have!
+
+I think your students went on to publish: *"Convolutional Deep Belief Networks for Scalable Unsupervised Learning of Hierarchical Representations"*, from that idea, while the general council at DARPA forbade me from participating (at least Honglak acknowledged me in the paper!)
+
+Besides saying "hello" after so many years, the reason I am writing is to ask if you could provide a reference for an AI safety fellowship program at Anthropic.
+
+I recognize we never collaborated on completed work, so if you were contacted, you could only provide the context based on our few deep discussions.  Still, I think that thin slice would still add value.
+
+Let me know.
+-- Dan  
+
+
+
+
+
+
 
 
 ## Info
@@ -26,9 +42,11 @@ Andrew:
 
 - [[Anthropic AI Safety Fellow]]
 - [[Fellows Program Blog]] 
-- [[Researchers]] 
+- [[AFA Researchers]] 
 - https://oblinger.github.io/abio-docs/  
 
+
+**Unsupervised Learning of Hierarchical Representations**
 
   The paper is: "Convolutional Deep Belief Networks for Scalable Unsupervised Learning of Hierarchical Representations"
   - Authors: Honglak Lee, Roger Grosse, Rajesh Ranganath, Andrew Y. Ng
@@ -84,6 +102,9 @@ WHY ARE YOU INTERESTED IN PARTICIPATING IN THE AI FELLOWS PROGRAM?   (1-2 paragr
 
 
 PLEASE TELL US BRIEFLY ABOUT AN AREA OF TECHNICAL AI SAFETY WORK YOU’RE CURRENTLY EXCITED ABOUT, AND WHY.   (1 paragraph)
+
+[[AFA Application Area and Why]]
+
 
 
 

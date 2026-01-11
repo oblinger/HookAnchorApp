@@ -1,3 +1,4 @@
+ [[AFA]] 
 # Research Areas
 
 ## Scalable Oversight
@@ -11,13 +12,14 @@
 
 ## Interpretability & Mechanistic Understanding
 
-| Researcher | Subarea/Description | Paper |
-|------------|---------------------|-------|
-| [Trenton Bricken](https://www.trentonbricken.com/) | Sparse autoencoders | [Towards Monosemanticity: Decomposing Language Models With Dictionary Learning](https://transformer-circuits.pub/2023/monosemantic-features) |
-| [Trenton Bricken](https://www.trentonbricken.com/) | Scaling interpretability | [Scaling Monosemanticity: Extracting Interpretable Features from Claude 3 Sonnet](https://transformer-circuits.pub/2024/scaling-monosemanticity/) |
-| [Trenton Bricken](https://www.trentonbricken.com/) | Internal reasoning traces | [Circuit Tracing: Revealing Computational Graphs in Language Models](https://transformer-circuits.pub/2025/attribution-graphs/biology.html) |
-| [Samuel Marks](https://www.linkedin.com/in/samuel-marks-3211b134a/) | Truth representation | [The Geometry of Truth: Emergent Linear Structure in LLM Representations](https://arxiv.org/abs/2310.06824) |
-| [Alex Tamkin](https://www.linkedin.com/in/alextamkin/) | Sparse interpretability | [Towards Monosemanticity: Decomposing Language Models With Dictionary Learning](https://transformer-circuits.pub/2023/monosemantic-features) |
+| Researcher                                                          | Subarea/Description       | Paper                                                                                                                                             |
+| ------------------------------------------------------------------- | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Trenton Bricken](https://www.trentonbricken.com/)                  | Sparse autoencoders       | [Towards Monosemanticity: Decomposing Language Models With Dictionary Learning](https://transformer-circuits.pub/2023/monosemantic-features)      |
+| [Trenton Bricken](https://www.trentonbricken.com/)                  | Scaling interpretability  | [Scaling Monosemanticity: Extracting Interpretable Features from Claude 3 Sonnet](https://transformer-circuits.pub/2024/scaling-monosemanticity/) |
+| [Trenton Bricken](https://www.trentonbricken.com/)                  | Internal reasoning traces | [Circuit Tracing: Revealing Computational Graphs in Language Models](https://transformer-circuits.pub/2025/attribution-graphs/biology.html)       |
+| [Samuel Marks](https://www.linkedin.com/in/samuel-marks-3211b134a/) | Truth representation      | [The Geometry of Truth: Emergent Linear Structure in LLM Representations](https://arxiv.org/abs/2310.06824)                                       |
+| [Alex Tamkin](https://www.linkedin.com/in/alextamkin/)              | Sparse interpretability   | [Towards Monosemanticity: Decomposing Language Models With Dictionary Learning](https://transformer-circuits.pub/2023/monosemantic-features)      |
+|                                                                     |                           |                                                                                                                                                   |
 
 ## Weak-to-Strong Generalization
 
@@ -43,12 +45,12 @@
 
 ## Chain-of-Thought Faithfulness & Reasoning
 
-| Researcher | Subarea/Description | Paper |
-|------------|---------------------|-------|
-| [Fabien Roger](https://uk.linkedin.com/in/fabien-roger-29243a1b9) | CoT unfaithfulness | [Reasoning Models Don't Always Say What They Think](https://assets.anthropic.com/m/71876fabef0f0ed4/original/reasoning_models_paper.pdf) |
-| [Sam Bowman](https://www.linkedin.com/in/sr-bowman/) | CoT unfaithfulness | [Reasoning Models Don't Always Say What They Think](https://assets.anthropic.com/m/71876fabef0f0ed4/original/reasoning_models_paper.pdf) |
-| [Joe Benton](https://www.linkedin.com/in/joe-benton-686420157/) | CoT monitoring | [Chain of Thought Monitorability: A New and Fragile Opportunity for AI Safety](https://arxiv.org/abs/2507.11473) |
-| [Ethan Perez](https://www.linkedin.com/in/ethanjperez/) | CoT monitoring | [Reasoning Models Don't Always Say What They Think](https://assets.anthropic.com/m/71876fabef0f0ed4/original/reasoning_models_paper.pdf) |
+| Researcher                                                        | Subarea/Description | Paper                                                                                                                                    |
+| ----------------------------------------------------------------- | ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| [Fabien Roger](https://uk.linkedin.com/in/fabien-roger-29243a1b9) | CoT unfaithfulness  | [Reasoning Models Don't Always Say What They Think](https://assets.anthropic.com/m/71876fabef0f0ed4/original/reasoning_models_paper.pdf) |
+| [Sam Bowman](https://www.linkedin.com/in/sr-bowman/)              | CoT unfaithfulness  | [Reasoning Models Don't Always Say What They Think](https://assets.anthropic.com/m/71876fabef0f0ed4/original/reasoning_models_paper.pdf) |
+| [Joe Benton](https://www.linkedin.com/in/joe-benton-686420157/)   | CoT monitoring      | [Chain of Thought Monitorability: A New and Fragile Opportunity for AI Safety](https://arxiv.org/abs/2507.11473)                         |
+| [Ethan Perez](https://www.linkedin.com/in/ethanjperez/)           | CoT monitoring      | [Reasoning Models Don't Always Say What They Think](https://assets.anthropic.com/m/71876fabef0f0ed4/original/reasoning_models_paper.pdf) |
 
 ## Alignment Faking & Deception Detection
 
