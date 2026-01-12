@@ -10,6 +10,7 @@
 - PEPPERMINT: TradMed Organic Peppermint
 - SPEARIMENT:
 - ROOIBOS: Numi Rooibos??, Equal Exchange Vanilla Rooibos
+- VANILLA: Twinings Peppermint & Creamy Vanilla
 
 - LICORICE: Yogi Egyptian Licorice, TradMed Fennel
 - CINNAMON: Harney & Sons Hot Cinnamon Spice

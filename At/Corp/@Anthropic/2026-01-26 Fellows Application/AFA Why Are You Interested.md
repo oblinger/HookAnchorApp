@@ -1,5 +1,5 @@
 
-WHY ARE YOU INTERESTED IN PARTICIPATING IN THE AI FELLOWS PROGRAM?   (1-2 paragraphs)
+**WHY ARE YOU INTERESTED IN PARTICIPATING IN THE AI FELLOWS PROGRAM?   (1-2 paragraphs)**
 
 TL;DR.  I have a research agenda that is ripe for execution in your program, and I want to transition to full-time AI safety work.
 
@@ -9,13 +9,3 @@ At the beginning of this year, I drafted a white paper, "Alien Biology."  It is 
 
 When I learned of the Anthropic Fellows Program, I dove in to implement the Alien Biology universe generator and simulator, and to sketch how it could be used to study how deliberatively achieved alignment does or does not hold when pressured by conflict, instrumental, or environmental pressures.  I think it is 
 
-
-
-align their interests with, rather than, at odds with humanity.  
-
-
-
-See my early sketch of how I plan to approach "Deliberatively Coherent" 
-
-
-I have drafted the very beginnings of this researchlaid out the beginnings of a reserach agenda in this direction and I think it is
