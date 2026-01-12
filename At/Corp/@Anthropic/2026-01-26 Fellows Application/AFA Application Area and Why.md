@@ -20,9 +20,8 @@ I have the beginnings for this kind of work that I would love to explore while a
 
 
 
-**please tell us briefly about an area of technical ai safety work you’re currently excited about, and why.**
 
-### Why
+**PLEASE TELL US BRIEFLY ABOUT AN AREA OF TECHNICAL AI SAFETY WORK YOU’RE CURRENTLY EXCITED ABOUT, AND WHY.   (1 paragraph)**
 
 A murderer is not the one who has most often ideated about the act, but rather the one who has decided to act upon their ideation.  Likewise, I believe future deliberative AI systems will not be misaligned due to poor impulse control or poor RLHF training; their deliberation over their alignment goals will address those cases.  Instead, they will be misaligned because they have CHOSEN to be — because they chose one interpretation of their alignment objectives over another.
 
@@ -31,13 +30,8 @@ Thus, I want to study alignment that is achieved through explicit deliberation, 
 Related Areas:
 - Model Organisms -- Synthetic generated universes (like Alien Biology) would allow us to study general trends.
 - Chain-of-thought Faithfulness & Reasoning -- Studying 
-- 
--  
-I believe deliberative systems will 
 
-about alignment in contexts that are provably untainted by training bias.  I want to understand how conflicting objectives, partial understanding of the world, instrumental and environmental pressures can
 
-- The more that AI systems reason about their reasoning, the more they will deliberatively overcome misaligned
 
 
 

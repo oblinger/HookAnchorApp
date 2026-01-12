@@ -23,7 +23,7 @@ ALIEN BIOLOGY - Framework for generating controllable synthetic "Alien" biologic
 - The framework is elegant/general and biologically plausible. (will be completed and could possibly serve as the basis of my fellowship work)
   Docs:  https://oblinger.github.io/abio-docs/  Code: https://github.com/oblinger/alienbio 
 
-I am a very fast, strong, organized coder, but most of my work is proprietary.  Alien Bio was developed over a compressed period, so it is a good measure of my capacity.
+I am a very fast, strong, organized coder, but most of my work is proprietary.  Alien Bio was developed over my Christmas break, so it is a good indicator of my quality and velocity.
 
 {{NICK:  Over the summer I wrote a 35K line personal knowlege management tool in Rust, Javascript and Swift, it is not open source, but I could share the codebase if it would add value}}
 
@@ -35,6 +35,14 @@ I am a very fast, strong, organized coder, but most of my work is proprietary.  
 
 [[AFA Why Are You Interested]] 
 **WHY ARE YOU INTERESTED IN PARTICIPATING IN THE AI FELLOWS PROGRAM?   (1-2 paragraphs)**
+
+TL;DR.  I want to transition to full-time AI safety work and I have a research agenda that is ripe for execution within your program.
+
+I have long been interested in systems that can bootstrap beyond human intelligence (this was the basis for one of my DARPA programs), and a second Machine Reading program also drove early ML + NLP work in that direction.  But I am so skeptical of our long-term ability to control this technology that I wrote a 4-page justification for myself about why it was acceptable to join DARPA to drive this work.    Leaving DARPA I chose a more applied AI path for this reason.  
+
+At the beginning of this year, I drafted a white paper, "Alien Biology."  It is a clever way to measure AI reasoning performance that is provably untainted by reasoning provided in the training data.  More exciting, I think I see a way this platform can drive AI safety work.  I believe that future AI systems will use deliberation to achieve internal alignment and will have instrumental reasons to strive to increase that internal alignment within themselves and their progeny.  Perhaps this can afford a natural long-term alignment of their interests with humanity's?
+
+When I learned of the Anthropic Fellows Program, I dove in to implement the Alien Biology universe generator/simulator.  After a decade of wringing my hands on the sidelines, I finally have a direction that seems at least plausible for humanity's most pressing threat.
 
 
 
@@ -64,10 +72,10 @@ Reference 1:
 - Andrew Ng    DeepLearning.AI's Founder   AI Fund's Managing Partner           andrewyantakng@gmail.com   
 
 Reference 3:
-- Vittorio Castelli   
+- Vittorio Castelli   Senior Director Applied Science at Oracle     vittorio.castelli@alumni.stanford.edu  
 
 Reference 2:
-- Nina Mishra
+- Nina Mishra   Principle Scientist at Amazon       nmishra@gmail.com  
 
 
 
@@ -80,6 +88,8 @@ Reference 2:
 
 **Is there anything else you would like to share?**
 
+
+{{NICK:  Anything here?}}
 
 
 
