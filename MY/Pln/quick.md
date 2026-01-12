@@ -1,5 +1,5 @@
 - write a note to Barney
-- ask super whisper about rebate
+- Briones note
 - ASK RAM:  play on usage ramp in Jan Feb
 - trigger finger
 - shingles shot
