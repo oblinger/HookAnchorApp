@@ -10,4 +10,4 @@ I have organized my thinking over the last year into three draft papers/outlines
 - Experimental Roadmap -- Outlines how I plan to use the Alien Biology framework to conduct this work.
 
 
-{{NICK:  Each of these will be a link to papers that}}
+{{NICK:  Each of these will be a link to papers/outlines I have written.  The only one that is written as a paper is Alien Biology.  The others are very well organized and thought-out outlines.  But only outlines! Over the next two weeks, I plan to work hard to get these in better shape.  Here is hoping they take their time getting into the review process!}}

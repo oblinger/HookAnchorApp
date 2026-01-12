@@ -65,7 +65,16 @@ Related Areas:
 [[AFA Relevant Background]] 
 **(Optional) Please share any relevant AI safety background you have and provide links where possible (e.g., research experience, coursework, self-directed study, past roles, relevant projects).**
 
+I have organized my thinking over the last year into three draft papers/outlines that indicate the direction of this thinking:
 
+- Alien Biology Whitepaper - The paper that spawned the generative testing framework.
+
+- Deliberative Coherence - Outlines the agenda for studying "deliberative coherence" -- studying how deliberation-based alignment works and how in breaks down.
+
+- Experimental Roadmap -- Outlines how I plan to use the Alien Biology framework to conduct this work.
+
+
+{{NICK:  Each of these will be a link to papers/outlines I have written.  The only one that is written as a paper is Alien Biology.  The others are very well organized and thought-out outlines.  But only outlines! Over the next two weeks, I plan to work hard to get these in better shape.  Here is hoping they take their time getting into the review process!}}
 
 **How likely are you to accept a full-time offer at Anthropic if you receive one after the Fellows program? ***
 - 100%.  More than all other foundational labs, I feel Anthropic is most serious and open-minded about AI-safety.  This is by far my most effective choice.
@@ -97,7 +106,7 @@ Reference 2:
 **Is there anything else you would like to share?**
 
 
-{{NICK:  Anything here?}}
+{{NICK:  I am a little tempted to state that I recognize that I am not a validated AI-safety researcher, but that I am quite motivated to make the switch if I am able to find a path where I maintain some kind of a salary, and that my background both as a coder and as a researcher suggest I will be strong for the role.  Or is writing something like that at the end a bit too try-hard, or denigrating my application?}}
 
 
 

@@ -12,16 +12,33 @@ Ditto, P. H., Liu, B., Clark, C. J., Wojcik, S. P., Chen, E. E., Grady, R. H., C
 
 ## The Data
 
-| Measure | Value |
-|---------|-------|
-| Studies analyzed | 51 |
-| Total participants | 18,000+ |
-| Overall partisan bias | r = .245 |
-| **Liberals** | **r = .235** |
-| **Conservatives** | **r = .255** |
-| Difference | 0.02 |
+**Meta-analysis:** 51 studies, 18,000+ participants
 
-The difference between groups (r = .02) is trivially small and not statistically meaningful.
+### Real-World Example: Same Policy, Different Name
+
+When pollsters ask about the exact same healthcare law using different names ([Navigator Research, 2024](https://navigatorresearch.org/the-affordable-care-act-remains-widely-favorable/)):
+
+| Group           | "Affordable Care Act" | "Obamacare"       | Shift   |
+| --------------- | --------------------- | ----------------- | ------- |
+| Democrats       | 84% favorable         | 85% favorable     | +1%     |
+| Independents    | 46% favorable         | 44% favorable     | -2%     |
+| **Republicans** | **34% favorable**     | **25% favorable** | **-9%** |
+
+Republicans are 9 points less favorable to the same policy when it has Obama's name on it. Democrats show no shift - but they're already at 84-85% (ceiling effect).
+
+**Note:** This example shows asymmetry because it tests a *Democratic* policy. To test fairly, you need experiments testing both parties' reactions to policies labeled with opposing party names - which is what the meta-analysis did across 51 studies.
+
+### The Meta-Analysis Result
+
+When you average across 51 experiments measuring partisan bias:
+
+| Group | Bias Level (r) |
+|-------|---------------|
+| Liberals | .235 |
+| Conservatives | .255 |
+| **Difference** | **.02** |
+
+Both groups show the same amount of bias. The 0.02 difference is trivially small.
 
 ## What This Means
 

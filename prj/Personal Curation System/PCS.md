@@ -5,9 +5,10 @@
 | ----------------------------------------------- | -------- |
 | [[prj/Personal Curation System/CLAUDE\|CLAUDE]] | Ger      |
 | [[PCS Streams]]                                 |          |
-| [[PCS Anchor Rules]]                                 | Folders  |
+| [[Anchor Template Structure]]                                 | Folders  |
 |                                                 |          |
 |                                                 |          |
 |                                                 |          |
 |                                                 |          |
  
+[[Anchor Template v1]]  [[Anchor Template Structure]]  
