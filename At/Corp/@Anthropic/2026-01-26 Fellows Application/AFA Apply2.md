@@ -25,7 +25,7 @@ ALIEN BIOLOGY - Framework for generating controllable synthetic "Alien" biologic
 
 I am a very fast, strong, organized coder, but most of my work is proprietary.  Alien Bio was developed over my Christmas break, so it is a good indicator of my quality and velocity.
 
-{{NICK:  Over the summer I wrote a 35K line personal knowlege management tool in Rust, Javascript and Swift, it is not open source, but I could share the codebase if it would add value}}
+{{NICK:  Over the summer, I wrote a 35K line personal knowledge management tool in Rust, Javascript and Swift. It is not open source, but I could share the codebase if it would add value}}
 
 
 **Code Sample:  (Drag & Drop)**   
@@ -49,6 +49,14 @@ When I learned of the Anthropic Fellows Program, I dove in to implement the Alie
 
 [[AFA Application Area and Why]]
 **PLEASE TELL US BRIEFLY ABOUT AN AREA OF TECHNICAL AI SAFETY WORK YOU’RE CURRENTLY EXCITED ABOUT, AND WHY.   (1 paragraph)**
+
+A murderer is not the one who has most often ideated about the act, but rather the one who has decided to act upon their ideation.  Likewise, I believe future deliberative AI systems will not be misaligned due to poor impulse control or poor RLHF training; their deliberation over their alignment goals will address those cases.  Instead, they will be misaligned because they have CHOSEN to be — because they chose one interpretation of their alignment objectives over another.
+
+Thus, I want to study alignment that is achieved through explicit deliberation, isolated from the confounding effects of training bias.  By sampling across many alignment goals and universes, we can learn which pressures tend to cause this alignment to break down and in what contexts.  I believe the dynamics of these deliberative systems may be simpler than those of system-I reasoning that underlies them.  If true, perhaps we can learn to design our first deliberatively coherent AI systems on a trajectory toward, rather than away from, long-term human interests.
+
+Related Areas:
+- Model Organisms — Synthetic, generated universes (such as Alien Biology) would allow us to study general trends.
+- Chain-of-thought Faithfulness & Reasoning  — Broadly, I want to study failures in reasoning.  In the long term, AI safety will be based on such deliberation.
 
 
 
