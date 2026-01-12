@@ -39,17 +39,17 @@ PLEASE TELL US BRIEFLY ABOUT AN AREA OF TECHNICAL AI SAFETY WORK YOU’RE CURREN
 
 
 **References:**
-- Andrew Ng
-- Nina Mishra
 
 Reference 1:
+- Andrew Ng
 
 
 Reference 2:
+- Nina Mishra
 
 
 Reference 3:
-
+- Vittorio Castelli
 
 
 **Do you have any other commitments or obligations during the Fellows program?**

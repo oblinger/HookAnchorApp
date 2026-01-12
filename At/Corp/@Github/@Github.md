@@ -1,6 +1,5 @@
 .[[@Github]].
   , [@Github Obsidian](spot://@githubobsidian),
-  DELS: ,[@Github Obsidian](spot://@githubobsidian),
   , ,
   , [@Github Note](spot://@githubnote), 
   DELS: [@Github Note](spot://@githubnote),[@Github Obsidian](spot://@githubobsidian),[@Github Note](spot://@githubnote),[@Github Note](spot://@githubnote),

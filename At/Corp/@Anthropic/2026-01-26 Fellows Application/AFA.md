@@ -5,7 +5,11 @@ Application Call
 - [[2026-01-26 Fellows Application]] 
 
 - [[AFA Apply]] 
-- [[AFA Share Links Here]]  
+	- [[AFA Share Links Here]]  
+	- [[AFA Why Are You Interested]] 
+	- [[AFA Application Area and Why]]
+	- [[AFA Relevant Background]] 
+
 - [[AFA Research Areas]]
 - [[AFA Researchers]]  
 - [[AFA To Andrew]] 
