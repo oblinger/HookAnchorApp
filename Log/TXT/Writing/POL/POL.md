@@ -1,6 +1,6 @@
 .[[POL]].
   , [[AI HISTORY]], [[Climate]], [[Cultural Progress]], [[Election2024]], [[Immigration]]
-  , [[Palestinians]], [[Parties]], [[Politics]], [[Politics From Me]], [[POL refs]], [[Race]]
+  , [[Palestinians]], [[POL Parties]], [[Politics]], [[Politics From Me]], [[POL refs]], [[Race]]
   , [[Socialism]], [[Trump]], ,
   , [[Voting]], ,
   , [[Innovation]],
@@ -16,7 +16,7 @@
   DELS: [POL Note](spot://polnote),[POL Obsidian](spot://polobsidian),[POL Note](spot://polnote),[POL Note](spot://polnote),
 
   DELS: [[Voting]],[[Innovation]],[[Consciousness]], 
-  DELS: [[POL refs]],[[Politics From Me]], [[POL refs]],[[Immigration]], [[Climate]], [[Palestinians]], [[Race]], [[Socialism]], [[Trump]], [[Election2024]], [[Parties]], [[AI HISTORY]], [[Cultural Progress]], [[Politics From Me]], [[POL refs]], 
+  DELS: [[POL refs]],[[Politics From Me]], [[POL refs]],[[Immigration]], [[Climate]], [[Palestinians]], [[Race]], [[Socialism]], [[Trump]], [[Election2024]], [[POL Parties]], [[AI HISTORY]], [[Cultural Progress]], [[Politics From Me]], [[POL refs]], 
 
 
   [[Politics From Me]]
