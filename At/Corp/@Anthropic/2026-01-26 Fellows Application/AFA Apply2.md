@@ -40,7 +40,7 @@ I have long been interested in systems that achieve general intelligence, as wel
 
 Yet even then, I harbored doubts about our ability to control these systems: before joining DARPA, I wrote a 4-page note to myself reasoning through whether it was acceptable to drive this work, and upon leaving, I chose a more applied AI path rather than continue pushing toward AGI. This tension—between fascination with capable AI systems and concern about their risks—is precisely why AI safety work feels so urgent and personal to me now.
 
-Earlier this year, I drafted the white paper "Alien Biology" (described in Relevant Background below) and realized it could serve as a platform to drive AI safety work. When I learned of the Anthropic Fellows Program, I dove in to implement the generator/simulator and began outlining the research agenda. After a decade of wringing my hands on the sidelines, I finally have a direction that seems plausible for addressing humanity's most pressing threat.
+Earlier this year, I drafted the white paper "Alien Biology" and realized it could serve as a platform to drive AI safety work (see Alien Biology whitepaper and Deliberative Coherence in Relevant Background). When I learned of the Anthropic Fellows Program, I dove in to implement the generator/simulator and began outlining the deliberative coherence research agenda. After a decade of wringing my hands on the sidelines, I finally have a direction I believe in for addressing humanity's most pressing threat.
 
 
 

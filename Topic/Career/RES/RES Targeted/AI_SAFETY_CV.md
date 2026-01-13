@@ -1,5 +1,15 @@
 
 
+## AI SAFETY TARGETING
+
+**Deep learning engineer, researcher, leader. Seeking role mitigating existential risk.**
+
+- Research vision that shaped the field. Directed $200M+ in DARPA programs driving 1000+ papers from 500+ researchers—work that propelled statistical AI/ML and NLP into the deep learning era. Collaborated with Stuart Russell, Andrew Ng, Tom Mitchell.
+- Strong technical credentials. Ph.D. in CS, 25+ peer-reviewed papers, 20+ patents, taught graduate ML at Columbia. Built production systems across ML, computer vision, robotics, and NLP.
+- Hands-on builder. Architected and coded CV platform that served as the basis for a 60+ engineer team building an autonomous dexterous home robot (Aeolus); award-winning Programming By Demonstration system integrated into IBM Rational; CV-based sports analytics (Sports Visio).
+- Long-standing concern, now active research. Weighed AI risks before joining DARPA; chose applied path after. Now developing Alien Biology (taint-free AI testing) and Deliberative Coherence (alignment failure theory).
+
+---
 
 ## SUMMARY / OBJECTIVES
 
