@@ -22,13 +22,14 @@ pub fn execute_on_server(
     let mut expanded_action = action.clone();
 
     // Create template context for CLI (no popup context, empty input)
-    let mut template_context = crate::core::template_creation::TemplateContext::create_basic_template("");
+    use crate::capabilities::template_ops;
+    let mut template_context = template_ops::create_context("");
 
     // Add variables to template context for expansion AND to action params for JS runtime
     if let Some(vars) = &variables {
         for (key, value) in vars {
             // Add to template context for {{...}} expansion
-            template_context.add_variable(key.clone(), value.clone());
+            template_ops::add_variable(&mut template_context, key, value);
             // Also add to action params so JS runtime can access via extra_params
             expanded_action.params.insert(key.clone(), JsonValue::String(value.clone()));
             detailed_log("EXECUTE", &format!("Added variable: '{}' = '{}'", key, value));
@@ -36,7 +37,7 @@ pub fn execute_on_server(
     }
 
     // Expand all action parameters using the template context
-    template_context.expand_action_parameters(&mut expanded_action);
+    template_ops::expand_action(&mut expanded_action, &template_context);
 
     detailed_log("EXECUTE", &format!("Sending expanded action to server: {}", expanded_action.action_type()));
 

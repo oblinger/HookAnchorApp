@@ -9,6 +9,7 @@ use serde::{Deserialize, Serialize};
 use crate::core::Command;
 use crate::core::key_processing::Keystroke;
 use crate::prelude::*;
+use crate::capabilities::anchor_ops;
 
 /// Canonical field names for command objects in JavaScript context.
 /// These are used consistently in both template expansion and JS action execution.
@@ -170,7 +171,7 @@ impl TemplateContext {
         if let Some(last_executed_name) = &state.last_executed_command {
             let (sys_data, _) = crate::core::get_sys_data();
             if let Some(cmd) = sys_data.commands.iter().find(|c| &c.command == last_executed_name) {
-                let folder = match extract_and_validate_folder(cmd) {
+                let folder = match anchor_ops::extract_and_validate_folder(cmd) {
                     Ok(f) => f,
                     Err(_) => String::new()
                 };
@@ -237,7 +238,7 @@ impl TemplateContext {
         // Add or update selected command variables
         if let Some(cmd) = selected_command {
             // Extract and validate folder, or use empty string if extraction fails
-            let folder = match extract_and_validate_folder(cmd) {
+            let folder = match anchor_ops::extract_and_validate_folder(cmd) {
                 Ok(f) => f,
                 Err(_) => String::new()
             };
@@ -507,103 +508,6 @@ impl TemplateContext {
             self.variables.insert(key, value);
         }
     }
-}
-
-/// Extract folder path from a file path
-fn extract_folder_from_path(path: &str) -> Option<String> {
-    use std::path::Path;
-    
-    let path = Path::new(path);
-    path.parent()
-        .and_then(|p| p.to_str())
-        .map(|s| s.to_string())
-}
-
-/// Extract folder from cmd command with cd
-fn extract_folder_from_cd_command(arg: &str) -> Result<String, String> {
-    let trimmed = arg.trim();
-    
-    // Check if it starts with cd
-    if !trimmed.starts_with("cd ") {
-        return Err("Command does not start with 'cd'".to_string());
-    }
-    
-    // Find the && terminator
-    let cd_part = if let Some(idx) = trimmed.find(" &&") {
-        &trimmed[3..idx] // Skip "cd " and take up to " &&"
-    } else {
-        return Err("No && found after cd command".to_string());
-    };
-    
-    // Trim and remove quotes
-    let folder = cd_part.trim();
-    let folder = if (folder.starts_with('"') && folder.ends_with('"')) ||
-                    (folder.starts_with('\'') && folder.ends_with('\'')) {
-        &folder[1..folder.len()-1]
-    } else {
-        folder
-    };
-    
-    Ok(folder.to_string())
-}
-
-/// Extract and validate folder from command
-fn extract_and_validate_folder(cmd: &super::Command) -> Result<String, String> {
-    use std::path::Path;
-    
-    let folder = match cmd.action.as_str() {
-        "cmd" => {
-            // Special handling for cmd - look for cd command
-            extract_folder_from_cd_command(&cmd.arg)?
-        },
-        "folder" | "tmux" => {
-            // For folder/tmux actions, the arg is the folder itself
-            cmd.arg.clone()
-        },
-        "markdown" | "doc" | "text" => {
-            // For file-based actions, check if arg is a directory or file
-            let expanded_arg = if cmd.arg.starts_with("~/") {
-                cmd.arg.replacen("~", &std::env::var("HOME").unwrap_or_default(), 1)
-            } else {
-                cmd.arg.clone()
-            };
-
-            let path = Path::new(&expanded_arg);
-            if path.is_dir() {
-                // If it's already a directory (like /path/to/folder), use it directly
-                expanded_arg
-            } else {
-                // If it's a file, extract parent folder
-                extract_folder_from_path(&cmd.arg)
-                    .ok_or_else(|| format!("Could not extract folder from path: {}", cmd.arg))?
-            }
-        },
-        _ => {
-            // Other actions don't have folder context
-            return Err(format!("Action '{}' does not provide folder context", cmd.action));
-        }
-    };
-    
-    // Expand tilde if present
-    let expanded = if folder.starts_with("~/") {
-        folder.replacen("~", &std::env::var("HOME").unwrap_or_default(), 1)
-    } else {
-        folder.clone()
-    };
-    
-    // Verify folder exists
-    if !Path::new(&expanded).exists() {
-        return Err(format!("Folder does not exist: {}", expanded));
-    }
-
-    // Remove trailing slash to avoid double slashes in templates
-    let normalized = if expanded.ends_with('/') && expanded.len() > 1 {
-        expanded[..expanded.len() - 1].to_string()
-    } else {
-        expanded
-    };
-
-    Ok(normalized)
 }
 
 /// Add date/time variables to the context
