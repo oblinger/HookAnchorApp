@@ -2,11 +2,11 @@
 
 # ATV Features
 
-Feature design log. Newest entries first.
+Feature design log. **Dated sections** document.
 
 ---
 
-## 2026-01-12 — Feature: [Feature Name]
+## 2026-01-12  [Feature Name]
 
 ### Overview
 

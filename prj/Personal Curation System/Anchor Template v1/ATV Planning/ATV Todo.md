@@ -2,7 +2,7 @@
 
 # ATV Todo
 
-Current tasks and open questions. Tasks are tracked in [[ATV Roadmap]].
+Current tasks and open questions. **Dated sections** document. Tasks are tracked in [[ATV Roadmap]].
 
 ---
 

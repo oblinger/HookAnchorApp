@@ -2,7 +2,7 @@
 
 # ATV Notes
 
-High-level discussion notes. Newest entries first.
+High-level discussion notes. **Dated sections** document.
 
 ---
 

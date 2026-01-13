@@ -1,3 +1,74 @@
+
+# GENERAL CURATION RULES
+
+## DEFINED TERMS
+
+- **DATED FOLDER** — A folder where all files and subfolders within it are prefixed with the date format (`YYYY-MM-DD`). Items sort in chronological order when viewed alphabetically.
+
+- **DATED SECTIONS** — A file composed of H2 sections whose titles begin with a date prefix (`## YYYY-MM-DD — Title`), listed in reverse chronological order (newest first). Used for notes, features, todo, and log files.
+
+---
+
+## MARKDOWN FORMATTING
+
+Standard formatting conventions used throughout all documents.
+
+### Vertical Spacing
+Headings should visually associate with the content that follows, not the content before:
+- **H1, H2** — Three blank lines before, one blank line after
+- **H3 AND BELOW** — No blank line after the heading
+- **LISTS** — No blank line between a heading/text and the list that follows it
+
+Example of correct spacing:
+```markdown
+Some preceding content here.
+
+
+
+## Section Title
+
+First paragraph of this section.
+
+### Subsection
+- List item 1
+- List item 2
+
+More text here.
+```
+
+### Named List
+A bullet list where each item has a bold ALL CAPS name followed by a double dash and description:
+- **NAME** — Description of what this item is or does
+
+Used for: defining terms, listing standard entries, describing fields.
+
+### Dated Sections Example
+Example of a file with **dated sections**:
+```
+## 2026-01-12 — Topic or Feature Name
+
+Content for this entry...
+
+## 2026-01-10 — Earlier Topic
+
+Earlier content...
+```
+
+### Date Format
+Standard date format is `YYYY-MM-DD` (ISO 8601):
+- **IN HEADINGS** — Use as prefix: `## 2026-01-12 — Topic Name`
+- **IN FILENAMES** — Use as prefix for archived items: `2026-01-12 Old Project Name`
+- **IN TEXT** — Use consistently for all dates
+
+This format ensures:
+- Chronological sorting when viewing alphabetically
+- Unambiguous interpretation (no month/day confusion)
+- Compatibility with international standards
+
+---
+
+
+
 # ANCHOR RULES
 
 [[Anchor Template v1]]
@@ -19,10 +90,10 @@ Template variables: `{NAME}` = full name, `{TLC}` = short code, `{repo}` = repos
 ├── {TLC} Planning/                # Planning docs (PRIVATE - not published)
 │   ├── {TLC} Planning.md          # Anchor for planning subfolder
 │   ├── {TLC} PRD.md               # Product Requirements Document
-│   ├── {TLC} Features.md          # Feature designs (streaming)
-│   ├── {TLC} Notes.md             # Discussion notes (streaming)
+│   ├── {TLC} Features.md          # Feature designs (dated sections)
+│   ├── {TLC} Notes.md             # Discussion notes (dated sections)
 │   ├── {TLC} Roadmap.md           # Milestone-based task tracking
-│   └── {TLC} Todo.md              # Short-term tasks (streaming)
+│   └── {TLC} Todo.md              # Short-term tasks (dated sections)
 │
 ├── {TLC} Research/                # Research materials (optional)
 │   ├── {TLC} References.md        # Bibliography
@@ -95,66 +166,6 @@ Folder `Alien Biology/` contains:
 
 ---
 
-## MARKDOWN FORMATTING
-
-Standard formatting conventions used throughout anchor documents.
-
-### Vertical Spacing
-Headings should visually associate with the content that follows, not the content before:
-- **H1, H2** — Three blank lines before, one blank line after
-- **H3 AND BELOW** — No blank line after the heading
-- **LISTS** — No blank line between a heading/text and the list that follows it
-
-Example of correct spacing:
-```markdown
-Some preceding content here.
-
-
-
-## Section Title
-
-First paragraph of this section.
-
-### Subsection
-- List item 1
-- List item 2
-
-More text here.
-```
-
-### Named List
-A bullet list where each item has a bold ALL CAPS name followed by a double dash and description:
-- **NAME** — Description of what this item is or does
-
-Used for: defining terms, listing standard entries, describing fields.
-
-### Reverse Chronological H2
-A streaming file format where H2 sections have dated prefixes, newest first:
-```
-## 2026-01-12 — Topic or Feature Name
-
-Content for this entry...
-
-## 2026-01-10 — Earlier Topic
-
-Earlier content...
-```
-
-Used for: Features, Notes, Todo, and Log files that accumulate entries over time.
-
-### Date Format
-Standard date format is `YYYY-MM-DD` (ISO 8601):
-- **IN HEADINGS** — Use as prefix: `## 2026-01-12 — Topic Name`
-- **IN FILENAMES** — Use as prefix for archived items: `2026-01-12 Old Project Name`
-- **IN TEXT** — Use consistently for all dates
-
-This format ensures:
-- Chronological sorting when viewing alphabetically
-- Unambiguous interpretation (no month/day confusion)
-- Compatibility with international standards
-
----
-
 ## ANCHOR PAGE
 
 The anchor page (`{TLC}.md`) is the primary entry point for the project.
@@ -191,12 +202,12 @@ Links to research materials (optional, for research-oriented projects):
 Links to planning documents (private, not published):
 - **TLC PLANNING** — Anchor for the planning subfolder
 - **TLC PRD** — Product Requirements Document; feature-by-feature design specs
-- **TLC FEATURES** — Feature design log; uses Reverse Chronological H2 format
-- **TLC NOTES** — High-level discussion notes; uses Reverse Chronological H2 format
+- **TLC FEATURES** — Feature design log; **dated sections**
+- **TLC NOTES** — High-level discussion notes; **dated sections**
 
 #### Execution Row
 Links to task tracking documents (sub-row of Planning):
-- **TLC TODO** — Short-term tasks and open questions; uses Reverse Chronological H2 format
+- **TLC TODO** — Short-term tasks and open questions; **dated sections**
 - **TLC ROADMAP** — Milestone-based task organization
 
 #### User Docs Row
@@ -217,10 +228,10 @@ Links to published end-user documentation:
 ### Standard Planning Documents
 - **TLC PLANNING.MD** — Anchor for the planning subfolder
 - **TLC PRD.MD** — Product Requirements Document; feature-by-feature design specs
-- **TLC FEATURES.MD** — Feature design log; uses Reverse Chronological H2 format
-- **TLC NOTES.MD** — High-level discussion notes; uses Reverse Chronological H2 format
+- **TLC FEATURES.MD** — Feature design log; **dated sections**
+- **TLC NOTES.MD** — High-level discussion notes; **dated sections**
 - **TLC ROADMAP.MD** — Milestone-based task organization
-- **TLC TODO.MD** — Short-term tasks and open questions; uses Reverse Chronological H2 format
+- **TLC TODO.MD** — Short-term tasks and open questions; **dated sections**
 - **TLC OPEN QUESTIONS.MD** — Design questions awaiting resolution
 
 ---

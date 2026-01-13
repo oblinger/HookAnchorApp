@@ -13,7 +13,7 @@
 | 2023-05-06 | [[LIM]]  | [[2025-06 LinkedIn Contacts Merge]] |                                                     |
 |            | [[ASP]]  |                                     |                                                     |
 |            | [[ABIO]] |                                     |                                                     |
-|            | [[HA]]   |                                     |                                                     |
+|            | [[HA]]   | [[Hook Anchor]]                     | Universal command launcher for macOS                |
 |            |          |                                     |                                                     |
 |            |          |                                     |                                                     |
 |            |          |                                     |                                                     |
