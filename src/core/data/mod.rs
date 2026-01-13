@@ -91,9 +91,6 @@ pub(crate) use storage::load_commands_raw;
 // Re-export config directory path function (for non-data files only)
 pub use storage::get_config_dir;
 
-// Re-export deduplication utilities for consistent duplicate detection
-pub use storage::command_dedup_key;
-
 // Re-export history read function (via trampoline in sys_data)
 // History writing is automatic and happens only inside sys_data
 pub use history::HistoryEntry;
