@@ -20,6 +20,7 @@ pub mod ui;
 pub mod js;
 
 // Command-line interface
+pub mod cli;
 pub mod cmd;
 pub mod utils;
 
