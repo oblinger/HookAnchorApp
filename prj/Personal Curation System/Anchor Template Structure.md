@@ -8,17 +8,7 @@ The most common stream types are streams of anchors. Each anchor is usually asso
 
 ## FILE STRUCTURE
 
-### Anchor Folder Definition
-- An **anchor** is a folder that contains a Markdown file with the same name as the folder
-- Example: `.../My Project/My Project.md` — the `.md` file is the "anchor markdown"
-- The anchor markdown provides links to key parts of the anchor folder
-- An anchor folder without the same-named markdown is just a regular folder
-
-### Root Folder vs Repository
-- The anchor root folder contains planning/private documentation that should NOT be published
-- If the project has a code repository, it is a **subdirectory** of the anchor folder
-- The subdirectory name matches the GitHub repository name (since it's a clone)
-- Template variables: `{NAME}` = full name, `{TLC}` = short code, `{repo}` = repository name
+Template variables: `{NAME}` = full name, `{TLC}` = short code, `{repo}` = repository name
 
 ### Complete Folder Structure
 ```
@@ -65,7 +55,17 @@ Folder `Alien Biology/` contains:
 - `ABIO Planning/` — private planning docs
 - `alienbio/` — the repository (publishable)
 
-This separation ensures planning docs don't accidentally get committed to the repo.
+### Anchor Folder Definition
+- An **anchor** is a folder that contains a Markdown file with the same name as the folder
+- Example: `.../My Project/My Project.md` — the `.md` file is the "anchor markdown"
+- The anchor markdown provides links to key parts of the anchor folder
+- An anchor folder without the same-named markdown is just a regular folder
+
+### Root Folder vs Repository
+- The anchor root folder contains planning/private documentation that should NOT be published
+- If the project has a code repository, it is a **subdirectory** of the anchor folder
+- The subdirectory name matches the GitHub repository name (since it's a clone)
+- This separation ensures planning docs don't accidentally get committed to the repo
 
 ---
 
@@ -95,37 +95,104 @@ This separation ensures planning docs don't accidentally get committed to the re
 
 ---
 
+## MARKDOWN FORMATTING
+
+Standard formatting conventions used throughout anchor documents.
+
+### Vertical Spacing
+Headings should visually associate with the content that follows, not the content before:
+- **H1, H2** — Three blank lines before, one blank line after
+- **H3 AND BELOW** — No blank line after the heading
+- **LISTS** — No blank line between a heading/text and the list that follows it
+
+Example of correct spacing:
+```markdown
+Some preceding content here.
+
+
+
+## Section Title
+
+First paragraph of this section.
+
+### Subsection
+- List item 1
+- List item 2
+
+More text here.
+```
+
+### Named List
+A bullet list where each item has a bold ALL CAPS name followed by a double dash and description:
+- **NAME** — Description of what this item is or does
+
+Used for: defining terms, listing standard entries, describing fields.
+
+### Reverse Chronological H2
+A streaming file format where H2 sections have dated prefixes, newest first:
+```
+## 2026-01-12 — Topic or Feature Name
+
+Content for this entry...
+
+## 2026-01-10 — Earlier Topic
+
+Earlier content...
+```
+
+Used for: Features, Notes, Todo, and Log files that accumulate entries over time.
+
+---
+
 ## ANCHOR PAGE
 
-The anchor page (`{TLC}.md`) is the primary entry point for the project. It has specific structural rules.
-
-### Link Table at Top
-- The anchor page begins with a table linking to key resources
-- Table format with columns for category, links, and optional notes
-- Standard rows (include only those that apply):
-
-| Row | Purpose | Example Links |
-|-----|---------|---------------|
-| **External** | Links outside the vault | GitHub repo, published docs, legacy |
-| **Research** | Research materials | References, related work |
-| **Planning** | Planning documents | PRD, Features, Notes, Roadmap, Todo |
-| **User Docs** | End-user documentation | User Guide, Architecture, API Reference |
-
-### Example Link Table
-```markdown
-| [[TLC Planning]]           | -------------------------------- [[Related Project]]        |
-| -------------------------- | ------------------------------------------------------------ |
-| External                   | [Repo](url), [Docs](url), [[legacy/TLC Legacy\|Legacy]]      |
-| [[TLC Research]]           | [[TLC References]]                                           |
-| [[TLC Planning\|Planning]] | [[TLC PRD]], [[TLC Features]], [[TLC Notes]]                 |
-| - Execution                | [[TLC Todo]], [[TLC Roadmap]]                                |
-| [[TLC Docs\|User Docs]]    | [[User Guide]], [[Architecture Docs]], [[api/index\|API]]    |
-```
+The anchor page (`{TLC}.md`) is the primary entry point for the project.
 
 ### Description Field
 - Include a `desc::` field near the top for the TLC index
 - Format: `desc:: Brief description of the project`
 - This is extracted when building the TLC table
+
+### Anchor Link Table
+The anchor page begins with a link table. Example:
+
+| [[TLC Planning]]           | -------------------------------- [[Related Project]]      |
+| -------------------------- | --------------------------------------------------------- |
+| External                   | [Repo](url), [Docs](url)                                  |
+| [[TLC Research]]           | [[TLC References]]                                        |
+| [[TLC Planning\|Planning]] | [[TLC PRD]], [[TLC Features]], [[TLC Notes]]              |
+| - Execution                | [[TLC Todo]], [[TLC Roadmap]]                             |
+| [[TLC Docs\|User Docs]]    | [[User Guide]], [[Architecture Docs]], [[api/index\|API]] |
+
+#### External Row
+Links to resources outside the Obsidian vault:
+- **REPO** — GitHub repository URL
+- **DOCS** — Published documentation site (GitHub Pages)
+- **LEGACY** — Link to legacy/archived version if this replaces an older project
+
+#### Research Row
+Links to research materials (optional, for research-oriented projects):
+- **TLC RESEARCH** — Anchor for the research subfolder
+- **TLC REFERENCES** — Bibliography and reference links
+- **TLC RELATED WORK** — Analysis of related work
+
+#### Planning Row
+Links to planning documents (private, not published):
+- **TLC PLANNING** — Anchor for the planning subfolder
+- **TLC PRD** — Product Requirements Document; feature-by-feature design specs
+- **TLC FEATURES** — Feature design log; uses Reverse Chronological H2 format
+- **TLC NOTES** — High-level discussion notes; uses Reverse Chronological H2 format
+
+#### Execution Row
+Links to task tracking documents (sub-row of Planning):
+- **TLC TODO** — Short-term tasks and open questions; uses Reverse Chronological H2 format
+- **TLC ROADMAP** — Milestone-based task organization
+
+#### User Docs Row
+Links to published end-user documentation:
+- **USER GUIDE** — Task-oriented tutorials and how-tos
+- **ARCHITECTURE DOCS** — System design, class documentation
+- **API** — Generated API reference (from docstrings)
 
 ### Body Content
 - Below the link table, add project-specific content as needed
@@ -137,74 +204,54 @@ The anchor page (`{TLC}.md`) is the primary entry point for the project. It has 
 ## PLANNING FOLDER
 
 ### Standard Planning Documents
-- `TLC Planning.md` — Anchor for the planning subfolder
-- `TLC PRD.md` — Product Requirements Document (feature-by-feature design)
-- `TLC Features.md` — Streaming file of feature designs (dated H2 entries)
-- `TLC Notes.md` — Streaming file of high-level discussion notes (dated H2 entries)
-- `TLC Roadmap.md` — Milestone-based task organization
-- `TLC Todo.md` — Short-term task tracking, open questions (dated H2 entries)
-- `TLC Open Questions.md` — Design questions awaiting resolution
-
-### Streaming Files
-- Some files are "streaming" — they accumulate entries over time
-- Format: H2 headers with dated prefixes, newest first (reverse chronological)
-- Example:
-  ```markdown
-  ## 2026-01-12 — Feature: Export to CSV
-
-  Design notes for CSV export...
-
-  ## 2026-01-10 — Feature: Dark Mode
-
-  Design notes for dark mode...
-  ```
-- Streaming files: Features, Notes, Todo, Log files
+- **TLC PLANNING.MD** — Anchor for the planning subfolder
+- **TLC PRD.MD** — Product Requirements Document; feature-by-feature design specs
+- **TLC FEATURES.MD** — Feature design log; uses Reverse Chronological H2 format
+- **TLC NOTES.MD** — High-level discussion notes; uses Reverse Chronological H2 format
+- **TLC ROADMAP.MD** — Milestone-based task organization
+- **TLC TODO.MD** — Short-term tasks and open questions; uses Reverse Chronological H2 format
+- **TLC OPEN QUESTIONS.MD** — Design questions awaiting resolution
 
 ---
 
 ## DOCUMENTATION STRUCTURE
 
 ### Planning Docs (Private)
-- Located in anchor root, NOT in repository
-- Include: PRD, Features, Notes, Roadmap, Todo
-- These contain work-in-progress, internal discussions, rough ideas
+Located in anchor root (`{TLC} Planning/`), NOT in repository. Contains work-in-progress, internal discussions, rough ideas.
 
 ### User Docs (Published)
-- Located in repository under `docs/`
-- Types:
-  - **User Guide** — Task-oriented tutorials and how-tos
-  - **Architecture Docs** — System design, class documentation
-  - **API Reference** — Generated from source code (MkDocs, Sphinx, etc.)
+Located in repository under `docs/`. Types:
+- **USER GUIDE** — Task-oriented tutorials and how-tos
+- **ARCHITECTURE DOCS** — System design, class documentation
+- **API REFERENCE** — Generated from source code docstrings
 
 ### Documentation Generation
-- Use MkDocs (Python) or equivalent for API reference generation
-- `mkdocs.yml` configures documentation build
-- Generated site goes to `site/` folder or GitHub Pages
+- **MKDOCS** — Python-based documentation generator
+- **MKDOCS.YML** — Configuration file in repo root
+- **SITE/** — Generated documentation folder (gitignored)
 - API docs are auto-generated from docstrings; other docs are hand-written
 
 ---
 
 ## CODE REPOSITORY STRUCTURE
 
-See the Complete Folder Structure above for the full layout. Key points:
+See the Complete Folder Structure above for the full layout.
 
 ### Key Repository Files
-- `README.md` — Brief project description, installation, quick start
-- `CLAUDE.md` — Claude Code project instructions (coding conventions, key patterns)
-- `pyproject.toml` — Dependencies, build config, project metadata
-- `justfile` — Common tasks: `just build`, `just test`, `just docs`
-- `mkdocs.yml` — MkDocs documentation site configuration
+- **README.MD** — Brief project description, installation, quick start
+- **CLAUDE.MD** — Claude Code project instructions; coding conventions, key patterns
+- **PYPROJECT.TOML** — Dependencies, build config, project metadata
+- **JUSTFILE** — Task runner; common tasks like `just build`, `just test`, `just docs`
+- **MKDOCS.YML** — MkDocs documentation site configuration
 
 ### docs/ Folder Organization
-- `docs/index.md` — Documentation home page
-- `docs/user-guide/` — Task-oriented tutorials and how-tos
-- `docs/architecture/` — System design docs, class documentation
-- `docs/api/` — Generated API reference (auto-generated from docstrings)
+- **INDEX.MD** — Documentation home page
+- **USER-GUIDE/** — Task-oriented tutorials and how-tos
+- **ARCHITECTURE/** — System design docs, class documentation
+- **API/** — Generated API reference (auto-generated from docstrings)
 
 ### site/ Folder
-- Generated by `mkdocs build`
-- Should be gitignored
-- Deployed to GitHub Pages
+Generated by `mkdocs build`. Should be gitignored. Deployed to GitHub Pages.
 
 ---
 
@@ -256,3 +303,163 @@ See the Complete Folder Structure above for the full layout. Key points:
 7. [ ] If code project: set up docs/, mkdocs.yml, pyproject.toml
 8. [ ] Add to TLC index if applicable
 9. [ ] Create CLAUDE.md if using Claude for development
+
+---
+
+# ACTIONS
+
+## Organizational Actions
+
+### Move Anchor Folder
+Moving an anchor folder requires updating several systems that index by path.
+
+#### 1. Move the Folder
+```bash
+mv "/old/path/{NAME}" "/new/path/{NAME}"
+```
+
+#### 2. Migrate Claude Code Sessions
+Claude Code stores sessions in `~/.claude/projects/` with paths encoded (slashes become dashes). When you move a folder, sessions become orphaned.
+
+**Manual migration:**
+```bash
+cd ~/.claude/projects/
+# Rename the session directory (use -- to handle leading dash)
+mv -- -old-path-encoded -new-path-encoded
+```
+
+Example: Moving `~/ob/proj/My Project` to `~/ob/kmr/prj/My Project`:
+```bash
+mv -- -Users-oblinger-ob-proj-My-Project -Users-oblinger-ob-kmr-prj-My-Project
+```
+
+**Automated migration:** Use the `claude-mv` script from Chase Adams:
+```bash
+claude-mv ~/old/path ~/new/path
+```
+This handles renaming directories and updating path references in `.jsonl` files.
+
+**Verify:** After migration, run `claude --continue` in the new location.
+
+#### 3. Reindex HookAnchor
+HookAnchor maintains an index of anchor folders. Trigger a rescan:
+```bash
+ha --rescan     # Rescan filesystem
+```
+
+#### 4. Rebuild Documentation Index
+If the anchor has published docs, rebuild the MkDocs site:
+```bash
+cd /new/path/{repo}
+mkdocs build    # Rebuild site/ folder
+```
+
+If using GitHub Pages, push changes to trigger rebuild.
+
+#### 5. Update TLC Index
+If the anchor has a TLC, update [[SYS/Closet/Three Letter Codes/TLC]] with the new location.
+
+#### 6. Update Git Remotes (if applicable)
+If the repository was moved, remote URLs should still work. But verify:
+```bash
+cd /new/path/{repo}
+git remote -v
+```
+
+#### 7. Scan for Hardcoded Paths
+Search the codebase for hardcoded references to the old path:
+```bash
+cd /new/path/{repo}
+grep -r "/old/path" .
+grep -r "old-path-segment" .
+```
+
+Common places where paths may be hardcoded:
+- **CLAUDE.MD** — Project instructions may reference absolute paths
+- **CONFIG FILES** — pyproject.toml, mkdocs.yml, justfile
+- **SCRIPTS** — Shell scripts, Python scripts with path constants
+- **DOCUMENTATION** — Examples or tutorials with absolute paths
+- **TESTS** — Test fixtures or test data paths
+
+#### Checklist: Move Anchor Folder
+1. [ ] Move the folder itself
+2. [ ] Migrate Claude Code sessions (`~/.claude/projects/`)
+3. [ ] Reindex HookAnchor (`ha --rescan`)
+4. [ ] Rebuild docs if applicable (`mkdocs build`)
+5. [ ] Update TLC index
+6. [ ] Verify git remotes
+7. [ ] Scan for and update hardcoded paths
+8. [ ] Test: `claude --continue` works in new location
+
+---
+
+## Coding Actions
+
+### Justfile Standards
+The `justfile` is the standard way to manage project tasks. Use [just](https://github.com/casey/just) as the task runner.
+
+#### Standard Recipes
+- **BUILD** — Build the project (compile, package)
+- **TEST** — Run the test suite
+- **LINT** — Run linters (ruff, mypy, etc.)
+- **CHECK** — Run all checks (lint + test)
+- **DOCS** — Build documentation (`mkdocs build`)
+- **DOCS-SERVE** — Serve docs locally (`mkdocs serve`)
+- **DOCS-DEPLOY** — Deploy docs to GitHub Pages (`mkdocs gh-deploy`)
+- **INSTALL** — Install dependencies
+- **DEV** — Install in development mode with dev dependencies
+- **CLEAN** — Remove build artifacts, cache files
+- **RELEASE** — Build and publish to PyPI
+
+#### Example Justfile
+```just
+# Default recipe - show available commands
+default:
+    @just --list
+
+# Build the project
+build:
+    python -m build
+
+# Run tests
+test:
+    pytest tests/
+
+# Run linter
+lint:
+    ruff check src/
+
+# Format code
+format:
+    ruff format src/ tests/
+
+# Run all checks
+check: lint test
+
+# Build documentation
+docs:
+    mkdocs build
+
+# Serve docs locally
+docs-serve:
+    mkdocs serve
+
+# Deploy docs to GitHub Pages
+docs-deploy:
+    mkdocs gh-deploy
+
+# Install in development mode
+dev:
+    pip install -e ".[dev]"
+
+# Clean build artifacts
+clean:
+    rm -rf dist/ build/ *.egg-info site/ .pytest_cache/ .ruff_cache/
+```
+
+#### Project-Specific Recipes
+Add project-specific recipes as needed:
+- **RUN** — Run the application
+- **DB-MIGRATE** — Run database migrations
+- **DOCKER-BUILD** — Build Docker image
+- **DEPLOY** — Deploy to production
