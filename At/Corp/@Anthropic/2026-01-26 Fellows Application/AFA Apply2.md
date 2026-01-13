@@ -66,19 +66,25 @@ When I learned of the Anthropic Fellows Program, I dove in to implement the Alie
 
 I have organized my thinking over the last year into three draft papers/outlines that indicate the direction of this thinking:
 
-Alien Biology Whitepaper - The paper that spawned the generative testing framework.  The aim is to provide a
-- controllable
-- taint-free 
-- ???? 
+ALIEN BIOLOGY WHITEPAPER
 
-Deliberative Coherence — Outlines the agenda for studying "deliberative coherence," examining how deliberation-based alignment works and when/how it breaks down.
+Most AI benchmarks suffer from training contamination: we cannot distinguish genuine reasoning from pattern-matching against memorized solutions. The Alien Biology framework addresses this by generating procedural universes guaranteed untainted by training corpora. These synthetic ecosystems preserve the structural complexity of real biological reasoning--feedback loops, multi-level interactions, emergent behaviors--while ensuring every detail is novel. The framework is parametrically controllable, varying task complexity across dimensions like reasoning depth, abstraction layers, and information availability. This enables systematic measurement of where agentic AI systems transition from competent to confused.
 
-Experimental Roadmap -- Outlines how I plan to use the Alien Biology framework to conduct this work.  Here is a thumbnail of these research directions:
-- Testing Inner Alignment - Alien biology provides an ideal testbed for testing how well deliberation achieves inner alignment rather than trained alignment.
-- Deliberation Alignment Failures - Sampling over parametrically generated 
+DELIBERATIVE COHERENCE
 
-White Paper:  https://oblinger.github.io/gitproj/AlienBiology/AlienBiologyWhitepaper.pdf
+This introduces "deliberative coherence" as a theoretical lens for understanding alignment in future AI systems. A deliberatively coherent system possesses three capabilities: self-understanding (the ability to predict and model its own behavior), self-adaptation (the ability, directly or indirectly, to adapt the way it reasons), and exhaustive deliberation (given sufficient stakes, will reason about anything within reach). The central conjecture is that future AI systems will be deliberatively coherent--not as a hope, but as an inevitability driven by competitive pressure and architectural trajectory. Even systems not given direct mechanisms for self-modification will find indirect ways to adapt their thinking toward their objectives. If true, this reframes the alignment question: rather than asking whether we can make systems safe through training, we ask what will the failure modes of deliberately coherent systems be?
 
+EXPERIMENTAL ROADMAP
+
+This outlines experiments using Alien Biology to study how deliberatively coherent systems fail. Research directions include:
+- Constitutional conflicts: when stated objectives contradict each other, how does resolution occur?
+- Instrumental pressures: goals that emerge from world structure may push against stated alignment objectives
+- Alignment under ignorance: with incomplete knowledge, all actions risk violating alignment objectives in ways the system cannot foresee
+- Fixed point analysis: if systems continuously self-adapt toward their objectives, where does this process converge?
+
+
+Documents linked here:
+https://oblinger.github.io/gitproj/DeliberativeCoherence/
 
 
 
@@ -90,15 +96,48 @@ White Paper:  https://oblinger.github.io/gitproj/AlienBiology/AlienBiologyWhitep
 
 
 **References:**
+**For each Reference: Please share context on their background.**
+  - **Include their title, website, Google Scholar, and any other relevant public information.**
+  **For each Reference: Please share context on your relationship.**
+  - **Include what you worked on together, when and for how long you worked together, how closely you collaborated, and your relationship to them.**
+
 
 Reference 1:
-- Andrew Ng    DeepLearning.AI's Founder   AI Fund's Managing Partner           andrewyantakng@gmail.com   
+- Andrew Ng    DeepLearning.AI's Founder   AI Fund's Managing Partner           andrewyantakng@gmail.com
 
-Reference 3:
-- Vittorio Castelli   Senior Director Applied Science at Oracle     vittorio.castelli@alumni.stanford.edu  
+BACKGROUND
+Andrew Ng is one of the world's most influential figures in AI and deep learning. He co-founded Google Brain (2011), where his team trained neural networks on 16,000 CPU cores that learned to recognize cats from YouTube videos—a landmark in unsupervised deep learning. He served as Chief Scientist at Baidu and co-founded Coursera, bringing AI education to over 8 million students worldwide. He is currently Founder of DeepLearning.AI, Managing General Partner of AI Fund ($175M+ invested in AI startups), Executive Chairman of LandingAI, and Adjunct Professor at Stanford. His research spans machine learning, deep learning, computer vision, and NLP.
+- Website: https://www.andrewng.org/
+- Google Scholar: https://scholar.google.com/citations?user=mG4imMEAAAAJ
+- LinkedIn: https://www.linkedin.com/in/andrewyng/
+
+RELATIONSHIP
+{{NICK: Please fill in: What you worked on together, when, how long, how closely you collaborated, your relationship to him}}
+
 
 Reference 2:
-- Nina Mishra   Principle Scientist at Amazon       nmishra@gmail.com  
+- Nina Mishra   Principal Scientist at Amazon       nmishra@gmail.com
+
+BACKGROUND
+Nina Mishra is a Principal Scientist at Amazon with deep expertise in machine learning, data mining, and streaming algorithms. With over 16 years of industry research leadership at Microsoft Research, HP Labs, and Amazon, plus 6 years as Associate Professor at University of Virginia and Acting Faculty at Stanford, she bridges academic rigor with industrial impact. Her foundational work on clustering data streams (7,700+ citations, h-index 34) shaped the field, and her "Robust Random Cut Forest" algorithm is central to Amazon's anomaly detection systems. She has authored ~50 publications in top venues (ICML, NeurIPS, AAAI, VLDB, CRYPTO), holds 14+ patents, and chaired ICML in 2003. Her research was central to the Bing search engine. PhD from UIUC.
+- Amazon Science: https://www.amazon.science/author/nina-mishra
+- Google Scholar: https://scholar.google.com/citations?user=9yJU0gsAAAAJ
+- Stanford page: http://theory.stanford.edu/~nmishra/
+
+RELATIONSHIP
+{{NICK: Please fill in: What you worked on together, when, how long, how closely you collaborated, your relationship to her}}
+
+
+Reference 3:
+- Vittorio Castelli   Senior Director Applied Science at Oracle     vittorio.castelli@alumni.stanford.edu
+
+BACKGROUND
+Vittorio Castelli is Senior Director of Applied Science at Oracle Cloud Infrastructure, leading generative AI and NLP efforts. Previously at AWS, he helped launch foundational AI services including Amazon Bedrock for generative AI applications. His 30+ year research career spans IBM Research where he pioneered work in machine learning, information theory, and NLP. With 9,400+ citations (h-index 46), his influential publications include foundational work on semi-supervised learning with Thomas Cover, image database retrieval, and large-scale ML systems. He is currently building Oracle's applied science team for generative AI. Stanford PhD.
+- LinkedIn: https://www.linkedin.com/in/vittorio-castelli-3449604/
+- Google Scholar: https://scholar.google.com/citations?user=d-lg1lEAAAAJ
+
+RELATIONSHIP
+{{NICK: Please fill in: What you worked on together, when, how long, how closely you collaborated, your relationship to him}}
 
 
 
