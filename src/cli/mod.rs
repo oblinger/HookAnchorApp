@@ -11,7 +11,6 @@ pub mod server;
 pub mod install;
 pub mod inference;
 pub mod maintenance;
-pub mod legacy;
 
 // Re-export commonly used items
 pub use help::{print_help, print_help_vars, print_help_config, print_help_fns};
@@ -34,4 +33,3 @@ pub use maintenance::{
     run_rescan_command, run_execute_launcher_command, run_rebuild_command,
     run_search_command, run_delete_history, run_diagnose,
 };
-pub use legacy::run_load_legacy_and_compare;
