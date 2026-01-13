@@ -14,6 +14,7 @@ pub(crate) mod popup;
 pub(crate) mod command_editor;
 pub(crate) mod dialog;
 pub(crate) mod anchor_tree_navigator;
+pub(crate) mod window_utils;
 pub mod helpers;  // Used by UI module and history viewer
 
 // ============================================================================
