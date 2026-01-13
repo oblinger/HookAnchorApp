@@ -33,8 +33,8 @@
 | ----- | ------------------- | ------------------ | ------------------------ | -------------------- | --------------- |
 | -     |                     |                    | tgl LEFT pane            |                      |                 |
 | +     |                     |                    | tgl RIGHT pane           |                      |                 |
-| {     |                     |                    | nav BACK / DAILY note    |                      |                 |
-| }     |                     |                    | nav FORWARD / DAILY note |                      |                 |
+| [     |                     |                    | nav BACK / DAILY note    |                      |                 |
+| ]     |                     |                    | nav FORWARD / DAILY note |                      |                 |
 | \\    |                     |                    |                          |                      |                 |
 | ;     |                     |                    | DARK mode                |                      |                 |
 | '     |                     |                    | LIGHT mode               |                      |                 |

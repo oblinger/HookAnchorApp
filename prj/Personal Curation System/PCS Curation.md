@@ -83,25 +83,28 @@ The most common stream types are streams of anchors. Each anchor is usually asso
 
 ## FILE STRUCTURE
 
-Template variables: `{NAME}` = full name, `{TLC}` = short code, `{repo}` = repository name
+Template variables:
+- `{FULL_NAME}` = folder name (the full descriptive name)
+- `{TLC}` = short code (if it exists, typically 2-5 uppercase letters)
+- `{NAME}` = TLC if it exists, otherwise FULL_NAME
+- `{repo}` = repository name
 
 ### Complete Folder Structure
 ```
-{NAME}/                            # Anchor root folder (full descriptive name)
-├── {NAME}.md                      # Redirect: contains only "See [[{TLC}]]"
-├── {TLC}.md                       # PRIMARY ANCHOR PAGE (link table, overview)
+{FULL_NAME}/                       # Anchor root folder (full descriptive name)
+├── {FULL_NAME}.md                 # Redirect: contains only "See [[{TLC}]]" (if TLC exists)
 │
-├── {TLC} Planning/                # Planning docs (PRIVATE - not published)
-│   ├── {TLC} Planning.md          # Anchor for planning subfolder
-│   ├── {TLC} PRD.md               # Product Requirements Document
-│   ├── {TLC} Features.md          # Feature designs (dated sections)
-│   ├── {TLC} Notes.md             # Discussion notes (dated sections)
-│   ├── {TLC} Roadmap.md           # Milestone-based task tracking
-│   └── {TLC} Todo.md              # Short-term tasks (dated sections)
+├── {NAME} Docs/                   # Private docs (NOT published)
+│   ├── {NAME}.md                  # PRIMARY ANCHOR PAGE (link table, overview)
+│   ├── {NAME} PRD.md              # Product Requirements Document
+│   ├── {NAME} Features.md         # Feature designs (dated sections)
+│   ├── {NAME} Notes.md            # Discussion notes (dated sections)
+│   ├── {NAME} Roadmap.md          # Milestone-based task tracking
+│   └── {NAME} Todo.md             # Short-term tasks (dated sections)
 │
-├── {TLC} Research/                # Research materials (optional)
-│   ├── {TLC} References.md        # Bibliography
-│   └── {TLC} Related Work.md      # Analysis of related work
+├── {NAME} Research/               # Research materials (optional)
+│   ├── {NAME} References.md       # Bibliography
+│   └── {NAME} Related Work.md     # Analysis of related work
 │
 └── {repo}/                        # Repository clone (PUBLISHABLE)
     ├── .git/
@@ -123,21 +126,28 @@ Template variables: `{NAME}` = full name, `{TLC}` = short code, `{repo}` = repos
     └── site/                      # Generated docs site (gitignored)
 ```
 
-### Concrete Example
+### Concrete Example (with TLC)
 Folder `Alien Biology/` contains:
 - `Alien Biology.md` — says `See [[ABIO]]`
-- `ABIO.md` — the main anchor page with link table
-- `ABIO Planning/` — private planning docs
+- `ABIO Docs/ABIO.md` — the main anchor page with link table
+- `ABIO Docs/` — private planning/design docs
 - `alienbio/` — the repository (publishable)
 
+### Concrete Example (without TLC)
+Folder `My Simple Project/` contains:
+- `My Simple Project Docs/My Simple Project.md` — the main anchor page
+- `My Simple Project Docs/` — private planning/design docs
+- `my-simple-project/` — the repository (publishable)
+
 ### Anchor Folder Definition
-- An **anchor** is a folder that contains a Markdown file with the same name as the folder
-- Example: `.../My Project/My Project.md` — the `.md` file is the "anchor markdown"
-- The anchor markdown provides links to key parts of the anchor folder
-- An anchor folder without the same-named markdown is just a regular folder
+- An **anchor** is a folder that contains a `{NAME} Docs/` subfolder with the primary anchor markdown
+- The primary anchor markdown (`{NAME}.md`) lives inside the Docs folder
+- If the anchor has a TLC, the root folder also has `{FULL_NAME}.md` containing only `See [[TLC]]`
+- Example with TLC: `.../Alien Biology/ABIO Docs/ABIO.md` — primary anchor page
+- Example without TLC: `.../My Project/My Project Docs/My Project.md` — primary anchor page
 
 ### Root Folder vs Repository
-- The anchor root folder contains planning/private documentation that should NOT be published
+- The anchor root folder has a `{NAME} Docs/` subfolder for private documentation (NOT published)
 - If the project has a code repository, it is a **subdirectory** of the anchor folder
 - The subdirectory name matches the GitHub repository name (since it's a clone)
 - This separation ensures planning docs don't accidentally get committed to the repo
@@ -148,10 +158,10 @@ Folder `Alien Biology/` contains:
 
 ### TLC (Three Letter Codes)
 - Commonly accessed anchors have a short acronym for quick access
-- Ideally three letters, hence "TLC" — but can be 2-4 letters if needed
-- If an anchor has a TLC, create a `TLC.md` file (e.g., `ASP.md`)
-- The full-named anchor markdown should contain only: `See [[TLC]]`
-- The TLC file becomes the primary anchor markdown with all the content
+- Ideally three letters, hence "TLC" — but can be 2-5 letters if needed
+- If an anchor has a TLC, create `{TLC}.md` in the `{TLC} Docs/` folder
+- The root folder has `{FULL_NAME}.md` containing only: `See [[TLC]]`
+- The TLC file in Docs becomes the primary anchor markdown with all the content
 
 ### TLC Index
 - The markdown [[SYS/Closet/Three Letter Codes/TLC]] contains a table of all TLCs
@@ -170,11 +180,11 @@ ha -p "Alien Biology"  # Find by full name
 ```
 This is useful for quickly navigating to any anchor from the command line.
 
-### File Naming with TLC Prefix
-- Within an anchor folder, prefix related files with the TLC
+### File Naming with NAME Prefix
+- Within an anchor folder, prefix related files with {NAME} (TLC if exists, else FULL_NAME)
 - Example: `ASP Notes.md`, `ASP Roadmap.md`, `ASP PRD.md`
 - This keeps files organized when viewing alphabetically
-- Exception: Generic subfolder names like `Planning/`, `Research/`, `docs/`
+- Exception: Generic subfolder names like `Docs/`, `Research/`, `docs/`
 
 ---
 
@@ -235,16 +245,18 @@ Links to published end-user documentation:
 
 ---
 
-## PLANNING FOLDER
+## DOCS FOLDER
 
-### Standard Planning Documents
-- **TLC PLANNING.MD** — Anchor for the planning subfolder
-- **TLC PRD.MD** — Product Requirements Document; feature-by-feature design specs
-- **TLC FEATURES.MD** — Feature design log; **dated sections**
-- **TLC NOTES.MD** — High-level discussion notes; **dated sections**
-- **TLC ROADMAP.MD** — Milestone-based task organization
-- **TLC TODO.MD** — Short-term tasks and open questions; **dated sections**
-- **TLC OPEN QUESTIONS.MD** — Design questions awaiting resolution
+The `{NAME} Docs/` folder contains private planning and design documentation (NOT published).
+
+### Standard Docs Documents
+- **{NAME}.MD** — Primary anchor page (link table, overview)
+- **{NAME} PRD.MD** — Product Requirements Document; feature-by-feature design specs
+- **{NAME} FEATURES.MD** — Feature design log; **dated sections**
+- **{NAME} NOTES.MD** — High-level discussion notes; **dated sections**
+- **{NAME} ROADMAP.MD** — Milestone-based task organization
+- **{NAME} TODO.MD** — Short-term tasks and open questions; **dated sections**
+- **{NAME} OPEN QUESTIONS.MD** — Design questions awaiting resolution
 
 ### Roadmap Format
 Roadmaps use checkboxes in headings to track milestone completion:
@@ -273,19 +285,19 @@ Key conventions:
 - Checkboxes in headings allow tracking at both milestone and task level
 
 Placement:
-- Roadmap lives in `{TLC} Planning/` folder as `{TLC} Roadmap.md`
-- Linked from root anchor page under "Execution Docs" row (sub-row of Planning)
+- Roadmap lives in `{NAME} Docs/` folder as `{NAME} Roadmap.md`
+- Linked from anchor page under "Execution Docs" row (sub-row of Planning)
 - Grouped with Todo (both are execution/tracking docs, vs PRD/Features/Notes which are design docs)
 
 ---
 
 ## DOCUMENTATION
 
-Documentation is split between private planning docs and published user docs.
+Documentation is split between private docs (anchor level) and published user docs (repository level).
 
-### Planning Docs vs User Docs
+### Private Docs vs User Docs
 
-- **PLANNING DOCS** — Private, located in anchor root (`{TLC} Planning/`). Contains work-in-progress, internal discussions, design decisions, rough ideas. NOT published.
+- **PRIVATE DOCS** — Located in `{NAME} Docs/` folder at anchor level. Contains planning, design decisions, internal discussions, rough ideas. NOT published.
 - **USER DOCS** — Published, located in repository under `docs/`. Contains polished documentation for end users and developers.
 
 ### docs/ Folder Structure
