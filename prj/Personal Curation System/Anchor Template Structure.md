@@ -142,6 +142,17 @@ Earlier content...
 
 Used for: Features, Notes, Todo, and Log files that accumulate entries over time.
 
+### Date Format
+Standard date format is `YYYY-MM-DD` (ISO 8601):
+- **IN HEADINGS** — Use as prefix: `## 2026-01-12 — Topic Name`
+- **IN FILENAMES** — Use as prefix for archived items: `2026-01-12 Old Project Name`
+- **IN TEXT** — Use consistently for all dates
+
+This format ensures:
+- Chronological sorting when viewing alphabetically
+- Unambiguous interpretation (no month/day confusion)
+- Compatibility with international standards
+
 ---
 
 ## ANCHOR PAGE
@@ -463,3 +474,40 @@ Add project-specific recipes as needed:
 - **DB-MIGRATE** — Run database migrations
 - **DOCKER-BUILD** — Build Docker image
 - **DEPLOY** — Deploy to production
+
+---
+
+### Archive to Yore/
+The `Yore/` subfolder stores archived code, documentation, or other materials that are no longer active but worth preserving. The name "Yore" sorts late alphabetically, keeping archives at the bottom of directory listings.
+
+#### When to Archive
+- Old versions of code being replaced
+- Deprecated documentation
+- Legacy implementations kept for reference
+- Backup copies before major refactoring
+
+#### Archive Naming
+Prefix archived items with the date in `YYYY-MM-DD` format:
+```
+Yore/
+├── 2026-01-12 OldProjectName/
+├── 2025-11-15 DeprecatedModule/
+└── 2025-08-20 LegacyDocs/
+```
+
+#### Archive Procedure
+1. Create `Yore/` folder if it doesn't exist
+2. Move the item with date prefix:
+   ```bash
+   mkdir -p Yore
+   mv "OldProject" "Yore/$(date +%Y-%m-%d) OldProject"
+   ```
+3. Update any references or symlinks that pointed to the archived item
+4. Add a note in the anchor page or README about what was archived and why
+
+---
+
+### Update Double Click Symlinks
+*(To be documented)*
+
+When moving anchor folders, Double Click symlinks under the vault's Users tree may need updating to point to new locations.
