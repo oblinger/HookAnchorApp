@@ -16,12 +16,11 @@ Other Links:
 Was the initial developer and architect for a CV/robotic platform that grew to have 60 developers. The entire system is proprietary property of Aeolus Robotics.
 Active developer of many novel CV algorithms at SportsVisio -- all proprietary except DAT an elegant/small data management layer that I open sourced:
 
-DVC DAT - It provides flexible namespace management that integrates dynamically loaded code with cloud datasets, ensuring versioning is synchronized across them and your code repository.  
+DVC-DAT - It provides flexible namespace management that integrates dynamically loaded code with cloud datasets, ensuring versioning is synchronized across them and your code repository.  Code:  https://github.com/oblinger/dvc-dat    Example Usage:  https://nbviewer.jupyter.org/github/oblinger/DVC-DAT/blob/main/examples/do_examples.ipynb
 
-ALIEN BIOLOGY - Framework for generating controllable synthetic "Alien" biological ecosystems for use in taint-free testing of Agentic reasoning.
-- Parametrically controlled complexity builds worlds with organisms, predation/symbiosis/etc. build on a synthetic biochemistry with molecules, reactions, cycles, pathways, signaling, etc. LLM serves as an alien biologist, advancing biology and curing disease.
-- The framework is elegant/general and biologically plausible. (will be completed and could possibly serve as the basis of my fellowship work)
-  Docs:  https://oblinger.github.io/abio-docs/  Code: https://github.com/oblinger/alienbio 
+ALIEN BIOLOGY - Framework for generating controllable synthetic alien biology for use in taint-free testing of agentic AI.
+- Elegant, general, and biologically plausible. Design optimized to run efficiently on GPU.
+  Docs: https://oblinger.github.io/abio-docs/  Code: https://github.com/oblinger/alienbio 
 
 HOOK ANCHOR - I am opinionated about how personal knowledge management should be done, so over the summer I implemented this vision as a 50K-line Rust application with a 3K-line JavaScript user configuration layer on top.  Code:  https://github.com/oblinger/HookAnchorApp  Docs:  https://oblinger.github.io/gitproj/HookAnchor    Teaser:  https://oblinger.github.io/HookAnchor/  
 
@@ -41,9 +40,7 @@ I have long been interested in systems that achieve general intelligence, as wel
 
 Yet even then, I harbored doubts about our ability to control these systems: before joining DARPA, I wrote a 4-page note to myself reasoning through whether it was acceptable to drive this work, and upon leaving, I chose a more applied AI path rather than continue pushing toward AGI. This tension—between fascination with capable AI systems and concern about their risks—is precisely why AI safety work feels so urgent and personal to me now.
 
-Earlier this year, I drafted a white paper, "Alien Biology"—a framework for measuring AI reasoning performance that is provably untainted by reasoning in the training data. More importantly, I believe this platform can drive AI safety work: future AI systems will likely use deliberation to achieve internal alignment and may have instrumental reasons to increase that alignment within themselves and their progeny. Perhaps this affords a natural long-term alignment of their interests with humanity's?
-
-When I learned of the Anthropic Fellows Program, I dove in to implement the Alien Biology universe generator/simulator. After a decade of wringing my hands on the sidelines, I finally have a direction that seems plausible for addressing humanity's most pressing threat.
+Earlier this year, I drafted the white paper "Alien Biology" (described in Relevant Background below) and realized it could serve as a platform to drive AI safety work. When I learned of the Anthropic Fellows Program, I dove in to implement the generator/simulator and began outlining the research agenda. After a decade of wringing my hands on the sidelines, I finally have a direction that seems plausible for addressing humanity's most pressing threat.
 
 
 
@@ -83,7 +80,7 @@ This outlines experiments using Alien Biology to study how deliberatively cohere
 - Fixed point analysis: if systems continuously self-adapt toward their objectives, where does this process converge?
 
 
-Documents linked here:
+All three documents available at:
 https://oblinger.github.io/gitproj/DeliberativeCoherence/
 
 
@@ -112,7 +109,7 @@ Andrew Ng is one of the world's most influential figures in AI and deep learning
 - LinkedIn: https://www.linkedin.com/in/andrewyng/
 
 RELATIONSHIP
-{{NICK: Please fill in: What you worked on together, when, how long, how closely you collaborated, your relationship to him}}
+As a DARPA Program Manager (2005-2010), I collaborated with Andrew over multiple programs and led workshops fostering collaboration across research teams. Beyond these formal interactions, we had several deeper one-on-one discussions. Most notable was a day we spent together exploring unsupervised methods for learning deep representations. Andrew was initially skeptical of my ideas until I narrowed one approach toward inducing deep hierarchical and/or trees. He suggested a collaboration with him and one of his students, which ultimately yielded an ICML best paper award on convolutional deep belief networks. Unfortunately, DARPA's general counsel prohibited my formal collaboration, so I was not a coauthor—though the core approach was mine, sharpened by Andrew's skepticism. At the end of that discussion, Andrew further suggested I consider a postdoc with him after DARPA.
 
 
 Reference 2:
@@ -125,7 +122,7 @@ Nina Mishra is a Principal Scientist at Amazon with deep expertise in machine le
 - Stanford page: http://theory.stanford.edu/~nmishra/
 
 RELATIONSHIP
-{{NICK: Please fill in: What you worked on together, when, how long, how closely you collaborated, your relationship to her}}
+Nina has been a lifelong friend and sounding board for each other's research directions and ideas. We collaborated on a SODA paper with 150 citations.
 
 
 Reference 3:
@@ -137,9 +134,7 @@ Vittorio Castelli is Senior Director of Applied Science at Oracle Cloud Infrastr
 - Google Scholar: https://scholar.google.com/citations?user=d-lg1lEAAAAJ
 
 RELATIONSHIP
-{{NICK: Please fill in: What you worked on together, when, how long, how closely you collaborated, your relationship to him}}
-
-
+Vittorio and I worked together for three years at IBM Research after winning an Adventurous Research grant—a sought-after internal award for self-directed, open-ended research. We developed a novel inductive method for programming by demonstration and co-authored a half-dozen papers, including a runner-up best paper award.
 
 
 **Do you have any other commitments or obligations during the Fellows program?**

@@ -1,8 +1,21 @@
 
 **WHY ARE YOU INTERESTED IN PARTICIPATING IN THE AI FELLOWS PROGRAM?   (1-2 paragraphs)**
 
-TL;DR.  I want to transition to full-time AI safety work and I have a research agenda that is ripe for execution within your program.
 
+
+TL;DR. I want to transition to full-time AI safety work and I have a research agenda ripe for execution within your program.
+
+I have long been interested in systems that achieve general intelligence, as well as the risks inherent in such systems. As a Program Manager at DARPA, I ran "Bootstrapped Learning," an effort to iteratively capture deeply structured human knowledge, and created "Machine Reading," a vision for how NLP and ML might be productively integrated to drive automated deep structure acquisition—a $150M program that led to IBM's Jeopardy-playing system (Watson) and hundreds of publications driving early deep learning work by researchers central to the field.
+
+Yet even then, I harbored doubts about our ability to control these systems: before joining DARPA, I wrote a 4-page note to myself reasoning through whether it was acceptable to drive this work, and upon leaving, I chose a more applied AI path rather than continue pushing toward AGI. This tension—between fascination with capable AI systems and concern about their risks—is precisely why AI safety work feels so urgent and personal to me now.
+
+Earlier this year, I drafted a white paper, "Alien Biology"—a framework for measuring AI reasoning performance that is provably untainted by reasoning in the training data. More importantly, I believe this platform can drive AI safety work: future AI systems will likely use deliberation to achieve internal alignment and may have instrumental reasons to increase that alignment within themselves and their progeny. Perhaps this affords a natural long-term alignment of their interests with humanity's?
+
+When I learned of the Anthropic Fellows Program, I dove in to implement the Alien Biology universe generator/simulator. After a decade of wringing my hands on the sidelines, I finally have a direction that seems plausible for addressing humanity's most pressing threat.
+
+
+~~
+TL;DR.  I want to transition to full-time AI safety work and I have a research agenda that is ripe for execution within your program.
 
   I have long been interested in systems that achieve general intelligence, as well as the risks inherent in such systems. As a Program Manager at DARPA, I ran "Bootstrapped Learning," an effort to iteratively capture deeply structured human knowledge, and created "Machine Reading," a vision for how NLP and ML might be productively integrated to drive automated deep structure acquisition—this $150M program that led to IBM's Jeopardy-playing system (Watson) and hundreds of publications driving early deep learning work by researchers central to the field.
 
