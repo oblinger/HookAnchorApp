@@ -158,6 +158,14 @@ Folder `Alien Biology/` contains:
   - **FULL ANCHOR NAME** — Folder name containing the TLC
   - **DESC** — Description (stored in anchor markdown with prefix `desc::`)
 
+### Finding Anchors
+Use the `ha` (HookAnchor) command to find anchor paths by TLC or name:
+```bash
+ha -p ASP              # Returns path to the ASP anchor folder
+ha -p "Alien Biology"  # Find by full name
+```
+This is useful for quickly navigating to any anchor from the command line.
+
 ### File Naming with TLC Prefix
 - Within an anchor folder, prefix related files with the TLC
 - Example: `ASP Notes.md`, `ASP Roadmap.md`, `ASP PRD.md`
@@ -234,24 +242,103 @@ Links to published end-user documentation:
 - **TLC TODO.MD** — Short-term tasks and open questions; **dated sections**
 - **TLC OPEN QUESTIONS.MD** — Design questions awaiting resolution
 
+### Roadmap Format
+Roadmaps use checkboxes in headings to track milestone completion:
+
+```markdown
+## Phase 1: Foundation
+
+### [ ] M1.1 - Repository Setup
+
+Create the repository with initial structure.
+
+**Deliverables**:
+- [ ] Git repository initialized
+- [ ] Directory structure created
+- [ ] pyproject.toml configured
+
+### [x] M1.2 - Basic Configuration
+
+Completed milestone example.
+```
+
+Key conventions:
+- **PHASES** — H2 headings group related milestones
+- **MILESTONES** — H3 headings with `[ ]` or `[x]` checkbox, numbered (M1.1, M1.2, etc.)
+- **DELIVERABLES** — Bullet lists with checkboxes under each milestone
+- Checkboxes in headings allow tracking at both milestone and task level
+
+Placement:
+- Roadmap lives in `{TLC} Planning/` folder as `{TLC} Roadmap.md`
+- Linked from root anchor page under "Execution Docs" row (sub-row of Planning)
+- Grouped with Todo (both are execution/tracking docs, vs PRD/Features/Notes which are design docs)
+
 ---
 
-## DOCUMENTATION STRUCTURE
+## DOCUMENTATION
 
-### Planning Docs (Private)
-Located in anchor root (`{TLC} Planning/`), NOT in repository. Contains work-in-progress, internal discussions, rough ideas.
+Documentation is split between private planning docs and published user docs.
 
-### User Docs (Published)
-Located in repository under `docs/`. Types:
-- **USER GUIDE** — Task-oriented tutorials and how-tos
-- **ARCHITECTURE DOCS** — System design, class documentation
-- **API REFERENCE** — Generated from source code docstrings
+### Planning Docs vs User Docs
 
-### Documentation Generation
-- **MKDOCS** — Python-based documentation generator
+- **PLANNING DOCS** — Private, located in anchor root (`{TLC} Planning/`). Contains work-in-progress, internal discussions, design decisions, rough ideas. NOT published.
+- **USER DOCS** — Published, located in repository under `docs/`. Contains polished documentation for end users and developers.
+
+### docs/ Folder Structure
+
+All repositories with documentation should organize `docs/` as follows:
+
+```
+docs/
+├── index.md              # Documentation home page (entry point)
+├── user-guide/           # Task-oriented tutorials and how-tos
+│   ├── getting-started.md
+│   ├── installation.md
+│   └── ...
+├── architecture/         # System design and technical reference
+│   ├── overview.md
+│   ├── config-reference.md
+│   └── ...
+└── api/                  # Generated API reference (auto-generated)
+    └── ...
+```
+
+### Documentation Types
+
+- **INDEX.MD** — Entry point linking to all documentation sections
+- **USER-GUIDE/** — Task-oriented tutorials, getting started guides, how-tos. Written for end users.
+- **ARCHITECTURE/** — System design docs, configuration reference, technical specifications. Written for developers.
+- **API/** — Auto-generated from source code. Do not edit manually.
+
+### Documentation Generators
+
+Choose the appropriate generator for your project type:
+
+- **PYTHON** — MkDocs with mkdocstrings for API docs
+- **SWIFT** — swift-docc or Jazzy for API docs
+- **TYPESCRIPT/JS** — TypeDoc for API docs
+- **GENERAL** — MkDocs, Docusaurus, or similar static site generator
+
+### MkDocs Setup (Python Projects)
+
+```
+repo/
+├── mkdocs.yml            # MkDocs configuration
+├── docs/                 # Documentation source
+└── site/                 # Generated site (gitignored)
+```
+
+Key files:
 - **MKDOCS.YML** — Configuration file in repo root
-- **SITE/** — Generated documentation folder (gitignored)
-- API docs are auto-generated from docstrings; other docs are hand-written
+- **SITE/** — Generated documentation folder (gitignored, deployed to GitHub Pages)
+
+### Documentation Workflow
+
+1. Write user guides and architecture docs by hand in `docs/`
+2. API docs are auto-generated from source code docstrings
+3. Build docs locally: `mkdocs build` (or equivalent)
+4. Preview locally: `mkdocs serve` (or equivalent)
+5. Deploy to GitHub Pages: `mkdocs gh-deploy` (or equivalent)
 
 ---
 
@@ -262,18 +349,12 @@ See the Complete Folder Structure above for the full layout.
 ### Key Repository Files
 - **README.MD** — Brief project description, installation, quick start
 - **CLAUDE.MD** — Claude Code project instructions; coding conventions, key patterns
-- **PYPROJECT.TOML** — Dependencies, build config, project metadata
+- **PYPROJECT.TOML** — Dependencies, build config, project metadata (Python)
 - **JUSTFILE** — Task runner; common tasks like `just build`, `just test`, `just docs`
-- **MKDOCS.YML** — MkDocs documentation site configuration
-
-### docs/ Folder Organization
-- **INDEX.MD** — Documentation home page
-- **USER-GUIDE/** — Task-oriented tutorials and how-tos
-- **ARCHITECTURE/** — System design docs, class documentation
-- **API/** — Generated API reference (auto-generated from docstrings)
+- **MKDOCS.YML** — MkDocs documentation site configuration (if using MkDocs)
 
 ### site/ Folder
-Generated by `mkdocs build`. Should be gitignored. Deployed to GitHub Pages.
+Generated by documentation build. Should be gitignored. Deployed to GitHub Pages.
 
 ---
 
