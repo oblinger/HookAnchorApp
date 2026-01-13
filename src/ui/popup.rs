@@ -17,34 +17,8 @@ use super::{PopupState, LayoutArrangement};
 use super::command_editor::{CommandEditor, CommandEditorResult};
 use super::dialog::Dialog;
 
-/// Extract folder path from a command's arg (file path)
-/// Returns the parent directory if arg is a file, or the directory itself if arg is a directory
-fn extract_folder_from_command(cmd: &Command) -> Option<String> {
-    if cmd.arg.is_empty() {
-        return None;
-    }
-
-    use std::path::Path;
-    let expanded_path = if cmd.arg.starts_with("~/") {
-        if let Some(home) = dirs::home_dir() {
-            home.join(&cmd.arg[2..]).to_string_lossy().to_string()
-        } else {
-            cmd.arg.clone()
-        }
-    } else {
-        cmd.arg.clone()
-    };
-
-    let path = Path::new(&expanded_path);
-    if path.is_file() {
-        path.parent().map(|p| p.to_string_lossy().to_string())
-    } else if path.is_dir() {
-        Some(expanded_path)
-    } else {
-        // Path doesn't exist, try to get parent anyway
-        path.parent().map(|p| p.to_string_lossy().to_string())
-    }
-}
+// Use anchor_ops from capabilities layer for folder extraction
+use crate::capabilities::anchor_ops;
 
 /// Window sizing modes for different UI states
 #[derive(Clone, Debug, PartialEq)]
@@ -623,8 +597,8 @@ impl PopupInterface for AnchorSelector {
 
             if is_anchor {
                 // Found an anchor (either directly or via alias) - set it as active and clear the input
-                let anchor_folder = extract_folder_from_command(&resolved_cmd);
-                match crate::core::data::set_active_anchor(resolved_cmd.command.clone(), anchor_folder) {
+                let anchor_folder = anchor_ops::extract_folder_from_command(&resolved_cmd);
+                match anchor_ops::set_anchor(resolved_cmd.command.clone(), anchor_folder) {
                     Ok(()) => {
                         log(&format!("✅ Activated anchor: '{}'", resolved_cmd.command));
                         // Clear the search text after successful activation
@@ -792,9 +766,23 @@ impl PopupInterface for AnchorSelector {
         log("RELOAD: Triggering full restart via ha --restart");
         self.set_input("Restarting...".to_string());
 
+        // Derive ha binary path from current executable (popup and ha are in same directory)
+        let ha_path = std::env::current_exe()
+            .ok()
+            .and_then(|p| p.parent().map(|dir| dir.join("ha")));
+
+        let ha_path = match ha_path {
+            Some(p) if p.exists() => p,
+            _ => {
+                log_error("RELOAD: Cannot find ha binary relative to current executable");
+                self.set_input("".to_string());
+                return;
+            }
+        };
+
         // Spawn ha --restart as a detached process, then exit this popup
         // The ha --restart will kill us and start a fresh popup
-        match std::process::Command::new("/Users/oblinger/ob/proj/HookAnchor/HookAnchorApp/target/release/ha")
+        match std::process::Command::new(&ha_path)
             .arg("--restart")
             .stdin(std::process::Stdio::null())
             .stdout(std::process::Stdio::null())
@@ -840,8 +828,8 @@ impl AnchorSelector {
 
         // If the resolved command is an anchor, save it as the last anchor
         if resolved_command.is_anchor() {
-            let anchor_folder = extract_folder_from_command(&resolved_command);
-            let _ = crate::core::data::set_active_anchor(resolved_command.command.clone(), anchor_folder);
+            let anchor_folder = anchor_ops::extract_folder_from_command(&resolved_command);
+            let _ = anchor_ops::set_anchor(resolved_command.command.clone(), anchor_folder);
         }
 
         // Handle "file" action - convert to "doc" action for execution
@@ -1024,9 +1012,23 @@ impl AnchorSelector {
         log("RELOAD: Triggering full restart via ha --restart");
         self.set_input("Restarting...".to_string());
 
+        // Derive ha binary path from current executable (popup and ha are in same directory)
+        let ha_path = std::env::current_exe()
+            .ok()
+            .and_then(|p| p.parent().map(|dir| dir.join("ha")));
+
+        let ha_path = match ha_path {
+            Some(p) if p.exists() => p,
+            _ => {
+                log_error("RELOAD: Cannot find ha binary relative to current executable");
+                self.set_input("".to_string());
+                return;
+            }
+        };
+
         // Spawn ha --restart as a detached process, then exit this popup
         // The ha --restart will kill us and start a fresh popup
-        match std::process::Command::new("/Users/oblinger/ob/proj/HookAnchor/HookAnchorApp/target/release/ha")
+        match std::process::Command::new(&ha_path)
             .arg("--restart")
             .stdin(std::process::Stdio::null())
             .stdout(std::process::Stdio::null())
@@ -1051,8 +1053,22 @@ impl AnchorSelector {
         // Show "Rebuilding..." in the input box
         self.set_input("Rebuilding...".to_string());
 
+        // Derive ha binary path from current executable (popup and ha are in same directory)
+        let ha_path = std::env::current_exe()
+            .ok()
+            .and_then(|p| p.parent().map(|dir| dir.join("ha")));
+
+        let ha_path = match ha_path {
+            Some(p) if p.exists() => p,
+            _ => {
+                log_error("REBUILD: Cannot find ha binary relative to current executable");
+                self.set_input("".to_string());
+                return;
+            }
+        };
+
         // Use the ha binary to trigger a full rebuild
-        match std::process::Command::new("/Users/oblinger/ob/proj/HookAnchor/HookAnchorApp/target/release/ha")
+        match std::process::Command::new(&ha_path)
             .arg("--rebuild")
             .spawn()
         {
@@ -1349,7 +1365,7 @@ impl AnchorSelector {
     /// Create a TemplateContext from current popup state
     /// This consolidates all the context gathering logic in one place
     fn create_template_context(&self) -> crate::core::template_creation::TemplateContext {
-        use crate::core::template_creation::TemplateContext;
+        use crate::capabilities::template_ops;
 
         // Get the current input text
         let raw_input = self.popup_state.search_text.clone();
@@ -1371,7 +1387,7 @@ impl AnchorSelector {
         }
 
         // Create basic template context with expanded input
-        let mut context = TemplateContext::create_basic_template(&input);
+        let mut context = template_ops::create_context(&input);
 
         // Add raw_input variable with the original typed text
         context.variables.insert("raw_input".to_string(), raw_input);

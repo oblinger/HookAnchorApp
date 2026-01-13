@@ -960,12 +960,27 @@ fn scan_files_merge_based(
             }
         };
 
+        // Check if file exists at all - delete if missing, regardless of scan roots
+        if !file_path.exists() {
+            stats.deleted += 1;
+            if verbose {
+                crate::utils::print(&format!("   Deleted: '{}' - file no longer exists at {}",
+                    cmd.command, file_path.display()
+                ));
+            }
+            log(&format!(
+                "Deleted: '{}' - file no longer exists at {}",
+                cmd.command, file_path.display()
+            ));
+            return false; // Remove from list
+        }
+
         // Check if file is within scan roots
         if !is_within_scan_roots(&file_path, file_roots) {
-            // Outside scan scope - don't touch
+            // Outside scan scope - don't touch (but file exists)
             stats.unchanged += 1;
             detailed_log("SCANNER", &format!(
-                "Unchanged: '{}' (outside scan roots)", cmd.command
+                "Unchanged: '{}' (outside scan roots, file exists)", cmd.command
             ));
             if cmd.command == "@Exponent" {
                 log(&format!("DEBUG @Exponent: OUTSIDE scan roots - keeping unchanged"));

@@ -10,6 +10,9 @@
 pub mod core;
 pub mod execute;
 
+// Capabilities layer - consolidated business logic
+pub mod capabilities;
+
 // UI modules  
 pub mod ui;
 
