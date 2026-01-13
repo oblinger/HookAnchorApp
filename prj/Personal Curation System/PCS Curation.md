@@ -1,6 +1,10 @@
 
 # GENERAL CURATION RULES
 
+## CURATION ACTIONS
+
+- **CODE FLOW** -- 
+
 ## DEFINED TERMS
 
 - **DATED FOLDER** — A folder where all files and subfolders within it are prefixed with the date format (`YYYY-MM-DD`). Items sort in chronological order when viewed alphabetically.

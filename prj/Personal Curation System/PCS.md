@@ -7,7 +7,7 @@
 | [[PCS Streams]]                                 |                         |
 | [[Anchor Template Structure]]                   | Folders                 |
 | ANCHOR                                          | [[Anchor Template v1]]  |
-| RULES                                           | [[PCS Rules]]           |
+| RULES                                           | [[PCS Curation]]           |
 |                                                 |                         |
 |                                                 |                         |
  
