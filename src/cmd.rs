@@ -49,12 +49,15 @@ pub fn run_command_line_mode(args: Vec<String>) {
         "-m" | "--match" => run_match_command(&args),
         "-r" | "--run_fn" => run_exec_command(&args),
         "-x" | "--execute" => run_execute_top_match(&args),
+        "-f" | "--folders" => run_folders_command(&args),
+        "-F" | "--named-folders" => run_named_folders_command(&args),
         "-c" | "--command" => run_test_command(&args),  // Renamed: test command with action and arg
         "-a" | "--action" => run_action_directly(&args),  // New: execute action directly
         "--hook" => handle_hook_option(&args),
         "--user-info" => print_user_info(),
         "--test-grabber" => run_test_grabber(),
         "--test-permissions" => run_test_permissions(),
+        "--diagnose" => run_diagnose(),
         "--grab" => run_grab_command(&args),
         "--infer" => run_infer_patches(&args),
         "--infer-all" => run_infer_all_patches(&args),
@@ -106,6 +109,7 @@ pub fn print_help(_program_name: &str) {
     print(&format!("  {} --delete-history [--add-commands <path>] [--force] # Delete history and rebuild (optionally from backup)", name));
     print(&format!("  {} --test-grabber           # Test grabber functionality", name));
     print(&format!("  {} --test-permissions       # Test accessibility permissions", name));
+    print(&format!("  {} --diagnose               # Full system diagnostics (permissions, signing, server)", name));
     print(&format!("  {} --grab [delay]           # Grab active app after delay", name));
     print(&format!("  {} --start-server           # Force restart command server", name));
     print(&format!("  {} --restart                # Kill and restart command server in new Terminal", name));
@@ -118,7 +122,12 @@ pub fn print_help(_program_name: &str) {
     print(&format!("  {} --search                 # Launch history viewer", name));
     print(&format!("  {} --hook <url>             # Handle hook:// URL (for URL handler)", name));
     print(&format!("  {} --load-legacy-and-compare <path> # Load legacy commands and compare", name));
-    print("  open 'hook://query'         # Handle hook URL via URL handler");
+    print("");
+    print("URL Schemes (use with 'open' command or browser):");
+    print("  hook://QUERY                # Execute command matching QUERY");
+    print("  hook://p/[TEXT[/ACTION]]    # Open popup with optional text/action");
+    print("  hook://a/ACTION/ARG[?k=v]   # Execute action with optional params");
+    print("  hook://f/QUERY              # Open folder of matching command in Finder");
     print("");
     print("Examples:");
     print(&format!("  {} --popup           # Launch popup search interface", name));
@@ -437,6 +446,74 @@ fn run_match_command(args: &[String]) {
         }
     }
 
+    std::process::exit(exit_code);
+}
+
+/// Get folder paths for matching commands (-f, --folders)
+/// Shortcut for: ha -m <query> --format=folder
+fn run_folders_command(args: &[String]) {
+    if args.len() < 3 {
+        print("Usage: ha -f, --folders <query>");
+        std::process::exit(1);
+    }
+
+    let query = &args[2];
+    let (sys_data, _) = crate::core::data::get_sys_data();
+    let config = crate::core::data::get_config();
+
+    let (filtered, _) = {
+        let (display_commands, is_prefix_menu, _, _, _, _) =
+            crate::core::get_new_display_commands(query, &sys_data.commands, &sys_data.patches, &config);
+        (display_commands, is_prefix_menu)
+    };
+
+    // Print folder paths (resolve aliases, skip commands without folders)
+    for cmd in filtered.iter().take(50) {
+        let resolved = resolve_alias_to_target(cmd, &sys_data.commands);
+        if let Some(folder) = get_command_folder(resolved) {
+            print(&folder);
+        }
+    }
+
+    let exit_code = match filtered.len() {
+        0 => 2,
+        1 => 0,
+        _ => 1,
+    };
+    std::process::exit(exit_code);
+}
+
+/// Get command names with their folder paths (-F, --named-folders)
+/// Prints: COMMAND -> /path/to/folder
+fn run_named_folders_command(args: &[String]) {
+    if args.len() < 3 {
+        print("Usage: ha -F, --named-folders <query>");
+        std::process::exit(1);
+    }
+
+    let query = &args[2];
+    let (sys_data, _) = crate::core::data::get_sys_data();
+    let config = crate::core::data::get_config();
+
+    let (filtered, _) = {
+        let (display_commands, is_prefix_menu, _, _, _, _) =
+            crate::core::get_new_display_commands(query, &sys_data.commands, &sys_data.patches, &config);
+        (display_commands, is_prefix_menu)
+    };
+
+    // Print command names with folder paths
+    for cmd in filtered.iter().take(50) {
+        let resolved = resolve_alias_to_target(cmd, &sys_data.commands);
+        if let Some(folder) = get_command_folder(resolved) {
+            print(&format!("{} -> {}", cmd.command, folder));
+        }
+    }
+
+    let exit_code = match filtered.len() {
+        0 => 2,
+        1 => 0,
+        _ => 1,
+    };
     std::process::exit(exit_code);
 }
 
@@ -1483,8 +1560,13 @@ fn run_restart_server() {
         print("  ✅ Popup window hidden");
     }
 
-    // BRUTAL KILL: Kill ALL HookAnchor processes including supervisor
+    // BRUTAL KILL: Kill ALL HookAnchor processes including supervisor AND command server
     print("  🔪 Killing all HookAnchor processes...");
+    // Kill command server first (uses PID from state.json)
+    if let Err(e) = crate::execute::kill_existing_server() {
+        print(&format!("  ⚠️  Failed to kill command server: {}", e));
+    }
+    // Kill popup servers and supervisor
     match crate::systems::restart::kill_popup_servers() {
         Ok(_) => {
             print("  ✅ All processes killed and verified dead");
@@ -2381,5 +2463,133 @@ fn load_commands_from_file(path: &str) -> Vec<Command> {
             print(&format!("❌ Failed to read file: {}", e));
             std::process::exit(1);
         }
+    }
+}
+
+/// Run comprehensive system diagnostics
+fn run_diagnose() {
+    print("HookAnchor System Diagnostics");
+    print("==============================");
+    print("");
+
+    let mut all_ok = true;
+
+    // 1. Test Accessibility Permission (native)
+    print("1. Accessibility Permission (native CGEvent)");
+    print("   Required for: sending keystrokes, 1Password integration");
+    let ax_ok = crate::utils::test_accessibility_permission();
+    if ax_ok {
+        print("   ✅ GRANTED - Can send keystrokes via CGEvent");
+    } else {
+        print("   ❌ DENIED - Cannot send keystrokes");
+        print("   → Add binaries to System Settings → Privacy & Security → Accessibility");
+        all_ok = false;
+    }
+    print("");
+
+    // 2. Test Automation Permission (osascript)
+    print("2. Automation Permission (System Events)");
+    print("   Required for: controlling other applications");
+    let permissions = crate::utils::get_missing_permissions();
+    let automation_missing = permissions.iter().any(|p| p.name == "Automation (System Events)");
+    if !automation_missing {
+        print("   ✅ GRANTED - Can control System Events");
+    } else {
+        print("   ❌ DENIED - Cannot control System Events");
+        print("   → Add binaries to System Settings → Privacy & Security → Automation");
+        all_ok = false;
+    }
+    print("");
+
+    // 3. Check binary signatures
+    print("3. Code Signature Status");
+    let binary_dir = crate::utils::get_binary_dir();
+    let binaries = [("popup", "popup"), ("ha", "HookAnchorCommand"), ("HookAnchorDialog", "HookAnchorDialog")];
+
+    for (display_name, binary) in &binaries {
+        let binary_path = binary_dir.join(binary);
+        if binary_path.exists() {
+            let output = std::process::Command::new("codesign")
+                .args(["-dv", "--verbose=2"])
+                .arg(&binary_path)
+                .output();
+
+            match output {
+                Ok(result) => {
+                    let stderr = String::from_utf8_lossy(&result.stderr);
+                    if stderr.contains("Authority=Developer ID Application") {
+                        print(&format!("   ✅ {} - Developer ID signed", display_name));
+                    } else if stderr.contains("Authority=Apple Development") {
+                        print(&format!("   ⚠️  {} - Development signed (not notarized)", display_name));
+                    } else if stderr.contains("adhoc") || stderr.contains("linker-signed") {
+                        print(&format!("   ⚠️  {} - Ad-hoc signed (local dev)", display_name));
+                    } else if stderr.contains("code object is not signed") {
+                        print(&format!("   ❌ {} - Unsigned", display_name));
+                    } else {
+                        print(&format!("   ?  {} - Unknown signature status", display_name));
+                    }
+                }
+                Err(_) => {
+                    print(&format!("   ?  {} - Could not check signature", display_name));
+                }
+            }
+        } else {
+            print(&format!("   ❌ {} - Binary not found at {}", display_name, binary_path.display()));
+        }
+    }
+    print("");
+
+    // 4. Check server status
+    print("4. Command Server Status");
+
+    // Check if popup_server is running
+    let ps_output = std::process::Command::new("pgrep")
+        .args(["-lf", "popup_server"])
+        .output();
+
+    match ps_output {
+        Ok(result) => {
+            let stdout = String::from_utf8_lossy(&result.stdout);
+            if stdout.trim().is_empty() {
+                print("   ⚠️  No server process found");
+                print("   → Run: ha --restart");
+            } else {
+                print("   ✅ Server process running");
+                for line in stdout.lines().take(3) {
+                    let short = line.split('/').last().unwrap_or(line);
+                    print(&format!("      {}", short));
+                }
+            }
+        }
+        Err(_) => {
+            print("   ?  Could not check server status");
+        }
+    }
+    print("");
+
+    // 5. Check config files
+    print("5. Configuration Files");
+    let config_dir = dirs::home_dir()
+        .map(|p| p.join(".config/hookanchor"))
+        .unwrap_or_else(|| std::path::PathBuf::from("/Users/default/.config/hookanchor"));
+
+    let config_files = ["config.yaml", "config.js", "commands.txt"];
+    for file in &config_files {
+        let path = config_dir.join(file);
+        if path.exists() {
+            print(&format!("   ✅ {} exists", file));
+        } else {
+            print(&format!("   ❌ {} missing", file));
+            all_ok = false;
+        }
+    }
+    print("");
+
+    // Summary
+    print("==============================");
+    if all_ok {
+        print("✅ All diagnostics passed!");
+    } else {
+        print("⚠️  Some issues detected - see above for details");
     }
 }

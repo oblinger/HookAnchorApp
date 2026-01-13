@@ -28,6 +28,7 @@ pub(crate) mod build_verification;
 pub(crate) mod dialog2;
 pub(crate) mod params;
 pub(crate) mod permissions;
+pub(crate) mod macos_input;
 
 // ============================================================================
 // PUBLIC API - All external access goes through these re-exports
@@ -98,5 +99,13 @@ pub use params::{
 // Permissions checking
 pub use permissions::{
     check_all_permissions, get_missing_permissions, format_missing_permissions_message,
+    format_accessibility_warning,
+    request_accessibility_permission, open_accessibility_settings, reveal_binaries_in_finder,
     PermissionInfo
+};
+
+// Native macOS input (keystrokes, typing)
+pub use macos_input::{
+    send_keystroke, send_keystroke_by_name, type_string, press_key,
+    test_accessibility_permission, key_codes, Modifier
 };

@@ -17,6 +17,34 @@ use super::{PopupState, LayoutArrangement};
 use super::command_editor::{CommandEditor, CommandEditorResult};
 use super::dialog::Dialog;
 
+/// Extract folder path from a command's arg (file path)
+/// Returns the parent directory if arg is a file, or the directory itself if arg is a directory
+fn extract_folder_from_command(cmd: &Command) -> Option<String> {
+    if cmd.arg.is_empty() {
+        return None;
+    }
+
+    use std::path::Path;
+    let expanded_path = if cmd.arg.starts_with("~/") {
+        if let Some(home) = dirs::home_dir() {
+            home.join(&cmd.arg[2..]).to_string_lossy().to_string()
+        } else {
+            cmd.arg.clone()
+        }
+    } else {
+        cmd.arg.clone()
+    };
+
+    let path = Path::new(&expanded_path);
+    if path.is_file() {
+        path.parent().map(|p| p.to_string_lossy().to_string())
+    } else if path.is_dir() {
+        Some(expanded_path)
+    } else {
+        // Path doesn't exist, try to get parent anyway
+        path.parent().map(|p| p.to_string_lossy().to_string())
+    }
+}
 
 /// Window sizing modes for different UI states
 #[derive(Clone, Debug, PartialEq)]
@@ -595,7 +623,8 @@ impl PopupInterface for AnchorSelector {
 
             if is_anchor {
                 // Found an anchor (either directly or via alias) - set it as active and clear the input
-                match crate::core::data::set_active_anchor(resolved_cmd.command.clone(), None) {
+                let anchor_folder = extract_folder_from_command(&resolved_cmd);
+                match crate::core::data::set_active_anchor(resolved_cmd.command.clone(), anchor_folder) {
                     Ok(()) => {
                         log(&format!("✅ Activated anchor: '{}'", resolved_cmd.command));
                         // Clear the search text after successful activation
@@ -811,11 +840,8 @@ impl AnchorSelector {
 
         // If the resolved command is an anchor, save it as the last anchor
         if resolved_command.is_anchor() {
-            detailed_log("LAST_ANCHOR", &format!("Saving last anchor: '{}'", resolved_command.command));
-            let mut state = crate::core::data::get_state();
-            state.anchor_name = Some(resolved_command.command.clone());
-            state.anchor_timestamp = Some(chrono::Local::now().timestamp());
-            let _ = crate::core::data::set_state(&state);
+            let anchor_folder = extract_folder_from_command(&resolved_command);
+            let _ = crate::core::data::set_active_anchor(resolved_command.command.clone(), anchor_folder);
         }
 
         // Handle "file" action - convert to "doc" action for execution
@@ -1351,14 +1377,32 @@ impl AnchorSelector {
         context.variables.insert("raw_input".to_string(), raw_input);
 
         // Add popup-specific variables (selected command, previous command, etc.)
-        let selected_command = if !self.filtered_commands().is_empty() {
-            let display_commands = &self.popup_state.display_commands;
-            if self.selected_index() < display_commands.len() {
-                Some(display_commands[self.selected_index()].clone())
+        let filtered_empty = self.filtered_commands().is_empty();
+        let display_commands = &self.popup_state.display_commands;
+        let selected_idx = self.selected_index();
+
+        detailed_log("TEMPLATE_CONTEXT", &format!(
+            "Getting selected command: filtered_empty={}, display_commands.len()={}, selected_index={}",
+            filtered_empty, display_commands.len(), selected_idx
+        ));
+
+        let selected_command = if !filtered_empty {
+            if selected_idx < display_commands.len() {
+                let cmd = display_commands[selected_idx].clone();
+                detailed_log("TEMPLATE_CONTEXT", &format!(
+                    "Selected command at index {}: name='{}', arg='{}', action='{}'",
+                    selected_idx, cmd.command, cmd.arg, cmd.action
+                ));
+                Some(cmd)
             } else {
+                detailed_log("TEMPLATE_CONTEXT", &format!(
+                    "Index {} out of bounds (display_commands.len()={})",
+                    selected_idx, display_commands.len()
+                ));
                 None
             }
         } else {
+            detailed_log("TEMPLATE_CONTEXT", "filtered_commands is empty, no selected command");
             None
         };
 
@@ -5614,6 +5658,42 @@ impl eframe::App for PopupWithControl {
                         self.popup.is_hidden, self.popup.should_exit));
                     detailed_log("SHOW_TIMING", &format!("Command processing complete in {:?}", show_start.elapsed()));
                     detailed_log("SHOW", "===== SHOW COMMAND COMPLETE =====");
+                }
+                crate::systems::popup_server::PopupCommand::ShowWithInput(ref input) => {
+                    let show_start = std::time::Instant::now();
+                    detailed_log("SHOW", &format!("===== SHOW_WITH_INPUT COMMAND RECEIVED: '{}' =====", input));
+
+                    // Same window setup as Show command
+                    self.popup.show_command_start = Some(show_start);
+
+                    // Restore saved position BEFORE making window visible
+                    if let Some(saved_pos) = load_window_position() {
+                        ctx.send_viewport_cmd(egui::ViewportCommand::OuterPosition(saved_pos));
+                    }
+
+                    // Make the window visible
+                    ctx.send_viewport_cmd(egui::ViewportCommand::Visible(true));
+                    ctx.send_viewport_cmd(egui::ViewportCommand::Focus);
+                    ctx.send_viewport_cmd(egui::ViewportCommand::Fullscreen(false));
+                    ctx.send_viewport_cmd(egui::ViewportCommand::Minimized(false));
+
+                    // SET the search input to the provided text (instead of clearing it)
+                    self.popup.popup_state.search_text = input.clone();
+                    self.popup.popup_state.update_search(input.clone());
+
+                    // Request focus on the input field and reset focus tracking flags
+                    self.popup.request_focus = true;
+                    self.popup.focus_set = false;
+                    self.popup.window_activated = false;
+                    self.popup.frame_count = 0;
+
+                    // Mark window as not hidden
+                    self.popup.is_hidden = false;
+                    self.popup.should_exit = false;
+                    self.popup.last_interaction_time = std::time::Instant::now();
+
+                    ctx.request_repaint();
+                    detailed_log("SHOW", &format!("===== SHOW_WITH_INPUT COMMAND COMPLETE in {:?} =====", show_start.elapsed()));
                 }
                 crate::systems::popup_server::PopupCommand::Hide => {
                     detailed_log("HIDE", "===== HIDE COMMAND RECEIVED =====");

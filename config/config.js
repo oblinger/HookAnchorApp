@@ -390,46 +390,48 @@ module.exports = {
   },
 
   // Search and fill from 1Password
+  // Uses native CGEvent APIs for keystrokes (no osascript or cliclick dependency)
   action_1pass: function(ctx) {
-    const { shell, shellSync } = ctx.builtins;
+    const { shell, shellSync, log, sendKeystroke, typeString, pressKey, testAccessibility } = ctx.builtins;
     const searchTerm = ctx.arg;
-    
-    // Try Quick Access first (most universal)
+
+    log("1PASS", `Opening 1Password Quick Access for: ${searchTerm}`);
+
+    // Check if we have Accessibility permission
+    if (!testAccessibility()) {
+      log("1PASS", "ERROR: No Accessibility permission - add HookAnchor to System Settings > Privacy & Security > Accessibility");
+      return "Error: No Accessibility permission";
+    }
+
+    // Use native CGEvent APIs for keystrokes
+    // Cmd+Shift+Space opens 1Password Quick Access
     try {
-      shellSync("osascript -e 'tell application \"System Events\" to keystroke \" \" using {shift down, command down}'");
-      shellSync("/bin/sleep 0.25");  // Wait for Quick Access to fully open
-      
-      // Type character by character for better reliability
+      sendKeystroke("space", ["cmd", "shift"]);
+      shellSync("/bin/sleep 0.5");  // Wait for Quick Access to fully open
+
       // Type the search term
-      shellSync(`osascript -e 'tell application "System Events" to keystroke "${searchTerm}"'`);
+      typeString(searchTerm);
 
-      shellSync("/bin/sleep 0.5");  // Wait for 1Password popup to populate
+      shellSync("/bin/sleep 1.0");  // Wait for 1Password popup to populate
 
-      // Send space as separate keystroke to help with selection
-      shellSync(`osascript -e 'tell application "System Events" to keystroke " "'`);
-
-      shellSync("/bin/sleep 2.0");  // Wait for 1Password to search and show results
-      shellSync("osascript -e 'tell application \"System Events\" to key code 36'");  // Press Enter to select and open
+      // Press Enter to select and fill
+      pressKey("return");
       shellSync("/bin/sleep 0.5");  // Wait for action to complete
+
+      log("1PASS", "1Password Quick Access triggered successfully");
     } catch (e) {
-      // Fallback 1: Try menu bar access
+      log("1PASS", `Error: ${e}`);
+      // Fallback: Try opening 1Password app directly
       try {
-        shell("osascript -e 'tell application \"System Events\" to tell process \"1Password 7 - Password Manager\" to click menu bar item 1 of menu bar 1'");
+        shell("open -a '1Password'");
         shellSync("/bin/sleep 0.5");
-        shell(`osascript -e 'tell application "System Events" to keystroke "${searchTerm}"'`);
-        shellSync("/bin/sleep 0.5");
-        shell(`osascript -e 'tell application "System Events" to keystroke " "'`);
-        shell("osascript -e 'tell application \"System Events\" to key code 36'");
-      } catch (e2) {
-        // Fallback 2: Open 1Password app and use search
-        shell("osascript -e 'tell application \"1Password\" to activate'");
-        shellSync("/bin/sleep 0.5");
-        shell("osascript -e 'tell application \"System Events\" to keystroke \"f\" using command down'");
+        sendKeystroke("f", ["cmd"]);  // Cmd+F for search
         shellSync("/bin/sleep 0.2");
-        shell(`osascript -e 'tell application "System Events" to keystroke "${searchTerm}"'`);
+        typeString(searchTerm);
         shellSync("/bin/sleep 0.5");
-        shell(`osascript -e 'tell application "System Events" to keystroke " "'`);
-        shell("osascript -e 'tell application \"System Events\" to key code 36'");
+        pressKey("return");
+      } catch (e2) {
+        log("1PASS", `Fallback also failed: ${e2}`);
       }
     }
     return "1Password search initiated";

@@ -151,6 +151,13 @@ fn handle_hook_url(url: &str) {
         return;
     }
 
+    if decoded_query.starts_with("f/") {
+        // Folder mode - find command and open its folder in Finder
+        let search_query = decoded_query.strip_prefix("f/").unwrap_or("");
+        handle_folder_url_ha(search_query);
+        return;
+    }
+
     // Default: search-and-execute (backward compatible)
     handle_execute_url_ha(&decoded_query);
 }
@@ -248,4 +255,69 @@ fn handle_execute_url_ha(search_query: &str) {
     variables.insert("arg".to_string(), top_command_obj.arg.clone());
     let _ = execute::execute_on_server(&action, Some(variables));
     detailed_log("DISPATCHER", "Command sent to server");
+}
+
+/// Handle folder mode URLs: hook://f/QUERY - find command and open its folder in Finder
+fn handle_folder_url_ha(search_query: &str) {
+    use hookanchor::core::get_sys_data;
+    use std::path::PathBuf;
+
+    detailed_log("DISPATCHER", &format!("Folder mode - query='{}'", search_query));
+
+    // Find the top matching command
+    let (sys_data, _) = get_sys_data();
+    let config = hookanchor::core::get_config();
+    let (display_commands, _, _, _, _, _) = hookanchor::core::get_new_display_commands(
+        search_query, &sys_data.commands, &sys_data.patches, &config
+    );
+    let filtered = display_commands.into_iter().take(1).collect::<Vec<_>>();
+
+    if filtered.is_empty() {
+        detailed_log("DISPATCHER", &format!("No commands found for query: '{}'", search_query));
+        return;
+    }
+
+    let top_command = &filtered[0];
+    detailed_log("DISPATCHER", &format!("Found command: {} (arg='{}')", top_command.command, top_command.arg));
+
+    // Expand ~ to home directory
+    let expand_tilde = |path: &str| -> PathBuf {
+        if path.starts_with("~/") {
+            if let Some(home) = dirs::home_dir() {
+                return home.join(&path[2..]);
+            }
+        } else if path == "~" {
+            if let Some(home) = dirs::home_dir() {
+                return home;
+            }
+        }
+        PathBuf::from(path)
+    };
+
+    let expanded_path = expand_tilde(&top_command.arg);
+
+    // Determine the folder to open
+    let folder_path = if expanded_path.is_dir() {
+        expanded_path
+    } else if expanded_path.is_file() {
+        // Arg is a file - get its parent directory
+        expanded_path.parent()
+            .map(|p| p.to_path_buf())
+            .unwrap_or(expanded_path)
+    } else {
+        detailed_log("DISPATCHER", &format!("Path not found: {}", top_command.arg));
+        return;
+    };
+
+    detailed_log("DISPATCHER", &format!("Opening folder in Finder: {}", folder_path.display()));
+
+    // Open the folder in Finder
+    match Command::new("open").arg(&folder_path).spawn() {
+        Ok(_) => {
+            detailed_log("DISPATCHER", "Folder opened in Finder");
+        }
+        Err(e) => {
+            detailed_log("DISPATCHER", &format!("Failed to open folder: {}", e));
+        }
+    }
 }

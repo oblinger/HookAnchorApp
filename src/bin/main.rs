@@ -194,12 +194,24 @@ fn main() -> Result<(), eframe::Error> {
             .unwrap_or(false);
 
         if !skip_permissions {
-            let missing = hookanchor::utils::get_missing_permissions();
-            if !missing.is_empty() {
-                let message = hookanchor::utils::format_missing_permissions_message(&missing);
-                log(&format!("STARTUP: Missing permissions detected:\n{}", message));
+            // Request accessibility permission - this adds the app to the list and may show macOS prompt
+            // AXIsProcessTrustedWithOptions is the authoritative check for whether THIS process has permission
+            let has_accessibility = hookanchor::utils::request_accessibility_permission();
+
+            if !has_accessibility {
+                // Permission not yet granted - show our warning dialog
+                // NOTE: We trust AXIsProcessTrustedWithOptions result directly rather than
+                // re-checking via osascript, because osascript can inherit permissions from
+                // the parent process (Terminal, Keyboard Maestro, etc.) while the actual
+                // binary may not have permission.
+                let message = hookanchor::utils::format_accessibility_warning();
+                log(&format!("STARTUP: Accessibility permission not granted:\n{}", message));
                 // Show non-blocking warning dialog - app continues running
                 hookanchor::utils::warning2(&message);
+                // Open the Accessibility settings pane for convenience
+                hookanchor::utils::open_accessibility_settings();
+                // Reveal binaries in Finder so user can drag them into Settings
+                hookanchor::utils::reveal_binaries_in_finder();
             }
         }
 

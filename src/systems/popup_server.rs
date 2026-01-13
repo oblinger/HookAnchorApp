@@ -35,6 +35,7 @@ pub fn is_primary_popup_instance() -> bool {
 #[derive(Debug, Clone)]
 pub enum PopupCommand {
     Show,
+    ShowWithInput(String),  // Show popup with pre-filled input text
     Hide,
     Ping,
 }
@@ -119,7 +120,7 @@ impl PopupControl {
         if let Ok(mut pending) = self.pending_command.lock() {
             if let Some(command) = pending.take() {
                 match &command {
-                    PopupCommand::Show => {
+                    PopupCommand::Show | PopupCommand::ShowWithInput(_) => {
                         log("⏱️ POPUP_SERVER: Processing 'show' in update loop");
                         // Show the window and focus it
                         ctx.send_viewport_cmd(egui::ViewportCommand::Visible(true));
@@ -161,6 +162,11 @@ fn handle_client(stream: &mut UnixStream, pending_command: &Arc<Mutex<Option<Pop
             detailed_log("POPUP_SERVER", &format!("Received command: {}", command_str));
             
             let (command, mut response) = match command_str {
+                cmd if cmd.starts_with("show_with_input ") => {
+                    let input = cmd.strip_prefix("show_with_input ").unwrap_or("");
+                    detailed_log("POPUP_SERVER", &format!("Received 'show_with_input' command with: {}", input));
+                    (Some(PopupCommand::ShowWithInput(input.to_string())), String::from("Processing show_with_input command..."))
+                }
                 "show" => {
                     detailed_log("POPUP_SERVER", "Received 'show' command");
                     (Some(PopupCommand::Show), String::from("Processing show command..."))
@@ -187,8 +193,8 @@ fn handle_client(stream: &mut UnixStream, pending_command: &Arc<Mutex<Option<Pop
             
             // Set pending command
             if let Some(cmd) = command.clone() {
-                // Special handling for show command - need to wake up the UI
-                if matches!(cmd, PopupCommand::Show) {
+                // Special handling for show commands - need to wake up the UI
+                if matches!(cmd, PopupCommand::Show | PopupCommand::ShowWithInput(_)) {
                     // Request a repaint to wake up the hidden window
                     if let Ok(ctx_lock) = ctx_handle.lock() {
                         if let Some(ref ctx) = *ctx_lock {
@@ -203,8 +209,8 @@ fn handle_client(stream: &mut UnixStream, pending_command: &Arc<Mutex<Option<Pop
                 }
             }
             
-            // For show command, we no longer need verification since viewport commands handle it
-            if matches!(command, Some(PopupCommand::Show)) {
+            // For show commands, we no longer need verification since viewport commands handle it
+            if matches!(command, Some(PopupCommand::Show) | Some(PopupCommand::ShowWithInput(_))) {
                 // The viewport commands in process_commands() will handle the actual show
                 response = String::from("OK: Show command processed");
             }

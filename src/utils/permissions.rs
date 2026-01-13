@@ -4,6 +4,39 @@
 
 use std::process::Command;
 
+#[cfg(target_os = "macos")]
+use std::ffi::c_void;
+
+#[cfg(target_os = "macos")]
+#[link(name = "ApplicationServices", kind = "framework")]
+extern "C" {
+    fn AXIsProcessTrustedWithOptions(options: *const c_void) -> bool;
+}
+
+#[cfg(target_os = "macos")]
+#[link(name = "CoreFoundation", kind = "framework")]
+extern "C" {
+    fn CFDictionaryCreate(
+        allocator: *const c_void,
+        keys: *const *const c_void,
+        values: *const *const c_void,
+        num_values: isize,
+        key_callbacks: *const c_void,
+        value_callbacks: *const c_void,
+    ) -> *const c_void;
+    fn CFRelease(cf: *const c_void);
+
+    static kCFBooleanTrue: *const c_void;
+    static kCFTypeDictionaryKeyCallBacks: c_void;
+    static kCFTypeDictionaryValueCallBacks: c_void;
+}
+
+// This is defined in HIServices but we link via ApplicationServices
+#[cfg(target_os = "macos")]
+extern "C" {
+    static kAXTrustedCheckOptionPrompt: *const c_void;
+}
+
 /// Represents a permission that may be required
 #[derive(Debug, Clone)]
 pub struct PermissionInfo {
@@ -88,8 +121,101 @@ pub fn format_missing_permissions_message(missing: &[PermissionInfo]) -> String 
         msg.push_str(&format!("  → {}\n\n", perm.settings_path));
     }
 
-    msg.push_str("Add HookAnchor (or the 'ha' binary) to each list above.\n\n");
+    // Get the binary directory to show exact paths
+    if let Some(binary_path) = crate::utils::get_binary_path() {
+        if let Some(binary_dir) = binary_path.parent() {
+            msg.push_str("Add these binaries using the + button:\n");
+            msg.push_str(&format!("  • {}/HookAnchorPopupServer\n", binary_dir.display()));
+            msg.push_str(&format!("  • {}/ha\n\n", binary_dir.display()));
+        }
+    } else {
+        msg.push_str("Add HookAnchor binaries (HookAnchorPopupServer and ha) to the list.\n\n");
+    }
+
     msg.push_str("To disable this check, set 'skip_permissions_check: true' in config.yaml");
 
     msg
+}
+
+/// Format Accessibility permission warning message
+/// Used when AXIsProcessTrustedWithOptions returns false
+pub fn format_accessibility_warning() -> String {
+    let mut msg = String::from("HookAnchor needs Accessibility permission.\n\n");
+
+    msg.push_str("This is required for:\n");
+    msg.push_str("• Sending keystrokes (1Password integration, etc.)\n");
+    msg.push_str("• Controlling other applications\n\n");
+
+    // Get the binary directory to show exact paths
+    if let Some(binary_path) = crate::utils::get_binary_path() {
+        if let Some(binary_dir) = binary_path.parent() {
+            msg.push_str("Add these binaries in System Settings → Privacy & Security → Accessibility:\n");
+            msg.push_str(&format!("  • {}/HookAnchorPopupServer\n", binary_dir.display()));
+            msg.push_str(&format!("  • {}/ha\n\n", binary_dir.display()));
+        }
+    } else {
+        msg.push_str("Add HookAnchor binaries in System Settings → Privacy & Security → Accessibility.\n\n");
+    }
+
+    msg.push_str("Tip: Drag the binaries from Finder into the Settings list.\n\n");
+    msg.push_str("To disable this check, set 'skip_permissions_check: true' in config.yaml");
+
+    msg
+}
+
+/// Request Accessibility permission from macOS
+/// This triggers the system prompt and adds the app to the Accessibility list
+/// Returns true if permission is already granted, false if user needs to grant it
+#[cfg(target_os = "macos")]
+pub fn request_accessibility_permission() -> bool {
+    unsafe {
+        // Create options dictionary with kAXTrustedCheckOptionPrompt = true
+        // This tells macOS to show the permission prompt if not already granted
+        let keys: [*const c_void; 1] = [kAXTrustedCheckOptionPrompt];
+        let values: [*const c_void; 1] = [kCFBooleanTrue];
+
+        let options = CFDictionaryCreate(
+            std::ptr::null(),
+            keys.as_ptr(),
+            values.as_ptr(),
+            1,
+            &kCFTypeDictionaryKeyCallBacks as *const _ as *const c_void,
+            &kCFTypeDictionaryValueCallBacks as *const _ as *const c_void,
+        );
+
+        let result = AXIsProcessTrustedWithOptions(options);
+
+        if !options.is_null() {
+            CFRelease(options);
+        }
+
+        result
+    }
+}
+
+#[cfg(not(target_os = "macos"))]
+pub fn request_accessibility_permission() -> bool {
+    true // Non-macOS platforms don't need this
+}
+
+/// Open the Accessibility settings pane in System Settings
+pub fn open_accessibility_settings() {
+    let _ = Command::new("open")
+        .arg("x-apple.systempreferences:com.apple.preference.security?Privacy_Accessibility")
+        .spawn();
+}
+
+/// Reveal the HookAnchor binaries in Finder for easy adding to Accessibility
+pub fn reveal_binaries_in_finder() {
+    if let Some(binary_path) = crate::utils::get_binary_path() {
+        if let Some(binary_dir) = binary_path.parent() {
+            // Reveal the popup server binary
+            let popup_server = binary_dir.join("HookAnchorPopupServer");
+            if popup_server.exists() {
+                let _ = Command::new("open")
+                    .args(["-R", &popup_server.to_string_lossy()])
+                    .spawn();
+            }
+        }
+    }
 }

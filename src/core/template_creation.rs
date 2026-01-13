@@ -208,6 +208,26 @@ impl TemplateContext {
         variables.insert("_selected_flags".to_string(), String::new());
         variables.insert("_selected_folder".to_string(), String::new());
 
+        // Last anchor from state - stored as object fields for JavaScript access
+        if let Some(anchor_name) = &state.anchor_name {
+            detailed_log("ANCHOR_LOAD", &format!("Loading anchor from state: name='{}', folder={:?}", anchor_name, state.anchor_folder));
+            variables.insert("_last_anchor_name".to_string(), anchor_name.clone());
+            if let Some(timestamp) = state.anchor_timestamp {
+                variables.insert("_last_anchor_timestamp".to_string(), timestamp.to_string());
+            }
+            if let Some(folder) = &state.anchor_folder {
+                variables.insert("_last_anchor_folder".to_string(), folder.clone());
+            } else {
+                detailed_log("ANCHOR_LOAD", &format!("ERROR: Anchor '{}' has no folder in state.json!", anchor_name));
+                variables.insert("_last_anchor_folder".to_string(), String::new());
+            }
+        } else {
+            detailed_log("ANCHOR_LOAD", "No anchor in state.json");
+            variables.insert("_last_anchor_name".to_string(), String::new());
+            variables.insert("_last_anchor_timestamp".to_string(), String::new());
+            variables.insert("_last_anchor_folder".to_string(), String::new());
+        }
+
         TemplateContext { variables }
     }
 
@@ -246,122 +266,6 @@ impl TemplateContext {
         Ok(())
     }
 
-    /// Create a new template context with standard variables
-    pub fn new(
-        input: &str,
-        selected_command: Option<&Command>,
-    ) -> Self {
-        let mut variables = HashMap::new();
-
-        // Basic variables
-        variables.insert("input".to_string(), input.to_string());
-        
-        // Last executed command from state - stored as object fields for JavaScript access
-        let state = crate::core::data::get_state();
-        if let Some(last_executed_name) = state.last_executed_command {
-            // Try to find the full command details from singleton
-            let (sys_data, _) = crate::core::get_sys_data();
-            if let Some(cmd) = sys_data.commands.iter().find(|c| c.command == last_executed_name) {
-                // Store last_executed command details
-                // Extract and validate folder, or use empty string if extraction fails
-                let folder = match extract_and_validate_folder(&cmd) {
-                    Ok(f) => {
-                        detailed_log("TEMPLATE_FOLDER", &format!("TEMPLATE_FOLDER: Extracted valid folder from '{}': {}", cmd.command, f));
-                        f
-                    },
-                    Err(e) => {
-                        detailed_log("TEMPLATE_FOLDER", &format!("TEMPLATE_FOLDER: Failed to extract folder from '{}' (action={}): {}", cmd.command, cmd.action, e));
-                        String::new() // Use empty string for invalid folder
-                    }
-                };
-                
-                // We store these for JavaScript object creation later
-                variables.insert("_last_executed_name".to_string(), cmd.command.clone());
-                variables.insert("_last_executed_path".to_string(), cmd.arg.clone());
-                variables.insert("_last_executed_patch".to_string(), cmd.patch.clone());
-                variables.insert("_last_executed_action".to_string(), cmd.action.clone());
-                variables.insert("_last_executed_flags".to_string(), cmd.flags.clone());
-                variables.insert("_last_executed_folder".to_string(), folder);
-            } else {
-                // Command not found, just use the name
-                variables.insert("_last_executed_name".to_string(), last_executed_name);
-                variables.insert("_last_executed_path".to_string(), String::new());
-                variables.insert("_last_executed_patch".to_string(), String::new());
-                variables.insert("_last_executed_folder".to_string(), String::new());
-                variables.insert("_last_executed_action".to_string(), String::new());
-                variables.insert("_last_executed_flags".to_string(), String::new());
-            }
-        } else {
-            // No last executed command
-            variables.insert("_last_executed_name".to_string(), String::new());
-            variables.insert("_last_executed_path".to_string(), String::new());
-            variables.insert("_last_executed_patch".to_string(), String::new());
-            variables.insert("_last_executed_folder".to_string(), String::new());
-            variables.insert("_last_executed_action".to_string(), String::new());
-            variables.insert("_last_executed_flags".to_string(), String::new());
-        }
-
-        // Last anchor from state - stored as object fields for JavaScript access
-        if let Some(anchor_name) = &state.anchor_name {
-            variables.insert("_last_anchor_name".to_string(), anchor_name.clone());
-            if let Some(timestamp) = state.anchor_timestamp {
-                variables.insert("_last_anchor_timestamp".to_string(), timestamp.to_string());
-            }
-            if let Some(folder) = &state.anchor_folder {
-                variables.insert("_last_anchor_folder".to_string(), folder.clone());
-            } else {
-                variables.insert("_last_anchor_folder".to_string(), String::new());
-            }
-        } else {
-            variables.insert("_last_anchor_name".to_string(), String::new());
-            variables.insert("_last_anchor_timestamp".to_string(), String::new());
-            variables.insert("_last_anchor_folder".to_string(), String::new());
-        }
-
-        // Selected command - stored as object fields for JavaScript access
-        if let Some(cmd) = selected_command {
-            // Extract and validate folder, or use empty string if extraction fails
-            let folder = match extract_and_validate_folder(cmd) {
-                Ok(f) => {
-                    detailed_log("TEMPLATE", &format!("Selected command folder: {}", f));
-                    f
-                },
-                Err(e) => {
-                    detailed_log("TEMPLATE", &format!("Selected command folder error: {}", e));
-                    String::new()
-                }
-            };
-            
-            variables.insert("_selected_name".to_string(), cmd.command.clone());
-            variables.insert("_selected_path".to_string(), cmd.arg.clone());
-            variables.insert("_selected_patch".to_string(), cmd.patch.clone());
-            variables.insert("_selected_action".to_string(), cmd.action.clone());
-            variables.insert("_selected_flags".to_string(), cmd.flags.clone());
-            variables.insert("_selected_folder".to_string(), folder);
-        } else {
-            // Provide empty defaults for when no command is selected
-            variables.insert("_selected_name".to_string(), String::new());
-            variables.insert("_selected_path".to_string(), String::new());
-            variables.insert("_selected_patch".to_string(), String::new());
-            variables.insert("_selected_folder".to_string(), String::new());
-            variables.insert("_selected_action".to_string(), String::new());
-            variables.insert("_selected_flags".to_string(), String::new());
-        }
-        
-        // Note: We no longer track "previous" command as it was volatile and unreliable
-        // Instead, use last_executed which tracks the actually executed command
-        // The _previous_command parameter is kept for compatibility but unused
-        
-        // Add date/time variables
-        add_datetime_variables(&mut variables);
-        
-        // Add placeholder variables for grab functionality (until it's implemented)
-        variables.insert("grabbed_action".to_string(), "app".to_string());
-        variables.insert("grabbed_arg".to_string(), "Finder".to_string());
-        
-        TemplateContext { variables }
-    }
-    
     /// Add a custom variable
     pub fn add_variable(&mut self, name: String, value: String) {
         self.variables.insert(name, value);
@@ -1057,7 +961,7 @@ mod tests {
     #[ignore] // Requires full config environment (config.js, etc.) - run with --ignored
     fn test_datetime_variables() {
         init_test_environment();
-        let context = TemplateContext::new("", None);
+        let context = TemplateContext::create_basic_template("");
         
         // Test object-based date variables
         let year = context.expand("{{date.year}}");

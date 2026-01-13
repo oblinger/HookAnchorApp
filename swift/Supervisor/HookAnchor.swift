@@ -243,10 +243,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         //   5. Result: duplicate popup_server processes
         //
         // Instead, let `ha --restart` handle everything.
-        // The supervisor just ensures command server is available.
-
-        // Ensure command server is running before we do anything else
-        startCommandServerIfNeeded()
+        // The supervisor just ensures popup_server starts.
+        // Command server is now started by popup_server during its initialization
+        // using the same code path as rebuild (activate_command_server).
 
         // Set up supervisor control socket for lifecycle management
         setupSupervisorSocket()

@@ -738,8 +738,65 @@ fn setup_launcher_builtins(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Erro
             Err(e) => format!("Failed to execute AppleScript: {}", e),
         }
     })?)?;
-    
-    
+
+    // ============================================================================
+    // NATIVE MACOS INPUT FUNCTIONS
+    // ============================================================================
+    // These use native CGEvent APIs instead of osascript, so they work when
+    // the HookAnchor app has Accessibility permission (no need for osascript permission)
+
+    // sendKeystroke(key, modifiers?) -> sends a keystroke with optional modifiers
+    // key: single character or key name (e.g., "a", "return", "tab", "space")
+    // modifiers: array of modifier names (e.g., ["cmd", "shift"], ["alt", "ctrl"])
+    ctx.globals().set("sendKeystroke", Function::new(ctx.clone(), |key: String, modifiers: Opt<Vec<String>>| {
+        let mod_names: Vec<&str> = modifiers.0.as_ref()
+            .map(|v| v.iter().map(|s| s.as_str()).collect())
+            .unwrap_or_default();
+
+        detailed_log("NATIVE_INPUT", &format!("sendKeystroke: key='{}', modifiers={:?}", key, mod_names));
+
+        match crate::utils::send_keystroke_by_name(&key, &mod_names) {
+            Ok(()) => "Keystroke sent".to_string(),
+            Err(e) => {
+                log(&format!("❌ sendKeystroke failed: {}", e));
+                format!("Error: {}", e)
+            }
+        }
+    })?)?;
+
+    // typeString(text) -> types a string character by character
+    ctx.globals().set("typeString", Function::new(ctx.clone(), |text: String| {
+        detailed_log("NATIVE_INPUT", &format!("typeString: '{}' ({} chars)", text, text.len()));
+
+        match crate::utils::type_string(&text) {
+            Ok(()) => format!("Typed {} characters", text.len()),
+            Err(e) => {
+                log(&format!("❌ typeString failed: {}", e));
+                format!("Error: {}", e)
+            }
+        }
+    })?)?;
+
+    // pressKey(keyName) -> presses a named key (return, tab, escape, etc.)
+    ctx.globals().set("pressKey", Function::new(ctx.clone(), |key_name: String| {
+        detailed_log("NATIVE_INPUT", &format!("pressKey: '{}'", key_name));
+
+        match crate::utils::press_key(&key_name) {
+            Ok(()) => format!("Pressed {}", key_name),
+            Err(e) => {
+                log(&format!("❌ pressKey failed: {}", e));
+                format!("Error: {}", e)
+            }
+        }
+    })?)?;
+
+    // testAccessibility() -> tests if we have Accessibility permission for native input
+    ctx.globals().set("testAccessibility", Function::new(ctx.clone(), || {
+        let has_permission = crate::utils::test_accessibility_permission();
+        detailed_log("NATIVE_INPUT", &format!("testAccessibility: {}", has_permission));
+        has_permission
+    })?)?;
+
     // appIsRunning(app_name) -> checks if application is currently running
     ctx.globals().set("appIsRunning", Function::new(ctx.clone(), |app_name: String| {
         let script = format!(r#"tell application "System Events" to exists (processes where name is "{}")"#, app_name);
@@ -931,7 +988,12 @@ fn load_config_js_functions(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Err
                                     appIsRunning: appIsRunning,
                                     encodeURIComponent: encodeURIComponent,
                                     saveAnchor: saveAnchor,
-                                    updateCommand: updateCommand
+                                    updateCommand: updateCommand,
+                                    // Native macOS input functions (no osascript dependency)
+                                    sendKeystroke: sendKeystroke,
+                                    typeString: typeString,
+                                    pressKey: pressKey,
+                                    testAccessibility: testAccessibility
                                 }}
                             }};
                             // Merge extra_params into ctx if provided (for any other custom params)

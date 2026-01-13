@@ -81,9 +81,30 @@ fn main() {
     // Get command from args
     let args: Vec<String> = env::args().collect();
 
-    // Special case: if first arg is --popup, just forward all args to popup_server directly
+    // Special case: if first arg is --popup, try to use existing server first
     if args.len() > 1 && args[1] == "--popup" {
-        // Forward everything to popup_server
+        let socket_path = get_popup_socket();
+
+        // Try to communicate with existing popup server first
+        if socket_path.exists() {
+            // Extract input text from args (args[2] if present)
+            let input_text = args.get(2).map(|s| s.as_str()).unwrap_or("");
+
+            // Build command: "show" or "show_with_input TEXT"
+            let command = if input_text.is_empty() {
+                "show".to_string()
+            } else {
+                format!("show_with_input {}", input_text)
+            };
+
+            // Try to send to existing server
+            if send_command(&command).is_ok() {
+                exit(0);  // Success - existing server handled it
+            }
+            // Socket exists but connection failed - server may have crashed, continue to spawn
+        }
+
+        // No existing server or connection failed - spawn new popup_server
         let exe_path = env::current_exe().unwrap_or_else(|e| {
             print(&format!("Failed to get current exe path: {}", e));
             std::path::PathBuf::from("popup")

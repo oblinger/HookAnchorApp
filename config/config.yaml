@@ -7,7 +7,9 @@
 # APPLICATION SETTINGS
 # =================================================================
 popup_settings:
-  verbose_logging:        false        # Controls if detailed logging messages added to the log
+  skip_permissions_check: true         # Skip macOS Accessibility permission check on startup (dev machine)
+  show_command_server_terminal: true   # Show Terminal window for command server (inherits Terminal's Accessibility permission)
+  verbose_logging:        true         # Controls if detailed logging messages added to the log
   merge_similar:          false         # BROKEN - causes menu to not work right, needs fixing
   max_rows:               25           # Max number of rows in the list of matching commands
   max_columns:            4            # Max columns in list of matching commands
@@ -72,8 +74,8 @@ popup_settings:
 # TEMPLATE SETTINGS
 # =================================================================
 template_settings:
-  default_anchor_template:     "sub_markdown"  # Template to use when active anchor exists but no template found in hierarchy
-  default_no_anchor_template:  "sub_markdown"  # Template to use when no active anchor is set
+  default_anchor_template:     "child_create_default"  # Template to use when active anchor exists but no template found in hierarchy
+  default_no_anchor_template:  "child_create_default"  # Template to use when no active anchor is set
 
 launcher_settings:
   js_timeout_ms:          5000         # Max milliseconds allows for a js command execution
@@ -111,101 +113,223 @@ history_viewer:
 # be bound to a keyboard key via the 'key' field.  (See configuration reference for available commands.)
 actions:
 
+
   # =================================================================
-  # TEMPLATE ACTIONS - For creating new commands & files
+  # SPECIALIZED TEMPLATE ACTIONS - Specialized for use in a single stream
   # =================================================================
 
-
-  child_dated_markdown:
-    description: "Creates markdown in in the same folder as current command with a YYYY-MM-DD prefix"
+  add_paper_markdown:
+    description: "Creates a new paper entry as a dated child of the [PAP]ers folder"
     action_type: template
-    key: "Cmd+D"
-    name: "{{date.year}}-{{date.month}}-{{date.day}} {{input}}"
-    action: "markdown"
-    arg: "{{last_executed.folder}}/{{date.year}}-{{date.month}}-{{date.day}} {{input}}.md"
-    patch: "{{last_executed.name}}"
+    key: "Cmd+Shift+P"
     edit: true
-    file: "{{last_executed.folder}}/{{date.year}}-{{date.month}}-{{date.day}} {{input}}.md"
-    file_rescan: false
-    contents: ""
-             
+    operations:
+      - type: create
+        file: "~/ob/kmr/RR/PAP/{{date.year}}-{{date.month}}-{{date.day}} {{input}}.md"
+        contents: ""
+      - type: command
+        name: "{{date.year}}-{{date.month}}-{{date.day}} {{input}}"
+        action: "markdown"
+        arg: "~/ob/kmr/RR/PAP/{{date.year}}-{{date.month}}-{{date.day}} {{input}}.md"
+        patch: "PAP"
+      - type: append
+        file: "~/ob/kmr/RR/PAP/PAP.md"
+        after: "## Papers"
+        contents: |
+          - [[{{date.year}}-{{date.month}}-{{date.day}} {{input}}]] 
+      - type: clip
+        contents: '**"[[{{date.year}}-{{date.month}}-{{date.day}} {{input}}]]"** '
 
-  child_year_folder:
-    description: "Creates a new subfolder with a YYYY prefix"
+
+  add_paper_topic_markdown:
+    description: "Creates a new Paper Topic (PT) entry"
     action_type: template
-    name: "{{date.year}} {{input}}"
-    action: "markdown"
-    arg: "{{last_executed.folder}}/{{date.year}} {{input}}/{{date.year}} {{input}}.md"
-    flags: "A"
+    key: "Cmd+Shift+T"
     edit: true
-    file: "{{last_executed.folder}}/{{date.year}} {{input}}/{{date.year}} {{input}}.md"
-    file_rescan: false
-    contents: |
-      .[[{{date.year}} {{input}}]].
+    operations:
+      - type: create
+        file: "~/ob/kmr/RR/PT/PT {{input}}.md"
+        contents: ""
+      - type: command
+        name: "PT {{input}}"
+        action: "markdown"
+        arg: "~/ob/kmr/RR/PT/PT {{input}}.md"
+        patch: "PT"
+      - type: append
+        file: "~/ob/kmr/RR/PT/PT.md"
+        after: "## Paper Topics"
+        contents: |
+          - {{date.year}}-{{date.month}}-{{date.day}} [[PT {{input}}]] 
+      - type: clip
+        contents: '[[PT {{input}}]] '
+
+
+  child_doc_entry:
+    description: "Creates a new DOC documentation file"
+    action_type: template
+    edit: true
+    operations:
+      - type: create
+        file: "~/ob/kmr/T/DOC/Doc{{input}}.md"
+        contents: |
+          #org
+      - type: command
+        name: "Doc{{input}}"
+        action: "doc"
+        arg: "~/ob/kmr/T/DOC/Doc{{input}}.md"
+        patch: "DOC"   
       
-
   prj_child:
     description: "Creates a new Prj project with a YYYY prefix"
     action_type: template
     key: "Cmd+P"
-    name: "{{date.year}} {{input}}"
-    action: "markdown"
-    arg: "~/ob/kmr/prj/{{date.year}} {{input}}/{{date.year}} {{input}}.md"
-    patch: "Prj"
-    flags: "A"
     edit: true
-    file: "~/ob/kmr/prj/{{date.year}} {{input}}/{{date.year}} {{input}}.md"
-    file_rescan: false
-    contents: |
-      .[[{{date.year}}-{{date.month}} {{input}}]].
+    operations:
+      - type: create
+        file: "~/ob/kmr/prj/{{date.year}} {{input}}/{{date.year}} {{input}}.md"
+        contents: |
+          .[[{{date.year}}-{{date.month}} {{input}}]].
+      - type: command
+        name: "{{date.year}} {{input}}"
+        action: "markdown"
+        arg: "~/ob/kmr/prj/{{date.year}} {{input}}/{{date.year}} {{input}}.md"
+        patch: "Prj"
+        flags: "A"
       
-
   child_at_entry:
     description: "Creates a new contact's @ entry"
     action_type: template
     key: "Cmd+Shift+A"
-    name: "@{{input}}"
-    action: "markdown"
-    arg: "~/ob/kmr/At/@{{input}}.md"
-    patch: "At"
-    flags: ""
     edit: true
-    file_rescan: false
-    contents: |
-      =[[At]]  
+    operations:
+      - type: create
+        file: "~/ob/kmr/At/@{{input}}.md"
+        contents: |
+          =[[At]]
+      - type: command
+        name: "@{{input}}"
+        action: "markdown"
+        arg: "~/ob/kmr/At/@{{input}}.md"
+        patch: "At"  
 
-    
   child_corp_entry:
     description: "Creates a new org @ entry"
     action_type: template
     key: "Cmd+O"
-    name: "@{{input}}"
-    action: "markdown"
-    arg: "~/ob/kmr/At/Corp/@{{input}}.md"
-    patch: "Corp"
-    flags: ""
     edit: true
-    file: "~/ob/kmr/At/Corp/@{{input}}.md"
-    file_rescan: false
-    contents: |
-      =[[Corp]]   
+    operations:
+      - type: create
+        file: "~/ob/kmr/At/Corp/@{{input}}.md"
+        contents: |
+          =[[Corp]]
+      - type: command
+        name: "@{{input}}"
+        action: "markdown"
+        arg: "~/ob/kmr/At/Corp/@{{input}}.md"
+        patch: "Corp"   
 
-    
-  child_doc_entry:
-    description: "Creates a new DOC documentation file"
+
+
+  # =================================================================
+  # GENERAL TEMPLATE ACTIONS - For creating new commands & files
+  # =================================================================
+
+  child_create_default:
+    description: "Default template - creates markdown in same folder as the last command"
+    action_type: template
+    key: "!"
+    edit: true
+    validate_last_executed_folder: true
+    operations:
+      - type: create
+        file: "{{last_executed.folder}}/{{input}}.md"
+        contents: ""
+      - type: command
+        name: "{{input}}"
+        action: "markdown"
+        arg: "{{last_executed.folder}}/{{input}}.md"
+        patch: "{{last_executed.name}}"
+      - type: clip
+        contents: '[[{{input}}]] '
+
+  create_sub_anchor:
+    description: "Creates an anchor sub-FOLDER under last executed command's folder"
+    action_type: template
+    key: "Cmd+F"
+    edit: true
+    validate_last_executed_folder: true
+    operations:
+      - type: create
+        file: "{{last_executed.folder}}/{{input}}/{{input}}.md"
+        contents: |
+          .[[{{input}}]].  >[[{{last_executed.name}}]]
+      - type: command
+        name: "{{input}}"
+        action: "markdown"
+        arg: "{{last_executed.folder}}/{{input}}/{{input}}.md"
+        patch: "{{last_executed.name}}"
+        flags: "A"
+     
+  child_dated_markdown:
+    description: "Creates markdown in in the same folder as current command with a YYYY-MM-DD prefix"
+    action_type: template
+    key: "Cmd+D"
+    edit: true
+    operations:
+      - type: create
+        file: "{{last_executed.folder}}/{{date.year}}-{{date.month}}-{{date.day}} {{input}}.md"
+        contents: ""
+      - type: command
+        name: "{{date.year}}-{{date.month}}-{{date.day}} {{input}}"
+        action: "markdown"
+        arg: "{{last_executed.folder}}/{{date.year}}-{{date.month}}-{{date.day}} {{input}}.md"
+        patch: "{{last_executed.name}}"
+
+  sibling_dated_markdown:
+    description: "Creates dated markdown in the ANCHOR's folder"
     action_type: template
     key: "Cmd+Shift+D"
-    name: "Doc{{input}}"
-    action: "doc"
-    arg: "~/ob/kmr/T/DOC/Doc{{input}}.md"
-    patch: "DOC"
-    flags: ""
     edit: true
-    file_rescan: false
-    file: "~/ob/kmr/T/DOC/Doc{{input}}.md"
-    contents: |
-      #org   
-      
+    operations:
+      - type: create
+        file: "{{last_anchor.folder}}/{{date.year}}-{{date.month}}-{{date.day}} {{input}}.md"
+        contents: ""
+      - type: command
+        name: "{{date.year}}-{{date.month}}-{{date.day}} {{input}}"
+        action: "markdown"
+        arg: "{{last_anchor.folder}}/{{date.year}}-{{date.month}}-{{date.day}} {{input}}.md"
+        patch: "{{last_anchor.name}}"
+
+  child_year_folder:
+    description: "Creates a new subfolder with a YYYY prefix"
+    action_type: template
+    key: "Cmd+Y"
+    edit: true
+    operations:
+      - type: create
+        file: "{{last_executed.folder}}/{{date.year}} {{input}}/{{date.year}} {{input}}.md"
+        contents: |
+          .[[{{date.year}} {{input}}]].
+      - type: command
+        name: "{{date.year}} {{input}}"
+        action: "markdown"
+        arg: "{{last_executed.folder}}/{{date.year}} {{input}}/{{date.year}} {{input}}.md"
+        flags: "A"
+
+  sibling_year_markdown:
+    description: "Creates year-prefixed markdown in the ANCHOR's folder (no subfolder)"
+    action_type: template
+    key: "Cmd+Shift+Y"
+    edit: true
+    operations:
+      - type: create
+        file: "{{last_anchor.folder}}/{{date.year}} {{input}}.md"
+        contents: ""
+      - type: command
+        name: "{{date.year}} {{input}}"
+        action: "markdown"
+        arg: "{{last_anchor.folder}}/{{date.year}} {{input}}.md"
+        patch: "{{last_anchor.name}}"
 
 
   # =================================================================
@@ -213,43 +337,49 @@ actions:
   # =================================================================
 
   kb_create_child:
-    description: "Create child command using anchor's template"
+    description: "Create child command using anchor's template action"
     action_type: popup
     key: "+"
     popup_action: create_child
     close_popup: false
 
   grab:
-    description: "Capture window/app after 3 second countdown"
+    description: "Capture window/app after 5 second countdown & create command"
     action_type: template
     key: "*"
     grab: 5
-    name: "{{input}}"
-    action: "{{grabbed.action}}"
-    arg: "{{grabbed.arg}}"
     edit: true
+    operations:
+      - type: command
+        name: "{{input}}"
+        action: "{{grabbed.action}}"
+        arg: "{{grabbed.arg}}"
 
   edit_selection:
     description: "Edit currently selected command"
     action_type: template
     key: ";"
-    name: "{{selected.name}}"
-    action: "{{selected.action}}"
-    arg: "{{selected.arg}}"
-    patch: "{{selected.patch}}"
-    flags: "{{selected.flags}}"
     edit: true
     use_existing: true
+    operations:
+      - type: command
+        name: "{{selected.name}}"
+        action: "{{selected.action}}"
+        arg: "{{selected.arg}}"
+        patch: "{{selected.patch}}"
+        flags: "{{selected.flags}}"
 
   edit_input:
     description: "Edit command from current input"
     action_type: template
     key: "="
-    name: "{{raw_input}}"
-    action: ""
-    arg: ""
     edit: true
     use_existing: true
+    operations:
+      - type: command
+        name: "{{raw_input}}"
+        action: ""
+        arg: ""
 
   wrap_file:
     description: "Wrap file into folder with same name and make anchor"
@@ -258,48 +388,17 @@ actions:
     # ctx.selected is automatically populated from the selected command
     # No need for template expansion - JS actions access ctx.selected.name, ctx.selected.arg, etc.
 
-
   create_alias:
     description: "Create alias to last executed command"
     action_type: template
     key: ">"
-    name: "{{input}}"
-    action: "alias"
-    arg: "{{last_executed.name}}"
-    patch: ""
-    flags: ""
     edit: true
+    operations:
+      - type: command
+        name: "{{input}}"
+        action: "alias"
+        arg: "{{last_executed.name}}"
     
-
-  create_sub_anchor:
-    description: "Creates an anchor as subfolder of last executed command's folder"
-    action_type: template
-    key: "!"
-    name: "{{input}}"
-    action: "markdown"
-    arg: "{{last_executed.folder}}/{{input}}/{{input}}.md"
-    patch: "{{last_executed.name}}"
-    flags: "A"
-    edit: true
-    file: "{{last_executed.folder}}/{{input}}/{{input}}.md"
-    validate_last_executed_folder: true
-    contents: |
-      .[[{{input}}]].  >[[{{last_executed.name}}]]
-     
-
-  sub_markdown:
-    description: "Creates a markdown note in the same folder as the last executed command"
-    action_type: template
-    key: "&"
-    name: "{{input}}"
-    action: "markdown"
-    arg: "{{last_executed.folder}}/{{input}}.md"
-    patch: "{{last_executed.patch}}"
-    flags: ""
-    edit: true
-    file: "{{last_executed.folder}}/{{input}}.md"
-    validate_last_executed_folder: true
-       
 
 
   # =================================================================
@@ -432,9 +531,9 @@ actions:
     key: "Cmd+E"
 
   kb_toggle_show_files:
-    description: "Toggle showing files in prefix menus"
+    description: "Toggle SHOW files in the prefix menu"
     action_type: popup
-    key: "Cmd+F"
+    key: "Cmd+S"
     popup_action: toggle_show_files
     close_popup: false
 
@@ -754,13 +853,17 @@ grabber_rules:
   test_template:
     action_type: template
     description: "Test template action"
-    name: "Test {{input}}"
-    action: "test"
-    arg: "/tmp/test_{{input}}.txt"
-    patch: "Test"
-    contents: |
-      Test file for {{input}}
-      Created at {{date.year}}-{{date.month}}-{{date.day}}
+    operations:
+      - type: create
+        file: "/tmp/test_{{input}}.txt"
+        contents: |
+          Test file for {{input}}
+          Created at {{date.year}}-{{date.month}}-{{date.day}}
+      - type: command
+        name: "Test {{input}}"
+        action: "test"
+        arg: "/tmp/test_{{input}}.txt"
+        patch: "Test"
   
   # Example: Text action with custom delay
   # You can create custom text actions with specific delays

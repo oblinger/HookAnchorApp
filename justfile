@@ -253,10 +253,30 @@ bootstrap: setup setup-url-handler setup-git
 
 # === CI/RELEASE COMMANDS ===
 
-# Prepare release (build universal + distribution)
-release: build-universal build-dist
-    @echo "🎉 Release package ready!"
-    @echo "Distribution: dist/HookAnchor-$(just version).dmg"
+# Sign release binaries for local development
+sign:
+    @echo "🔏 Signing release binaries..."
+    ./dev-scripts/build/sign_and_notarize.sh binaries
+
+# Sign and notarize app bundle (requires notarization credentials)
+sign-app:
+    @echo "🔏 Signing and notarizing app bundle..."
+    ./dev-scripts/build/sign_and_notarize.sh app
+
+# Sign and notarize DMG for distribution
+sign-dmg:
+    @echo "🔏 Signing and notarizing DMG..."
+    ./dev-scripts/build/sign_and_notarize.sh dmg
+
+# Full release: build, sign, notarize
+release: build-universal build-dist sign-dmg
+    @echo "🎉 Release package ready and notarized!"
+    @echo "Distribution: versions/$(just version)/HookAnchor-$(just version).dmg"
+
+# Release without notarization (faster, for testing)
+release-unsigned: build-universal build-dist
+    @echo "🎉 Release package ready (unsigned)!"
+    @echo "Distribution: versions/$(just version)/HookAnchor-$(just version).dmg"
 
 # === PUBLIC REPOSITORY SYNC ===
 

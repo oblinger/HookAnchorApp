@@ -160,48 +160,87 @@ pub fn rename_associated_data(
         }
     }
     
-    // 4. Prefix Renaming  
+    // 4. Prefix Renaming
     if config.popup_settings.rename_prefix.unwrap_or(false) {
         let separators = &config.popup_settings.word_separators;
-        
-        // Find affected commands
-        let mut affected_commands = Vec::new();
+
+        // Find affected commands and track which files need renaming
+        // Tuple: (old_cmd_name, new_cmd_name, Option<(old_file_path, new_file_path)>)
+        let mut affected_commands: Vec<(String, String, Option<(PathBuf, PathBuf)>)> = Vec::new();
+
         for cmd in commands.iter() {
             // Skip the command being renamed
             if cmd.command == old_name {
                 continue;
             }
-            
+
             // Check if this command starts with old_name followed by a separator
             let old_name_chars: Vec<char> = old_name.chars().collect();
             let cmd_chars: Vec<char> = cmd.command.chars().collect();
-            
+
             if cmd_chars.len() > old_name_chars.len() {
                 // Extract prefix characters
                 let prefix_chars: String = cmd_chars[..old_name_chars.len()].iter().collect();
                 let next_char = cmd_chars[old_name_chars.len()];
-                
+
                 // Check if prefix matches (case-insensitive) and next char is a separator
-                if prefix_chars.to_lowercase() == old_name.to_lowercase() && 
+                if prefix_chars.to_lowercase() == old_name.to_lowercase() &&
                    separators.contains(next_char) {
-                    affected_commands.push(cmd.command.clone());
+                    // Calculate new command name
+                    let remainder_chars: String = cmd_chars[old_name_chars.len()..].iter().collect();
+                    let new_cmd_name = format!("{}{}", new_name, remainder_chars);
+
+                    // Check if the file basename matches the OLD command name (case-insensitive)
+                    let file_rename = if matches!(cmd.action.as_str(), "markdown" | "text" | "doc") {
+                        let path = Path::new(&cmd.arg);
+                        if path.exists() && path.is_file() {
+                            if let Some(file_stem) = path.file_stem() {
+                                if let Some(file_stem_str) = file_stem.to_str() {
+                                    // Check if file basename matches old command name
+                                    if normalize_for_match(file_stem_str) == normalize_for_match(&cmd.command) {
+                                        // Build new file path with new command name
+                                        let extension = path.extension().unwrap_or_default();
+                                        let new_file_name = if extension.is_empty() {
+                                            new_cmd_name.clone()
+                                        } else {
+                                            format!("{}.{}", new_cmd_name, extension.to_str().unwrap())
+                                        };
+                                        let new_path = path.parent()
+                                            .map(|p| p.join(&new_file_name))
+                                            .unwrap_or_else(|| PathBuf::from(&new_file_name));
+
+                                        // Only rename if target doesn't exist
+                                        if !new_path.exists() {
+                                            Some((path.to_path_buf(), new_path))
+                                        } else {
+                                            None
+                                        }
+                                    } else {
+                                        None
+                                    }
+                                } else { None }
+                            } else { None }
+                        } else { None }
+                    } else { None };
+
+                    affected_commands.push((cmd.command.clone(), new_cmd_name, file_rename));
                 }
             }
         }
-        
+
         if !affected_commands.is_empty() {
             // Add action description with complete command listing
             let mut action_desc = format!("• PREFIX -- Update prefix from {} to {} for the following commands:", old_name, new_name);
-            
+
             // Add all affected commands, 4 spaces indented, wrapping lines as needed
             let mut current_line = String::from("    ");
-            for (i, cmd) in affected_commands.iter().enumerate() {
+            for (i, (old_cmd, _, _)) in affected_commands.iter().enumerate() {
                 let cmd_text = if i == affected_commands.len() - 1 {
-                    cmd.clone() // Last command, no comma
+                    old_cmd.clone() // Last command, no comma
                 } else {
-                    format!("{}, ", cmd) // Add comma and space
+                    format!("{}, ", old_cmd) // Add comma and space
                 };
-                
+
                 // Check if adding this command would make the line too long (>80 chars)
                 if current_line.len() + cmd_text.len() > 80 && current_line.len() > 4 {
                     // Add the current line and start a new one
@@ -212,45 +251,61 @@ pub fn rename_associated_data(
                     current_line.push_str(&cmd_text);
                 }
             }
-            
+
             // Add the final line if it has content
             if current_line.len() > 4 {
                 action_desc.push('\n');
                 action_desc.push_str(&current_line);
             }
-            
+
             actions.push(action_desc);
-            
+
+            // Add file rename actions to the description
+            let file_renames: Vec<_> = affected_commands.iter()
+                .filter_map(|(_, _, file_opt)| file_opt.as_ref())
+                .collect();
+            if !file_renames.is_empty() {
+                let mut file_desc = String::from("• PREFIX FILES -- Rename files to match new command names:");
+                for (old_path, new_path) in &file_renames {
+                    let old_name = old_path.file_name().unwrap_or_default().to_string_lossy();
+                    let new_name = new_path.file_name().unwrap_or_default().to_string_lossy();
+                    file_desc.push_str(&format!("\n    {} → {}", old_name, new_name));
+                }
+                actions.push(file_desc);
+            }
+
             // Perform update if not dry run
             if !dry_run {
-                for cmd in commands.iter_mut() {
-                    // Skip the command being renamed
-                    if cmd.command == old_name {
-                        continue;
-                    }
-                    
-                    // Check if this command starts with old_name followed by a separator
-                    let old_name_chars: Vec<char> = old_name.chars().collect();
-                    let cmd_chars: Vec<char> = cmd.command.chars().collect();
-                    
-                    if cmd_chars.len() > old_name_chars.len() {
-                        // Extract prefix characters
-                        let prefix_chars: String = cmd_chars[..old_name_chars.len()].iter().collect();
-                        let next_char = cmd_chars[old_name_chars.len()];
-                        
-                        // Check if prefix matches (case-insensitive) and next char is a separator
-                        if prefix_chars.to_lowercase() == old_name.to_lowercase() && 
-                           separators.contains(next_char) {
-                            // Replace the prefix with the new name
-                            let remainder_chars: String = cmd_chars[old_name_chars.len()..].iter().collect();
-                            let old_cmd_name = cmd.command.clone();
-                            cmd.command = format!("{}{}", new_name, remainder_chars);
-                            log(&format!("RENAME: Updated prefix '{}' -> '{}'", 
-                                old_cmd_name, cmd.command));
+                for (old_cmd_name, new_cmd_name, file_rename) in &affected_commands {
+                    // Find and update the command
+                    for cmd in commands.iter_mut() {
+                        if cmd.command == *old_cmd_name {
+                            cmd.command = new_cmd_name.clone();
+                            log(&format!("RENAME: Updated prefix '{}' -> '{}'",
+                                old_cmd_name, new_cmd_name));
+
+                            // Rename file if needed
+                            if let Some((old_path, new_path)) = file_rename {
+                                if old_path.exists() && !new_path.exists() {
+                                    match fs::rename(old_path, new_path) {
+                                        Ok(_) => {
+                                            log(&format!("RENAME: Renamed file '{}' -> '{}'",
+                                                old_path.display(), new_path.display()));
+                                            // Update the command's arg to point to new file
+                                            cmd.arg = new_path.to_string_lossy().to_string();
+                                        }
+                                        Err(e) => {
+                                            log_error(&format!("RENAME: Failed to rename file '{}': {}",
+                                                old_path.display(), e));
+                                        }
+                                    }
+                                }
+                            }
+                            break;
                         }
                     }
                 }
-                log(&format!("RENAME: Updated {} commands with new prefix", 
+                log(&format!("RENAME: Updated {} commands with new prefix",
                     affected_commands.len()));
             }
         }
