@@ -14,7 +14,7 @@ Other Links:
 **Please briefly describe your role and contributions for each sample.**
 
 Was the initial developer and architect for a CV/robotic platform that grew to have 60 developers. The entire system is proprietary property of Aeolus Robotics.
-Active developer of many novel CV algorithms at SportsVisio -- all proprietary except DAT an elegant but small data management layer we open sourced:
+Active developer of many novel CV algorithms at SportsVisio -- all proprietary except DAT an elegant/small data management layer that I open sourced:
 
 DVC DAT - It provides flexible namespace management that integrates dynamically loaded code with cloud datasets, ensuring versioning is synchronized across them and your code repository.  
 
@@ -37,7 +37,16 @@ I am a very fast, strong, organized coder, but most of my work is proprietary.  
 
 TL;DR.  I want to transition to full-time AI safety work and I have a research agenda that is ripe for execution within your program.
 
-I have long been interested in systems that can bootstrap beyond human intelligence (this was the basis for one of my DARPA programs), and a second Machine Reading program also drove early ML + NLP work in that direction.  But I am so skeptical of our long-term ability to control this technology that I wrote a 4-page justification for myself about why it was acceptable to join DARPA to drive this work.    Leaving DARPA I chose a more applied AI path for this reason.  
+  I have long been interested in systems that achieve general intelligence, as well as the risks inherent in such systems.
+  - As a Program Manager at DARPA, I ran "Bootstrapped Learning," a $50M effort to iteratively capture deeply structured human knowledge.
+  - I also created "Machine Reading," a vision for how NLP and ML might be productively integrated to drive automated deep structure acquisition. This program led to IBM's Jeopardy-playing system (Watson) and hundreds of publications, driving early deep learning work by researchers central to the field (Andrew Ng, Daphne Koller, Pedro Domingos, Tom Mitchell, Leslie Kaelbling, and others).
+And I have long doubted our ability to control these systems.
+- 
+
+I have long been interested in systems that achieve general intelligence, as well as the risks inherent in such systems.
+- As a Program Manager at DARPA, I ran "Bootstrapped Learning," a $50M effort to iteratively capture deeply structured human knowledge,
+- As "Machine Reading," my vision for NLP and ML might be productively integrated.  This program resulted in the IBM Watson Jeporady playing system as well as hundreds of publications in Deep Learning from many central to the field ( Andrew Ng, Daphne Koller, Pedro Domingos, Tom Mitchell, Leslie Kabeling, ...) drove early deep learning work from  
+by bootstrapping from human intelligence (the basis of my $50M DARPA program) as well as a second Machine Reading program that systems that can bootstrap beyond human intelligence (this was the basis for my $50M  DARPA programs), and a second Machine Reading program also drove early ML + NLP work in that direction.  But I am so skeptical of our long-term ability to control this technology that I wrote a 4-page justification for myself about why it was acceptable to join DARPA to drive this work.    Leaving DARPA I chose a more applied AI path for this reason.  
 
 At the beginning of this year, I drafted a white paper, "Alien Biology."  It is a clever way to measure AI reasoning performance that is provably untainted by reasoning provided in the training data.  More exciting, I think I see a way this platform can drive AI safety work.  I believe that future AI systems will use deliberation to achieve internal alignment and will have instrumental reasons to strive to increase that internal alignment within themselves and their progeny.  Perhaps this can afford a natural long-term alignment of their interests with humanity's?
 

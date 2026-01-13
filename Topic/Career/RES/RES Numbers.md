@@ -405,7 +405,7 @@ Next-Generation Behavior Composer for Military Simulation (1 Phase 2)
 
 #### Number of dollars and people managed
 MR: $25M/yr for 5 years.	3 teams.  $8M/prime.  13 profs per prime
-BL: $15M/yr for 3 years.	2 teams + BlueTeam 
+BL: $15M/yr for 3 years.	2 teams + BlueTeam   (~$50M)
 TL:	$18M/yr for 3 years.	3 teams.  ($6M per team is a guess, remember it)
 
 
