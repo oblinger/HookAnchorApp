@@ -23,13 +23,7 @@ ALIEN BIOLOGY - Framework for generating controllable synthetic "Alien" biologic
 - The framework is elegant/general and biologically plausible. (will be completed and could possibly serve as the basis of my fellowship work)
   Docs:  https://oblinger.github.io/abio-docs/  Code: https://github.com/oblinger/alienbio 
 
-
-
-HOOK ANCHOR - I am opinionated about how personal knowledge management should be done, so over the summer I implemented this vision as a 50K-line Rust application with a 3K-line JavaScript user configuration layer on top.  Code:  https://github.com/oblinger/HookAnchorApp  Docs:    Teaser:  
-
-https://oblinger.github.io/gitproj/HookAnchor/README.html
-
-https://oblinger.github.io/gitproj/HookAnchor  
+HOOK ANCHOR - I am opinionated about how personal knowledge management should be done, so over the summer I implemented this vision as a 50K-line Rust application with a 3K-line JavaScript user configuration layer on top.  Code:  https://github.com/oblinger/HookAnchorApp  Docs:  https://oblinger.github.io/gitproj/HookAnchor    Teaser:  https://oblinger.github.io/HookAnchor/  
 
 I am a very fast, strong, organized coder, but most of my work is proprietary.  I developed the basic Alien Bio framework in ten days over Christmas break, so its code and docs are a good indicator of my quality and velocity.
 
@@ -72,18 +66,19 @@ When I learned of the Anthropic Fellows Program, I dove in to implement the Alie
 
 I have organized my thinking over the last year into three draft papers/outlines that indicate the direction of this thinking:
 
-- Alien Biology Whitepaper - The paper that spawned the generative testing framework.  The aim is to provide a
-	- controllable
-	- taint-free 
-	- ???? 
+Alien Biology Whitepaper - The paper that spawned the generative testing framework.  The aim is to provide a
+- controllable
+- taint-free 
+- ???? 
 
-- Deliberative Coherence — Outlines the agenda for studying "deliberative coherence," examining how deliberation-based alignment works and when/how it breaks down.
+Deliberative Coherence — Outlines the agenda for studying "deliberative coherence," examining how deliberation-based alignment works and when/how it breaks down.
 
-- Experimental Roadmap -- Outlines how I plan to use the Alien Biology framework to conduct this work.  Here is a thumbnail of these research directions:
-	- Testing Inner Alignment - Alien biology provides an ideal testbed for testing how well deliberation achieves inner alignment rather than trained alignment.
-	- Deliberation Alignment Failures - Sampling over parametrically generated 
+Experimental Roadmap -- Outlines how I plan to use the Alien Biology framework to conduct this work.  Here is a thumbnail of these research directions:
+- Testing Inner Alignment - Alien biology provides an ideal testbed for testing how well deliberation achieves inner alignment rather than trained alignment.
+- Deliberation Alignment Failures - Sampling over parametrically generated 
 
 White Paper:  https://oblinger.github.io/gitproj/AlienBiology/AlienBiologyWhitepaper.pdf
+
 
 
 
