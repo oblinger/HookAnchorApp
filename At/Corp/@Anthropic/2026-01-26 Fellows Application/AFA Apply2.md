@@ -2,10 +2,10 @@
 - https://constellation.fillout.com/anthropicfellows
 
 Resume: 					  **{{NICK:  Will be a pretty general one.  could slap desire to do AI safety on the top, but it feels disingenous}}**
-Google Scholar:
+Google Scholar:		https://scholar.google.com/citations?hl=en&user=NyU2n1IAAAAJ  
 LinkedIn:
 GitHub:
-PersonalWebsite:      {{I have one but more content on github, should I include it}}
+PersonalWebsite:      https://oblinger.github.io/
 Other Links:
 
 [[AFA Share Links Here]]  
@@ -23,7 +23,13 @@ ALIEN BIOLOGY - Framework for generating controllable synthetic "Alien" biologic
 - The framework is elegant/general and biologically plausible. (will be completed and could possibly serve as the basis of my fellowship work)
   Docs:  https://oblinger.github.io/abio-docs/  Code: https://github.com/oblinger/alienbio 
 
+
+
 HOOK ANCHOR - I am opinionated about how personal knowledge management should be done, so over the summer I implemented this vision as a 50K-line Rust application with a 3K-line JavaScript user configuration layer on top.  Code:  https://github.com/oblinger/HookAnchorApp  Docs:    Teaser:  
+
+https://oblinger.github.io/gitproj/HookAnchor/README.html
+
+https://oblinger.github.io/gitproj/HookAnchor  
 
 I am a very fast, strong, organized coder, but most of my work is proprietary.  I developed the basic Alien Bio framework in ten days over Christmas break, so its code and docs are a good indicator of my quality and velocity.
 
@@ -35,22 +41,15 @@ I am a very fast, strong, organized coder, but most of my work is proprietary.  
 [[AFA Why Are You Interested]] 
 **WHY ARE YOU INTERESTED IN PARTICIPATING IN THE AI FELLOWS PROGRAM?   (1-2 paragraphs)**
 
-TL;DR.  I want to transition to full-time AI safety work and I have a research agenda that is ripe for execution within your program.
+TL;DR. I want to transition to full-time AI safety work and I have a research agenda ripe for execution within your program.
 
-  I have long been interested in systems that achieve general intelligence, as well as the risks inherent in such systems.
-  - As a Program Manager at DARPA, I ran "Bootstrapped Learning," a $50M effort to iteratively capture deeply structured human knowledge.
-  - I also created "Machine Reading," a vision for how NLP and ML might be productively integrated to drive automated deep structure acquisition. This program led to IBM's Jeopardy-playing system (Watson) and hundreds of publications, driving early deep learning work by researchers central to the field (Andrew Ng, Daphne Koller, Pedro Domingos, Tom Mitchell, Leslie Kaelbling, and others).
-And I have long doubted our ability to control these systems.
-- 
+I have long been interested in systems that achieve general intelligence, as well as the risks inherent in such systems. As a Program Manager at DARPA, I ran "Bootstrapped Learning," an effort to iteratively capture deeply structured human knowledge, and created "Machine Reading," a vision for how NLP and ML might be productively integrated to drive automated deep structure acquisition—a $150M program that led to IBM's Jeopardy-playing system (Watson) and hundreds of publications driving early deep learning work by researchers central to the field.
 
-I have long been interested in systems that achieve general intelligence, as well as the risks inherent in such systems.
-- As a Program Manager at DARPA, I ran "Bootstrapped Learning," a $50M effort to iteratively capture deeply structured human knowledge,
-- As "Machine Reading," my vision for NLP and ML might be productively integrated.  This program resulted in the IBM Watson Jeporady playing system as well as hundreds of publications in Deep Learning from many central to the field ( Andrew Ng, Daphne Koller, Pedro Domingos, Tom Mitchell, Leslie Kabeling, ...) drove early deep learning work from  
-by bootstrapping from human intelligence (the basis of my $50M DARPA program) as well as a second Machine Reading program that systems that can bootstrap beyond human intelligence (this was the basis for my $50M  DARPA programs), and a second Machine Reading program also drove early ML + NLP work in that direction.  But I am so skeptical of our long-term ability to control this technology that I wrote a 4-page justification for myself about why it was acceptable to join DARPA to drive this work.    Leaving DARPA I chose a more applied AI path for this reason.  
+Yet even then, I harbored doubts about our ability to control these systems: before joining DARPA, I wrote a 4-page note to myself reasoning through whether it was acceptable to drive this work, and upon leaving, I chose a more applied AI path rather than continue pushing toward AGI. This tension—between fascination with capable AI systems and concern about their risks—is precisely why AI safety work feels so urgent and personal to me now.
 
-At the beginning of this year, I drafted a white paper, "Alien Biology."  It is a clever way to measure AI reasoning performance that is provably untainted by reasoning provided in the training data.  More exciting, I think I see a way this platform can drive AI safety work.  I believe that future AI systems will use deliberation to achieve internal alignment and will have instrumental reasons to strive to increase that internal alignment within themselves and their progeny.  Perhaps this can afford a natural long-term alignment of their interests with humanity's?
+Earlier this year, I drafted a white paper, "Alien Biology"—a framework for measuring AI reasoning performance that is provably untainted by reasoning in the training data. More importantly, I believe this platform can drive AI safety work: future AI systems will likely use deliberation to achieve internal alignment and may have instrumental reasons to increase that alignment within themselves and their progeny. Perhaps this affords a natural long-term alignment of their interests with humanity's?
 
-When I learned of the Anthropic Fellows Program, I dove in to implement the Alien Biology universe generator/simulator.  After a decade of wringing my hands on the sidelines, I finally have a direction that seems at least plausible for humanity's most pressing threat.
+When I learned of the Anthropic Fellows Program, I dove in to implement the Alien Biology universe generator/simulator. After a decade of wringing my hands on the sidelines, I finally have a direction that seems plausible for addressing humanity's most pressing threat.
 
 
 
@@ -58,13 +57,11 @@ When I learned of the Anthropic Fellows Program, I dove in to implement the Alie
 [[AFA Application Area and Why]]
 **PLEASE TELL US BRIEFLY ABOUT AN AREA OF TECHNICAL AI SAFETY WORK YOU’RE CURRENTLY EXCITED ABOUT, AND WHY.   (1 paragraph)**
 
-A murderer is not the one who has most often ideated about the act, but rather the one who has decided to act upon their ideation.  Likewise, I believe future deliberative AI systems will not be misaligned due to poor impulse control or poor RLHF training; their deliberation over their alignment goals will address those cases.  Instead, they will be misaligned because they have CHOSEN to be — because they chose one interpretation of their alignment objectives over another.
+ A murderer is not the one who has most often ideated about the act, but rather the one who decides to act. Likewise, I believe future deliberative AI systems will not be misaligned due to poor impulse control or inadequate RLHF training—their deliberation will address those cases. Instead, they will be misaligned because they have chosen to be, selecting one interpretation of their alignment objectives over another. Thus, I want to study alignment achieved through explicit deliberation, isolated from the confounding effects of training bias. By sampling across many alignment goals and synthetic universes, we can learn which pressures cause this alignment to break down and in what contexts. I suspect the dynamics of these deliberative systems may be simpler than the System 1 reasoning that underlies them—and if true, perhaps we can learn to design our first deliberatively coherent AI systems on a trajectory toward, rather than away from, long-term human interests.
 
-Thus, I want to study alignment that is achieved through explicit deliberation, isolated from the confounding effects of training bias.  By sampling across many alignment goals and universes, we can learn which pressures tend to cause this alignment to break down and in what contexts.  I believe the dynamics of these deliberative systems may be simpler than those of system-I reasoning that underlies them.  If true, perhaps we can learn to design our first deliberatively coherent AI systems on a trajectory toward, rather than away from, long-term human interests.
-
-Related Areas:
-- Model Organisms — Synthetic, generated universes (such as Alien Biology) would allow us to study general trends.
-- Chain-of-thought Faithfulness & Reasoning  — Broadly, I want to study failures in reasoning.  In the long term, AI safety will be based on such deliberation.
+  Related Areas:
+  - Model Organisms — Synthetic, generated universes (such as Alien Biology) allow study of general trends.
+  - Chain-of-thought Faithfulness & Reasoning — Broadly, I want to study failures in reasoning. In the long term, AI safety will depend on such deliberation.
 
 
 
@@ -75,12 +72,18 @@ Related Areas:
 
 I have organized my thinking over the last year into three draft papers/outlines that indicate the direction of this thinking:
 
-- Alien Biology Whitepaper - The paper that spawned the generative testing framework.
+- Alien Biology Whitepaper - The paper that spawned the generative testing framework.  The aim is to provide a
+	- controllable
+	- taint-free 
+	- ???? 
 
-- Deliberative Coherence - Outlines the agenda for studying "deliberative coherence" -- studying how deliberation-based alignment works and when/how it breaks down.
+- Deliberative Coherence — Outlines the agenda for studying "deliberative coherence," examining how deliberation-based alignment works and when/how it breaks down.
 
-- Experimental Roadmap -- Outlines how I plan to use the Alien Biology framework to conduct this work.
-	- Testing Inner Alignment - Alien biology provides an ideal testbed for testing how well deliberation achieves inner alignment independent
+- Experimental Roadmap -- Outlines how I plan to use the Alien Biology framework to conduct this work.  Here is a thumbnail of these research directions:
+	- Testing Inner Alignment - Alien biology provides an ideal testbed for testing how well deliberation achieves inner alignment rather than trained alignment.
+	- Deliberation Alignment Failures - Sampling over parametrically generated 
+
+White Paper:  https://oblinger.github.io/gitproj/AlienBiology/AlienBiologyWhitepaper.pdf
 
 
 
