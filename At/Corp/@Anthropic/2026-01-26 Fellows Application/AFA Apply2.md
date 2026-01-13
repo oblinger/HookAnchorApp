@@ -23,13 +23,12 @@ ALIEN BIOLOGY - Framework for generating controllable synthetic "Alien" biologic
 - The framework is elegant/general and biologically plausible. (will be completed and could possibly serve as the basis of my fellowship work)
   Docs:  https://oblinger.github.io/abio-docs/  Code: https://github.com/oblinger/alienbio 
 
-I am a very fast, strong, organized coder, but most of my work is proprietary.  Alien Bio was developed over my Christmas break, so it is a good indicator of my quality and velocity.
+HOOK ANCHOR - I am opinionated about how personal knowledge management should be done, so over the summer I implemented this vision as a 50K-line Rust application with a 3K-line JavaScript user configuration layer on top.  Code:  https://github.com/oblinger/HookAnchorApp  Docs:    Teaser:  
 
-{{NICK:  Over the summer, I wrote a 35K line personal knowledge management tool in Rust, Javascript and Swift. It is not open source, but I could share the codebase if it would add value}}
+I am a very fast, strong, organized coder, but most of my work is proprietary.  I developed the basic Alien Bio framework in ten days over Christmas break, so its code and docs are a good indicator of my quality and velocity.
 
 
 **Code Sample:  (Drag & Drop)**   
-{{NICK:  I only plan to provide Github links}}
 
 
 
@@ -69,12 +68,12 @@ I have organized my thinking over the last year into three draft papers/outlines
 
 - Alien Biology Whitepaper - The paper that spawned the generative testing framework.
 
-- Deliberative Coherence - Outlines the agenda for studying "deliberative coherence" -- studying how deliberation-based alignment works and how in breaks down.
+- Deliberative Coherence - Outlines the agenda for studying "deliberative coherence" -- studying how deliberation-based alignment works and when/how it breaks down.
 
 - Experimental Roadmap -- Outlines how I plan to use the Alien Biology framework to conduct this work.
+	- Testing Inner Alignment - Alien biology provides an ideal testbed for testing how well deliberation achieves inner alignment independent
 
 
-{{NICK:  Each of these will be a link to papers/outlines I have written.  The only one that is written as a paper is Alien Biology.  The others are very well organized and thought-out outlines.  But only outlines! Over the next two weeks, I plan to work hard to get these in better shape.  Here is hoping they take their time getting into the review process!}}
 
 **How likely are you to accept a full-time offer at Anthropic if you receive one after the Fellows program? ***
 - 100%.  More than all other foundational labs, I feel Anthropic is most serious and open-minded about AI-safety.  This is by far my most effective choice.
