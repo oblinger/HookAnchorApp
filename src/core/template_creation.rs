@@ -556,8 +556,8 @@ fn extract_and_validate_folder(cmd: &super::Command) -> Result<String, String> {
             // Special handling for cmd - look for cd command
             extract_folder_from_cd_command(&cmd.arg)?
         },
-        "folder" => {
-            // For folder action, the arg is the folder itself
+        "folder" | "tmux" => {
+            // For folder/tmux actions, the arg is the folder itself
             cmd.arg.clone()
         },
         "markdown" | "doc" | "text" => {

@@ -258,8 +258,8 @@ impl Command {
                 // Already absolute, just expand tilde
                 Some(PathBuf::from(crate::utils::expand_tilde(&self.arg)))
             }
-            "folder" => {
-                // Handle both relative and absolute paths
+            "folder" | "tmux" => {
+                // Handle both relative and absolute paths (tmux arg is also a folder)
                 if self.arg.starts_with('/') || self.arg.starts_with('~') {
                     Some(PathBuf::from(crate::utils::expand_tilde(&self.arg)))
                 } else {
@@ -310,8 +310,8 @@ impl Command {
     /// For folder commands and directory-based anchors, returns the folder itself
     pub fn get_absolute_folder_path(&self, config: &Config) -> Option<PathBuf> {
         match self.action.as_str() {
-            "folder" => {
-                // For folder commands, return the folder itself (already normalized)
+            "folder" | "tmux" => {
+                // For folder/tmux commands, return the folder itself (already normalized)
                 self.get_absolute_file_path(config)
             }
             _ => {
@@ -325,7 +325,7 @@ impl Command {
     
     /// Checks if this command refers to a file or folder
     pub fn is_path_based(&self) -> bool {
-        matches!(self.action.as_str(), "markdown" | "folder" | "doc" | "open" | "open_app" | "app")
+        matches!(self.action.as_str(), "markdown" | "folder" | "tmux" | "doc" | "open" | "open_app" | "app")
     }
 
     /// Gets the value of a flag by its key character

@@ -49,8 +49,10 @@ pub fn run_command_line_mode(args: Vec<String>) {
         "-m" | "--match" => run_match_command(&args),
         "-r" | "--run_fn" => run_exec_command(&args),
         "-x" | "--execute" => run_execute_top_match(&args),
-        "-f" | "--folders" => run_folders_command(&args),
-        "-F" | "--named-folders" => run_named_folders_command(&args),
+        "-p" => run_single_path_command(&args),
+        "-P" => run_paths_command(&args),
+        "-f" => run_single_named_folder_command(&args),
+        "-F" => run_named_folders_command(&args),
         "-c" | "--command" => run_test_command(&args),  // Renamed: test command with action and arg
         "-a" | "--action" => run_action_directly(&args),  // New: execute action directly
         "--hook" => handle_hook_option(&args),
@@ -98,8 +100,10 @@ pub fn print_help(_program_name: &str) {
     print(&format!("  {} -m, --match <query>      # Search CMDS", name));
     print(&format!("  {} -r, --run_fn <cmd>       # Execute specific CMD", name));
     print(&format!("  {} -x, --execute <query>    # Execute top match", name));
-    print(&format!("  {} -f, --folders <query>    # Get folder paths", name));
-    print(&format!("  {} -F, --named-folders <q>  # Get CMDS->paths", name));
+    print(&format!("  {} -p <query>               # Get folder path (first match)", name));
+    print(&format!("  {} -P <query>               # Get folder paths (all matches)", name));
+    print(&format!("  {} -f <query>               # Get CMD->path (first match)", name));
+    print(&format!("  {} -F <query>               # Get CMDS->paths (all matches)", name));
     print(&format!("  {} -c, --command <act> <arg># Test command with action+arg", name));
     print(&format!("  {} -a, --action <name>      # Execute action directly", name));
     print(&format!("  {} --infer [command]        # Show patch inference changes", name));
@@ -449,11 +453,42 @@ fn run_match_command(args: &[String]) {
     std::process::exit(exit_code);
 }
 
-/// Get folder paths for matching commands (-f, --folders)
-/// Shortcut for: ha -m <query> --format=folder
-fn run_folders_command(args: &[String]) {
+/// Get single folder path for top match (-p)
+/// Returns just the folder path of the first matching command
+fn run_single_path_command(args: &[String]) {
     if args.len() < 3 {
-        print("Usage: ha -f, --folders <query>");
+        print("Usage: ha -p <query>");
+        std::process::exit(1);
+    }
+
+    let query = &args[2];
+    let (sys_data, _) = crate::core::data::get_sys_data();
+    let config = crate::core::data::get_config();
+
+    let (filtered, _) = {
+        let (display_commands, is_prefix_menu, _, _, _, _) =
+            crate::core::get_new_display_commands(query, &sys_data.commands, &sys_data.patches, &config);
+        (display_commands, is_prefix_menu)
+    };
+
+    // Print first folder path only
+    for cmd in filtered.iter().take(1) {
+        let resolved = resolve_alias_to_target(cmd, &sys_data.commands);
+        if let Some(folder) = get_command_folder(resolved) {
+            print(&folder);
+            std::process::exit(0);
+        }
+    }
+
+    // No folder found
+    std::process::exit(2);
+}
+
+/// Get folder paths for all matching commands (-P)
+/// Returns folder paths for up to 50 matches
+fn run_paths_command(args: &[String]) {
+    if args.len() < 3 {
+        print("Usage: ha -P <query>");
         std::process::exit(1);
     }
 
@@ -483,11 +518,42 @@ fn run_folders_command(args: &[String]) {
     std::process::exit(exit_code);
 }
 
-/// Get command names with their folder paths (-F, --named-folders)
-/// Prints: COMMAND -> /path/to/folder
+/// Get single command name with folder path (-f)
+/// Returns: COMMAND -> /path/to/folder (first match only)
+fn run_single_named_folder_command(args: &[String]) {
+    if args.len() < 3 {
+        print("Usage: ha -f <query>");
+        std::process::exit(1);
+    }
+
+    let query = &args[2];
+    let (sys_data, _) = crate::core::data::get_sys_data();
+    let config = crate::core::data::get_config();
+
+    let (filtered, _) = {
+        let (display_commands, is_prefix_menu, _, _, _, _) =
+            crate::core::get_new_display_commands(query, &sys_data.commands, &sys_data.patches, &config);
+        (display_commands, is_prefix_menu)
+    };
+
+    // Print first command name with folder path
+    for cmd in filtered.iter().take(1) {
+        let resolved = resolve_alias_to_target(cmd, &sys_data.commands);
+        if let Some(folder) = get_command_folder(resolved) {
+            print(&format!("{} -> {}", cmd.command, folder));
+            std::process::exit(0);
+        }
+    }
+
+    // No folder found
+    std::process::exit(2);
+}
+
+/// Get command names with their folder paths (-F)
+/// Prints: COMMAND -> /path/to/folder (all matches)
 fn run_named_folders_command(args: &[String]) {
     if args.len() < 3 {
-        print("Usage: ha -F, --named-folders <query>");
+        print("Usage: ha -F <query>");
         std::process::exit(1);
     }
 
@@ -1709,12 +1775,25 @@ fn run_rebuild_command() {
     // Step 1: Build the release binary
     print("\n🔨 Step 1/3: Building release binary...");
     let build_start = std::time::Instant::now();
-    
-    // Run cargo build --release
-    let build_output = std::process::Command::new("cargo")
+
+    // Get project directory from executable location
+    let project_dir = match crate::utils::build_verification::get_project_dir() {
+        Some(dir) if dir.join("Cargo.toml").exists() => dir,
+        _ => {
+            print("  ❌ Cannot determine project directory from executable location");
+            print("     Expected: <project>/target/release/ha");
+            std::process::exit(1);
+        }
+    };
+
+    // Run cargo build --release using standard rustup location
+    let home = std::env::var("HOME").unwrap_or_default();
+    let cargo = format!("{}/.cargo/bin/cargo", home);
+
+    let build_output = std::process::Command::new(&cargo)
         .arg("build")
         .arg("--release")
-        .current_dir("/Users/oblinger/ob/proj/HookAnchor/HookAnchorApp")
+        .current_dir(&project_dir)
         .output();
     
     match build_output {

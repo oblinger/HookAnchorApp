@@ -792,9 +792,23 @@ impl PopupInterface for AnchorSelector {
         log("RELOAD: Triggering full restart via ha --restart");
         self.set_input("Restarting...".to_string());
 
+        // Derive ha binary path from current executable (popup and ha are in same directory)
+        let ha_path = std::env::current_exe()
+            .ok()
+            .and_then(|p| p.parent().map(|dir| dir.join("ha")));
+
+        let ha_path = match ha_path {
+            Some(p) if p.exists() => p,
+            _ => {
+                log_error("RELOAD: Cannot find ha binary relative to current executable");
+                self.set_input("".to_string());
+                return;
+            }
+        };
+
         // Spawn ha --restart as a detached process, then exit this popup
         // The ha --restart will kill us and start a fresh popup
-        match std::process::Command::new("/Users/oblinger/ob/proj/HookAnchor/HookAnchorApp/target/release/ha")
+        match std::process::Command::new(&ha_path)
             .arg("--restart")
             .stdin(std::process::Stdio::null())
             .stdout(std::process::Stdio::null())
@@ -1024,9 +1038,23 @@ impl AnchorSelector {
         log("RELOAD: Triggering full restart via ha --restart");
         self.set_input("Restarting...".to_string());
 
+        // Derive ha binary path from current executable (popup and ha are in same directory)
+        let ha_path = std::env::current_exe()
+            .ok()
+            .and_then(|p| p.parent().map(|dir| dir.join("ha")));
+
+        let ha_path = match ha_path {
+            Some(p) if p.exists() => p,
+            _ => {
+                log_error("RELOAD: Cannot find ha binary relative to current executable");
+                self.set_input("".to_string());
+                return;
+            }
+        };
+
         // Spawn ha --restart as a detached process, then exit this popup
         // The ha --restart will kill us and start a fresh popup
-        match std::process::Command::new("/Users/oblinger/ob/proj/HookAnchor/HookAnchorApp/target/release/ha")
+        match std::process::Command::new(&ha_path)
             .arg("--restart")
             .stdin(std::process::Stdio::null())
             .stdout(std::process::Stdio::null())
@@ -1051,8 +1079,22 @@ impl AnchorSelector {
         // Show "Rebuilding..." in the input box
         self.set_input("Rebuilding...".to_string());
 
+        // Derive ha binary path from current executable (popup and ha are in same directory)
+        let ha_path = std::env::current_exe()
+            .ok()
+            .and_then(|p| p.parent().map(|dir| dir.join("ha")));
+
+        let ha_path = match ha_path {
+            Some(p) if p.exists() => p,
+            _ => {
+                log_error("REBUILD: Cannot find ha binary relative to current executable");
+                self.set_input("".to_string());
+                return;
+            }
+        };
+
         // Use the ha binary to trigger a full rebuild
-        match std::process::Command::new("/Users/oblinger/ob/proj/HookAnchor/HookAnchorApp/target/release/ha")
+        match std::process::Command::new(&ha_path)
             .arg("--rebuild")
             .spawn()
         {

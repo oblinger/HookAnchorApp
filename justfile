@@ -164,8 +164,8 @@ docs:
     set -e
     echo "📚 Generating HTML documentation..."
 
-    # Docs are in Obsidian vault, not in the code repo
-    DOCS_DIR="/Users/oblinger/ob/kmr/prj/binproj/Hook Anchor/docs/User Docs"
+    PROJECT_ROOT="{{justfile_directory()}}"
+    DOCS_DIR="$PROJECT_ROOT/../website-docs"
 
     # Check if pandoc is installed
     if ! command -v pandoc &> /dev/null; then
@@ -175,11 +175,10 @@ docs:
     fi
 
     # Copy CSS file to docs directory
-    PROJECT_ROOT="{{justfile_directory()}}"
     cp "$PROJECT_ROOT/docs-style.css" "$DOCS_DIR/docs-style.css"
 
     # Convert each markdown file to HTML with nice styling
-    for md_name in README USER_GUIDE TEMPLATES_AND_SCRIPTING; do
+    for md_name in README USER_GUIDE TEMPLATES_AND_SCRIPTING CONFIG_REFERENCE HookAnchor_Action_Types TEMPLATE_JS_VARIABLES; do
         md_file="$DOCS_DIR/${md_name}.md"
         if [ -f "$md_file" ]; then
             html_file="$DOCS_DIR/${md_name}.html"
@@ -208,6 +207,47 @@ docs:
 
     echo "✅ Documentation generated in $DOCS_DIR/"
     echo "📖 Open with: open '$DOCS_DIR/USER_GUIDE.html'"
+
+# Deploy documentation to oblinger.github.io website
+docs-deploy: docs
+    #!/usr/bin/env bash
+    set -e
+    echo "🚀 Deploying documentation to website..."
+
+    PROJECT_ROOT="{{justfile_directory()}}"
+    DOCS_DIR="$PROJECT_ROOT/../website-docs"
+    WEBSITE_REPO="/Users/oblinger/ob/proj/oblinger.github.io"
+    WEBSITE_DOCS="$WEBSITE_REPO/gitproj/HookAnchor"
+
+    # Create directory if it doesn't exist
+    mkdir -p "$WEBSITE_DOCS"
+
+    # Copy HTML files and assets
+    echo "  Copying HTML documentation..."
+    cp "$DOCS_DIR"/*.html "$WEBSITE_DOCS/"
+    cp "$DOCS_DIR"/docs-style.css "$WEBSITE_DOCS/"
+
+    # Copy images if any
+    if ls "$DOCS_DIR"/*.png 1> /dev/null 2>&1; then
+        cp "$DOCS_DIR"/*.png "$WEBSITE_DOCS/"
+    fi
+
+    # Create index.html that redirects to README
+    echo '<!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="refresh" content="0; url=README.html"><title>HookAnchor Documentation</title></head><body><p>Redirecting to <a href="README.html">HookAnchor Documentation</a>...</p></body></html>' > "$WEBSITE_DOCS/index.html"
+
+    echo "✅ Documentation copied to $WEBSITE_DOCS"
+
+    # Commit and push to website repo
+    cd "$WEBSITE_REPO"
+    git add -A gitproj/HookAnchor/
+
+    if git diff --cached --quiet; then
+        echo "  No changes to deploy"
+    else
+        git commit -m "Update HookAnchor documentation"
+        git push origin main
+        echo "✅ Deployed to https://oblinger.github.io/gitproj/HookAnchor/"
+    fi
 
 # Show version from Cargo.toml
 version:
