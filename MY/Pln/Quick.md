@@ -2,7 +2,7 @@
 - Briones note
 - ASK RAM:  play on usage ramp in Jan Feb
 - trigger finger
-- shingles shot
+- shingles shot 
 - spec for court corners
 - demo 2/3-pointers rebound/assist 
 - PHQ ask about API
