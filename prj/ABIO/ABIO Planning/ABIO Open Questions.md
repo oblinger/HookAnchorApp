@@ -418,37 +418,196 @@ class Bio:
 ## 8. Bio.build() Return Type
 
 What should `Bio.build()` return?
-- A) DAT object
-- B) Path string
-- C) Scenario wrapper object
+
+### ✅ RESOLVED
+
+**Return type determined by spec content:**
+
+- Spec has `_type` → returns instance of that type
+- Spec has `dat` key (no `_type`) → returns Dat object
+- Neither → returns hydrated dict (error to have both `_type` and `dat`)
+
+**Hydration algorithm (bottom-up):**
+
+1. Depth-first traversal - always recurse into children
+2. On the way back up at each node:
+   - If `_type` present → construct that class, passing hydrated children
+   - If no `_type` → stays as dict
+3. No special markers needed - absence of `_type` means "don't hydrate this level"
+
+```python
+def hydrate(data: dict) -> Any:
+    """Bottom-up hydration based on _type field."""
+    # First, recurse into all dict children
+    result = {}
+    for key, value in data.items():
+        if isinstance(value, dict):
+            result[key] = hydrate(value)  # recurse
+        elif isinstance(value, list):
+            result[key] = [hydrate(v) if isinstance(v, dict) else v for v in value]
+        else:
+            result[key] = value
+
+    # Then, hydrate this level if _type present
+    if "_type" in result:
+        cls = get_type_class(result["_type"])
+        return cls(**{k: v for k, v in result.items() if k != "_type"})
+    return result
+```
+
+**Design rationale:**
+- Simple rule: `_type` present means hydrate, absent means dict
+- No special markers or annotations needed
+- Natural behavior handles "raw" cases - just omit `_type`
+- Consistent with typed key syntax in YAML
 
 ---
 
-## 9. Protocol vs Impl Naming
+## 9. Protocol vs Impl Naming & Factory Pattern
 
 The codebase uses `*Impl` suffix for implementations:
 - `ChemistryImpl`, `StateImpl`, `ReferenceSimulatorImpl`
 
-**Question:** Document this as the standard pattern?
+### ✅ RESOLVED
+
+**Standard naming pattern:**
+- Protocol: `Simulator`, `Chemistry`, `State` (abstract interface)
+- Implementation: `*Impl` suffix - `ReferenceSimulatorImpl`, `FastSimulatorImpl`
+- Multiple implementations allowed per protocol
 
 ---
 
-## 10. hydrate/dehydrate in eval.py
+### ✅ RESOLVED: Factory Pattern
+
+**Decorator to register implementations:**
+
+```python
+@factory(name="reference", protocol=Simulator)
+class ReferenceSimulatorImpl(Simulator):
+    """Reference implementation - accurate but slow."""
+    ...
+
+@factory(name="fast", protocol=Simulator)
+class FastSimulatorImpl(Simulator):
+    """Optimized implementation - faster but approximations."""
+    ...
+```
+
+**Registry on Bio:**
+
+```python
+class Bio:
+    # Populated by @factory decorators at import time
+    _factories: dict[type, dict[str, type]]  # protocol → {name → impl_class}
+    _factory_defaults: dict[type, str]       # protocol → default_name (from config)
+```
+
+**Entry point is `build()`, not a separate `create()`:**
+
+Everything goes through specs - objects have too many parameters to create from nothing.
+
+```python
+def build(self, spec, impl: str = None, **kwargs) -> Any:
+    """Build from spec with optional implementation override.
+
+    Args:
+        spec: Spec dict or specifier string
+        impl: Override implementation name (optional)
+    """
+    # impl flows down to hydration
+    return self._hydrate(spec, impl_override=impl)
+```
+
+**Implementation resolution order:**
+
+1. `impl` parameter to `build()` → programmatic override
+2. `impl` field in spec → spec-defined choice
+3. Default from config registry → user's configured default
+4. None of above → runtime error
+
+**Spec fields (no underscores - regular fields):**
+
+```yaml
+scenario.test:
+  chemistry:
+    type: Chemistry    # protocol/class name
+    impl: fast         # implementation name (optional)
+    molecules: ...
+```
+
+- `type` - which protocol/class (required for typed objects)
+- `impl` - which implementation of that type (optional, defaults from registry)
+
+**Validation:**
+- If `impl` passed to `build()`, verify it's valid for the spec's `type`
+- Error if mismatch: "impl 'fast' is not valid for type 'Scenario'"
+
+**Defaults in config (not in decorator):**
+
+```yaml
+# ~/.config/alienbio/config.yaml
+defaults:
+  Simulator: reference
+  Chemistry: standard
+```
+
+**Design rationale:**
+- Specs always source of truth (handles complex params)
+- Programmatic override via `build(spec, impl="fast")`
+- No `default=True` in decorators - config controls defaults
+- Single path: build → hydrate → construct
+
+---
+
+## 10. hydrate/dehydrate Location and Naming
 
 `eval.py` has `hydrate`/`dehydrate` functions that handle YAML tags.
-These are different from the removed `construct`/`deconstruct`.
 
-**Question:** Are these names confusing? Should they be renamed to:
-- `parse_tags` / `unparse_tags`
-- `expand_placeholders` / `collapse_placeholders`
+### ✅ RESOLVED
+
+**Location:** Module-level functions in `alienbio`, not on Bio class.
+
+```python
+from alienbio import bio, hydrate, dehydrate  # if needed
+
+# Most users just use fetch (hydrates by default):
+scenario = bio.fetch("...")
+```
+
+**Rationale:**
+- Bio class stays focused on main operations (fetch, build, run, report)
+- hydrate/dehydrate rarely called directly (fetch does it)
+- Still accessible for advanced use cases (tooling, debugging)
+- Cleaner API surface
+
+**Names:** Keep `hydrate`/`dehydrate` - they're clear and standard terminology.
+
+**Pipeline clarity:**
+
+| Stage | What Happens | Tags Resolved |
+|-------|--------------|---------------|
+| **fetch()** | Load YAML, hydrate by default | — |
+| **hydrate()** | Resolve structural tags, construct types | `!include`, `!ref` |
+| **build()** | Template expansion | — |
+| **eval()** | Execute expressions | `!ev` |
+
+- `!_` (Quoted) preserved for runtime (rates, scoring)
+- fetch() hydrates by default; `hydrate=False` to skip
 
 ---
 
 ## 11. Simulator Factory Pattern
 
 We just added `_simulator_factory` to Bio. Should other factories follow?
-- `_chemistry_factory`
-- `_state_factory`
+
+### ✅ RESOLVED (see #9)
+
+Yes - unified factory pattern via `@factory` decorator applies to all protocols:
+- Simulator, Chemistry, State, etc.
+- Single registry on Bio: `_factories` and `_factory_defaults`
+- No separate `_simulator_factory`, `_chemistry_factory` - one unified system
+
+See Question #9 for full factory pattern design.
 
 ---
 
@@ -458,6 +617,40 @@ We just added `_simulator_factory` to Bio. Should other factories follow?
 - A) Keep comprehensive exports for convenience
 - B) Require explicit imports from submodules
 - C) Use `__all__` to limit star imports
+
+### ✅ RESOLVED
+
+**Option C with curation** - use `__all__` to define clean public API.
+
+```python
+# alienbio/__init__.py
+
+# Main user API
+from .spec_lang.bio import Bio
+bio = Bio()  # singleton
+
+# Module-level functions
+from .spec_lang.eval import hydrate, dehydrate
+
+# Core protocols (what users type-hint against)
+from .protocols import Simulator, Chemistry, State, Entity, Scenario
+
+# Curated public API for star imports
+__all__ = [
+    "bio", "Bio",
+    "hydrate", "dehydrate",
+    "Entity", "Scenario", "Chemistry", "Simulator", "State",
+]
+
+# Impl classes available but NOT in __all__
+from .impl import ReferenceSimulatorImpl, ChemistryImpl  # etc.
+```
+
+**Result:**
+- `from alienbio import bio` → clean main API
+- `from alienbio import *` → curated set only
+- `from alienbio import ReferenceSimulatorImpl` → works for advanced users
+- Impl classes not pushed on beginners
 
 ---
 
@@ -503,3 +696,48 @@ Test file created: `tests/unit/test_fetch_resolution.py` (50+ test cases)
   - Source root scanning with index.yaml fallback
   - Edge cases (single segment, dots in DAT names, etc.)
 - [ ] Polish for clarity and readability
+
+### Documentation Integration Audit
+
+- [ ] Scan all resolved questions (#1-12) in this file
+- [ ] For each resolution, verify details are integrated into relevant system docs:
+  - Bio.md, Scope.md, Entity docs, command docs, etc.
+- [ ] Ensure no design decisions are lost in this planning doc only
+- [ ] Cross-reference: planning doc should point to where details live in real docs
+
+### Factory Pattern Documentation
+
+- [ ] Create new doc: `docs/architecture/Factory Pattern.md`
+- [ ] Document `@factory` decorator usage and registration
+- [ ] Document implementation resolution order (build param → spec field → config default)
+- [ ] Document config file format for defaults
+- [ ] Add examples for creating custom implementations
+- [ ] Update Bio.md to reference factory pattern doc
+
+### Code Updates from Design Decisions
+
+- [ ] Move `hydrate`/`dehydrate` from Bio class to module-level functions in `alienbio/__init__.py`
+- [ ] Update Bio.fetch() to call module-level hydrate()
+- [ ] Implement `@factory` decorator in `alienbio/decorators.py`
+- [ ] Implement factory registry on Bio (`_factories`, `_factory_defaults`)
+- [ ] Update existing `*Impl` classes with `@factory` decorators
+- [ ] Add `impl` parameter to `build()`
+- [ ] Implement `Entity.run()` base method with NotImplementedError
+- [ ] Add `run()` methods to Scenario, Experiment, Report classes
+
+### Pipeline Documentation Consistency
+
+- [ ] Verify all docs use consistent pipeline: fetch → hydrate → build → eval
+- [ ] Update Bio.md methods table to NOT include hydrate/dehydrate (they're module-level now)
+- [ ] Update ABIO Hydrate.md to note it's module-level and called by fetch by default
+- [ ] Ensure Spec Language Reference matches Core Spec on tag resolution timing
+- [ ] Add note to hydrate docs: "Called by fetch() by default - most users don't need this directly"
+
+### Module Exports Cleanup
+
+- [ ] Refactor `alienbio/__init__.py` to use curated `__all__`
+- [ ] Export main API: `bio`, `Bio`, `hydrate`, `dehydrate`
+- [ ] Export core protocols: `Entity`, `Scenario`, `Chemistry`, `Simulator`, `State`
+- [ ] Keep `*Impl` classes importable but NOT in `__all__`
+- [ ] Verify `from alienbio import *` only gets curated set
+- [ ] Update any docs that reference old import patterns

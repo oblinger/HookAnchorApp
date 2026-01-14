@@ -5,6 +5,7 @@
 
 | Date       | TLC      | Full Anchor Name                    | Description                                         |
 | ---------- | -------- | ----------------------------------- | --------------------------------------------------- |
+| 2026-01-14 | [[SYS]]  | [[System Setup]]                    | Configuration and tools for personal dev environment |
 | 2026-01-08 | [[TLC]]  | [[Three Letter Codes]]              | List of acronyms used to name important anchors     |
 | 2026-01-08 | [[PCS]]  | [[Personal Curation System]]        | Processes used to organize my personal information. |
 | 2026-01-08 | [[UCM]]  | [[Uniform Code Markdown]]           |                                                     |

@@ -159,6 +159,7 @@ Folder `My Simple Project/` contains:
 ### TLC (Three Letter Codes)
 - Commonly accessed anchors have a short acronym for quick access
 - Ideally three letters, hence "TLC" — but can be 2-5 letters if needed
+- **TLCs should always be ALL CAPS** (e.g., SYS, ABIO, PCS)
 - If an anchor has a TLC, create `{TLC}.md` in the `{TLC} Docs/` folder
 - The root folder has `{FULL_NAME}.md` containing only: `See [[TLC]]`
 - The TLC file in Docs becomes the primary anchor markdown with all the content
