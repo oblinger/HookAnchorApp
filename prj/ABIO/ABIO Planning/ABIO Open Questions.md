@@ -165,22 +165,253 @@ The `dat` parameter accepts either a string (DAT name) or a DAT object. If a str
 - Loader hooks: If DAT adds `register_loader()`, should Bio use it?
 - `DAT.get/set`: Expose to users or hide behind Bio API?
 
+### ✅ RESOLVED
+
+**DAT's `do` function:** Don't use internally.
+
+- `do.load()` uses `yaml.safe_load()` which doesn't handle Bio's custom tags (`!ref`, `!ev`, `!include`)
+- No scope inheritance semantics (`extends:`)
+- Different caching model than Bio's ORM-style DAT caching
+- Bio implements its own loader for YAML tag resolution, scope inheritance, and type hydration
+
+**DAT get/set:** Forward directly to Bio class.
+
+```python
+from dvc_dat import Dat
+
+class Bio:
+    get = Dat.get    # direct assignment, no trampoline
+    set = Dat.set
+```
+
+Users interact with Bio only - no need to import or think about DAT class for nested dict access.
+
+**Loader hooks:** Not needed. Bio handles its own YAML loading pipeline.
+
 ---
 
-## 6. Naming Conventions
+## 6. Fetch String Resolution
 
-- Recipe names: Must have at least one dot, no slashes? (e.g., `scenarios.baseline`)
-- Scenario data paths: Must have slashes? (e.g., `data/scenarios/baseline_42/`)
-- Experiment output paths: Template tokens like `{date}`, `{seq}`?
+How does `bio.fetch(string)` resolve its argument?
+
+### ✅ RESOLVED
+
+**Three access patterns:**
+
+| Pattern | Syntax | Example |
+|---------|--------|---------|
+| **DAT access** | Contains `/` | `experiments/baseline.scenario` |
+| **Module access** | All dots, matches loaded module | `alienbio.catalog.worlds` |
+| **Source root access** | All dots, no module match | `scenarios.mutualism.test1` |
 
 ---
 
-## 7. Bio.run() Return Type
+**Routing Algorithm:**
 
-What should `Bio.run()` return?
-- A) Result object with typed fields
-- B) Tuple `(success, metadata)`
-- C) Dict with standard keys
+```
+fetch(string):
+    if "/" in string:
+        → DAT access
+    else:
+        if first_segment matches a loaded Python module:
+            → Module access
+        else:
+            → Source root access
+```
+
+---
+
+**Pattern 1: DAT Access** (string contains `/`)
+
+```
+experiments/baseline/run_42.results.scores
+└─────────DAT name─────────┘ └──dig path──┘
+```
+
+1. Split at first `.` that follows the DAT name (everything up to and including last `/` segment)
+2. Load the DAT (via ORM cache)
+3. Use **dig operation** with remaining dotted path into DAT's content
+
+**Examples:**
+```python
+fetch("experiments/baseline")           # → DAT object itself
+fetch("experiments/baseline.scenario")  # → scenario field from DAT
+fetch("experiments/baseline.results.scores.health")  # → nested access
+```
+
+**Constraint:** DAT names must contain `/`. This disambiguates from module/source access.
+
+---
+
+**Pattern 2: Module Access** (all dots, first segment is loaded module)
+
+```
+alienbio.catalog.worlds.ecosystem
+└──module name──┘ └─attribute path─┘
+```
+
+1. Import the module (first segment, or first N segments that resolve)
+2. Get the global variable (next segment)
+3. Dig into the variable with remaining segments using `Bio.get()`
+
+**Examples:**
+```python
+fetch("alienbio.catalog.worlds")        # → worlds module/dict
+fetch("alienbio.catalog.worlds.ecosystem")  # → ecosystem from worlds
+fetch("mymodule.CONFIG.timeout")        # → CONFIG["timeout"] or CONFIG.timeout
+```
+
+---
+
+**Pattern 3: Source Root Access** (all dots, no module match)
+
+```
+scenarios.mutualism.test1.interface
+└───filesystem scan───┘ └─dig path─┘
+```
+
+1. For each configured source root (in order):
+   - Use **filesystem dig operation** to find YAML file
+   - If found, load and hydrate it
+   - Dig into structure with remaining path
+2. Error if not found in any root
+
+**Filesystem dig operation:**
+
+For path `a.b.c.d` starting at root `/src`:
+```
+Try: /src/a.yaml           → if exists, load, dig into ["b"]["c"]["d"]
+Try: /src/a/b.yaml         → if exists, load, dig into ["c"]["d"]
+Try: /src/a/b/c.yaml       → if exists, load, dig into ["d"]
+Try: /src/a/b/c/d.yaml     → if exists, load, return root
+Try: /src/a/index.yaml     → if exists, load, dig into ["b"]["c"]["d"]
+Try: /src/a/b/index.yaml   → if exists, load, dig into ["c"]["d"]
+... (prefer explicit name over index.yaml at each level)
+```
+
+**Examples:**
+```python
+fetch("scenarios.mutualism")           # finds scenarios/mutualism.yaml or scenarios/mutualism/index.yaml
+fetch("scenarios.mutualism.test1")     # loads mutualism.yaml, digs into ["test1"]
+fetch("worlds.ecosystem.molecules.ME1")  # nested access
+```
+
+---
+
+**Shared Dig Operation:**
+
+Both DAT access and source root access use the same dig semantics once a root is established:
+
+```python
+def dig(root: dict, path: list[str]) -> Any:
+    """Dig into a loaded structure by dotted path segments."""
+    result = root
+    for segment in path:
+        if isinstance(result, dict):
+            result = result[segment]
+        elif hasattr(result, segment):
+            result = getattr(result, segment)
+        else:
+            raise KeyError(f"Cannot find {segment} in {type(result)}")
+    return result
+```
+
+---
+
+**Source Roots Configuration:**
+
+```python
+# In Bio or config
+source_roots = [
+    "/path/to/project/catalog",    # project-specific specs
+    "/path/to/alienbio/catalog",   # library defaults
+]
+```
+
+Searched in order; first match wins.
+
+---
+
+**Edge Cases:**
+
+| Input | Resolution |
+|-------|------------|
+| `""` (empty) | Error |
+| `"foo"` (single segment, no module match) | Source root scan for `foo.yaml` or `foo/index.yaml` |
+| `"foo"` (single segment, is module) | Return the module |
+| `"foo/bar"` | DAT access (has `/`) |
+| `"foo.bar"` | Module or source root (no `/`) |
+
+---
+
+**Design Rationale:**
+
+- `/` unambiguously signals DAT access (filesystem paths use slashes)
+- Module access gets priority for dotted names (explicit imports)
+- Source root is fallback for spec files in the repository
+- Same dig semantics for DAT and source roots reduces cognitive load
+- `index.yaml` convention allows directory-as-module pattern
+
+---
+
+## 7. Run Method Design
+
+What should `Bio.run()` return? How does run relate to entities?
+
+### ✅ RESOLVED
+
+**Two-level design:**
+
+**Entity.run() → Any**
+
+Each entity subclass defines its own `run()` that returns whatever makes sense:
+
+```python
+class Entity:
+    def run(self) -> Any:
+        """Override in runnable subclasses."""
+        raise NotImplementedError(f"{type(self).__name__} is not runnable")
+
+class Scenario(Entity):
+    def run(self) -> SimulationTrace:
+        """Run simulation, return traces."""
+        ...
+
+class Report(Entity):
+    def run(self) -> Path:
+        """Generate report, return output path."""
+        ...
+
+class Experiment(Entity):
+    def run(self) -> list[dict]:
+        """Run scenarios, return list of results."""
+        ...
+```
+
+**Bio.run() → dict**
+
+Bio wraps entity execution with metadata:
+
+```python
+class Bio:
+    def run(self, target, **kwargs) -> dict:
+        entity = self.build(target, **kwargs) if isinstance(target, (str, dict)) else target
+        result = entity.run()
+        return {
+            "result": result,      # whatever entity returned
+            "success": True,       # completed without error
+            "dat": "...",          # where results stored
+            "elapsed": 12.3,       # timing
+            # ... extensible
+        }
+```
+
+**Design rationale:**
+- Entities stay simple - return their natural domain-specific result
+- Bio provides uniform dict wrapper for CLI/tooling
+- Dict is extensible (add fields without breaking callers)
+- Clear separation: Entity does work, Bio orchestrates
+- No forced structure on entities that don't need it
 
 ---
 
@@ -247,3 +478,28 @@ We just added `_simulator_factory` to Bio. Should other factories follow?
 - [ ] Implement `Bio(dat=...)` constructor parameter (accepts string or DAT object)
 - [ ] Document `bio.dat` accessor with lazy anonymous DAT creation
 - [ ] Define anonymous DAT spec constant location in config
+
+### Fetch String Resolution Implementation
+
+Test file created: `tests/unit/test_fetch_resolution.py` (50+ test cases)
+
+- [ ] Implement routing logic (`/` → DAT, dots → module or source root)
+- [ ] Implement DAT name parsing (extract name + dig path)
+- [ ] Implement module access (import + attribute dig)
+- [ ] Implement source root scanning (YAML file discovery)
+- [ ] Implement shared dig operation (dict key / attribute access)
+- [ ] Implement ORM caching for DAT access
+- [ ] Implement source root configuration
+- [ ] Enable and pass all tests in `test_fetch_resolution.py`
+- [ ] Handle edge cases (empty string, unicode, whitespace, etc.)
+
+### Fetch User Documentation
+
+- [ ] Merge fetch string resolution spec (from Question #6 above) into user docs at `docs/architecture/commands/ABIO Fetch.md`
+- [ ] Structure: concise overview at top explaining the three access patterns
+- [ ] Add extensive examples section covering corner cases:
+  - DAT access with/without dig paths
+  - Module access with nested attributes
+  - Source root scanning with index.yaml fallback
+  - Edge cases (single segment, dots in DAT names, etc.)
+- [ ] Polish for clarity and readability
