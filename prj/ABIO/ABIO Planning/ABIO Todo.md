@@ -1,8 +1,11 @@
-# ABIO Open Questions
+
+
+
+## 2026-01-14  ABIO Open Questions
 
 Design decisions needed for M1.11 documentation sync.
 
-## 1. Two Context Classes
+### 1. Two Context Classes
 
 There are two different `Context` classes causing confusion:
 
@@ -35,7 +38,7 @@ Plus there's an alias `Context = EvalContext` in eval.py!
 
 ---
 
-## 2. Bio API Style
+### 2. Bio API Style
 
 The `Bio` class has multiple patterns:
 - Instance methods on singleton: `bio.fetch()`, `bio.sim()`
@@ -72,7 +75,7 @@ sandbox.fetch("scenarios/test")
 
 ---
 
-## 3. construct/deconstruct Removal Cleanup
+### 3. construct/deconstruct Removal Cleanup
 
 We removed `construct`/`deconstruct` but:
 - `@biotype` decorator still exists and registers classes
@@ -96,7 +99,7 @@ We removed `construct`/`deconstruct` but:
 
 ---
 
-## 4. Storage and Persistence
+### 4. Storage and Persistence
 
 - Does `bio run` automatically persist results, or is storage explicit?
 - Where do built scenarios go? Default data path for `bio build` output?
@@ -159,7 +162,7 @@ The `dat` parameter accepts either a string (DAT name) or a DAT object. If a str
 
 ---
 
-## 5. DAT Integration
+### 5. DAT Integration
 
 - Reuse DAT's `do` function? It has useful directory creation logic, but Bio needs custom YAML parsing
 - Loader hooks: If DAT adds `register_loader()`, should Bio use it?
@@ -190,7 +193,7 @@ Users interact with Bio only - no need to import or think about DAT class for ne
 
 ---
 
-## 6. Fetch String Resolution
+### 6. Fetch String Resolution
 
 How does `bio.fetch(string)` resolve its argument?
 
@@ -354,7 +357,7 @@ Searched in order; first match wins.
 
 ---
 
-## 7. Run Method Design
+### 7. Run Method Design
 
 What should `Bio.run()` return? How does run relate to entities?
 
@@ -415,7 +418,7 @@ class Bio:
 
 ---
 
-## 8. Bio.build() Return Type
+### 8. Bio.build() Return Type
 
 What should `Bio.build()` return?
 
@@ -463,7 +466,7 @@ def hydrate(data: dict) -> Any:
 
 ---
 
-## 9. Protocol vs Impl Naming & Factory Pattern
+### 9. Protocol vs Impl Naming & Factory Pattern
 
 The codebase uses `*Impl` suffix for implementations:
 - `ChemistryImpl`, `StateImpl`, `ReferenceSimulatorImpl`
@@ -559,7 +562,7 @@ defaults:
 
 ---
 
-## 10. hydrate/dehydrate Location and Naming
+### 10. hydrate/dehydrate Location and Naming
 
 `eval.py` has `hydrate`/`dehydrate` functions that handle YAML tags.
 
@@ -596,7 +599,7 @@ scenario = bio.fetch("...")
 
 ---
 
-## 11. Simulator Factory Pattern
+### 11. Simulator Factory Pattern
 
 We just added `_simulator_factory` to Bio. Should other factories follow?
 
@@ -611,7 +614,7 @@ See Question #9 for full factory pattern design.
 
 ---
 
-## 12. Module Exports
+### 12. Module Exports
 
 `__init__.py` exports many symbols. Should we:
 - A) Keep comprehensive exports for convenience
@@ -654,9 +657,9 @@ from .impl import ReferenceSimulatorImpl, ChemistryImpl  # etc.
 
 ---
 
-## TODOs
+### TODOs
 
-### DAT Name Convention Verification
+#### #1 DAT Name Convention Verification
 
 - [ ] Review all documentation to ensure DAT names (full names) are used, not filesystem paths
 - [ ] Review code to verify cross-component APIs use DAT names
@@ -664,7 +667,7 @@ from .impl import ReferenceSimulatorImpl, ChemistryImpl  # etc.
 - [ ] Check that paths starting with `/` are handled as filesystem path escape hatch
 - [ ] **If any ambiguity about implementation approach, consult user before proceeding**
 
-### ORM Pattern Implementation
+#### #2 ORM Pattern Implementation
 
 - [ ] Document DAT ORM pattern (single in-memory instance per DAT)
 - [ ] Implement DAT caching layer for fetch()
@@ -672,7 +675,7 @@ from .impl import ReferenceSimulatorImpl, ChemistryImpl  # etc.
 - [ ] Document `bio.dat` accessor with lazy anonymous DAT creation
 - [ ] Define anonymous DAT spec constant location in config
 
-### Fetch String Resolution Implementation
+#### #3 Fetch String Resolution Implementation
 
 Test file created: `tests/unit/test_fetch_resolution.py` (50+ test cases)
 
@@ -686,7 +689,7 @@ Test file created: `tests/unit/test_fetch_resolution.py` (50+ test cases)
 - [ ] Enable and pass all tests in `test_fetch_resolution.py`
 - [ ] Handle edge cases (empty string, unicode, whitespace, etc.)
 
-### Fetch User Documentation
+#### #4 Fetch User Documentation
 
 - [ ] Merge fetch string resolution spec (from Question #6 above) into user docs at `docs/architecture/commands/ABIO Fetch.md`
 - [ ] Structure: concise overview at top explaining the three access patterns
@@ -697,7 +700,7 @@ Test file created: `tests/unit/test_fetch_resolution.py` (50+ test cases)
   - Edge cases (single segment, dots in DAT names, etc.)
 - [ ] Polish for clarity and readability
 
-### Documentation Integration Audit
+#### #5 Documentation Integration Audit
 
 - [ ] Scan all resolved questions (#1-12) in this file
 - [ ] For each resolution, verify details are integrated into relevant system docs:
@@ -705,7 +708,7 @@ Test file created: `tests/unit/test_fetch_resolution.py` (50+ test cases)
 - [ ] Ensure no design decisions are lost in this planning doc only
 - [ ] Cross-reference: planning doc should point to where details live in real docs
 
-### Factory Pattern Documentation
+#### #6 Factory Pattern Documentation
 
 - [ ] Create new doc: `docs/architecture/Factory Pattern.md`
 - [ ] Document `@factory` decorator usage and registration
@@ -714,7 +717,7 @@ Test file created: `tests/unit/test_fetch_resolution.py` (50+ test cases)
 - [ ] Add examples for creating custom implementations
 - [ ] Update Bio.md to reference factory pattern doc
 
-### Code Updates from Design Decisions
+#### #7 Code Updates from Design Decisions
 
 - [ ] Move `hydrate`/`dehydrate` from Bio class to module-level functions in `alienbio/__init__.py`
 - [ ] Update Bio.fetch() to call module-level hydrate()
@@ -725,7 +728,7 @@ Test file created: `tests/unit/test_fetch_resolution.py` (50+ test cases)
 - [ ] Implement `Entity.run()` base method with NotImplementedError
 - [ ] Add `run()` methods to Scenario, Experiment, Report classes
 
-### Pipeline Documentation Consistency
+#### #8 Pipeline Documentation Consistency
 
 - [ ] Verify all docs use consistent pipeline: fetch → hydrate → build → eval
 - [ ] Update Bio.md methods table to NOT include hydrate/dehydrate (they're module-level now)
@@ -733,7 +736,7 @@ Test file created: `tests/unit/test_fetch_resolution.py` (50+ test cases)
 - [ ] Ensure Spec Language Reference matches Core Spec on tag resolution timing
 - [ ] Add note to hydrate docs: "Called by fetch() by default - most users don't need this directly"
 
-### Module Exports Cleanup
+#### #9 Module Exports Cleanup
 
 - [ ] Refactor `alienbio/__init__.py` to use curated `__all__`
 - [ ] Export main API: `bio`, `Bio`, `hydrate`, `dehydrate`
@@ -744,75 +747,114 @@ Test file created: `tests/unit/test_fetch_resolution.py` (50+ test cases)
 
 ---
 
-## 13. Unified YAML/Python Namespace in Fetch
+### 13. Unified YAML/Python Namespace in Fetch
 
 How does fetch() handle coexistence of YAML specs and Python modules in the same namespace?
 
-### ✅ RESOLVED (pending resolution order decision)
+### ✅ RESOLVED
 
-**Core Principle:** YAML and Python can coexist with the same name prefix.
+**Two Data Sources, One Pipeline:**
 
-```
-mute/mol/energy/
-├── mygen.yaml    # YAML template (structure, params)
-└── mygen.py      # Python helpers (functions, classes)
-```
+Data can come from either YAML files or Python module globals — both go through the same processing pipeline.
 
-Both are accessible via the same namespace:
-- `fetch("mute.mol.energy.mygen")` → ?
-- `fetch("mute.mol.energy.mygen.rate_fn")` → ?
-- `fetch("mute.mol.energy.mygen.rate_fn.params")` → ?
+| Source | Example | How Detected |
+|--------|---------|--------------|
+| **YAML file** | `mute/mol/energy/mygen.yaml` | File with `.yaml` extension |
+| **Python module global** | `mygen.py` with `TEMPLATE = {...}` | Python attribute (dict or "yaml: " string) |
 
 ---
 
-**Decisions Made:**
+**Resolution: YAML is primary, `!py` for local Python**
 
-1. **Both YAML and Python coexist** — Don't error if both `mygen.yaml` and `mygen.py` exist
+- `fetch("mute.mol.energy.mygen")` → loads YAML file (or Python global if no YAML)
+- `!py rate_fn` inside YAML → loads Python from same directory
+- `!ref module.path.fn` → global Python access via standard ref
 
-2. **No suffix/tag disambiguation** — No `:function` syntax. Resolution is automatic.
-
-3. **Multiple source roots** — Config allows multiple roots for shared catalogs across repos
-
-4. **Source root config structure:**
-   ```yaml
-   source_roots:
-     - path: source/catalog/mute    # filesystem path (relative to config)
-       module: myproject.catalog.mute  # Python module prefix
-     - path: ../shared/std
-       module: shared_catalog.std
-   ```
-
-5. **Top-level folders become prefixes** — Each folder directly under a source root is a valid prefix
-
-6. **Catalog Naming Scheme updated** — Users choose their own prefix (e.g., `mute`, `pred`, `std`); no fixed `cat` prefix
+**No dual-namespace merging** — YAML owns the fetch namespace. Python helpers are pulled in explicitly via `!py`.
 
 ---
 
-**Resolution Order:** ⚠️ OPEN — Need to decide
+**`!py` Tag Semantics:**
 
-**Option A: YAML-first**
+```yaml
+# In mygen.yaml
+molecule.ME_gen:
+  rate: !py rate_fn        # loads from mygen.py in same dir
+  params: { k: 0.5 }
 ```
-fetch("mute.mol.energy.mygen.rate_fn"):
-  1. Look in mygen.yaml for "rate_fn" key
-  2. If not found → look in mygen.py for rate_fn attribute
-```
-- Pros: Data is primary, code is fallback
-- Cons: Can't easily get Python function if YAML has same key
 
-**Option B: Python-first with "keep going"**
-```
-fetch("mute.mol.energy.mygen.rate_fn"):
-  → Returns Python function from mygen.py
+Resolution rules for `!py`:
+- `!py rate_fn` (no dots) → **local**: same directory as the YAML/Python source
+- `!ref myproject.utils.fn` → **global**: standard module access via `!ref`
 
-fetch("mute.mol.energy.mygen.rate_fn.params"):
-  1. Python function has no .params attribute
-  2. Fall back to mygen.yaml, look for rate_fn.params
-  → Returns YAML params dict
-```
-- Pros: Natural "function + config" pattern; function is callable, params are data
-- Cons: Complex resolution; harder to predict; what if Python DOES have `.params`?
+The `!py` tag resolves relative to *where the data came from*:
+- From `mygen.yaml` → looks in directory containing `mygen.yaml`
+- From `mygen.py:TEMPLATE` → looks in directory containing `mygen.py`
 
-**Recommendation:** TBD — leaning toward simpler YAML-first with explicit `!py` tag for Python access when needed.
+---
+
+**Python Module Globals as Data:**
+
+Templates can be defined directly in Python modules:
+
+```python
+# mygen.py
+
+# Option 1: Dict directly
+TEMPLATE = {
+    "molecule": {
+        "initial_count": 100,
+        "rate": "!py rate_fn",  # will be processed
+    }
+}
+
+# Option 2: YAML string
+TEMPLATE = """yaml:
+molecule:
+  initial_count: 100
+  rate: !py rate_fn
+"""
+
+# Helper functions in same file
+def rate_fn(S, params):
+    return params['k'] * S / (params['Km'] + S)
+```
+
+This allows keeping a template and its helper functions in the same file.
+
+---
+
+**Processing Pipeline (same for both sources):**
+
+```
+1. Load raw data
+   ├── From YAML file, OR
+   └── From Python module global (dict or "yaml: " string)
+2. If string starts with "yaml: " → parse as YAML
+3. Resolve !include tags
+4. Resolve !ref tags (standard fetch)
+5. Resolve !py tags (relative to source location)
+6. Hydrate typed objects (_type field)
+7. Return result
+```
+
+---
+
+**Source Roots Configuration:**
+
+```yaml
+# dat_config.yaml
+dat_root: experiments
+source_roots:
+  - path: source/catalog/mute    # filesystem path (relative to config)
+    module: myproject.catalog.mute  # Python module prefix
+  - path: ../shared/std
+    module: shared_catalog.std
+```
+
+- Multiple roots for shared catalogs across repos
+- Top-level folders become valid prefixes
+- Users choose their own prefix (`mute`, `pred`, `std`, etc.)
 
 ---
 
@@ -825,28 +867,189 @@ my_project/
 │       └── mute/              # "mute" prefix
 │           └── mol/
 │               └── energy/
-│                   ├── mygen.yaml    # template structure + params
-│                   └── mygen.py      # helper functions
-├── dat_config.yaml            # source_roots config
+│                   ├── mygen.yaml    # YAML template
+│                   └── mygen.py      # Python helpers + optional TEMPLATE global
+├── dat_config.yaml
 └── experiments/
-```
-
-**dat_config.yaml:**
-```yaml
-dat_root: experiments
-source_roots:
-  - path: source/catalog/mute
-    module: myproject.catalog.mute
 ```
 
 ---
 
-### YAML/Python Fetch TODOs
+#### #10 YAML/Python Fetch Implementation
 
-- [ ] Decide resolution order: YAML-first vs Python-first with keep-going
-- [ ] Document unified namespace semantics in ABIO Fetch.md
-- [ ] Implement dual-lookup in fetch() source root scanning
+- [ ] Implement `!py` tag resolution (local to source file)
+- [ ] Implement Python module global loading (dict and "yaml: " string)
 - [ ] Implement source_roots config with path + module pairs
-- [ ] Add tests for YAML/Python coexistence scenarios
-- [ ] Update Catalog Naming Scheme doc with Python coexistence examples
-- [ ] Consider `!py` tag for explicit Python references in YAML
+- [ ] Update fetch() to check both YAML files and Python globals
+- [ ] Add tests for:
+  - [ ] `!py` local resolution from YAML file
+  - [ ] `!py` local resolution from Python module global
+  - [ ] Python TEMPLATE dict loading
+  - [ ] Python "yaml: " string loading
+  - [ ] Multiple source roots
+- [ ] Document in ABIO Fetch.md (Data Sources section)
+
+
+### 2026-01-14  Open Questions
+
+Questions to resolve before/during implementation.
+
+#### M2 Questions
+
+1. **Bio.run() vs Bio.fetch() routing**: I implemented simple "dots before slash" detection in `Bio.run()`. The `ABIO Fetch.md` doc shows more complex routing (absolute path, relative path, Python modules, configured roots). Should `Bio.run()` use the same routing logic as `fetch()`?
+
+2. **Bio.lookup() scope**: Docs mention `lookup()` handles "Python modules → cwd filesystem". What's the full enumeration of lookup cases? (Marked in roadmap as "Work with user to enumerate all lookup cases")
+
+---
+
+### 2026-01-10 M1.5 Decisions (Resolved)
+
+1. **Tag classes**: Keep `Evaluable`, `Quoted`, `Reference`. Remove old tag classes. (Investigate `tags.py` to find what exists.)
+
+2. **generator → build rename**: Do early in M1.5, before other changes.
+
+3. **Scenario class location**: Move to `protocols/` — it's a top-level class, not just implementation.
+
+4. **Backward compatibility**: Remove aliases immediately. No backward compat needed in this codebase.
+
+---
+
+### 2026-01-10  Design Decisions (Resolved)
+
+Historical record of design decisions made during documentation review.
+
+#### Bio Class Architecture (2026-01-10)
+
+**Decision:** Bio is a traditional class with instance methods and a null constructor. Each `Bio()` creates a fresh environment (DAT context, scope chain). A module-level singleton `bio` is used for CLI commands.
+
+This enables sandboxing for tests while keeping CLI simple.
+
+#### Execution Pipeline (2026-01-10)
+
+**Decision:** Separate methods with implicit chaining:
+- `fetch(string)` → load + hydrate → typed object
+- `build(string_or_object)` → if string, fetch first, then template instantiate
+- `run(string_or_object)` → if string, build first (which fetches), then execute
+
+Chain: `run → build → fetch` (each implicitly calls the previous if given a string)
+
+#### Hydration Architecture (2026-01-10)
+
+**Decision:** Two-level hydration:
+- `Bio.hydrate(data)` — Orchestrator that handles all phases
+- `Entity.hydrate(data, ...)` — Class-specific constructor called during phase 3
+
+Phases: (1) Resolve `!include`, (2) Resolve `!ref`, (3) Bottom-up type construction
+
+Note: `!ev` tags stay as `Evaluable` placeholders until evaluation time.
+
+#### Tag System (2026-01-10)
+
+**Decision:** Keep new system (Evaluable, Quoted, Reference), remove old system (EvTag, RefTag, IncludeTag).
+
+#### Context Classes (2026-01-10)
+
+**Decision:** Use Scope instead of eval.Context. Rename infra.Context to RuntimeEnv.
+
+#### Experiment Structure (2026-01-10)
+
+**Decision:** Experiment references a single scenario (not scenarios as an axis). `name` is a top-level field for naming child DATs, not inside axes.
+
+```yaml
+experiment.sweep:
+  scenario: !ref baseline
+  name: "{agent}_s{seed}"
+  axes:
+    agents: [claude, gpt-4]
+    seeds: 10
+```
+
+---
+
+### B9 Design Decisions (Resolved)
+
+Earlier decisions from B9 spec language design.
+
+### ~~Loader vs current IO~~
+
+**Resolved:** Keep both. Spec handles filesystem/storage (specifiers like `catalog/worlds/mutualism`). IO handles runtime references within loaded data (`W:Lora.cytoplasm.glucose`). Orthogonal concerns.
+
+### ~~World definition~~
+
+**Resolved:** Three distinct classes:
+- `WorldSpec` — declarative description from YAML
+- `WorldSimulator` — execution engine
+- `WorldState` — runtime snapshot
+
+Flow: `world.name:` → WorldSpec → WorldSimulator → WorldState
+
+### ~~Simulator class~~
+
+**Resolved:** Use WorldSimulator. B9's "Simulator" is the same as existing WorldSimulator.
+
+### ~~Runtime expressions~~
+
+**Resolved:** Build Python reference simulator first, then JAX-accelerated simulator as drop-in replacement. No Rust needed—JAX compiles Python to XLA/GPU code directly. Rate functions must be pure functional for JAX tracing.
+
+### ~~YAML custom tags~~
+
+**Resolved:** Use three YAML tags: `!ev` (evaluate expression), `!ref` (reference constant/object), `!include` (include file). No `$` or `=` prefix syntax.
+
+### ~~Decorator module location~~
+
+**Resolved:** Create `alienbio/spec_lang` module containing all decorators (`@biotype`, `@fn`, `@scoring`, `@action`, `@measurement`, `@rate`) and YAML tag implementations.
+
+### ~~Action/Measurement registration~~
+
+**Resolved:** Global singleton registries. `@action` and `@measurement` decorators register functions at decoration time (module load). Called via `sim.action(name, ...)` and `sim.measure(name, ...)`.
+
+### ~~Terminology alignment~~
+
+**Resolved:**
+
+| B9 Term | Current Code | Notes |
+|---------|--------------|-------|
+| `world` | `WorldSpec` | Declarative description from YAML |
+| — | `WorldSimulator` | Execution engine |
+| — | `WorldState` | Runtime snapshot |
+| `molecules` | Molecule class | Exists |
+| `reactions` | Reaction class | Exists |
+| `containers` | Compartment + CompartmentTree | Exists |
+| `feedstock` | — | New concept |
+| `actions` | — | New (decorator-defined via `@action`) |
+| `measurements` | — | New (decorator-defined via `@measurement`) |
+
+---
+
+### Implementation Class Naming Pattern
+
+Source code uses `*Impl` suffix for implementation classes:
+
+| Protocol (type hints) | Implementation (runtime) |
+|----------------------|--------------------------|
+| `Atom` | `AtomImpl` |
+| `Molecule` | `MoleculeImpl` |
+| `Reaction` | `ReactionImpl` |
+| `Chemistry` | `ChemistryImpl` |
+| `State` | `StateImpl` |
+| `Simulator` | `SimulatorBase`, `ReferenceSimulatorImpl` |
+
+---
+
+### B10 Naming Conventions
+
+From the mutualism example specification:
+
+| Prefix | Type | Examples |
+|--------|------|----------|
+| M | Molecules | ME (energy), MS (structural), MW (waste), MB (buffer), MC (catalyst) |
+| K | Organisms | Krel, Kova, Kesh |
+| L | Locations | Lora, Lesh, Lika |
+| R | Reactions | R_energy_1, R_krel_1 |
+
+---
+
+### See Also
+
+- [[ABIO Roadmap]] — Task tracking by milestone
+- [[Architecture Docs]] — System documentation

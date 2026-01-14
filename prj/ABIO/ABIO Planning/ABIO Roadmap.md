@@ -492,6 +492,141 @@ See [[ABIO Todo#Implementation Class Naming Pattern]] — Document Protocol vs `
 ### .
 
 
+## [ ] M1.12 - Refactoring & Cleanup
+
+Clean up technical debt before building new features. All items reference existing code.
+
+**Key docs with implementation notes:**
+- Bio.md — Bio class refactoring steps, hydration consolidation
+- Spec Language Reference — Tag system consolidation, Context class cleanup
+
+### Code Refactoring
+
+1. **Bio class: instance pattern**
+   - [ ] Refactor `_BioCompat` static wrappers to delegate to singleton
+   - [ ] Ensure `Bio.__init__()` creates fresh DAT context and scope chain
+   - [ ] Export `bio` singleton from `alienbio.__init__`
+   - [ ] Update CLI commands to use singleton `bio` instance
+
+2. **Consolidate hydration** (see TODO 2026-01-14 #7)
+   - [ ] Move `hydrate`/`dehydrate` to module-level functions in `alienbio/__init__.py`
+   - [ ] Update Bio.fetch() to call module-level hydrate()
+   - [ ] Ensure each Entity subclass has `hydrate(data, ...)` classmethod
+
+3. **Remove old tag system**
+   - [ ] Remove `EvTag`, `RefTag`, `IncludeTag` classes from `tags.py`
+   - [ ] Keep YAML constructors but have them create new placeholder classes (Evaluable, Quoted, Reference)
+   - [ ] Add dotted path support to Reference resolution
+   - [ ] Ensure circular include detection in `Bio.hydrate()`
+
+4. **Context class disambiguation**
+   - [ ] Remove `eval.Context` dataclass
+   - [ ] Update `eval_node()` to take Scope instead of Context
+   - [ ] Rename `infra.Context` → `RuntimeEnv`
+   - [ ] Update all references
+
+5. **Rename generator → build**
+   - [ ] Rename `src/alienbio/generator/` → `src/alienbio/build/`
+   - [ ] Update all imports
+
+6. **Remove loader stub**
+   - [ ] Remove `loader.py` stub `load_spec()`
+
+7. **Factory pattern** (see TODO 2026-01-14 #7)
+   - [ ] Implement `@factory` decorator in `alienbio/decorators.py`
+   - [ ] Implement factory registry on Bio (`_factories`, `_factory_defaults`)
+   - [ ] Update existing `*Impl` classes with `@factory` decorators
+   - [ ] Add `impl` parameter to `build()`
+
+8. **Module exports cleanup** (see TODO 2026-01-14 #9)
+   - [ ] Refactor `alienbio/__init__.py` to use curated `__all__`
+   - [ ] Export main API: `bio`, `Bio`, `hydrate`, `dehydrate`
+   - [ ] Export core protocols: `Entity`, `Scenario`, `Chemistry`, `Simulator`, `State`
+   - [ ] Keep `*Impl` classes importable but NOT in `__all__`
+
+### Documentation Updates (for existing code)
+
+- [ ] Document `Entity.ancestors()`, `descendants()`, `local_name`, `parent`, `children`
+- [ ] Document `IO.orphan_root`, `resolve_prefix()`, `unbind_prefix()`, `resolve_refs()`, `insert_refs()`, `load()`, `save()`
+- [ ] Document `MoleculeImpl`, `ReactionImpl`, `ChemistryImpl` and hydrate methods
+- [ ] Document `@fn`, `@scoring`, `@action`, `@measurement`, `@rate` decorator parameters
+- [ ] Document `FnMeta` class and registry access functions
+- [ ] Document `!quote` tag alias for `!_`
+- [ ] Document `EvalError` exception
+- [ ] Document `IncludeTag` .py file execution (security note)
+- [ ] Clarify Protocol vs `*Impl` naming pattern
+
+### Factory Pattern Documentation (see TODO 2026-01-14 #6)
+
+- [ ] Create new doc: `docs/architecture/Factory Pattern.md`
+- [ ] Document `@factory` decorator usage and registration
+- [ ] Document implementation resolution order (build param → spec field → config default)
+- [ ] Document config file format for defaults
+- [ ] Add examples for creating custom implementations
+- [ ] Update Bio.md to reference factory pattern doc
+
+### .
+
+
+## [>] M1.13 - Fetch Foundation (Current)
+
+Front-loaded from M2 while design is fresh. Execute TODO 2026-01-14 items in order.
+
+**Status**: #10 YAML/Python Fetch complete (2026-01-14).
+
+1. [x] **#10 YAML/Python Fetch Implementation** — `!py` tag, source_roots config, Python globals as data
+2. [ ] **#3 Fetch String Resolution** — Routing logic, dig operation, source root scanning
+3. [ ] **#2 ORM Pattern** — DAT caching, `Bio(dat=...)` constructor
+4. [ ] **#4 Fetch User Documentation** — Update docs to match implementation
+
+### M1.13a - Bio Fetch Extensions
+
+Bio class methods for loading and navigating specs. Builds on fetch foundation.
+
+**Key docs**: ABIO Fetch.md — Specifier routing logic, hydration order, data sources
+
+1. **Bio.cd()**
+   - [ ] Add `_current_dat: Path | None` instance variable
+   - [ ] Add `cd(path=None)` method
+   - [ ] Update `fetch()`, `store()` to resolve relative paths against current DAT
+   - [ ] CLI: `bio cd` prints current, `bio cd path` changes it
+
+2. **ORM Pattern** (see TODO 2026-01-14 #2)
+   - [ ] Document DAT ORM pattern (single in-memory instance per DAT)
+   - [ ] Implement DAT caching layer for fetch()
+   - [ ] Implement `Bio(dat=...)` constructor parameter (accepts string or DAT object)
+   - [ ] Document `bio.dat` accessor with lazy anonymous DAT creation
+   - [ ] Define anonymous DAT spec constant location in config
+
+3. **Fetch string resolution** (see TODO 2026-01-14 #3)
+   - [ ] Implement routing logic (`/` → DAT, dots → module or source root)
+   - [ ] Implement DAT name parsing (extract name + dig path)
+   - [ ] Implement module access (import + attribute dig)
+   - [ ] Implement source root scanning (YAML file discovery)
+   - [ ] Implement shared dig operation (dict key / attribute access)
+   - [ ] Implement ORM caching for DAT access
+   - [ ] Enable and pass all tests in `test_fetch_resolution.py`
+   - [ ] Handle edge cases (empty string, unicode, whitespace, etc.)
+
+4. **Bio.fetch() enhancements**
+   - [ ] Detect dots-before-slash and route to lookup()
+   - [ ] Implement "loads within DAT" pattern (load YAML → dereference → hydrate)
+   - [ ] Support `hydrate=False` option
+
+5. **Bio.store()**
+   - [ ] Implement dehydration and storage
+   - [ ] (Remote sync planned for Later)
+
+### DAT Name Convention Verification (see TODO 2026-01-14 #1)
+
+- [ ] Review all documentation to ensure DAT names (full names) are used, not filesystem paths
+- [ ] Review code to verify cross-component APIs use DAT names
+- [ ] Verify persisted data stores DAT names, not paths
+- [ ] Check that paths starting with `/` are handled as filesystem path escape hatch
+
+### .
+
+
 # Milestone 2 - Generator System
 
 **Concept**: Template-based scenario generation with parameterized templates, distribution sampling, constraint guards, and visibility mapping. See [[Generator Spec Language]] for YAML syntax.

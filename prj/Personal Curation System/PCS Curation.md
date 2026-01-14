@@ -1,9 +1,82 @@
 
+## FILE STRUCTURE
+
+Template variables:
+- `{FULL_NAME}` = folder name (the full descriptive name)
+- `{TLC}` = short code (if it exists, typically 2-5 uppercase letters)
+- `{NAME}` = TLC if it exists, otherwise FULL_NAME
+- `{repo}` = repository name
+
+### Complete Folder Structure
+```
+{FULL_NAME}/                       # Anchor root folder (full descriptive name)
+├── {FULL_NAME}.md                 # Redirect: contains only "See [[{TLC}]]" (if TLC exists)
+│
+├── {NAME} Docs/                   # Private docs (NOT published)
+│   ├── {NAME}.md                  # PRIMARY ANCHOR PAGE (link table, overview)
+│   ├── {NAME} PRD.md              # Product Requirements Document
+│   ├── {NAME} Features.md         # Feature designs (dated sections)
+│   ├── {NAME} Notes.md            # Discussion notes (dated sections)
+│   ├── {NAME} Roadmap.md          # Milestone-based task tracking
+│   └── {NAME} Todo.md             # Short-term tasks (dated sections)
+│
+├── {NAME} Research/               # Research materials (optional)
+│   ├── {NAME} References.md       # Bibliography
+│   └── {NAME} Related Work.md     # Analysis of related work
+│
+└── {repo}/                        # Repository clone (PUBLISHABLE)
+    ├── .git/
+    ├── README.md                  # Brief description, installation, quick start
+    ├── CLAUDE.md                  # Claude Code project instructions
+    ├── pyproject.toml             # Project metadata and dependencies
+    ├── mkdocs.yml                 # MkDocs configuration
+    ├── justfile                   # Task runner commands
+    │
+    ├── src/{package}/             # Source code
+    ├── tests/                     # Test files
+    │
+    ├── docs/                      # Documentation SOURCE (hand-written + generated)
+    │   ├── index.md               # Docs home page
+    │   ├── user-guide/            # Task-oriented tutorials
+    │   ├── architecture/          # System design docs
+    │   └── api/                   # Generated API reference
+    │
+    └── site/                      # Generated docs site (gitignored)
+```
+
+### Concrete Example (with TLC)
+Folder `Alien Biology/` contains:
+- `Alien Biology.md` — says `See [[ABIO]]`
+- `ABIO Docs/ABIO.md` — the main anchor page with link table
+- `ABIO Docs/` — private planning/design docs
+- `alienbio/` — the repository (publishable)
+
+### Concrete Example (without TLC)
+Folder `My Simple Project/` contains:
+- `My Simple Project Docs/My Simple Project.md` — the main anchor page
+- `My Simple Project Docs/` — private planning/design docs
+- `my-simple-project/` — the repository (publishable)
+
+### Anchor Folder Definition
+- An **anchor** is a folder that contains a `{NAME} Docs/` subfolder with the primary anchor markdown
+- The primary anchor markdown (`{NAME}.md`) lives inside the Docs folder
+- If the anchor has a TLC, the root folder also has `{FULL_NAME}.md` containing only `See [[TLC]]`
+- Example with TLC: `.../Alien Biology/ABIO Docs/ABIO.md` — primary anchor page
+- Example without TLC: `.../My Project/My Project Docs/My Project.md` — primary anchor page
+
+### Root Folder vs Repository
+- The anchor root folder has a `{NAME} Docs/` subfolder for private documentation (NOT published)
+- If the project has a code repository, it is a **subdirectory** of the anchor folder
+- The subdirectory name matches the GitHub repository name (since it's a clone)
+- This separation ensures planning docs don't accidentally get committed to the repo
+
+---
+
 # GENERAL CURATION RULES
 
 ## CURATION ACTIONS
 
-- **CODE FLOW** -- 
+- **CODE FLOW** --
 
 ## DEFINED TERMS
 
