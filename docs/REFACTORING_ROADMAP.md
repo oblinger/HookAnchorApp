@@ -18,6 +18,26 @@
 ### In Progress
 - [ ] Continue thinning popup.rs (currently 5,726 lines)
 
+### popup.rs Analysis (5,726 lines)
+
+**Structure breakdown:**
+| Section | Lines | Notes |
+|---------|-------|-------|
+| AnchorSelector struct + fields | 1-135 | State definitions |
+| Window/Scanner/Key mgmt | 136-548 | Uses `self` + egui ctx |
+| PopupInterface impl | 553-807 | Trait implementation |
+| Action execution system | 812-3978 | Business logic + UI interleaved |
+| eframe::App impl (update loop) | 4007-5387 | **1,380 lines** - the big one |
+| PopupWithControl | 5388-end | Wrapper |
+
+**The challenge:** Almost everything is tightly coupled - methods use `&mut self` and `egui::Context`, business logic (rename, save, delete) is interleaved with UI updates, update loop orchestrates many subsystems.
+
+**Options for further thinning:**
+1. **Easy wins** - Look for more standalone utilities like window_utils
+2. **Split update loop** - Extract major UI phases (loading, key handling, rendering, command editor handling) into helper methods in separate files
+3. **Move business logic to capabilities** - The rename/save/delete operations could be extracted, with popup calling them and handling just the UI callbacks
+4. **Leave it** - CLI refactoring complete (cmd.rs: 2,674 → 151 lines). Further popup thinning has diminishing returns.
+
 ### Decided Against
 - cli/server.rs orchestration extraction - kept as-is because user feedback is tightly coupled with each step
 
