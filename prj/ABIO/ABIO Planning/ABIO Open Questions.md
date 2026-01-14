@@ -741,3 +741,112 @@ Test file created: `tests/unit/test_fetch_resolution.py` (50+ test cases)
 - [ ] Keep `*Impl` classes importable but NOT in `__all__`
 - [ ] Verify `from alienbio import *` only gets curated set
 - [ ] Update any docs that reference old import patterns
+
+---
+
+## 13. Unified YAML/Python Namespace in Fetch
+
+How does fetch() handle coexistence of YAML specs and Python modules in the same namespace?
+
+### ✅ RESOLVED (pending resolution order decision)
+
+**Core Principle:** YAML and Python can coexist with the same name prefix.
+
+```
+mute/mol/energy/
+├── mygen.yaml    # YAML template (structure, params)
+└── mygen.py      # Python helpers (functions, classes)
+```
+
+Both are accessible via the same namespace:
+- `fetch("mute.mol.energy.mygen")` → ?
+- `fetch("mute.mol.energy.mygen.rate_fn")` → ?
+- `fetch("mute.mol.energy.mygen.rate_fn.params")` → ?
+
+---
+
+**Decisions Made:**
+
+1. **Both YAML and Python coexist** — Don't error if both `mygen.yaml` and `mygen.py` exist
+
+2. **No suffix/tag disambiguation** — No `:function` syntax. Resolution is automatic.
+
+3. **Multiple source roots** — Config allows multiple roots for shared catalogs across repos
+
+4. **Source root config structure:**
+   ```yaml
+   source_roots:
+     - path: source/catalog/mute    # filesystem path (relative to config)
+       module: myproject.catalog.mute  # Python module prefix
+     - path: ../shared/std
+       module: shared_catalog.std
+   ```
+
+5. **Top-level folders become prefixes** — Each folder directly under a source root is a valid prefix
+
+6. **Catalog Naming Scheme updated** — Users choose their own prefix (e.g., `mute`, `pred`, `std`); no fixed `cat` prefix
+
+---
+
+**Resolution Order:** ⚠️ OPEN — Need to decide
+
+**Option A: YAML-first**
+```
+fetch("mute.mol.energy.mygen.rate_fn"):
+  1. Look in mygen.yaml for "rate_fn" key
+  2. If not found → look in mygen.py for rate_fn attribute
+```
+- Pros: Data is primary, code is fallback
+- Cons: Can't easily get Python function if YAML has same key
+
+**Option B: Python-first with "keep going"**
+```
+fetch("mute.mol.energy.mygen.rate_fn"):
+  → Returns Python function from mygen.py
+
+fetch("mute.mol.energy.mygen.rate_fn.params"):
+  1. Python function has no .params attribute
+  2. Fall back to mygen.yaml, look for rate_fn.params
+  → Returns YAML params dict
+```
+- Pros: Natural "function + config" pattern; function is callable, params are data
+- Cons: Complex resolution; harder to predict; what if Python DOES have `.params`?
+
+**Recommendation:** TBD — leaning toward simpler YAML-first with explicit `!py` tag for Python access when needed.
+
+---
+
+**Example Project Structure:**
+
+```
+my_project/
+├── source/
+│   └── catalog/
+│       └── mute/              # "mute" prefix
+│           └── mol/
+│               └── energy/
+│                   ├── mygen.yaml    # template structure + params
+│                   └── mygen.py      # helper functions
+├── dat_config.yaml            # source_roots config
+└── experiments/
+```
+
+**dat_config.yaml:**
+```yaml
+dat_root: experiments
+source_roots:
+  - path: source/catalog/mute
+    module: myproject.catalog.mute
+```
+
+---
+
+### YAML/Python Fetch TODOs
+
+- [ ] Decide resolution order: YAML-first vs Python-first with keep-going
+- [ ] Document unified namespace semantics in ABIO Fetch.md
+- [ ] Implement dual-lookup in fetch() source root scanning
+- [ ] Implement source_roots config with path + module pairs
+- [ ] Add tests for YAML/Python coexistence scenarios
+- [ ] Update Catalog Naming Scheme doc with Python coexistence examples
+- [ ] Consider `!py` tag for explicit Python references in YAML
