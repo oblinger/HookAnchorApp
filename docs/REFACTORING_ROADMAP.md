@@ -16,8 +16,10 @@
 - [x] Moved helper functions (resolve_alias_to_target, get_command_folder, get_command_path) from cli/search.rs to capabilities/command_ops.rs
 
 ### In Progress
-- [ ] Update cli/search.rs to import helpers from command_ops instead of local definitions
-- [ ] Analyze cli/server.rs for potential extraction of orchestration logic to systems layer
+- [ ] Continue thinning popup.rs (currently 5,726 lines)
+
+### Decided Against
+- cli/server.rs orchestration extraction - kept as-is because user feedback is tightly coupled with each step
 
 ### Future Considerations
 - [ ] **Consolidate similar methods**: `command_ops.rs` now has `resolve_alias_to_target`, `get_command_folder`, `get_command_path` which are similar to `Command::resolve_alias`, `Command::get_absolute_folder_path`, `Command::get_absolute_file_path`. Consider unifying these to use a single implementation. Key differences:
