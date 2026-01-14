@@ -11,6 +11,7 @@
 pub(crate) mod layout;
 pub(crate) mod popup_state;
 pub(crate) mod popup;
+pub(crate) mod popup_server_wrapper;  // Server control wrapper for popup
 pub(crate) mod command_editor;
 pub(crate) mod dialog;
 pub(crate) mod anchor_tree_navigator;
@@ -32,9 +33,8 @@ pub use popup_state::{
 };
 
 // Main GUI entry point
-pub use popup::{
-    run_gui_with_prompt, AnchorSelector
-};
+pub use popup::AnchorSelector;
+pub use popup_server_wrapper::run_gui_with_prompt;
 
 // Command editor
 pub use command_editor::{
