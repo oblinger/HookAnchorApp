@@ -1691,61 +1691,16 @@ impl AnchorSelector {
     // =============================================================================
     // Initialization
     // =============================================================================
-    
-    /// Redirect stdout and stderr to the anchor log file for centralized debugging
-    fn setup_log_redirection() {
-        use std::fs::OpenOptions;
-        use std::os::unix::io::AsRawFd;
-        use std::sync::OnceLock;
-        
-        static LOG_REDIRECT_SETUP: OnceLock<()> = OnceLock::new();
-        
-        // Only set up redirection once
-        LOG_REDIRECT_SETUP.get_or_init(|| {
-            if let Some(_home_dir) = dirs::home_dir() {
-                let config_dir = crate::core::get_config_dir();
-                let log_path = config_dir.join("anchor.log");
-                
-                // Open log file in append mode
-                if let Ok(log_file) = OpenOptions::new()
-                    .create(true)
-                    .append(true)
-                    .open(&log_path) {
-                    
-                    let log_fd = log_file.as_raw_fd();
-                    
-                    // Add a separator to the log
-                    if let Ok(mut f) = std::fs::OpenOptions::new().append(true).open(&log_path) {
-                        use std::io::Write;
-                        let _ = writeln!(f, "\n=== GUI SESSION START {} ===", 
-                                       chrono::Local::now().format("%Y-%m-%d %H:%M:%S"));
-                    }
-                    
-                    unsafe {
-                        // Redirect stdout (fd 1) and stderr (fd 2) to log file
-                        libc::dup2(log_fd, 1);
-                        libc::dup2(log_fd, 2);
-                    }
-                    
-                    // Force flush stdout/stderr buffers to ensure redirection works
-                    let _ = std::io::Write::flush(&mut std::io::stdout());
-                    let _ = std::io::Write::flush(&mut std::io::stderr());
-                    
-                    // Output redirection setup completed
-                }
-            }
-        });
-    }
-    
+
     pub fn new() -> Self {
         Self::new_with_prompt("")
     }
-    
+
     pub fn new_with_prompt(initial_prompt: &str) -> Self {
         let _startup_time = std::time::Instant::now();
-        
+
         // Redirect stdout/stderr to anchor log for centralized debugging
-        Self::setup_log_redirection();
+        crate::utils::logging::setup_log_redirection();
 
         // Load only app state for window positioning - this is fast
         let state = crate::core::data::get_state();
@@ -1803,7 +1758,7 @@ impl AnchorSelector {
         let _startup_time = std::time::Instant::now();
 
         // Redirect stdout/stderr to anchor log for centralized debugging
-        Self::setup_log_redirection();
+        crate::utils::logging::setup_log_redirection();
 
         // Load only app state for window positioning - this is fast
         let state = crate::core::data::get_state();
