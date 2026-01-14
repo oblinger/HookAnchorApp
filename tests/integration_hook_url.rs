@@ -100,16 +100,25 @@ fn test_hook_url_does_not_open_popup() {
     println!("=========================\n");
     
     // Check for expected patterns
-    // With supervisor refactoring, look for SUPERVISOR logs instead of old patterns
+    // The dispatcher processes hook URLs and logs with "DISPATCHER:" prefix
+    // Also match "No commands found" which confirms the URL was processed
     let has_url_handler = recent_entries.iter()
-        .any(|line| (line.contains("URL_HANDLER") || line.contains("SUPERVISOR: URL_EVENT_START") || line.contains("SUPERVISOR: Processing hook URL"))
+        .any(|line| (line.contains("URL_HANDLER")
+            || line.contains("DISPATCHER: Processing hook URL")
+            || line.contains("DISPATCHER: No commands found")
+            || line.contains("SUPERVISOR: URL_EVENT_START")
+            || line.contains("SUPERVISOR: Processing hook URL"))
             && line.contains("test_integration"));
 
     let has_popup_open = recent_entries.iter()
         .any(|line| line.contains("POPUP_OPEN"));
 
+    // Check that the system processed the URL (dispatcher running = system started)
     let has_startup = recent_entries.iter()
-        .any(|line| line.contains("STARTUP") || line.contains("SUPERVISOR: URL_EVENT_START") || line.contains("SUPERVISOR: Processing"));
+        .any(|line| line.contains("STARTUP")
+            || line.contains("DISPATCHER: Processing")
+            || line.contains("SUPERVISOR: URL_EVENT_START")
+            || line.contains("SUPERVISOR: Processing"));
     
     // Results
     println!("Test Results:");
