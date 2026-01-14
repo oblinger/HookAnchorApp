@@ -575,9 +575,9 @@ Front-loaded from M2 while design is fresh. Execute TODO 2026-01-14 items in ord
 **Status**: #10 YAML/Python Fetch complete (2026-01-14).
 
 1. [x] **#10 YAML/Python Fetch Implementation** — `!py` tag, source_roots config, Python globals as data
-2. [ ] **#3 Fetch String Resolution** — Routing logic, dig operation, source root scanning
-3. [ ] **#2 ORM Pattern** — DAT caching, `Bio(dat=...)` constructor
-4. [ ] **#4 Fetch User Documentation** — Update docs to match implementation
+2. [x] **#3 Fetch String Resolution** — Routing logic, dig operation, source root scanning
+3. [x] **#2 ORM Pattern** — DAT caching, `Bio(dat=...)` constructor
+4. [x] **#4 Fetch User Documentation** — Update docs to match implementation
 
 ### M1.13a - Bio Fetch Extensions
 
@@ -592,21 +592,21 @@ Bio class methods for loading and navigating specs. Builds on fetch foundation.
    - [ ] CLI: `bio cd` prints current, `bio cd path` changes it
 
 2. **ORM Pattern** (see TODO 2026-01-14 #2)
-   - [ ] Document DAT ORM pattern (single in-memory instance per DAT)
-   - [ ] Implement DAT caching layer for fetch()
-   - [ ] Implement `Bio(dat=...)` constructor parameter (accepts string or DAT object)
-   - [ ] Document `bio.dat` accessor with lazy anonymous DAT creation
+   - [x] Document DAT ORM pattern (single in-memory instance per DAT)
+   - [x] Implement DAT caching layer for fetch()
+   - [x] Implement `Bio(dat=...)` constructor parameter (accepts string or DAT object)
+   - [x] Document `bio.dat` accessor with lazy anonymous DAT creation
    - [ ] Define anonymous DAT spec constant location in config
 
 3. **Fetch string resolution** (see TODO 2026-01-14 #3)
-   - [ ] Implement routing logic (`/` → DAT, dots → module or source root)
-   - [ ] Implement DAT name parsing (extract name + dig path)
-   - [ ] Implement module access (import + attribute dig)
-   - [ ] Implement source root scanning (YAML file discovery)
-   - [ ] Implement shared dig operation (dict key / attribute access)
-   - [ ] Implement ORM caching for DAT access
-   - [ ] Enable and pass all tests in `test_fetch_resolution.py`
-   - [ ] Handle edge cases (empty string, unicode, whitespace, etc.)
+   - [x] Implement routing logic (`/` → DAT, dots → module or source root)
+   - [x] Implement DAT name parsing (extract name + dig path)
+   - [x] Implement module access (import + attribute dig)
+   - [x] Implement source root scanning (YAML file discovery)
+   - [x] Implement shared dig operation (dict key / attribute access)
+   - [x] Implement ORM caching for DAT access
+   - [x] Enable and pass all tests in `test_fetch_resolution.py`
+   - [x] Handle edge cases (empty string, unicode, whitespace, etc.)
 
 4. **Bio.fetch() enhancements**
    - [ ] Detect dots-before-slash and route to lookup()
@@ -623,6 +623,21 @@ Bio class methods for loading and navigating specs. Builds on fetch foundation.
 - [ ] Review code to verify cross-component APIs use DAT names
 - [ ] Verify persisted data stores DAT names, not paths
 - [ ] Check that paths starting with `/` are handled as filesystem path escape hatch
+
+### .
+
+
+## [ ] M1.14 - Experiments Roadmap Discussion
+
+Review and refine the experiments roadmap before implementing the testing infrastructure.
+
+**Reference**: [[ABIO Notes#2026-01-14 ABIO Experiments roadmap]]
+
+- [ ] Review experiments roadmap (H1-H5 progression, measurement dimensions)
+- [ ] Decide which experiments to implement first
+- [ ] Refine experiment specifications based on current system capabilities
+- [ ] Define success criteria and evaluation methods
+- [ ] Integrate experiments into the milestone structure
 
 ### .
 

@@ -1,3 +1,4 @@
+# GENERAL CURATION RULES
 
 ## FILE STRUCTURE
 
@@ -72,17 +73,22 @@ Folder `My Simple Project/` contains:
 
 ---
 
-# GENERAL CURATION RULES
-
-## CURATION ACTIONS
-
-- **CODE FLOW** --
-
 ## DEFINED TERMS
 
 - **DATED FOLDER** — A folder where all files and subfolders within it are prefixed with the date format (`YYYY-MM-DD`). Items sort in chronological order when viewed alphabetically.
 
 - **DATED SECTIONS** — A file composed of H2 sections whose titles begin with a date prefix (`## YYYY-MM-DD — Title`), listed in reverse chronological order (newest first). Used for notes, features, todo, and log files.
+
+---
+
+## CURATION ACTIONS
+
+### Finding Anchors
+
+
+### Code Flow
+
+
 
 ---
 
@@ -151,79 +157,6 @@ This format ensures:
 [[Anchor Template v1]]
 
 The most common stream types are streams of anchors. Each anchor is usually associated with a folder. Here are the aspects that may be associated with an anchor folder.
-
----
-
-## FILE STRUCTURE
-
-Template variables:
-- `{FULL_NAME}` = folder name (the full descriptive name)
-- `{TLC}` = short code (if it exists, typically 2-5 uppercase letters)
-- `{NAME}` = TLC if it exists, otherwise FULL_NAME
-- `{repo}` = repository name
-
-### Complete Folder Structure
-```
-{FULL_NAME}/                       # Anchor root folder (full descriptive name)
-├── {FULL_NAME}.md                 # Redirect: contains only "See [[{TLC}]]" (if TLC exists)
-│
-├── {NAME} Docs/                   # Private docs (NOT published)
-│   ├── {NAME}.md                  # PRIMARY ANCHOR PAGE (link table, overview)
-│   ├── {NAME} PRD.md              # Product Requirements Document
-│   ├── {NAME} Features.md         # Feature designs (dated sections)
-│   ├── {NAME} Notes.md            # Discussion notes (dated sections)
-│   ├── {NAME} Roadmap.md          # Milestone-based task tracking
-│   └── {NAME} Todo.md             # Short-term tasks (dated sections)
-│
-├── {NAME} Research/               # Research materials (optional)
-│   ├── {NAME} References.md       # Bibliography
-│   └── {NAME} Related Work.md     # Analysis of related work
-│
-└── {repo}/                        # Repository clone (PUBLISHABLE)
-    ├── .git/
-    ├── README.md                  # Brief description, installation, quick start
-    ├── CLAUDE.md                  # Claude Code project instructions
-    ├── pyproject.toml             # Project metadata and dependencies
-    ├── mkdocs.yml                 # MkDocs configuration
-    ├── justfile                   # Task runner commands
-    │
-    ├── src/{package}/             # Source code
-    ├── tests/                     # Test files
-    │
-    ├── docs/                      # Documentation SOURCE (hand-written + generated)
-    │   ├── index.md               # Docs home page
-    │   ├── user-guide/            # Task-oriented tutorials
-    │   ├── architecture/          # System design docs
-    │   └── api/                   # Generated API reference
-    │
-    └── site/                      # Generated docs site (gitignored)
-```
-
-### Concrete Example (with TLC)
-Folder `Alien Biology/` contains:
-- `Alien Biology.md` — says `See [[ABIO]]`
-- `ABIO Docs/ABIO.md` — the main anchor page with link table
-- `ABIO Docs/` — private planning/design docs
-- `alienbio/` — the repository (publishable)
-
-### Concrete Example (without TLC)
-Folder `My Simple Project/` contains:
-- `My Simple Project Docs/My Simple Project.md` — the main anchor page
-- `My Simple Project Docs/` — private planning/design docs
-- `my-simple-project/` — the repository (publishable)
-
-### Anchor Folder Definition
-- An **anchor** is a folder that contains a `{NAME} Docs/` subfolder with the primary anchor markdown
-- The primary anchor markdown (`{NAME}.md`) lives inside the Docs folder
-- If the anchor has a TLC, the root folder also has `{FULL_NAME}.md` containing only `See [[TLC]]`
-- Example with TLC: `.../Alien Biology/ABIO Docs/ABIO.md` — primary anchor page
-- Example without TLC: `.../My Project/My Project Docs/My Project.md` — primary anchor page
-
-### Root Folder vs Repository
-- The anchor root folder has a `{NAME} Docs/` subfolder for private documentation (NOT published)
-- If the project has a code repository, it is a **subdirectory** of the anchor folder
-- The subdirectory name matches the GitHub repository name (since it's a clone)
-- This separation ensures planning docs don't accidentally get committed to the repo
 
 ---
 
@@ -429,6 +362,24 @@ Key files:
 3. Build docs locally: `mkdocs build` (or equivalent)
 4. Preview locally: `mkdocs serve` (or equivalent)
 5. Deploy to GitHub Pages: `mkdocs gh-deploy` (or equivalent)
+
+### Documenting Code Interfaces
+
+When documenting APIs or code interfaces, follow these conventions:
+
+**Show return types** — Always annotate the return type so readers know what they're getting:
+```python
+run: dict = bio.fetch("data/experiments/run_001")
+```
+
+**Inline comments on same line** — Put explanatory comments on the same line as the code:
+```python
+run: dict = bio.fetch("data/experiments/run_001")              # data directory — run results
+scenario: Scenario = bio.fetch("data/experiments/run_001.scenario")  # dig into structure
+scenario: Scenario = bio.fetch("catalog.scenarios.mutualism")  # source tree — template
+```
+
+**Align comment markers** — Line up the `#` symbols for readability when showing multiple related calls.
 
 ---
 

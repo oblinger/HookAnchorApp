@@ -1,4 +1,4 @@
- [[ATV Planning]]
+ [[ATV]]
 
 # ATV Notes
 
