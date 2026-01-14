@@ -15,10 +15,15 @@
 - [x] Extracted ui/window_utils.rs - window positioning utilities from popup.rs
 - [x] Moved helper functions (resolve_alias_to_target, get_command_folder, get_command_path) from cli/search.rs to capabilities/command_ops.rs
 
-### In Progress
-- [ ] Continue thinning popup.rs (currently 5,726 lines)
+### Completed - Extract Business Logic from popup.rs
+Moved business logic from popup.rs to capabilities layer. UI calls capability functions and handles display/dialogs.
 
-### popup.rs Analysis (5,726 lines)
+- [x] `save_command_atomic` → `capabilities/command_ops::save_command_atomic`
+- [x] `execute_rename_with_ui_update` → `capabilities/command_ops::execute_full_rename` + `FullRenameParams`
+- [x] `execute_command_only_rename` → `capabilities/command_ops::execute_command_only_rename`
+- [x] Delete handling → already properly extracted in `core::delete_command`
+
+### popup.rs Analysis (5,571 lines)
 
 **Structure breakdown:**
 | Section | Lines | Notes |
@@ -29,14 +34,6 @@
 | Action execution system | 812-3978 | Business logic + UI interleaved |
 | eframe::App impl (update loop) | 4007-5387 | **1,380 lines** - the big one |
 | PopupWithControl | 5388-end | Wrapper |
-
-**The challenge:** Almost everything is tightly coupled - methods use `&mut self` and `egui::Context`, business logic (rename, save, delete) is interleaved with UI updates, update loop orchestrates many subsystems.
-
-**Options for further thinning:**
-1. **Easy wins** - Look for more standalone utilities like window_utils
-2. **Split update loop** - Extract major UI phases (loading, key handling, rendering, command editor handling) into helper methods in separate files
-3. **Move business logic to capabilities** - The rename/save/delete operations could be extracted, with popup calling them and handling just the UI callbacks
-4. **Leave it** - CLI refactoring complete (cmd.rs: 2,674 → 151 lines). Further popup thinning has diminishing returns.
 
 ### Decided Against
 - cli/server.rs orchestration extraction - kept as-is because user feedback is tightly coupled with each step
@@ -51,4 +48,34 @@
 
 ### Results
 - cmd.rs reduced from 2,674 to 151 lines (thin dispatcher)
-- popup.rs reduced from 5,842 to 5,726 lines
+- popup.rs reduced from 5,842 to 5,571 lines (-271 lines, business logic to capabilities)
+
+---
+
+## Phase 4: Method Overlap Analysis (Future)
+
+After refactoring, systematically analyze each module for:
+- Duplicate or overlapping methods that could be consolidated
+- Similar functions with slightly different signatures that could be unified
+- Opportunities to create shared abstractions
+
+Key areas to review:
+- `capabilities/command_ops.rs` vs `Command` struct methods
+- CLI helper functions vs core utilities
+- Rename/save/delete operations across modules
+
+---
+
+## Phase 5: Comprehensive Testing (Future)
+
+Establish systematic testing coverage:
+- **Unit tests** for capabilities layer functions (pure business logic)
+- **Integration tests** for CLI commands
+- **UI tests** for popup interactions (if feasible with egui)
+- **End-to-end tests** for common workflows
+
+Current state: Limited test coverage exists. Need to assess:
+- What tests exist today
+- Critical paths that need coverage
+- Testing strategy for GUI components
+- CI/CD integration for automated testing
