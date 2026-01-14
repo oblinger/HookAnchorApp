@@ -151,3 +151,53 @@ pub fn print_and_log(message: &str) {
     println!("{}", message);
     log(message);
 }
+
+// =============================================================================
+// LOG REDIRECTION
+// =============================================================================
+
+/// Redirect stdout and stderr to the anchor log file for centralized debugging.
+///
+/// This is typically called once at GUI startup to ensure all output goes to
+/// the log file instead of being lost (since GUI apps have no console).
+/// Uses OnceLock to ensure setup only happens once per process.
+pub fn setup_log_redirection() {
+    use std::os::unix::io::AsRawFd;
+    use std::sync::OnceLock;
+
+    static LOG_REDIRECT_SETUP: OnceLock<()> = OnceLock::new();
+
+    LOG_REDIRECT_SETUP.get_or_init(|| {
+        if dirs::home_dir().is_some() {
+            let config_dir = crate::core::get_config_dir();
+            let log_path = config_dir.join("anchor.log");
+
+            if let Ok(log_file) = OpenOptions::new()
+                .create(true)
+                .append(true)
+                .open(&log_path)
+            {
+                let log_fd = log_file.as_raw_fd();
+
+                // Add a separator to the log
+                if let Ok(mut f) = OpenOptions::new().append(true).open(&log_path) {
+                    let _ = writeln!(
+                        f,
+                        "\n=== GUI SESSION START {} ===",
+                        Local::now().format("%Y-%m-%d %H:%M:%S")
+                    );
+                }
+
+                unsafe {
+                    // Redirect stdout (fd 1) and stderr (fd 2) to log file
+                    libc::dup2(log_fd, 1);
+                    libc::dup2(log_fd, 2);
+                }
+
+                // Force flush stdout/stderr buffers
+                let _ = std::io::Write::flush(&mut std::io::stdout());
+                let _ = std::io::Write::flush(&mut std::io::stderr());
+            }
+        }
+    });
+}
