@@ -2005,223 +2005,68 @@ impl AnchorSelector {
     pub fn has_pending_action(&self) -> bool {
         self.pending_action.is_some()
     }
-    /// Save a command atomically - handles both new commands and edits
-    /// If old_command_name is Some, this is an edit/rename - delete the old one first
-    /// This ensures patch inference only runs once after both delete+add are done
-    fn save_command_atomic(&mut self, new_command: Command, old_command_name: Option<&str>) -> Result<(), Box<dyn std::error::Error>> {
-        // Get current commands from singleton
-        let mut commands = crate::core::data::get_commands();
 
-        // Delete original command if this is an edit/rename
-        if let Some(old_name) = old_command_name {
-            if !old_name.is_empty() {
-                log(&format!("SAVE: Deleting original command '{}' from UI", old_name));
-                commands.retain(|c| c.command != old_name);
-            }
-        }
-
-        // Add the new command
-        log(&format!("SAVE: Adding command '{}' to UI (action: {}, patch: {})",
-            new_command.command, new_command.action, new_command.patch));
-        commands.push(new_command);
-
-        // Save all commands to disk - patch inference runs once here
-        crate::core::data::set_commands(commands)?;
-        log("SAVE: Saved all commands to disk");
-
-        Ok(())
-    }
-
-    /// Execute a rename operation with UI update - has access to &mut self unlike static version
+    /// Execute a rename operation with UI update
+    /// Parses context HashMap, calls capability function, updates UI
     fn execute_rename_with_ui_update(&mut self, context: &HashMap<String, String>) -> Result<(), Box<dyn std::error::Error>> {
-        let old_name = context.get("old_name").ok_or("Missing old_name")?;
-        let new_name = context.get("new_name").ok_or("Missing new_name")?;
-        let current_arg = context.get("current_arg").ok_or("Missing current_arg")?;
-        let action = context.get("action").ok_or("Missing action")?;
-        let original_command_to_delete = context.get("original_command_to_delete");
+        use crate::capabilities::command_ops::{execute_full_rename, FullRenameParams};
 
-        // Get the new command details from context
-        let new_command_action = context.get("new_command_action").ok_or("Missing new_command_action")?;
-        let _new_command_arg = context.get("new_command_arg").ok_or("Missing new_command_arg")?;
-        let new_command_patch = context.get("new_command_patch").ok_or("Missing new_command_patch")?;
-        let new_command_flags = context.get("new_command_flags").ok_or("Missing new_command_flags")?;
-
-        let config = crate::core::data::get_config();
-
-        // Get current commands for modification
-        let mut commands = crate::core::data::get_commands();
-
-        // Execute the rename with dry_run = false
-        use crate::core::rename_associated_data;
-        let (sys_data, _) = crate::core::get_sys_data();
-        let mut patches = sys_data.patches;
-
-        log(&format!("RENAME: About to execute rename_associated_data: '{}' -> '{}'", old_name, new_name));
-        let (mut updated_arg, _actions) = rename_associated_data(
-            old_name,
-            new_name,
-            current_arg,
-            action,
-            &mut commands,
-            &mut patches,
-            &config,
-            false, // dry_run = false
-        )?;
-        log(&format!("RENAME: rename_associated_data completed, updated_arg: {}", updated_arg));
-
-        // Check if this is an anchor file rename where filename matches folder name
-        // Check if the command has the anchor flag ('A')
-        if new_command_flags.contains('A') {
-            use std::path::Path;
-            let arg_path = Path::new(current_arg);
-
-            // Check if the file stem (without extension) matches the old command name
-            if let Some(file_stem) = arg_path.file_stem() {
-                if let Some(file_stem_str) = file_stem.to_str() {
-                    if file_stem_str == old_name {
-                        // This is an anchor file - check if folder name also matches
-                        if let Some(parent) = arg_path.parent() {
-                            if let Some(folder_name) = parent.file_name() {
-                                if let Some(folder_name_str) = folder_name.to_str() {
-                                    if folder_name_str == old_name {
-                                        // Folder name matches - rename the folder too
-                                        use crate::core::command_ops::rename_folder;
-                                        log(&format!("RENAME_FOLDER: Executing folder rename: '{}' -> '{}'", folder_name_str, new_name));
-                                        match rename_folder(
-                                            parent.to_str().unwrap_or(""),
-                                            new_name,
-                                            &mut commands,
-                                            false, // dry_run = false
-                                        ) {
-                                            Ok(_) => {
-                                                log("RENAME_FOLDER: Folder rename completed successfully");
-
-                                                // Update the arg path to reflect the new folder name
-                                                let new_folder_path = parent.parent()
-                                                    .map(|p| p.join(new_name))
-                                                    .unwrap_or_else(|| std::path::PathBuf::from(new_name));
-                                                let new_file_name = format!("{}.md", new_name);
-                                                let new_full_path = new_folder_path.join(&new_file_name);
-                                                updated_arg = new_full_path.to_string_lossy().to_string();
-                                                log(&format!("RENAME_FOLDER: Updated arg to: {}", updated_arg));
-                                            }
-                                            Err(e) => {
-                                                return Err(format!("Failed to rename folder: {}", e).into());
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        // Delete original command if needed
-        if let Some(cmd_name) = original_command_to_delete {
-            if !cmd_name.is_empty() {
-                log(&format!("RENAME: Deleting original command '{}'", cmd_name));
-                commands.retain(|c| &c.command != cmd_name);
-            }
-        }
-
-        // Create the new command with potentially updated arg
-        let new_command = crate::core::Command {
-            command: new_name.clone(),
-            action: new_command_action.clone(),
-            arg: updated_arg, // Use the updated arg from rename operation
-            patch: new_command_patch.clone(),
-            flags: new_command_flags.clone(),
-        other_params: None,
-        last_update: 0,
-        file_size: None,
+        // Parse context into params
+        let params = FullRenameParams {
+            old_name: context.get("old_name").ok_or("Missing old_name")?.clone(),
+            new_name: context.get("new_name").ok_or("Missing new_name")?.clone(),
+            current_arg: context.get("current_arg").ok_or("Missing current_arg")?.clone(),
+            action: context.get("action").ok_or("Missing action")?.clone(),
+            original_command_to_delete: context.get("original_command_to_delete").cloned(),
+            new_command_action: context.get("new_command_action").ok_or("Missing new_command_action")?.clone(),
+            new_command_patch: context.get("new_command_patch").ok_or("Missing new_command_patch")?.clone(),
+            new_command_flags: context.get("new_command_flags").ok_or("Missing new_command_flags")?.clone(),
         };
 
-        // Add the new command
-        log(&format!("RENAME: Adding new command '{}'", new_command.command));
-        commands.push(new_command);
+        // Execute the rename via capability layer
+        let new_name = execute_full_rename(params)?;
 
-        // Save all commands back to sys_data because rename_associated_data modified
-        // patches and prefixes on many commands (not just the renamed command)
-        crate::core::data::set_commands(commands)?;
-        log("RENAME: Saved all command changes (patches/prefixes) to sys_data");
-
-        // Update the filtered list if we're currently filtering
+        // UI updates
         if !self.popup_state.search_text.trim().is_empty() {
-            // Refresh the search with updated commands
             let current_search = self.popup_state.search_text.clone();
             self.popup_state.update_search(current_search);
         }
+        self.set_input(new_name);
 
-        // Mark commands as modified to trigger automatic reload
-
-        // Update input field with the renamed command name for symmetric feedback
-        // This ensures that after the rename dialog, the input field shows the command that was just renamed
-        log(&format!("RENAME_FEEDBACK: Setting input field to renamed command: '{}'", new_name));
-        self.set_input(new_name.to_string());
-
-        log(&format!("RENAME: Successfully renamed '{}' to '{}' with side effects and UI update", old_name, new_name));
         Ok(())
     }
 
     /// Execute a command-only rename - changes ONLY the command name, no file/folder/prefix changes
     fn execute_command_only_rename(&mut self, context: &HashMap<String, String>) -> Result<(), Box<dyn std::error::Error>> {
+        use crate::capabilities::command_ops::execute_command_only_rename as do_rename;
+
+        // Parse context
         let old_name = context.get("old_name").ok_or("Missing old_name")?;
         let new_name = context.get("new_name").ok_or("Missing new_name")?;
-        let original_command_to_delete = context.get("original_command_to_delete");
-
-        // Get the new command details from context
+        let original_command_to_delete = context.get("original_command_to_delete").map(|s| s.as_str());
         let new_command_action = context.get("new_command_action").ok_or("Missing new_command_action")?;
         let new_command_arg = context.get("new_command_arg").ok_or("Missing new_command_arg")?;
         let new_command_patch = context.get("new_command_patch").ok_or("Missing new_command_patch")?;
         let new_command_flags = context.get("new_command_flags").ok_or("Missing new_command_flags")?;
 
-        log(&format!("CMD_ONLY_RENAME: Renaming command '{}' -> '{}' without side effects", old_name, new_name));
+        // Execute the rename via capability layer
+        let result_name = do_rename(
+            old_name,
+            new_name,
+            original_command_to_delete,
+            new_command_action,
+            new_command_arg,
+            new_command_patch,
+            new_command_flags,
+        )?;
 
-        // Get current commands for modification
-        let mut commands = crate::core::data::get_commands();
-
-        // Delete original command if needed
-        if let Some(cmd_name) = original_command_to_delete {
-            if !cmd_name.is_empty() {
-                log(&format!("CMD_ONLY_RENAME: Deleting original command '{}'", cmd_name));
-                commands.retain(|c| &c.command != cmd_name);
-            }
-        }
-
-        // Create the new command with ORIGINAL arg (no rename_associated_data modifications)
-        let new_command = crate::core::Command {
-            command: new_name.clone(),
-            action: new_command_action.clone(),
-            arg: new_command_arg.clone(), // Use original arg, not renamed
-            patch: new_command_patch.clone(),
-            flags: new_command_flags.clone(),
-            other_params: None,
-            last_update: 0,
-            file_size: None,
-        };
-
-        // Add the new command
-        log(&format!("CMD_ONLY_RENAME: Adding new command '{}'", new_command.command));
-        commands.push(new_command);
-
-        // Save commands
-        crate::core::data::set_commands(commands)?;
-        log("CMD_ONLY_RENAME: Saved command changes to sys_data");
-
-        // Update the filtered list if we're currently filtering
+        // UI updates
         if !self.popup_state.search_text.trim().is_empty() {
-            // Refresh the search with updated commands
             let current_search = self.popup_state.search_text.clone();
             self.popup_state.update_search(current_search);
         }
+        self.set_input(result_name);
 
-        // Update input field with the renamed command name
-        log(&format!("CMD_ONLY_RENAME: Setting input field to renamed command: '{}'", new_name));
-        self.set_input(new_name.to_string());
-
-        log(&format!("CMD_ONLY_RENAME: Successfully renamed command '{}' to '{}' (command only, no side effects)", old_name, new_name));
         Ok(())
     }
 
@@ -4623,7 +4468,7 @@ impl eframe::App for AnchorSelector {
                     // Use atomic save to prevent patch inference from running twice
                     log(&format!("SAVE: Using atomic save for command: '{}' (action: {}, arg: {})",
                         new_command.command, new_command.action, new_command.arg));
-                    self.save_command_atomic(new_command, command_to_delete.as_deref())
+                    crate::capabilities::command_ops::save_command_atomic(new_command, command_to_delete.as_deref())
                 };
 
                 match test_result {
