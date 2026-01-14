@@ -2442,13 +2442,14 @@ impl AnchorSelector {
                     let mut end_index = parts.len();
 
                     // Find RULE: and FLAGS: markers
+                    // Use min to ensure we take the first marker as the URL boundary
                     for (i, part) in parts[1..].iter().enumerate() {
                         if part.starts_with("RULE:") {
                             rule_name = part[5..].to_string(); // Remove "RULE:" prefix
-                            end_index = 1 + i; // Everything before this is URL
+                            end_index = end_index.min(1 + i); // Everything before this is URL
                         } else if part.starts_with("FLAGS:") {
                             flags = part[6..].to_string(); // Remove "FLAGS:" prefix
-                            end_index = 1 + i; // Everything before this is URL
+                            end_index = end_index.min(1 + i); // Everything before this is URL
                         }
                     }
 

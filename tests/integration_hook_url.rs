@@ -78,11 +78,11 @@ fn test_hook_url_does_not_open_popup() {
         })
         .collect();
     
-    // Get recent entries (last 50 lines should be sufficient)
+    // Get recent entries (last 500 lines - log file can be very large)
     let recent_entries: Vec<&str> = log_content
         .lines()
         .rev()
-        .take(50)
+        .take(500)
         .collect::<Vec<_>>()
         .into_iter()
         .rev()
