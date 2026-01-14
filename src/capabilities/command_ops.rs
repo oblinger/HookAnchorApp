@@ -100,6 +100,78 @@ pub fn count_commands() -> usize {
 }
 
 // =============================================================================
+// PATH EXTRACTION
+// =============================================================================
+
+/// Extract folder path from a command using dynamic action type lookup.
+///
+/// This differs from `Command::get_absolute_folder_path` in that it:
+/// - Uses dynamic action type configuration instead of hardcoded action names
+/// - Returns a simple String instead of PathBuf
+/// - Doesn't require Config for path resolution
+pub fn get_command_folder(cmd: &Command) -> Option<String> {
+    let arg_type = crate::execute::get_action_arg_type(&cmd.action);
+
+    match arg_type.as_deref() {
+        Some("folder") => {
+            if !cmd.arg.is_empty() {
+                return Some(cmd.arg.clone());
+            }
+        }
+        Some("file") => {
+            if !cmd.arg.is_empty() {
+                if let Some(parent) = std::path::Path::new(&cmd.arg).parent() {
+                    return Some(parent.to_string_lossy().to_string());
+                }
+            }
+        }
+        _ => {}
+    }
+    None
+}
+
+/// Extract full file/folder path from a command using dynamic action type lookup.
+///
+/// Returns the arg if the action type is "file" or "folder".
+pub fn get_command_path(cmd: &Command) -> Option<String> {
+    let arg_type = crate::execute::get_action_arg_type(&cmd.action);
+
+    match arg_type.as_deref() {
+        Some("file") | Some("folder") => {
+            if !cmd.arg.is_empty() {
+                return Some(cmd.arg.clone());
+            }
+        }
+        _ => {}
+    }
+    None
+}
+
+// =============================================================================
+// ALIAS RESOLUTION
+// =============================================================================
+
+/// Resolve alias to target command, returning a reference.
+///
+/// This is a simpler version of `Command::resolve_alias` that:
+/// - Returns a reference instead of cloning
+/// - Doesn't do cycle detection (suitable for display purposes)
+/// - Handles patch!command format
+pub fn resolve_alias_to_target<'a>(cmd: &'a Command, all_commands: &'a [Command]) -> &'a Command {
+    if cmd.action == "alias" {
+        let target_lower = cmd.arg.to_lowercase();
+        if let Some(target_cmd) = all_commands.iter().find(|c|
+            c.command.to_lowercase() == target_lower ||
+            // Handle patch!command format
+            (c.command.contains('!') && c.command.split('!').nth(1).map(|s| s.trim().to_lowercase()) == Some(target_lower.clone()))
+        ) {
+            return target_cmd;
+        }
+    }
+    cmd
+}
+
+// =============================================================================
 // TESTS
 // =============================================================================
 

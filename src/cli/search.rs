@@ -2,71 +2,9 @@
 //!
 //! Functions for searching and querying commands.
 
-use crate::core::{filter_commands, Command};
+use crate::capabilities::command_ops::{resolve_alias_to_target, get_command_folder, get_command_path};
+use crate::core::filter_commands;
 use crate::utils::logging::print;
-
-// =============================================================================
-// HELPER FUNCTIONS
-// =============================================================================
-
-/// Resolve alias to target command.
-pub fn resolve_alias_to_target<'a>(cmd: &'a Command, all_commands: &'a [Command]) -> &'a Command {
-    if cmd.action == "alias" {
-        // Find the target command
-        let target_lower = cmd.arg.to_lowercase();
-        if let Some(target_cmd) = all_commands.iter().find(|c|
-            c.command.to_lowercase() == target_lower ||
-            // Handle patch! prefix format
-            (c.command.contains('!') && c.command.split('!').nth(1).map(|s| s.trim().to_lowercase()) == Some(target_lower.clone()))
-        ) {
-            return target_cmd;
-        }
-    }
-    // Return original if not an alias or target not found
-    cmd
-}
-
-/// Extract folder path from a command.
-pub fn get_command_folder(cmd: &Command) -> Option<String> {
-    // Get arg_type from action config instead of hardcoding action names
-    let arg_type = crate::execute::get_action_arg_type(&cmd.action);
-
-    match arg_type.as_deref() {
-        Some("folder") => {
-            // For folder actions, the arg is the folder path
-            if !cmd.arg.is_empty() {
-                return Some(cmd.arg.clone());
-            }
-        }
-        Some("file") => {
-            // For file actions, extract directory from file path in arg
-            if !cmd.arg.is_empty() {
-                if let Some(parent) = std::path::Path::new(&cmd.arg).parent() {
-                    return Some(parent.to_string_lossy().to_string());
-                }
-            }
-        }
-        _ => {}
-    }
-    None
-}
-
-/// Extract full file path from a command.
-pub fn get_command_path(cmd: &Command) -> Option<String> {
-    // Get arg_type from action config instead of hardcoding action names
-    let arg_type = crate::execute::get_action_arg_type(&cmd.action);
-
-    // For file/folder actions, the arg is the full path
-    match arg_type.as_deref() {
-        Some("file") | Some("folder") => {
-            if !cmd.arg.is_empty() {
-                return Some(cmd.arg.clone());
-            }
-        }
-        _ => {}
-    }
-    None
-}
 
 // =============================================================================
 // SEARCH COMMANDS
