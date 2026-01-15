@@ -1,9 +1,10 @@
-# PC PR Flow
+# PC PR Flow {SIZE}
 
 **Objectives:**  
 - Provide an efficient flow for allowing the user to review every line of Claude code exactly once as it is added to main.
 - Minimize touch points where user needs to swap back to interact w/ Claude during development.
-- 
+
+
 
 **Key Constraint**:  The user is doing other things, so Claude always needs to alert the user when it has stopped either by:
 1. **Surf a PR** — Notified the user a new PR is ready via browser tab (see below) OR
@@ -18,12 +19,31 @@
 - The roadmap is ready (see [[PC Roadmap Ready]])
 **PR FLOW PROCEDURE**
 1. **PR flow** — User says "PR flow", Claude finds next incomplete roadmap item, user goes to do other work
-2. **Work** — Claude creates feature branches (if needed), does work on `work` branch
+2. **Claude Work** — Claude creates feature branches (if needed), does work on `work` branch
 3. **PR & Surf** — Claude PRs `work` → `feature`, merges, surfs the **Files tab**
 4. **Review** — User reviews files, provides feedback if needed
 5. **Iterate** — If fixes needed, go to step 2
 6. **Complete** — When feature done, Claude PRs `feature` → `main`, squash merges, surfs Files tab (no wait), deletes branches, continues to next feature
 
+
+## Claude Work Details
+
+During step 2 (Claude Work), Claude should batch small milestones together:
+
+**Batching Rule**: If a milestone is completed and the PR would have fewer than **{SIZE}** total edited lines, continue to the next milestone on the same branch. Keep working until the PR has enough substance.
+
+**Default SIZE**: 300 lines
+
+**Custom SIZE**: If user says "PR flow 500", use 500 as the target instead of 300.
+
+- The branch name doesn't need to match all milestones — it's just a workspace
+- The merge commit message (feature → main) will have the correct final name
+- Git history accuracy comes from the squash merge, not the branch name
+- Total edited lines includes code, tests, and documentation — all changes are reviewed
+
+**Example**: If M3.9 only needed 12 lines added, continue to M3.10 on the same branch. The feature → main PR can be titled "M3.9-M3.10: Trace Recording and Scoring" or just use the final milestone name.
+
+---
 
 # Notes
 
