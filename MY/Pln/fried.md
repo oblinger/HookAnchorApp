@@ -57,7 +57,7 @@ Clean up spotify
 - Use GPT to make portrait cartoon 
   (or giphy grab)
 - Read Quadratic Funding
-- org [[Self]]; org [[SYS]]; org TOP
+- org [[Self]]; org [[SYS-orig]]; org TOP
 - [[MED Log#EMDR|EMDR]]: try it 
 - - [ ] Reset car seat auto adjust
 - MED:  Research best vitamins

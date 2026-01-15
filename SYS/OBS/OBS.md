@@ -1,7 +1,7 @@
 
 .[[OBS]].
   [[Facet]] 
-  [[SYS]]:	[[SYS DoubleKey]] 
+  [[SYS-orig]]:	[[SYS DoubleKey]] 
   [[OBS Setup]] 
   [Plugins Folder](spot://pluginsfolder)
   popup: view
@@ -347,7 +347,7 @@ PLUGINS:		[Templater Docs](https://silentvoid13.github.io/Templater/internal-fun
 - [[OBS Examples]]  
 
 :: [[OBS Projects]]
-- [[SYS]],  [[KM]], 
+- [[SYS-orig]],  [[KM]], 
 - [[OBS API Docs]]
 
   [Discord](http://app/discord),  

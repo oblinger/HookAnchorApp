@@ -5,7 +5,7 @@
   .
   ROOTS:		[Dir](hook://p/dir), [[Meta KMR]], 
   PROJ:			
-  [[SYS]]:			[[SYS Task Lists]], 
+  [[SYS-orig]]:			[[SYS Task Lists]], 
   [[KM]]:				[[Facet]], [[Lifecycle]], 
   [[Meta Self]]:	
   [[Meta Work]]:	

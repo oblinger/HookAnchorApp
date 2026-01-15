@@ -542,7 +542,7 @@
 [[MED Food\|Wed Jul 26  2023]]  	[[MED Food#Health]]  
 [[MED Food\|Wed Jul 26  2023]]  	[[MED Food#OLDER STUFF]]  
 [[SYS Dashboards\|Wed Jul 26  2023]]  	[[SYS Dashboards#THREE SCREEN LAYOUT]]  
-[[SYS\|Wed Jul 26  2023]]  	[[SYS#MY PERSONAL SYSTEMS]]  
+[[SYS-orig\|Wed Jul 26  2023]]  	[[SYS-orig#MY PERSONAL SYSTEMS]]  
 [[2023-W28\|Wed Jul 26  2023]]  	[[2023-W28#2022-W28]]  
 [[2023-W29\|Wed Jul 26  2023]]  	[[2023-W29#2023-W29]]  
 [[2023-W30\|Wed Jul 26  2023]]  	[[2023-W30#2023-W30]]  

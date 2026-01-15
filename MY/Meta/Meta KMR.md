@@ -11,7 +11,7 @@ SPECIALTY PAGES
 - [[Self]] 				[[Meta Self]]	 PERSONAL-	Personal life
 - [[CRM]]	[[AT Folder|CRM]]		[[Meta Coms]]	 How I track my regular pings
 - [[Work]]	[work](spot://work~folder)		[[Meta Work]] 	 How I track my work
-- [[SYS]]	[SYS](spot://sysfolder)		[[Meta Sys]]	 How my system is organized
+- [[SYS-orig]]	[SYS](spot://sysfolder)		[[Meta Sys]]	 How my system is organized
 - [[MY]]		[[My Folder|MY]] 						 MYFO    -	Info about me & my stuff				 
 
 OTHER STUFF

@@ -1,6 +1,6 @@
 .                 **MY PERSONAL SYSTEMS**
 
-.[[SYS]]. > [[MY]] 
+.[[SYS-orig]]. > [[MY]] 
   SYSTEMS:	[[SYS Obs]], [[SYS Android]], [[SYS Disks]], [[SYS Network]], [[SYS PKM]], 
   [[SYS Setup]]		-
 	My KBD:		[[SYS Keyboard Setup]], [[KBD Shortcuts]], [[KBD Obsidian Keys]], [[KBD Global Keys]], [[KBD Notion]], 
