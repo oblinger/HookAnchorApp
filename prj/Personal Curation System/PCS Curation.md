@@ -3,46 +3,55 @@
 ## FILE STRUCTURE
 
 Template variables:
-- `{FULL_NAME}` = folder name (the full descriptive name)
+- `{FULL_NAME}` = folder name (the full descriptive name, Title Case with spaces)
 - `{TLC}` = short code (if it exists, typically 2-5 uppercase letters)
 - `{NAME}` = TLC if it exists, otherwise FULL_NAME
-- `{repo}` = repository name
+- `{kebab-name}` = FULL_NAME in kebab-case (lowercase, hyphens instead of spaces)
+- `{snake_name}` = FULL_NAME in snake_case (lowercase, underscores instead of spaces)
+
+### Naming Convention
+The same name appears in three formats to indicate context:
+- **Title Case with spaces** = Anchor folder (Obsidian world)
+- **kebab-case** = Git repository (GitHub world)
+- **snake_case** = Python package (code world)
+
+Example: `System Setup` → `system-setup` → `system_setup`
 
 ### Complete Folder Structure
 ```
-{FULL_NAME}/                       # Anchor root folder (full descriptive name)
-├── {FULL_NAME}.md                 # Redirect: contains only "See [[{TLC}]]" (if TLC exists)
+{FULL_NAME}/                       # Anchor root folder (Title Case with spaces)
+├── {FULL_NAME}.md                 # Redirect: "See [[{NAME}]]" (if TLC exists)
 │
 ├── {NAME} Docs/                   # Private docs (NOT published)
-│   ├── {NAME}.md                  # PRIMARY ANCHOR PAGE (link table, overview)
-│   ├── {NAME} PRD.md              # Product Requirements Document
-│   ├── {NAME} Features.md         # Feature designs (dated sections)
-│   ├── {NAME} Notes.md            # Discussion notes (dated sections)
-│   ├── {NAME} Roadmap.md          # Milestone-based task tracking
-│   └── {NAME} Todo.md             # Short-term tasks (dated sections)
+│   ├── {NAME}.md                  # PRIMARY ANCHOR PAGE
+│   ├── {NAME} PRD.md
+│   ├── {NAME} Features.md
+│   ├── {NAME} Notes.md
+│   ├── {NAME} Roadmap.md
+│   └── {NAME} Todo.md
 │
 ├── {NAME} Research/               # Research materials (optional)
-│   ├── {NAME} References.md       # Bibliography
-│   └── {NAME} Related Work.md     # Analysis of related work
 │
-└── {repo}/                        # Repository clone (PUBLISHABLE)
+│   ─── If project has a version-controlled repository ───
+│
+└── {kebab-name}/                  # Repository (kebab-case)
     ├── .git/
-    ├── README.md                  # Brief description, installation, quick start
-    ├── CLAUDE.md                  # Claude Code project instructions
-    ├── pyproject.toml             # Project metadata and dependencies
-    ├── mkdocs.yml                 # MkDocs configuration
-    ├── justfile                   # Task runner commands
+    ├── README.md
+    ├── CLAUDE.md
     │
-    ├── src/{package}/             # Source code
-    ├── tests/                     # Test files
+    │   ─── If repository is a Python project ───
     │
-    ├── docs/                      # Documentation SOURCE (hand-written + generated)
-    │   ├── index.md               # Docs home page
-    │   ├── user-guide/            # Task-oriented tutorials
-    │   ├── architecture/          # System design docs
-    │   └── api/                   # Generated API reference
-    │
-    └── site/                      # Generated docs site (gitignored)
+    ├── pyproject.toml
+    ├── justfile
+    ├── src/{snake_name}/          # Python package (snake_case)
+    │   └── __init__.py
+    ├── tests/
+    ├── docs/
+    │   ├── index.md
+    │   ├── user-guide/
+    │   ├── architecture/
+    │   └── api/
+    └── site/                      # Generated (gitignored)
 ```
 
 ### Concrete Example (with TLC)
@@ -50,13 +59,15 @@ Folder `Alien Biology/` contains:
 - `Alien Biology.md` — says `See [[ABIO]]`
 - `ABIO Docs/ABIO.md` — the main anchor page with link table
 - `ABIO Docs/` — private planning/design docs
-- `alienbio/` — the repository (publishable)
+- `alien-biology/` — the repository (kebab-case)
+- `alien-biology/src/alien_biology/` — Python package (snake_case)
 
 ### Concrete Example (without TLC)
 Folder `My Simple Project/` contains:
 - `My Simple Project Docs/My Simple Project.md` — the main anchor page
 - `My Simple Project Docs/` — private planning/design docs
-- `my-simple-project/` — the repository (publishable)
+- `my-simple-project/` — the repository (kebab-case)
+- `my-simple-project/src/my_simple_project/` — Python package (snake_case)
 
 ### Anchor Folder Definition
 - An **anchor** is a folder that contains a `{NAME} Docs/` subfolder with the primary anchor markdown

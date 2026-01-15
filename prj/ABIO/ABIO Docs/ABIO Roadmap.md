@@ -471,6 +471,7 @@ Run the hardcoded job from CLI and verify results.
 
 ### .
 
+# HERE
 ## [ ] M1.11 - Documentation Sync
 
 Bring documentation into consistency with source code. Full audit completed 2026-01-10.
@@ -486,8 +487,8 @@ See [[ABIO Todo#Documentation Todos]] — Bio, Entity, IO, Molecule, Reaction, C
 ### [ ] Document new modules
 See [[ABIO Todo#Additional Module Reviews (2026-01-10)]] — Loader, Context, Atom, Flow, WorldState, WorldSimulator, Generator system, Run module.
 
-### [ ] Clarify naming patterns
-See [[ABIO Todo#Implementation Class Naming Pattern]] — Document Protocol vs `*Impl` pattern used throughout codebase.
+### [x] Clarify naming patterns ✓
+Created `docs/architecture/Naming Conventions.md` — Documents Protocol vs `*Impl` pattern, entity naming, flow classes, factory registration.
 
 ### .
 
@@ -504,60 +505,61 @@ Clean up technical debt before building new features. All items reference existi
 
 **Do these first** — eliminate confusion and reduce code surface.
 
-1. **Deprecate RuntimeContext**
-   - [ ] Audit `infra/context.py` - identify any functionality not in Bio
-   - [ ] Migrate useful methods to Bio (if any)
-   - [ ] Remove `RuntimeContext` class entirely
-   - [ ] Remove `ctx()` function and `_ctx` ContextVar
-   - [ ] Remove `Context = RuntimeContext` alias
-   - [ ] Remove module-level functions (`do`, `create`, `load`, `save`, `lookup`, `create_root`)
-   - [ ] Remove `_ContextProxy` class and `o` proxy object
-   - [ ] Update any code that imports from `infra.context`
+1. **Deprecate RuntimeContext** ✓
+   - [x] Audit `infra/context.py` - identify any functionality not in Bio
+   - [x] Migrate useful methods to Bio (if any)
+   - [x] Remove `RuntimeContext` class entirely
+   - [x] Remove `ctx()` function and `_ctx` ContextVar
+   - [x] Remove `Context = RuntimeContext` alias
+   - [x] Remove module-level functions (`do`, `create`, `load`, `save`, `lookup`, `create_root`)
+   - [x] Remove `_ContextProxy` class and `o` proxy object
+   - [x] Update any code that imports from `infra.context`
 
-2. **Legacy code audit** — search and eliminate
-   - [ ] Search codebase for `deprecated` (comments, decorators, docstrings)
-   - [ ] Search codebase for `backward` / `backwards` / `compat` patterns
-   - [ ] Search codebase for `alias` patterns (like `Context = RuntimeContext`)
-   - [ ] Search codebase for `legacy` comments
-   - [ ] Search codebase for `# TODO: remove` or `# FIXME: remove`
-   - [ ] For each finding: remove if safe, document if not
-   - [ ] Goal: zero deprecated/compat/alias patterns in codebase
+2. **Legacy code audit** ✓ — search and eliminate
+   - [x] Search codebase for `deprecated` (comments, decorators, docstrings)
+   - [x] Search codebase for `backward` / `backwards` / `compat` patterns
+   - [x] Search codebase for `alias` patterns (like `Context = RuntimeContext`)
+   - [x] Search codebase for `legacy` comments
+   - [x] Search codebase for `# TODO: remove` or `# FIXME: remove`
+   - [x] For each finding: remove if safe, document if not
+   - [x] Goal: zero deprecated/compat/alias patterns in codebase
 
 ### Code Refactoring
 
-3. **Bio class: instance pattern**
-   - [ ] Refactor `_BioCompat` static wrappers to delegate to singleton
-   - [ ] Ensure `Bio.__init__()` creates fresh DAT context and scope chain
-   - [ ] Export `bio` singleton from `alienbio.__init__`
-   - [ ] Update CLI commands to use singleton `bio` instance
+3. **Bio class: instance pattern** ✓
+   - [x] ~~Refactor `_BioCompat` static wrappers~~ (not needed - no _BioCompat)
+   - [x] Ensure `Bio.__init__()` creates fresh DAT context and scope chain
+   - [x] Export `bio` singleton from `alienbio.__init__`
+   - [x] Update CLI commands to use singleton `bio` instance
 
-4. **Consolidate hydration** (see TODO 2026-01-14 #7)
-   - [ ] Move `hydrate`/`dehydrate` to module-level functions in `alienbio/__init__.py`
-   - [ ] Update Bio.fetch() to call module-level hydrate()
-   - [ ] Ensure each Entity subclass has `hydrate(data, ...)` classmethod
+4. **Consolidate hydration** ✓ (see TODO 2026-01-14 #7)
+   - [x] Move `hydrate`/`dehydrate` to module-level functions in `alienbio/__init__.py`
+   - [x] Update Bio.fetch() to call module-level hydrate()
+   - [x] Ensure each Entity subclass has `hydrate(data, ...)` classmethod (via @biotype)
 
-5. **Remove old tag system**
-   - [ ] Remove `EvTag`, `RefTag`, `IncludeTag` classes from `tags.py`
-   - [ ] Keep YAML constructors but have them create new placeholder classes (Evaluable, Quoted, Reference)
-   - [ ] Add dotted path support to Reference resolution
-   - [ ] Ensure circular include detection in `Bio.hydrate()`
+5. **Remove old tag system** ✓
+   - [x] Remove `EvTag`, `RefTag`, `IncludeTag` classes from `tags.py`
+   - [x] Keep YAML constructors but have them create new placeholder classes (Evaluable, Quoted, Reference)
+   - [x] Add dotted path support to Reference resolution
+   - [x] Ensure circular include detection in `Bio.hydrate()`
 
-6. **EvalContext cleanup** (infra.Context handled by item #1)
-   - [ ] Remove `eval.Context` dataclass if exists
-   - [ ] Update `eval_node()` to take Scope instead of Context
+6. **EvalContext cleanup** ✓ (infra.Context handled by item #1)
+   - [x] ~~Remove `eval.Context` dataclass~~ (doesn't exist - only EvalContext)
+   - [x] EvalContext and Scope serve different purposes: Scope for lexical inheritance, EvalContext for runtime eval
 
-7. **Rename generator → build**
-   - [ ] Rename `src/alienbio/generator/` → `src/alienbio/build/`
-   - [ ] Update all imports
+7. **Rename generator → build** ✓
+   - [x] Rename `src/alienbio/generator/` → `src/alienbio/build/`
+   - [x] Update all imports
 
-8. **Remove loader stub**
-   - [ ] Remove `loader.py` stub `load_spec()`
+8. **Remove loader stub** ✓
+   - [x] Remove `loader.py` stub `load_spec()`
 
-9. **Factory pattern** (see TODO 2026-01-14 #7)
-   - [ ] Implement `@factory` decorator in `alienbio/decorators.py`
-   - [ ] Implement factory registry on Bio (`_factories`, `_factory_defaults`)
-   - [ ] Update existing `*Impl` classes with `@factory` decorators
-   - [ ] Add `impl` parameter to `build()`
+9. **Factory pattern** ✓ (see TODO 2026-01-14 #7)
+   - [x] Implement `@factory` decorator in `alienbio/decorators.py`
+   - [x] Implement factory registry on Bio (`_factories`, `_factory_defaults`)
+   - [x] Add `@factory` decorator to ReferenceSimulatorImpl
+   - [x] `bio.create(Simulator)` works via factory registry
+   - [ ] Add `impl` parameter to `build()` for simulator selection (future)
 
 10. **Module exports cleanup** (see TODO 2026-01-14 #9)
     - [x] Refactor `alienbio/__init__.py` to use curated `__all__`
@@ -567,23 +569,23 @@ Clean up technical debt before building new features. All items reference existi
 
 ### Documentation Updates (for existing code)
 
-- [ ] Document `Entity.ancestors()`, `descendants()`, `local_name`, `parent`, `children`
+- [x] Document `Entity.ancestors()`, `descendants()`, `local_name`, `parent`, `children` → updated entity.md
 - [ ] Document `IO.orphan_root`, `resolve_prefix()`, `unbind_prefix()`, `resolve_refs()`, `insert_refs()`, `load()`, `save()`
 - [ ] Document `MoleculeImpl`, `ReactionImpl`, `ChemistryImpl` and hydrate methods
-- [ ] Document `@fn`, `@scoring`, `@action`, `@measurement`, `@rate` decorator parameters
+- [x] Document `@fn`, `@scoring`, `@action`, `@measurement`, `@rate` decorator parameters → in Decorators.md
 - [ ] Document `FnMeta` class and registry access functions
 - [ ] Document `!quote` tag alias for `!_`
 - [ ] Document `EvalError` exception
 - [ ] Document `IncludeTag` .py file execution (security note)
-- [ ] Clarify Protocol vs `*Impl` naming pattern
+- [x] Clarify Protocol vs `*Impl` naming pattern → Naming Conventions.md
 
 ### Factory Pattern Documentation (see TODO 2026-01-14 #6)
 
-- [ ] Create new doc: `docs/architecture/Factory Pattern.md`
-- [ ] Document `@factory` decorator usage and registration
-- [ ] Document implementation resolution order (build param → spec field → config default)
+- [x] Factory Pegboard API.md exists (updated to IMPLEMENTED status)
+- [x] Document `@factory` decorator usage and registration → in Decorators.md
+- [x] Document implementation resolution order → in Decorators.md and Factory Pegboard API.md
 - [ ] Document config file format for defaults
-- [ ] Add examples for creating custom implementations
+- [x] Add examples for creating custom implementations → in Decorators.md
 - [ ] Update Bio.md to reference factory pattern doc
 
 ### .
@@ -648,7 +650,7 @@ Bio class methods for loading and navigating specs. Builds on fetch foundation.
 ### .
 
 
-## [>] M1.14 - Hello World Experiments
+## [ ] M1.14 - Hello World Experiments
 
 Implement the H1-H5 experiment progression to validate the testbed and LLM engagement.
 
@@ -670,15 +672,16 @@ catalog/
     measurements.py        # @measurement: sample_substrate, deep_analysis, etc.
 ```
 
-1. **Catalog structure**
-   - [ ] Create `catalog/test/` directory
-   - [ ] Create `catalog/test/scenarios/` for test scenario specs
-   - [ ] Create `catalog/test/actions.py` with @action decorated test functions
-   - [ ] Create `catalog/test/measurements.py` with @measurement decorated test functions
+1. **Catalog structure** ✓
+   - [x] Create `catalog/test/` directory
+   - [x] Create `catalog/test/scenarios/` for test scenario specs
+   - [x] Create `catalog/test/actions.py` with @action decorated test functions
+   - [x] Create `catalog/test/measurements.py` with @measurement decorated test functions
 
-2. **Source root configuration**
-   - [ ] Ensure `bio.add_source_root()` works with catalog
-   - [ ] Test that `bio.fetch("test.scenarios.simple")` loads from catalog
+2. **Source root configuration** ✓
+   - [x] Ensure `bio.add_source_root()` works with catalog
+   - [x] Test that `bio.fetch("test.scenarios.simple")` loads from catalog
+   - [x] Auto-configure catalog as default source root in Bio.__init__()
    - [ ] Verify `!include` and `!py` resolve actions/measurements from catalog
 
 ### Phase 1: Agent Interface Core
