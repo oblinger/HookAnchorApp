@@ -17,27 +17,21 @@ The same name appears in three formats to indicate context:
 
 Example: `System Setup` → `system-setup` → `system_setup`
 
-### Complete Folder Structure
+### Complete Folder Structure (Private Repo)
 ```
 {FULL_NAME}/                       # Anchor root folder (Title Case with spaces)
-├── {FULL_NAME}.md                 # Redirect: "See [[{NAME}]]" (if TLC exists)
-│
-├── {NAME} Docs/                   # Private docs (NOT published)
-│   ├── {NAME}.md                  # PRIMARY ANCHOR PAGE
-│   ├── {NAME} PRD.md
-│   ├── {NAME} Features.md
-│   ├── {NAME} Notes.md
-│   ├── {NAME} Roadmap.md
-│   └── {NAME} Todo.md
-│
-├── {NAME} Research/               # Research materials (optional)
-│
-│   ─── If project has a version-controlled repository ───
+├── {FULL_NAME}.md                 # Pointer: "See [[{NAME}]]"
 │
 └── {kebab-name}/                  # Repository (kebab-case)
     ├── .git/
     ├── README.md
     ├── CLAUDE.md
+    │
+    ├── {NAME} Docs/               # Private docs (inside repo for version control)
+    │   ├── {NAME}.md              # PRIMARY ANCHOR PAGE
+    │   ├── {NAME} PRD.md
+    │   ├── {NAME} Roadmap.md
+    │   └── ...
     │
     │   ─── If repository is a Python project ───
     │
@@ -46,28 +40,26 @@ Example: `System Setup` → `system-setup` → `system_setup`
     ├── src/{snake_name}/          # Python package (snake_case)
     │   └── __init__.py
     ├── tests/
-    ├── docs/
-    │   ├── index.md
-    │   ├── user-guide/
-    │   ├── architecture/
-    │   └── api/
+    ├── docs/                      # Published user docs
     └── site/                      # Generated (gitignored)
 ```
 
-### Concrete Example (with TLC)
-Folder `Alien Biology/` contains:
-- `Alien Biology.md` — says `See [[ABIO]]`
-- `ABIO Docs/ABIO.md` — the main anchor page with link table
-- `ABIO Docs/` — private planning/design docs
-- `alien-biology/` — the repository (kebab-case)
-- `alien-biology/src/alien_biology/` — Python package (snake_case)
+See [[#Root Folder vs Repository]] for public repo structure (docs outside repo).
 
-### Concrete Example (without TLC)
-Folder `My Simple Project/` contains:
-- `My Simple Project Docs/My Simple Project.md` — the main anchor page
-- `My Simple Project Docs/` — private planning/design docs
-- `my-simple-project/` — the repository (kebab-case)
-- `my-simple-project/src/my_simple_project/` — Python package (snake_case)
+### Concrete Example (Private Repo with TLC)
+Folder `System Setup/` contains:
+- `System Setup.md` — pointer: `See [[SYS]]`
+- `system-setup/` — the repository (private)
+- `system-setup/SYS Docs/SYS.md` — the main anchor page
+- `system-setup/SYS Docs/` — private planning/design docs (version controlled)
+
+### Concrete Example (Public Repo with TLC)
+Folder `Alien Biology/` contains:
+- `Alien Biology.md` — pointer: `See [[ABIO]]`
+- `ABIO Docs/ABIO.md` — the main anchor page (tracked by parent proj/ repo)
+- `ABIO Docs/` — private planning/design docs
+- `alien-biology/` — the public repository (kebab-case)
+- `alien-biology/src/alien_biology/` — Python package (snake_case)
 
 ### Anchor Folder Definition
 - An **anchor** is a folder that contains a `{NAME} Docs/` subfolder with the primary anchor markdown
@@ -77,10 +69,40 @@ Folder `My Simple Project/` contains:
 - Example without TLC: `.../My Project/My Project Docs/My Project.md` — primary anchor page
 
 ### Root Folder vs Repository
-- The anchor root folder has a `{NAME} Docs/` subfolder for private documentation (NOT published)
 - If the project has a code repository, it is a **subdirectory** of the anchor folder
 - The subdirectory name matches the GitHub repository name (since it's a clone)
-- This separation ensures planning docs don't accidentally get committed to the repo
+
+**Private repos**: `{NAME} Docs/` lives **inside** the repository for version control:
+```
+{FULL_NAME}/
+├── {FULL_NAME}.md                 # Pointer: "See [[{NAME}]]"
+└── {kebab-name}/                  # Repository (private)
+    ├── {NAME} Docs/               # Docs inside repo
+    │   └── {NAME}.md
+    └── src/
+```
+
+**Public repos**: `{NAME} Docs/` stays **outside** the repository (at anchor level). A parent `proj/` repo with gitignore whitelist tracks these docs:
+```
+proj/                              # Parent repo (private)
+├── .gitignore                     # Ignore *, whitelist specific docs
+└── {FULL_NAME}/
+    ├── {FULL_NAME}.md
+    ├── {NAME} Docs/               # Tracked by parent repo
+    │   └── {NAME}.md
+    └── {kebab-name}/              # Public repo (ignored by parent)
+        └── src/
+```
+
+The gitignore whitelist pattern:
+```gitignore
+# Ignore everything
+*
+# Whitelist specific doc folders
+!{FULL_NAME}/
+!{FULL_NAME}/{NAME} Docs/
+!{FULL_NAME}/{NAME} Docs/**
+```
 
 ---
 
@@ -107,26 +129,54 @@ Folder `My Simple Project/` contains:
 
 ### PR Flow
 
-**Goal:** When user says "PR flow", Claude does enough work to create a PR, pushes it, and surfs the URL. The next interaction should be the user reviewing that PR.
+**Goals:**
+- User says "PR flow", goes to do other work, gets notified when code is ready via surfed Files tab
+- Minimize user touch points per iteration
+- Clean git history (one squash commit per feature on main)
 
 **Pre-conditions:**
-- Repository is clean (all changes committed, or can be committed now)
-- Roadmap is up-to-date with next step identified
-
+- Repository is clean
+- No open PRs on this repo
 
 **The Cycle:**
-1. **PR flow** — User says "PR flow" to start the cycle
-2. **Work** — Claude creates a branch (if needed), does work, builds up an appropriately sized PR (5-20 pages)
-3. **Push & Surf** — Claude creates the PR, pushes to GitHub, surfs the PR URL
-4. **Review** — User closes the PR, pulls, and reviews:
-   - User provides comments, questions, changes needed
-   - Claude makes fixes, commits, pushes to the same branch
-   - Claude checks if PR is open; if not, creates a new one on the same branch
-   - User closes it, reviews just the incremental changes
-   - Back and forth until user is satisfied
-5. **PR flow** — User says "PR flow" to start the next iteration (go to step 2)
+1. **PR flow** — User says "PR flow", goes to do other work
+2. **Work** — Claude creates feature branches (if needed), does work on `work` branch
+3. **PR & Surf** — Claude PRs `work` → `feature`, merges, surfs the **Files tab**
+4. **Review** — User reviews files, provides feedback if needed
+5. **Iterate** — If fixes needed, go to step 2
+6. **Complete** — When feature done, Claude PRs `feature` → `main`, squash merges, deletes branches, starts next feature
 
-The cycle continues until the roadmap work is complete.
+**Branch Structure:**
+```
+main
+ └── feature/{name}
+      └── feature/{name}/work   ← all work happens here
+```
+
+**Implementation Notes:**
+
+Starting a feature:
+- Create `feature/{name}` from `main`
+- Create `feature/{name}/work` from `feature/{name}`
+
+Each review cycle:
+- Commit work to `work` branch
+- `gh pr create` from `work` → `feature`, then `gh pr merge`
+- Surf Files tab: `ctrl surf "https://github.com/{owner}/{repo}/pull/{number}/files"`
+- Each PR shows only the delta since last merge (clean incremental diff)
+
+Completing a feature:
+- `gh pr create` from `feature` → `main`
+- Squash merge with descriptive commit message
+- Delete both branches: `git branch -d feature/{name}/work feature/{name}`
+- `git push origin --delete feature/{name}/work feature/{name}`
+- Pull main: `git checkout main && git pull`
+
+Why this works:
+- PRing `work` → `feature` repeatedly shows clean incremental diffs
+- User reviews familiar PR Files tab interface
+- Squash merge keeps main history clean (one commit per feature)
+- User only needs to: say "PR flow", review files, give feedback
 
 ---
 

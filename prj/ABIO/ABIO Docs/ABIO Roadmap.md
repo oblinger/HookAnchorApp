@@ -570,13 +570,13 @@ Clean up technical debt before building new features. All items reference existi
 ### Documentation Updates (for existing code)
 
 - [x] Document `Entity.ancestors()`, `descendants()`, `local_name`, `parent`, `children` → updated entity.md
-- [ ] Document `IO.orphan_root`, `resolve_prefix()`, `unbind_prefix()`, `resolve_refs()`, `insert_refs()`, `load()`, `save()`
-- [ ] Document `MoleculeImpl`, `ReactionImpl`, `ChemistryImpl` and hydrate methods
+- [x] Document `IO.orphan_root`, `resolve_prefix()`, `unbind_prefix()`, `resolve_refs()`, `insert_refs()`, `load()`, `save()` → updated IO.md (PR #41)
+- [x] Document `MoleculeImpl`, `ReactionImpl`, `ChemistryImpl` and hydrate methods → added hydrate() docs (PR #41, #42)
 - [x] Document `@fn`, `@scoring`, `@action`, `@measurement`, `@rate` decorator parameters → in Decorators.md
-- [ ] Document `FnMeta` class and registry access functions
-- [ ] Document `!quote` tag alias for `!_`
-- [ ] Document `EvalError` exception
-- [ ] Document `IncludeTag` .py file execution (security note)
+- [x] Document `FnMeta` class and registry access functions → added to Decorators.md (PR #41)
+- [x] Document `!quote` tag alias for `!_` → added to Spec Language Reference.md (PR #41)
+- [x] Document `EvalError` exception → added to Spec Language Reference.md (PR #41)
+- [x] Document `IncludeTag` .py file execution (security note) → added to Spec Language Reference.md
 - [x] Clarify Protocol vs `*Impl` naming pattern → Naming Conventions.md
 
 ### Factory Pattern Documentation (see TODO 2026-01-14 #6)
@@ -584,9 +584,9 @@ Clean up technical debt before building new features. All items reference existi
 - [x] Factory Pegboard API.md exists (updated to IMPLEMENTED status)
 - [x] Document `@factory` decorator usage and registration → in Decorators.md
 - [x] Document implementation resolution order → in Decorators.md and Factory Pegboard API.md
-- [ ] Document config file format for defaults
+- [x] Document config file format for defaults → added to Factory Pegboard API.md
 - [x] Add examples for creating custom implementations → in Decorators.md
-- [ ] Update Bio.md to reference factory pattern doc
+- [x] Update Bio.md to reference factory pattern doc → already in Bio.md See Also section
 
 ### .
 
