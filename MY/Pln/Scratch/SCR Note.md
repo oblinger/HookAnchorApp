@@ -1,4 +1,30 @@
 
+
+
+
+## 2026-01-14  
+
+I understand your desires for a better way forward, 
+
+- We have a really big misunderstanding on the part of the average man as to the risk a woman (who does not secure self sufficiency) takes on.
+
+- I just don't believe we can negate hundreds of years of history, where women have not been afforded opportunity to self actualize. 
+
+
+- I believe it's men's job to teach men a new understanding of what equality actually means, that every human being with XX is not the same, but most definitely are equal in their humanity.
+
+
+- A huge cultural shift, including a move toward pre-nups becoming the norm, must be made by men if they want women to take risks with their lives.
+
+
+- The grey divorce rate currently sits at 40% - people over 50, and 15% of all divorces for people over 65. Overall divorce is down, but way up for those who went the long haul. Many of these divorcees are not doing well financially, especially women.
+
+
+
+## H3
+
+
+
 ### 2023-07-07  Nick note (stressed)
 
 Could not sleep…. Stressed.   You are right about me of course, no matter what I am going to think … it is what I do, and it would be sad (but also likely) that nothing will every really come of it.  And you are also right that now is a magic time for generalized AI ideas (starting a new-co using GPT, or somehow being a pundit around the un-align-ability apocalypse).  Presently things are going well at Sports Visio, we just got a $3M term sheet...  but I feel overwhelmed, and I do not feel safe at Sports Visio...  too much fucking around on the side could get me burned.

@@ -1,6 +1,90 @@
 # ABIO MISCELLANEOUS NOTES
 
 
+## 2026-01-14 M1.14 Agent Interface Implementation Questions
+
+Questions to resolve before implementing the Agent Interface for M1.14 Hello World Experiments.
+
+### ✅ Q1: Module Location
+
+Where should the agent code live?
+
+**Decision**: Keep protocols in `protocols/`. Implementations go in `bio/` with `_impl` suffix on module names. Agent implementations go in `bio/agents/` subfolder.
+
+Structure:
+```
+protocols/
+  bio.py              # includes Agent protocol
+bio/
+  simulator_impl.py   # ReferenceSimulatorImpl
+  agents/
+    random_impl.py    # RandomAgentImpl
+    scripted_impl.py  # ScriptedAgentImpl
+    oracle_impl.py    # OracleAgentImpl
+```
+
+Session infrastructure (`AgentSession`, `Trace`, `Timeline`) goes in `bio/session.py` or similar - it's not an impl, it's core infrastructure.
+
+---
+
+### ✅ Q2: Action/Measurement Implementation
+
+**Decision**: One `Action` class for both manipulations and measurements. The distinction is semantic (from `interface.actions` vs `interface.measurements`).
+
+**Where implementations live**:
+- **Built-in actions** (add_molecule, remove_molecule, adjust_rate, step, done, wait) — handled by AgentSession dispatching to simulator methods. These are generic and live in alienbio core.
+- **Scenario-specific actions** — defined in **catalogs**, not in alienbio core. Registered via `@action` decorator, looked up by name.
+
+**Catalog structure**:
+```
+alienbio/
+  catalog/
+    test/                    # scaffolding for unit/integration tests
+      scenarios/
+        simple.yaml
+      actions.py             # @action functions for tests
+      measurements.py        # @measurement functions for tests
+
+external-project/
+  catalog/
+    mutualism/
+      spec.yaml
+      actions.py             # @action functions specific to this world
+```
+
+Worlds can inherit from each other at the spec level. Fetch should work with catalog items via source roots.
+
+---
+
+### ✅ Q3: Simulator Initialization from Scenario
+
+**Decision**: AgentSession creates simulator from scenario. Extract chemistry, build initial state from `containers`, create WorldSimulator. Session wraps and manages the simulator lifecycle.
+
+---
+
+### ✅ Q4: Timeline vs Trace Distinction
+
+**Decision**: Both are needed, serving different purposes:
+
+- **Timeline** = Chronological event log with timestamps. All events (action initiated, action completed, simulation stepped). For debugging. Methods: `recent(n)`, `since(time)`, `filter(type)`, `pending()`.
+
+- **Trace** = Agent-centric summary. Just action/result records with costs. For scoring. Methods: `actions[]`, `total_cost`. Passed to scoring functions like `budget_score(trace)`.
+
+Trace can be derived from Timeline but provides cleaner interface for evaluation.
+
+---
+
+### ✅ Q5: World Generation for H1-H5
+
+**Decision**: Start with hardcoded test fixtures. Parameterized world generation is M2 (Generator System).
+
+---
+
+### ✅ Q6: Scoring Function Location
+
+**Decision**: `alienbio/scoring.py` at top level. Scoring is used by experiment framework, not tied to specific domain.
+
+
 ## 2026-01-14 Experiments Open Questions
 
 Questions to resolve before implementing the Hello World experiments (H1-H5).
@@ -532,9 +616,5 @@ Created `tests/unit/test_bio_m2.py` with 26 tests covering M2 features. Results:
 - **Bio.store()** — 5 tests (all skipped)
 - **Bio.build() edge cases** — 3 tests (2 passing, 1 skipped)
 - **Integration** — 2 tests (all skipped)
-
-
-
-
 
 

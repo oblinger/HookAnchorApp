@@ -653,67 +653,174 @@ Bio class methods for loading and navigating specs. Builds on fetch foundation.
 Implement the H1-H5 experiment progression to validate the testbed and LLM engagement.
 
 **Reference**: [[ABIO Experiments]] — Full specification of experiments and evaluation methods
+**Tests**: `tests/integration/test_agent_interface.py` — ~100 skipped tests defining the interface
+**Discussion**: [[ABIO Notes#2026-01-14 M1.14 Agent Interface Implementation Questions]]
 
-### Infrastructure (required for all tests)
+### Phase 0: Catalog Scaffolding
 
-- [ ] World generation from spec (compartments, molecules, reactions, flows)
-- [ ] Observation interface: `observe()` returns concentrations per compartment
-- [ ] Action interface: `step(n)`, `add_molecule()`, `remove_molecule()`, `adjust_rate()`
-- [ ] Ground truth recording for evaluation
-- [ ] Test harness to run agent through protocol
-- [ ] Evaluation framework (exact match, numerical tolerance, binary success)
+Set up `catalog/test/` for unit/integration test scenarios. Actions and measurements for tests live here, not in core alienbio.
 
-### H1: Representation Comprehension
+```
+catalog/
+  test/
+    scenarios/
+      simple.yaml          # simple_scenario fixture as YAML
+      timing.yaml          # timing_scenario fixture
+    actions.py             # @action: add_feedstock, adjust_temp, kill_all, etc.
+    measurements.py        # @measurement: sample_substrate, deep_analysis, etc.
+```
 
-Verify LLM can parse and understand the alien biology format.
+1. **Catalog structure**
+   - [ ] Create `catalog/test/` directory
+   - [ ] Create `catalog/test/scenarios/` for test scenario specs
+   - [ ] Create `catalog/test/actions.py` with @action decorated test functions
+   - [ ] Create `catalog/test/measurements.py` with @measurement decorated test functions
 
-- [ ] Generate test worlds (2-3 compartments, 3-5 molecules, 2-3 reactions)
-- [ ] Structural question generator (molecules in compartment, reactants/products, etc.)
-- [ ] Evaluator: exact match against ground truth
-- [ ] Variants: H1.1 minimal, H1.2 small, H1.3 with alien names
-- [ ] Test: ≥80% accuracy on structural questions
+2. **Source root configuration**
+   - [ ] Ensure `bio.add_source_root()` works with catalog
+   - [ ] Test that `bio.fetch("test.scenarios.simple")` loads from catalog
+   - [ ] Verify `!include` and `!py` resolve actions/measurements from catalog
 
-### H2: Single-Step Dynamics Prediction
+### Phase 1: Agent Interface Core
 
-Verify LLM can reason about dynamics from concentration changes.
+Create core session and data types. Structure:
+```
+bio/
+  simulation/          # simulation-related code
+    simulator_impl.py
+    state_impl.py
+  agents/              # agent implementations
+    random_impl.py
+    scripted_impl.py
+    oracle_impl.py
+  session.py           # AgentSession, Trace, Timeline
+  types.py             # Action, Observation, ActionResult, ExperimentResults
+protocols/
+  bio.py               # add Agent protocol
+alienbio/
+  scoring.py           # budget_score, etc.
+```
 
-- [ ] Generate test worlds with known dynamics
-- [ ] Protocol: observe t=0 → step → observe t=1 → predict t=2
-- [ ] Questions: which reactions fired, predict next state, estimate rates
-- [ ] Evaluator: reaction identification, numerical tolerance (±20%)
-- [ ] Variants: H2.1-H2.4 increasing difficulty
-- [ ] Test: correct reaction identification AND directional predictions
+1. **Data types** (`agent/types.py`)
+   - [ ] `Action` dataclass — name, params, kind, wait
+   - [ ] `ActionResult` dataclass — success, error, data, cost, new_state, initiated, completed, completion_time
+   - [ ] `Observation` dataclass — briefing, constitution, available_actions, available_measurements, current_state, step, budget, spent, remaining, is_initial()
+   - [ ] `ExperimentResults` dataclass — scenario, seed, scores, trace, passed
 
-### H3: Control Interface Exercise
+2. **Timeline** (`agent/timeline.py`)
+   - [ ] `TimelineEvent` dataclass — event_type, time, data
+   - [ ] `Timeline` class — append, recent(n), since(time), since_index(i), filter(type), pending(), total_cost
 
-Verify LLM can operate the observation/action interface.
+3. **Trace** (`agent/trace.py`)
+   - [ ] `ActionObservationRecord` dataclass — action, observation, step, cumulative_cost
+   - [ ] `Trace` class — records list (action→observation pairs), total_cost property
+   - Note: Trace is agent-centric (what agent did and saw); Timeline is system-centric (all events with timestamps)
 
-- [ ] Define tool interface: `observe()`, `step(n)`, `report(text)`
-- [ ] Scripted protocol: observe → step(10) → observe → report changes
-- [ ] Evaluator: correct tool sequence, accurate report
-- [ ] Variants: H3.1 simple, H3.2 with cost, H3.3 with branching
-- [ ] Test: all tools invoked correctly AND report matches ground truth
+4. **AgentSession** (`agent/session.py`)
+   - [ ] `__init__(scenario, seed=None)` — initialize simulator, trace, timeline
+   - [ ] `observe()` → Observation
+   - [ ] `act(action)` → ActionResult
+   - [ ] `poll()` → list of new events since last interaction
+   - [ ] `is_done()` → bool (max_steps, done action, terminal state)
+   - [ ] `score()` → dict of scores
+   - [ ] `results()` → ExperimentResults
+   - [ ] Properties: scenario, simulator, trace, timeline, step_count, seed
 
-### H4: Goal-Directed Single Intervention
+5. **Package exports** (`agent/__init__.py`)
+   - [ ] Export all public types and AgentSession
 
-Verify LLM can connect goals to actions.
+### Phase 2: Action Execution
 
-- [ ] Generate test worlds with intervention options
-- [ ] Goal generator: increase/decrease/balance molecule concentrations
-- [ ] Evaluator: goal achieved (binary), reasoning quality
-- [ ] Variants: H4.1-H4.4 (direct, indirect, rate, competing)
-- [ ] Test: goal achieved AND reasoning identifies mechanism
+Implement action dispatch and built-in actions.
 
-### H5: Hypothesis Formation from Observation
+6. **Built-in actions**
+   - [ ] `add_feedstock` / `add_molecule` — add molecules to region
+   - [ ] `remove_molecule` — remove molecules from region
+   - [ ] `adjust_rate` — modify reaction rate
+   - [ ] `step` — advance simulation (typically handled per-action via steps_per_action)
+   - [ ] `wait` — advance simulation time without action
+   - [ ] `done` — signal experiment completion
 
-Verify LLM can infer hidden rules from experiments.
+7. **Measurement execution**
+   - [ ] `sample_substrate` — return concentrations for region
+   - [ ] Custom measurements via scenario interface
 
-- [ ] Generate worlds with one hidden reaction
-- [ ] Experiment budget system (limited observations)
-- [ ] Hypothesis submission format
-- [ ] Evaluator: reactants correct, products correct, stoichiometry bonus
-- [ ] Variants: H5.1-H5.5 increasing complexity
-- [ ] Test: correctly identify reactants AND products
+8. **Action validation**
+   - [ ] Unknown action → success=False, error message
+   - [ ] Missing params → success=False, error message
+   - [ ] Invalid param types → success=False, error message
+   - [ ] Failed actions don't change state or increment step
+
+9. **Cost tracking**
+   - [ ] Actions have cost (from interface spec or formula)
+   - [ ] Measurements have cost (default 0)
+   - [ ] Cost formulas evaluated at runtime (`!_ 0.5 + length * 0.1`)
+   - [ ] Over-budget allowed (scoring handles penalty)
+
+### Phase 3: Timing Model
+
+Implement turn-based and concurrent timing.
+
+10. **Turn-based mode** (default_wait=true)
+    - [ ] Actions block until complete
+    - [ ] Time advances by initiation_time + duration
+
+11. **Concurrent mode** (default_wait=false)
+    - [ ] Actions return immediately with initiated=True, completed=False
+    - [ ] Multiple actions can overlap
+    - [ ] Timeline tracks pending actions
+    - [ ] Explicit wait=True/False overrides default
+
+### Phase 4: Built-in Agents
+
+Implement agent protocol and built-in agents.
+
+12. **Agent protocol** (`agent/protocol.py`)
+    - [ ] `Agent` Protocol — start(session), decide(observation) → Action, end(results)
+
+13. **Built-in agents** (`agent/agents.py`)
+    - [ ] `RandomAgent` — random valid actions, seeded for reproducibility
+    - [ ] `ScriptedAgent` — follows predefined action sequence, returns done when exhausted
+    - [ ] `OracleAgent` — receives ground truth, computes optimal policy
+
+14. **run_experiment()** (`agent/runner.py`)
+    - [ ] `run_experiment(scenario, agent, seed)` → ExperimentResults
+    - [ ] Calls agent.start(), loops observe/decide/act until is_done(), calls agent.end()
+
+### Phase 5: Scoring
+
+Implement scoring framework.
+
+15. **Scoring module** (`alienbio/scoring.py`)
+    - [ ] `budget_score(trace, budget)` — 1.0 if under, degrades to 0 at 2x budget
+    - [ ] Framework for evaluating `!_` expressions against trace/state
+
+### Phase 6: Test Fixtures for H1-H5
+
+Create hardcoded test scenarios for Hello World experiments.
+
+16. **H1 fixtures** — Static structure questions
+    - [ ] Minimal world (2 compartments, 3 molecules, 1 reaction)
+    - [ ] Small world (3 compartments, 5 molecules, 3 reactions)
+
+17. **H2 fixtures** — Dynamics prediction
+    - [ ] Single reaction system
+    - [ ] Multi-reaction with different rates
+
+18. **H3 fixtures** — Control interface
+    - [ ] Scripted protocol scenario
+
+19. **H4 fixtures** — Goal-directed
+    - [ ] Direct intervention scenario
+    - [ ] Indirect intervention scenario
+
+20. **H5 fixtures** — Hypothesis formation
+    - [ ] Hidden reaction scenario
+
+### Verification
+
+- [ ] All ~100 tests in `test_agent_interface.py` passing
+- [ ] At least one H1-H5 fixture runs end-to-end with ScriptedAgent
 
 ### .
 
