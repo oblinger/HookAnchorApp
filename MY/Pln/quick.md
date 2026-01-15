@@ -1,3 +1,4 @@
+- cancel Chat GPT
 
 - vaccine
 - beads, actions, skills at claude

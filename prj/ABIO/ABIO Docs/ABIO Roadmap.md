@@ -1918,51 +1918,57 @@ Non-LLM agents for testing and baselines.
 
 ### .
 
-## [ ] M3.4 - API Key Management
+## [x] M3.4 - API Key Management ✓
 
 Configuration for LLM providers.
 
-### [ ] Config file at ~/.config/alienbio/config.yaml
-### [ ] Store api_keys, default_agent, default models per provider
-### [ ] get_api_key(provider) checks env vars then config file
-### [ ] set_api_key(provider, key) saves to config
-### [ ] `bio config set-key <provider> <key>` CLI command
-### [ ] `bio config list-keys` shows registered providers
-### [ ] `bio config set-default-agent <provider>` sets default
-### [ ] `bio config test-key <provider>` validates key works
-### [ ] Test: config round-trips through save/load
-### [ ] Test: env var overrides config file
+### [x] Config file at ~/.config/alienbio/config.yaml
+### [x] Store api_keys, default_agent, default models per provider
+### [x] get_api_key(provider) checks env vars then config file
+### [x] set_api_key(provider, key) saves to config
+### [x] `bio config set-key <provider> <key>` CLI command
+### [x] `bio config list-keys` shows registered providers
+### [x] `bio config set-default-agent <provider>` sets default
+### [x] `bio config test-key <provider>` validates key works
+### [x] Test: config round-trips through save/load
+### [x] Test: env var overrides config file
+
+**Status**: Complete. PR #60 merged. 24 new tests.
 
 ### .
 
-## [ ] M3.5 - ConversationalLLMAgent
+## [x] M3.5 - ConversationalLLMAgent
 
 Generic LLM binding using tool/function calling.
 
-### [ ] ConversationalLLMAgent(model, api, api_key) constructor
-### [ ] Support api="anthropic" with Claude API
-### [ ] Support api="openai" with OpenAI API
-### [ ] Format system prompt from briefing + constitution + tools
-### [ ] Convert interface actions/measurements to tool definitions
-### [ ] Manage conversation history (messages list)
-### [ ] Parse tool_use blocks from Claude response
-### [ ] Parse tool_calls from OpenAI response
-### [ ] Context management: summarize old messages when too long
-### [ ] observe_result() adds action results to conversation
-### [ ] Test: ConversationalLLMAgent with mock API completes experiment
-### [ ] Test: tool definitions generated correctly from interface
+### [x] ConversationalLLMAgent(model, api, api_key) constructor
+### [x] Support api="anthropic" with Claude API
+### [x] Support api="openai" with OpenAI API
+### [x] Format system prompt from briefing + constitution + tools
+### [x] Convert interface actions/measurements to tool definitions
+### [x] Manage conversation history (messages list)
+### [x] Parse tool_use blocks from Claude response
+### [x] Parse tool_calls from OpenAI response
+### [x] Context management: summarize old messages when too long
+### [x] observe_result() adds action results to conversation
+### [x] Test: ConversationalLLMAgent with mock API completes experiment
+### [x] Test: tool definitions generated correctly from interface
+
+**Status**: Complete. PR #62 merged. 22 new tests.
 
 ### .
 
-## [ ] M3.6 - ClaudeAgentSDKBinding
+## [x] M3.6 - ClaudeAgentSDKBinding
 
 Native Claude Agent SDK integration.
 
-### [ ] ClaudeAgentSDKBinding(model, api_key) constructor
-### [ ] Create Claude Agent with tools from interface
-### [ ] Native tool handling through SDK
-### [ ] Agent-aware conversation management
-### [ ] Test: ClaudeAgentSDKBinding completes experiment with real API
+### [x] ClaudeAgentSDKBinding(model, api_key) constructor
+### [x] Create Claude Agent with tools from interface
+### [x] Native tool handling through SDK
+### [x] Agent-aware conversation management
+### [x] Test: ClaudeAgentSDKBinding completes experiment with real API
+
+**Status**: Complete. PR #64 merged. 14 new tests.
 
 ### .
 

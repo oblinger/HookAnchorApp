@@ -16,13 +16,7 @@
 - The repository is clean (no uncommitted changes). Otherwise, commit them.
 - No open PRs on this repo
 - The roadmap is ready (see [[PC Roadmap Ready]])
-
-
-
----
-
-## The Cycle
-
+**PR FLOW PROCEDURE**
 1. **PR flow** — User says "PR flow", Claude finds next incomplete roadmap item, user goes to do other work
 2. **Work** — Claude creates feature branches (if needed), does work on `work` branch
 3. **PR & Surf** — Claude PRs `work` → `feature`, merges, surfs the **Files tab**
@@ -31,6 +25,40 @@
 6. **Complete** — When feature done, Claude PRs `feature` → `main`, squash merges, surfs Files tab (no wait), deletes branches, continues to next feature
 
 
+# Notes
+
+## Roadmap Ordering
+
+If the roadmap ordering no longer seems correct (e.g., a later item should be done first, or dependencies have changed), alert the user before proceeding. (See [[PC Roadmap Ready]] for details)
+
+The user will be saying "PR flow" repeatedly to drive progress — so don't blindly follow a stale ordering.
+
+## Alert on Wait
+
+If Claude needs to stop work and wait for user feedback, but has NOT surfed a PR (i.e., the user won't be automatically notified), Claude MUST call the alert command:
+
+```bash
+alert "Waiting for: <reason>"
+```
+
+This pops up on the user's screen so they know to check Claude's interface.
+
+Examples:
+- `alert "Roadmap reordering needed"`
+- `alert "Need clarification on feature scope"`
+- `alert "Encountered blocking issue"`
+
+---
+
+## Why This Works
+
+- PRing `work` → `feature` repeatedly shows clean incremental diffs
+- User reviews familiar PR Files tab interface
+- Squash merge keeps main history clean (one commit per feature)
+- User only needs to: say "PR flow", review files, give feedback
+
+
+### Alert command
 
 If Claude needs to ask a question, get clarification, or wait for any reason and there's no PR to surf, it MUST call:
 ```bash
@@ -41,33 +69,13 @@ This ensures the user is always notified when Claude needs attention.
 
 ---
 
-## Quick Reference
-
-**Trigger:** User says "PR flow"
-
-**What happens:** Claude finds the next incomplete roadmap item and works on it, creating PRs for review.
-
----
-
-## Goals
-
-- User says "PR flow", goes to do other work, gets notified when code is ready via surfed Files tab
-- Minimize user touch points per iteration
-- Clean git history (one squash commit per feature on main)
-
----
-
----
-
-## Branch Structure
+### Branch Structure
 
 ```
 main
  └── feature/{name}
       └── feature/{name}/work   ← all work happens here
 ```
-
----
 
 ## Implementation Details
 
@@ -129,36 +137,3 @@ The "Work on" commits disappear when we squash merge to main — only the clean 
    ```
 5. Continue immediately to next feature or task
 
----
-
-## Roadmap Ordering
-
-If the roadmap ordering no longer seems correct (e.g., a later item should be done first, or dependencies have changed), alert the user before proceeding. Agree on revised ordering before continuing.
-
-The user will be saying "PR flow" repeatedly to drive progress — don't blindly follow a stale ordering.
-
----
-
-## Alert on Wait
-
-If Claude needs to stop work and wait for user feedback, but has NOT surfed a PR (i.e., the user won't be automatically notified), Claude MUST call the alert command:
-
-```bash
-alert "Waiting for: <reason>"
-```
-
-This pops up on the user's screen so they know to check Claude's interface.
-
-Examples:
-- `alert "Roadmap reordering needed"`
-- `alert "Need clarification on feature scope"`
-- `alert "Encountered blocking issue"`
-
----
-
-## Why This Works
-
-- PRing `work` → `feature` repeatedly shows clean incremental diffs
-- User reviews familiar PR Files tab interface
-- Squash merge keeps main history clean (one commit per feature)
-- User only needs to: say "PR flow", review files, give feedback

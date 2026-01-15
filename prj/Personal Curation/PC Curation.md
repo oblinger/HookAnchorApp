@@ -2,23 +2,6 @@
 
 ## FILE STRUCTURE
 
-Template variables:
-- `{FULL_NAME}` = full descriptive name (Title Case with spaces)
-- `{TLC}` = short code (if it exists, typically 2-5 uppercase letters)
-- `{NAME}` = TLC if it exists, otherwise FULL_NAME
-- `{kebab-name}` = FULL_NAME in kebab-case (lowercase, hyphens)
-- `{snake_name}` = FULL_NAME in snake_case (lowercase, underscores)
-
-### Naming Convention
-The same name appears in different formats to indicate context:
-- **kebab-case** = Git repository / anchor folder
-- **Title Case with spaces** = Wrapper folder (public repos only)
-- **snake_case** = Python package
-
-Example: `system-setup` (repo) → `System Setup` (wrapper) → `system_setup` (package)
-
----
-
 ### Private Repo Anchor (Primary Case)
 
 For private repos, the repository IS the anchor. No wrapper folder needed.
@@ -44,6 +27,21 @@ For private repos, the repository IS the anchor. No wrapper folder needed.
 ├── docs/                          # Published user docs
 └── site/                          # Generated (gitignored)
 ```
+
+Template variables:
+- `{FULL_NAME}` = full descriptive name (Title Case with spaces)
+- `{TLC}` = short code (if it exists, typically 2-5 uppercase letters)
+- `{NAME}` = TLC if it exists, otherwise FULL_NAME
+- `{kebab-name}` = FULL_NAME in kebab-case (lowercase, hyphens)
+- `{snake_name}` = FULL_NAME in snake_case (lowercase, underscores)
+
+### Naming Convention
+The same name appears in different formats to indicate context:
+- **kebab-case** = Git repository / anchor folder
+- **Title Case with spaces** = Wrapper folder (public repos only)
+- **snake_case** = Python package
+
+Example: `system-setup` (repo) → `System Setup` (wrapper) → `system_setup` (package)
 
 **Example**: `system-setup/` is the anchor
 - `system-setup/SYS Docs/SYS.md` — primary anchor page
