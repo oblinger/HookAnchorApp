@@ -3,106 +3,99 @@
 ## FILE STRUCTURE
 
 Template variables:
-- `{FULL_NAME}` = folder name (the full descriptive name, Title Case with spaces)
+- `{FULL_NAME}` = full descriptive name (Title Case with spaces)
 - `{TLC}` = short code (if it exists, typically 2-5 uppercase letters)
 - `{NAME}` = TLC if it exists, otherwise FULL_NAME
-- `{kebab-name}` = FULL_NAME in kebab-case (lowercase, hyphens instead of spaces)
-- `{snake_name}` = FULL_NAME in snake_case (lowercase, underscores instead of spaces)
+- `{kebab-name}` = FULL_NAME in kebab-case (lowercase, hyphens)
+- `{snake_name}` = FULL_NAME in snake_case (lowercase, underscores)
 
 ### Naming Convention
-The same name appears in three formats to indicate context:
-- **Title Case with spaces** = Anchor folder (Obsidian world)
-- **kebab-case** = Git repository (GitHub world)
-- **snake_case** = Python package (code world)
+The same name appears in different formats to indicate context:
+- **kebab-case** = Git repository / anchor folder
+- **Title Case with spaces** = Wrapper folder (public repos only)
+- **snake_case** = Python package
 
-Example: `System Setup` → `system-setup` → `system_setup`
+Example: `system-setup` (repo) → `System Setup` (wrapper) → `system_setup` (package)
 
-### Complete Folder Structure (Private Repo)
+---
+
+### Private Repo Anchor (Primary Case)
+
+For private repos, the repository IS the anchor. No wrapper folder needed.
+
 ```
-{FULL_NAME}/                       # Anchor root folder (Title Case with spaces)
+{kebab-name}/                      # Repository = Anchor (kebab-case)
+├── .git/
+├── README.md
+├── CLAUDE.md
+│
+├── {NAME} Docs/                   # Private docs (version controlled)
+│   ├── {NAME}.md                  # PRIMARY ANCHOR PAGE
+│   ├── {NAME} PRD.md
+│   ├── {NAME} Roadmap.md
+│   └── ...
+│
+│   ─── If Python project ───
+│
+├── pyproject.toml
+├── justfile
+├── src/{snake_name}/
+├── tests/
+├── docs/                          # Published user docs
+└── site/                          # Generated (gitignored)
+```
+
+**Example**: `system-setup/` is the anchor
+- `system-setup/SYS Docs/SYS.md` — primary anchor page
+- `system-setup/SYS Docs/` — all private planning docs
+- Everything is version controlled in one repo
+
+---
+
+### Public Repo Anchor
+
+For public repos, private docs can't be in the repo. Add a wrapper folder.
+
+```
+{FULL_NAME}/                       # Wrapper folder (Title Case)
 ├── {FULL_NAME}.md                 # Pointer: "See [[{NAME}]]"
 │
-└── {kebab-name}/                  # Repository (kebab-case)
+├── {NAME} Docs/                   # Private docs (OUTSIDE repo)
+│   ├── {NAME}.md                  # PRIMARY ANCHOR PAGE
+│   └── ...
+│
+└── {kebab-name}/                  # Public repository
     ├── .git/
     ├── README.md
-    ├── CLAUDE.md
-    │
-    ├── {NAME} Docs/               # Private docs (inside repo for version control)
-    │   ├── {NAME}.md              # PRIMARY ANCHOR PAGE
-    │   ├── {NAME} PRD.md
-    │   ├── {NAME} Roadmap.md
-    │   └── ...
-    │
-    │   ─── If repository is a Python project ───
-    │
-    ├── pyproject.toml
-    ├── justfile
-    ├── src/{snake_name}/          # Python package (snake_case)
-    │   └── __init__.py
-    ├── tests/
-    ├── docs/                      # Published user docs
-    └── site/                      # Generated (gitignored)
+    ├── src/
+    └── ...
 ```
 
-See [[#Root Folder vs Repository]] for public repo structure (docs outside repo).
+**Version control for private docs**: Create a parent `proj/` repo with gitignore whitelist:
 
-### Concrete Example (Private Repo with TLC)
-Folder `System Setup/` contains:
-- `System Setup.md` — pointer: `See [[SYS]]`
-- `system-setup/` — the repository (private)
-- `system-setup/SYS Docs/SYS.md` — the main anchor page
-- `system-setup/SYS Docs/` — private planning/design docs (version controlled)
-
-### Concrete Example (Public Repo with TLC)
-Folder `Alien Biology/` contains:
-- `Alien Biology.md` — pointer: `See [[ABIO]]`
-- `ABIO Docs/ABIO.md` — the main anchor page (tracked by parent proj/ repo)
-- `ABIO Docs/` — private planning/design docs
-- `alien-biology/` — the public repository (kebab-case)
-- `alien-biology/src/alien_biology/` — Python package (snake_case)
-
-### Anchor Folder Definition
-- An **anchor** is a folder that contains a `{NAME} Docs/` subfolder with the primary anchor markdown
-- The primary anchor markdown (`{NAME}.md`) lives inside the Docs folder
-- If the anchor has a TLC, the root folder also has `{FULL_NAME}.md` containing only `See [[TLC]]`
-- Example with TLC: `.../Alien Biology/ABIO Docs/ABIO.md` — primary anchor page
-- Example without TLC: `.../My Project/My Project Docs/My Project.md` — primary anchor page
-
-### Root Folder vs Repository
-- If the project has a code repository, it is a **subdirectory** of the anchor folder
-- The subdirectory name matches the GitHub repository name (since it's a clone)
-
-**Private repos**: `{NAME} Docs/` lives **inside** the repository for version control:
-```
-{FULL_NAME}/
-├── {FULL_NAME}.md                 # Pointer: "See [[{NAME}]]"
-└── {kebab-name}/                  # Repository (private)
-    ├── {NAME} Docs/               # Docs inside repo
-    │   └── {NAME}.md
-    └── src/
-```
-
-**Public repos**: `{NAME} Docs/` stays **outside** the repository (at anchor level). A parent `proj/` repo with gitignore whitelist tracks these docs:
 ```
 proj/                              # Parent repo (private)
-├── .gitignore                     # Ignore *, whitelist specific docs
-└── {FULL_NAME}/
-    ├── {FULL_NAME}.md
-    ├── {NAME} Docs/               # Tracked by parent repo
-    │   └── {NAME}.md
-    └── {kebab-name}/              # Public repo (ignored by parent)
-        └── src/
+├── .gitignore                     # Ignore *, whitelist doc folders
+├── Alien Biology/                 # Wrapper folder
+│   ├── Alien Biology.md
+│   ├── ABIO Docs/                 # Tracked by parent repo
+│   └── alien-biology/             # Public repo (ignored)
 ```
 
-The gitignore whitelist pattern:
+Gitignore whitelist pattern:
 ```gitignore
-# Ignore everything
 *
-# Whitelist specific doc folders
 !{FULL_NAME}/
 !{FULL_NAME}/{NAME} Docs/
 !{FULL_NAME}/{NAME} Docs/**
 ```
+
+---
+
+### Anchor Definition
+- An **anchor** is a folder containing `{NAME} Docs/` with the primary anchor markdown
+- For private repos: the repo root IS the anchor
+- For public repos: the wrapper folder is the anchor
 
 ---
 
@@ -138,13 +131,19 @@ The gitignore whitelist pattern:
 - Repository is clean
 - No open PRs on this repo
 
+**Trigger:** User says "PR flow"
+
+**Meaning:** Identify the next incomplete feature/milestone in the roadmap and work on it using the PR flow cycle.
+
+**Roadmap ordering:** If the roadmap ordering no longer seems correct (e.g., a later item should be done first, or dependencies have changed), alert the user before proceeding. Agree on revised ordering before continuing. The user will be saying "PR flow" repeatedly to drive progress — don't blindly follow a stale ordering.
+
 **The Cycle:**
-1. **PR flow** — User says "PR flow", goes to do other work
+1. **PR flow** — User says "PR flow", Claude finds next incomplete roadmap item, user goes to do other work
 2. **Work** — Claude creates feature branches (if needed), does work on `work` branch
 3. **PR & Surf** — Claude PRs `work` → `feature`, merges, surfs the **Files tab**
 4. **Review** — User reviews files, provides feedback if needed
 5. **Iterate** — If fixes needed, go to step 2
-6. **Complete** — When feature done, Claude PRs `feature` → `main`, squash merges, deletes branches, starts next feature
+6. **Complete** — When feature done, Claude PRs `feature` → `main`, squash merges, surfs Files tab (no wait), deletes branches, continues to next feature
 
 **Branch Structure:**
 ```
@@ -168,15 +167,27 @@ Each review cycle:
 Completing a feature:
 - `gh pr create` from `feature` → `main`
 - Squash merge with descriptive commit message
+- Surf the Files tab (user can see what went into main, but no wait — already reviewed)
 - Delete both branches: `git branch -d feature/{name}/work feature/{name}`
 - `git push origin --delete feature/{name}/work feature/{name}`
 - Pull main: `git checkout main && git pull`
+- Continue immediately to next feature or task
 
 Why this works:
 - PRing `work` → `feature` repeatedly shows clean incremental diffs
 - User reviews familiar PR Files tab interface
 - Squash merge keeps main history clean (one commit per feature)
 - User only needs to: say "PR flow", review files, give feedback
+
+**Alert on Wait:**
+If Claude needs to stop work and wait for user feedback, but has NOT surfed a PR (i.e., the user won't be automatically notified), Claude MUST call the alert command:
+```bash
+alert "Waiting for: <reason>"
+```
+This pops up on the user's screen so they know to check Claude's interface. Examples:
+- `alert "Roadmap reordering needed"`
+- `alert "Need clarification on feature scope"`
+- `alert "Encountered blocking issue"`
 
 ---
 
