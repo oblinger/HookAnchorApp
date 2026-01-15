@@ -109,103 +109,23 @@ Gitignore whitelist pattern:
 
 ## CURATION ACTIONS
 
+Each action has a standalone runbook document optimized for execution.
+
+| Action | Trigger | Description |
+| ------ | ------- | ----------- |
+| [[PC PR Flow]] | "PR flow" | Iterative development using pull requests |
+| [[PC Tidy]] | "tidy" | Validate and correct anchor folder structure |
+| [[PC Roadmap Ready]] | "roadmap ready" | Validate roadmap structure and surface open questions |
+| [[PC Move Anchor]] | Move anchor | Update all systems when moving an anchor folder |
+| [[PC Archive]] | Archive | Move old content to Yore/ with date prefix |
+
 ### Finding Anchors
 
-
-### Tidy
-
-**Trigger:** User says "tidy" (optionally with anchor name)
-
-**Action:** Scan the anchor and execute all items in the [[#Tidy List]] below. Each tidy item describes a validation/correction to perform.
-
----
-
-### PR Flow
-
-**Goals:**
-- User says "PR flow", goes to do other work, gets notified when code is ready via surfed Files tab
-- Minimize user touch points per iteration
-- Clean git history (one squash commit per feature on main)
-
-**Pre-conditions:**
-- Repository is clean
-- No open PRs on this repo
-
-**Trigger:** User says "PR flow"
-
-**Meaning:** Identify the next incomplete feature/milestone in the roadmap and work on it using the PR flow cycle.
-
-**Roadmap ordering:** If the roadmap ordering no longer seems correct (e.g., a later item should be done first, or dependencies have changed), alert the user before proceeding. Agree on revised ordering before continuing. The user will be saying "PR flow" repeatedly to drive progress — don't blindly follow a stale ordering.
-
-**The Cycle:**
-1. **PR flow** — User says "PR flow", Claude finds next incomplete roadmap item, user goes to do other work
-2. **Work** — Claude creates feature branches (if needed), does work on `work` branch
-3. **PR & Surf** — Claude PRs `work` → `feature`, merges, surfs the **Files tab**
-4. **Review** — User reviews files, provides feedback if needed
-5. **Iterate** — If fixes needed, go to step 2
-6. **Complete** — When feature done, Claude PRs `feature` → `main`, squash merges, surfs Files tab (no wait), deletes branches, continues to next feature
-
-**Branch Structure:**
-```
-main
- └── feature/{name}
-      └── feature/{name}/work   ← all work happens here
-```
-
-**Implementation Notes:**
-
-Starting a feature:
-- Create `feature/{name}` from `main`
-- Create `feature/{name}/work` from `feature/{name}`
-
-Each review cycle:
-- Commit work to `work` branch
-- `gh pr create` from `work` → `feature`, then `gh pr merge`
-- Surf Files tab: `ctrl surf "https://github.com/{owner}/{repo}/pull/{number}/files"`
-- Each PR shows only the delta since last merge (clean incremental diff)
-
-Completing a feature:
-- `gh pr create` from `feature` → `main`
-- Squash merge with descriptive commit message
-- Surf the Files tab (user can see what went into main, but no wait — already reviewed)
-- Delete both branches: `git branch -d feature/{name}/work feature/{name}`
-- `git push origin --delete feature/{name}/work feature/{name}`
-- Pull main: `git checkout main && git pull`
-- Continue immediately to next feature or task
-
-Why this works:
-- PRing `work` → `feature` repeatedly shows clean incremental diffs
-- User reviews familiar PR Files tab interface
-- Squash merge keeps main history clean (one commit per feature)
-- User only needs to: say "PR flow", review files, give feedback
-
-**Alert on Wait:**
-If Claude needs to stop work and wait for user feedback, but has NOT surfed a PR (i.e., the user won't be automatically notified), Claude MUST call the alert command:
+Use the `ha` (HookAnchor) command to find anchor paths:
 ```bash
-alert "Waiting for: <reason>"
+ha -p ASP              # Returns path to the ASP anchor folder
+ha -p "Alien Biology"  # Find by full name
 ```
-This pops up on the user's screen so they know to check Claude's interface. Examples:
-- `alert "Roadmap reordering needed"`
-- `alert "Need clarification on feature scope"`
-- `alert "Encountered blocking issue"`
-
----
-
-## Tidy List
-
-Execute each of these items when tidying an anchor.
-
-### Anchor Page Links
-Ensure all documentation is linked directly or indirectly from the anchor page. The anchor page should be a dense, scannable index. If any chunk of documentation or links starts to get too large, move it to a subpage and link to that subpage from the anchor page. This keeps the anchor page concise while maintaining full discoverability.
-
-### Roadmap Content
-Verify the roadmap contains only high-level milestone descriptions. If there's detailed discussion, move it to the Notes document and reference from roadmap. If there are detailed task lists, move them to the Todo document and reference from roadmap.
-
-### Link Table Rows
-Check that all rows in the anchor page link table have valid links. Remove or update broken links. Ensure external links (repo, docs) are current.
-
-### TLC Index Entry
-If the anchor has a TLC, verify it appears in the [[TLC]] index table with correct date, link, full name, and description.
 
 ---
 
@@ -282,7 +202,7 @@ The most common stream types are streams of anchors. Each anchor is usually asso
 ### TLC (Three Letter Codes)
 - Commonly accessed anchors have a short acronym for quick access
 - Ideally three letters, hence "TLC" — but can be 2-5 letters if needed
-- **TLCs should always be ALL CAPS** (e.g., SYS, ABIO, PCS)
+- **TLCs should always be ALL CAPS** (e.g., SYS, ABIO, PC)
 - If an anchor has a TLC, create `{TLC}.md` in the `{TLC} Docs/` folder
 - The root folder has `{FULL_NAME}.md` containing only: `See [[TLC]]`
 - The TLC file in Docs becomes the primary anchor markdown with all the content
@@ -421,6 +341,28 @@ Placement:
 - Roadmap lives in `{NAME} Docs/` folder as `{NAME} Roadmap.md`
 - Linked from anchor page under "Execution Docs" row (sub-row of Planning)
 - Grouped with Todo (both are execution/tracking docs, vs PRD/Features/Notes which are design docs)
+
+### Handling Milestone Deferrals
+When a milestone needs to be deferred to a later phase:
+
+1. **Mark the deferred item** with `[~]` and add "(Deferred - see Mx.y)" to the title:
+   ```markdown
+   ### [~] M1.11 - Documentation Sync (Deferred - see M3.14)
+   ```
+
+2. **Add a revisit milestone** at the end of the target milestone/phase:
+   ```markdown
+   ### [ ] M3.14 - Revisit: M1.11 Documentation Sync
+   ```
+
+3. **Cross-reference both directions**:
+   - The deferred item points to where it will be revisited
+   - The revisit item links back to the original deferred milestone
+
+This ensures:
+- Deferred work is not forgotten
+- There's a defined point where it will be addressed
+- Traceability in both directions
 
 ---
 
@@ -587,158 +529,23 @@ Checklist for validating an anchor is properly set up:
 
 ---
 
-# ACTIONS
+# STANDARDS
 
-## Organizational Actions
+## Justfile Standards
 
-### Move Anchor Folder
-Moving an anchor folder requires updating several systems that index by path.
-
-#### 1. Move the Folder
-```bash
-mv "/old/path/{NAME}" "/new/path/{NAME}"
-```
-
-#### 2. Migrate Claude Code Sessions
-Claude Code stores sessions in `~/.claude/projects/` with paths encoded (slashes become dashes). When you move a folder, sessions become orphaned.
-
-**Manual migration:**
-```bash
-cd ~/.claude/projects/
-# Rename the session directory (use -- to handle leading dash)
-mv -- -old-path-encoded -new-path-encoded
-```
-
-Example: Moving `~/ob/proj/My Project` to `~/ob/kmr/prj/My Project`:
-```bash
-mv -- -Users-oblinger-ob-proj-My-Project -Users-oblinger-ob-kmr-prj-My-Project
-```
-
-**Automated migration:** Use the `claude-mv` script from Chase Adams:
-```bash
-claude-mv ~/old/path ~/new/path
-```
-This handles renaming directories and updating path references in `.jsonl` files.
-
-**Verify:** After migration, run `claude --continue` in the new location.
-
-#### 3. Reindex HookAnchor
-HookAnchor maintains an index of anchor folders. Trigger a rescan:
-```bash
-ha --rescan     # Rescan filesystem
-```
-
-#### 4. Rebuild Documentation Index
-If the anchor has published docs, rebuild the MkDocs site:
-```bash
-cd /new/path/{repo}
-mkdocs build    # Rebuild site/ folder
-```
-
-If using GitHub Pages, push changes to trigger rebuild.
-
-#### 5. Update TLC Index
-If the anchor has a TLC, update [[SYS/Closet/Three Letter Codes/TLC]] with the new location.
-
-#### 6. Update Git Remotes (if applicable)
-If the repository was moved, remote URLs should still work. But verify:
-```bash
-cd /new/path/{repo}
-git remote -v
-```
-
-#### 7. Scan for Hardcoded Paths
-Search the codebase for hardcoded references to the old path:
-```bash
-cd /new/path/{repo}
-grep -r "/old/path" .
-grep -r "old-path-segment" .
-```
-
-Common places where paths may be hardcoded:
-- **CLAUDE.MD** — Project instructions may reference absolute paths
-- **CONFIG FILES** — pyproject.toml, mkdocs.yml, justfile
-- **SCRIPTS** — Shell scripts, Python scripts with path constants
-- **DOCUMENTATION** — Examples or tutorials with absolute paths
-- **TESTS** — Test fixtures or test data paths
-
-#### Checklist: Move Anchor Folder
-1. [ ] Move the folder itself
-2. [ ] Migrate Claude Code sessions (`~/.claude/projects/`)
-3. [ ] Reindex HookAnchor (`ha --rescan`)
-4. [ ] Rebuild docs if applicable (`mkdocs build`)
-5. [ ] Update TLC index
-6. [ ] Verify git remotes
-7. [ ] Scan for and update hardcoded paths
-8. [ ] Test: `claude --continue` works in new location
-
----
-
-## Coding Actions
-
-### Justfile Standards
 The `justfile` is the standard way to manage project tasks. Use [just](https://github.com/casey/just) as the task runner.
 
-#### Standard Recipes
+### Standard Recipes
 - **BUILD** — Build the project (compile, package)
 - **TEST** — Run the test suite
 - **LINT** — Run linters (ruff, mypy, etc.)
 - **CHECK** — Run all checks (lint + test)
-- **DOCS** — Build documentation (`mkdocs build`)
-- **DOCS-SERVE** — Serve docs locally (`mkdocs serve`)
-- **DOCS-DEPLOY** — Deploy docs to GitHub Pages (`mkdocs gh-deploy`)
+- **DOCS** — Build documentation
 - **INSTALL** — Install dependencies
-- **DEV** — Install in development mode with dev dependencies
-- **CLEAN** — Remove build artifacts, cache files
-- **RELEASE** — Build and publish to PyPI
+- **DEV** — Install in development mode
+- **CLEAN** — Remove build artifacts
 
-#### Example Justfile
-```just
-# Default recipe - show available commands
-default:
-    @just --list
-
-# Build the project
-build:
-    python -m build
-
-# Run tests
-test:
-    pytest tests/
-
-# Run linter
-lint:
-    ruff check src/
-
-# Format code
-format:
-    ruff format src/ tests/
-
-# Run all checks
-check: lint test
-
-# Build documentation
-docs:
-    mkdocs build
-
-# Serve docs locally
-docs-serve:
-    mkdocs serve
-
-# Deploy docs to GitHub Pages
-docs-deploy:
-    mkdocs gh-deploy
-
-# Install in development mode
-dev:
-    pip install -e ".[dev]"
-
-# Clean build artifacts
-clean:
-    rm -rf dist/ build/ *.egg-info site/ .pytest_cache/ .ruff_cache/
-```
-
-#### Project-Specific Recipes
+### Project-Specific Recipes
 Add project-specific recipes as needed:
 - **RUN** — Run the application
 - **DB-MIGRATE** — Run database migrations
@@ -747,37 +554,7 @@ Add project-specific recipes as needed:
 
 ---
 
-### Archive to Yore/
-The `Yore/` subfolder stores archived code, documentation, or other materials that are no longer active but worth preserving. The name "Yore" sorts late alphabetically, keeping archives at the bottom of directory listings.
-
-#### When to Archive
-- Old versions of code being replaced
-- Deprecated documentation
-- Legacy implementations kept for reference
-- Backup copies before major refactoring
-
-#### Archive Naming
-Prefix archived items with the date in `YYYY-MM-DD` format:
-```
-Yore/
-├── 2026-01-12 OldProjectName/
-├── 2025-11-15 DeprecatedModule/
-└── 2025-08-20 LegacyDocs/
-```
-
-#### Archive Procedure
-1. Create `Yore/` folder if it doesn't exist
-2. Move the item with date prefix:
-   ```bash
-   mkdir -p Yore
-   mv "OldProject" "Yore/$(date +%Y-%m-%d) OldProject"
-   ```
-3. Update any references or symlinks that pointed to the archived item
-4. Add a note in the anchor page or README about what was archived and why
-
----
-
-### Update Double Click Symlinks
+## Update Double Click Symlinks
 *(To be documented)*
 
 When moving anchor folders, Double Click symlinks under the vault's Users tree may need updating to point to new locations.

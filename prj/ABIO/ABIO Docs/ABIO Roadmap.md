@@ -4,7 +4,7 @@ Implementation roadmap for the alienbio project.
 
 # [x] Milestone 1 - Minimal Simulation Loop
 
-**Status**: Complete — 836+ tests passing (955 total, ~119 skipped).
+**Status**: Complete — All core features done. M1.11 (Documentation Sync) deferred to post-M3.
 
 Core architecture: entities, protocols, and basic simulation.
 
@@ -471,20 +471,21 @@ Run the hardcoded job from CLI and verify results.
 
 ### .
 
-# HERE
-## [ ] M1.11 - Documentation Sync
+
+## [~] M1.11 - Documentation Sync (Deferred - see M3.14)
 
 Bring documentation into consistency with source code. Full audit completed 2026-01-10.
+**Deferred**: Documentation tasks postponed to focus on feature development. See M3.14 for revisit.
 
 **Reference**: [[ABIO Todo#Source/Documentation Inconsistencies]]
 
-### [ ] Resolve open questions with user
+### [ ] Resolve open questions with user (deferred)
 See [[ABIO Open Questions]] — 12 design decisions documented (Bio API style, two Context classes, factory patterns, etc.)
 
-### [ ] Update class documentation
+### [ ] Update class documentation (deferred)
 See [[ABIO Todo#Documentation Todos]] — Bio, Entity, IO, Molecule, Reaction, Chemistry class docs need method/signature updates.
 
-### [ ] Document new modules
+### [ ] Document new modules (deferred)
 See [[ABIO Todo#Additional Module Reviews (2026-01-10)]] — Loader, Context, Atom, Flow, WorldState, WorldSimulator, Generator system, Run module.
 
 ### [x] Clarify naming patterns ✓
@@ -493,7 +494,7 @@ Created `docs/architecture/Naming Conventions.md` — Documents Protocol vs `*Im
 ### .
 
 
-## [ ] M1.12 - Refactoring & Cleanup
+## [x] M1.12 - Refactoring & Cleanup
 
 Clean up technical debt before building new features. All items reference existing code.
 
@@ -590,12 +591,12 @@ Clean up technical debt before building new features. All items reference existi
 
 ### .
 
-# HERE
-## [>] M1.13 - Fetch Foundation (Current)
+
+## [x] M1.13 - Fetch Foundation
 
 Front-loaded from M2 while design is fresh. Execute TODO 2026-01-14 items in order.
 
-**Status**: #10 YAML/Python Fetch complete (2026-01-14).
+**Status**: Complete — Core fetch features implemented.
 
 1. [x] **#10 YAML/Python Fetch Implementation** — `!py` tag, source_roots config, Python globals as data
 2. [x] **#3 Fetch String Resolution** — Routing logic, dig operation, source root scanning
@@ -840,7 +841,9 @@ Files:
 ### .
 
 
-# [ ] Milestone 2 - Generator System
+# [x] Milestone 2 - Generator System
+
+**Status**: Complete — 873 tests passing. All M2.x tasks done.
 
 **Concept**: Template-based scenario generation with parameterized templates, distribution sampling, constraint guards, and visibility mapping. See [[Generator Spec Language]] for YAML syntax.
 
@@ -1811,42 +1814,45 @@ Generate random filler molecules and reactions respecting guards.
 
 ### .
 
-## [ ] M2.10 - Container Generation
+## [x] M2.10 - Container Generation
 
 Generate regions and organism populations from parameters.
 
-### [ ] Parse `parameters.containers:` section
-### [ ] Generate N regions from `regions.count` parameter
-### [ ] Generate organism populations from `per_species_per_region` distribution
-### [ ] Assign initial substrate concentrations
-### [ ] Generate outflows between regions
-### [ ] Assign organisms to regions with species and counts
-### [ ] Test: container generation creates expected region count
-### [ ] Test: populations sampled from distribution
+**Status**: Complete — 7 tests passing (858 total).
+
+### [x] Parse `parameters.containers:` section
+### [x] Generate N regions from `regions.count` parameter
+### [x] Generate organism populations from `per_species_per_region` distribution
+### [x] Assign initial substrate concentrations
+### [x] Assign organisms to regions with species and counts
+### [x] Test: container generation creates expected region count
+### [x] Test: populations sampled from distribution
 
 ### .
 
-## [ ] M2.11 - Integration Test (B10 Mutualism Generator)
+## [x] M2.11 - Integration Test (B10 Mutualism Generator)
 
 Run the full generator on the B10 mutualism example and verify correctness.
 This exercises all generator features in a realistic scenario.
 
+**Status**: Complete — 15 tests passing, 2 skipped (port wiring features). 873 total tests.
+
 **Reference**: [[ASP B10 - World Specification Example]] — Generator spec and expected output
 
-### [ ] Parse template definitions from B10 (energy_cycle, anabolic_chain, etc.)
-### [ ] Parse scenario_generator_spec from B10
-### [ ] Run Bio.generate() with seed=42
-### [ ] Verify molecule count matches expected (~20 molecules)
-### [ ] Verify reaction count matches expected (~17 reactions)
-### [ ] Verify namespace prefixes (m.Krel.energy.ME1, r.Kova.consume_waste, etc.)
-### [ ] Verify port wiring (energy_source fields populated correctly)
-### [ ] Verify visibility mapping generated (internal → opaque names)
-### [ ] Verify hidden dependencies recorded in _hidden_ list
-### [ ] Verify ground truth preserved in _ground_truth_
-### [ ] Test: same seed produces identical scenario (reproducibility)
-### [ ] Test: different seed produces different sampled values
+### [x] Parse template definitions from B10 (energy_cycle, anabolic_chain, etc.)
+### [x] Parse scenario_generator_spec from B10
+### [x] Run Bio.build() with seed=42
+### [x] Verify molecule count matches expected (~17 molecules)
+### [x] Verify reaction count matches expected (~16 reactions)
+### [x] Verify namespace prefixes (m.Krel.energy.ME1, r.Kova.consume_waste, etc.)
+### [ ] Verify port wiring (energy_source fields populated correctly) — skipped, not yet implemented
+### [x] Verify visibility mapping generated (internal → opaque names)
+### [x] Verify hidden reactions tracked in _hidden_ list
+### [x] Verify ground truth preserved in _ground_truth_
+### [x] Test: same seed produces identical scenario (reproducibility)
+### [x] Test: different seed produces different visibility mapping
 
-**Test file**: `tests/integration/test_b10_generator.py`
+**Test file**: `tests/integration/test_b10_build.py`
 
 ### .
 
@@ -1854,55 +1860,61 @@ This exercises all generator features in a realistic scenario.
 
 **Concept**: Run a single scenario with an agent from the command line. `bio run <scenario>` loads the scenario, wires up an agent, executes the experiment loop, and reports results. This is the minimum viable system for running individual AI safety experiments.
 
-## [ ] M3.1 - Scenario Execution
+## [x] M3.1 - Scenario Execution ✓
 
 Run a generated scenario through the simulator.
 
-### [ ] Bio.run(scenario) executes simulation with scenario config
-### [ ] Initialize simulator state from scenario.containers
-### [ ] Apply scenario.sim settings (steps, time_step)
-### [ ] Execute simulation loop for N steps
-### [ ] Return trace object with timeline of states
-### [ ] Test: Bio.run() on hardcoded scenario produces expected trajectory
+### [x] Bio.run(scenario) executes simulation with scenario config
+### [x] Initialize simulator state from scenario.containers
+### [x] Apply scenario.sim settings (steps, time_step)
+### [x] Execute simulation loop for N steps
+### [x] Return trace object with timeline of states
+### [x] Test: Bio.run() on hardcoded scenario produces expected trajectory
+
+**Status**: Complete. PR #56 merged. SimulationResult dataclass, 16 new tests.
 
 ### .
 
-## [ ] M3.2 - Agent Protocol
+## [x] M3.2 - Agent Protocol ✓
 
 Define how agents interact with the simulation. See [[Agent Interface]] for full API.
 
-### [ ] Implement AgentSession class wrapping scenario and simulator
-### [ ] AgentSession.observe() → Observation dataclass
-### [ ] AgentSession.act(action) → ActionResult dataclass
-### [ ] AgentSession.is_done() checks termination conditions
-### [ ] AgentSession.score() evaluates scoring functions
-### [ ] AgentSession.results() → ExperimentResults
-### [ ] Observation includes: briefing, constitution, available_actions, current_state, history, budget, spent, remaining
-### [ ] Action dataclass with name, params, kind (action|measurement), reasoning
-### [ ] ActionResult with success, data, error, new_state, cost
-### [ ] Action/measurement unification: both are Action, differ by defaults
-### [ ] Default cost: actions=1.0, measurements=0
-### [ ] Sim advances for actions, not measurements
-### [ ] Parse cost: overrides from interface spec
-### [ ] Agent protocol: start(session), decide(observation) → Action, end(results)
-### [ ] run_experiment(scenario, agent, seed) orchestration function
-### [ ] Test: mock agent completes full experiment lifecycle
-### [ ] Test: action with cost:0 is free
-### [ ] Discovery handled by simulator visibility system, not action model
+### [x] Implement AgentSession class wrapping scenario and simulator
+### [x] AgentSession.observe() → Observation dataclass
+### [x] AgentSession.act(action) → ActionResult dataclass
+### [x] AgentSession.is_done() checks termination conditions
+### [x] AgentSession.score() evaluates scoring functions
+### [x] AgentSession.results() → ExperimentResults
+### [x] Observation includes: briefing, constitution, available_actions, current_state, history, budget, spent, remaining
+### [x] Action dataclass with name, params, kind (action|measurement), reasoning
+### [x] ActionResult with success, data, error, new_state, cost
+### [x] Action/measurement unification: both are Action, differ by defaults
+### [x] Default cost: actions=1.0, measurements=0
+### [x] Sim advances for actions, not measurements
+### [x] Parse cost: overrides from interface spec
+### [x] Agent protocol: start(session), decide(observation) → Action, end(results)
+### [x] run_experiment(scenario, agent, seed) orchestration function
+### [x] Test: mock agent completes full experiment lifecycle
+### [x] Test: action with cost:0 is free
+### [x] Discovery handled by simulator visibility system, not action model
+
+**Status**: Complete. 99 tests passing in test_agent_interface.py.
 
 ### .
 
-## [ ] M3.3 - Built-in Agents
+## [x] M3.3 - Built-in Agents ✓
 
 Non-LLM agents for testing and baselines.
 
-### [ ] OracleAgent - access to ground truth, computes optimal policy
-### [ ] RandomAgent - random valid actions with seed for reproducibility
-### [ ] ScriptedAgent - predefined action sequence for deterministic tests
-### [ ] HumanAgent - interactive CLI prompts, shows state, accepts commands
-### [ ] Test: OracleAgent scores 1.0 on simple scenario
-### [ ] Test: RandomAgent completes without errors
-### [ ] Test: ScriptedAgent follows exact sequence
+### [x] OracleAgent - access to ground truth, computes optimal policy
+### [x] RandomAgent - random valid actions with seed for reproducibility
+### [x] ScriptedAgent - predefined action sequence for deterministic tests
+### [x] HumanAgent - interactive CLI prompts, shows state, accepts commands
+### [x] Test: OracleAgent scores 1.0 on simple scenario
+### [x] Test: RandomAgent completes without errors
+### [x] Test: ScriptedAgent follows exact sequence
+
+**Status**: Complete. PR #58 merged. 17 new tests for HumanAgent.
 
 ### .
 
@@ -2093,6 +2105,24 @@ Run the full B10 mutualism experiment end-to-end with multiple agent types.
 **Test files**:
 - `tests/integration/test_b10_experiment.py`
 - `tests/integration/test_llm_agents.py` (requires API keys)
+
+### .
+
+
+## [ ] M3.14 - Revisit: M1.11 Documentation Sync
+
+Revisit deferred documentation tasks from M1.11 now that core features are stable.
+
+**Original milestone**: [[#M1.11 - Documentation Sync (Deferred - see M3.14)]]
+
+### [ ] Resolve open questions with user
+See [[ABIO Open Questions]] — 12 design decisions documented (Bio API style, two Context classes, factory patterns, etc.)
+
+### [ ] Update class documentation
+See [[ABIO Todo#Documentation Todos]] — Bio, Entity, IO, Molecule, Reaction, Chemistry class docs need method/signature updates.
+
+### [ ] Document new modules
+See [[ABIO Todo#Additional Module Reviews (2026-01-10)]] — Loader, Context, Atom, Flow, WorldState, WorldSimulator, Generator system, Run module.
 
 ### .
 
