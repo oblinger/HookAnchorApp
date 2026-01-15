@@ -1,3 +1,4 @@
+- beads, actions, skills at claude
 - write a note to Barney
 - Briones note
 - ASK RAM:  play on usage ramp in Jan Feb
