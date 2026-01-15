@@ -1,7 +1,51 @@
+## 2026-01-14  Open Items (Resolved)
 
+### ✅ Q1: Bio.run() vs Bio.fetch() routing alignment
 
+**Resolution:** Not an open question - run() does NOT call fetch() directly.
 
-## 2026-01-14  ABIO Open Questions
+**Call Chain:**
+```
+run(target) → build(target) → fetch(target)  # if target is string
+```
+
+**run() Behavior:**
+
+| Input | Action |
+|-------|--------|
+| DAT object or DAT name | Check if `result` exists → if yes, return existing result; if no, call `DAT.run()` |
+| Non-DAT spec (string) | Call `build()`, then call `.run()` on result |
+| Non-DAT spec (dict) | Call `build()`, then call `.run()` on result |
+
+**build() Behavior:**
+
+| Input | Action |
+|-------|--------|
+| String | Call `fetch()` first, then do template expansion |
+| Dict/structure | Do template expansion directly |
+
+**Non-DAT Execution:**
+- When running something that's not a full DAT spec, `build()` creates it in context of an anonymous DAT
+- Returns the instantiated entity
+- `run()` then calls `entity.run()` (not `DAT.run()`)
+
+**DAT.run() Return:**
+- Returns the object inside `dat.result`
+
+**Action:** Update `run` and `build` command documentation to clarify this behavior
+
+### ✅ Q2: Bio.lookup() scope enumeration
+
+**Resolution:** Subsumed by fetch() - see resolved Question #6 (Fetch String Resolution).
+
+The three fetch patterns cover all lookup cases:
+1. **DAT access** - contains `/`
+2. **Module access** - all dots, matches loaded module
+3. **Source root access** - all dots, no module match
+
+---
+
+## 2026-01-14  ABIO Open Questions (Resolved)
 
 Design decisions needed for M1.11 documentation sync.
 
