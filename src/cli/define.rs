@@ -176,3 +176,90 @@ fn print_usage() {
     print("  ha --define name:=MyDocs action:=folder arg:=~/Documents");
     print("  ha --define n:=ProjectRoot a:=anchor r:=~/projects/myapp f:=A");
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_expand_aliases() {
+        let mut params = HashMap::new();
+        params.insert("n".to_string(), "MyName".to_string());
+        params.insert("a".to_string(), "chrome".to_string());
+        params.insert("r".to_string(), "https://example.com".to_string());
+
+        let expanded = expand_aliases(params);
+
+        assert_eq!(expanded.get("name"), Some(&"MyName".to_string()));
+        assert_eq!(expanded.get("action"), Some(&"chrome".to_string()));
+        assert_eq!(expanded.get("arg"), Some(&"https://example.com".to_string()));
+    }
+
+    #[test]
+    fn test_expand_aliases_preserves_long_form() {
+        let mut params = HashMap::new();
+        params.insert("name".to_string(), "LongName".to_string());
+        params.insert("n".to_string(), "ShortName".to_string()); // Should be ignored
+
+        let expanded = expand_aliases(params);
+
+        // Long form takes precedence
+        assert_eq!(expanded.get("name"), Some(&"LongName".to_string()));
+    }
+
+    #[test]
+    fn test_infer_patch_chrome() {
+        assert_eq!(infer_patch_from_arg("https://google.com", "chrome"), "Web");
+        assert_eq!(infer_patch_from_arg("https://github.com", "safari"), "Web");
+    }
+
+    #[test]
+    fn test_infer_patch_folder() {
+        // Should return parent folder name
+        let patch = infer_patch_from_arg("/Users/test/Documents/MyProject", "folder");
+        assert_eq!(patch, "Documents");
+    }
+
+    #[test]
+    fn test_define_and_cleanup() {
+        // This test requires SysData to be initialized
+        // Skip if running in unit test mode without full initialization
+        if std::panic::catch_unwind(|| crate::core::get_commands()).is_err() {
+            println!("Skipping persistence test - SysData not initialized");
+            return;
+        }
+
+        // Create a unique test command name
+        let test_name = format!("__TestDefine_{}", std::process::id());
+
+        // Create the command
+        let command = Command {
+            patch: "TestPatch".to_string(),
+            command: test_name.clone(),
+            action: "chrome".to_string(),
+            arg: "https://test-cleanup.example.com".to_string(),
+            flags: String::new(),
+            other_params: None,
+            last_update: 0,
+            file_size: None,
+        };
+
+        // Save it
+        let save_result = save_command_atomic(command, None);
+        assert!(save_result.is_ok(), "Failed to save test command");
+
+        // Verify it exists
+        let commands = crate::core::get_commands();
+        let found = commands.iter().any(|c| c.command == test_name);
+        assert!(found, "Test command should exist after save");
+
+        // Clean up - delete the command
+        let delete_result = crate::core::delete_command(&test_name);
+        assert!(delete_result.is_ok(), "Failed to delete test command");
+
+        // Verify it's gone
+        let commands = crate::core::get_commands();
+        let found = commands.iter().any(|c| c.command == test_name);
+        assert!(!found, "Test command should be deleted");
+    }
+}
