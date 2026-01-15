@@ -746,11 +746,29 @@ Test file created: `tests/unit/test_fetch_resolution.py` (50+ test cases)
 
 #### #5 Documentation Integration Audit
 
-- [ ] Scan all resolved questions (#1-12) in this file
-- [ ] For each resolution, verify details are integrated into relevant system docs:
-  - Bio.md, Scope.md, Entity docs, command docs, etc.
-- [ ] Ensure no design decisions are lost in this planning doc only
-- [ ] Cross-reference: planning doc should point to where details live in real docs
+**Audit completed 2026-01-14:**
+
+| Question | Target Doc | Status |
+|----------|------------|--------|
+| Q1 Two Context Classes | Spec Language Reference | ❌ Needs update - says `RuntimeEnv` but resolution says `EvalEnv` |
+| Q2 Bio API Style | Bio.md | ✅ Documented (singleton vs instance) |
+| Q3 construct/deconstruct | Entity.md, Decorators | ⚠️ Check if @biotype removal documented |
+| Q4 Storage and Persistence | Bio.md, DAT.md | ✅ DAT pattern documented |
+| Q5 DAT Integration | ABIO DAT.md | ✅ Documented |
+| Q6 Fetch String Resolution | ABIO Fetch.md | ✅ Documented (code incomplete) |
+| Q7 Run Method Design | ABIO Run.md | ✅ Updated with call chain |
+| Q8 Bio.build() Return Type | ABIO Build.md | ✅ Updated with call chain |
+| Q9 Factory Pattern | Factory Pattern.md | ❌ Needs creation (#6) |
+| Q10 hydrate/dehydrate Location | ABIO Hydrate.md | ⚠️ Check if module-level location documented |
+| Q11 Simulator Factory | (covered by Q9) | — |
+| Q12 Module Exports | alienbio topic | ⚠️ Check __all__ documentation |
+| Q13 YAML/Python Namespace | ABIO Fetch.md | ✅ Documented in Data Sources section |
+
+**Remaining tasks:**
+- [ ] Update Spec Language Reference to match Q1 resolution (EvalEnv not RuntimeEnv)
+- [ ] Verify @biotype removal documented in Decorators.md
+- [ ] Verify hydrate/dehydrate module-level location in ABIO Hydrate.md
+- [ ] Document __all__ exports in alienbio topic doc
 
 #### #6 Factory Pattern Documentation
 

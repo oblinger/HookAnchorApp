@@ -500,49 +500,70 @@ Clean up technical debt before building new features. All items reference existi
 - Bio.md — Bio class refactoring steps, hydration consolidation
 - Spec Language Reference — Tag system consolidation, Context class cleanup
 
+### Priority: Legacy Code Removal
+
+**Do these first** — eliminate confusion and reduce code surface.
+
+1. **Deprecate RuntimeContext**
+   - [ ] Audit `infra/context.py` - identify any functionality not in Bio
+   - [ ] Migrate useful methods to Bio (if any)
+   - [ ] Remove `RuntimeContext` class entirely
+   - [ ] Remove `ctx()` function and `_ctx` ContextVar
+   - [ ] Remove `Context = RuntimeContext` alias
+   - [ ] Remove module-level functions (`do`, `create`, `load`, `save`, `lookup`, `create_root`)
+   - [ ] Remove `_ContextProxy` class and `o` proxy object
+   - [ ] Update any code that imports from `infra.context`
+
+2. **Legacy code audit** — search and eliminate
+   - [ ] Search codebase for `deprecated` (comments, decorators, docstrings)
+   - [ ] Search codebase for `backward` / `backwards` / `compat` patterns
+   - [ ] Search codebase for `alias` patterns (like `Context = RuntimeContext`)
+   - [ ] Search codebase for `legacy` comments
+   - [ ] Search codebase for `# TODO: remove` or `# FIXME: remove`
+   - [ ] For each finding: remove if safe, document if not
+   - [ ] Goal: zero deprecated/compat/alias patterns in codebase
+
 ### Code Refactoring
 
-1. **Bio class: instance pattern**
+3. **Bio class: instance pattern**
    - [ ] Refactor `_BioCompat` static wrappers to delegate to singleton
    - [ ] Ensure `Bio.__init__()` creates fresh DAT context and scope chain
    - [ ] Export `bio` singleton from `alienbio.__init__`
    - [ ] Update CLI commands to use singleton `bio` instance
 
-2. **Consolidate hydration** (see TODO 2026-01-14 #7)
+4. **Consolidate hydration** (see TODO 2026-01-14 #7)
    - [ ] Move `hydrate`/`dehydrate` to module-level functions in `alienbio/__init__.py`
    - [ ] Update Bio.fetch() to call module-level hydrate()
    - [ ] Ensure each Entity subclass has `hydrate(data, ...)` classmethod
 
-3. **Remove old tag system**
+5. **Remove old tag system**
    - [ ] Remove `EvTag`, `RefTag`, `IncludeTag` classes from `tags.py`
    - [ ] Keep YAML constructors but have them create new placeholder classes (Evaluable, Quoted, Reference)
    - [ ] Add dotted path support to Reference resolution
    - [ ] Ensure circular include detection in `Bio.hydrate()`
 
-4. **Context class disambiguation**
-   - [ ] Remove `eval.Context` dataclass
+6. **EvalContext cleanup** (infra.Context handled by item #1)
+   - [ ] Remove `eval.Context` dataclass if exists
    - [ ] Update `eval_node()` to take Scope instead of Context
-   - [ ] Rename `infra.Context` → `RuntimeEnv`
-   - [ ] Update all references
 
-5. **Rename generator → build**
+7. **Rename generator → build**
    - [ ] Rename `src/alienbio/generator/` → `src/alienbio/build/`
    - [ ] Update all imports
 
-6. **Remove loader stub**
+8. **Remove loader stub**
    - [ ] Remove `loader.py` stub `load_spec()`
 
-7. **Factory pattern** (see TODO 2026-01-14 #7)
+9. **Factory pattern** (see TODO 2026-01-14 #7)
    - [ ] Implement `@factory` decorator in `alienbio/decorators.py`
    - [ ] Implement factory registry on Bio (`_factories`, `_factory_defaults`)
    - [ ] Update existing `*Impl` classes with `@factory` decorators
    - [ ] Add `impl` parameter to `build()`
 
-8. **Module exports cleanup** (see TODO 2026-01-14 #9)
-   - [x] Refactor `alienbio/__init__.py` to use curated `__all__`
-   - [x] Export main API: `bio`, `Bio`, `hydrate`, `dehydrate`
-   - [x] Export core protocols: `Entity`, `Scenario`, `Chemistry`, `Simulator`, `State`
-   - [x] Keep `*Impl` classes importable but NOT in `__all__`
+10. **Module exports cleanup** (see TODO 2026-01-14 #9)
+    - [x] Refactor `alienbio/__init__.py` to use curated `__all__`
+    - [x] Export main API: `bio`, `Bio`, `hydrate`, `dehydrate`
+    - [x] Export core protocols: `Entity`, `Scenario`, `Chemistry`, `Simulator`, `State`
+    - [x] Keep `*Impl` classes importable but NOT in `__all__`
 
 ### Documentation Updates (for existing code)
 
