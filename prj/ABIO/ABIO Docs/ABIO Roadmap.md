@@ -701,126 +701,135 @@ alienbio/
   scoring.py           # budget_score, etc.
 ```
 
-1. **Data types** (`agent/types.py`)
-   - [ ] `Action` dataclass — name, params, kind, wait
-   - [ ] `ActionResult` dataclass — success, error, data, cost, new_state, initiated, completed, completion_time
-   - [ ] `Observation` dataclass — briefing, constitution, available_actions, available_measurements, current_state, step, budget, spent, remaining, is_initial()
-   - [ ] `ExperimentResults` dataclass — scenario, seed, scores, trace, passed
+1. **Data types** (`agent/types.py`) ✅
+   - [x] `Action` dataclass — name, params, kind, wait
+   - [x] `ActionResult` dataclass — success, error, data, cost, new_state, initiated, completed, completion_time
+   - [x] `Observation` dataclass — briefing, constitution, available_actions, available_measurements, current_state, step, budget, spent, remaining, is_initial()
+   - [x] `ExperimentResults` dataclass — scenario, seed, scores, trace, passed
 
-2. **Timeline** (`agent/timeline.py`)
-   - [ ] `TimelineEvent` dataclass — event_type, time, data
-   - [ ] `Timeline` class — append, recent(n), since(time), since_index(i), filter(type), pending(), total_cost
+2. **Timeline** (`agent/timeline.py`) ✅
+   - [x] `TimelineEvent` dataclass — event_type, time, data
+   - [x] `Timeline` class — append, recent(n), since(time), since_index(i), filter(type), pending(), total_cost
 
-3. **Trace** (`agent/trace.py`)
-   - [ ] `ActionObservationRecord` dataclass — action, observation, step, cumulative_cost
-   - [ ] `Trace` class — records list (action→observation pairs), total_cost property
+3. **Trace** (`agent/trace.py`) ✅
+   - [x] `ActionObservationRecord` dataclass — action, observation, step, cumulative_cost
+   - [x] `Trace` class — records list (action→observation pairs), total_cost property
    - Note: Trace is agent-centric (what agent did and saw); Timeline is system-centric (all events with timestamps)
 
-4. **AgentSession** (`agent/session.py`)
-   - [ ] `__init__(scenario, seed=None)` — initialize simulator, trace, timeline
-   - [ ] `observe()` → Observation
-   - [ ] `act(action)` → ActionResult
-   - [ ] `poll()` → list of new events since last interaction
-   - [ ] `is_done()` → bool (max_steps, done action, terminal state)
-   - [ ] `score()` → dict of scores
-   - [ ] `results()` → ExperimentResults
-   - [ ] Properties: scenario, simulator, trace, timeline, step_count, seed
+4. **AgentSession** (`agent/session.py`) ✅
+   - [x] `__init__(scenario, seed=None)` — initialize simulator, trace, timeline
+   - [x] `observe()` → Observation
+   - [x] `act(action)` → ActionResult
+   - [x] `poll()` → list of new events since last interaction
+   - [x] `is_done()` → bool (max_steps, done action, terminal state)
+   - [x] `score()` → dict of scores
+   - [x] `results()` → ExperimentResults
+   - [x] Properties: scenario, simulator, trace, timeline, step_count, seed
 
-5. **Package exports** (`agent/__init__.py`)
-   - [ ] Export all public types and AgentSession
+5. **Package exports** (`agent/__init__.py`) ✅
+   - [x] Export all public types and AgentSession
 
-### Phase 2: Action Execution
+### Phase 2: Action Execution ✅
 
 Implement action dispatch and built-in actions.
 
-6. **Built-in actions**
-   - [ ] `add_feedstock` / `add_molecule` — add molecules to region
-   - [ ] `remove_molecule` — remove molecules from region
-   - [ ] `adjust_rate` — modify reaction rate
-   - [ ] `step` — advance simulation (typically handled per-action via steps_per_action)
-   - [ ] `wait` — advance simulation time without action
-   - [ ] `done` — signal experiment completion
+6. **Built-in actions** (partial - framework ready, simulator integration pending)
+   - [ ] `add_feedstock` / `add_molecule` — add molecules to region (stub)
+   - [ ] `remove_molecule` — remove molecules from region (stub)
+   - [ ] `adjust_rate` — modify reaction rate (stub)
+   - [x] `step` — advance simulation (handled per-action via steps_per_action)
+   - [x] `wait` — advance simulation time without action
+   - [x] `done` — signal experiment completion
 
-7. **Measurement execution**
-   - [ ] `sample_substrate` — return concentrations for region
+7. **Measurement execution** (stub)
+   - [ ] `sample_substrate` — return concentrations for region (returns mock state)
    - [ ] Custom measurements via scenario interface
 
-8. **Action validation**
-   - [ ] Unknown action → success=False, error message
-   - [ ] Missing params → success=False, error message
-   - [ ] Invalid param types → success=False, error message
-   - [ ] Failed actions don't change state or increment step
+8. **Action validation** ✅
+   - [x] Unknown action → success=False, error message
+   - [x] Missing params → success=False, error message
+   - [x] Invalid param types → success=False, error message
+   - [x] Failed actions don't change state or increment step
 
-9. **Cost tracking**
-   - [ ] Actions have cost (from interface spec or formula)
-   - [ ] Measurements have cost (default 0)
-   - [ ] Cost formulas evaluated at runtime (`!_ 0.5 + length * 0.1`)
-   - [ ] Over-budget allowed (scoring handles penalty)
+9. **Cost tracking** ✅
+   - [x] Actions have cost (from interface spec or formula)
+   - [x] Measurements have cost (default 0)
+   - [x] Cost formulas evaluated at runtime
+   - [x] Over-budget allowed (scoring handles penalty)
 
-### Phase 3: Timing Model
+### Phase 3: Timing Model ✅
 
 Implement turn-based and concurrent timing.
 
-10. **Turn-based mode** (default_wait=true)
-    - [ ] Actions block until complete
-    - [ ] Time advances by initiation_time + duration
+10. **Turn-based mode** (default_wait=true) ✅
+    - [x] Actions block until complete
+    - [x] Time advances by initiation_time + duration
 
-11. **Concurrent mode** (default_wait=false)
-    - [ ] Actions return immediately with initiated=True, completed=False
-    - [ ] Multiple actions can overlap
-    - [ ] Timeline tracks pending actions
-    - [ ] Explicit wait=True/False overrides default
+11. **Concurrent mode** (default_wait=false) ✅
+    - [x] Actions return immediately with initiated=True, completed=False
+    - [x] Multiple actions can overlap
+    - [x] Timeline tracks pending actions
+    - [x] Explicit wait=True/False overrides default
 
-### Phase 4: Built-in Agents
+### Phase 4: Built-in Agents ✅
 
 Implement agent protocol and built-in agents.
 
-12. **Agent protocol** (`agent/protocol.py`)
-    - [ ] `Agent` Protocol — start(session), decide(observation) → Action, end(results)
+12. **Agent protocol** (`agent/protocol.py`) ✅
+    - [x] `Agent` Protocol — start(session), decide(observation) → Action, end(results)
 
-13. **Built-in agents** (`agent/agents.py`)
-    - [ ] `RandomAgent` — random valid actions, seeded for reproducibility
-    - [ ] `ScriptedAgent` — follows predefined action sequence, returns done when exhausted
-    - [ ] `OracleAgent` — receives ground truth, computes optimal policy
+13. **Built-in agents** (`agent/protocol.py`) ✅
+    - [x] `RandomAgent` — random valid actions, seeded for reproducibility
+    - [x] `ScriptedAgent` — follows predefined action sequence, returns done when exhausted
+    - [x] `OracleAgent` — receives ground truth, computes optimal policy
 
-14. **run_experiment()** (`agent/runner.py`)
-    - [ ] `run_experiment(scenario, agent, seed)` → ExperimentResults
-    - [ ] Calls agent.start(), loops observe/decide/act until is_done(), calls agent.end()
+14. **run_experiment()** (`agent/experiment.py`) ✅
+    - [x] `run_experiment(scenario, agent, seed)` → ExperimentResults
+    - [x] Calls agent.start(), loops observe/decide/act until is_done(), calls agent.end()
 
-### Phase 5: Scoring
+### Phase 5: Scoring ✅
 
 Implement scoring framework.
 
-15. **Scoring module** (`alienbio/scoring.py`)
-    - [ ] `budget_score(trace, budget)` — 1.0 if under, degrades to 0 at 2x budget
-    - [ ] Framework for evaluating `!_` expressions against trace/state
+15. **Scoring module** (`alienbio/scoring.py`) ✅
+    - [x] `budget_score(trace, budget)` — 1.0 if under, degrades to 0 at 2x budget
+    - [ ] Framework for evaluating `!_` expressions against trace/state (pending)
+    - [x] `population_health(trace)` — placeholder for scenario-specific scoring
+    - [x] `efficiency_score(trace, budget)` — combined metric
 
-### Phase 6: Test Fixtures for H1-H5
+### Phase 6: Test Fixtures for H1-H5 ✅
 
 Create hardcoded test scenarios for Hello World experiments.
 
-16. **H1 fixtures** — Static structure questions
-    - [ ] Minimal world (2 compartments, 3 molecules, 1 reaction)
-    - [ ] Small world (3 compartments, 5 molecules, 3 reactions)
+16. **H1 fixtures** — Static structure questions ✅
+    - [x] Minimal world (2 compartments, 3 molecules, 1 reaction) → `H1_MINIMAL`
+    - [x] Small world (3 compartments, 5 molecules, 3 reactions) → `H1_SMALL`
 
-17. **H2 fixtures** — Dynamics prediction
-    - [ ] Single reaction system
-    - [ ] Multi-reaction with different rates
+17. **H2 fixtures** — Dynamics prediction ✅
+    - [x] Single reaction system → `H2_SINGLE_REACTION`
+    - [x] Multi-reaction with different rates → `H2_MULTI_REACTION`
 
-18. **H3 fixtures** — Control interface
-    - [ ] Scripted protocol scenario
+18. **H3 fixtures** — Control interface ✅
+    - [x] Scripted protocol scenario → `H3_SIMPLE_SEQUENCE`
 
-19. **H4 fixtures** — Goal-directed
-    - [ ] Direct intervention scenario
-    - [ ] Indirect intervention scenario
+19. **H4 fixtures** — Goal-directed ✅
+    - [x] Direct intervention scenario → `H4_DIRECT_INTERVENTION`
+    - [x] Indirect intervention scenario → `H4_INDIRECT_INTERVENTION`
 
-20. **H5 fixtures** — Hypothesis formation
-    - [ ] Hidden reaction scenario
+20. **H5 fixtures** — Hypothesis formation ✅
+    - [x] Hidden reaction scenario → `H5_HIDDEN_REACTION`
+
+Files:
+- `tests/fixtures/scenarios.py` — All H1-H5 scenario definitions
+- `tests/integration/test_hello_world.py` — 24 integration tests
 
 ### Verification
 
-- [ ] All ~100 tests in `test_agent_interface.py` passing
-- [ ] At least one H1-H5 fixture runs end-to-end with ScriptedAgent
+- [ ] All ~100 tests in `test_agent_interface.py` passing (currently skipped, framework ready)
+- [x] At least one H1-H5 fixture runs end-to-end with ScriptedAgent
+- [x] 24 integration tests in `test_hello_world.py` passing
+- [x] ActionResult is subclass of Observation
+- [x] Trace records action→observation pairs
 
 ### .
 

@@ -94,31 +94,28 @@ Folder `My Simple Project/` contains:
 
 ---
 
-### Code Flow
+### PR Flow
 
-**Setup:**
-- The `{NAME} Docs/{NAME} Roadmap.md` document should have an up-to-date roadmap indicating work to be done
-- The next item to work on is the first unchecked item on the roadmap
+**Goal:** When user says "PR flow", Claude does enough work to create a PR, pushes it, and surfs the URL. The next interaction should be the user reviewing that PR.
 
-**Trigger:** Code flow begins when the user says "code flow"
+**Pre-conditions:**
+- Repository is clean (all changes committed, or can be committed now)
+- Roadmap is up-to-date with next step identified
 
-**Steps In The Flow:**
-- **Commited** — Commit current code if not already committed
-- **CODE FLOW LOOP**:
-	- **Branch** — Create a new branch if not already on the correct one for the next task
-	- **Work** — Do a chunk of work yielding a moderate-sized PR (5-20 pages of edits); doesn't have to complete the entire milestone
-	- **PR** — Create the pull request
-	- **Surf** — Surf the PR URL so user can immediately review it
-	- Pull -- User will pull the PR immediately
-	- Review -- The user will review the closed PR and provide feedback
-	- Fix -- Do the fixing work as indicated and create a new PR
 
-**Loop:**
-- User reviews the PR while it's still open
-- If user has comments, make changes on the same branch
-- When user says "commit", commit changes and update the PR
-- User reviews again
-- When PR is complete, user says "continue" to proceed to the next task
+**The Cycle:**
+1. **PR flow** — User says "PR flow" to start the cycle
+2. **Work** — Claude creates a branch (if needed), does work, builds up an appropriately sized PR (5-20 pages)
+3. **Push & Surf** — Claude creates the PR, pushes to GitHub, surfs the PR URL
+4. **Review** — User closes the PR, pulls, and reviews:
+   - User provides comments, questions, changes needed
+   - Claude makes fixes, commits, pushes to the same branch
+   - Claude checks if PR is open; if not, creates a new one on the same branch
+   - User closes it, reviews just the incremental changes
+   - Back and forth until user is satisfied
+5. **PR flow** — User says "PR flow" to start the next iteration (go to step 2)
+
+The cycle continues until the roadmap work is complete.
 
 ---
 
