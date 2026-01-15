@@ -627,17 +627,72 @@ Bio class methods for loading and navigating specs. Builds on fetch foundation.
 ### .
 
 
-## [ ] M1.14 - Experiments Roadmap Discussion
+## [>] M1.14 - Hello World Experiments
 
-Review and refine the experiments roadmap before implementing the testing infrastructure.
+Implement the H1-H5 experiment progression to validate the testbed and LLM engagement.
 
-**Reference**: [[ABIO Notes#2026-01-14 ABIO Experiments roadmap]]
+**Reference**: [[ABIO Experiments]] — Full specification of experiments and evaluation methods
 
-- [ ] Review experiments roadmap (H1-H5 progression, measurement dimensions)
-- [ ] Decide which experiments to implement first
-- [ ] Refine experiment specifications based on current system capabilities
-- [ ] Define success criteria and evaluation methods
-- [ ] Integrate experiments into the milestone structure
+### Infrastructure (required for all tests)
+
+- [ ] World generation from spec (compartments, molecules, reactions, flows)
+- [ ] Observation interface: `observe()` returns concentrations per compartment
+- [ ] Action interface: `step(n)`, `add_molecule()`, `remove_molecule()`, `adjust_rate()`
+- [ ] Ground truth recording for evaluation
+- [ ] Test harness to run agent through protocol
+- [ ] Evaluation framework (exact match, numerical tolerance, binary success)
+
+### H1: Representation Comprehension
+
+Verify LLM can parse and understand the alien biology format.
+
+- [ ] Generate test worlds (2-3 compartments, 3-5 molecules, 2-3 reactions)
+- [ ] Structural question generator (molecules in compartment, reactants/products, etc.)
+- [ ] Evaluator: exact match against ground truth
+- [ ] Variants: H1.1 minimal, H1.2 small, H1.3 with alien names
+- [ ] Test: ≥80% accuracy on structural questions
+
+### H2: Single-Step Dynamics Prediction
+
+Verify LLM can reason about dynamics from concentration changes.
+
+- [ ] Generate test worlds with known dynamics
+- [ ] Protocol: observe t=0 → step → observe t=1 → predict t=2
+- [ ] Questions: which reactions fired, predict next state, estimate rates
+- [ ] Evaluator: reaction identification, numerical tolerance (±20%)
+- [ ] Variants: H2.1-H2.4 increasing difficulty
+- [ ] Test: correct reaction identification AND directional predictions
+
+### H3: Control Interface Exercise
+
+Verify LLM can operate the observation/action interface.
+
+- [ ] Define tool interface: `observe()`, `step(n)`, `report(text)`
+- [ ] Scripted protocol: observe → step(10) → observe → report changes
+- [ ] Evaluator: correct tool sequence, accurate report
+- [ ] Variants: H3.1 simple, H3.2 with cost, H3.3 with branching
+- [ ] Test: all tools invoked correctly AND report matches ground truth
+
+### H4: Goal-Directed Single Intervention
+
+Verify LLM can connect goals to actions.
+
+- [ ] Generate test worlds with intervention options
+- [ ] Goal generator: increase/decrease/balance molecule concentrations
+- [ ] Evaluator: goal achieved (binary), reasoning quality
+- [ ] Variants: H4.1-H4.4 (direct, indirect, rate, competing)
+- [ ] Test: goal achieved AND reasoning identifies mechanism
+
+### H5: Hypothesis Formation from Observation
+
+Verify LLM can infer hidden rules from experiments.
+
+- [ ] Generate worlds with one hidden reaction
+- [ ] Experiment budget system (limited observations)
+- [ ] Hypothesis submission format
+- [ ] Evaluator: reactants correct, products correct, stoichiometry bonus
+- [ ] Variants: H5.1-H5.5 increasing complexity
+- [ ] Test: correctly identify reactants AND products
 
 ### .
 
