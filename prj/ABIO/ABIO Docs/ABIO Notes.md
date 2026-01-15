@@ -72,7 +72,7 @@ This enables:
 - Variant-based testing by generating with different visibility mappings
 - Ground truth preserved for scoring/analysis
 
-### Q5: Multi-Turn Budget
+### ✅ Q5: Multi-Turn Budget → Dual budgets (cost + simulation time)
 
 How many API calls / tool invocations constitute a "fair" test?
 
@@ -82,13 +82,13 @@ How many API calls / tool invocations constitute a "fair" test?
 - **Cost-based** — Actions have costs, total budget in "units"
 - **Time-based** — Wall-clock or token limit
 
-**Considerations**:
-- Unlimited makes comparison across models difficult
-- Fixed budget enables fair comparison
-- Cost-based allows trading off observation vs action
-- Need to calibrate so good solutions are achievable within budget
+**Decision**: Use **dual budgets** — already designed in [[Agent Interface#Termination Conditions]].
 
-**Decision**: _TBD_
+Two independent limits per scenario:
+- `action.limits.budget` — Cost budget (total action/measurement costs)
+- `action.limits.max_sim_time` — Simulation time budget (not wall clock)
+
+Either or both can be specified (null = unlimited). Termination occurs when any limit is exceeded. This allows scenarios to constrain by resources, time, or both.
 
 ### ✅ Q6: Baseline Agents → Random, Oracle, Scripted, Human
 
@@ -109,7 +109,7 @@ Already implemented in [[Agent Interface]]:
 
 Greedy heuristics can be implemented as ScriptedAgents for specific tests.
 
-### Q7: Evaluation Without LLM Grader
+### ✅ Q7: Evaluation Without LLM Grader → Simulation-based scoring
 
 How do we evaluate free-form responses without using another LLM?
 
@@ -119,13 +119,15 @@ How do we evaluate free-form responses without using another LLM?
 - **Keyword matching** — Check for presence of key terms
 - **Numerical only** — All answers are numbers with tolerance
 
-**Considerations**:
-- Multiple choice limits question types but is fully objective
-- Structured output requires LLM to follow format (may fail)
-- Keyword matching is fragile
-- Numerical works for predictions but not explanations
+**Decision**: **No direct response evaluation** — already designed in [[Agent Interface]].
 
-**Decision**: _TBD_
+We don't evaluate what the agent *says*. We evaluate what happens in the *simulation*:
+- Agent interacts with simulation through actions/measurements
+- `scoring.score` is a **computable function** of the trace/state (e.g., `!_ population_health(trace)`)
+- `passing_score` threshold determines pass/fail
+- No LLM grader needed — everything is computed programmatically
+
+Future extension: rubric-style grading (A/B/C/D/F) based on score ranges.
 
 
 ## 2026-01-14  ABIO Experiments roadmap

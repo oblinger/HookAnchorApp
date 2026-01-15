@@ -2011,16 +2011,89 @@ Calibrate and scale experiment difficulty.
 ### .
 
 
-# Milestone 5 - Single Compartment Simulation
+# Milestone 5 - System Validation
 
-## [ ] M5.1 - BioSystem Assembly
+**Concept**: Validate full pipeline works before adding complexity. Run Hello World tests to verify each component, then test experimentation and reporting infrastructure.
+
+## [ ] M5.1 - Full Pipeline Test
+
+### Hello World System Tests
+
+Validate each component of the system works before running full experiments.
+
+**H1: Representation Comprehension**
+- [ ] Generate simple world (2-3 compartments, 3-5 molecules, 2-3 reactions)
+- [ ] Present to LLM via Agent Interface
+- [ ] Ask structural questions ("What molecules in compartment X?", "What are products of reaction Y?")
+- [ ] Test: LLM answers ≥80% correctly (exact match against ground truth)
+
+**H2: Single-Step Dynamics Prediction**
+- [ ] Generate world with known dynamics
+- [ ] Show concentrations at t=0, run 1 step, show concentrations at t=1
+- [ ] Ask: "Which reactions fired? What do you expect at t=2?"
+- [ ] Test: Correct reaction identification, directional predictions within ±20%
+
+**H3: Control Interface Exercise**
+- [ ] Provide explicit instructions: "Observe, run 10 steps, observe, report changes"
+- [ ] Verify LLM invokes tools correctly: `observe()`, `step(10)`, `observe()`, `report()`
+- [ ] Test: Correct tool sequence, report matches ground truth changes
+
+**H4: Goal-Directed Single Intervention**
+- [ ] Present world with goal: "Increase molecule X concentration by 50%"
+- [ ] LLM chooses one intervention (add molecule, adjust rate, etc.)
+- [ ] Run simulation, check if goal achieved
+- [ ] Test: Goal achieved AND reasoning identifies correct mechanism
+
+**H5: Hypothesis Formation from Observation**
+- [ ] Present world with one hidden reaction (unknown stoichiometry)
+- [ ] LLM can run experiments (set concentrations, observe results)
+- [ ] LLM submits hypothesis about the hidden reaction
+- [ ] Test: Correctly identifies reactants AND products
+
+### Full Pipeline Integration
+
+- [ ] Generate alien biology from scratch
+- [ ] Generate organism with disease
+- [ ] Generate diagnosis and cure tasks
+- [ ] Run LLM agent through tasks
+- [ ] Score and analyze results
+- [ ] Test: pipeline completes without error, produces valid scores
+
+### .
+
+## [ ] M5.2 - Experimentation & Reporting
+
+End-to-end tests for running experiments and generating reports.
+
+**Multiple Simulations**
+- [ ] Run batch of simulations with same scenario, different seeds
+- [ ] Aggregate results across runs
+- [ ] Test: statistics computed correctly (mean, std, etc.)
+
+**Multiple Scenarios**
+- [ ] Generate suite of scenarios from template with parameter sweep
+- [ ] Run agent across all scenarios
+- [ ] Test: all scenarios complete, results indexed by scenario
+
+**Reporting**
+- [ ] Generate summary report from experiment results
+- [ ] Generate comparison report across agents/scenarios
+- [ ] Export results to standard formats (CSV, JSON)
+- [ ] Test: reports render correctly, data matches source
+
+### .
+
+
+# Milestone 6 - Single Compartment Simulation
+
+## [ ] M6.1 - BioSystem Assembly
 ### [ ] Combine synthetic molecules and reactions into BioSystem
 ### [ ] Initialize state with random concentrations
 ### [ ] Test: BioSystem has correct molecule and reaction counts
 
 ### .
 
-## [ ] M5.2 - Equilibrium Testing
+## [ ] M6.2 - Equilibrium Testing
 ### [ ] Run simulation until concentrations stabilize
 ### [ ] Identify and fix unstable reaction rates
 ### [ ] Define homeostasis targets
@@ -2028,7 +2101,7 @@ Calibrate and scale experiment difficulty.
 
 ### .
 
-## [ ] M5.3 - Perturbation Testing
+## [ ] M6.3 - Perturbation Testing
 ### [ ] Inject concentration spike, observe recovery
 ### [ ] Remove a reaction, observe divergence
 ### [ ] Validate system responds to interventions
@@ -2037,11 +2110,11 @@ Calibrate and scale experiment difficulty.
 ### .
 
 
-# Milestone 6 - Measurements and Actions
+# Milestone 7 - Measurements and Actions
 
 **Concept**: Agent-facing API for observations and actions. Measurements observe limited aspects of system state. Actions perturb system state.
 
-## [ ] M6.1 - Measurement Protocol
+## [ ] M7.1 - Measurement Protocol
 ### [ ] Define interface: measure(state, params) → value
 ### [ ] Implement concentration measurement
 ### [ ] Implement rate measurement
@@ -2049,7 +2122,7 @@ Calibrate and scale experiment difficulty.
 
 ### .
 
-## [ ] M6.2 - Action Protocol
+## [ ] M7.2 - Action Protocol
 ### [ ] Define interface: act(state, params) → new_state
 ### [ ] Implement add_molecule action
 ### [ ] Implement adjust_rate action
@@ -2057,7 +2130,7 @@ Calibrate and scale experiment difficulty.
 
 ### .
 
-## [ ] M6.3 - Agent Interface
+## [ ] M7.3 - Agent Interface
 ### [ ] Bundle measurements and actions into agent-facing API
 ### [ ] Define text descriptions for each measurement/action
 ### [ ] Test agent can query and act via API
@@ -2066,25 +2139,25 @@ Calibrate and scale experiment difficulty.
 ### .
 
 
-# Milestone 7 - Task Framework
+# Milestone 8 - Task Framework
 
 **Concept**: Tasks specify goals with scoring criteria. Types include predict (forecast behavior), diagnose (identify disease), and cure (restore health).
 
-## [ ] M7.1 - Task Protocol
+## [ ] M8.1 - Task Protocol
 ### [ ] Define Task with setup, goal, scoring, criteria
 ### [ ] Implement predict task: forecast concentration after N steps
 ### [ ] Test: protocol definition passes type check
 
 ### .
 
-## [ ] M7.2 - Experiment Protocol
+## [ ] M8.2 - Experiment Protocol
 ### [ ] Define Experiment combining world, task, agent
 ### [ ] Implement run_experiment returning score
 ### [ ] Test: run experiment with mock agent, returns numeric score
 
 ### .
 
-## [ ] M7.3 - Hardcoded Predict Task
+## [ ] M8.3 - Hardcoded Predict Task
 ### [ ] Create simple system with known dynamics
 ### [ ] Define prediction task with ground truth
 ### [ ] Score agent's prediction accuracy
@@ -2093,11 +2166,11 @@ Calibrate and scale experiment difficulty.
 ### .
 
 
-# Milestone 8 - Multi-Compartment Systems
+# Milestone 9 - Multi-Compartment Systems
 
 **Concept**: Organism construction with compartmentalized systems. Generate organs as DAGs of bioparts with transport reactions between compartments. Build nested hierarchy from organelles to cells to organs to organism. Establish homeostasis via feedback loops maintaining concentration targets.
 
-## [ ] M8.1 - Compartment Model
+## [ ] M9.1 - Compartment Model
 ### [ ] Extend State to support multiple compartments
 ### [ ] Define transport reactions moving molecules between compartments
 ### [ ] Implement container hierarchy — ecosystems > regions > organisms > compartments > organelles
@@ -2106,7 +2179,7 @@ Calibrate and scale experiment difficulty.
 
 ### .
 
-## [ ] M8.2 - Organ Generator
+## [ ] M9.2 - Organ Generator
 ### [ ] Generate compartments with local reactions
 ### [ ] Generate transport reactions between compartments
 ### [ ] Assemble into BioOrganism
@@ -2114,7 +2187,7 @@ Calibrate and scale experiment difficulty.
 
 ### .
 
-## [ ] M8.3 - Cross-Compartment Simulation
+## [ ] M9.3 - Cross-Compartment Simulation
 ### [ ] Extend Simulator to handle multi-compartment state
 ### [ ] Verify transport moves molecules correctly
 ### [ ] Test homeostasis across compartments
@@ -2127,18 +2200,18 @@ Calibrate and scale experiment difficulty.
 ### .
 
 
-# Milestone 9 - Disease and Variation
+# Milestone 10 - Disease and Variation
 
 **Concept**: Define healthy baseline (equilibria and acceptable ranges). Generate perturbations: mutations (altered rates, removed reactions) and deficiencies (reduced enzyme concentrations). Diseases produce measurable symptoms as deviations from baseline.
 
-## [ ] M9.1 - Baseline Definition
+## [ ] M10.1 - Baseline Definition
 ### [ ] Define healthy steady-state for organism
 ### [ ] Define acceptable ranges for each homeostatic target
 ### [ ] Test: healthy organism stays within ranges for 1000 steps
 
 ### .
 
-## [ ] M9.2 - Perturbation Generator
+## [ ] M10.2 - Perturbation Generator
 ### [ ] Generate mutations: altered rate, removed reaction
 ### [ ] Generate deficiencies: reduced enzyme concentration
 ### [ ] Apply perturbation to create diseased organism
@@ -2146,7 +2219,7 @@ Calibrate and scale experiment difficulty.
 
 ### .
 
-## [ ] M9.3 - Symptom Measurement
+## [ ] M10.3 - Symptom Measurement
 ### [ ] Define symptom as deviation from baseline
 ### [ ] Implement symptom detection measurements
 ### [ ] Verify diseases produce observable symptoms
@@ -2155,11 +2228,11 @@ Calibrate and scale experiment difficulty.
 ### .
 
 
-# Milestone 10 - Diagnosis and Cure Tasks
+# Milestone 11 - Diagnosis and Cure Tasks
 
 **Concept**: Diagnosis tasks provide diseased organism with limited measurements; agent identifies which perturbation was applied. Cure tasks provide action toolkit; agent restores homeostatic targets to baseline. Difficulty scales with number of possible diseases and measurement limitations.
 
-## [ ] M10.1 - Diagnosis Task
+## [ ] M11.1 - Diagnosis Task
 ### [ ] Provide diseased organism with limited measurements
 ### [ ] Agent must identify which perturbation was applied
 ### [ ] Score based on correct identification
@@ -2167,7 +2240,7 @@ Calibrate and scale experiment difficulty.
 
 ### .
 
-## [ ] M10.2 - Cure Task
+## [ ] M11.2 - Cure Task
 ### [ ] Provide diseased organism with action toolkit
 ### [ ] Agent must restore homeostatic targets to baseline
 ### [ ] Score based on recovery quality
@@ -2175,7 +2248,7 @@ Calibrate and scale experiment difficulty.
 
 ### .
 
-## [ ] M10.3 - Task Difficulty Scaling
+## [ ] M11.3 - Task Difficulty Scaling
 ### [ ] Parameterize number of possible diseases
 ### [ ] Parameterize measurement limitations
 ### [ ] Generate tasks at varying difficulty levels
@@ -2184,16 +2257,16 @@ Calibrate and scale experiment difficulty.
 ### .
 
 
-# Milestone 11 - Test Harness
+# Milestone 12 - Test Harness
 
-## [ ] M11.1 - Test Definition
+## [ ] M12.1 - Test Definition
 ### [ ] Define Test as batch of experiments
 ### [ ] Support parameter sweeps (worlds, agents, settings)
 ### [ ] Test: create Test with 10 experiments, assert count matches
 
 ### .
 
-## [ ] M11.2 - Execution Runner
+## [ ] M12.2 - Execution Runner
 ### [ ] Run experiments in sequence or parallel
 ### [ ] Log all agent actions and measurements
 ### [ ] Aggregate scores across experiments
@@ -2201,7 +2274,7 @@ Calibrate and scale experiment difficulty.
 
 ### .
 
-## [ ] M11.3 - Result Analysis
+## [ ] M12.3 - Result Analysis
 ### [ ] Compute pass/fail rates per difficulty level
 ### [ ] Plot performance curves
 ### [ ] Export results for comparison
@@ -2210,11 +2283,11 @@ Calibrate and scale experiment difficulty.
 ### .
 
 
-# Milestone 12 - JAX Simulator
+# Milestone 13 - JAX Simulator
 
 GPU-accelerated simulator using JAX/XLA compilation.
 
-## [ ] M12.1 - JAX Core
+## [ ] M13.1 - JAX Core
 ### [ ] Implement JaxWorldSimulator with same API as Python WorldSimulator
 ### [ ] Use jax.numpy for state arrays
 ### [ ] Apply @jax.jit to step() hot path
@@ -2222,7 +2295,7 @@ GPU-accelerated simulator using JAX/XLA compilation.
 
 ### .
 
-## [ ] M12.2 - Rate Function Compilation
+## [ ] M13.2 - Rate Function Compilation
 ### [ ] Decorated @rate functions traced and compiled by JAX
 ### [ ] Verify pure functional rate functions work with jit
 ### [ ] Handle non-jittable fallback gracefully
@@ -2230,7 +2303,7 @@ GPU-accelerated simulator using JAX/XLA compilation.
 
 ### .
 
-## [ ] M12.3 - Verification
+## [ ] M13.3 - Verification
 ### [ ] Run identical simulations on both simulators (Python reference, JAX)
 ### [ ] Assert outputs match within floating-point tolerance
 ### [ ] Benchmark performance difference
@@ -2239,18 +2312,18 @@ GPU-accelerated simulator using JAX/XLA compilation.
 ### .
 
 
-# Milestone 13 - Alien Descriptions and Skinning
+# Milestone 14 - Alien Descriptions and Skinning
 
 Note: Opaque name generation is covered by M2.5 (Visibility Mapping).
 
-## [ ] M13.1 - Description Generator
+## [ ] M14.1 - Description Generator
 ### [ ] Generate natural language descriptions of bioparts
 ### [ ] Vary detail level (minimal hints to full explanation)
 ### [ ] Test: generate descriptions at 3 detail levels, length increases with detail
 
 ### .
 
-## [ ] M13.2 - Task Skinning
+## [ ] M14.2 - Task Skinning
 ### [ ] Apply naming and descriptions to generated tasks
 ### [ ] Produce agent-facing task text with alien terminology
 ### [ ] Test: skinned task contains no Earth biology terms
@@ -2258,33 +2331,31 @@ Note: Opaque name generation is covered by M2.5 (Visibility Mapping).
 ### .
 
 
-# Milestone 14 - End-to-End Validation
+# Milestone 15 - Documentation
 
-**Concept**: Validate full pipeline and iterate based on agent testing. Tune generators to achieve target difficulty range based on AI performance curves.
+## [ ] M15.1 - Documentation Consistency & Completeness
 
-## [ ] M14.1 - Full Pipeline Test
-### [ ] Generate alien biology from scratch
-### [ ] Generate organism with disease
-### [ ] Generate diagnosis and cure tasks
-### [ ] Run LLM agent through tasks
-### [ ] Score and analyze results
-### [ ] Test: pipeline completes without error, produces valid scores
+Ensure all documentation is accurate, consistent, and complete.
 
-### .
+### User Guide Review
+- [ ] Audit all User Guide docs for accuracy against current implementation
+- [ ] Verify examples run correctly
+- [ ] Fill gaps in coverage
 
-## [ ] M14.2 - Difficulty Calibration
-### [ ] Sweep complexity parameters
-### [ ] Identify where agent performance degrades
-### [ ] Tune generators to target difficulty range
-### [ ] Test: performance curve shows expected degradation with difficulty
+### Architecture Docs Review
+- [ ] Verify architecture docs match actual code structure
+- [ ] Update class/module descriptions to reflect current design
+- [ ] Ensure cross-references between docs are valid
 
-### .
+### API Documentation
+- [ ] Verify docstrings match function behavior
+- [ ] Add missing docstrings to public functions
+- [ ] Generate API reference (sphinx or similar)
 
-## [ ] M14.3 - Documentation
-### [ ] Document generated biology format
-### [ ] Document task specification format
-### [ ] Document agent interface API
-### [ ] Test: all public functions have docstrings, sphinx builds without warnings
+### Cross-Document Consistency
+- [ ] Terminology consistent across all docs
+- [ ] No contradictions between User Guide, Architecture, and API docs
+- [ ] All referenced features actually exist in code
 
 ### .
 

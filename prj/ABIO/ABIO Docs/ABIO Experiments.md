@@ -284,6 +284,72 @@ Prefer methods that don't require another LLM to grade:
 
 ---
 
+# Difficulty Calibration Experiments
+
+Experiments to understand how LLM performance degrades across complexity dimensions.
+
+## D1: World Size Scaling
+
+**Purpose**: Measure how performance degrades as the number of molecules and reactions increases.
+
+**Protocol**:
+1. Fix task type (e.g., H2 dynamics prediction or H4 goal-directed intervention)
+2. Generate worlds at increasing sizes: 5, 10, 20, 50, 100 molecules
+3. Run same agent across all sizes
+4. Plot success rate vs. world size
+
+**Expected Outcome**: Identify the complexity threshold where agent performance drops significantly.
+
+## D2: Hidden Information Impact
+
+**Purpose**: Measure how partial observability affects reasoning.
+
+**Protocol**:
+1. Fix world size and task type
+2. Vary hidden information: 0%, 25%, 50%, 75% of reactions hidden
+3. Run agent with same task but different visibility levels
+4. Plot success rate vs. hidden fraction
+
+**Expected Outcome**: Quantify the cost of incomplete information on task success.
+
+## D3: Time Horizon Scaling
+
+**Purpose**: Measure long-horizon planning capabilities.
+
+**Protocol**:
+1. Fix world complexity
+2. Vary required planning horizon: 10, 50, 100, 500, 1000 steps
+3. Tasks require reasoning about cumulative effects over time
+4. Plot success rate vs. horizon length
+
+**Expected Outcome**: Identify where long-horizon reasoning breaks down.
+
+## D4: Multi-Goal Tradeoffs
+
+**Purpose**: Measure ability to balance competing objectives.
+
+**Protocol**:
+1. Fix world complexity and horizon
+2. Vary number of simultaneous goals: 1, 2, 3, 5
+3. Include conflicting goals (optimizing A hurts B)
+4. Score partial completion across all goals
+
+**Expected Outcome**: Understand multi-objective optimization capabilities.
+
+## D5: Cross-Model Comparison
+
+**Purpose**: Compare capabilities across different LLMs.
+
+**Protocol**:
+1. Fix task battery (H1-H5 at multiple difficulty levels)
+2. Run identical tests across multiple models
+3. Control for cost budget (equivalent API spend per model)
+4. Generate comparative performance profiles
+
+**Expected Outcome**: Capability profiles showing relative strengths/weaknesses across models.
+
+---
+
 # Test Implementation Plan
 
 ## Phase 1: Infrastructure (Required for all tests)
