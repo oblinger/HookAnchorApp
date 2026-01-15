@@ -2,9 +2,9 @@
 **Related**: [[alienbio]], [[Testing]]
 Implementation roadmap for the alienbio project.
 
-# [x] Milestone 1 - Minimal Simulation Loop
+# [ ] Milestone 1 - Minimal Simulation Loop
 
-**Status**: Complete — 524 tests passing.
+**Status**: In progress — 680 tests passing.
 
 Core architecture: entities, protocols, and basic simulation.
 
@@ -539,10 +539,10 @@ Clean up technical debt before building new features. All items reference existi
    - [ ] Add `impl` parameter to `build()`
 
 8. **Module exports cleanup** (see TODO 2026-01-14 #9)
-   - [ ] Refactor `alienbio/__init__.py` to use curated `__all__`
-   - [ ] Export main API: `bio`, `Bio`, `hydrate`, `dehydrate`
-   - [ ] Export core protocols: `Entity`, `Scenario`, `Chemistry`, `Simulator`, `State`
-   - [ ] Keep `*Impl` classes importable but NOT in `__all__`
+   - [x] Refactor `alienbio/__init__.py` to use curated `__all__`
+   - [x] Export main API: `bio`, `Bio`, `hydrate`, `dehydrate`
+   - [x] Export core protocols: `Entity`, `Scenario`, `Chemistry`, `Simulator`, `State`
+   - [x] Keep `*Impl` classes importable but NOT in `__all__`
 
 ### Documentation Updates (for existing code)
 
@@ -567,7 +567,7 @@ Clean up technical debt before building new features. All items reference existi
 
 ### .
 
-
+# HERE
 ## [>] M1.13 - Fetch Foundation (Current)
 
 Front-loaded from M2 while design is fresh. Execute TODO 2026-01-14 items in order.
@@ -586,10 +586,10 @@ Bio class methods for loading and navigating specs. Builds on fetch foundation.
 **Key docs**: ABIO Fetch.md — Specifier routing logic, hydration order, data sources
 
 1. **Bio.cd()**
-   - [ ] Add `_current_dat: Path | None` instance variable
-   - [ ] Add `cd(path=None)` method
-   - [ ] Update `fetch()`, `store()` to resolve relative paths against current DAT
-   - [ ] CLI: `bio cd` prints current, `bio cd path` changes it
+   - [x] Add `_current_dat: Path | None` instance variable
+   - [x] Add `cd(path=None)` method
+   - [x] Update `fetch()`, `store()` to resolve relative paths against current DAT
+   - [x] CLI: `bio cd` prints current, `bio cd path` changes it
 
 2. **ORM Pattern** (see TODO 2026-01-14 #2)
    - [x] Document DAT ORM pattern (single in-memory instance per DAT)
@@ -609,12 +609,12 @@ Bio class methods for loading and navigating specs. Builds on fetch foundation.
    - [x] Handle edge cases (empty string, unicode, whitespace, etc.)
 
 4. **Bio.fetch() enhancements**
-   - [ ] Detect dots-before-slash and route to lookup()
-   - [ ] Implement "loads within DAT" pattern (load YAML → dereference → hydrate)
-   - [ ] Support `hydrate=False` option
+   - [x] Detect dots-before-slash and route to lookup()
+   - [x] Implement "loads within DAT" pattern (path.dig.path → load DAT, dig into result)
+   - [x] Support `hydrate=False` option (parameter added; actual hydration not yet implemented)
 
 5. **Bio.store()**
-   - [ ] Implement dehydration and storage
+   - [x] Implement dehydration and storage
    - [ ] (Remote sync planned for Later)
 
 ### DAT Name Convention Verification (see TODO 2026-01-14 #1)
@@ -642,7 +642,7 @@ Review and refine the experiments roadmap before implementing the testing infras
 ### .
 
 
-# Milestone 2 - Generator System
+# [ ] Milestone 2 - Generator System
 
 **Concept**: Template-based scenario generation with parameterized templates, distribution sampling, constraint guards, and visibility mapping. See [[Generator Spec Language]] for YAML syntax.
 
