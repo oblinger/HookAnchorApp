@@ -213,10 +213,8 @@ fn test_url_no_popup() {
 // Helper functions
 
 fn get_ha_binary_path() -> String {
-    // Use the release binary
-    std::env::var("HOME")
-        .map(|home| format!("{}/ob/proj/HookAnchor/target/release/ha", home))
-        .unwrap_or_else(|_| "./target/release/ha".to_string())
+    // Use the release binary - prefer relative path for portability
+    "./target/release/ha".to_string()
 }
 
 fn ensure_server_running() {

@@ -26,6 +26,7 @@ pub fn print_help(_program_name: &str) {
     print(&format!("  {} -F <query>               # Get CMDS->paths (all matches)", name));
     print(&format!("  {} -c, --command <act> <arg># Test command with action+arg", name));
     print(&format!("  {} -a, --action <name>      # Execute action directly", name));
+    print(&format!("  {} -d, --define <params>    # Define new command (n:=NAME a:=ACTION r:=ARG)", name));
     print(&format!("  {} --infer [command]        # Show patch inference changes", name));
     print(&format!("  {} --infer-all              # Show changes and prompt to apply", name));
     print(&format!("  {} --rescan                 # Rescan filesystem with verbose output", name));

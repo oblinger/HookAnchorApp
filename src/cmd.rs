@@ -19,6 +19,7 @@ use crate::cli::maintenance::{
     run_rescan_command, run_execute_launcher_command, run_rebuild_command,
     run_search_command, run_delete_history, run_diagnose,
 };
+use crate::cli::define::run_define;
 
 /// Main entry point for command-line mode
 pub fn run_command_line_mode(args: Vec<String>) {
@@ -91,6 +92,7 @@ pub fn run_command_line_mode(args: Vec<String>) {
         "--execute-launcher-command" => run_execute_launcher_command(&args),
         "--search" => run_search_command(),
         "--delete-history" => run_delete_history(&args),
+        "--define" | "-d" => run_define(&args),
         _ => {
             print(&format!("Unknown command: {}", args[1]));
             print("Use -h or --help for usage information");
