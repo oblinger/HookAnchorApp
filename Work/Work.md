@@ -28,6 +28,10 @@
     Test automation:  (1) Mery Impersonation; (2) API testing.
     Top of mind from Jason; ask for topics before (for mgt meeting)
 ## PAUSE
+  Jan-28	ICML  Jan-28			http://aideadlines.org/
+  May			NeurIPS  
+  Aug			AAAI
+  Sep			ICLR
   Baseball opportunity
   Effort Analysis for BB stats
   Halo analysis
@@ -54,6 +58,7 @@
   DELS: [work Note](spot://worknote),[work Obsidian](spot://workobsidian),[work Note](spot://worknote),[work Note](spot://worknote),
  SOON [[mgt]] [[CVP]] l
 [[Journaling]] 
+
 
 
 
