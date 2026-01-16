@@ -16,9 +16,27 @@
 |            | [[ASP]]  |                                     |                                                     |
 |            | [[ABIO]] |                                     |                                                     |
 |            | [[HA]]   | [[Hook Anchor]]                     | Universal command launcher for macOS                |
-|            |          |                                     |                                                     |
-|            |          |                                     |                                                     |
-|            |          |                                     |                                                     |
-|            |          |                                     |                                                     |
-|            |          |                                     |                                                     |
-  
+|            | [[ASIO]] | [[Artificial Super Intelligence Outcomes]] |                                                     |
+
+| TLC         | Evergreen TLC Meaning |
+| ----------- | --------------------- |
+| [[AF]]      | Acquisition/Finance   |
+| [[COM]]     | Communications        |
+| [[ELI]]     | Personal              |
+| [[FIN]]     | Financial             |
+| [[MAC]]     | Mac Setup             |
+| [[MED]]     | Medical               |
+| [[MGR]]     | Manager Docs          |
+| [[NJ]]      |                       |
+| [[PJ]]      | Projects              |
+| [[RES]]     | Resumes               |
+| [[RR]]      | Research Resources    |
+| . . [[AI]]  | AI Research           |
+| . . [[CV]]  | Computer Vision       |
+| . . [[DL]]  | Deep Learning         |
+| . . [[ML]]  | Machine Learning      |
+| [[SV]]      | Services/Apps         |
+| . . [[SVT]] | Service Tools         |
+| [[TXT]]     | Text Logs             |
+| [[VC]]      | Venture Capital       |
+
