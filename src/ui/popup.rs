@@ -2705,8 +2705,30 @@ impl AnchorSelector {
                 }
             }
             Err(err) => {
-                log_error(&format!("GRAB: Failed to execute grab on command server: {}", err));
-                crate::utils::queue_user_error(&format!("Grab operation failed: {}", err));
+                let err_str = err.to_string();
+                log_error(&format!("GRAB: Failed to execute grab on command server: {}", err_str));
+
+                // Check if this is a "server not running" error
+                if err_str.contains("Connection refused") || err_str.contains("os error 61") {
+                    // Try to restart the server automatically
+                    log("GRAB: Server appears to be down, attempting automatic restart...");
+                    match crate::systems::restart::restart_all_servers() {
+                        Ok(_) => {
+                            log("GRAB: Server restarted successfully");
+                            crate::utils::queue_user_error(
+                                "Server was not running. Restarted automatically.\n\nPlease try your action again."
+                            );
+                        }
+                        Err(restart_err) => {
+                            log_error(&format!("GRAB: Failed to restart server: {}", restart_err));
+                            crate::utils::queue_user_error(
+                                "Server is not running.\n\nTo restart, run:\n  ha --restart\n\nOr press Cmd+B in the popup."
+                            );
+                        }
+                    }
+                } else {
+                    crate::utils::queue_user_error(&format!("Grab operation failed: {}", err_str));
+                }
             }
         }
         
