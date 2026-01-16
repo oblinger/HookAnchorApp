@@ -1,1 +1,0 @@
-/Users/oblinger/ob/proj/system-setup/personal-curation/PC.md
