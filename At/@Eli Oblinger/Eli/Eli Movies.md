@@ -1,24 +1,29 @@
-# HOLD
+# LISTS
+
+# ALL
+ I'm looking for some good movies to watch with my six-year-old son, here are ones we already know about:
+ - We have Disney, Netflix, Prime, and are happy to buy too
+## HOLD
 - Wallace and Gromit: https://www.netflix.com/title/70271652 Gromit
 - pinochio. https://www.netflix.com/title/80218455
 - Disney:  https://www.nytimes.com/article/best-tv-shows-movies-disney-plus.html
 - Star Wars III
-# YES !!!
+## YES !!!
   - The Good Dinosaur - Pixar, visually stunning/  Good Diasaur 2
   - Lightyear - Buzz Lightyear origin, fun adventure  (FUNNY)
-# MAYBE
+## MAYBE
 - SanJay's super team
   - The Land Before Time - classic, gentle
   - Spirit: Stallion of the Cimarron - horses, beautiful animation
-# MAYBE LATER
+## MAYBE LATER
   - Treasure Planet - underrated Disney, space pirates
-# DONT LIKE
+## DONT LIKE
   - Moana - adventure, great music, not too scary
   - Paddington (1 & 2) - live action, genuinely delightful
-# TOO SCARY
+## TOO SCARY
   - Raya and the Last Dragon - action-packed, strong characters
   - Jurassic Park - might be a bit intense but many 6yo love it
-# WATCHED
+## WATCHED
 - How to train your dragon
 - the lorax
 - The willoboys
@@ -32,21 +37,33 @@
   - The Lion King (animated) - classic, some intense moments
   - WALL-E - robot love story in space
   - Cars (1, 2, 3) - obvious choice if he hasn't seen them
-# CONSIDERING
+## CONSIDERING
   - Planes - same universe as Cars
   - Turbo - snail who wants to race
-
-  Superheroes
-
   - Spider-Man: Into the Spider-Verse - visually amazing
   - The Iron Giant - robot hero, beautiful story
 
-  Which of these has he already seen?
 
-
-https://www.nytimes.com/article/best-netflix-movies.html
-
-
+  Strong Recommendations
+  - Kung Fu Panda (1, 2, 3) - funny, action, heart - very similar vibe to what he likes
+  - Megamind - superhero comedy, underrated gem
+  - Puss in Boots: The Last Wish - visually stunning, funny, some intensity but manageable
+  - The Croods (1 & 2) - prehistoric family adventure, funny
+  - Bolt - dog thinks he's a superhero, sweet
+  - Up - if he hasn't seen it, classic Pixar
+  - Coco - visually gorgeous, some emotional moments
+  - Elemental - newer Pixar, underrated
+  Since He Liked HTTYD & Robots
+  - The Wild Robot (2024) - beautiful, robot + animals, emotional
+  - Ron's Gone Wrong - robot friendship, funny
+  - Robots (2005) - older but fun
+  Action/Adventure
+  - Atlantis: The Lost Empire - underrated Disney, adventure
+  - Brave - Pixar, Scotland, bears, action
+  - Kubo and the Two Strings - gorgeous animation, some intensity (check if ok)
+  Consider Moving Up
+  - The Iron Giant - move from "considering" to watch - it's perfect for him based on his taste
+  - Spider-Verse - also perfect match, visually wild like Mitchells
 
   Animated Adventures
 
@@ -73,22 +90,18 @@ https://www.nytimes.com/article/best-netflix-movies.html
     - Magical adventure
     - Stop-motion animation
     - Not too scary, very creative
-  6. The Willoughbys (2020)
-    - Quirky kids' adventure
-    - Netflix, funny and sweet
-    - Unique animation style
-  7. Smallfoot (2018)
+  6. Smallfoot (2018)
     - Yeti discovers humans
     - Musical, fun, colorful
     - Cute message about discovery
 
   Live-Action/Hybrid
 
-  8. Clifford the Big Red Dog (2021)
+  7. Clifford the Big Red Dog (2021)
     - Giant red dog in NYC
     - Live-action, kid-friendly
     - Fun and silly
-  9. Peter Rabbit 1 or 2 (2018/2021)
+  8. Peter Rabbit 1 or 2 (2018/2021)
     - Mischievous rabbit adventures
     - Mix of live-action and CGI
     - Funny physical comedy
@@ -97,3 +110,7 @@ https://www.nytimes.com/article/best-netflix-movies.html
   - Turning Red (Pixar, 2022) - girl turns into red panda
   - Luca (Pixar, 2021) - sea monsters, summer adventure
   - Wish (Disney, 2023) - newest Disney musical
+
+  What's his take on emotional movies? (Coco, Up, Wild Robot all hit hard)
+
+

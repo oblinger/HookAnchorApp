@@ -1,6 +1,6 @@
 .[[T]].
   , [[Career]], [[COM]], [[Courses]], [[Doc]], [[EduCorp]], [[FIN]], [[Food]], [[Legal]], [[Life]], [[Word]], 
-  , [[MED]], [[MGR]], [[Misc]], [[Mus]], [[Tag]], [[Trash]], ,
+  , [[MED]], [[MGR]], [[Misc]], [[Mus]], [[TAG]], [[Trash]], ,
   , [[MOV]],
   , ,
   , [[Date Rollup]], [[T Roll]],

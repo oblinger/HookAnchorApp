@@ -1,3 +1,9 @@
+- The Claudifier claudify
+- learn about open agent
+- and cleanup and move bin
+- plus ask and gitproj
+- move binproj over; create claude flow: double-click, ctrl, whisperflow(clickscript), 
+- sox for me
 - get five users
 - plan the patch generator (next task)
 - https://www.scalablepath.com/professional-headshot-guide-for-freelancers

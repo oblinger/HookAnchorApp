@@ -1,2 +1,0 @@
-.[[SYS Misc]].
-  ,   [[Text Shutdown]], 

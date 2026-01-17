@@ -1,6 +1,6 @@
-### BUY TEAS
+### BUY TEAS (Black/Bitter; ???; Ginger; Mint-nilla, Strong)
 - BLACK: Harney & Sons Paris Black Tea
-- GREEN TEA: 
+- GREEN TEA: Republic Of Tea (Green Tea w/ Lemon & Honey)
 - CHAI??:
 
 - ???
@@ -15,39 +15,23 @@
 - LICORICE: Yogi Egyptian Licorice, TradMed Fennel
 - CINNAMON: Harney & Sons Hot Cinnamon Spice
 
-Chamomile, Fennel, Tulsi, Honeybush, 
-
-- Ginger (Lemon) (Turmeric)
-- Jasmine, 
+Chamomile, Fennel, Tulsi, Honeybush, Jasmine, 
 - Harneys Chocolate?
-
-
-Green???
-FAVS:		
 - TWININGS:	Lemon Ginger, Honey Bush, 
-- PUKKA:  	(amz?) ThreeGinger++, ThreeLicorice+
-- NUMI: 		Rooibos
-- Spearmint
-- Cinnamon
-- Chai
 
-TEAS  http://carandafinefoods.com 
+
+
 
 #### QL TEAS
 - [Numi - Yuzu Bancha](https://smile.amazon.com/gp/product/B0B57Y35MD/ref=ox_sc_act_image_2?smid=A1UURZ0SEW4JD3&almBrandId=VUZHIFdob2xlIEZvb2Rz&psc=1&fpw=alm) [Numi - Matcha Toasted Rice](https://smile.amazon.com/gp/product/B000M7OWKK/ref=ewc_pr_img_2?smid=A1UURZ0SEW4JD3&almBrandId=VUZHIFdob2xlIEZvb2Rz&psc=1&fpw=alm) 
 - Numi Tea - Box of 100 Single Serve Packets: Rooibos
 - Numi Tea - Box of 100 Single Serve Packets: Chamomile Lemon
-
-
-#### K-cups
-
-++ SF Bay Coffee:  French Roast
-
-BAD
+#### BAD
 -- Kava (not healthy)
 -- Happy Belly: Donut Shop Coffee
 -- Kirkland:  ???
 
+TEAS  http://carandafinefoods.com 
 [Harney & Sons Fine Teas Organic Bangkok](https://www.amazon.com/Harney-Sons-Fine-Organic-Bangkok/dp/B002YW3JE6) 
 
 

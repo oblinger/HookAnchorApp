@@ -28,7 +28,21 @@
 - [ ] 
 - https://plutopillow.com/products/puff
 - elenmind headband for sleep.  Elemind. https://elemindtech.com/products/elemind?srsltid=AfmBOooOTGV1dCODBmUem0XpPSRRFBmR2TkQWQT3Ji3KT-_jrgOjA8Xr
-## ITEMS
+# ITEMS
+
+## 2026-01-16  Sox for me
+- calvin https://www.amazon.com/stores/CalvinKlein/page/1F7FE41C-476A-4CB0-90B5-CF7CE0588DCD
+- 
+## 2026-01-16  Shirt for DAD
+- shirt   https://bonobos.com/products/garment-dyed-utility-shirt?shirt-fit=slim&color=deep%20forest%20green
+- 
+- Dluth   https://www.duluthtrading.com/s/DTC/mens-officers-slub-sateen-shirt-jac-53057.html?color=GKI
+- ZIPPER :-(  https://www.tractorsupply.com/tsc/product/berne-mens-quilt-lined-micro-duck-jacket
+- 
+HOODED
+- Nice https://www.legendarywhitetails.com/product/mens-concealed-carry-maplewood-hooded-shirt-jacket-6623.html?dwvar_6623_color=MWPL&cgid=men-shirt-jackets
+- 
+## 2026-01-16  H3 headings
 ### 2024-03-16  Tent
 
 Instant tents:
